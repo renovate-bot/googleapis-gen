@@ -46,6 +46,7 @@ func ExampleTensorboardClient_CreateTensorboard() {
 
 	req := &aiplatformpb.CreateTensorboardRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateTensorboardRequest.
 	}
 	op, err := c.CreateTensorboard(ctx, req)
 	if err != nil {
@@ -70,6 +71,7 @@ func ExampleTensorboardClient_GetTensorboard() {
 
 	req := &aiplatformpb.GetTensorboardRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetTensorboardRequest.
 	}
 	resp, err := c.GetTensorboard(ctx, req)
 	if err != nil {
@@ -89,6 +91,7 @@ func ExampleTensorboardClient_UpdateTensorboard() {
 
 	req := &aiplatformpb.UpdateTensorboardRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateTensorboardRequest.
 	}
 	op, err := c.UpdateTensorboard(ctx, req)
 	if err != nil {
@@ -113,6 +116,7 @@ func ExampleTensorboardClient_ListTensorboards() {
 
 	req := &aiplatformpb.ListTensorboardsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListTensorboardsRequest.
 	}
 	it := c.ListTensorboards(ctx, req)
 	for {
@@ -138,6 +142,7 @@ func ExampleTensorboardClient_DeleteTensorboard() {
 
 	req := &aiplatformpb.DeleteTensorboardRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteTensorboardRequest.
 	}
 	op, err := c.DeleteTensorboard(ctx, req)
 	if err != nil {
@@ -160,6 +165,7 @@ func ExampleTensorboardClient_CreateTensorboardExperiment() {
 
 	req := &aiplatformpb.CreateTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateTensorboardExperimentRequest.
 	}
 	resp, err := c.CreateTensorboardExperiment(ctx, req)
 	if err != nil {
@@ -179,6 +185,7 @@ func ExampleTensorboardClient_GetTensorboardExperiment() {
 
 	req := &aiplatformpb.GetTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetTensorboardExperimentRequest.
 	}
 	resp, err := c.GetTensorboardExperiment(ctx, req)
 	if err != nil {
@@ -198,6 +205,7 @@ func ExampleTensorboardClient_UpdateTensorboardExperiment() {
 
 	req := &aiplatformpb.UpdateTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateTensorboardExperimentRequest.
 	}
 	resp, err := c.UpdateTensorboardExperiment(ctx, req)
 	if err != nil {
@@ -217,6 +225,7 @@ func ExampleTensorboardClient_ListTensorboardExperiments() {
 
 	req := &aiplatformpb.ListTensorboardExperimentsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListTensorboardExperimentsRequest.
 	}
 	it := c.ListTensorboardExperiments(ctx, req)
 	for {
@@ -242,6 +251,7 @@ func ExampleTensorboardClient_DeleteTensorboardExperiment() {
 
 	req := &aiplatformpb.DeleteTensorboardExperimentRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteTensorboardExperimentRequest.
 	}
 	op, err := c.DeleteTensorboardExperiment(ctx, req)
 	if err != nil {
@@ -264,6 +274,7 @@ func ExampleTensorboardClient_CreateTensorboardRun() {
 
 	req := &aiplatformpb.CreateTensorboardRunRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateTensorboardRunRequest.
 	}
 	resp, err := c.CreateTensorboardRun(ctx, req)
 	if err != nil {
@@ -283,6 +294,7 @@ func ExampleTensorboardClient_GetTensorboardRun() {
 
 	req := &aiplatformpb.GetTensorboardRunRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetTensorboardRunRequest.
 	}
 	resp, err := c.GetTensorboardRun(ctx, req)
 	if err != nil {
@@ -302,6 +314,7 @@ func ExampleTensorboardClient_UpdateTensorboardRun() {
 
 	req := &aiplatformpb.UpdateTensorboardRunRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateTensorboardRunRequest.
 	}
 	resp, err := c.UpdateTensorboardRun(ctx, req)
 	if err != nil {
@@ -321,6 +334,7 @@ func ExampleTensorboardClient_ListTensorboardRuns() {
 
 	req := &aiplatformpb.ListTensorboardRunsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListTensorboardRunsRequest.
 	}
 	it := c.ListTensorboardRuns(ctx, req)
 	for {
@@ -346,6 +360,7 @@ func ExampleTensorboardClient_DeleteTensorboardRun() {
 
 	req := &aiplatformpb.DeleteTensorboardRunRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteTensorboardRunRequest.
 	}
 	op, err := c.DeleteTensorboardRun(ctx, req)
 	if err != nil {
@@ -368,6 +383,7 @@ func ExampleTensorboardClient_CreateTensorboardTimeSeries() {
 
 	req := &aiplatformpb.CreateTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateTensorboardTimeSeriesRequest.
 	}
 	resp, err := c.CreateTensorboardTimeSeries(ctx, req)
 	if err != nil {
@@ -387,6 +403,7 @@ func ExampleTensorboardClient_GetTensorboardTimeSeries() {
 
 	req := &aiplatformpb.GetTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetTensorboardTimeSeriesRequest.
 	}
 	resp, err := c.GetTensorboardTimeSeries(ctx, req)
 	if err != nil {
@@ -406,6 +423,7 @@ func ExampleTensorboardClient_UpdateTensorboardTimeSeries() {
 
 	req := &aiplatformpb.UpdateTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateTensorboardTimeSeriesRequest.
 	}
 	resp, err := c.UpdateTensorboardTimeSeries(ctx, req)
 	if err != nil {
@@ -425,6 +443,7 @@ func ExampleTensorboardClient_ListTensorboardTimeSeries() {
 
 	req := &aiplatformpb.ListTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListTensorboardTimeSeriesRequest.
 	}
 	it := c.ListTensorboardTimeSeries(ctx, req)
 	for {
@@ -450,6 +469,7 @@ func ExampleTensorboardClient_DeleteTensorboardTimeSeries() {
 
 	req := &aiplatformpb.DeleteTensorboardTimeSeriesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteTensorboardTimeSeriesRequest.
 	}
 	op, err := c.DeleteTensorboardTimeSeries(ctx, req)
 	if err != nil {
@@ -472,6 +492,7 @@ func ExampleTensorboardClient_ReadTensorboardTimeSeriesData() {
 
 	req := &aiplatformpb.ReadTensorboardTimeSeriesDataRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ReadTensorboardTimeSeriesDataRequest.
 	}
 	resp, err := c.ReadTensorboardTimeSeriesData(ctx, req)
 	if err != nil {
@@ -491,6 +512,7 @@ func ExampleTensorboardClient_WriteTensorboardRunData() {
 
 	req := &aiplatformpb.WriteTensorboardRunDataRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#WriteTensorboardRunDataRequest.
 	}
 	resp, err := c.WriteTensorboardRunData(ctx, req)
 	if err != nil {
@@ -510,6 +532,7 @@ func ExampleTensorboardClient_ExportTensorboardTimeSeriesData() {
 
 	req := &aiplatformpb.ExportTensorboardTimeSeriesDataRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ExportTensorboardTimeSeriesDataRequest.
 	}
 	it := c.ExportTensorboardTimeSeriesData(ctx, req)
 	for {

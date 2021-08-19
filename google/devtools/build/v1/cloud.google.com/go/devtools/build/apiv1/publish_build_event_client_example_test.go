@@ -46,6 +46,7 @@ func ExamplePublishBuildEventClient_PublishLifecycleEvent() {
 
 	req := &buildpb.PublishLifecycleEventRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/devtools/build/v1#PublishLifecycleEventRequest.
 	}
 	err = c.PublishLifecycleEvent(ctx, req)
 	if err != nil {

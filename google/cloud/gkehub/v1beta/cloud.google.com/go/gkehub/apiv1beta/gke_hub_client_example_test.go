@@ -46,6 +46,7 @@ func ExampleClient_ListFeatures() {
 
 	req := &gkehubpb.ListFeaturesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1beta#ListFeaturesRequest.
 	}
 	it := c.ListFeatures(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_GetFeature() {
 
 	req := &gkehubpb.GetFeatureRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1beta#GetFeatureRequest.
 	}
 	resp, err := c.GetFeature(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleClient_CreateFeature() {
 
 	req := &gkehubpb.CreateFeatureRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1beta#CreateFeatureRequest.
 	}
 	op, err := c.CreateFeature(ctx, req)
 	if err != nil {
@@ -114,6 +117,7 @@ func ExampleClient_DeleteFeature() {
 
 	req := &gkehubpb.DeleteFeatureRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1beta#DeleteFeatureRequest.
 	}
 	op, err := c.DeleteFeature(ctx, req)
 	if err != nil {
@@ -136,6 +140,7 @@ func ExampleClient_UpdateFeature() {
 
 	req := &gkehubpb.UpdateFeatureRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1beta#UpdateFeatureRequest.
 	}
 	op, err := c.UpdateFeature(ctx, req)
 	if err != nil {

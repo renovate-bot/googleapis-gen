@@ -46,6 +46,7 @@ func ExampleClient_ListAlerts() {
 
 	req := &alertcenterpb.ListAlertsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#ListAlertsRequest.
 	}
 	it := c.ListAlerts(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_GetAlert() {
 
 	req := &alertcenterpb.GetAlertRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#GetAlertRequest.
 	}
 	resp, err := c.GetAlert(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleClient_DeleteAlert() {
 
 	req := &alertcenterpb.DeleteAlertRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#DeleteAlertRequest.
 	}
 	err = c.DeleteAlert(ctx, req)
 	if err != nil {
@@ -107,6 +110,7 @@ func ExampleClient_UndeleteAlert() {
 
 	req := &alertcenterpb.UndeleteAlertRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#UndeleteAlertRequest.
 	}
 	resp, err := c.UndeleteAlert(ctx, req)
 	if err != nil {
@@ -126,6 +130,7 @@ func ExampleClient_CreateAlertFeedback() {
 
 	req := &alertcenterpb.CreateAlertFeedbackRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#CreateAlertFeedbackRequest.
 	}
 	resp, err := c.CreateAlertFeedback(ctx, req)
 	if err != nil {
@@ -145,6 +150,7 @@ func ExampleClient_ListAlertFeedback() {
 
 	req := &alertcenterpb.ListAlertFeedbackRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#ListAlertFeedbackRequest.
 	}
 	resp, err := c.ListAlertFeedback(ctx, req)
 	if err != nil {
@@ -164,6 +170,7 @@ func ExampleClient_GetAlertMetadata() {
 
 	req := &alertcenterpb.GetAlertMetadataRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#GetAlertMetadataRequest.
 	}
 	resp, err := c.GetAlertMetadata(ctx, req)
 	if err != nil {
@@ -183,6 +190,7 @@ func ExampleClient_GetSettings() {
 
 	req := &alertcenterpb.GetSettingsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#GetSettingsRequest.
 	}
 	resp, err := c.GetSettings(ctx, req)
 	if err != nil {
@@ -202,6 +210,7 @@ func ExampleClient_UpdateSettings() {
 
 	req := &alertcenterpb.UpdateSettingsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#UpdateSettingsRequest.
 	}
 	resp, err := c.UpdateSettings(ctx, req)
 	if err != nil {
@@ -221,6 +230,7 @@ func ExampleClient_BatchDeleteAlerts() {
 
 	req := &alertcenterpb.BatchDeleteAlertsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#BatchDeleteAlertsRequest.
 	}
 	resp, err := c.BatchDeleteAlerts(ctx, req)
 	if err != nil {
@@ -240,6 +250,7 @@ func ExampleClient_BatchUndeleteAlerts() {
 
 	req := &alertcenterpb.BatchUndeleteAlertsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/alertcenter/v1beta1#BatchUndeleteAlertsRequest.
 	}
 	resp, err := c.BatchUndeleteAlerts(ctx, req)
 	if err != nil {

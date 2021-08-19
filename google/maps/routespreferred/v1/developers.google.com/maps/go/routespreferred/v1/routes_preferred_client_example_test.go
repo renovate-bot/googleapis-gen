@@ -45,6 +45,7 @@ func ExampleRoutesPreferredClient_ComputeRoutes() {
 
 	req := &routespb.ComputeRoutesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/routes/v1#ComputeRoutesRequest.
 	}
 	resp, err := c.ComputeRoutes(ctx, req)
 	if err != nil {

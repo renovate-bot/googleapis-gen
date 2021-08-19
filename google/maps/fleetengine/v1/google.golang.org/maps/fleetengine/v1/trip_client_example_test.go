@@ -46,6 +46,7 @@ func ExampleTripClient_CreateTrip() {
 
 	req := &fleetenginepb.CreateTripRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#CreateTripRequest.
 	}
 	resp, err := c.CreateTrip(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleTripClient_GetTrip() {
 
 	req := &fleetenginepb.GetTripRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#GetTripRequest.
 	}
 	resp, err := c.GetTrip(ctx, req)
 	if err != nil {
@@ -84,6 +86,7 @@ func ExampleTripClient_ReportBillableTrip() {
 
 	req := &fleetenginepb.ReportBillableTripRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#ReportBillableTripRequest.
 	}
 	err = c.ReportBillableTrip(ctx, req)
 	if err != nil {
@@ -101,6 +104,7 @@ func ExampleTripClient_SearchTrips() {
 
 	req := &fleetenginepb.SearchTripsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#SearchTripsRequest.
 	}
 	it := c.SearchTrips(ctx, req)
 	for {
@@ -126,6 +130,7 @@ func ExampleTripClient_UpdateTrip() {
 
 	req := &fleetenginepb.UpdateTripRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#UpdateTripRequest.
 	}
 	resp, err := c.UpdateTrip(ctx, req)
 	if err != nil {

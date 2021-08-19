@@ -45,6 +45,7 @@ func ExampleClient_MutateRow() {
 
 	req := &bigtablepb.MutateRowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/v2#MutateRowRequest.
 	}
 	resp, err := c.MutateRow(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleClient_CheckAndMutateRow() {
 
 	req := &bigtablepb.CheckAndMutateRowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/v2#CheckAndMutateRowRequest.
 	}
 	resp, err := c.CheckAndMutateRow(ctx, req)
 	if err != nil {
@@ -83,6 +85,7 @@ func ExampleClient_ReadModifyWriteRow() {
 
 	req := &bigtablepb.ReadModifyWriteRowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/v2#ReadModifyWriteRowRequest.
 	}
 	resp, err := c.ReadModifyWriteRow(ctx, req)
 	if err != nil {

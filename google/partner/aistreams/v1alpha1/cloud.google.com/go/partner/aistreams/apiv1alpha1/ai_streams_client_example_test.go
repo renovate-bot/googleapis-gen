@@ -46,6 +46,7 @@ func ExampleClient_ListClusters() {
 
 	req := &aistreamspb.ListClustersRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#ListClustersRequest.
 	}
 	it := c.ListClusters(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_GetCluster() {
 
 	req := &aistreamspb.GetClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#GetClusterRequest.
 	}
 	resp, err := c.GetCluster(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleClient_CreateCluster() {
 
 	req := &aistreamspb.CreateClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#CreateClusterRequest.
 	}
 	op, err := c.CreateCluster(ctx, req)
 	if err != nil {
@@ -114,6 +117,7 @@ func ExampleClient_UpdateCluster() {
 
 	req := &aistreamspb.UpdateClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#UpdateClusterRequest.
 	}
 	op, err := c.UpdateCluster(ctx, req)
 	if err != nil {
@@ -138,6 +142,7 @@ func ExampleClient_DeleteCluster() {
 
 	req := &aistreamspb.DeleteClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#DeleteClusterRequest.
 	}
 	op, err := c.DeleteCluster(ctx, req)
 	if err != nil {
@@ -160,6 +165,7 @@ func ExampleClient_ListStreams() {
 
 	req := &aistreamspb.ListStreamsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#ListStreamsRequest.
 	}
 	it := c.ListStreams(ctx, req)
 	for {
@@ -185,6 +191,7 @@ func ExampleClient_GetStream() {
 
 	req := &aistreamspb.GetStreamRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#GetStreamRequest.
 	}
 	resp, err := c.GetStream(ctx, req)
 	if err != nil {
@@ -204,6 +211,7 @@ func ExampleClient_CreateStream() {
 
 	req := &aistreamspb.CreateStreamRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#CreateStreamRequest.
 	}
 	op, err := c.CreateStream(ctx, req)
 	if err != nil {
@@ -228,6 +236,7 @@ func ExampleClient_UpdateStream() {
 
 	req := &aistreamspb.UpdateStreamRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#UpdateStreamRequest.
 	}
 	op, err := c.UpdateStream(ctx, req)
 	if err != nil {
@@ -252,6 +261,7 @@ func ExampleClient_DeleteStream() {
 
 	req := &aistreamspb.DeleteStreamRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/partner/aistreams/v1alpha1#DeleteStreamRequest.
 	}
 	op, err := c.DeleteStream(ctx, req)
 	if err != nil {

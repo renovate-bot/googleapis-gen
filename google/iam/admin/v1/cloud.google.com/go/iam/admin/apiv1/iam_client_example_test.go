@@ -47,6 +47,7 @@ func ExampleIamClient_ListServiceAccounts() {
 
 	req := &adminpb.ListServiceAccountsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#ListServiceAccountsRequest.
 	}
 	it := c.ListServiceAccounts(ctx, req)
 	for {
@@ -72,6 +73,7 @@ func ExampleIamClient_GetServiceAccount() {
 
 	req := &adminpb.GetServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#GetServiceAccountRequest.
 	}
 	resp, err := c.GetServiceAccount(ctx, req)
 	if err != nil {
@@ -91,6 +93,7 @@ func ExampleIamClient_CreateServiceAccount() {
 
 	req := &adminpb.CreateServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#CreateServiceAccountRequest.
 	}
 	resp, err := c.CreateServiceAccount(ctx, req)
 	if err != nil {
@@ -110,6 +113,7 @@ func ExampleIamClient_UpdateServiceAccount() {
 
 	req := &adminpb.ServiceAccount{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#ServiceAccount.
 	}
 	resp, err := c.UpdateServiceAccount(ctx, req)
 	if err != nil {
@@ -129,6 +133,7 @@ func ExampleIamClient_PatchServiceAccount() {
 
 	req := &adminpb.PatchServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#PatchServiceAccountRequest.
 	}
 	resp, err := c.PatchServiceAccount(ctx, req)
 	if err != nil {
@@ -148,6 +153,7 @@ func ExampleIamClient_DeleteServiceAccount() {
 
 	req := &adminpb.DeleteServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#DeleteServiceAccountRequest.
 	}
 	err = c.DeleteServiceAccount(ctx, req)
 	if err != nil {
@@ -165,6 +171,7 @@ func ExampleIamClient_UndeleteServiceAccount() {
 
 	req := &adminpb.UndeleteServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#UndeleteServiceAccountRequest.
 	}
 	resp, err := c.UndeleteServiceAccount(ctx, req)
 	if err != nil {
@@ -184,6 +191,7 @@ func ExampleIamClient_EnableServiceAccount() {
 
 	req := &adminpb.EnableServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#EnableServiceAccountRequest.
 	}
 	err = c.EnableServiceAccount(ctx, req)
 	if err != nil {
@@ -201,6 +209,7 @@ func ExampleIamClient_DisableServiceAccount() {
 
 	req := &adminpb.DisableServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#DisableServiceAccountRequest.
 	}
 	err = c.DisableServiceAccount(ctx, req)
 	if err != nil {
@@ -218,6 +227,7 @@ func ExampleIamClient_ListServiceAccountKeys() {
 
 	req := &adminpb.ListServiceAccountKeysRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#ListServiceAccountKeysRequest.
 	}
 	resp, err := c.ListServiceAccountKeys(ctx, req)
 	if err != nil {
@@ -237,6 +247,7 @@ func ExampleIamClient_GetServiceAccountKey() {
 
 	req := &adminpb.GetServiceAccountKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#GetServiceAccountKeyRequest.
 	}
 	resp, err := c.GetServiceAccountKey(ctx, req)
 	if err != nil {
@@ -256,6 +267,7 @@ func ExampleIamClient_CreateServiceAccountKey() {
 
 	req := &adminpb.CreateServiceAccountKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#CreateServiceAccountKeyRequest.
 	}
 	resp, err := c.CreateServiceAccountKey(ctx, req)
 	if err != nil {
@@ -275,6 +287,7 @@ func ExampleIamClient_UploadServiceAccountKey() {
 
 	req := &adminpb.UploadServiceAccountKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#UploadServiceAccountKeyRequest.
 	}
 	resp, err := c.UploadServiceAccountKey(ctx, req)
 	if err != nil {
@@ -294,6 +307,7 @@ func ExampleIamClient_DeleteServiceAccountKey() {
 
 	req := &adminpb.DeleteServiceAccountKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#DeleteServiceAccountKeyRequest.
 	}
 	err = c.DeleteServiceAccountKey(ctx, req)
 	if err != nil {
@@ -311,6 +325,7 @@ func ExampleIamClient_SignBlob() {
 
 	req := &adminpb.SignBlobRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#SignBlobRequest.
 	}
 	resp, err := c.SignBlob(ctx, req)
 	if err != nil {
@@ -330,6 +345,7 @@ func ExampleIamClient_SignJwt() {
 
 	req := &adminpb.SignJwtRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#SignJwtRequest.
 	}
 	resp, err := c.SignJwt(ctx, req)
 	if err != nil {
@@ -349,6 +365,7 @@ func ExampleIamClient_GetIamPolicy() {
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#GetIamPolicyRequest.
 	}
 	resp, err := c.GetIamPolicy(ctx, req)
 	if err != nil {
@@ -368,6 +385,7 @@ func ExampleIamClient_SetIamPolicy() {
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#SetIamPolicyRequest.
 	}
 	resp, err := c.SetIamPolicy(ctx, req)
 	if err != nil {
@@ -387,6 +405,7 @@ func ExampleIamClient_TestIamPermissions() {
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#TestIamPermissionsRequest.
 	}
 	resp, err := c.TestIamPermissions(ctx, req)
 	if err != nil {
@@ -406,6 +425,7 @@ func ExampleIamClient_QueryGrantableRoles() {
 
 	req := &adminpb.QueryGrantableRolesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#QueryGrantableRolesRequest.
 	}
 	it := c.QueryGrantableRoles(ctx, req)
 	for {
@@ -431,6 +451,7 @@ func ExampleIamClient_ListRoles() {
 
 	req := &adminpb.ListRolesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#ListRolesRequest.
 	}
 	it := c.ListRoles(ctx, req)
 	for {
@@ -456,6 +477,7 @@ func ExampleIamClient_GetRole() {
 
 	req := &adminpb.GetRoleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#GetRoleRequest.
 	}
 	resp, err := c.GetRole(ctx, req)
 	if err != nil {
@@ -475,6 +497,7 @@ func ExampleIamClient_CreateRole() {
 
 	req := &adminpb.CreateRoleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#CreateRoleRequest.
 	}
 	resp, err := c.CreateRole(ctx, req)
 	if err != nil {
@@ -494,6 +517,7 @@ func ExampleIamClient_UpdateRole() {
 
 	req := &adminpb.UpdateRoleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#UpdateRoleRequest.
 	}
 	resp, err := c.UpdateRole(ctx, req)
 	if err != nil {
@@ -513,6 +537,7 @@ func ExampleIamClient_DeleteRole() {
 
 	req := &adminpb.DeleteRoleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#DeleteRoleRequest.
 	}
 	resp, err := c.DeleteRole(ctx, req)
 	if err != nil {
@@ -532,6 +557,7 @@ func ExampleIamClient_UndeleteRole() {
 
 	req := &adminpb.UndeleteRoleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#UndeleteRoleRequest.
 	}
 	resp, err := c.UndeleteRole(ctx, req)
 	if err != nil {
@@ -551,6 +577,7 @@ func ExampleIamClient_QueryTestablePermissions() {
 
 	req := &adminpb.QueryTestablePermissionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#QueryTestablePermissionsRequest.
 	}
 	it := c.QueryTestablePermissions(ctx, req)
 	for {
@@ -576,6 +603,7 @@ func ExampleIamClient_QueryAuditableServices() {
 
 	req := &adminpb.QueryAuditableServicesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#QueryAuditableServicesRequest.
 	}
 	resp, err := c.QueryAuditableServices(ctx, req)
 	if err != nil {
@@ -595,6 +623,7 @@ func ExampleIamClient_LintPolicy() {
 
 	req := &adminpb.LintPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/admin/v1#LintPolicyRequest.
 	}
 	resp, err := c.LintPolicy(ctx, req)
 	if err != nil {

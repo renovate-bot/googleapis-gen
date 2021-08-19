@@ -19,6 +19,24 @@
 //
 // Lets you store and retrieve potentially-large, immutable data objects.
 //
+// Example usage
+//
+// To get started with this package, create a client.
+//  ctx := context.Background()
+//  c, err := storage.NewClient(ctx)
+//  if err != nil {
+//  	// TODO: Handle error.
+//  }
+//  defer c.Close()
+//
+// The client will use your default application credentials. Clients should be reused instead of created as needed.
+// The methods of Client are safe for concurrent use by multiple goroutines.
+// The returned client must be Closed when it is done being used.
+//
+// Using the Client
+//
+// The following is an example of making an API call with the newly created client.
+//
 // Use of Context
 //
 // The ctx passed to NewClient is used for authentication requests and

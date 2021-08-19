@@ -46,6 +46,7 @@ func ExampleVehicleClient_CreateVehicle() {
 
 	req := &fleetenginepb.CreateVehicleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#CreateVehicleRequest.
 	}
 	resp, err := c.CreateVehicle(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleVehicleClient_GetVehicle() {
 
 	req := &fleetenginepb.GetVehicleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#GetVehicleRequest.
 	}
 	resp, err := c.GetVehicle(ctx, req)
 	if err != nil {
@@ -84,6 +86,7 @@ func ExampleVehicleClient_UpdateVehicle() {
 
 	req := &fleetenginepb.UpdateVehicleRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#UpdateVehicleRequest.
 	}
 	resp, err := c.UpdateVehicle(ctx, req)
 	if err != nil {
@@ -103,6 +106,7 @@ func ExampleVehicleClient_UpdateVehicleLocation() {
 
 	req := &fleetenginepb.UpdateVehicleLocationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#UpdateVehicleLocationRequest.
 	}
 	resp, err := c.UpdateVehicleLocation(ctx, req)
 	if err != nil {
@@ -122,6 +126,7 @@ func ExampleVehicleClient_UpdateVehicleAttributes() {
 
 	req := &fleetenginepb.UpdateVehicleAttributesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#UpdateVehicleAttributesRequest.
 	}
 	resp, err := c.UpdateVehicleAttributes(ctx, req)
 	if err != nil {
@@ -141,6 +146,7 @@ func ExampleVehicleClient_ListVehicles() {
 
 	req := &fleetenginepb.ListVehiclesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#ListVehiclesRequest.
 	}
 	it := c.ListVehicles(ctx, req)
 	for {
@@ -166,6 +172,7 @@ func ExampleVehicleClient_SearchVehicles() {
 
 	req := &fleetenginepb.SearchVehiclesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#SearchVehiclesRequest.
 	}
 	resp, err := c.SearchVehicles(ctx, req)
 	if err != nil {
@@ -185,6 +192,7 @@ func ExampleVehicleClient_SearchFuzzedVehicles() {
 
 	req := &fleetenginepb.SearchVehiclesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/fleetengine/v1#SearchVehiclesRequest.
 	}
 	resp, err := c.SearchFuzzedVehicles(ctx, req)
 	if err != nil {

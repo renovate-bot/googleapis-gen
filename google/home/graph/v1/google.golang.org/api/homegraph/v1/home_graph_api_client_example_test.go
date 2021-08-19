@@ -45,6 +45,7 @@ func ExampleHomeGraphApiClient_RequestSyncDevices() {
 
 	req := &graphpb.RequestSyncDevicesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/graph/v1#RequestSyncDevicesRequest.
 	}
 	resp, err := c.RequestSyncDevices(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleHomeGraphApiClient_ReportStateAndNotification() {
 
 	req := &graphpb.ReportStateAndNotificationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/graph/v1#ReportStateAndNotificationRequest.
 	}
 	resp, err := c.ReportStateAndNotification(ctx, req)
 	if err != nil {
@@ -83,6 +85,7 @@ func ExampleHomeGraphApiClient_DeleteAgentUser() {
 
 	req := &graphpb.DeleteAgentUserRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/graph/v1#DeleteAgentUserRequest.
 	}
 	err = c.DeleteAgentUser(ctx, req)
 	if err != nil {
@@ -100,6 +103,7 @@ func ExampleHomeGraphApiClient_Query() {
 
 	req := &graphpb.QueryRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/graph/v1#QueryRequest.
 	}
 	resp, err := c.Query(ctx, req)
 	if err != nil {
@@ -119,6 +123,7 @@ func ExampleHomeGraphApiClient_Sync() {
 
 	req := &graphpb.SyncRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/graph/v1#SyncRequest.
 	}
 	resp, err := c.Sync(ctx, req)
 	if err != nil {

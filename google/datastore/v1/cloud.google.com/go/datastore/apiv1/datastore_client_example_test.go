@@ -45,6 +45,7 @@ func ExampleClient_Lookup() {
 
 	req := &datastorepb.LookupRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#LookupRequest.
 	}
 	resp, err := c.Lookup(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleClient_RunQuery() {
 
 	req := &datastorepb.RunQueryRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#RunQueryRequest.
 	}
 	resp, err := c.RunQuery(ctx, req)
 	if err != nil {
@@ -83,6 +85,7 @@ func ExampleClient_BeginTransaction() {
 
 	req := &datastorepb.BeginTransactionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#BeginTransactionRequest.
 	}
 	resp, err := c.BeginTransaction(ctx, req)
 	if err != nil {
@@ -102,6 +105,7 @@ func ExampleClient_Commit() {
 
 	req := &datastorepb.CommitRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#CommitRequest.
 	}
 	resp, err := c.Commit(ctx, req)
 	if err != nil {
@@ -121,6 +125,7 @@ func ExampleClient_Rollback() {
 
 	req := &datastorepb.RollbackRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#RollbackRequest.
 	}
 	resp, err := c.Rollback(ctx, req)
 	if err != nil {
@@ -140,6 +145,7 @@ func ExampleClient_AllocateIds() {
 
 	req := &datastorepb.AllocateIdsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#AllocateIdsRequest.
 	}
 	resp, err := c.AllocateIds(ctx, req)
 	if err != nil {
@@ -159,6 +165,7 @@ func ExampleClient_ReserveIds() {
 
 	req := &datastorepb.ReserveIdsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/datastore/v1#ReserveIdsRequest.
 	}
 	resp, err := c.ReserveIds(ctx, req)
 	if err != nil {

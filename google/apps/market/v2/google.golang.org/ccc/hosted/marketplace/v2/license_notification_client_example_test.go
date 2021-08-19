@@ -45,6 +45,7 @@ func ExampleLicenseNotificationClient_List() {
 
 	req := &marketplacepb.LicenseNotificationListRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2#LicenseNotificationListRequest.
 	}
 	resp, err := c.List(ctx, req)
 	if err != nil {

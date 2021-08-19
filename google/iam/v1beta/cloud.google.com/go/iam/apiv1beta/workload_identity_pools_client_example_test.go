@@ -46,6 +46,7 @@ func ExampleWorkloadIdentityPoolsClient_ListWorkloadIdentityPools() {
 
 	req := &iampb.ListWorkloadIdentityPoolsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#ListWorkloadIdentityPoolsRequest.
 	}
 	it := c.ListWorkloadIdentityPools(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleWorkloadIdentityPoolsClient_GetWorkloadIdentityPool() {
 
 	req := &iampb.GetWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#GetWorkloadIdentityPoolRequest.
 	}
 	resp, err := c.GetWorkloadIdentityPool(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleWorkloadIdentityPoolsClient_CreateWorkloadIdentityPool() {
 
 	req := &iampb.CreateWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#CreateWorkloadIdentityPoolRequest.
 	}
 	op, err := c.CreateWorkloadIdentityPool(ctx, req)
 	if err != nil {
@@ -114,6 +117,7 @@ func ExampleWorkloadIdentityPoolsClient_UpdateWorkloadIdentityPool() {
 
 	req := &iampb.UpdateWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#UpdateWorkloadIdentityPoolRequest.
 	}
 	op, err := c.UpdateWorkloadIdentityPool(ctx, req)
 	if err != nil {
@@ -138,6 +142,7 @@ func ExampleWorkloadIdentityPoolsClient_DeleteWorkloadIdentityPool() {
 
 	req := &iampb.DeleteWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#DeleteWorkloadIdentityPoolRequest.
 	}
 	op, err := c.DeleteWorkloadIdentityPool(ctx, req)
 	if err != nil {
@@ -162,6 +167,7 @@ func ExampleWorkloadIdentityPoolsClient_UndeleteWorkloadIdentityPool() {
 
 	req := &iampb.UndeleteWorkloadIdentityPoolRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#UndeleteWorkloadIdentityPoolRequest.
 	}
 	op, err := c.UndeleteWorkloadIdentityPool(ctx, req)
 	if err != nil {
@@ -186,6 +192,7 @@ func ExampleWorkloadIdentityPoolsClient_ListWorkloadIdentityPoolProviders() {
 
 	req := &iampb.ListWorkloadIdentityPoolProvidersRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#ListWorkloadIdentityPoolProvidersRequest.
 	}
 	it := c.ListWorkloadIdentityPoolProviders(ctx, req)
 	for {
@@ -211,6 +218,7 @@ func ExampleWorkloadIdentityPoolsClient_GetWorkloadIdentityPoolProvider() {
 
 	req := &iampb.GetWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#GetWorkloadIdentityPoolProviderRequest.
 	}
 	resp, err := c.GetWorkloadIdentityPoolProvider(ctx, req)
 	if err != nil {
@@ -230,6 +238,7 @@ func ExampleWorkloadIdentityPoolsClient_CreateWorkloadIdentityPoolProvider() {
 
 	req := &iampb.CreateWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#CreateWorkloadIdentityPoolProviderRequest.
 	}
 	op, err := c.CreateWorkloadIdentityPoolProvider(ctx, req)
 	if err != nil {
@@ -254,6 +263,7 @@ func ExampleWorkloadIdentityPoolsClient_UpdateWorkloadIdentityPoolProvider() {
 
 	req := &iampb.UpdateWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#UpdateWorkloadIdentityPoolProviderRequest.
 	}
 	op, err := c.UpdateWorkloadIdentityPoolProvider(ctx, req)
 	if err != nil {
@@ -278,6 +288,7 @@ func ExampleWorkloadIdentityPoolsClient_DeleteWorkloadIdentityPoolProvider() {
 
 	req := &iampb.DeleteWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#DeleteWorkloadIdentityPoolProviderRequest.
 	}
 	op, err := c.DeleteWorkloadIdentityPoolProvider(ctx, req)
 	if err != nil {
@@ -302,6 +313,7 @@ func ExampleWorkloadIdentityPoolsClient_UndeleteWorkloadIdentityPoolProvider() {
 
 	req := &iampb.UndeleteWorkloadIdentityPoolProviderRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1beta#UndeleteWorkloadIdentityPoolProviderRequest.
 	}
 	op, err := c.UndeleteWorkloadIdentityPoolProvider(ctx, req)
 	if err != nil {

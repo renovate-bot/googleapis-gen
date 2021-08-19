@@ -46,6 +46,7 @@ func ExampleSmartDeviceManagementClient_GetDevice() {
 
 	req := &sdmpb.GetDeviceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#GetDeviceRequest.
 	}
 	resp, err := c.GetDevice(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleSmartDeviceManagementClient_ListDevices() {
 
 	req := &sdmpb.ListDevicesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#ListDevicesRequest.
 	}
 	it := c.ListDevices(ctx, req)
 	for {
@@ -90,6 +92,7 @@ func ExampleSmartDeviceManagementClient_ExecuteDeviceCommand() {
 
 	req := &sdmpb.ExecuteDeviceCommandRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#ExecuteDeviceCommandRequest.
 	}
 	resp, err := c.ExecuteDeviceCommand(ctx, req)
 	if err != nil {
@@ -109,6 +112,7 @@ func ExampleSmartDeviceManagementClient_GetStructure() {
 
 	req := &sdmpb.GetStructureRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#GetStructureRequest.
 	}
 	resp, err := c.GetStructure(ctx, req)
 	if err != nil {
@@ -128,6 +132,7 @@ func ExampleSmartDeviceManagementClient_ListStructures() {
 
 	req := &sdmpb.ListStructuresRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#ListStructuresRequest.
 	}
 	it := c.ListStructures(ctx, req)
 	for {
@@ -153,6 +158,7 @@ func ExampleSmartDeviceManagementClient_GetRoom() {
 
 	req := &sdmpb.GetRoomRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#GetRoomRequest.
 	}
 	resp, err := c.GetRoom(ctx, req)
 	if err != nil {
@@ -172,6 +178,7 @@ func ExampleSmartDeviceManagementClient_ListRooms() {
 
 	req := &sdmpb.ListRoomsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/home/enterprise/sdm/v1#ListRoomsRequest.
 	}
 	it := c.ListRooms(ctx, req)
 	for {

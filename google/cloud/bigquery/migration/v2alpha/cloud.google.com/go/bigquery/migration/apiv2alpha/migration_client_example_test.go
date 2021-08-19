@@ -46,6 +46,7 @@ func ExampleClient_CreateMigrationWorkflow() {
 
 	req := &migrationpb.CreateMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#CreateMigrationWorkflowRequest.
 	}
 	resp, err := c.CreateMigrationWorkflow(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleClient_GetMigrationWorkflow() {
 
 	req := &migrationpb.GetMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#GetMigrationWorkflowRequest.
 	}
 	resp, err := c.GetMigrationWorkflow(ctx, req)
 	if err != nil {
@@ -84,6 +86,7 @@ func ExampleClient_ListMigrationWorkflows() {
 
 	req := &migrationpb.ListMigrationWorkflowsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#ListMigrationWorkflowsRequest.
 	}
 	it := c.ListMigrationWorkflows(ctx, req)
 	for {
@@ -109,6 +112,7 @@ func ExampleClient_DeleteMigrationWorkflow() {
 
 	req := &migrationpb.DeleteMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#DeleteMigrationWorkflowRequest.
 	}
 	err = c.DeleteMigrationWorkflow(ctx, req)
 	if err != nil {
@@ -126,6 +130,7 @@ func ExampleClient_StartMigrationWorkflow() {
 
 	req := &migrationpb.StartMigrationWorkflowRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#StartMigrationWorkflowRequest.
 	}
 	err = c.StartMigrationWorkflow(ctx, req)
 	if err != nil {
@@ -143,6 +148,7 @@ func ExampleClient_GetMigrationSubtask() {
 
 	req := &migrationpb.GetMigrationSubtaskRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#GetMigrationSubtaskRequest.
 	}
 	resp, err := c.GetMigrationSubtask(ctx, req)
 	if err != nil {
@@ -162,6 +168,7 @@ func ExampleClient_ListMigrationSubtasks() {
 
 	req := &migrationpb.ListMigrationSubtasksRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha#ListMigrationSubtasksRequest.
 	}
 	it := c.ListMigrationSubtasks(ctx, req)
 	for {

@@ -46,6 +46,7 @@ func ExampleAdMobApiClient_GetPublisherAccount() {
 
 	req := &admobpb.GetPublisherAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/ads/admob/v1#GetPublisherAccountRequest.
 	}
 	resp, err := c.GetPublisherAccount(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleAdMobApiClient_ListPublisherAccounts() {
 
 	req := &admobpb.ListPublisherAccountsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/ads/admob/v1#ListPublisherAccountsRequest.
 	}
 	it := c.ListPublisherAccounts(ctx, req)
 	for {

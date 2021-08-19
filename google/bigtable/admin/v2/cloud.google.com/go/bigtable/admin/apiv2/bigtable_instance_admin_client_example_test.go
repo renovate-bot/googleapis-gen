@@ -47,6 +47,7 @@ func ExampleBigtableInstanceAdminClient_CreateInstance() {
 
 	req := &adminpb.CreateInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CreateInstanceRequest.
 	}
 	op, err := c.CreateInstance(ctx, req)
 	if err != nil {
@@ -71,6 +72,7 @@ func ExampleBigtableInstanceAdminClient_GetInstance() {
 
 	req := &adminpb.GetInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GetInstanceRequest.
 	}
 	resp, err := c.GetInstance(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleBigtableInstanceAdminClient_ListInstances() {
 
 	req := &adminpb.ListInstancesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ListInstancesRequest.
 	}
 	resp, err := c.ListInstances(ctx, req)
 	if err != nil {
@@ -109,6 +112,7 @@ func ExampleBigtableInstanceAdminClient_UpdateInstance() {
 
 	req := &adminpb.Instance{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#Instance.
 	}
 	resp, err := c.UpdateInstance(ctx, req)
 	if err != nil {
@@ -128,6 +132,7 @@ func ExampleBigtableInstanceAdminClient_PartialUpdateInstance() {
 
 	req := &adminpb.PartialUpdateInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#PartialUpdateInstanceRequest.
 	}
 	op, err := c.PartialUpdateInstance(ctx, req)
 	if err != nil {
@@ -152,6 +157,7 @@ func ExampleBigtableInstanceAdminClient_DeleteInstance() {
 
 	req := &adminpb.DeleteInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DeleteInstanceRequest.
 	}
 	err = c.DeleteInstance(ctx, req)
 	if err != nil {
@@ -169,6 +175,7 @@ func ExampleBigtableInstanceAdminClient_CreateCluster() {
 
 	req := &adminpb.CreateClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CreateClusterRequest.
 	}
 	op, err := c.CreateCluster(ctx, req)
 	if err != nil {
@@ -193,6 +200,7 @@ func ExampleBigtableInstanceAdminClient_GetCluster() {
 
 	req := &adminpb.GetClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GetClusterRequest.
 	}
 	resp, err := c.GetCluster(ctx, req)
 	if err != nil {
@@ -212,6 +220,7 @@ func ExampleBigtableInstanceAdminClient_ListClusters() {
 
 	req := &adminpb.ListClustersRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ListClustersRequest.
 	}
 	resp, err := c.ListClusters(ctx, req)
 	if err != nil {
@@ -231,6 +240,7 @@ func ExampleBigtableInstanceAdminClient_UpdateCluster() {
 
 	req := &adminpb.Cluster{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#Cluster.
 	}
 	op, err := c.UpdateCluster(ctx, req)
 	if err != nil {
@@ -255,6 +265,7 @@ func ExampleBigtableInstanceAdminClient_DeleteCluster() {
 
 	req := &adminpb.DeleteClusterRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DeleteClusterRequest.
 	}
 	err = c.DeleteCluster(ctx, req)
 	if err != nil {
@@ -272,6 +283,7 @@ func ExampleBigtableInstanceAdminClient_CreateAppProfile() {
 
 	req := &adminpb.CreateAppProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CreateAppProfileRequest.
 	}
 	resp, err := c.CreateAppProfile(ctx, req)
 	if err != nil {
@@ -291,6 +303,7 @@ func ExampleBigtableInstanceAdminClient_GetAppProfile() {
 
 	req := &adminpb.GetAppProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GetAppProfileRequest.
 	}
 	resp, err := c.GetAppProfile(ctx, req)
 	if err != nil {
@@ -310,6 +323,7 @@ func ExampleBigtableInstanceAdminClient_ListAppProfiles() {
 
 	req := &adminpb.ListAppProfilesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ListAppProfilesRequest.
 	}
 	it := c.ListAppProfiles(ctx, req)
 	for {
@@ -335,6 +349,7 @@ func ExampleBigtableInstanceAdminClient_UpdateAppProfile() {
 
 	req := &adminpb.UpdateAppProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#UpdateAppProfileRequest.
 	}
 	op, err := c.UpdateAppProfile(ctx, req)
 	if err != nil {
@@ -359,6 +374,7 @@ func ExampleBigtableInstanceAdminClient_DeleteAppProfile() {
 
 	req := &adminpb.DeleteAppProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DeleteAppProfileRequest.
 	}
 	err = c.DeleteAppProfile(ctx, req)
 	if err != nil {
@@ -376,6 +392,7 @@ func ExampleBigtableInstanceAdminClient_GetIamPolicy() {
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#GetIamPolicyRequest.
 	}
 	resp, err := c.GetIamPolicy(ctx, req)
 	if err != nil {
@@ -395,6 +412,7 @@ func ExampleBigtableInstanceAdminClient_SetIamPolicy() {
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#SetIamPolicyRequest.
 	}
 	resp, err := c.SetIamPolicy(ctx, req)
 	if err != nil {
@@ -414,6 +432,7 @@ func ExampleBigtableInstanceAdminClient_TestIamPermissions() {
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#TestIamPermissionsRequest.
 	}
 	resp, err := c.TestIamPermissions(ctx, req)
 	if err != nil {

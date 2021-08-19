@@ -46,6 +46,7 @@ func ExampleClient_CreateShelf() {
 
 	req := &librarypb.CreateShelfRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#CreateShelfRequest.
 	}
 	resp, err := c.CreateShelf(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleClient_GetShelf() {
 
 	req := &librarypb.GetShelfRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#GetShelfRequest.
 	}
 	resp, err := c.GetShelf(ctx, req)
 	if err != nil {
@@ -84,6 +86,7 @@ func ExampleClient_ListShelves() {
 
 	req := &librarypb.ListShelvesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#ListShelvesRequest.
 	}
 	it := c.ListShelves(ctx, req)
 	for {
@@ -109,6 +112,7 @@ func ExampleClient_DeleteShelf() {
 
 	req := &librarypb.DeleteShelfRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#DeleteShelfRequest.
 	}
 	err = c.DeleteShelf(ctx, req)
 	if err != nil {
@@ -126,6 +130,7 @@ func ExampleClient_MergeShelves() {
 
 	req := &librarypb.MergeShelvesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#MergeShelvesRequest.
 	}
 	resp, err := c.MergeShelves(ctx, req)
 	if err != nil {
@@ -145,6 +150,7 @@ func ExampleClient_CreateBook() {
 
 	req := &librarypb.CreateBookRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#CreateBookRequest.
 	}
 	resp, err := c.CreateBook(ctx, req)
 	if err != nil {
@@ -164,6 +170,7 @@ func ExampleClient_GetBook() {
 
 	req := &librarypb.GetBookRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#GetBookRequest.
 	}
 	resp, err := c.GetBook(ctx, req)
 	if err != nil {
@@ -183,6 +190,7 @@ func ExampleClient_ListBooks() {
 
 	req := &librarypb.ListBooksRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#ListBooksRequest.
 	}
 	it := c.ListBooks(ctx, req)
 	for {
@@ -208,6 +216,7 @@ func ExampleClient_DeleteBook() {
 
 	req := &librarypb.DeleteBookRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#DeleteBookRequest.
 	}
 	err = c.DeleteBook(ctx, req)
 	if err != nil {
@@ -225,6 +234,7 @@ func ExampleClient_UpdateBook() {
 
 	req := &librarypb.UpdateBookRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#UpdateBookRequest.
 	}
 	resp, err := c.UpdateBook(ctx, req)
 	if err != nil {
@@ -244,6 +254,7 @@ func ExampleClient_MoveBook() {
 
 	req := &librarypb.MoveBookRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/example/library/v1#MoveBookRequest.
 	}
 	resp, err := c.MoveBook(ctx, req)
 	if err != nil {

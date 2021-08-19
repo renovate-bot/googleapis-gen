@@ -46,6 +46,7 @@ func ExamplePredictionClient_Predict() {
 
 	req := &recommendationenginepb.PredictRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/recommendationengine/v1beta1#PredictRequest.
 	}
 	it := c.Predict(ctx, req)
 	for {

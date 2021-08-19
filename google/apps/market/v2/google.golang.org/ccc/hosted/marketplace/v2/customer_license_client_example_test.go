@@ -45,6 +45,7 @@ func ExampleCustomerLicenseClient_Get() {
 
 	req := &marketplacepb.CustomerLicenseGetRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/ccc/hosted/marketplace/v2#CustomerLicenseGetRequest.
 	}
 	resp, err := c.Get(ctx, req)
 	if err != nil {

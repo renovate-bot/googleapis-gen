@@ -46,6 +46,7 @@ func ExampleImageVersionsClient_ListImageVersions() {
 
 	req := &servicepb.ListImageVersionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/orchestration/airflow/service/v1#ListImageVersionsRequest.
 	}
 	it := c.ListImageVersions(ctx, req)
 	for {

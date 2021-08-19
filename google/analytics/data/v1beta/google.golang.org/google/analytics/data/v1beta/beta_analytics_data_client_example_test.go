@@ -45,6 +45,7 @@ func ExampleBetaAnalyticsDataClient_RunReport() {
 
 	req := &datapb.RunReportRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#RunReportRequest.
 	}
 	resp, err := c.RunReport(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleBetaAnalyticsDataClient_RunPivotReport() {
 
 	req := &datapb.RunPivotReportRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#RunPivotReportRequest.
 	}
 	resp, err := c.RunPivotReport(ctx, req)
 	if err != nil {
@@ -83,6 +85,7 @@ func ExampleBetaAnalyticsDataClient_BatchRunReports() {
 
 	req := &datapb.BatchRunReportsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#BatchRunReportsRequest.
 	}
 	resp, err := c.BatchRunReports(ctx, req)
 	if err != nil {
@@ -102,6 +105,7 @@ func ExampleBetaAnalyticsDataClient_BatchRunPivotReports() {
 
 	req := &datapb.BatchRunPivotReportsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#BatchRunPivotReportsRequest.
 	}
 	resp, err := c.BatchRunPivotReports(ctx, req)
 	if err != nil {
@@ -121,6 +125,7 @@ func ExampleBetaAnalyticsDataClient_GetMetadata() {
 
 	req := &datapb.GetMetadataRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#GetMetadataRequest.
 	}
 	resp, err := c.GetMetadata(ctx, req)
 	if err != nil {
@@ -140,6 +145,7 @@ func ExampleBetaAnalyticsDataClient_RunRealtimeReport() {
 
 	req := &datapb.RunRealtimeReportRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#RunRealtimeReportRequest.
 	}
 	resp, err := c.RunRealtimeReport(ctx, req)
 	if err != nil {

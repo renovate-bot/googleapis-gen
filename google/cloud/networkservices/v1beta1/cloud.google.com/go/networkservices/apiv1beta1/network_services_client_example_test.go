@@ -46,6 +46,7 @@ func ExampleClient_ListEndpointPolicies() {
 
 	req := &networkservicespb.ListEndpointPoliciesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkservices/v1beta1#ListEndpointPoliciesRequest.
 	}
 	it := c.ListEndpointPolicies(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_GetEndpointPolicy() {
 
 	req := &networkservicespb.GetEndpointPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkservices/v1beta1#GetEndpointPolicyRequest.
 	}
 	resp, err := c.GetEndpointPolicy(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleClient_CreateEndpointPolicy() {
 
 	req := &networkservicespb.CreateEndpointPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkservices/v1beta1#CreateEndpointPolicyRequest.
 	}
 	op, err := c.CreateEndpointPolicy(ctx, req)
 	if err != nil {
@@ -114,6 +117,7 @@ func ExampleClient_UpdateEndpointPolicy() {
 
 	req := &networkservicespb.UpdateEndpointPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkservices/v1beta1#UpdateEndpointPolicyRequest.
 	}
 	op, err := c.UpdateEndpointPolicy(ctx, req)
 	if err != nil {
@@ -138,6 +142,7 @@ func ExampleClient_DeleteEndpointPolicy() {
 
 	req := &networkservicespb.DeleteEndpointPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkservices/v1beta1#DeleteEndpointPolicyRequest.
 	}
 	op, err := c.DeleteEndpointPolicy(ctx, req)
 	if err != nil {

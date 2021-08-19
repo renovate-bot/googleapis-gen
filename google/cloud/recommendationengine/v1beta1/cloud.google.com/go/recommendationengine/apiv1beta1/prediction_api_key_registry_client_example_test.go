@@ -46,6 +46,7 @@ func ExamplePredictionApiKeyRegistryClient_CreatePredictionApiKeyRegistration() 
 
 	req := &recommendationenginepb.CreatePredictionApiKeyRegistrationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/recommendationengine/v1beta1#CreatePredictionApiKeyRegistrationRequest.
 	}
 	resp, err := c.CreatePredictionApiKeyRegistration(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExamplePredictionApiKeyRegistryClient_ListPredictionApiKeyRegistrations() {
 
 	req := &recommendationenginepb.ListPredictionApiKeyRegistrationsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/recommendationengine/v1beta1#ListPredictionApiKeyRegistrationsRequest.
 	}
 	it := c.ListPredictionApiKeyRegistrations(ctx, req)
 	for {
@@ -90,6 +92,7 @@ func ExamplePredictionApiKeyRegistryClient_DeletePredictionApiKeyRegistration() 
 
 	req := &recommendationenginepb.DeletePredictionApiKeyRegistrationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/recommendationengine/v1beta1#DeletePredictionApiKeyRegistrationRequest.
 	}
 	err = c.DeletePredictionApiKeyRegistration(ctx, req)
 	if err != nil {

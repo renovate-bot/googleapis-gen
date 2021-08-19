@@ -45,6 +45,7 @@ func ExampleClient_SnapToRoads() {
 
 	req := &roadspb.SnapToRoadsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/roads/v1op#SnapToRoadsRequest.
 	}
 	resp, err := c.SnapToRoads(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleClient_ListNearestRoads() {
 
 	req := &roadspb.ListNearestRoadsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/roads/v1op#ListNearestRoadsRequest.
 	}
 	resp, err := c.ListNearestRoads(ctx, req)
 	if err != nil {

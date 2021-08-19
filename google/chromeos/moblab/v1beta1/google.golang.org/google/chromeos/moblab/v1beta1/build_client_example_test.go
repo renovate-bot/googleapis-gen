@@ -46,6 +46,7 @@ func ExampleBuildClient_ListBuildTargets() {
 
 	req := &moblabpb.ListBuildTargetsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1#ListBuildTargetsRequest.
 	}
 	it := c.ListBuildTargets(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleBuildClient_ListBuilds() {
 
 	req := &moblabpb.ListBuildsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1#ListBuildsRequest.
 	}
 	it := c.ListBuilds(ctx, req)
 	for {
@@ -96,6 +98,7 @@ func ExampleBuildClient_CheckBuildStageStatus() {
 
 	req := &moblabpb.CheckBuildStageStatusRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1#CheckBuildStageStatusRequest.
 	}
 	resp, err := c.CheckBuildStageStatus(ctx, req)
 	if err != nil {
@@ -115,6 +118,7 @@ func ExampleBuildClient_StageBuild() {
 
 	req := &moblabpb.StageBuildRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1#StageBuildRequest.
 	}
 	op, err := c.StageBuild(ctx, req)
 	if err != nil {
@@ -139,6 +143,7 @@ func ExampleBuildClient_FindMostStableBuild() {
 
 	req := &moblabpb.FindMostStableBuildRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1#FindMostStableBuildRequest.
 	}
 	resp, err := c.FindMostStableBuild(ctx, req)
 	if err != nil {

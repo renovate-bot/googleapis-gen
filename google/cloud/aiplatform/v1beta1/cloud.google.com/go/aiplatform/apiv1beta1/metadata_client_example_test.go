@@ -46,6 +46,7 @@ func ExampleMetadataClient_CreateMetadataStore() {
 
 	req := &aiplatformpb.CreateMetadataStoreRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateMetadataStoreRequest.
 	}
 	op, err := c.CreateMetadataStore(ctx, req)
 	if err != nil {
@@ -70,6 +71,7 @@ func ExampleMetadataClient_GetMetadataStore() {
 
 	req := &aiplatformpb.GetMetadataStoreRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetMetadataStoreRequest.
 	}
 	resp, err := c.GetMetadataStore(ctx, req)
 	if err != nil {
@@ -89,6 +91,7 @@ func ExampleMetadataClient_ListMetadataStores() {
 
 	req := &aiplatformpb.ListMetadataStoresRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListMetadataStoresRequest.
 	}
 	it := c.ListMetadataStores(ctx, req)
 	for {
@@ -114,6 +117,7 @@ func ExampleMetadataClient_DeleteMetadataStore() {
 
 	req := &aiplatformpb.DeleteMetadataStoreRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteMetadataStoreRequest.
 	}
 	op, err := c.DeleteMetadataStore(ctx, req)
 	if err != nil {
@@ -136,6 +140,7 @@ func ExampleMetadataClient_CreateArtifact() {
 
 	req := &aiplatformpb.CreateArtifactRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateArtifactRequest.
 	}
 	resp, err := c.CreateArtifact(ctx, req)
 	if err != nil {
@@ -155,6 +160,7 @@ func ExampleMetadataClient_GetArtifact() {
 
 	req := &aiplatformpb.GetArtifactRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetArtifactRequest.
 	}
 	resp, err := c.GetArtifact(ctx, req)
 	if err != nil {
@@ -174,6 +180,7 @@ func ExampleMetadataClient_ListArtifacts() {
 
 	req := &aiplatformpb.ListArtifactsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListArtifactsRequest.
 	}
 	it := c.ListArtifacts(ctx, req)
 	for {
@@ -199,6 +206,7 @@ func ExampleMetadataClient_UpdateArtifact() {
 
 	req := &aiplatformpb.UpdateArtifactRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateArtifactRequest.
 	}
 	resp, err := c.UpdateArtifact(ctx, req)
 	if err != nil {
@@ -218,6 +226,7 @@ func ExampleMetadataClient_DeleteArtifact() {
 
 	req := &aiplatformpb.DeleteArtifactRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteArtifactRequest.
 	}
 	op, err := c.DeleteArtifact(ctx, req)
 	if err != nil {
@@ -240,6 +249,7 @@ func ExampleMetadataClient_PurgeArtifacts() {
 
 	req := &aiplatformpb.PurgeArtifactsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#PurgeArtifactsRequest.
 	}
 	op, err := c.PurgeArtifacts(ctx, req)
 	if err != nil {
@@ -264,6 +274,7 @@ func ExampleMetadataClient_CreateContext() {
 
 	req := &aiplatformpb.CreateContextRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateContextRequest.
 	}
 	resp, err := c.CreateContext(ctx, req)
 	if err != nil {
@@ -283,6 +294,7 @@ func ExampleMetadataClient_GetContext() {
 
 	req := &aiplatformpb.GetContextRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetContextRequest.
 	}
 	resp, err := c.GetContext(ctx, req)
 	if err != nil {
@@ -302,6 +314,7 @@ func ExampleMetadataClient_ListContexts() {
 
 	req := &aiplatformpb.ListContextsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListContextsRequest.
 	}
 	it := c.ListContexts(ctx, req)
 	for {
@@ -327,6 +340,7 @@ func ExampleMetadataClient_UpdateContext() {
 
 	req := &aiplatformpb.UpdateContextRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateContextRequest.
 	}
 	resp, err := c.UpdateContext(ctx, req)
 	if err != nil {
@@ -346,6 +360,7 @@ func ExampleMetadataClient_DeleteContext() {
 
 	req := &aiplatformpb.DeleteContextRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteContextRequest.
 	}
 	op, err := c.DeleteContext(ctx, req)
 	if err != nil {
@@ -368,6 +383,7 @@ func ExampleMetadataClient_PurgeContexts() {
 
 	req := &aiplatformpb.PurgeContextsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#PurgeContextsRequest.
 	}
 	op, err := c.PurgeContexts(ctx, req)
 	if err != nil {
@@ -392,6 +408,7 @@ func ExampleMetadataClient_AddContextArtifactsAndExecutions() {
 
 	req := &aiplatformpb.AddContextArtifactsAndExecutionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#AddContextArtifactsAndExecutionsRequest.
 	}
 	resp, err := c.AddContextArtifactsAndExecutions(ctx, req)
 	if err != nil {
@@ -411,6 +428,7 @@ func ExampleMetadataClient_AddContextChildren() {
 
 	req := &aiplatformpb.AddContextChildrenRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#AddContextChildrenRequest.
 	}
 	resp, err := c.AddContextChildren(ctx, req)
 	if err != nil {
@@ -430,6 +448,7 @@ func ExampleMetadataClient_QueryContextLineageSubgraph() {
 
 	req := &aiplatformpb.QueryContextLineageSubgraphRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#QueryContextLineageSubgraphRequest.
 	}
 	resp, err := c.QueryContextLineageSubgraph(ctx, req)
 	if err != nil {
@@ -449,6 +468,7 @@ func ExampleMetadataClient_CreateExecution() {
 
 	req := &aiplatformpb.CreateExecutionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateExecutionRequest.
 	}
 	resp, err := c.CreateExecution(ctx, req)
 	if err != nil {
@@ -468,6 +488,7 @@ func ExampleMetadataClient_GetExecution() {
 
 	req := &aiplatformpb.GetExecutionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetExecutionRequest.
 	}
 	resp, err := c.GetExecution(ctx, req)
 	if err != nil {
@@ -487,6 +508,7 @@ func ExampleMetadataClient_ListExecutions() {
 
 	req := &aiplatformpb.ListExecutionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListExecutionsRequest.
 	}
 	it := c.ListExecutions(ctx, req)
 	for {
@@ -512,6 +534,7 @@ func ExampleMetadataClient_UpdateExecution() {
 
 	req := &aiplatformpb.UpdateExecutionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#UpdateExecutionRequest.
 	}
 	resp, err := c.UpdateExecution(ctx, req)
 	if err != nil {
@@ -531,6 +554,7 @@ func ExampleMetadataClient_DeleteExecution() {
 
 	req := &aiplatformpb.DeleteExecutionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#DeleteExecutionRequest.
 	}
 	op, err := c.DeleteExecution(ctx, req)
 	if err != nil {
@@ -553,6 +577,7 @@ func ExampleMetadataClient_PurgeExecutions() {
 
 	req := &aiplatformpb.PurgeExecutionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#PurgeExecutionsRequest.
 	}
 	op, err := c.PurgeExecutions(ctx, req)
 	if err != nil {
@@ -577,6 +602,7 @@ func ExampleMetadataClient_AddExecutionEvents() {
 
 	req := &aiplatformpb.AddExecutionEventsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#AddExecutionEventsRequest.
 	}
 	resp, err := c.AddExecutionEvents(ctx, req)
 	if err != nil {
@@ -596,6 +622,7 @@ func ExampleMetadataClient_QueryExecutionInputsAndOutputs() {
 
 	req := &aiplatformpb.QueryExecutionInputsAndOutputsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#QueryExecutionInputsAndOutputsRequest.
 	}
 	resp, err := c.QueryExecutionInputsAndOutputs(ctx, req)
 	if err != nil {
@@ -615,6 +642,7 @@ func ExampleMetadataClient_CreateMetadataSchema() {
 
 	req := &aiplatformpb.CreateMetadataSchemaRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#CreateMetadataSchemaRequest.
 	}
 	resp, err := c.CreateMetadataSchema(ctx, req)
 	if err != nil {
@@ -634,6 +662,7 @@ func ExampleMetadataClient_GetMetadataSchema() {
 
 	req := &aiplatformpb.GetMetadataSchemaRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#GetMetadataSchemaRequest.
 	}
 	resp, err := c.GetMetadataSchema(ctx, req)
 	if err != nil {
@@ -653,6 +682,7 @@ func ExampleMetadataClient_ListMetadataSchemas() {
 
 	req := &aiplatformpb.ListMetadataSchemasRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ListMetadataSchemasRequest.
 	}
 	it := c.ListMetadataSchemas(ctx, req)
 	for {
@@ -678,6 +708,7 @@ func ExampleMetadataClient_QueryArtifactLineageSubgraph() {
 
 	req := &aiplatformpb.QueryArtifactLineageSubgraphRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#QueryArtifactLineageSubgraphRequest.
 	}
 	resp, err := c.QueryArtifactLineageSubgraph(ctx, req)
 	if err != nil {

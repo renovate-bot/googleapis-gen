@@ -46,6 +46,7 @@ func ExampleDriveActivityClient_QueryDriveActivity() {
 
 	req := &activitypb.QueryDriveActivityRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/apps/drive/activity/v2#QueryDriveActivityRequest.
 	}
 	it := c.QueryDriveActivity(ctx, req)
 	for {

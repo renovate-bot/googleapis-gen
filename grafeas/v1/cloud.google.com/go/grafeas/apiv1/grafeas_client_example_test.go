@@ -46,6 +46,7 @@ func ExampleClient_GetOccurrence() {
 
 	req := &grafeaspb.GetOccurrenceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#GetOccurrenceRequest.
 	}
 	resp, err := c.GetOccurrence(ctx, req)
 	if err != nil {
@@ -65,6 +66,7 @@ func ExampleClient_ListOccurrences() {
 
 	req := &grafeaspb.ListOccurrencesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#ListOccurrencesRequest.
 	}
 	it := c.ListOccurrences(ctx, req)
 	for {
@@ -90,6 +92,7 @@ func ExampleClient_DeleteOccurrence() {
 
 	req := &grafeaspb.DeleteOccurrenceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#DeleteOccurrenceRequest.
 	}
 	err = c.DeleteOccurrence(ctx, req)
 	if err != nil {
@@ -107,6 +110,7 @@ func ExampleClient_CreateOccurrence() {
 
 	req := &grafeaspb.CreateOccurrenceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#CreateOccurrenceRequest.
 	}
 	resp, err := c.CreateOccurrence(ctx, req)
 	if err != nil {
@@ -126,6 +130,7 @@ func ExampleClient_BatchCreateOccurrences() {
 
 	req := &grafeaspb.BatchCreateOccurrencesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#BatchCreateOccurrencesRequest.
 	}
 	resp, err := c.BatchCreateOccurrences(ctx, req)
 	if err != nil {
@@ -145,6 +150,7 @@ func ExampleClient_UpdateOccurrence() {
 
 	req := &grafeaspb.UpdateOccurrenceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#UpdateOccurrenceRequest.
 	}
 	resp, err := c.UpdateOccurrence(ctx, req)
 	if err != nil {
@@ -164,6 +170,7 @@ func ExampleClient_GetOccurrenceNote() {
 
 	req := &grafeaspb.GetOccurrenceNoteRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#GetOccurrenceNoteRequest.
 	}
 	resp, err := c.GetOccurrenceNote(ctx, req)
 	if err != nil {
@@ -183,6 +190,7 @@ func ExampleClient_GetNote() {
 
 	req := &grafeaspb.GetNoteRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#GetNoteRequest.
 	}
 	resp, err := c.GetNote(ctx, req)
 	if err != nil {
@@ -202,6 +210,7 @@ func ExampleClient_ListNotes() {
 
 	req := &grafeaspb.ListNotesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#ListNotesRequest.
 	}
 	it := c.ListNotes(ctx, req)
 	for {
@@ -227,6 +236,7 @@ func ExampleClient_DeleteNote() {
 
 	req := &grafeaspb.DeleteNoteRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#DeleteNoteRequest.
 	}
 	err = c.DeleteNote(ctx, req)
 	if err != nil {
@@ -244,6 +254,7 @@ func ExampleClient_CreateNote() {
 
 	req := &grafeaspb.CreateNoteRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#CreateNoteRequest.
 	}
 	resp, err := c.CreateNote(ctx, req)
 	if err != nil {
@@ -263,6 +274,7 @@ func ExampleClient_BatchCreateNotes() {
 
 	req := &grafeaspb.BatchCreateNotesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#BatchCreateNotesRequest.
 	}
 	resp, err := c.BatchCreateNotes(ctx, req)
 	if err != nil {
@@ -282,6 +294,7 @@ func ExampleClient_UpdateNote() {
 
 	req := &grafeaspb.UpdateNoteRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#UpdateNoteRequest.
 	}
 	resp, err := c.UpdateNote(ctx, req)
 	if err != nil {
@@ -301,6 +314,7 @@ func ExampleClient_ListNoteOccurrences() {
 
 	req := &grafeaspb.ListNoteOccurrencesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/grafeas/v1#ListNoteOccurrencesRequest.
 	}
 	it := c.ListNoteOccurrences(ctx, req)
 	for {

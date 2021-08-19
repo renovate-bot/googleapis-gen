@@ -46,6 +46,7 @@ func ExampleClient_SearchAllResources() {
 
 	req := &assetpb.SearchAllResourcesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/asset/v1p1beta1#SearchAllResourcesRequest.
 	}
 	it := c.SearchAllResources(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_SearchAllIamPolicies() {
 
 	req := &assetpb.SearchAllIamPoliciesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/asset/v1p1beta1#SearchAllIamPoliciesRequest.
 	}
 	it := c.SearchAllIamPolicies(ctx, req)
 	for {

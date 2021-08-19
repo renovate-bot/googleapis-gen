@@ -45,6 +45,7 @@ func ExampleBotsClient_CreateBotSession() {
 
 	req := &remoteworkerspb.CreateBotSessionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2#CreateBotSessionRequest.
 	}
 	resp, err := c.CreateBotSession(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleBotsClient_UpdateBotSession() {
 
 	req := &remoteworkerspb.UpdateBotSessionRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/devtools/remoteworkers/v1test2#UpdateBotSessionRequest.
 	}
 	resp, err := c.UpdateBotSession(ctx, req)
 	if err != nil {

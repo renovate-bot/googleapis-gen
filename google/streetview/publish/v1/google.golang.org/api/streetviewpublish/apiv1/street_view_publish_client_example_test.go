@@ -47,6 +47,7 @@ func ExampleClient_StartUpload() {
 
 	req := &emptypb.Empty{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/protobuf/types/known/emptypb#Empty.
 	}
 	resp, err := c.StartUpload(ctx, req)
 	if err != nil {
@@ -66,6 +67,7 @@ func ExampleClient_CreatePhoto() {
 
 	req := &publishpb.CreatePhotoRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#CreatePhotoRequest.
 	}
 	resp, err := c.CreatePhoto(ctx, req)
 	if err != nil {
@@ -85,6 +87,7 @@ func ExampleClient_GetPhoto() {
 
 	req := &publishpb.GetPhotoRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#GetPhotoRequest.
 	}
 	resp, err := c.GetPhoto(ctx, req)
 	if err != nil {
@@ -104,6 +107,7 @@ func ExampleClient_BatchGetPhotos() {
 
 	req := &publishpb.BatchGetPhotosRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#BatchGetPhotosRequest.
 	}
 	resp, err := c.BatchGetPhotos(ctx, req)
 	if err != nil {
@@ -123,6 +127,7 @@ func ExampleClient_ListPhotos() {
 
 	req := &publishpb.ListPhotosRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#ListPhotosRequest.
 	}
 	it := c.ListPhotos(ctx, req)
 	for {
@@ -148,6 +153,7 @@ func ExampleClient_UpdatePhoto() {
 
 	req := &publishpb.UpdatePhotoRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#UpdatePhotoRequest.
 	}
 	resp, err := c.UpdatePhoto(ctx, req)
 	if err != nil {
@@ -167,6 +173,7 @@ func ExampleClient_BatchUpdatePhotos() {
 
 	req := &publishpb.BatchUpdatePhotosRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#BatchUpdatePhotosRequest.
 	}
 	resp, err := c.BatchUpdatePhotos(ctx, req)
 	if err != nil {
@@ -186,6 +193,7 @@ func ExampleClient_DeletePhoto() {
 
 	req := &publishpb.DeletePhotoRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#DeletePhotoRequest.
 	}
 	err = c.DeletePhoto(ctx, req)
 	if err != nil {
@@ -203,6 +211,7 @@ func ExampleClient_BatchDeletePhotos() {
 
 	req := &publishpb.BatchDeletePhotosRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/streetview/publish/v1#BatchDeletePhotosRequest.
 	}
 	resp, err := c.BatchDeletePhotos(ctx, req)
 	if err != nil {

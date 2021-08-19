@@ -45,6 +45,7 @@ func ExampleClient_ExportAssets() {
 
 	req := &assetpb.ExportAssetsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/asset/v1p7beta1#ExportAssetsRequest.
 	}
 	op, err := c.ExportAssets(ctx, req)
 	if err != nil {

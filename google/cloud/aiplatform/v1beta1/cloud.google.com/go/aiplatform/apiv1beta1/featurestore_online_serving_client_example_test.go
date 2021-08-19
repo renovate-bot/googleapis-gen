@@ -45,6 +45,7 @@ func ExampleFeaturestoreOnlineServingClient_ReadFeatureValues() {
 
 	req := &aiplatformpb.ReadFeatureValuesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ReadFeatureValuesRequest.
 	}
 	resp, err := c.ReadFeatureValues(ctx, req)
 	if err != nil {

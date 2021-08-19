@@ -45,6 +45,7 @@ func ExampleDocumentUnderstandingClient_BatchProcessDocuments() {
 
 	req := &documentaipb.BatchProcessDocumentsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/documentai/v1beta1#BatchProcessDocumentsRequest.
 	}
 	op, err := c.BatchProcessDocuments(ctx, req)
 	if err != nil {

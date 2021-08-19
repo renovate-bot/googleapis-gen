@@ -46,6 +46,7 @@ func ExampleClient_ListAvailableVersions() {
 
 	req := &datafusionpb.ListAvailableVersionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#ListAvailableVersionsRequest.
 	}
 	it := c.ListAvailableVersions(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_ListInstances() {
 
 	req := &datafusionpb.ListInstancesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#ListInstancesRequest.
 	}
 	it := c.ListInstances(ctx, req)
 	for {
@@ -96,6 +98,7 @@ func ExampleClient_GetInstance() {
 
 	req := &datafusionpb.GetInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#GetInstanceRequest.
 	}
 	resp, err := c.GetInstance(ctx, req)
 	if err != nil {
@@ -115,6 +118,7 @@ func ExampleClient_CreateInstance() {
 
 	req := &datafusionpb.CreateInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#CreateInstanceRequest.
 	}
 	op, err := c.CreateInstance(ctx, req)
 	if err != nil {
@@ -139,6 +143,7 @@ func ExampleClient_DeleteInstance() {
 
 	req := &datafusionpb.DeleteInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#DeleteInstanceRequest.
 	}
 	op, err := c.DeleteInstance(ctx, req)
 	if err != nil {
@@ -161,6 +166,7 @@ func ExampleClient_UpdateInstance() {
 
 	req := &datafusionpb.UpdateInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#UpdateInstanceRequest.
 	}
 	op, err := c.UpdateInstance(ctx, req)
 	if err != nil {
@@ -185,6 +191,7 @@ func ExampleClient_RestartInstance() {
 
 	req := &datafusionpb.RestartInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#RestartInstanceRequest.
 	}
 	op, err := c.RestartInstance(ctx, req)
 	if err != nil {
@@ -209,6 +216,7 @@ func ExampleClient_UpgradeInstance() {
 
 	req := &datafusionpb.UpgradeInstanceRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#UpgradeInstanceRequest.
 	}
 	op, err := c.UpgradeInstance(ctx, req)
 	if err != nil {
@@ -233,6 +241,7 @@ func ExampleClient_RemoveIamPolicy() {
 
 	req := &datafusionpb.RemoveIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#RemoveIamPolicyRequest.
 	}
 	resp, err := c.RemoveIamPolicy(ctx, req)
 	if err != nil {
@@ -252,6 +261,7 @@ func ExampleClient_ListNamespaces() {
 
 	req := &datafusionpb.ListNamespacesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#ListNamespacesRequest.
 	}
 	it := c.ListNamespaces(ctx, req)
 	for {
@@ -277,6 +287,7 @@ func ExampleClient_AddDnsPeering() {
 
 	req := &datafusionpb.AddDnsPeeringRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#AddDnsPeeringRequest.
 	}
 	resp, err := c.AddDnsPeering(ctx, req)
 	if err != nil {
@@ -296,6 +307,7 @@ func ExampleClient_RemoveDnsPeering() {
 
 	req := &datafusionpb.RemoveDnsPeeringRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#RemoveDnsPeeringRequest.
 	}
 	resp, err := c.RemoveDnsPeering(ctx, req)
 	if err != nil {
@@ -315,6 +327,7 @@ func ExampleClient_ListDnsPeerings() {
 
 	req := &datafusionpb.ListDnsPeeringsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/datafusion/v1beta1#ListDnsPeeringsRequest.
 	}
 	it := c.ListDnsPeerings(ctx, req)
 	for {

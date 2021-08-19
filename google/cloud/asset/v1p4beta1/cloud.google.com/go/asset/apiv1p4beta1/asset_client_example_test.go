@@ -45,6 +45,7 @@ func ExampleClient_AnalyzeIamPolicy() {
 
 	req := &assetpb.AnalyzeIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/asset/v1p4beta1#AnalyzeIamPolicyRequest.
 	}
 	resp, err := c.AnalyzeIamPolicy(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleClient_ExportIamPolicyAnalysis() {
 
 	req := &assetpb.ExportIamPolicyAnalysisRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/asset/v1p4beta1#ExportIamPolicyAnalysisRequest.
 	}
 	op, err := c.ExportIamPolicyAnalysis(ctx, req)
 	if err != nil {

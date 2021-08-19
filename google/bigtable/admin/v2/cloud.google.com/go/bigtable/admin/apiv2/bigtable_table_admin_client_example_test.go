@@ -47,6 +47,7 @@ func ExampleBigtableTableAdminClient_CreateTable() {
 
 	req := &adminpb.CreateTableRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CreateTableRequest.
 	}
 	resp, err := c.CreateTable(ctx, req)
 	if err != nil {
@@ -66,6 +67,7 @@ func ExampleBigtableTableAdminClient_CreateTableFromSnapshot() {
 
 	req := &adminpb.CreateTableFromSnapshotRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CreateTableFromSnapshotRequest.
 	}
 	op, err := c.CreateTableFromSnapshot(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleBigtableTableAdminClient_ListTables() {
 
 	req := &adminpb.ListTablesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ListTablesRequest.
 	}
 	it := c.ListTables(ctx, req)
 	for {
@@ -115,6 +118,7 @@ func ExampleBigtableTableAdminClient_GetTable() {
 
 	req := &adminpb.GetTableRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GetTableRequest.
 	}
 	resp, err := c.GetTable(ctx, req)
 	if err != nil {
@@ -134,6 +138,7 @@ func ExampleBigtableTableAdminClient_DeleteTable() {
 
 	req := &adminpb.DeleteTableRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DeleteTableRequest.
 	}
 	err = c.DeleteTable(ctx, req)
 	if err != nil {
@@ -151,6 +156,7 @@ func ExampleBigtableTableAdminClient_ModifyColumnFamilies() {
 
 	req := &adminpb.ModifyColumnFamiliesRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ModifyColumnFamiliesRequest.
 	}
 	resp, err := c.ModifyColumnFamilies(ctx, req)
 	if err != nil {
@@ -170,6 +176,7 @@ func ExampleBigtableTableAdminClient_DropRowRange() {
 
 	req := &adminpb.DropRowRangeRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DropRowRangeRequest.
 	}
 	err = c.DropRowRange(ctx, req)
 	if err != nil {
@@ -187,6 +194,7 @@ func ExampleBigtableTableAdminClient_GenerateConsistencyToken() {
 
 	req := &adminpb.GenerateConsistencyTokenRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GenerateConsistencyTokenRequest.
 	}
 	resp, err := c.GenerateConsistencyToken(ctx, req)
 	if err != nil {
@@ -206,6 +214,7 @@ func ExampleBigtableTableAdminClient_CheckConsistency() {
 
 	req := &adminpb.CheckConsistencyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CheckConsistencyRequest.
 	}
 	resp, err := c.CheckConsistency(ctx, req)
 	if err != nil {
@@ -225,6 +234,7 @@ func ExampleBigtableTableAdminClient_SnapshotTable() {
 
 	req := &adminpb.SnapshotTableRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#SnapshotTableRequest.
 	}
 	op, err := c.SnapshotTable(ctx, req)
 	if err != nil {
@@ -249,6 +259,7 @@ func ExampleBigtableTableAdminClient_GetSnapshot() {
 
 	req := &adminpb.GetSnapshotRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GetSnapshotRequest.
 	}
 	resp, err := c.GetSnapshot(ctx, req)
 	if err != nil {
@@ -268,6 +279,7 @@ func ExampleBigtableTableAdminClient_ListSnapshots() {
 
 	req := &adminpb.ListSnapshotsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ListSnapshotsRequest.
 	}
 	it := c.ListSnapshots(ctx, req)
 	for {
@@ -293,6 +305,7 @@ func ExampleBigtableTableAdminClient_DeleteSnapshot() {
 
 	req := &adminpb.DeleteSnapshotRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DeleteSnapshotRequest.
 	}
 	err = c.DeleteSnapshot(ctx, req)
 	if err != nil {
@@ -310,6 +323,7 @@ func ExampleBigtableTableAdminClient_CreateBackup() {
 
 	req := &adminpb.CreateBackupRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#CreateBackupRequest.
 	}
 	op, err := c.CreateBackup(ctx, req)
 	if err != nil {
@@ -334,6 +348,7 @@ func ExampleBigtableTableAdminClient_GetBackup() {
 
 	req := &adminpb.GetBackupRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#GetBackupRequest.
 	}
 	resp, err := c.GetBackup(ctx, req)
 	if err != nil {
@@ -353,6 +368,7 @@ func ExampleBigtableTableAdminClient_UpdateBackup() {
 
 	req := &adminpb.UpdateBackupRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#UpdateBackupRequest.
 	}
 	resp, err := c.UpdateBackup(ctx, req)
 	if err != nil {
@@ -372,6 +388,7 @@ func ExampleBigtableTableAdminClient_DeleteBackup() {
 
 	req := &adminpb.DeleteBackupRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#DeleteBackupRequest.
 	}
 	err = c.DeleteBackup(ctx, req)
 	if err != nil {
@@ -389,6 +406,7 @@ func ExampleBigtableTableAdminClient_ListBackups() {
 
 	req := &adminpb.ListBackupsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#ListBackupsRequest.
 	}
 	it := c.ListBackups(ctx, req)
 	for {
@@ -414,6 +432,7 @@ func ExampleBigtableTableAdminClient_RestoreTable() {
 
 	req := &adminpb.RestoreTableRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/bigtable/admin/v2#RestoreTableRequest.
 	}
 	op, err := c.RestoreTable(ctx, req)
 	if err != nil {
@@ -438,6 +457,7 @@ func ExampleBigtableTableAdminClient_GetIamPolicy() {
 
 	req := &iampb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#GetIamPolicyRequest.
 	}
 	resp, err := c.GetIamPolicy(ctx, req)
 	if err != nil {
@@ -457,6 +477,7 @@ func ExampleBigtableTableAdminClient_SetIamPolicy() {
 
 	req := &iampb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#SetIamPolicyRequest.
 	}
 	resp, err := c.SetIamPolicy(ctx, req)
 	if err != nil {
@@ -476,6 +497,7 @@ func ExampleBigtableTableAdminClient_TestIamPermissions() {
 
 	req := &iampb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#TestIamPermissionsRequest.
 	}
 	resp, err := c.TestIamPermissions(ctx, req)
 	if err != nil {

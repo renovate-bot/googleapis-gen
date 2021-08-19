@@ -46,6 +46,7 @@ func ExampleClient_DeleteBucketAccessControl() {
 
 	req := &storagepb.DeleteBucketAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteBucketAccessControlRequest.
 	}
 	err = c.DeleteBucketAccessControl(ctx, req)
 	if err != nil {
@@ -63,6 +64,7 @@ func ExampleClient_GetBucketAccessControl() {
 
 	req := &storagepb.GetBucketAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetBucketAccessControlRequest.
 	}
 	resp, err := c.GetBucketAccessControl(ctx, req)
 	if err != nil {
@@ -82,6 +84,7 @@ func ExampleClient_InsertBucketAccessControl() {
 
 	req := &storagepb.InsertBucketAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#InsertBucketAccessControlRequest.
 	}
 	resp, err := c.InsertBucketAccessControl(ctx, req)
 	if err != nil {
@@ -101,6 +104,7 @@ func ExampleClient_ListBucketAccessControls() {
 
 	req := &storagepb.ListBucketAccessControlsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListBucketAccessControlsRequest.
 	}
 	resp, err := c.ListBucketAccessControls(ctx, req)
 	if err != nil {
@@ -120,6 +124,7 @@ func ExampleClient_UpdateBucketAccessControl() {
 
 	req := &storagepb.UpdateBucketAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#UpdateBucketAccessControlRequest.
 	}
 	resp, err := c.UpdateBucketAccessControl(ctx, req)
 	if err != nil {
@@ -139,6 +144,7 @@ func ExampleClient_PatchBucketAccessControl() {
 
 	req := &storagepb.PatchBucketAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#PatchBucketAccessControlRequest.
 	}
 	resp, err := c.PatchBucketAccessControl(ctx, req)
 	if err != nil {
@@ -158,6 +164,7 @@ func ExampleClient_DeleteBucket() {
 
 	req := &storagepb.DeleteBucketRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteBucketRequest.
 	}
 	err = c.DeleteBucket(ctx, req)
 	if err != nil {
@@ -175,6 +182,7 @@ func ExampleClient_GetBucket() {
 
 	req := &storagepb.GetBucketRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetBucketRequest.
 	}
 	resp, err := c.GetBucket(ctx, req)
 	if err != nil {
@@ -194,6 +202,7 @@ func ExampleClient_InsertBucket() {
 
 	req := &storagepb.InsertBucketRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#InsertBucketRequest.
 	}
 	resp, err := c.InsertBucket(ctx, req)
 	if err != nil {
@@ -213,6 +222,7 @@ func ExampleClient_ListChannels() {
 
 	req := &storagepb.ListChannelsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListChannelsRequest.
 	}
 	resp, err := c.ListChannels(ctx, req)
 	if err != nil {
@@ -232,6 +242,7 @@ func ExampleClient_ListBuckets() {
 
 	req := &storagepb.ListBucketsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListBucketsRequest.
 	}
 	it := c.ListBuckets(ctx, req)
 	for {
@@ -257,6 +268,7 @@ func ExampleClient_LockBucketRetentionPolicy() {
 
 	req := &storagepb.LockRetentionPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#LockRetentionPolicyRequest.
 	}
 	resp, err := c.LockBucketRetentionPolicy(ctx, req)
 	if err != nil {
@@ -276,6 +288,7 @@ func ExampleClient_GetBucketIamPolicy() {
 
 	req := &storagepb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetIamPolicyRequest.
 	}
 	resp, err := c.GetBucketIamPolicy(ctx, req)
 	if err != nil {
@@ -295,6 +308,7 @@ func ExampleClient_SetBucketIamPolicy() {
 
 	req := &storagepb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#SetIamPolicyRequest.
 	}
 	resp, err := c.SetBucketIamPolicy(ctx, req)
 	if err != nil {
@@ -314,6 +328,7 @@ func ExampleClient_TestBucketIamPermissions() {
 
 	req := &storagepb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#TestIamPermissionsRequest.
 	}
 	resp, err := c.TestBucketIamPermissions(ctx, req)
 	if err != nil {
@@ -333,6 +348,7 @@ func ExampleClient_PatchBucket() {
 
 	req := &storagepb.PatchBucketRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#PatchBucketRequest.
 	}
 	resp, err := c.PatchBucket(ctx, req)
 	if err != nil {
@@ -352,6 +368,7 @@ func ExampleClient_UpdateBucket() {
 
 	req := &storagepb.UpdateBucketRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#UpdateBucketRequest.
 	}
 	resp, err := c.UpdateBucket(ctx, req)
 	if err != nil {
@@ -371,6 +388,7 @@ func ExampleClient_StopChannel() {
 
 	req := &storagepb.StopChannelRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#StopChannelRequest.
 	}
 	err = c.StopChannel(ctx, req)
 	if err != nil {
@@ -388,6 +406,7 @@ func ExampleClient_DeleteDefaultObjectAccessControl() {
 
 	req := &storagepb.DeleteDefaultObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteDefaultObjectAccessControlRequest.
 	}
 	err = c.DeleteDefaultObjectAccessControl(ctx, req)
 	if err != nil {
@@ -405,6 +424,7 @@ func ExampleClient_GetDefaultObjectAccessControl() {
 
 	req := &storagepb.GetDefaultObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetDefaultObjectAccessControlRequest.
 	}
 	resp, err := c.GetDefaultObjectAccessControl(ctx, req)
 	if err != nil {
@@ -424,6 +444,7 @@ func ExampleClient_InsertDefaultObjectAccessControl() {
 
 	req := &storagepb.InsertDefaultObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#InsertDefaultObjectAccessControlRequest.
 	}
 	resp, err := c.InsertDefaultObjectAccessControl(ctx, req)
 	if err != nil {
@@ -443,6 +464,7 @@ func ExampleClient_ListDefaultObjectAccessControls() {
 
 	req := &storagepb.ListDefaultObjectAccessControlsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListDefaultObjectAccessControlsRequest.
 	}
 	resp, err := c.ListDefaultObjectAccessControls(ctx, req)
 	if err != nil {
@@ -462,6 +484,7 @@ func ExampleClient_PatchDefaultObjectAccessControl() {
 
 	req := &storagepb.PatchDefaultObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#PatchDefaultObjectAccessControlRequest.
 	}
 	resp, err := c.PatchDefaultObjectAccessControl(ctx, req)
 	if err != nil {
@@ -481,6 +504,7 @@ func ExampleClient_UpdateDefaultObjectAccessControl() {
 
 	req := &storagepb.UpdateDefaultObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#UpdateDefaultObjectAccessControlRequest.
 	}
 	resp, err := c.UpdateDefaultObjectAccessControl(ctx, req)
 	if err != nil {
@@ -500,6 +524,7 @@ func ExampleClient_DeleteNotification() {
 
 	req := &storagepb.DeleteNotificationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteNotificationRequest.
 	}
 	err = c.DeleteNotification(ctx, req)
 	if err != nil {
@@ -517,6 +542,7 @@ func ExampleClient_GetNotification() {
 
 	req := &storagepb.GetNotificationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetNotificationRequest.
 	}
 	resp, err := c.GetNotification(ctx, req)
 	if err != nil {
@@ -536,6 +562,7 @@ func ExampleClient_InsertNotification() {
 
 	req := &storagepb.InsertNotificationRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#InsertNotificationRequest.
 	}
 	resp, err := c.InsertNotification(ctx, req)
 	if err != nil {
@@ -555,6 +582,7 @@ func ExampleClient_ListNotifications() {
 
 	req := &storagepb.ListNotificationsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListNotificationsRequest.
 	}
 	resp, err := c.ListNotifications(ctx, req)
 	if err != nil {
@@ -574,6 +602,7 @@ func ExampleClient_DeleteObjectAccessControl() {
 
 	req := &storagepb.DeleteObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteObjectAccessControlRequest.
 	}
 	err = c.DeleteObjectAccessControl(ctx, req)
 	if err != nil {
@@ -591,6 +620,7 @@ func ExampleClient_GetObjectAccessControl() {
 
 	req := &storagepb.GetObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetObjectAccessControlRequest.
 	}
 	resp, err := c.GetObjectAccessControl(ctx, req)
 	if err != nil {
@@ -610,6 +640,7 @@ func ExampleClient_InsertObjectAccessControl() {
 
 	req := &storagepb.InsertObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#InsertObjectAccessControlRequest.
 	}
 	resp, err := c.InsertObjectAccessControl(ctx, req)
 	if err != nil {
@@ -629,6 +660,7 @@ func ExampleClient_ListObjectAccessControls() {
 
 	req := &storagepb.ListObjectAccessControlsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListObjectAccessControlsRequest.
 	}
 	resp, err := c.ListObjectAccessControls(ctx, req)
 	if err != nil {
@@ -648,6 +680,7 @@ func ExampleClient_PatchObjectAccessControl() {
 
 	req := &storagepb.PatchObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#PatchObjectAccessControlRequest.
 	}
 	resp, err := c.PatchObjectAccessControl(ctx, req)
 	if err != nil {
@@ -667,6 +700,7 @@ func ExampleClient_UpdateObjectAccessControl() {
 
 	req := &storagepb.UpdateObjectAccessControlRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#UpdateObjectAccessControlRequest.
 	}
 	resp, err := c.UpdateObjectAccessControl(ctx, req)
 	if err != nil {
@@ -686,6 +720,7 @@ func ExampleClient_ComposeObject() {
 
 	req := &storagepb.ComposeObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ComposeObjectRequest.
 	}
 	resp, err := c.ComposeObject(ctx, req)
 	if err != nil {
@@ -705,6 +740,7 @@ func ExampleClient_CopyObject() {
 
 	req := &storagepb.CopyObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#CopyObjectRequest.
 	}
 	resp, err := c.CopyObject(ctx, req)
 	if err != nil {
@@ -724,6 +760,7 @@ func ExampleClient_DeleteObject() {
 
 	req := &storagepb.DeleteObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteObjectRequest.
 	}
 	err = c.DeleteObject(ctx, req)
 	if err != nil {
@@ -741,6 +778,7 @@ func ExampleClient_GetObject() {
 
 	req := &storagepb.GetObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetObjectRequest.
 	}
 	resp, err := c.GetObject(ctx, req)
 	if err != nil {
@@ -760,6 +798,7 @@ func ExampleClient_ListObjects() {
 
 	req := &storagepb.ListObjectsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListObjectsRequest.
 	}
 	it := c.ListObjects(ctx, req)
 	for {
@@ -785,6 +824,7 @@ func ExampleClient_RewriteObject() {
 
 	req := &storagepb.RewriteObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#RewriteObjectRequest.
 	}
 	resp, err := c.RewriteObject(ctx, req)
 	if err != nil {
@@ -804,6 +844,7 @@ func ExampleClient_StartResumableWrite() {
 
 	req := &storagepb.StartResumableWriteRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#StartResumableWriteRequest.
 	}
 	resp, err := c.StartResumableWrite(ctx, req)
 	if err != nil {
@@ -823,6 +864,7 @@ func ExampleClient_QueryWriteStatus() {
 
 	req := &storagepb.QueryWriteStatusRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#QueryWriteStatusRequest.
 	}
 	resp, err := c.QueryWriteStatus(ctx, req)
 	if err != nil {
@@ -842,6 +884,7 @@ func ExampleClient_PatchObject() {
 
 	req := &storagepb.PatchObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#PatchObjectRequest.
 	}
 	resp, err := c.PatchObject(ctx, req)
 	if err != nil {
@@ -861,6 +904,7 @@ func ExampleClient_UpdateObject() {
 
 	req := &storagepb.UpdateObjectRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#UpdateObjectRequest.
 	}
 	resp, err := c.UpdateObject(ctx, req)
 	if err != nil {
@@ -880,6 +924,7 @@ func ExampleClient_GetObjectIamPolicy() {
 
 	req := &storagepb.GetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetIamPolicyRequest.
 	}
 	resp, err := c.GetObjectIamPolicy(ctx, req)
 	if err != nil {
@@ -899,6 +944,7 @@ func ExampleClient_SetObjectIamPolicy() {
 
 	req := &storagepb.SetIamPolicyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#SetIamPolicyRequest.
 	}
 	resp, err := c.SetObjectIamPolicy(ctx, req)
 	if err != nil {
@@ -918,6 +964,7 @@ func ExampleClient_TestObjectIamPermissions() {
 
 	req := &storagepb.TestIamPermissionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#TestIamPermissionsRequest.
 	}
 	resp, err := c.TestObjectIamPermissions(ctx, req)
 	if err != nil {
@@ -937,6 +984,7 @@ func ExampleClient_WatchAllObjects() {
 
 	req := &storagepb.WatchAllObjectsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#WatchAllObjectsRequest.
 	}
 	resp, err := c.WatchAllObjects(ctx, req)
 	if err != nil {
@@ -956,6 +1004,7 @@ func ExampleClient_GetServiceAccount() {
 
 	req := &storagepb.GetProjectServiceAccountRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetProjectServiceAccountRequest.
 	}
 	resp, err := c.GetServiceAccount(ctx, req)
 	if err != nil {
@@ -975,6 +1024,7 @@ func ExampleClient_CreateHmacKey() {
 
 	req := &storagepb.CreateHmacKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#CreateHmacKeyRequest.
 	}
 	resp, err := c.CreateHmacKey(ctx, req)
 	if err != nil {
@@ -994,6 +1044,7 @@ func ExampleClient_DeleteHmacKey() {
 
 	req := &storagepb.DeleteHmacKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#DeleteHmacKeyRequest.
 	}
 	err = c.DeleteHmacKey(ctx, req)
 	if err != nil {
@@ -1011,6 +1062,7 @@ func ExampleClient_GetHmacKey() {
 
 	req := &storagepb.GetHmacKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#GetHmacKeyRequest.
 	}
 	resp, err := c.GetHmacKey(ctx, req)
 	if err != nil {
@@ -1030,6 +1082,7 @@ func ExampleClient_ListHmacKeys() {
 
 	req := &storagepb.ListHmacKeysRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#ListHmacKeysRequest.
 	}
 	it := c.ListHmacKeys(ctx, req)
 	for {
@@ -1055,6 +1108,7 @@ func ExampleClient_UpdateHmacKey() {
 
 	req := &storagepb.UpdateHmacKeyRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/storage/v1#UpdateHmacKeyRequest.
 	}
 	resp, err := c.UpdateHmacKey(ctx, req)
 	if err != nil {

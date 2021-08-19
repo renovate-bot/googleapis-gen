@@ -45,6 +45,7 @@ func ExampleProfilerClient_CreateProfile() {
 
 	req := &cloudprofilerpb.CreateProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/devtools/cloudprofiler/v2#CreateProfileRequest.
 	}
 	resp, err := c.CreateProfile(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleProfilerClient_CreateOfflineProfile() {
 
 	req := &cloudprofilerpb.CreateOfflineProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/devtools/cloudprofiler/v2#CreateOfflineProfileRequest.
 	}
 	resp, err := c.CreateOfflineProfile(ctx, req)
 	if err != nil {
@@ -83,6 +85,7 @@ func ExampleProfilerClient_UpdateProfile() {
 
 	req := &cloudprofilerpb.UpdateProfileRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/devtools/cloudprofiler/v2#UpdateProfileRequest.
 	}
 	resp, err := c.UpdateProfile(ctx, req)
 	if err != nil {

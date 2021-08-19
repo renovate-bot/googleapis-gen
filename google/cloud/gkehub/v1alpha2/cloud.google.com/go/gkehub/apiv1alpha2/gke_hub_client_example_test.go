@@ -46,6 +46,7 @@ func ExampleClient_ListMemberships() {
 
 	req := &gkehubpb.ListMembershipsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#ListMembershipsRequest.
 	}
 	it := c.ListMemberships(ctx, req)
 	for {
@@ -71,6 +72,7 @@ func ExampleClient_GetMembership() {
 
 	req := &gkehubpb.GetMembershipRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#GetMembershipRequest.
 	}
 	resp, err := c.GetMembership(ctx, req)
 	if err != nil {
@@ -90,6 +92,7 @@ func ExampleClient_CreateMembership() {
 
 	req := &gkehubpb.CreateMembershipRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#CreateMembershipRequest.
 	}
 	op, err := c.CreateMembership(ctx, req)
 	if err != nil {
@@ -114,6 +117,7 @@ func ExampleClient_DeleteMembership() {
 
 	req := &gkehubpb.DeleteMembershipRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#DeleteMembershipRequest.
 	}
 	op, err := c.DeleteMembership(ctx, req)
 	if err != nil {
@@ -136,6 +140,7 @@ func ExampleClient_UpdateMembership() {
 
 	req := &gkehubpb.UpdateMembershipRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#UpdateMembershipRequest.
 	}
 	op, err := c.UpdateMembership(ctx, req)
 	if err != nil {
@@ -160,6 +165,7 @@ func ExampleClient_GenerateConnectManifest() {
 
 	req := &gkehubpb.GenerateConnectManifestRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#GenerateConnectManifestRequest.
 	}
 	resp, err := c.GenerateConnectManifest(ctx, req)
 	if err != nil {
@@ -179,6 +185,7 @@ func ExampleClient_InitializeHub() {
 
 	req := &gkehubpb.InitializeHubRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/gkehub/v1alpha2#InitializeHubRequest.
 	}
 	resp, err := c.InitializeHub(ctx, req)
 	if err != nil {

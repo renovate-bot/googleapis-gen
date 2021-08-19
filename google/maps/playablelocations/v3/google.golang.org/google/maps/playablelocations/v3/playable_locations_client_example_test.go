@@ -45,6 +45,7 @@ func ExampleClient_SamplePlayableLocations() {
 
 	req := &playablelocationspb.SamplePlayableLocationsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/playablelocations/v3#SamplePlayableLocationsRequest.
 	}
 	resp, err := c.SamplePlayableLocations(ctx, req)
 	if err != nil {
@@ -64,6 +65,7 @@ func ExampleClient_LogPlayerReports() {
 
 	req := &playablelocationspb.LogPlayerReportsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/playablelocations/v3#LogPlayerReportsRequest.
 	}
 	resp, err := c.LogPlayerReports(ctx, req)
 	if err != nil {
@@ -83,6 +85,7 @@ func ExampleClient_LogImpressions() {
 
 	req := &playablelocationspb.LogImpressionsRequest{
 		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/playablelocations/v3#LogImpressionsRequest.
 	}
 	resp, err := c.LogImpressions(ctx, req)
 	if err != nil {
