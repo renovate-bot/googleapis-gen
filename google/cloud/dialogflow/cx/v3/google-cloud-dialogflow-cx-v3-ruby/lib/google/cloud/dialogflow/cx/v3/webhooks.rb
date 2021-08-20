@@ -29,15 +29,15 @@ require "google/cloud/dialogflow/cx/v3/webhooks/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::Webhook Webhooks}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3::Webhook Webhooks}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3/webhooks"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new
           #
           module Webhooks
           end

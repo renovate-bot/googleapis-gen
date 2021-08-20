@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # Hierarchical advanced settings for agent/flow/page/fulfillment/parameter.
           # Settings exposed at lower level overrides the settings exposed at higher
@@ -28,7 +28,7 @@ module Google
           #
           # Hierarchy: Agent->Flow->Page->Fulfillment/Parameter.
           # @!attribute [rw] logging_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::AdvancedSettings::LoggingSettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::AdvancedSettings::LoggingSettings]
           #     Settings for logging.
           #     Settings for Dialogflow History, Contact Center messages, StackDriver logs,
           #     and speech logging.

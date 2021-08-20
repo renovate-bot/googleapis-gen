@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # Represents an environment for an agent. You can create multiple versions
           # of your agent and publish them to separate environments. When you edit an
@@ -44,7 +44,7 @@ module Google
           #     The human-readable description of the environment. The maximum length is
           #     500 characters. If exceeded, the request is rejected.
           # @!attribute [rw] version_configs
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Environment::VersionConfig>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Environment::VersionConfig>]
           #     Required. A list of configurations for flow versions. You should include version
           #     configs for all flows that are reachable from [`Start
           #     Flow`][Agent.start_flow] in the agent. Otherwise, an error will be
@@ -67,10 +67,10 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#list_environments Environments.ListEnvironments}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#list_environments Environments.ListEnvironments}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3::Agent Agent} to list all environments for.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3::Agent Agent} to list all environments for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] page_size
           #   @return [::Integer]
@@ -84,9 +84,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#list_environments Environments.ListEnvironments}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#list_environments Environments.ListEnvironments}.
           # @!attribute [rw] environments
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Environment>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Environment>]
           #     The list of environments. There will be a maximum number of items
           #     returned based on the page_size field in the request. The list may in some
           #     cases be empty or contain fewer entries than page_size even if this isn't
@@ -100,10 +100,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#get_environment Environments.GetEnvironment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#get_environment Environments.GetEnvironment}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>`.
           class GetEnvironmentRequest
@@ -111,22 +111,22 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#create_environment Environments.CreateEnvironment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#create_environment Environments.CreateEnvironment}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3::Agent Agent} to create an {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment} for.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3::Agent Agent} to create an {::Google::Cloud::Dialogflow::CX::V3::Environment Environment} for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] environment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Environment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Environment]
           #     Required. The environment to create.
           class CreateEnvironmentRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#update_environment Environments.UpdateEnvironment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#update_environment Environments.UpdateEnvironment}.
           # @!attribute [rw] environment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Environment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Environment]
           #     Required. The environment to update.
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
@@ -136,10 +136,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#delete_environment Environments.DeleteEnvironment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#delete_environment Environments.DeleteEnvironment}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment} to delete.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::Environment Environment} to delete.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>`.
           class DeleteEnvironmentRequest
@@ -147,7 +147,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#lookup_environment_history Environments.LookupEnvironmentHistory}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#lookup_environment_history Environments.LookupEnvironmentHistory}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. Resource name of the environment to look up the history for.
@@ -165,11 +165,11 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#lookup_environment_history Environments.LookupEnvironmentHistory}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#lookup_environment_history Environments.LookupEnvironmentHistory}.
           # @!attribute [rw] environments
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Environment>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Environment>]
           #     Represents a list of snapshots for an environment. Time of the snapshots is
-          #     stored in {::Google::Cloud::Dialogflow::Cx::V3::Environment#update_time `update_time`}.
+          #     stored in {::Google::Cloud::Dialogflow::CX::V3::Environment#update_time `update_time`}.
           # @!attribute [rw] next_page_token
           #   @return [::String]
           #     Token to retrieve the next page of results, or empty if there are no more
@@ -187,7 +187,7 @@ module Google
           #     ID>/environments/<Environment
           #     ID>/continuousTestResults/<ContinuousTestResult ID>`.
           # @!attribute [rw] result
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult::AggregatedTestResult]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::ContinuousTestResult::AggregatedTestResult]
           #     The result of this continuous test run, i.e. whether all the tests in this
           #     continuous test run pass or not.
           # @!attribute [rw] test_case_results
@@ -213,7 +213,7 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#run_continuous_test Environments.RunContinuousTest}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#run_continuous_test Environments.RunContinuousTest}.
           # @!attribute [rw] environment
           #   @return [::String]
           #     Required. Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
@@ -223,26 +223,26 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#run_continuous_test Environments.RunContinuousTest}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#run_continuous_test Environments.RunContinuousTest}.
           # @!attribute [rw] continuous_test_result
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::ContinuousTestResult]
           #     The result for a continuous test run.
           class RunContinuousTestResponse
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Metadata returned for the {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#run_continuous_test Environments.RunContinuousTest} long running
+          # Metadata returned for the {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#run_continuous_test Environments.RunContinuousTest} long running
           # operation.
           # @!attribute [rw] errors
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::TestError>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::TestError>]
           #     The test errors.
           class RunContinuousTestMetadata
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client#list_continuous_test_results Environments.ListContinuousTestResults}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Environments::Client#list_continuous_test_results Environments.ListContinuousTestResults}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The environment to list results for.
@@ -262,7 +262,7 @@ module Google
 
           # The response message for [Environments.ListTestCaseResults][].
           # @!attribute [rw] continuous_test_results
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::ContinuousTestResult>]
           #     The list of continuous test results.
           # @!attribute [rw] next_page_token
           #   @return [::String]

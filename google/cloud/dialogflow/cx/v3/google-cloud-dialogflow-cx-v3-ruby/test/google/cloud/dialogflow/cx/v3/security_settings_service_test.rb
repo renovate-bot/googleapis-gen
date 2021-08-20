@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3/security_settings_pb"
 require "google/cloud/dialogflow/cx/v3/security_settings_services_pb"
 require "google/cloud/dialogflow/cx/v3/security_settings_service"
 
-class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
   def test_create_security_settings
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettings.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -60,15 +60,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     create_security_settings_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_security_settings, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::CreateSecuritySettingsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::CreateSecuritySettingsRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings), request["security_settings"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3::SecuritySettings), request["security_settings"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_security_settings_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -85,7 +85,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object
-      client.create_security_settings ::Google::Cloud::Dialogflow::Cx::V3::CreateSecuritySettingsRequest.new(parent: parent, security_settings: security_settings) do |response, operation|
+      client.create_security_settings ::Google::Cloud::Dialogflow::CX::V3::CreateSecuritySettingsRequest.new(parent: parent, security_settings: security_settings) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -97,7 +97,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object with options
-      client.create_security_settings(::Google::Cloud::Dialogflow::Cx::V3::CreateSecuritySettingsRequest.new(parent: parent, security_settings: security_settings), grpc_options) do |response, operation|
+      client.create_security_settings(::Google::Cloud::Dialogflow::CX::V3::CreateSecuritySettingsRequest.new(parent: parent, security_settings: security_settings), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -109,7 +109,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
   def test_get_security_settings
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettings.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -119,14 +119,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     get_security_settings_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_security_settings, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::GetSecuritySettingsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::GetSecuritySettingsRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, get_security_settings_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -143,7 +143,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object
-      client.get_security_settings ::Google::Cloud::Dialogflow::Cx::V3::GetSecuritySettingsRequest.new(name: name) do |response, operation|
+      client.get_security_settings ::Google::Cloud::Dialogflow::CX::V3::GetSecuritySettingsRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -155,7 +155,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object with options
-      client.get_security_settings(::Google::Cloud::Dialogflow::Cx::V3::GetSecuritySettingsRequest.new(name: name), grpc_options) do |response, operation|
+      client.get_security_settings(::Google::Cloud::Dialogflow::CX::V3::GetSecuritySettingsRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -167,7 +167,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
   def test_update_security_settings
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettings.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -178,15 +178,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     update_security_settings_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_security_settings, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::UpdateSecuritySettingsRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings), request["security_settings"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::UpdateSecuritySettingsRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3::SecuritySettings), request["security_settings"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, update_security_settings_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -203,7 +203,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object
-      client.update_security_settings ::Google::Cloud::Dialogflow::Cx::V3::UpdateSecuritySettingsRequest.new(security_settings: security_settings, update_mask: update_mask) do |response, operation|
+      client.update_security_settings ::Google::Cloud::Dialogflow::CX::V3::UpdateSecuritySettingsRequest.new(security_settings: security_settings, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -215,7 +215,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object with options
-      client.update_security_settings(::Google::Cloud::Dialogflow::Cx::V3::UpdateSecuritySettingsRequest.new(security_settings: security_settings, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_security_settings(::Google::Cloud::Dialogflow::CX::V3::UpdateSecuritySettingsRequest.new(security_settings: security_settings, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -227,7 +227,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
   def test_list_security_settings
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::ListSecuritySettingsResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::ListSecuritySettingsResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -239,7 +239,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     list_security_settings_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_security_settings, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::ListSecuritySettingsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::ListSecuritySettingsRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal 42, request["page_size"]
       assert_equal "hello world", request["page_token"]
@@ -248,7 +248,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     Gapic::ServiceStub.stub :new, list_security_settings_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -267,7 +267,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object
-      client.list_security_settings ::Google::Cloud::Dialogflow::Cx::V3::ListSecuritySettingsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_security_settings ::Google::Cloud::Dialogflow::CX::V3::ListSecuritySettingsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -281,7 +281,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object with options
-      client.list_security_settings(::Google::Cloud::Dialogflow::Cx::V3::ListSecuritySettingsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_security_settings(::Google::Cloud::Dialogflow::CX::V3::ListSecuritySettingsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -304,14 +304,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     delete_security_settings_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_security_settings, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::DeleteSecuritySettingsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::DeleteSecuritySettingsRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, delete_security_settings_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -328,7 +328,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object
-      client.delete_security_settings ::Google::Cloud::Dialogflow::Cx::V3::DeleteSecuritySettingsRequest.new(name: name) do |response, operation|
+      client.delete_security_settings ::Google::Cloud::Dialogflow::CX::V3::DeleteSecuritySettingsRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -340,7 +340,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
       end
 
       # Use protobuf object with options
-      client.delete_security_settings(::Google::Cloud::Dialogflow::Cx::V3::DeleteSecuritySettingsRequest.new(name: name), grpc_options) do |response, operation|
+      client.delete_security_settings(::Google::Cloud::Dialogflow::CX::V3::DeleteSecuritySettingsRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -355,7 +355,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -365,6 +365,6 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientTest <
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client::Configuration, config
   end
 end

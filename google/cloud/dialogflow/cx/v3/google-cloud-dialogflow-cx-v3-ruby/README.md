@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud Dialogflow Cx V3 API
+# Ruby Client for the Dialogflow CX V3 API
 
-API Client library for the Google Cloud Dialogflow Cx V3 API
+API Client library for the Dialogflow CX V3 API
 
-google-cloud-dialogflow-cx-v3 is the official client library for the Google Cloud Dialogflow Cx V3 API.
+Dialogflow is an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices. You can use it to build interfaces (such as chatbots and conversational IVR) that enable natural and rich interactions between your users and your business.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Dialogflow Cx V3 API. Most users should consider using
+specific version of the Dialogflow CX V3 API. Most users should consider using
 the main client gem,
 [google-cloud-dialogflow-cx](https://rubygems.org/gems/google-cloud-dialogflow-cx).
 See the section below titled *Which client should I use?* for more information.
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/dialogflow.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -31,13 +32,16 @@ In order to use this library, you first need to go through the following steps:
 ```ruby
 require "google/cloud/dialogflow/cx/v3"
 
-client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
-request = ::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest.new # (request fields as keyword arguments...)
+client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new
+request = ::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest.new # (request fields as keyword arguments...)
 response = client.list_pages request
 ```
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-dialogflow-cx-v3/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/dialogflow)
+for general usage information.
 
 ## Enabling Logging
 

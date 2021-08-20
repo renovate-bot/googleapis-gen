@@ -20,20 +20,20 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # Agent/flow validation message.
           # @!attribute [rw] resource_type
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::ValidationMessage::ResourceType]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::ValidationMessage::ResourceType]
           #     The type of the resources where the message is found.
           # @!attribute [rw] resources
           #   @return [::Array<::String>]
           #     The names of the resources where the message is found.
           # @!attribute [rw] resource_names
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::ResourceName>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::ResourceName>]
           #     The resource names of the resources where the message is found.
           # @!attribute [rw] severity
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::ValidationMessage::Severity]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::ValidationMessage::Severity]
           #     Indicates the severity of the message.
           # @!attribute [rw] detail
           #   @return [::String]

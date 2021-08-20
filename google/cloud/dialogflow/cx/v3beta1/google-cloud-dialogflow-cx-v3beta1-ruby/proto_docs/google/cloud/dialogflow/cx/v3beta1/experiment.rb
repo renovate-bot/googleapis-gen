@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           # Represents an experiment in an environment.
           # @!attribute [rw] name
@@ -36,30 +36,30 @@ module Google
           #   @return [::String]
           #     The human-readable description of the experiment.
           # @!attribute [rw] state
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::State]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::State]
           #     The current state of the experiment.
           #     Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING.
           #     Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or
           #     RUNNING->DONE.
           # @!attribute [rw] definition
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Definition]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Definition]
           #     The definition of the experiment.
           # @!attribute [rw] rollout_config
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::RolloutConfig]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::RolloutConfig]
           #     The configuration for auto rollout. If set, there should be exactly two
           #     variants in the experiment (control variant being the default version of
           #     the flow), the traffic allocation for the non-control variant will
           #     gradually increase to 100% when conditions are met, and eventually
           #     replace the control variant to become the default version of the flow.
           # @!attribute [rw] rollout_state
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::RolloutState]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::RolloutState]
           #     State of the auto rollout process.
           # @!attribute [rw] rollout_failure_reason
           #   @return [::String]
           #     The reason why rollout has failed. Should only be set when state is
           #     ROLLOUT_FAILED.
           # @!attribute [rw] result
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Result]
           #     Inference result of the experiment.
           # @!attribute [rw] create_time
           #   @return [::Google::Protobuf::Timestamp]
@@ -79,7 +79,7 @@ module Google
           #     not enabled, default value and maximum will be 30 days. If auto-rollout is
           #     enabled, default value and maximum will be 6 days.
           # @!attribute [rw] variants_history
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::VariantsHistory>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::VariantsHistory>]
           #     The history of updates to the experiment variants.
           class Experiment
             include ::Google::Protobuf::MessageExts
@@ -93,7 +93,7 @@ module Google
             #     "query_input.language_code=en" See the [conditions
             #     reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
             # @!attribute [rw] version_variants
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::VersionVariants]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::VersionVariants]
             #     The flow versions as the variants of this experiment.
             class Definition
               include ::Google::Protobuf::MessageExts
@@ -103,7 +103,7 @@ module Google
             # The inference result which includes an objective metric to optimize and the
             # confidence interval.
             # @!attribute [rw] version_metrics
-            #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::VersionMetrics>]
+            #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Result::VersionMetrics>]
             #     Version variants and metrics.
             # @!attribute [rw] last_update_time
             #   @return [::Google::Protobuf::Timestamp]
@@ -136,11 +136,11 @@ module Google
 
               # Metric and corresponding confidence intervals.
               # @!attribute [rw] type
-              #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::MetricType]
+              #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Result::MetricType]
               #     Ratio-based metric type. Only one of type or count_type is specified in
               #     each Metric.
               # @!attribute [rw] count_type
-              #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::CountType]
+              #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Result::CountType]
               #     Count-based metric type. Only one of type or count_type is specified in
               #     each Metric.
               # @!attribute [rw] ratio
@@ -150,7 +150,7 @@ module Google
               #   @return [::Float]
               #     Count value of a metric.
               # @!attribute [rw] confidence_interval
-              #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::ConfidenceInterval]
+              #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Result::ConfidenceInterval]
               #     The probability that the treatment is better than all other treatments
               #     in the experiment
               class Metric
@@ -161,11 +161,11 @@ module Google
               # Version variant and associated metrics.
               # @!attribute [rw] version
               #   @return [::String]
-              #     The name of the flow {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version}.
+              #     The name of the flow {::Google::Cloud::Dialogflow::CX::V3beta1::Version Version}.
               #     Format: `projects/<Project ID>/locations/<Location
               #     ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
               # @!attribute [rw] metrics
-              #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::Metric>]
+              #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Experiment::Result::Metric>]
               #     The metrics and corresponding confidence intervals in the inference
               #     result.
               # @!attribute [rw] session_count
@@ -235,7 +235,7 @@ module Google
 
           # A list of flow version variants.
           # @!attribute [rw] variants
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::VersionVariants::Variant>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::VersionVariants::Variant>]
           #     A list of flow version variants.
           class VersionVariants
             include ::Google::Protobuf::MessageExts
@@ -262,7 +262,7 @@ module Google
 
           # The configuration for auto rollout.
           # @!attribute [rw] rollout_steps
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::RolloutConfig::RolloutStep>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::RolloutConfig::RolloutStep>]
           #     Steps to roll out a flow version. Steps should be sorted by percentage in
           #     ascending order.
           # @!attribute [rw] rollout_condition
@@ -318,7 +318,7 @@ module Google
 
           # The history of variants update.
           # @!attribute [rw] version_variants
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::VersionVariants]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::VersionVariants]
           #     The flow versions as the variants.
           # @!attribute [rw] update_time
           #   @return [::Google::Protobuf::Timestamp]
@@ -328,10 +328,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#list_experiments Experiments.ListExperiments}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#list_experiments Experiments.ListExperiments}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to list all environments for.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3beta1::Environment Environment} to list all environments for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>`.
           # @!attribute [rw] page_size
@@ -346,9 +346,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#list_experiments Experiments.ListExperiments}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#list_experiments Experiments.ListExperiments}.
           # @!attribute [rw] experiments
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Experiment>]
           #     The list of experiments. There will be a maximum number of items
           #     returned based on the page_size field in the request. The list may in some
           #     cases be empty or contain fewer entries than page_size even if this isn't
@@ -362,10 +362,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#get_experiment Experiments.GetExperiment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#get_experiment Experiments.GetExperiment}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment}.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::Environment Environment}.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
           class GetExperimentRequest
@@ -373,23 +373,23 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#create_experiment Experiments.CreateExperiment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#create_experiment Experiments.CreateExperiment}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Agent Agent} to create an {::Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} for.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3beta1::Agent Agent} to create an {::Google::Cloud::Dialogflow::CX::V3beta1::Environment Environment} for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>`.
           # @!attribute [rw] experiment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment]
           #     Required. The experiment to create.
           class CreateExperimentRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#update_experiment Experiments.UpdateExperiment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#update_experiment Experiments.UpdateExperiment}.
           # @!attribute [rw] experiment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Experiment]
           #     Required. The experiment to update.
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
@@ -399,10 +399,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#delete_experiment Experiments.DeleteExperiment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#delete_experiment Experiments.DeleteExperiment}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environment} to delete.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::Environment Environment} to delete.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/environments/<Environment ID>/experiments/<Experiment ID>`.
           class DeleteExperimentRequest
@@ -410,7 +410,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#start_experiment Experiments.StartExperiment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#start_experiment Experiments.StartExperiment}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. Resource name of the experiment to start.
@@ -421,7 +421,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Experiments::Client#stop_experiment Experiments.StopExperiment}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Experiments::Client#stop_experiment Experiments.StopExperiment}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. Resource name of the experiment to stop.

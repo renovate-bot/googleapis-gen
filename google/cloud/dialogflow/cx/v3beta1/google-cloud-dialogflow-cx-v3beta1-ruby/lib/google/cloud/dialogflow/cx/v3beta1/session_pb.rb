@@ -178,7 +178,7 @@ end
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           DetectIntentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest").msgclass
           DetectIntentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse").msgclass

@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3/webhook_pb"
 require "google/cloud/dialogflow/cx/v3/webhook_services_pb"
 require "google/cloud/dialogflow/cx/v3/webhooks"
 
-class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3::Webhooks::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
   def test_list_webhooks
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::ListWebhooksResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::ListWebhooksResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -61,7 +61,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     list_webhooks_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_webhooks, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::ListWebhooksRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::ListWebhooksRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal 42, request["page_size"]
       assert_equal "hello world", request["page_token"]
@@ -70,7 +70,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, list_webhooks_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -89,7 +89,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.list_webhooks ::Google::Cloud::Dialogflow::Cx::V3::ListWebhooksRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_webhooks ::Google::Cloud::Dialogflow::CX::V3::ListWebhooksRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -103,7 +103,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_webhooks(::Google::Cloud::Dialogflow::Cx::V3::ListWebhooksRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_webhooks(::Google::Cloud::Dialogflow::CX::V3::ListWebhooksRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -116,7 +116,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
   def test_get_webhook
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::Webhook.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::Webhook.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -126,14 +126,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     get_webhook_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_webhook, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::GetWebhookRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::GetWebhookRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, get_webhook_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -150,7 +150,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.get_webhook ::Google::Cloud::Dialogflow::Cx::V3::GetWebhookRequest.new(name: name) do |response, operation|
+      client.get_webhook ::Google::Cloud::Dialogflow::CX::V3::GetWebhookRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -162,7 +162,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_webhook(::Google::Cloud::Dialogflow::Cx::V3::GetWebhookRequest.new(name: name), grpc_options) do |response, operation|
+      client.get_webhook(::Google::Cloud::Dialogflow::CX::V3::GetWebhookRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -174,7 +174,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
   def test_create_webhook
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::Webhook.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::Webhook.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -185,15 +185,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     create_webhook_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_webhook, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::CreateWebhookRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::CreateWebhookRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3::Webhook), request["webhook"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3::Webhook), request["webhook"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_webhook_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -210,7 +210,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.create_webhook ::Google::Cloud::Dialogflow::Cx::V3::CreateWebhookRequest.new(parent: parent, webhook: webhook) do |response, operation|
+      client.create_webhook ::Google::Cloud::Dialogflow::CX::V3::CreateWebhookRequest.new(parent: parent, webhook: webhook) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -222,7 +222,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_webhook(::Google::Cloud::Dialogflow::Cx::V3::CreateWebhookRequest.new(parent: parent, webhook: webhook), grpc_options) do |response, operation|
+      client.create_webhook(::Google::Cloud::Dialogflow::CX::V3::CreateWebhookRequest.new(parent: parent, webhook: webhook), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -234,7 +234,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
   def test_update_webhook
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::Webhook.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::Webhook.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -245,15 +245,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     update_webhook_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_webhook, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::UpdateWebhookRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3::Webhook), request["webhook"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::UpdateWebhookRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3::Webhook), request["webhook"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, update_webhook_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -270,7 +270,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.update_webhook ::Google::Cloud::Dialogflow::Cx::V3::UpdateWebhookRequest.new(webhook: webhook, update_mask: update_mask) do |response, operation|
+      client.update_webhook ::Google::Cloud::Dialogflow::CX::V3::UpdateWebhookRequest.new(webhook: webhook, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -282,7 +282,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.update_webhook(::Google::Cloud::Dialogflow::Cx::V3::UpdateWebhookRequest.new(webhook: webhook, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_webhook(::Google::Cloud::Dialogflow::CX::V3::UpdateWebhookRequest.new(webhook: webhook, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -305,7 +305,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     delete_webhook_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_webhook, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::DeleteWebhookRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::DeleteWebhookRequest, request
       assert_equal "hello world", request["name"]
       assert_equal true, request["force"]
       refute_nil options
@@ -313,7 +313,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, delete_webhook_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -330,7 +330,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.delete_webhook ::Google::Cloud::Dialogflow::Cx::V3::DeleteWebhookRequest.new(name: name, force: force) do |response, operation|
+      client.delete_webhook ::Google::Cloud::Dialogflow::CX::V3::DeleteWebhookRequest.new(name: name, force: force) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -342,7 +342,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_webhook(::Google::Cloud::Dialogflow::Cx::V3::DeleteWebhookRequest.new(name: name, force: force), grpc_options) do |response, operation|
+      client.delete_webhook(::Google::Cloud::Dialogflow::CX::V3::DeleteWebhookRequest.new(name: name, force: force), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -357,7 +357,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -367,6 +367,6 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientTest < Minitest::Test
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client::Configuration, config
   end
 end

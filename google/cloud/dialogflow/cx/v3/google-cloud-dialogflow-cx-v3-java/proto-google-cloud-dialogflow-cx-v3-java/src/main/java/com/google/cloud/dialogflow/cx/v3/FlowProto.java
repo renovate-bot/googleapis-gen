@@ -237,11 +237,12 @@ public final class FlowProto {
       "Struct\032x\312A\031dialogflow.googleapis.com\322AYh" +
       "ttps://www.googleapis.com/auth/cloud-pla" +
       "tform,https://www.googleapis.com/auth/di" +
-      "alogflowB\231\001\n!com.google.cloud.dialogflow" +
+      "alogflowB\275\001\n!com.google.cloud.dialogflow" +
       ".cx.v3B\tFlowProtoP\001Z?google.golang.org/g" +
       "enproto/googleapis/cloud/dialogflow/cx/v" +
       "3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialogflow.C" +
-      "x.V3b\006proto3"
+      "x.V3\352\002!Google::Cloud::Dialogflow::CX::V3" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

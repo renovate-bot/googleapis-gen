@@ -262,11 +262,12 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             "ZW50cy8qL3Rlc3RDYXNlcy8qL3Jlc3VsdHMvKn3aQQRuYW1lGnjKQRlkaWFs",
             "b2dmbG93Lmdvb2dsZWFwaXMuY29t0kFZaHR0cHM6Ly93d3cuZ29vZ2xlYXBp",
             "cy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSxodHRwczovL3d3dy5nb29nbGVh",
-            "cGlzLmNvbS9hdXRoL2RpYWxvZ2Zsb3dCrAEKJmNvbS5nb29nbGUuY2xvdWQu",
+            "cGlzLmNvbS9hdXRoL2RpYWxvZ2Zsb3dC1QEKJmNvbS5nb29nbGUuY2xvdWQu",
             "ZGlhbG9nZmxvdy5jeC52M2JldGExQg1UZXN0Q2FzZVByb3RvUAFaRGdvb2ds",
             "ZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvZGlhbG9n",
             "Zmxvdy9jeC92M2JldGExO2N4+AEBogICREaqAiJHb29nbGUuQ2xvdWQuRGlh",
-            "bG9nZmxvdy5DeC5WM0JldGExYgZwcm90bzM="));
+            "bG9nZmxvdy5DeC5WM0JldGEx6gImR29vZ2xlOjpDbG91ZDo6RGlhbG9nZmxv",
+            "dzo6Q1g6OlYzYmV0YTFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.FlowReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.IntentReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.PageReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.ResponseMessageReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.SessionReflection.Descriptor, global::Google.Cloud.Dialogflow.Cx.V3Beta1.TransitionRouteGroupReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Rpc.StatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.TestResult), }, null, new pbr::GeneratedClrTypeInfo[] {

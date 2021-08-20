@@ -57,11 +57,12 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             "dWQuZGlhbG9nZmxvdy5jeC52M2JldGExLlJlc3BvbnNlTWVzc2FnZS5NaXhl",
             "ZEF1ZGlvLlNlZ21lbnQaXgoHU2VnbWVudBIPCgVhdWRpbxgBIAEoDEgAEg0K",
             "A3VyaRgCIAEoCUgAEigKG2FsbG93X3BsYXliYWNrX2ludGVycnVwdGlvbhgD",
-            "IAEoCEID4EEDQgkKB2NvbnRlbnRCCQoHbWVzc2FnZUKzAQomY29tLmdvb2ds",
+            "IAEoCEID4EEDQgkKB2NvbnRlbnRCCQoHbWVzc2FnZULcAQomY29tLmdvb2ds",
             "ZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTFCFFJlc3BvbnNlTWVzc2Fn",
             "ZVByb3RvUAFaRGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
             "aXMvY2xvdWQvZGlhbG9nZmxvdy9jeC92M2JldGExO2N4+AEBogICREaqAiJH",
-            "b29nbGUuQ2xvdWQuRGlhbG9nZmxvdy5DeC5WM0JldGExYgZwcm90bzM="));
+            "b29nbGUuQ2xvdWQuRGlhbG9nZmxvdy5DeC5WM0JldGEx6gImR29vZ2xlOjpD",
+            "bG91ZDo6RGlhbG9nZmxvdzo6Q1g6OlYzYmV0YTFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

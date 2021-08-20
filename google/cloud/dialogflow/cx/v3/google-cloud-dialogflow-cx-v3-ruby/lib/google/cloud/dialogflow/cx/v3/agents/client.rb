@@ -22,13 +22,13 @@ require "google/cloud/dialogflow/cx/v3/agent_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           module Agents
             ##
             # Client for the Agents service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::Agent Agents}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3::Agent Agents}.
             #
             class Client
               include Paths
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the Agents Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::Agents::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all Agents clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3::Agents::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::Agents::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::Agents::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Agents::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Agents::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Agents::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Agents::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -145,7 +145,7 @@ module Google
                 end
 
                 @agents_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3::Agents::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3::Agents::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -156,7 +156,7 @@ module Google
               ##
               # Get the associated client for long-running operations.
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Agents::Operations]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Agents::Operations]
               #
               attr_reader :operations_client
 
@@ -167,9 +167,9 @@ module Google
               #
               # @overload list_agents(request, options = nil)
               #   Pass arguments to `list_agents` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ListAgentsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ListAgentsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ListAgentsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ListAgentsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -190,17 +190,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Agent>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Agent>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Agent>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Agent>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_agents request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ListAgentsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ListAgentsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -211,7 +211,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -242,9 +242,9 @@ module Google
               #
               # @overload get_agent(request, options = nil)
               #   Pass arguments to `get_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::GetAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::GetAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::GetAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::GetAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -260,17 +260,17 @@ module Google
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Agent]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Agent]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::GetAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::GetAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -281,7 +281,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -315,9 +315,9 @@ module Google
               #
               # @overload create_agent(request, options = nil)
               #   Pass arguments to `create_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::CreateAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::CreateAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::CreateAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::CreateAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -331,21 +331,21 @@ module Google
               #   @param parent [::String]
               #     Required. The location to create a agent for.
               #     Format: `projects/<Project ID>/locations/<Location ID>`.
-              #   @param agent [::Google::Cloud::Dialogflow::Cx::V3::Agent, ::Hash]
+              #   @param agent [::Google::Cloud::Dialogflow::CX::V3::Agent, ::Hash]
               #     Required. The agent to create.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Agent]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Agent]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::CreateAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::CreateAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -356,7 +356,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -390,9 +390,9 @@ module Google
               #
               # @overload update_agent(request, options = nil)
               #   Pass arguments to `update_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::UpdateAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::UpdateAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::UpdateAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::UpdateAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -403,24 +403,24 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param agent [::Google::Cloud::Dialogflow::Cx::V3::Agent, ::Hash]
+              #   @param agent [::Google::Cloud::Dialogflow::CX::V3::Agent, ::Hash]
               #     Required. The agent to update.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     The mask to control which fields get updated. If the mask is not present,
               #     all fields will be updated.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Agent]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Agent]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::UpdateAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::UpdateAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -431,7 +431,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -461,9 +461,9 @@ module Google
               #
               # @overload delete_agent(request, options = nil)
               #   Pass arguments to `delete_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::DeleteAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::DeleteAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::DeleteAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::DeleteAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -489,7 +489,7 @@ module Google
               def delete_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::DeleteAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::DeleteAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -500,7 +500,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -530,9 +530,9 @@ module Google
               #
               # @overload export_agent(request, options = nil)
               #   Pass arguments to `export_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ExportAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ExportAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -567,7 +567,7 @@ module Google
               def export_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ExportAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -578,7 +578,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -617,9 +617,9 @@ module Google
               #
               # @overload restore_agent(request, options = nil)
               #   Pass arguments to `restore_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::RestoreAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::RestoreAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -639,7 +639,7 @@ module Google
               #     `gs://<bucket-name>/<object-name>`.
               #   @param agent_content [::String]
               #     Uncompressed raw byte content for agent.
-              #   @param restore_option [::Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest::RestoreOption]
+              #   @param restore_option [::Google::Cloud::Dialogflow::CX::V3::RestoreAgentRequest::RestoreOption]
               #     Agent restore mode. If not specified, `KEEP` is assumed.
               #
               # @yield [response, operation] Access the result along with the RPC operation
@@ -653,7 +653,7 @@ module Google
               def restore_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::RestoreAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -664,7 +664,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -697,9 +697,9 @@ module Google
               #
               # @overload validate_agent(request, options = nil)
               #   Pass arguments to `validate_agent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ValidateAgentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ValidateAgentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ValidateAgentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ValidateAgentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -717,17 +717,17 @@ module Google
               #     If not specified, the agent's default language is used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::AgentValidationResult]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::AgentValidationResult]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::AgentValidationResult]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::AgentValidationResult]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def validate_agent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ValidateAgentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ValidateAgentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -738,7 +738,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -769,9 +769,9 @@ module Google
               #
               # @overload get_agent_validation_result(request, options = nil)
               #   Pass arguments to `get_agent_validation_result` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::GetAgentValidationResultRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::GetAgentValidationResultRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::GetAgentValidationResultRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::GetAgentValidationResultRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -790,17 +790,17 @@ module Google
               #     If not specified, the agent's default language is used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::AgentValidationResult]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::AgentValidationResult]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::AgentValidationResult]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::AgentValidationResult]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_agent_validation_result request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::GetAgentValidationResultRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::GetAgentValidationResultRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -811,7 +811,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -843,7 +843,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3::Agents::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -854,13 +854,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_agents to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3::Agents::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::Agents::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_agents.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Agents::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Agents::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_agents.timeout = 20.0
               #   end

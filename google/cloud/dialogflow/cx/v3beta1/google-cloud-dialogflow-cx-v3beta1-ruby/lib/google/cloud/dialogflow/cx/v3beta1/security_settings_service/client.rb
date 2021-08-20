@@ -22,7 +22,7 @@ require "google/cloud/dialogflow/cx/v3beta1/security_settings_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           module SecuritySettingsService
             ##
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the SecuritySettingsService Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all SecuritySettingsService clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3beta1"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3beta1"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -140,7 +140,7 @@ module Google
                 @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
                 @security_settings_service_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -155,9 +155,9 @@ module Google
               #
               # @overload create_security_settings(request, options = nil)
               #   Pass arguments to `create_security_settings` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CreateSecuritySettingsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::CreateSecuritySettingsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::CreateSecuritySettingsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::CreateSecuritySettingsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -169,23 +169,23 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The location to create an {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings SecuritySettings} for.
+              #     Required. The location to create an {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings SecuritySettings} for.
               #     Format: `projects/<Project ID>/locations/<Location ID>`.
-              #   @param security_settings [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings, ::Hash]
+              #   @param security_settings [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings, ::Hash]
               #     Required. The security settings to create.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_security_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateSecuritySettingsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::CreateSecuritySettingsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -196,7 +196,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -222,14 +222,14 @@ module Google
               end
 
               ##
-              # Retrieves the specified {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings SecuritySettings}.
+              # Retrieves the specified {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings SecuritySettings}.
               # The returned settings may be stale by up to 1 minute.
               #
               # @overload get_security_settings(request, options = nil)
               #   Pass arguments to `get_security_settings` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::GetSecuritySettingsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::GetSecuritySettingsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::GetSecuritySettingsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::GetSecuritySettingsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -246,17 +246,17 @@ module Google
               #     ID>/securitySettings/<security settings ID>`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_security_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::GetSecuritySettingsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::GetSecuritySettingsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -267,7 +267,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -293,13 +293,13 @@ module Google
               end
 
               ##
-              # Updates the specified {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings SecuritySettings}.
+              # Updates the specified {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings SecuritySettings}.
               #
               # @overload update_security_settings(request, options = nil)
               #   Pass arguments to `update_security_settings` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateSecuritySettingsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::UpdateSecuritySettingsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateSecuritySettingsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::UpdateSecuritySettingsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -310,7 +310,7 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param security_settings [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings, ::Hash]
+              #   @param security_settings [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings, ::Hash]
               #     Required. [SecuritySettings] object that contains values for each of the
               #     fields to update.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
@@ -318,17 +318,17 @@ module Google
               #     all fields will be updated.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_security_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateSecuritySettingsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateSecuritySettingsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -339,7 +339,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -369,9 +369,9 @@ module Google
               #
               # @overload list_security_settings(request, options = nil)
               #   Pass arguments to `list_security_settings` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ListSecuritySettingsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ListSecuritySettingsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ListSecuritySettingsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ListSecuritySettingsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -392,17 +392,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_security_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ListSecuritySettingsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ListSecuritySettingsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -413,7 +413,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -440,13 +440,13 @@ module Google
               end
 
               ##
-              # Deletes the specified {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings SecuritySettings}.
+              # Deletes the specified {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings SecuritySettings}.
               #
               # @overload delete_security_settings(request, options = nil)
               #   Pass arguments to `delete_security_settings` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteSecuritySettingsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::DeleteSecuritySettingsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteSecuritySettingsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::DeleteSecuritySettingsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -458,7 +458,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings SecuritySettings} to delete.
+              #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettings SecuritySettings} to delete.
               #     Format: `projects/<Project ID>/locations/<Location
               #     ID>/securitySettings/<Security Settings ID>`.
               #
@@ -473,7 +473,7 @@ module Google
               def delete_security_settings request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteSecuritySettingsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteSecuritySettingsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -484,7 +484,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -516,7 +516,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -527,13 +527,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # create_security_settings to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.create_security_settings.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.create_security_settings.timeout = 20.0
               #   end

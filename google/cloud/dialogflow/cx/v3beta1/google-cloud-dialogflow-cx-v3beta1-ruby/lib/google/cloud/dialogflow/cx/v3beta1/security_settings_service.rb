@@ -29,7 +29,7 @@ require "google/cloud/dialogflow/cx/v3beta1/security_settings_service/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           ##
           # Service for managing security settings for Dialogflow.
@@ -37,7 +37,7 @@ module Google
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3beta1/security_settings_service"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettingsService::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3beta1::SecuritySettingsService::Client.new
           #
           module SecuritySettingsService
           end

@@ -22,13 +22,13 @@ require "google/cloud/dialogflow/cx/v3/environment_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           module Environments
             ##
             # Client for the Environments service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::Environment Environments}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3::Environment Environments}.
             #
             class Client
               include Paths
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the Environments Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::Environments::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all Environments clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3::Environments::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::Environments::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::Environments::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Environments::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Environments::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Environments::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Environments::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -145,7 +145,7 @@ module Google
                 end
 
                 @environments_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3::Environments::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3::Environments::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -156,20 +156,20 @@ module Google
               ##
               # Get the associated client for long-running operations.
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Environments::Operations]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Environments::Operations]
               #
               attr_reader :operations_client
 
               # Service calls
 
               ##
-              # Returns the list of all environments in the specified {::Google::Cloud::Dialogflow::Cx::V3::Agent Agent}.
+              # Returns the list of all environments in the specified {::Google::Cloud::Dialogflow::CX::V3::Agent Agent}.
               #
               # @overload list_environments(request, options = nil)
               #   Pass arguments to `list_environments` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ListEnvironmentsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ListEnvironmentsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ListEnvironmentsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ListEnvironmentsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -181,7 +181,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The {::Google::Cloud::Dialogflow::Cx::V3::Agent Agent} to list all environments for.
+              #     Required. The {::Google::Cloud::Dialogflow::CX::V3::Agent Agent} to list all environments for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
               #   @param page_size [::Integer]
               #     The maximum number of items to return in a single page. By default 20 and
@@ -190,17 +190,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Environment>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Environment>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Environment>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Environment>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_environments request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ListEnvironmentsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ListEnvironmentsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -211,7 +211,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -238,13 +238,13 @@ module Google
               end
 
               ##
-              # Retrieves the specified {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              # Retrieves the specified {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
               #
               # @overload get_environment(request, options = nil)
               #   Pass arguments to `get_environment` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::GetEnvironmentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::GetEnvironmentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::GetEnvironmentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::GetEnvironmentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -256,22 +256,22 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/environments/<Environment ID>`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Environment]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Environment]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Environment]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Environment]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_environment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::GetEnvironmentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::GetEnvironmentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -282,7 +282,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -308,13 +308,13 @@ module Google
               end
 
               ##
-              # Creates an {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment} in the specified {::Google::Cloud::Dialogflow::Cx::V3::Agent Agent}.
+              # Creates an {::Google::Cloud::Dialogflow::CX::V3::Environment Environment} in the specified {::Google::Cloud::Dialogflow::CX::V3::Agent Agent}.
               #
               # @overload create_environment(request, options = nil)
               #   Pass arguments to `create_environment` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::CreateEnvironmentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::CreateEnvironmentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::CreateEnvironmentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::CreateEnvironmentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -326,9 +326,9 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The {::Google::Cloud::Dialogflow::Cx::V3::Agent Agent} to create an {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment} for.
+              #     Required. The {::Google::Cloud::Dialogflow::CX::V3::Agent Agent} to create an {::Google::Cloud::Dialogflow::CX::V3::Environment Environment} for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-              #   @param environment [::Google::Cloud::Dialogflow::Cx::V3::Environment, ::Hash]
+              #   @param environment [::Google::Cloud::Dialogflow::CX::V3::Environment, ::Hash]
               #     Required. The environment to create.
               #
               # @yield [response, operation] Access the result along with the RPC operation
@@ -342,7 +342,7 @@ module Google
               def create_environment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::CreateEnvironmentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::CreateEnvironmentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -353,7 +353,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -380,13 +380,13 @@ module Google
               end
 
               ##
-              # Updates the specified {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              # Updates the specified {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
               #
               # @overload update_environment(request, options = nil)
               #   Pass arguments to `update_environment` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::UpdateEnvironmentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::UpdateEnvironmentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::UpdateEnvironmentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::UpdateEnvironmentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -397,7 +397,7 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param environment [::Google::Cloud::Dialogflow::Cx::V3::Environment, ::Hash]
+              #   @param environment [::Google::Cloud::Dialogflow::CX::V3::Environment, ::Hash]
               #     Required. The environment to update.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. The mask to control which fields get updated.
@@ -413,7 +413,7 @@ module Google
               def update_environment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::UpdateEnvironmentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::UpdateEnvironmentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -424,7 +424,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -451,13 +451,13 @@ module Google
               end
 
               ##
-              # Deletes the specified {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              # Deletes the specified {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
               #
               # @overload delete_environment(request, options = nil)
               #   Pass arguments to `delete_environment` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::DeleteEnvironmentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::DeleteEnvironmentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::DeleteEnvironmentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::DeleteEnvironmentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -469,7 +469,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment} to delete.
+              #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::Environment Environment} to delete.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/environments/<Environment ID>`.
               #
@@ -484,7 +484,7 @@ module Google
               def delete_environment request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::DeleteEnvironmentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::DeleteEnvironmentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -495,7 +495,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -521,13 +521,13 @@ module Google
               end
 
               ##
-              # Looks up the history of the specified {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              # Looks up the history of the specified {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
               #
               # @overload lookup_environment_history(request, options = nil)
               #   Pass arguments to `lookup_environment_history` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::LookupEnvironmentHistoryRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::LookupEnvironmentHistoryRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::LookupEnvironmentHistoryRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::LookupEnvironmentHistoryRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -549,17 +549,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Environment>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Environment>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Environment>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Environment>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def lookup_environment_history request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::LookupEnvironmentHistoryRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::LookupEnvironmentHistoryRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -570,7 +570,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -597,13 +597,13 @@ module Google
               end
 
               ##
-              # Kicks off a continuous test under the specified {::Google::Cloud::Dialogflow::Cx::V3::Environment Environment}.
+              # Kicks off a continuous test under the specified {::Google::Cloud::Dialogflow::CX::V3::Environment Environment}.
               #
               # @overload run_continuous_test(request, options = nil)
               #   Pass arguments to `run_continuous_test` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::RunContinuousTestRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::RunContinuousTestRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -629,7 +629,7 @@ module Google
               def run_continuous_test request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::RunContinuousTestRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::RunContinuousTestRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -640,7 +640,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -671,9 +671,9 @@ module Google
               #
               # @overload list_continuous_test_results(request, options = nil)
               #   Pass arguments to `list_continuous_test_results` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ListContinuousTestResultsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ListContinuousTestResultsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -695,17 +695,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::ContinuousTestResult>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::ContinuousTestResult>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::ContinuousTestResult>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_continuous_test_results request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ListContinuousTestResultsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ListContinuousTestResultsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -716,7 +716,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -749,7 +749,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3::Environments::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3::Environments::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -760,13 +760,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_environments to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3::Environments::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::Environments::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_environments.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Environments::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Environments::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_environments.timeout = 20.0
               #   end

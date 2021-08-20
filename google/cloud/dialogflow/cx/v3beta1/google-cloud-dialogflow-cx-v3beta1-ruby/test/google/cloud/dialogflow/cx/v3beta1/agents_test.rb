@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3beta1/agent_pb"
 require "google/cloud/dialogflow/cx/v3beta1/agent_services_pb"
 require "google/cloud/dialogflow/cx/v3beta1/agents"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
   def test_list_agents
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::ListAgentsResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::ListAgentsResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -61,7 +61,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     list_agents_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_agents, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ListAgentsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ListAgentsRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal 42, request["page_size"]
       assert_equal "hello world", request["page_token"]
@@ -70,7 +70,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     Gapic::ServiceStub.stub :new, list_agents_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -89,7 +89,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.list_agents ::Google::Cloud::Dialogflow::Cx::V3beta1::ListAgentsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_agents ::Google::Cloud::Dialogflow::CX::V3beta1::ListAgentsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -103,7 +103,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.list_agents(::Google::Cloud::Dialogflow::Cx::V3beta1::ListAgentsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_agents(::Google::Cloud::Dialogflow::CX::V3beta1::ListAgentsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -116,7 +116,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
   def test_get_agent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agent.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Agent.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -126,14 +126,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     get_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetAgentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetAgentRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, get_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -150,7 +150,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.get_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::GetAgentRequest.new(name: name) do |response, operation|
+      client.get_agent ::Google::Cloud::Dialogflow::CX::V3beta1::GetAgentRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -162,7 +162,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.get_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::GetAgentRequest.new(name: name), grpc_options) do |response, operation|
+      client.get_agent(::Google::Cloud::Dialogflow::CX::V3beta1::GetAgentRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -174,7 +174,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
   def test_create_agent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agent.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Agent.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -185,15 +185,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     create_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateAgentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::CreateAgentRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Agent), request["agent"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Agent), request["agent"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -210,7 +210,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.create_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateAgentRequest.new(parent: parent, agent: agent) do |response, operation|
+      client.create_agent ::Google::Cloud::Dialogflow::CX::V3beta1::CreateAgentRequest.new(parent: parent, agent: agent) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -222,7 +222,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.create_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::CreateAgentRequest.new(parent: parent, agent: agent), grpc_options) do |response, operation|
+      client.create_agent(::Google::Cloud::Dialogflow::CX::V3beta1::CreateAgentRequest.new(parent: parent, agent: agent), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -234,7 +234,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
   def test_update_agent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agent.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Agent.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -245,15 +245,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     update_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateAgentRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Agent), request["agent"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateAgentRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Agent), request["agent"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, update_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -270,7 +270,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.update_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateAgentRequest.new(agent: agent, update_mask: update_mask) do |response, operation|
+      client.update_agent ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateAgentRequest.new(agent: agent, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -282,7 +282,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.update_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateAgentRequest.new(agent: agent, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_agent(::Google::Cloud::Dialogflow::CX::V3beta1::UpdateAgentRequest.new(agent: agent, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -304,14 +304,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     delete_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteAgentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteAgentRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, delete_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -328,7 +328,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.delete_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteAgentRequest.new(name: name) do |response, operation|
+      client.delete_agent ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteAgentRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -340,7 +340,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.delete_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteAgentRequest.new(name: name), grpc_options) do |response, operation|
+      client.delete_agent(::Google::Cloud::Dialogflow::CX::V3beta1::DeleteAgentRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -364,7 +364,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     export_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :export_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ExportAgentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ExportAgentRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["agent_uri"]
       assert_equal "hello world", request["environment"]
@@ -373,7 +373,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     Gapic::ServiceStub.stub :new, export_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -392,7 +392,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.export_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::ExportAgentRequest.new(name: name, agent_uri: agent_uri, environment: environment) do |response, operation|
+      client.export_agent ::Google::Cloud::Dialogflow::CX::V3beta1::ExportAgentRequest.new(name: name, agent_uri: agent_uri, environment: environment) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -406,7 +406,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.export_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::ExportAgentRequest.new(name: name, agent_uri: agent_uri, environment: environment), grpc_options) do |response, operation|
+      client.export_agent(::Google::Cloud::Dialogflow::CX::V3beta1::ExportAgentRequest.new(name: name, agent_uri: agent_uri, environment: environment), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -431,7 +431,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     restore_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :restore_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::RestoreAgentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::RestoreAgentRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["agent_uri"]
       assert_equal :agent_uri, request.agent
@@ -441,7 +441,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     Gapic::ServiceStub.stub :new, restore_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -460,7 +460,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.restore_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::RestoreAgentRequest.new(name: name, agent_uri: agent_uri, restore_option: restore_option) do |response, operation|
+      client.restore_agent ::Google::Cloud::Dialogflow::CX::V3beta1::RestoreAgentRequest.new(name: name, agent_uri: agent_uri, restore_option: restore_option) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -474,7 +474,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.restore_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::RestoreAgentRequest.new(name: name, agent_uri: agent_uri, restore_option: restore_option), grpc_options) do |response, operation|
+      client.restore_agent(::Google::Cloud::Dialogflow::CX::V3beta1::RestoreAgentRequest.new(name: name, agent_uri: agent_uri, restore_option: restore_option), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -487,7 +487,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
   def test_validate_agent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::AgentValidationResult.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::AgentValidationResult.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -498,7 +498,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     validate_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :validate_agent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ValidateAgentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ValidateAgentRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -506,7 +506,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     Gapic::ServiceStub.stub :new, validate_agent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -523,7 +523,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.validate_agent ::Google::Cloud::Dialogflow::Cx::V3beta1::ValidateAgentRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.validate_agent ::Google::Cloud::Dialogflow::CX::V3beta1::ValidateAgentRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -535,7 +535,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.validate_agent(::Google::Cloud::Dialogflow::Cx::V3beta1::ValidateAgentRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.validate_agent(::Google::Cloud::Dialogflow::CX::V3beta1::ValidateAgentRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -547,7 +547,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
   def test_get_agent_validation_result
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::AgentValidationResult.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::AgentValidationResult.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -558,7 +558,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     get_agent_validation_result_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_agent_validation_result, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetAgentValidationResultRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetAgentValidationResultRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -566,7 +566,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     Gapic::ServiceStub.stub :new, get_agent_validation_result_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -583,7 +583,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object
-      client.get_agent_validation_result ::Google::Cloud::Dialogflow::Cx::V3beta1::GetAgentValidationResultRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.get_agent_validation_result ::Google::Cloud::Dialogflow::CX::V3beta1::GetAgentValidationResultRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -595,7 +595,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
       end
 
       # Use protobuf object with options
-      client.get_agent_validation_result(::Google::Cloud::Dialogflow::Cx::V3beta1::GetAgentValidationResultRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.get_agent_validation_result(::Google::Cloud::Dialogflow::CX::V3beta1::GetAgentValidationResultRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -610,7 +610,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -620,7 +620,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client::Configuration, config
   end
 
   def test_operations_client
@@ -628,11 +628,11 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::ClientTest < Minitest::T
 
     client = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
 
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Operations, client.operations_client
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Agents::Operations, client.operations_client
   end
 end

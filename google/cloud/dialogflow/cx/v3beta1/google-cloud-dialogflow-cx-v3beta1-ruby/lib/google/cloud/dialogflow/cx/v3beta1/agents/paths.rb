@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           module Agents
             # Path helper methods for the Agents API.

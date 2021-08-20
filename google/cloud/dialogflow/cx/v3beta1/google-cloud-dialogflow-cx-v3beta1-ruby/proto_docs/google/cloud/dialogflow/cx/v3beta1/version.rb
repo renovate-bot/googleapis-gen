@@ -20,10 +20,10 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           # Metadata associated with the long running operation for
-          # {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#create_version Versions.CreateVersion}.
+          # {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#create_version Versions.CreateVersion}.
           # @!attribute [rw] version
           #   @return [::String]
           #     Name of the created version.
@@ -48,13 +48,13 @@ module Google
           #     The description of the version. The maximum length is 500 characters. If
           #     exceeded, the request is rejected.
           # @!attribute [r] nlu_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::NluSettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::NluSettings]
           #     Output only. The NLU settings of the flow at version creation.
           # @!attribute [r] create_time
           #   @return [::Google::Protobuf::Timestamp]
           #     Output only. Create time of the version.
           # @!attribute [r] state
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Version::State]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Version::State]
           #     Output only. The state of this version. This field is read-only and cannot be set by
           #     create and update methods.
           class Version
@@ -77,10 +77,10 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#list_versions Versions.ListVersions}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#list_versions Versions.ListVersions}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Flow Flow} to list all versions for.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3beta1::Flow Flow} to list all versions for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>`.
           # @!attribute [rw] page_size
@@ -95,9 +95,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#list_versions Versions.ListVersions}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#list_versions Versions.ListVersions}.
           # @!attribute [rw] versions
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Version>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Version>]
           #     A list of versions. There will be a maximum number of items returned based
           #     on the page_size field in the request. The list may in some cases be empty
           #     or contain fewer entries than page_size even if this isn't the last page.
@@ -110,10 +110,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#get_version Versions.GetVersion}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#get_version Versions.GetVersion}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version}.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::Version Version}.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/versions/<Version ID>`.
           class GetVersionRequest
@@ -121,23 +121,23 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#create_version Versions.CreateVersion}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#create_version Versions.CreateVersion}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Flow Flow} to create an {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version} for.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3beta1::Flow Flow} to create an {::Google::Cloud::Dialogflow::CX::V3beta1::Version Version} for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>`.
           # @!attribute [rw] version
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Version]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Version]
           #     Required. The version to create.
           class CreateVersionRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#update_version Versions.UpdateVersion}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#update_version Versions.UpdateVersion}.
           # @!attribute [rw] version
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Version]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Version]
           #     Required. The version to update.
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
@@ -148,10 +148,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#delete_version Versions.DeleteVersion}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#delete_version Versions.DeleteVersion}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version} to delete.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::Version Version} to delete.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/versions/<Version ID>`.
           class DeleteVersionRequest
@@ -159,10 +159,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client#load_version Versions.LoadVersion}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client#load_version Versions.LoadVersion}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version} to be loaded to draft flow.
+          #     Required. The {::Google::Cloud::Dialogflow::CX::V3beta1::Version Version} to be loaded to draft flow.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/versions/<Version ID>`.
           # @!attribute [rw] allow_override_agent_resources

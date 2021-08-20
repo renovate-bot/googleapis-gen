@@ -20,13 +20,13 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           # Represents a test case.
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the test case.
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#create_test_case TestCases.CreateTestCase} will populate the name automatically.
+          #     {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#create_test_case TestCases.CreateTestCase} will populate the name automatically.
           #     Otherwise use format: `projects/<Project ID>/locations/<LocationID>/agents/
           #     <AgentID>/testCases/<TestCase ID>`.
           # @!attribute [rw] tags
@@ -42,10 +42,10 @@ module Google
           #   @return [::String]
           #     Additional freeform notes about the test case. Limit of 400 characters.
           # @!attribute [rw] test_config
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestConfig]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestConfig]
           #     Config for the test case.
           # @!attribute [rw] test_case_conversation_turns
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::ConversationTurn>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::ConversationTurn>]
           #     The conversation turns uttered when the test case was created, in
           #     chronological order. These include the canonical set of agent utterances
           #     that should occur when the agent is working properly.
@@ -53,7 +53,7 @@ module Google
           #   @return [::Google::Protobuf::Timestamp]
           #     Output only. When the test was created.
           # @!attribute [rw] last_test_result
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult]
           #     The latest test result.
           class TestCase
             include ::Google::Protobuf::MessageExts
@@ -71,11 +71,11 @@ module Google
           #     Environment where the test was run. If not set, it indicates the draft
           #     environment.
           # @!attribute [rw] conversation_turns
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::ConversationTurn>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::ConversationTurn>]
           #     The conversation turns uttered during the test case replay in chronological
           #     order.
           # @!attribute [rw] test_result
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestResult]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestResult]
           #     Whether the test case passed in the agent environment.
           # @!attribute [rw] test_time
           #   @return [::Google::Protobuf::Timestamp]
@@ -102,10 +102,10 @@ module Google
           # One interaction between a human and virtual agent. The human provides some
           # input and the virtual agent provides a response.
           # @!attribute [rw] user_input
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::ConversationTurn::UserInput]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::ConversationTurn::UserInput]
           #     The user input.
           # @!attribute [rw] virtual_agent_output
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::ConversationTurn::VirtualAgentOutput]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::ConversationTurn::VirtualAgentOutput]
           #     The virtual agent output.
           class ConversationTurn
             include ::Google::Protobuf::MessageExts
@@ -113,9 +113,9 @@ module Google
 
             # The input from the human user.
             # @!attribute [rw] input
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput]
-            #     Supports {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput#text text input}, {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput#event event input},
-            #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput#dtmf dtmf input} in the test case.
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::QueryInput]
+            #     Supports {::Google::Cloud::Dialogflow::CX::V3beta1::QueryInput#text text input}, {::Google::Cloud::Dialogflow::CX::V3beta1::QueryInput#event event input},
+            #     {::Google::Cloud::Dialogflow::CX::V3beta1::QueryInput#dtmf dtmf input} in the test case.
             # @!attribute [rw] injected_parameters
             #   @return [::Google::Protobuf::Struct]
             #     Parameters that need to be injected into the conversation during intent
@@ -138,7 +138,7 @@ module Google
             #   @return [::Google::Protobuf::Struct]
             #     The session parameters available to the bot at this point.
             # @!attribute [r] differences
-            #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TestRunDifference>]
+            #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TestRunDifference>]
             #     Output only. If this is part of a [result conversation
             #     turn][TestCaseResult.conversation_turns], the list of differences
             #     between the original run and the replay for this output, if any.
@@ -148,16 +148,16 @@ module Google
             #     [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
             #     output for the turn.
             # @!attribute [rw] triggered_intent
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
-            #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that triggered the response. Only name and displayName
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
+            #     The {::Google::Cloud::Dialogflow::CX::V3beta1::Intent Intent} that triggered the response. Only name and displayName
             #     will be set.
             # @!attribute [rw] current_page
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Page]
-            #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page} on which the utterance was spoken. Only name and displayName
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Page]
+            #     The {::Google::Cloud::Dialogflow::CX::V3beta1::Page Page} on which the utterance was spoken. Only name and displayName
             #     will be set.
             # @!attribute [rw] text_responses
-            #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::ResponseMessage::Text>]
-            #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::ResponseMessage::Text text} responses from the agent for the turn.
+            #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::ResponseMessage::Text>]
+            #     The {::Google::Cloud::Dialogflow::CX::V3beta1::ResponseMessage::Text text} responses from the agent for the turn.
             # @!attribute [rw] status
             #   @return [::Google::Rpc::Status]
             #     Response error from the agent in the test result. If set, other output
@@ -170,7 +170,7 @@ module Google
 
           # The description of differences between original and replayed agent output.
           # @!attribute [rw] type
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestRunDifference::DiffType]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestRunDifference::DiffType]
           #     The type of diff.
           # @!attribute [rw] description
           #   @return [::String]
@@ -202,7 +202,7 @@ module Google
           # transitions (page-level transition routes and event handlers, excluding
           # transition route groups) present within any of a parent's test cases.
           # @!attribute [rw] transitions
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage::Transition>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TransitionCoverage::Transition>]
           #     The list of Transitions present in the agent.
           # @!attribute [rw] coverage_score
           #   @return [::Float]
@@ -213,12 +213,12 @@ module Google
 
             # The source or target of a transition.
             # @!attribute [rw] page
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Page]
-            #     Indicates a transition to a {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page}. Only some fields such as name and
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Page]
+            #     Indicates a transition to a {::Google::Cloud::Dialogflow::CX::V3beta1::Page Page}. Only some fields such as name and
             #     displayname will be set.
             # @!attribute [rw] flow
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Flow]
-            #     Indicates a transition to a {::Google::Cloud::Dialogflow::Cx::V3beta1::Flow Flow}. Only some fields such as name and
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Flow]
+            #     Indicates a transition to a {::Google::Cloud::Dialogflow::CX::V3beta1::Flow Flow}. Only some fields such as name and
             #     displayname will be set.
             class TransitionNode
               include ::Google::Protobuf::MessageExts
@@ -227,23 +227,23 @@ module Google
 
             # A transition in a page.
             # @!attribute [rw] source
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage::TransitionNode]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionCoverage::TransitionNode]
             #     The start node of a transition.
             # @!attribute [rw] index
             #   @return [::Integer]
             #     The index of a transition in the transition list. Starting from 0.
             # @!attribute [rw] target
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage::TransitionNode]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionCoverage::TransitionNode]
             #     The end node of a transition.
             # @!attribute [rw] covered
             #   @return [::Boolean]
             #     Whether or not the transition is covered by at least one of the
             #     agent's test cases.
             # @!attribute [rw] transition_route
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRoute]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRoute]
             #     Intent route or condition route.
             # @!attribute [rw] event_handler
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::EventHandler]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::EventHandler]
             #     Event handler.
             class Transition
               include ::Google::Protobuf::MessageExts
@@ -255,7 +255,7 @@ module Google
           # transition routes present within any of a parent's test cases. The results
           # are grouped by the transition route group.
           # @!attribute [rw] coverages
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroupCoverage::Coverage>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroupCoverage::Coverage>]
           #     Transition route group coverages.
           # @!attribute [rw] coverage_score
           #   @return [::Float]
@@ -267,10 +267,10 @@ module Google
 
             # Coverage result message for one transition route group.
             # @!attribute [rw] route_group
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup]
             #     Transition route group metadata. Only name and displayName will be set.
             # @!attribute [rw] transitions
-            #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroupCoverage::Coverage::Transition>]
+            #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroupCoverage::Coverage::Transition>]
             #     The list of transition routes and coverage in the transition route group.
             # @!attribute [rw] coverage_score
             #   @return [::Float]
@@ -282,7 +282,7 @@ module Google
 
               # A transition coverage in a transition route group.
               # @!attribute [rw] transition_route
-              #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRoute]
+              #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRoute]
               #     Intent route or condition route.
               # @!attribute [rw] covered
               #   @return [::Boolean]
@@ -298,7 +298,7 @@ module Google
           # Intent coverage represents the percentage of all possible intents in the
           # agent that are triggered in any of a parent's test cases.
           # @!attribute [rw] intents
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::IntentCoverage::Intent>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::IntentCoverage::Intent>]
           #     The list of Intents present in the agent
           # @!attribute [rw] coverage_score
           #   @return [::Float]
@@ -321,13 +321,13 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#calculate_coverage TestCases.CalculateCoverage}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#calculate_coverage TestCases.CalculateCoverage}.
           # @!attribute [rw] agent
           #   @return [::String]
           #     Required. The agent to calculate coverage for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] type
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageRequest::CoverageType]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageRequest::CoverageType]
           #     Required. The type of coverage requested.
           class CalculateCoverageRequest
             include ::Google::Protobuf::MessageExts
@@ -349,26 +349,26 @@ module Google
             end
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#calculate_coverage TestCases.CalculateCoverage}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#calculate_coverage TestCases.CalculateCoverage}.
           # @!attribute [rw] agent
           #   @return [::String]
           #     The agent to calculate coverage for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] intent_coverage
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::IntentCoverage]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::IntentCoverage]
           #     Intent coverage.
           # @!attribute [rw] transition_coverage
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionCoverage]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionCoverage]
           #     Transition (excluding transition route groups) coverage.
           # @!attribute [rw] route_group_coverage
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroupCoverage]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroupCoverage]
           #     Transition route group coverage.
           class CalculateCoverageResponse
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#list_test_cases TestCases.ListTestCases}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#list_test_cases TestCases.ListTestCases}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to list all pages for.
@@ -382,7 +382,7 @@ module Google
           #   @return [::String]
           #     The next_page_token value returned from a previous list request.
           # @!attribute [rw] view
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCasesRequest::TestCaseView]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCasesRequest::TestCaseView]
           #     Specifies whether response should include all fields or just the metadata.
           class ListTestCasesRequest
             include ::Google::Protobuf::MessageExts
@@ -403,9 +403,9 @@ module Google
             end
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#list_test_cases TestCases.ListTestCases}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#list_test_cases TestCases.ListTestCases}.
           # @!attribute [rw] test_cases
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TestCase>]
           #     The list of test cases. There will be a maximum number of items returned
           #     based on the page_size field in the request.
           # @!attribute [rw] next_page_token
@@ -417,7 +417,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#batch_delete_test_cases TestCases.BatchDeleteTestCases}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#batch_delete_test_cases TestCases.BatchDeleteTestCases}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to delete test cases from.
@@ -431,34 +431,34 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#create_test_case TestCases.CreateTestCase}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#create_test_case TestCases.CreateTestCase}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to create the test case for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] test_case
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
           #     Required. The test case to create.
           class CreateTestCaseRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#update_test_case TestCases.UpdateTestCase}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#update_test_case TestCases.UpdateTestCase}.
           # @!attribute [rw] test_case
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
           #     Required. The test case to update.
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
           #     Required. The mask to specify which fields should be updated. The
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase#creation_time `creationTime`} and
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase#last_test_result `lastTestResult`} cannot be updated.
+          #     {::Google::Cloud::Dialogflow::CX::V3beta1::TestCase#creation_time `creationTime`} and
+          #     {::Google::Cloud::Dialogflow::CX::V3beta1::TestCase#last_test_result `lastTestResult`} cannot be updated.
           class UpdateTestCaseRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#get_test_case TestCases.GetTestCase}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#get_test_case TestCases.GetTestCase}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the testcase.
@@ -469,7 +469,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#run_test_case TestCases.RunTestCase}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#run_test_case TestCases.RunTestCase}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. Format of test case name to run: `projects/<Project ID>/locations/
@@ -484,22 +484,22 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#run_test_case TestCases.RunTestCase}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#run_test_case TestCases.RunTestCase}.
           # @!attribute [rw] result
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult]
           #     The result.
           class RunTestCaseResponse
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Metadata returned for the {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#run_test_case TestCases.RunTestCase} long running operation.
+          # Metadata returned for the {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#run_test_case TestCases.RunTestCase} long running operation.
           class RunTestCaseMetadata
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#batch_run_test_cases TestCases.BatchRunTestCases}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#batch_run_test_cases TestCases.BatchRunTestCases}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. Agent name. Format: `projects/<Project ID>/locations/<Location ID>/agents/
@@ -518,21 +518,21 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#batch_run_test_cases TestCases.BatchRunTestCases}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#batch_run_test_cases TestCases.BatchRunTestCases}.
           # @!attribute [rw] results
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult>]
           #     The test case results. The detailed
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult#conversation_turns conversation turns} are empty in this
+          #     {::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult#conversation_turns conversation turns} are empty in this
           #     response.
           class BatchRunTestCasesResponse
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Metadata returned for the {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#batch_run_test_cases TestCases.BatchRunTestCases} long running
+          # Metadata returned for the {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#batch_run_test_cases TestCases.BatchRunTestCases} long running
           # operation.
           # @!attribute [rw] errors
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TestError>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TestError>]
           #     The test errors.
           class BatchRunTestCasesMetadata
             include ::Google::Protobuf::MessageExts
@@ -554,7 +554,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#import_test_cases TestCases.ImportTestCases}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#import_test_cases TestCases.ImportTestCases}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to import test cases to.
@@ -572,7 +572,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#import_test_cases TestCases.ImportTestCases}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#import_test_cases TestCases.ImportTestCases}.
           # @!attribute [rw] names
           #   @return [::Array<::String>]
           #     The unique identifiers of the new test cases.
@@ -583,10 +583,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Metadata returned for the {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#import_test_cases TestCases.ImportTestCases} long running
+          # Metadata returned for the {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#import_test_cases TestCases.ImportTestCases} long running
           # operation.
           # @!attribute [rw] errors
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseError>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseError>]
           #     Errors for failed test cases.
           class ImportTestCasesMetadata
             include ::Google::Protobuf::MessageExts
@@ -595,7 +595,7 @@ module Google
 
           # Error info for importing a test.
           # @!attribute [rw] test_case
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
           #     The test case.
           # @!attribute [rw] status
           #   @return [::Google::Rpc::Status]
@@ -605,7 +605,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#export_test_cases TestCases.ExportTestCases}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#export_test_cases TestCases.ExportTestCases}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent where to export test cases from.
@@ -617,7 +617,7 @@ module Google
           #     `gs://<bucket-name>/<object-name>`. If unspecified, the serialized test
           #     cases is returned inline.
           # @!attribute [rw] data_format
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::ExportTestCasesRequest::DataFormat]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::ExportTestCasesRequest::DataFormat]
           #     The data format of the exported test cases. If not specified, `BLOB` is
           #     assumed.
           # @!attribute [rw] filter
@@ -649,12 +649,12 @@ module Google
             end
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#export_test_cases TestCases.ExportTestCases}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#export_test_cases TestCases.ExportTestCases}.
           # @!attribute [rw] gcs_uri
           #   @return [::String]
           #     The URI to a file containing the exported test cases. This field is
           #     populated only if `gcs_uri` is specified in
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::ExportTestCasesRequest ExportTestCasesRequest}.
+          #     {::Google::Cloud::Dialogflow::CX::V3beta1::ExportTestCasesRequest ExportTestCasesRequest}.
           # @!attribute [rw] content
           #   @return [::String]
           #     Uncompressed raw byte content for test cases.
@@ -663,14 +663,14 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Metadata returned for the {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#export_test_cases TestCases.ExportTestCases} long running
+          # Metadata returned for the {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#export_test_cases TestCases.ExportTestCases} long running
           # operation.
           class ExportTestCasesMetadata
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#list_test_case_results TestCases.ListTestCaseResults}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#list_test_case_results TestCases.ListTestCaseResults}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The test case to list results for.
@@ -715,9 +715,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#list_test_case_results TestCases.ListTestCaseResults}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#list_test_case_results TestCases.ListTestCaseResults}.
           # @!attribute [rw] test_case_results
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult>]
           #     The list of test case results.
           # @!attribute [rw] next_page_token
           #   @return [::String]
@@ -728,7 +728,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client#get_test_case_result TestCases.GetTestCaseResult}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client#get_test_case_result TestCases.GetTestCaseResult}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the testcase.

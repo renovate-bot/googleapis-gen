@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # Entities are extracted from user input and represent parameters that are
           # meaningful to your application. For example, a date range, a proper name
@@ -45,30 +45,30 @@ module Google
           #
           # *   **User** - entities that are built for an individual user such as
           #     favorites, preferences, playlists, and so on. A user entity is
-          #     represented by the {::Google::Cloud::Dialogflow::Cx::V3::SessionEntityType SessionEntityType} type.
+          #     represented by the {::Google::Cloud::Dialogflow::CX::V3::SessionEntityType SessionEntityType} type.
           #
           # For more information about entity types, see the [Dialogflow
           # documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the entity type.
-          #     Required for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#update_entity_type EntityTypes.UpdateEntityType}.
+          #     Required for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#update_entity_type EntityTypes.UpdateEntityType}.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/entityTypes/<Entity Type ID>`.
           # @!attribute [rw] display_name
           #   @return [::String]
           #     Required. The human-readable name of the entity type, unique within the agent.
           # @!attribute [rw] kind
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::EntityType::Kind]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::EntityType::Kind]
           #     Required. Indicates the kind of entity type.
           # @!attribute [rw] auto_expansion_mode
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::EntityType::AutoExpansionMode]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::EntityType::AutoExpansionMode]
           #     Indicates whether the entity type can be automatically expanded.
           # @!attribute [rw] entities
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::EntityType::Entity>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::EntityType::Entity>]
           #     The collection of entity entries associated with the entity type.
           # @!attribute [rw] excluded_phrases
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::EntityType::ExcludedPhrase>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::EntityType::ExcludedPhrase>]
           #     Collection of exceptional words and phrases that shouldn't be matched.
           #     For example, if you have a size entity type with entry `giant`(an
           #     adjective), you might consider adding `giants`(a noun) as an exclusion.
@@ -156,7 +156,7 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#list_entity_types EntityTypes.ListEntityTypes}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#list_entity_types EntityTypes.ListEntityTypes}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to list all entity types for.
@@ -187,9 +187,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#list_entity_types EntityTypes.ListEntityTypes}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#list_entity_types EntityTypes.ListEntityTypes}.
           # @!attribute [rw] entity_types
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::EntityType>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::EntityType>]
           #     The list of entity types. There will be a maximum number of items returned
           #     based on the page_size field in the request.
           # @!attribute [rw] next_page_token
@@ -201,7 +201,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#get_entity_type EntityTypes.GetEntityType}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#get_entity_type EntityTypes.GetEntityType}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the entity type.
@@ -226,13 +226,13 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#create_entity_type EntityTypes.CreateEntityType}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#create_entity_type EntityTypes.CreateEntityType}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to create a entity type for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] entity_type
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::EntityType]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::EntityType]
           #     Required. The entity type to create.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -252,9 +252,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#update_entity_type EntityTypes.UpdateEntityType}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#update_entity_type EntityTypes.UpdateEntityType}.
           # @!attribute [rw] entity_type
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::EntityType]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::EntityType]
           #     Required. The entity type to update.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -277,7 +277,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client#delete_entity_type EntityTypes.DeleteEntityType}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client#delete_entity_type EntityTypes.DeleteEntityType}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the entity type to delete.
@@ -292,8 +292,8 @@ module Google
           #        indicating the referencing resources.
           #     *  If `force` is set to true, Dialogflow will remove the entity type, as
           #        well as any references to the entity type (i.e. Page
-          #        {::Google::Cloud::Dialogflow::Cx::V3::Form::Parameter parameter} of the entity type will be changed to
-          #        '@sys.any' and intent {::Google::Cloud::Dialogflow::Cx::V3::Intent::Parameter parameter} of the entity type
+          #        {::Google::Cloud::Dialogflow::CX::V3::Form::Parameter parameter} of the entity type will be changed to
+          #        '@sys.any' and intent {::Google::Cloud::Dialogflow::CX::V3::Intent::Parameter parameter} of the entity type
           #        will be removed).
           class DeleteEntityTypeRequest
             include ::Google::Protobuf::MessageExts

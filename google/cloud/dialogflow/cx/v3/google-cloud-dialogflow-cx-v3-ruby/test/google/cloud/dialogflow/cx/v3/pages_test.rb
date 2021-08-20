@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3/page_pb"
 require "google/cloud/dialogflow/cx/v3/page_services_pb"
 require "google/cloud/dialogflow/cx/v3/pages"
 
-class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3::Pages::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
   def test_list_pages
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::ListPagesResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::ListPagesResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -62,7 +62,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     list_pages_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_pages, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal "hello world", request["language_code"]
       assert_equal 42, request["page_size"]
@@ -72,7 +72,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, list_pages_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -91,7 +91,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.list_pages ::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_pages ::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -105,7 +105,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_pages(::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_pages(::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -118,7 +118,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
   def test_get_page
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::Page.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::Page.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -129,7 +129,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     get_page_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_page, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::GetPageRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -137,7 +137,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, get_page_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -154,7 +154,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.get_page ::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.get_page ::Google::Cloud::Dialogflow::CX::V3::GetPageRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -166,7 +166,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_page(::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.get_page(::Google::Cloud::Dialogflow::CX::V3::GetPageRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -178,7 +178,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
   def test_create_page
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::Page.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::Page.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -190,16 +190,16 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     create_page_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_page, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::CreatePageRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3::Page), request["page"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3::Page), request["page"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_page_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -216,7 +216,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.create_page ::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest.new(parent: parent, page: page, language_code: language_code) do |response, operation|
+      client.create_page ::Google::Cloud::Dialogflow::CX::V3::CreatePageRequest.new(parent: parent, page: page, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -228,7 +228,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_page(::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest.new(parent: parent, page: page, language_code: language_code), grpc_options) do |response, operation|
+      client.create_page(::Google::Cloud::Dialogflow::CX::V3::CreatePageRequest.new(parent: parent, page: page, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -240,7 +240,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
   def test_update_page
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3::Page.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3::Page.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -252,8 +252,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     update_page_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_page, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3::Page), request["page"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::UpdatePageRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3::Page), request["page"]
       assert_equal "hello world", request["language_code"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
@@ -261,7 +261,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, update_page_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -278,7 +278,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.update_page ::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest.new(page: page, language_code: language_code, update_mask: update_mask) do |response, operation|
+      client.update_page ::Google::Cloud::Dialogflow::CX::V3::UpdatePageRequest.new(page: page, language_code: language_code, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -290,7 +290,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.update_page(::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest.new(page: page, language_code: language_code, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_page(::Google::Cloud::Dialogflow::CX::V3::UpdatePageRequest.new(page: page, language_code: language_code, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -313,7 +313,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     delete_page_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_page, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::DeletePageRequest, request
       assert_equal "hello world", request["name"]
       assert_equal true, request["force"]
       refute_nil options
@@ -321,7 +321,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, delete_page_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -338,7 +338,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.delete_page ::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest.new(name: name, force: force) do |response, operation|
+      client.delete_page ::Google::Cloud::Dialogflow::CX::V3::DeletePageRequest.new(name: name, force: force) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -350,7 +350,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_page(::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest.new(name: name, force: force), grpc_options) do |response, operation|
+      client.delete_page(::Google::Cloud::Dialogflow::CX::V3::DeletePageRequest.new(name: name, force: force), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -365,7 +365,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -375,6 +375,6 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Pages::ClientTest < Minitest::Test
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3::Pages::Client::Configuration, config
   end
 end

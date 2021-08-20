@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.dialogflow.cx.v3",
-  "libraryPackage": "::Google::Cloud::Dialogflow::Cx::V3",
+  "libraryPackage": "::Google::Cloud::Dialogflow::CX::V3",
   "services": {
     "Pages": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Pages::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Pages::Client",
           "rpcs": {
             "ListPages": {
               "methods": [
@@ -42,7 +42,7 @@
     "Flows": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Flows::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Flows::Client",
           "rpcs": {
             "CreateFlow": {
               "methods": [
@@ -101,7 +101,7 @@
     "SecuritySettingsService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client",
           "rpcs": {
             "CreateSecuritySettings": {
               "methods": [
@@ -135,7 +135,7 @@
     "Agents": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Agents::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Agents::Client",
           "rpcs": {
             "ListAgents": {
               "methods": [
@@ -189,7 +189,7 @@
     "EntityTypes": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client",
           "rpcs": {
             "ListEntityTypes": {
               "methods": [
@@ -223,7 +223,7 @@
     "Intents": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Intents::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Intents::Client",
           "rpcs": {
             "ListIntents": {
               "methods": [
@@ -257,7 +257,7 @@
     "SessionEntityTypes": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::SessionEntityTypes::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::SessionEntityTypes::Client",
           "rpcs": {
             "ListSessionEntityTypes": {
               "methods": [
@@ -291,7 +291,7 @@
     "Sessions": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Sessions::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Sessions::Client",
           "rpcs": {
             "DetectIntent": {
               "methods": [
@@ -320,7 +320,7 @@
     "TransitionRouteGroups": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client",
           "rpcs": {
             "ListTransitionRouteGroups": {
               "methods": [
@@ -354,7 +354,7 @@
     "TestCases": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::TestCases::Client",
           "rpcs": {
             "ListTestCases": {
               "methods": [
@@ -423,7 +423,7 @@
     "Environments": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Environments::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Environments::Client",
           "rpcs": {
             "ListEnvironments": {
               "methods": [
@@ -472,7 +472,7 @@
     "Experiments": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Experiments::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Experiments::Client",
           "rpcs": {
             "ListExperiments": {
               "methods": [
@@ -516,7 +516,7 @@
     "Webhooks": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Webhooks::Client",
           "rpcs": {
             "ListWebhooks": {
               "methods": [
@@ -550,7 +550,7 @@
     "Versions": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3::Versions::Client",
+          "libraryClient": "::Google::Cloud::Dialogflow::CX::V3::Versions::Client",
           "rpcs": {
             "ListVersions": {
               "methods": [

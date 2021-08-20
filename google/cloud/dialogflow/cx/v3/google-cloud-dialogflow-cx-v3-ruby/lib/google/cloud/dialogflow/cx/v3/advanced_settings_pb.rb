@@ -21,7 +21,7 @@ end
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           AdvancedSettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.AdvancedSettings").msgclass
           AdvancedSettings::LoggingSettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings").msgclass

@@ -22,13 +22,13 @@ require "google/cloud/dialogflow/cx/v3beta1/intent_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           module Intents
             ##
             # Client for the Intents service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intents}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3beta1::Intent Intents}.
             #
             class Client
               include Paths
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the Intents Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all Intents clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3beta1"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3beta1"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -140,7 +140,7 @@ module Google
                 @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
                 @intents_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -155,9 +155,9 @@ module Google
               #
               # @overload list_intents(request, options = nil)
               #   Pass arguments to `list_intents` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -182,7 +182,7 @@ module Google
               #     languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
               #     are supported.
               #     Note: languages must be enabled in the agent before they can be used.
-              #   @param intent_view [::Google::Cloud::Dialogflow::Cx::V3beta1::IntentView]
+              #   @param intent_view [::Google::Cloud::Dialogflow::CX::V3beta1::IntentView]
               #     The resource view to apply to the returned intent.
               #   @param page_size [::Integer]
               #     The maximum number of items to return in a single page. By default 100 and
@@ -191,17 +191,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::Intent>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::Intent>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::Intent>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::Intent>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_intents request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -212,7 +212,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -243,9 +243,9 @@ module Google
               #
               # @overload get_intent(request, options = nil)
               #   Pass arguments to `get_intent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::GetIntentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::GetIntentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -273,17 +273,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_intent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::GetIntentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -294,7 +294,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -328,9 +328,9 @@ module Google
               #
               # @overload create_intent(request, options = nil)
               #   Pass arguments to `create_intent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::CreateIntentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::CreateIntentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -344,7 +344,7 @@ module Google
               #   @param parent [::String]
               #     Required. The agent to create an intent for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-              #   @param intent [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent, ::Hash]
+              #   @param intent [::Google::Cloud::Dialogflow::CX::V3beta1::Intent, ::Hash]
               #     Required. The intent to create.
               #   @param language_code [::String]
               #     The language of the following fields in `intent`:
@@ -358,17 +358,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_intent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::CreateIntentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -379,7 +379,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -413,9 +413,9 @@ module Google
               #
               # @overload update_intent(request, options = nil)
               #   Pass arguments to `update_intent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::UpdateIntentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::UpdateIntentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -426,7 +426,7 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param intent [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent, ::Hash]
+              #   @param intent [::Google::Cloud::Dialogflow::CX::V3beta1::Intent, ::Hash]
               #     Required. The intent to update.
               #   @param language_code [::String]
               #     The language of the following fields in `intent`:
@@ -443,17 +443,17 @@ module Google
               #     all fields will be updated.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::Intent]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_intent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateIntentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -464,7 +464,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -498,9 +498,9 @@ module Google
               #
               # @overload delete_intent(request, options = nil)
               #   Pass arguments to `delete_intent` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::DeleteIntentRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::DeleteIntentRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -527,7 +527,7 @@ module Google
               def delete_intent request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteIntentRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -538,7 +538,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -570,7 +570,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -581,13 +581,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_intents to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_intents.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_intents.timeout = 20.0
               #   end

@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3beta1/version_pb"
 require "google/cloud/dialogflow/cx/v3beta1/version_services_pb"
 require "google/cloud/dialogflow/cx/v3beta1/versions"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::OperationsTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -72,7 +72,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
 
     Gapic::ServiceStub.stub :new, list_operations_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -135,7 +135,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
 
     Gapic::ServiceStub.stub :new, get_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -198,7 +198,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
 
     Gapic::ServiceStub.stub :new, delete_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -256,7 +256,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
 
     Gapic::ServiceStub.stub :new, cancel_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -316,7 +316,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
 
     Gapic::ServiceStub.stub :new, wait_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -365,7 +365,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -375,6 +375,6 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::OperationsTest < Minit
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations::Configuration, config
   end
 end

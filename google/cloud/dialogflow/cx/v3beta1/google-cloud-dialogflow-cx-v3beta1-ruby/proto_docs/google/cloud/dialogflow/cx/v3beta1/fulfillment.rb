@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           # A fulfillment can do one or more of the following actions at the same time:
           #
@@ -28,13 +28,13 @@ module Google
           #   * Set parameter values.
           #   * Call the webhook.
           #
-          # Fulfillments can be called at various stages in the {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page} or
-          # {::Google::Cloud::Dialogflow::Cx::V3beta1::Form Form} lifecycle. For example, when a {::Google::Cloud::Dialogflow::Cx::V3beta1::DetectIntentRequest DetectIntentRequest} drives a
+          # Fulfillments can be called at various stages in the {::Google::Cloud::Dialogflow::CX::V3beta1::Page Page} or
+          # {::Google::Cloud::Dialogflow::CX::V3beta1::Form Form} lifecycle. For example, when a {::Google::Cloud::Dialogflow::CX::V3beta1::DetectIntentRequest DetectIntentRequest} drives a
           # session to enter a new page, the page's entry fulfillment can add a static
-          # response to the {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult QueryResult} in the returning {::Google::Cloud::Dialogflow::Cx::V3beta1::DetectIntentResponse DetectIntentResponse},
+          # response to the {::Google::Cloud::Dialogflow::CX::V3beta1::QueryResult QueryResult} in the returning {::Google::Cloud::Dialogflow::CX::V3beta1::DetectIntentResponse DetectIntentResponse},
           # call the webhook (for example, to load user data from a database), or both.
           # @!attribute [rw] messages
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::ResponseMessage>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::ResponseMessage>]
           #     The list of rich message responses to present to the user.
           # @!attribute [rw] webhook
           #   @return [::String]
@@ -57,10 +57,10 @@ module Google
           #     The tag used by the webhook to identify which fulfillment is being called.
           #     This field is required if `webhook` is specified.
           # @!attribute [rw] set_parameter_actions
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment::SetParameterAction>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment::SetParameterAction>]
           #     Set parameter values before executing the webhook.
           # @!attribute [rw] conditional_cases
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment::ConditionalCases>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment::ConditionalCases>]
           #     Conditional cases for this fulfillment.
           class Fulfillment
             include ::Google::Protobuf::MessageExts
@@ -81,7 +81,7 @@ module Google
             # A list of cascading if-else conditions. Cases are mutually exclusive.
             # The first one with a matching condition is selected, all the rest ignored.
             # @!attribute [rw] cases
-            #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment::ConditionalCases::Case>]
+            #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment::ConditionalCases::Case>]
             #     A list of cascading if-else conditions.
             class ConditionalCases
               include ::Google::Protobuf::MessageExts
@@ -99,7 +99,7 @@ module Google
               #     See the [conditions
               #     reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
               # @!attribute [rw] case_content
-              #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment::ConditionalCases::Case::CaseContent>]
+              #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment::ConditionalCases::Case::CaseContent>]
               #     A list of case content.
               class Case
                 include ::Google::Protobuf::MessageExts
@@ -107,10 +107,10 @@ module Google
 
                 # The list of messages or conditional cases to activate for this case.
                 # @!attribute [rw] message
-                #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::ResponseMessage]
+                #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::ResponseMessage]
                 #     Returned message.
                 # @!attribute [rw] additional_cases
-                #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment::ConditionalCases]
+                #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment::ConditionalCases]
                 #     Additional cases to be evaluated.
                 class CaseContent
                   include ::Google::Protobuf::MessageExts

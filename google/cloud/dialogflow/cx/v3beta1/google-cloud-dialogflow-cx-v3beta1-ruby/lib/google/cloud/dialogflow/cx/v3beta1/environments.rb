@@ -30,15 +30,15 @@ require "google/cloud/dialogflow/cx/v3beta1/environments/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3beta1::Environment Environments}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3beta1::Environment Environments}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3beta1/environments"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Environments::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3beta1::Environments::Client.new
           #
           module Environments
           end

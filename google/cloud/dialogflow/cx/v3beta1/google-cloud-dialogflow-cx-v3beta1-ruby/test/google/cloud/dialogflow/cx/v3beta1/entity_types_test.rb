@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3beta1/entity_type_pb"
 require "google/cloud/dialogflow/cx/v3beta1/entity_type_services_pb"
 require "google/cloud/dialogflow/cx/v3beta1/entity_types"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
   def test_list_entity_types
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::ListEntityTypesResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::ListEntityTypesResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -62,7 +62,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     list_entity_types_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_entity_types, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ListEntityTypesRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ListEntityTypesRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal "hello world", request["language_code"]
       assert_equal 42, request["page_size"]
@@ -72,7 +72,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     Gapic::ServiceStub.stub :new, list_entity_types_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -91,7 +91,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object
-      client.list_entity_types ::Google::Cloud::Dialogflow::Cx::V3beta1::ListEntityTypesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_entity_types ::Google::Cloud::Dialogflow::CX::V3beta1::ListEntityTypesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -105,7 +105,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.list_entity_types(::Google::Cloud::Dialogflow::Cx::V3beta1::ListEntityTypesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_entity_types(::Google::Cloud::Dialogflow::CX::V3beta1::ListEntityTypesRequest.new(parent: parent, language_code: language_code, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -118,7 +118,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
   def test_get_entity_type
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityType.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -129,7 +129,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     get_entity_type_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_entity_type, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetEntityTypeRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetEntityTypeRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -137,7 +137,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     Gapic::ServiceStub.stub :new, get_entity_type_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -154,7 +154,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object
-      client.get_entity_type ::Google::Cloud::Dialogflow::Cx::V3beta1::GetEntityTypeRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.get_entity_type ::Google::Cloud::Dialogflow::CX::V3beta1::GetEntityTypeRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -166,7 +166,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.get_entity_type(::Google::Cloud::Dialogflow::Cx::V3beta1::GetEntityTypeRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.get_entity_type(::Google::Cloud::Dialogflow::CX::V3beta1::GetEntityTypeRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -178,7 +178,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
   def test_create_entity_type
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityType.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -190,16 +190,16 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     create_entity_type_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_entity_type, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateEntityTypeRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::CreateEntityTypeRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType), request["entity_type"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::EntityType), request["entity_type"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_entity_type_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -216,7 +216,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object
-      client.create_entity_type ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateEntityTypeRequest.new(parent: parent, entity_type: entity_type, language_code: language_code) do |response, operation|
+      client.create_entity_type ::Google::Cloud::Dialogflow::CX::V3beta1::CreateEntityTypeRequest.new(parent: parent, entity_type: entity_type, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -228,7 +228,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.create_entity_type(::Google::Cloud::Dialogflow::Cx::V3beta1::CreateEntityTypeRequest.new(parent: parent, entity_type: entity_type, language_code: language_code), grpc_options) do |response, operation|
+      client.create_entity_type(::Google::Cloud::Dialogflow::CX::V3beta1::CreateEntityTypeRequest.new(parent: parent, entity_type: entity_type, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -240,7 +240,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
   def test_update_entity_type
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityType.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -252,8 +252,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     update_entity_type_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_entity_type, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateEntityTypeRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityType), request["entity_type"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateEntityTypeRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::EntityType), request["entity_type"]
       assert_equal "hello world", request["language_code"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
@@ -261,7 +261,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     Gapic::ServiceStub.stub :new, update_entity_type_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -278,7 +278,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object
-      client.update_entity_type ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateEntityTypeRequest.new(entity_type: entity_type, language_code: language_code, update_mask: update_mask) do |response, operation|
+      client.update_entity_type ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateEntityTypeRequest.new(entity_type: entity_type, language_code: language_code, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -290,7 +290,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.update_entity_type(::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateEntityTypeRequest.new(entity_type: entity_type, language_code: language_code, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_entity_type(::Google::Cloud::Dialogflow::CX::V3beta1::UpdateEntityTypeRequest.new(entity_type: entity_type, language_code: language_code, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -313,7 +313,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     delete_entity_type_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_entity_type, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteEntityTypeRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteEntityTypeRequest, request
       assert_equal "hello world", request["name"]
       assert_equal true, request["force"]
       refute_nil options
@@ -321,7 +321,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     Gapic::ServiceStub.stub :new, delete_entity_type_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -338,7 +338,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object
-      client.delete_entity_type ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteEntityTypeRequest.new(name: name, force: force) do |response, operation|
+      client.delete_entity_type ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteEntityTypeRequest.new(name: name, force: force) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -350,7 +350,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
       end
 
       # Use protobuf object with options
-      client.delete_entity_type(::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteEntityTypeRequest.new(name: name, force: force), grpc_options) do |response, operation|
+      client.delete_entity_type(::Google::Cloud::Dialogflow::CX::V3beta1::DeleteEntityTypeRequest.new(name: name, force: force), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -365,7 +365,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -375,6 +375,6 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::ClientTest < Minite
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::EntityTypes::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::EntityTypes::Client::Configuration, config
   end
 end

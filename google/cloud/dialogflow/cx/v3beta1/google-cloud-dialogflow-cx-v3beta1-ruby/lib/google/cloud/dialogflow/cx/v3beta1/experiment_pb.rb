@@ -145,7 +145,7 @@ end
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           Experiment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.Experiment").msgclass
           Experiment::Definition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.Experiment.Definition").msgclass

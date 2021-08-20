@@ -22,13 +22,13 @@ require "google/cloud/dialogflow/cx/v3/transition_route_group_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           module TransitionRouteGroups
             ##
             # Client for the TransitionRouteGroups service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroups}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroups}.
             #
             class Client
               include Paths
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the TransitionRouteGroups Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all TransitionRouteGroups clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -140,7 +140,7 @@ module Google
                 @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
                 @transition_route_groups_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -155,9 +155,9 @@ module Google
               #
               # @overload list_transition_route_groups(request, options = nil)
               #   Pass arguments to `list_transition_route_groups` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ListTransitionRouteGroupsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ListTransitionRouteGroupsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ListTransitionRouteGroupsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ListTransitionRouteGroupsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -193,17 +193,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_transition_route_groups request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ListTransitionRouteGroupsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ListTransitionRouteGroupsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -214,7 +214,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -241,13 +241,13 @@ module Google
               end
 
               ##
-              # Retrieves the specified {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup}.
+              # Retrieves the specified {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup}.
               #
               # @overload get_transition_route_group(request, options = nil)
               #   Pass arguments to `get_transition_route_group` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::GetTransitionRouteGroupRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::GetTransitionRouteGroupRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::GetTransitionRouteGroupRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::GetTransitionRouteGroupRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -259,7 +259,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup}.
+              #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup}.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
               #   @param language_code [::String]
@@ -277,17 +277,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_transition_route_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::GetTransitionRouteGroupRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::GetTransitionRouteGroupRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -298,7 +298,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -324,7 +324,7 @@ module Google
               end
 
               ##
-              # Creates an {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup} in the specified flow.
+              # Creates an {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup} in the specified flow.
               #
               # Note: You should always train a flow prior to sending it queries. See the
               # [training
@@ -332,9 +332,9 @@ module Google
               #
               # @overload create_transition_route_group(request, options = nil)
               #   Pass arguments to `create_transition_route_group` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::CreateTransitionRouteGroupRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::CreateTransitionRouteGroupRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::CreateTransitionRouteGroupRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::CreateTransitionRouteGroupRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -346,10 +346,10 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param parent [::String]
-              #     Required. The flow to create an {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup} for.
+              #     Required. The flow to create an {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup} for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/flows/<Flow ID>`.
-              #   @param transition_route_group [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup, ::Hash]
+              #   @param transition_route_group [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup, ::Hash]
               #     Required. The transition route group to create.
               #   @param language_code [::String]
               #     The language of the following fields in `TransitionRouteGroup`:
@@ -365,17 +365,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_transition_route_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::CreateTransitionRouteGroupRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::CreateTransitionRouteGroupRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -386,7 +386,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -412,7 +412,7 @@ module Google
               end
 
               ##
-              # Updates the specified {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup}.
+              # Updates the specified {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup}.
               #
               # Note: You should always train a flow prior to sending it queries. See the
               # [training
@@ -420,9 +420,9 @@ module Google
               #
               # @overload update_transition_route_group(request, options = nil)
               #   Pass arguments to `update_transition_route_group` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::UpdateTransitionRouteGroupRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::UpdateTransitionRouteGroupRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::UpdateTransitionRouteGroupRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::UpdateTransitionRouteGroupRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -433,7 +433,7 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param transition_route_group [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup, ::Hash]
+              #   @param transition_route_group [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup, ::Hash]
               #     Required. The transition route group to update.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     The mask to control which fields get updated.
@@ -451,17 +451,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_transition_route_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::UpdateTransitionRouteGroupRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::UpdateTransitionRouteGroupRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -472,7 +472,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -498,7 +498,7 @@ module Google
               end
 
               ##
-              # Deletes the specified {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup}.
+              # Deletes the specified {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup}.
               #
               # Note: You should always train a flow prior to sending it queries. See the
               # [training
@@ -506,9 +506,9 @@ module Google
               #
               # @overload delete_transition_route_group(request, options = nil)
               #   Pass arguments to `delete_transition_route_group` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::DeleteTransitionRouteGroupRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::DeleteTransitionRouteGroupRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::DeleteTransitionRouteGroupRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::DeleteTransitionRouteGroupRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -520,7 +520,7 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup TransitionRouteGroup} to delete.
+              #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup TransitionRouteGroup} to delete.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
               #   @param force [::Boolean]
@@ -543,7 +543,7 @@ module Google
               def delete_transition_route_group request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::DeleteTransitionRouteGroupRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::DeleteTransitionRouteGroupRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -554,7 +554,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -586,7 +586,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -597,13 +597,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_transition_route_groups to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_transition_route_groups.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroups::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroups::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_transition_route_groups.timeout = 20.0
               #   end

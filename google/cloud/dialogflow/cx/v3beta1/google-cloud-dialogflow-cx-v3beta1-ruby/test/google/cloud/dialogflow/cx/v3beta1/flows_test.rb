@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3beta1/flow_pb"
 require "google/cloud/dialogflow/cx/v3beta1/flow_services_pb"
 require "google/cloud/dialogflow/cx/v3beta1/flows"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
   def test_create_flow
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flow.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Flow.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -61,16 +61,16 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     create_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::CreateFlowRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Flow), request["flow"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Flow), request["flow"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -87,7 +87,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.create_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateFlowRequest.new(parent: parent, flow: flow, language_code: language_code) do |response, operation|
+      client.create_flow ::Google::Cloud::Dialogflow::CX::V3beta1::CreateFlowRequest.new(parent: parent, flow: flow, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -99,7 +99,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.create_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::CreateFlowRequest.new(parent: parent, flow: flow, language_code: language_code), grpc_options) do |response, operation|
+      client.create_flow(::Google::Cloud::Dialogflow::CX::V3beta1::CreateFlowRequest.new(parent: parent, flow: flow, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -122,7 +122,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     delete_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteFlowRequest, request
       assert_equal "hello world", request["name"]
       assert_equal true, request["force"]
       refute_nil options
@@ -130,7 +130,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, delete_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -147,7 +147,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.delete_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteFlowRequest.new(name: name, force: force) do |response, operation|
+      client.delete_flow ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteFlowRequest.new(name: name, force: force) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -159,7 +159,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.delete_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteFlowRequest.new(name: name, force: force), grpc_options) do |response, operation|
+      client.delete_flow(::Google::Cloud::Dialogflow::CX::V3beta1::DeleteFlowRequest.new(name: name, force: force), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -171,7 +171,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
   def test_list_flows
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::ListFlowsResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::ListFlowsResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -184,7 +184,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     list_flows_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_flows, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ListFlowsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ListFlowsRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal 42, request["page_size"]
       assert_equal "hello world", request["page_token"]
@@ -194,7 +194,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, list_flows_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -213,7 +213,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.list_flows ::Google::Cloud::Dialogflow::Cx::V3beta1::ListFlowsRequest.new(parent: parent, page_size: page_size, page_token: page_token, language_code: language_code) do |response, operation|
+      client.list_flows ::Google::Cloud::Dialogflow::CX::V3beta1::ListFlowsRequest.new(parent: parent, page_size: page_size, page_token: page_token, language_code: language_code) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -227,7 +227,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.list_flows(::Google::Cloud::Dialogflow::Cx::V3beta1::ListFlowsRequest.new(parent: parent, page_size: page_size, page_token: page_token, language_code: language_code), grpc_options) do |response, operation|
+      client.list_flows(::Google::Cloud::Dialogflow::CX::V3beta1::ListFlowsRequest.new(parent: parent, page_size: page_size, page_token: page_token, language_code: language_code), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -240,7 +240,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
   def test_get_flow
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flow.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Flow.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -251,7 +251,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     get_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetFlowRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -259,7 +259,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, get_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -276,7 +276,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.get_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::GetFlowRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.get_flow ::Google::Cloud::Dialogflow::CX::V3beta1::GetFlowRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -288,7 +288,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.get_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::GetFlowRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.get_flow(::Google::Cloud::Dialogflow::CX::V3beta1::GetFlowRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -300,7 +300,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
   def test_update_flow
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flow.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Flow.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -312,8 +312,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     update_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateFlowRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Flow), request["flow"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateFlowRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Flow), request["flow"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -321,7 +321,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, update_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -338,7 +338,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.update_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateFlowRequest.new(flow: flow, update_mask: update_mask, language_code: language_code) do |response, operation|
+      client.update_flow ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateFlowRequest.new(flow: flow, update_mask: update_mask, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -350,7 +350,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.update_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateFlowRequest.new(flow: flow, update_mask: update_mask, language_code: language_code), grpc_options) do |response, operation|
+      client.update_flow(::Google::Cloud::Dialogflow::CX::V3beta1::UpdateFlowRequest.new(flow: flow, update_mask: update_mask, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -372,14 +372,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     train_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :train_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::TrainFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::TrainFlowRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, train_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -398,7 +398,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.train_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::TrainFlowRequest.new(name: name) do |response, operation|
+      client.train_flow ::Google::Cloud::Dialogflow::CX::V3beta1::TrainFlowRequest.new(name: name) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -412,7 +412,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.train_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::TrainFlowRequest.new(name: name), grpc_options) do |response, operation|
+      client.train_flow(::Google::Cloud::Dialogflow::CX::V3beta1::TrainFlowRequest.new(name: name), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -425,7 +425,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
   def test_validate_flow
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::FlowValidationResult.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::FlowValidationResult.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -436,7 +436,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     validate_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :validate_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ValidateFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ValidateFlowRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -444,7 +444,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, validate_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -461,7 +461,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.validate_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::ValidateFlowRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.validate_flow ::Google::Cloud::Dialogflow::CX::V3beta1::ValidateFlowRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -473,7 +473,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.validate_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::ValidateFlowRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.validate_flow(::Google::Cloud::Dialogflow::CX::V3beta1::ValidateFlowRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -485,7 +485,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
   def test_get_flow_validation_result
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::FlowValidationResult.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::FlowValidationResult.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -496,7 +496,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     get_flow_validation_result_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_flow_validation_result, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetFlowValidationResultRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetFlowValidationResultRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -504,7 +504,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, get_flow_validation_result_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -521,7 +521,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.get_flow_validation_result ::Google::Cloud::Dialogflow::Cx::V3beta1::GetFlowValidationResultRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.get_flow_validation_result ::Google::Cloud::Dialogflow::CX::V3beta1::GetFlowValidationResultRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -533,7 +533,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.get_flow_validation_result(::Google::Cloud::Dialogflow::Cx::V3beta1::GetFlowValidationResultRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.get_flow_validation_result(::Google::Cloud::Dialogflow::CX::V3beta1::GetFlowValidationResultRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -557,7 +557,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     import_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :import_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ImportFlowRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal "hello world", request["flow_uri"]
       assert_equal :flow_uri, request.flow
@@ -567,7 +567,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, import_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -586,7 +586,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.import_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest.new(parent: parent, flow_uri: flow_uri, import_option: import_option) do |response, operation|
+      client.import_flow ::Google::Cloud::Dialogflow::CX::V3beta1::ImportFlowRequest.new(parent: parent, flow_uri: flow_uri, import_option: import_option) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -600,7 +600,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.import_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest.new(parent: parent, flow_uri: flow_uri, import_option: import_option), grpc_options) do |response, operation|
+      client.import_flow(::Google::Cloud::Dialogflow::CX::V3beta1::ImportFlowRequest.new(parent: parent, flow_uri: flow_uri, import_option: import_option), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -625,7 +625,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     export_flow_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :export_flow, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ExportFlowRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ExportFlowRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["flow_uri"]
       assert_equal true, request["include_referenced_flows"]
@@ -634,7 +634,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     Gapic::ServiceStub.stub :new, export_flow_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -653,7 +653,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object
-      client.export_flow ::Google::Cloud::Dialogflow::Cx::V3beta1::ExportFlowRequest.new(name: name, flow_uri: flow_uri, include_referenced_flows: include_referenced_flows) do |response, operation|
+      client.export_flow ::Google::Cloud::Dialogflow::CX::V3beta1::ExportFlowRequest.new(name: name, flow_uri: flow_uri, include_referenced_flows: include_referenced_flows) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -667,7 +667,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
       end
 
       # Use protobuf object with options
-      client.export_flow(::Google::Cloud::Dialogflow::Cx::V3beta1::ExportFlowRequest.new(name: name, flow_uri: flow_uri, include_referenced_flows: include_referenced_flows), grpc_options) do |response, operation|
+      client.export_flow(::Google::Cloud::Dialogflow::CX::V3beta1::ExportFlowRequest.new(name: name, flow_uri: flow_uri, include_referenced_flows: include_referenced_flows), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -683,7 +683,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -693,7 +693,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client::Configuration, config
   end
 
   def test_operations_client
@@ -701,11 +701,11 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientTest < Minitest::Te
 
     client = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
 
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Operations, client.operations_client
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Operations, client.operations_client
   end
 end

@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # An intent represents a user's intent to interact with a conversational agent.
           #
@@ -30,7 +30,7 @@ module Google
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the intent.
-          #     Required for the {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#update_intent Intents.UpdateIntent} method. {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#create_intent Intents.CreateIntent}
+          #     Required for the {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#update_intent Intents.UpdateIntent} method. {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#create_intent Intents.CreateIntent}
           #     populates the name automatically.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/intents/<Intent ID>`.
@@ -38,11 +38,11 @@ module Google
           #   @return [::String]
           #     Required. The human-readable name of the intent, unique within the agent.
           # @!attribute [rw] training_phrases
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Intent::TrainingPhrase>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Intent::TrainingPhrase>]
           #     The collection of training phrases the agent is trained on to identify the
           #     intent.
           # @!attribute [rw] parameters
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Intent::Parameter>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Intent::Parameter>]
           #     The collection of parameters associated with the intent.
           # @!attribute [rw] priority
           #   @return [::Integer]
@@ -89,7 +89,7 @@ module Google
             #   @return [::String]
             #     Output only. The unique identifier of the training phrase.
             # @!attribute [rw] parts
-            #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Intent::TrainingPhrase::Part>]
+            #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Intent::TrainingPhrase::Part>]
             #     Required. The ordered list of training phrase parts.
             #     The parts are concatenated in order to form the training phrase.
             #
@@ -100,7 +100,7 @@ module Google
             #     training phrase is well formatted when the parts are concatenated.
             #
             #     If the training phrase does not need to be annotated with parameters,
-            #     you just need a single part with only the {::Google::Cloud::Dialogflow::Cx::V3::Intent::TrainingPhrase::Part#text Part.text} field set.
+            #     you just need a single part with only the {::Google::Cloud::Dialogflow::CX::V3::Intent::TrainingPhrase::Part#text Part.text} field set.
             #
             #     If you want to annotate the training phrase, you must create multiple
             #     parts, where the fields of each part are populated in one of two ways:
@@ -121,7 +121,7 @@ module Google
               #     Required. The text for this part.
               # @!attribute [rw] parameter_id
               #   @return [::String]
-              #     The {::Google::Cloud::Dialogflow::Cx::V3::Intent::Parameter parameter} used to annotate this part of the
+              #     The {::Google::Cloud::Dialogflow::CX::V3::Intent::Parameter parameter} used to annotate this part of the
               #     training phrase. This field is required for annotated parts of the
               #     training phrase.
               class Part
@@ -134,8 +134,8 @@ module Google
             # @!attribute [rw] id
             #   @return [::String]
             #     Required. The unique identifier of the parameter. This field
-            #     is used by {::Google::Cloud::Dialogflow::Cx::V3::Intent::TrainingPhrase training phrases} to annotate their
-            #     {::Google::Cloud::Dialogflow::Cx::V3::Intent::TrainingPhrase::Part parts}.
+            #     is used by {::Google::Cloud::Dialogflow::CX::V3::Intent::TrainingPhrase training phrases} to annotate their
+            #     {::Google::Cloud::Dialogflow::CX::V3::Intent::TrainingPhrase::Part parts}.
             # @!attribute [rw] entity_type
             #   @return [::String]
             #     Required. The entity type of the parameter.
@@ -153,7 +153,7 @@ module Google
             #     redaction is enabled, the parameter content will be replaced by parameter
             #     name during logging.
             #     Note: the parameter content is subject to redaction if either parameter
-            #     level redaction or {::Google::Cloud::Dialogflow::Cx::V3::EntityType#redact entity type level redaction} is
+            #     level redaction or {::Google::Cloud::Dialogflow::CX::V3::EntityType#redact entity type level redaction} is
             #     enabled.
             class Parameter
               include ::Google::Protobuf::MessageExts
@@ -170,7 +170,7 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#list_intents Intents.ListIntents}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#list_intents Intents.ListIntents}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to list all intents for.
@@ -188,7 +188,7 @@ module Google
           #     are supported.
           #     Note: languages must be enabled in the agent before they can be used.
           # @!attribute [rw] intent_view
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::IntentView]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::IntentView]
           #     The resource view to apply to the returned intent.
           # @!attribute [rw] page_size
           #   @return [::Integer]
@@ -202,9 +202,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#list_intents Intents.ListIntents}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#list_intents Intents.ListIntents}.
           # @!attribute [rw] intents
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Intent>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Intent>]
           #     The list of intents. There will be a maximum number of items returned based
           #     on the page_size field in the request.
           # @!attribute [rw] next_page_token
@@ -216,7 +216,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#get_intent Intents.GetIntent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#get_intent Intents.GetIntent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the intent.
@@ -239,13 +239,13 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#create_intent Intents.CreateIntent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#create_intent Intents.CreateIntent}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The agent to create an intent for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] intent
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Intent]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Intent]
           #     Required. The intent to create.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -263,9 +263,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#update_intent Intents.UpdateIntent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#update_intent Intents.UpdateIntent}.
           # @!attribute [rw] intent
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Intent]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Intent]
           #     Required. The intent to update.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -287,7 +287,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Intents::Client#delete_intent Intents.DeleteIntent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Intents::Client#delete_intent Intents.DeleteIntent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the intent to delete.

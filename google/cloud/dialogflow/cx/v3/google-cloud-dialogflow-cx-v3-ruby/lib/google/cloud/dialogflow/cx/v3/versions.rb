@@ -30,15 +30,15 @@ require "google/cloud/dialogflow/cx/v3/versions/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::Version Versions}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3::Version Versions}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3/versions"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3::Versions::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3::Versions::Client.new
           #
           module Versions
           end

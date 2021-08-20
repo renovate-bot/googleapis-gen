@@ -22,14 +22,14 @@ require "google/cloud/dialogflow/cx/v3beta1/test_case_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           module TestCases
             ##
             # Client for the TestCases service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase Test Cases} and
-            # {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult Test Case Results}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3beta1::TestCase Test Cases} and
+            # {::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult Test Case Results}.
             #
             class Client
               include Paths
@@ -40,13 +40,13 @@ module Google
               ##
               # Configure the TestCases Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all TestCases clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -57,7 +57,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3beta1"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3beta1"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -84,7 +84,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -103,10 +103,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -146,7 +146,7 @@ module Google
                 end
 
                 @test_cases_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -157,7 +157,7 @@ module Google
               ##
               # Get the associated client for long-running operations.
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Operations]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Operations]
               #
               attr_reader :operations_client
 
@@ -168,9 +168,9 @@ module Google
               #
               # @overload list_test_cases(request, options = nil)
               #   Pass arguments to `list_test_cases` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCasesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCasesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCasesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCasesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -190,21 +190,21 @@ module Google
               #     When TestCaseView = BASIC, the maximum page size allowed is 500.
               #   @param page_token [::String]
               #     The next_page_token value returned from a previous list request.
-              #   @param view [::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCasesRequest::TestCaseView]
+              #   @param view [::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCasesRequest::TestCaseView]
               #     Specifies whether response should include all fields or just the metadata.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::TestCase>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::TestCase>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_test_cases request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCasesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCasesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -215,7 +215,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -246,9 +246,9 @@ module Google
               #
               # @overload batch_delete_test_cases(request, options = nil)
               #   Pass arguments to `batch_delete_test_cases` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::BatchDeleteTestCasesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::BatchDeleteTestCasesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::BatchDeleteTestCasesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::BatchDeleteTestCasesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -277,7 +277,7 @@ module Google
               def batch_delete_test_cases request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::BatchDeleteTestCasesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::BatchDeleteTestCasesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -288,7 +288,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -318,9 +318,9 @@ module Google
               #
               # @overload get_test_case(request, options = nil)
               #   Pass arguments to `get_test_case` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::GetTestCaseRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::GetTestCaseRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -337,17 +337,17 @@ module Google
               #     ID>/testCases/<TestCase ID>`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_test_case request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::GetTestCaseRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -358,7 +358,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -388,9 +388,9 @@ module Google
               #
               # @overload create_test_case(request, options = nil)
               #   Pass arguments to `create_test_case` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CreateTestCaseRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::CreateTestCaseRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::CreateTestCaseRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::CreateTestCaseRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -404,21 +404,21 @@ module Google
               #   @param parent [::String]
               #     Required. The agent to create the test case for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-              #   @param test_case [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase, ::Hash]
+              #   @param test_case [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase, ::Hash]
               #     Required. The test case to create.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_test_case request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateTestCaseRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::CreateTestCaseRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -429,7 +429,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -459,9 +459,9 @@ module Google
               #
               # @overload update_test_case(request, options = nil)
               #   Pass arguments to `update_test_case` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateTestCaseRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::UpdateTestCaseRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateTestCaseRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::UpdateTestCaseRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -472,25 +472,25 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param test_case [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase, ::Hash]
+              #   @param test_case [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase, ::Hash]
               #     Required. The test case to update.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     Required. The mask to specify which fields should be updated. The
-              #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase#creation_time `creationTime`} and
-              #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase#last_test_result `lastTestResult`} cannot be updated.
+              #     {::Google::Cloud::Dialogflow::CX::V3beta1::TestCase#creation_time `creationTime`} and
+              #     {::Google::Cloud::Dialogflow::CX::V3beta1::TestCase#last_test_result `lastTestResult`} cannot be updated.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCase]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_test_case request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateTestCaseRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateTestCaseRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -501,7 +501,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -531,9 +531,9 @@ module Google
               #
               # @overload run_test_case(request, options = nil)
               #   Pass arguments to `run_test_case` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::RunTestCaseRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::RunTestCaseRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::RunTestCaseRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::RunTestCaseRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -563,7 +563,7 @@ module Google
               def run_test_case request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::RunTestCaseRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::RunTestCaseRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -574,7 +574,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -605,9 +605,9 @@ module Google
               #
               # @overload batch_run_test_cases(request, options = nil)
               #   Pass arguments to `batch_run_test_cases` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::BatchRunTestCasesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::BatchRunTestCasesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::BatchRunTestCasesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::BatchRunTestCasesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -640,7 +640,7 @@ module Google
               def batch_run_test_cases request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::BatchRunTestCasesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::BatchRunTestCasesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -651,7 +651,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -682,9 +682,9 @@ module Google
               #
               # @overload calculate_coverage(request, options = nil)
               #   Pass arguments to `calculate_coverage` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -698,21 +698,21 @@ module Google
               #   @param agent [::String]
               #     Required. The agent to calculate coverage for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-              #   @param type [::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageRequest::CoverageType]
+              #   @param type [::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageRequest::CoverageType]
               #     Required. The type of coverage requested.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageResponse]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageResponse]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageResponse]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageResponse]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def calculate_coverage request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::CalculateCoverageRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::CalculateCoverageRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -723,7 +723,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -755,9 +755,9 @@ module Google
               #
               # @overload import_test_cases(request, options = nil)
               #   Pass arguments to `import_test_cases` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ImportTestCasesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ImportTestCasesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ImportTestCasesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ImportTestCasesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -789,7 +789,7 @@ module Google
               def import_test_cases request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ImportTestCasesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ImportTestCasesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -800,7 +800,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -832,9 +832,9 @@ module Google
               #
               # @overload export_test_cases(request, options = nil)
               #   Pass arguments to `export_test_cases` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ExportTestCasesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ExportTestCasesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ExportTestCasesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ExportTestCasesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -853,7 +853,7 @@ module Google
               #     export the test cases to. The format of this URI must be
               #     `gs://<bucket-name>/<object-name>`. If unspecified, the serialized test
               #     cases is returned inline.
-              #   @param data_format [::Google::Cloud::Dialogflow::Cx::V3beta1::ExportTestCasesRequest::DataFormat]
+              #   @param data_format [::Google::Cloud::Dialogflow::CX::V3beta1::ExportTestCasesRequest::DataFormat]
               #     The data format of the exported test cases. If not specified, `BLOB` is
               #     assumed.
               #   @param filter [::String]
@@ -879,7 +879,7 @@ module Google
               def export_test_cases request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ExportTestCasesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ExportTestCasesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -890,7 +890,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -921,9 +921,9 @@ module Google
               #
               # @overload list_test_case_results(request, options = nil)
               #   Pass arguments to `list_test_case_results` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCaseResultsRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCaseResultsRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCaseResultsRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCaseResultsRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -971,17 +971,17 @@ module Google
               #         later than a unix timestamp in seconds 1602540713.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_test_case_results request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ListTestCaseResultsRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ListTestCaseResultsRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -992,7 +992,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -1023,9 +1023,9 @@ module Google
               #
               # @overload get_test_case_result(request, options = nil)
               #   Pass arguments to `get_test_case_result` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseResultRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::GetTestCaseResultRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseResultRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::GetTestCaseResultRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -1042,17 +1042,17 @@ module Google
               #     ID>/testCases/<TestCase ID>/results/<TestCaseResult ID>`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_test_case_result request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::GetTestCaseResultRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::GetTestCaseResultRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -1063,7 +1063,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -1095,7 +1095,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -1106,13 +1106,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_test_cases to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_test_cases.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_test_cases.timeout = 20.0
               #   end

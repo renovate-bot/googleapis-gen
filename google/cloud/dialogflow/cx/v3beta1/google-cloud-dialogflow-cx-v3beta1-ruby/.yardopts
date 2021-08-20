@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Dialogflow Cx V3beta1 API
+--title=Dialogflow CX V3beta1 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet

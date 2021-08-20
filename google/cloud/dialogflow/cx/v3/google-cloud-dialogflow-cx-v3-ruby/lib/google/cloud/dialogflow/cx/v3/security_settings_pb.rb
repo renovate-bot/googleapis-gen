@@ -69,7 +69,7 @@ end
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           GetSecuritySettingsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest").msgclass
           UpdateSecuritySettingsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest").msgclass

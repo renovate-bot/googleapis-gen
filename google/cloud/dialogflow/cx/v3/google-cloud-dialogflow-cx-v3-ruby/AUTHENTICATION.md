@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
+export DIALOGFLOW_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -27,7 +27,7 @@ export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 ```ruby
 require "google/cloud/dialogflow/cx/v3"
 
-client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
+client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new
 ```
 
 ## Credential Lookup
@@ -64,8 +64,10 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-dialogflow-cx-v3
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Dialogflow::Cx::V3::Pages::Credentials}):
+{::Google::Cloud::Dialogflow::CX::V3::Pages::Credentials}):
 
+* `DIALOGFLOW_CREDENTIALS` - Path to JSON file, or JSON contents
+* `DIALOGFLOW_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -73,9 +75,9 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/dialogflow/cx/v3"
 
-ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["DIALOGFLOW_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
+client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new
 ```
 
 ### Configuration
@@ -86,7 +88,7 @@ it in an environment variable. Either on an individual client initialization:
 ```ruby
 require "google/cloud/dialogflow/cx/v3"
 
-client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,11 +98,11 @@ Or globally for all clients:
 ```ruby
 require "google/cloud/dialogflow/cx/v3"
 
-::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.configure do |config|
+::Google::Cloud::Dialogflow::CX::V3::Pages::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
+client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new
 ```
 
 ### Cloud SDK

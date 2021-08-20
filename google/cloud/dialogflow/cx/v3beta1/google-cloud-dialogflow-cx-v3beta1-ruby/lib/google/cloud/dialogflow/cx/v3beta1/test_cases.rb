@@ -30,16 +30,16 @@ require "google/cloud/dialogflow/cx/v3beta1/test_cases/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCase Test Cases} and
-          # {::Google::Cloud::Dialogflow::Cx::V3beta1::TestCaseResult Test Case Results}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3beta1::TestCase Test Cases} and
+          # {::Google::Cloud::Dialogflow::CX::V3beta1::TestCaseResult Test Case Results}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3beta1/test_cases"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3beta1::TestCases::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3beta1::TestCases::Client.new
           #
           module TestCases
           end

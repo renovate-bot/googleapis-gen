@@ -19,14 +19,14 @@ class AdvancedSettings
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-è
+≥
 5google/cloud/dialogflow/cx/v3/advanced_settings.protogoogle.cloud.dialogflow.cx.v3google/protobuf/duration.protogoogle/api/annotations.proto"»
 AdvancedSettingsY
 logging_settings (2?.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettingsY
 LoggingSettings"
 enable_stackdriver_logging ("
-enable_interaction_logging (B•
-!com.google.cloud.dialogflow.cx.v3BAdvancedSettingsProtoPZ?google.golang.org/genproto/googleapis/cloud/dialogflow/cx/v3;cx¯¢DF™Google.Cloud.Dialogflow.Cx.V3bproto3'
+enable_interaction_logging (B…
+!com.google.cloud.dialogflow.cx.v3BAdvancedSettingsProtoPZ?google.golang.org/genproto/googleapis/cloud/dialogflow/cx/v3;cx¯¢DF™Google.Cloud.Dialogflow.Cx.V3Í!Google::Cloud::Dialogflow::CX::V3bproto3'
         , true);
 
         static::$is_initialized = true;

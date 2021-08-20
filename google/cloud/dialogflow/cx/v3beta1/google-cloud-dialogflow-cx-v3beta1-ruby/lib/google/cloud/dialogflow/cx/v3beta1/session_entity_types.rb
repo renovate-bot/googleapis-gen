@@ -29,15 +29,15 @@ require "google/cloud/dialogflow/cx/v3beta1/session_entity_types/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3beta1::SessionEntityType SessionEntityTypes}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3beta1::SessionEntityType SessionEntityTypes}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3beta1/session_entity_types"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3beta1::SessionEntityTypes::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3beta1::SessionEntityTypes::Client.new
           #
           module SessionEntityTypes
           end

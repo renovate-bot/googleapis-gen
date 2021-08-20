@@ -29,15 +29,15 @@ require "google/cloud/dialogflow/cx/v3/entity_types/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::EntityType EntityTypes}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3::EntityType EntityTypes}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3/entity_types"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3::EntityTypes::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3::EntityTypes::Client.new
           #
           module EntityTypes
           end

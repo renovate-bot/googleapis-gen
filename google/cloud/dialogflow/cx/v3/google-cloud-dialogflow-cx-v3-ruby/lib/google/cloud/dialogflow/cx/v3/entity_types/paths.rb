@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           module EntityTypes
             # Path helper methods for the EntityTypes API.

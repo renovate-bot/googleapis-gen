@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3beta1/version_pb"
 require "google/cloud/dialogflow/cx/v3beta1/version_services_pb"
 require "google/cloud/dialogflow/cx/v3beta1/versions"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
   def test_list_versions
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::ListVersionsResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::ListVersionsResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -61,7 +61,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     list_versions_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_versions, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ListVersionsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ListVersionsRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal 42, request["page_size"]
       assert_equal "hello world", request["page_token"]
@@ -70,7 +70,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     Gapic::ServiceStub.stub :new, list_versions_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -89,7 +89,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object
-      client.list_versions ::Google::Cloud::Dialogflow::Cx::V3beta1::ListVersionsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_versions ::Google::Cloud::Dialogflow::CX::V3beta1::ListVersionsRequest.new(parent: parent, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -103,7 +103,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.list_versions(::Google::Cloud::Dialogflow::Cx::V3beta1::ListVersionsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_versions(::Google::Cloud::Dialogflow::CX::V3beta1::ListVersionsRequest.new(parent: parent, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -116,7 +116,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
   def test_get_version
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Version.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Version.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -126,14 +126,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     get_version_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_version, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetVersionRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetVersionRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, get_version_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -150,7 +150,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object
-      client.get_version ::Google::Cloud::Dialogflow::Cx::V3beta1::GetVersionRequest.new(name: name) do |response, operation|
+      client.get_version ::Google::Cloud::Dialogflow::CX::V3beta1::GetVersionRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -162,7 +162,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.get_version(::Google::Cloud::Dialogflow::Cx::V3beta1::GetVersionRequest.new(name: name), grpc_options) do |response, operation|
+      client.get_version(::Google::Cloud::Dialogflow::CX::V3beta1::GetVersionRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -185,15 +185,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     create_version_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_version, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateVersionRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::CreateVersionRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Version), request["version"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Version), request["version"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_version_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -212,7 +212,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object
-      client.create_version ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateVersionRequest.new(parent: parent, version: version) do |response, operation|
+      client.create_version ::Google::Cloud::Dialogflow::CX::V3beta1::CreateVersionRequest.new(parent: parent, version: version) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -226,7 +226,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.create_version(::Google::Cloud::Dialogflow::Cx::V3beta1::CreateVersionRequest.new(parent: parent, version: version), grpc_options) do |response, operation|
+      client.create_version(::Google::Cloud::Dialogflow::CX::V3beta1::CreateVersionRequest.new(parent: parent, version: version), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -239,7 +239,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
   def test_update_version
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Version.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Version.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -250,15 +250,15 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     update_version_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_version, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateVersionRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Version), request["version"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateVersionRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Version), request["version"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, update_version_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -275,7 +275,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object
-      client.update_version ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateVersionRequest.new(version: version, update_mask: update_mask) do |response, operation|
+      client.update_version ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateVersionRequest.new(version: version, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -287,7 +287,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.update_version(::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateVersionRequest.new(version: version, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_version(::Google::Cloud::Dialogflow::CX::V3beta1::UpdateVersionRequest.new(version: version, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -309,14 +309,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     delete_version_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_version, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteVersionRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteVersionRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, delete_version_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -333,7 +333,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object
-      client.delete_version ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteVersionRequest.new(name: name) do |response, operation|
+      client.delete_version ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteVersionRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -345,7 +345,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.delete_version(::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteVersionRequest.new(name: name), grpc_options) do |response, operation|
+      client.delete_version(::Google::Cloud::Dialogflow::CX::V3beta1::DeleteVersionRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -368,7 +368,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     load_version_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :load_version, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::LoadVersionRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::LoadVersionRequest, request
       assert_equal "hello world", request["name"]
       assert_equal true, request["allow_override_agent_resources"]
       refute_nil options
@@ -376,7 +376,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     Gapic::ServiceStub.stub :new, load_version_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -395,7 +395,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object
-      client.load_version ::Google::Cloud::Dialogflow::Cx::V3beta1::LoadVersionRequest.new(name: name, allow_override_agent_resources: allow_override_agent_resources) do |response, operation|
+      client.load_version ::Google::Cloud::Dialogflow::CX::V3beta1::LoadVersionRequest.new(name: name, allow_override_agent_resources: allow_override_agent_resources) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -409,7 +409,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
       end
 
       # Use protobuf object with options
-      client.load_version(::Google::Cloud::Dialogflow::Cx::V3beta1::LoadVersionRequest.new(name: name, allow_override_agent_resources: allow_override_agent_resources), grpc_options) do |response, operation|
+      client.load_version(::Google::Cloud::Dialogflow::CX::V3beta1::LoadVersionRequest.new(name: name, allow_override_agent_resources: allow_override_agent_resources), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -425,7 +425,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -435,7 +435,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client::Configuration, config
   end
 
   def test_operations_client
@@ -443,11 +443,11 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::ClientTest < Minitest:
 
     client = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
 
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Versions::Operations, client.operations_client
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Versions::Operations, client.operations_client
   end
 end

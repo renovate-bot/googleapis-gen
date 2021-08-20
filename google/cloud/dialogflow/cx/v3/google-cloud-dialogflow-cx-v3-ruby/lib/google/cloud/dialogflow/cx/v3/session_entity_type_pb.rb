@@ -51,7 +51,7 @@ end
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           SessionEntityType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SessionEntityType").msgclass
           SessionEntityType::EntityOverrideMode = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SessionEntityType.EntityOverrideMode").enummodule

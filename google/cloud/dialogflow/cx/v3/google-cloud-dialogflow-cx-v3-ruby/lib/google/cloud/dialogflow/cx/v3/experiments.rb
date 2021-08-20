@@ -29,15 +29,15 @@ require "google/cloud/dialogflow/cx/v3/experiments/client"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           ##
-          # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::Experiment Experiments}.
+          # Service for managing {::Google::Cloud::Dialogflow::CX::V3::Experiment Experiments}.
           #
           # To load this service and instantiate a client:
           #
           #     require "google/cloud/dialogflow/cx/v3/experiments"
-          #     client = ::Google::Cloud::Dialogflow::Cx::V3::Experiments::Client.new
+          #     client = ::Google::Cloud::Dialogflow::CX::V3::Experiments::Client.new
           #
           module Experiments
           end

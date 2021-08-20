@@ -20,9 +20,9 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client#get_security_settings SecuritySettingsService.GetSecuritySettings}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client#get_security_settings SecuritySettingsService.GetSecuritySettings}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. Resource name of the settings.
@@ -33,9 +33,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client#update_security_settings SecuritySettingsService.UpdateSecuritySettings}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client#update_security_settings SecuritySettingsService.UpdateSecuritySettings}.
           # @!attribute [rw] security_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SecuritySettings]
           #     Required. [SecuritySettings] object that contains values for each of the
           #     fields to update.
           # @!attribute [rw] update_mask
@@ -66,7 +66,7 @@ module Google
 
           # The response message for [SecuritySettings.ListSecuritySettings][].
           # @!attribute [rw] security_settings
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::SecuritySettings>]
           #     The list of security settings.
           # @!attribute [rw] next_page_token
           #   @return [::String]
@@ -80,10 +80,10 @@ module Google
           # The request message for [SecuritySettings.CreateSecuritySettings][].
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The location to create an {::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings SecuritySettings} for.
+          #     Required. The location to create an {::Google::Cloud::Dialogflow::CX::V3::SecuritySettings SecuritySettings} for.
           #     Format: `projects/<Project ID>/locations/<Location ID>`.
           # @!attribute [rw] security_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SecuritySettings]
           #     Required. The security settings to create.
           class CreateSecuritySettingsRequest
             include ::Google::Protobuf::MessageExts
@@ -93,7 +93,7 @@ module Google
           # The request message for [SecuritySettings.DeleteSecuritySettings][].
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings SecuritySettings} to delete.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3::SecuritySettings SecuritySettings} to delete.
           #     Format: `projects/<Project ID>/locations/<Location
           #     ID>/securitySettings/<Security Settings ID>`.
           class DeleteSecuritySettingsRequest
@@ -114,10 +114,10 @@ module Google
           #     Required. The human-readable name of the security settings, unique within the
           #     location.
           # @!attribute [rw] redaction_strategy
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::RedactionStrategy]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SecuritySettings::RedactionStrategy]
           #     Strategy that defines how we do redaction.
           # @!attribute [rw] redaction_scope
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::RedactionScope]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SecuritySettings::RedactionScope]
           #     Defines the data for which Dialogflow applies redaction. Dialogflow does
           #     not redact data that it does not have access to – for example, Cloud
           #     logging.
@@ -161,10 +161,10 @@ module Google
           #     Note: Interaction logging is a limited access feature. Talk to your
           #     Google representative to check availability for you.
           # @!attribute [rw] purge_data_types
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::PurgeDataType>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::SecuritySettings::PurgeDataType>]
           #     List of types of data to remove when retention settings triggers purge.
           # @!attribute [rw] insights_export_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::InsightsExportSettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SecuritySettings::InsightsExportSettings]
           #     Controls conversation exporting settings to Insights after conversation is
           #     completed.
           #

@@ -22,11 +22,11 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/dialogflow/cx/v3/security_settings_service"
 
-class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientPathsTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::ClientPathsTest < Minitest::Test
   def test_deidentify_template_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -41,7 +41,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientPathsT
   def test_inspect_template_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -56,7 +56,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientPathsT
   def test_location_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -68,7 +68,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientPathsT
   def test_security_settings_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3::SecuritySettingsService::Client.new do |config|
         config.credentials = grpc_channel
       end
 

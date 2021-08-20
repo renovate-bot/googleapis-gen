@@ -51,7 +51,7 @@ end
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           TransitionRouteGroup = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.TransitionRouteGroup").msgclass
           ListTransitionRouteGroupsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsRequest").msgclass

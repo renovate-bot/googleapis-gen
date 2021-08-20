@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # A Dialogflow CX conversation (session) can be described and visualized as a
           # state machine. The states of a CX session are represented by pages.
@@ -41,7 +41,7 @@ module Google
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the page.
-          #     Required for the {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#update_page Pages.UpdatePage} method. {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#create_page Pages.CreatePage}
+          #     Required for the {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#update_page Pages.UpdatePage} method. {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#create_page Pages.CreatePage}
           #     populates the name automatically.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/pages/<Page ID>`.
@@ -49,15 +49,15 @@ module Google
           #   @return [::String]
           #     Required. The human-readable name of the page, unique within the agent.
           # @!attribute [rw] entry_fulfillment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Fulfillment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Fulfillment]
           #     The fulfillment to call when the session is entering the page.
           # @!attribute [rw] form
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Form]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Form]
           #     The form associated with the page, used for collecting parameters
           #     relevant to the page.
           # @!attribute [rw] transition_route_groups
           #   @return [::Array<::String>]
-          #     Ordered list of {::Google::Cloud::Dialogflow::Cx::V3::TransitionRouteGroup `TransitionRouteGroups`} associated
+          #     Ordered list of {::Google::Cloud::Dialogflow::CX::V3::TransitionRouteGroup `TransitionRouteGroups`} associated
           #     with the page. Transition route groups must be unique within a page.
           #
           #     *   If multiple transition routes within a page scope refer to the same
@@ -70,7 +70,7 @@ module Google
           #     Format:`projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/transitionRouteGroups/<TransitionRouteGroup ID>`.
           # @!attribute [rw] transition_routes
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::TransitionRoute>]
           #     A list of transitions for the transition rules of this page.
           #     They route the conversation to another page in the same flow, or another
           #     flow.
@@ -80,18 +80,18 @@ module Google
           #
           #     *   TransitionRoutes defined in the page with intent specified.
           #     *   TransitionRoutes defined in the
-          #         {::Google::Cloud::Dialogflow::Cx::V3::Page#transition_route_groups transition route groups} with intent
+          #         {::Google::Cloud::Dialogflow::CX::V3::Page#transition_route_groups transition route groups} with intent
           #         specified.
           #     *   TransitionRoutes defined in flow with intent specified.
           #     *   TransitionRoutes defined in the
-          #         {::Google::Cloud::Dialogflow::Cx::V3::Flow#transition_route_groups transition route groups} with intent
+          #         {::Google::Cloud::Dialogflow::CX::V3::Flow#transition_route_groups transition route groups} with intent
           #         specified.
           #     *   TransitionRoutes defined in the page with only condition specified.
           #     *   TransitionRoutes defined in the
-          #         {::Google::Cloud::Dialogflow::Cx::V3::Page#transition_route_groups transition route groups} with only
+          #         {::Google::Cloud::Dialogflow::CX::V3::Page#transition_route_groups transition route groups} with only
           #         condition specified.
           # @!attribute [rw] event_handlers
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::EventHandler>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::EventHandler>]
           #     Handlers associated with the page to handle events such as webhook errors,
           #     no match or no input.
           class Page
@@ -102,10 +102,10 @@ module Google
           # A form is a data model that groups related parameters that can be collected
           # from the user. The process in which the agent prompts the user and collects
           # parameter values from the user is called form filling. A form can be added to
-          # a {::Google::Cloud::Dialogflow::Cx::V3::Page page}. When form filling is done, the filled parameters will be
-          # written to the {::Google::Cloud::Dialogflow::Cx::V3::SessionInfo#parameters session}.
+          # a {::Google::Cloud::Dialogflow::CX::V3::Page page}. When form filling is done, the filled parameters will be
+          # written to the {::Google::Cloud::Dialogflow::CX::V3::SessionInfo#parameters session}.
           # @!attribute [rw] parameters
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Form::Parameter>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Form::Parameter>]
           #     Parameters to collect from the user.
           class Form
             include ::Google::Protobuf::MessageExts
@@ -133,7 +133,7 @@ module Google
             #   @return [::Boolean]
             #     Indicates whether the parameter represents a list of values.
             # @!attribute [rw] fill_behavior
-            #   @return [::Google::Cloud::Dialogflow::Cx::V3::Form::Parameter::FillBehavior]
+            #   @return [::Google::Cloud::Dialogflow::CX::V3::Form::Parameter::FillBehavior]
             #     Required. Defines fill behavior for the parameter.
             # @!attribute [rw] default_value
             #   @return [::Google::Protobuf::Value]
@@ -145,7 +145,7 @@ module Google
             #     redaction is enabled, the parameter content will be replaced by parameter
             #     name during logging.
             #     Note: the parameter content is subject to redaction if either parameter
-            #     level redaction or {::Google::Cloud::Dialogflow::Cx::V3::EntityType#redact entity type level redaction} is
+            #     level redaction or {::Google::Cloud::Dialogflow::CX::V3::EntityType#redact entity type level redaction} is
             #     enabled.
             class Parameter
               include ::Google::Protobuf::MessageExts
@@ -153,11 +153,11 @@ module Google
 
               # Configuration for how the filling of a parameter should be handled.
               # @!attribute [rw] initial_prompt_fulfillment
-              #   @return [::Google::Cloud::Dialogflow::Cx::V3::Fulfillment]
+              #   @return [::Google::Cloud::Dialogflow::CX::V3::Fulfillment]
               #     Required. The fulfillment to provide the initial prompt that the agent
               #     can present to the user in order to fill the parameter.
               # @!attribute [rw] reprompt_event_handlers
-              #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::EventHandler>]
+              #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::EventHandler>]
               #     The handlers for parameter-level events, used to provide reprompt for
               #     the parameter or transition to a different page/flow. The supported
               #     events are:
@@ -197,16 +197,16 @@ module Google
             end
           end
 
-          # An event handler specifies an {::Google::Cloud::Dialogflow::Cx::V3::EventHandler#event event} that can be handled
+          # An event handler specifies an {::Google::Cloud::Dialogflow::CX::V3::EventHandler#event event} that can be handled
           # during a session. When the specified event happens, the following actions are
           # taken in order:
           #
           # *   If there is a
-          # {::Google::Cloud::Dialogflow::Cx::V3::EventHandler#trigger_fulfillment `trigger_fulfillment`} associated with
+          # {::Google::Cloud::Dialogflow::CX::V3::EventHandler#trigger_fulfillment `trigger_fulfillment`} associated with
           # the event, it will be called.
-          # *   If there is a {::Google::Cloud::Dialogflow::Cx::V3::EventHandler#target_page `target_page`} associated
+          # *   If there is a {::Google::Cloud::Dialogflow::CX::V3::EventHandler#target_page `target_page`} associated
           # with the event, the session will transition into the specified page.
-          # *   If there is a {::Google::Cloud::Dialogflow::Cx::V3::EventHandler#target_flow `target_flow`} associated
+          # *   If there is a {::Google::Cloud::Dialogflow::CX::V3::EventHandler#target_flow `target_flow`} associated
           # with the event, the session will transition into the specified flow.
           # @!attribute [r] name
           #   @return [::String]
@@ -215,7 +215,7 @@ module Google
           #   @return [::String]
           #     Required. The name of the event to handle.
           # @!attribute [rw] trigger_fulfillment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Fulfillment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Fulfillment]
           #     The fulfillment to call when the event occurs.
           #     Handling webhook errors with a fulfillment enabled with webhook could
           #     cause infinite loop. It is invalid to specify such fulfillment for a
@@ -235,23 +235,23 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # A transition route specifies a {::Google::Cloud::Dialogflow::Cx::V3::Intent intent} that can be matched and/or a
+          # A transition route specifies a {::Google::Cloud::Dialogflow::CX::V3::Intent intent} that can be matched and/or a
           # data condition that can be evaluated during a session. When a specified
           # transition is matched, the following actions are taken in order:
           #
           # *   If there is a
-          # {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute#trigger_fulfillment `trigger_fulfillment`} associated with
+          # {::Google::Cloud::Dialogflow::CX::V3::TransitionRoute#trigger_fulfillment `trigger_fulfillment`} associated with
           # the transition, it will be called.
-          # *   If there is a {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute#target_page `target_page`} associated
+          # *   If there is a {::Google::Cloud::Dialogflow::CX::V3::TransitionRoute#target_page `target_page`} associated
           # with the transition, the session will transition into the specified page.
-          # *   If there is a {::Google::Cloud::Dialogflow::Cx::V3::TransitionRoute#target_flow `target_flow`} associated
+          # *   If there is a {::Google::Cloud::Dialogflow::CX::V3::TransitionRoute#target_flow `target_flow`} associated
           # with the transition, the session will transition into the specified flow.
           # @!attribute [r] name
           #   @return [::String]
           #     Output only. The unique identifier of this transition route.
           # @!attribute [rw] intent
           #   @return [::String]
-          #     The unique identifier of an {::Google::Cloud::Dialogflow::Cx::V3::Intent Intent}.
+          #     The unique identifier of an {::Google::Cloud::Dialogflow::CX::V3::Intent Intent}.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/intents/<Intent ID>`.
           #     Indicates that the transition can only happen when the given intent is
@@ -261,8 +261,8 @@ module Google
           #     when both are fulfilled.
           # @!attribute [rw] condition
           #   @return [::String]
-          #     The condition to evaluate against {::Google::Cloud::Dialogflow::Cx::V3::Form#parameters form parameters} or
-          #     {::Google::Cloud::Dialogflow::Cx::V3::SessionInfo#parameters session parameters}.
+          #     The condition to evaluate against {::Google::Cloud::Dialogflow::CX::V3::Form#parameters form parameters} or
+          #     {::Google::Cloud::Dialogflow::CX::V3::SessionInfo#parameters session parameters}.
           #
           #     See the [conditions
           #     reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
@@ -270,7 +270,7 @@ module Google
           #     `intent` and `condition` are specified, the transition can only happen
           #     when both are fulfilled.
           # @!attribute [rw] trigger_fulfillment
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Fulfillment]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Fulfillment]
           #     The fulfillment to call when the condition is satisfied. At least one of
           #     `trigger_fulfillment` and `target` must be specified. When both are
           #     defined, `trigger_fulfillment` is executed first.
@@ -289,7 +289,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#list_pages Pages.ListPages}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#list_pages Pages.ListPages}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The flow to list all pages for.
@@ -330,9 +330,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#list_pages Pages.ListPages}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#list_pages Pages.ListPages}.
           # @!attribute [rw] pages
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Page>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Page>]
           #     The list of pages. There will be a maximum number of items returned based
           #     on the page_size field in the request.
           # @!attribute [rw] next_page_token
@@ -344,7 +344,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#get_page Pages.GetPage}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#get_page Pages.GetPage}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the page.
@@ -378,14 +378,14 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#create_page Pages.CreatePage}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#create_page Pages.CreatePage}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The flow to create a page for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>`.
           # @!attribute [rw] page
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Page]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Page]
           #     Required. The page to create.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -414,9 +414,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#update_page Pages.UpdatePage}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#update_page Pages.UpdatePage}.
           # @!attribute [rw] page
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Page]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Page]
           #     Required. The page to update.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -449,7 +449,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client#delete_page Pages.DeletePage}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Pages::Client#delete_page Pages.DeletePage}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the page to delete.

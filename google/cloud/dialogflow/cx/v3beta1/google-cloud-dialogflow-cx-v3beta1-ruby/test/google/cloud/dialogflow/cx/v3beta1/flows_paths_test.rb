@@ -22,11 +22,11 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/dialogflow/cx/v3beta1/flows"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::ClientPathsTest < Minitest::Test
   def test_agent_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -38,7 +38,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minites
   def test_flow_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -50,7 +50,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minites
   def test_flow_validation_result_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -62,7 +62,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minites
   def test_intent_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -74,7 +74,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minites
   def test_page_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -86,7 +86,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minites
   def test_transition_route_group_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -98,7 +98,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::ClientPathsTest < Minites
   def test_webhook_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Flows::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Flows::Client.new do |config|
         config.credentials = grpc_channel
       end
 

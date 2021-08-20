@@ -20,30 +20,30 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           # An TransitionRouteGroup represents a group of
-          # {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRoute `TransitionRoutes`} to be used by a {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page}.
+          # {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRoute `TransitionRoutes`} to be used by a {::Google::Cloud::Dialogflow::CX::V3beta1::Page Page}.
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the transition route group.
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#create_transition_route_group TransitionRouteGroups.CreateTransitionRouteGroup} populates the name
+          #     {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#create_transition_route_group TransitionRouteGroups.CreateTransitionRouteGroup} populates the name
           #     automatically.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
           # @!attribute [rw] display_name
           #   @return [::String]
           #     Required. The human-readable name of the transition route group, unique within
-          #     the {::Google::Cloud::Dialogflow::Cx::V3beta1::Agent Agent}. The display name can be no longer than 30 characters.
+          #     the {::Google::Cloud::Dialogflow::CX::V3beta1::Agent Agent}. The display name can be no longer than 30 characters.
           # @!attribute [rw] transition_routes
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRoute>]
-          #     Transition routes associated with the {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup}.
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRoute>]
+          #     Transition routes associated with the {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup TransitionRouteGroup}.
           class TransitionRouteGroup
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#list_transition_route_groups TransitionRouteGroups.ListTransitionRouteGroups}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#list_transition_route_groups TransitionRouteGroups.ListTransitionRouteGroups}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The flow to list all transition route groups for.
@@ -75,9 +75,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#list_transition_route_groups TransitionRouteGroups.ListTransitionRouteGroups}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#list_transition_route_groups TransitionRouteGroups.ListTransitionRouteGroups}.
           # @!attribute [rw] transition_route_groups
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup>]
           #     The list of transition route groups. There will be a maximum number of
           #     items returned based on the page_size field in the request. The list may in
           #     some cases be empty or contain fewer entries than page_size even if this
@@ -91,10 +91,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#get_transition_route_group TransitionRouteGroups.GetTransitionRouteGroup}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#get_transition_route_group TransitionRouteGroups.GetTransitionRouteGroup}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup}.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup TransitionRouteGroup}.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
           # @!attribute [rw] language_code
@@ -116,14 +116,14 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#create_transition_route_group TransitionRouteGroups.CreateTransitionRouteGroup}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#create_transition_route_group TransitionRouteGroups.CreateTransitionRouteGroup}.
           # @!attribute [rw] parent
           #   @return [::String]
-          #     Required. The flow to create an {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup} for.
+          #     Required. The flow to create an {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup TransitionRouteGroup} for.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>`.
           # @!attribute [rw] transition_route_group
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup]
           #     Required. The transition route group to create.
           # @!attribute [rw] language_code
           #   @return [::String]
@@ -143,9 +143,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#update_transition_route_group TransitionRouteGroups.UpdateTransitionRouteGroup}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#update_transition_route_group TransitionRouteGroups.UpdateTransitionRouteGroup}.
           # @!attribute [rw] transition_route_group
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup]
           #     Required. The transition route group to update.
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
@@ -168,10 +168,10 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroups::Client#delete_transition_route_group TransitionRouteGroups.DeleteTransitionRouteGroup}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroups::Client#delete_transition_route_group TransitionRouteGroups.DeleteTransitionRouteGroup}.
           # @!attribute [rw] name
           #   @return [::String]
-          #     Required. The name of the {::Google::Cloud::Dialogflow::Cx::V3beta1::TransitionRouteGroup TransitionRouteGroup} to delete.
+          #     Required. The name of the {::Google::Cloud::Dialogflow::CX::V3beta1::TransitionRouteGroup TransitionRouteGroup} to delete.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/flows/<Flow ID>/transitionRouteGroups/<Transition Route Group ID>`.
           # @!attribute [rw] force

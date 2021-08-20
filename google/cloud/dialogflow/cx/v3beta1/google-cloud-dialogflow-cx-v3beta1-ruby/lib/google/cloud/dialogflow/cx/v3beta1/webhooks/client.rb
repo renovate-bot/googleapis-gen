@@ -22,13 +22,13 @@ require "google/cloud/dialogflow/cx/v3beta1/webhook_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3beta1
           module Webhooks
             ##
             # Client for the Webhooks service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook Webhooks}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3beta1::Webhook Webhooks}.
             #
             class Client
               include Paths
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the Webhooks Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all Webhooks clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3beta1"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3beta1"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -140,7 +140,7 @@ module Google
                 @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
                 @webhooks_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -155,9 +155,9 @@ module Google
               #
               # @overload list_webhooks(request, options = nil)
               #   Pass arguments to `list_webhooks` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ListWebhooksRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::ListWebhooksRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ListWebhooksRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::ListWebhooksRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -178,17 +178,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::Webhook>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3beta1::Webhook>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_webhooks request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ListWebhooksRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::ListWebhooksRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -199,7 +199,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -230,9 +230,9 @@ module Google
               #
               # @overload get_webhook(request, options = nil)
               #   Pass arguments to `get_webhook` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::GetWebhookRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::GetWebhookRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::GetWebhookRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::GetWebhookRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -249,17 +249,17 @@ module Google
               #     ID>/webhooks/<Webhook ID>`.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_webhook request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::GetWebhookRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::GetWebhookRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -270,7 +270,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -300,9 +300,9 @@ module Google
               #
               # @overload create_webhook(request, options = nil)
               #   Pass arguments to `create_webhook` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::CreateWebhookRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::CreateWebhookRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::CreateWebhookRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::CreateWebhookRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -316,21 +316,21 @@ module Google
               #   @param parent [::String]
               #     Required. The agent to create a webhook for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
-              #   @param webhook [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook, ::Hash]
+              #   @param webhook [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook, ::Hash]
               #     Required. The webhook to create.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_webhook request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateWebhookRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::CreateWebhookRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -341,7 +341,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -371,9 +371,9 @@ module Google
               #
               # @overload update_webhook(request, options = nil)
               #   Pass arguments to `update_webhook` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateWebhookRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::UpdateWebhookRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateWebhookRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::UpdateWebhookRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -384,24 +384,24 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param webhook [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook, ::Hash]
+              #   @param webhook [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook, ::Hash]
               #     Required. The webhook to update.
               #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
               #     The mask to control which fields get updated. If the mask is not present,
               #     all fields will be updated.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Webhook]
+              # @return [::Google::Cloud::Dialogflow::CX::V3beta1::Webhook]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_webhook request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateWebhookRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateWebhookRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -412,7 +412,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -442,9 +442,9 @@ module Google
               #
               # @overload delete_webhook(request, options = nil)
               #   Pass arguments to `delete_webhook` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteWebhookRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3beta1::DeleteWebhookRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteWebhookRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3beta1::DeleteWebhookRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -466,8 +466,8 @@ module Google
               #     *  If `force` is set to false, an error will be returned with message
               #        indicating the referenced resources.
               #     *  If `force` is set to true, Dialogflow will remove the webhook, as well
-              #        as any references to the webhook (i.e. {::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment#webhook Webhook}
-              #        and {::Google::Cloud::Dialogflow::Cx::V3beta1::Fulfillment#tag tag}in fulfillments that point to this webhook
+              #        as any references to the webhook (i.e. {::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment#webhook Webhook}
+              #        and {::Google::Cloud::Dialogflow::CX::V3beta1::Fulfillment#tag tag}in fulfillments that point to this webhook
               #        will be removed).
               #
               # @yield [response, operation] Access the result along with the RPC operation
@@ -481,7 +481,7 @@ module Google
               def delete_webhook request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteWebhookRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteWebhookRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -492,7 +492,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3beta1::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -524,7 +524,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -535,13 +535,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_webhooks to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_webhooks.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3beta1::Webhooks::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_webhooks.timeout = 20.0
               #   end

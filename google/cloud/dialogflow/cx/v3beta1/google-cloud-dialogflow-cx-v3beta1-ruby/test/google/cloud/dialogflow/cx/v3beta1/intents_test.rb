@@ -24,7 +24,7 @@ require "google/cloud/dialogflow/cx/v3beta1/intent_pb"
 require "google/cloud/dialogflow/cx/v3beta1/intent_services_pb"
 require "google/cloud/dialogflow/cx/v3beta1/intents"
 
-class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::Test
+class ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
   def test_list_intents
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsResponse.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -63,7 +63,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     list_intents_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_intents, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal "hello world", request["language_code"]
       assert_equal :INTENT_VIEW_UNSPECIFIED, request["intent_view"]
@@ -74,7 +74,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     Gapic::ServiceStub.stub :new, list_intents_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -93,7 +93,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object
-      client.list_intents ::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsRequest.new(parent: parent, language_code: language_code, intent_view: intent_view, page_size: page_size, page_token: page_token) do |response, operation|
+      client.list_intents ::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsRequest.new(parent: parent, language_code: language_code, intent_view: intent_view, page_size: page_size, page_token: page_token) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -107,7 +107,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object with options
-      client.list_intents(::Google::Cloud::Dialogflow::Cx::V3beta1::ListIntentsRequest.new(parent: parent, language_code: language_code, intent_view: intent_view, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+      client.list_intents(::Google::Cloud::Dialogflow::CX::V3beta1::ListIntentsRequest.new(parent: parent, language_code: language_code, intent_view: intent_view, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -120,7 +120,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
   def test_get_intent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Intent.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -131,7 +131,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     get_intent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_intent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::GetIntentRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
@@ -139,7 +139,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     Gapic::ServiceStub.stub :new, get_intent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -156,7 +156,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object
-      client.get_intent ::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest.new(name: name, language_code: language_code) do |response, operation|
+      client.get_intent ::Google::Cloud::Dialogflow::CX::V3beta1::GetIntentRequest.new(name: name, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -168,7 +168,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object with options
-      client.get_intent(::Google::Cloud::Dialogflow::Cx::V3beta1::GetIntentRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
+      client.get_intent(::Google::Cloud::Dialogflow::CX::V3beta1::GetIntentRequest.new(name: name, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -180,7 +180,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
   def test_create_intent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Intent.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -192,16 +192,16 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     create_intent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_intent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::CreateIntentRequest, request
       assert_equal "hello world", request["parent"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent), request["intent"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Intent), request["intent"]
       assert_equal "hello world", request["language_code"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_intent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -218,7 +218,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object
-      client.create_intent ::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest.new(parent: parent, intent: intent, language_code: language_code) do |response, operation|
+      client.create_intent ::Google::Cloud::Dialogflow::CX::V3beta1::CreateIntentRequest.new(parent: parent, intent: intent, language_code: language_code) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -230,7 +230,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object with options
-      client.create_intent(::Google::Cloud::Dialogflow::Cx::V3beta1::CreateIntentRequest.new(parent: parent, intent: intent, language_code: language_code), grpc_options) do |response, operation|
+      client.create_intent(::Google::Cloud::Dialogflow::CX::V3beta1::CreateIntentRequest.new(parent: parent, intent: intent, language_code: language_code), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -242,7 +242,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
   def test_update_intent
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent.new
+    grpc_response = ::Google::Cloud::Dialogflow::CX::V3beta1::Intent.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -254,8 +254,8 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     update_intent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :update_intent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest, request
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::Intent), request["intent"]
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateIntentRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Dialogflow::CX::V3beta1::Intent), request["intent"]
       assert_equal "hello world", request["language_code"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
       refute_nil options
@@ -263,7 +263,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     Gapic::ServiceStub.stub :new, update_intent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -280,7 +280,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object
-      client.update_intent ::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest.new(intent: intent, language_code: language_code, update_mask: update_mask) do |response, operation|
+      client.update_intent ::Google::Cloud::Dialogflow::CX::V3beta1::UpdateIntentRequest.new(intent: intent, language_code: language_code, update_mask: update_mask) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -292,7 +292,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object with options
-      client.update_intent(::Google::Cloud::Dialogflow::Cx::V3beta1::UpdateIntentRequest.new(intent: intent, language_code: language_code, update_mask: update_mask), grpc_options) do |response, operation|
+      client.update_intent(::Google::Cloud::Dialogflow::CX::V3beta1::UpdateIntentRequest.new(intent: intent, language_code: language_code, update_mask: update_mask), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -314,14 +314,14 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     delete_intent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_intent, name
-      assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest, request
+      assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteIntentRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, delete_intent_client_stub do
       # Create client
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -338,7 +338,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object
-      client.delete_intent ::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest.new(name: name) do |response, operation|
+      client.delete_intent ::Google::Cloud::Dialogflow::CX::V3beta1::DeleteIntentRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -350,7 +350,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
       end
 
       # Use protobuf object with options
-      client.delete_intent(::Google::Cloud::Dialogflow::Cx::V3beta1::DeleteIntentRequest.new(name: name), grpc_options) do |response, operation|
+      client.delete_intent(::Google::Cloud::Dialogflow::CX::V3beta1::DeleteIntentRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -365,7 +365,7 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client.new do |config|
+      client = ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -375,6 +375,6 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::ClientTest < Minitest::
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Dialogflow::Cx::V3beta1::Intents::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::Dialogflow::CX::V3beta1::Intents::Client::Configuration, config
   end
 end

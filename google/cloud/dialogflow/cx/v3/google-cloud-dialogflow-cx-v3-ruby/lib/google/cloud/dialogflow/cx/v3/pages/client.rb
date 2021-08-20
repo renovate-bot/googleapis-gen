@@ -22,13 +22,13 @@ require "google/cloud/dialogflow/cx/v3/page_pb"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           module Pages
             ##
             # Client for the Pages service.
             #
-            # Service for managing {::Google::Cloud::Dialogflow::Cx::V3::Page Pages}.
+            # Service for managing {::Google::Cloud::Dialogflow::CX::V3::Page Pages}.
             #
             class Client
               include Paths
@@ -39,13 +39,13 @@ module Google
               ##
               # Configure the Pages Client class.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::Pages::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @example
               #
               #   # Modify the configuration for all Pages clients
-              #   ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.configure do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -56,7 +56,7 @@ module Google
               #
               def self.configure
                 @configure ||= begin
-                  namespace = ["Google", "Cloud", "Dialogflow", "Cx", "V3"]
+                  namespace = ["Google", "Cloud", "Dialogflow", "CX", "V3"]
                   parent_config = while namespace.any?
                                     parent_name = namespace.join "::"
                                     parent_const = const_get parent_name
@@ -83,7 +83,7 @@ module Google
               # but structural changes (adding new fields, etc.) are not allowed. Structural changes
               # should be made on {Client.configure}.
               #
-              # See {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client::Configuration}
+              # See {::Google::Cloud::Dialogflow::CX::V3::Pages::Client::Configuration}
               # for a description of the configuration fields.
               #
               # @yield [config] Configure the Client client.
@@ -102,10 +102,10 @@ module Google
               # @example
               #
               #   # Create a client using the default configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new
               #
               #   # Create a client using a custom configuration
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
               #     config.timeout = 10.0
               #   end
               #
@@ -140,7 +140,7 @@ module Google
                 @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
                 @pages_stub = ::Gapic::ServiceStub.new(
-                  ::Google::Cloud::Dialogflow::Cx::V3::Pages::Stub,
+                  ::Google::Cloud::Dialogflow::CX::V3::Pages::Stub,
                   credentials:  credentials,
                   endpoint:     @config.endpoint,
                   channel_args: @config.channel_args,
@@ -155,9 +155,9 @@ module Google
               #
               # @overload list_pages(request, options = nil)
               #   Pass arguments to `list_pages` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -201,17 +201,17 @@ module Google
               #     The next_page_token value returned from a previous list request.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Page>]
+              # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Page>]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::Cx::V3::Page>]
+              # @return [::Gapic::PagedEnumerable<::Google::Cloud::Dialogflow::CX::V3::Page>]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def list_pages request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::ListPagesRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::ListPagesRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -222,7 +222,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -253,9 +253,9 @@ module Google
               #
               # @overload get_page(request, options = nil)
               #   Pass arguments to `get_page` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::GetPageRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::GetPageRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -294,17 +294,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Page]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Page]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Page]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Page]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def get_page request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::GetPageRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::GetPageRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -315,7 +315,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -349,9 +349,9 @@ module Google
               #
               # @overload create_page(request, options = nil)
               #   Pass arguments to `create_page` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::CreatePageRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::CreatePageRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -366,7 +366,7 @@ module Google
               #     Required. The flow to create a page for.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/flows/<Flow ID>`.
-              #   @param page [::Google::Cloud::Dialogflow::Cx::V3::Page, ::Hash]
+              #   @param page [::Google::Cloud::Dialogflow::CX::V3::Page, ::Hash]
               #     Required. The page to create.
               #   @param language_code [::String]
               #     The language of the following fields in `page`:
@@ -391,17 +391,17 @@ module Google
               #     Note: languages must be enabled in the agent before they can be used.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Page]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Page]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Page]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Page]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def create_page request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::CreatePageRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::CreatePageRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -412,7 +412,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -446,9 +446,9 @@ module Google
               #
               # @overload update_page(request, options = nil)
               #   Pass arguments to `update_page` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::UpdatePageRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::UpdatePageRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -459,7 +459,7 @@ module Google
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
-              #   @param page [::Google::Cloud::Dialogflow::Cx::V3::Page, ::Hash]
+              #   @param page [::Google::Cloud::Dialogflow::CX::V3::Page, ::Hash]
               #     Required. The page to update.
               #   @param language_code [::String]
               #     The language of the following fields in `page`:
@@ -487,17 +487,17 @@ module Google
               #     all fields will be updated.
               #
               # @yield [response, operation] Access the result along with the RPC operation
-              # @yieldparam response [::Google::Cloud::Dialogflow::Cx::V3::Page]
+              # @yieldparam response [::Google::Cloud::Dialogflow::CX::V3::Page]
               # @yieldparam operation [::GRPC::ActiveCall::Operation]
               #
-              # @return [::Google::Cloud::Dialogflow::Cx::V3::Page]
+              # @return [::Google::Cloud::Dialogflow::CX::V3::Page]
               #
               # @raise [::Google::Cloud::Error] if the RPC is aborted.
               #
               def update_page request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::UpdatePageRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::UpdatePageRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -508,7 +508,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -542,9 +542,9 @@ module Google
               #
               # @overload delete_page(request, options = nil)
               #   Pass arguments to `delete_page` via a request object, either of type
-              #   {::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest} or an equivalent Hash.
+              #   {::Google::Cloud::Dialogflow::CX::V3::DeletePageRequest} or an equivalent Hash.
               #
-              #   @param request [::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest, ::Hash]
+              #   @param request [::Google::Cloud::Dialogflow::CX::V3::DeletePageRequest, ::Hash]
               #     A request object representing the call parameters. Required. To specify no
               #     parameters, or to keep all the default parameter values, pass an empty Hash.
               #   @param options [::Gapic::CallOptions, ::Hash]
@@ -582,7 +582,7 @@ module Google
               def delete_page request, options = nil
                 raise ::ArgumentError, "request must be provided" if request.nil?
 
-                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3::DeletePageRequest
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::CX::V3::DeletePageRequest
 
                 # Converts hash and nil to an options object
                 options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -593,7 +593,7 @@ module Google
                 # Set x-goog-api-client and x-goog-user-project headers
                 metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                   lib_name: @config.lib_name, lib_version: @config.lib_version,
-                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3::VERSION
+                  gapic_version: ::Google::Cloud::Dialogflow::CX::V3::VERSION
                 metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
                 header_params = {
@@ -625,7 +625,7 @@ module Google
               # providing control over timeouts, retry behavior, logging, transport
               # parameters, and other low-level controls. Certain parameters can also be
               # applied individually to specific RPCs. See
-              # {::Google::Cloud::Dialogflow::Cx::V3::Pages::Client::Configuration::Rpcs}
+              # {::Google::Cloud::Dialogflow::CX::V3::Pages::Client::Configuration::Rpcs}
               # for a list of RPCs that can be configured independently.
               #
               # Configuration can be applied globally to all clients, or to a single client
@@ -636,13 +636,13 @@ module Google
               #   # Modify the global config, setting the timeout for
               #   # list_pages to 20 seconds,
               #   # and all remaining timeouts to 10 seconds.
-              #   ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.configure do |config|
+              #   ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.configure do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_pages.timeout = 20.0
               #   end
               #
               #   # Apply the above configuration only to a new client.
-              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Pages::Client.new do |config|
+              #   client = ::Google::Cloud::Dialogflow::CX::V3::Pages::Client.new do |config|
               #     config.timeout = 10.0
               #     config.rpcs.list_pages.timeout = 20.0
               #   end

@@ -35,12 +35,12 @@ require "google/cloud/dialogflow/cx/v3beta1/version"
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         ##
         # To load this package, including all its services, and instantiate a client:
         #
         #     require "google/cloud/dialogflow/cx/v3beta1"
-        #     client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Pages::Client.new
+        #     client = ::Google::Cloud::Dialogflow::CX::V3beta1::Pages::Client.new
         #
         module V3beta1
         end

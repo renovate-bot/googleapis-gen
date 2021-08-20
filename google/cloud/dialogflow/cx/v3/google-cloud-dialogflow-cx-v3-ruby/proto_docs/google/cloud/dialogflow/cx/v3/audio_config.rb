@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # Information for a word recognized by the speech recognizer.
           # @!attribute [rw] word
@@ -52,7 +52,7 @@ module Google
 
           # Instructs the speech recognizer on how to process the audio content.
           # @!attribute [rw] audio_encoding
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::AudioEncoding]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::AudioEncoding]
           #     Required. Audio encoding of the audio content to process.
           # @!attribute [rw] sample_rate_hertz
           #   @return [::Integer]
@@ -63,8 +63,8 @@ module Google
           #     more details.
           # @!attribute [rw] enable_word_info
           #   @return [::Boolean]
-          #     Optional. If `true`, Dialogflow returns {::Google::Cloud::Dialogflow::Cx::V3::SpeechWordInfo SpeechWordInfo} in
-          #     {::Google::Cloud::Dialogflow::Cx::V3::StreamingRecognitionResult StreamingRecognitionResult} with information about the recognized speech
+          #     Optional. If `true`, Dialogflow returns {::Google::Cloud::Dialogflow::CX::V3::SpeechWordInfo SpeechWordInfo} in
+          #     {::Google::Cloud::Dialogflow::CX::V3::StreamingRecognitionResult StreamingRecognitionResult} with information about the recognized speech
           #     words, e.g. start and end time offsets. If false or unspecified, Speech
           #     doesn't return any word-level information.
           # @!attribute [rw] phrase_hints
@@ -89,8 +89,8 @@ module Google
           #     documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
           #     for more details.
           # @!attribute [rw] model_variant
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SpeechModelVariant]
-          #     Optional. Which variant of the {::Google::Cloud::Dialogflow::Cx::V3::InputAudioConfig#model Speech model} to use.
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SpeechModelVariant]
+          #     Optional. Which variant of the {::Google::Cloud::Dialogflow::CX::V3::InputAudioConfig#model Speech model} to use.
           # @!attribute [rw] single_utterance
           #   @return [::Boolean]
           #     Optional. If `false` (default), recognition does not cease until the
@@ -111,15 +111,15 @@ module Google
           #   @return [::String]
           #     Optional. The name of the voice. If not set, the service will choose a
           #     voice based on the other parameters such as language_code and
-          #     {::Google::Cloud::Dialogflow::Cx::V3::VoiceSelectionParams#ssml_gender ssml_gender}.
+          #     {::Google::Cloud::Dialogflow::CX::V3::VoiceSelectionParams#ssml_gender ssml_gender}.
           #
           #     For the list of available voices, please refer to [Supported voices and
           #     languages](https://cloud.google.com/text-to-speech/docs/voices).
           # @!attribute [rw] ssml_gender
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SsmlVoiceGender]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SsmlVoiceGender]
           #     Optional. The preferred gender of the voice. If not set, the service will
           #     choose a voice based on the other parameters such as language_code and
-          #     {::Google::Cloud::Dialogflow::Cx::V3::VoiceSelectionParams#name name}. Note that this is only a preference, not requirement. If a
+          #     {::Google::Cloud::Dialogflow::CX::V3::VoiceSelectionParams#name name}. Note that this is only a preference, not requirement. If a
           #     voice of the appropriate gender is not available, the synthesizer
           #     substitutes a voice with a different gender rather than failing the
           #     request.
@@ -156,7 +156,7 @@ module Google
           #     applied on (post synthesized) text to speech. Effects are applied on top of
           #     each other in the order they are given.
           # @!attribute [rw] voice
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::VoiceSelectionParams]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::VoiceSelectionParams]
           #     Optional. The desired voice of the synthesized audio.
           class SynthesizeSpeechConfig
             include ::Google::Protobuf::MessageExts
@@ -165,7 +165,7 @@ module Google
 
           # Instructs the speech synthesizer how to generate the output audio content.
           # @!attribute [rw] audio_encoding
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::OutputAudioEncoding]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::OutputAudioEncoding]
           #     Required. Audio encoding of the synthesized audio content.
           # @!attribute [rw] sample_rate_hertz
           #   @return [::Integer]
@@ -175,7 +175,7 @@ module Google
           #     rate, then the synthesizer will honor this request by converting to the
           #     desired sample rate (which might result in worse audio quality).
           # @!attribute [rw] synthesize_speech_config
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SynthesizeSpeechConfig]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SynthesizeSpeechConfig]
           #     Optional. Configuration of how speech should be synthesized.
           class OutputAudioConfig
             include ::Google::Protobuf::MessageExts
@@ -231,7 +231,7 @@ module Google
             AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7
           end
 
-          # Variant of the specified {::Google::Cloud::Dialogflow::Cx::V3::InputAudioConfig#model Speech model} to use.
+          # Variant of the specified {::Google::Cloud::Dialogflow::CX::V3::InputAudioConfig#model Speech model} to use.
           #
           # See the [Cloud Speech
           # documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
@@ -260,7 +260,7 @@ module Google
             # Use an enhanced model variant:
             #
             # * If an enhanced variant does not exist for the given
-            #   {::Google::Cloud::Dialogflow::Cx::V3::InputAudioConfig#model model} and request language, Dialogflow falls
+            #   {::Google::Cloud::Dialogflow::CX::V3::InputAudioConfig#model model} and request language, Dialogflow falls
             #   back to the standard variant.
             #
             #   The [Cloud Speech

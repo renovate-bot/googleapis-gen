@@ -23,7 +23,7 @@ class TransitionRouteGroup
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ë
+∫
 ?google/cloud/dialogflow/cx/v3beta1/transition_route_group.proto"google.cloud.dialogflow.cx.v3beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto-google/cloud/dialogflow/cx/v3beta1/page.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"∫
 TransitionRouteGroup
 name (	
@@ -60,8 +60,8 @@ page_token (	
 GetTransitionRouteGroupB.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest8.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup"^Ç”‰ìQO/v3beta1/{name=projects/*/locations/*/agents/*/flows/*/transitionRouteGroups/*}⁄AnameØ
 CreateTransitionRouteGroupE.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest8.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup"èÇ”‰ìi"O/v3beta1/{parent=projects/*/locations/*/agents/*/flows/*}/transitionRouteGroups:transition_route_group⁄Aparent,transition_route_groupÃ
 UpdateTransitionRouteGroupE.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest8.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup"¨Ç”‰ìÄ2f/v3beta1/{transition_route_group.name=projects/*/locations/*/agents/*/flows/*/transitionRouteGroups/*}:transition_route_group⁄A"transition_route_group,update_mask€
-DeleteTransitionRouteGroupE.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest.google.protobuf.Empty"^Ç”‰ìQ*O/v3beta1/{name=projects/*/locations/*/agents/*/flows/*/transitionRouteGroups/*}⁄Anamex Adialogflow.googleapis.com“AYhttps://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/dialogflowB∏
-&com.google.cloud.dialogflow.cx.v3beta1BTransitionRouteGroupProtoPZDgoogle.golang.org/genproto/googleapis/cloud/dialogflow/cx/v3beta1;cx¯¢DF™"Google.Cloud.Dialogflow.Cx.V3Beta1bproto3'
+DeleteTransitionRouteGroupE.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest.google.protobuf.Empty"^Ç”‰ìQ*O/v3beta1/{name=projects/*/locations/*/agents/*/flows/*/transitionRouteGroups/*}⁄Anamex Adialogflow.googleapis.com“AYhttps://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/dialogflowB·
+&com.google.cloud.dialogflow.cx.v3beta1BTransitionRouteGroupProtoPZDgoogle.golang.org/genproto/googleapis/cloud/dialogflow/cx/v3beta1;cx¯¢DF™"Google.Cloud.Dialogflow.Cx.V3Beta1Í&Google::Cloud::Dialogflow::CX::V3beta1bproto3'
         , true);
 
         static::$is_initialized = true;

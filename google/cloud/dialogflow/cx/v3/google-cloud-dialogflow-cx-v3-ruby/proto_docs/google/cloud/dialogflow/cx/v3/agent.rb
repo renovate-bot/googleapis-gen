@@ -20,7 +20,7 @@
 module Google
   module Cloud
     module Dialogflow
-      module Cx
+      module CX
         module V3
           # Settings related to speech recognition.
           # @!attribute [rw] enable_speech_adaptation
@@ -36,13 +36,13 @@ module Google
           # in your app, product, or service to determine user intent and respond to the
           # user in a natural way.
           #
-          # After you create an agent, you can add {::Google::Cloud::Dialogflow::Cx::V3::Intent Intents},
-          # {::Google::Cloud::Dialogflow::Cx::V3::EntityType Entity Types}, {::Google::Cloud::Dialogflow::Cx::V3::Flow Flows}, {::Google::Cloud::Dialogflow::Cx::V3::Fulfillment Fulfillments},
-          # {::Google::Cloud::Dialogflow::Cx::V3::Webhook Webhooks}, and so on to manage the conversation flows..
+          # After you create an agent, you can add {::Google::Cloud::Dialogflow::CX::V3::Intent Intents},
+          # {::Google::Cloud::Dialogflow::CX::V3::EntityType Entity Types}, {::Google::Cloud::Dialogflow::CX::V3::Flow Flows}, {::Google::Cloud::Dialogflow::CX::V3::Fulfillment Fulfillments},
+          # {::Google::Cloud::Dialogflow::CX::V3::Webhook Webhooks}, and so on to manage the conversation flows..
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the agent.
-          #     Required for the {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#update_agent Agents.UpdateAgent} method. {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#create_agent Agents.CreateAgent}
+          #     Required for the {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#update_agent Agents.UpdateAgent} method. {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#create_agent Agents.CreateAgent}
           #     populates the name automatically.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
           # @!attribute [rw] display_name
@@ -54,7 +54,7 @@ module Google
           #     See [Language
           #     Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     for a list of the currently supported language codes.
-          #     This field cannot be set by the {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#update_agent Agents.UpdateAgent} method.
+          #     This field cannot be set by the {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#update_agent Agents.UpdateAgent} method.
           # @!attribute [rw] supported_language_codes
           #   @return [::Array<::String>]
           #     The list of all languages supported by the agent (except for the
@@ -75,7 +75,7 @@ module Google
           #     Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo)
           #     integration.
           # @!attribute [rw] speech_to_text_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SpeechToTextSettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::SpeechToTextSettings]
           #     Speech recognition related settings.
           # @!attribute [rw] start_flow
           #   @return [::String]
@@ -86,20 +86,20 @@ module Google
           #     ID>/flows/<Flow ID>`.
           # @!attribute [rw] security_settings
           #   @return [::String]
-          #     Name of the {::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings SecuritySettings} reference for the agent.
+          #     Name of the {::Google::Cloud::Dialogflow::CX::V3::SecuritySettings SecuritySettings} reference for the agent.
           #     Format: `projects/<Project ID>/locations/<Location
           #     ID>/securitySettings/<Security Settings ID>`.
           # @!attribute [rw] enable_stackdriver_logging
           #   @return [::Boolean]
           #     Indicates if stackdriver logging is enabled for the agent.
-          #     Please use {::Google::Cloud::Dialogflow::Cx::V3::AdvancedSettings::LoggingSettings agent.advanced_settings}
+          #     Please use {::Google::Cloud::Dialogflow::CX::V3::AdvancedSettings::LoggingSettings agent.advanced_settings}
           #     instead.
           # @!attribute [rw] enable_spell_correction
           #   @return [::Boolean]
           #     Indicates if automatic spell correction is enabled in detect intent
           #     requests.
           # @!attribute [rw] advanced_settings
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::AdvancedSettings]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::AdvancedSettings]
           #     Hierarchical advanced settings for this agent. The settings exposed at the
           #     lower level overrides the settings exposed at the higher level.
           class Agent
@@ -107,7 +107,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#list_agents Agents.ListAgents}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#list_agents Agents.ListAgents}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The location to list all agents for.
@@ -124,9 +124,9 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#list_agents Agents.ListAgents}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#list_agents Agents.ListAgents}.
           # @!attribute [rw] agents
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::Agent>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::Agent>]
           #     The list of agents. There will be a maximum number of items returned based
           #     on the page_size field in the request.
           # @!attribute [rw] next_page_token
@@ -138,7 +138,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#get_agent Agents.GetAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#get_agent Agents.GetAgent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the agent.
@@ -148,22 +148,22 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#create_agent Agents.CreateAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#create_agent Agents.CreateAgent}.
           # @!attribute [rw] parent
           #   @return [::String]
           #     Required. The location to create a agent for.
           #     Format: `projects/<Project ID>/locations/<Location ID>`.
           # @!attribute [rw] agent
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Agent]
           #     Required. The agent to create.
           class CreateAgentRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#update_agent Agents.UpdateAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#update_agent Agents.UpdateAgent}.
           # @!attribute [rw] agent
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Agent]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::Agent]
           #     Required. The agent to update.
           # @!attribute [rw] update_mask
           #   @return [::Google::Protobuf::FieldMask]
@@ -174,7 +174,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#delete_agent Agents.DeleteAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#delete_agent Agents.DeleteAgent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the agent to delete.
@@ -184,7 +184,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#export_agent Agents.ExportAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#export_agent Agents.ExportAgent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the agent to export.
@@ -205,11 +205,11 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#export_agent Agents.ExportAgent}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#export_agent Agents.ExportAgent}.
           # @!attribute [rw] agent_uri
           #   @return [::String]
           #     The URI to a file containing the exported agent. This field is populated
-          #     only if `agent_uri` is specified in {::Google::Cloud::Dialogflow::Cx::V3::ExportAgentRequest ExportAgentRequest}.
+          #     only if `agent_uri` is specified in {::Google::Cloud::Dialogflow::CX::V3::ExportAgentRequest ExportAgentRequest}.
           # @!attribute [rw] agent_content
           #   @return [::String]
           #     Uncompressed raw byte content for agent.
@@ -218,7 +218,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#restore_agent Agents.RestoreAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#restore_agent Agents.RestoreAgent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The name of the agent to restore into.
@@ -232,7 +232,7 @@ module Google
           #   @return [::String]
           #     Uncompressed raw byte content for agent.
           # @!attribute [rw] restore_option
-          #   @return [::Google::Cloud::Dialogflow::Cx::V3::RestoreAgentRequest::RestoreOption]
+          #   @return [::Google::Cloud::Dialogflow::CX::V3::RestoreAgentRequest::RestoreOption]
           #     Agent restore mode. If not specified, `KEEP` is assumed.
           class RestoreAgentRequest
             include ::Google::Protobuf::MessageExts
@@ -254,7 +254,7 @@ module Google
             end
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#validate_agent Agents.ValidateAgent}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#validate_agent Agents.ValidateAgent}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The agent to validate.
@@ -267,7 +267,7 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The request message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#get_agent_validation_result Agents.GetAgentValidationResult}.
+          # The request message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#get_agent_validation_result Agents.GetAgentValidationResult}.
           # @!attribute [rw] name
           #   @return [::String]
           #     Required. The agent name.
@@ -281,14 +281,14 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # The response message for {::Google::Cloud::Dialogflow::Cx::V3::Agents::Client#get_agent_validation_result Agents.GetAgentValidationResult}.
+          # The response message for {::Google::Cloud::Dialogflow::CX::V3::Agents::Client#get_agent_validation_result Agents.GetAgentValidationResult}.
           # @!attribute [rw] name
           #   @return [::String]
           #     The unique identifier of the agent validation result.
           #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
           #     ID>/validationResult`.
           # @!attribute [rw] flow_validation_results
-          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::FlowValidationResult>]
+          #   @return [::Array<::Google::Cloud::Dialogflow::CX::V3::FlowValidationResult>]
           #     Contains all flow validation results.
           class AgentValidationResult
             include ::Google::Protobuf::MessageExts

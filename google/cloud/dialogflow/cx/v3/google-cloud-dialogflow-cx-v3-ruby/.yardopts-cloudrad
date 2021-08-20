@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Dialogflow Cx V3 API
+--title=Dialogflow CX V3 API
 --exclude _pb\.rb$
 --format yaml
 --template-path ../template
