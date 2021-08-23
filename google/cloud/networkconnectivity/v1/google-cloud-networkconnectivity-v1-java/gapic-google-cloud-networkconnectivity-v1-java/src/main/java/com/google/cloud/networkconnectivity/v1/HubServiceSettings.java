@@ -151,28 +151,6 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return ((HubServiceStubSettings) getStubSettings()).updateSpokeOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to deactivateSpoke. */
-  public UnaryCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeSettings() {
-    return ((HubServiceStubSettings) getStubSettings()).deactivateSpokeSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deactivateSpoke. */
-  public OperationCallSettings<DeactivateSpokeRequest, Spoke, OperationMetadata>
-      deactivateSpokeOperationSettings() {
-    return ((HubServiceStubSettings) getStubSettings()).deactivateSpokeOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to activateSpoke. */
-  public UnaryCallSettings<ActivateSpokeRequest, Operation> activateSpokeSettings() {
-    return ((HubServiceStubSettings) getStubSettings()).activateSpokeSettings();
-  }
-
-  /** Returns the object with the settings used for calls to activateSpoke. */
-  public OperationCallSettings<ActivateSpokeRequest, Spoke, OperationMetadata>
-      activateSpokeOperationSettings() {
-    return ((HubServiceStubSettings) getStubSettings()).activateSpokeOperationSettings();
-  }
-
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return ((HubServiceStubSettings) getStubSettings()).deleteSpokeSettings();
@@ -355,28 +333,6 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     public OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings() {
       return getStubSettingsBuilder().updateSpokeOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deactivateSpoke. */
-    public UnaryCallSettings.Builder<DeactivateSpokeRequest, Operation> deactivateSpokeSettings() {
-      return getStubSettingsBuilder().deactivateSpokeSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deactivateSpoke. */
-    public OperationCallSettings.Builder<DeactivateSpokeRequest, Spoke, OperationMetadata>
-        deactivateSpokeOperationSettings() {
-      return getStubSettingsBuilder().deactivateSpokeOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to activateSpoke. */
-    public UnaryCallSettings.Builder<ActivateSpokeRequest, Operation> activateSpokeSettings() {
-      return getStubSettingsBuilder().activateSpokeSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to activateSpoke. */
-    public OperationCallSettings.Builder<ActivateSpokeRequest, Spoke, OperationMetadata>
-        activateSpokeOperationSettings() {
-      return getStubSettingsBuilder().activateSpokeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */

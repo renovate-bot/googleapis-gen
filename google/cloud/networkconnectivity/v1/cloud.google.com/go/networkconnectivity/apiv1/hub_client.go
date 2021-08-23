@@ -42,18 +42,16 @@ var newHubClientHook clientHook
 
 // HubCallOptions contains the retry settings for each method of HubClient.
 type HubCallOptions struct {
-	ListHubs        []gax.CallOption
-	GetHub          []gax.CallOption
-	CreateHub       []gax.CallOption
-	UpdateHub       []gax.CallOption
-	DeleteHub       []gax.CallOption
-	ListSpokes      []gax.CallOption
-	GetSpoke        []gax.CallOption
-	CreateSpoke     []gax.CallOption
-	UpdateSpoke     []gax.CallOption
-	DeactivateSpoke []gax.CallOption
-	ActivateSpoke   []gax.CallOption
-	DeleteSpoke     []gax.CallOption
+	ListHubs    []gax.CallOption
+	GetHub      []gax.CallOption
+	CreateHub   []gax.CallOption
+	UpdateHub   []gax.CallOption
+	DeleteHub   []gax.CallOption
+	ListSpokes  []gax.CallOption
+	GetSpoke    []gax.CallOption
+	CreateSpoke []gax.CallOption
+	UpdateSpoke []gax.CallOption
+	DeleteSpoke []gax.CallOption
 }
 
 func defaultHubGRPCClientOptions() []option.ClientOption {
@@ -118,11 +116,9 @@ func defaultHubCallOptions() *HubCallOptions {
 				})
 			}),
 		},
-		CreateSpoke:     []gax.CallOption{},
-		UpdateSpoke:     []gax.CallOption{},
-		DeactivateSpoke: []gax.CallOption{},
-		ActivateSpoke:   []gax.CallOption{},
-		DeleteSpoke:     []gax.CallOption{},
+		CreateSpoke: []gax.CallOption{},
+		UpdateSpoke: []gax.CallOption{},
+		DeleteSpoke: []gax.CallOption{},
 	}
 }
 
@@ -145,10 +141,6 @@ type internalHubClient interface {
 	CreateSpokeOperation(name string) *CreateSpokeOperation
 	UpdateSpoke(context.Context, *networkconnectivitypb.UpdateSpokeRequest, ...gax.CallOption) (*UpdateSpokeOperation, error)
 	UpdateSpokeOperation(name string) *UpdateSpokeOperation
-	DeactivateSpoke(context.Context, *networkconnectivitypb.DeactivateSpokeRequest, ...gax.CallOption) (*DeactivateSpokeOperation, error)
-	DeactivateSpokeOperation(name string) *DeactivateSpokeOperation
-	ActivateSpoke(context.Context, *networkconnectivitypb.ActivateSpokeRequest, ...gax.CallOption) (*ActivateSpokeOperation, error)
-	ActivateSpokeOperation(name string) *ActivateSpokeOperation
 	DeleteSpoke(context.Context, *networkconnectivitypb.DeleteSpokeRequest, ...gax.CallOption) (*DeleteSpokeOperation, error)
 	DeleteSpokeOperation(name string) *DeleteSpokeOperation
 }
@@ -267,31 +259,6 @@ func (c *HubClient) UpdateSpoke(ctx context.Context, req *networkconnectivitypb.
 // The name must be that of a previously created UpdateSpokeOperation, possibly from a different process.
 func (c *HubClient) UpdateSpokeOperation(name string) *UpdateSpokeOperation {
 	return c.internalClient.UpdateSpokeOperation(name)
-}
-
-// DeactivateSpoke deactivates the specified spoke. Deactivating keeps the spoke information
-// for future re-activation, but disconnects the Google Cloud network from
-// non-Google-Cloud network.
-func (c *HubClient) DeactivateSpoke(ctx context.Context, req *networkconnectivitypb.DeactivateSpokeRequest, opts ...gax.CallOption) (*DeactivateSpokeOperation, error) {
-	return c.internalClient.DeactivateSpoke(ctx, req, opts...)
-}
-
-// DeactivateSpokeOperation returns a new DeactivateSpokeOperation from a given name.
-// The name must be that of a previously created DeactivateSpokeOperation, possibly from a different process.
-func (c *HubClient) DeactivateSpokeOperation(name string) *DeactivateSpokeOperation {
-	return c.internalClient.DeactivateSpokeOperation(name)
-}
-
-// ActivateSpoke activates the specified spoke. Activating reconnects the Google Cloud
-// network with the non-Google-Cloud network.
-func (c *HubClient) ActivateSpoke(ctx context.Context, req *networkconnectivitypb.ActivateSpokeRequest, opts ...gax.CallOption) (*ActivateSpokeOperation, error) {
-	return c.internalClient.ActivateSpoke(ctx, req, opts...)
-}
-
-// ActivateSpokeOperation returns a new ActivateSpokeOperation from a given name.
-// The name must be that of a previously created ActivateSpokeOperation, possibly from a different process.
-func (c *HubClient) ActivateSpokeOperation(name string) *ActivateSpokeOperation {
-	return c.internalClient.ActivateSpokeOperation(name)
 }
 
 // DeleteSpoke deletes the specified spoke.
@@ -648,52 +615,6 @@ func (c *hubGRPCClient) UpdateSpoke(ctx context.Context, req *networkconnectivit
 	}, nil
 }
 
-func (c *hubGRPCClient) DeactivateSpoke(ctx context.Context, req *networkconnectivitypb.DeactivateSpokeRequest, opts ...gax.CallOption) (*DeactivateSpokeOperation, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).DeactivateSpoke[0:len((*c.CallOptions).DeactivateSpoke):len((*c.CallOptions).DeactivateSpoke)], opts...)
-	var resp *longrunningpb.Operation
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.hubClient.DeactivateSpoke(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &DeactivateSpokeOperation{
-		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
-	}, nil
-}
-
-func (c *hubGRPCClient) ActivateSpoke(ctx context.Context, req *networkconnectivitypb.ActivateSpokeRequest, opts ...gax.CallOption) (*ActivateSpokeOperation, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append((*c.CallOptions).ActivateSpoke[0:len((*c.CallOptions).ActivateSpoke):len((*c.CallOptions).ActivateSpoke)], opts...)
-	var resp *longrunningpb.Operation
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.hubClient.ActivateSpoke(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &ActivateSpokeOperation{
-		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
-	}, nil
-}
-
 func (c *hubGRPCClient) DeleteSpoke(ctx context.Context, req *networkconnectivitypb.DeleteSpokeRequest, opts ...gax.CallOption) (*DeleteSpokeOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -715,75 +636,6 @@ func (c *hubGRPCClient) DeleteSpoke(ctx context.Context, req *networkconnectivit
 	return &DeleteSpokeOperation{
 		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
-}
-
-// ActivateSpokeOperation manages a long-running operation from ActivateSpoke.
-type ActivateSpokeOperation struct {
-	lro *longrunning.Operation
-}
-
-// ActivateSpokeOperation returns a new ActivateSpokeOperation from a given name.
-// The name must be that of a previously created ActivateSpokeOperation, possibly from a different process.
-func (c *hubGRPCClient) ActivateSpokeOperation(name string) *ActivateSpokeOperation {
-	return &ActivateSpokeOperation{
-		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
-	}
-}
-
-// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
-//
-// See documentation of Poll for error-handling information.
-func (op *ActivateSpokeOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*networkconnectivitypb.Spoke, error) {
-	var resp networkconnectivitypb.Spoke
-	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
-		return nil, err
-	}
-	return &resp, nil
-}
-
-// Poll fetches the latest state of the long-running operation.
-//
-// Poll also fetches the latest metadata, which can be retrieved by Metadata.
-//
-// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
-// the operation has completed with failure, the error is returned and op.Done will return true.
-// If Poll succeeds and the operation has completed successfully,
-// op.Done will return true, and the response of the operation is returned.
-// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
-func (op *ActivateSpokeOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*networkconnectivitypb.Spoke, error) {
-	var resp networkconnectivitypb.Spoke
-	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
-		return nil, err
-	}
-	if !op.Done() {
-		return nil, nil
-	}
-	return &resp, nil
-}
-
-// Metadata returns metadata associated with the long-running operation.
-// Metadata itself does not contact the server, but Poll does.
-// To get the latest metadata, call this method after a successful call to Poll.
-// If the metadata is not available, the returned metadata and error are both nil.
-func (op *ActivateSpokeOperation) Metadata() (*networkconnectivitypb.OperationMetadata, error) {
-	var meta networkconnectivitypb.OperationMetadata
-	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
-		return nil, nil
-	} else if err != nil {
-		return nil, err
-	}
-	return &meta, nil
-}
-
-// Done reports whether the long-running operation has completed.
-func (op *ActivateSpokeOperation) Done() bool {
-	return op.lro.Done()
-}
-
-// Name returns the name of the long-running operation.
-// The name is assigned by the server and is unique within the service from which the operation is created.
-func (op *ActivateSpokeOperation) Name() string {
-	return op.lro.Name()
 }
 
 // CreateHubOperation manages a long-running operation from CreateHub.
@@ -921,75 +773,6 @@ func (op *CreateSpokeOperation) Done() bool {
 // Name returns the name of the long-running operation.
 // The name is assigned by the server and is unique within the service from which the operation is created.
 func (op *CreateSpokeOperation) Name() string {
-	return op.lro.Name()
-}
-
-// DeactivateSpokeOperation manages a long-running operation from DeactivateSpoke.
-type DeactivateSpokeOperation struct {
-	lro *longrunning.Operation
-}
-
-// DeactivateSpokeOperation returns a new DeactivateSpokeOperation from a given name.
-// The name must be that of a previously created DeactivateSpokeOperation, possibly from a different process.
-func (c *hubGRPCClient) DeactivateSpokeOperation(name string) *DeactivateSpokeOperation {
-	return &DeactivateSpokeOperation{
-		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
-	}
-}
-
-// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
-//
-// See documentation of Poll for error-handling information.
-func (op *DeactivateSpokeOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*networkconnectivitypb.Spoke, error) {
-	var resp networkconnectivitypb.Spoke
-	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
-		return nil, err
-	}
-	return &resp, nil
-}
-
-// Poll fetches the latest state of the long-running operation.
-//
-// Poll also fetches the latest metadata, which can be retrieved by Metadata.
-//
-// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
-// the operation has completed with failure, the error is returned and op.Done will return true.
-// If Poll succeeds and the operation has completed successfully,
-// op.Done will return true, and the response of the operation is returned.
-// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
-func (op *DeactivateSpokeOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*networkconnectivitypb.Spoke, error) {
-	var resp networkconnectivitypb.Spoke
-	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
-		return nil, err
-	}
-	if !op.Done() {
-		return nil, nil
-	}
-	return &resp, nil
-}
-
-// Metadata returns metadata associated with the long-running operation.
-// Metadata itself does not contact the server, but Poll does.
-// To get the latest metadata, call this method after a successful call to Poll.
-// If the metadata is not available, the returned metadata and error are both nil.
-func (op *DeactivateSpokeOperation) Metadata() (*networkconnectivitypb.OperationMetadata, error) {
-	var meta networkconnectivitypb.OperationMetadata
-	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
-		return nil, nil
-	} else if err != nil {
-		return nil, err
-	}
-	return &meta, nil
-}
-
-// Done reports whether the long-running operation has completed.
-func (op *DeactivateSpokeOperation) Done() bool {
-	return op.lro.Done()
-}
-
-// Name returns the name of the long-running operation.
-// The name is assigned by the server and is unique within the service from which the operation is created.
-func (op *DeactivateSpokeOperation) Name() string {
 	return op.lro.Name()
 }
 

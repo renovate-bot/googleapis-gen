@@ -27,18 +27,6 @@ return [
             ],
         ],
         'google.cloud.networkconnectivity.v1.HubService' => [
-            'ActivateSpoke' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/spokes/*}:activate',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateHub' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{parent=projects/*/locations/global}/hubs',
@@ -59,18 +47,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'DeactivateSpoke' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=projects/*/locations/*/spokes/*}:deactivate',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
                         ],
                     ],
                 ],

@@ -251,56 +251,6 @@ func ExampleHubClient_UpdateSpoke() {
 	_ = resp
 }
 
-func ExampleHubClient_DeactivateSpoke() {
-	ctx := context.Background()
-	c, err := networkconnectivity.NewHubClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	defer c.Close()
-
-	req := &networkconnectivitypb.DeactivateSpokeRequest{
-		// TODO: Fill request struct fields.
-		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkconnectivity/v1#DeactivateSpokeRequest.
-	}
-	op, err := c.DeactivateSpoke(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	resp, err := op.Wait(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	// TODO: Use resp.
-	_ = resp
-}
-
-func ExampleHubClient_ActivateSpoke() {
-	ctx := context.Background()
-	c, err := networkconnectivity.NewHubClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	defer c.Close()
-
-	req := &networkconnectivitypb.ActivateSpokeRequest{
-		// TODO: Fill request struct fields.
-		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/networkconnectivity/v1#ActivateSpokeRequest.
-	}
-	op, err := c.ActivateSpoke(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	resp, err := op.Wait(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	// TODO: Use resp.
-	_ = resp
-}
-
 func ExampleHubClient_DeleteSpoke() {
 	ctx := context.Background()
 	c, err := networkconnectivity.NewHubClient(ctx)

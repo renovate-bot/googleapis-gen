@@ -38,10 +38,8 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\NetworkConnectivity\V1\ActivateSpokeRequest;
 use Google\Cloud\NetworkConnectivity\V1\CreateHubRequest;
 use Google\Cloud\NetworkConnectivity\V1\CreateSpokeRequest;
-use Google\Cloud\NetworkConnectivity\V1\DeactivateSpokeRequest;
 use Google\Cloud\NetworkConnectivity\V1\DeleteHubRequest;
 use Google\Cloud\NetworkConnectivity\V1\DeleteSpokeRequest;
 use Google\Cloud\NetworkConnectivity\V1\GetHubRequest;
@@ -68,8 +66,9 @@ use Google\Protobuf\FieldMask;
  * ```
  * $hubServiceClient = new HubServiceClient();
  * try {
- *     $formattedName = $hubServiceClient->spokeName('[PROJECT]', '[LOCATION]', '[SPOKE]');
- *     $operationResponse = $hubServiceClient->activateSpoke($formattedName);
+ *     $formattedParent = $hubServiceClient->locationName('[PROJECT]', '[LOCATION]');
+ *     $hub = new Hub();
+ *     $operationResponse = $hubServiceClient->createHub($formattedParent, $hub);
  *     $operationResponse->pollUntilComplete();
  *     if ($operationResponse->operationSucceeded()) {
  *         $result = $operationResponse->getResult();
@@ -80,10 +79,10 @@ use Google\Protobuf\FieldMask;
  *     }
  *     // Alternatively:
  *     // start the operation, keep the operation name, and resume later
- *     $operationResponse = $hubServiceClient->activateSpoke($formattedName);
+ *     $operationResponse = $hubServiceClient->createHub($formattedParent, $hub);
  *     $operationName = $operationResponse->getName();
  *     // ... do other work
- *     $newOperationResponse = $hubServiceClient->resumeOperation($operationName, 'activateSpoke');
+ *     $newOperationResponse = $hubServiceClient->resumeOperation($operationName, 'createHub');
  *     while (!$newOperationResponse->isDone()) {
  *         // ... do other work
  *         $newOperationResponse->reload();
@@ -392,91 +391,6 @@ class HubServiceGapicClient
     }
 
     /**
-     * Activates the specified spoke. Activating reconnects the Google Cloud
-     * network with the non-Google-Cloud network.
-     *
-     * Sample code:
-     * ```
-     * $hubServiceClient = new HubServiceClient();
-     * try {
-     *     $formattedName = $hubServiceClient->spokeName('[PROJECT]', '[LOCATION]', '[SPOKE]');
-     *     $operationResponse = $hubServiceClient->activateSpoke($formattedName);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         $result = $operationResponse->getResult();
-     *     // doSomethingWith($result)
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *     // Alternatively:
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $hubServiceClient->activateSpoke($formattedName);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $hubServiceClient->resumeOperation($operationName, 'activateSpoke');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *         $result = $newOperationResponse->getResult();
-     *     // doSomethingWith($result)
-     *     } else {
-     *         $error = $newOperationResponse->getError();
-     *         // handleError($error)
-     *     }
-     * } finally {
-     *     $hubServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the spoke to activate.
-     * @param array  $optionalArgs {
-     *     Optional.
-     *
-     *     @type string $requestId
-     *           Optional. A unique request ID (optional). If you specify this ID, you can use it
-     *           in cases when you need to retry your request. When you need to retry, this
-     *           ID lets the server know that it can ignore the request if it has already
-     *           been completed. The server guarantees that for at least 60 minutes after
-     *           the first request.
-     *
-     *           For example, consider a situation where you make an initial request and
-     *           the request times out. If you make the request again with the same request
-     *           ID, the server can check to see whether the original operation
-     *           was received. If it was, the server ignores the second request. This
-     *           behavior prevents clients from mistakenly creating duplicate commitments.
-     *
-     *           The request ID must be a valid UUID, with the exception that zero UUID is
-     *           not supported (00000000-0000-0000-0000-000000000000).
-     *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     */
-    public function activateSpoke($name, array $optionalArgs = [])
-    {
-        $request = new ActivateSpokeRequest();
-        $requestParamHeaders = [];
-        $request->setName($name);
-        $requestParamHeaders['name'] = $name;
-        if (isset($optionalArgs['requestId'])) {
-            $request->setRequestId($optionalArgs['requestId']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
-        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startOperationsCall('ActivateSpoke', $optionalArgs, $request, $this->getOperationsClient())->wait();
-    }
-
-    /**
      * Creates a new hub in the specified project.
      *
      * Sample code:
@@ -660,92 +574,6 @@ class HubServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('CreateSpoke', $optionalArgs, $request, $this->getOperationsClient())->wait();
-    }
-
-    /**
-     * Deactivates the specified spoke. Deactivating keeps the spoke information
-     * for future re-activation, but disconnects the Google Cloud network from
-     * non-Google-Cloud network.
-     *
-     * Sample code:
-     * ```
-     * $hubServiceClient = new HubServiceClient();
-     * try {
-     *     $formattedName = $hubServiceClient->spokeName('[PROJECT]', '[LOCATION]', '[SPOKE]');
-     *     $operationResponse = $hubServiceClient->deactivateSpoke($formattedName);
-     *     $operationResponse->pollUntilComplete();
-     *     if ($operationResponse->operationSucceeded()) {
-     *         $result = $operationResponse->getResult();
-     *     // doSomethingWith($result)
-     *     } else {
-     *         $error = $operationResponse->getError();
-     *         // handleError($error)
-     *     }
-     *     // Alternatively:
-     *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $hubServiceClient->deactivateSpoke($formattedName);
-     *     $operationName = $operationResponse->getName();
-     *     // ... do other work
-     *     $newOperationResponse = $hubServiceClient->resumeOperation($operationName, 'deactivateSpoke');
-     *     while (!$newOperationResponse->isDone()) {
-     *         // ... do other work
-     *         $newOperationResponse->reload();
-     *     }
-     *     if ($newOperationResponse->operationSucceeded()) {
-     *         $result = $newOperationResponse->getResult();
-     *     // doSomethingWith($result)
-     *     } else {
-     *         $error = $newOperationResponse->getError();
-     *         // handleError($error)
-     *     }
-     * } finally {
-     *     $hubServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the spoke to deactivate.
-     * @param array  $optionalArgs {
-     *     Optional.
-     *
-     *     @type string $requestId
-     *           Optional. A unique request ID (optional). If you specify this ID, you can use it
-     *           in cases when you need to retry your request. When you need to retry, this
-     *           ID lets the server know that it can ignore the request if it has already
-     *           been completed. The server guarantees that for at least 60 minutes after
-     *           the first request.
-     *
-     *           For example, consider a situation where you make an initial request and
-     *           the request times out. If you make the request again with the same request
-     *           ID, the server can check to see whether the original operation
-     *           was received. If it was, the server ignores the second request. This
-     *           behavior prevents clients from mistakenly creating duplicate commitments.
-     *
-     *           The request ID must be a valid UUID, with the exception that zero UUID is
-     *           not supported (00000000-0000-0000-0000-000000000000).
-     *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\ApiCore\OperationResponse
-     *
-     * @throws ApiException if the remote call fails
-     */
-    public function deactivateSpoke($name, array $optionalArgs = [])
-    {
-        $request = new DeactivateSpokeRequest();
-        $requestParamHeaders = [];
-        $request->setName($name);
-        $requestParamHeaders['name'] = $name;
-        if (isset($optionalArgs['requestId'])) {
-            $request->setRequestId($optionalArgs['requestId']);
-        }
-
-        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
-        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startOperationsCall('DeactivateSpoke', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**

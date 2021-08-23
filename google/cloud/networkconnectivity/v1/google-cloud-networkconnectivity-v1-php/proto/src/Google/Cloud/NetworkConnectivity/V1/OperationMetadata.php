@@ -47,7 +47,7 @@ class OperationMetadata extends \Google\Protobuf\Internal\Message
     protected $status_message = '';
     /**
      * Output only. Identifies whether the user has requested cancellation
-     * of the operation. Operations that have successfully been cancelled
+     * of the operation. Operations that have been cancelled successfully
      * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      *
@@ -79,7 +79,7 @@ class OperationMetadata extends \Google\Protobuf\Internal\Message
      *           Output only. Human-readable status of the operation, if any.
      *     @type bool $requested_cancellation
      *           Output only. Identifies whether the user has requested cancellation
-     *           of the operation. Operations that have successfully been cancelled
+     *           of the operation. Operations that have been cancelled successfully
      *           have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      *           corresponding to `Code.CANCELLED`.
      *     @type string $api_version
@@ -243,7 +243,7 @@ class OperationMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Identifies whether the user has requested cancellation
-     * of the operation. Operations that have successfully been cancelled
+     * of the operation. Operations that have been cancelled successfully
      * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      *
@@ -257,7 +257,7 @@ class OperationMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. Identifies whether the user has requested cancellation
-     * of the operation. Operations that have successfully been cancelled
+     * of the operation. Operations that have been cancelled successfully
      * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
      * corresponding to `Code.CANCELLED`.
      *

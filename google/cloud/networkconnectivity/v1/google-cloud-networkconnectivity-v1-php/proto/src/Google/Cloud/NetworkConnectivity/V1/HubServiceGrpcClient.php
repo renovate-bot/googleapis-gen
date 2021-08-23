@@ -170,39 +170,6 @@ class HubServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Deactivates the specified spoke. Deactivating keeps the spoke information
-     * for future re-activation, but disconnects the Google Cloud network from
-     * non-Google-Cloud network.
-     * @param \Google\Cloud\NetworkConnectivity\V1\DeactivateSpokeRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeactivateSpoke(\Google\Cloud\NetworkConnectivity\V1\DeactivateSpokeRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.cloud.networkconnectivity.v1.HubService/DeactivateSpoke',
-        $argument,
-        ['\Google\LongRunning\Operation', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Activates the specified spoke. Activating reconnects the Google Cloud
-     * network with the non-Google-Cloud network.
-     * @param \Google\Cloud\NetworkConnectivity\V1\ActivateSpokeRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ActivateSpoke(\Google\Cloud\NetworkConnectivity\V1\ActivateSpokeRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.cloud.networkconnectivity.v1.HubService/ActivateSpoke',
-        $argument,
-        ['\Google\LongRunning\Operation', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Deletes the specified spoke.
      * @param \Google\Cloud\NetworkConnectivity\V1\DeleteSpokeRequest $argument input argument
      * @param array $metadata metadata

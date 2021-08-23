@@ -26,12 +26,8 @@ class LinkedInterconnectAttachments extends \Google\Protobuf\Internal\Message
     private $uris;
     /**
      * A value that controls whether site-to-site data transfer is enabled for
-     * these resources. If true, routes are propagated between the spoke
-     * associated with these resources and other spokes in the hub that have data
-     * transfer enabled. If false, the spoke associated with these resources
-     * provides connectivity only between the external site and Google Cloud. In
-     * regions where data transfer is unsupported, you cannot set this field
-     * to true.
+     * these resources. This field is set to false by default, but you must set it
+     * to true. Note that data transfer is available only in supported locations.
      *
      * Generated from protobuf field <code>bool site_to_site_data_transfer = 2;</code>
      */
@@ -47,12 +43,8 @@ class LinkedInterconnectAttachments extends \Google\Protobuf\Internal\Message
      *           The URIs of linked interconnect attachment resources
      *     @type bool $site_to_site_data_transfer
      *           A value that controls whether site-to-site data transfer is enabled for
-     *           these resources. If true, routes are propagated between the spoke
-     *           associated with these resources and other spokes in the hub that have data
-     *           transfer enabled. If false, the spoke associated with these resources
-     *           provides connectivity only between the external site and Google Cloud. In
-     *           regions where data transfer is unsupported, you cannot set this field
-     *           to true.
+     *           these resources. This field is set to false by default, but you must set it
+     *           to true. Note that data transfer is available only in supported locations.
      * }
      */
     public function __construct($data = NULL) {
@@ -88,12 +80,8 @@ class LinkedInterconnectAttachments extends \Google\Protobuf\Internal\Message
 
     /**
      * A value that controls whether site-to-site data transfer is enabled for
-     * these resources. If true, routes are propagated between the spoke
-     * associated with these resources and other spokes in the hub that have data
-     * transfer enabled. If false, the spoke associated with these resources
-     * provides connectivity only between the external site and Google Cloud. In
-     * regions where data transfer is unsupported, you cannot set this field
-     * to true.
+     * these resources. This field is set to false by default, but you must set it
+     * to true. Note that data transfer is available only in supported locations.
      *
      * Generated from protobuf field <code>bool site_to_site_data_transfer = 2;</code>
      * @return bool
@@ -105,12 +93,8 @@ class LinkedInterconnectAttachments extends \Google\Protobuf\Internal\Message
 
     /**
      * A value that controls whether site-to-site data transfer is enabled for
-     * these resources. If true, routes are propagated between the spoke
-     * associated with these resources and other spokes in the hub that have data
-     * transfer enabled. If false, the spoke associated with these resources
-     * provides connectivity only between the external site and Google Cloud. In
-     * regions where data transfer is unsupported, you cannot set this field
-     * to true.
+     * these resources. This field is set to false by default, but you must set it
+     * to true. Note that data transfer is available only in supported locations.
      *
      * Generated from protobuf field <code>bool site_to_site_data_transfer = 2;</code>
      * @param bool $var

@@ -65,6 +65,16 @@ class Hub extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.networkconnectivity.v1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $state = 0;
+    /**
+     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+     * VLAN attachments, and router appliance instances referenced by this hub's
+     * spokes must belong to this VPC network.
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the set of spokes attached to the hub.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     */
+    private $routing_vpcs;
 
     /**
      * Constructor.
@@ -92,6 +102,12 @@ class Hub extends \Google\Protobuf\Internal\Message
      *           the new hub is assigned a different unique_id.
      *     @type int $state
      *           Output only. The current lifecycle state of this hub.
+     *     @type \Google\Cloud\NetworkConnectivity\V1\RoutingVPC[]|\Google\Protobuf\Internal\RepeatedField $routing_vpcs
+     *           The VPC network associated with this hub's spokes. All of the VPN tunnels,
+     *           VLAN attachments, and router appliance instances referenced by this hub's
+     *           spokes must belong to this VPC network.
+     *           This field is read-only. Network Connectivity Center automatically
+     *           populates it based on the set of spokes attached to the hub.
      * }
      */
     public function __construct($data = NULL) {
@@ -309,6 +325,40 @@ class Hub extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\NetworkConnectivity\V1\State::class);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+     * VLAN attachments, and router appliance instances referenced by this hub's
+     * spokes must belong to this VPC network.
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the set of spokes attached to the hub.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRoutingVpcs()
+    {
+        return $this->routing_vpcs;
+    }
+
+    /**
+     * The VPC network associated with this hub's spokes. All of the VPN tunnels,
+     * VLAN attachments, and router appliance instances referenced by this hub's
+     * spokes must belong to this VPC network.
+     * This field is read-only. Network Connectivity Center automatically
+     * populates it based on the set of spokes attached to the hub.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * @param \Google\Cloud\NetworkConnectivity\V1\RoutingVPC[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRoutingVpcs($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\NetworkConnectivity\V1\RoutingVPC::class);
+        $this->routing_vpcs = $arr;
 
         return $this;
     }

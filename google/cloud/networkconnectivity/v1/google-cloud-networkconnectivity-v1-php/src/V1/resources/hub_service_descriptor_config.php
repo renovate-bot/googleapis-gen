@@ -3,16 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.networkconnectivity.v1.HubService' => [
-            'ActivateSpoke' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1\Spoke',
-                    'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
             'CreateHub' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1\Hub',
@@ -24,16 +14,6 @@ return [
                 ],
             ],
             'CreateSpoke' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1\Spoke',
-                    'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1\OperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
-            'DeactivateSpoke' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\NetworkConnectivity\V1\Spoke',
                     'metadataReturnType' => '\Google\Cloud\NetworkConnectivity\V1\OperationMetadata',
