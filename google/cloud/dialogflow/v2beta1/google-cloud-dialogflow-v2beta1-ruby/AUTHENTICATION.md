@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
+export DIALOGFLOW_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,6 +66,8 @@ The environment variables that google-cloud-dialogflow-v2beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Dialogflow::V2beta1::Fulfillments::Credentials}):
 
+* `DIALOGFLOW_CREDENTIALS` - Path to JSON file, or JSON contents
+* `DIALOGFLOW_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -73,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/dialogflow/v2beta1"
 
-ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["DIALOGFLOW_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Dialogflow::V2beta1::Fulfillments::Client.new
 ```

@@ -69,29 +69,29 @@ desc "Run the google-cloud-dialogflow-v2beta1 acceptance tests."
 task :acceptance, :project, :keyfile do |t, args|
   project = args[:project]
   project ||=
-    ENV["GOOGLE_CLOUD_TEST_PROJECT"] ||
+    ENV["DIALOGFLOW_TEST_PROJECT"] ||
     ENV["GCLOUD_TEST_PROJECT"]
   keyfile = args[:keyfile]
   keyfile ||=
-    ENV["GOOGLE_CLOUD_TEST_KEYFILE"] ||
+    ENV["DIALOGFLOW_TEST_KEYFILE"] ||
     ENV["GCLOUD_TEST_KEYFILE"]
   if keyfile
     keyfile = File.read keyfile
   else
     keyfile ||=
-      ENV["GOOGLE_CLOUD_TEST_KEYFILE_JSON"] ||
+      ENV["DIALOGFLOW_TEST_KEYFILE_JSON"] ||
       ENV["GCLOUD_TEST_KEYFILE_JSON"]
   end
   if project.nil? || keyfile.nil?
-    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or GOOGLE_CLOUD_TEST_PROJECT=test123 GOOGLE_CLOUD_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
+    fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or DIALOGFLOW_TEST_PROJECT=test123 DIALOGFLOW_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
   require "google/cloud/dialogflow/v2beta1/fulfillments/credentials"
   ::Google::Cloud::Dialogflow::V2beta1::Fulfillments::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
-  ENV["GOOGLE_CLOUD_PROJECT"] = project
-  ENV["GOOGLE_CLOUD_TEST_PROJECT"] = project
-  ENV["GOOGLE_CLOUD_KEYFILE_JSON"] = keyfile
+  ENV["DIALOGFLOW_PROJECT"] = project
+  ENV["DIALOGFLOW_TEST_PROJECT"] = project
+  ENV["DIALOGFLOW_KEYFILE_JSON"] = keyfile
 
   Rake::Task["acceptance:run"].invoke
 end
