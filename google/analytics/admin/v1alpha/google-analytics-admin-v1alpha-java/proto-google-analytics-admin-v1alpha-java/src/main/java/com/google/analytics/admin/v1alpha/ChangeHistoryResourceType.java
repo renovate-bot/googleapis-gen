@@ -116,6 +116,14 @@ public enum ChangeHistoryResourceType
    * <code>CUSTOM_METRIC = 12;</code>
    */
   CUSTOM_METRIC(12),
+  /**
+   * <pre>
+   * DataRetentionSettings resource
+   * </pre>
+   *
+   * <code>DATA_RETENTION_SETTINGS = 13;</code>
+   */
+  DATA_RETENTION_SETTINGS(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -223,6 +231,14 @@ public enum ChangeHistoryResourceType
    * <code>CUSTOM_METRIC = 12;</code>
    */
   public static final int CUSTOM_METRIC_VALUE = 12;
+  /**
+   * <pre>
+   * DataRetentionSettings resource
+   * </pre>
+   *
+   * <code>DATA_RETENTION_SETTINGS = 13;</code>
+   */
+  public static final int DATA_RETENTION_SETTINGS_VALUE = 13;
 
 
   public final int getNumber() {
@@ -262,6 +278,7 @@ public enum ChangeHistoryResourceType
       case 10: return MEASUREMENT_PROTOCOL_SECRET;
       case 11: return CUSTOM_DIMENSION;
       case 12: return CUSTOM_METRIC;
+      case 13: return DATA_RETENTION_SETTINGS;
       default: return null;
     }
   }

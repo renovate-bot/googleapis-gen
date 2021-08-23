@@ -97,28 +97,6 @@ public interface GoogleAdsLinkOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Email address of the user that created the link.
-   * An empty string will be returned if the email address can't be retrieved.
-   * </pre>
-   *
-   * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The emailAddress.
-   */
-  java.lang.String getEmailAddress();
-  /**
-   * <pre>
-   * Output only. Email address of the user that created the link.
-   * An empty string will be returned if the email address can't be retrieved.
-   * </pre>
-   *
-   * <code>string email_address = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The bytes for emailAddress.
-   */
-  com.google.protobuf.ByteString
-      getEmailAddressBytes();
-
-  /**
-   * <pre>
    * Output only. Time when this link was originally created.
    * </pre>
    *
@@ -170,4 +148,26 @@ public interface GoogleAdsLinkOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. Email address of the user that created the link.
+   * An empty string will be returned if the email address can't be retrieved.
+   * </pre>
+   *
+   * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The creatorEmailAddress.
+   */
+  java.lang.String getCreatorEmailAddress();
+  /**
+   * <pre>
+   * Output only. Email address of the user that created the link.
+   * An empty string will be returned if the email address can't be retrieved.
+   * </pre>
+   *
+   * <code>string creator_email_address = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for creatorEmailAddress.
+   */
+  com.google.protobuf.ByteString
+      getCreatorEmailAddressBytes();
 }
