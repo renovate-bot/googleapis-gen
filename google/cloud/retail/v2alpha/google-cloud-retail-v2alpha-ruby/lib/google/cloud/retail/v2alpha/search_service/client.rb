@@ -68,9 +68,9 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
-                default_config.timeout = 60.0
+                default_config.timeout = 5.0
                 default_config.retry_policy = {
-                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                  initial_delay: 0.1, max_delay: 5.0, multiplier: 1.3, retry_codes: [14, 4]
                 }
 
                 default_config
@@ -231,8 +231,7 @@ module Google
             #   @param filter [::String]
             #     The filter syntax consists of an expression language for constructing a
             #     predicate from one or more fields of the products being filtered. Filter
-            #     expression is case-sensitive. See more details at this [user
-            #     guide](/retail/private/docs/filter-and-order#filter).
+            #     expression is case-sensitive.
             #
             #     If this field is unrecognizable, an INVALID_ARGUMENT is returned.
             #   @param canonical_filter [::String]
@@ -249,9 +248,7 @@ module Google
             #   @param order_by [::String]
             #     The order in which products are returned. Products can be ordered by
             #     a field in an {::Google::Cloud::Retail::V2alpha::Product Product} object. Leave
-            #     it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-            #     more details at this [user
-            #     guide](/retail/private/docs/filter-and-order#order).
+            #     it unset if ordered by relevance. OrderBy expression is case-sensitive.
             #
             #     If this field is unrecognizable, an INVALID_ARGUMENT is returned.
             #   @param facet_specs [::Array<::Google::Cloud::Retail::V2alpha::SearchRequest::FacetSpec, ::Hash>]
@@ -266,20 +263,17 @@ module Google
             #     This feature requires additional allowlisting. Contact Retail Search
             #     support team if you are interested in using dynamic facet feature.
             #   @param boost_spec [::Google::Cloud::Retail::V2alpha::SearchRequest::BoostSpec, ::Hash]
-            #     Boost specification to boost certain products. See more details at this
-            #     [user guide](/retail/private/docs/boosting).
+            #     Boost specification to boost certain products.
             #   @param query_expansion_spec [::Google::Cloud::Retail::V2alpha::SearchRequest::QueryExpansionSpec, ::Hash]
             #     The query expansion specification that specifies the conditions under which
-            #     query expansion will occur. See more details at this [user
-            #     guide](/retail/private/docs/result-size#query_expansion).
+            #     query expansion will occur..
             #   @param relevance_threshold [::Google::Cloud::Retail::V2alpha::SearchRequest::RelevanceThreshold]
             #     The relevance threshold of the search results.
             #
             #     Defaults to
             #     {::Google::Cloud::Retail::V2alpha::SearchRequest::RelevanceThreshold::HIGH RelevanceThreshold.HIGH},
             #     which means only the most relevant results are shown, and the least number
-            #     of results are returned. See more details at this [user
-            #     guide](/retail/private/docs/result-size#relevance_thresholding).
+            #     of results are returned.
             #   @param variant_rollup_keys [::Array<::String>]
             #     The keys to fetch and rollup the matching
             #     {::Google::Cloud::Retail::V2alpha::Product::Type::VARIANT variant}

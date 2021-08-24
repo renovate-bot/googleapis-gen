@@ -343,8 +343,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// <summary>
     /// The filter syntax consists of an expression language for constructing a
     /// predicate from one or more fields of the products being filtered. Filter
-    /// expression is case-sensitive. See more details at this [user
-    /// guide](/retail/private/docs/filter-and-order#filter).
+    /// expression is case-sensitive.
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -385,9 +384,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// <summary>
     /// The order in which products are returned. Products can be ordered by
     /// a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-    /// it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-    /// more details at this [user
-    /// guide](/retail/private/docs/filter-and-order#order).
+    /// it unset if ordered by relevance. OrderBy expression is case-sensitive.
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -437,8 +434,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     public const int BoostSpecFieldNumber = 13;
     private global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.BoostSpec boostSpec_;
     /// <summary>
-    /// Boost specification to boost certain products. See more details at this
-    /// [user guide](/retail/private/docs/boosting).
+    /// Boost specification to boost certain products.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.BoostSpec BoostSpec {
@@ -453,8 +449,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     private global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.QueryExpansionSpec queryExpansionSpec_;
     /// <summary>
     /// The query expansion specification that specifies the conditions under which
-    /// query expansion will occur. See more details at this [user
-    /// guide](/retail/private/docs/result-size#query_expansion).
+    /// query expansion will occur..
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.QueryExpansionSpec QueryExpansionSpec {
@@ -473,8 +468,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Defaults to
     /// [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
     /// which means only the most relevant results are shown, and the least number
-    /// of results are returned. See more details at this [user
-    /// guide](/retail/private/docs/result-size#relevance_thresholding).
+    /// of results are returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.RelevanceThreshold RelevanceThreshold {
@@ -1555,11 +1549,11 @@ namespace Google.Cloud.Retail.V2Alpha {
             private string key_ = "";
             /// <summary>
             /// Required. Supported textual and numerical facet keys in
-            /// [Product][google.cloud.retail.v2.Product] object, over which the facet
-            /// values are computed. Facet key is case-sensitive.
+            /// [Product][google.cloud.retail.v2alpha.Product] object, over which the
+            /// facet values are computed. Facet key is case-sensitive.
             ///
             /// Allowed facet keys when
-            /// [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
+            /// [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
             /// is not specified:
             ///
             /// * textual_field =
@@ -2416,10 +2410,9 @@ namespace Google.Cloud.Retail.V2Alpha {
             ///
             /// * To boost products with product ID "product_1" or "product_2", and
             /// color
-            ///   "Red" or "Blue":&lt;br>
-            ///   *(id: ANY("product_1", "product_2"))&lt;br>*
-            ///   *AND&lt;br>*
-            ///   *(colorFamilies: ANY("Red", "Blue"))&lt;br>*
+            ///   "Red" or "Blue":
+            ///     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+            ///     ANY("Red","Blue"))
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public string Condition {

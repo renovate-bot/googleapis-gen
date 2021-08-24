@@ -89,8 +89,7 @@ module Google
         #   @return [::String]
         #     The filter syntax consists of an expression language for constructing a
         #     predicate from one or more fields of the products being filtered. Filter
-        #     expression is case-sensitive. See more details at this [user
-        #     guide](/retail/private/docs/filter-and-order#filter).
+        #     expression is case-sensitive.
         #
         #     If this field is unrecognizable, an INVALID_ARGUMENT is returned.
         # @!attribute [rw] canonical_filter
@@ -109,9 +108,7 @@ module Google
         #   @return [::String]
         #     The order in which products are returned. Products can be ordered by
         #     a field in an {::Google::Cloud::Retail::V2alpha::Product Product} object. Leave
-        #     it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-        #     more details at this [user
-        #     guide](/retail/private/docs/filter-and-order#order).
+        #     it unset if ordered by relevance. OrderBy expression is case-sensitive.
         #
         #     If this field is unrecognizable, an INVALID_ARGUMENT is returned.
         # @!attribute [rw] facet_specs
@@ -129,13 +126,11 @@ module Google
         #     support team if you are interested in using dynamic facet feature.
         # @!attribute [rw] boost_spec
         #   @return [::Google::Cloud::Retail::V2alpha::SearchRequest::BoostSpec]
-        #     Boost specification to boost certain products. See more details at this
-        #     [user guide](/retail/private/docs/boosting).
+        #     Boost specification to boost certain products.
         # @!attribute [rw] query_expansion_spec
         #   @return [::Google::Cloud::Retail::V2alpha::SearchRequest::QueryExpansionSpec]
         #     The query expansion specification that specifies the conditions under which
-        #     query expansion will occur. See more details at this [user
-        #     guide](/retail/private/docs/result-size#query_expansion).
+        #     query expansion will occur..
         # @!attribute [rw] relevance_threshold
         #   @return [::Google::Cloud::Retail::V2alpha::SearchRequest::RelevanceThreshold]
         #     The relevance threshold of the search results.
@@ -143,8 +138,7 @@ module Google
         #     Defaults to
         #     {::Google::Cloud::Retail::V2alpha::SearchRequest::RelevanceThreshold::HIGH RelevanceThreshold.HIGH},
         #     which means only the most relevant results are shown, and the least number
-        #     of results are returned. See more details at this [user
-        #     guide](/retail/private/docs/result-size#relevance_thresholding).
+        #     of results are returned.
         # @!attribute [rw] variant_rollup_keys
         #   @return [::Array<::String>]
         #     The keys to fetch and rollup the matching
@@ -306,11 +300,11 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             #     Required. Supported textual and numerical facet keys in
-            #     [Product][google.cloud.retail.v2.Product] object, over which the facet
-            #     values are computed. Facet key is case-sensitive.
+            #     {::Google::Cloud::Retail::V2alpha::Product Product} object, over which the
+            #     facet values are computed. Facet key is case-sensitive.
             #
             #     Allowed facet keys when
-            #     [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
+            #     {::Google::Cloud::Retail::V2alpha::SearchRequest::FacetSpec::FacetKey#query FacetKey.query}
             #     is not specified:
             #
             #     * textual_field =
@@ -484,10 +478,9 @@ module Google
             #
             #     * To boost products with product ID "product_1" or "product_2", and
             #     color
-            #       "Red" or "Blue":<br>
-            #       *(id: ANY("product_1", "product_2"))<br>*
-            #       *AND<br>*
-            #       *(colorFamilies: ANY("Red", "Blue"))<br>*
+            #       "Red" or "Blue":
+            #         * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+            #         ANY("Red","Blue"))
             # @!attribute [rw] boost
             #   @return [::Float]
             #     Strength of the condition boost, which should be in [-1, 1]. Negative

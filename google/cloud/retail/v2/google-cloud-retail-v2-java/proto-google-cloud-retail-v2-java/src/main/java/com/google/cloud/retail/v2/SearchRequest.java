@@ -5977,10 +5977,9 @@ private static final long serialVersionUID = 0L;
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
        * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       *   "Red" or "Blue":
+       *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+       *     ANY("Red","Blue"))
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -5996,10 +5995,9 @@ private static final long serialVersionUID = 0L;
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
        * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       *   "Red" or "Blue":
+       *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+       *     ANY("Red","Blue"))
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -6135,10 +6133,9 @@ private static final long serialVersionUID = 0L;
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
        * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       *   "Red" or "Blue":
+       *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+       *     ANY("Red","Blue"))
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -6166,10 +6163,9 @@ private static final long serialVersionUID = 0L;
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
        * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       *   "Red" or "Blue":
+       *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+       *     ANY("Red","Blue"))
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -6553,10 +6549,9 @@ private static final long serialVersionUID = 0L;
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
          * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         *   "Red" or "Blue":
+         *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+         *     ANY("Red","Blue"))
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -6583,10 +6578,9 @@ private static final long serialVersionUID = 0L;
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
          * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         *   "Red" or "Blue":
+         *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+         *     ANY("Red","Blue"))
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -6614,10 +6608,9 @@ private static final long serialVersionUID = 0L;
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
          * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         *   "Red" or "Blue":
+         *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+         *     ANY("Red","Blue"))
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -6643,10 +6636,9 @@ private static final long serialVersionUID = 0L;
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
          * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         *   "Red" or "Blue":
+         *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+         *     ANY("Red","Blue"))
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -6667,10 +6659,9 @@ private static final long serialVersionUID = 0L;
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
          * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         *   "Red" or "Blue":
+         *     * (id: ANY("product_1", "product_2")) AND (colorFamilies:
+         *     ANY("Red","Blue"))
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -8848,8 +8839,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](/retail/private/docs/filter-and-order#filter).
+   * expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -8873,8 +8863,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the products being filtered. Filter
-   * expression is case-sensitive. See more details at this [user
-   * guide](/retail/private/docs/filter-and-order#filter).
+   * expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -8962,9 +8951,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](/retail/private/docs/filter-and-order#order).
+   * unset if ordered by relevance. OrderBy expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -8988,9 +8975,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The order in which products are returned. Products can be ordered by
    * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-   * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-   * more details at this [user
-   * guide](/retail/private/docs/filter-and-order#order).
+   * unset if ordered by relevance. OrderBy expression is case-sensitive.
    * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
    * </pre>
    *
@@ -9133,8 +9118,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.retail.v2.SearchRequest.BoostSpec boostSpec_;
   /**
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](/retail/private/docs/boosting).
+   * Boost specification to boost certain products.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -9146,8 +9130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](/retail/private/docs/boosting).
+   * Boost specification to boost certain products.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -9159,8 +9142,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Boost specification to boost certain products. See more details at this
-   * [user guide](/retail/private/docs/boosting).
+   * Boost specification to boost certain products.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -9175,8 +9157,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](/retail/private/docs/result-size#query_expansion).
+   * query expansion will occur.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -9189,8 +9170,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](/retail/private/docs/result-size#query_expansion).
+   * query expansion will occur.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -9203,8 +9183,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur. See more details at this [user
-   * guide](/retail/private/docs/result-size#query_expansion).
+   * query expansion will occur.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -11136,8 +11115,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](/retail/private/docs/filter-and-order#filter).
+     * expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11160,8 +11138,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](/retail/private/docs/filter-and-order#filter).
+     * expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11185,8 +11162,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](/retail/private/docs/filter-and-order#filter).
+     * expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11208,8 +11184,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](/retail/private/docs/filter-and-order#filter).
+     * expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11226,8 +11201,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the products being filtered. Filter
-     * expression is case-sensitive. See more details at this [user
-     * guide](/retail/private/docs/filter-and-order#filter).
+     * expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11383,9 +11357,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](/retail/private/docs/filter-and-order#order).
+     * unset if ordered by relevance. OrderBy expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11408,9 +11380,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](/retail/private/docs/filter-and-order#order).
+     * unset if ordered by relevance. OrderBy expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11434,9 +11404,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](/retail/private/docs/filter-and-order#order).
+     * unset if ordered by relevance. OrderBy expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11458,9 +11426,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](/retail/private/docs/filter-and-order#order).
+     * unset if ordered by relevance. OrderBy expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -11477,9 +11443,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The order in which products are returned. Products can be ordered by
      * a field in an [Product][google.cloud.retail.v2.Product] object. Leave it
-     * unset if ordered by relevance. OrderBy expression is case-sensitive. See
-     * more details at this [user
-     * guide](/retail/private/docs/filter-and-order#order).
+     * unset if ordered by relevance. OrderBy expression is case-sensitive.
      * If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      * </pre>
      *
@@ -12034,8 +11998,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.retail.v2.SearchRequest.BoostSpec, com.google.cloud.retail.v2.SearchRequest.BoostSpec.Builder, com.google.cloud.retail.v2.SearchRequest.BoostSpecOrBuilder> boostSpecBuilder_;
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12046,8 +12009,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12062,8 +12024,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12083,8 +12044,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12102,8 +12062,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12125,8 +12084,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12144,8 +12102,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12157,8 +12114,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12173,8 +12129,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Boost specification to boost certain products. See more details at this
-     * [user guide](/retail/private/docs/boosting).
+     * Boost specification to boost certain products.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -12199,8 +12154,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12212,8 +12166,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12229,8 +12182,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12251,8 +12203,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12271,8 +12222,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12295,8 +12245,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12315,8 +12264,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12329,8 +12277,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>
@@ -12346,8 +12293,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query expansion specification that specifies the conditions under which
-     * query expansion will occur. See more details at this [user
-     * guide](/retail/private/docs/result-size#query_expansion).
+     * query expansion will occur.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec query_expansion_spec = 14;</code>

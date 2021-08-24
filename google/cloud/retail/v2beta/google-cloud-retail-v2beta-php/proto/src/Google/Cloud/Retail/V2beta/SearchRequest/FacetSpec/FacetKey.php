@@ -17,10 +17,10 @@ class FacetKey extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Supported textual and numerical facet keys in
-     * [Product][google.cloud.retail.v2.Product] object, over which the facet
-     * values are computed. Facet key is case-sensitive.
+     * [Product][google.cloud.retail.v2beta.Product] object, over which the
+     * facet values are computed. Facet key is case-sensitive.
      * Allowed facet keys when
-     * [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
+     * [FacetKey.query][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.query]
      * is not specified:
      * * textual_field =
      *     * "brands"
@@ -154,10 +154,10 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key
      *           Required. Supported textual and numerical facet keys in
-     *           [Product][google.cloud.retail.v2.Product] object, over which the facet
-     *           values are computed. Facet key is case-sensitive.
+     *           [Product][google.cloud.retail.v2beta.Product] object, over which the
+     *           facet values are computed. Facet key is case-sensitive.
      *           Allowed facet keys when
-     *           [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
+     *           [FacetKey.query][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.query]
      *           is not specified:
      *           * textual_field =
      *               * "brands"
@@ -263,10 +263,10 @@ class FacetKey extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Supported textual and numerical facet keys in
-     * [Product][google.cloud.retail.v2.Product] object, over which the facet
-     * values are computed. Facet key is case-sensitive.
+     * [Product][google.cloud.retail.v2beta.Product] object, over which the
+     * facet values are computed. Facet key is case-sensitive.
      * Allowed facet keys when
-     * [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
+     * [FacetKey.query][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.query]
      * is not specified:
      * * textual_field =
      *     * "brands"
@@ -307,10 +307,10 @@ class FacetKey extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Supported textual and numerical facet keys in
-     * [Product][google.cloud.retail.v2.Product] object, over which the facet
-     * values are computed. Facet key is case-sensitive.
+     * [Product][google.cloud.retail.v2beta.Product] object, over which the
+     * facet values are computed. Facet key is case-sensitive.
      * Allowed facet keys when
-     * [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
+     * [FacetKey.query][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.query]
      * is not specified:
      * * textual_field =
      *     * "brands"
