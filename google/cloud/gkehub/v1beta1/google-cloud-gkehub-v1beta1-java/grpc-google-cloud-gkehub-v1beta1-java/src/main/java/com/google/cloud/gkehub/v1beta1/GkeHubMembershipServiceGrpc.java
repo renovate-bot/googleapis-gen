@@ -4,8 +4,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * GKE Hub CRUD API for the Membership resource.
- * The Membership service is currently only available in the global location.
+ * The GKE Hub MembershipService handles the registration of many Kubernetes
+ * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+ * GKE Hub is currently only available in the global region.
+ * **Membership management may be non-trivial:** it is recommended to use one
+ * of the Google-provided client libraries or tools where possible when working
+ * with Membership resources.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -312,8 +316,12 @@ public final class GkeHubMembershipServiceGrpc {
 
   /**
    * <pre>
-   * GKE Hub CRUD API for the Membership resource.
-   * The Membership service is currently only available in the global location.
+   * The GKE Hub MembershipService handles the registration of many Kubernetes
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * GKE Hub is currently only available in the global region.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
    * </pre>
    */
   public static abstract class GkeHubMembershipServiceImplBase implements io.grpc.BindableService {
@@ -340,7 +348,10 @@ public final class GkeHubMembershipServiceGrpc {
 
     /**
      * <pre>
-     * Adds a new Membership.
+     * Creates a new Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
      * </pre>
      */
     public void createMembership(com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request,
@@ -351,6 +362,9 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Removes a Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
      * </pre>
      */
     public void deleteMembership(com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request,
@@ -371,6 +385,8 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Generates the manifest for deployment of the GKE connect agent.
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
      * </pre>
      */
     public void generateConnectManifest(com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request,
@@ -472,8 +488,12 @@ public final class GkeHubMembershipServiceGrpc {
 
   /**
    * <pre>
-   * GKE Hub CRUD API for the Membership resource.
-   * The Membership service is currently only available in the global location.
+   * The GKE Hub MembershipService handles the registration of many Kubernetes
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * GKE Hub is currently only available in the global region.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
    * </pre>
    */
   public static final class GkeHubMembershipServiceStub extends io.grpc.stub.AbstractAsyncStub<GkeHubMembershipServiceStub> {
@@ -512,7 +532,10 @@ public final class GkeHubMembershipServiceGrpc {
 
     /**
      * <pre>
-     * Adds a new Membership.
+     * Creates a new Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
      * </pre>
      */
     public void createMembership(com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request,
@@ -524,6 +547,9 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Removes a Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
      * </pre>
      */
     public void deleteMembership(com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request,
@@ -546,6 +572,8 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Generates the manifest for deployment of the GKE connect agent.
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
      * </pre>
      */
     public void generateConnectManifest(com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request,
@@ -589,8 +617,12 @@ public final class GkeHubMembershipServiceGrpc {
 
   /**
    * <pre>
-   * GKE Hub CRUD API for the Membership resource.
-   * The Membership service is currently only available in the global location.
+   * The GKE Hub MembershipService handles the registration of many Kubernetes
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * GKE Hub is currently only available in the global region.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
    * </pre>
    */
   public static final class GkeHubMembershipServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<GkeHubMembershipServiceBlockingStub> {
@@ -627,7 +659,10 @@ public final class GkeHubMembershipServiceGrpc {
 
     /**
      * <pre>
-     * Adds a new Membership.
+     * Creates a new Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
      * </pre>
      */
     public com.google.longrunning.Operation createMembership(com.google.cloud.gkehub.v1beta1.CreateMembershipRequest request) {
@@ -638,6 +673,9 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Removes a Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
      * </pre>
      */
     public com.google.longrunning.Operation deleteMembership(com.google.cloud.gkehub.v1beta1.DeleteMembershipRequest request) {
@@ -658,6 +696,8 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Generates the manifest for deployment of the GKE connect agent.
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
      * </pre>
      */
     public com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse generateConnectManifest(com.google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest request) {
@@ -698,8 +738,12 @@ public final class GkeHubMembershipServiceGrpc {
 
   /**
    * <pre>
-   * GKE Hub CRUD API for the Membership resource.
-   * The Membership service is currently only available in the global location.
+   * The GKE Hub MembershipService handles the registration of many Kubernetes
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * GKE Hub is currently only available in the global region.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
    * </pre>
    */
   public static final class GkeHubMembershipServiceFutureStub extends io.grpc.stub.AbstractFutureStub<GkeHubMembershipServiceFutureStub> {
@@ -738,7 +782,10 @@ public final class GkeHubMembershipServiceGrpc {
 
     /**
      * <pre>
-     * Adds a new Membership.
+     * Creates a new Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createMembership(
@@ -750,6 +797,9 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Removes a Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteMembership(
@@ -772,6 +822,8 @@ public final class GkeHubMembershipServiceGrpc {
     /**
      * <pre>
      * Generates the manifest for deployment of the GKE connect agent.
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gkehub.v1beta1.GenerateConnectManifestResponse> generateConnectManifest(

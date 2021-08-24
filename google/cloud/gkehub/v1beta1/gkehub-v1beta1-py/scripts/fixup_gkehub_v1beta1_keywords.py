@@ -39,13 +39,13 @@ def partition(
 class gkehubCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_membership': ('parent', 'membership_id', 'resource', ),
-          'delete_membership': ('name', ),
+          'create_membership': ('parent', 'membership_id', 'resource', 'request_id', ),
+          'delete_membership': ('name', 'request_id', ),
           'generate_connect_manifest': ('name', 'connect_agent', 'version', 'is_upgrade', 'registry', 'image_pull_secret_content', ),
           'generate_exclusivity_manifest': ('name', 'crd_manifest', 'cr_manifest', ),
           'get_membership': ('name', ),
           'list_memberships': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'update_membership': ('name', 'update_mask', 'resource', ),
+          'update_membership': ('name', 'update_mask', 'resource', 'request_id', ),
           'validate_exclusivity': ('parent', 'intended_membership', 'cr_manifest', ),
     }
 

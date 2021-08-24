@@ -10,7 +10,7 @@ public interface GkeClusterOrBuilder extends
   /**
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   * &gt; container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * Zonal clusters are also supported.
    * </pre>
    *
@@ -21,7 +21,7 @@ public interface GkeClusterOrBuilder extends
   /**
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   * &gt; container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
+   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
    * Zonal clusters are also supported.
    * </pre>
    *
@@ -30,4 +30,15 @@ public interface GkeClusterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceLinkBytes();
+
+  /**
+   * <pre>
+   * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
+   * exists in the GKE Control Plane.
+   * </pre>
+   *
+   * <code>bool cluster_missing = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The clusterMissing.
+   */
+  boolean getClusterMissing();
 }

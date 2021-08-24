@@ -590,11 +590,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Required. Description of this membership, limited to 63 characters.
+   * Optional. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
    * </pre>
    *
-   * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   @java.lang.Override
@@ -612,11 +612,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Description of this membership, limited to 63 characters.
+   * Optional. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
    * </pre>
    *
-   * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -2005,11 +2005,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -2026,11 +2026,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -2048,11 +2048,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -2068,11 +2068,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -2083,11 +2083,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Description of this membership, limited to 63 characters.
+     * Optional. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
      * </pre>
      *
-     * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */

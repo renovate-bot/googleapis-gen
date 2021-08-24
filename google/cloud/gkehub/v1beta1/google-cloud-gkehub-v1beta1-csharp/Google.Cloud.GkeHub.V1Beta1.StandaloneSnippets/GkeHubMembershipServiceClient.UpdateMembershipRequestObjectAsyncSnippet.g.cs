@@ -38,6 +38,7 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
                 Name = "",
                 UpdateMask = new FieldMask(),
                 Resource = new Membership(),
+                RequestId = "",
             };
             // Make the request
             Operation<Membership, OperationMetadata> response = await gkeHubMembershipServiceClient.UpdateMembershipAsync(request);

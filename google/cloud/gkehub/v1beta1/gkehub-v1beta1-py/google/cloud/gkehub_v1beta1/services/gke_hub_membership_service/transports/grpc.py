@@ -33,9 +33,15 @@ from .base import GkeHubMembershipServiceTransport, DEFAULT_CLIENT_INFO
 class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     """gRPC backend transport for GkeHubMembershipService.
 
-    GKE Hub CRUD API for the Membership resource.
-    The Membership service is currently only available in the global
-    location.
+    The GKE Hub MembershipService handles the registration of many
+    Kubernetes clusters to Google Cloud, represented with the
+    [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+
+    GKE Hub is currently only available in the global region.
+
+    **Membership management may be non-trivial:** it is recommended to
+    use one of the Google-provided client libraries or tools where
+    possible when working with Membership resources.
 
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation
@@ -299,7 +305,11 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
             operations_pb2.Operation]:
         r"""Return a callable for the create membership method over gRPC.
 
-        Adds a new Membership.
+        Creates a new Membership.
+
+        **This is currently only supported for GKE clusters on Google
+        Cloud**. To register other clusters, follow the instructions at
+        https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
 
         Returns:
             Callable[[~.CreateMembershipRequest],
@@ -326,6 +336,11 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
         r"""Return a callable for the delete membership method over gRPC.
 
         Removes a Membership.
+
+        **This is currently only supported for GKE clusters on Google
+        Cloud**. To unregister other clusters, follow the instructions
+        at
+        https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
 
         Returns:
             Callable[[~.DeleteMembershipRequest],
@@ -377,8 +392,10 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
             membership.GenerateConnectManifestResponse]:
         r"""Return a callable for the generate connect manifest method over gRPC.
 
-        Generates the manifest for deployment of the GKE
-        connect agent.
+        Generates the manifest for deployment of the GKE connect agent.
+
+        **This method is used internally by Google-provided libraries.**
+        Most clients should not need to call this method directly.
 
         Returns:
             Callable[[~.GenerateConnectManifestRequest],

@@ -55,15 +55,16 @@ private static final long serialVersionUID = 0L;
             break;
           case 34: {
             com.google.cloud.gkehub.v1beta1.GkeCluster.Builder subBuilder = null;
-            if (gkeCluster_ != null) {
-              subBuilder = gkeCluster_.toBuilder();
+            if (typeCase_ == 4) {
+              subBuilder = ((com.google.cloud.gkehub.v1beta1.GkeCluster) type_).toBuilder();
             }
-            gkeCluster_ = input.readMessage(com.google.cloud.gkehub.v1beta1.GkeCluster.parser(), extensionRegistry);
+            type_ =
+                input.readMessage(com.google.cloud.gkehub.v1beta1.GkeCluster.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(gkeCluster_);
-              gkeCluster_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom((com.google.cloud.gkehub.v1beta1.GkeCluster) type_);
+              type_ = subBuilder.buildPartial();
             }
-
+            typeCase_ = 4;
             break;
           }
           case 42: {
@@ -90,6 +91,34 @@ private static final long serialVersionUID = 0L;
               kubernetesResource_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 58: {
+            com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder subBuilder = null;
+            if (typeCase_ == 7) {
+              subBuilder = ((com.google.cloud.gkehub.v1beta1.OnPremCluster) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(com.google.cloud.gkehub.v1beta1.OnPremCluster.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.gkehub.v1beta1.OnPremCluster) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 7;
+            break;
+          }
+          case 66: {
+            com.google.cloud.gkehub.v1beta1.MultiCloudCluster.Builder subBuilder = null;
+            if (typeCase_ == 8) {
+              subBuilder = ((com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(com.google.cloud.gkehub.v1beta1.MultiCloudCluster.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 8;
             break;
           }
           default: {
@@ -124,11 +153,53 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.gkehub.v1beta1.MembershipEndpoint.class, com.google.cloud.gkehub.v1beta1.MembershipEndpoint.Builder.class);
   }
 
+  private int typeCase_ = 0;
+  private java.lang.Object type_;
+  public enum TypeCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GKE_CLUSTER(4),
+    ON_PREM_CLUSTER(7),
+    MULTI_CLOUD_CLUSTER(8),
+    TYPE_NOT_SET(0);
+    private final int value;
+    private TypeCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TypeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static TypeCase forNumber(int value) {
+      switch (value) {
+        case 4: return GKE_CLUSTER;
+        case 7: return ON_PREM_CLUSTER;
+        case 8: return MULTI_CLOUD_CLUSTER;
+        case 0: return TYPE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public TypeCase
+  getTypeCase() {
+    return TypeCase.forNumber(
+        typeCase_);
+  }
+
   public static final int GKE_CLUSTER_FIELD_NUMBER = 4;
-  private com.google.cloud.gkehub.v1beta1.GkeCluster gkeCluster_;
   /**
    * <pre>
-   * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+   * Optional. Specific information for a GKE-on-GCP cluster.
    * </pre>
    *
    * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -136,11 +207,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasGkeCluster() {
-    return gkeCluster_ != null;
+    return typeCase_ == 4;
   }
   /**
    * <pre>
-   * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+   * Optional. Specific information for a GKE-on-GCP cluster.
    * </pre>
    *
    * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -148,18 +219,110 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta1.GkeCluster getGkeCluster() {
-    return gkeCluster_ == null ? com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance() : gkeCluster_;
+    if (typeCase_ == 4) {
+       return (com.google.cloud.gkehub.v1beta1.GkeCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance();
   }
   /**
    * <pre>
-   * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+   * Optional. Specific information for a GKE-on-GCP cluster.
    * </pre>
    *
    * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta1.GkeClusterOrBuilder getGkeClusterOrBuilder() {
-    return getGkeCluster();
+    if (typeCase_ == 4) {
+       return (com.google.cloud.gkehub.v1beta1.GkeCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance();
+  }
+
+  public static final int ON_PREM_CLUSTER_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Optional. Specific information for a GKE On-Prem cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the onPremCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnPremCluster() {
+    return typeCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Optional. Specific information for a GKE On-Prem cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The onPremCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.OnPremCluster getOnPremCluster() {
+    if (typeCase_ == 7) {
+       return (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Optional. Specific information for a GKE On-Prem cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.OnPremClusterOrBuilder getOnPremClusterOrBuilder() {
+    if (typeCase_ == 7) {
+       return (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance();
+  }
+
+  public static final int MULTI_CLOUD_CLUSTER_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Optional. Specific information for a GKE Multi-Cloud cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the multiCloudCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiCloudCluster() {
+    return typeCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Optional. Specific information for a GKE Multi-Cloud cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The multiCloudCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.MultiCloudCluster getMultiCloudCluster() {
+    if (typeCase_ == 8) {
+       return (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Optional. Specific information for a GKE Multi-Cloud cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.MultiCloudClusterOrBuilder getMultiCloudClusterOrBuilder() {
+    if (typeCase_ == 8) {
+       return (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
   }
 
   public static final int KUBERNETES_METADATA_FIELD_NUMBER = 5;
@@ -270,14 +433,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (gkeCluster_ != null) {
-      output.writeMessage(4, getGkeCluster());
+    if (typeCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.gkehub.v1beta1.GkeCluster) type_);
     }
     if (kubernetesMetadata_ != null) {
       output.writeMessage(5, getKubernetesMetadata());
     }
     if (kubernetesResource_ != null) {
       output.writeMessage(6, getKubernetesResource());
+    }
+    if (typeCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_);
+    }
+    if (typeCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_);
     }
     unknownFields.writeTo(output);
   }
@@ -288,9 +457,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (gkeCluster_ != null) {
+    if (typeCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getGkeCluster());
+        .computeMessageSize(4, (com.google.cloud.gkehub.v1beta1.GkeCluster) type_);
     }
     if (kubernetesMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -299,6 +468,14 @@ private static final long serialVersionUID = 0L;
     if (kubernetesResource_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getKubernetesResource());
+    }
+    if (typeCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_);
+    }
+    if (typeCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -315,11 +492,6 @@ private static final long serialVersionUID = 0L;
     }
     com.google.cloud.gkehub.v1beta1.MembershipEndpoint other = (com.google.cloud.gkehub.v1beta1.MembershipEndpoint) obj;
 
-    if (hasGkeCluster() != other.hasGkeCluster()) return false;
-    if (hasGkeCluster()) {
-      if (!getGkeCluster()
-          .equals(other.getGkeCluster())) return false;
-    }
     if (hasKubernetesMetadata() != other.hasKubernetesMetadata()) return false;
     if (hasKubernetesMetadata()) {
       if (!getKubernetesMetadata()
@@ -329,6 +501,23 @@ private static final long serialVersionUID = 0L;
     if (hasKubernetesResource()) {
       if (!getKubernetesResource()
           .equals(other.getKubernetesResource())) return false;
+    }
+    if (!getTypeCase().equals(other.getTypeCase())) return false;
+    switch (typeCase_) {
+      case 4:
+        if (!getGkeCluster()
+            .equals(other.getGkeCluster())) return false;
+        break;
+      case 7:
+        if (!getOnPremCluster()
+            .equals(other.getOnPremCluster())) return false;
+        break;
+      case 8:
+        if (!getMultiCloudCluster()
+            .equals(other.getMultiCloudCluster())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -341,10 +530,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasGkeCluster()) {
-      hash = (37 * hash) + GKE_CLUSTER_FIELD_NUMBER;
-      hash = (53 * hash) + getGkeCluster().hashCode();
-    }
     if (hasKubernetesMetadata()) {
       hash = (37 * hash) + KUBERNETES_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getKubernetesMetadata().hashCode();
@@ -352,6 +537,22 @@ private static final long serialVersionUID = 0L;
     if (hasKubernetesResource()) {
       hash = (37 * hash) + KUBERNETES_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getKubernetesResource().hashCode();
+    }
+    switch (typeCase_) {
+      case 4:
+        hash = (37 * hash) + GKE_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getGkeCluster().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + ON_PREM_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getOnPremCluster().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + MULTI_CLOUD_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiCloudCluster().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -491,12 +692,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gkeClusterBuilder_ == null) {
-        gkeCluster_ = null;
-      } else {
-        gkeCluster_ = null;
-        gkeClusterBuilder_ = null;
-      }
       if (kubernetesMetadataBuilder_ == null) {
         kubernetesMetadata_ = null;
       } else {
@@ -509,6 +704,8 @@ private static final long serialVersionUID = 0L;
         kubernetesResource_ = null;
         kubernetesResourceBuilder_ = null;
       }
+      typeCase_ = 0;
+      type_ = null;
       return this;
     }
 
@@ -535,10 +732,26 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.gkehub.v1beta1.MembershipEndpoint buildPartial() {
       com.google.cloud.gkehub.v1beta1.MembershipEndpoint result = new com.google.cloud.gkehub.v1beta1.MembershipEndpoint(this);
-      if (gkeClusterBuilder_ == null) {
-        result.gkeCluster_ = gkeCluster_;
-      } else {
-        result.gkeCluster_ = gkeClusterBuilder_.build();
+      if (typeCase_ == 4) {
+        if (gkeClusterBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = gkeClusterBuilder_.build();
+        }
+      }
+      if (typeCase_ == 7) {
+        if (onPremClusterBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = onPremClusterBuilder_.build();
+        }
+      }
+      if (typeCase_ == 8) {
+        if (multiCloudClusterBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = multiCloudClusterBuilder_.build();
+        }
       }
       if (kubernetesMetadataBuilder_ == null) {
         result.kubernetesMetadata_ = kubernetesMetadata_;
@@ -550,6 +763,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.kubernetesResource_ = kubernetesResourceBuilder_.build();
       }
+      result.typeCase_ = typeCase_;
       onBuilt();
       return result;
     }
@@ -598,14 +812,28 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloud.gkehub.v1beta1.MembershipEndpoint other) {
       if (other == com.google.cloud.gkehub.v1beta1.MembershipEndpoint.getDefaultInstance()) return this;
-      if (other.hasGkeCluster()) {
-        mergeGkeCluster(other.getGkeCluster());
-      }
       if (other.hasKubernetesMetadata()) {
         mergeKubernetesMetadata(other.getKubernetesMetadata());
       }
       if (other.hasKubernetesResource()) {
         mergeKubernetesResource(other.getKubernetesResource());
+      }
+      switch (other.getTypeCase()) {
+        case GKE_CLUSTER: {
+          mergeGkeCluster(other.getGkeCluster());
+          break;
+        }
+        case ON_PREM_CLUSTER: {
+          mergeOnPremCluster(other.getOnPremCluster());
+          break;
+        }
+        case MULTI_CLOUD_CLUSTER: {
+          mergeMultiCloudCluster(other.getMultiCloudCluster());
+          break;
+        }
+        case TYPE_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -635,39 +863,61 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int typeCase_ = 0;
+    private java.lang.Object type_;
+    public TypeCase
+        getTypeCase() {
+      return TypeCase.forNumber(
+          typeCase_);
+    }
 
-    private com.google.cloud.gkehub.v1beta1.GkeCluster gkeCluster_;
+    public Builder clearType() {
+      typeCase_ = 0;
+      type_ = null;
+      onChanged();
+      return this;
+    }
+
+
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.gkehub.v1beta1.GkeCluster, com.google.cloud.gkehub.v1beta1.GkeCluster.Builder, com.google.cloud.gkehub.v1beta1.GkeClusterOrBuilder> gkeClusterBuilder_;
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the gkeCluster field is set.
      */
+    @java.lang.Override
     public boolean hasGkeCluster() {
-      return gkeClusterBuilder_ != null || gkeCluster_ != null;
+      return typeCase_ == 4;
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The gkeCluster.
      */
+    @java.lang.Override
     public com.google.cloud.gkehub.v1beta1.GkeCluster getGkeCluster() {
       if (gkeClusterBuilder_ == null) {
-        return gkeCluster_ == null ? com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance() : gkeCluster_;
+        if (typeCase_ == 4) {
+          return (com.google.cloud.gkehub.v1beta1.GkeCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance();
       } else {
-        return gkeClusterBuilder_.getMessage();
+        if (typeCase_ == 4) {
+          return gkeClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -677,17 +927,17 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        gkeCluster_ = value;
+        type_ = value;
         onChanged();
       } else {
         gkeClusterBuilder_.setMessage(value);
       }
-
+      typeCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -695,84 +945,94 @@ private static final long serialVersionUID = 0L;
     public Builder setGkeCluster(
         com.google.cloud.gkehub.v1beta1.GkeCluster.Builder builderForValue) {
       if (gkeClusterBuilder_ == null) {
-        gkeCluster_ = builderForValue.build();
+        type_ = builderForValue.build();
         onChanged();
       } else {
         gkeClusterBuilder_.setMessage(builderForValue.build());
       }
-
+      typeCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeGkeCluster(com.google.cloud.gkehub.v1beta1.GkeCluster value) {
       if (gkeClusterBuilder_ == null) {
-        if (gkeCluster_ != null) {
-          gkeCluster_ =
-            com.google.cloud.gkehub.v1beta1.GkeCluster.newBuilder(gkeCluster_).mergeFrom(value).buildPartial();
+        if (typeCase_ == 4 &&
+            type_ != com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance()) {
+          type_ = com.google.cloud.gkehub.v1beta1.GkeCluster.newBuilder((com.google.cloud.gkehub.v1beta1.GkeCluster) type_)
+              .mergeFrom(value).buildPartial();
         } else {
-          gkeCluster_ = value;
+          type_ = value;
         }
         onChanged();
       } else {
-        gkeClusterBuilder_.mergeFrom(value);
+        if (typeCase_ == 4) {
+          gkeClusterBuilder_.mergeFrom(value);
+        }
+        gkeClusterBuilder_.setMessage(value);
       }
-
+      typeCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearGkeCluster() {
       if (gkeClusterBuilder_ == null) {
-        gkeCluster_ = null;
-        onChanged();
+        if (typeCase_ == 4) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
       } else {
-        gkeCluster_ = null;
-        gkeClusterBuilder_ = null;
+        if (typeCase_ == 4) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        gkeClusterBuilder_.clear();
       }
-
       return this;
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.gkehub.v1beta1.GkeCluster.Builder getGkeClusterBuilder() {
-      
-      onChanged();
       return getGkeClusterFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
+    @java.lang.Override
     public com.google.cloud.gkehub.v1beta1.GkeClusterOrBuilder getGkeClusterOrBuilder() {
-      if (gkeClusterBuilder_ != null) {
+      if ((typeCase_ == 4) && (gkeClusterBuilder_ != null)) {
         return gkeClusterBuilder_.getMessageOrBuilder();
       } else {
-        return gkeCluster_ == null ?
-            com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance() : gkeCluster_;
+        if (typeCase_ == 4) {
+          return (com.google.cloud.gkehub.v1beta1.GkeCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.GkeCluster gke_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -781,14 +1041,373 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.gkehub.v1beta1.GkeCluster, com.google.cloud.gkehub.v1beta1.GkeCluster.Builder, com.google.cloud.gkehub.v1beta1.GkeClusterOrBuilder> 
         getGkeClusterFieldBuilder() {
       if (gkeClusterBuilder_ == null) {
+        if (!(typeCase_ == 4)) {
+          type_ = com.google.cloud.gkehub.v1beta1.GkeCluster.getDefaultInstance();
+        }
         gkeClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.v1beta1.GkeCluster, com.google.cloud.gkehub.v1beta1.GkeCluster.Builder, com.google.cloud.gkehub.v1beta1.GkeClusterOrBuilder>(
-                getGkeCluster(),
+                (com.google.cloud.gkehub.v1beta1.GkeCluster) type_,
                 getParentForChildren(),
                 isClean());
-        gkeCluster_ = null;
+        type_ = null;
       }
+      typeCase_ = 4;
+      onChanged();;
       return gkeClusterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.gkehub.v1beta1.OnPremCluster, com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder, com.google.cloud.gkehub.v1beta1.OnPremClusterOrBuilder> onPremClusterBuilder_;
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the onPremCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasOnPremCluster() {
+      return typeCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The onPremCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.OnPremCluster getOnPremCluster() {
+      if (onPremClusterBuilder_ == null) {
+        if (typeCase_ == 7) {
+          return (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance();
+      } else {
+        if (typeCase_ == 7) {
+          return onPremClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setOnPremCluster(com.google.cloud.gkehub.v1beta1.OnPremCluster value) {
+      if (onPremClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        onPremClusterBuilder_.setMessage(value);
+      }
+      typeCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setOnPremCluster(
+        com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder builderForValue) {
+      if (onPremClusterBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        onPremClusterBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeOnPremCluster(com.google.cloud.gkehub.v1beta1.OnPremCluster value) {
+      if (onPremClusterBuilder_ == null) {
+        if (typeCase_ == 7 &&
+            type_ != com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance()) {
+          type_ = com.google.cloud.gkehub.v1beta1.OnPremCluster.newBuilder((com.google.cloud.gkehub.v1beta1.OnPremCluster) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 7) {
+          onPremClusterBuilder_.mergeFrom(value);
+        }
+        onPremClusterBuilder_.setMessage(value);
+      }
+      typeCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearOnPremCluster() {
+      if (onPremClusterBuilder_ == null) {
+        if (typeCase_ == 7) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 7) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        onPremClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder getOnPremClusterBuilder() {
+      return getOnPremClusterFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.OnPremClusterOrBuilder getOnPremClusterOrBuilder() {
+      if ((typeCase_ == 7) && (onPremClusterBuilder_ != null)) {
+        return onPremClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 7) {
+          return (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE On-Prem cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.OnPremCluster on_prem_cluster = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.gkehub.v1beta1.OnPremCluster, com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder, com.google.cloud.gkehub.v1beta1.OnPremClusterOrBuilder> 
+        getOnPremClusterFieldBuilder() {
+      if (onPremClusterBuilder_ == null) {
+        if (!(typeCase_ == 7)) {
+          type_ = com.google.cloud.gkehub.v1beta1.OnPremCluster.getDefaultInstance();
+        }
+        onPremClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.OnPremCluster, com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder, com.google.cloud.gkehub.v1beta1.OnPremClusterOrBuilder>(
+                (com.google.cloud.gkehub.v1beta1.OnPremCluster) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 7;
+      onChanged();;
+      return onPremClusterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.gkehub.v1beta1.MultiCloudCluster, com.google.cloud.gkehub.v1beta1.MultiCloudCluster.Builder, com.google.cloud.gkehub.v1beta1.MultiCloudClusterOrBuilder> multiCloudClusterBuilder_;
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the multiCloudCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiCloudCluster() {
+      return typeCase_ == 8;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The multiCloudCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.MultiCloudCluster getMultiCloudCluster() {
+      if (multiCloudClusterBuilder_ == null) {
+        if (typeCase_ == 8) {
+          return (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
+      } else {
+        if (typeCase_ == 8) {
+          return multiCloudClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setMultiCloudCluster(com.google.cloud.gkehub.v1beta1.MultiCloudCluster value) {
+      if (multiCloudClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        multiCloudClusterBuilder_.setMessage(value);
+      }
+      typeCase_ = 8;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setMultiCloudCluster(
+        com.google.cloud.gkehub.v1beta1.MultiCloudCluster.Builder builderForValue) {
+      if (multiCloudClusterBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        multiCloudClusterBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 8;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeMultiCloudCluster(com.google.cloud.gkehub.v1beta1.MultiCloudCluster value) {
+      if (multiCloudClusterBuilder_ == null) {
+        if (typeCase_ == 8 &&
+            type_ != com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance()) {
+          type_ = com.google.cloud.gkehub.v1beta1.MultiCloudCluster.newBuilder((com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 8) {
+          multiCloudClusterBuilder_.mergeFrom(value);
+        }
+        multiCloudClusterBuilder_.setMessage(value);
+      }
+      typeCase_ = 8;
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearMultiCloudCluster() {
+      if (multiCloudClusterBuilder_ == null) {
+        if (typeCase_ == 8) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 8) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        multiCloudClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.gkehub.v1beta1.MultiCloudCluster.Builder getMultiCloudClusterBuilder() {
+      return getMultiCloudClusterFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.MultiCloudClusterOrBuilder getMultiCloudClusterOrBuilder() {
+      if ((typeCase_ == 8) && (multiCloudClusterBuilder_ != null)) {
+        return multiCloudClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 8) {
+          return (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.v1beta1.MultiCloudCluster multi_cloud_cluster = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.gkehub.v1beta1.MultiCloudCluster, com.google.cloud.gkehub.v1beta1.MultiCloudCluster.Builder, com.google.cloud.gkehub.v1beta1.MultiCloudClusterOrBuilder> 
+        getMultiCloudClusterFieldBuilder() {
+      if (multiCloudClusterBuilder_ == null) {
+        if (!(typeCase_ == 8)) {
+          type_ = com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
+        }
+        multiCloudClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.MultiCloudCluster, com.google.cloud.gkehub.v1beta1.MultiCloudCluster.Builder, com.google.cloud.gkehub.v1beta1.MultiCloudClusterOrBuilder>(
+                (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 8;
+      onChanged();;
+      return multiCloudClusterBuilder_;
     }
 
     private com.google.cloud.gkehub.v1beta1.KubernetesMetadata kubernetesMetadata_;

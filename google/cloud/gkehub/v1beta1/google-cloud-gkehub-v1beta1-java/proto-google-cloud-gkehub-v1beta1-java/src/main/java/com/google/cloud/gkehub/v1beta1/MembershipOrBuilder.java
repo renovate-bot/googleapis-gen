@@ -97,21 +97,21 @@ public interface MembershipOrBuilder extends
 
   /**
    * <pre>
-   * Required. Description of this membership, limited to 63 characters.
+   * Optional. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
    * </pre>
    *
-   * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
    * <pre>
-   * Required. Description of this membership, limited to 63 characters.
+   * Optional. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
    * </pre>
    *
-   * <code>string description = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString

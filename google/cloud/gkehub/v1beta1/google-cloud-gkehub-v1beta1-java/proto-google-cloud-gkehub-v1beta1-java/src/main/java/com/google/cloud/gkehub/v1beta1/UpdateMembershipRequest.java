@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private UpdateMembershipRequest() {
     name_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -83,6 +84,12 @@ private static final long serialVersionUID = 0L;
               resource_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestId_ = s;
             break;
           }
           default: {
@@ -216,6 +223,8 @@ private static final long serialVersionUID = 0L;
    * If you are updating a map field, set the value of a key to null or empty
    * string to delete the key from the map. It's not possible to update a key's
    * value to the empty string.
+   * If you specify the update_mask to be a special path "*", fully replaces all
+   * user-modifiable fields to match `resource`.
    * </pre>
    *
    * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -233,6 +242,8 @@ private static final long serialVersionUID = 0L;
    * If you are updating a map field, set the value of a key to null or empty
    * string to delete the key from the map. It's not possible to update a key's
    * value to the empty string.
+   * If you specify the update_mask to be a special path "*", fully replaces all
+   * user-modifiable fields to match `resource`.
    * </pre>
    *
    * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -250,6 +261,8 @@ private static final long serialVersionUID = 0L;
    * If you are updating a map field, set the value of a key to null or empty
    * string to delete the key from the map. It's not possible to update a key's
    * value to the empty string.
+   * If you specify the update_mask to be a special path "*", fully replaces all
+   * user-modifiable fields to match `resource`.
    * </pre>
    *
    * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -257,6 +270,72 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta1.MembershipOrBuilder getResourceOrBuilder() {
     return getResource();
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object requestId_;
+  /**
+   * <pre>
+   * Optional. A request ID to identify requests. Specify a unique request ID
+   * so that if you must retry your request, the server will know to ignore
+   * the request if it has already been completed. The server will guarantee
+   * that for at least 60 minutes after the first request.
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
+   * ID, the server can check if original operation with the same request ID
+   * was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. A request ID to identify requests. Specify a unique request ID
+   * so that if you must retry your request, the server will know to ignore
+   * the request if it has already been completed. The server will guarantee
+   * that for at least 60 minutes after the first request.
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
+   * ID, the server can check if original operation with the same request ID
+   * was received, and if so, will ignore the second request. This prevents
+   * clients from accidentally creating duplicate commitments.
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -282,6 +361,9 @@ private static final long serialVersionUID = 0L;
     if (resource_ != null) {
       output.writeMessage(3, getResource());
     }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -301,6 +383,9 @@ private static final long serialVersionUID = 0L;
     if (resource_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getResource());
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -329,6 +414,8 @@ private static final long serialVersionUID = 0L;
       if (!getResource()
           .equals(other.getResource())) return false;
     }
+    if (!getRequestId()
+        .equals(other.getRequestId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -350,6 +437,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getResource().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -501,6 +590,8 @@ private static final long serialVersionUID = 0L;
         resource_ = null;
         resourceBuilder_ = null;
       }
+      requestId_ = "";
+
       return this;
     }
 
@@ -538,6 +629,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.resource_ = resourceBuilder_.build();
       }
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -595,6 +687,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasResource()) {
         mergeResource(other.getResource());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -901,6 +997,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -917,6 +1015,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -937,6 +1037,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -962,6 +1064,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -985,6 +1089,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1012,6 +1118,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1035,6 +1143,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1052,6 +1162,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1072,6 +1184,8 @@ private static final long serialVersionUID = 0L;
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      * </pre>
      *
      * <code>.google.cloud.gkehub.v1beta1.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1088,6 +1202,152 @@ private static final long serialVersionUID = 0L;
         resource_ = null;
       }
       return resourceBuilder_;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A request ID to identify requests. Specify a unique request ID
+     * so that if you must retry your request, the server will know to ignore
+     * the request if it has already been completed. The server will guarantee
+     * that for at least 60 minutes after the first request.
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
+     * ID, the server can check if original operation with the same request ID
+     * was received, and if so, will ignore the second request. This prevents
+     * clients from accidentally creating duplicate commitments.
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      requestId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

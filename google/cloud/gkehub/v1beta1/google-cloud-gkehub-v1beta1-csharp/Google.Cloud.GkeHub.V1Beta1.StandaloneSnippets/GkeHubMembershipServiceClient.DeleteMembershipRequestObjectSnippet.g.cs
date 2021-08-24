@@ -32,7 +32,11 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
             // Create client
             GkeHubMembershipServiceClient gkeHubMembershipServiceClient = GkeHubMembershipServiceClient.Create();
             // Initialize request argument(s)
-            DeleteMembershipRequest request = new DeleteMembershipRequest { Name = "", };
+            DeleteMembershipRequest request = new DeleteMembershipRequest
+            {
+                Name = "",
+                RequestId = "",
+            };
             // Make the request
             Operation<Empty, OperationMetadata> response = gkeHubMembershipServiceClient.DeleteMembership(request);
 
