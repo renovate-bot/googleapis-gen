@@ -281,6 +281,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :ignored_files, :string, 15
       repeated :included_files, :string, 16
       optional :filter, :string, 30
+      optional :service_account, :string, 33
       oneof :build_template do
         optional :autodetect, :bool, 18
         optional :build, :message, 4, "google.devtools.cloudbuild.v1.Build"

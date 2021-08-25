@@ -1144,6 +1144,13 @@ module Google
         # @!attribute [rw] filter
         #   @return [::String]
         #     Optional. A Common Expression Language string.
+        # @!attribute [rw] service_account
+        #   @return [::String]
+        #     The service account used for all user-controlled operations including
+        #     UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
+        #     If no service account is set, then the standard Cloud Build service account
+        #     ([PROJECT_NUM]@system.gserviceaccount.com) will be used instead.
+        #     Format: `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT_ID_OR_EMAIL}`
         class BuildTrigger
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
