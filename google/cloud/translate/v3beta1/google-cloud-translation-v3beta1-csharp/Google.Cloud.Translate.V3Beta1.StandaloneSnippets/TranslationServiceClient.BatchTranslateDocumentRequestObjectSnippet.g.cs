@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Translate.V3Beta1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Translate.V3Beta1;
     using Google.LongRunning;
 
@@ -33,7 +34,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             // Initialize request argument(s)
             BatchTranslateDocumentRequest request = new BatchTranslateDocumentRequest
             {
-                Parent = "",
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 SourceLanguageCode = "",
                 TargetLanguageCodes = { "", },
                 InputConfigs =

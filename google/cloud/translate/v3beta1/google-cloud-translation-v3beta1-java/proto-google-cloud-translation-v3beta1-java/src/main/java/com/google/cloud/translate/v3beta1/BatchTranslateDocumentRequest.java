@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
    * error is returned.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -216,7 +216,7 @@ private static final long serialVersionUID = 0L;
    * error is returned.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   @java.lang.Override
@@ -494,7 +494,6 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -526,7 +525,6 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -548,7 +546,6 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -575,7 +572,6 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -1227,7 +1223,7 @@ private static final long serialVersionUID = 0L;
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
     public java.lang.String getParent() {
@@ -1252,7 +1248,7 @@ private static final long serialVersionUID = 0L;
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
@@ -1278,7 +1274,7 @@ private static final long serialVersionUID = 0L;
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -1302,7 +1298,7 @@ private static final long serialVersionUID = 0L;
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -1321,7 +1317,7 @@ private static final long serialVersionUID = 0L;
      * error is returned.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
@@ -2173,7 +2169,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>
@@ -2205,7 +2200,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>
@@ -2227,7 +2221,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>
@@ -2254,7 +2247,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>
@@ -2289,7 +2281,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>
@@ -2322,7 +2313,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>
@@ -2348,7 +2338,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      * </pre>

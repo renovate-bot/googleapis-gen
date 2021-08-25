@@ -19,7 +19,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 total_pages = 1;</code>
@@ -27,14 +27,14 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
     protected $total_pages = 0;
     /**
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 translated_pages = 2;</code>
      */
     protected $translated_pages = 0;
     /**
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 failed_pages = 3;</code>
      */
@@ -95,14 +95,14 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $total_pages
-     *           Total number of pages to translate in all documents. Documents without a
+     *           Total number of pages to translate in all documents. Documents without
      *           clear page definition (such as XLSX) are not counted.
      *     @type int|string $translated_pages
      *           Number of successfully translated pages in all documents. Documents without
-     *           a clear page definition (such as XLSX) are not counted.
+     *           clear page definition (such as XLSX) are not counted.
      *     @type int|string $failed_pages
      *           Number of pages that failed to process in all documents. Documents without
-     *           a clear page definition (such as XLSX) are not counted.
+     *           clear page definition (such as XLSX) are not counted.
      *     @type int|string $total_billable_pages
      *           Number of billable pages in documents with clear page definition (such as
      *           PDF, DOCX, PPTX)
@@ -131,7 +131,7 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 total_pages = 1;</code>
@@ -143,7 +143,7 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 total_pages = 1;</code>
@@ -160,7 +160,7 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 translated_pages = 2;</code>
      * @return int|string
@@ -172,7 +172,7 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 translated_pages = 2;</code>
      * @param int|string $var
@@ -188,7 +188,7 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 failed_pages = 3;</code>
      * @return int|string
@@ -200,7 +200,7 @@ class BatchTranslateDocumentResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      *
      * Generated from protobuf field <code>int64 failed_pages = 3;</code>
      * @param int|string $var

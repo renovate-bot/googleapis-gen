@@ -131,12 +131,12 @@ class TranslationServiceClientTest extends GeneratedTest
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $sourceLanguageCode = 'sourceLanguageCode1687263568';
         $targetLanguageCodes = [];
         $inputConfigs = [];
         $outputConfig = new BatchDocumentOutputConfig();
-        $response = $client->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+        $response = $client->batchTranslateDocument($formattedParent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -147,7 +147,7 @@ class TranslationServiceClientTest extends GeneratedTest
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.translation.v3beta1.TranslationService/BatchTranslateDocument', $actualApiFuncCall);
         $actualValue = $actualApiRequestObject->getParent();
-        $this->assertProtobufEquals($parent, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $actualValue = $actualApiRequestObject->getSourceLanguageCode();
         $this->assertProtobufEquals($sourceLanguageCode, $actualValue);
         $actualValue = $actualApiRequestObject->getTargetLanguageCodes();
@@ -209,12 +209,12 @@ class TranslationServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $sourceLanguageCode = 'sourceLanguageCode1687263568';
         $targetLanguageCodes = [];
         $inputConfigs = [];
         $outputConfig = new BatchDocumentOutputConfig();
-        $response = $client->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+        $response = $client->batchTranslateDocument($formattedParent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $expectedOperationsRequestObject = new GetOperationRequest();

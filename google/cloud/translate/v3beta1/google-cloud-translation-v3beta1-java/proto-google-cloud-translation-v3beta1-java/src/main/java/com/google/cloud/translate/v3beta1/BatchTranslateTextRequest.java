@@ -375,14 +375,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is the model name. Value can be a built-in general model,
+   * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -407,14 +406,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is the model name. Value can be a built-in general model,
+   * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -429,14 +427,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is the model name. Value can be a built-in general model,
+   * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -456,14 +453,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The models to use for translation. Map's key is target language
-   * code. Map's value is the model name. Value can be a built-in general model,
+   * code. Map's value is model name. Value can be a built-in general model,
    * or an AutoML Translation model.
    * The value format depends on model type:
    * - AutoML Translation models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is
    * not requested for a language pair, then default google model (nmt) is used.
    * </pre>
@@ -1767,14 +1763,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1799,14 +1794,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1821,14 +1815,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1848,14 +1841,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1883,14 +1875,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1916,14 +1907,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>
@@ -1942,14 +1932,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The models to use for translation. Map's key is target language
-     * code. Map's value is the model name. Value can be a built-in general model,
+     * code. Map's value is model name. Value can be a built-in general model,
      * or an AutoML Translation model.
      * The value format depends on model type:
      * - AutoML Translation models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is
      * not requested for a language pair, then default google model (nmt) is used.
      * </pre>

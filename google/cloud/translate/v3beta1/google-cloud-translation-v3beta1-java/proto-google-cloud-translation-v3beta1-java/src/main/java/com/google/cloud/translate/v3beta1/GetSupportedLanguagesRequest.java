@@ -227,9 +227,8 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * Returns languages supported by the specified model.
-   * If missing, we get supported languages of Google general base (PBMT) model.
+   * If missing, we get supported languages of Google general NMT model.
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -256,9 +255,8 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * Returns languages supported by the specified model.
-   * If missing, we get supported languages of Google general base (PBMT) model.
+   * If missing, we get supported languages of Google general NMT model.
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -870,9 +868,8 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -898,9 +895,8 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -927,9 +923,8 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -954,9 +949,8 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -976,9 +970,8 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * Returns languages supported by the specified model.
-     * If missing, we get supported languages of Google general base (PBMT) model.
+     * If missing, we get supported languages of Google general NMT model.
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

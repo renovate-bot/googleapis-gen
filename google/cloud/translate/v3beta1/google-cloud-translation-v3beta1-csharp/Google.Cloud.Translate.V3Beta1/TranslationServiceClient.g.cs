@@ -488,7 +488,7 @@ namespace Google.Cloud.Translate.V3Beta1
         /// For global calls, use `projects/{project-number-or-id}/locations/global` or
         /// `projects/{project-number-or-id}`.
         /// 
-        /// Only models within the same region, which have the same location-id, can be used.
+        /// Only models within the same region (has same location-id) can be used.
         /// Otherwise an INVALID_ARGUMENT (400) error is returned.
         /// </param>
         /// <param name="model">
@@ -529,7 +529,7 @@ namespace Google.Cloud.Translate.V3Beta1
         /// For global calls, use `projects/{project-number-or-id}/locations/global` or
         /// `projects/{project-number-or-id}`.
         /// 
-        /// Only models within the same region, which have the same location-id, can be used.
+        /// Only models within the same region (has same location-id) can be used.
         /// Otherwise an INVALID_ARGUMENT (400) error is returned.
         /// </param>
         /// <param name="model">
@@ -570,7 +570,7 @@ namespace Google.Cloud.Translate.V3Beta1
         /// For global calls, use `projects/{project-number-or-id}/locations/global` or
         /// `projects/{project-number-or-id}`.
         /// 
-        /// Only models within the same region, which have the same location-id, can be used.
+        /// Only models within the same region (has same location-id) can be used.
         /// Otherwise an INVALID_ARGUMENT (400) error is returned.
         /// </param>
         /// <param name="model">
@@ -606,7 +606,7 @@ namespace Google.Cloud.Translate.V3Beta1
         /// For global calls, use `projects/{project-number-or-id}/locations/global` or
         /// `projects/{project-number-or-id}`.
         /// 
-        /// Only models within the same region, which have the same location-id, can be used.
+        /// Only models within the same region (has same location-id) can be used.
         /// Otherwise an INVALID_ARGUMENT (400) error is returned.
         /// </param>
         /// <param name="model">
@@ -647,7 +647,7 @@ namespace Google.Cloud.Translate.V3Beta1
         /// For global calls, use `projects/{project-number-or-id}/locations/global` or
         /// `projects/{project-number-or-id}`.
         /// 
-        /// Only models within the same region, which have the same location-id, can be used.
+        /// Only models within the same region (has same location-id) can be used.
         /// Otherwise an INVALID_ARGUMENT (400) error is returned.
         /// </param>
         /// <param name="model">
@@ -688,7 +688,7 @@ namespace Google.Cloud.Translate.V3Beta1
         /// For global calls, use `projects/{project-number-or-id}/locations/global` or
         /// `projects/{project-number-or-id}`.
         /// 
-        /// Only models within the same region, which have the same location-id, can be used.
+        /// Only models within the same region (has same location-id) can be used.
         /// Otherwise an INVALID_ARGUMENT (400) error is returned.
         /// </param>
         /// <param name="model">
@@ -771,11 +771,10 @@ namespace Google.Cloud.Translate.V3Beta1
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -820,11 +819,10 @@ namespace Google.Cloud.Translate.V3Beta1
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -869,11 +867,10 @@ namespace Google.Cloud.Translate.V3Beta1
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -913,11 +910,10 @@ namespace Google.Cloud.Translate.V3Beta1
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -962,11 +958,10 @@ namespace Google.Cloud.Translate.V3Beta1
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1011,11 +1006,10 @@ namespace Google.Cloud.Translate.V3Beta1
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>

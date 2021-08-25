@@ -76,12 +76,12 @@ use Google\LongRunning\Operation;
  * ```
  * $translationServiceClient = new TranslationServiceClient();
  * try {
- *     $parent = 'parent';
+ *     $formattedParent = $translationServiceClient->locationName('[PROJECT]', '[LOCATION]');
  *     $sourceLanguageCode = 'source_language_code';
  *     $targetLanguageCodes = [];
  *     $inputConfigs = [];
  *     $outputConfig = new BatchDocumentOutputConfig();
- *     $operationResponse = $translationServiceClient->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+ *     $operationResponse = $translationServiceClient->batchTranslateDocument($formattedParent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
  *     $operationResponse->pollUntilComplete();
  *     if ($operationResponse->operationSucceeded()) {
  *         $result = $operationResponse->getResult();
@@ -92,7 +92,7 @@ use Google\LongRunning\Operation;
  *     }
  *     // Alternatively:
  *     // start the operation, keep the operation name, and resume later
- *     $operationResponse = $translationServiceClient->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+ *     $operationResponse = $translationServiceClient->batchTranslateDocument($formattedParent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
  *     $operationName = $operationResponse->getName();
  *     // ... do other work
  *     $newOperationResponse = $translationServiceClient->resumeOperation($operationName, 'batchTranslateDocument');
@@ -401,12 +401,12 @@ class TranslationServiceGapicClient
      * ```
      * $translationServiceClient = new TranslationServiceClient();
      * try {
-     *     $parent = 'parent';
+     *     $formattedParent = $translationServiceClient->locationName('[PROJECT]', '[LOCATION]');
      *     $sourceLanguageCode = 'source_language_code';
      *     $targetLanguageCodes = [];
      *     $inputConfigs = [];
      *     $outputConfig = new BatchDocumentOutputConfig();
-     *     $operationResponse = $translationServiceClient->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+     *     $operationResponse = $translationServiceClient->batchTranslateDocument($formattedParent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
@@ -417,7 +417,7 @@ class TranslationServiceGapicClient
      *     }
      *     // Alternatively:
      *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $translationServiceClient->batchTranslateDocument($parent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
+     *     $operationResponse = $translationServiceClient->batchTranslateDocument($formattedParent, $sourceLanguageCode, $targetLanguageCodes, $inputConfigs, $outputConfig);
      *     $operationName = $operationResponse->getName();
      *     // ... do other work
      *     $newOperationResponse = $translationServiceClient->resumeOperation($operationName, 'batchTranslateDocument');
@@ -473,7 +473,6 @@ class TranslationServiceGapicClient
      *
      *           - General (built-in) models:
      *           `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *           `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *
      *
      *           If the map is empty or a specific model is not requested for a language
@@ -588,7 +587,7 @@ class TranslationServiceGapicClient
      *
      *     @type array $models
      *           Optional. The models to use for translation. Map's key is target language
-     *           code. Map's value is the model name. Value can be a built-in general model,
+     *           code. Map's value is model name. Value can be a built-in general model,
      *           or an AutoML Translation model.
      *
      *           The value format depends on model type:
@@ -598,7 +597,6 @@ class TranslationServiceGapicClient
      *
      *           - General (built-in) models:
      *           `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *           `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *
      *
      *           If the map is empty or a specific model is
@@ -818,7 +816,7 @@ class TranslationServiceGapicClient
      *                             For global calls, use `projects/{project-number-or-id}/locations/global` or
      *                             `projects/{project-number-or-id}`.
      *
-     *                             Only models within the same region, which have the same location-id, can be used.
+     *                             Only models within the same region (has same location-id) can be used.
      *                             Otherwise an INVALID_ARGUMENT (400) error is returned.
      * @param array  $optionalArgs {
      *     Optional.
@@ -974,11 +972,10 @@ class TranslationServiceGapicClient
      *
      *           - General (built-in) models:
      *           `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *           `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *
      *
      *           Returns languages supported by the specified model.
-     *           If missing, we get supported languages of Google general base (PBMT) model.
+     *           If missing, we get supported languages of Google general NMT model.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1124,8 +1121,7 @@ class TranslationServiceGapicClient
      *
      *                                                 Format: `projects/{project-number-or-id}/locations/{location-id}`.
      *
-     *                                                 For global calls, use `projects/{project-number-or-id}/locations/global` or
-     *                                                 `projects/{project-number-or-id}`.
+     *                                                 For global calls, use `projects/{project-number-or-id}/locations/global`.
      *
      *                                                 Non-global location is required for requests using AutoML models or custom
      *                                                 glossaries.
@@ -1161,7 +1157,6 @@ class TranslationServiceGapicClient
      *
      *           - General (built-in) models:
      *           `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *           `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *
      *
      *           If not provided, the default Google model (NMT) will be used for
@@ -1284,14 +1279,13 @@ class TranslationServiceGapicClient
      *
      *           - General (built-in) models:
      *           `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *           `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *
      *
      *           For global (non-regionalized) requests, use `location-id` `global`.
      *           For example,
      *           `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     *           If missing, the system decides which google base model to use.
+     *           If not provided, the default Google model (NMT) will be used
      *     @type TranslateTextGlossaryConfig $glossaryConfig
      *           Optional. Glossary to be applied. The glossary must be
      *           within the same region (have the same location-id) as the model, otherwise

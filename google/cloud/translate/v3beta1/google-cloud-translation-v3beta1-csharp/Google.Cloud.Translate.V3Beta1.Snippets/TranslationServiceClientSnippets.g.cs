@@ -422,7 +422,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             // Initialize request argument(s)
             BatchTranslateDocumentRequest request = new BatchTranslateDocumentRequest
             {
-                Parent = "",
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 SourceLanguageCode = "",
                 TargetLanguageCodes = { "", },
                 InputConfigs =
@@ -470,7 +470,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             // Initialize request argument(s)
             BatchTranslateDocumentRequest request = new BatchTranslateDocumentRequest
             {
-                Parent = "",
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 SourceLanguageCode = "",
                 TargetLanguageCodes = { "", },
                 InputConfigs =

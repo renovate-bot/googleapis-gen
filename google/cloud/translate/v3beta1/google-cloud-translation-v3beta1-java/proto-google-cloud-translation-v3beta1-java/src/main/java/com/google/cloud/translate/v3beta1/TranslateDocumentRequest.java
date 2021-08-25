@@ -183,8 +183,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Location to make a regional call.
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-number-or-id}/locations/global` or
-   * `projects/{project-number-or-id}`.
+   * For global calls, use `projects/{project-number-or-id}/locations/global`.
    * Non-global location is required for requests using AutoML models or custom
    * glossaries.
    * Models and glossaries must be within the same region (have the same
@@ -211,8 +210,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Location to make a regional call.
    * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-   * For global calls, use `projects/{project-number-or-id}/locations/global` or
-   * `projects/{project-number-or-id}`.
+   * For global calls, use `projects/{project-number-or-id}/locations/global`.
    * Non-global location is required for requests using AutoML models or custom
    * glossaries.
    * Models and glossaries must be within the same region (have the same
@@ -439,7 +437,6 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If not provided, the default Google model (NMT) will be used for
    * translation.
    * </pre>
@@ -468,7 +465,6 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If not provided, the default Google model (NMT) will be used for
    * translation.
    * </pre>
@@ -1159,8 +1155,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Location to make a regional call.
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-number-or-id}/locations/global` or
-     * `projects/{project-number-or-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global`.
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
      * Models and glossaries must be within the same region (have the same
@@ -1186,8 +1181,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Location to make a regional call.
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-number-or-id}/locations/global` or
-     * `projects/{project-number-or-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global`.
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
      * Models and glossaries must be within the same region (have the same
@@ -1214,8 +1208,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Location to make a regional call.
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-number-or-id}/locations/global` or
-     * `projects/{project-number-or-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global`.
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
      * Models and glossaries must be within the same region (have the same
@@ -1240,8 +1233,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Location to make a regional call.
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-number-or-id}/locations/global` or
-     * `projects/{project-number-or-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global`.
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
      * Models and glossaries must be within the same region (have the same
@@ -1261,8 +1253,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Location to make a regional call.
      * Format: `projects/{project-number-or-id}/locations/{location-id}`.
-     * For global calls, use `projects/{project-number-or-id}/locations/global` or
-     * `projects/{project-number-or-id}`.
+     * For global calls, use `projects/{project-number-or-id}/locations/global`.
      * Non-global location is required for requests using AutoML models or custom
      * glossaries.
      * Models and glossaries must be within the same region (have the same
@@ -1862,7 +1853,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -1890,7 +1880,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -1919,7 +1908,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -1946,7 +1934,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>
@@ -1968,7 +1955,6 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If not provided, the default Google model (NMT) will be used for
      * translation.
      * </pre>

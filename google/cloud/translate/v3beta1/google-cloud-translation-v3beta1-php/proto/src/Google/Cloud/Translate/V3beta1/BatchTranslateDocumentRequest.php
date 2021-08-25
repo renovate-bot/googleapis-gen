@@ -23,7 +23,7 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $parent = '';
     /**
@@ -67,7 +67,6 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      *
@@ -119,7 +118,6 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      *             `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      *           - General (built-in) models:
      *             `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *             `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      *           If the map is empty or a specific model is not requested for a language
      *           pair, then default google model (nmt) is used.
      *     @type array|\Google\Protobuf\Internal\MapField $glossaries
@@ -139,7 +137,7 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -155,7 +153,7 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      * the same location-id) can be used, otherwise an INVALID_ARGUMENT (400)
      * error is returned.
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -306,7 +304,6 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      *
@@ -327,7 +324,6 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * If the map is empty or a specific model is not requested for a language
      * pair, then default google model (nmt) is used.
      *

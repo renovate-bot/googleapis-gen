@@ -22,7 +22,7 @@ class DetectLanguageRequest extends \Google\Protobuf\Internal\Message
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      *
      * Generated from protobuf field <code>string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -72,7 +72,7 @@ class DetectLanguageRequest extends \Google\Protobuf\Internal\Message
      *           `projects/{project-number-or-id}`.
      *           For global calls, use `projects/{project-number-or-id}/locations/global` or
      *           `projects/{project-number-or-id}`.
-     *           Only models within the same region, which have the same location-id, can be used.
+     *           Only models within the same region (has same location-id) can be used.
      *           Otherwise an INVALID_ARGUMENT (400) error is returned.
      *     @type string $model
      *           Optional. The language detection model to be used.
@@ -107,7 +107,7 @@ class DetectLanguageRequest extends \Google\Protobuf\Internal\Message
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      *
      * Generated from protobuf field <code>string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -125,7 +125,7 @@ class DetectLanguageRequest extends \Google\Protobuf\Internal\Message
      * `projects/{project-number-or-id}`.
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
-     * Only models within the same region, which have the same location-id, can be used.
+     * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      *
      * Generated from protobuf field <code>string parent = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>

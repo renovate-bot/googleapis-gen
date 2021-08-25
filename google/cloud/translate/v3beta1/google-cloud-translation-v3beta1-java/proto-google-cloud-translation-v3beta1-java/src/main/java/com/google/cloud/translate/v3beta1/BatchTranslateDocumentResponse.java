@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
   private long totalPages_;
   /**
    * <pre>
-   * Total number of pages to translate in all documents. Documents without a
+   * Total number of pages to translate in all documents. Documents without
    * clear page definition (such as XLSX) are not counted.
    * </pre>
    *
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Number of successfully translated pages in all documents. Documents without
-   * a clear page definition (such as XLSX) are not counted.
+   * clear page definition (such as XLSX) are not counted.
    * </pre>
    *
    * <code>int64 translated_pages = 2;</code>
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Number of pages that failed to process in all documents. Documents without
-   * a clear page definition (such as XLSX) are not counted.
+   * clear page definition (such as XLSX) are not counted.
    * </pre>
    *
    * <code>int64 failed_pages = 3;</code>
@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
     private long totalPages_ ;
     /**
      * <pre>
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Total number of pages to translate in all documents. Documents without a
+     * Total number of pages to translate in all documents. Documents without
      * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 translated_pages = 2;</code>
@@ -921,7 +921,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 translated_pages = 2;</code>
@@ -937,7 +937,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of successfully translated pages in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 translated_pages = 2;</code>
@@ -954,7 +954,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 failed_pages = 3;</code>
@@ -967,7 +967,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 failed_pages = 3;</code>
@@ -983,7 +983,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of pages that failed to process in all documents. Documents without
-     * a clear page definition (such as XLSX) are not counted.
+     * clear page definition (such as XLSX) are not counted.
      * </pre>
      *
      * <code>int64 failed_pages = 3;</code>

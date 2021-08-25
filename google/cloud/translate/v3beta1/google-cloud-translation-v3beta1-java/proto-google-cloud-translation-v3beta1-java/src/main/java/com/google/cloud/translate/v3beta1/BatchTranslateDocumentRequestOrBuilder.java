@@ -17,7 +17,7 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    * error is returned.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   java.lang.String getParent();
@@ -31,7 +31,7 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    * error is returned.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
@@ -208,7 +208,6 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -226,7 +225,6 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -251,7 +249,6 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -270,7 +267,6 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>
@@ -291,7 +287,6 @@ public interface BatchTranslateDocumentRequestOrBuilder extends
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * If the map is empty or a specific model is not requested for a language
    * pair, then default google model (nmt) is used.
    * </pre>

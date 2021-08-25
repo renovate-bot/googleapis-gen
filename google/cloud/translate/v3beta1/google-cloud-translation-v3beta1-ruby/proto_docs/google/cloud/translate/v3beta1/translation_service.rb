@@ -85,14 +85,13 @@ module Google
         #
         #     - General (built-in) models:
         #       `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        #       `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         #
         #
         #     For global (non-regionalized) requests, use `location-id` `global`.
         #     For example,
         #     `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         #
-        #     If missing, the system decides which google base model to use.
+        #     If not provided, the default Google model (NMT) will be used
         # @!attribute [rw] glossary_config
         #   @return [::Google::Cloud::Translate::V3beta1::TranslateTextGlossaryConfig]
         #     Optional. Glossary to be applied. The glossary must be
@@ -143,6 +142,8 @@ module Google
         # @!attribute [rw] translated_text
         #   @return [::String]
         #     Text translated into the target language.
+        #     If an error occurs during translation, this field might be excluded from
+        #     the response.
         # @!attribute [rw] model
         #   @return [::String]
         #     Only present when `model` is present in the request.
@@ -179,7 +180,7 @@ module Google
         #     For global calls, use `projects/{project-number-or-id}/locations/global` or
         #     `projects/{project-number-or-id}`.
         #
-        #     Only models within the same region, which have the same location-id, can be used.
+        #     Only models within the same region (has same location-id) can be used.
         #     Otherwise an INVALID_ARGUMENT (400) error is returned.
         # @!attribute [rw] model
         #   @return [::String]
@@ -278,11 +279,10 @@ module Google
         #
         #     - General (built-in) models:
         #       `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        #       `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         #
         #
         #     Returns languages supported by the specified model.
-        #     If missing, we get supported languages of Google general base (PBMT) model.
+        #     If missing, we get supported languages of Google general NMT model.
         class GetSupportedLanguagesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -404,13 +404,13 @@ module Google
         #     content to output.
         #
         #     Once a row is present in index.csv, the input/output matching never
-        #     changes. Callers should also expect the contents in the input_file are
+        #     changes. Callers should also expect all the content in input_file are
         #     processed and ready to be consumed (that is, no partial output file is
         #     written).
         #
-        #     Since index.csv will be updated during the process, please make
+        #     Since index.csv will be keeping updated during the process, please make
         #     sure there is no custom retention policy applied on the output bucket
-        #     that may prevent file updating.
+        #     that may avoid file updating.
         #     (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
         #
         #     The format of translations_file (for target language code 'trg') is:
@@ -546,8 +546,7 @@ module Google
         #
         #     Format: `projects/{project-number-or-id}/locations/{location-id}`.
         #
-        #     For global calls, use `projects/{project-number-or-id}/locations/global` or
-        #     `projects/{project-number-or-id}`.
+        #     For global calls, use `projects/{project-number-or-id}/locations/global`.
         #
         #     Non-global location is required for requests using AutoML models or custom
         #     glossaries.
@@ -587,7 +586,6 @@ module Google
         #
         #     - General (built-in) models:
         #       `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        #       `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         #
         #
         #     If not provided, the default Google model (NMT) will be used for
@@ -691,7 +689,7 @@ module Google
         # @!attribute [rw] models
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     Optional. The models to use for translation. Map's key is target language
-        #     code. Map's value is the model name. Value can be a built-in general model,
+        #     code. Map's value is model name. Value can be a built-in general model,
         #     or an AutoML Translation model.
         #
         #     The value format depends on model type:
@@ -701,7 +699,6 @@ module Google
         #
         #     - General (built-in) models:
         #       `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        #       `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         #
         #
         #     If the map is empty or a specific model is
@@ -1145,7 +1142,6 @@ module Google
         #
         #     - General (built-in) models:
         #       `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        #       `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         #
         #
         #     If the map is empty or a specific model is not requested for a language
@@ -1194,10 +1190,10 @@ module Google
         #     - `xlsx`,
         #     application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
         #
-        #     The max file size supported for `.docx`, `.pptx` and `.xlsx` is 100MB.
-        #     The max file size supported for `.pdf` is 1GB and the max page limit is
+        #     The max file size to support for `.docx`, `.pptx` and `.xlsx` is 100MB.
+        #     The max file size to support for `.pdf` is 1GB and the max page limit is
         #     1000 pages.
-        #     The max file size supported for all input documents is 1GB.
+        #     The max file size to support for all input documents is 1GB.
         class BatchDocumentInputConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1262,16 +1258,16 @@ module Google
         # translated successfully.
         # @!attribute [rw] total_pages
         #   @return [::Integer]
-        #     Total number of pages to translate in all documents. Documents without a
+        #     Total number of pages to translate in all documents. Documents without
         #     clear page definition (such as XLSX) are not counted.
         # @!attribute [rw] translated_pages
         #   @return [::Integer]
         #     Number of successfully translated pages in all documents. Documents without
-        #     a clear page definition (such as XLSX) are not counted.
+        #     clear page definition (such as XLSX) are not counted.
         # @!attribute [rw] failed_pages
         #   @return [::Integer]
         #     Number of pages that failed to process in all documents. Documents without
-        #     a clear page definition (such as XLSX) are not counted.
+        #     clear page definition (such as XLSX) are not counted.
         # @!attribute [rw] total_billable_pages
         #   @return [::Integer]
         #     Number of billable pages in documents with clear page definition (such as
