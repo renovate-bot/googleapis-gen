@@ -61,6 +61,13 @@ describe('v6.AgeRangeViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new agerangeviewserviceModule.v6.AgeRangeViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new agerangeviewserviceModule.v6.AgeRangeViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

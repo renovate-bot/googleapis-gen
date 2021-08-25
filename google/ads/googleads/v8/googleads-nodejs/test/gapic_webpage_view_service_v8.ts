@@ -61,6 +61,13 @@ describe('v8.WebpageViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new webpageviewserviceModule.v8.WebpageViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new webpageviewserviceModule.v8.WebpageViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

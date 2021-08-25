@@ -61,6 +61,13 @@ describe('v6.RemarketingActionServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new remarketingactionserviceModule.v6.RemarketingActionServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new remarketingactionserviceModule.v6.RemarketingActionServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

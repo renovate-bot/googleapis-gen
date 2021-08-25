@@ -61,6 +61,13 @@ describe('v6.ClickViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new clickviewserviceModule.v6.ClickViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new clickviewserviceModule.v6.ClickViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,6 +61,13 @@ describe('v6.CampaignSharedSetServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,6 +61,13 @@ describe('v8.CustomInterestServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new custominterestserviceModule.v8.CustomInterestServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new custominterestserviceModule.v8.CustomInterestServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,6 +61,13 @@ describe('v6.BillingSetupServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new billingsetupserviceModule.v6.BillingSetupServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new billingsetupserviceModule.v6.BillingSetupServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

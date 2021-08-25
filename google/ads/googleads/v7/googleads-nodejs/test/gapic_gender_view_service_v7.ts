@@ -61,6 +61,13 @@ describe('v7.GenderViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new genderviewserviceModule.v7.GenderViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new genderviewserviceModule.v7.GenderViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

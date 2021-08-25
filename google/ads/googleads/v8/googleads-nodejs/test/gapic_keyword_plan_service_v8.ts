@@ -61,6 +61,13 @@ describe('v8.KeywordPlanServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new keywordplanserviceModule.v8.KeywordPlanServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new keywordplanserviceModule.v8.KeywordPlanServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

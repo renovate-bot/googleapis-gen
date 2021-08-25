@@ -61,6 +61,13 @@ describe('v8.ReachPlanServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

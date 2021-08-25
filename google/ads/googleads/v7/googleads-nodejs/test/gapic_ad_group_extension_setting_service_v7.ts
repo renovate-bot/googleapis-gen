@@ -61,6 +61,13 @@ describe('v7.AdGroupExtensionSettingServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new adgroupextensionsettingserviceModule.v7.AdGroupExtensionSettingServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adgroupextensionsettingserviceModule.v7.AdGroupExtensionSettingServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

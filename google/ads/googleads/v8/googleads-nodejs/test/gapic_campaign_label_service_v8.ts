@@ -61,6 +61,13 @@ describe('v8.CampaignLabelServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new campaignlabelserviceModule.v8.CampaignLabelServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignlabelserviceModule.v8.CampaignLabelServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

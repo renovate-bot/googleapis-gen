@@ -61,6 +61,13 @@ describe('v6.ThirdPartyAppAnalyticsLinkServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new thirdpartyappanalyticslinkserviceModule.v6.ThirdPartyAppAnalyticsLinkServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new thirdpartyappanalyticslinkserviceModule.v6.ThirdPartyAppAnalyticsLinkServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,6 +61,13 @@ describe('v7.ShoppingPerformanceViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new shoppingperformanceviewserviceModule.v7.ShoppingPerformanceViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new shoppingperformanceviewserviceModule.v7.ShoppingPerformanceViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

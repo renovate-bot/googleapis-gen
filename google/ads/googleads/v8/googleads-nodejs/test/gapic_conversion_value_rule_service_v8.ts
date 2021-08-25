@@ -61,6 +61,13 @@ describe('v8.ConversionValueRuleServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new conversionvalueruleserviceModule.v8.ConversionValueRuleServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new conversionvalueruleserviceModule.v8.ConversionValueRuleServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

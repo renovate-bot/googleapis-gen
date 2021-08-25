@@ -61,6 +61,13 @@ describe('v7.SharedSetServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new sharedsetserviceModule.v7.SharedSetServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new sharedsetserviceModule.v7.SharedSetServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

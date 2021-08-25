@@ -61,6 +61,13 @@ describe('v7.DistanceViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new distanceviewserviceModule.v7.DistanceViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new distanceviewserviceModule.v7.DistanceViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

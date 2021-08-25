@@ -61,6 +61,13 @@ describe('v8.UserDataServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new userdataserviceModule.v8.UserDataServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new userdataserviceModule.v8.UserDataServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

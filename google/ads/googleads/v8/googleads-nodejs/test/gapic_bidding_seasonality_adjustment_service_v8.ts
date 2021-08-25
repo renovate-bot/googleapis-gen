@@ -61,6 +61,13 @@ describe('v8.BiddingSeasonalityAdjustmentServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new biddingseasonalityadjustmentserviceModule.v8.BiddingSeasonalityAdjustmentServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new biddingseasonalityadjustmentserviceModule.v8.BiddingSeasonalityAdjustmentServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

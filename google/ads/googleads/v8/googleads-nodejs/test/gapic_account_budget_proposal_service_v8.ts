@@ -61,6 +61,13 @@ describe('v8.AccountBudgetProposalServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new accountbudgetproposalserviceModule.v8.AccountBudgetProposalServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new accountbudgetproposalserviceModule.v8.AccountBudgetProposalServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

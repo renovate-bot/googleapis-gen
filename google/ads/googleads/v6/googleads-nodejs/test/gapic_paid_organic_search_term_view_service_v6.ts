@@ -61,6 +61,13 @@ describe('v6.PaidOrganicSearchTermViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new paidorganicsearchtermviewserviceModule.v6.PaidOrganicSearchTermViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new paidorganicsearchtermviewserviceModule.v6.PaidOrganicSearchTermViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

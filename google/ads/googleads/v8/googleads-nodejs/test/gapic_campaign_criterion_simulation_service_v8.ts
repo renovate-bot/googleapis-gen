@@ -61,6 +61,13 @@ describe('v8.CampaignCriterionSimulationServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new campaigncriterionsimulationserviceModule.v8.CampaignCriterionSimulationServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaigncriterionsimulationserviceModule.v8.CampaignCriterionSimulationServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

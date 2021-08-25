@@ -61,6 +61,13 @@ describe('v8.SmartCampaignSearchTermViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new smartcampaignsearchtermviewserviceModule.v8.SmartCampaignSearchTermViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new smartcampaignsearchtermviewserviceModule.v8.SmartCampaignSearchTermViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

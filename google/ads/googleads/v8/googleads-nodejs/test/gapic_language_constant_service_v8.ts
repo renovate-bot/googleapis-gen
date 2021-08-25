@@ -61,6 +61,13 @@ describe('v8.LanguageConstantServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new languageconstantserviceModule.v8.LanguageConstantServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new languageconstantserviceModule.v8.LanguageConstantServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

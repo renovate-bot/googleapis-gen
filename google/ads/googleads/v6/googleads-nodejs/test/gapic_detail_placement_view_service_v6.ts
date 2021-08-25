@@ -61,6 +61,13 @@ describe('v6.DetailPlacementViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new detailplacementviewserviceModule.v6.DetailPlacementViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new detailplacementviewserviceModule.v6.DetailPlacementViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,6 +61,13 @@ describe('v7.HotelGroupViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,6 +61,13 @@ describe('v6.CampaignFeedServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new campaignfeedserviceModule.v6.CampaignFeedServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignfeedserviceModule.v6.CampaignFeedServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

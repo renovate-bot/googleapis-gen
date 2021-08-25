@@ -124,6 +124,13 @@ describe('v7.BatchJobServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new batchjobserviceModule.v7.BatchJobServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new batchjobserviceModule.v7.BatchJobServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

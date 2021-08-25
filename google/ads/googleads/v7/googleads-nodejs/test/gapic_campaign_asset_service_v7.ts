@@ -61,6 +61,13 @@ describe('v7.CampaignAssetServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

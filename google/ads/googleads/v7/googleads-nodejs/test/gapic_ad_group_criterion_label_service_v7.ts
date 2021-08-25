@@ -61,6 +61,13 @@ describe('v7.AdGroupCriterionLabelServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new adgroupcriterionlabelserviceModule.v7.AdGroupCriterionLabelServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adgroupcriterionlabelserviceModule.v7.AdGroupCriterionLabelServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

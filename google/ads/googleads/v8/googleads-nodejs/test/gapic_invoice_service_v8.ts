@@ -61,6 +61,13 @@ describe('v8.InvoiceServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new invoiceserviceModule.v8.InvoiceServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new invoiceserviceModule.v8.InvoiceServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

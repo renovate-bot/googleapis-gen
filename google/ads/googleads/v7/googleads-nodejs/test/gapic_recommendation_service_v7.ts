@@ -61,6 +61,13 @@ describe('v7.RecommendationServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new recommendationserviceModule.v7.RecommendationServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new recommendationserviceModule.v7.RecommendationServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

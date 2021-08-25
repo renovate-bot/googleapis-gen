@@ -61,6 +61,13 @@ describe('v7.DisplayKeywordViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new displaykeywordviewserviceModule.v7.DisplayKeywordViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new displaykeywordviewserviceModule.v7.DisplayKeywordViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

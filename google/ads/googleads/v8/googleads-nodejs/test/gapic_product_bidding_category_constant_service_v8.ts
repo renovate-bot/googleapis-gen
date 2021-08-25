@@ -61,6 +61,13 @@ describe('v8.ProductBiddingCategoryConstantServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new productbiddingcategoryconstantserviceModule.v8.ProductBiddingCategoryConstantServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new productbiddingcategoryconstantserviceModule.v8.ProductBiddingCategoryConstantServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

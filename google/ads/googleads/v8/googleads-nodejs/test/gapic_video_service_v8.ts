@@ -61,6 +61,13 @@ describe('v8.VideoServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new videoserviceModule.v8.VideoServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new videoserviceModule.v8.VideoServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

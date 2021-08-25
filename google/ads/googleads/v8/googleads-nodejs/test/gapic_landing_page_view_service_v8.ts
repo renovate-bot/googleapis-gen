@@ -61,6 +61,13 @@ describe('v8.LandingPageViewServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new landingpageviewserviceModule.v8.LandingPageViewServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new landingpageviewserviceModule.v8.LandingPageViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

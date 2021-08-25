@@ -124,6 +124,13 @@ describe('v6.CampaignExperimentServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new campaignexperimentserviceModule.v6.CampaignExperimentServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignexperimentserviceModule.v6.CampaignExperimentServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

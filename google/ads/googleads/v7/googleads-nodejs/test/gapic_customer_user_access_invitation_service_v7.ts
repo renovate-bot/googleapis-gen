@@ -61,6 +61,13 @@ describe('v7.CustomerUserAccessInvitationServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new customeruseraccessinvitationserviceModule.v7.CustomerUserAccessInvitationServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customeruseraccessinvitationserviceModule.v7.CustomerUserAccessInvitationServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

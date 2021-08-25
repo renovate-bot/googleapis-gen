@@ -61,6 +61,13 @@ describe('v6.ConversionActionServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new conversionactionserviceModule.v6.ConversionActionServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new conversionactionserviceModule.v6.ConversionActionServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

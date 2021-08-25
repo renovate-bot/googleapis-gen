@@ -61,6 +61,13 @@ describe('v7.CustomerManagerLinkServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new customermanagerlinkserviceModule.v7.CustomerManagerLinkServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customermanagerlinkserviceModule.v7.CustomerManagerLinkServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

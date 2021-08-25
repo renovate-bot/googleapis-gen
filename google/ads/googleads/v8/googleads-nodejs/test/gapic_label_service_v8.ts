@@ -61,6 +61,13 @@ describe('v8.LabelServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new labelserviceModule.v8.LabelServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new labelserviceModule.v8.LabelServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

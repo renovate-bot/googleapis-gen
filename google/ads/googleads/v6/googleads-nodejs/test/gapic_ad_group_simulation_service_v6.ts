@@ -61,6 +61,13 @@ describe('v6.AdGroupSimulationServiceClient', () => {
         assert(client);
     });
 
+    it('should create a client with gRPC fallback', () => {
+        const client = new adgroupsimulationserviceModule.v6.AdGroupSimulationServiceClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adgroupsimulationserviceModule.v6.AdGroupSimulationServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},
