@@ -524,4 +524,26 @@ public interface BuildStepOrBuilder extends
    * @return The status.
    */
   com.google.cloudbuild.v1.Build.Status getStatus();
+
+  /**
+   * <pre>
+   * A shell script to be executed in the step.
+   * When script is provided, the user cannot specify the entrypoint or args.
+   * </pre>
+   *
+   * <code>string script = 19;</code>
+   * @return The script.
+   */
+  java.lang.String getScript();
+  /**
+   * <pre>
+   * A shell script to be executed in the step.
+   * When script is provided, the user cannot specify the entrypoint or args.
+   * </pre>
+   *
+   * <code>string script = 19;</code>
+   * @return The bytes for script.
+   */
+  com.google.protobuf.ByteString
+      getScriptBytes();
 }

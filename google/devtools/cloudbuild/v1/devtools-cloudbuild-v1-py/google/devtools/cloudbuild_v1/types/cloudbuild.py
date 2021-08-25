@@ -442,6 +442,10 @@ class BuildStep(proto.Message):
             this time, build step status is only updated on
             build completion; step status is not updated in
             real-time as the build progresses.
+        script (str):
+            A shell script to be executed in the step.
+            When script is provided, the user cannot specify
+            the entrypoint or args.
     """
 
     name = proto.Field(
@@ -500,6 +504,10 @@ class BuildStep(proto.Message):
         proto.ENUM,
         number=12,
         enum='Build.Status',
+    )
+    script = proto.Field(
+        proto.STRING,
+        number=19,
     )
 
 

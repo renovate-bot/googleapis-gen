@@ -277,6 +277,11 @@ module Google
         #     Output only. Status of the build step. At this time, build step status is
         #     only updated on build completion; step status is not updated in real-time
         #     as the build progresses.
+        # @!attribute [rw] script
+        #   @return [::String]
+        #     A shell script to be executed in the step.
+        #
+        #     When script is provided, the user cannot specify the entrypoint or args.
         class BuildStep
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
