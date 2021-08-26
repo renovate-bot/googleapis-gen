@@ -168,7 +168,7 @@ public interface WorkloadOrBuilder extends
 
   /**
    * <pre>
-   * Required. Input only. The billing account used for the resources which are
+   * Input only. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -178,13 +178,13 @@ public interface WorkloadOrBuilder extends
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The billingAccount.
    */
   java.lang.String getBillingAccount();
   /**
    * <pre>
-   * Required. Input only. The billing account used for the resources which are
+   * Input only. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -194,7 +194,7 @@ public interface WorkloadOrBuilder extends
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The bytes for billingAccount.
    */
   com.google.protobuf.ByteString
@@ -387,12 +387,11 @@ public interface WorkloadOrBuilder extends
   /**
    * <pre>
    * Input only. The parent resource for the resources managed by this Assured Workload. May
-   * be either an organization or a folder. Must be the same or a child of the
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
-   * Workload parent.
-   * Formats:
+   * parent organization.
+   * Format:
    * folders/{folder_id}
-   * organizations/{organization_id}
    * </pre>
    *
    * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -402,12 +401,11 @@ public interface WorkloadOrBuilder extends
   /**
    * <pre>
    * Input only. The parent resource for the resources managed by this Assured Workload. May
-   * be either an organization or a folder. Must be the same or a child of the
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
-   * Workload parent.
-   * Formats:
+   * parent organization.
+   * Format:
    * folders/{folder_id}
-   * organizations/{organization_id}
    * </pre>
    *
    * <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>

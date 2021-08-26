@@ -40,6 +40,13 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $compliance_regime = 0;
+    /**
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $resource_settings;
 
     /**
      * Constructor.
@@ -56,6 +63,9 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
      *     @type int $compliance_regime
      *           Optional. Compliance controls that should be applied to the resources managed by
      *           the workload.
+     *     @type \Google\Cloud\AssuredWorkloads\V1beta1\Workload\ResourceSettings[]|\Google\Protobuf\Internal\RepeatedField $resource_settings
+     *           Optional. Resource properties in the input that are used for creating/customizing
+     *           workload resources.
      * }
      */
     public function __construct($data = NULL) {
@@ -175,6 +185,34 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\AssuredWorkloads\V1beta1\Workload\ComplianceRegime::class);
         $this->compliance_regime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getResourceSettings()
+    {
+        return $this->resource_settings;
+    }
+
+    /**
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
+     *
+     * Generated from protobuf field <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Cloud\AssuredWorkloads\V1beta1\Workload\ResourceSettings[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setResourceSettings($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\AssuredWorkloads\V1beta1\Workload\ResourceSettings::class);
+        $this->resource_settings = $arr;
 
         return $this;
     }

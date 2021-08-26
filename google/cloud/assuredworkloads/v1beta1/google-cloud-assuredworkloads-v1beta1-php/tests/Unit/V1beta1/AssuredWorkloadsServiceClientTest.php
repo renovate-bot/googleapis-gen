@@ -129,8 +129,6 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $workload->setDisplayName($workloadDisplayName);
         $workloadComplianceRegime = ComplianceRegime::COMPLIANCE_REGIME_UNSPECIFIED;
         $workload->setComplianceRegime($workloadComplianceRegime);
-        $workloadBillingAccount = 'workloadBillingAccount-2106140023';
-        $workload->setBillingAccount($workloadBillingAccount);
         $complianceRegimeSettings = new ComplianceRegimeSettingsOneof();
         $complianceRegimeSettings->setIl4Settings(new IL4Settings());
         $workload->setIl4Settings($complianceRegimeSettings);
@@ -216,8 +214,6 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $workload->setDisplayName($workloadDisplayName);
         $workloadComplianceRegime = ComplianceRegime::COMPLIANCE_REGIME_UNSPECIFIED;
         $workload->setComplianceRegime($workloadComplianceRegime);
-        $workloadBillingAccount = 'workloadBillingAccount-2106140023';
-        $workload->setBillingAccount($workloadBillingAccount);
         $complianceRegimeSettings = new ComplianceRegimeSettingsOneof();
         $complianceRegimeSettings->setIl4Settings(new IL4Settings());
         $workload->setIl4Settings($complianceRegimeSettings);
@@ -486,8 +482,6 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $workload->setDisplayName($workloadDisplayName);
         $workloadComplianceRegime = ComplianceRegime::COMPLIANCE_REGIME_UNSPECIFIED;
         $workload->setComplianceRegime($workloadComplianceRegime);
-        $workloadBillingAccount = 'workloadBillingAccount-2106140023';
-        $workload->setBillingAccount($workloadBillingAccount);
         $complianceRegimeSettings = new ComplianceRegimeSettingsOneof();
         $complianceRegimeSettings->setIl4Settings(new IL4Settings());
         $workload->setIl4Settings($complianceRegimeSettings);
@@ -541,8 +535,6 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $workload->setDisplayName($workloadDisplayName);
         $workloadComplianceRegime = ComplianceRegime::COMPLIANCE_REGIME_UNSPECIFIED;
         $workload->setComplianceRegime($workloadComplianceRegime);
-        $workloadBillingAccount = 'workloadBillingAccount-2106140023';
-        $workload->setBillingAccount($workloadBillingAccount);
         $complianceRegimeSettings = new ComplianceRegimeSettingsOneof();
         $complianceRegimeSettings->setIl4Settings(new IL4Settings());
         $workload->setIl4Settings($complianceRegimeSettings);

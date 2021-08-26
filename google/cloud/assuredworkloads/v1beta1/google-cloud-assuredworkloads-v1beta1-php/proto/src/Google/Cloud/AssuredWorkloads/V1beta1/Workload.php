@@ -57,7 +57,7 @@ class Workload extends \Google\Protobuf\Internal\Message
      */
     protected $create_time = null;
     /**
-     * Required. Input only. The billing account used for the resources which are
+     * Input only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -66,7 +66,7 @@ class Workload extends \Google\Protobuf\Internal\Message
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF`.
      *
-     * Generated from protobuf field <code>string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
+     * Generated from protobuf field <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $billing_account = '';
     /**
@@ -84,12 +84,11 @@ class Workload extends \Google\Protobuf\Internal\Message
     private $labels;
     /**
      * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either an organization or a folder. Must be the same or a child of the
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
-     * Workload parent.
-     * Formats:
+     * parent organization.
+     * Format:
      * folders/{folder_id}
-     * organizations/{organization_id}
      *
      * Generated from protobuf field <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
@@ -139,7 +138,7 @@ class Workload extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Output only. Immutable. The Workload creation timestamp.
      *     @type string $billing_account
-     *           Required. Input only. The billing account used for the resources which are
+     *           Input only. The billing account used for the resources which are
      *           direct children of workload. This billing account is initially associated
      *           with the resources created as part of Workload creation.
      *           After the initial creation of these resources, the customer can change
@@ -162,12 +161,11 @@ class Workload extends \Google\Protobuf\Internal\Message
      *           Optional. Labels applied to the workload.
      *     @type string $provisioned_resources_parent
      *           Input only. The parent resource for the resources managed by this Assured Workload. May
-     *           be either an organization or a folder. Must be the same or a child of the
+     *           be either empty or a folder resource which is a child of the
      *           Workload parent. If not specified all resources are created under the
-     *           Workload parent.
-     *           Formats:
+     *           parent organization.
+     *           Format:
      *           folders/{folder_id}
-     *           organizations/{organization_id}
      *     @type \Google\Cloud\AssuredWorkloads\V1beta1\Workload\KMSSettings $kms_settings
      *           Input only. Settings used to create a CMEK crypto key. When set a project with a KMS
      *           CMEK key is provisioned. This field is mandatory for a subset of Compliance
@@ -344,7 +342,7 @@ class Workload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Input only. The billing account used for the resources which are
+     * Input only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -353,7 +351,7 @@ class Workload extends \Google\Protobuf\Internal\Message
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF`.
      *
-     * Generated from protobuf field <code>string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
+     * Generated from protobuf field <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return string
      */
     public function getBillingAccount()
@@ -362,7 +360,7 @@ class Workload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Input only. The billing account used for the resources which are
+     * Input only. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -371,7 +369,7 @@ class Workload extends \Google\Protobuf\Internal\Message
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF`.
      *
-     * Generated from protobuf field <code>string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
+     * Generated from protobuf field <code>string billing_account = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -583,12 +581,11 @@ class Workload extends \Google\Protobuf\Internal\Message
 
     /**
      * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either an organization or a folder. Must be the same or a child of the
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
-     * Workload parent.
-     * Formats:
+     * parent organization.
+     * Format:
      * folders/{folder_id}
-     * organizations/{organization_id}
      *
      * Generated from protobuf field <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return string
@@ -600,12 +597,11 @@ class Workload extends \Google\Protobuf\Internal\Message
 
     /**
      * Input only. The parent resource for the resources managed by this Assured Workload. May
-     * be either an organization or a folder. Must be the same or a child of the
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
-     * Workload parent.
-     * Formats:
+     * parent organization.
+     * Format:
      * folders/{folder_id}
-     * organizations/{organization_id}
      *
      * Generated from protobuf field <code>string provisioned_resources_parent = 13 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param string $var
