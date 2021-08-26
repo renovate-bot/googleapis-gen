@@ -610,8 +610,9 @@ class MetricServiceGapicClient
      * }
      * ```
      *
-     * @param string           $name             Required. The project on which to execute the request. The format is:
-     *
+     * @param string           $name             Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                                           which to execute the request. The format is:
+     *                                           4
      *                                           projects/[PROJECT_ID_OR_NUMBER]
      * @param MetricDescriptor $metricDescriptor Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
      *                                           descriptor.
@@ -659,7 +660,8 @@ class MetricServiceGapicClient
      * }
      * ```
      *
-     * @param string       $name         Required. The project on which to execute the request. The format is:
+     * @param string       $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                                   which to execute the request. The format is:
      *
      *                                   projects/[PROJECT_ID_OR_NUMBER]
      * @param TimeSeries[] $timeSeries   Required. The new data to be added to a list of time series.
@@ -854,7 +856,8 @@ class MetricServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The project on which to execute the request. The format is:
+     * @param string $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                             which to execute the request. The format is:
      *
      *                             projects/[PROJECT_ID_OR_NUMBER]
      * @param array  $optionalArgs {
@@ -938,7 +941,8 @@ class MetricServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The project on which to execute the request. The format is:
+     * @param string $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                             which to execute the request. The format is:
      *
      *                             projects/[PROJECT_ID_OR_NUMBER]
      * @param array  $optionalArgs {
@@ -1023,8 +1027,8 @@ class MetricServiceGapicClient
      * }
      * ```
      *
-     * @param string       $name         Required. The project, organization or folder on which to execute the request. The
-     *                                   format is:
+     * @param string       $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     *                                   organization or folder on which to execute the request. The format is:
      *
      *                                   projects/[PROJECT_ID_OR_NUMBER]
      *                                   organizations/[ORGANIZATION_ID]

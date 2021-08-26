@@ -114,11 +114,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -136,11 +137,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -167,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * The default time zone is in UTC.
    * </pre>
    *
-   * <code>string query = 7;</code>
+   * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The query.
    */
   @java.lang.Override
@@ -190,7 +192,7 @@ private static final long serialVersionUID = 0L;
    * The default time zone is in UTC.
    * </pre>
    *
-   * <code>string query = 7;</code>
+   * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -633,11 +635,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -654,11 +657,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -676,11 +680,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -696,11 +701,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -711,11 +717,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project on which to execute the request. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     * which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -739,7 +746,7 @@ private static final long serialVersionUID = 0L;
      * The default time zone is in UTC.
      * </pre>
      *
-     * <code>string query = 7;</code>
+     * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The query.
      */
     public java.lang.String getQuery() {
@@ -761,7 +768,7 @@ private static final long serialVersionUID = 0L;
      * The default time zone is in UTC.
      * </pre>
      *
-     * <code>string query = 7;</code>
+     * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for query.
      */
     public com.google.protobuf.ByteString
@@ -784,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * The default time zone is in UTC.
      * </pre>
      *
-     * <code>string query = 7;</code>
+     * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -805,7 +812,7 @@ private static final long serialVersionUID = 0L;
      * The default time zone is in UTC.
      * </pre>
      *
-     * <code>string query = 7;</code>
+     * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
@@ -821,7 +828,7 @@ private static final long serialVersionUID = 0L;
      * The default time zone is in UTC.
      * </pre>
      *
-     * <code>string query = 7;</code>
+     * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */

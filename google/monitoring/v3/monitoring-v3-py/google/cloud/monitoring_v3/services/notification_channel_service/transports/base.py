@@ -154,7 +154,6 @@ class NotificationChannelServiceTransport(abc.ABC):
                 self.list_notification_channel_descriptors,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -166,7 +165,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_notification_channel_descriptor,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -178,7 +176,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.list_notification_channels,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -190,7 +187,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_notification_channel,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -212,7 +208,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.delete_notification_channel,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -229,7 +224,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_notification_channel_verification_code,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -241,7 +235,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.verify_notification_channel,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,

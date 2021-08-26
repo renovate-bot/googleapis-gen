@@ -5136,6 +5136,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Selects regular-expression matching. The match succeeds of the output
        * matches the regular expression specified in the `content` string.
+       * Regex matching is only supported for HTTP/HTTPS checks.
        * </pre>
        *
        * <code>MATCHES_REGEX = 3;</code>
@@ -5145,7 +5146,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Selects negation of regular-expression matching. The match succeeds if
        * the output does _NOT_ match the regular expression specified in the
-       * `content` string.
+       * `content` string. Regex matching is only supported for HTTP/HTTPS
+       * checks.
        * </pre>
        *
        * <code>NOT_MATCHES_REGEX = 4;</code>
@@ -5188,6 +5190,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Selects regular-expression matching. The match succeeds of the output
        * matches the regular expression specified in the `content` string.
+       * Regex matching is only supported for HTTP/HTTPS checks.
        * </pre>
        *
        * <code>MATCHES_REGEX = 3;</code>
@@ -5197,7 +5200,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Selects negation of regular-expression matching. The match succeeds if
        * the output does _NOT_ match the regular expression specified in the
-       * `content` string.
+       * `content` string. Regex matching is only supported for HTTP/HTTPS
+       * checks.
        * </pre>
        *
        * <code>NOT_MATCHES_REGEX = 4;</code>
@@ -6121,12 +6125,13 @@ private static final long serialVersionUID = 0L;
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
    * with the configuration.
-   * The following monitored resource types are supported for Uptime checks:
+   * The following monitored resource types are valid for this field:
    *   `uptime_url`,
    *   `gce_instance`,
    *   `gae_app`,
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
+   *   `k8s_service`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6141,12 +6146,13 @@ private static final long serialVersionUID = 0L;
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
    * with the configuration.
-   * The following monitored resource types are supported for Uptime checks:
+   * The following monitored resource types are valid for this field:
    *   `uptime_url`,
    *   `gce_instance`,
    *   `gae_app`,
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
+   *   `k8s_service`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -6164,12 +6170,13 @@ private static final long serialVersionUID = 0L;
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
    * with the configuration.
-   * The following monitored resource types are supported for Uptime checks:
+   * The following monitored resource types are valid for this field:
    *   `uptime_url`,
    *   `gce_instance`,
    *   `gae_app`,
    *   `aws_ec2_instance`,
    *   `aws_elb_load_balancer`
+   *   `k8s_service`
    * </pre>
    *
    * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7633,12 +7640,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7653,12 +7661,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7683,12 +7692,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7711,12 +7721,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7737,12 +7748,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7771,12 +7783,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7802,12 +7815,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7820,12 +7834,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
@@ -7846,12 +7861,13 @@ private static final long serialVersionUID = 0L;
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      * </pre>
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>

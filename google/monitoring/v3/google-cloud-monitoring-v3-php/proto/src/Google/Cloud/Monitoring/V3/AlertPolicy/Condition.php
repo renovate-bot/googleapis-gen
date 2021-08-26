@@ -88,6 +88,9 @@ class Condition extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\MetricAbsence $condition_absent
      *           A condition that checks that a time series continues to
      *           receive new data points.
+     *     @type \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\LogMatch $condition_matched_log
+     *           A condition that checks for log messages matching given constraints. If
+     *           set, no other conditions can be present.
      *     @type \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\MonitoringQueryLanguageCondition $condition_monitoring_query_language
      *           A condition that uses the Monitoring Query Language to define
      *           alerts.
@@ -252,6 +255,39 @@ class Condition extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\MetricAbsence::class);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     *
+     * Generated from protobuf field <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     * @return \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\LogMatch|null
+     */
+    public function getConditionMatchedLog()
+    {
+        return $this->readOneof(20);
+    }
+
+    public function hasConditionMatchedLog()
+    {
+        return $this->hasOneof(20);
+    }
+
+    /**
+     * A condition that checks for log messages matching given constraints. If
+     * set, no other conditions can be present.
+     *
+     * Generated from protobuf field <code>.google.monitoring.v3.AlertPolicy.Condition.LogMatch condition_matched_log = 20;</code>
+     * @param \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\LogMatch $var
+     * @return $this
+     */
+    public function setConditionMatchedLog($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Monitoring\V3\AlertPolicy\Condition\LogMatch::class);
+        $this->writeOneof(20, $var);
 
         return $this;
     }

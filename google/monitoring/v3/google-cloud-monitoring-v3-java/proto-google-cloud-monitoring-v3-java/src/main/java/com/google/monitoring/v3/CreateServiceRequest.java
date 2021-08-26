@@ -115,7 +115,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the parent workspace. The format is:
+   * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+   * the parent workspace. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -137,7 +138,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the parent workspace. The format is:
+   * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+   * the parent workspace. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -601,7 +603,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -622,7 +625,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -644,7 +648,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -664,7 +669,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -679,7 +685,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent workspace. The format is:
+     * Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+     * the parent workspace. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *

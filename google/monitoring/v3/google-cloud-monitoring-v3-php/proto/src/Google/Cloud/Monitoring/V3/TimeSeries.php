@@ -27,7 +27,9 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
     protected $metric = null;
     /**
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 2;</code>
      */
@@ -95,7 +97,9 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
      *           series.
      *     @type \Google\Api\MonitoredResource $resource
      *           The associated monitored resource.  Custom metrics can use only certain
-     *           monitored resource types in their time series data.
+     *           monitored resource types in their time series data. For more information,
+     *           see [Monitored resources for custom
+     *           metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      *     @type \Google\Api\MonitoredResourceMetadata $metadata
      *           Output only. The associated monitored resource metadata. When reading a
      *           time series, this field will include metadata labels that are explicitly
@@ -174,7 +178,9 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
 
     /**
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 2;</code>
      * @return \Google\Api\MonitoredResource|null
@@ -196,7 +202,9 @@ class TimeSeries extends \Google\Protobuf\Internal\Message
 
     /**
      * The associated monitored resource.  Custom metrics can use only certain
-     * monitored resource types in their time series data.
+     * monitored resource types in their time series data. For more information,
+     * see [Monitored resources for custom
+     * metrics](https://cloud.google.com/monitoring/custom-metrics/creating-metrics#custom-metric-resources).
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource resource = 2;</code>
      * @param \Google\Api\MonitoredResource $var

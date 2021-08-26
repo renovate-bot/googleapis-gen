@@ -16,8 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -99,8 +99,8 @@ class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The project, organization or folder on which to execute the request. The
-     *           format is:
+     *           Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     *           organization or folder on which to execute the request. The format is:
      *               projects/[PROJECT_ID_OR_NUMBER]
      *               organizations/[ORGANIZATION_ID]
      *               folders/[FOLDER_ID]
@@ -146,8 +146,8 @@ class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -161,8 +161,8 @@ class ListTimeSeriesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]

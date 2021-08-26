@@ -9,8 +9,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -22,8 +22,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]

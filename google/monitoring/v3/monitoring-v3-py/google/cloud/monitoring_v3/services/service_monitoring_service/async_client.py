@@ -169,8 +169,9 @@ class ServiceMonitoringServiceAsyncClient:
             request (:class:`google.cloud.monitoring_v3.types.CreateServiceRequest`):
                 The request object. The `CreateService` request.
             parent (:class:`str`):
-                Required. Resource name of the parent workspace. The
-                format is:
+                Required. Resource
+                `name <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                of the parent workspace. The format is:
 
                 ::
 
@@ -305,7 +306,6 @@ class ServiceMonitoringServiceAsyncClient:
             self._client._transport.get_service,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -348,8 +348,9 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. The `ListServices` request.
             parent (:class:`str`):
                 Required. Resource name of the parent containing the
-                listed services, either a project or a Monitoring
-                Workspace. The formats are:
+                listed services, either a
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                or a Monitoring Workspace. The formats are:
 
                 ::
 
@@ -394,7 +395,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_services,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -560,7 +560,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_service,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -755,7 +754,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_service_level_objective,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -845,7 +843,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_service_level_objectives,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -1021,7 +1018,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_service_level_objective,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,

@@ -156,7 +156,6 @@ class MetricServiceTransport(abc.ABC):
                 self.list_monitored_resource_descriptors,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -168,7 +167,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_monitored_resource_descriptor,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -180,7 +178,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.list_metric_descriptors,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -192,7 +189,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_metric_descriptor,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -209,7 +205,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.delete_metric_descriptor,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -221,12 +216,11 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.list_time_series,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
-                    deadline=30.0,
+                    deadline=90.0,
                 ),
-                default_timeout=30.0,
+                default_timeout=90.0,
                 client_info=client_info,
             ),
             self.create_time_series: gapic_v1.method.wrap_method(

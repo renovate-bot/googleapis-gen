@@ -38,6 +38,17 @@ class Service extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.monitoring.v3.Service.Telemetry telemetry = 13;</code>
      */
     protected $telemetry = null;
+    /**
+     * Labels which have been used to annotate the service. Label keys must start
+     * with a letter. Label keys and values may contain lowercase letters,
+     * numbers, underscores, and dashes. Label keys and values have a maximum
+     * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+     * label entries may be stored. For labels which do not have a semantic value,
+     * the empty string may be supplied for the label value.
+     *
+     * Generated from protobuf field <code>map<string, string> user_labels = 14;</code>
+     */
+    private $user_labels;
     protected $identifier;
 
     /**
@@ -67,6 +78,13 @@ class Service extends \Google\Protobuf\Internal\Message
      *           [documented here](https://istio.io/latest/docs/reference/config/metrics/)
      *     @type \Google\Cloud\Monitoring\V3\Service\Telemetry $telemetry
      *           Configuration for how to query telemetry on a Service.
+     *     @type array|\Google\Protobuf\Internal\MapField $user_labels
+     *           Labels which have been used to annotate the service. Label keys must start
+     *           with a letter. Label keys and values may contain lowercase letters,
+     *           numbers, underscores, and dashes. Label keys and values have a maximum
+     *           length of 63 characters, and must be less than 128 bytes in size. Up to 64
+     *           label entries may be stored. For labels which do not have a semantic value,
+     *           the empty string may be supplied for the label value.
      * }
      */
     public function __construct($data = NULL) {
@@ -350,6 +368,42 @@ class Service extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Monitoring\V3\Service\Telemetry::class);
         $this->telemetry = $var;
+
+        return $this;
+    }
+
+    /**
+     * Labels which have been used to annotate the service. Label keys must start
+     * with a letter. Label keys and values may contain lowercase letters,
+     * numbers, underscores, and dashes. Label keys and values have a maximum
+     * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+     * label entries may be stored. For labels which do not have a semantic value,
+     * the empty string may be supplied for the label value.
+     *
+     * Generated from protobuf field <code>map<string, string> user_labels = 14;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getUserLabels()
+    {
+        return $this->user_labels;
+    }
+
+    /**
+     * Labels which have been used to annotate the service. Label keys must start
+     * with a letter. Label keys and values may contain lowercase letters,
+     * numbers, underscores, and dashes. Label keys and values have a maximum
+     * length of 63 characters, and must be less than 128 bytes in size. Up to 64
+     * label entries may be stored. For labels which do not have a semantic value,
+     * the empty string may be supplied for the label value.
+     *
+     * Generated from protobuf field <code>map<string, string> user_labels = 14;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setUserLabels($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->user_labels = $arr;
 
         return $this;
     }

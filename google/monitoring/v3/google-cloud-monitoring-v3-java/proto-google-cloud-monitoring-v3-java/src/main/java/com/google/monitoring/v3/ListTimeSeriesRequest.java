@@ -299,8 +299,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -324,8 +324,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The project, organization or folder on which to execute the request. The
-   * format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * organization or folder on which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    *     organizations/[ORGANIZATION_ID]
    *     folders/[FOLDER_ID]
@@ -1164,8 +1164,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1188,8 +1188,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1213,8 +1213,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1236,8 +1236,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]
@@ -1254,8 +1254,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project, organization or folder on which to execute the request. The
-     * format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+     * organization or folder on which to execute the request. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     organizations/[ORGANIZATION_ID]
      *     folders/[FOLDER_ID]

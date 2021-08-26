@@ -160,7 +160,6 @@ class ServiceMonitoringServiceTransport(abc.ABC):
                 self.get_service,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -172,7 +171,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.list_services,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -189,7 +187,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.delete_service,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -206,7 +203,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_service_level_objective,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -218,7 +214,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.list_service_level_objectives,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -235,7 +230,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.delete_service_level_objective,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,

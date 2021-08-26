@@ -1375,7 +1375,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A `MetricRange` is used when each window is good when the value x of a
-   * single `TimeSeries` satisfies `range.min &lt;= x &lt; range.max`. The provided
+   * single `TimeSeries` satisfies `range.min &lt;= x &lt;= range.max`. The provided
    * `TimeSeries` must have `ValueType = INT64` or `ValueType = DOUBLE` and
    * `MetricKind = GAUGE`.
    * </pre>
@@ -1738,7 +1738,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A `MetricRange` is used when each window is good when the value x of a
-     * single `TimeSeries` satisfies `range.min &lt;= x &lt; range.max`. The provided
+     * single `TimeSeries` satisfies `range.min &lt;= x &lt;= range.max`. The provided
      * `TimeSeries` must have `ValueType = INT64` or `ValueType = DOUBLE` and
      * `MetricKind = GAUGE`.
      * </pre>

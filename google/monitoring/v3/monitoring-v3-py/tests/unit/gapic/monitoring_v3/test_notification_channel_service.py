@@ -38,7 +38,6 @@ from google.cloud.monitoring_v3.services.notification_channel_service import Not
 from google.cloud.monitoring_v3.services.notification_channel_service import pagers
 from google.cloud.monitoring_v3.services.notification_channel_service import transports
 from google.cloud.monitoring_v3.services.notification_channel_service.transports.base import _GOOGLE_AUTH_VERSION
-from google.cloud.monitoring_v3.types import common
 from google.cloud.monitoring_v3.types import mutation_record
 from google.cloud.monitoring_v3.types import notification
 from google.cloud.monitoring_v3.types import notification_service
@@ -832,7 +831,6 @@ def test_get_notification_channel_descriptor(transport: str = 'grpc', request_ty
             type_='type__value',
             display_name='display_name_value',
             description='description_value',
-            supported_tiers=[common.ServiceTier.SERVICE_TIER_BASIC],
             launch_stage=launch_stage_pb2.LaunchStage.UNIMPLEMENTED,
         )
         response = client.get_notification_channel_descriptor(request)
@@ -848,7 +846,6 @@ def test_get_notification_channel_descriptor(transport: str = 'grpc', request_ty
     assert response.type_ == 'type__value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-    assert response.supported_tiers == [common.ServiceTier.SERVICE_TIER_BASIC]
     assert response.launch_stage == launch_stage_pb2.LaunchStage.UNIMPLEMENTED
 
 
@@ -895,7 +892,6 @@ async def test_get_notification_channel_descriptor_async(transport: str = 'grpc_
             type_='type__value',
             display_name='display_name_value',
             description='description_value',
-            supported_tiers=[common.ServiceTier.SERVICE_TIER_BASIC],
             launch_stage=launch_stage_pb2.LaunchStage.UNIMPLEMENTED,
         ))
         response = await client.get_notification_channel_descriptor(request)
@@ -911,7 +907,6 @@ async def test_get_notification_channel_descriptor_async(transport: str = 'grpc_
     assert response.type_ == 'type__value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-    assert response.supported_tiers == [common.ServiceTier.SERVICE_TIER_BASIC]
     assert response.launch_stage == launch_stage_pb2.LaunchStage.UNIMPLEMENTED
 
 

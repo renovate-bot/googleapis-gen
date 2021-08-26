@@ -13,7 +13,7 @@ public interface AlertPolicyOrBuilder extends
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-   * is created.  When calling the
+   * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
    * part of the request.
@@ -29,7 +29,7 @@ public interface AlertPolicyOrBuilder extends
    * format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * `[ALERT_POLICY_ID]` is assigned by Stackdriver Monitoring when the policy
-   * is created.  When calling the
+   * is created. When calling the
    * [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
    * method, do not include the `name` field in the alerting policy passed as
    * part of the request.
@@ -480,4 +480,31 @@ public interface AlertPolicyOrBuilder extends
    * <code>.google.monitoring.v3.MutationRecord mutation_record = 11;</code>
    */
   com.google.monitoring.v3.MutationRecordOrBuilder getMutationRecordOrBuilder();
+
+  /**
+   * <pre>
+   * Control over how this alert policy's notification channels are notified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+   * @return Whether the alertStrategy field is set.
+   */
+  boolean hasAlertStrategy();
+  /**
+   * <pre>
+   * Control over how this alert policy's notification channels are notified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+   * @return The alertStrategy.
+   */
+  com.google.monitoring.v3.AlertPolicy.AlertStrategy getAlertStrategy();
+  /**
+   * <pre>
+   * Control over how this alert policy's notification channels are notified.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
+   */
+  com.google.monitoring.v3.AlertPolicy.AlertStrategyOrBuilder getAlertStrategyOrBuilder();
 }

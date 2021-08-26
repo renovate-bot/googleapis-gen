@@ -154,7 +154,6 @@ class AlertPolicyServiceTransport(abc.ABC):
                 self.list_alert_policies,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -166,7 +165,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.get_alert_policy,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,
@@ -183,7 +181,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 self.delete_alert_policy,
                 default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if_exception_type(
-                        core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
                     deadline=30.0,

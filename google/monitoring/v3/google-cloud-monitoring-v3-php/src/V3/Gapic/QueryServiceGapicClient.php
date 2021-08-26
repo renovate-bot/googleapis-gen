@@ -47,8 +47,10 @@ use Google\Cloud\Monitoring\V3\QueryTimeSeriesResponse;
  * ```
  * $queryServiceClient = new QueryServiceClient();
  * try {
+ *     $name = 'name';
+ *     $query = 'query';
  *     // Iterate over pages of elements
- *     $pagedResponse = $queryServiceClient->queryTimeSeries();
+ *     $pagedResponse = $queryServiceClient->queryTimeSeries($name, $query);
  *     foreach ($pagedResponse->iteratePages() as $page) {
  *         foreach ($page as $element) {
  *             // doSomethingWith($element);
@@ -56,7 +58,7 @@ use Google\Cloud\Monitoring\V3\QueryTimeSeriesResponse;
  *     }
  *     // Alternatively:
  *     // Iterate through all elements
- *     $pagedResponse = $queryServiceClient->queryTimeSeries();
+ *     $pagedResponse = $queryServiceClient->queryTimeSeries($name, $query);
  *     foreach ($pagedResponse->iterateAllElements() as $element) {
  *         // doSomethingWith($element);
  *     }
@@ -184,8 +186,10 @@ class QueryServiceGapicClient
      * ```
      * $queryServiceClient = new QueryServiceClient();
      * try {
+     *     $name = 'name';
+     *     $query = 'query';
      *     // Iterate over pages of elements
-     *     $pagedResponse = $queryServiceClient->queryTimeSeries();
+     *     $pagedResponse = $queryServiceClient->queryTimeSeries($name, $query);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -193,7 +197,7 @@ class QueryServiceGapicClient
      *     }
      *     // Alternatively:
      *     // Iterate through all elements
-     *     $pagedResponse = $queryServiceClient->queryTimeSeries();
+     *     $pagedResponse = $queryServiceClient->queryTimeSeries($name, $query);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -202,17 +206,16 @@ class QueryServiceGapicClient
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param string $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                             which to execute the request. The format is:
+     *
+     *                             projects/[PROJECT_ID_OR_NUMBER]
+     * @param string $query        Required. The query in the [Monitoring Query
+     *                             Language](https://cloud.google.com/monitoring/mql/reference) format.
+     *                             The default time zone is in UTC.
+     * @param array  $optionalArgs {
      *     Optional.
      *
-     *     @type string $name
-     *           Required. The project on which to execute the request. The format is:
-     *
-     *           projects/[PROJECT_ID_OR_NUMBER]
-     *     @type string $query
-     *           Required. The query in the [Monitoring Query
-     *           Language](https://cloud.google.com/monitoring/mql/reference) format.
-     *           The default time zone is in UTC.
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if
@@ -233,19 +236,13 @@ class QueryServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function queryTimeSeries(array $optionalArgs = [])
+    public function queryTimeSeries($name, $query, array $optionalArgs = [])
     {
         $request = new QueryTimeSeriesRequest();
         $requestParamHeaders = [];
-        if (isset($optionalArgs['name'])) {
-            $request->setName($optionalArgs['name']);
-            $requestParamHeaders['name'] = $optionalArgs['name'];
-        }
-
-        if (isset($optionalArgs['query'])) {
-            $request->setQuery($optionalArgs['query']);
-        }
-
+        $request->setName($name);
+        $request->setQuery($query);
+        $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }

@@ -9,21 +9,23 @@ public interface QueryTimeSeriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -36,7 +38,7 @@ public interface QueryTimeSeriesRequestOrBuilder extends
    * The default time zone is in UTC.
    * </pre>
    *
-   * <code>string query = 7;</code>
+   * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The query.
    */
   java.lang.String getQuery();
@@ -47,7 +49,7 @@ public interface QueryTimeSeriesRequestOrBuilder extends
    * The default time zone is in UTC.
    * </pre>
    *
-   * <code>string query = 7;</code>
+   * <code>string query = 7 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for query.
    */
   com.google.protobuf.ByteString

@@ -70,7 +70,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings ListAlertPoliciesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings ListAlertPoliciesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -85,7 +85,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings GetAlertPolicySettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings GetAlertPolicySettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -114,7 +114,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings DeleteAlertPolicySettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings DeleteAlertPolicySettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -309,7 +309,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -341,7 +342,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -373,7 +375,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -405,7 +408,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -437,7 +441,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -469,7 +474,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -501,7 +507,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -533,7 +540,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -565,7 +573,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -597,7 +606,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Lists the existing alerting policies for the workspace.
         /// </summary>
         /// <param name="name">
-        /// Required. The project whose alert policies are to be listed. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+        /// whose alert policies are to be listed. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -818,7 +828,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -848,7 +859,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -878,7 +890,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -904,7 +917,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -934,7 +948,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -964,7 +979,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -990,7 +1006,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1020,7 +1037,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1050,7 +1068,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1076,7 +1095,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1106,7 +1126,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1136,7 +1157,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1162,7 +1184,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1192,7 +1215,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 
@@ -1222,7 +1246,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Creates a new alerting policy.
         /// </summary>
         /// <param name="name">
-        /// Required. The project in which to create the alerting policy. The format is:
+        /// Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+        /// which to create the alerting policy. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// 

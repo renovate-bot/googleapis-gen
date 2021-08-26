@@ -110,8 +110,10 @@ private static final long serialVersionUID = 0L;
    * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
    *     projects/[PROJECT_ID_OR_NUMBER]
-   * Note that this names the parent container in which to look for the
-   * descriptors; to retrieve a single descriptor by name, use the
+   * Note that this
+   * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+   * container in which to look for the descriptors; to retrieve a single
+   * descriptor by name, use the
    * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    * operation, instead.
    * </pre>
@@ -137,8 +139,10 @@ private static final long serialVersionUID = 0L;
    * Required. The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
    *     projects/[PROJECT_ID_OR_NUMBER]
-   * Note that this names the parent container in which to look for the
-   * descriptors; to retrieve a single descriptor by name, use the
+   * Note that this
+   * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+   * container in which to look for the descriptors; to retrieve a single
+   * descriptor by name, use the
    * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
    * operation, instead.
    * </pre>
@@ -574,8 +578,10 @@ private static final long serialVersionUID = 0L;
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -600,8 +606,10 @@ private static final long serialVersionUID = 0L;
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -627,8 +635,10 @@ private static final long serialVersionUID = 0L;
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -652,8 +662,10 @@ private static final long serialVersionUID = 0L;
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>
@@ -672,8 +684,10 @@ private static final long serialVersionUID = 0L;
      * Required. The REST resource name of the parent from which to retrieve
      * the notification channel descriptors. The expected syntax is:
      *     projects/[PROJECT_ID_OR_NUMBER]
-     * Note that this names the parent container in which to look for the
-     * descriptors; to retrieve a single descriptor by name, use the
+     * Note that this
+     * [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     * container in which to look for the descriptors; to retrieve a single
+     * descriptor by name, use the
      * [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      * operation, instead.
      * </pre>

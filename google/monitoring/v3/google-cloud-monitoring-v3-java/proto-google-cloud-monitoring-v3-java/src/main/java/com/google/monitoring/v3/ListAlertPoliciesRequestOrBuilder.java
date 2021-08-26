@@ -9,7 +9,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project whose alert policies are to be listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose alert policies are to be listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
@@ -24,7 +25,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The project whose alert policies are to be listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose alert policies are to be listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy

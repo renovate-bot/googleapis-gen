@@ -575,8 +575,9 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
- *
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
+ *   4
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {google.api.MetricDescriptor} request.metricDescriptor
  *   Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
@@ -732,7 +733,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {number[]} request.timeSeries
@@ -815,7 +817,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.filter
@@ -885,7 +888,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.filter
@@ -942,7 +946,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.filter
@@ -1023,7 +1028,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.filter
@@ -1095,7 +1101,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.filter
@@ -1154,7 +1161,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.filter
@@ -1237,8 +1245,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project, organization or folder on which to execute the request. The
- *   format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+ *   organization or folder on which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *       organizations/[ORGANIZATION_ID]
@@ -1333,8 +1341,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project, organization or folder on which to execute the request. The
- *   format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+ *   organization or folder on which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *       organizations/[ORGANIZATION_ID]
@@ -1416,8 +1424,8 @@ export class MetricServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project, organization or folder on which to execute the request. The
- *   format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+ *   organization or folder on which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *       organizations/[ORGANIZATION_ID]

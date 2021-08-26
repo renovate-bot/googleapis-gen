@@ -29,7 +29,6 @@ from .common import (
     TimeInterval,
     TypedValue,
     ComparisonType,
-    ServiceTier,
 )
 from .dropped_labels import (
     DroppedLabels,
@@ -154,7 +153,6 @@ __all__ = (
     'TimeInterval',
     'TypedValue',
     'ComparisonType',
-    'ServiceTier',
     'DroppedLabels',
     'Group',
     'CreateGroupRequest',

@@ -476,7 +476,8 @@ export class UptimeCheckServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project in which to create the Uptime check. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+ *   which to create the Uptime check. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {google.monitoring.v3.UptimeCheckConfig} request.uptimeCheckConfig
@@ -718,7 +719,8 @@ export class UptimeCheckServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project whose Uptime check configurations are listed. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+ *   whose Uptime check configurations are listed. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {number} request.pageSize
@@ -784,7 +786,8 @@ export class UptimeCheckServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project whose Uptime check configurations are listed. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+ *   whose Uptime check configurations are listed. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {number} request.pageSize
@@ -837,7 +840,8 @@ export class UptimeCheckServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project whose Uptime check configurations are listed. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+ *   whose Uptime check configurations are listed. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {number} request.pageSize

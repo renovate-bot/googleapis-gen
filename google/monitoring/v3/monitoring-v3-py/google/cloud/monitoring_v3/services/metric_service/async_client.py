@@ -172,8 +172,9 @@ class MetricServiceAsyncClient:
                 The request object. The
                 `ListMonitoredResourceDescriptors` request.
             name (:class:`str`):
-                Required. The project on which to execute the request.
-                The format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                on which to execute the request. The format is:
 
                 ::
 
@@ -217,7 +218,6 @@ class MetricServiceAsyncClient:
             self._client._transport.list_monitored_resource_descriptors,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -325,7 +325,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_monitored_resource_descriptor,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -368,8 +367,9 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             request (:class:`google.cloud.monitoring_v3.types.ListMetricDescriptorsRequest`):
                 The request object. The `ListMetricDescriptors` request.
             name (:class:`str`):
-                Required. The project on which to execute the request.
-                The format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                on which to execute the request. The format is:
 
                 ::
 
@@ -413,7 +413,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_metric_descriptors,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -514,7 +513,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_metric_descriptor,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -560,12 +558,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. The `CreateMetricDescriptor`
                 request.
             name (:class:`str`):
-                Required. The project on which to execute the request.
-                The format is:
-
-                ::
-
-                    projects/[PROJECT_ID_OR_NUMBER]
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                on which to execute the request. The format is: 4
+                projects/[PROJECT_ID_OR_NUMBER]
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -694,7 +690,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_metric_descriptor,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -737,8 +732,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             request (:class:`google.cloud.monitoring_v3.types.ListTimeSeriesRequest`):
                 The request object. The `ListTimeSeries` request.
             name (:class:`str`):
-                Required. The project, organization or folder on which
-                to execute the request. The format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__,
+                organization or folder on which to execute the request.
+                The format is:
 
                 ::
 
@@ -823,12 +820,11 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_time_series,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=30.0,
+                deadline=90.0,
             ),
-            default_timeout=30.0,
+            default_timeout=90.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -879,8 +875,9 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             request (:class:`google.cloud.monitoring_v3.types.CreateTimeSeriesRequest`):
                 The request object. The `CreateTimeSeries` request.
             name (:class:`str`):
-                Required. The project on which to execute the request.
-                The format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                on which to execute the request. The format is:
 
                 ::
 

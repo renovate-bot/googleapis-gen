@@ -172,8 +172,10 @@ class UptimeCheckServiceAsyncClient:
                 The request object. The protocol for the
                 `ListUptimeCheckConfigs` request.
             parent (:class:`str`):
-                Required. The project whose Uptime check configurations
-                are listed. The format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                whose Uptime check configurations are listed. The format
+                is:
 
                 ::
 
@@ -217,7 +219,6 @@ class UptimeCheckServiceAsyncClient:
             self._client._transport.list_uptime_check_configs,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -313,7 +314,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_uptime_check_config,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -357,8 +357,9 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. The protocol for the
                 `CreateUptimeCheckConfig` request.
             parent (:class:`str`):
-                Required. The project in which to create the Uptime
-                check. The format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                in which to create the Uptime check. The format is:
 
                 ::
 
@@ -577,7 +578,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_uptime_check_config,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -639,7 +639,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_uptime_check_ips,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,

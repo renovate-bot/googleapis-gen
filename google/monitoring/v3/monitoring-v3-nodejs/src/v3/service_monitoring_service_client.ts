@@ -399,7 +399,8 @@ export class ServiceMonitoringServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Resource name of the parent workspace. The format is:
+ *   Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+ *   the parent workspace. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.serviceId
@@ -1006,7 +1007,8 @@ export class ServiceMonitoringServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. Resource name of the parent containing the listed services, either a
- *   project or a Monitoring Workspace. The formats are:
+ *   [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+ *   Monitoring Workspace. The formats are:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *       workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -1092,7 +1094,8 @@ export class ServiceMonitoringServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. Resource name of the parent containing the listed services, either a
- *   project or a Monitoring Workspace. The formats are:
+ *   [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+ *   Monitoring Workspace. The formats are:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *       workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -1165,7 +1168,8 @@ export class ServiceMonitoringServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. Resource name of the parent containing the listed services, either a
- *   project or a Monitoring Workspace. The formats are:
+ *   [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+ *   Monitoring Workspace. The formats are:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *       workspaces/[HOST_PROJECT_ID_OR_NUMBER]

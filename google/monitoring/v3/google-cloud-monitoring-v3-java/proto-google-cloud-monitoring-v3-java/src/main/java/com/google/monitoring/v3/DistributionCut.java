@@ -8,8 +8,8 @@ package com.google.monitoring.v3;
  * A `DistributionCut` defines a `TimeSeries` and thresholds used for measuring
  * good service and total service. The `TimeSeries` must have `ValueType =
  * DISTRIBUTION` and `MetricKind = DELTA` or `MetricKind = CUMULATIVE`. The
- * computed `good_service` will be the count of values x in the `Distribution`
- * such that `range.min &lt;= x &lt; range.max`.
+ * computed `good_service` will be the estimated count of values in the
+ * `Distribution` that fall within the specified `min` and `max`.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.DistributionCut}
@@ -374,8 +374,8 @@ private static final long serialVersionUID = 0L;
    * A `DistributionCut` defines a `TimeSeries` and thresholds used for measuring
    * good service and total service. The `TimeSeries` must have `ValueType =
    * DISTRIBUTION` and `MetricKind = DELTA` or `MetricKind = CUMULATIVE`. The
-   * computed `good_service` will be the count of values x in the `Distribution`
-   * such that `range.min &lt;= x &lt; range.max`.
+   * computed `good_service` will be the estimated count of values in the
+   * `Distribution` that fall within the specified `min` and `max`.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.DistributionCut}

@@ -480,7 +480,8 @@ export class GroupServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project in which to create the group. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+ *   which to create the group. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {google.monitoring.v3.Group} request.group
@@ -712,7 +713,8 @@ export class GroupServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project whose groups are to be listed. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+ *   whose groups are to be listed. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.childrenOfGroup
@@ -799,7 +801,8 @@ export class GroupServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project whose groups are to be listed. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+ *   whose groups are to be listed. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.childrenOfGroup
@@ -873,7 +876,8 @@ export class GroupServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project whose groups are to be listed. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+ *   whose groups are to be listed. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.childrenOfGroup

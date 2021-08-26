@@ -89,7 +89,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings GetServiceSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings GetServiceSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -105,7 +105,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings ListServicesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings ListServicesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -134,7 +134,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings DeleteServiceSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings DeleteServiceSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -163,7 +163,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings GetServiceLevelObjectiveSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings GetServiceLevelObjectiveSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -179,7 +179,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings ListServiceLevelObjectivesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings ListServiceLevelObjectivesSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -208,7 +208,7 @@ namespace Google.Cloud.Monitoring.V3
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings DeleteServiceLevelObjectiveSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable)));
+        public gaxgrpc::CallSettings DeleteServiceLevelObjectiveSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(30000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(30000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
 
         /// <summary>Creates a deep clone of this object, with all the same property values.</summary>
         /// <returns>A deep clone of this <see cref="ServiceMonitoringServiceSettings"/> object.</returns>
@@ -394,7 +394,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -414,7 +415,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -434,7 +436,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -450,7 +453,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -470,7 +474,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -490,7 +495,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -506,7 +512,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -526,7 +533,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -546,7 +554,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -562,7 +571,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -582,7 +592,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -602,7 +613,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -618,7 +630,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -638,7 +651,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -658,7 +672,8 @@ namespace Google.Cloud.Monitoring.V3
         /// Create a `Service`.
         /// </summary>
         /// <param name="parent">
-        /// Required. Resource name of the parent workspace. The format is:
+        /// Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+        /// the parent workspace. The format is:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// </param>
@@ -855,7 +870,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -883,7 +899,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -911,7 +928,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -939,7 +957,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -967,7 +986,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -995,7 +1015,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -1023,7 +1044,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -1051,7 +1073,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -1079,7 +1102,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -1107,7 +1131,8 @@ namespace Google.Cloud.Monitoring.V3
         /// </summary>
         /// <param name="parent">
         /// Required. Resource name of the parent containing the listed services, either a
-        /// project or a Monitoring Workspace. The formats are:
+        /// [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+        /// Monitoring Workspace. The formats are:
         /// 
         /// projects/[PROJECT_ID_OR_NUMBER]
         /// workspaces/[HOST_PROJECT_ID_OR_NUMBER]

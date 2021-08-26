@@ -108,7 +108,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The project in which to create the alerting policy. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   * which to create the alerting policy. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. |name| must be
@@ -137,7 +138,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The project in which to create the alerting policy. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   * which to create the alerting policy. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * Note that this field names the parent container in which the alerting
    * policy will be written, not the name of the created policy. |name| must be
@@ -549,7 +551,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The project in which to create the alerting policy. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+     * which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policy will be written, not the name of the created policy. |name| must be
@@ -577,7 +580,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project in which to create the alerting policy. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+     * which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policy will be written, not the name of the created policy. |name| must be
@@ -606,7 +610,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project in which to create the alerting policy. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+     * which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policy will be written, not the name of the created policy. |name| must be
@@ -633,7 +638,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project in which to create the alerting policy. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+     * which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policy will be written, not the name of the created policy. |name| must be
@@ -655,7 +661,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project in which to create the alerting policy. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+     * which to create the alerting policy. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * Note that this field names the parent container in which the alerting
      * policy will be written, not the name of the created policy. |name| must be

@@ -107,7 +107,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The project whose Uptime check configurations are listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose Uptime check configurations are listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -129,7 +130,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The project whose Uptime check configurations are listed. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   * whose Uptime check configurations are listed. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -562,7 +564,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The project whose Uptime check configurations are listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose Uptime check configurations are listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -583,7 +586,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project whose Uptime check configurations are listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose Uptime check configurations are listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -605,7 +609,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project whose Uptime check configurations are listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose Uptime check configurations are listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -625,7 +630,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project whose Uptime check configurations are listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose Uptime check configurations are listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -640,7 +646,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The project whose Uptime check configurations are listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose Uptime check configurations are listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *

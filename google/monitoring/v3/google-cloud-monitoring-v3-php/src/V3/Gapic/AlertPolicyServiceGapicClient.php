@@ -373,7 +373,8 @@ class AlertPolicyServiceGapicClient
      * }
      * ```
      *
-     * @param string      $name         Required. The project in which to create the alerting policy. The format is:
+     * @param string      $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+     *                                  which to create the alerting policy. The format is:
      *
      *                                  projects/[PROJECT_ID_OR_NUMBER]
      *
@@ -523,7 +524,8 @@ class AlertPolicyServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The project whose alert policies are to be listed. The format is:
+     * @param string $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     *                             whose alert policies are to be listed. The format is:
      *
      *                             projects/[PROJECT_ID_OR_NUMBER]
      *

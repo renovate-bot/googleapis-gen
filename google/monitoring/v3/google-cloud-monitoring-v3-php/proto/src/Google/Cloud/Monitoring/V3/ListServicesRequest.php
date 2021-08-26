@@ -17,7 +17,8 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Resource name of the parent containing the listed services, either a
-     * project or a Monitoring Workspace. The formats are:
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+     * Monitoring Workspace. The formats are:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      *
@@ -70,7 +71,8 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. Resource name of the parent containing the listed services, either a
-     *           project or a Monitoring Workspace. The formats are:
+     *           [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+     *           Monitoring Workspace. The formats are:
      *               projects/[PROJECT_ID_OR_NUMBER]
      *               workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      *     @type string $filter
@@ -107,7 +109,8 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Resource name of the parent containing the listed services, either a
-     * project or a Monitoring Workspace. The formats are:
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+     * Monitoring Workspace. The formats are:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      *
@@ -121,7 +124,8 @@ class ListServicesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Resource name of the parent containing the listed services, either a
-     * project or a Monitoring Workspace. The formats are:
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+     * Monitoring Workspace. The formats are:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *     workspaces/[HOST_PROJECT_ID_OR_NUMBER]
      *

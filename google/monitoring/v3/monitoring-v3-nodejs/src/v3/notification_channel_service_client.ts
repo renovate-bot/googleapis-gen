@@ -549,7 +549,8 @@ export class NotificationChannelServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *
@@ -1048,8 +1049,10 @@ export class NotificationChannelServiceClient {
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *
- *   Note that this names the parent container in which to look for the
- *   descriptors; to retrieve a single descriptor by name, use the
+ *   Note that this
+ *   [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+ *   container in which to look for the descriptors; to retrieve a single
+ *   descriptor by name, use the
  *   {@link google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor|GetNotificationChannelDescriptor}
  *   operation, instead.
  * @param {number} request.pageSize
@@ -1119,8 +1122,10 @@ export class NotificationChannelServiceClient {
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *
- *   Note that this names the parent container in which to look for the
- *   descriptors; to retrieve a single descriptor by name, use the
+ *   Note that this
+ *   [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+ *   container in which to look for the descriptors; to retrieve a single
+ *   descriptor by name, use the
  *   {@link google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor|GetNotificationChannelDescriptor}
  *   operation, instead.
  * @param {number} request.pageSize
@@ -1177,8 +1182,10 @@ export class NotificationChannelServiceClient {
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *
- *   Note that this names the parent container in which to look for the
- *   descriptors; to retrieve a single descriptor by name, use the
+ *   Note that this
+ *   [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+ *   container in which to look for the descriptors; to retrieve a single
+ *   descriptor by name, use the
  *   {@link google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor|GetNotificationChannelDescriptor}
  *   operation, instead.
  * @param {number} request.pageSize
@@ -1254,7 +1261,8 @@ export class NotificationChannelServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *
@@ -1339,7 +1347,8 @@ export class NotificationChannelServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *
@@ -1411,7 +1420,8 @@ export class NotificationChannelServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  *

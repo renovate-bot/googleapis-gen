@@ -16,7 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListGroupsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The project whose groups are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose groups are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *
      * Generated from protobuf field <code>string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -45,7 +46,8 @@ class ListGroupsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The project whose groups are to be listed. The format is:
+     *           Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     *           whose groups are to be listed. The format is:
      *               projects/[PROJECT_ID_OR_NUMBER]
      *     @type string $children_of_group
      *           A group name. The format is:
@@ -79,7 +81,8 @@ class ListGroupsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The project whose groups are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose groups are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *
      * Generated from protobuf field <code>string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -91,7 +94,8 @@ class ListGroupsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The project whose groups are to be listed. The format is:
+     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+     * whose groups are to be listed. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]
      *
      * Generated from protobuf field <code>string name = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>

@@ -117,12 +117,13 @@ class UptimeCheckConfig extends \Google\Protobuf\Internal\Message
      *           The [monitored
      *           resource](https://cloud.google.com/monitoring/api/resources) associated
      *           with the configuration.
-     *           The following monitored resource types are supported for Uptime checks:
+     *           The following monitored resource types are valid for this field:
      *             `uptime_url`,
      *             `gce_instance`,
      *             `gae_app`,
      *             `aws_ec2_instance`,
      *             `aws_elb_load_balancer`
+     *             `k8s_service`
      *     @type \Google\Cloud\Monitoring\V3\UptimeCheckConfig\ResourceGroup $resource_group
      *           The group resource associated with the configuration.
      *     @type \Google\Cloud\Monitoring\V3\UptimeCheckConfig\HttpCheck $http_check
@@ -238,12 +239,13 @@ class UptimeCheckConfig extends \Google\Protobuf\Internal\Message
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource monitored_resource = 3;</code>
      * @return \Google\Api\MonitoredResource|null
@@ -262,12 +264,13 @@ class UptimeCheckConfig extends \Google\Protobuf\Internal\Message
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
      * with the configuration.
-     * The following monitored resource types are supported for Uptime checks:
+     * The following monitored resource types are valid for this field:
      *   `uptime_url`,
      *   `gce_instance`,
      *   `gae_app`,
      *   `aws_ec2_instance`,
      *   `aws_elb_load_balancer`
+     *   `k8s_service`
      *
      * Generated from protobuf field <code>.google.api.MonitoredResource monitored_resource = 3;</code>
      * @param \Google\Api\MonitoredResource $var

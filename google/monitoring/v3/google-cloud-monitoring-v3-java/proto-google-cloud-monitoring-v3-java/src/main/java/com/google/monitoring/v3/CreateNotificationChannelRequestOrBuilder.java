@@ -9,7 +9,8 @@ public interface CreateNotificationChannelRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting
@@ -23,7 +24,8 @@ public interface CreateNotificationChannelRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The project on which to execute the request. The format is:
+   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   * which to execute the request. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]
    * This names the container into which the channel will be
    * written, this does not name the newly created channel. The resulting

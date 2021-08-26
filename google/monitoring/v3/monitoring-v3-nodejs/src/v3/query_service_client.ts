@@ -395,7 +395,8 @@ export class QueryServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.query
@@ -462,7 +463,8 @@ export class QueryServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.query
@@ -516,7 +518,8 @@ export class QueryServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The project on which to execute the request. The format is:
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
  *
  *       projects/[PROJECT_ID_OR_NUMBER]
  * @param {string} request.query

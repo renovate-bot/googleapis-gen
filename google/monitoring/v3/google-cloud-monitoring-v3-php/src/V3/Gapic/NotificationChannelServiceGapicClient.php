@@ -496,7 +496,8 @@ class NotificationChannelServiceGapicClient
      * }
      * ```
      *
-     * @param string              $name                Required. The project on which to execute the request. The format is:
+     * @param string              $name                Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                                                 which to execute the request. The format is:
      *
      *                                                 projects/[PROJECT_ID_OR_NUMBER]
      *
@@ -777,8 +778,10 @@ class NotificationChannelServiceGapicClient
      *
      *                             projects/[PROJECT_ID_OR_NUMBER]
      *
-     *                             Note that this names the parent container in which to look for the
-     *                             descriptors; to retrieve a single descriptor by name, use the
+     *                             Note that this
+     *                             [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+     *                             container in which to look for the descriptors; to retrieve a single
+     *                             descriptor by name, use the
      *                             [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
      *                             operation, instead.
      * @param array  $optionalArgs {
@@ -849,7 +852,8 @@ class NotificationChannelServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The project on which to execute the request. The format is:
+     * @param string $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                             which to execute the request. The format is:
      *
      *                             projects/[PROJECT_ID_OR_NUMBER]
      *

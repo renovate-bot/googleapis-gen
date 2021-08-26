@@ -173,8 +173,9 @@ class GroupServiceAsyncClient:
             request (:class:`google.cloud.monitoring_v3.types.ListGroupsRequest`):
                 The request object. The `ListGroup` request.
             name (:class:`str`):
-                Required. The project whose groups are to be listed. The
-                format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                whose groups are to be listed. The format is:
 
                 ::
 
@@ -218,7 +219,6 @@ class GroupServiceAsyncClient:
             self._client._transport.list_groups,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -342,7 +342,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_group,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -385,8 +384,9 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             request (:class:`google.cloud.monitoring_v3.types.CreateGroupRequest`):
                 The request object. The `CreateGroup` request.
             name (:class:`str`):
-                Required. The project in which to create the group. The
-                format is:
+                Required. The
+                `project <https://cloud.google.com/monitoring/api/v3#project_name>`__
+                in which to create the group. The format is:
 
                 ::
 
@@ -575,12 +575,11 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.update_group,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=30.0,
+                deadline=180.0,
             ),
-            default_timeout=30.0,
+            default_timeout=180.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -655,7 +654,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_group,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
@@ -740,7 +738,6 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_group_members,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
