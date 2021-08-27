@@ -29,7 +29,6 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
-
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -42,6 +41,7 @@ use Google\Cloud\Dialogflow\Cx\V3\AgentValidationResult;
 use Google\Cloud\Dialogflow\Cx\V3\CreateAgentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\DeleteAgentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\ExportAgentRequest;
+use Google\Cloud\Dialogflow\Cx\V3\ExportAgentResponse;
 use Google\Cloud\Dialogflow\Cx\V3\GetAgentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\GetAgentValidationResultRequest;
 use Google\Cloud\Dialogflow\Cx\V3\ListAgentsRequest;
@@ -51,8 +51,9 @@ use Google\Cloud\Dialogflow\Cx\V3\UpdateAgentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\ValidateAgentRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
-
 use Google\Protobuf\GPBEmpty;
+
+use Google\Protobuf\Struct;
 
 /**
  * Service Description: Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
@@ -554,6 +555,13 @@ class AgentsGapicClient
 
     /**
      * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      *
      * Sample code:
      * ```

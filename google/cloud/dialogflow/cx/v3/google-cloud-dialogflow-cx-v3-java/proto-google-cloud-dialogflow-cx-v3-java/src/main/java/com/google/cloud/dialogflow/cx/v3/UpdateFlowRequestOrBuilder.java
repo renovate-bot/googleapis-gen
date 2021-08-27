@@ -36,31 +36,31 @@ public interface UpdateFlowRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * The mask to control which fields get updated. If the mask is not present,
+   * all fields will be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * The mask to control which fields get updated. If the mask is not present,
+   * all fields will be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. If `update_mask` is not
-   * specified, an error will be returned.
+   * The mask to control which fields get updated. If the mask is not present,
+   * all fields will be updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 

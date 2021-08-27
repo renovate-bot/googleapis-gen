@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Metadata returned for the [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase] long running operation.
+ * This message currently has no fields.
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.RunTestCaseMetadata</code>
  */

@@ -110,6 +110,12 @@ class TestCasesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Kicks off a test case run.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3.RunTestCaseMetadata]
+     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3.RunTestCaseResponse]
      * @param \Google\Cloud\Dialogflow\Cx\V3\RunTestCaseRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

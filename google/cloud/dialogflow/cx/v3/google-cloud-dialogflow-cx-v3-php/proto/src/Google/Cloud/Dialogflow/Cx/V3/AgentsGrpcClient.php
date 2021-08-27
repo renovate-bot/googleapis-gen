@@ -117,6 +117,13 @@ class AgentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      * @param \Google\Cloud\Dialogflow\Cx\V3\ExportAgentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

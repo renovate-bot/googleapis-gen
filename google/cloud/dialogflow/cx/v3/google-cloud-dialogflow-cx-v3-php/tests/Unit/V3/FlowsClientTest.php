@@ -39,7 +39,6 @@ use Google\Cloud\Dialogflow\Cx\V3\ListFlowsResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
-use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;
@@ -809,8 +808,7 @@ class FlowsClientTest extends GeneratedTest
         $flow = new Flow();
         $flowDisplayName = 'flowDisplayName-554265505';
         $flow->setDisplayName($flowDisplayName);
-        $updateMask = new FieldMask();
-        $response = $client->updateFlow($flow, $updateMask);
+        $response = $client->updateFlow($flow);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -819,8 +817,6 @@ class FlowsClientTest extends GeneratedTest
         $this->assertSame('/google.cloud.dialogflow.cx.v3.Flows/UpdateFlow', $actualFuncCall);
         $actualValue = $actualRequestObject->getFlow();
         $this->assertProtobufEquals($flow, $actualValue);
-        $actualValue = $actualRequestObject->getUpdateMask();
-        $this->assertProtobufEquals($updateMask, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -848,9 +844,8 @@ class FlowsClientTest extends GeneratedTest
         $flow = new Flow();
         $flowDisplayName = 'flowDisplayName-554265505';
         $flow->setDisplayName($flowDisplayName);
-        $updateMask = new FieldMask();
         try {
-            $client->updateFlow($flow, $updateMask);
+            $client->updateFlow($flow);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
