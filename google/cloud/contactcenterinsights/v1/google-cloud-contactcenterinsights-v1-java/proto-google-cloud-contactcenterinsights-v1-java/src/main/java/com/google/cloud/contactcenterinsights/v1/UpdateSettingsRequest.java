@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.contactcenterinsights.v1.Settings settings_;
   /**
    * <pre>
-   * Required. The new values for the conversation.
+   * Required. The new settings values.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The new values for the conversation.
+   * Required. The new settings values.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -138,7 +138,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The new values for the conversation.
+   * Required. The new settings values.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -540,7 +540,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.contactcenterinsights.v1.Settings, com.google.cloud.contactcenterinsights.v1.Settings.Builder, com.google.cloud.contactcenterinsights.v1.SettingsOrBuilder> settingsBuilder_;
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -671,7 +671,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>

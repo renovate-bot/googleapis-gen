@@ -28,6 +28,13 @@ class IssueAssignment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double score = 2;</code>
      */
     protected $score = 0.0;
+    /**
+     * Immutable. Display name of the assigned issue. This field is set at time of analyis
+     * and immutable since then.
+     *
+     * Generated from protobuf field <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $display_name = '';
 
     /**
      * Constructor.
@@ -40,6 +47,9 @@ class IssueAssignment extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *           Score indicating the likelihood of the issue assignment.
      *           currently bounded on [0,1].
+     *     @type string $display_name
+     *           Immutable. Display name of the assigned issue. This field is set at time of analyis
+     *           and immutable since then.
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +107,34 @@ class IssueAssignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Display name of the assigned issue. This field is set at time of analyis
+     * and immutable since then.
+     *
+     * Generated from protobuf field <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+    /**
+     * Immutable. Display name of the assigned issue. This field is set at time of analyis
+     * and immutable since then.
+     *
+     * Generated from protobuf field <code>string display_name = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
 
         return $this;
     }

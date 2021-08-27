@@ -9,7 +9,7 @@ public interface UpdateSettingsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The new values for the conversation.
+   * Required. The new settings values.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -18,7 +18,7 @@ public interface UpdateSettingsRequestOrBuilder extends
   boolean hasSettings();
   /**
    * <pre>
-   * Required. The new values for the conversation.
+   * Required. The new settings values.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -27,7 +27,7 @@ public interface UpdateSettingsRequestOrBuilder extends
   com.google.cloud.contactcenterinsights.v1.Settings getSettings();
   /**
    * <pre>
-   * Required. The new values for the conversation.
+   * Required. The new settings values.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSettingsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -35,7 +35,7 @@ class UpdateSettingsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\ContactCenterInsights\V1\Settings $settings
-     *           Required. The new values for the conversation.
+     *           Required. The new settings values.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. The list of fields to be updated.
      * }
@@ -46,7 +46,7 @@ class UpdateSettingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\ContactCenterInsights\V1\Settings|null
@@ -67,7 +67,7 @@ class UpdateSettingsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The new values for the conversation.
+     * Required. The new settings values.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Settings settings = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\ContactCenterInsights\V1\Settings $var

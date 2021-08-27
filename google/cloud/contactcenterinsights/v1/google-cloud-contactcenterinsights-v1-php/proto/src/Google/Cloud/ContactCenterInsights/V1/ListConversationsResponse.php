@@ -22,8 +22,9 @@ class ListConversationsResponse extends \Google\Protobuf\Internal\Message
      */
     private $conversations;
     /**
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
@@ -38,8 +39,9 @@ class ListConversationsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\ContactCenterInsights\V1\Conversation[]|\Google\Protobuf\Internal\RepeatedField $conversations
      *           The conversations that match the request.
      *     @type string $next_page_token
-     *           A token, which can be sent as `page_token` to retrieve the next page.
-     *           If this field is omitted, there are no subsequent pages.
+     *           A token which can be sent as `page_token` to retrieve the next page. If
+     *           this field is set, it means there is another page available. If it is not
+     *           set, it means no other pages are available.
      * }
      */
     public function __construct($data = NULL) {
@@ -74,8 +76,9 @@ class ListConversationsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      * @return string
@@ -86,8 +89,9 @@ class ListConversationsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token which can be sent as `page_token` to retrieve the next page. If
+     * this field is set, it means there is another page available. If it is not
+     * set, it means no other pages are available.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      * @param string $var

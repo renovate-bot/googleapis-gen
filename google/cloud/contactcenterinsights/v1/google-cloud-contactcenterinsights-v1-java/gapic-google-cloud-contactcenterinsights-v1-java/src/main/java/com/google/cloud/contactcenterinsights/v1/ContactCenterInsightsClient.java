@@ -3153,7 +3153,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param settings Required. The new values for the conversation.
+   * @param settings Required. The new settings values.
    * @param updateMask Required. The list of fields to be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

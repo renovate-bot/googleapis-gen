@@ -1967,7 +1967,7 @@ class ContactCenterInsightsGapicClient
      * }
      * ```
      *
-     * @param Settings  $settings     Required. The new values for the conversation.
+     * @param Settings  $settings     Required. The new settings values.
      * @param FieldMask $updateMask   Required. The list of fields to be updated.
      * @param array     $optionalArgs {
      *     Optional.

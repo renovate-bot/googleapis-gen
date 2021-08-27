@@ -70,6 +70,7 @@ public interface ConversationParticipantOrBuilder extends
 
   /**
    * <pre>
+   * Deprecated. Use `dialogflow_participant_name` instead.
    * The name of the Dialogflow participant. Format:
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
@@ -80,6 +81,7 @@ public interface ConversationParticipantOrBuilder extends
   @java.lang.Deprecated java.lang.String getDialogflowParticipant();
   /**
    * <pre>
+   * Deprecated. Use `dialogflow_participant_name` instead.
    * The name of the Dialogflow participant. Format:
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>

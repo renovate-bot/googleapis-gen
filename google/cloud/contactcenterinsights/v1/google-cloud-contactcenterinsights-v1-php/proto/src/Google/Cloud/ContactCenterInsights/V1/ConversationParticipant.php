@@ -16,6 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ConversationParticipant extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *
@@ -43,6 +44,7 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      *     @type string $user_id
      *           A user-specified ID representing the participant.
      *     @type string $dialogflow_participant
+     *           Deprecated. Use `dialogflow_participant_name` instead.
      *           The name of the Dialogflow participant. Format:
      *           projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *     @type int $role
@@ -119,6 +121,7 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *
@@ -133,6 +136,7 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *

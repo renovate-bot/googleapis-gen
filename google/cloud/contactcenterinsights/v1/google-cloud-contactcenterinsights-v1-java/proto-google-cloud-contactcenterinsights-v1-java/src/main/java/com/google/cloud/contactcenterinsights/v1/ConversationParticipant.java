@@ -465,6 +465,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object dialogflowParticipant_;
   /**
    * <pre>
+   * Deprecated. Use `dialogflow_participant_name` instead.
    * The name of the Dialogflow participant. Format:
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
@@ -487,6 +488,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated. Use `dialogflow_participant_name` instead.
    * The name of the Dialogflow participant. Format:
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
@@ -1187,6 +1189,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object dialogflowParticipant_ = "";
     /**
      * <pre>
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
@@ -1208,6 +1211,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
@@ -1230,6 +1234,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
@@ -1250,6 +1255,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
@@ -1265,6 +1271,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. Use `dialogflow_participant_name` instead.
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
