@@ -9,7 +9,7 @@ public interface DeleteRealmRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the realm to delete. Uses the form:
+   * Required. The name of the realm to delete, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface DeleteRealmRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the realm to delete. Uses the form:
+   * Required. The name of the realm to delete, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *

@@ -38,6 +38,7 @@ from google.cloud.gaming_v1.types.game_server_clusters import GameServerCluster
 from google.cloud.gaming_v1.types.game_server_clusters import GameServerClusterConnectionInfo
 from google.cloud.gaming_v1.types.game_server_clusters import GetGameServerClusterRequest
 from google.cloud.gaming_v1.types.game_server_clusters import GkeClusterReference
+from google.cloud.gaming_v1.types.game_server_clusters import KubernetesClusterState
 from google.cloud.gaming_v1.types.game_server_clusters import ListGameServerClustersRequest
 from google.cloud.gaming_v1.types.game_server_clusters import ListGameServerClustersResponse
 from google.cloud.gaming_v1.types.game_server_clusters import PreviewCreateGameServerClusterRequest
@@ -47,6 +48,7 @@ from google.cloud.gaming_v1.types.game_server_clusters import PreviewDeleteGameS
 from google.cloud.gaming_v1.types.game_server_clusters import PreviewUpdateGameServerClusterRequest
 from google.cloud.gaming_v1.types.game_server_clusters import PreviewUpdateGameServerClusterResponse
 from google.cloud.gaming_v1.types.game_server_clusters import UpdateGameServerClusterRequest
+from google.cloud.gaming_v1.types.game_server_clusters import GameServerClusterView
 from google.cloud.gaming_v1.types.game_server_configs import CreateGameServerConfigRequest
 from google.cloud.gaming_v1.types.game_server_configs import DeleteGameServerConfigRequest
 from google.cloud.gaming_v1.types.game_server_configs import FleetConfig
@@ -103,6 +105,7 @@ __all__ = ('GameServerClustersServiceClient',
     'GameServerClusterConnectionInfo',
     'GetGameServerClusterRequest',
     'GkeClusterReference',
+    'KubernetesClusterState',
     'ListGameServerClustersRequest',
     'ListGameServerClustersResponse',
     'PreviewCreateGameServerClusterRequest',
@@ -112,6 +115,7 @@ __all__ = ('GameServerClustersServiceClient',
     'PreviewUpdateGameServerClusterRequest',
     'PreviewUpdateGameServerClusterResponse',
     'UpdateGameServerClusterRequest',
+    'GameServerClusterView',
     'CreateGameServerConfigRequest',
     'DeleteGameServerConfigRequest',
     'FleetConfig',

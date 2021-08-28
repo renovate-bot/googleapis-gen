@@ -9,7 +9,7 @@ public interface GetGameServerClusterRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the game server cluster to retrieve. Uses the form:
+   * Required. The name of the game server cluster to retrieve, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface GetGameServerClusterRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the game server cluster to retrieve. Uses the form:
+   * Required. The name of the game server cluster to retrieve, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -28,4 +28,33 @@ public interface GetGameServerClusterRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * Optional. View for the returned GameServerCluster objects. When `FULL` is
+   * specified, the `cluster_state` field is also returned in the
+   * GameServerCluster object, which includes the state of the referenced
+   * Kubernetes cluster such as versions and provider info. The default/unset
+   * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+   * not return the `cluster_state` field.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   * <pre>
+   * Optional. View for the returned GameServerCluster objects. When `FULL` is
+   * specified, the `cluster_state` field is also returned in the
+   * GameServerCluster object, which includes the state of the referenced
+   * Kubernetes cluster such as versions and provider info. The default/unset
+   * value is GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED, same as BASIC, which does
+   * not return the `cluster_state` field.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The view.
+   */
+  com.google.cloud.gaming.v1.GameServerClusterView getView();
 }

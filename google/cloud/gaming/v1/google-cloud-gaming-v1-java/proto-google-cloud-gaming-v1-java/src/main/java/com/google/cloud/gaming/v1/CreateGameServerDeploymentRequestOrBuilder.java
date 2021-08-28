@@ -9,7 +9,7 @@ public interface CreateGameServerDeploymentRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface CreateGameServerDeploymentRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}`.
    * </pre>
    *

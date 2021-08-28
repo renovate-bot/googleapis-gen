@@ -9,7 +9,7 @@ public interface CreateGameServerClusterRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface CreateGameServerClusterRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm-id}`.
    * </pre>
    *

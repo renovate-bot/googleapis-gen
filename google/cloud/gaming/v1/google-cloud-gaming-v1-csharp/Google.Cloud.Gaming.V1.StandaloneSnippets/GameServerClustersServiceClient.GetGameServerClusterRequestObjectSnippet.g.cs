@@ -33,6 +33,7 @@ namespace Google.Cloud.Gaming.V1.Snippets
             GetGameServerClusterRequest request = new GetGameServerClusterRequest
             {
                 GameServerClusterName = GameServerClusterName.FromProjectLocationRealmCluster("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]"),
+                View = GameServerClusterView.Unspecified,
             };
             // Make the request
             GameServerCluster response = gameServerClustersServiceClient.GetGameServerCluster(request);

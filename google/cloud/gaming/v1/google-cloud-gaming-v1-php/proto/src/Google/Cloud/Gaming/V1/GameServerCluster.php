@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GameServerCluster extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -62,6 +62,13 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 7;</code>
      */
     protected $description = '';
+    /**
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     *
+     * Generated from protobuf field <code>.google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $cluster_state = null;
 
     /**
      * Constructor.
@@ -70,7 +77,7 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The resource name of the game server cluster. Uses the form:
+     *           Required. The resource name of the game server cluster, in the following form:
      *           `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      *           For example,
      *           `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -88,6 +95,9 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
      *           ETag of the resource.
      *     @type string $description
      *           Human readable description of the cluster.
+     *     @type \Google\Cloud\Gaming\V1\KubernetesClusterState $cluster_state
+     *           Output only. The state of the Kubernetes cluster, this will be available if
+     *           'view' is set to `FULL` in the relevant List/Get/Preview request.
      * }
      */
     public function __construct($data = NULL) {
@@ -96,7 +106,7 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -110,7 +120,7 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the game server cluster. Uses the form:
+     * Required. The resource name of the game server cluster, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}/gameServerClusters/{cluster}`.
      * For example,
      * `projects/my-project/locations/{location}/realms/zanzibar/gameServerClusters/my-onprem-cluster`.
@@ -313,6 +323,44 @@ class GameServerCluster extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     *
+     * Generated from protobuf field <code>.google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Gaming\V1\KubernetesClusterState|null
+     */
+    public function getClusterState()
+    {
+        return isset($this->cluster_state) ? $this->cluster_state : null;
+    }
+
+    public function hasClusterState()
+    {
+        return isset($this->cluster_state);
+    }
+
+    public function clearClusterState()
+    {
+        unset($this->cluster_state);
+    }
+
+    /**
+     * Output only. The state of the Kubernetes cluster, this will be available if
+     * 'view' is set to `FULL` in the relevant List/Get/Preview request.
+     *
+     * Generated from protobuf field <code>.google.cloud.gaming.v1.KubernetesClusterState cluster_state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Gaming\V1\KubernetesClusterState $var
+     * @return $this
+     */
+    public function setClusterState($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Gaming\V1\KubernetesClusterState::class);
+        $this->cluster_state = $var;
 
         return $this;
     }

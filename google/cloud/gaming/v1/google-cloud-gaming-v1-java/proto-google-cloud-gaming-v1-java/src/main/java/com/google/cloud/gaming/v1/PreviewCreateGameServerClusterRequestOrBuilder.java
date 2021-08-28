@@ -9,7 +9,7 @@ public interface PreviewCreateGameServerClusterRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface PreviewCreateGameServerClusterRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -102,4 +102,25 @@ public interface PreviewCreateGameServerClusterRequestOrBuilder extends
    * <code>.google.protobuf.Timestamp preview_time = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.TimestampOrBuilder getPreviewTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. This field is deprecated, preview will always return
+   * KubernetesClusterState.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Deprecated int getViewValue();
+  /**
+   * <pre>
+   * Optional. This field is deprecated, preview will always return
+   * KubernetesClusterState.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The view.
+   */
+  @java.lang.Deprecated com.google.cloud.gaming.v1.GameServerClusterView getView();
 }

@@ -9,7 +9,8 @@ public interface GameServerDeploymentRolloutOrBuilder extends
 
   /**
    * <pre>
-   * The resource name of the game server deployment rollout. Uses the form:
+   * The resource name of the game server deployment rollout, in the following
+   * form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -21,7 +22,8 @@ public interface GameServerDeploymentRolloutOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * The resource name of the game server deployment rollout. Uses the form:
+   * The resource name of the game server deployment rollout, in the following
+   * form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.

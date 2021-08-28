@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the realm. Uses the form:
+   * The resource name of the realm, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the realm. Uses the form:
+   * The resource name of the realm, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`. For
    * example, `projects/my-project/locations/{location}/realms/my-realm`.
    * </pre>
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the realm. Uses the form:
+     * The resource name of the realm, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
@@ -1022,7 +1022,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the realm. Uses the form:
+     * The resource name of the realm, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
@@ -1045,7 +1045,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the realm. Uses the form:
+     * The resource name of the realm, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
@@ -1066,7 +1066,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the realm. Uses the form:
+     * The resource name of the realm, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>
@@ -1082,7 +1082,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the realm. Uses the form:
+     * The resource name of the realm, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`. For
      * example, `projects/my-project/locations/{location}/realms/my-realm`.
      * </pre>

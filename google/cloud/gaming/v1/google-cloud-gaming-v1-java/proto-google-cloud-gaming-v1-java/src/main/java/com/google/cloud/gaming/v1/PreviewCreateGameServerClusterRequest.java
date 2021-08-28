@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private PreviewCreateGameServerClusterRequest() {
     parent_ = "";
     gameServerClusterId_ = "";
+    view_ = 0;
   }
 
   @java.lang.Override
@@ -92,6 +93,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 48: {
+            int rawValue = input.readEnum();
+
+            view_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,7 +135,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -150,7 +157,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The parent resource name. Uses the form:
+   * Required. The parent resource name, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -294,6 +301,35 @@ private static final long serialVersionUID = 0L;
     return getPreviewTime();
   }
 
+  public static final int VIEW_FIELD_NUMBER = 6;
+  private int view_;
+  /**
+   * <pre>
+   * Optional. This field is deprecated, preview will always return
+   * KubernetesClusterState.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override @java.lang.Deprecated public int getViewValue() {
+    return view_;
+  }
+  /**
+   * <pre>
+   * Optional. This field is deprecated, preview will always return
+   * KubernetesClusterState.
+   * </pre>
+   *
+   * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The view.
+   */
+  @java.lang.Override @java.lang.Deprecated public com.google.cloud.gaming.v1.GameServerClusterView getView() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.gaming.v1.GameServerClusterView result = com.google.cloud.gaming.v1.GameServerClusterView.valueOf(view_);
+    return result == null ? com.google.cloud.gaming.v1.GameServerClusterView.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -320,6 +356,9 @@ private static final long serialVersionUID = 0L;
     if (previewTime_ != null) {
       output.writeMessage(4, getPreviewTime());
     }
+    if (view_ != com.google.cloud.gaming.v1.GameServerClusterView.GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, view_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -342,6 +381,10 @@ private static final long serialVersionUID = 0L;
     if (previewTime_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getPreviewTime());
+    }
+    if (view_ != com.google.cloud.gaming.v1.GameServerClusterView.GAME_SERVER_CLUSTER_VIEW_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, view_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -372,6 +415,7 @@ private static final long serialVersionUID = 0L;
       if (!getPreviewTime()
           .equals(other.getPreviewTime())) return false;
     }
+    if (view_ != other.view_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -395,6 +439,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PREVIEW_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getPreviewTime().hashCode();
     }
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -548,6 +594,8 @@ private static final long serialVersionUID = 0L;
         previewTime_ = null;
         previewTimeBuilder_ = null;
       }
+      view_ = 0;
+
       return this;
     }
 
@@ -586,6 +634,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.previewTime_ = previewTimeBuilder_.build();
       }
+      result.view_ = view_;
       onBuilt();
       return result;
     }
@@ -648,6 +697,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasPreviewTime()) {
         mergePreviewTime(other.getPreviewTime());
       }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -680,7 +732,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`.
      * </pre>
      *
@@ -701,7 +753,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`.
      * </pre>
      *
@@ -723,7 +775,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`.
      * </pre>
      *
@@ -743,7 +795,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`.
      * </pre>
      *
@@ -758,7 +810,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The parent resource name. Uses the form:
+     * Required. The parent resource name, in the following form:
      * `projects/{project}/locations/{location}/realms/{realm}`.
      * </pre>
      *
@@ -1182,6 +1234,85 @@ private static final long serialVersionUID = 0L;
         previewTime_ = null;
       }
       return previewTimeBuilder_;
+    }
+
+    private int view_ = 0;
+    /**
+     * <pre>
+     * Optional. This field is deprecated, preview will always return
+     * KubernetesClusterState.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override @java.lang.Deprecated public int getViewValue() {
+      return view_;
+    }
+    /**
+     * <pre>
+     * Optional. This field is deprecated, preview will always return
+     * KubernetesClusterState.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setViewValue(int value) {
+      
+      view_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. This field is deprecated, preview will always return
+     * KubernetesClusterState.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The view.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public com.google.cloud.gaming.v1.GameServerClusterView getView() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.gaming.v1.GameServerClusterView result = com.google.cloud.gaming.v1.GameServerClusterView.valueOf(view_);
+      return result == null ? com.google.cloud.gaming.v1.GameServerClusterView.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Optional. This field is deprecated, preview will always return
+     * KubernetesClusterState.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setView(com.google.cloud.gaming.v1.GameServerClusterView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. This field is deprecated, preview will always return
+     * KubernetesClusterState.
+     * </pre>
+     *
+     * <code>.google.cloud.gaming.v1.GameServerClusterView view = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearView() {
+      
+      view_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -17,7 +17,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class GameServerDeploymentRollout extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -67,7 +68,8 @@ class GameServerDeploymentRollout extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the game server deployment rollout. Uses the form:
+     *           The resource name of the game server deployment rollout, in the following
+     *           form:
      *           `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      *           For example,
      *           `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -93,7 +95,8 @@ class GameServerDeploymentRollout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -107,7 +110,8 @@ class GameServerDeploymentRollout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.

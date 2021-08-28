@@ -158,9 +158,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. For the `FieldMask` definition, see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -174,9 +172,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. For the `FieldMask` definition, see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -190,9 +186,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. For the `FieldMask` definition, see
-   * https:
-   * //developers.google.com/protocol-buffers
-   * // /docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -723,9 +717,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -738,9 +730,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -757,9 +747,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -781,9 +769,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -803,9 +789,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -829,9 +813,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -851,9 +833,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,9 +847,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,9 +864,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

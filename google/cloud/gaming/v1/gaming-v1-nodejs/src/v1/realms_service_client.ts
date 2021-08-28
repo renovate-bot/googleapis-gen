@@ -373,7 +373,7 @@ export class RealmsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The name of the realm to retrieve. Uses the form:
+ *   Required. The name of the realm to retrieve, in the following form:
  *   `projects/{project}/locations/{location}/realms/{realm}`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -450,10 +450,7 @@ export class RealmsServiceClient {
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. The update mask applies to the resource. For the `FieldMask`
  *   definition, see
- *
- *   https:
- *   //developers.google.com/protocol-buffers
- *   // /docs/reference/google.protobuf#fieldmask
+ *   https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
  * @param {google.protobuf.Timestamp} [request.previewTime]
  *   Optional. The target timestamp to compute the preview.
  * @param {object} [options]
@@ -527,7 +524,7 @@ export class RealmsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The parent resource name. Uses the form:
+ *   Required. The parent resource name, in the following form:
  *   `projects/{project}/locations/{location}`.
  * @param {string} request.realmId
  *   Required. The ID of the realm resource to be created.
@@ -627,7 +624,7 @@ export class RealmsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. The name of the realm to delete. Uses the form:
+ *   Required. The name of the realm to delete, in the following form:
  *   `projects/{project}/locations/{location}/realms/{realm}`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -728,10 +725,7 @@ export class RealmsServiceClient {
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. The update mask applies to the resource. For the `FieldMask`
  *   definition, see
- *
- *   https:
- *   //developers.google.com/protocol-buffers
- *   // /docs/reference/google.protobuf#fieldmask
+ *   https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -827,7 +821,7 @@ export class RealmsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The parent resource name. Uses the form:
+ *   Required. The parent resource name, in the following form:
  *   `projects/{project}/locations/{location}`.
  * @param {number} [request.pageSize]
  *   Optional. The maximum number of items to return.  If unspecified, server
@@ -897,7 +891,7 @@ export class RealmsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The parent resource name. Uses the form:
+ *   Required. The parent resource name, in the following form:
  *   `projects/{project}/locations/{location}`.
  * @param {number} [request.pageSize]
  *   Optional. The maximum number of items to return.  If unspecified, server
@@ -954,7 +948,7 @@ export class RealmsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The parent resource name. Uses the form:
+ *   Required. The parent resource name, in the following form:
  *   `projects/{project}/locations/{location}`.
  * @param {number} [request.pageSize]
  *   Optional. The maximum number of items to return.  If unspecified, server

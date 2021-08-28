@@ -39,6 +39,7 @@ namespace Google.Cloud.Gaming.V1.Snippets
                 ParentAsRealmName = RealmName.FromProjectLocationRealm("[PROJECT]", "[LOCATION]", "[REALM]"),
                 Filter = "",
                 OrderBy = "",
+                View = GameServerClusterView.Unspecified,
             };
             // Make the request
             PagedAsyncEnumerable<ListGameServerClustersResponse, GameServerCluster> response = gameServerClustersServiceClient.ListGameServerClustersAsync(request);

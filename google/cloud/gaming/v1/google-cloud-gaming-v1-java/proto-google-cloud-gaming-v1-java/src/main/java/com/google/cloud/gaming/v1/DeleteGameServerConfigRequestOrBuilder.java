@@ -9,7 +9,7 @@ public interface DeleteGameServerConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the game server config to delete. Uses the form:
+   * Required. The name of the game server config to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface DeleteGameServerConfigRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the game server config to delete. Uses the form:
+   * Required. The name of the game server config to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * </pre>
    *

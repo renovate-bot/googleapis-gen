@@ -9,7 +9,7 @@ public interface GetGameServerDeploymentRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the game server delpoyment to retrieve. Uses the form:
+   * Required. The name of the game server delpoyment to retrieve, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface GetGameServerDeploymentRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the game server delpoyment to retrieve. Uses the form:
+   * Required. The name of the game server delpoyment to retrieve, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * </pre>
    *

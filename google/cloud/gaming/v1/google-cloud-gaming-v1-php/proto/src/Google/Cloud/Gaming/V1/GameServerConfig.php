@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GameServerConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -70,7 +70,7 @@ class GameServerConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the game server config. Uses the form:
+     *           The resource name of the game server config, in the following form:
      *           `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      *           For example,
      *           `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -96,7 +96,7 @@ class GameServerConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -110,7 +110,7 @@ class GameServerConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.

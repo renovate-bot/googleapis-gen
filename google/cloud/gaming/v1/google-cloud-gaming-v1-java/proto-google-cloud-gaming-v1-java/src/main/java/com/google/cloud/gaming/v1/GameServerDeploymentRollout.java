@@ -150,7 +150,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the game server deployment rollout. Uses the form:
+   * The resource name of the game server deployment rollout, in the following
+   * form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -174,7 +175,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the game server deployment rollout. Uses the form:
+   * The resource name of the game server deployment rollout, in the following
+   * form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -901,7 +903,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -924,7 +927,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -948,7 +952,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -970,7 +975,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.
@@ -987,7 +993,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server deployment rollout. Uses the form:
+     * The resource name of the game server deployment rollout, in the following
+     * form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-deployment/rollout`.

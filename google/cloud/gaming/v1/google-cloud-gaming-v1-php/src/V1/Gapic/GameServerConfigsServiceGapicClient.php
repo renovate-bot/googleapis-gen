@@ -396,8 +396,7 @@ class GameServerConfigsServiceGapicClient
      * }
      * ```
      *
-     * @param string           $parent           Required. The parent resource name. Uses the form:
-     *
+     * @param string           $parent           Required. The parent resource name, in the following form:
      *                                           `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
      * @param string           $configId         Required. The ID of the game server config resource to be created.
      * @param GameServerConfig $gameServerConfig Required. The game server config resource to be created.
@@ -466,8 +465,7 @@ class GameServerConfigsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the game server config to delete. Uses the form:
-     *
+     * @param string $name         Required. The name of the game server config to delete, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -508,8 +506,7 @@ class GameServerConfigsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the game server config to retrieve. Uses the form:
-     *
+     * @param string $name         Required. The name of the game server config to retrieve, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -563,8 +560,7 @@ class GameServerConfigsServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The parent resource name. Uses the form:
-     *
+     * @param string $parent       Required. The parent resource name, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
      * @param array  $optionalArgs {
      *     Optional.

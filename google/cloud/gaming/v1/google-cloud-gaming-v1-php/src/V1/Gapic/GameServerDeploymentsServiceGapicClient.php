@@ -433,7 +433,7 @@ class GameServerDeploymentsServiceGapicClient
      * }
      * ```
      *
-     * @param string               $parent               Required. The parent resource name. Uses the form:
+     * @param string               $parent               Required. The parent resource name, in the following form:
      *                                                   `projects/{project}/locations/{location}`.
      * @param string               $deploymentId         Required. The ID of the game server delpoyment resource to be created.
      * @param GameServerDeployment $gameServerDeployment Required. The game server delpoyment resource to be created.
@@ -501,8 +501,7 @@ class GameServerDeploymentsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the game server delpoyment to delete. Uses the form:
-     *
+     * @param string $name         Required. The name of the game server delpoyment to delete, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -545,8 +544,7 @@ class GameServerDeploymentsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the game server delpoyment. Uses the form:
-     *
+     * @param string $name         Required. The name of the game server delpoyment, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -587,8 +585,7 @@ class GameServerDeploymentsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the game server delpoyment to retrieve. Uses the form:
-     *
+     * @param string $name         Required. The name of the game server delpoyment to retrieve, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -629,8 +626,7 @@ class GameServerDeploymentsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the game server delpoyment to retrieve. Uses the form:
-     *
+     * @param string $name         Required. The name of the game server delpoyment to retrieve, in the following form:
      *                             `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -683,7 +679,7 @@ class GameServerDeploymentsServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The parent resource name. Uses the form:
+     * @param string $parent       Required. The parent resource name, in the following form:
      *                             `projects/{project}/locations/{location}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -763,10 +759,7 @@ class GameServerDeploymentsServiceGapicClient
      *     @type FieldMask $updateMask
      *           Optional. Mask of fields to update. At least one path must be supplied in
      *           this field. For the `FieldMask` definition, see
-     *
-     *           https:
-     *           //developers.google.com/protocol-buffers
-     *           // /docs/reference/google.protobuf#fieldmask
+     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *     @type Timestamp $previewTime
      *           Optional. The target timestamp to compute the preview. Defaults to the immediately
      *           after the proposed rollout completes.
@@ -844,10 +837,7 @@ class GameServerDeploymentsServiceGapicClient
      *                                                   Only fields specified in update_mask are updated.
      * @param FieldMask            $updateMask           Required. Mask of fields to update. At least one path must be supplied in
      *                                                   this field. For the `FieldMask` definition, see
-     *
-     *                                                   https:
-     *                                                   //developers.google.com/protocol-buffers
-     *                                                   // /docs/reference/google.protobuf#fieldmask
+     *                                                   https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * @param array                $optionalArgs         {
      *     Optional.
      *
@@ -923,10 +913,7 @@ class GameServerDeploymentsServiceGapicClient
      *                                                  Only fields specified in update_mask are updated.
      * @param FieldMask                   $updateMask   Required. Mask of fields to update. At least one path must be supplied in
      *                                                  this field. For the `FieldMask` definition, see
-     *
-     *                                                  https:
-     *                                                  //developers.google.com/protocol-buffers
-     *                                                  // /docs/reference/google.protobuf#fieldmask
+     *                                                  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * @param array                       $optionalArgs {
      *     Optional.
      *

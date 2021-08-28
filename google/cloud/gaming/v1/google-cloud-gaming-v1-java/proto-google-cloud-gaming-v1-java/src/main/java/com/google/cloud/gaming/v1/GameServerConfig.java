@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the game server config. Uses the form:
+   * The resource name of the game server config, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the game server config. Uses the form:
+   * The resource name of the game server config, in the following form:
    * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
    * For example,
    * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -1123,7 +1123,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -1146,7 +1146,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -1170,7 +1170,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -1192,7 +1192,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.
@@ -1209,7 +1209,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the game server config. Uses the form:
+     * The resource name of the game server config, in the following form:
      * `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
      * For example,
      * `projects/my-project/locations/global/gameServerDeployments/my-game/configs/my-config`.

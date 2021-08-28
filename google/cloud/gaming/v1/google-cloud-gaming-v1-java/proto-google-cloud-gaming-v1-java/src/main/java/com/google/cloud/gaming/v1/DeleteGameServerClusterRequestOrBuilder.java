@@ -9,7 +9,7 @@ public interface DeleteGameServerClusterRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the game server cluster to delete. Uses the form:
+   * Required. The name of the game server cluster to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface DeleteGameServerClusterRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the game server cluster to delete. Uses the form:
+   * Required. The name of the game server cluster to delete, in the following form:
    * `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
    * </pre>
    *

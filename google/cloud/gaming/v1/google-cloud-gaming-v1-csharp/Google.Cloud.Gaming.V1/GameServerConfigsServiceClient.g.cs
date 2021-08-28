@@ -324,8 +324,7 @@ namespace Google.Cloud.Gaming.V1
         /// deployment.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
         /// </param>
         /// <param name="pageToken">
@@ -351,8 +350,7 @@ namespace Google.Cloud.Gaming.V1
         /// deployment.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
         /// </param>
         /// <param name="pageToken">
@@ -378,8 +376,7 @@ namespace Google.Cloud.Gaming.V1
         /// deployment.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
         /// </param>
         /// <param name="pageToken">
@@ -405,8 +402,7 @@ namespace Google.Cloud.Gaming.V1
         /// deployment.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/*`.
         /// </param>
         /// <param name="pageToken">
@@ -458,8 +454,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single game server config.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to retrieve. Uses the form:
-        /// 
+        /// Required. The name of the game server config to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -474,8 +469,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single game server config.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to retrieve. Uses the form:
-        /// 
+        /// Required. The name of the game server config to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -490,8 +484,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single game server config.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to retrieve. Uses the form:
-        /// 
+        /// Required. The name of the game server config to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -503,8 +496,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single game server config.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to retrieve. Uses the form:
-        /// 
+        /// Required. The name of the game server config to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -519,8 +511,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single game server config.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to retrieve. Uses the form:
-        /// 
+        /// Required. The name of the game server config to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -535,8 +526,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single game server config.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to retrieve. Uses the form:
-        /// 
+        /// Required. The name of the game server config to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -610,8 +600,7 @@ namespace Google.Cloud.Gaming.V1
         /// until referenced in the game server deployment rollout resource.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
         /// </param>
         /// <param name="gameServerConfig">
@@ -632,8 +621,7 @@ namespace Google.Cloud.Gaming.V1
         /// until referenced in the game server deployment rollout resource.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
         /// </param>
         /// <param name="gameServerConfig">
@@ -654,8 +642,7 @@ namespace Google.Cloud.Gaming.V1
         /// until referenced in the game server deployment rollout resource.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
         /// </param>
         /// <param name="gameServerConfig">
@@ -672,8 +659,7 @@ namespace Google.Cloud.Gaming.V1
         /// until referenced in the game server deployment rollout resource.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
         /// </param>
         /// <param name="gameServerConfig">
@@ -694,8 +680,7 @@ namespace Google.Cloud.Gaming.V1
         /// until referenced in the game server deployment rollout resource.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
         /// </param>
         /// <param name="gameServerConfig">
@@ -716,8 +701,7 @@ namespace Google.Cloud.Gaming.V1
         /// until referenced in the game server deployment rollout resource.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
-        /// 
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
         /// </param>
         /// <param name="gameServerConfig">
@@ -790,8 +774,7 @@ namespace Google.Cloud.Gaming.V1
         /// server config is referenced in a game server deployment rollout.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to delete. Uses the form:
-        /// 
+        /// Required. The name of the game server config to delete, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -807,8 +790,7 @@ namespace Google.Cloud.Gaming.V1
         /// server config is referenced in a game server deployment rollout.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to delete. Uses the form:
-        /// 
+        /// Required. The name of the game server config to delete, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -824,8 +806,7 @@ namespace Google.Cloud.Gaming.V1
         /// server config is referenced in a game server deployment rollout.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to delete. Uses the form:
-        /// 
+        /// Required. The name of the game server config to delete, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -838,8 +819,7 @@ namespace Google.Cloud.Gaming.V1
         /// server config is referenced in a game server deployment rollout.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to delete. Uses the form:
-        /// 
+        /// Required. The name of the game server config to delete, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -855,8 +835,7 @@ namespace Google.Cloud.Gaming.V1
         /// server config is referenced in a game server deployment rollout.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to delete. Uses the form:
-        /// 
+        /// Required. The name of the game server config to delete, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -872,8 +851,7 @@ namespace Google.Cloud.Gaming.V1
         /// server config is referenced in a game server deployment rollout.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the game server config to delete. Uses the form:
-        /// 
+        /// Required. The name of the game server config to delete, in the following form:
         /// `projects/{project}/locations/{location}/gameServerDeployments/{deployment}/configs/{config}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>

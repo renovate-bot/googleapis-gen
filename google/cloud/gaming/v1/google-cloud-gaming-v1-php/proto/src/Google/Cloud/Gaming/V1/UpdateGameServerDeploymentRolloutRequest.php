@@ -26,9 +26,7 @@ class UpdateGameServerDeploymentRolloutRequest extends \Google\Protobuf\Internal
     /**
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -46,9 +44,7 @@ class UpdateGameServerDeploymentRolloutRequest extends \Google\Protobuf\Internal
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. Mask of fields to update. At least one path must be supplied in
      *           this field. For the `FieldMask` definition, see
-     *           https:
-     *           //developers.google.com/protocol-buffers
-     *           // /docs/reference/google.protobuf#fieldmask
+     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * }
      */
     public function __construct($data = NULL) {
@@ -97,9 +93,7 @@ class UpdateGameServerDeploymentRolloutRequest extends \Google\Protobuf\Internal
     /**
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -122,9 +116,7 @@ class UpdateGameServerDeploymentRolloutRequest extends \Google\Protobuf\Internal
     /**
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field. For the `FieldMask` definition, see
-     * https:
-     * //developers.google.com/protocol-buffers
-     * // /docs/reference/google.protobuf#fieldmask
+     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var

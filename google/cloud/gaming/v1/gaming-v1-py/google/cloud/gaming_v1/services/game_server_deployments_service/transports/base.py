@@ -218,9 +218,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if
 initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if_exception_type(
                         core_exceptions.ServiceUnavailable,
                     ),
-                    deadline=120.0,
+                    deadline=60.0,
                 ),
-                default_timeout=120.0,
+                default_timeout=60.0,
                 client_info=client_info,
             ),
          }

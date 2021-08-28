@@ -170,8 +170,8 @@ class GameServerDeploymentsServiceAsyncClient:
                 The request object. Request message for
                 GameServerDeploymentsService.ListGameServerDeployments.
             parent (:class:`str`):
-                Required. The parent resource name. Uses the form:
-                ``projects/{project}/locations/{location}``.
+                Required. The parent resource name, in the following
+                form: ``projects/{project}/locations/{location}``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -264,8 +264,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 GameServerDeploymentsService.GetGameServerDeployment.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
-                retrieve. Uses the form:
-
+                retrieve, in the following form:
                 ``projects/{project}/locations/{location}/gameServerDeployments/{deployment}``.
 
                 This corresponds to the ``name`` field
@@ -346,8 +345,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. Request message for
                 GameServerDeploymentsService.CreateGameServerDeployment.
             parent (:class:`str`):
-                Required. The parent resource name. Uses the form:
-                ``projects/{project}/locations/{location}``.
+                Required. The parent resource name, in the following
+                form: ``projects/{project}/locations/{location}``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -442,8 +441,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 GameServerDeploymentsService.DeleteGameServerDeployment.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
-                delete. Uses the form:
-
+                delete, in the following form:
                 ``projects/{project}/locations/{location}/gameServerDeployments/{deployment}``.
 
                 This corresponds to the ``name`` field
@@ -551,9 +549,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 Required. Mask of fields to update. At least one path
                 must be supplied in this field. For the ``FieldMask``
                 definition, see
-
-                https: //developers.google.com/protocol-buffers //
-                /docs/reference/google.protobuf#fieldmask
+                https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -641,8 +637,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 GameServerDeploymentsService.GetGameServerDeploymentRollout.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
-                retrieve. Uses the form:
-
+                retrieve, in the following form:
                 ``projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout``.
 
                 This corresponds to the ``name`` field
@@ -742,9 +737,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 Required. Mask of fields to update. At least one path
                 must be supplied in this field. For the ``FieldMask``
                 definition, see
-
-                https: //developers.google.com/protocol-buffers //
-                /docs/reference/google.protobuf#fieldmask
+                https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -919,9 +912,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=120.0,
+                deadline=60.0,
             ),
-            default_timeout=120.0,
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 

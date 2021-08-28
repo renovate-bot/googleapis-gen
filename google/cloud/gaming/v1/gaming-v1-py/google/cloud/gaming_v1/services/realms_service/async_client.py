@@ -167,8 +167,8 @@ class RealmsServiceAsyncClient:
                 The request object. Request message for
                 RealmsService.ListRealms.
             parent (:class:`str`):
-                Required. The parent resource name. Uses the form:
-                ``projects/{project}/locations/{location}``.
+                Required. The parent resource name, in the following
+                form: ``projects/{project}/locations/{location}``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -260,8 +260,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. Request message for
                 RealmsService.GetRealm.
             name (:class:`str`):
-                Required. The name of the realm to retrieve. Uses the
-                form:
+                Required. The name of the realm to retrieve, in the
+                following form:
                 ``projects/{project}/locations/{location}/realms/{realm}``.
 
                 This corresponds to the ``name`` field
@@ -342,8 +342,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. Request message for
                 RealmsService.CreateRealm.
             parent (:class:`str`):
-                Required. The parent resource name. Uses the form:
-                ``projects/{project}/locations/{location}``.
+                Required. The parent resource name, in the following
+                form: ``projects/{project}/locations/{location}``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -446,8 +446,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 The request object. Request message for
                 RealmsService.DeleteRealm.
             name (:class:`str`):
-                Required. The name of the realm to delete. Uses the
-                form:
+                Required. The name of the realm to delete, in the
+                following form:
                 ``projects/{project}/locations/{location}/realms/{realm}``.
 
                 This corresponds to the ``name`` field
@@ -553,9 +553,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
                 Required. The update mask applies to the resource. For
                 the ``FieldMask`` definition, see
-
-                https: //developers.google.com/protocol-buffers //
-                /docs/reference/google.protobuf#fieldmask
+                https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this

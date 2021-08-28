@@ -396,7 +396,7 @@ class RealmsServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The parent resource name. Uses the form:
+     * @param string $parent       Required. The parent resource name, in the following form:
      *                             `projects/{project}/locations/{location}`.
      * @param string $realmId      Required. The ID of the realm resource to be created.
      * @param Realm  $realm        Required. The realm resource to be created.
@@ -464,7 +464,7 @@ class RealmsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the realm to delete. Uses the form:
+     * @param string $name         Required. The name of the realm to delete, in the following form:
      *                             `projects/{project}/locations/{location}/realms/{realm}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -505,7 +505,7 @@ class RealmsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the realm to retrieve. Uses the form:
+     * @param string $name         Required. The name of the realm to retrieve, in the following form:
      *                             `projects/{project}/locations/{location}/realms/{realm}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -558,7 +558,7 @@ class RealmsServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The parent resource name. Uses the form:
+     * @param string $parent       Required. The parent resource name, in the following form:
      *                             `projects/{project}/locations/{location}`.
      * @param array  $optionalArgs {
      *     Optional.
@@ -634,10 +634,7 @@ class RealmsServiceGapicClient
      *                                Only fields specified in update_mask are updated.
      * @param FieldMask $updateMask   Required. The update mask applies to the resource. For the `FieldMask`
      *                                definition, see
-     *
-     *                                https:
-     *                                //developers.google.com/protocol-buffers
-     *                                // /docs/reference/google.protobuf#fieldmask
+     *                                https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * @param array     $optionalArgs {
      *     Optional.
      *
@@ -714,10 +711,7 @@ class RealmsServiceGapicClient
      *                                Only fields specified in update_mask are updated.
      * @param FieldMask $updateMask   Required. The update mask applies to the resource. For the `FieldMask`
      *                                definition, see
-     *
-     *                                https:
-     *                                //developers.google.com/protocol-buffers
-     *                                // /docs/reference/google.protobuf#fieldmask
+     *                                https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
      * @param array     $optionalArgs {
      *     Optional.
      *

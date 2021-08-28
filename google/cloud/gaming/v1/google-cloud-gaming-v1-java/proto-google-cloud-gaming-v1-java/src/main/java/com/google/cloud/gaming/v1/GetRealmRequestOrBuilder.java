@@ -9,7 +9,7 @@ public interface GetRealmRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the realm to retrieve. Uses the form:
+   * Required. The name of the realm to retrieve, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface GetRealmRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the realm to retrieve. Uses the form:
+   * Required. The name of the realm to retrieve, in the following form:
    * `projects/{project}/locations/{location}/realms/{realm}`.
    * </pre>
    *

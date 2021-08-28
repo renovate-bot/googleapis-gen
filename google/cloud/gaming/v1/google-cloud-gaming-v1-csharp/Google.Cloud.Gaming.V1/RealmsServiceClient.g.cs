@@ -362,7 +362,7 @@ namespace Google.Cloud.Gaming.V1
         /// Lists realms in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="pageToken">
@@ -387,7 +387,7 @@ namespace Google.Cloud.Gaming.V1
         /// Lists realms in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="pageToken">
@@ -412,7 +412,7 @@ namespace Google.Cloud.Gaming.V1
         /// Lists realms in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="pageToken">
@@ -437,7 +437,7 @@ namespace Google.Cloud.Gaming.V1
         /// Lists realms in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="pageToken">
@@ -489,7 +489,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to retrieve. Uses the form:
+        /// Required. The name of the realm to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -504,7 +504,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to retrieve. Uses the form:
+        /// Required. The name of the realm to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -519,7 +519,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to retrieve. Uses the form:
+        /// Required. The name of the realm to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -531,7 +531,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to retrieve. Uses the form:
+        /// Required. The name of the realm to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -546,7 +546,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to retrieve. Uses the form:
+        /// Required. The name of the realm to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -561,7 +561,7 @@ namespace Google.Cloud.Gaming.V1
         /// Gets details of a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to retrieve. Uses the form:
+        /// Required. The name of the realm to retrieve, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -626,7 +626,7 @@ namespace Google.Cloud.Gaming.V1
         /// Creates a new realm in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="realm">
@@ -649,7 +649,7 @@ namespace Google.Cloud.Gaming.V1
         /// Creates a new realm in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="realm">
@@ -672,7 +672,7 @@ namespace Google.Cloud.Gaming.V1
         /// Creates a new realm in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="realm">
@@ -690,7 +690,7 @@ namespace Google.Cloud.Gaming.V1
         /// Creates a new realm in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="realm">
@@ -713,7 +713,7 @@ namespace Google.Cloud.Gaming.V1
         /// Creates a new realm in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="realm">
@@ -736,7 +736,7 @@ namespace Google.Cloud.Gaming.V1
         /// Creates a new realm in a given project and location.
         /// </summary>
         /// <param name="parent">
-        /// Required. The parent resource name. Uses the form:
+        /// Required. The parent resource name, in the following form:
         /// `projects/{project}/locations/{location}`.
         /// </param>
         /// <param name="realm">
@@ -807,7 +807,7 @@ namespace Google.Cloud.Gaming.V1
         /// Deletes a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to delete. Uses the form:
+        /// Required. The name of the realm to delete, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -822,7 +822,7 @@ namespace Google.Cloud.Gaming.V1
         /// Deletes a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to delete. Uses the form:
+        /// Required. The name of the realm to delete, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -837,7 +837,7 @@ namespace Google.Cloud.Gaming.V1
         /// Deletes a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to delete. Uses the form:
+        /// Required. The name of the realm to delete, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -849,7 +849,7 @@ namespace Google.Cloud.Gaming.V1
         /// Deletes a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to delete. Uses the form:
+        /// Required. The name of the realm to delete, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -864,7 +864,7 @@ namespace Google.Cloud.Gaming.V1
         /// Deletes a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to delete. Uses the form:
+        /// Required. The name of the realm to delete, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -879,7 +879,7 @@ namespace Google.Cloud.Gaming.V1
         /// Deletes a single realm.
         /// </summary>
         /// <param name="name">
-        /// Required. The name of the realm to delete. Uses the form:
+        /// Required. The name of the realm to delete, in the following form:
         /// `projects/{project}/locations/{location}/realms/{realm}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -950,10 +950,7 @@ namespace Google.Cloud.Gaming.V1
         /// <param name="updateMask">
         /// Required. The update mask applies to the resource. For the `FieldMask`
         /// definition, see
-        /// 
-        /// https:
-        /// //developers.google.com/protocol-buffers
-        /// // /docs/reference/google.protobuf#fieldmask
+        /// https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -974,10 +971,7 @@ namespace Google.Cloud.Gaming.V1
         /// <param name="updateMask">
         /// Required. The update mask applies to the resource. For the `FieldMask`
         /// definition, see
-        /// 
-        /// https:
-        /// //developers.google.com/protocol-buffers
-        /// // /docs/reference/google.protobuf#fieldmask
+        /// https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -998,10 +992,7 @@ namespace Google.Cloud.Gaming.V1
         /// <param name="updateMask">
         /// Required. The update mask applies to the resource. For the `FieldMask`
         /// definition, see
-        /// 
-        /// https:
-        /// //developers.google.com/protocol-buffers
-        /// // /docs/reference/google.protobuf#fieldmask
+        /// https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
