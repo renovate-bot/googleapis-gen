@@ -102,8 +102,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.translate.v3.DetectedLanguage> languages_;
   /**
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -114,8 +114,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -127,8 +127,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -139,8 +139,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -151,8 +151,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of detected languages sorted by detection confidence in descending
-   * order. The most probable language first.
+   * The most probable language detected by the Translation API. For each
+   * request, the Translation API will always return only one result.
    * </pre>
    *
    * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -523,8 +523,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -538,8 +538,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -553,8 +553,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -568,8 +568,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -590,8 +590,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -609,8 +609,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -630,8 +630,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -652,8 +652,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -671,8 +671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -690,8 +690,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -710,8 +710,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -728,8 +728,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -746,8 +746,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -758,8 +758,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -773,8 +773,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -789,8 +789,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -801,8 +801,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>
@@ -814,8 +814,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of detected languages sorted by detection confidence in descending
-     * order. The most probable language first.
+     * The most probable language detected by the Translation API. For each
+     * request, the Translation API will always return only one result.
      * </pre>
      *
      * <code>repeated .google.cloud.translation.v3.DetectedLanguage languages = 1;</code>

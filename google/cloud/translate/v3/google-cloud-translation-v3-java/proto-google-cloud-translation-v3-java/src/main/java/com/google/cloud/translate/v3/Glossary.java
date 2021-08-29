@@ -1776,7 +1776,7 @@ private static final long serialVersionUID = 0L;
    * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -1798,7 +1798,7 @@ private static final long serialVersionUID = 0L;
    * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -2538,7 +2538,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -2559,7 +2559,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -2581,7 +2581,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2601,7 +2601,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -2616,7 +2616,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */

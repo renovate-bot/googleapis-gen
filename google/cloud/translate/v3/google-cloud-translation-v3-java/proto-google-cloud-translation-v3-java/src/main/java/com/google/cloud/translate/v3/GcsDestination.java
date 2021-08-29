@@ -95,12 +95,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object outputUriPrefix_;
   /**
    * <pre>
-   * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-   * INVALID_ARGUMENT (400) error is returned.
+   * Required. The bucket used in 'output_uri_prefix' must exist and there must
+   * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+   * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+   * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+   * is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The outputUriPrefix.
    */
   @java.lang.Override
@@ -118,12 +120,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. There must be no files under 'output_uri_prefix'.
-   * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-   * INVALID_ARGUMENT (400) error is returned.
+   * Required. The bucket used in 'output_uri_prefix' must exist and there must
+   * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+   * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+   * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+   * is returned.
    * </pre>
    *
-   * <code>string output_uri_prefix = 1;</code>
+   * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for outputUriPrefix.
    */
   @java.lang.Override
@@ -450,12 +454,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object outputUriPrefix_ = "";
     /**
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The outputUriPrefix.
      */
     public java.lang.String getOutputUriPrefix() {
@@ -472,12 +478,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for outputUriPrefix.
      */
     public com.google.protobuf.ByteString
@@ -495,12 +503,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The outputUriPrefix to set.
      * @return This builder for chaining.
      */
@@ -516,12 +526,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearOutputUriPrefix() {
@@ -532,12 +544,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. There must be no files under 'output_uri_prefix'.
-     * 'output_uri_prefix' must end with "/" and start with "gs://", otherwise an
-     * INVALID_ARGUMENT (400) error is returned.
+     * Required. The bucket used in 'output_uri_prefix' must exist and there must
+     * be no files under 'output_uri_prefix'. 'output_uri_prefix' must end with
+     * "/" and start with "gs://". One 'output_uri_prefix' can only be used by one
+     * batch translation job at a time. Otherwise an INVALID_ARGUMENT (400) error
+     * is returned.
      * </pre>
      *
-     * <code>string output_uri_prefix = 1;</code>
+     * <code>string output_uri_prefix = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for outputUriPrefix to set.
      * @return This builder for chaining.
      */

@@ -479,6 +479,17 @@ class TranslationServiceGapicClient
      *           pair, then default google model (nmt) is used.
      *     @type array $glossaries
      *           Optional. Glossaries to be applied. It's keyed by target language code.
+     *     @type array $formatConversions
+     *           Optional. File format conversion map to be applied to all input files.
+     *           Map's key is the original mime_type. Map's value is the target mime_type of
+     *           translated documents.
+     *
+     *           Supported file format conversion includes:
+     *           - `application/pdf` to
+     *           `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *
+     *           If nothing specified, output files will be in the same format as the
+     *           original file.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -508,6 +519,10 @@ class TranslationServiceGapicClient
 
         if (isset($optionalArgs['glossaries'])) {
             $request->setGlossaries($optionalArgs['glossaries']);
+        }
+
+        if (isset($optionalArgs['formatConversions'])) {
+            $request->setFormatConversions($optionalArgs['formatConversions']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

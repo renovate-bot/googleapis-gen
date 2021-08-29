@@ -412,6 +412,7 @@ class ::Google::Cloud::Translate::V3beta1::TranslationService::ClientTest < Mini
     output_config = {}
     models = {}
     glossaries = {}
+    format_conversions = {}
 
     batch_translate_document_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :batch_translate_document, name
@@ -423,6 +424,7 @@ class ::Google::Cloud::Translate::V3beta1::TranslationService::ClientTest < Mini
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Translate::V3beta1::BatchDocumentOutputConfig), request["output_config"]
       assert_equal({}, request["models"].to_h)
       assert_equal({}, request["glossaries"].to_h)
+      assert_equal({}, request["format_conversions"].to_h)
       refute_nil options
     end
 
@@ -433,35 +435,35 @@ class ::Google::Cloud::Translate::V3beta1::TranslationService::ClientTest < Mini
       end
 
       # Use hash object
-      client.batch_translate_document({ parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries }) do |response, operation|
+      client.batch_translate_document({ parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries, format_conversions: format_conversions }) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.batch_translate_document parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries do |response, operation|
+      client.batch_translate_document parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries, format_conversions: format_conversions do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.batch_translate_document ::Google::Cloud::Translate::V3beta1::BatchTranslateDocumentRequest.new(parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries) do |response, operation|
+      client.batch_translate_document ::Google::Cloud::Translate::V3beta1::BatchTranslateDocumentRequest.new(parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries, format_conversions: format_conversions) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.batch_translate_document({ parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries }, grpc_options) do |response, operation|
+      client.batch_translate_document({ parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries, format_conversions: format_conversions }, grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.batch_translate_document(::Google::Cloud::Translate::V3beta1::BatchTranslateDocumentRequest.new(parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries), grpc_options) do |response, operation|
+      client.batch_translate_document(::Google::Cloud::Translate::V3beta1::BatchTranslateDocumentRequest.new(parent: parent, source_language_code: source_language_code, target_language_codes: target_language_codes, input_configs: input_configs, output_config: output_config, models: models, glossaries: glossaries, format_conversions: format_conversions), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

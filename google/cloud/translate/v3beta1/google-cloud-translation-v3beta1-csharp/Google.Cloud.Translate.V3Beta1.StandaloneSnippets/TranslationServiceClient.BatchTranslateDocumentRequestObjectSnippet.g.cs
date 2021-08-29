@@ -50,6 +50,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
                         new TranslateTextGlossaryConfig()
                     },
                 },
+                FormatConversions = { { "", "" }, },
             };
             // Make the request
             Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> response = translationServiceClient.BatchTranslateDocument(request);

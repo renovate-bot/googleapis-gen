@@ -783,7 +783,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload batch_translate_document(parent: nil, source_language_code: nil, target_language_codes: nil, input_configs: nil, output_config: nil, models: nil, glossaries: nil)
+            # @overload batch_translate_document(parent: nil, source_language_code: nil, target_language_codes: nil, input_configs: nil, output_config: nil, models: nil, glossaries: nil, format_conversions: nil)
             #   Pass arguments to `batch_translate_document` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -832,6 +832,17 @@ module Google
             #     pair, then default google model (nmt) is used.
             #   @param glossaries [::Hash{::String => ::Google::Cloud::Translate::V3beta1::TranslateTextGlossaryConfig, ::Hash}]
             #     Optional. Glossaries to be applied. It's keyed by target language code.
+            #   @param format_conversions [::Hash{::String => ::String}]
+            #     Optional. File format conversion map to be applied to all input files.
+            #     Map's key is the original mime_type. Map's value is the target mime_type of
+            #     translated documents.
+            #
+            #     Supported file format conversion includes:
+            #     - `application/pdf` to
+            #       `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+            #
+            #     If nothing specified, output files will be in the same format as the
+            #     original file.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

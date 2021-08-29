@@ -17,6 +17,11 @@
 from google.cloud.translate_v3.services.translation_service.client import TranslationServiceClient
 from google.cloud.translate_v3.services.translation_service.async_client import TranslationServiceAsyncClient
 
+from google.cloud.translate_v3.types.translation_service import BatchDocumentInputConfig
+from google.cloud.translate_v3.types.translation_service import BatchDocumentOutputConfig
+from google.cloud.translate_v3.types.translation_service import BatchTranslateDocumentMetadata
+from google.cloud.translate_v3.types.translation_service import BatchTranslateDocumentRequest
+from google.cloud.translate_v3.types.translation_service import BatchTranslateDocumentResponse
 from google.cloud.translate_v3.types.translation_service import BatchTranslateMetadata
 from google.cloud.translate_v3.types.translation_service import BatchTranslateResponse
 from google.cloud.translate_v3.types.translation_service import BatchTranslateTextRequest
@@ -28,6 +33,9 @@ from google.cloud.translate_v3.types.translation_service import DeleteGlossaryRe
 from google.cloud.translate_v3.types.translation_service import DetectedLanguage
 from google.cloud.translate_v3.types.translation_service import DetectLanguageRequest
 from google.cloud.translate_v3.types.translation_service import DetectLanguageResponse
+from google.cloud.translate_v3.types.translation_service import DocumentInputConfig
+from google.cloud.translate_v3.types.translation_service import DocumentOutputConfig
+from google.cloud.translate_v3.types.translation_service import DocumentTranslation
 from google.cloud.translate_v3.types.translation_service import GcsDestination
 from google.cloud.translate_v3.types.translation_service import GcsSource
 from google.cloud.translate_v3.types.translation_service import GetGlossaryRequest
@@ -40,6 +48,8 @@ from google.cloud.translate_v3.types.translation_service import ListGlossariesRe
 from google.cloud.translate_v3.types.translation_service import OutputConfig
 from google.cloud.translate_v3.types.translation_service import SupportedLanguage
 from google.cloud.translate_v3.types.translation_service import SupportedLanguages
+from google.cloud.translate_v3.types.translation_service import TranslateDocumentRequest
+from google.cloud.translate_v3.types.translation_service import TranslateDocumentResponse
 from google.cloud.translate_v3.types.translation_service import TranslateTextGlossaryConfig
 from google.cloud.translate_v3.types.translation_service import TranslateTextRequest
 from google.cloud.translate_v3.types.translation_service import TranslateTextResponse
@@ -47,6 +57,11 @@ from google.cloud.translate_v3.types.translation_service import Translation
 
 __all__ = ('TranslationServiceClient',
     'TranslationServiceAsyncClient',
+    'BatchDocumentInputConfig',
+    'BatchDocumentOutputConfig',
+    'BatchTranslateDocumentMetadata',
+    'BatchTranslateDocumentRequest',
+    'BatchTranslateDocumentResponse',
     'BatchTranslateMetadata',
     'BatchTranslateResponse',
     'BatchTranslateTextRequest',
@@ -58,6 +73,9 @@ __all__ = ('TranslationServiceClient',
     'DetectedLanguage',
     'DetectLanguageRequest',
     'DetectLanguageResponse',
+    'DocumentInputConfig',
+    'DocumentOutputConfig',
+    'DocumentTranslation',
     'GcsDestination',
     'GcsSource',
     'GetGlossaryRequest',
@@ -70,6 +88,8 @@ __all__ = ('TranslationServiceClient',
     'OutputConfig',
     'SupportedLanguage',
     'SupportedLanguages',
+    'TranslateDocumentRequest',
+    'TranslateDocumentResponse',
     'TranslateTextGlossaryConfig',
     'TranslateTextRequest',
     'TranslateTextResponse',

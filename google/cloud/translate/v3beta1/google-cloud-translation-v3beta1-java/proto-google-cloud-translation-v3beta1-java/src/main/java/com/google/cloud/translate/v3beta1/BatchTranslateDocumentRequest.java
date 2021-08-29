@@ -126,6 +126,19 @@ private static final long serialVersionUID = 0L;
                 glossaries__.getKey(), glossaries__.getValue());
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              formatConversions_ = com.google.protobuf.MapField.newMapField(
+                  FormatConversionsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000010;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            formatConversions__ = input.readMessage(
+                FormatConversionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            formatConversions_.getMutableMap().put(
+                formatConversions__.getKey(), formatConversions__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -165,6 +178,8 @@ private static final long serialVersionUID = 0L;
         return internalGetModels();
       case 7:
         return internalGetGlossaries();
+      case 8:
+        return internalGetFormatConversions();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -688,6 +703,131 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int FORMAT_CONVERSIONS_FIELD_NUMBER = 8;
+  private static final class FormatConversionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.translate.v3beta1.TranslationServiceProto.internal_static_google_cloud_translation_v3beta1_BatchTranslateDocumentRequest_FormatConversionsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> formatConversions_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetFormatConversions() {
+    if (formatConversions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          FormatConversionsDefaultEntryHolder.defaultEntry);
+    }
+    return formatConversions_;
+  }
+
+  public int getFormatConversionsCount() {
+    return internalGetFormatConversions().getMap().size();
+  }
+  /**
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsFormatConversions(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetFormatConversions().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getFormatConversionsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getFormatConversions() {
+    return getFormatConversionsMap();
+  }
+  /**
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getFormatConversionsMap() {
+    return internalGetFormatConversions().getMap();
+  }
+  /**
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getFormatConversionsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetFormatConversions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Optional. File format conversion map to be applied to all input files.
+   * Map's key is the original mime_type. Map's value is the target mime_type of
+   * translated documents.
+   * Supported file format conversion includes:
+   * - `application/pdf` to
+   *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+   * If nothing specified, output files will be in the same format as the
+   * original file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getFormatConversionsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetFormatConversions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -729,6 +869,12 @@ private static final long serialVersionUID = 0L;
         internalGetGlossaries(),
         GlossariesDefaultEntryHolder.defaultEntry,
         7);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetFormatConversions(),
+        FormatConversionsDefaultEntryHolder.defaultEntry,
+        8);
     unknownFields.writeTo(output);
   }
 
@@ -780,6 +926,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, glossaries__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetFormatConversions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      formatConversions__ = FormatConversionsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, formatConversions__);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -812,6 +968,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetModels())) return false;
     if (!internalGetGlossaries().equals(
         other.internalGetGlossaries())) return false;
+    if (!internalGetFormatConversions().equals(
+        other.internalGetFormatConversions())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -846,6 +1004,10 @@ private static final long serialVersionUID = 0L;
     if (!internalGetGlossaries().getMap().isEmpty()) {
       hash = (37 * hash) + GLOSSARIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetGlossaries().hashCode();
+    }
+    if (!internalGetFormatConversions().getMap().isEmpty()) {
+      hash = (37 * hash) + FORMAT_CONVERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetFormatConversions().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -966,6 +1128,8 @@ private static final long serialVersionUID = 0L;
           return internalGetModels();
         case 7:
           return internalGetGlossaries();
+        case 8:
+          return internalGetFormatConversions();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -979,6 +1143,8 @@ private static final long serialVersionUID = 0L;
           return internalGetMutableModels();
         case 7:
           return internalGetMutableGlossaries();
+        case 8:
+          return internalGetMutableFormatConversions();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1031,6 +1197,7 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableModels().clear();
       internalGetMutableGlossaries().clear();
+      internalGetMutableFormatConversions().clear();
       return this;
     }
 
@@ -1083,6 +1250,8 @@ private static final long serialVersionUID = 0L;
       result.models_.makeImmutable();
       result.glossaries_ = internalGetGlossaries();
       result.glossaries_.makeImmutable();
+      result.formatConversions_ = internalGetFormatConversions();
+      result.formatConversions_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1182,6 +1351,8 @@ private static final long serialVersionUID = 0L;
           other.internalGetModels());
       internalGetMutableGlossaries().mergeFrom(
           other.internalGetGlossaries());
+      internalGetMutableFormatConversions().mergeFrom(
+          other.internalGetFormatConversions());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2504,6 +2675,211 @@ private static final long serialVersionUID = 0L;
     public Builder putAllGlossaries(
         java.util.Map<java.lang.String, com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig> values) {
       internalGetMutableGlossaries().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> formatConversions_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetFormatConversions() {
+      if (formatConversions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FormatConversionsDefaultEntryHolder.defaultEntry);
+      }
+      return formatConversions_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableFormatConversions() {
+      onChanged();;
+      if (formatConversions_ == null) {
+        formatConversions_ = com.google.protobuf.MapField.newMapField(
+            FormatConversionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!formatConversions_.isMutable()) {
+        formatConversions_ = formatConversions_.copy();
+      }
+      return formatConversions_;
+    }
+
+    public int getFormatConversionsCount() {
+      return internalGetFormatConversions().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsFormatConversions(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetFormatConversions().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getFormatConversionsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getFormatConversions() {
+      return getFormatConversionsMap();
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getFormatConversionsMap() {
+      return internalGetFormatConversions().getMap();
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getFormatConversionsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetFormatConversions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getFormatConversionsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetFormatConversions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearFormatConversions() {
+      internalGetMutableFormatConversions().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+
+    public Builder removeFormatConversions(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableFormatConversions().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableFormatConversions() {
+      return internalGetMutableFormatConversions().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putFormatConversions(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableFormatConversions().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+
+    public Builder putAllFormatConversions(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableFormatConversions().getMutableMap()
           .putAll(values);
       return this;
     }

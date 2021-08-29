@@ -9,6 +9,7 @@ require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/timestamp_pb'
+require 'google/rpc/status_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/translate/v3beta1/translation_service.proto", :syntax => :proto3) do
     add_message "google.cloud.translation.v3beta1.TranslateTextGlossaryConfig" do
@@ -230,6 +231,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :output_config, :message, 5, "google.cloud.translation.v3beta1.BatchDocumentOutputConfig"
       map :models, :string, :string, 6
       map :glossaries, :string, :message, 7, "google.cloud.translation.v3beta1.TranslateTextGlossaryConfig"
+      map :format_conversions, :string, :string, 8
     end
     add_message "google.cloud.translation.v3beta1.BatchDocumentInputConfig" do
       oneof :source do

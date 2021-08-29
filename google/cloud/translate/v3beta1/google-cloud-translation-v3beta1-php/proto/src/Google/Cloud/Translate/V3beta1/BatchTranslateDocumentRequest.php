@@ -79,6 +79,19 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, .google.cloud.translation.v3beta1.TranslateTextGlossaryConfig> glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $glossaries;
+    /**
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     *
+     * Generated from protobuf field <code>map<string, string> format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $format_conversions;
 
     /**
      * Constructor.
@@ -122,6 +135,15 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
      *           pair, then default google model (nmt) is used.
      *     @type array|\Google\Protobuf\Internal\MapField $glossaries
      *           Optional. Glossaries to be applied. It's keyed by target language code.
+     *     @type array|\Google\Protobuf\Internal\MapField $format_conversions
+     *           Optional. File format conversion map to be applied to all input files.
+     *           Map's key is the original mime_type. Map's value is the target mime_type of
+     *           translated documents.
+     *           Supported file format conversion includes:
+     *           - `application/pdf` to
+     *             `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     *           If nothing specified, output files will be in the same format as the
+     *           original file.
      * }
      */
     public function __construct($data = NULL) {
@@ -361,6 +383,46 @@ class BatchTranslateDocumentRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Translate\V3beta1\TranslateTextGlossaryConfig::class);
         $this->glossaries = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     *
+     * Generated from protobuf field <code>map<string, string> format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getFormatConversions()
+    {
+        return $this->format_conversions;
+    }
+
+    /**
+     * Optional. File format conversion map to be applied to all input files.
+     * Map's key is the original mime_type. Map's value is the target mime_type of
+     * translated documents.
+     * Supported file format conversion includes:
+     * - `application/pdf` to
+     *   `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+     * If nothing specified, output files will be in the same format as the
+     * original file.
+     *
+     * Generated from protobuf field <code>map<string, string> format_conversions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setFormatConversions($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->format_conversions = $arr;
 
         return $this;
     }

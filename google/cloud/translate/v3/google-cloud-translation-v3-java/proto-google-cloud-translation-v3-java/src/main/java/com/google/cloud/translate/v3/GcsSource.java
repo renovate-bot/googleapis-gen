@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
    * Required. Source data URI. For example, `gs://my_bucket/my_object`.
    * </pre>
    *
-   * <code>string input_uri = 1;</code>
+   * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The inputUri.
    */
   @java.lang.Override
@@ -119,7 +119,7 @@ private static final long serialVersionUID = 0L;
    * Required. Source data URI. For example, `gs://my_bucket/my_object`.
    * </pre>
    *
-   * <code>string input_uri = 1;</code>
+   * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for inputUri.
    */
   @java.lang.Override
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The inputUri.
      */
     public java.lang.String getInputUri() {
@@ -469,7 +469,7 @@ private static final long serialVersionUID = 0L;
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for inputUri.
      */
     public com.google.protobuf.ByteString
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The inputUri to set.
      * @return This builder for chaining.
      */
@@ -509,7 +509,7 @@ private static final long serialVersionUID = 0L;
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearInputUri() {
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
      * Required. Source data URI. For example, `gs://my_bucket/my_object`.
      * </pre>
      *
-     * <code>string input_uri = 1;</code>
+     * <code>string input_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for inputUri to set.
      * @return This builder for chaining.
      */

@@ -101,8 +101,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object glossary_;
   /**
    * <pre>
-   * Required. Specifies the glossary used for this translation. Use
-   * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+   * Required. The `glossary` to be applied for this translation.
+   * The format depends on glossary:
+   * - User provided custom glossary:
+   *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
    * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -123,8 +125,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Specifies the glossary used for this translation. Use
-   * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+   * Required. The `glossary` to be applied for this translation.
+   * The format depends on glossary:
+   * - User provided custom glossary:
+   *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
    * </pre>
    *
    * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -489,8 +493,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object glossary_ = "";
     /**
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -510,8 +516,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -532,8 +540,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -552,8 +562,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -567,8 +579,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Specifies the glossary used for this translation. Use
-     * this format: projects/&#42;&#47;locations/&#42;&#47;glossaries/&#42;
+     * Required. The `glossary` to be applied for this translation.
+     * The format depends on glossary:
+     * - User provided custom glossary:
+     *   `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
      * </pre>
      *
      * <code>string glossary = 1 [(.google.api.field_behavior) = REQUIRED];</code>

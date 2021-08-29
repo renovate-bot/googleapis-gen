@@ -10,6 +10,8 @@ public interface TranslationOrBuilder extends
   /**
    * <pre>
    * Text translated into the target language.
+   * If an error occurs during translation, this field might be excluded from
+   * the response.
    * </pre>
    *
    * <code>string translated_text = 1;</code>
@@ -19,6 +21,8 @@ public interface TranslationOrBuilder extends
   /**
    * <pre>
    * Text translated into the target language.
+   * If an error occurs during translation, this field might be excluded from
+   * the response.
    * </pre>
    *
    * <code>string translated_text = 1;</code>

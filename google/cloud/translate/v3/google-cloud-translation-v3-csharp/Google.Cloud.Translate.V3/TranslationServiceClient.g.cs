@@ -49,8 +49,11 @@ namespace Google.Cloud.Translate.V3
             TranslateTextSettings = existing.TranslateTextSettings;
             DetectLanguageSettings = existing.DetectLanguageSettings;
             GetSupportedLanguagesSettings = existing.GetSupportedLanguagesSettings;
+            TranslateDocumentSettings = existing.TranslateDocumentSettings;
             BatchTranslateTextSettings = existing.BatchTranslateTextSettings;
             BatchTranslateTextOperationsSettings = existing.BatchTranslateTextOperationsSettings.Clone();
+            BatchTranslateDocumentSettings = existing.BatchTranslateDocumentSettings;
+            BatchTranslateDocumentOperationsSettings = existing.BatchTranslateDocumentOperationsSettings.Clone();
             CreateGlossarySettings = existing.CreateGlossarySettings;
             CreateGlossaryOperationsSettings = existing.CreateGlossaryOperationsSettings.Clone();
             ListGlossariesSettings = existing.ListGlossariesSettings;
@@ -104,6 +107,19 @@ namespace Google.Cloud.Translate.V3
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>TranslationServiceClient.TranslateDocument</c> and <c>TranslationServiceClient.TranslateDocumentAsync</c>
+        /// .
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings TranslateDocumentSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
         /// <c>TranslationServiceClient.BatchTranslateText</c> and <c>TranslationServiceClient.BatchTranslateTextAsync</c>
         /// .
         /// </summary>
@@ -129,6 +145,37 @@ namespace Google.Cloud.Translate.V3
         /// </list>
         /// </remarks>
         public lro::OperationsSettings BatchTranslateTextOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>TranslationServiceClient.BatchTranslateDocument</c> and
+        /// <c>TranslationServiceClient.BatchTranslateDocumentAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>Timeout: 600 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings BatchTranslateDocumentSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)));
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>TranslationServiceClient.BatchTranslateDocument</c> and
+        /// <c>TranslationServiceClient.BatchTranslateDocumentAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings BatchTranslateDocumentOperationsSettings { get; set; } = new lro::OperationsSettings
         {
             DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
         };
@@ -426,7 +473,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -467,7 +515,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -508,7 +557,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -541,7 +591,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -582,7 +633,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -623,7 +675,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -660,14 +713,13 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// For global (non-regionalized) requests, use `location-id` `global`.
         /// For example,
         /// `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         /// 
-        /// If missing, the system decides which google base model to use.
+        /// If not provided, the default Google model (NMT) will be used.
         /// </param>
         /// <param name="mimeType">
         /// Optional. The format of the source text, for example, "text/html",
@@ -686,7 +738,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -734,14 +787,13 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// For global (non-regionalized) requests, use `location-id` `global`.
         /// For example,
         /// `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         /// 
-        /// If missing, the system decides which google base model to use.
+        /// If not provided, the default Google model (NMT) will be used.
         /// </param>
         /// <param name="mimeType">
         /// Optional. The format of the source text, for example, "text/html",
@@ -760,7 +812,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -808,14 +861,13 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// For global (non-regionalized) requests, use `location-id` `global`.
         /// For example,
         /// `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         /// 
-        /// If missing, the system decides which google base model to use.
+        /// If not provided, the default Google model (NMT) will be used.
         /// </param>
         /// <param name="mimeType">
         /// Optional. The format of the source text, for example, "text/html",
@@ -834,7 +886,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -871,14 +924,13 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// For global (non-regionalized) requests, use `location-id` `global`.
         /// For example,
         /// `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         /// 
-        /// If missing, the system decides which google base model to use.
+        /// If not provided, the default Google model (NMT) will be used.
         /// </param>
         /// <param name="mimeType">
         /// Optional. The format of the source text, for example, "text/html",
@@ -897,7 +949,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -945,14 +998,13 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// For global (non-regionalized) requests, use `location-id` `global`.
         /// For example,
         /// `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         /// 
-        /// If missing, the system decides which google base model to use.
+        /// If not provided, the default Google model (NMT) will be used.
         /// </param>
         /// <param name="mimeType">
         /// Optional. The format of the source text, for example, "text/html",
@@ -971,7 +1023,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1019,14 +1072,13 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// For global (non-regionalized) requests, use `location-id` `global`.
         /// For example,
         /// `projects/{project-number-or-id}/locations/global/models/general/nmt`.
         /// 
-        /// If missing, the system decides which google base model to use.
+        /// If not provided, the default Google model (NMT) will be used.
         /// </param>
         /// <param name="mimeType">
         /// Optional. The format of the source text, for example, "text/html",
@@ -1045,7 +1097,8 @@ namespace Google.Cloud.Translate.V3
         /// </param>
         /// <param name="contents">
         /// Required. The content of the input in string format.
-        /// We recommend the total content be less than 30k codepoints.
+        /// We recommend the total content be less than 30k codepoints. The max length
+        /// of this field is 1024.
         /// Use BatchTranslateText for larger text.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -1393,11 +1446,10 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="displayLanguageCode">
         /// Optional. The language to use to return localized, human readable names
@@ -1442,11 +1494,10 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="displayLanguageCode">
         /// Optional. The language to use to return localized, human readable names
@@ -1491,11 +1542,10 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="displayLanguageCode">
         /// Optional. The language to use to return localized, human readable names
@@ -1535,11 +1585,10 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="displayLanguageCode">
         /// Optional. The language to use to return localized, human readable names
@@ -1584,11 +1633,10 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="displayLanguageCode">
         /// Optional. The language to use to return localized, human readable names
@@ -1633,11 +1681,10 @@ namespace Google.Cloud.Translate.V3
         /// 
         /// - General (built-in) models:
         /// `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-        /// `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
         /// 
         /// 
         /// Returns languages supported by the specified model.
-        /// If missing, we get supported languages of Google general base (PBMT) model.
+        /// If missing, we get supported languages of Google general NMT model.
         /// </param>
         /// <param name="displayLanguageCode">
         /// Optional. The language to use to return localized, human readable names
@@ -1648,6 +1695,33 @@ namespace Google.Cloud.Translate.V3
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<SupportedLanguages> GetSupportedLanguagesAsync(gagr::LocationName parent, string model, string displayLanguageCode, st::CancellationToken cancellationToken) =>
             GetSupportedLanguagesAsync(parent, model, displayLanguageCode, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Translates documents in synchronous mode.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual TranslateDocumentResponse TranslateDocument(TranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Translates documents in synchronous mode.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<TranslateDocumentResponse> TranslateDocumentAsync(TranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Translates documents in synchronous mode.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<TranslateDocumentResponse> TranslateDocumentAsync(TranslateDocumentRequest request, st::CancellationToken cancellationToken) =>
+            TranslateDocumentAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
         /// Translates a large volume of text in asynchronous batch mode.
@@ -1720,6 +1794,78 @@ namespace Google.Cloud.Translate.V3
         /// <returns>A task representing the result of polling the operation.</returns>
         public virtual stt::Task<lro::Operation<BatchTranslateResponse, BatchTranslateMetadata>> PollOnceBatchTranslateTextAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<BatchTranslateResponse, BatchTranslateMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), BatchTranslateTextOperationsClient, callSettings);
+
+        /// <summary>
+        /// Translates a large volume of document in asynchronous batch mode.
+        /// This function provides real-time output as the inputs are being processed.
+        /// If caller cancels a request, the partial results (for an input file, it's
+        /// all or nothing) may still be available on the specified output location.
+        /// 
+        /// This call returns immediately and you can use
+        /// google.longrunning.Operation.name to poll the status of the call.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> BatchTranslateDocument(BatchTranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Translates a large volume of document in asynchronous batch mode.
+        /// This function provides real-time output as the inputs are being processed.
+        /// If caller cancels a request, the partial results (for an input file, it's
+        /// all or nothing) may still be available on the specified output location.
+        /// 
+        /// This call returns immediately and you can use
+        /// google.longrunning.Operation.name to poll the status of the call.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>> BatchTranslateDocumentAsync(BatchTranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Translates a large volume of document in asynchronous batch mode.
+        /// This function provides real-time output as the inputs are being processed.
+        /// If caller cancels a request, the partial results (for an input file, it's
+        /// all or nothing) may still be available on the specified output location.
+        /// 
+        /// This call returns immediately and you can use
+        /// google.longrunning.Operation.name to poll the status of the call.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>> BatchTranslateDocumentAsync(BatchTranslateDocumentRequest request, st::CancellationToken cancellationToken) =>
+            BatchTranslateDocumentAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>BatchTranslateDocument</c>.</summary>
+        public virtual lro::OperationsClient BatchTranslateDocumentOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>BatchTranslateDocument</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> PollOnceBatchTranslateDocument(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), BatchTranslateDocumentOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>BatchTranslateDocument</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>> PollOnceBatchTranslateDocumentAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), BatchTranslateDocumentOperationsClient, callSettings);
 
         /// <summary>
         /// Creates a glossary and returns the long-running operation. Returns
@@ -2279,7 +2425,11 @@ namespace Google.Cloud.Translate.V3
 
         private readonly gaxgrpc::ApiCall<GetSupportedLanguagesRequest, SupportedLanguages> _callGetSupportedLanguages;
 
+        private readonly gaxgrpc::ApiCall<TranslateDocumentRequest, TranslateDocumentResponse> _callTranslateDocument;
+
         private readonly gaxgrpc::ApiCall<BatchTranslateTextRequest, lro::Operation> _callBatchTranslateText;
+
+        private readonly gaxgrpc::ApiCall<BatchTranslateDocumentRequest, lro::Operation> _callBatchTranslateDocument;
 
         private readonly gaxgrpc::ApiCall<CreateGlossaryRequest, lro::Operation> _callCreateGlossary;
 
@@ -2300,6 +2450,7 @@ namespace Google.Cloud.Translate.V3
             TranslationServiceSettings effectiveSettings = settings ?? TranslationServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
             BatchTranslateTextOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.BatchTranslateTextOperationsSettings);
+            BatchTranslateDocumentOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.BatchTranslateDocumentOperationsSettings);
             CreateGlossaryOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.CreateGlossaryOperationsSettings);
             DeleteGlossaryOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.DeleteGlossaryOperationsSettings);
             _callTranslateText = clientHelper.BuildApiCall<TranslateTextRequest, TranslateTextResponse>(grpcClient.TranslateTextAsync, grpcClient.TranslateText, effectiveSettings.TranslateTextSettings).WithGoogleRequestParam("parent", request => request.Parent);
@@ -2311,9 +2462,15 @@ namespace Google.Cloud.Translate.V3
             _callGetSupportedLanguages = clientHelper.BuildApiCall<GetSupportedLanguagesRequest, SupportedLanguages>(grpcClient.GetSupportedLanguagesAsync, grpcClient.GetSupportedLanguages, effectiveSettings.GetSupportedLanguagesSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callGetSupportedLanguages);
             Modify_GetSupportedLanguagesApiCall(ref _callGetSupportedLanguages);
+            _callTranslateDocument = clientHelper.BuildApiCall<TranslateDocumentRequest, TranslateDocumentResponse>(grpcClient.TranslateDocumentAsync, grpcClient.TranslateDocument, effectiveSettings.TranslateDocumentSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callTranslateDocument);
+            Modify_TranslateDocumentApiCall(ref _callTranslateDocument);
             _callBatchTranslateText = clientHelper.BuildApiCall<BatchTranslateTextRequest, lro::Operation>(grpcClient.BatchTranslateTextAsync, grpcClient.BatchTranslateText, effectiveSettings.BatchTranslateTextSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callBatchTranslateText);
             Modify_BatchTranslateTextApiCall(ref _callBatchTranslateText);
+            _callBatchTranslateDocument = clientHelper.BuildApiCall<BatchTranslateDocumentRequest, lro::Operation>(grpcClient.BatchTranslateDocumentAsync, grpcClient.BatchTranslateDocument, effectiveSettings.BatchTranslateDocumentSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callBatchTranslateDocument);
+            Modify_BatchTranslateDocumentApiCall(ref _callBatchTranslateDocument);
             _callCreateGlossary = clientHelper.BuildApiCall<CreateGlossaryRequest, lro::Operation>(grpcClient.CreateGlossaryAsync, grpcClient.CreateGlossary, effectiveSettings.CreateGlossarySettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callCreateGlossary);
             Modify_CreateGlossaryApiCall(ref _callCreateGlossary);
@@ -2337,7 +2494,11 @@ namespace Google.Cloud.Translate.V3
 
         partial void Modify_GetSupportedLanguagesApiCall(ref gaxgrpc::ApiCall<GetSupportedLanguagesRequest, SupportedLanguages> call);
 
+        partial void Modify_TranslateDocumentApiCall(ref gaxgrpc::ApiCall<TranslateDocumentRequest, TranslateDocumentResponse> call);
+
         partial void Modify_BatchTranslateTextApiCall(ref gaxgrpc::ApiCall<BatchTranslateTextRequest, lro::Operation> call);
+
+        partial void Modify_BatchTranslateDocumentApiCall(ref gaxgrpc::ApiCall<BatchTranslateDocumentRequest, lro::Operation> call);
 
         partial void Modify_CreateGlossaryApiCall(ref gaxgrpc::ApiCall<CreateGlossaryRequest, lro::Operation> call);
 
@@ -2358,7 +2519,11 @@ namespace Google.Cloud.Translate.V3
 
         partial void Modify_GetSupportedLanguagesRequest(ref GetSupportedLanguagesRequest request, ref gaxgrpc::CallSettings settings);
 
+        partial void Modify_TranslateDocumentRequest(ref TranslateDocumentRequest request, ref gaxgrpc::CallSettings settings);
+
         partial void Modify_BatchTranslateTextRequest(ref BatchTranslateTextRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_BatchTranslateDocumentRequest(ref BatchTranslateDocumentRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_CreateGlossaryRequest(ref CreateGlossaryRequest request, ref gaxgrpc::CallSettings settings);
 
@@ -2440,6 +2605,30 @@ namespace Google.Cloud.Translate.V3
             return _callGetSupportedLanguages.Async(request, callSettings);
         }
 
+        /// <summary>
+        /// Translates documents in synchronous mode.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override TranslateDocumentResponse TranslateDocument(TranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_TranslateDocumentRequest(ref request, ref callSettings);
+            return _callTranslateDocument.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Translates documents in synchronous mode.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<TranslateDocumentResponse> TranslateDocumentAsync(TranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_TranslateDocumentRequest(ref request, ref callSettings);
+            return _callTranslateDocument.Async(request, callSettings);
+        }
+
         /// <summary>The long-running operations client for <c>BatchTranslateText</c>.</summary>
         public override lro::OperationsClient BatchTranslateTextOperationsClient { get; }
 
@@ -2477,6 +2666,45 @@ namespace Google.Cloud.Translate.V3
         {
             Modify_BatchTranslateTextRequest(ref request, ref callSettings);
             return new lro::Operation<BatchTranslateResponse, BatchTranslateMetadata>(await _callBatchTranslateText.Async(request, callSettings).ConfigureAwait(false), BatchTranslateTextOperationsClient);
+        }
+
+        /// <summary>The long-running operations client for <c>BatchTranslateDocument</c>.</summary>
+        public override lro::OperationsClient BatchTranslateDocumentOperationsClient { get; }
+
+        /// <summary>
+        /// Translates a large volume of document in asynchronous batch mode.
+        /// This function provides real-time output as the inputs are being processed.
+        /// If caller cancels a request, the partial results (for an input file, it's
+        /// all or nothing) may still be available on the specified output location.
+        /// 
+        /// This call returns immediately and you can use
+        /// google.longrunning.Operation.name to poll the status of the call.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> BatchTranslateDocument(BatchTranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_BatchTranslateDocumentRequest(ref request, ref callSettings);
+            return new lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>(_callBatchTranslateDocument.Sync(request, callSettings), BatchTranslateDocumentOperationsClient);
+        }
+
+        /// <summary>
+        /// Translates a large volume of document in asynchronous batch mode.
+        /// This function provides real-time output as the inputs are being processed.
+        /// If caller cancels a request, the partial results (for an input file, it's
+        /// all or nothing) may still be available on the specified output location.
+        /// 
+        /// This call returns immediately and you can use
+        /// google.longrunning.Operation.name to poll the status of the call.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>> BatchTranslateDocumentAsync(BatchTranslateDocumentRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_BatchTranslateDocumentRequest(ref request, ref callSettings);
+            return new lro::Operation<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata>(await _callBatchTranslateDocument.Async(request, callSettings).ConfigureAwait(false), BatchTranslateDocumentOperationsClient);
         }
 
         /// <summary>The long-running operations client for <c>CreateGlossary</c>.</summary>

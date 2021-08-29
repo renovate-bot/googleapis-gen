@@ -176,7 +176,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -190,7 +191,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -203,7 +205,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -217,7 +220,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The content of the input in string format.
-   * We recommend the total content be less than 30k codepoints.
+   * We recommend the total content be less than 30k codepoints. The max length
+   * of this field is 1024.
    * Use BatchTranslateText for larger text.
    * </pre>
    *
@@ -454,11 +458,10 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   * If missing, the system decides which google base model to use.
+   * If not provided, the default Google model (NMT) will be used.
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -485,11 +488,10 @@ private static final long serialVersionUID = 0L;
    *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
    * - General (built-in) models:
    *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-   *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
    * For global (non-regionalized) requests, use `location-id` `global`.
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   * If missing, the system decides which google base model to use.
+   * If not provided, the default Google model (NMT) will be used.
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -587,7 +589,8 @@ private static final long serialVersionUID = 0L;
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -614,7 +617,8 @@ private static final long serialVersionUID = 0L;
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -631,7 +635,8 @@ private static final long serialVersionUID = 0L;
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -653,7 +658,8 @@ private static final long serialVersionUID = 0L;
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
-   * See https://cloud.google.com/translate/docs/labels for more information.
+   * See https://cloud.google.com/translate/docs/advanced/labels for more
+   * information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1170,7 +1176,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1184,7 +1191,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1197,7 +1205,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1211,7 +1220,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1226,7 +1236,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1248,7 +1259,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1269,7 +1281,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1288,7 +1301,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1304,7 +1318,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The content of the input in string format.
-     * We recommend the total content be less than 30k codepoints.
+     * We recommend the total content be less than 30k codepoints. The max length
+     * of this field is 1024.
      * Use BatchTranslateText for larger text.
      * </pre>
      *
@@ -1792,11 +1807,10 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If missing, the system decides which google base model to use.
+     * If not provided, the default Google model (NMT) will be used.
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1822,11 +1836,10 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If missing, the system decides which google base model to use.
+     * If not provided, the default Google model (NMT) will be used.
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1853,11 +1866,10 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If missing, the system decides which google base model to use.
+     * If not provided, the default Google model (NMT) will be used.
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1882,11 +1894,10 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If missing, the system decides which google base model to use.
+     * If not provided, the default Google model (NMT) will be used.
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1906,11 +1917,10 @@ private static final long serialVersionUID = 0L;
      *   `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}`
      * - General (built-in) models:
      *   `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
-     *   `projects/{project-number-or-id}/locations/{location-id}/models/general/base`
      * For global (non-regionalized) requests, use `location-id` `global`.
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-     * If missing, the system decides which google base model to use.
+     * If not provided, the default Google model (NMT) will be used.
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2135,7 +2145,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2162,7 +2173,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2179,7 +2191,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2201,7 +2214,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2231,7 +2245,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2259,7 +2274,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2280,7 +2296,8 @@ private static final long serialVersionUID = 0L;
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
-     * See https://cloud.google.com/translate/docs/labels for more information.
+     * See https://cloud.google.com/translate/docs/advanced/labels for more
+     * information.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>

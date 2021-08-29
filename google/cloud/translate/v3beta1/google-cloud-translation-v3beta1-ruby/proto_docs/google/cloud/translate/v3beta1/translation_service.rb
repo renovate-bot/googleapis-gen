@@ -1149,6 +1149,18 @@ module Google
         # @!attribute [rw] glossaries
         #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Translate::V3beta1::TranslateTextGlossaryConfig}]
         #     Optional. Glossaries to be applied. It's keyed by target language code.
+        # @!attribute [rw] format_conversions
+        #   @return [::Google::Protobuf::Map{::String => ::String}]
+        #     Optional. File format conversion map to be applied to all input files.
+        #     Map's key is the original mime_type. Map's value is the target mime_type of
+        #     translated documents.
+        #
+        #     Supported file format conversion includes:
+        #     - `application/pdf` to
+        #       `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+        #
+        #     If nothing specified, output files will be in the same format as the
+        #     original file.
         class BatchTranslateDocumentRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1167,6 +1179,15 @@ module Google
           # @!attribute [rw] value
           #   @return [::Google::Cloud::Translate::V3beta1::TranslateTextGlossaryConfig]
           class GlossariesEntry
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::String]
+          class FormatConversionsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
