@@ -34,6 +34,8 @@ from google.cloud.gkehub_v1alpha2.types.membership import ListMembershipsRespons
 from google.cloud.gkehub_v1alpha2.types.membership import Membership
 from google.cloud.gkehub_v1alpha2.types.membership import MembershipEndpoint
 from google.cloud.gkehub_v1alpha2.types.membership import MembershipState
+from google.cloud.gkehub_v1alpha2.types.membership import MultiCloudCluster
+from google.cloud.gkehub_v1alpha2.types.membership import OnPremCluster
 from google.cloud.gkehub_v1alpha2.types.membership import OperationMetadata
 from google.cloud.gkehub_v1alpha2.types.membership import ResourceManifest
 from google.cloud.gkehub_v1alpha2.types.membership import ResourceOptions
@@ -59,6 +61,8 @@ __all__ = ('GkeHubClient',
     'Membership',
     'MembershipEndpoint',
     'MembershipState',
+    'MultiCloudCluster',
+    'OnPremCluster',
     'OperationMetadata',
     'ResourceManifest',
     'ResourceOptions',

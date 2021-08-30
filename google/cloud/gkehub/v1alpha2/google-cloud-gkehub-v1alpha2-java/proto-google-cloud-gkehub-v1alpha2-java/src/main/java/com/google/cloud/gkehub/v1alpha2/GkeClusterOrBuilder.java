@@ -30,4 +30,15 @@ public interface GkeClusterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceLinkBytes();
+
+  /**
+   * <pre>
+   * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
+   * exists in the GKE Control Plane.
+   * </pre>
+   *
+   * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The clusterMissing.
+   */
+  boolean getClusterMissing();
 }

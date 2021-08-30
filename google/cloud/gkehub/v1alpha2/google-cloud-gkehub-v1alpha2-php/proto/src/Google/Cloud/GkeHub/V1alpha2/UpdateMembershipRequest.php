@@ -35,6 +35,8 @@ class UpdateMembershipRequest extends \Google\Protobuf\Internal\Message
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -58,6 +60,8 @@ class UpdateMembershipRequest extends \Google\Protobuf\Internal\Message
      *           If you are updating a map field, set the value of a key to null or empty
      *           string to delete the key from the map. It's not possible to update a key's
      *           value to the empty string.
+     *           If you specify the update_mask to be a special path "*", fully replaces all
+     *           user-modifiable fields to match `resource`.
      * }
      */
     public function __construct($data = NULL) {
@@ -136,6 +140,8 @@ class UpdateMembershipRequest extends \Google\Protobuf\Internal\Message
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\GkeHub\V1alpha2\Membership|null
@@ -162,6 +168,8 @@ class UpdateMembershipRequest extends \Google\Protobuf\Internal\Message
      * If you are updating a map field, set the value of a key to null or empty
      * string to delete the key from the map. It's not possible to update a key's
      * value to the empty string.
+     * If you specify the update_mask to be a special path "*", fully replaces all
+     * user-modifiable fields to match `resource`.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.Membership resource = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\GkeHub\V1alpha2\Membership $var

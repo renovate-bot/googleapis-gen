@@ -17,12 +17,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class MembershipEndpoint extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
-     *
-     * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.GkeCluster gke_cluster = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    protected $gke_cluster = null;
-    /**
      * Output only. Useful Kubernetes-specific metadata.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.KubernetesMetadata kubernetes_metadata = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,6 +34,7 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.KubernetesResource kubernetes_resource = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $kubernetes_resource = null;
+    protected $type;
 
     /**
      * Constructor.
@@ -48,7 +43,11 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\GkeHub\V1alpha2\GkeCluster $gke_cluster
-     *           Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     *           Optional. Specific information for a GKE-on-GCP cluster.
+     *     @type \Google\Cloud\GkeHub\V1alpha2\OnPremCluster $on_prem_cluster
+     *           Optional. Specific information for a GKE On-Prem cluster.
+     *     @type \Google\Cloud\GkeHub\V1alpha2\MultiCloudCluster $multi_cloud_cluster
+     *           Optional. Specific information for a GKE Multi-Cloud cluster.
      *     @type \Google\Cloud\GkeHub\V1alpha2\KubernetesMetadata $kubernetes_metadata
      *           Output only. Useful Kubernetes-specific metadata.
      *     @type \Google\Cloud\GkeHub\V1alpha2\KubernetesResource $kubernetes_resource
@@ -67,28 +66,23 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.GkeCluster gke_cluster = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Cloud\GkeHub\V1alpha2\GkeCluster|null
      */
     public function getGkeCluster()
     {
-        return isset($this->gke_cluster) ? $this->gke_cluster : null;
+        return $this->readOneof(1);
     }
 
     public function hasGkeCluster()
     {
-        return isset($this->gke_cluster);
-    }
-
-    public function clearGkeCluster()
-    {
-        unset($this->gke_cluster);
+        return $this->hasOneof(1);
     }
 
     /**
-     * Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+     * Optional. Specific information for a GKE-on-GCP cluster.
      *
      * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.GkeCluster gke_cluster = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Cloud\GkeHub\V1alpha2\GkeCluster $var
@@ -97,7 +91,69 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
     public function setGkeCluster($var)
     {
         GPBUtil::checkMessage($var, \Google\Cloud\GkeHub\V1alpha2\GkeCluster::class);
-        $this->gke_cluster = $var;
+        $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Optional. Specific information for a GKE On-Prem cluster.
+     *
+     * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.OnPremCluster on_prem_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Cloud\GkeHub\V1alpha2\OnPremCluster|null
+     */
+    public function getOnPremCluster()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasOnPremCluster()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Optional. Specific information for a GKE On-Prem cluster.
+     *
+     * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.OnPremCluster on_prem_cluster = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Cloud\GkeHub\V1alpha2\OnPremCluster $var
+     * @return $this
+     */
+    public function setOnPremCluster($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\GkeHub\V1alpha2\OnPremCluster::class);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     *
+     * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.MultiCloudCluster multi_cloud_cluster = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Cloud\GkeHub\V1alpha2\MultiCloudCluster|null
+     */
+    public function getMultiCloudCluster()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasMultiCloudCluster()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Optional. Specific information for a GKE Multi-Cloud cluster.
+     *
+     * Generated from protobuf field <code>.google.cloud.gkehub.v1alpha2.MultiCloudCluster multi_cloud_cluster = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Cloud\GkeHub\V1alpha2\MultiCloudCluster $var
+     * @return $this
+     */
+    public function setMultiCloudCluster($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\GkeHub\V1alpha2\MultiCloudCluster::class);
+        $this->writeOneof(5, $var);
 
         return $this;
     }
@@ -184,6 +240,14 @@ class MembershipEndpoint extends \Google\Protobuf\Internal\Message
         $this->kubernetes_resource = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->whichOneof("type");
     }
 
 }

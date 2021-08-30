@@ -146,7 +146,7 @@ func defaultCallOptions() *CallOptions {
 	}
 }
 
-// internalClient is an interface that defines the methods availaible from GKE Hub.
+// internalClient is an interface that defines the methods availaible from GKE Hub API.
 type internalClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -163,11 +163,17 @@ type internalClient interface {
 	InitializeHub(context.Context, *gkehubpb.InitializeHubRequest, ...gax.CallOption) (*gkehubpb.InitializeHubResponse, error)
 }
 
-// Client is a client for interacting with GKE Hub.
+// Client is a client for interacting with GKE Hub API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// GKE Hub CRUD API for the Membership resource.
-// The Membership service is currently only available in the global location.
+// The GKE Hub service handles the registration of many Kubernetes
+// clusters to Google Cloud, represented with the Membership resource.
+//
+// GKE Hub is currently only available in the global region.
+//
+// Membership management may be non-trivial: it is recommended to use one
+// of the Google-provided client libraries or tools where possible when working
+// with Membership resources.
 type Client struct {
 	// The internal transport-dependent client.
 	internalClient internalClient
@@ -213,7 +219,11 @@ func (c *Client) GetMembership(ctx context.Context, req *gkehubpb.GetMembershipR
 	return c.internalClient.GetMembership(ctx, req, opts...)
 }
 
-// CreateMembership adds a new Membership.
+// CreateMembership creates a new Membership.
+//
+// This is currently only supported for GKE clusters on Google Cloud.
+// To register other clusters, follow the instructions at
+// https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster (at https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster).
 func (c *Client) CreateMembership(ctx context.Context, req *gkehubpb.CreateMembershipRequest, opts ...gax.CallOption) (*CreateMembershipOperation, error) {
 	return c.internalClient.CreateMembership(ctx, req, opts...)
 }
@@ -225,6 +235,10 @@ func (c *Client) CreateMembershipOperation(name string) *CreateMembershipOperati
 }
 
 // DeleteMembership removes a Membership.
+//
+// This is currently only supported for GKE clusters on Google Cloud.
+// To unregister other clusters, follow the instructions at
+// https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster (at https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster).
 func (c *Client) DeleteMembership(ctx context.Context, req *gkehubpb.DeleteMembershipRequest, opts ...gax.CallOption) (*DeleteMembershipOperation, error) {
 	return c.internalClient.DeleteMembership(ctx, req, opts...)
 }
@@ -247,6 +261,9 @@ func (c *Client) UpdateMembershipOperation(name string) *UpdateMembershipOperati
 }
 
 // GenerateConnectManifest generates the manifest for deployment of the GKE connect agent.
+//
+// This method is used internally by Google-provided libraries.
+// Most clients should not need to call this method directly.
 func (c *Client) GenerateConnectManifest(ctx context.Context, req *gkehubpb.GenerateConnectManifestRequest, opts ...gax.CallOption) (*gkehubpb.GenerateConnectManifestResponse, error) {
 	return c.internalClient.GenerateConnectManifest(ctx, req, opts...)
 }
@@ -263,7 +280,7 @@ func (c *Client) InitializeHub(ctx context.Context, req *gkehubpb.InitializeHubR
 	return c.internalClient.InitializeHub(ctx, req, opts...)
 }
 
-// gRPCClient is a client for interacting with GKE Hub over gRPC transport.
+// gRPCClient is a client for interacting with GKE Hub API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type gRPCClient struct {
@@ -291,8 +308,14 @@ type gRPCClient struct {
 // NewClient creates a new gke hub client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// GKE Hub CRUD API for the Membership resource.
-// The Membership service is currently only available in the global location.
+// The GKE Hub service handles the registration of many Kubernetes
+// clusters to Google Cloud, represented with the Membership resource.
+//
+// GKE Hub is currently only available in the global region.
+//
+// Membership management may be non-trivial: it is recommended to use one
+// of the Google-provided client libraries or tools where possible when working
+// with Membership resources.
 func NewClient(ctx context.Context, opts ...option.ClientOption) (*Client, error) {
 	clientOpts := defaultGRPCClientOptions()
 	if newClientHook != nil {

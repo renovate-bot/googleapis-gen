@@ -5,21 +5,21 @@ package com.google.cloud.gkehub.v1alpha2;
 
 /**
  * <pre>
- * GkeCluster contains information specific to GKE clusters.
+ * MultiCloudCluster contains information specific to GKE Multi-Cloud clusters.
  * </pre>
  *
- * Protobuf type {@code google.cloud.gkehub.v1alpha2.GkeCluster}
+ * Protobuf type {@code google.cloud.gkehub.v1alpha2.MultiCloudCluster}
  */
-public final class GkeCluster extends
+public final class MultiCloudCluster extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1alpha2.GkeCluster)
-    GkeClusterOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1alpha2.MultiCloudCluster)
+    MultiCloudClusterOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GkeCluster.newBuilder() to construct.
-  private GkeCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MultiCloudCluster.newBuilder() to construct.
+  private MultiCloudCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GkeCluster() {
+  private MultiCloudCluster() {
     resourceLink_ = "";
   }
 
@@ -27,7 +27,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GkeCluster();
+    return new MultiCloudCluster();
   }
 
   @java.lang.Override
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GkeCluster(
+  private MultiCloudCluster(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -85,24 +85,25 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_descriptor;
+    return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_fieldAccessorTable
+    return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.gkehub.v1alpha2.GkeCluster.class, com.google.cloud.gkehub.v1alpha2.GkeCluster.Builder.class);
+            com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.class, com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.Builder.class);
   }
 
   public static final int RESOURCE_LINK_FIELD_NUMBER = 1;
   private volatile java.lang.Object resourceLink_;
   /**
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-   * Zonal clusters are also supported.
+   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+   * example:
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
    *
    * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -123,9 +124,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-   *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-   * Zonal clusters are also supported.
+   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+   * example:
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+   *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
    *
    * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -150,8 +152,9 @@ private static final long serialVersionUID = 0L;
   private boolean clusterMissing_;
   /**
    * <pre>
-   * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-   * exists in the GKE Control Plane.
+   * Output only. If cluster_missing is set then it denotes that
+   * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+   * no longer exists.
    * </pre>
    *
    * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -208,10 +211,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.gkehub.v1alpha2.GkeCluster)) {
+    if (!(obj instanceof com.google.cloud.gkehub.v1alpha2.MultiCloudCluster)) {
       return super.equals(obj);
     }
-    com.google.cloud.gkehub.v1alpha2.GkeCluster other = (com.google.cloud.gkehub.v1alpha2.GkeCluster) obj;
+    com.google.cloud.gkehub.v1alpha2.MultiCloudCluster other = (com.google.cloud.gkehub.v1alpha2.MultiCloudCluster) obj;
 
     if (!getResourceLink()
         .equals(other.getResourceLink())) return false;
@@ -238,69 +241,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(byte[] data)
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(java.io.InputStream input)
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseDelimitedFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster parseFrom(
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -313,7 +316,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.gkehub.v1alpha2.GkeCluster prototype) {
+  public static Builder newBuilder(com.google.cloud.gkehub.v1alpha2.MultiCloudCluster prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -330,29 +333,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * GkeCluster contains information specific to GKE clusters.
+   * MultiCloudCluster contains information specific to GKE Multi-Cloud clusters.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.gkehub.v1alpha2.GkeCluster}
+   * Protobuf type {@code google.cloud.gkehub.v1alpha2.MultiCloudCluster}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.gkehub.v1alpha2.GkeCluster)
-      com.google.cloud.gkehub.v1alpha2.GkeClusterOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.gkehub.v1alpha2.MultiCloudCluster)
+      com.google.cloud.gkehub.v1alpha2.MultiCloudClusterOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_descriptor;
+      return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_fieldAccessorTable
+      return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.gkehub.v1alpha2.GkeCluster.class, com.google.cloud.gkehub.v1alpha2.GkeCluster.Builder.class);
+              com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.class, com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.Builder.class);
     }
 
-    // Construct using com.google.cloud.gkehub.v1alpha2.GkeCluster.newBuilder()
+    // Construct using com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -380,17 +383,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_GkeCluster_descriptor;
+      return com.google.cloud.gkehub.v1alpha2.MembershipProto.internal_static_google_cloud_gkehub_v1alpha2_MultiCloudCluster_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.gkehub.v1alpha2.GkeCluster getDefaultInstanceForType() {
-      return com.google.cloud.gkehub.v1alpha2.GkeCluster.getDefaultInstance();
+    public com.google.cloud.gkehub.v1alpha2.MultiCloudCluster getDefaultInstanceForType() {
+      return com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.gkehub.v1alpha2.GkeCluster build() {
-      com.google.cloud.gkehub.v1alpha2.GkeCluster result = buildPartial();
+    public com.google.cloud.gkehub.v1alpha2.MultiCloudCluster build() {
+      com.google.cloud.gkehub.v1alpha2.MultiCloudCluster result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -398,8 +401,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.gkehub.v1alpha2.GkeCluster buildPartial() {
-      com.google.cloud.gkehub.v1alpha2.GkeCluster result = new com.google.cloud.gkehub.v1alpha2.GkeCluster(this);
+    public com.google.cloud.gkehub.v1alpha2.MultiCloudCluster buildPartial() {
+      com.google.cloud.gkehub.v1alpha2.MultiCloudCluster result = new com.google.cloud.gkehub.v1alpha2.MultiCloudCluster(this);
       result.resourceLink_ = resourceLink_;
       result.clusterMissing_ = clusterMissing_;
       onBuilt();
@@ -440,16 +443,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.gkehub.v1alpha2.GkeCluster) {
-        return mergeFrom((com.google.cloud.gkehub.v1alpha2.GkeCluster)other);
+      if (other instanceof com.google.cloud.gkehub.v1alpha2.MultiCloudCluster) {
+        return mergeFrom((com.google.cloud.gkehub.v1alpha2.MultiCloudCluster)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.gkehub.v1alpha2.GkeCluster other) {
-      if (other == com.google.cloud.gkehub.v1alpha2.GkeCluster.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.gkehub.v1alpha2.MultiCloudCluster other) {
+      if (other == com.google.cloud.gkehub.v1alpha2.MultiCloudCluster.getDefaultInstance()) return this;
       if (!other.getResourceLink().isEmpty()) {
         resourceLink_ = other.resourceLink_;
         onChanged();
@@ -472,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.v1alpha2.GkeCluster parsedMessage = null;
+      com.google.cloud.gkehub.v1alpha2.MultiCloudCluster parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gkehub.v1alpha2.GkeCluster) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.gkehub.v1alpha2.MultiCloudCluster) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -489,9 +492,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object resourceLink_ = "";
     /**
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
      *
      * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -511,9 +515,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
      *
      * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -534,9 +539,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
      *
      * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -555,9 +561,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
      *
      * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -571,9 +578,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      * </pre>
      *
      * <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -595,8 +603,9 @@ private static final long serialVersionUID = 0L;
     private boolean clusterMissing_ ;
     /**
      * <pre>
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that
+     * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     * no longer exists.
      * </pre>
      *
      * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -608,8 +617,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that
+     * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     * no longer exists.
      * </pre>
      *
      * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -624,8 +634,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that
+     * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     * no longer exists.
      * </pre>
      *
      * <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -650,41 +661,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.gkehub.v1alpha2.GkeCluster)
+    // @@protoc_insertion_point(builder_scope:google.cloud.gkehub.v1alpha2.MultiCloudCluster)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.gkehub.v1alpha2.GkeCluster)
-  private static final com.google.cloud.gkehub.v1alpha2.GkeCluster DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.gkehub.v1alpha2.MultiCloudCluster)
+  private static final com.google.cloud.gkehub.v1alpha2.MultiCloudCluster DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.gkehub.v1alpha2.GkeCluster();
+    DEFAULT_INSTANCE = new com.google.cloud.gkehub.v1alpha2.MultiCloudCluster();
   }
 
-  public static com.google.cloud.gkehub.v1alpha2.GkeCluster getDefaultInstance() {
+  public static com.google.cloud.gkehub.v1alpha2.MultiCloudCluster getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GkeCluster>
-      PARSER = new com.google.protobuf.AbstractParser<GkeCluster>() {
+  private static final com.google.protobuf.Parser<MultiCloudCluster>
+      PARSER = new com.google.protobuf.AbstractParser<MultiCloudCluster>() {
     @java.lang.Override
-    public GkeCluster parsePartialFrom(
+    public MultiCloudCluster parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GkeCluster(input, extensionRegistry);
+      return new MultiCloudCluster(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GkeCluster> parser() {
+  public static com.google.protobuf.Parser<MultiCloudCluster> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GkeCluster> getParserForType() {
+  public com.google.protobuf.Parser<MultiCloudCluster> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.gkehub.v1alpha2.GkeCluster getDefaultInstanceForType() {
+  public com.google.cloud.gkehub.v1alpha2.MultiCloudCluster getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

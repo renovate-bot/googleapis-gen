@@ -27,6 +27,8 @@ __protobuf__ = proto.module(
         'KubernetesResource',
         'ResourceOptions',
         'GkeCluster',
+        'OnPremCluster',
+        'MultiCloudCluster',
         'KubernetesMetadata',
         'Authority',
         'MembershipState',
@@ -206,8 +208,14 @@ class MembershipEndpoint(proto.Message):
 
     Attributes:
         gke_cluster (google.cloud.gkehub_v1alpha2.types.GkeCluster):
-            Optional. GKE-specific information. Only
-            present if this Membership is a GKE cluster.
+            Optional. Specific information for a GKE-on-
+            CP cluster.
+        on_prem_cluster (google.cloud.gkehub_v1alpha2.types.OnPremCluster):
+            Optional. Specific information for a GKE On-
+            rem cluster.
+        multi_cloud_cluster (google.cloud.gkehub_v1alpha2.types.MultiCloudCluster):
+            Optional. Specific information for a GKE
+            Multi-Cloud cluster.
         kubernetes_metadata (google.cloud.gkehub_v1alpha2.types.KubernetesMetadata):
             Output only. Useful Kubernetes-specific
             metadata.
@@ -227,7 +235,20 @@ class MembershipEndpoint(proto.Message):
     gke_cluster = proto.Field(
         proto.MESSAGE,
         number=1,
+        oneof='type',
         message='GkeCluster',
+    )
+    on_prem_cluster = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='type',
+        message='OnPremCluster',
+    )
+    multi_cloud_cluster = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='type',
+        message='MultiCloudCluster',
     )
     kubernetes_metadata = proto.Field(
         proto.MESSAGE,
@@ -342,11 +363,85 @@ class GkeCluster(proto.Message):
                 //container.googleapis.com/projects/my-
             project/locations/us-west1-a/clusters/my-cluster
             Zonal clusters are also supported.
+        cluster_missing (bool):
+            Output only. If cluster_missing is set then it denotes that
+            the GKE cluster no longer exists in the GKE Control Plane.
     """
 
     resource_link = proto.Field(
         proto.STRING,
         number=1,
+    )
+    cluster_missing = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+
+
+class OnPremCluster(proto.Message):
+    r"""OnPremCluster contains information specific to GKE On-Prem
+    clusters.
+
+    Attributes:
+        resource_link (str):
+            Immutable. Self-link of the GCP resource for
+            the GKE On-Prem cluster. For example:
+             //gkeonprem.googleapis.com/projects/my-
+            project/locations/us-west1-a/vmwareClusters/my-
+            cluster  //gkeonprem.googleapis.com/projects/my-
+            project/locations/us-
+            west1-a/bareMetalClusters/my-cluster
+        cluster_missing (bool):
+            Output only. If cluster_missing is set then it denotes that
+            API(gkeonprem.googleapis.com) resource for this GKE On-Prem
+            cluster no longer exists.
+        admin_cluster (bool):
+            Immutable. Whether the cluster is an admin
+            cluster.
+    """
+
+    resource_link = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    cluster_missing = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    admin_cluster = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+
+
+class MultiCloudCluster(proto.Message):
+    r"""MultiCloudCluster contains information specific to GKE Multi-
+    loud clusters.
+
+    Attributes:
+        resource_link (str):
+            Immutable. Self-link of the GCP resource for
+            the GKE Multi-Cloud cluster. For example:
+
+             //gkemulticloud.googleapis.com/projects/my-
+            project/locations/us-west1-a/awsClusters/my-
+            cluster
+            //gkemulticloud.googleapis.com/projects/my-
+            project/locations/us-west1-a/azureClusters/my-
+            cluster
+        cluster_missing (bool):
+            Output only. If cluster_missing is set then it denotes that
+            API(gkemulticloud.googleapis.com) resource for this GKE
+            Multi-Cloud cluster no longer exists.
+    """
+
+    resource_link = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    cluster_missing = proto.Field(
+        proto.BOOL,
+        number=2,
     )
 
 
@@ -674,7 +769,9 @@ class UpdateMembershipRequest(proto.Message):
             its value here that field will be deleted. If you are
             updating a map field, set the value of a key to null or
             empty string to delete the key from the map. It's not
-            possible to update a key's value to the empty string.
+            possible to update a key's value to the empty string. If you
+            specify the update_mask to be a special path "*", fully
+            replaces all user-modifiable fields to match ``resource``.
     """
 
     name = proto.Field(

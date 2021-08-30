@@ -35,9 +35,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :MULTI_CLOUD, 2
     end
     add_message "google.cloud.gkehub.v1alpha2.MembershipEndpoint" do
-      optional :gke_cluster, :message, 1, "google.cloud.gkehub.v1alpha2.GkeCluster"
       optional :kubernetes_metadata, :message, 2, "google.cloud.gkehub.v1alpha2.KubernetesMetadata"
       optional :kubernetes_resource, :message, 3, "google.cloud.gkehub.v1alpha2.KubernetesResource"
+      oneof :type do
+        optional :gke_cluster, :message, 1, "google.cloud.gkehub.v1alpha2.GkeCluster"
+        optional :on_prem_cluster, :message, 4, "google.cloud.gkehub.v1alpha2.OnPremCluster"
+        optional :multi_cloud_cluster, :message, 5, "google.cloud.gkehub.v1alpha2.MultiCloudCluster"
+      end
     end
     add_message "google.cloud.gkehub.v1alpha2.KubernetesResource" do
       optional :membership_cr_manifest, :string, 1
@@ -51,6 +55,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.gkehub.v1alpha2.GkeCluster" do
       optional :resource_link, :string, 1
+      optional :cluster_missing, :bool, 2
+    end
+    add_message "google.cloud.gkehub.v1alpha2.OnPremCluster" do
+      optional :resource_link, :string, 1
+      optional :cluster_missing, :bool, 2
+      optional :admin_cluster, :bool, 3
+    end
+    add_message "google.cloud.gkehub.v1alpha2.MultiCloudCluster" do
+      optional :resource_link, :string, 1
+      optional :cluster_missing, :bool, 2
     end
     add_message "google.cloud.gkehub.v1alpha2.KubernetesMetadata" do
       optional :kubernetes_api_server_version, :string, 1
@@ -158,6 +172,8 @@ module Google
         KubernetesResource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.KubernetesResource").msgclass
         ResourceOptions = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.ResourceOptions").msgclass
         GkeCluster = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.GkeCluster").msgclass
+        OnPremCluster = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.OnPremCluster").msgclass
+        MultiCloudCluster = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.MultiCloudCluster").msgclass
         KubernetesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.KubernetesMetadata").msgclass
         Authority = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.Authority").msgclass
         MembershipState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.gkehub.v1alpha2.MembershipState").msgclass

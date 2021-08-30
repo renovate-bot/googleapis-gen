@@ -75,9 +75,15 @@ class GkeHubClientMeta(type):
 
 
 class GkeHubClient(metaclass=GkeHubClientMeta):
-    """GKE Hub CRUD API for the Membership resource.
-    The Membership service is currently only available in the global
-    location.
+    """The GKE Hub service handles the registration of many Kubernetes
+    clusters to Google Cloud, represented with the
+    [Membership][google.cloud.gkehub.v1alpha2.Membership] resource.
+
+    GKE Hub is currently only available in the global region.
+
+    **Membership management may be non-trivial:** it is recommended to
+    use one of the Google-provided client libraries or tools where
+    possible when working with Membership resources.
     """
 
     @staticmethod
@@ -515,7 +521,11 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
-        r"""Adds a new Membership.
+        r"""Creates a new Membership.
+
+        **This is currently only supported for GKE clusters on Google
+        Cloud**. To register other clusters, follow the instructions at
+        https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
 
         Args:
             request (google.cloud.gkehub_v1alpha2.types.CreateMembershipRequest):
@@ -629,6 +639,11 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
         r"""Removes a Membership.
+
+        **This is currently only supported for GKE clusters on Google
+        Cloud**. To unregister other clusters, follow the instructions
+        at
+        https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
 
         Args:
             request (google.cloud.gkehub_v1alpha2.types.DeleteMembershipRequest):
@@ -746,7 +761,9 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
                 If you are updating a map field, set the value of a key
                 to null or empty string to delete the key from the map.
                 It's not possible to update a key's value to the empty
-                string.
+                string. If you specify the update_mask to be a special
+                path "*", fully replaces all user-modifiable fields to
+                match ``resource``.
 
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -832,8 +849,10 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> membership.GenerateConnectManifestResponse:
-        r"""Generates the manifest for deployment of the GKE
-        connect agent.
+        r"""Generates the manifest for deployment of the GKE connect agent.
+
+        **This method is used internally by Google-provided libraries.**
+        Most clients should not need to call this method directly.
 
         Args:
             request (google.cloud.gkehub_v1alpha2.types.GenerateConnectManifestRequest):

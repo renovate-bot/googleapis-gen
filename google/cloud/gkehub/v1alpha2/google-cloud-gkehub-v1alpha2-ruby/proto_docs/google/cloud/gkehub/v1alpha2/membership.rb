@@ -125,7 +125,13 @@ module Google
         # endpoint and any additional Kubernetes metadata.
         # @!attribute [rw] gke_cluster
         #   @return [::Google::Cloud::GkeHub::V1alpha2::GkeCluster]
-        #     Optional. GKE-specific information. Only present if this Membership is a GKE cluster.
+        #     Optional. Specific information for a GKE-on-GCP cluster.
+        # @!attribute [rw] on_prem_cluster
+        #   @return [::Google::Cloud::GkeHub::V1alpha2::OnPremCluster]
+        #     Optional. Specific information for a GKE On-Prem cluster.
+        # @!attribute [rw] multi_cloud_cluster
+        #   @return [::Google::Cloud::GkeHub::V1alpha2::MultiCloudCluster]
+        #     Optional. Specific information for a GKE Multi-Cloud cluster.
         # @!attribute [r] kubernetes_metadata
         #   @return [::Google::Cloud::GkeHub::V1alpha2::KubernetesMetadata]
         #     Output only. Useful Kubernetes-specific metadata.
@@ -208,7 +214,49 @@ module Google
         #         //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
         #
         #     Zonal clusters are also supported.
+        # @!attribute [r] cluster_missing
+        #   @return [::Boolean]
+        #     Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
+        #     exists in the GKE Control Plane.
         class GkeCluster
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # OnPremCluster contains information specific to GKE On-Prem clusters.
+        # @!attribute [rw] resource_link
+        #   @return [::String]
+        #     Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
+        #
+        #      //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
+        #      //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
+        # @!attribute [r] cluster_missing
+        #   @return [::Boolean]
+        #     Output only. If cluster_missing is set then it denotes that
+        #     API(gkeonprem.googleapis.com) resource for this GKE On-Prem cluster no
+        #     longer exists.
+        # @!attribute [rw] admin_cluster
+        #   @return [::Boolean]
+        #     Immutable. Whether the cluster is an admin cluster.
+        class OnPremCluster
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # MultiCloudCluster contains information specific to GKE Multi-Cloud clusters.
+        # @!attribute [rw] resource_link
+        #   @return [::String]
+        #     Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+        #     example:
+        #
+        #      //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+        #      //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
+        # @!attribute [r] cluster_missing
+        #   @return [::Boolean]
+        #     Output only. If cluster_missing is set then it denotes that
+        #     API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+        #     no longer exists.
+        class MultiCloudCluster
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
@@ -438,6 +486,8 @@ module Google
         #     If you are updating a map field, set the value of a key to null or empty
         #     string to delete the key from the map. It's not possible to update a key's
         #     value to the empty string.
+        #     If you specify the update_mask to be a special path "*", fully replaces all
+        #     user-modifiable fields to match `resource`.
         class UpdateMembershipRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

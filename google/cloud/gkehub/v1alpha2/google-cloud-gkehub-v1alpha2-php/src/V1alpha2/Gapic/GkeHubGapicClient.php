@@ -54,8 +54,14 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: GKE Hub CRUD API for the Membership resource.
- * The Membership service is currently only available in the global location.
+ * Service Description: The GKE Hub service handles the registration of many Kubernetes
+ * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1alpha2.Membership] resource.
+ *
+ * GKE Hub is currently only available in the global region.
+ *
+ * **Membership management may be non-trivial:** it is recommended to use one
+ * of the Google-provided client libraries or tools where possible when working
+ * with Membership resources.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -373,7 +379,11 @@ class GkeHubGapicClient
     }
 
     /**
-     * Adds a new Membership.
+     * Creates a new Membership.
+     *
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
      *
      * Sample code:
      * ```
@@ -457,6 +467,10 @@ class GkeHubGapicClient
     /**
      * Removes a Membership.
      *
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+     *
      * Sample code:
      * ```
      * $gkeHubClient = new GkeHubClient();
@@ -522,6 +536,9 @@ class GkeHubGapicClient
 
     /**
      * Generates the manifest for deployment of the GKE connect agent.
+     *
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
      *
      * Sample code:
      * ```
@@ -856,6 +873,8 @@ class GkeHubGapicClient
      *                                 If you are updating a map field, set the value of a key to null or empty
      *                                 string to delete the key from the map. It's not possible to update a key's
      *                                 value to the empty string.
+     *                                 If you specify the update_mask to be a special path "*", fully replaces all
+     *                                 user-modifiable fields to match `resource`.
      * @param array      $optionalArgs {
      *     Optional.
      *

@@ -24,8 +24,14 @@ using grpc = global::Grpc.Core;
 
 namespace Google.Cloud.GkeHub.V1Alpha2 {
   /// <summary>
-  /// GKE Hub CRUD API for the Membership resource.
-  /// The Membership service is currently only available in the global location.
+  /// The GKE Hub service handles the registration of many Kubernetes
+  /// clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1alpha2.Membership] resource.
+  ///
+  /// GKE Hub is currently only available in the global region.
+  ///
+  /// **Membership management may be non-trivial:** it is recommended to use one
+  /// of the Google-provided client libraries or tools where possible when working
+  /// with Membership resources.
   /// </summary>
   public static partial class GkeHub
   {
@@ -156,7 +162,11 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
 
       /// <summary>
-      /// Adds a new Membership.
+      /// Creates a new Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To register other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -168,6 +178,10 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
 
       /// <summary>
       /// Removes a Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To unregister other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -190,6 +204,9 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
 
       /// <summary>
       /// Generates the manifest for deployment of the GKE connect agent.
+      ///
+      /// **This method is used internally by Google-provided libraries.**
+      /// Most clients should not need to call this method directly.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -331,7 +348,11 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
         return CallInvoker.AsyncUnaryCall(__Method_GetMembership, null, options, request);
       }
       /// <summary>
-      /// Adds a new Membership.
+      /// Creates a new Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To register other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -343,7 +364,11 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
         return CreateMembership(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Adds a new Membership.
+      /// Creates a new Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To register other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -353,7 +378,11 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateMembership, null, options, request);
       }
       /// <summary>
-      /// Adds a new Membership.
+      /// Creates a new Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To register other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -365,7 +394,11 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
         return CreateMembershipAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Adds a new Membership.
+      /// Creates a new Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To register other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -376,6 +409,10 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Removes a Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To unregister other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -388,6 +425,10 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Removes a Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To unregister other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -398,6 +439,10 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Removes a Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To unregister other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -410,6 +455,10 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Removes a Membership.
+      ///
+      /// **This is currently only supported for GKE clusters on Google Cloud**.
+      /// To unregister other clusters, follow the instructions at
+      /// https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -464,6 +513,9 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Generates the manifest for deployment of the GKE connect agent.
+      ///
+      /// **This method is used internally by Google-provided libraries.**
+      /// Most clients should not need to call this method directly.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -476,6 +528,9 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Generates the manifest for deployment of the GKE connect agent.
+      ///
+      /// **This method is used internally by Google-provided libraries.**
+      /// Most clients should not need to call this method directly.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -486,6 +541,9 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Generates the manifest for deployment of the GKE connect agent.
+      ///
+      /// **This method is used internally by Google-provided libraries.**
+      /// Most clients should not need to call this method directly.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -498,6 +556,9 @@ namespace Google.Cloud.GkeHub.V1Alpha2 {
       }
       /// <summary>
       /// Generates the manifest for deployment of the GKE connect agent.
+      ///
+      /// **This method is used internally by Google-provided libraries.**
+      /// Most clients should not need to call this method directly.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

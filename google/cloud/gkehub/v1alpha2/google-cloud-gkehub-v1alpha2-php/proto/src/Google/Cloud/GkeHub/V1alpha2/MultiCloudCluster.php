@@ -9,23 +9,25 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * GkeCluster contains information specific to GKE clusters.
+ * MultiCloudCluster contains information specific to GKE Multi-Cloud clusters.
  *
- * Generated from protobuf message <code>google.cloud.gkehub.v1alpha2.GkeCluster</code>
+ * Generated from protobuf message <code>google.cloud.gkehub.v1alpha2.MultiCloudCluster</code>
  */
-class GkeCluster extends \Google\Protobuf\Internal\Message
+class MultiCloudCluster extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      *
      * Generated from protobuf field <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $resource_link = '';
     /**
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that
+     * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     * no longer exists.
      *
      * Generated from protobuf field <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -38,12 +40,14 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource_link
-     *           Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *               //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     *           Zonal clusters are also supported.
+     *           Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     *           example:
+     *            //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *            //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      *     @type bool $cluster_missing
-     *           Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     *           exists in the GKE Control Plane.
+     *           Output only. If cluster_missing is set then it denotes that
+     *           API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     *           no longer exists.
      * }
      */
     public function __construct($data = NULL) {
@@ -52,9 +56,10 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      *
      * Generated from protobuf field <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
@@ -65,9 +70,10 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Self-link of the GCP resource for the GKE cluster. For example:
-     *     //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster
-     * Zonal clusters are also supported.
+     * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+     * example:
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
+     *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
      *
      * Generated from protobuf field <code>string resource_link = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
@@ -82,8 +88,9 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that
+     * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     * no longer exists.
      *
      * Generated from protobuf field <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
@@ -94,8 +101,9 @@ class GkeCluster extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. If cluster_missing is set then it denotes that the GKE cluster no longer
-     * exists in the GKE Control Plane.
+     * Output only. If cluster_missing is set then it denotes that
+     * API(gkemulticloud.googleapis.com) resource for this GKE Multi-Cloud cluster
+     * no longer exists.
      *
      * Generated from protobuf field <code>bool cluster_missing = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var

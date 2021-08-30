@@ -27,8 +27,14 @@ module Google
           ##
           # Client for the GkeHub service.
           #
-          # GKE Hub CRUD API for the Membership resource.
-          # The Membership service is currently only available in the global location.
+          # The GKE Hub service handles the registration of many Kubernetes
+          # clusters to Google Cloud, represented with the {::Google::Cloud::GkeHub::V1alpha2::Membership Membership} resource.
+          #
+          # GKE Hub is currently only available in the global region.
+          #
+          # **Membership management may be non-trivial:** it is recommended to use one
+          # of the Google-provided client libraries or tools where possible when working
+          # with Membership resources.
           #
           class Client
             include Paths
@@ -334,7 +340,11 @@ module Google
             end
 
             ##
-            # Adds a new Membership.
+            # Creates a new Membership.
+            #
+            # **This is currently only supported for GKE clusters on Google Cloud**.
+            # To register other clusters, follow the instructions at
+            # https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
             #
             # @overload create_membership(request, options = nil)
             #   Pass arguments to `create_membership` via a request object, either of type
@@ -417,6 +427,10 @@ module Google
 
             ##
             # Removes a Membership.
+            #
+            # **This is currently only supported for GKE clusters on Google Cloud**.
+            # To unregister other clusters, follow the instructions at
+            # https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
             #
             # @overload delete_membership(request, options = nil)
             #   Pass arguments to `delete_membership` via a request object, either of type
@@ -515,6 +529,8 @@ module Google
             #     If you are updating a map field, set the value of a key to null or empty
             #     string to delete the key from the map. It's not possible to update a key's
             #     value to the empty string.
+            #     If you specify the update_mask to be a special path "*", fully replaces all
+            #     user-modifiable fields to match `resource`.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -566,6 +582,9 @@ module Google
 
             ##
             # Generates the manifest for deployment of the GKE connect agent.
+            #
+            # **This method is used internally by Google-provided libraries.**
+            # Most clients should not need to call this method directly.
             #
             # @overload generate_connect_manifest(request, options = nil)
             #   Pass arguments to `generate_connect_manifest` via a request object, either of type

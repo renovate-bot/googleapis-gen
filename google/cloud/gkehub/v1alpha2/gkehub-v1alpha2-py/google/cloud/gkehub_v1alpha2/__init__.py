@@ -34,6 +34,8 @@ from .types.membership import ListMembershipsResponse
 from .types.membership import Membership
 from .types.membership import MembershipEndpoint
 from .types.membership import MembershipState
+from .types.membership import MultiCloudCluster
+from .types.membership import OnPremCluster
 from .types.membership import OperationMetadata
 from .types.membership import ResourceManifest
 from .types.membership import ResourceOptions
@@ -60,6 +62,8 @@ __all__ = (
 'Membership',
 'MembershipEndpoint',
 'MembershipState',
+'MultiCloudCluster',
+'OnPremCluster',
 'OperationMetadata',
 'ResourceManifest',
 'ResourceOptions',
