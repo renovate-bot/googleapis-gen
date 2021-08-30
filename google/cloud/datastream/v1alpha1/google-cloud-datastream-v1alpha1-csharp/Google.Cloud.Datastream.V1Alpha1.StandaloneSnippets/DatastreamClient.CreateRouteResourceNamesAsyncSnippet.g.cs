@@ -32,7 +32,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = await DatastreamClient.CreateAsync();
             // Initialize request argument(s)
-            PrivateConnectionName parent = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]");
+            PrivateConnectionName parent = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
             Route route = new Route();
             string routeId = "";
             // Make the request

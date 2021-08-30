@@ -30,7 +30,7 @@ class ::Google::Cloud::Datastream::V1alpha1::Datastream::ClientPathsTest < Minit
         config.credentials = grpc_channel
       end
 
-      path = client.connection_profile_path project: "value0", location: "value1", connectionProfile: "value2"
+      path = client.connection_profile_path project: "value0", location: "value1", connection_profile: "value2"
       assert_equal "projects/value0/locations/value1/connectionProfiles/value2", path
     end
   end
@@ -54,7 +54,7 @@ class ::Google::Cloud::Datastream::V1alpha1::Datastream::ClientPathsTest < Minit
         config.credentials = grpc_channel
       end
 
-      path = client.private_connection_path project: "value0", location: "value1", privateConnection: "value2"
+      path = client.private_connection_path project: "value0", location: "value1", private_connection: "value2"
       assert_equal "projects/value0/locations/value1/privateConnections/value2", path
     end
   end
@@ -66,7 +66,7 @@ class ::Google::Cloud::Datastream::V1alpha1::Datastream::ClientPathsTest < Minit
         config.credentials = grpc_channel
       end
 
-      path = client.route_path project: "value0", location: "value1", privateConnection: "value2", route: "value3"
+      path = client.route_path project: "value0", location: "value1", private_connection: "value2", route: "value3"
       assert_equal "projects/value0/locations/value1/privateConnections/value2/routes/value3", path
     end
   end

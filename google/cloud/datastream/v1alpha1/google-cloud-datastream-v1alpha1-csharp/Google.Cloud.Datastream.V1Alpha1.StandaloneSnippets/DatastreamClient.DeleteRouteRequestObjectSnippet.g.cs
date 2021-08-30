@@ -34,7 +34,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             DeleteRouteRequest request = new DeleteRouteRequest
             {
-                RouteName = RouteName.FromProjectLocationPrivateConnectionRoute("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]"),
+                RouteName = RouteName.FromProjectLocationPrivateConnectionRoute("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]"),
                 RequestId = "",
             };
             // Make the request

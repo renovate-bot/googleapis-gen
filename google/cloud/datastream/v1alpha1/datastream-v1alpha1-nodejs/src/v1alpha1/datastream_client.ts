@@ -157,19 +157,19 @@ export class DatastreamClient {
     // Create useful helper objects for these.
     this.pathTemplates = {
       connectionProfilePathTemplate: new this._gaxModule.PathTemplate(
-        'projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}'
+        'projects/{project}/locations/{location}/connectionProfiles/{connection_profile}'
       ),
       locationPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}'
       ),
       privateConnectionPathTemplate: new this._gaxModule.PathTemplate(
-        'projects/{project}/locations/{location}/privateConnections/{privateConnection}'
+        'projects/{project}/locations/{location}/privateConnections/{private_connection}'
       ),
       projectPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}'
       ),
       routePathTemplate: new this._gaxModule.PathTemplate(
-        'projects/{project}/locations/{location}/privateConnections/{privateConnection}/routes/{route}'
+        'projects/{project}/locations/{location}/privateConnections/{private_connection}/routes/{route}'
       ),
       streamPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/streams/{stream}'
@@ -3048,14 +3048,14 @@ export class DatastreamClient {
    *
    * @param {string} project
    * @param {string} location
-   * @param {string} connectionProfile
+   * @param {string} connection_profile
    * @returns {string} Resource name string.
    */
   connectionProfilePath(project:string,location:string,connectionProfile:string) {
     return this.pathTemplates.connectionProfilePathTemplate.render({
       project: project,
       location: location,
-      connectionProfile: connectionProfile,
+      connection_profile: connectionProfile,
     });
   }
 
@@ -3082,14 +3082,14 @@ export class DatastreamClient {
   }
 
   /**
-   * Parse the connectionProfile from ConnectionProfile resource.
+   * Parse the connection_profile from ConnectionProfile resource.
    *
    * @param {string} connectionProfileName
    *   A fully-qualified path representing ConnectionProfile resource.
-   * @returns {string} A string representing the connectionProfile.
+   * @returns {string} A string representing the connection_profile.
    */
   matchConnectionProfileFromConnectionProfileName(connectionProfileName: string) {
-    return this.pathTemplates.connectionProfilePathTemplate.match(connectionProfileName).connectionProfile;
+    return this.pathTemplates.connectionProfilePathTemplate.match(connectionProfileName).connection_profile;
   }
 
   /**
@@ -3133,14 +3133,14 @@ export class DatastreamClient {
    *
    * @param {string} project
    * @param {string} location
-   * @param {string} privateConnection
+   * @param {string} private_connection
    * @returns {string} Resource name string.
    */
   privateConnectionPath(project:string,location:string,privateConnection:string) {
     return this.pathTemplates.privateConnectionPathTemplate.render({
       project: project,
       location: location,
-      privateConnection: privateConnection,
+      private_connection: privateConnection,
     });
   }
 
@@ -3167,14 +3167,14 @@ export class DatastreamClient {
   }
 
   /**
-   * Parse the privateConnection from PrivateConnection resource.
+   * Parse the private_connection from PrivateConnection resource.
    *
    * @param {string} privateConnectionName
    *   A fully-qualified path representing PrivateConnection resource.
-   * @returns {string} A string representing the privateConnection.
+   * @returns {string} A string representing the private_connection.
    */
   matchPrivateConnectionFromPrivateConnectionName(privateConnectionName: string) {
-    return this.pathTemplates.privateConnectionPathTemplate.match(privateConnectionName).privateConnection;
+    return this.pathTemplates.privateConnectionPathTemplate.match(privateConnectionName).private_connection;
   }
 
   /**
@@ -3205,7 +3205,7 @@ export class DatastreamClient {
    *
    * @param {string} project
    * @param {string} location
-   * @param {string} privateConnection
+   * @param {string} private_connection
    * @param {string} route
    * @returns {string} Resource name string.
    */
@@ -3213,7 +3213,7 @@ export class DatastreamClient {
     return this.pathTemplates.routePathTemplate.render({
       project: project,
       location: location,
-      privateConnection: privateConnection,
+      private_connection: privateConnection,
       route: route,
     });
   }
@@ -3241,14 +3241,14 @@ export class DatastreamClient {
   }
 
   /**
-   * Parse the privateConnection from Route resource.
+   * Parse the private_connection from Route resource.
    *
    * @param {string} routeName
    *   A fully-qualified path representing Route resource.
-   * @returns {string} A string representing the privateConnection.
+   * @returns {string} A string representing the private_connection.
    */
   matchPrivateConnectionFromRouteName(routeName: string) {
-    return this.pathTemplates.routePathTemplate.match(routeName).privateConnection;
+    return this.pathTemplates.routePathTemplate.match(routeName).private_connection;
   }
 
   /**

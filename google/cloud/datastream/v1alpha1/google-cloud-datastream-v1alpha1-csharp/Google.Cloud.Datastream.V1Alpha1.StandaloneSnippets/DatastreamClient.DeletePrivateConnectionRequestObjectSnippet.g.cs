@@ -34,7 +34,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             DeletePrivateConnectionRequest request = new DeletePrivateConnectionRequest
             {
-                PrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]"),
+                PrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]"),
                 RequestId = "",
                 Force = false,
             };

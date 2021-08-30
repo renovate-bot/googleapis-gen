@@ -193,7 +193,7 @@ class DatastreamGapicClient
     private static function getConnectionProfileNameTemplate()
     {
         if (self::$connectionProfileNameTemplate == null) {
-            self::$connectionProfileNameTemplate = new PathTemplate('projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}');
+            self::$connectionProfileNameTemplate = new PathTemplate('projects/{project}/locations/{location}/connectionProfiles/{connection_profile}');
         }
 
         return self::$connectionProfileNameTemplate;
@@ -211,7 +211,7 @@ class DatastreamGapicClient
     private static function getPrivateConnectionNameTemplate()
     {
         if (self::$privateConnectionNameTemplate == null) {
-            self::$privateConnectionNameTemplate = new PathTemplate('projects/{project}/locations/{location}/privateConnections/{privateConnection}');
+            self::$privateConnectionNameTemplate = new PathTemplate('projects/{project}/locations/{location}/privateConnections/{private_connection}');
         }
 
         return self::$privateConnectionNameTemplate;
@@ -220,7 +220,7 @@ class DatastreamGapicClient
     private static function getRouteNameTemplate()
     {
         if (self::$routeNameTemplate == null) {
-            self::$routeNameTemplate = new PathTemplate('projects/{project}/locations/{location}/privateConnections/{privateConnection}/routes/{route}');
+            self::$routeNameTemplate = new PathTemplate('projects/{project}/locations/{location}/privateConnections/{private_connection}/routes/{route}');
         }
 
         return self::$routeNameTemplate;
@@ -267,7 +267,7 @@ class DatastreamGapicClient
         return self::getConnectionProfileNameTemplate()->render([
             'project' => $project,
             'location' => $location,
-            'connectionProfile' => $connectionProfile,
+            'connection_profile' => $connectionProfile,
         ]);
     }
 
@@ -307,7 +307,7 @@ class DatastreamGapicClient
         return self::getPrivateConnectionNameTemplate()->render([
             'project' => $project,
             'location' => $location,
-            'privateConnection' => $privateConnection,
+            'private_connection' => $privateConnection,
         ]);
     }
 
@@ -329,7 +329,7 @@ class DatastreamGapicClient
         return self::getRouteNameTemplate()->render([
             'project' => $project,
             'location' => $location,
-            'privateConnection' => $privateConnection,
+            'private_connection' => $privateConnection,
             'route' => $route,
         ]);
     }
@@ -359,10 +359,10 @@ class DatastreamGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
-     * - connectionProfile: projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}
+     * - connectionProfile: projects/{project}/locations/{location}/connectionProfiles/{connection_profile}
      * - location: projects/{project}/locations/{location}
-     * - privateConnection: projects/{project}/locations/{location}/privateConnections/{privateConnection}
-     * - route: projects/{project}/locations/{location}/privateConnections/{privateConnection}/routes/{route}
+     * - privateConnection: projects/{project}/locations/{location}/privateConnections/{private_connection}
+     * - route: projects/{project}/locations/{location}/privateConnections/{private_connection}/routes/{route}
      * - stream: projects/{project}/locations/{location}/streams/{stream}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
@@ -688,7 +688,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedParent = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+     *     $formattedParent = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATE_CONNECTION]');
      *     $routeId = 'route_id';
      *     $route = new Route();
      *     $operationResponse = $datastreamClient->createRoute($formattedParent, $routeId, $route);
@@ -883,7 +883,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTIONPROFILE]');
+     *     $formattedName = $datastreamClient->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTION_PROFILE]');
      *     $operationResponse = $datastreamClient->deleteConnectionProfile($formattedName);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
@@ -966,7 +966,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATE_CONNECTION]');
      *     $operationResponse = $datastreamClient->deletePrivateConnection($formattedName);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
@@ -1056,7 +1056,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
+     *     $formattedName = $datastreamClient->routeName('[PROJECT]', '[LOCATION]', '[PRIVATE_CONNECTION]', '[ROUTE]');
      *     $operationResponse = $datastreamClient->deleteRoute($formattedName);
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
@@ -1449,7 +1449,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTIONPROFILE]');
+     *     $formattedName = $datastreamClient->connectionProfileName('[PROJECT]', '[LOCATION]', '[CONNECTION_PROFILE]');
      *     $response = $datastreamClient->getConnectionProfile($formattedName);
      * } finally {
      *     $datastreamClient->close();
@@ -1491,7 +1491,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+     *     $formattedName = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATE_CONNECTION]');
      *     $response = $datastreamClient->getPrivateConnection($formattedName);
      * } finally {
      *     $datastreamClient->close();
@@ -1533,7 +1533,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedName = $datastreamClient->routeName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]', '[ROUTE]');
+     *     $formattedName = $datastreamClient->routeName('[PROJECT]', '[LOCATION]', '[PRIVATE_CONNECTION]', '[ROUTE]');
      *     $response = $datastreamClient->getRoute($formattedName);
      * } finally {
      *     $datastreamClient->close();
@@ -1786,7 +1786,7 @@ class DatastreamGapicClient
      * ```
      * $datastreamClient = new DatastreamClient();
      * try {
-     *     $formattedParent = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATECONNECTION]');
+     *     $formattedParent = $datastreamClient->privateConnectionName('[PROJECT]', '[LOCATION]', '[PRIVATE_CONNECTION]');
      *     // Iterate over pages of elements
      *     $pagedResponse = $datastreamClient->listRoutes($formattedParent);
      *     foreach ($pagedResponse->iteratePages() as $page) {

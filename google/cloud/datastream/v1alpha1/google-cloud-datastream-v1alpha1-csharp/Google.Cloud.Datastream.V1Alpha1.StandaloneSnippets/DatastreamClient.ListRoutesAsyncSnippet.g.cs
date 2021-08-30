@@ -34,7 +34,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = await DatastreamClient.CreateAsync();
             // Initialize request argument(s)
-            string parent = "projects/[PROJECT]/locations/[LOCATION]/privateConnections/[PRIVATECONNECTION]";
+            string parent = "projects/[PROJECT]/locations/[LOCATION]/privateConnections/[PRIVATE_CONNECTION]";
             // Make the request
             PagedAsyncEnumerable<ListRoutesResponse, Route> response = datastreamClient.ListRoutesAsync(parent);
 

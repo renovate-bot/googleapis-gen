@@ -3299,7 +3299,7 @@ describe('v1alpha1.DatastreamClient', () => {
             const expectedParameters = {
                 project: "projectValue",
                 location: "locationValue",
-                connectionProfile: "connectionProfileValue",
+                connection_profile: "connectionProfileValue",
             };
             const client = new datastreamModule.v1alpha1.DatastreamClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
@@ -3383,7 +3383,7 @@ describe('v1alpha1.DatastreamClient', () => {
             const expectedParameters = {
                 project: "projectValue",
                 location: "locationValue",
-                privateConnection: "privateConnectionValue",
+                private_connection: "privateConnectionValue",
             };
             const client = new datastreamModule.v1alpha1.DatastreamClient({
                 credentials: {client_email: 'bogus', private_key: 'bogus'},
@@ -3459,7 +3459,7 @@ describe('v1alpha1.DatastreamClient', () => {
             const expectedParameters = {
                 project: "projectValue",
                 location: "locationValue",
-                privateConnection: "privateConnectionValue",
+                private_connection: "privateConnectionValue",
                 route: "routeValue",
             };
             const client = new datastreamModule.v1alpha1.DatastreamClient({

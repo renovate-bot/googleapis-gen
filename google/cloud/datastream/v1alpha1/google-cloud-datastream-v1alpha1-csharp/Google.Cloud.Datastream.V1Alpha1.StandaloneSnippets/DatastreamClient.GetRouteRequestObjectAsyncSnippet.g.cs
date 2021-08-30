@@ -33,7 +33,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             GetRouteRequest request = new GetRouteRequest
             {
-                RouteName = RouteName.FromProjectLocationPrivateConnectionRoute("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]"),
+                RouteName = RouteName.FromProjectLocationPrivateConnectionRoute("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]"),
             };
             // Make the request
             Route response = await datastreamClient.GetRouteAsync(request);

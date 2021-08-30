@@ -35,7 +35,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             DeleteConnectionProfileRequest request = new DeleteConnectionProfileRequest
             {
-                ConnectionProfileName = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]"),
+                ConnectionProfileName = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]"),
                 RequestId = "",
             };
             // Make the request

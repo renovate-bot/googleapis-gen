@@ -33,7 +33,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             CreateRouteRequest request = new CreateRouteRequest
             {
-                ParentAsPrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]"),
+                ParentAsPrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]"),
                 RouteId = "",
                 Route = new Route(),
                 RequestId = "",

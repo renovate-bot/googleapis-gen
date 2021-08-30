@@ -32,7 +32,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = DatastreamClient.Create();
             // Initialize request argument(s)
-            ConnectionProfileName name = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]");
+            ConnectionProfileName name = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
             // Make the request
             Operation<Empty, OperationMetadata> response = datastreamClient.DeleteConnectionProfile(name);
 

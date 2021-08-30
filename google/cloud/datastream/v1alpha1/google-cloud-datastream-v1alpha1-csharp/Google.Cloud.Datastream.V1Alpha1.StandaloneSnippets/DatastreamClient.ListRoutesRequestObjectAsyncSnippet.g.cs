@@ -36,7 +36,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             ListRoutesRequest request = new ListRoutesRequest
             {
-                ParentAsPrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]"),
+                ParentAsPrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]"),
                 Filter = "",
                 OrderBy = "",
             };

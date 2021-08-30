@@ -32,7 +32,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Create client
             DatastreamClient datastreamClient = DatastreamClient.Create();
             // Initialize request argument(s)
-            RouteName name = RouteName.FromProjectLocationPrivateConnectionRoute("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]", "[ROUTE]");
+            RouteName name = RouteName.FromProjectLocationPrivateConnectionRoute("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]", "[ROUTE]");
             // Make the request
             Operation<Empty, OperationMetadata> response = datastreamClient.DeleteRoute(name);
 

@@ -32,7 +32,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             GetConnectionProfileRequest request = new GetConnectionProfileRequest
             {
-                ConnectionProfileName = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTIONPROFILE]"),
+                ConnectionProfileName = ConnectionProfileName.FromProjectLocationConnectionProfile("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]"),
             };
             // Make the request
             ConnectionProfile response = datastreamClient.GetConnectionProfile(request);

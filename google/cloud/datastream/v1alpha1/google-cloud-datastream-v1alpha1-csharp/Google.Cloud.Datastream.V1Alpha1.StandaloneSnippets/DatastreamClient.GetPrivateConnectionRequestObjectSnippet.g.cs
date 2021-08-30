@@ -32,7 +32,7 @@ namespace Google.Cloud.Datastream.V1Alpha1.Snippets
             // Initialize request argument(s)
             GetPrivateConnectionRequest request = new GetPrivateConnectionRequest
             {
-                PrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATECONNECTION]"),
+                PrivateConnectionName = PrivateConnectionName.FromProjectLocationPrivateConnection("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]"),
             };
             // Make the request
             PrivateConnection response = datastreamClient.GetPrivateConnection(request);

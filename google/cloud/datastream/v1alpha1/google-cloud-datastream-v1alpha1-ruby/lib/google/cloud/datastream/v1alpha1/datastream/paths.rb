@@ -29,18 +29,18 @@ module Google
             #
             # The resource will be in the following format:
             #
-            # `projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}`
+            # `projects/{project}/locations/{location}/connectionProfiles/{connection_profile}`
             #
             # @param project [String]
             # @param location [String]
-            # @param connectionProfile [String]
+            # @param connection_profile [String]
             #
             # @return [::String]
-            def connection_profile_path project:, location:, connectionProfile:
+            def connection_profile_path project:, location:, connection_profile:
               raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
               raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
-              "projects/#{project}/locations/#{location}/connectionProfiles/#{connectionProfile}"
+              "projects/#{project}/locations/#{location}/connectionProfiles/#{connection_profile}"
             end
 
             ##
@@ -65,18 +65,18 @@ module Google
             #
             # The resource will be in the following format:
             #
-            # `projects/{project}/locations/{location}/privateConnections/{privateConnection}`
+            # `projects/{project}/locations/{location}/privateConnections/{private_connection}`
             #
             # @param project [String]
             # @param location [String]
-            # @param privateConnection [String]
+            # @param private_connection [String]
             #
             # @return [::String]
-            def private_connection_path project:, location:, privateConnection:
+            def private_connection_path project:, location:, private_connection:
               raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
               raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
-              "projects/#{project}/locations/#{location}/privateConnections/#{privateConnection}"
+              "projects/#{project}/locations/#{location}/privateConnections/#{private_connection}"
             end
 
             ##
@@ -84,20 +84,20 @@ module Google
             #
             # The resource will be in the following format:
             #
-            # `projects/{project}/locations/{location}/privateConnections/{privateConnection}/routes/{route}`
+            # `projects/{project}/locations/{location}/privateConnections/{private_connection}/routes/{route}`
             #
             # @param project [String]
             # @param location [String]
-            # @param privateConnection [String]
+            # @param private_connection [String]
             # @param route [String]
             #
             # @return [::String]
-            def route_path project:, location:, privateConnection:, route:
+            def route_path project:, location:, private_connection:, route:
               raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
               raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
-              raise ::ArgumentError, "privateConnection cannot contain /" if privateConnection.to_s.include? "/"
+              raise ::ArgumentError, "private_connection cannot contain /" if private_connection.to_s.include? "/"
 
-              "projects/#{project}/locations/#{location}/privateConnections/#{privateConnection}/routes/#{route}"
+              "projects/#{project}/locations/#{location}/privateConnections/#{private_connection}/routes/#{route}"
             end
 
             ##
