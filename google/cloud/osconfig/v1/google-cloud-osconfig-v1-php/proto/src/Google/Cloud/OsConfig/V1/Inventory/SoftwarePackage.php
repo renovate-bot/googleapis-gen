@@ -54,6 +54,8 @@ class SoftwarePackage extends \Google\Protobuf\Internal\Message
      *           for info in Windows Quick Fix Engineering.
      *     @type \Google\Cloud\OsConfig\V1\Inventory\VersionedPackage $cos_package
      *           Details of a COS package.
+     *     @type \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication $windows_application
+     *           Details of a Windows Application
      * }
      */
     public function __construct($data = NULL) {
@@ -335,6 +337,37 @@ class SoftwarePackage extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\OsConfig\V1\Inventory\VersionedPackage::class);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Details of a Windows Application
+     *
+     * Generated from protobuf field <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     * @return \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication|null
+     */
+    public function getWindowsApplication()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasWindowsApplication()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Details of a Windows Application
+     *
+     * Generated from protobuf field <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
+     * @param \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication $var
+     * @return $this
+     */
+    public function setWindowsApplication($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication::class);
+        $this->writeOneof(9, $var);
 
         return $this;
     }
