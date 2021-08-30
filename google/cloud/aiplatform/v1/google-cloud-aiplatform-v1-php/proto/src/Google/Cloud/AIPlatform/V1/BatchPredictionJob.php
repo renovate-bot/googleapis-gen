@@ -90,6 +90,34 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     protected $manual_batch_tuning_parameters = null;
     /**
+     * Generate explanation with the batch prediction results.
+     * When set to `true`, the batch prediction output changes based on the
+     * `predictions_format` field of the
+     * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config] object:
+     *  * `bigquery`: output includes a column named `explanation`. The value
+     *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *  * `jsonl`: The JSON objects on each line include an additional entry
+     *    keyed `explanation`. The value of the entry is a JSON object that
+     *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *  * `csv`: Generating explanations for CSV format is not supported.
+     * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] or
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] must be populated.
+     *
+     * Generated from protobuf field <code>bool generate_explanation = 23;</code>
+     */
+    protected $generate_explanation = false;
+    /**
+     * Explanation configuration for this BatchPredictionJob. Can be
+     * specified only if [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation] is set to `true`.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
+     * the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] object is inherited.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 25;</code>
+     */
+    protected $explanation_spec = null;
+    /**
      * Output only. Information further describing the output of this job.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo output_info = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -223,6 +251,26 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      *           Immutable. Parameters configuring the batch behavior. Currently only applicable when
      *           [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      *           the tuning itself).
+     *     @type bool $generate_explanation
+     *           Generate explanation with the batch prediction results.
+     *           When set to `true`, the batch prediction output changes based on the
+     *           `predictions_format` field of the
+     *           [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config] object:
+     *            * `bigquery`: output includes a column named `explanation`. The value
+     *              is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *            * `jsonl`: The JSON objects on each line include an additional entry
+     *              keyed `explanation`. The value of the entry is a JSON object that
+     *              conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *            * `csv`: Generating explanations for CSV format is not supported.
+     *           If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] or
+     *           [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] must be populated.
+     *     @type \Google\Cloud\AIPlatform\V1\ExplanationSpec $explanation_spec
+     *           Explanation configuration for this BatchPredictionJob. Can be
+     *           specified only if [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation] is set to `true`.
+     *           This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     *           [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
+     *           [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
+     *           the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] object is inherited.
      *     @type \Google\Cloud\AIPlatform\V1\BatchPredictionJob\OutputInfo $output_info
      *           Output only. Information further describing the output of this job.
      *     @type int $state
@@ -570,6 +618,100 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\ManualBatchTuningParameters::class);
         $this->manual_batch_tuning_parameters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generate explanation with the batch prediction results.
+     * When set to `true`, the batch prediction output changes based on the
+     * `predictions_format` field of the
+     * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config] object:
+     *  * `bigquery`: output includes a column named `explanation`. The value
+     *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *  * `jsonl`: The JSON objects on each line include an additional entry
+     *    keyed `explanation`. The value of the entry is a JSON object that
+     *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *  * `csv`: Generating explanations for CSV format is not supported.
+     * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] or
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] must be populated.
+     *
+     * Generated from protobuf field <code>bool generate_explanation = 23;</code>
+     * @return bool
+     */
+    public function getGenerateExplanation()
+    {
+        return $this->generate_explanation;
+    }
+
+    /**
+     * Generate explanation with the batch prediction results.
+     * When set to `true`, the batch prediction output changes based on the
+     * `predictions_format` field of the
+     * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config] object:
+     *  * `bigquery`: output includes a column named `explanation`. The value
+     *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *  * `jsonl`: The JSON objects on each line include an additional entry
+     *    keyed `explanation`. The value of the entry is a JSON object that
+     *    conforms to the [Explanation][google.cloud.aiplatform.v1.Explanation] object.
+     *  * `csv`: Generating explanations for CSV format is not supported.
+     * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] or
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] must be populated.
+     *
+     * Generated from protobuf field <code>bool generate_explanation = 23;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGenerateExplanation($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->generate_explanation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Explanation configuration for this BatchPredictionJob. Can be
+     * specified only if [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation] is set to `true`.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
+     * the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] object is inherited.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 25;</code>
+     * @return \Google\Cloud\AIPlatform\V1\ExplanationSpec|null
+     */
+    public function getExplanationSpec()
+    {
+        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+    }
+
+    public function hasExplanationSpec()
+    {
+        return isset($this->explanation_spec);
+    }
+
+    public function clearExplanationSpec()
+    {
+        unset($this->explanation_spec);
+    }
+
+    /**
+     * Explanation configuration for this BatchPredictionJob. Can be
+     * specified only if [generate_explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation] is set to `true`.
+     * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
+     * the [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] object is inherited.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 25;</code>
+     * @param \Google\Cloud\AIPlatform\V1\ExplanationSpec $var
+     * @return $this
+     */
+    public function setExplanationSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\ExplanationSpec::class);
+        $this->explanation_spec = $var;
 
         return $this;
     }

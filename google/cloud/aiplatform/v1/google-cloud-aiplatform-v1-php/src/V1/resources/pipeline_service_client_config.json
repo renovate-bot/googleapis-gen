@@ -2,8 +2,7 @@
     "interfaces": {
         "google.cloud.aiplatform.v1.PipelineService": {
             "retry_codes": {
-                "no_retry_codes": [],
-                "no_retry_5_codes": []
+                "no_retry_codes": []
             },
             "retry_params": {
                 "no_retry_params": {
@@ -14,15 +13,6 @@
                     "rpc_timeout_multiplier": 1.0,
                     "max_rpc_timeout_millis": 0,
                     "total_timeout_millis": 0
-                },
-                "no_retry_5_params": {
-                    "initial_retry_delay_millis": 0,
-                    "retry_delay_multiplier": 0.0,
-                    "max_retry_delay_millis": 0,
-                    "initial_rpc_timeout_millis": 5000,
-                    "rpc_timeout_multiplier": 1.0,
-                    "max_rpc_timeout_millis": 5000,
-                    "total_timeout_millis": 5000
                 }
             },
             "methods": {
@@ -32,9 +22,9 @@
                     "retry_params_name": "no_retry_params"
                 },
                 "CancelTrainingPipeline": {
-                    "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_5_codes",
-                    "retry_params_name": "no_retry_5_params"
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "CreatePipelineJob": {
                     "timeout_millis": 60000,
@@ -42,9 +32,9 @@
                     "retry_params_name": "no_retry_params"
                 },
                 "CreateTrainingPipeline": {
-                    "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_5_codes",
-                    "retry_params_name": "no_retry_5_params"
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "DeletePipelineJob": {
                     "timeout_millis": 60000,
@@ -52,9 +42,9 @@
                     "retry_params_name": "no_retry_params"
                 },
                 "DeleteTrainingPipeline": {
-                    "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_5_codes",
-                    "retry_params_name": "no_retry_5_params"
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "GetPipelineJob": {
                     "timeout_millis": 60000,
@@ -62,9 +52,9 @@
                     "retry_params_name": "no_retry_params"
                 },
                 "GetTrainingPipeline": {
-                    "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_5_codes",
-                    "retry_params_name": "no_retry_5_params"
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "ListPipelineJobs": {
                     "timeout_millis": 60000,
@@ -72,9 +62,9 @@
                     "retry_params_name": "no_retry_params"
                 },
                 "ListTrainingPipelines": {
-                    "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_5_codes",
-                    "retry_params_name": "no_retry_5_params"
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 }
             }
         }

@@ -95,6 +95,20 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 12;</code>
      */
     protected $encryption_spec = null;
+    /**
+     * Output only. URIs for accessing [interactive
+     * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * (one URI for each training node). Only available if
+     * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+     * The keys are names of each node in the training job; for example,
+     * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+     * the second worker pool, and `workerpool1-1` for the second node in the
+     * second worker pool.
+     * The values are the URIs for each node's interactive shell.
+     *
+     * Generated from protobuf field <code>map<string, string> web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private $web_access_uris;
 
     /**
      * Constructor.
@@ -135,6 +149,16 @@ class CustomJob extends \Google\Protobuf\Internal\Message
      *           Customer-managed encryption key options for a CustomJob. If this is set,
      *           then all resources created by the CustomJob will be encrypted with the
      *           provided encryption key.
+     *     @type array|\Google\Protobuf\Internal\MapField $web_access_uris
+     *           Output only. URIs for accessing [interactive
+     *           shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     *           (one URI for each training node). Only available if
+     *           [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+     *           The keys are names of each node in the training job; for example,
+     *           `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+     *           the second worker pool, and `workerpool1-1` for the second node in the
+     *           second worker pool.
+     *           The values are the URIs for each node's interactive shell.
      * }
      */
     public function __construct($data = NULL) {
@@ -516,6 +540,48 @@ class CustomJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\EncryptionSpec::class);
         $this->encryption_spec = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. URIs for accessing [interactive
+     * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * (one URI for each training node). Only available if
+     * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+     * The keys are names of each node in the training job; for example,
+     * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+     * the second worker pool, and `workerpool1-1` for the second node in the
+     * second worker pool.
+     * The values are the URIs for each node's interactive shell.
+     *
+     * Generated from protobuf field <code>map<string, string> web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getWebAccessUris()
+    {
+        return $this->web_access_uris;
+    }
+
+    /**
+     * Output only. URIs for accessing [interactive
+     * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * (one URI for each training node). Only available if
+     * [job_spec.enable_web_access][google.cloud.aiplatform.v1.CustomJobSpec.enable_web_access] is `true`.
+     * The keys are names of each node in the training job; for example,
+     * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+     * the second worker pool, and `workerpool1-1` for the second node in the
+     * second worker pool.
+     * The values are the URIs for each node's interactive shell.
+     *
+     * Generated from protobuf field <code>map<string, string> web_access_uris = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setWebAccessUris($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->web_access_uris = $arr;
 
         return $this;
     }

@@ -103,6 +103,27 @@ module Google
             # [BatchPredictionJob.state][google.cloud.aiplatform.v1.BatchPredictionJob.state] is set to `CANCELLED`. Any files already
             # outputted by the job are not deleted.
             rpc :CancelBatchPredictionJob, ::Google::Cloud::AIPlatform::V1::CancelBatchPredictionJobRequest, ::Google::Protobuf::Empty
+            # Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+            # configured interval.
+            rpc :CreateModelDeploymentMonitoringJob, ::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest, ::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob
+            # Searches Model Monitoring Statistics generated within a given time window.
+            rpc :SearchModelDeploymentMonitoringStatsAnomalies, ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest, ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesResponse
+            # Gets a ModelDeploymentMonitoringJob.
+            rpc :GetModelDeploymentMonitoringJob, ::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest, ::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob
+            # Lists ModelDeploymentMonitoringJobs in a Location.
+            rpc :ListModelDeploymentMonitoringJobs, ::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest, ::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsResponse
+            # Updates a ModelDeploymentMonitoringJob.
+            rpc :UpdateModelDeploymentMonitoringJob, ::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest, ::Google::Longrunning::Operation
+            # Deletes a ModelDeploymentMonitoringJob.
+            rpc :DeleteModelDeploymentMonitoringJob, ::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest, ::Google::Longrunning::Operation
+            # Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+            # makes a best effort to cancel the job. Will mark
+            # [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+            rpc :PauseModelDeploymentMonitoringJob, ::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest, ::Google::Protobuf::Empty
+            # Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+            # next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+            # resumed.
+            rpc :ResumeModelDeploymentMonitoringJob, ::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest, ::Google::Protobuf::Empty
           end
 
           Stub = Service.rpc_stub_class

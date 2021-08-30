@@ -43,7 +43,7 @@ from .client import EndpointServiceClient
 
 
 class EndpointServiceAsyncClient:
-    """"""
+    """A service for managing Vertex AI's Endpoints."""
 
     _client: EndpointServiceClient
 
@@ -54,6 +54,8 @@ class EndpointServiceAsyncClient:
     parse_endpoint_path = staticmethod(EndpointServiceClient.parse_endpoint_path)
     model_path = staticmethod(EndpointServiceClient.model_path)
     parse_model_path = staticmethod(EndpointServiceClient.parse_model_path)
+    model_deployment_monitoring_job_path = staticmethod(EndpointServiceClient.model_deployment_monitoring_job_path)
+    parse_model_deployment_monitoring_job_path = staticmethod(EndpointServiceClient.parse_model_deployment_monitoring_job_path)
     common_billing_account_path = staticmethod(EndpointServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(EndpointServiceClient.parse_common_billing_account_path)
     common_folder_path = staticmethod(EndpointServiceClient.common_folder_path)
@@ -218,7 +220,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_endpoint,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -302,7 +304,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_endpoint,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -381,7 +383,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_endpoints,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -476,7 +478,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_endpoint,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -565,7 +567,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_endpoint,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -692,7 +694,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.deploy_model,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -810,7 +812,7 @@ class EndpointServiceAsyncClient:
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.undeploy_model,
-            default_timeout=5.0,
+            default_timeout=None,
             client_info=DEFAULT_CLIENT_INFO,
         )
 

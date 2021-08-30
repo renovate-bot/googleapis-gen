@@ -2955,8 +2955,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Config for migrating Dataset in datalabeling.googleapis.com to AI
-   * Platform's Dataset.
+   * Config for migrating Dataset in datalabeling.googleapis.com to Vertex
+   * AI's Dataset.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig}
@@ -4042,8 +4042,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Config for migrating Dataset in datalabeling.googleapis.com to AI
-     * Platform's Dataset.
+     * Config for migrating Dataset in datalabeling.googleapis.com to Vertex
+     * AI's Dataset.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig}

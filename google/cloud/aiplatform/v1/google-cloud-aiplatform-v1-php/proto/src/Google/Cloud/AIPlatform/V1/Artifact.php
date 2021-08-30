@@ -74,6 +74,37 @@ class Artifact extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Artifact.State state = 13;</code>
      */
     protected $state = 0;
+    /**
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_title = 14;</code>
+     */
+    protected $schema_title = '';
+    /**
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_version = 15;</code>
+     */
+    protected $schema_version = '';
+    /**
+     * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    protected $metadata = null;
+    /**
+     * Description of the Artifact
+     *
+     * Generated from protobuf field <code>string description = 17;</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -108,6 +139,21 @@ class Artifact extends \Google\Protobuf\Internal\Message
      *           not imply or capture any ongoing process. This property is managed by
      *           clients (such as Vertex Pipelines), and the system does not prescribe
      *           or check the validity of state transitions.
+     *     @type string $schema_title
+     *           The title of the schema describing the metadata.
+     *           Schema title and version is expected to be registered in earlier Create
+     *           Schema calls. And both are used together as unique identifiers to identify
+     *           schemas within the local metadata store.
+     *     @type string $schema_version
+     *           The version of the schema in schema_name to use.
+     *           Schema title and version is expected to be registered in earlier Create
+     *           Schema calls. And both are used together as unique identifiers to identify
+     *           schemas within the local metadata store.
+     *     @type \Google\Protobuf\Struct $metadata
+     *           Properties of the Artifact.
+     *           The size of this field should not exceed 200KB.
+     *     @type string $description
+     *           Description of the Artifact
      * }
      */
     public function __construct($data = NULL) {
@@ -361,6 +407,134 @@ class Artifact extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\AIPlatform\V1\Artifact\State::class);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_title = 14;</code>
+     * @return string
+     */
+    public function getSchemaTitle()
+    {
+        return $this->schema_title;
+    }
+
+    /**
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_title = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSchemaTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->schema_title = $var;
+
+        return $this;
+    }
+
+    /**
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_version = 15;</code>
+     * @return string
+     */
+    public function getSchemaVersion()
+    {
+        return $this->schema_version;
+    }
+
+    /**
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_version = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSchemaVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->schema_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getMetadata()
+    {
+        return isset($this->metadata) ? $this->metadata : null;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Description of the Artifact
+     *
+     * Generated from protobuf field <code>string description = 17;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Description of the Artifact
+     *
+     * Generated from protobuf field <code>string description = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

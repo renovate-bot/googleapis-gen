@@ -47,4 +47,43 @@ class PredictionServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Perform an online prediction with arbitrary http payload.
+     * @param \Google\Cloud\AIPlatform\V1\RawPredictRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RawPredict(\Google\Cloud\AIPlatform\V1\RawPredictRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PredictionService/RawPredict',
+        $argument,
+        ['\Google\Api\HttpBody', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Perform an online explanation.
+     *
+     * If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is specified,
+     * the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * populated. If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * populated. Only deployed AutoML tabular Models have
+     * explanation_spec.
+     * @param \Google\Cloud\AIPlatform\V1\ExplainRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function Explain(\Google\Cloud\AIPlatform\V1\ExplainRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.PredictionService/Explain',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1\ExplainResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

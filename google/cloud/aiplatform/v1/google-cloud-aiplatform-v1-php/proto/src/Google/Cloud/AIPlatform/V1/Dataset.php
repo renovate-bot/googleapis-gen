@@ -30,6 +30,12 @@ class Dataset extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
+     * Optional. The description of the Dataset.
+     *
+     * Generated from protobuf field <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $description = '';
+    /**
      * Required. Points to a YAML file stored on Google Cloud Storage describing additional
      * information about the Dataset.
      * The schema is defined as an OpenAPI 3.0.2 Schema Object.
@@ -100,6 +106,8 @@ class Dataset extends \Google\Protobuf\Internal\Message
      *           Required. The user-defined name of the Dataset.
      *           The name can be up to 128 characters long and can be consist of any UTF-8
      *           characters.
+     *     @type string $description
+     *           Optional. The description of the Dataset.
      *     @type string $metadata_schema_uri
      *           Required. Points to a YAML file stored on Google Cloud Storage describing additional
      *           information about the Dataset.
@@ -189,6 +197,32 @@ class Dataset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The description of the Dataset.
+     *
+     * Generated from protobuf field <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Optional. The description of the Dataset.
+     *
+     * Generated from protobuf field <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

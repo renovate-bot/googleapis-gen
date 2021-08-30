@@ -28,6 +28,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :error, :message, 10, "google.rpc.Status"
       map :labels, :string, :string, 11
       optional :encryption_spec, :message, 12, "google.cloud.aiplatform.v1.EncryptionSpec"
+      map :web_access_uris, :string, :string, 16
     end
     add_message "google.cloud.aiplatform.v1.CustomJobSpec" do
       repeated :worker_pool_specs, :message, 1, "google.cloud.aiplatform.v1.WorkerPoolSpec"
@@ -35,6 +36,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :service_account, :string, 4
       optional :network, :string, 5
       optional :base_output_directory, :message, 6, "google.cloud.aiplatform.v1.GcsDestination"
+      optional :enable_web_access, :bool, 10
     end
     add_message "google.cloud.aiplatform.v1.WorkerPoolSpec" do
       optional :machine_spec, :message, 1, "google.cloud.aiplatform.v1.MachineSpec"

@@ -20,6 +20,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 11, "google.protobuf.Timestamp"
       optional :update_time, :message, 12, "google.protobuf.Timestamp"
       optional :state, :enum, 13, "google.cloud.aiplatform.v1.Artifact.State"
+      optional :schema_title, :string, 14
+      optional :schema_version, :string, 15
+      optional :metadata, :message, 16, "google.protobuf.Struct"
+      optional :description, :string, 17
     end
     add_enum "google.cloud.aiplatform.v1.Artifact.State" do
       value :STATE_UNSPECIFIED, 0

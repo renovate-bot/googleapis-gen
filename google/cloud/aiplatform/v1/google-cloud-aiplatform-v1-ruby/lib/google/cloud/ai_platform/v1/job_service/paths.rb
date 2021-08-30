@@ -101,6 +101,25 @@ module Google
             end
 
             ##
+            # Create a fully-qualified Endpoint resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/endpoints/{endpoint}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param endpoint [String]
+            #
+            # @return [::String]
+            def endpoint_path project:, location:, endpoint:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/endpoints/#{endpoint}"
+            end
+
+            ##
             # Create a fully-qualified HyperparameterTuningJob resource string.
             #
             # The resource will be in the following format:
@@ -153,6 +172,25 @@ module Google
               raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
               "projects/#{project}/locations/#{location}/models/#{model}"
+            end
+
+            ##
+            # Create a fully-qualified ModelDeploymentMonitoringJob resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param model_deployment_monitoring_job [String]
+            #
+            # @return [::String]
+            def model_deployment_monitoring_job_path project:, location:, model_deployment_monitoring_job:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/modelDeploymentMonitoringJobs/#{model_deployment_monitoring_job}"
             end
 
             ##

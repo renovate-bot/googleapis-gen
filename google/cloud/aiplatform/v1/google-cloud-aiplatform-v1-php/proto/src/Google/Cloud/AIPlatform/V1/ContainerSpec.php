@@ -37,6 +37,7 @@ class ContainerSpec extends \Google\Protobuf\Internal\Message
     private $args;
     /**
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
      */
@@ -58,6 +59,7 @@ class ContainerSpec extends \Google\Protobuf\Internal\Message
      *           The arguments to be passed when starting the container.
      *     @type \Google\Cloud\AIPlatform\V1\EnvVar[]|\Google\Protobuf\Internal\RepeatedField $env
      *           Environment variables to be passed to the container.
+     *           Maximum limit is 100.
      * }
      */
     public function __construct($data = NULL) {
@@ -149,6 +151,7 @@ class ContainerSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -160,6 +163,7 @@ class ContainerSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
      * @param \Google\Cloud\AIPlatform\V1\EnvVar[]|\Google\Protobuf\Internal\RepeatedField $var

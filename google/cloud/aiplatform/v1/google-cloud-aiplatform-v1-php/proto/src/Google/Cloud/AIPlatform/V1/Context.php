@@ -65,6 +65,37 @@ class Context extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string parent_contexts = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     private $parent_contexts;
+    /**
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_title = 13;</code>
+     */
+    protected $schema_title = '';
+    /**
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_version = 14;</code>
+     */
+    protected $schema_version = '';
+    /**
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 15;</code>
+     */
+    protected $metadata = null;
+    /**
+     * Description of the Context
+     *
+     * Generated from protobuf field <code>string description = 16;</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -94,6 +125,21 @@ class Context extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $parent_contexts
      *           Output only. A list of resource names of Contexts that are parents of this Context.
      *           A Context may have at most 10 parent_contexts.
+     *     @type string $schema_title
+     *           The title of the schema describing the metadata.
+     *           Schema title and version is expected to be registered in earlier Create
+     *           Schema calls. And both are used together as unique identifiers to identify
+     *           schemas within the local metadata store.
+     *     @type string $schema_version
+     *           The version of the schema in schema_name to use.
+     *           Schema title and version is expected to be registered in earlier Create
+     *           Schema calls. And both are used together as unique identifiers to identify
+     *           schemas within the local metadata store.
+     *     @type \Google\Protobuf\Struct $metadata
+     *           Properties of the Context.
+     *           The size of this field should not exceed 200KB.
+     *     @type string $description
+     *           Description of the Context
      * }
      */
     public function __construct($data = NULL) {
@@ -315,6 +361,134 @@ class Context extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->parent_contexts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_title = 13;</code>
+     * @return string
+     */
+    public function getSchemaTitle()
+    {
+        return $this->schema_title;
+    }
+
+    /**
+     * The title of the schema describing the metadata.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_title = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSchemaTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->schema_title = $var;
+
+        return $this;
+    }
+
+    /**
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_version = 14;</code>
+     * @return string
+     */
+    public function getSchemaVersion()
+    {
+        return $this->schema_version;
+    }
+
+    /**
+     * The version of the schema in schema_name to use.
+     * Schema title and version is expected to be registered in earlier Create
+     * Schema calls. And both are used together as unique identifiers to identify
+     * schemas within the local metadata store.
+     *
+     * Generated from protobuf field <code>string schema_version = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSchemaVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->schema_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 15;</code>
+     * @return \Google\Protobuf\Struct|null
+     */
+    public function getMetadata()
+    {
+        return isset($this->metadata) ? $this->metadata : null;
+    }
+
+    public function hasMetadata()
+    {
+        return isset($this->metadata);
+    }
+
+    public function clearMetadata()
+    {
+        unset($this->metadata);
+    }
+
+    /**
+     * Properties of the Context.
+     * The size of this field should not exceed 200KB.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Struct metadata = 15;</code>
+     * @param \Google\Protobuf\Struct $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Description of the Context
+     *
+     * Generated from protobuf field <code>string description = 16;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Description of the Context
+     *
+     * Generated from protobuf field <code>string description = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

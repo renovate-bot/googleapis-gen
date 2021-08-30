@@ -23,27 +23,15 @@ class ListTrainingPipelinesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * Lists the PipelineJobs that match the filter expression. The following
-     * fields are supported:
-     * * `pipeline_name`: Supports `=` and `!=` comparisons.
-     * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `labels`: Supports key-value equality and key presence.
-     * Filter expressions can be combined together using logical operators
-     * (`AND` & `OR`).
-     * For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
-     * The syntax to define filter expression is based on
-     * https://google.aip.dev/160.
-     * Examples:
-     * * `create_time>"2021-05-18T00:00:00Z" OR
-     *   update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
-     *   after 2020-05-18 00:00:00 UTC.
-     * * `labels.env = "prod"`
-     *   PipelineJobs with label "env" set to "prod".
+     * The standard list filter.
+     * Supported fields:
+     *   * `display_name` supports = and !=.
+     *   * `state` supports = and !=.
+     * Some examples of using the filter are:
+     *  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *  * `NOT display_name="my_pipeline"`
+     *  * `state="PIPELINE_STATE_FAILED"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
@@ -80,27 +68,15 @@ class ListTrainingPipelinesRequest extends \Google\Protobuf\Internal\Message
      *           Required. The resource name of the Location to list the TrainingPipelines from.
      *           Format: `projects/{project}/locations/{location}`
      *     @type string $filter
-     *           Lists the PipelineJobs that match the filter expression. The following
-     *           fields are supported:
-     *           * `pipeline_name`: Supports `=` and `!=` comparisons.
-     *           * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *             Values must be in RFC 3339 format.
-     *           * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *             Values must be in RFC 3339 format.
-     *           * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *             Values must be in RFC 3339 format.
-     *           * `labels`: Supports key-value equality and key presence.
-     *           Filter expressions can be combined together using logical operators
-     *           (`AND` & `OR`).
-     *           For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
-     *           The syntax to define filter expression is based on
-     *           https://google.aip.dev/160.
-     *           Examples:
-     *           * `create_time>"2021-05-18T00:00:00Z" OR
-     *             update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
-     *             after 2020-05-18 00:00:00 UTC.
-     *           * `labels.env = "prod"`
-     *             PipelineJobs with label "env" set to "prod".
+     *           The standard list filter.
+     *           Supported fields:
+     *             * `display_name` supports = and !=.
+     *             * `state` supports = and !=.
+     *           Some examples of using the filter are:
+     *            * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *            * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *            * `NOT display_name="my_pipeline"`
+     *            * `state="PIPELINE_STATE_FAILED"`
      *     @type int $page_size
      *           The standard list page size.
      *     @type string $page_token
@@ -146,27 +122,15 @@ class ListTrainingPipelinesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Lists the PipelineJobs that match the filter expression. The following
-     * fields are supported:
-     * * `pipeline_name`: Supports `=` and `!=` comparisons.
-     * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `labels`: Supports key-value equality and key presence.
-     * Filter expressions can be combined together using logical operators
-     * (`AND` & `OR`).
-     * For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
-     * The syntax to define filter expression is based on
-     * https://google.aip.dev/160.
-     * Examples:
-     * * `create_time>"2021-05-18T00:00:00Z" OR
-     *   update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
-     *   after 2020-05-18 00:00:00 UTC.
-     * * `labels.env = "prod"`
-     *   PipelineJobs with label "env" set to "prod".
+     * The standard list filter.
+     * Supported fields:
+     *   * `display_name` supports = and !=.
+     *   * `state` supports = and !=.
+     * Some examples of using the filter are:
+     *  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *  * `NOT display_name="my_pipeline"`
+     *  * `state="PIPELINE_STATE_FAILED"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @return string
@@ -177,27 +141,15 @@ class ListTrainingPipelinesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Lists the PipelineJobs that match the filter expression. The following
-     * fields are supported:
-     * * `pipeline_name`: Supports `=` and `!=` comparisons.
-     * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
-     *   Values must be in RFC 3339 format.
-     * * `labels`: Supports key-value equality and key presence.
-     * Filter expressions can be combined together using logical operators
-     * (`AND` & `OR`).
-     * For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
-     * The syntax to define filter expression is based on
-     * https://google.aip.dev/160.
-     * Examples:
-     * * `create_time>"2021-05-18T00:00:00Z" OR
-     *   update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
-     *   after 2020-05-18 00:00:00 UTC.
-     * * `labels.env = "prod"`
-     *   PipelineJobs with label "env" set to "prod".
+     * The standard list filter.
+     * Supported fields:
+     *   * `display_name` supports = and !=.
+     *   * `state` supports = and !=.
+     * Some examples of using the filter are:
+     *  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *  * `NOT display_name="my_pipeline"`
+     *  * `state="PIPELINE_STATE_FAILED"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @param string $var

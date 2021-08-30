@@ -64,26 +64,6 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
-                default_config.rpcs.upload_model.timeout = 5.0
-
-                default_config.rpcs.get_model.timeout = 5.0
-
-                default_config.rpcs.list_models.timeout = 5.0
-
-                default_config.rpcs.update_model.timeout = 5.0
-
-                default_config.rpcs.delete_model.timeout = 5.0
-
-                default_config.rpcs.export_model.timeout = 5.0
-
-                default_config.rpcs.get_model_evaluation.timeout = 5.0
-
-                default_config.rpcs.list_model_evaluations.timeout = 5.0
-
-                default_config.rpcs.get_model_evaluation_slice.timeout = 5.0
-
-                default_config.rpcs.list_model_evaluation_slices.timeout = 5.0
-
                 default_config
               end
               yield @configure if block_given?

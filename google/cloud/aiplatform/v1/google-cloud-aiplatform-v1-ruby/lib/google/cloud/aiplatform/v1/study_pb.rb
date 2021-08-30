@@ -11,6 +11,20 @@ require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1/study.proto", :syntax => :proto3) do
+    add_message "google.cloud.aiplatform.v1.Study" do
+      optional :name, :string, 1
+      optional :display_name, :string, 2
+      optional :study_spec, :message, 3, "google.cloud.aiplatform.v1.StudySpec"
+      optional :state, :enum, 4, "google.cloud.aiplatform.v1.Study.State"
+      optional :create_time, :message, 5, "google.protobuf.Timestamp"
+      optional :inactive_reason, :string, 6
+    end
+    add_enum "google.cloud.aiplatform.v1.Study.State" do
+      value :STATE_UNSPECIFIED, 0
+      value :ACTIVE, 1
+      value :INACTIVE, 2
+      value :COMPLETED, 3
+    end
     add_message "google.cloud.aiplatform.v1.Trial" do
       optional :name, :string, 1
       optional :id, :string, 2
@@ -23,6 +37,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :client_id, :string, 9
       optional :infeasible_reason, :string, 10
       optional :custom_job, :string, 11
+      map :web_access_uris, :string, :string, 12
     end
     add_message "google.cloud.aiplatform.v1.Trial.Parameter" do
       optional :parameter_id, :string, 1
@@ -42,6 +57,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :algorithm, :enum, 3, "google.cloud.aiplatform.v1.StudySpec.Algorithm"
       optional :observation_noise, :enum, 6, "google.cloud.aiplatform.v1.StudySpec.ObservationNoise"
       optional :measurement_selection_type, :enum, 7, "google.cloud.aiplatform.v1.StudySpec.MeasurementSelectionType"
+      oneof :automated_stopping_spec do
+        optional :decay_curve_stopping_spec, :message, 4, "google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec"
+        optional :median_automated_stopping_spec, :message, 5, "google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec"
+      end
     end
     add_message "google.cloud.aiplatform.v1.StudySpec.MetricSpec" do
       optional :metric_id, :string, 1
@@ -104,6 +123,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :UNIT_LOG_SCALE, 2
       value :UNIT_REVERSE_LOG_SCALE, 3
     end
+    add_message "google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec" do
+      optional :use_elapsed_duration, :bool, 1
+    end
+    add_message "google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec" do
+      optional :use_elapsed_duration, :bool, 1
+    end
     add_enum "google.cloud.aiplatform.v1.StudySpec.Algorithm" do
       value :ALGORITHM_UNSPECIFIED, 0
       value :GRID_SEARCH, 2
@@ -135,6 +160,8 @@ module Google
   module Cloud
     module AIPlatform
       module V1
+        Study = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Study").msgclass
+        Study::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Study.State").enummodule
         Trial = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Trial").msgclass
         Trial::Parameter = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Trial.Parameter").msgclass
         Trial::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Trial.State").enummodule
@@ -151,6 +178,8 @@ module Google
         StudySpec::ParameterSpec::ConditionalParameterSpec::IntValueCondition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition").msgclass
         StudySpec::ParameterSpec::ConditionalParameterSpec::CategoricalValueCondition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition").msgclass
         StudySpec::ParameterSpec::ScaleType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.ParameterSpec.ScaleType").enummodule
+        StudySpec::DecayCurveAutomatedStoppingSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec").msgclass
+        StudySpec::MedianAutomatedStoppingSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec").msgclass
         StudySpec::Algorithm = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.Algorithm").enummodule
         StudySpec::ObservationNoise = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.ObservationNoise").enummodule
         StudySpec::MeasurementSelectionType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.StudySpec.MeasurementSelectionType").enummodule

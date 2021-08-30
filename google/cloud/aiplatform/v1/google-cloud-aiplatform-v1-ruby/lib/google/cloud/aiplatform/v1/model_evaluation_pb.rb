@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/aiplatform/v1/explanation_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
@@ -16,6 +17,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :metrics, :message, 3, "google.protobuf.Value"
       optional :create_time, :message, 4, "google.protobuf.Timestamp"
       repeated :slice_dimensions, :string, 5
+      optional :model_explanation, :message, 8, "google.cloud.aiplatform.v1.ModelExplanation"
     end
   end
 end

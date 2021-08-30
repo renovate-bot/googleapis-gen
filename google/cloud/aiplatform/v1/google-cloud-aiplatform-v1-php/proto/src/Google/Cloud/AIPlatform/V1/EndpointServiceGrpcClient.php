@@ -19,6 +19,7 @@
 namespace Google\Cloud\AIPlatform\V1;
 
 /**
+ * A service for managing Vertex AI's Endpoints.
  */
 class EndpointServiceGrpcClient extends \Grpc\BaseStub {
 

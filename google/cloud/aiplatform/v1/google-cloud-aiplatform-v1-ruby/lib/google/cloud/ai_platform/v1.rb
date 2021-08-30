@@ -18,6 +18,8 @@
 
 require "google/cloud/ai_platform/v1/dataset_service"
 require "google/cloud/ai_platform/v1/endpoint_service"
+require "google/cloud/ai_platform/v1/index_endpoint_service"
+require "google/cloud/ai_platform/v1/index_service"
 require "google/cloud/ai_platform/v1/job_service"
 require "google/cloud/ai_platform/v1/migration_service"
 require "google/cloud/ai_platform/v1/model_service"

@@ -9,6 +9,7 @@ require 'google/cloud/aiplatform/v1/dataset_pb'
 require 'google/cloud/aiplatform/v1/deployed_model_ref_pb'
 require 'google/cloud/aiplatform/v1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1/env_var_pb'
+require 'google/cloud/aiplatform/v1/explanation_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
@@ -31,6 +32,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 13, "google.protobuf.Timestamp"
       optional :update_time, :message, 14, "google.protobuf.Timestamp"
       repeated :deployed_models, :message, 15, "google.cloud.aiplatform.v1.DeployedModelRef"
+      optional :explanation_spec, :message, 23, "google.cloud.aiplatform.v1.ExplanationSpec"
       optional :etag, :string, 16
       map :labels, :string, :string, 17
       optional :encryption_spec, :message, 24, "google.cloud.aiplatform.v1.EncryptionSpec"

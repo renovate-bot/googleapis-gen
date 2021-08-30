@@ -71,6 +71,19 @@ module Google
         #     Customer-managed encryption key options for a CustomJob. If this is set,
         #     then all resources created by the CustomJob will be encrypted with the
         #     provided encryption key.
+        # @!attribute [r] web_access_uris
+        #   @return [::Google::Protobuf::Map{::String => ::String}]
+        #     Output only. URIs for accessing [interactive
+        #     shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+        #     (one URI for each training node). Only available if
+        #     {::Google::Cloud::AIPlatform::V1::CustomJobSpec#enable_web_access job_spec.enable_web_access} is `true`.
+        #
+        #     The keys are names of each node in the training job; for example,
+        #     `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+        #     the second worker pool, and `workerpool1-1` for the second node in the
+        #     second worker pool.
+        #
+        #     The values are the URIs for each node's interactive shell.
         class CustomJob
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -80,6 +93,15 @@ module Google
           # @!attribute [rw] value
           #   @return [::String]
           class LabelsEntry
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::String]
+          class WebAccessUrisEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
@@ -98,7 +120,7 @@ module Google
         #   @return [::String]
         #     Specifies the service account for workload run-as account.
         #     Users submitting jobs must have act-as permission on this run-as account.
-        #     If unspecified, the [AI Platform Custom Code Service
+        #     If unspecified, the [Vertex AI Custom Code Service
         #     Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
         #     for the CustomJob's project is used.
         # @!attribute [rw] network
@@ -136,6 +158,15 @@ module Google
         #       * AIP_MODEL_DIR = `<base_output_directory>/<trial_id>/model/`
         #       * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
         #       * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
+        # @!attribute [rw] enable_web_access
+        #   @return [::Boolean]
+        #     Optional. Whether you want Vertex AI to enable [interactive shell
+        #     access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+        #     to training containers.
+        #
+        #     If set to `true`, you can access interactive shells at the URIs given
+        #     by {::Google::Cloud::AIPlatform::V1::CustomJob#web_access_uris CustomJob.web_access_uris} or {::Google::Cloud::AIPlatform::V1::Trial#web_access_uris Trial.web_access_uris} (within
+        #     {::Google::Cloud::AIPlatform::V1::HyperparameterTuningJob#trials HyperparameterTuningJob.trials}).
         class CustomJobSpec
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -177,6 +208,7 @@ module Google
         # @!attribute [rw] env
         #   @return [::Array<::Google::Cloud::AIPlatform::V1::EnvVar>]
         #     Environment variables to be passed to the container.
+        #     Maximum limit is 100.
         class ContainerSpec
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -205,6 +237,7 @@ module Google
         # @!attribute [rw] env
         #   @return [::Array<::Google::Cloud::AIPlatform::V1::EnvVar>]
         #     Environment variables to be passed to the python module.
+        #     Maximum limit is 100.
         class PythonPackageSpec
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

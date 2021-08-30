@@ -7,10 +7,12 @@ require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1/completion_stats_pb'
 require 'google/cloud/aiplatform/v1/encryption_spec_pb'
+require 'google/cloud/aiplatform/v1/explanation_pb'
 require 'google/cloud/aiplatform/v1/io_pb'
 require 'google/cloud/aiplatform/v1/job_state_pb'
 require 'google/cloud/aiplatform/v1/machine_resources_pb'
 require 'google/cloud/aiplatform/v1/manual_batch_tuning_parameters_pb'
+require 'google/cloud/aiplatform/v1/model_monitoring_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/rpc/status_pb'
@@ -26,6 +28,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :output_config, :message, 6, "google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig"
       optional :dedicated_resources, :message, 7, "google.cloud.aiplatform.v1.BatchDedicatedResources"
       optional :manual_batch_tuning_parameters, :message, 8, "google.cloud.aiplatform.v1.ManualBatchTuningParameters"
+      optional :generate_explanation, :bool, 23
+      optional :explanation_spec, :message, 25, "google.cloud.aiplatform.v1.ExplanationSpec"
       optional :output_info, :message, 9, "google.cloud.aiplatform.v1.BatchPredictionJob.OutputInfo"
       optional :state, :enum, 10, "google.cloud.aiplatform.v1.JobState"
       optional :error, :message, 11, "google.rpc.Status"

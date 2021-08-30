@@ -73,6 +73,12 @@ module Google
         #     Customer-managed encryption key spec for an Endpoint. If set, this
         #     Endpoint and all sub-resources of this Endpoint will be secured by
         #     this key.
+        # @!attribute [r] model_deployment_monitoring_job
+        #   @return [::String]
+        #     Output only. Resource name of the Model Monitoring job associated with this Endpoint
+        #     if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
         class Endpoint
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -103,8 +109,8 @@ module Google
         #     that need a higher degree of manual configuration.
         # @!attribute [rw] automatic_resources
         #   @return [::Google::Cloud::AIPlatform::V1::AutomaticResources]
-        #     A description of resources that to large degree are decided by AI
-        #     Platform, and require only a modest additional configuration.
+        #     A description of resources that to large degree are decided by Vertex
+        #     AI, and require only a modest additional configuration.
         # @!attribute [r] id
         #   @return [::String]
         #     Output only. The ID of the DeployedModel.
@@ -119,6 +125,17 @@ module Google
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when the DeployedModel was created.
+        # @!attribute [rw] explanation_spec
+        #   @return [::Google::Cloud::AIPlatform::V1::ExplanationSpec]
+        #     Explanation configuration for this DeployedModel.
+        #
+        #     When deploying a Model using {::Google::Cloud::AIPlatform::V1::EndpointService::Client#deploy_model EndpointService.DeployModel}, this value
+        #     overrides the value of {::Google::Cloud::AIPlatform::V1::Model#explanation_spec Model.explanation_spec}. All fields of
+        #     {::Google::Cloud::AIPlatform::V1::DeployedModel#explanation_spec explanation_spec} are optional in the request. If a field of
+        #     {::Google::Cloud::AIPlatform::V1::DeployedModel#explanation_spec explanation_spec} is not populated, the value of the same field of
+        #     {::Google::Cloud::AIPlatform::V1::Model#explanation_spec Model.explanation_spec} is inherited. If the corresponding
+        #     {::Google::Cloud::AIPlatform::V1::Model#explanation_spec Model.explanation_spec} is not populated, all fields of the
+        #     {::Google::Cloud::AIPlatform::V1::DeployedModel#explanation_spec explanation_spec} will be used for the explanation configuration.
         # @!attribute [rw] service_account
         #   @return [::String]
         #     The service account that the DeployedModel's container runs as. Specify the

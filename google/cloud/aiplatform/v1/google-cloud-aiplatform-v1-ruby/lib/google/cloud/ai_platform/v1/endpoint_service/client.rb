@@ -27,6 +27,8 @@ module Google
           ##
           # Client for the EndpointService service.
           #
+          # A service for managing Vertex AI's Endpoints.
+          #
           class Client
             include Paths
 
@@ -61,20 +63,6 @@ module Google
                                   namespace.pop
                                 end
                 default_config = Client::Configuration.new parent_config
-
-                default_config.rpcs.create_endpoint.timeout = 5.0
-
-                default_config.rpcs.get_endpoint.timeout = 5.0
-
-                default_config.rpcs.list_endpoints.timeout = 5.0
-
-                default_config.rpcs.update_endpoint.timeout = 5.0
-
-                default_config.rpcs.delete_endpoint.timeout = 5.0
-
-                default_config.rpcs.deploy_model.timeout = 5.0
-
-                default_config.rpcs.undeploy_model.timeout = 5.0
 
                 default_config
               end

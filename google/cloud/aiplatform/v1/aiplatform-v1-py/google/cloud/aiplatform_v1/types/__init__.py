@@ -73,6 +73,9 @@ from .dataset_service import (
     ListDatasetsResponse,
     UpdateDatasetRequest,
 )
+from .deployed_index_ref import (
+    DeployedIndexRef,
+)
 from .deployed_model_ref import (
     DeployedModelRef,
 )
@@ -104,8 +107,63 @@ from .env_var import (
 from .execution import (
     Execution,
 )
+from .explanation import (
+    Attribution,
+    Explanation,
+    ExplanationMetadataOverride,
+    ExplanationParameters,
+    ExplanationSpec,
+    ExplanationSpecOverride,
+    FeatureNoiseSigma,
+    IntegratedGradientsAttribution,
+    ModelExplanation,
+    SampledShapleyAttribution,
+    SmoothGradConfig,
+    XraiAttribution,
+)
+from .explanation_metadata import (
+    ExplanationMetadata,
+)
+from .feature_monitoring_stats import (
+    FeatureStatsAnomaly,
+)
 from .hyperparameter_tuning_job import (
     HyperparameterTuningJob,
+)
+from .index import (
+    Index,
+)
+from .index_endpoint import (
+    DeployedIndex,
+    DeployedIndexAuthConfig,
+    IndexEndpoint,
+    IndexPrivateEndpoints,
+)
+from .index_endpoint_service import (
+    CreateIndexEndpointOperationMetadata,
+    CreateIndexEndpointRequest,
+    DeleteIndexEndpointRequest,
+    DeployIndexOperationMetadata,
+    DeployIndexRequest,
+    DeployIndexResponse,
+    GetIndexEndpointRequest,
+    ListIndexEndpointsRequest,
+    ListIndexEndpointsResponse,
+    UndeployIndexOperationMetadata,
+    UndeployIndexRequest,
+    UndeployIndexResponse,
+    UpdateIndexEndpointRequest,
+)
+from .index_service import (
+    CreateIndexOperationMetadata,
+    CreateIndexRequest,
+    DeleteIndexRequest,
+    GetIndexRequest,
+    ListIndexesRequest,
+    ListIndexesResponse,
+    NearestNeighborSearchOperationMetadata,
+    UpdateIndexOperationMetadata,
+    UpdateIndexRequest,
 )
 from .io import (
     BigQueryDestination,
@@ -123,14 +181,17 @@ from .job_service import (
     CreateCustomJobRequest,
     CreateDataLabelingJobRequest,
     CreateHyperparameterTuningJobRequest,
+    CreateModelDeploymentMonitoringJobRequest,
     DeleteBatchPredictionJobRequest,
     DeleteCustomJobRequest,
     DeleteDataLabelingJobRequest,
     DeleteHyperparameterTuningJobRequest,
+    DeleteModelDeploymentMonitoringJobRequest,
     GetBatchPredictionJobRequest,
     GetCustomJobRequest,
     GetDataLabelingJobRequest,
     GetHyperparameterTuningJobRequest,
+    GetModelDeploymentMonitoringJobRequest,
     ListBatchPredictionJobsRequest,
     ListBatchPredictionJobsResponse,
     ListCustomJobsRequest,
@@ -139,6 +200,14 @@ from .job_service import (
     ListDataLabelingJobsResponse,
     ListHyperparameterTuningJobsRequest,
     ListHyperparameterTuningJobsResponse,
+    ListModelDeploymentMonitoringJobsRequest,
+    ListModelDeploymentMonitoringJobsResponse,
+    PauseModelDeploymentMonitoringJobRequest,
+    ResumeModelDeploymentMonitoringJobRequest,
+    SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+    SearchModelDeploymentMonitoringStatsAnomaliesResponse,
+    UpdateModelDeploymentMonitoringJobOperationMetadata,
+    UpdateModelDeploymentMonitoringJobRequest,
 )
 from .machine_resources import (
     AutomaticResources,
@@ -170,11 +239,25 @@ from .model import (
     Port,
     PredictSchemata,
 )
+from .model_deployment_monitoring_job import (
+    ModelDeploymentMonitoringBigQueryTable,
+    ModelDeploymentMonitoringJob,
+    ModelDeploymentMonitoringObjectiveConfig,
+    ModelDeploymentMonitoringScheduleConfig,
+    ModelMonitoringStatsAnomalies,
+    ModelDeploymentMonitoringObjectiveType,
+)
 from .model_evaluation import (
     ModelEvaluation,
 )
 from .model_evaluation_slice import (
     ModelEvaluationSlice,
+)
+from .model_monitoring import (
+    ModelMonitoringAlertConfig,
+    ModelMonitoringObjectiveConfig,
+    SamplingStrategy,
+    ThresholdConfig,
 )
 from .model_service import (
     DeleteModelRequest,
@@ -220,8 +303,11 @@ from .pipeline_service import (
     ListTrainingPipelinesResponse,
 )
 from .prediction_service import (
+    ExplainRequest,
+    ExplainResponse,
     PredictRequest,
     PredictResponse,
+    RawPredictRequest,
 )
 from .specialist_pool import (
     SpecialistPool,
@@ -238,6 +324,7 @@ from .specialist_pool_service import (
 )
 from .study import (
     Measurement,
+    Study,
     StudySpec,
     Trial,
 )
@@ -296,6 +383,7 @@ __all__ = (
     'ListDatasetsRequest',
     'ListDatasetsResponse',
     'UpdateDatasetRequest',
+    'DeployedIndexRef',
     'DeployedModelRef',
     'EncryptionSpec',
     'DeployedModel',
@@ -315,7 +403,48 @@ __all__ = (
     'UpdateEndpointRequest',
     'EnvVar',
     'Execution',
+    'Attribution',
+    'Explanation',
+    'ExplanationMetadataOverride',
+    'ExplanationParameters',
+    'ExplanationSpec',
+    'ExplanationSpecOverride',
+    'FeatureNoiseSigma',
+    'IntegratedGradientsAttribution',
+    'ModelExplanation',
+    'SampledShapleyAttribution',
+    'SmoothGradConfig',
+    'XraiAttribution',
+    'ExplanationMetadata',
+    'FeatureStatsAnomaly',
     'HyperparameterTuningJob',
+    'Index',
+    'DeployedIndex',
+    'DeployedIndexAuthConfig',
+    'IndexEndpoint',
+    'IndexPrivateEndpoints',
+    'CreateIndexEndpointOperationMetadata',
+    'CreateIndexEndpointRequest',
+    'DeleteIndexEndpointRequest',
+    'DeployIndexOperationMetadata',
+    'DeployIndexRequest',
+    'DeployIndexResponse',
+    'GetIndexEndpointRequest',
+    'ListIndexEndpointsRequest',
+    'ListIndexEndpointsResponse',
+    'UndeployIndexOperationMetadata',
+    'UndeployIndexRequest',
+    'UndeployIndexResponse',
+    'UpdateIndexEndpointRequest',
+    'CreateIndexOperationMetadata',
+    'CreateIndexRequest',
+    'DeleteIndexRequest',
+    'GetIndexRequest',
+    'ListIndexesRequest',
+    'ListIndexesResponse',
+    'NearestNeighborSearchOperationMetadata',
+    'UpdateIndexOperationMetadata',
+    'UpdateIndexRequest',
     'BigQueryDestination',
     'BigQuerySource',
     'ContainerRegistryDestination',
@@ -329,14 +458,17 @@ __all__ = (
     'CreateCustomJobRequest',
     'CreateDataLabelingJobRequest',
     'CreateHyperparameterTuningJobRequest',
+    'CreateModelDeploymentMonitoringJobRequest',
     'DeleteBatchPredictionJobRequest',
     'DeleteCustomJobRequest',
     'DeleteDataLabelingJobRequest',
     'DeleteHyperparameterTuningJobRequest',
+    'DeleteModelDeploymentMonitoringJobRequest',
     'GetBatchPredictionJobRequest',
     'GetCustomJobRequest',
     'GetDataLabelingJobRequest',
     'GetHyperparameterTuningJobRequest',
+    'GetModelDeploymentMonitoringJobRequest',
     'ListBatchPredictionJobsRequest',
     'ListBatchPredictionJobsResponse',
     'ListCustomJobsRequest',
@@ -345,6 +477,14 @@ __all__ = (
     'ListDataLabelingJobsResponse',
     'ListHyperparameterTuningJobsRequest',
     'ListHyperparameterTuningJobsResponse',
+    'ListModelDeploymentMonitoringJobsRequest',
+    'ListModelDeploymentMonitoringJobsResponse',
+    'PauseModelDeploymentMonitoringJobRequest',
+    'ResumeModelDeploymentMonitoringJobRequest',
+    'SearchModelDeploymentMonitoringStatsAnomaliesRequest',
+    'SearchModelDeploymentMonitoringStatsAnomaliesResponse',
+    'UpdateModelDeploymentMonitoringJobOperationMetadata',
+    'UpdateModelDeploymentMonitoringJobRequest',
     'JobState',
     'AutomaticResources',
     'AutoscalingMetricSpec',
@@ -366,8 +506,18 @@ __all__ = (
     'ModelContainerSpec',
     'Port',
     'PredictSchemata',
+    'ModelDeploymentMonitoringBigQueryTable',
+    'ModelDeploymentMonitoringJob',
+    'ModelDeploymentMonitoringObjectiveConfig',
+    'ModelDeploymentMonitoringScheduleConfig',
+    'ModelMonitoringStatsAnomalies',
+    'ModelDeploymentMonitoringObjectiveType',
     'ModelEvaluation',
     'ModelEvaluationSlice',
+    'ModelMonitoringAlertConfig',
+    'ModelMonitoringObjectiveConfig',
+    'SamplingStrategy',
+    'ThresholdConfig',
     'DeleteModelRequest',
     'ExportModelOperationMetadata',
     'ExportModelRequest',
@@ -404,8 +554,11 @@ __all__ = (
     'ListTrainingPipelinesRequest',
     'ListTrainingPipelinesResponse',
     'PipelineState',
+    'ExplainRequest',
+    'ExplainResponse',
     'PredictRequest',
     'PredictResponse',
+    'RawPredictRequest',
     'SpecialistPool',
     'CreateSpecialistPoolOperationMetadata',
     'CreateSpecialistPoolRequest',
@@ -416,6 +569,7 @@ __all__ = (
     'UpdateSpecialistPoolOperationMetadata',
     'UpdateSpecialistPoolRequest',
     'Measurement',
+    'Study',
     'StudySpec',
     'Trial',
     'FilterSplit',

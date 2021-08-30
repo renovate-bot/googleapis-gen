@@ -27,6 +27,9 @@ module Google
           ##
           # Client for the DatasetService service.
           #
+          # The service that handles the CRUD of Vertex AI Dataset and its child
+          # resources.
+          #
           class Client
             include Paths
 
@@ -61,26 +64,6 @@ module Google
                                   namespace.pop
                                 end
                 default_config = Client::Configuration.new parent_config
-
-                default_config.rpcs.create_dataset.timeout = 5.0
-
-                default_config.rpcs.get_dataset.timeout = 5.0
-
-                default_config.rpcs.update_dataset.timeout = 5.0
-
-                default_config.rpcs.list_datasets.timeout = 5.0
-
-                default_config.rpcs.delete_dataset.timeout = 5.0
-
-                default_config.rpcs.import_data.timeout = 5.0
-
-                default_config.rpcs.export_data.timeout = 5.0
-
-                default_config.rpcs.list_data_items.timeout = 5.0
-
-                default_config.rpcs.get_annotation_spec.timeout = 5.0
-
-                default_config.rpcs.list_annotations.timeout = 5.0
 
                 default_config
               end

@@ -35,6 +35,19 @@ module Google
 
             # Perform an online prediction.
             rpc :Predict, ::Google::Cloud::AIPlatform::V1::PredictRequest, ::Google::Cloud::AIPlatform::V1::PredictResponse
+            # Perform an online prediction with arbitrary http payload.
+            rpc :RawPredict, ::Google::Cloud::AIPlatform::V1::RawPredictRequest, ::Google::Api::HttpBody
+            # Perform an online explanation.
+            #
+            # If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is specified,
+            # the corresponding DeployModel must have
+            # [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+            # populated. If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id]
+            # is not specified, all DeployedModels must have
+            # [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+            # populated. Only deployed AutoML tabular Models have
+            # explanation_spec.
+            rpc :Explain, ::Google::Cloud::AIPlatform::V1::ExplainRequest, ::Google::Cloud::AIPlatform::V1::ExplainResponse
           end
 
           Stub = Service.rpc_stub_class

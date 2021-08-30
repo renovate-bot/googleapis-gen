@@ -41,6 +41,8 @@ class Dataset(proto.Message):
             Required. The user-defined name of the
             Dataset. The name can be up to 128 characters
             long and can be consist of any UTF-8 characters.
+        description (str):
+            Optional. The description of the Dataset.
         metadata_schema_uri (str):
             Required. Points to a YAML file stored on
             Google Cloud Storage describing additional
@@ -95,6 +97,10 @@ class Dataset(proto.Message):
     display_name = proto.Field(
         proto.STRING,
         number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=16,
     )
     metadata_schema_uri = proto.Field(
         proto.STRING,

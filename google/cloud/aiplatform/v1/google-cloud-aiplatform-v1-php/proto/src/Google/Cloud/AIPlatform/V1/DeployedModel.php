@@ -42,6 +42,19 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      */
     protected $create_time = null;
     /**
+     * Explanation configuration for this DeployedModel.
+     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
+     */
+    protected $explanation_spec = null;
+    /**
      * The service account that the DeployedModel's container runs as. Specify the
      * email address of the service account. If this service account is not
      * specified, the container runs as a service account that doesn't have access
@@ -85,8 +98,8 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *           A description of resources that are dedicated to the DeployedModel, and
      *           that need a higher degree of manual configuration.
      *     @type \Google\Cloud\AIPlatform\V1\AutomaticResources $automatic_resources
-     *           A description of resources that to large degree are decided by AI
-     *           Platform, and require only a modest additional configuration.
+     *           A description of resources that to large degree are decided by Vertex
+     *           AI, and require only a modest additional configuration.
      *     @type string $id
      *           Output only. The ID of the DeployedModel.
      *     @type string $model
@@ -97,6 +110,15 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *           the Model's display_name is used.
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Output only. Timestamp when the DeployedModel was created.
+     *     @type \Google\Cloud\AIPlatform\V1\ExplanationSpec $explanation_spec
+     *           Explanation configuration for this DeployedModel.
+     *           When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+     *           overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     *           [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+     *           [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+     *           [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+     *           [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+     *           [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
      *     @type string $service_account
      *           The service account that the DeployedModel's container runs as. Specify the
      *           email address of the service account. If this service account is not
@@ -158,8 +180,8 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 8;</code>
      * @return \Google\Cloud\AIPlatform\V1\AutomaticResources|null
@@ -175,8 +197,8 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 8;</code>
      * @param \Google\Cloud\AIPlatform\V1\AutomaticResources $var
@@ -304,6 +326,56 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Explanation configuration for this DeployedModel.
+     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
+     * @return \Google\Cloud\AIPlatform\V1\ExplanationSpec|null
+     */
+    public function getExplanationSpec()
+    {
+        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+    }
+
+    public function hasExplanationSpec()
+    {
+        return isset($this->explanation_spec);
+    }
+
+    public function clearExplanationSpec()
+    {
+        unset($this->explanation_spec);
+    }
+
+    /**
+     * Explanation configuration for this DeployedModel.
+     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
+     * @param \Google\Cloud\AIPlatform\V1\ExplanationSpec $var
+     * @return $this
+     */
+    public function setExplanationSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\ExplanationSpec::class);
+        $this->explanation_spec = $var;
 
         return $this;
     }

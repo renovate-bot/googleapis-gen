@@ -22,8 +22,8 @@ class Context
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-©
-(google/cloud/aiplatform/v1/context.protogoogle.cloud.aiplatform.v1google/api/resource.proto&google/cloud/aiplatform/v1/value.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"Â
+ó
+(google/cloud/aiplatform/v1/context.protogoogle.cloud.aiplatform.v1google/api/resource.proto&google/cloud/aiplatform/v1/value.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"”
 Context
 name (	B‡A
 display_name (	
@@ -33,7 +33,11 @@ class Context
  (2.google.protobuf.TimestampB‡A4
 update_time (2.google.protobuf.TimestampB‡AB
 parent_contexts (	B)‡A˙A#
-!aiplatform.googleapis.com/Context-
+!aiplatform.googleapis.com/Context
+schema_title (	
+schema_version (	)
+metadata (2.google.protobuf.Struct
+description (	-
 LabelsEntry
 key (	
 value (	:8:ÇÍA

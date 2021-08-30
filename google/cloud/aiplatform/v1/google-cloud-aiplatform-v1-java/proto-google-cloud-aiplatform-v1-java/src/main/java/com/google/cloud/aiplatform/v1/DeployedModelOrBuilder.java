@@ -39,8 +39,8 @@ public interface DeployedModelOrBuilder extends
 
   /**
    * <pre>
-   * A description of resources that to large degree are decided by AI
-   * Platform, and require only a modest additional configuration.
+   * A description of resources that to large degree are decided by Vertex
+   * AI, and require only a modest additional configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 8;</code>
@@ -49,8 +49,8 @@ public interface DeployedModelOrBuilder extends
   boolean hasAutomaticResources();
   /**
    * <pre>
-   * A description of resources that to large degree are decided by AI
-   * Platform, and require only a modest additional configuration.
+   * A description of resources that to large degree are decided by Vertex
+   * AI, and require only a modest additional configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 8;</code>
@@ -59,8 +59,8 @@ public interface DeployedModelOrBuilder extends
   com.google.cloud.aiplatform.v1.AutomaticResources getAutomaticResources();
   /**
    * <pre>
-   * A description of resources that to large degree are decided by AI
-   * Platform, and require only a modest additional configuration.
+   * A description of resources that to large degree are decided by Vertex
+   * AI, and require only a modest additional configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 8;</code>
@@ -157,6 +157,54 @@ public interface DeployedModelOrBuilder extends
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Explanation configuration for this DeployedModel.
+   * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+   * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
+   * @return Whether the explanationSpec field is set.
+   */
+  boolean hasExplanationSpec();
+  /**
+   * <pre>
+   * Explanation configuration for this DeployedModel.
+   * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+   * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
+   * @return The explanationSpec.
+   */
+  com.google.cloud.aiplatform.v1.ExplanationSpec getExplanationSpec();
+  /**
+   * <pre>
+   * Explanation configuration for this DeployedModel.
+   * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
+   * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
+   */
+  com.google.cloud.aiplatform.v1.ExplanationSpecOrBuilder getExplanationSpecOrBuilder();
 
   /**
    * <pre>

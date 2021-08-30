@@ -58,6 +58,27 @@ module Google
         #     not imply or capture any ongoing process. This property is managed by
         #     clients (such as Vertex Pipelines), and the system does not prescribe
         #     or check the validity of state transitions.
+        # @!attribute [rw] schema_title
+        #   @return [::String]
+        #     The title of the schema describing the metadata.
+        #
+        #     Schema title and version is expected to be registered in earlier Create
+        #     Schema calls. And both are used together as unique identifiers to identify
+        #     schemas within the local metadata store.
+        # @!attribute [rw] schema_version
+        #   @return [::String]
+        #     The version of the schema in schema_name to use.
+        #
+        #     Schema title and version is expected to be registered in earlier Create
+        #     Schema calls. And both are used together as unique identifiers to identify
+        #     schemas within the local metadata store.
+        # @!attribute [rw] metadata
+        #   @return [::Google::Protobuf::Struct]
+        #     Properties of the Artifact.
+        #     The size of this field should not exceed 200KB.
+        # @!attribute [rw] description
+        #   @return [::String]
+        #     Description of the Artifact
         class Artifact
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -430,6 +430,204 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#create_model_deployment_monitoring_job JobService.CreateModelDeploymentMonitoringJob}.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The parent of the ModelDeploymentMonitoringJob.
+        #     Format: `projects/{project}/locations/{location}`
+        # @!attribute [rw] model_deployment_monitoring_job
+        #   @return [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob]
+        #     Required. The ModelDeploymentMonitoringJob to create
+        class CreateModelDeploymentMonitoringJobRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#search_model_deployment_monitoring_stats_anomalies JobService.SearchModelDeploymentMonitoringStatsAnomalies}.
+        # @!attribute [rw] model_deployment_monitoring_job
+        #   @return [::String]
+        #     Required. ModelDeploymentMonitoring Job resource name.
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+        # @!attribute [rw] deployed_model_id
+        #   @return [::String]
+        #     Required. The DeployedModel ID of the
+        #     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+        # @!attribute [rw] feature_display_name
+        #   @return [::String]
+        #     The feature display name. If specified, only return the stats belonging to
+        #     this feature. Format:
+        #     {::Google::Cloud::AIPlatform::V1::ModelMonitoringStatsAnomalies::FeatureHistoricStatsAnomalies#feature_display_name ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies.feature_display_name},
+        #     example: "user_destination".
+        # @!attribute [rw] objectives
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest::StatsAnomaliesObjective>]
+        #     Required. Objectives of the stats to retrieve.
+        # @!attribute [rw] page_size
+        #   @return [::Integer]
+        #     The standard list page size.
+        # @!attribute [rw] page_token
+        #   @return [::String]
+        #     A page token received from a previous
+        #     {::Google::Cloud::AIPlatform::V1::JobService::Client#search_model_deployment_monitoring_stats_anomalies JobService.SearchModelDeploymentMonitoringStatsAnomalies}
+        #     call.
+        # @!attribute [rw] start_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The earliest timestamp of stats being generated.
+        #     If not set, indicates fetching stats till the earliest possible one.
+        # @!attribute [rw] end_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The latest timestamp of stats being generated.
+        #     If not set, indicates feching stats till the latest possible one.
+        class SearchModelDeploymentMonitoringStatsAnomaliesRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # Stats requested for specific objective.
+          # @!attribute [rw] type
+          #   @return [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringObjectiveType]
+          # @!attribute [rw] top_feature_count
+          #   @return [::Integer]
+          #     If set, all attribution scores between
+          #     {::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest#start_time SearchModelDeploymentMonitoringStatsAnomaliesRequest.start_time} and
+          #     {::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest#end_time SearchModelDeploymentMonitoringStatsAnomaliesRequest.end_time} are
+          #     fetched, and page token doesn't take affect in this case.
+          #     Only used to retrieve attribution score for the top Features which has
+          #     the highest attribution score in the latest monitoring run.
+          class StatsAnomaliesObjective
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+        end
+
+        # Response message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#search_model_deployment_monitoring_stats_anomalies JobService.SearchModelDeploymentMonitoringStatsAnomalies}.
+        # @!attribute [rw] monitoring_stats
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::ModelMonitoringStatsAnomalies>]
+        #     Stats retrieved for requested objectives.
+        #     There are at most 1000
+        #     {::Google::Cloud::AIPlatform::V1::ModelMonitoringStatsAnomalies::FeatureHistoricStatsAnomalies#prediction_stats ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies.prediction_stats}
+        #     in the response.
+        # @!attribute [rw] next_page_token
+        #   @return [::String]
+        #     The page token that can be used by the next
+        #     {::Google::Cloud::AIPlatform::V1::JobService::Client#search_model_deployment_monitoring_stats_anomalies JobService.SearchModelDeploymentMonitoringStatsAnomalies}
+        #     call.
+        class SearchModelDeploymentMonitoringStatsAnomaliesResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#get_model_deployment_monitoring_job JobService.GetModelDeploymentMonitoringJob}.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The resource name of the ModelDeploymentMonitoringJob.
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+        class GetModelDeploymentMonitoringJobRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#list_model_deployment_monitoring_jobs JobService.ListModelDeploymentMonitoringJobs}.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The parent of the ModelDeploymentMonitoringJob.
+        #     Format: `projects/{project}/locations/{location}`
+        # @!attribute [rw] filter
+        #   @return [::String]
+        #     The standard list filter.
+        # @!attribute [rw] page_size
+        #   @return [::Integer]
+        #     The standard list page size.
+        # @!attribute [rw] page_token
+        #   @return [::String]
+        #     The standard list page token.
+        # @!attribute [rw] read_mask
+        #   @return [::Google::Protobuf::FieldMask]
+        #     Mask specifying which fields to read
+        class ListModelDeploymentMonitoringJobsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#list_model_deployment_monitoring_jobs JobService.ListModelDeploymentMonitoringJobs}.
+        # @!attribute [rw] model_deployment_monitoring_jobs
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob>]
+        #     A list of ModelDeploymentMonitoringJobs that matches the specified filter
+        #     in the request.
+        # @!attribute [rw] next_page_token
+        #   @return [::String]
+        #     The standard List next-page token.
+        class ListModelDeploymentMonitoringJobsResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#update_model_deployment_monitoring_job JobService.UpdateModelDeploymentMonitoringJob}.
+        # @!attribute [rw] model_deployment_monitoring_job
+        #   @return [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob]
+        #     Required. The model monitoring configuration which replaces the resource on the
+        #     server.
+        # @!attribute [rw] update_mask
+        #   @return [::Google::Protobuf::FieldMask]
+        #     Required. The update mask applies to the resource.
+        class UpdateModelDeploymentMonitoringJobRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#delete_model_deployment_monitoring_job JobService.DeleteModelDeploymentMonitoringJob}.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The resource name of the model monitoring job to delete.
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+        class DeleteModelDeploymentMonitoringJobRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#pause_model_deployment_monitoring_job JobService.PauseModelDeploymentMonitoringJob}.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The resource name of the ModelDeploymentMonitoringJob to pause.
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+        class PauseModelDeploymentMonitoringJobRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#resume_model_deployment_monitoring_job JobService.ResumeModelDeploymentMonitoringJob}.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The resource name of the ModelDeploymentMonitoringJob to resume.
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+        class ResumeModelDeploymentMonitoringJobRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Runtime operation information for
+        # {::Google::Cloud::AIPlatform::V1::JobService::Client#update_model_deployment_monitoring_job JobService.UpdateModelDeploymentMonitoringJob}.
+        # @!attribute [rw] generic_metadata
+        #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
+        #     The operation generic information.
+        class UpdateModelDeploymentMonitoringJobOperationMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
       end
     end
   end

@@ -32,7 +32,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      *
@@ -74,6 +74,17 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GcsDestination base_output_directory = 6;</code>
      */
     protected $base_output_directory = null;
+    /**
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     *
+     * Generated from protobuf field <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $enable_web_access = false;
 
     /**
      * Constructor.
@@ -90,7 +101,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *     @type string $service_account
      *           Specifies the service account for workload run-as account.
      *           Users submitting jobs must have act-as permission on this run-as account.
-     *           If unspecified, the [AI Platform Custom Code Service
+     *           If unspecified, the [Vertex AI Custom Code Service
      *           Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      *           for the CustomJob's project is used.
      *     @type string $network
@@ -120,6 +131,13 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *             * AIP_MODEL_DIR = `<base_output_directory>/<trial_id>/model/`
      *             * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
      *             * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
+     *     @type bool $enable_web_access
+     *           Optional. Whether you want Vertex AI to enable [interactive shell
+     *           access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     *           to training containers.
+     *           If set to `true`, you can access interactive shells at the URIs given
+     *           by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     *           [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
      * }
      */
     public function __construct($data = NULL) {
@@ -196,7 +214,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      *
@@ -211,7 +229,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      *
@@ -331,6 +349,42 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\GcsDestination::class);
         $this->base_output_directory = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     *
+     * Generated from protobuf field <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return bool
+     */
+    public function getEnableWebAccess()
+    {
+        return $this->enable_web_access;
+    }
+
+    /**
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     *
+     * Generated from protobuf field <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableWebAccess($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_web_access = $var;
 
         return $this;
     }

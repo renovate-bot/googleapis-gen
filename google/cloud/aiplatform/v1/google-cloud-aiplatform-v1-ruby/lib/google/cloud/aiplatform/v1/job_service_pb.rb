@@ -11,6 +11,7 @@ require 'google/cloud/aiplatform/v1/batch_prediction_job_pb'
 require 'google/cloud/aiplatform/v1/custom_job_pb'
 require 'google/cloud/aiplatform/v1/data_labeling_job_pb'
 require 'google/cloud/aiplatform/v1/hyperparameter_tuning_job_pb'
+require 'google/cloud/aiplatform/v1/model_deployment_monitoring_job_pb'
 require 'google/cloud/aiplatform/v1/operation_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
@@ -115,6 +116,58 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest" do
       optional :name, :string, 1
     end
+    add_message "google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest" do
+      optional :parent, :string, 1
+      optional :model_deployment_monitoring_job, :message, 2, "google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob"
+    end
+    add_message "google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest" do
+      optional :model_deployment_monitoring_job, :string, 1
+      optional :deployed_model_id, :string, 2
+      optional :feature_display_name, :string, 3
+      repeated :objectives, :message, 4, "google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest.StatsAnomaliesObjective"
+      optional :page_size, :int32, 5
+      optional :page_token, :string, 6
+      optional :start_time, :message, 7, "google.protobuf.Timestamp"
+      optional :end_time, :message, 8, "google.protobuf.Timestamp"
+    end
+    add_message "google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest.StatsAnomaliesObjective" do
+      optional :type, :enum, 1, "google.cloud.aiplatform.v1.ModelDeploymentMonitoringObjectiveType"
+      optional :top_feature_count, :int32, 4
+    end
+    add_message "google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesResponse" do
+      repeated :monitoring_stats, :message, 1, "google.cloud.aiplatform.v1.ModelMonitoringStatsAnomalies"
+      optional :next_page_token, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest" do
+      optional :parent, :string, 1
+      optional :filter, :string, 2
+      optional :page_size, :int32, 3
+      optional :page_token, :string, 4
+      optional :read_mask, :message, 5, "google.protobuf.FieldMask"
+    end
+    add_message "google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse" do
+      repeated :model_deployment_monitoring_jobs, :message, 1, "google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob"
+      optional :next_page_token, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest" do
+      optional :model_deployment_monitoring_job, :message, 1, "google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob"
+      optional :update_mask, :message, 2, "google.protobuf.FieldMask"
+    end
+    add_message "google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationMetadata" do
+      optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1.GenericOperationMetadata"
+    end
   end
 end
 
@@ -146,6 +199,18 @@ module Google
         ListBatchPredictionJobsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse").msgclass
         DeleteBatchPredictionJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest").msgclass
         CancelBatchPredictionJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest").msgclass
+        CreateModelDeploymentMonitoringJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest").msgclass
+        SearchModelDeploymentMonitoringStatsAnomaliesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest").msgclass
+        SearchModelDeploymentMonitoringStatsAnomaliesRequest::StatsAnomaliesObjective = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest.StatsAnomaliesObjective").msgclass
+        SearchModelDeploymentMonitoringStatsAnomaliesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesResponse").msgclass
+        GetModelDeploymentMonitoringJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest").msgclass
+        ListModelDeploymentMonitoringJobsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest").msgclass
+        ListModelDeploymentMonitoringJobsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse").msgclass
+        UpdateModelDeploymentMonitoringJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest").msgclass
+        DeleteModelDeploymentMonitoringJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest").msgclass
+        PauseModelDeploymentMonitoringJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest").msgclass
+        ResumeModelDeploymentMonitoringJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest").msgclass
+        UpdateModelDeploymentMonitoringJobOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobOperationMetadata").msgclass
       end
     end
   end

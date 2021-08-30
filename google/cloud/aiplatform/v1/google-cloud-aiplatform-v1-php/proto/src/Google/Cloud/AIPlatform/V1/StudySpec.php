@@ -47,6 +47,7 @@ class StudySpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.MeasurementSelectionType measurement_selection_type = 7;</code>
      */
     protected $measurement_selection_type = 0;
+    protected $automated_stopping_spec;
 
     /**
      * Constructor.
@@ -54,6 +55,10 @@ class StudySpec extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Cloud\AIPlatform\V1\StudySpec\DecayCurveAutomatedStoppingSpec $decay_curve_stopping_spec
+     *           The automated early stopping spec using decay curve rule.
+     *     @type \Google\Cloud\AIPlatform\V1\StudySpec\MedianAutomatedStoppingSpec $median_automated_stopping_spec
+     *           The automated early stopping spec using median rule.
      *     @type \Google\Cloud\AIPlatform\V1\StudySpec\MetricSpec[]|\Google\Protobuf\Internal\RepeatedField $metrics
      *           Required. Metric specs for the Study.
      *     @type \Google\Cloud\AIPlatform\V1\StudySpec\ParameterSpec[]|\Google\Protobuf\Internal\RepeatedField $parameters
@@ -71,6 +76,68 @@ class StudySpec extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Aiplatform\V1\Study::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * The automated early stopping spec using decay curve rule.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;</code>
+     * @return \Google\Cloud\AIPlatform\V1\StudySpec\DecayCurveAutomatedStoppingSpec|null
+     */
+    public function getDecayCurveStoppingSpec()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasDecayCurveStoppingSpec()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * The automated early stopping spec using decay curve rule.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.DecayCurveAutomatedStoppingSpec decay_curve_stopping_spec = 4;</code>
+     * @param \Google\Cloud\AIPlatform\V1\StudySpec\DecayCurveAutomatedStoppingSpec $var
+     * @return $this
+     */
+    public function setDecayCurveStoppingSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\StudySpec\DecayCurveAutomatedStoppingSpec::class);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * The automated early stopping spec using median rule.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;</code>
+     * @return \Google\Cloud\AIPlatform\V1\StudySpec\MedianAutomatedStoppingSpec|null
+     */
+    public function getMedianAutomatedStoppingSpec()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasMedianAutomatedStoppingSpec()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * The automated early stopping spec using median rule.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.MedianAutomatedStoppingSpec median_automated_stopping_spec = 5;</code>
+     * @param \Google\Cloud\AIPlatform\V1\StudySpec\MedianAutomatedStoppingSpec $var
+     * @return $this
+     */
+    public function setMedianAutomatedStoppingSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\StudySpec\MedianAutomatedStoppingSpec::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
     }
 
     /**
@@ -205,6 +272,14 @@ class StudySpec extends \Google\Protobuf\Internal\Message
         $this->measurement_selection_type = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAutomatedStoppingSpec()
+    {
+        return $this->whichOneof("automated_stopping_spec");
     }
 
 }

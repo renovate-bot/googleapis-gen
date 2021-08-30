@@ -72,6 +72,32 @@ module Google
         #     Immutable. Parameters configuring the batch behavior. Currently only applicable when
         #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases Vertex AI does
         #     the tuning itself).
+        # @!attribute [rw] generate_explanation
+        #   @return [::Boolean]
+        #     Generate explanation with the batch prediction results.
+        #
+        #     When set to `true`, the batch prediction output changes based on the
+        #     `predictions_format` field of the
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#output_config BatchPredictionJob.output_config} object:
+        #
+        #      * `bigquery`: output includes a column named `explanation`. The value
+        #        is a struct that conforms to the {::Google::Cloud::AIPlatform::V1::Explanation Explanation} object.
+        #      * `jsonl`: The JSON objects on each line include an additional entry
+        #        keyed `explanation`. The value of the entry is a JSON object that
+        #        conforms to the {::Google::Cloud::AIPlatform::V1::Explanation Explanation} object.
+        #      * `csv`: Generating explanations for CSV format is not supported.
+        #
+        #     If this field is set to true, either the {::Google::Cloud::AIPlatform::V1::Model#explanation_spec Model.explanation_spec} or
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#explanation_spec explanation_spec} must be populated.
+        # @!attribute [rw] explanation_spec
+        #   @return [::Google::Cloud::AIPlatform::V1::ExplanationSpec]
+        #     Explanation configuration for this BatchPredictionJob. Can be
+        #     specified only if {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#generate_explanation generate_explanation} is set to `true`.
+        #
+        #     This value overrides the value of {::Google::Cloud::AIPlatform::V1::Model#explanation_spec Model.explanation_spec}. All fields of
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#explanation_spec explanation_spec} are optional in the request. If a field of the
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#explanation_spec explanation_spec} object is not populated, the corresponding field of
+        #     the {::Google::Cloud::AIPlatform::V1::Model#explanation_spec Model.explanation_spec} object is inherited.
         # @!attribute [r] output_info
         #   @return [::Google::Cloud::AIPlatform::V1::BatchPredictionJob::OutputInfo]
         #     Output only. Information further describing the output of this job.

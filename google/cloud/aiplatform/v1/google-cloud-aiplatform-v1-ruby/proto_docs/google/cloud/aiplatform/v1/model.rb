@@ -37,7 +37,7 @@ module Google
         #   @return [::Google::Cloud::AIPlatform::V1::PredictSchemata]
         #     The schemata that describe formats of the Model's predictions and
         #     explanations as given and returned via
-        #     {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict} and [PredictionService.Explain][].
+        #     {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict} and {::Google::Cloud::AIPlatform::V1::PredictionService::Client#explain PredictionService.Explain}.
         # @!attribute [rw] metadata_schema_uri
         #   @return [::String]
         #     Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
@@ -83,7 +83,7 @@ module Google
         #     configuration types are listed, the Model cannot be deployed to an
         #     {::Google::Cloud::AIPlatform::V1::Endpoint Endpoint} and does not support
         #     online predictions ({::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict} or
-        #     [PredictionService.Explain][]). Such a Model can serve predictions by
+        #     {::Google::Cloud::AIPlatform::V1::PredictionService::Client#explain PredictionService.Explain}). Such a Model can serve predictions by
         #     using a {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}, if it has at least one entry each in
         #     {::Google::Cloud::AIPlatform::V1::Model#supported_input_storage_formats supported_input_storage_formats} and
         #     {::Google::Cloud::AIPlatform::V1::Model#supported_output_storage_formats supported_output_storage_formats}.
@@ -127,7 +127,7 @@ module Google
         #     used with a {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}. However, if it has
         #     {::Google::Cloud::AIPlatform::V1::Model#supported_deployment_resources_types supported_deployment_resources_types}, it could serve online
         #     predictions by using {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict} or
-        #     [PredictionService.Explain][].
+        #     {::Google::Cloud::AIPlatform::V1::PredictionService::Client#explain PredictionService.Explain}.
         # @!attribute [r] supported_output_storage_formats
         #   @return [::Array<::String>]
         #     Output only. The formats this Model supports in
@@ -160,7 +160,7 @@ module Google
         #     used with a {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}. However, if it has
         #     {::Google::Cloud::AIPlatform::V1::Model#supported_deployment_resources_types supported_deployment_resources_types}, it could serve online
         #     predictions by using {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict} or
-        #     [PredictionService.Explain][].
+        #     {::Google::Cloud::AIPlatform::V1::PredictionService::Client#explain PredictionService.Explain}.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Model was uploaded into Vertex AI.
@@ -171,6 +171,30 @@ module Google
         #   @return [::Array<::Google::Cloud::AIPlatform::V1::DeployedModelRef>]
         #     Output only. The pointers to DeployedModels created from this Model. Note that
         #     Model could have been deployed to Endpoints in different Locations.
+        # @!attribute [rw] explanation_spec
+        #   @return [::Google::Cloud::AIPlatform::V1::ExplanationSpec]
+        #     The default explanation specification for this Model.
+        #
+        #     The Model can be used for [requesting
+        #     explanation][PredictionService.Explain] after being
+        #     {::Google::Cloud::AIPlatform::V1::EndpointService::Client#deploy_model deployed} if it is populated.
+        #     The Model can be used for [batch
+        #     explanation][BatchPredictionJob.generate_explanation] if it is populated.
+        #
+        #     All fields of the explanation_spec can be overridden by
+        #     {::Google::Cloud::AIPlatform::V1::DeployedModel#explanation_spec explanation_spec} of
+        #     {::Google::Cloud::AIPlatform::V1::DeployModelRequest#deployed_model DeployModelRequest.deployed_model}, or
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#explanation_spec explanation_spec} of
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}.
+        #
+        #     If the default explanation specification is not set for this Model, this
+        #     Model can still be used for [requesting
+        #     explanation][PredictionService.Explain] by setting
+        #     {::Google::Cloud::AIPlatform::V1::DeployedModel#explanation_spec explanation_spec} of
+        #     {::Google::Cloud::AIPlatform::V1::DeployModelRequest#deployed_model DeployModelRequest.deployed_model} and for [batch
+        #     explanation][BatchPredictionJob.generate_explanation] by setting
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#explanation_spec explanation_spec} of
+        #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}.
         # @!attribute [rw] etag
         #   @return [::String]
         #     Used to perform consistent read-modify-write updates. If not set, a blind
@@ -266,13 +290,13 @@ module Google
         end
 
         # Contains the schemata used in Model's predictions and explanations via
-        # {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict}, [PredictionService.Explain][] and
+        # {::Google::Cloud::AIPlatform::V1::PredictionService::Client#predict PredictionService.Predict}, {::Google::Cloud::AIPlatform::V1::PredictionService::Client#explain PredictionService.Explain} and
         # {::Google::Cloud::AIPlatform::V1::BatchPredictionJob BatchPredictionJob}.
         # @!attribute [rw] instance_schema_uri
         #   @return [::String]
         #     Immutable. Points to a YAML file stored on Google Cloud Storage describing the format
         #     of a single instance, which are used in {::Google::Cloud::AIPlatform::V1::PredictRequest#instances PredictRequest.instances},
-        #     [ExplainRequest.instances][] and
+        #     {::Google::Cloud::AIPlatform::V1::ExplainRequest#instances ExplainRequest.instances} and
         #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#input_config BatchPredictionJob.input_config}.
         #     The schema is defined as an OpenAPI 3.0.2 [Schema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
@@ -284,7 +308,7 @@ module Google
         #   @return [::String]
         #     Immutable. Points to a YAML file stored on Google Cloud Storage describing the
         #     parameters of prediction and explanation via
-        #     {::Google::Cloud::AIPlatform::V1::PredictRequest#parameters PredictRequest.parameters}, [ExplainRequest.parameters][] and
+        #     {::Google::Cloud::AIPlatform::V1::PredictRequest#parameters PredictRequest.parameters}, {::Google::Cloud::AIPlatform::V1::ExplainRequest#parameters ExplainRequest.parameters} and
         #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#model_parameters BatchPredictionJob.model_parameters}.
         #     The schema is defined as an OpenAPI 3.0.2 [Schema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
@@ -297,7 +321,7 @@ module Google
         #   @return [::String]
         #     Immutable. Points to a YAML file stored on Google Cloud Storage describing the format
         #     of a single prediction produced by this Model, which are returned via
-        #     {::Google::Cloud::AIPlatform::V1::PredictResponse#predictions PredictResponse.predictions}, [ExplainResponse.explanations][], and
+        #     {::Google::Cloud::AIPlatform::V1::PredictResponse#predictions PredictResponse.predictions}, {::Google::Cloud::AIPlatform::V1::ExplainResponse#explanations ExplainResponse.explanations}, and
         #     {::Google::Cloud::AIPlatform::V1::BatchPredictionJob#output_config BatchPredictionJob.output_config}.
         #     The schema is defined as an OpenAPI 3.0.2 [Schema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
@@ -319,7 +343,7 @@ module Google
         #     predictions. This URI must identify an image in Artifact Registry or
         #     Container Registry. Learn more about the [container publishing
         #     requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-        #     including permissions requirements for the AI Platform Service Agent.
+        #     including permissions requirements for the Vertex AI Service Agent.
         #
         #     The container image is ingested upon {::Google::Cloud::AIPlatform::V1::ModelService::Client#upload_model ModelService.UploadModel}, stored
         #     internally, and this original path is afterwards not used.
@@ -440,8 +464,8 @@ module Google
         # @!attribute [rw] ports
         #   @return [::Array<::Google::Cloud::AIPlatform::V1::Port>]
         #     Immutable. List of ports to expose from the container. Vertex AI sends any
-        #     prediction requests that it receives to the first port on this list. AI
-        #     Platform also sends
+        #     prediction requests that it receives to the first port on this list. Vertex
+        #     AI also sends
         #     [liveness and health
         #     checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
         #     to this port.

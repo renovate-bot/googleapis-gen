@@ -24,6 +24,7 @@ module Google
     module AIPlatform
       module V1
         module EndpointService
+          # A service for managing Vertex AI's Endpoints.
           class Service
 
             include GRPC::GenericService

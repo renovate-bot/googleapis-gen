@@ -6,7 +6,10 @@ require 'google/protobuf'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1/encryption_spec_pb'
+require 'google/cloud/aiplatform/v1/explanation_pb'
 require 'google/cloud/aiplatform/v1/machine_resources_pb'
+require 'google/cloud/aiplatform/v1/model_deployment_monitoring_job_pb'
+require 'google/cloud/aiplatform/v1/model_monitoring_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
@@ -22,12 +25,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 8, "google.protobuf.Timestamp"
       optional :update_time, :message, 9, "google.protobuf.Timestamp"
       optional :encryption_spec, :message, 10, "google.cloud.aiplatform.v1.EncryptionSpec"
+      optional :model_deployment_monitoring_job, :string, 14
     end
     add_message "google.cloud.aiplatform.v1.DeployedModel" do
       optional :id, :string, 1
       optional :model, :string, 2
       optional :display_name, :string, 3
       optional :create_time, :message, 6, "google.protobuf.Timestamp"
+      optional :explanation_spec, :message, 9, "google.cloud.aiplatform.v1.ExplanationSpec"
       optional :service_account, :string, 11
       optional :disable_container_logging, :bool, 15
       optional :enable_access_logging, :bool, 13

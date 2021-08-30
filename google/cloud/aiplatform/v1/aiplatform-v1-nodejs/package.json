@@ -23,6 +23,8 @@
     "aiplatform",
     "dataset service",
     "endpoint service",
+    "index endpoint service",
+    "index service",
     "job service",
     "migration service",
     "model service",

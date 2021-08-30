@@ -290,6 +290,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -301,6 +302,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -313,6 +315,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -324,6 +327,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -335,6 +339,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Environment variables to be passed to the container.
+   * Maximum limit is 100.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1193,6 +1198,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1207,6 +1213,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1221,6 +1228,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1235,6 +1243,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1256,6 +1265,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1274,6 +1284,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1294,6 +1305,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1315,6 +1327,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1333,6 +1346,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1351,6 +1365,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1370,6 +1385,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1387,6 +1403,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1404,6 +1421,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1415,6 +1433,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1429,6 +1448,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1444,6 +1464,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1455,6 +1476,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>
@@ -1467,6 +1489,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Environment variables to be passed to the container.
+     * Maximum limit is 100.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 4;</code>

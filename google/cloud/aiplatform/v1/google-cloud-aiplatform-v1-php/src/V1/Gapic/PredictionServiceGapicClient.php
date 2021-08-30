@@ -26,16 +26,21 @@ namespace Google\Cloud\AIPlatform\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\GapicClientTrait;
+use Google\Api\HttpBody;
 
+use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\AIPlatform\V1\ExplainRequest;
+use Google\Cloud\AIPlatform\V1\ExplainResponse;
+use Google\Cloud\AIPlatform\V1\ExplanationSpecOverride;
 use Google\Cloud\AIPlatform\V1\PredictRequest;
 use Google\Cloud\AIPlatform\V1\PredictResponse;
+use Google\Cloud\AIPlatform\V1\RawPredictRequest;
 use Google\Protobuf\Value;
 
 /**
@@ -49,7 +54,7 @@ use Google\Protobuf\Value;
  * try {
  *     $formattedEndpoint = $predictionServiceClient->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
  *     $instances = [];
- *     $response = $predictionServiceClient->predict($formattedEndpoint, $instances);
+ *     $response = $predictionServiceClient->explain($formattedEndpoint, $instances);
  * } finally {
  *     $predictionServiceClient->close();
  * }
@@ -255,6 +260,97 @@ class PredictionServiceGapicClient
     }
 
     /**
+     * Perform an online explanation.
+     *
+     * If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is specified,
+     * the corresponding DeployModel must have
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * populated. If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id]
+     * is not specified, all DeployedModels must have
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * populated. Only deployed AutoML tabular Models have
+     * explanation_spec.
+     *
+     * Sample code:
+     * ```
+     * $predictionServiceClient = new PredictionServiceClient();
+     * try {
+     *     $formattedEndpoint = $predictionServiceClient->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
+     *     $instances = [];
+     *     $response = $predictionServiceClient->explain($formattedEndpoint, $instances);
+     * } finally {
+     *     $predictionServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string  $endpoint     Required. The name of the Endpoint requested to serve the explanation.
+     *                              Format:
+     *                              `projects/{project}/locations/{location}/endpoints/{endpoint}`
+     * @param Value[] $instances    Required. The instances that are the input to the explanation call.
+     *                              A DeployedModel may have an upper limit on the number of instances it
+     *                              supports per request, and when it is exceeded the explanation call errors
+     *                              in case of AutoML Models, or, in case of customer created Models, the
+     *                              behaviour is as documented by that Model.
+     *                              The schema of any single instance may be specified via Endpoint's
+     *                              DeployedModels' [Model's][google.cloud.aiplatform.v1.DeployedModel.model]
+     *                              [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+     *                              [instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri].
+     * @param array   $optionalArgs {
+     *     Optional.
+     *
+     *     @type Value $parameters
+     *           The parameters that govern the prediction. The schema of the parameters may
+     *           be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+     *           [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
+     *           [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
+     *     @type ExplanationSpecOverride $explanationSpecOverride
+     *           If specified, overrides the
+     *           [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of the DeployedModel.
+     *           Can be used for explaining prediction results with different
+     *           configurations, such as:
+     *           - Explaining top-5 predictions results as opposed to top-1;
+     *           - Increasing path count or step count of the attribution methods to reduce
+     *           approximate errors;
+     *           - Using different baselines for explaining the prediction results.
+     *     @type string $deployedModelId
+     *           If specified, this ExplainRequest will be served by the chosen
+     *           DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1\ExplainResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function explain($endpoint, $instances, array $optionalArgs = [])
+    {
+        $request = new ExplainRequest();
+        $requestParamHeaders = [];
+        $request->setEndpoint($endpoint);
+        $request->setInstances($instances);
+        $requestParamHeaders['endpoint'] = $endpoint;
+        if (isset($optionalArgs['parameters'])) {
+            $request->setParameters($optionalArgs['parameters']);
+        }
+
+        if (isset($optionalArgs['explanationSpecOverride'])) {
+            $request->setExplanationSpecOverride($optionalArgs['explanationSpecOverride']);
+        }
+
+        if (isset($optionalArgs['deployedModelId'])) {
+            $request->setDeployedModelId($optionalArgs['deployedModelId']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('Explain', ExplainResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Perform an online prediction.
      *
      * Sample code:
@@ -314,5 +410,65 @@ class PredictionServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('Predict', PredictResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Perform an online prediction with arbitrary http payload.
+     *
+     * Sample code:
+     * ```
+     * $predictionServiceClient = new PredictionServiceClient();
+     * try {
+     *     $formattedEndpoint = $predictionServiceClient->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
+     *     $response = $predictionServiceClient->rawPredict($formattedEndpoint);
+     * } finally {
+     *     $predictionServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $endpoint     Required. The name of the Endpoint requested to serve the prediction.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/endpoints/{endpoint}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type HttpBody $httpBody
+     *           The prediction input. Supports HTTP headers and arbitrary data payload.
+     *
+     *           A [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] may have an upper limit on the number of instances it
+     *           supports per request. When this limit it is exceeded for an AutoML model,
+     *           the [RawPredict][google.cloud.aiplatform.v1.PredictionService.RawPredict] method returns an error.
+     *           When this limit is exceeded for a custom-trained model, the behavior varies
+     *           depending on the model.
+     *
+     *           You can specify the schema for each instance in the
+     *           [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
+     *           field when you create a [Model][google.cloud.aiplatform.v1.Model]. This schema applies when you deploy the
+     *           `Model` as a `DeployedModel` to an [Endpoint][google.cloud.aiplatform.v1.Endpoint] and use the `RawPredict`
+     *           method.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Api\HttpBody
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function rawPredict($endpoint, array $optionalArgs = [])
+    {
+        $request = new RawPredictRequest();
+        $requestParamHeaders = [];
+        $request->setEndpoint($endpoint);
+        $requestParamHeaders['endpoint'] = $endpoint;
+        if (isset($optionalArgs['httpBody'])) {
+            $request->setHttpBody($optionalArgs['httpBody']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('RawPredict', HttpBody::class, $optionalArgs, $request)->wait();
     }
 }

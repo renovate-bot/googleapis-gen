@@ -18,6 +18,10 @@ from google.cloud.aiplatform_v1.services.dataset_service.client import DatasetSe
 from google.cloud.aiplatform_v1.services.dataset_service.async_client import DatasetServiceAsyncClient
 from google.cloud.aiplatform_v1.services.endpoint_service.client import EndpointServiceClient
 from google.cloud.aiplatform_v1.services.endpoint_service.async_client import EndpointServiceAsyncClient
+from google.cloud.aiplatform_v1.services.index_endpoint_service.client import IndexEndpointServiceClient
+from google.cloud.aiplatform_v1.services.index_endpoint_service.async_client import IndexEndpointServiceAsyncClient
+from google.cloud.aiplatform_v1.services.index_service.client import IndexServiceClient
+from google.cloud.aiplatform_v1.services.index_service.async_client import IndexServiceAsyncClient
 from google.cloud.aiplatform_v1.services.job_service.client import JobServiceClient
 from google.cloud.aiplatform_v1.services.job_service.async_client import JobServiceAsyncClient
 from google.cloud.aiplatform_v1.services.migration_service.client import MigrationServiceClient
@@ -70,6 +74,7 @@ from google.cloud.aiplatform_v1.types.dataset_service import ListDataItemsRespon
 from google.cloud.aiplatform_v1.types.dataset_service import ListDatasetsRequest
 from google.cloud.aiplatform_v1.types.dataset_service import ListDatasetsResponse
 from google.cloud.aiplatform_v1.types.dataset_service import UpdateDatasetRequest
+from google.cloud.aiplatform_v1.types.deployed_index_ref import DeployedIndexRef
 from google.cloud.aiplatform_v1.types.deployed_model_ref import DeployedModelRef
 from google.cloud.aiplatform_v1.types.encryption_spec import EncryptionSpec
 from google.cloud.aiplatform_v1.types.endpoint import DeployedModel
@@ -89,7 +94,48 @@ from google.cloud.aiplatform_v1.types.endpoint_service import UndeployModelRespo
 from google.cloud.aiplatform_v1.types.endpoint_service import UpdateEndpointRequest
 from google.cloud.aiplatform_v1.types.env_var import EnvVar
 from google.cloud.aiplatform_v1.types.execution import Execution
+from google.cloud.aiplatform_v1.types.explanation import Attribution
+from google.cloud.aiplatform_v1.types.explanation import Explanation
+from google.cloud.aiplatform_v1.types.explanation import ExplanationMetadataOverride
+from google.cloud.aiplatform_v1.types.explanation import ExplanationParameters
+from google.cloud.aiplatform_v1.types.explanation import ExplanationSpec
+from google.cloud.aiplatform_v1.types.explanation import ExplanationSpecOverride
+from google.cloud.aiplatform_v1.types.explanation import FeatureNoiseSigma
+from google.cloud.aiplatform_v1.types.explanation import IntegratedGradientsAttribution
+from google.cloud.aiplatform_v1.types.explanation import ModelExplanation
+from google.cloud.aiplatform_v1.types.explanation import SampledShapleyAttribution
+from google.cloud.aiplatform_v1.types.explanation import SmoothGradConfig
+from google.cloud.aiplatform_v1.types.explanation import XraiAttribution
+from google.cloud.aiplatform_v1.types.explanation_metadata import ExplanationMetadata
+from google.cloud.aiplatform_v1.types.feature_monitoring_stats import FeatureStatsAnomaly
 from google.cloud.aiplatform_v1.types.hyperparameter_tuning_job import HyperparameterTuningJob
+from google.cloud.aiplatform_v1.types.index import Index
+from google.cloud.aiplatform_v1.types.index_endpoint import DeployedIndex
+from google.cloud.aiplatform_v1.types.index_endpoint import DeployedIndexAuthConfig
+from google.cloud.aiplatform_v1.types.index_endpoint import IndexEndpoint
+from google.cloud.aiplatform_v1.types.index_endpoint import IndexPrivateEndpoints
+from google.cloud.aiplatform_v1.types.index_endpoint_service import CreateIndexEndpointOperationMetadata
+from google.cloud.aiplatform_v1.types.index_endpoint_service import CreateIndexEndpointRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import DeleteIndexEndpointRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import DeployIndexOperationMetadata
+from google.cloud.aiplatform_v1.types.index_endpoint_service import DeployIndexRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import DeployIndexResponse
+from google.cloud.aiplatform_v1.types.index_endpoint_service import GetIndexEndpointRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import ListIndexEndpointsRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import ListIndexEndpointsResponse
+from google.cloud.aiplatform_v1.types.index_endpoint_service import UndeployIndexOperationMetadata
+from google.cloud.aiplatform_v1.types.index_endpoint_service import UndeployIndexRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import UndeployIndexResponse
+from google.cloud.aiplatform_v1.types.index_endpoint_service import UpdateIndexEndpointRequest
+from google.cloud.aiplatform_v1.types.index_service import CreateIndexOperationMetadata
+from google.cloud.aiplatform_v1.types.index_service import CreateIndexRequest
+from google.cloud.aiplatform_v1.types.index_service import DeleteIndexRequest
+from google.cloud.aiplatform_v1.types.index_service import GetIndexRequest
+from google.cloud.aiplatform_v1.types.index_service import ListIndexesRequest
+from google.cloud.aiplatform_v1.types.index_service import ListIndexesResponse
+from google.cloud.aiplatform_v1.types.index_service import NearestNeighborSearchOperationMetadata
+from google.cloud.aiplatform_v1.types.index_service import UpdateIndexOperationMetadata
+from google.cloud.aiplatform_v1.types.index_service import UpdateIndexRequest
 from google.cloud.aiplatform_v1.types.io import BigQueryDestination
 from google.cloud.aiplatform_v1.types.io import BigQuerySource
 from google.cloud.aiplatform_v1.types.io import ContainerRegistryDestination
@@ -103,14 +149,17 @@ from google.cloud.aiplatform_v1.types.job_service import CreateBatchPredictionJo
 from google.cloud.aiplatform_v1.types.job_service import CreateCustomJobRequest
 from google.cloud.aiplatform_v1.types.job_service import CreateDataLabelingJobRequest
 from google.cloud.aiplatform_v1.types.job_service import CreateHyperparameterTuningJobRequest
+from google.cloud.aiplatform_v1.types.job_service import CreateModelDeploymentMonitoringJobRequest
 from google.cloud.aiplatform_v1.types.job_service import DeleteBatchPredictionJobRequest
 from google.cloud.aiplatform_v1.types.job_service import DeleteCustomJobRequest
 from google.cloud.aiplatform_v1.types.job_service import DeleteDataLabelingJobRequest
 from google.cloud.aiplatform_v1.types.job_service import DeleteHyperparameterTuningJobRequest
+from google.cloud.aiplatform_v1.types.job_service import DeleteModelDeploymentMonitoringJobRequest
 from google.cloud.aiplatform_v1.types.job_service import GetBatchPredictionJobRequest
 from google.cloud.aiplatform_v1.types.job_service import GetCustomJobRequest
 from google.cloud.aiplatform_v1.types.job_service import GetDataLabelingJobRequest
 from google.cloud.aiplatform_v1.types.job_service import GetHyperparameterTuningJobRequest
+from google.cloud.aiplatform_v1.types.job_service import GetModelDeploymentMonitoringJobRequest
 from google.cloud.aiplatform_v1.types.job_service import ListBatchPredictionJobsRequest
 from google.cloud.aiplatform_v1.types.job_service import ListBatchPredictionJobsResponse
 from google.cloud.aiplatform_v1.types.job_service import ListCustomJobsRequest
@@ -119,6 +168,14 @@ from google.cloud.aiplatform_v1.types.job_service import ListDataLabelingJobsReq
 from google.cloud.aiplatform_v1.types.job_service import ListDataLabelingJobsResponse
 from google.cloud.aiplatform_v1.types.job_service import ListHyperparameterTuningJobsRequest
 from google.cloud.aiplatform_v1.types.job_service import ListHyperparameterTuningJobsResponse
+from google.cloud.aiplatform_v1.types.job_service import ListModelDeploymentMonitoringJobsRequest
+from google.cloud.aiplatform_v1.types.job_service import ListModelDeploymentMonitoringJobsResponse
+from google.cloud.aiplatform_v1.types.job_service import PauseModelDeploymentMonitoringJobRequest
+from google.cloud.aiplatform_v1.types.job_service import ResumeModelDeploymentMonitoringJobRequest
+from google.cloud.aiplatform_v1.types.job_service import SearchModelDeploymentMonitoringStatsAnomaliesRequest
+from google.cloud.aiplatform_v1.types.job_service import SearchModelDeploymentMonitoringStatsAnomaliesResponse
+from google.cloud.aiplatform_v1.types.job_service import UpdateModelDeploymentMonitoringJobOperationMetadata
+from google.cloud.aiplatform_v1.types.job_service import UpdateModelDeploymentMonitoringJobRequest
 from google.cloud.aiplatform_v1.types.job_state import JobState
 from google.cloud.aiplatform_v1.types.machine_resources import AutomaticResources
 from google.cloud.aiplatform_v1.types.machine_resources import AutoscalingMetricSpec
@@ -140,8 +197,18 @@ from google.cloud.aiplatform_v1.types.model import Model
 from google.cloud.aiplatform_v1.types.model import ModelContainerSpec
 from google.cloud.aiplatform_v1.types.model import Port
 from google.cloud.aiplatform_v1.types.model import PredictSchemata
+from google.cloud.aiplatform_v1.types.model_deployment_monitoring_job import ModelDeploymentMonitoringBigQueryTable
+from google.cloud.aiplatform_v1.types.model_deployment_monitoring_job import ModelDeploymentMonitoringJob
+from google.cloud.aiplatform_v1.types.model_deployment_monitoring_job import ModelDeploymentMonitoringObjectiveConfig
+from google.cloud.aiplatform_v1.types.model_deployment_monitoring_job import ModelDeploymentMonitoringScheduleConfig
+from google.cloud.aiplatform_v1.types.model_deployment_monitoring_job import ModelMonitoringStatsAnomalies
+from google.cloud.aiplatform_v1.types.model_deployment_monitoring_job import ModelDeploymentMonitoringObjectiveType
 from google.cloud.aiplatform_v1.types.model_evaluation import ModelEvaluation
 from google.cloud.aiplatform_v1.types.model_evaluation_slice import ModelEvaluationSlice
+from google.cloud.aiplatform_v1.types.model_monitoring import ModelMonitoringAlertConfig
+from google.cloud.aiplatform_v1.types.model_monitoring import ModelMonitoringObjectiveConfig
+from google.cloud.aiplatform_v1.types.model_monitoring import SamplingStrategy
+from google.cloud.aiplatform_v1.types.model_monitoring import ThresholdConfig
 from google.cloud.aiplatform_v1.types.model_service import DeleteModelRequest
 from google.cloud.aiplatform_v1.types.model_service import ExportModelOperationMetadata
 from google.cloud.aiplatform_v1.types.model_service import ExportModelRequest
@@ -178,8 +245,11 @@ from google.cloud.aiplatform_v1.types.pipeline_service import ListPipelineJobsRe
 from google.cloud.aiplatform_v1.types.pipeline_service import ListTrainingPipelinesRequest
 from google.cloud.aiplatform_v1.types.pipeline_service import ListTrainingPipelinesResponse
 from google.cloud.aiplatform_v1.types.pipeline_state import PipelineState
+from google.cloud.aiplatform_v1.types.prediction_service import ExplainRequest
+from google.cloud.aiplatform_v1.types.prediction_service import ExplainResponse
 from google.cloud.aiplatform_v1.types.prediction_service import PredictRequest
 from google.cloud.aiplatform_v1.types.prediction_service import PredictResponse
+from google.cloud.aiplatform_v1.types.prediction_service import RawPredictRequest
 from google.cloud.aiplatform_v1.types.specialist_pool import SpecialistPool
 from google.cloud.aiplatform_v1.types.specialist_pool_service import CreateSpecialistPoolOperationMetadata
 from google.cloud.aiplatform_v1.types.specialist_pool_service import CreateSpecialistPoolRequest
@@ -190,6 +260,7 @@ from google.cloud.aiplatform_v1.types.specialist_pool_service import ListSpecial
 from google.cloud.aiplatform_v1.types.specialist_pool_service import UpdateSpecialistPoolOperationMetadata
 from google.cloud.aiplatform_v1.types.specialist_pool_service import UpdateSpecialistPoolRequest
 from google.cloud.aiplatform_v1.types.study import Measurement
+from google.cloud.aiplatform_v1.types.study import Study
 from google.cloud.aiplatform_v1.types.study import StudySpec
 from google.cloud.aiplatform_v1.types.study import Trial
 from google.cloud.aiplatform_v1.types.training_pipeline import FilterSplit
@@ -205,6 +276,10 @@ __all__ = ('DatasetServiceClient',
     'DatasetServiceAsyncClient',
     'EndpointServiceClient',
     'EndpointServiceAsyncClient',
+    'IndexEndpointServiceClient',
+    'IndexEndpointServiceAsyncClient',
+    'IndexServiceClient',
+    'IndexServiceAsyncClient',
     'JobServiceClient',
     'JobServiceAsyncClient',
     'MigrationServiceClient',
@@ -256,6 +331,7 @@ __all__ = ('DatasetServiceClient',
     'ListDatasetsRequest',
     'ListDatasetsResponse',
     'UpdateDatasetRequest',
+    'DeployedIndexRef',
     'DeployedModelRef',
     'EncryptionSpec',
     'DeployedModel',
@@ -275,7 +351,48 @@ __all__ = ('DatasetServiceClient',
     'UpdateEndpointRequest',
     'EnvVar',
     'Execution',
+    'Attribution',
+    'Explanation',
+    'ExplanationMetadataOverride',
+    'ExplanationParameters',
+    'ExplanationSpec',
+    'ExplanationSpecOverride',
+    'FeatureNoiseSigma',
+    'IntegratedGradientsAttribution',
+    'ModelExplanation',
+    'SampledShapleyAttribution',
+    'SmoothGradConfig',
+    'XraiAttribution',
+    'ExplanationMetadata',
+    'FeatureStatsAnomaly',
     'HyperparameterTuningJob',
+    'Index',
+    'DeployedIndex',
+    'DeployedIndexAuthConfig',
+    'IndexEndpoint',
+    'IndexPrivateEndpoints',
+    'CreateIndexEndpointOperationMetadata',
+    'CreateIndexEndpointRequest',
+    'DeleteIndexEndpointRequest',
+    'DeployIndexOperationMetadata',
+    'DeployIndexRequest',
+    'DeployIndexResponse',
+    'GetIndexEndpointRequest',
+    'ListIndexEndpointsRequest',
+    'ListIndexEndpointsResponse',
+    'UndeployIndexOperationMetadata',
+    'UndeployIndexRequest',
+    'UndeployIndexResponse',
+    'UpdateIndexEndpointRequest',
+    'CreateIndexOperationMetadata',
+    'CreateIndexRequest',
+    'DeleteIndexRequest',
+    'GetIndexRequest',
+    'ListIndexesRequest',
+    'ListIndexesResponse',
+    'NearestNeighborSearchOperationMetadata',
+    'UpdateIndexOperationMetadata',
+    'UpdateIndexRequest',
     'BigQueryDestination',
     'BigQuerySource',
     'ContainerRegistryDestination',
@@ -289,14 +406,17 @@ __all__ = ('DatasetServiceClient',
     'CreateCustomJobRequest',
     'CreateDataLabelingJobRequest',
     'CreateHyperparameterTuningJobRequest',
+    'CreateModelDeploymentMonitoringJobRequest',
     'DeleteBatchPredictionJobRequest',
     'DeleteCustomJobRequest',
     'DeleteDataLabelingJobRequest',
     'DeleteHyperparameterTuningJobRequest',
+    'DeleteModelDeploymentMonitoringJobRequest',
     'GetBatchPredictionJobRequest',
     'GetCustomJobRequest',
     'GetDataLabelingJobRequest',
     'GetHyperparameterTuningJobRequest',
+    'GetModelDeploymentMonitoringJobRequest',
     'ListBatchPredictionJobsRequest',
     'ListBatchPredictionJobsResponse',
     'ListCustomJobsRequest',
@@ -305,6 +425,14 @@ __all__ = ('DatasetServiceClient',
     'ListDataLabelingJobsResponse',
     'ListHyperparameterTuningJobsRequest',
     'ListHyperparameterTuningJobsResponse',
+    'ListModelDeploymentMonitoringJobsRequest',
+    'ListModelDeploymentMonitoringJobsResponse',
+    'PauseModelDeploymentMonitoringJobRequest',
+    'ResumeModelDeploymentMonitoringJobRequest',
+    'SearchModelDeploymentMonitoringStatsAnomaliesRequest',
+    'SearchModelDeploymentMonitoringStatsAnomaliesResponse',
+    'UpdateModelDeploymentMonitoringJobOperationMetadata',
+    'UpdateModelDeploymentMonitoringJobRequest',
     'JobState',
     'AutomaticResources',
     'AutoscalingMetricSpec',
@@ -326,8 +454,18 @@ __all__ = ('DatasetServiceClient',
     'ModelContainerSpec',
     'Port',
     'PredictSchemata',
+    'ModelDeploymentMonitoringBigQueryTable',
+    'ModelDeploymentMonitoringJob',
+    'ModelDeploymentMonitoringObjectiveConfig',
+    'ModelDeploymentMonitoringScheduleConfig',
+    'ModelMonitoringStatsAnomalies',
+    'ModelDeploymentMonitoringObjectiveType',
     'ModelEvaluation',
     'ModelEvaluationSlice',
+    'ModelMonitoringAlertConfig',
+    'ModelMonitoringObjectiveConfig',
+    'SamplingStrategy',
+    'ThresholdConfig',
     'DeleteModelRequest',
     'ExportModelOperationMetadata',
     'ExportModelRequest',
@@ -364,8 +502,11 @@ __all__ = ('DatasetServiceClient',
     'ListTrainingPipelinesRequest',
     'ListTrainingPipelinesResponse',
     'PipelineState',
+    'ExplainRequest',
+    'ExplainResponse',
     'PredictRequest',
     'PredictResponse',
+    'RawPredictRequest',
     'SpecialistPool',
     'CreateSpecialistPoolOperationMetadata',
     'CreateSpecialistPoolRequest',
@@ -376,6 +517,7 @@ __all__ = ('DatasetServiceClient',
     'UpdateSpecialistPoolOperationMetadata',
     'UpdateSpecialistPoolRequest',
     'Measurement',
+    'Study',
     'StudySpec',
     'Trial',
     'FilterSplit',

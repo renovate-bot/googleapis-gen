@@ -69,16 +69,6 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
-                default_config.rpcs.create_specialist_pool.timeout = 5.0
-
-                default_config.rpcs.get_specialist_pool.timeout = 5.0
-
-                default_config.rpcs.list_specialist_pools.timeout = 5.0
-
-                default_config.rpcs.delete_specialist_pool.timeout = 5.0
-
-                default_config.rpcs.update_specialist_pool.timeout = 5.0
-
                 default_config
               end
               yield @configure if block_given?

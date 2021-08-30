@@ -52,7 +52,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description:
+ * Service Description: A service for managing Vertex AI's Endpoints.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -135,6 +135,8 @@ class EndpointServiceGapicClient
 
     private static $modelNameTemplate;
 
+    private static $modelDeploymentMonitoringJobNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -185,6 +187,15 @@ class EndpointServiceGapicClient
         return self::$modelNameTemplate;
     }
 
+    private static function getModelDeploymentMonitoringJobNameTemplate()
+    {
+        if (self::$modelDeploymentMonitoringJobNameTemplate == null) {
+            self::$modelDeploymentMonitoringJobNameTemplate = new PathTemplate('projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}');
+        }
+
+        return self::$modelDeploymentMonitoringJobNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -192,6 +203,7 @@ class EndpointServiceGapicClient
                 'endpoint' => self::getEndpointNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'model' => self::getModelNameTemplate(),
+                'modelDeploymentMonitoringJob' => self::getModelDeploymentMonitoringJobNameTemplate(),
             ];
         }
 
@@ -254,12 +266,32 @@ class EndpointServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * model_deployment_monitoring_job resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $modelDeploymentMonitoringJob
+     *
+     * @return string The formatted model_deployment_monitoring_job resource.
+     */
+    public static function modelDeploymentMonitoringJobName($project, $location, $modelDeploymentMonitoringJob)
+    {
+        return self::getModelDeploymentMonitoringJobNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'model_deployment_monitoring_job' => $modelDeploymentMonitoringJob,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - endpoint: projects/{project}/locations/{location}/endpoints/{endpoint}
      * - location: projects/{project}/locations/{location}
      * - model: projects/{project}/locations/{location}/models/{model}
+     * - modelDeploymentMonitoringJob: projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

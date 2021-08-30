@@ -32,6 +32,9 @@ module Google
     module AIPlatform
       module V1
         ##
+        # The service that handles the CRUD of Vertex AI Dataset and its child
+        # resources.
+        #
         # To load this service and instantiate a client:
         #
         #     require "google/cloud/ai_platform/v1/dataset_service"

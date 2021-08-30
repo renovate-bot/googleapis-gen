@@ -21,6 +21,48 @@ module Google
   module Cloud
     module AIPlatform
       module V1
+        # A message representing a Study.
+        # @!attribute [r] name
+        #   @return [::String]
+        #     Output only. The name of a study. The study's globally unique identifier.
+        #     Format: `projects/{project}/locations/{location}/studies/{study}`
+        # @!attribute [rw] display_name
+        #   @return [::String]
+        #     Required. Describes the Study, default value is empty string.
+        # @!attribute [rw] study_spec
+        #   @return [::Google::Cloud::AIPlatform::V1::StudySpec]
+        #     Required. Configuration of the Study.
+        # @!attribute [r] state
+        #   @return [::Google::Cloud::AIPlatform::V1::Study::State]
+        #     Output only. The detailed state of a Study.
+        # @!attribute [r] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. Time at which the study was created.
+        # @!attribute [r] inactive_reason
+        #   @return [::String]
+        #     Output only. A human readable reason why the Study is inactive.
+        #     This should be empty if a study is ACTIVE or COMPLETED.
+        class Study
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # Describes the Study state.
+          module State
+            # The study state is unspecified.
+            STATE_UNSPECIFIED = 0
+
+            # The study is active.
+            ACTIVE = 1
+
+            # The study is stopped due to an internal error.
+            INACTIVE = 2
+
+            # The study is done when the service exhausts the parameter search space
+            # or max_trial_count is reached.
+            COMPLETED = 3
+          end
+        end
+
         # A message representing a Trial. A Trial contains a unique set of Parameters
         # that has been or will be evaluated, along with the objective metrics got by
         # running the Trial.
@@ -68,6 +110,21 @@ module Google
         #   @return [::String]
         #     Output only. The CustomJob name linked to the Trial.
         #     It's set for a HyperparameterTuningJob's Trial.
+        # @!attribute [r] web_access_uris
+        #   @return [::Google::Protobuf::Map{::String => ::String}]
+        #     Output only. URIs for accessing [interactive
+        #     shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+        #     (one URI for each training node). Only available if this trial is part of
+        #     a {::Google::Cloud::AIPlatform::V1::HyperparameterTuningJob HyperparameterTuningJob} and the job's
+        #     {::Google::Cloud::AIPlatform::V1::CustomJobSpec#enable_web_access trial_job_spec.enable_web_access} field
+        #     is `true`.
+        #
+        #     The keys are names of each node used for the trial; for example,
+        #     `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
+        #     the second worker pool, and `workerpool1-1` for the second node in the
+        #     second worker pool.
+        #
+        #     The values are the URIs for each node's interactive shell.
         class Trial
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -85,6 +142,15 @@ module Google
           #     `string_value` will be set if a parameter defined in StudySpec is
           #     in type 'CATEGORICAL'.
           class Parameter
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::String]
+          class WebAccessUrisEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
@@ -115,6 +181,12 @@ module Google
         end
 
         # Represents specification of a Study.
+        # @!attribute [rw] decay_curve_stopping_spec
+        #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::DecayCurveAutomatedStoppingSpec]
+        #     The automated early stopping spec using decay curve rule.
+        # @!attribute [rw] median_automated_stopping_spec
+        #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::MedianAutomatedStoppingSpec]
+        #     The automated early stopping spec using median rule.
         # @!attribute [rw] metrics
         #   @return [::Array<::Google::Cloud::AIPlatform::V1::StudySpec::MetricSpec>]
         #     Required. Metric specs for the Study.
@@ -343,6 +415,37 @@ module Google
               # strictly positive.
               UNIT_REVERSE_LOG_SCALE = 3
             end
+          end
+
+          # The decay curve automated stopping rule builds a Gaussian Process
+          # Regressor to predict the final objective value of a Trial based on the
+          # already completed Trials and the intermediate measurements of the current
+          # Trial. Early stopping is requested for the current Trial if there is very
+          # low probability to exceed the optimal value found so far.
+          # @!attribute [rw] use_elapsed_duration
+          #   @return [::Boolean]
+          #     True if {::Google::Cloud::AIPlatform::V1::Measurement#elapsed_duration Measurement.elapsed_duration} is used as the x-axis of each
+          #     Trials Decay Curve. Otherwise, {::Google::Cloud::AIPlatform::V1::Measurement#step_count Measurement.step_count} will be used
+          #     as the x-axis.
+          class DecayCurveAutomatedStoppingSpec
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # The median automated stopping rule stops a pending Trial if the Trial's
+          # best objective_value is strictly below the median 'performance' of all
+          # completed Trials reported up to the Trial's last measurement.
+          # Currently, 'performance' refers to the running average of the objective
+          # values reported by the Trial in each measurement.
+          # @!attribute [rw] use_elapsed_duration
+          #   @return [::Boolean]
+          #     True if median automated stopping rule applies on
+          #     {::Google::Cloud::AIPlatform::V1::Measurement#elapsed_duration Measurement.elapsed_duration}. It means that elapsed_duration
+          #     field of latest measurement of current Trial is used to compute median
+          #     objective value for each completed Trials.
+          class MedianAutomatedStoppingSpec
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
           # The available search algorithms for the Study.

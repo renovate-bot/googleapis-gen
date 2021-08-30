@@ -3,6 +3,9 @@ package com.google.cloud.aiplatform.v1;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
+ * <pre>
+ * A service for managing Vertex AI's Endpoints.
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
@@ -276,6 +279,9 @@ public final class EndpointServiceGrpc {
   }
 
   /**
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
    */
   public static abstract class EndpointServiceImplBase implements io.grpc.BindableService {
 
@@ -406,6 +412,9 @@ public final class EndpointServiceGrpc {
   }
 
   /**
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
    */
   public static final class EndpointServiceStub extends io.grpc.stub.AbstractAsyncStub<EndpointServiceStub> {
     private EndpointServiceStub(
@@ -499,6 +508,9 @@ public final class EndpointServiceGrpc {
   }
 
   /**
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
    */
   public static final class EndpointServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<EndpointServiceBlockingStub> {
     private EndpointServiceBlockingStub(
@@ -585,6 +597,9 @@ public final class EndpointServiceGrpc {
   }
 
   /**
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
    */
   public static final class EndpointServiceFutureStub extends io.grpc.stub.AbstractFutureStub<EndpointServiceFutureStub> {
     private EndpointServiceFutureStub(

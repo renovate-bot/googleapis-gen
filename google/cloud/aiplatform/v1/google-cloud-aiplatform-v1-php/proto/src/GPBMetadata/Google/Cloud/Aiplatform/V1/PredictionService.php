@@ -19,11 +19,12 @@ class PredictionService
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Httpbody::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Cloud\Aiplatform\V1\Explanation::initOnce();
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ü
-3google/cloud/aiplatform/v1/prediction_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/httpbody.protogoogle/api/resource.protogoogle/protobuf/struct.proto"ª
+ð
+3google/cloud/aiplatform/v1/prediction_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/httpbody.protogoogle/api/resource.proto,google/cloud/aiplatform/v1/explanation.protogoogle/protobuf/struct.proto"ª
 PredictRequest<
 endpoint (	B*àAúA$
 "aiplatform.googleapis.com/Endpoint.
@@ -32,9 +33,28 @@ class PredictionService
 parameters (2.google.protobuf.Value"Y
 PredictResponse+
 predictions (2.google.protobuf.Value
-deployed_model_id (	2­
+deployed_model_id (	"z
+RawPredictRequest<
+endpoint (	B*àAúA$
+"aiplatform.googleapis.com/Endpoint\'
+	http_body (2.google.api.HttpBody"
+ExplainRequest<
+endpoint (	B*àAúA$
+"aiplatform.googleapis.com/Endpoint.
+	instances (2.google.protobuf.ValueBàA*
+
+parameters (2.google.protobuf.ValueV
+explanation_spec_override (23.google.cloud.aiplatform.v1.ExplanationSpecOverride
+deployed_model_id (	"˜
+ExplainResponse=
+explanations (2\'.google.cloud.aiplatform.v1.Explanation
+deployed_model_id (	+
+predictions (2.google.protobuf.Value2¼
 PredictionServiceÈ
-Predict*.google.cloud.aiplatform.v1.PredictRequest+.google.cloud.aiplatform.v1.PredictResponse"d‚Óä“>"9/v1/{endpoint=projects/*/locations/*/endpoints/*}:predict:*ÚAendpoint,instances,parametersMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÚ
+Predict*.google.cloud.aiplatform.v1.PredictRequest+.google.cloud.aiplatform.v1.PredictResponse"d‚Óä“>"9/v1/{endpoint=projects/*/locations/*/endpoints/*}:predict:*ÚAendpoint,instances,parameters¯
+
+RawPredict-.google.cloud.aiplatform.v1.RawPredictRequest.google.api.HttpBody"\\‚Óä“A"</v1/{endpoint=projects/*/locations/*/endpoints/*}:rawPredict:*ÚAendpoint,http_bodyÚ
+Explain*.google.cloud.aiplatform.v1.ExplainRequest+.google.cloud.aiplatform.v1.ExplainResponse"v‚Óä“>"9/v1/{endpoint=projects/*/locations/*/endpoints/*}:explain:*ÚA/endpoint,instances,parameters,deployed_model_idMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÚ
 com.google.cloud.aiplatform.v1BPredictionServiceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 

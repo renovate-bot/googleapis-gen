@@ -53,6 +53,14 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string slice_dimensions = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $slice_dimensions;
+    /**
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $model_explanation = null;
 
     /**
      * Constructor.
@@ -77,6 +85,10 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
      *           ModelEvaluationSlices. The dimensions can be used as the filter of the
      *           [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices] request, in the form of
      *           `slice.dimension = <dimension>`.
+     *     @type \Google\Cloud\AIPlatform\V1\ModelExplanation $model_explanation
+     *           Output only. Aggregated explanation metrics for the Model's prediction output over the
+     *           data this ModelEvaluation uses. This field is populated only if the Model
+     *           is evaluated with explanations, and only for AutoML tabular Models.
      * }
      */
     public function __construct($data = NULL) {
@@ -244,6 +256,46 @@ class ModelEvaluation extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->slice_dimensions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\AIPlatform\V1\ModelExplanation|null
+     */
+    public function getModelExplanation()
+    {
+        return isset($this->model_explanation) ? $this->model_explanation : null;
+    }
+
+    public function hasModelExplanation()
+    {
+        return isset($this->model_explanation);
+    }
+
+    public function clearModelExplanation()
+    {
+        unset($this->model_explanation);
+    }
+
+    /**
+     * Output only. Aggregated explanation metrics for the Model's prediction output over the
+     * data this ModelEvaluation uses. This field is populated only if the Model
+     * is evaluated with explanations, and only for AutoML tabular Models.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\AIPlatform\V1\ModelExplanation $var
+     * @return $this
+     */
+    public function setModelExplanation($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\ModelExplanation::class);
+        $this->model_explanation = $var;
 
         return $this;
     }

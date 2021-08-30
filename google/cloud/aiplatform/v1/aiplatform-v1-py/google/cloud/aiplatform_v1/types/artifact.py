@@ -15,6 +15,7 @@
 #
 import proto  # type: ignore
 
+from google.protobuf import struct_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 
 
@@ -66,6 +67,26 @@ class Artifact(proto.Message):
             managed by clients (such as Vertex Pipelines),
             and the system does not prescribe or check the
             validity of state transitions.
+        schema_title (str):
+            The title of the schema describing the
+            metadata.
+            Schema title and version is expected to be
+            registered in earlier Create Schema calls. And
+            both are used together as unique identifiers to
+            identify schemas within the local metadata
+            store.
+        schema_version (str):
+            The version of the schema in schema_name to use.
+
+            Schema title and version is expected to be registered in
+            earlier Create Schema calls. And both are used together as
+            unique identifiers to identify schemas within the local
+            metadata store.
+        metadata (google.protobuf.struct_pb2.Struct):
+            Properties of the Artifact.
+            The size of this field should not exceed 200KB.
+        description (str):
+            Description of the Artifact
     """
     class State(proto.Enum):
         r"""Describes the state of the Artifact."""
@@ -108,6 +129,23 @@ class Artifact(proto.Message):
         proto.ENUM,
         number=13,
         enum=State,
+    )
+    schema_title = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    schema_version = proto.Field(
+        proto.STRING,
+        number=15,
+    )
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=16,
+        message=struct_pb2.Struct,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=17,
     )
 
 

@@ -103,6 +103,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 80: {
+
+            enableWebAccess_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -252,7 +257,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the [AI Platform Custom Code Service
+   * If unspecified, the [Vertex AI Custom Code Service
    * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
    * for the CustomJob's project is used.
    * </pre>
@@ -277,7 +282,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
-   * If unspecified, the [AI Platform Custom Code Service
+   * If unspecified, the [Vertex AI Custom Code Service
    * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
    * for the CustomJob's project is used.
    * </pre>
@@ -445,6 +450,26 @@ private static final long serialVersionUID = 0L;
     return getBaseOutputDirectory();
   }
 
+  public static final int ENABLE_WEB_ACCESS_FIELD_NUMBER = 10;
+  private boolean enableWebAccess_;
+  /**
+   * <pre>
+   * Optional. Whether you want Vertex AI to enable [interactive shell
+   * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+   * to training containers.
+   * If set to `true`, you can access interactive shells at the URIs given
+   * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+   * </pre>
+   *
+   * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enableWebAccess.
+   */
+  @java.lang.Override
+  public boolean getEnableWebAccess() {
+    return enableWebAccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -474,6 +499,9 @@ private static final long serialVersionUID = 0L;
     if (baseOutputDirectory_ != null) {
       output.writeMessage(6, getBaseOutputDirectory());
     }
+    if (enableWebAccess_ != false) {
+      output.writeBool(10, enableWebAccess_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -500,6 +528,10 @@ private static final long serialVersionUID = 0L;
     if (baseOutputDirectory_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getBaseOutputDirectory());
+    }
+    if (enableWebAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, enableWebAccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -532,6 +564,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseOutputDirectory()
           .equals(other.getBaseOutputDirectory())) return false;
     }
+    if (getEnableWebAccess()
+        != other.getEnableWebAccess()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -559,6 +593,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getBaseOutputDirectory().hashCode();
     }
+    hash = (37 * hash) + ENABLE_WEB_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableWebAccess());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -719,6 +756,8 @@ private static final long serialVersionUID = 0L;
         baseOutputDirectory_ = null;
         baseOutputDirectoryBuilder_ = null;
       }
+      enableWebAccess_ = false;
+
       return this;
     }
 
@@ -767,6 +806,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseOutputDirectory_ = baseOutputDirectoryBuilder_.build();
       }
+      result.enableWebAccess_ = enableWebAccess_;
       onBuilt();
       return result;
     }
@@ -854,6 +894,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasBaseOutputDirectory()) {
         mergeBaseOutputDirectory(other.getBaseOutputDirectory());
+      }
+      if (other.getEnableWebAccess() != false) {
+        setEnableWebAccess(other.getEnableWebAccess());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1393,7 +1436,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1417,7 +1460,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1442,7 +1485,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1465,7 +1508,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1483,7 +1526,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      * </pre>
@@ -1928,6 +1971,64 @@ private static final long serialVersionUID = 0L;
         baseOutputDirectory_ = null;
       }
       return baseOutputDirectoryBuilder_;
+    }
+
+    private boolean enableWebAccess_ ;
+    /**
+     * <pre>
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     * </pre>
+     *
+     * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enableWebAccess.
+     */
+    @java.lang.Override
+    public boolean getEnableWebAccess() {
+      return enableWebAccess_;
+    }
+    /**
+     * <pre>
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     * </pre>
+     *
+     * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enableWebAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableWebAccess(boolean value) {
+      
+      enableWebAccess_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1.HyperparameterTuningJob.trials]).
+     * </pre>
+     *
+     * <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableWebAccess() {
+      
+      enableWebAccess_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

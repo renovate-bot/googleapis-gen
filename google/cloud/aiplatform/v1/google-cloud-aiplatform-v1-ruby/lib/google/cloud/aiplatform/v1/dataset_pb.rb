@@ -15,6 +15,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1.Dataset" do
       optional :name, :string, 1
       optional :display_name, :string, 2
+      optional :description, :string, 16
       optional :metadata_schema_uri, :string, 3
       optional :metadata, :message, 8, "google.protobuf.Value"
       optional :create_time, :message, 4, "google.protobuf.Timestamp"

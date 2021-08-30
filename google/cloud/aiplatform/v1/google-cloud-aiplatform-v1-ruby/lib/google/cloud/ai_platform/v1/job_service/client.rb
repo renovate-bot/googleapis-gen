@@ -64,46 +64,6 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
-                default_config.rpcs.create_custom_job.timeout = 5.0
-
-                default_config.rpcs.get_custom_job.timeout = 5.0
-
-                default_config.rpcs.list_custom_jobs.timeout = 5.0
-
-                default_config.rpcs.delete_custom_job.timeout = 5.0
-
-                default_config.rpcs.cancel_custom_job.timeout = 5.0
-
-                default_config.rpcs.create_data_labeling_job.timeout = 5.0
-
-                default_config.rpcs.get_data_labeling_job.timeout = 5.0
-
-                default_config.rpcs.list_data_labeling_jobs.timeout = 5.0
-
-                default_config.rpcs.delete_data_labeling_job.timeout = 5.0
-
-                default_config.rpcs.cancel_data_labeling_job.timeout = 5.0
-
-                default_config.rpcs.create_hyperparameter_tuning_job.timeout = 5.0
-
-                default_config.rpcs.get_hyperparameter_tuning_job.timeout = 5.0
-
-                default_config.rpcs.list_hyperparameter_tuning_jobs.timeout = 5.0
-
-                default_config.rpcs.delete_hyperparameter_tuning_job.timeout = 5.0
-
-                default_config.rpcs.cancel_hyperparameter_tuning_job.timeout = 5.0
-
-                default_config.rpcs.create_batch_prediction_job.timeout = 5.0
-
-                default_config.rpcs.get_batch_prediction_job.timeout = 5.0
-
-                default_config.rpcs.list_batch_prediction_jobs.timeout = 5.0
-
-                default_config.rpcs.delete_batch_prediction_job.timeout = 5.0
-
-                default_config.rpcs.cancel_batch_prediction_job.timeout = 5.0
-
                 default_config
               end
               yield @configure if block_given?
@@ -1749,6 +1709,606 @@ module Google
             end
 
             ##
+            # Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+            # configured interval.
+            #
+            # @overload create_model_deployment_monitoring_job(request, options = nil)
+            #   Pass arguments to `create_model_deployment_monitoring_job` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload create_model_deployment_monitoring_job(parent: nil, model_deployment_monitoring_job: nil)
+            #   Pass arguments to `create_model_deployment_monitoring_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The parent of the ModelDeploymentMonitoringJob.
+            #     Format: `projects/{project}/locations/{location}`
+            #   @param model_deployment_monitoring_job [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob, ::Hash]
+            #     Required. The ModelDeploymentMonitoringJob to create
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def create_model_deployment_monitoring_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.create_model_deployment_monitoring_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.create_model_deployment_monitoring_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.create_model_deployment_monitoring_job.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :create_model_deployment_monitoring_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Searches Model Monitoring Statistics generated within a given time window.
+            #
+            # @overload search_model_deployment_monitoring_stats_anomalies(request, options = nil)
+            #   Pass arguments to `search_model_deployment_monitoring_stats_anomalies` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload search_model_deployment_monitoring_stats_anomalies(model_deployment_monitoring_job: nil, deployed_model_id: nil, feature_display_name: nil, objectives: nil, page_size: nil, page_token: nil, start_time: nil, end_time: nil)
+            #   Pass arguments to `search_model_deployment_monitoring_stats_anomalies` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param model_deployment_monitoring_job [::String]
+            #     Required. ModelDeploymentMonitoring Job resource name.
+            #     Format:
+            #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+            #   @param deployed_model_id [::String]
+            #     Required. The DeployedModel ID of the
+            #     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+            #   @param feature_display_name [::String]
+            #     The feature display name. If specified, only return the stats belonging to
+            #     this feature. Format:
+            #     {::Google::Cloud::AIPlatform::V1::ModelMonitoringStatsAnomalies::FeatureHistoricStatsAnomalies#feature_display_name ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies.feature_display_name},
+            #     example: "user_destination".
+            #   @param objectives [::Array<::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest::StatsAnomaliesObjective, ::Hash>]
+            #     Required. Objectives of the stats to retrieve.
+            #   @param page_size [::Integer]
+            #     The standard list page size.
+            #   @param page_token [::String]
+            #     A page token received from a previous
+            #     {::Google::Cloud::AIPlatform::V1::JobService::Client#search_model_deployment_monitoring_stats_anomalies JobService.SearchModelDeploymentMonitoringStatsAnomalies}
+            #     call.
+            #   @param start_time [::Google::Protobuf::Timestamp, ::Hash]
+            #     The earliest timestamp of stats being generated.
+            #     If not set, indicates fetching stats till the earliest possible one.
+            #   @param end_time [::Google::Protobuf::Timestamp, ::Hash]
+            #     The latest timestamp of stats being generated.
+            #     If not set, indicates feching stats till the latest possible one.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1::ModelMonitoringStatsAnomalies>]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1::ModelMonitoringStatsAnomalies>]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def search_model_deployment_monitoring_stats_anomalies request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.search_model_deployment_monitoring_stats_anomalies.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "model_deployment_monitoring_job" => request.model_deployment_monitoring_job
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.search_model_deployment_monitoring_stats_anomalies.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.search_model_deployment_monitoring_stats_anomalies.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :search_model_deployment_monitoring_stats_anomalies, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @job_service_stub, :search_model_deployment_monitoring_stats_anomalies, request, response, operation, options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Gets a ModelDeploymentMonitoringJob.
+            #
+            # @overload get_model_deployment_monitoring_job(request, options = nil)
+            #   Pass arguments to `get_model_deployment_monitoring_job` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload get_model_deployment_monitoring_job(name: nil)
+            #   Pass arguments to `get_model_deployment_monitoring_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The resource name of the ModelDeploymentMonitoringJob.
+            #     Format:
+            #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def get_model_deployment_monitoring_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.get_model_deployment_monitoring_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.get_model_deployment_monitoring_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.get_model_deployment_monitoring_job.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :get_model_deployment_monitoring_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Lists ModelDeploymentMonitoringJobs in a Location.
+            #
+            # @overload list_model_deployment_monitoring_jobs(request, options = nil)
+            #   Pass arguments to `list_model_deployment_monitoring_jobs` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload list_model_deployment_monitoring_jobs(parent: nil, filter: nil, page_size: nil, page_token: nil, read_mask: nil)
+            #   Pass arguments to `list_model_deployment_monitoring_jobs` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The parent of the ModelDeploymentMonitoringJob.
+            #     Format: `projects/{project}/locations/{location}`
+            #   @param filter [::String]
+            #     The standard list filter.
+            #   @param page_size [::Integer]
+            #     The standard list page size.
+            #   @param page_token [::String]
+            #     The standard list page token.
+            #   @param read_mask [::Google::Protobuf::FieldMask, ::Hash]
+            #     Mask specifying which fields to read
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob>]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob>]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def list_model_deployment_monitoring_jobs request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.list_model_deployment_monitoring_jobs.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.list_model_deployment_monitoring_jobs.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.list_model_deployment_monitoring_jobs.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :list_model_deployment_monitoring_jobs, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @job_service_stub, :list_model_deployment_monitoring_jobs, request, response, operation, options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Updates a ModelDeploymentMonitoringJob.
+            #
+            # @overload update_model_deployment_monitoring_job(request, options = nil)
+            #   Pass arguments to `update_model_deployment_monitoring_job` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload update_model_deployment_monitoring_job(model_deployment_monitoring_job: nil, update_mask: nil)
+            #   Pass arguments to `update_model_deployment_monitoring_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param model_deployment_monitoring_job [::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob, ::Hash]
+            #     Required. The model monitoring configuration which replaces the resource on the
+            #     server.
+            #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
+            #     Required. The update mask applies to the resource.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def update_model_deployment_monitoring_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.update_model_deployment_monitoring_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "model_deployment_monitoring_job.name" => request.model_deployment_monitoring_job.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.update_model_deployment_monitoring_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.update_model_deployment_monitoring_job.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :update_model_deployment_monitoring_job, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Deletes a ModelDeploymentMonitoringJob.
+            #
+            # @overload delete_model_deployment_monitoring_job(request, options = nil)
+            #   Pass arguments to `delete_model_deployment_monitoring_job` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload delete_model_deployment_monitoring_job(name: nil)
+            #   Pass arguments to `delete_model_deployment_monitoring_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The resource name of the model monitoring job to delete.
+            #     Format:
+            #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def delete_model_deployment_monitoring_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.delete_model_deployment_monitoring_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.delete_model_deployment_monitoring_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.delete_model_deployment_monitoring_job.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :delete_model_deployment_monitoring_job, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+            # makes a best effort to cancel the job. Will mark
+            # {::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob#state ModelDeploymentMonitoringJob.state} to 'PAUSED'.
+            #
+            # @overload pause_model_deployment_monitoring_job(request, options = nil)
+            #   Pass arguments to `pause_model_deployment_monitoring_job` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload pause_model_deployment_monitoring_job(name: nil)
+            #   Pass arguments to `pause_model_deployment_monitoring_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The resource name of the ModelDeploymentMonitoringJob to pause.
+            #     Format:
+            #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Protobuf::Empty]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Protobuf::Empty]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def pause_model_deployment_monitoring_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.pause_model_deployment_monitoring_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.pause_model_deployment_monitoring_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.pause_model_deployment_monitoring_job.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :pause_model_deployment_monitoring_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+            # next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+            # resumed.
+            #
+            # @overload resume_model_deployment_monitoring_job(request, options = nil)
+            #   Pass arguments to `resume_model_deployment_monitoring_job` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload resume_model_deployment_monitoring_job(name: nil)
+            #   Pass arguments to `resume_model_deployment_monitoring_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The resource name of the ModelDeploymentMonitoringJob to resume.
+            #     Format:
+            #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Protobuf::Empty]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Protobuf::Empty]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def resume_model_deployment_monitoring_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.resume_model_deployment_monitoring_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.resume_model_deployment_monitoring_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.resume_model_deployment_monitoring_job.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @job_service_stub.call_rpc :resume_model_deployment_monitoring_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Configuration class for the JobService API.
             #
             # This class represents the configuration for JobService,
@@ -1983,6 +2543,46 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :cancel_batch_prediction_job
+                ##
+                # RPC-specific configuration for `create_model_deployment_monitoring_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :create_model_deployment_monitoring_job
+                ##
+                # RPC-specific configuration for `search_model_deployment_monitoring_stats_anomalies`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :search_model_deployment_monitoring_stats_anomalies
+                ##
+                # RPC-specific configuration for `get_model_deployment_monitoring_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :get_model_deployment_monitoring_job
+                ##
+                # RPC-specific configuration for `list_model_deployment_monitoring_jobs`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :list_model_deployment_monitoring_jobs
+                ##
+                # RPC-specific configuration for `update_model_deployment_monitoring_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :update_model_deployment_monitoring_job
+                ##
+                # RPC-specific configuration for `delete_model_deployment_monitoring_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :delete_model_deployment_monitoring_job
+                ##
+                # RPC-specific configuration for `pause_model_deployment_monitoring_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :pause_model_deployment_monitoring_job
+                ##
+                # RPC-specific configuration for `resume_model_deployment_monitoring_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :resume_model_deployment_monitoring_job
 
                 # @private
                 def initialize parent_rpcs = nil
@@ -2026,6 +2626,22 @@ module Google
                   @delete_batch_prediction_job = ::Gapic::Config::Method.new delete_batch_prediction_job_config
                   cancel_batch_prediction_job_config = parent_rpcs.cancel_batch_prediction_job if parent_rpcs.respond_to? :cancel_batch_prediction_job
                   @cancel_batch_prediction_job = ::Gapic::Config::Method.new cancel_batch_prediction_job_config
+                  create_model_deployment_monitoring_job_config = parent_rpcs.create_model_deployment_monitoring_job if parent_rpcs.respond_to? :create_model_deployment_monitoring_job
+                  @create_model_deployment_monitoring_job = ::Gapic::Config::Method.new create_model_deployment_monitoring_job_config
+                  search_model_deployment_monitoring_stats_anomalies_config = parent_rpcs.search_model_deployment_monitoring_stats_anomalies if parent_rpcs.respond_to? :search_model_deployment_monitoring_stats_anomalies
+                  @search_model_deployment_monitoring_stats_anomalies = ::Gapic::Config::Method.new search_model_deployment_monitoring_stats_anomalies_config
+                  get_model_deployment_monitoring_job_config = parent_rpcs.get_model_deployment_monitoring_job if parent_rpcs.respond_to? :get_model_deployment_monitoring_job
+                  @get_model_deployment_monitoring_job = ::Gapic::Config::Method.new get_model_deployment_monitoring_job_config
+                  list_model_deployment_monitoring_jobs_config = parent_rpcs.list_model_deployment_monitoring_jobs if parent_rpcs.respond_to? :list_model_deployment_monitoring_jobs
+                  @list_model_deployment_monitoring_jobs = ::Gapic::Config::Method.new list_model_deployment_monitoring_jobs_config
+                  update_model_deployment_monitoring_job_config = parent_rpcs.update_model_deployment_monitoring_job if parent_rpcs.respond_to? :update_model_deployment_monitoring_job
+                  @update_model_deployment_monitoring_job = ::Gapic::Config::Method.new update_model_deployment_monitoring_job_config
+                  delete_model_deployment_monitoring_job_config = parent_rpcs.delete_model_deployment_monitoring_job if parent_rpcs.respond_to? :delete_model_deployment_monitoring_job
+                  @delete_model_deployment_monitoring_job = ::Gapic::Config::Method.new delete_model_deployment_monitoring_job_config
+                  pause_model_deployment_monitoring_job_config = parent_rpcs.pause_model_deployment_monitoring_job if parent_rpcs.respond_to? :pause_model_deployment_monitoring_job
+                  @pause_model_deployment_monitoring_job = ::Gapic::Config::Method.new pause_model_deployment_monitoring_job_config
+                  resume_model_deployment_monitoring_job_config = parent_rpcs.resume_model_deployment_monitoring_job if parent_rpcs.respond_to? :resume_model_deployment_monitoring_job
+                  @resume_model_deployment_monitoring_job = ::Gapic::Config::Method.new resume_model_deployment_monitoring_job_config
 
                   yield self if block_given?
                 end

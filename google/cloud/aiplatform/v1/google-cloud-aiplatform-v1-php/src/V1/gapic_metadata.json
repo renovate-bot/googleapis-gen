@@ -108,6 +108,84 @@
                 }
             }
         },
+        "IndexEndpointService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "IndexEndpointServiceGapicClient",
+                    "rpcs": {
+                        "CreateIndexEndpoint": {
+                            "methods": [
+                                "createIndexEndpoint"
+                            ]
+                        },
+                        "DeleteIndexEndpoint": {
+                            "methods": [
+                                "deleteIndexEndpoint"
+                            ]
+                        },
+                        "DeployIndex": {
+                            "methods": [
+                                "deployIndex"
+                            ]
+                        },
+                        "GetIndexEndpoint": {
+                            "methods": [
+                                "getIndexEndpoint"
+                            ]
+                        },
+                        "ListIndexEndpoints": {
+                            "methods": [
+                                "listIndexEndpoints"
+                            ]
+                        },
+                        "UndeployIndex": {
+                            "methods": [
+                                "undeployIndex"
+                            ]
+                        },
+                        "UpdateIndexEndpoint": {
+                            "methods": [
+                                "updateIndexEndpoint"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "IndexService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "IndexServiceGapicClient",
+                    "rpcs": {
+                        "CreateIndex": {
+                            "methods": [
+                                "createIndex"
+                            ]
+                        },
+                        "DeleteIndex": {
+                            "methods": [
+                                "deleteIndex"
+                            ]
+                        },
+                        "GetIndex": {
+                            "methods": [
+                                "getIndex"
+                            ]
+                        },
+                        "ListIndexes": {
+                            "methods": [
+                                "listIndexes"
+                            ]
+                        },
+                        "UpdateIndex": {
+                            "methods": [
+                                "updateIndex"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "JobService": {
             "clients": {
                 "grpc": {
@@ -153,6 +231,11 @@
                                 "createHyperparameterTuningJob"
                             ]
                         },
+                        "CreateModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "createModelDeploymentMonitoringJob"
+                            ]
+                        },
                         "DeleteBatchPredictionJob": {
                             "methods": [
                                 "deleteBatchPredictionJob"
@@ -171,6 +254,11 @@
                         "DeleteHyperparameterTuningJob": {
                             "methods": [
                                 "deleteHyperparameterTuningJob"
+                            ]
+                        },
+                        "DeleteModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "deleteModelDeploymentMonitoringJob"
                             ]
                         },
                         "GetBatchPredictionJob": {
@@ -193,6 +281,11 @@
                                 "getHyperparameterTuningJob"
                             ]
                         },
+                        "GetModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "getModelDeploymentMonitoringJob"
+                            ]
+                        },
                         "ListBatchPredictionJobs": {
                             "methods": [
                                 "listBatchPredictionJobs"
@@ -211,6 +304,31 @@
                         "ListHyperparameterTuningJobs": {
                             "methods": [
                                 "listHyperparameterTuningJobs"
+                            ]
+                        },
+                        "ListModelDeploymentMonitoringJobs": {
+                            "methods": [
+                                "listModelDeploymentMonitoringJobs"
+                            ]
+                        },
+                        "PauseModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "pauseModelDeploymentMonitoringJob"
+                            ]
+                        },
+                        "ResumeModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "resumeModelDeploymentMonitoringJob"
+                            ]
+                        },
+                        "SearchModelDeploymentMonitoringStatsAnomalies": {
+                            "methods": [
+                                "searchModelDeploymentMonitoringStatsAnomalies"
+                            ]
+                        },
+                        "UpdateModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "updateModelDeploymentMonitoringJob"
                             ]
                         }
                     }
@@ -359,9 +477,19 @@
                 "grpc": {
                     "libraryClient": "PredictionServiceGapicClient",
                     "rpcs": {
+                        "Explain": {
+                            "methods": [
+                                "explain"
+                            ]
+                        },
                         "Predict": {
                             "methods": [
                                 "predict"
+                            ]
+                        },
+                        "RawPredict": {
+                            "methods": [
+                                "rawPredict"
                             ]
                         }
                     }

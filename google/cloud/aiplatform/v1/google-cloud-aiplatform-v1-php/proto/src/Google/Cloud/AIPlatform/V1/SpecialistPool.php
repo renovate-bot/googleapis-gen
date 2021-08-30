@@ -10,11 +10,11 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * SpecialistPool represents customers' own workforce to work on their data
- * labeling jobs. It includes a group of specialist managers who are responsible
- * for managing the labelers in this pool as well as customers' data labeling
- * jobs associated with this pool.
- * Customers create specialist pool as well as start data labeling jobs on
- * Cloud, managers and labelers work with the jobs using CrowdCompute console.
+ * labeling jobs. It includes a group of specialist managers and workers.
+ * Managers are responsible for managing the workers in this pool as well as
+ * customers' data labeling jobs associated with this pool. Customers create
+ * specialist pool as well as start data labeling jobs on Cloud, managers and
+ * workers handle the jobs using CrowdCompute console.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1.SpecialistPool</code>
  */
@@ -36,13 +36,13 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      *
      * Generated from protobuf field <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $specialist_managers_count = 0;
     /**
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      *
      * Generated from protobuf field <code>repeated string specialist_manager_emails = 4;</code>
      */
@@ -68,9 +68,9 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
      *           characters.
      *           This field should be unique on project-level.
      *     @type int $specialist_managers_count
-     *           Output only. The number of Specialists in this SpecialistPool.
+     *           Output only. The number of managers in this SpecialistPool.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $specialist_manager_emails
-     *           The email addresses of the specialists in the SpecialistPool.
+     *           The email addresses of the managers in the SpecialistPool.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $pending_data_labeling_jobs
      *           Output only. The resource name of the pending data labeling jobs.
      * }
@@ -139,7 +139,7 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      *
      * Generated from protobuf field <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -150,7 +150,7 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      *
      * Generated from protobuf field <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
@@ -165,7 +165,7 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      *
      * Generated from protobuf field <code>repeated string specialist_manager_emails = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -176,7 +176,7 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      *
      * Generated from protobuf field <code>repeated string specialist_manager_emails = 4;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

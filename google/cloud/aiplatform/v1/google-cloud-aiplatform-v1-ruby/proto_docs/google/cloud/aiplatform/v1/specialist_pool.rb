@@ -22,11 +22,11 @@ module Google
     module AIPlatform
       module V1
         # SpecialistPool represents customers' own workforce to work on their data
-        # labeling jobs. It includes a group of specialist managers who are responsible
-        # for managing the labelers in this pool as well as customers' data labeling
-        # jobs associated with this pool.
-        # Customers create specialist pool as well as start data labeling jobs on
-        # Cloud, managers and labelers work with the jobs using CrowdCompute console.
+        # labeling jobs. It includes a group of specialist managers and workers.
+        # Managers are responsible for managing the workers in this pool as well as
+        # customers' data labeling jobs associated with this pool. Customers create
+        # specialist pool as well as start data labeling jobs on Cloud, managers and
+        # workers handle the jobs using CrowdCompute console.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The resource name of the SpecialistPool.
@@ -38,10 +38,10 @@ module Google
         #     This field should be unique on project-level.
         # @!attribute [r] specialist_managers_count
         #   @return [::Integer]
-        #     Output only. The number of Specialists in this SpecialistPool.
+        #     Output only. The number of managers in this SpecialistPool.
         # @!attribute [rw] specialist_manager_emails
         #   @return [::Array<::String>]
-        #     The email addresses of the specialists in the SpecialistPool.
+        #     The email addresses of the managers in the SpecialistPool.
         # @!attribute [r] pending_data_labeling_jobs
         #   @return [::Array<::String>]
         #     Output only. The resource name of the pending data labeling jobs.

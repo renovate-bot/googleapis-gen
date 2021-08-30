@@ -45,6 +45,11 @@ module Google
         #     ModelEvaluationSlices. The dimensions can be used as the filter of the
         #     {::Google::Cloud::AIPlatform::V1::ModelService::Client#list_model_evaluation_slices ModelService.ListModelEvaluationSlices} request, in the form of
         #     `slice.dimension = <dimension>`.
+        # @!attribute [r] model_explanation
+        #   @return [::Google::Cloud::AIPlatform::V1::ModelExplanation]
+        #     Output only. Aggregated explanation metrics for the Model's prediction output over the
+        #     data this ModelEvaluation uses. This field is populated only if the Model
+        #     is evaluated with explanations, and only for AutoML tabular Models.
         class ModelEvaluation
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

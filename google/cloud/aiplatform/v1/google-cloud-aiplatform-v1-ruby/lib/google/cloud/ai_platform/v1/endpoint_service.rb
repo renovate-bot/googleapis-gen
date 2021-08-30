@@ -32,6 +32,8 @@ module Google
     module AIPlatform
       module V1
         ##
+        # A service for managing Vertex AI's Endpoints.
+        #
         # To load this service and instantiate a client:
         #
         #     require "google/cloud/ai_platform/v1/endpoint_service"

@@ -48,6 +48,7 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
     private $args;
     /**
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
      */
@@ -76,6 +77,7 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
      *           Command line arguments to be passed to the Python task.
      *     @type \Google\Cloud\AIPlatform\V1\EnvVar[]|\Google\Protobuf\Internal\RepeatedField $env
      *           Environment variables to be passed to the python module.
+     *           Maximum limit is 100.
      * }
      */
     public function __construct($data = NULL) {
@@ -203,6 +205,7 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -214,6 +217,7 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.EnvVar env = 5;</code>
      * @param \Google\Cloud\AIPlatform\V1\EnvVar[]|\Google\Protobuf\Internal\RepeatedField $var

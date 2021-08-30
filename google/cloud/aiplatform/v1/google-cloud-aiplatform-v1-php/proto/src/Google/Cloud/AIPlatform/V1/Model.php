@@ -38,7 +38,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * The schemata that describe formats of the Model's predictions and
      * explanations as given and returned via
-     * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+     * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 4;</code>
      */
@@ -105,7 +105,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * configuration types are listed, the Model cannot be deployed to an
      * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
      * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][]). Such a Model can serve predictions by
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
      * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
      * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -143,7 +143,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][].
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -173,7 +173,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][].
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -197,6 +197,30 @@ class Model extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1.DeployedModelRef deployed_models = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $deployed_models;
+    /**
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * All fields of the explanation_spec can be overridden by
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     * If the default explanation specification is not set for this Model, this
+     * Model can still be used for [requesting
+     * explanation][PredictionService.Explain] by setting
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+     * explanation][BatchPredictionJob.generate_explanation] by setting
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
+     */
+    protected $explanation_spec = null;
     /**
      * Used to perform consistent read-modify-write updates. If not set, a blind
      * "overwrite" update happens.
@@ -239,7 +263,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\AIPlatform\V1\PredictSchemata $predict_schemata
      *           The schemata that describe formats of the Model's predictions and
      *           explanations as given and returned via
-     *           [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+     *           [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *     @type string $metadata_schema_uri
      *           Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
      *           information about the Model, that is specific to it. Unset if the Model
@@ -278,7 +302,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *           configuration types are listed, the Model cannot be deployed to an
      *           [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
      *           online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     *           [PredictionService.Explain][]). Such a Model can serve predictions by
+     *           [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
      *           using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
      *           [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
      *           [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -312,7 +336,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *           used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      *           [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      *           predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     *           [PredictionService.Explain][].
+     *           [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $supported_output_storage_formats
      *           Output only. The formats this Model supports in
      *           [BatchPredictionJob.output_config][google.cloud.aiplatform.v1.BatchPredictionJob.output_config]. If both
@@ -338,7 +362,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *           used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      *           [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      *           predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     *           [PredictionService.Explain][].
+     *           [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Output only. Timestamp when this Model was uploaded into Vertex AI.
      *     @type \Google\Protobuf\Timestamp $update_time
@@ -346,6 +370,26 @@ class Model extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\AIPlatform\V1\DeployedModelRef[]|\Google\Protobuf\Internal\RepeatedField $deployed_models
      *           Output only. The pointers to DeployedModels created from this Model. Note that
      *           Model could have been deployed to Endpoints in different Locations.
+     *     @type \Google\Cloud\AIPlatform\V1\ExplanationSpec $explanation_spec
+     *           The default explanation specification for this Model.
+     *           The Model can be used for [requesting
+     *           explanation][PredictionService.Explain] after being
+     *           [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+     *           The Model can be used for [batch
+     *           explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     *           All fields of the explanation_spec can be overridden by
+     *           [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     *           [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+     *           [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     *           [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *           If the default explanation specification is not set for this Model, this
+     *           Model can still be used for [requesting
+     *           explanation][PredictionService.Explain] by setting
+     *           [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     *           [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+     *           explanation][BatchPredictionJob.generate_explanation] by setting
+     *           [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     *           [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
      *     @type string $etag
      *           Used to perform consistent read-modify-write updates. If not set, a blind
      *           "overwrite" update happens.
@@ -450,7 +494,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * The schemata that describe formats of the Model's predictions and
      * explanations as given and returned via
-     * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+     * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 4;</code>
      * @return \Google\Cloud\AIPlatform\V1\PredictSchemata|null
@@ -473,7 +517,7 @@ class Model extends \Google\Protobuf\Internal\Message
     /**
      * The schemata that describe formats of the Model's predictions and
      * explanations as given and returned via
-     * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+     * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 4;</code>
      * @param \Google\Cloud\AIPlatform\V1\PredictSchemata $var
@@ -707,7 +751,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * configuration types are listed, the Model cannot be deployed to an
      * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
      * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][]). Such a Model can serve predictions by
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
      * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
      * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -728,7 +772,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * configuration types are listed, the Model cannot be deployed to an
      * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
      * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][]). Such a Model can serve predictions by
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
      * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
      * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
      * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -775,7 +819,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][].
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -815,7 +859,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][].
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -854,7 +898,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][].
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -889,7 +933,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
      * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
      * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-     * [PredictionService.Explain][].
+     * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
      *
      * Generated from protobuf field <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -999,6 +1043,78 @@ class Model extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\AIPlatform\V1\DeployedModelRef::class);
         $this->deployed_models = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * All fields of the explanation_spec can be overridden by
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     * If the default explanation specification is not set for this Model, this
+     * Model can still be used for [requesting
+     * explanation][PredictionService.Explain] by setting
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+     * explanation][BatchPredictionJob.generate_explanation] by setting
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
+     * @return \Google\Cloud\AIPlatform\V1\ExplanationSpec|null
+     */
+    public function getExplanationSpec()
+    {
+        return isset($this->explanation_spec) ? $this->explanation_spec : null;
+    }
+
+    public function hasExplanationSpec()
+    {
+        return isset($this->explanation_spec);
+    }
+
+    public function clearExplanationSpec()
+    {
+        unset($this->explanation_spec);
+    }
+
+    /**
+     * The default explanation specification for this Model.
+     * The Model can be used for [requesting
+     * explanation][PredictionService.Explain] after being
+     * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+     * The Model can be used for [batch
+     * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+     * All fields of the explanation_spec can be overridden by
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     * If the default explanation specification is not set for this Model, this
+     * Model can still be used for [requesting
+     * explanation][PredictionService.Explain] by setting
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+     * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+     * explanation][BatchPredictionJob.generate_explanation] by setting
+     * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+     * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
+     * @param \Google\Cloud\AIPlatform\V1\ExplanationSpec $var
+     * @return $this
+     */
+    public function setExplanationSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\ExplanationSpec::class);
+        $this->explanation_spec = $var;
 
         return $this;
     }

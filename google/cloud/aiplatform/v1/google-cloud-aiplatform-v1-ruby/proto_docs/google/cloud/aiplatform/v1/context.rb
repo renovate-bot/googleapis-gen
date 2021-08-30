@@ -52,6 +52,27 @@ module Google
         #   @return [::Array<::String>]
         #     Output only. A list of resource names of Contexts that are parents of this Context.
         #     A Context may have at most 10 parent_contexts.
+        # @!attribute [rw] schema_title
+        #   @return [::String]
+        #     The title of the schema describing the metadata.
+        #
+        #     Schema title and version is expected to be registered in earlier Create
+        #     Schema calls. And both are used together as unique identifiers to identify
+        #     schemas within the local metadata store.
+        # @!attribute [rw] schema_version
+        #   @return [::String]
+        #     The version of the schema in schema_name to use.
+        #
+        #     Schema title and version is expected to be registered in earlier Create
+        #     Schema calls. And both are used together as unique identifiers to identify
+        #     schemas within the local metadata store.
+        # @!attribute [rw] metadata
+        #   @return [::Google::Protobuf::Struct]
+        #     Properties of the Context.
+        #     The size of this field should not exceed 200KB.
+        # @!attribute [rw] description
+        #   @return [::String]
+        #     Description of the Context
         class Context
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

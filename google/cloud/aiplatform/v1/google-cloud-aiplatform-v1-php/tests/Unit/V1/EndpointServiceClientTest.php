@@ -105,11 +105,13 @@ class EndpointServiceClientTest extends GeneratedTest
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
         $etag = 'etag3123477';
+        $modelDeploymentMonitoringJob = 'modelDeploymentMonitoringJob1797127786';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -480,11 +482,13 @@ class EndpointServiceClientTest extends GeneratedTest
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
         $etag = 'etag3123477';
+        $modelDeploymentMonitoringJob = 'modelDeploymentMonitoringJob1797127786';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
@@ -747,11 +751,13 @@ class EndpointServiceClientTest extends GeneratedTest
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
         $etag = 'etag3123477';
+        $modelDeploymentMonitoringJob = 'modelDeploymentMonitoringJob1797127786';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
         $transport->addResponse($expectedResponse);
         // Mock request
         $endpoint = new Endpoint();

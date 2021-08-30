@@ -75,7 +75,7 @@ public interface ModelOrBuilder extends
    * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
-   * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+   * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 4;</code>
@@ -86,7 +86,7 @@ public interface ModelOrBuilder extends
    * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
-   * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+   * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 4;</code>
@@ -97,7 +97,7 @@ public interface ModelOrBuilder extends
    * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
-   * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][].
+   * [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.PredictSchemata predict_schemata = 4;</code>
@@ -316,7 +316,7 @@ public interface ModelOrBuilder extends
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
    * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][]). Such a Model can serve predictions by
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
    * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
    * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -335,7 +335,7 @@ public interface ModelOrBuilder extends
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
    * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][]). Such a Model can serve predictions by
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
    * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
    * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -354,7 +354,7 @@ public interface ModelOrBuilder extends
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
    * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][]). Such a Model can serve predictions by
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
    * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
    * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -374,7 +374,7 @@ public interface ModelOrBuilder extends
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
    * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][]). Such a Model can serve predictions by
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
    * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
    * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -394,7 +394,7 @@ public interface ModelOrBuilder extends
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1.Endpoint] and does not support
    * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][]). Such a Model can serve predictions by
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain]). Such a Model can serve predictions by
    * using a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob], if it has at least one entry each in
    * [supported_input_storage_formats][google.cloud.aiplatform.v1.Model.supported_input_storage_formats] and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1.Model.supported_output_storage_formats].
@@ -437,7 +437,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -476,7 +476,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -514,7 +514,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -553,7 +553,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_input_storage_formats = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -589,7 +589,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -623,7 +623,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -656,7 +656,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -690,7 +690,7 @@ public interface ModelOrBuilder extends
    * used with a [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob]. However, if it has
    * [supported_deployment_resources_types][google.cloud.aiplatform.v1.Model.supported_deployment_resources_types], it could serve online
    * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1.PredictionService.Predict] or
-   * [PredictionService.Explain][].
+   * [PredictionService.Explain][google.cloud.aiplatform.v1.PredictionService.Explain].
    * </pre>
    *
    * <code>repeated string supported_output_storage_formats = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -802,6 +802,87 @@ public interface ModelOrBuilder extends
    */
   com.google.cloud.aiplatform.v1.DeployedModelRefOrBuilder getDeployedModelsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The default explanation specification for this Model.
+   * The Model can be used for [requesting
+   * explanation][PredictionService.Explain] after being
+   * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+   * The Model can be used for [batch
+   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * All fields of the explanation_spec can be overridden by
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+   * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   * If the default explanation specification is not set for this Model, this
+   * Model can still be used for [requesting
+   * explanation][PredictionService.Explain] by setting
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+   * explanation][BatchPredictionJob.generate_explanation] by setting
+   * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
+   * @return Whether the explanationSpec field is set.
+   */
+  boolean hasExplanationSpec();
+  /**
+   * <pre>
+   * The default explanation specification for this Model.
+   * The Model can be used for [requesting
+   * explanation][PredictionService.Explain] after being
+   * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+   * The Model can be used for [batch
+   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * All fields of the explanation_spec can be overridden by
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+   * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   * If the default explanation specification is not set for this Model, this
+   * Model can still be used for [requesting
+   * explanation][PredictionService.Explain] by setting
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+   * explanation][BatchPredictionJob.generate_explanation] by setting
+   * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
+   * @return The explanationSpec.
+   */
+  com.google.cloud.aiplatform.v1.ExplanationSpec getExplanationSpec();
+  /**
+   * <pre>
+   * The default explanation specification for this Model.
+   * The Model can be used for [requesting
+   * explanation][PredictionService.Explain] after being
+   * [deployed][google.cloud.aiplatform.v1.EndpointService.DeployModel] if it is populated.
+   * The Model can be used for [batch
+   * explanation][BatchPredictionJob.generate_explanation] if it is populated.
+   * All fields of the explanation_spec can be overridden by
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model], or
+   * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   * If the default explanation specification is not set for this Model, this
+   * Model can still be used for [requesting
+   * explanation][PredictionService.Explain] by setting
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1.DeployModelRequest.deployed_model] and for [batch
+   * explanation][BatchPredictionJob.generate_explanation] by setting
+   * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec] of
+   * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
+   */
+  com.google.cloud.aiplatform.v1.ExplanationSpecOrBuilder getExplanationSpecOrBuilder();
 
   /**
    * <pre>

@@ -162,4 +162,37 @@ public interface ModelEvaluationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSliceDimensionsBytes(int index);
+
+  /**
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * data this ModelEvaluation uses. This field is populated only if the Model
+   * is evaluated with explanations, and only for AutoML tabular Models.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the modelExplanation field is set.
+   */
+  boolean hasModelExplanation();
+  /**
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * data this ModelEvaluation uses. This field is populated only if the Model
+   * is evaluated with explanations, and only for AutoML tabular Models.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The modelExplanation.
+   */
+  com.google.cloud.aiplatform.v1.ModelExplanation getModelExplanation();
+  /**
+   * <pre>
+   * Output only. Aggregated explanation metrics for the Model's prediction output over the
+   * data this ModelEvaluation uses. This field is populated only if the Model
+   * is evaluated with explanations, and only for AutoML tabular Models.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ModelExplanation model_explanation = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.cloud.aiplatform.v1.ModelExplanationOrBuilder getModelExplanationOrBuilder();
 }

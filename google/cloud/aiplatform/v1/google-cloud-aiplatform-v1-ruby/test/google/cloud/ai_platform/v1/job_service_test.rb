@@ -1289,6 +1289,516 @@ class ::Google::Cloud::AIPlatform::V1::JobService::ClientTest < Minitest::Test
     end
   end
 
+  def test_create_model_deployment_monitoring_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    model_deployment_monitoring_job = {}
+
+    create_model_deployment_monitoring_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :create_model_deployment_monitoring_job, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob), request["model_deployment_monitoring_job"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, create_model_deployment_monitoring_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.create_model_deployment_monitoring_job({ parent: parent, model_deployment_monitoring_job: model_deployment_monitoring_job }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.create_model_deployment_monitoring_job parent: parent, model_deployment_monitoring_job: model_deployment_monitoring_job do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.create_model_deployment_monitoring_job ::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest.new(parent: parent, model_deployment_monitoring_job: model_deployment_monitoring_job) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.create_model_deployment_monitoring_job({ parent: parent, model_deployment_monitoring_job: model_deployment_monitoring_job }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.create_model_deployment_monitoring_job(::Google::Cloud::AIPlatform::V1::CreateModelDeploymentMonitoringJobRequest.new(parent: parent, model_deployment_monitoring_job: model_deployment_monitoring_job), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, create_model_deployment_monitoring_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_search_model_deployment_monitoring_stats_anomalies
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    model_deployment_monitoring_job = "hello world"
+    deployed_model_id = "hello world"
+    feature_display_name = "hello world"
+    objectives = [{}]
+    page_size = 42
+    page_token = "hello world"
+    start_time = {}
+    end_time = {}
+
+    search_model_deployment_monitoring_stats_anomalies_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :search_model_deployment_monitoring_stats_anomalies, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest, request
+      assert_equal "hello world", request["model_deployment_monitoring_job"]
+      assert_equal "hello world", request["deployed_model_id"]
+      assert_equal "hello world", request["feature_display_name"]
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest::StatsAnomaliesObjective, request["objectives"].first
+      assert_equal 42, request["page_size"]
+      assert_equal "hello world", request["page_token"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::Timestamp), request["start_time"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::Timestamp), request["end_time"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, search_model_deployment_monitoring_stats_anomalies_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.search_model_deployment_monitoring_stats_anomalies({ model_deployment_monitoring_job: model_deployment_monitoring_job, deployed_model_id: deployed_model_id, feature_display_name: feature_display_name, objectives: objectives, page_size: page_size, page_token: page_token, start_time: start_time, end_time: end_time }) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.search_model_deployment_monitoring_stats_anomalies model_deployment_monitoring_job: model_deployment_monitoring_job, deployed_model_id: deployed_model_id, feature_display_name: feature_display_name, objectives: objectives, page_size: page_size, page_token: page_token, start_time: start_time, end_time: end_time do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.search_model_deployment_monitoring_stats_anomalies ::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest.new(model_deployment_monitoring_job: model_deployment_monitoring_job, deployed_model_id: deployed_model_id, feature_display_name: feature_display_name, objectives: objectives, page_size: page_size, page_token: page_token, start_time: start_time, end_time: end_time) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.search_model_deployment_monitoring_stats_anomalies({ model_deployment_monitoring_job: model_deployment_monitoring_job, deployed_model_id: deployed_model_id, feature_display_name: feature_display_name, objectives: objectives, page_size: page_size, page_token: page_token, start_time: start_time, end_time: end_time }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.search_model_deployment_monitoring_stats_anomalies(::Google::Cloud::AIPlatform::V1::SearchModelDeploymentMonitoringStatsAnomaliesRequest.new(model_deployment_monitoring_job: model_deployment_monitoring_job, deployed_model_id: deployed_model_id, feature_display_name: feature_display_name, objectives: objectives, page_size: page_size, page_token: page_token, start_time: start_time, end_time: end_time), grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, search_model_deployment_monitoring_stats_anomalies_client_stub.call_rpc_count
+    end
+  end
+
+  def test_get_model_deployment_monitoring_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    get_model_deployment_monitoring_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :get_model_deployment_monitoring_job, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, get_model_deployment_monitoring_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.get_model_deployment_monitoring_job({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.get_model_deployment_monitoring_job name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.get_model_deployment_monitoring_job ::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.get_model_deployment_monitoring_job({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.get_model_deployment_monitoring_job(::Google::Cloud::AIPlatform::V1::GetModelDeploymentMonitoringJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, get_model_deployment_monitoring_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_list_model_deployment_monitoring_jobs
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    filter = "hello world"
+    page_size = 42
+    page_token = "hello world"
+    read_mask = {}
+
+    list_model_deployment_monitoring_jobs_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :list_model_deployment_monitoring_jobs, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal "hello world", request["filter"]
+      assert_equal 42, request["page_size"]
+      assert_equal "hello world", request["page_token"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["read_mask"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, list_model_deployment_monitoring_jobs_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.list_model_deployment_monitoring_jobs({ parent: parent, filter: filter, page_size: page_size, page_token: page_token, read_mask: read_mask }) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.list_model_deployment_monitoring_jobs parent: parent, filter: filter, page_size: page_size, page_token: page_token, read_mask: read_mask do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.list_model_deployment_monitoring_jobs ::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token, read_mask: read_mask) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.list_model_deployment_monitoring_jobs({ parent: parent, filter: filter, page_size: page_size, page_token: page_token, read_mask: read_mask }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.list_model_deployment_monitoring_jobs(::Google::Cloud::AIPlatform::V1::ListModelDeploymentMonitoringJobsRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token, read_mask: read_mask), grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, list_model_deployment_monitoring_jobs_client_stub.call_rpc_count
+    end
+  end
+
+  def test_update_model_deployment_monitoring_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    model_deployment_monitoring_job = {}
+    update_mask = {}
+
+    update_model_deployment_monitoring_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :update_model_deployment_monitoring_job, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::AIPlatform::V1::ModelDeploymentMonitoringJob), request["model_deployment_monitoring_job"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, update_model_deployment_monitoring_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.update_model_deployment_monitoring_job({ model_deployment_monitoring_job: model_deployment_monitoring_job, update_mask: update_mask }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.update_model_deployment_monitoring_job model_deployment_monitoring_job: model_deployment_monitoring_job, update_mask: update_mask do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.update_model_deployment_monitoring_job ::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest.new(model_deployment_monitoring_job: model_deployment_monitoring_job, update_mask: update_mask) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.update_model_deployment_monitoring_job({ model_deployment_monitoring_job: model_deployment_monitoring_job, update_mask: update_mask }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.update_model_deployment_monitoring_job(::Google::Cloud::AIPlatform::V1::UpdateModelDeploymentMonitoringJobRequest.new(model_deployment_monitoring_job: model_deployment_monitoring_job, update_mask: update_mask), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, update_model_deployment_monitoring_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_delete_model_deployment_monitoring_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    delete_model_deployment_monitoring_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :delete_model_deployment_monitoring_job, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, delete_model_deployment_monitoring_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.delete_model_deployment_monitoring_job({ name: name }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.delete_model_deployment_monitoring_job name: name do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.delete_model_deployment_monitoring_job ::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest.new(name: name) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.delete_model_deployment_monitoring_job({ name: name }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.delete_model_deployment_monitoring_job(::Google::Cloud::AIPlatform::V1::DeleteModelDeploymentMonitoringJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, delete_model_deployment_monitoring_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_pause_model_deployment_monitoring_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Protobuf::Empty.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    pause_model_deployment_monitoring_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :pause_model_deployment_monitoring_job, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, pause_model_deployment_monitoring_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.pause_model_deployment_monitoring_job({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.pause_model_deployment_monitoring_job name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.pause_model_deployment_monitoring_job ::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.pause_model_deployment_monitoring_job({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.pause_model_deployment_monitoring_job(::Google::Cloud::AIPlatform::V1::PauseModelDeploymentMonitoringJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, pause_model_deployment_monitoring_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_resume_model_deployment_monitoring_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Protobuf::Empty.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    resume_model_deployment_monitoring_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :resume_model_deployment_monitoring_job, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, resume_model_deployment_monitoring_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.resume_model_deployment_monitoring_job({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.resume_model_deployment_monitoring_job name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.resume_model_deployment_monitoring_job ::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.resume_model_deployment_monitoring_job({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.resume_model_deployment_monitoring_job(::Google::Cloud::AIPlatform::V1::ResumeModelDeploymentMonitoringJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, resume_model_deployment_monitoring_job_client_stub.call_rpc_count
+    end
+  end
+
   def test_configure
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
 
