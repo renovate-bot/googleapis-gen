@@ -22,10 +22,10 @@ class UpdateFlowRequest extends \Google\Protobuf\Internal\Message
      */
     protected $flow = null;
     /**
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     protected $update_mask = null;
     /**
@@ -53,8 +53,8 @@ class UpdateFlowRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Flow $flow
      *           Required. The flow to update.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           Required. The mask to control which fields get updated. If `update_mask` is not
-     *           specified, an error will be returned.
+     *           The mask to control which fields get updated. If the mask is not present,
+     *           all fields will be updated.
      *     @type string $language_code
      *           The language of the following fields in `flow`:
      *           *  `Flow.event_handlers.trigger_fulfillment.messages`
@@ -110,10 +110,10 @@ class UpdateFlowRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
@@ -132,10 +132,10 @@ class UpdateFlowRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The mask to control which fields get updated. If `update_mask` is not
-     * specified, an error will be returned.
+     * The mask to control which fields get updated. If the mask is not present,
+     * all fields will be updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */

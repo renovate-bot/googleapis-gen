@@ -32,7 +32,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
     /**
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
      */
@@ -80,7 +80,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Struct $diagnostic_info
      *           Required. Input only. The diagnostic
      *           [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     *           output for the turn.
+     *           output for the turn. Required to calculate the testing coverage.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Intent $triggered_intent
      *           The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that triggered the response. Only name and displayName
      *           will be set.
@@ -168,7 +168,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
     /**
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Google\Protobuf\Struct|null
@@ -191,7 +191,7 @@ class VirtualAgentOutput extends \Google\Protobuf\Internal\Message
     /**
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Google\Protobuf\Struct $var

@@ -495,6 +495,11 @@ public final class TestCasesGrpc {
     /**
      * <pre>
      * Kicks off a test case run.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public void runTestCase(com.google.cloud.dialogflow.cx.v3beta1.RunTestCaseRequest request,
@@ -731,6 +736,11 @@ public final class TestCasesGrpc {
     /**
      * <pre>
      * Kicks off a test case run.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public void runTestCase(com.google.cloud.dialogflow.cx.v3beta1.RunTestCaseRequest request,
@@ -880,6 +890,11 @@ public final class TestCasesGrpc {
     /**
      * <pre>
      * Kicks off a test case run.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public com.google.longrunning.Operation runTestCase(com.google.cloud.dialogflow.cx.v3beta1.RunTestCaseRequest request) {
@@ -1027,6 +1042,11 @@ public final class TestCasesGrpc {
     /**
      * <pre>
      * Kicks off a test case run.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> runTestCase(

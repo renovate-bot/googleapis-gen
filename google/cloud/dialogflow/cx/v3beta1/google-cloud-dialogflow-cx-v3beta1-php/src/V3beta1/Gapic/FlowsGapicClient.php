@@ -1019,19 +1019,19 @@ class FlowsGapicClient
      * $flowsClient = new FlowsClient();
      * try {
      *     $flow = new Flow();
-     *     $updateMask = new FieldMask();
-     *     $response = $flowsClient->updateFlow($flow, $updateMask);
+     *     $response = $flowsClient->updateFlow($flow);
      * } finally {
      *     $flowsClient->close();
      * }
      * ```
      *
-     * @param Flow      $flow         Required. The flow to update.
-     * @param FieldMask $updateMask   Required. The mask to control which fields get updated. If `update_mask` is not
-     *                                specified, an error will be returned.
-     * @param array     $optionalArgs {
+     * @param Flow  $flow         Required. The flow to update.
+     * @param array $optionalArgs {
      *     Optional.
      *
+     *     @type FieldMask $updateMask
+     *           The mask to control which fields get updated. If the mask is not present,
+     *           all fields will be updated.
      *     @type string $languageCode
      *           The language of the following fields in `flow`:
      *
@@ -1058,13 +1058,16 @@ class FlowsGapicClient
      *
      * @experimental
      */
-    public function updateFlow($flow, $updateMask, array $optionalArgs = [])
+    public function updateFlow($flow, array $optionalArgs = [])
     {
         $request = new UpdateFlowRequest();
         $requestParamHeaders = [];
         $request->setFlow($flow);
-        $request->setUpdateMask($updateMask);
         $requestParamHeaders['flow.name'] = $flow->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
         if (isset($optionalArgs['languageCode'])) {
             $request->setLanguageCode($optionalArgs['languageCode']);
         }

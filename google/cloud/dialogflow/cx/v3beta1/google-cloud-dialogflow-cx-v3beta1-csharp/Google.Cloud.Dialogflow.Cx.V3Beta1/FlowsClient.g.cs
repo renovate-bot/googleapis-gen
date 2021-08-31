@@ -983,8 +983,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         /// Required. The flow to update.
         /// </param>
         /// <param name="updateMask">
-        /// Required. The mask to control which fields get updated. If `update_mask` is not
-        /// specified, an error will be returned.
+        /// The mask to control which fields get updated. If the mask is not present,
+        /// all fields will be updated.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -992,7 +992,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             UpdateFlow(new UpdateFlowRequest
             {
                 Flow = gax::GaxPreconditions.CheckNotNull(flow, nameof(flow)),
-                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
+                UpdateMask = updateMask,
             }, callSettings);
 
         /// <summary>
@@ -1006,8 +1006,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         /// Required. The flow to update.
         /// </param>
         /// <param name="updateMask">
-        /// Required. The mask to control which fields get updated. If `update_mask` is not
-        /// specified, an error will be returned.
+        /// The mask to control which fields get updated. If the mask is not present,
+        /// all fields will be updated.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1015,7 +1015,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             UpdateFlowAsync(new UpdateFlowRequest
             {
                 Flow = gax::GaxPreconditions.CheckNotNull(flow, nameof(flow)),
-                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
+                UpdateMask = updateMask,
             }, callSettings);
 
         /// <summary>
@@ -1029,8 +1029,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         /// Required. The flow to update.
         /// </param>
         /// <param name="updateMask">
-        /// Required. The mask to control which fields get updated. If `update_mask` is not
-        /// specified, an error will be returned.
+        /// The mask to control which fields get updated. If the mask is not present,
+        /// all fields will be updated.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>

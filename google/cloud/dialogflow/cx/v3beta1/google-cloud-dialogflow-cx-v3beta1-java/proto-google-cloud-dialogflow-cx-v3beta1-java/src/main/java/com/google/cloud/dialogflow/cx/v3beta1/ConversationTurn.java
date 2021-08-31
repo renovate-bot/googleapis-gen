@@ -1374,7 +1374,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1385,7 +1385,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1396,7 +1396,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1824,7 +1824,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1838,7 +1838,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1852,7 +1852,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Input only. The diagnostic
      * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-     * output for the turn.
+     * output for the turn. Required to calculate the testing coverage.
      * </pre>
      *
      * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3106,7 +3106,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3119,7 +3119,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3136,7 +3136,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3158,7 +3158,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3178,7 +3178,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3202,7 +3202,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3222,7 +3222,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3236,7 +3236,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3253,7 +3253,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Required. Input only. The diagnostic
        * [info][Session.DetectIntentResponse.QueryResult.diagnostic_info]
-       * output for the turn.
+       * output for the turn. Required to calculate the testing coverage.
        * </pre>
        *
        * <code>.google.protobuf.Struct diagnostic_info = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];</code>

@@ -53,7 +53,9 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCaseResultsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCaseResultsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCasesRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCasesResponse;
+use Google\Cloud\Dialogflow\Cx\V3beta1\RunTestCaseMetadata;
 use Google\Cloud\Dialogflow\Cx\V3beta1\RunTestCaseRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\RunTestCaseResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\TestCase;
 use Google\Cloud\Dialogflow\Cx\V3beta1\TestCaseResult;
 
@@ -1116,6 +1118,12 @@ class TestCasesGapicClient
 
     /**
      * Kicks off a test case run.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      *
      * Sample code:
      * ```
