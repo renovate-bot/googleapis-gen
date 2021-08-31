@@ -354,8 +354,8 @@ module Google
           end
         end
 
-        # The {::Google::Cloud::AIPlatform::V1beta1::ExplanationSpec ExplanationSpec} entries that can be overridden at [online
-        # explanation]{::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client#explain PredictionService.Explain} time.
+        # The {::Google::Cloud::AIPlatform::V1beta1::ExplanationSpec ExplanationSpec} entries that can be overridden at
+        # {::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client#explain online explanation} time.
         # @!attribute [rw] parameters
         #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationParameters]
         #     The parameters to be overridden. Note that the

@@ -164,8 +164,8 @@ module Google
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Config for migrating Dataset in datalabeling.googleapis.com to AI
-          # Platform's Dataset.
+          # Config for migrating Dataset in datalabeling.googleapis.com to Vertex
+          # AI's Dataset.
           # @!attribute [rw] dataset
           #   @return [::String]
           #     Required. Full resource name of data labeling Dataset.

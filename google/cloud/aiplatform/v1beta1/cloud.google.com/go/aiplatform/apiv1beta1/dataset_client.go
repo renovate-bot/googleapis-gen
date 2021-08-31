@@ -104,6 +104,9 @@ type internalDatasetClient interface {
 
 // DatasetClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// The service that handles the CRUD of Vertex AI Dataset and its child
+// resources.
 type DatasetClient struct {
 	// The internal transport-dependent client.
 	internalClient internalDatasetClient
@@ -240,6 +243,9 @@ type datasetGRPCClient struct {
 
 // NewDatasetClient creates a new dataset service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
+//
+// The service that handles the CRUD of Vertex AI Dataset and its child
+// resources.
 func NewDatasetClient(ctx context.Context, opts ...option.ClientOption) (*DatasetClient, error) {
 	clientOpts := defaultDatasetGRPCClientOptions()
 	if newDatasetClientHook != nil {

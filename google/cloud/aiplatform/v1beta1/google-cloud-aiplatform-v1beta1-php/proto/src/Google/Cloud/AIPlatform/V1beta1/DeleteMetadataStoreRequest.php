@@ -24,11 +24,10 @@ class DeleteMetadataStoreRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * If set to true, any child resources of this MetadataStore will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * MetadataStore has any child resources.)
+     * Deprecated: Field is no longer supported.
      *
-     * Generated from protobuf field <code>bool force = 2;</code>
+     * Generated from protobuf field <code>bool force = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $force = false;
 
@@ -43,9 +42,7 @@ class DeleteMetadataStoreRequest extends \Google\Protobuf\Internal\Message
      *           Format:
      *           projects/{project}/locations/{location}/metadataStores/{metadatastore}
      *     @type bool $force
-     *           If set to true, any child resources of this MetadataStore will be deleted.
-     *           (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     *           MetadataStore has any child resources.)
+     *           Deprecated: Field is no longer supported.
      * }
      */
     public function __construct($data = NULL) {
@@ -84,29 +81,29 @@ class DeleteMetadataStoreRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, any child resources of this MetadataStore will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * MetadataStore has any child resources.)
+     * Deprecated: Field is no longer supported.
      *
-     * Generated from protobuf field <code>bool force = 2;</code>
+     * Generated from protobuf field <code>bool force = 2 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getForce()
     {
+        @trigger_error('force is deprecated.', E_USER_DEPRECATED);
         return $this->force;
     }
 
     /**
-     * If set to true, any child resources of this MetadataStore will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * MetadataStore has any child resources.)
+     * Deprecated: Field is no longer supported.
      *
-     * Generated from protobuf field <code>bool force = 2;</code>
+     * Generated from protobuf field <code>bool force = 2 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setForce($var)
     {
+        @trigger_error('force is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->force = $var;
 

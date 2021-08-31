@@ -1258,7 +1258,8 @@ class MetadataServiceGapicClient
     }
 
     /**
-     * Deletes a single MetadataStore.
+     * Deletes a single MetadataStore and all its child resources (Artifacts,
+     * Executions, and Contexts).
      *
      * Sample code:
      * ```
@@ -1301,9 +1302,7 @@ class MetadataServiceGapicClient
      *     Optional.
      *
      *     @type bool $force
-     *           If set to true, any child resources of this MetadataStore will be deleted.
-     *           (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     *           MetadataStore has any child resources.)
+     *           Deprecated: Field is no longer supported.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -2469,12 +2468,13 @@ class MetadataServiceGapicClient
      *                                Format:
      *                                projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
      * @param FieldMask $updateMask   Required. A FieldMask indicating which fields should be updated.
+     *                                Functionality of this field is not yet supported.
      * @param array     $optionalArgs {
      *     Optional.
      *
      *     @type bool $allowMissing
-     *           If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     *           be created. In this situation, `update_mask` is ignored.
+     *           If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     *           created.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -2525,12 +2525,13 @@ class MetadataServiceGapicClient
      *                                Format:
      *                                projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * @param FieldMask $updateMask   Required. A FieldMask indicating which fields should be updated.
+     *                                Functionality of this field is not yet supported.
      * @param array     $optionalArgs {
      *     Optional.
      *
      *     @type bool $allowMissing
-     *           If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] will be
-     *           created. In this situation, `update_mask` is ignored.
+     *           If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] is
+     *           created.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -2581,12 +2582,13 @@ class MetadataServiceGapicClient
      *                                Format:
      *                                projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
      * @param FieldMask $updateMask   Required. A FieldMask indicating which fields should be updated.
+     *                                Functionality of this field is not yet supported.
      * @param array     $optionalArgs {
      *     Optional.
      *
      *     @type bool $allowMissing
      *           If set to true, and the [Execution][google.cloud.aiplatform.v1beta1.Execution] is not found, a new [Execution][google.cloud.aiplatform.v1beta1.Execution]
-     *           will be created. In this situation, `update_mask` is ignored.
+     *           is created.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

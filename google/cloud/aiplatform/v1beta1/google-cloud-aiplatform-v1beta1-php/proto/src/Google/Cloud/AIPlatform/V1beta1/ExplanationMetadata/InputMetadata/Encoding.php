@@ -7,8 +7,7 @@ namespace Google\Cloud\AIPlatform\V1beta1\ExplanationMetadata\InputMetadata;
 use UnexpectedValueException;
 
 /**
- * Defines how the feature is encoded to [encoded_tensor][]. Defaults to
- * IDENTITY.
+ * Defines how a feature is encoded. Defaults to IDENTITY.
  *
  * Protobuf type <code>google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Encoding</code>
  */

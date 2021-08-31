@@ -27,6 +27,7 @@ import (
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
+	httpbodypb "google.golang.org/genproto/googleapis/api/httpbody"
 	aiplatformpb "google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
@@ -36,8 +37,9 @@ var newPredictionClientHook clientHook
 
 // PredictionCallOptions contains the retry settings for each method of PredictionClient.
 type PredictionCallOptions struct {
-	Predict []gax.CallOption
-	Explain []gax.CallOption
+	Predict    []gax.CallOption
+	RawPredict []gax.CallOption
+	Explain    []gax.CallOption
 }
 
 func defaultPredictionGRPCClientOptions() []option.ClientOption {
@@ -55,8 +57,9 @@ func defaultPredictionGRPCClientOptions() []option.ClientOption {
 
 func defaultPredictionCallOptions() *PredictionCallOptions {
 	return &PredictionCallOptions{
-		Predict: []gax.CallOption{},
-		Explain: []gax.CallOption{},
+		Predict:    []gax.CallOption{},
+		RawPredict: []gax.CallOption{},
+		Explain:    []gax.CallOption{},
 	}
 }
 
@@ -66,6 +69,7 @@ type internalPredictionClient interface {
 	setGoogleClientInfo(...string)
 	Connection() *grpc.ClientConn
 	Predict(context.Context, *aiplatformpb.PredictRequest, ...gax.CallOption) (*aiplatformpb.PredictResponse, error)
+	RawPredict(context.Context, *aiplatformpb.RawPredictRequest, ...gax.CallOption) (*httpbodypb.HttpBody, error)
 	Explain(context.Context, *aiplatformpb.ExplainRequest, ...gax.CallOption) (*aiplatformpb.ExplainResponse, error)
 }
 
@@ -106,6 +110,11 @@ func (c *PredictionClient) Connection() *grpc.ClientConn {
 // Predict perform an online prediction.
 func (c *PredictionClient) Predict(ctx context.Context, req *aiplatformpb.PredictRequest, opts ...gax.CallOption) (*aiplatformpb.PredictResponse, error) {
 	return c.internalClient.Predict(ctx, req, opts...)
+}
+
+// RawPredict perform an online prediction with arbitrary http payload.
+func (c *PredictionClient) RawPredict(ctx context.Context, req *aiplatformpb.RawPredictRequest, opts ...gax.CallOption) (*httpbodypb.HttpBody, error) {
+	return c.internalClient.RawPredict(ctx, req, opts...)
 }
 
 // Explain perform an online explanation.
@@ -215,6 +224,22 @@ func (c *predictionGRPCClient) Predict(ctx context.Context, req *aiplatformpb.Pr
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.predictionClient.Predict(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *predictionGRPCClient) RawPredict(ctx context.Context, req *aiplatformpb.RawPredictRequest, opts ...gax.CallOption) (*httpbodypb.HttpBody, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "endpoint", url.QueryEscape(req.GetEndpoint())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).RawPredict[0:len((*c.CallOptions).RawPredict):len((*c.CallOptions).RawPredict)], opts...)
+	var resp *httpbodypb.HttpBody
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.predictionClient.RawPredict(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

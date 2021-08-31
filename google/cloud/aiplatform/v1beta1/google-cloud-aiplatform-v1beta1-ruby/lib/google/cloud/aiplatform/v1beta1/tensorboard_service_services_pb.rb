@@ -55,6 +55,8 @@ module Google
             rpc :DeleteTensorboardExperiment, ::Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardExperimentRequest, ::Google::Longrunning::Operation
             # Creates a TensorboardRun.
             rpc :CreateTensorboardRun, ::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardRunRequest, ::Google::Cloud::AIPlatform::V1beta1::TensorboardRun
+            # Batch create TensorboardRuns.
+            rpc :BatchCreateTensorboardRuns, ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest, ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsResponse
             # Gets a TensorboardRun.
             rpc :GetTensorboardRun, ::Google::Cloud::AIPlatform::V1beta1::GetTensorboardRunRequest, ::Google::Cloud::AIPlatform::V1beta1::TensorboardRun
             # Updates a TensorboardRun.
@@ -63,6 +65,8 @@ module Google
             rpc :ListTensorboardRuns, ::Google::Cloud::AIPlatform::V1beta1::ListTensorboardRunsRequest, ::Google::Cloud::AIPlatform::V1beta1::ListTensorboardRunsResponse
             # Deletes a TensorboardRun.
             rpc :DeleteTensorboardRun, ::Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardRunRequest, ::Google::Longrunning::Operation
+            # Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+            rpc :BatchCreateTensorboardTimeSeries, ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest, ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesResponse
             # Creates a TensorboardTimeSeries.
             rpc :CreateTensorboardTimeSeries, ::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardTimeSeriesRequest, ::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries
             # Gets a TensorboardTimeSeries.
@@ -84,6 +88,10 @@ module Google
             # Storage bucket without users having to obtain Cloud Storage access
             # permission.
             rpc :ReadTensorboardBlobData, ::Google::Cloud::AIPlatform::V1beta1::ReadTensorboardBlobDataRequest, stream(::Google::Cloud::AIPlatform::V1beta1::ReadTensorboardBlobDataResponse)
+            # Write time series data points of multiple TensorboardTimeSeries in multiple
+            # TensorboardRun's. If any data fail to be ingested, an error will be
+            # returned.
+            rpc :WriteTensorboardExperimentData, ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest, ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataResponse
             # Write time series data points into multiple TensorboardTimeSeries under
             # a TensorboardRun. If any data fail to be ingested, an error will be
             # returned.

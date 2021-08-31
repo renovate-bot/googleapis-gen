@@ -9,8 +9,8 @@ public interface CreateTensorboardRunRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   * Format:
+   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+   * in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
@@ -20,8 +20,8 @@ public interface CreateTensorboardRunRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   * Format:
+   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+   * in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *

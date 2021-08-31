@@ -54,7 +54,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description:
+ * Service Description: A service for managing Vertex AI's Endpoints.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -139,6 +139,8 @@ class EndpointServiceGapicClient
 
     private static $modelNameTemplate;
 
+    private static $modelDeploymentMonitoringJobNameTemplate;
+
     private static $networkNameTemplate;
 
     private static $pathTemplateMap;
@@ -191,6 +193,15 @@ class EndpointServiceGapicClient
         return self::$modelNameTemplate;
     }
 
+    private static function getModelDeploymentMonitoringJobNameTemplate()
+    {
+        if (self::$modelDeploymentMonitoringJobNameTemplate == null) {
+            self::$modelDeploymentMonitoringJobNameTemplate = new PathTemplate('projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}');
+        }
+
+        return self::$modelDeploymentMonitoringJobNameTemplate;
+    }
+
     private static function getNetworkNameTemplate()
     {
         if (self::$networkNameTemplate == null) {
@@ -207,6 +218,7 @@ class EndpointServiceGapicClient
                 'endpoint' => self::getEndpointNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'model' => self::getModelNameTemplate(),
+                'modelDeploymentMonitoringJob' => self::getModelDeploymentMonitoringJobNameTemplate(),
                 'network' => self::getNetworkNameTemplate(),
             ];
         }
@@ -276,6 +288,27 @@ class EndpointServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * model_deployment_monitoring_job resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $modelDeploymentMonitoringJob
+     *
+     * @return string The formatted model_deployment_monitoring_job resource.
+     *
+     * @experimental
+     */
+    public static function modelDeploymentMonitoringJobName($project, $location, $modelDeploymentMonitoringJob)
+    {
+        return self::getModelDeploymentMonitoringJobNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'model_deployment_monitoring_job' => $modelDeploymentMonitoringJob,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a network
      * resource.
      *
@@ -301,6 +334,7 @@ class EndpointServiceGapicClient
      * - endpoint: projects/{project}/locations/{location}/endpoints/{endpoint}
      * - location: projects/{project}/locations/{location}
      * - model: projects/{project}/locations/{location}/models/{model}
+     * - modelDeploymentMonitoringJob: projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
      * - network: projects/{project}/global/networks/{network}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

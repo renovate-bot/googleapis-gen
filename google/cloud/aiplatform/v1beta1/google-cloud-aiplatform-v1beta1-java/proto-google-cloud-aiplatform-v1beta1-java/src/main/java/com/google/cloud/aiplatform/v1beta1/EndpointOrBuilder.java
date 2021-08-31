@@ -422,4 +422,30 @@ public interface EndpointOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNetworkBytes();
+
+  /**
+   * <pre>
+   * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+   * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+   * Format:
+   * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * </pre>
+   *
+   * <code>string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * @return The modelDeploymentMonitoringJob.
+   */
+  java.lang.String getModelDeploymentMonitoringJob();
+  /**
+   * <pre>
+   * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+   * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+   * Format:
+   * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+   * </pre>
+   *
+   * <code>string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for modelDeploymentMonitoringJob.
+   */
+  com.google.protobuf.ByteString
+      getModelDeploymentMonitoringJobBytes();
 }

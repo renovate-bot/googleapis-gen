@@ -94,6 +94,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
     protected $schema_version = '';
     /**
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
      */
@@ -150,6 +151,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
      *           schemas within the local metadata store.
      *     @type \Google\Protobuf\Struct $metadata
      *           Properties of the Artifact.
+     *           The size of this field should not exceed 200KB.
      *     @type string $description
      *           Description of the Artifact
      * }
@@ -475,6 +477,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
 
     /**
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
      * @return \Google\Protobuf\Struct|null
@@ -496,6 +499,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
 
     /**
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 16;</code>
      * @param \Google\Protobuf\Struct $var

@@ -28,8 +28,9 @@ namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
-use Google\ApiCore\GapicClientTrait;
+use Google\Api\HttpBody;
 
+use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -41,6 +42,7 @@ use Google\Cloud\AIPlatform\V1beta1\ExplainResponse;
 use Google\Cloud\AIPlatform\V1beta1\ExplanationSpecOverride;
 use Google\Cloud\AIPlatform\V1beta1\PredictRequest;
 use Google\Cloud\AIPlatform\V1beta1\PredictResponse;
+use Google\Cloud\AIPlatform\V1beta1\RawPredictRequest;
 use Google\Protobuf\Value;
 
 /**
@@ -422,5 +424,67 @@ class PredictionServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('Predict', PredictResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Perform an online prediction with arbitrary http payload.
+     *
+     * Sample code:
+     * ```
+     * $predictionServiceClient = new PredictionServiceClient();
+     * try {
+     *     $formattedEndpoint = $predictionServiceClient->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
+     *     $response = $predictionServiceClient->rawPredict($formattedEndpoint);
+     * } finally {
+     *     $predictionServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $endpoint     Required. The name of the Endpoint requested to serve the prediction.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/endpoints/{endpoint}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type HttpBody $httpBody
+     *           The prediction input. Supports HTTP headers and arbitrary data payload.
+     *
+     *           A [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] may have an upper limit on the number of instances it
+     *           supports per request. When this limit it is exceeded for an AutoML model,
+     *           the [RawPredict][google.cloud.aiplatform.v1beta1.PredictionService.RawPredict] method returns an error.
+     *           When this limit is exceeded for a custom-trained model, the behavior varies
+     *           depending on the model.
+     *
+     *           You can specify the schema for each instance in the
+     *           [predict_schemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+     *           field when you create a [Model][google.cloud.aiplatform.v1beta1.Model]. This schema applies when you deploy the
+     *           `Model` as a `DeployedModel` to an [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and use the `RawPredict`
+     *           method.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Api\HttpBody
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function rawPredict($endpoint, array $optionalArgs = [])
+    {
+        $request = new RawPredictRequest();
+        $requestParamHeaders = [];
+        $request->setEndpoint($endpoint);
+        $requestParamHeaders['endpoint'] = $endpoint;
+        if (isset($optionalArgs['httpBody'])) {
+            $request->setHttpBody($optionalArgs['httpBody']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('RawPredict', HttpBody::class, $optionalArgs, $request)->wait();
     }
 }

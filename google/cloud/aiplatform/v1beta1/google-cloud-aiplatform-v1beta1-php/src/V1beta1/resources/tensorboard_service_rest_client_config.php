@@ -3,6 +3,30 @@
 return [
     'interfaces' => [
         'google.cloud.aiplatform.v1beta1.TensorboardService' => [
+            'BatchCreateTensorboardRuns' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*/tensorboards/*/experiments/*}/runs:batchCreate',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'BatchCreateTensorboardTimeSeries' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*/tensorboards/*/experiments/*}/runs/*/timeSeries:batchCreate',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'CreateTensorboard' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/tensorboards',
@@ -276,6 +300,18 @@ return [
                     'update_mask',
                 ],
             ],
+            'WriteTensorboardExperimentData' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{tensorboard_experiment=projects/*/locations/*/tensorboards/*/experiments/*}:write',
+                'body' => '*',
+                'placeholders' => [
+                    'tensorboard_experiment' => [
+                        'getters' => [
+                            'getTensorboardExperiment',
+                        ],
+                    ],
+                ],
+            ],
             'WriteTensorboardRunData' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{tensorboard_run=projects/*/locations/*/tensorboards/*/experiments/*/runs/*}:write',
@@ -349,6 +385,10 @@ return [
                     [
                         'method' => 'post',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:cancel',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}:cancel',
                     ],
                     [
                         'method' => 'post',
@@ -461,6 +501,10 @@ return [
                     [
                         'method' => 'post',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:cancel',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}:cancel',
                     ],
                     [
                         'method' => 'post',
@@ -585,6 +629,10 @@ return [
                     ],
                     [
                         'method' => 'delete',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'delete',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}',
                     ],
                     [
@@ -694,6 +742,10 @@ return [
                     [
                         'method' => 'delete',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'delete',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
                     ],
                     [
                         'method' => 'delete',
@@ -818,6 +870,14 @@ return [
                     ],
                     [
                         'method' => 'get',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDeploymentJobs/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}',
                     ],
                     [
@@ -927,6 +987,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
                     ],
                     [
                         'method' => 'get',
@@ -1051,6 +1115,10 @@ return [
                     ],
                     [
                         'method' => 'get',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*}/operations',
+                    ],
+                    [
+                        'method' => 'get',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*}/operations',
                     ],
                     [
@@ -1160,6 +1228,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*}/operations',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*}/operations',
                     ],
                     [
                         'method' => 'get',
@@ -1284,6 +1356,10 @@ return [
                     ],
                     [
                         'method' => 'post',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}:wait',
+                    ],
+                    [
+                        'method' => 'post',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}:wait',
                     ],
                     [
@@ -1393,6 +1469,10 @@ return [
                     [
                         'method' => 'post',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:wait',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}:wait',
                     ],
                     [
                         'method' => 'post',

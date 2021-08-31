@@ -16,8 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class OutputMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      *
      * Generated from protobuf field <code>string output_tensor_name = 3;</code>
      */
@@ -48,8 +48,8 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
      *           outputs, so that it can be located by [Attribution.output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index] for
      *           a specific output.
      *     @type string $output_tensor_name
-     *           Name of the output tensor. Required and is only applicable to AI
-     *           Platform provided images for Tensorflow.
+     *           Name of the output tensor. Required and is only applicable to Vertex
+     *           AI provided images for Tensorflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -146,8 +146,8 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      *
      * Generated from protobuf field <code>string output_tensor_name = 3;</code>
      * @return string
@@ -158,8 +158,8 @@ class OutputMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Name of the output tensor. Required and is only applicable to AI
-     * Platform provided images for Tensorflow.
+     * Name of the output tensor. Required and is only applicable to Vertex
+     * AI provided images for Tensorflow.
      *
      * Generated from protobuf field <code>string output_tensor_name = 3;</code>
      * @param string $var

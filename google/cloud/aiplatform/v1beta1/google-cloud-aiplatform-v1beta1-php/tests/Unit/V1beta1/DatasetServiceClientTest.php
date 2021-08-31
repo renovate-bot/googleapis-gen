@@ -109,11 +109,13 @@ class DatasetServiceClientTest extends GeneratedTest
         $transport->addResponse($incompleteOperation);
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
+        $description = 'description-1724546052';
         $metadataSchemaUri = 'metadataSchemaUri-152319778';
         $etag = 'etag3123477';
         $expectedResponse = new Dataset();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setDescription($description);
         $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
         $expectedResponse->setEtag($etag);
         $anyResponse = new Any();
@@ -556,11 +558,13 @@ class DatasetServiceClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
+        $description = 'description-1724546052';
         $metadataSchemaUri = 'metadataSchemaUri-152319778';
         $etag = 'etag3123477';
         $expectedResponse = new Dataset();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setDescription($description);
         $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
         $expectedResponse->setEtag($etag);
         $transport->addResponse($expectedResponse);
@@ -967,11 +971,13 @@ class DatasetServiceClientTest extends GeneratedTest
         // Mock response
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
+        $description = 'description-1724546052';
         $metadataSchemaUri = 'metadataSchemaUri-152319778';
         $etag = 'etag3123477';
         $expectedResponse = new Dataset();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setDescription($description);
         $expectedResponse->setMetadataSchemaUri($metadataSchemaUri);
         $expectedResponse->setEtag($etag);
         $transport->addResponse($expectedResponse);

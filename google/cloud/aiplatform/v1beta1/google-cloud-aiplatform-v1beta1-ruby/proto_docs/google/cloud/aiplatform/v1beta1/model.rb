@@ -343,7 +343,7 @@ module Google
         #     predictions. This URI must identify an image in Artifact Registry or
         #     Container Registry. Learn more about the [container publishing
         #     requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
-        #     including permissions requirements for the AI Platform Service Agent.
+        #     including permissions requirements for the Vertex AI Service Agent.
         #
         #     The container image is ingested upon {::Google::Cloud::AIPlatform::V1beta1::ModelService::Client#upload_model ModelService.UploadModel}, stored
         #     internally, and this original path is afterwards not used.
@@ -464,8 +464,8 @@ module Google
         # @!attribute [rw] ports
         #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Port>]
         #     Immutable. List of ports to expose from the container. Vertex AI sends any
-        #     prediction requests that it receives to the first port on this list. AI
-        #     Platform also sends
+        #     prediction requests that it receives to the first port on this list. Vertex
+        #     AI also sends
         #     [liveness and health
         #     checks](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#liveness)
         #     to this port.

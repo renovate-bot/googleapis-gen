@@ -7,9 +7,8 @@ namespace Google\Cloud\AIPlatform\V1beta1\ExplanationMetadata\InputMetadata\Visu
 use UnexpectedValueException;
 
 /**
- * Type of the image visualization. Only applicable to [Integrated
- * Gradients attribution]
- * [ExplanationParameters.integrated_gradients_attribution].
+ * Type of the image visualization. Only applicable to
+ * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
  *
  * Protobuf type <code>google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Type</code>
  */

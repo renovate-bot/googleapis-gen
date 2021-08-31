@@ -27,13 +27,14 @@ class UpdateArtifactRequest extends \Google\Protobuf\Internal\Message
     protected $artifact = null;
     /**
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $update_mask = null;
     /**
-     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     * be created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     * created.
      *
      * Generated from protobuf field <code>bool allow_missing = 3;</code>
      */
@@ -53,9 +54,10 @@ class UpdateArtifactRequest extends \Google\Protobuf\Internal\Message
      *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. A FieldMask indicating which fields should be updated.
+     *           Functionality of this field is not yet supported.
      *     @type bool $allow_missing
-     *           If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     *           be created. In this situation, `update_mask` is ignored.
+     *           If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     *           created.
      * }
      */
     public function __construct($data = NULL) {
@@ -109,6 +111,7 @@ class UpdateArtifactRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -130,6 +133,7 @@ class UpdateArtifactRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. A FieldMask indicating which fields should be updated.
+     * Functionality of this field is not yet supported.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var
@@ -144,8 +148,8 @@ class UpdateArtifactRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     * be created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     * created.
      *
      * Generated from protobuf field <code>bool allow_missing = 3;</code>
      * @return bool
@@ -156,8 +160,8 @@ class UpdateArtifactRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will
-     * be created. In this situation, `update_mask` is ignored.
+     * If set to true, and the [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not found, a new [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+     * created.
      *
      * Generated from protobuf field <code>bool allow_missing = 3;</code>
      * @param bool $var

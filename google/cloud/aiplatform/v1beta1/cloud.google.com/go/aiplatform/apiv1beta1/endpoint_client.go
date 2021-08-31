@@ -95,6 +95,8 @@ type internalEndpointClient interface {
 
 // EndpointClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
+//
+// A service for managing Vertex AI’s Endpoints.
 type EndpointClient struct {
 	// The internal transport-dependent client.
 	internalClient internalEndpointClient
@@ -217,6 +219,8 @@ type endpointGRPCClient struct {
 
 // NewEndpointClient creates a new endpoint service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
+//
+// A service for managing Vertex AI’s Endpoints.
 func NewEndpointClient(ctx context.Context, opts ...option.ClientOption) (*EndpointClient, error) {
 	clientOpts := defaultEndpointGRPCClientOptions()
 	if newEndpointClientHook != nil {

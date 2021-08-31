@@ -71,6 +71,7 @@ module Google
         # @!attribute [rw] metadata
         #   @return [::Google::Protobuf::Struct]
         #     Properties of the Execution.
+        #     The size of this field should not exceed 200KB.
         # @!attribute [rw] description
         #   @return [::String]
         #     Description of the Execution

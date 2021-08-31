@@ -229,10 +229,7 @@ class DeleteMetadataStoreRequest(proto.Message):
             MetadataStore to delete. Format:
             projects/{project}/locations/{location}/metadataStores/{metadatastore}
         force (bool):
-            If set to true, any child resources of this MetadataStore
-            will be deleted. (Otherwise, the request will fail with a
-            FAILED_PRECONDITION error if the MetadataStore has any child
-            resources.)
+            Deprecated: Field is no longer supported.
     """
 
     name = proto.Field(
@@ -429,13 +426,14 @@ class UpdateArtifactRequest(proto.Message):
             projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. A FieldMask indicating which fields
-            should be updated.
+            should be updated. Functionality of this field
+            is not yet supported.
         allow_missing (bool):
             If set to true, and the
             [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is not
             found, a new
-            [Artifact][google.cloud.aiplatform.v1beta1.Artifact] will be
-            created. In this situation, ``update_mask`` is ignored.
+            [Artifact][google.cloud.aiplatform.v1beta1.Artifact] is
+            created.
     """
 
     artifact = proto.Field(
@@ -725,13 +723,14 @@ class UpdateContextRequest(proto.Message):
             projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. A FieldMask indicating which fields
-            should be updated.
+            should be updated. Functionality of this field
+            is not yet supported.
         allow_missing (bool):
             If set to true, and the
             [Context][google.cloud.aiplatform.v1beta1.Context] is not
             found, a new
-            [Context][google.cloud.aiplatform.v1beta1.Context] will be
-            created. In this situation, ``update_mask`` is ignored.
+            [Context][google.cloud.aiplatform.v1beta1.Context] is
+            created.
     """
 
     context = proto.Field(
@@ -1117,13 +1116,14 @@ class UpdateExecutionRequest(proto.Message):
             projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. A FieldMask indicating which fields
-            should be updated.
+            should be updated. Functionality of this field
+            is not yet supported.
         allow_missing (bool):
             If set to true, and the
             [Execution][google.cloud.aiplatform.v1beta1.Execution] is
             not found, a new
-            [Execution][google.cloud.aiplatform.v1beta1.Execution] will
-            be created. In this situation, ``update_mask`` is ignored.
+            [Execution][google.cloud.aiplatform.v1beta1.Execution] is
+            created.
     """
 
     execution = proto.Field(

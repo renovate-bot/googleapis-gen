@@ -26,6 +26,7 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
+from google.api import httpbody_pb2  # type: ignore
 from google.cloud.aiplatform_v1beta1.types import prediction_service
 
 try:
@@ -151,6 +152,11 @@ class PredictionServiceTransport(abc.ABC):
                 default_timeout=5.0,
                 client_info=client_info,
             ),
+            self.raw_predict: gapic_v1.method.wrap_method(
+                self.raw_predict,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.explain: gapic_v1.method.wrap_method(
                 self.explain,
                 default_timeout=5.0,
@@ -164,6 +170,15 @@ class PredictionServiceTransport(abc.ABC):
             Union[
                 prediction_service.PredictResponse,
                 Awaitable[prediction_service.PredictResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def raw_predict(self) -> Callable[
+            [prediction_service.RawPredictRequest],
+            Union[
+                httpbody_pb2.HttpBody,
+                Awaitable[httpbody_pb2.HttpBody]
             ]]:
         raise NotImplementedError()
 

@@ -198,6 +198,21 @@ class TensorboardServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Batch create TensorboardRuns.
+     * @param \Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function BatchCreateTensorboardRuns(\Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.TensorboardService/BatchCreateTensorboardRuns',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Gets a TensorboardRun.
      * @param \Google\Cloud\AIPlatform\V1beta1\GetTensorboardRunRequest $argument input argument
      * @param array $metadata metadata
@@ -254,6 +269,21 @@ class TensorboardServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.TensorboardService/DeleteTensorboardRun',
         $argument,
         ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     * @param \Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function BatchCreateTensorboardTimeSeries(\Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.TensorboardService/BatchCreateTensorboardTimeSeries',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -366,6 +396,23 @@ class TensorboardServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_serverStreamRequest('/google.cloud.aiplatform.v1beta1.TensorboardService/ReadTensorboardBlobData',
         $argument,
         ['\Google\Cloud\AIPlatform\V1beta1\ReadTensorboardBlobDataResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error will be
+     * returned.
+     * @param \Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function WriteTensorboardExperimentData(\Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.TensorboardService/WriteTensorboardExperimentData',
+        $argument,
+        ['\Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataResponse', 'decode'],
         $metadata, $options);
     }
 

@@ -651,8 +651,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $featurestore = new Featurestore();
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
-        $onlineServingConfigFixedNodeCount = 1784461612;
-        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
         $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $featurestoreId = 'featurestoreId-2136676817';
         $response = $client->createFeaturestore($formattedParent, $featurestore, $featurestoreId);
@@ -727,8 +725,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $featurestore = new Featurestore();
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
-        $onlineServingConfigFixedNodeCount = 1784461612;
-        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
         $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $featurestoreId = 'featurestoreId-2136676817';
         $response = $client->createFeaturestore($formattedParent, $featurestore, $featurestoreId);
@@ -2052,8 +2048,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $featurestore = new Featurestore();
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
-        $onlineServingConfigFixedNodeCount = 1784461612;
-        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
         $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $response = $client->updateFeaturestore($featurestore);
         $this->assertFalse($response->isDone());
@@ -2122,8 +2116,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $featurestore = new Featurestore();
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
-        $onlineServingConfigFixedNodeCount = 1784461612;
-        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
         $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $response = $client->updateFeaturestore($featurestore);
         $this->assertFalse($response->isDone());

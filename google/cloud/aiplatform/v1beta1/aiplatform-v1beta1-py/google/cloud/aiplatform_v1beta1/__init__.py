@@ -364,6 +364,7 @@ from .types.prediction_service import ExplainRequest
 from .types.prediction_service import ExplainResponse
 from .types.prediction_service import PredictRequest
 from .types.prediction_service import PredictResponse
+from .types.prediction_service import RawPredictRequest
 from .types.specialist_pool import SpecialistPool
 from .types.specialist_pool_service import CreateSpecialistPoolOperationMetadata
 from .types.specialist_pool_service import CreateSpecialistPoolRequest
@@ -386,6 +387,10 @@ from .types.tensorboard_data import TimeSeriesData
 from .types.tensorboard_data import TimeSeriesDataPoint
 from .types.tensorboard_experiment import TensorboardExperiment
 from .types.tensorboard_run import TensorboardRun
+from .types.tensorboard_service import BatchCreateTensorboardRunsRequest
+from .types.tensorboard_service import BatchCreateTensorboardRunsResponse
+from .types.tensorboard_service import BatchCreateTensorboardTimeSeriesRequest
+from .types.tensorboard_service import BatchCreateTensorboardTimeSeriesResponse
 from .types.tensorboard_service import CreateTensorboardExperimentRequest
 from .types.tensorboard_service import CreateTensorboardOperationMetadata
 from .types.tensorboard_service import CreateTensorboardRequest
@@ -418,6 +423,8 @@ from .types.tensorboard_service import UpdateTensorboardOperationMetadata
 from .types.tensorboard_service import UpdateTensorboardRequest
 from .types.tensorboard_service import UpdateTensorboardRunRequest
 from .types.tensorboard_service import UpdateTensorboardTimeSeriesRequest
+from .types.tensorboard_service import WriteTensorboardExperimentDataRequest
+from .types.tensorboard_service import WriteTensorboardExperimentDataResponse
 from .types.tensorboard_service import WriteTensorboardRunDataRequest
 from .types.tensorboard_service import WriteTensorboardRunDataResponse
 from .types.tensorboard_time_series import TensorboardTimeSeries
@@ -491,6 +498,10 @@ __all__ = (
 'BatchCreateFeaturesOperationMetadata',
 'BatchCreateFeaturesRequest',
 'BatchCreateFeaturesResponse',
+'BatchCreateTensorboardRunsRequest',
+'BatchCreateTensorboardRunsResponse',
+'BatchCreateTensorboardTimeSeriesRequest',
+'BatchCreateTensorboardTimeSeriesResponse',
 'BatchDedicatedResources',
 'BatchMigrateResourcesOperationMetadata',
 'BatchMigrateResourcesRequest',
@@ -813,6 +824,7 @@ __all__ = (
 'QueryArtifactLineageSubgraphRequest',
 'QueryContextLineageSubgraphRequest',
 'QueryExecutionInputsAndOutputsRequest',
+'RawPredictRequest',
 'ReadFeatureValuesRequest',
 'ReadFeatureValuesResponse',
 'ReadTensorboardBlobDataRequest',
@@ -894,6 +906,8 @@ __all__ = (
 'Value',
 'VizierServiceClient',
 'WorkerPoolSpec',
+'WriteTensorboardExperimentDataRequest',
+'WriteTensorboardExperimentDataResponse',
 'WriteTensorboardRunDataRequest',
 'WriteTensorboardRunDataResponse',
 'XraiAttribution',

@@ -161,6 +161,20 @@ module Google
         #     The value sohuld be the name of the address
         #     (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
         #     Example: 'vertex-ai-ip-range'.
+        # @!attribute [rw] deployment_group
+        #   @return [::String]
+        #     Optional. The deployment group can be no longer than 64 characters (eg:
+        #     'test', 'prod'). If not set, we will use the 'default' deployment group.
+        #
+        #     Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+        #     practice when the peered network has multiple peering ranges. This creates
+        #     your deployments from predictable IP spaces for easier traffic
+        #     administration. Also, one deployment_group (except 'default') can only be
+        #     used with the same reserved_ip_ranges which means if the deployment_group
+        #     has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+        #     [d, e] is disallowed.
+        #
+        #     Note: we only support up to 5 deployment groups(not including 'default').
         class DeployedIndex
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

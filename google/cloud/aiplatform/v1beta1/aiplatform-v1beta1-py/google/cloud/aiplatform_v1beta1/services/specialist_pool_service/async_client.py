@@ -199,12 +199,12 @@ class SpecialistPoolServiceAsyncClient:
 
                 The result type for the operation will be :class:`google.cloud.aiplatform_v1beta1.types.SpecialistPool` SpecialistPool represents customers' own workforce to work on their data
                    labeling jobs. It includes a group of specialist
-                   managers who are responsible for managing the
-                   labelers in this pool as well as customers' data
-                   labeling jobs associated with this pool. Customers
-                   create specialist pool as well as start data labeling
-                   jobs on Cloud, managers and labelers work with the
-                   jobs using CrowdCompute console.
+                   managers and workers. Managers are responsible for
+                   managing the workers in this pool as well as
+                   customers' data labeling jobs associated with this
+                   pool. Customers create specialist pool as well as
+                   start data labeling jobs on Cloud, managers and
+                   workers handle the jobs using CrowdCompute console.
 
         """
         # Create or coerce a protobuf request object.
@@ -292,14 +292,15 @@ class SpecialistPoolServiceAsyncClient:
                 SpecialistPool represents customers'
                 own workforce to work on their data
                 labeling jobs. It includes a group of
-                specialist managers who are responsible
-                for managing the labelers in this pool
-                as well as customers' data labeling jobs
-                associated with this pool.
-                Customers create specialist pool as well
-                as start data labeling jobs on Cloud,
-                managers and labelers work with the jobs
-                using CrowdCompute console.
+                specialist managers and workers.
+                Managers are responsible for managing
+                the workers in this pool as well as
+                customers' data labeling jobs associated
+                with this pool. Customers create
+                specialist pool as well as start data
+                labeling jobs on Cloud, managers and
+                workers handle the jobs using
+                CrowdCompute console.
 
         """
         # Create or coerce a protobuf request object.
@@ -571,12 +572,12 @@ class SpecialistPoolServiceAsyncClient:
 
                 The result type for the operation will be :class:`google.cloud.aiplatform_v1beta1.types.SpecialistPool` SpecialistPool represents customers' own workforce to work on their data
                    labeling jobs. It includes a group of specialist
-                   managers who are responsible for managing the
-                   labelers in this pool as well as customers' data
-                   labeling jobs associated with this pool. Customers
-                   create specialist pool as well as start data labeling
-                   jobs on Cloud, managers and labelers work with the
-                   jobs using CrowdCompute console.
+                   managers and workers. Managers are responsible for
+                   managing the workers in this pool as well as
+                   customers' data labeling jobs associated with this
+                   pool. Customers create specialist pool as well as
+                   start data labeling jobs on Cloud, managers and
+                   workers handle the jobs using CrowdCompute console.
 
         """
         # Create or coerce a protobuf request object.

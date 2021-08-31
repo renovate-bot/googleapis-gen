@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to list TensorboardRuns.
+   * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    * Format:
    * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
    * </pre>
@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to list TensorboardRuns.
+   * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    * Format:
    * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
    * </pre>
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      * </pre>
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      * </pre>
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      * </pre>
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      * </pre>
@@ -873,7 +873,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      * </pre>

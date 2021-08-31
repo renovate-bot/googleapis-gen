@@ -55,7 +55,7 @@ public interface SpecialistPoolOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The number of Specialists in this SpecialistPool.
+   * Output only. The number of managers in this SpecialistPool.
    * </pre>
    *
    * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -65,7 +65,7 @@ public interface SpecialistPoolOrBuilder extends
 
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -75,7 +75,7 @@ public interface SpecialistPoolOrBuilder extends
       getSpecialistManagerEmailsList();
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -84,7 +84,7 @@ public interface SpecialistPoolOrBuilder extends
   int getSpecialistManagerEmailsCount();
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -94,7 +94,7 @@ public interface SpecialistPoolOrBuilder extends
   java.lang.String getSpecialistManagerEmails(int index);
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>

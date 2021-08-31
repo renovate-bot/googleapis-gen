@@ -103,8 +103,8 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *           A description of resources that are dedicated to the DeployedModel, and
      *           that need a higher degree of manual configuration.
      *     @type \Google\Cloud\AIPlatform\V1beta1\AutomaticResources $automatic_resources
-     *           A description of resources that to large degree are decided by AI
-     *           Platform, and require only a modest additional configuration.
+     *           A description of resources that to large degree are decided by Vertex
+     *           AI, and require only a modest additional configuration.
      *     @type string $id
      *           Output only. The ID of the DeployedModel.
      *     @type string $model
@@ -186,8 +186,8 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
      * @return \Google\Cloud\AIPlatform\V1beta1\AutomaticResources|null
@@ -203,8 +203,8 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A description of resources that to large degree are decided by AI
-     * Platform, and require only a modest additional configuration.
+     * A description of resources that to large degree are decided by Vertex
+     * AI, and require only a modest additional configuration.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.AutomaticResources automatic_resources = 8;</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\AutomaticResources $var

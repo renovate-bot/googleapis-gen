@@ -40,6 +40,10 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsRequest;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsResponse;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesResponse;
 use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardExperimentRequest;
 use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardRequest;
 use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardRunRequest;
@@ -75,6 +79,8 @@ use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardExperimentRequest;
 use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardRequest;
 use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardRunRequest;
 use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataResponse;
 use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataRequest;
 use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataResponse;
 use Google\LongRunning\Operation;
@@ -89,34 +95,9 @@ use Google\Protobuf\FieldMask;
  * ```
  * $tensorboardServiceClient = new TensorboardServiceClient();
  * try {
- *     $formattedParent = $tensorboardServiceClient->tensorboardName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]');
- *     $tensorboard = new Tensorboard();
- *     $operationResponse = $tensorboardServiceClient->createTensorboard($formattedParent, $tensorboard);
- *     $operationResponse->pollUntilComplete();
- *     if ($operationResponse->operationSucceeded()) {
- *         $result = $operationResponse->getResult();
- *     // doSomethingWith($result)
- *     } else {
- *         $error = $operationResponse->getError();
- *         // handleError($error)
- *     }
- *     // Alternatively:
- *     // start the operation, keep the operation name, and resume later
- *     $operationResponse = $tensorboardServiceClient->createTensorboard($formattedParent, $tensorboard);
- *     $operationName = $operationResponse->getName();
- *     // ... do other work
- *     $newOperationResponse = $tensorboardServiceClient->resumeOperation($operationName, 'createTensorboard');
- *     while (!$newOperationResponse->isDone()) {
- *         // ... do other work
- *         $newOperationResponse->reload();
- *     }
- *     if ($newOperationResponse->operationSucceeded()) {
- *         $result = $newOperationResponse->getResult();
- *     // doSomethingWith($result)
- *     } else {
- *         $error = $newOperationResponse->getError();
- *         // handleError($error)
- *     }
+ *     $formattedParent = $tensorboardServiceClient->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+ *     $requests = [];
+ *     $response = $tensorboardServiceClient->batchCreateTensorboardRuns($formattedParent, $requests);
  * } finally {
  *     $tensorboardServiceClient->close();
  * }
@@ -512,6 +493,108 @@ class TensorboardServiceGapicClient
     }
 
     /**
+     * Batch create TensorboardRuns.
+     *
+     * Sample code:
+     * ```
+     * $tensorboardServiceClient = new TensorboardServiceClient();
+     * try {
+     *     $formattedParent = $tensorboardServiceClient->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+     *     $requests = [];
+     *     $response = $tensorboardServiceClient->batchCreateTensorboardRuns($formattedParent, $requests);
+     * } finally {
+     *     $tensorboardServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                        $parent       Required. The resource name of the TensorboardExperiment to create the
+     *                                                    TensorboardRuns in. Format:
+     *                                                    `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+     *                                                    The parent field in the CreateTensorboardRunRequest messages must match
+     *                                                    this field.
+     * @param CreateTensorboardRunRequest[] $requests     Required. The request message specifying the TensorboardRuns to create.
+     *                                                    A maximum of 1000 TensorboardRuns can be created in a batch.
+     * @param array                         $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function batchCreateTensorboardRuns($parent, $requests, array $optionalArgs = [])
+    {
+        $request = new BatchCreateTensorboardRunsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setRequests($requests);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('BatchCreateTensorboardRuns', BatchCreateTensorboardRunsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+     *
+     * Sample code:
+     * ```
+     * $tensorboardServiceClient = new TensorboardServiceClient();
+     * try {
+     *     $formattedParent = $tensorboardServiceClient->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+     *     $requests = [];
+     *     $response = $tensorboardServiceClient->batchCreateTensorboardTimeSeries($formattedParent, $requests);
+     * } finally {
+     *     $tensorboardServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                               $parent       Required. The resource name of the TensorboardExperiment to create the
+     *                                                           TensorboardTimeSeries in.
+     *                                                           Format:
+     *                                                           `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+     *                                                           The TensorboardRuns referenced by the parent fields in the
+     *                                                           CreateTensorboardTimeSeriesRequest messages must be sub resources of this
+     *                                                           TensorboardExperiment.
+     * @param CreateTensorboardTimeSeriesRequest[] $requests     Required. The request message specifying the TensorboardTimeSeries to create.
+     *                                                           A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * @param array                                $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function batchCreateTensorboardTimeSeries($parent, $requests, array $optionalArgs = [])
+    {
+        $request = new BatchCreateTensorboardTimeSeriesRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setRequests($requests);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('BatchCreateTensorboardTimeSeries', BatchCreateTensorboardTimeSeriesResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Creates a Tensorboard.
      *
      * Sample code:
@@ -655,8 +738,8 @@ class TensorboardServiceGapicClient
      * }
      * ```
      *
-     * @param string         $parent           Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     *                                         Format:
+     * @param string         $parent           Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     *                                         in. Format:
      *                                         `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * @param TensorboardRun $tensorboardRun   Required. The TensorboardRun to create.
      * @param string         $tensorboardRunId Required. The ID to use for the Tensorboard run, which will become the final
@@ -1400,7 +1483,7 @@ class TensorboardServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * @param string $parent       Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      *                             Format:
      *                             'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      * @param array  $optionalArgs {
@@ -1584,7 +1667,7 @@ class TensorboardServiceGapicClient
      *
      * @param string $parent       Required. The resource name of the Location to list Tensorboards.
      *                             Format:
-     *                             'projects/{project}/locations/{location}'
+     *                             `projects/{project}/locations/{location}`
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1996,6 +2079,55 @@ class TensorboardServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('UpdateTensorboardTimeSeries', TensorboardTimeSeries::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Write time series data points of multiple TensorboardTimeSeries in multiple
+     * TensorboardRun's. If any data fail to be ingested, an error will be
+     * returned.
+     *
+     * Sample code:
+     * ```
+     * $tensorboardServiceClient = new TensorboardServiceClient();
+     * try {
+     *     $formattedTensorboardExperiment = $tensorboardServiceClient->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+     *     $writeRunDataRequests = [];
+     *     $response = $tensorboardServiceClient->writeTensorboardExperimentData($formattedTensorboardExperiment, $writeRunDataRequests);
+     * } finally {
+     *     $tensorboardServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                           $tensorboardExperiment Required. The resource name of the TensorboardExperiment to write data to.
+     *                                                                Format:
+     *                                                                `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+     * @param WriteTensorboardRunDataRequest[] $writeRunDataRequests  Required. Requests containing per-run TensorboardTimeSeries data to write.
+     * @param array                            $optionalArgs          {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function writeTensorboardExperimentData($tensorboardExperiment, $writeRunDataRequests, array $optionalArgs = [])
+    {
+        $request = new WriteTensorboardExperimentDataRequest();
+        $requestParamHeaders = [];
+        $request->setTensorboardExperiment($tensorboardExperiment);
+        $request->setWriteRunDataRequests($writeRunDataRequests);
+        $requestParamHeaders['tensorboard_experiment'] = $tensorboardExperiment;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('WriteTensorboardExperimentData', WriteTensorboardExperimentDataResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**

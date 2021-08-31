@@ -150,16 +150,14 @@ private static final long serialVersionUID = 0L;
   private boolean force_;
   /**
    * <pre>
-   * If set to true, any child resources of this MetadataStore will be deleted.
-   * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-   * MetadataStore has any child resources.)
+   * Deprecated: Field is no longer supported.
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [deprecated = true];</code>
    * @return The force.
    */
   @java.lang.Override
-  public boolean getForce() {
+  @java.lang.Deprecated public boolean getForce() {
     return force_;
   }
 
@@ -596,30 +594,26 @@ private static final long serialVersionUID = 0L;
     private boolean force_ ;
     /**
      * <pre>
-     * If set to true, any child resources of this MetadataStore will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * MetadataStore has any child resources.)
+     * Deprecated: Field is no longer supported.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [deprecated = true];</code>
      * @return The force.
      */
     @java.lang.Override
-    public boolean getForce() {
+    @java.lang.Deprecated public boolean getForce() {
       return force_;
     }
     /**
      * <pre>
-     * If set to true, any child resources of this MetadataStore will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * MetadataStore has any child resources.)
+     * Deprecated: Field is no longer supported.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [deprecated = true];</code>
      * @param value The force to set.
      * @return This builder for chaining.
      */
-    public Builder setForce(boolean value) {
+    @java.lang.Deprecated public Builder setForce(boolean value) {
       
       force_ = value;
       onChanged();
@@ -627,15 +621,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, any child resources of this MetadataStore will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * MetadataStore has any child resources.)
+     * Deprecated: Field is no longer supported.
      * </pre>
      *
-     * <code>bool force = 2;</code>
+     * <code>bool force = 2 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearForce() {
+    @java.lang.Deprecated public Builder clearForce() {
       
       force_ = false;
       onChanged();

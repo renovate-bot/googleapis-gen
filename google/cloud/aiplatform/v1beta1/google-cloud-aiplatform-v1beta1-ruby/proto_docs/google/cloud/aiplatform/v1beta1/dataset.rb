@@ -30,6 +30,9 @@ module Google
         #     Required. The user-defined name of the Dataset.
         #     The name can be up to 128 characters long and can be consist of any UTF-8
         #     characters.
+        # @!attribute [rw] description
+        #   @return [::String]
+        #     Optional. The description of the Dataset.
         # @!attribute [rw] metadata_schema_uri
         #   @return [::String]
         #     Required. Points to a YAML file stored on Google Cloud Storage describing additional

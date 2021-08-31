@@ -87,6 +87,7 @@ class Execution extends \Google\Protobuf\Internal\Message
     protected $schema_version = '';
     /**
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 15;</code>
      */
@@ -140,6 +141,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      *           schemas within the local metadata store.
      *     @type \Google\Protobuf\Struct $metadata
      *           Properties of the Execution.
+     *           The size of this field should not exceed 200KB.
      *     @type string $description
      *           Description of the Execution
      * }
@@ -437,6 +439,7 @@ class Execution extends \Google\Protobuf\Internal\Message
 
     /**
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 15;</code>
      * @return \Google\Protobuf\Struct|null
@@ -458,6 +461,7 @@ class Execution extends \Google\Protobuf\Internal\Message
 
     /**
      * Properties of the Execution.
+     * The size of this field should not exceed 200KB.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct metadata = 15;</code>
      * @param \Google\Protobuf\Struct $var

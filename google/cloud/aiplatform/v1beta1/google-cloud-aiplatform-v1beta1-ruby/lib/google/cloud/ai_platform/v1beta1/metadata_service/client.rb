@@ -442,7 +442,8 @@ module Google
             end
 
             ##
-            # Deletes a single MetadataStore.
+            # Deletes a single MetadataStore and all its child resources (Artifacts,
+            # Executions, and Contexts).
             #
             # @overload delete_metadata_store(request, options = nil)
             #   Pass arguments to `delete_metadata_store` via a request object, either of type
@@ -464,9 +465,7 @@ module Google
             #     Format:
             #     projects/\\{project}/locations/\\{location}/metadataStores/\\{metadatastore}
             #   @param force [::Boolean]
-            #     If set to true, any child resources of this MetadataStore will be deleted.
-            #     (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-            #     MetadataStore has any child resources.)
+            #     Deprecated: Field is no longer supported.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -802,9 +801,10 @@ module Google
             #     projects/\\{project}/locations/\\{location}/metadataStores/\\{metadatastore}/artifacts/\\{artifact}
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. A FieldMask indicating which fields should be updated.
+            #     Functionality of this field is not yet supported.
             #   @param allow_missing [::Boolean]
-            #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} will
-            #     be created. In this situation, `update_mask` is ignored.
+            #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} is
+            #     created.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::Artifact]
@@ -1296,9 +1296,10 @@ module Google
             #     projects/\\{project}/locations/\\{location}/metadataStores/\\{metadatastore}/contexts/\\{context}
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. A FieldMask indicating which fields should be updated.
+            #     Functionality of this field is not yet supported.
             #   @param allow_missing [::Boolean]
-            #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Context Context} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Context Context} will be
-            #     created. In this situation, `update_mask` is ignored.
+            #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Context Context} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Context Context} is
+            #     created.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::Context]
@@ -2026,9 +2027,10 @@ module Google
             #     projects/\\{project}/locations/\\{location}/metadataStores/\\{metadatastore}/executions/\\{execution}
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. A FieldMask indicating which fields should be updated.
+            #     Functionality of this field is not yet supported.
             #   @param allow_missing [::Boolean]
             #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Execution Execution} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Execution Execution}
-            #     will be created. In this situation, `update_mask` is ignored.
+            #     is created.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::Execution]

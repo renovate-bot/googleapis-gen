@@ -27,6 +27,9 @@ module Google
           ##
           # Client for the DatasetService service.
           #
+          # The service that handles the CRUD of Vertex AI Dataset and its child
+          # resources.
+          #
           class Client
             include Paths
 

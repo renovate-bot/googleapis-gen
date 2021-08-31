@@ -60,6 +60,7 @@ class StudySpec extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\AIPlatform\V1beta1\StudySpec\MedianAutomatedStoppingSpec $median_automated_stopping_spec
      *           The automated early stopping spec using median rule.
      *     @type \Google\Cloud\AIPlatform\V1beta1\StudySpec\ConvexStopConfig $convex_stop_config
+     *           Deprecated.
      *           The automated early stopping using convex stopping rule.
      *     @type \Google\Cloud\AIPlatform\V1beta1\StudySpec\MetricSpec[]|\Google\Protobuf\Internal\RepeatedField $metrics
      *           Required. Metric specs for the Study.
@@ -143,30 +144,37 @@ class StudySpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      * @return \Google\Cloud\AIPlatform\V1beta1\StudySpec\ConvexStopConfig|null
+     * @deprecated
      */
     public function getConvexStopConfig()
     {
+        @trigger_error('convex_stop_config is deprecated.', E_USER_DEPRECATED);
         return $this->readOneof(8);
     }
 
     public function hasConvexStopConfig()
     {
+        @trigger_error('convex_stop_config is deprecated.', E_USER_DEPRECATED);
         return $this->hasOneof(8);
     }
 
     /**
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      *
-     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\StudySpec\ConvexStopConfig $var
      * @return $this
+     * @deprecated
      */
     public function setConvexStopConfig($var)
     {
+        @trigger_error('convex_stop_config is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\StudySpec\ConvexStopConfig::class);
         $this->writeOneof(8, $var);
 

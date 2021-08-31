@@ -78,7 +78,8 @@ class MetadataServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Deletes a single MetadataStore.
+     * Deletes a single MetadataStore and all its child resources (Artifacts,
+     * Executions, and Contexts).
      * @param \Google\Cloud\AIPlatform\V1beta1\DeleteMetadataStoreRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

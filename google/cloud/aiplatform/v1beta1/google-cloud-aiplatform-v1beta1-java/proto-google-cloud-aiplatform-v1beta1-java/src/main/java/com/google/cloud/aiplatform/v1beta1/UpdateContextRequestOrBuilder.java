@@ -49,6 +49,7 @@ public interface UpdateContextRequestOrBuilder extends
   /**
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -58,6 +59,7 @@ public interface UpdateContextRequestOrBuilder extends
   /**
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,6 +69,7 @@ public interface UpdateContextRequestOrBuilder extends
   /**
    * <pre>
    * Required. A FieldMask indicating which fields should be updated.
+   * Functionality of this field is not yet supported.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -75,8 +78,8 @@ public interface UpdateContextRequestOrBuilder extends
 
   /**
    * <pre>
-   * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] will be
-   * created. In this situation, `update_mask` is ignored.
+   * If set to true, and the [Context][google.cloud.aiplatform.v1beta1.Context] is not found, a new [Context][google.cloud.aiplatform.v1beta1.Context] is
+   * created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>

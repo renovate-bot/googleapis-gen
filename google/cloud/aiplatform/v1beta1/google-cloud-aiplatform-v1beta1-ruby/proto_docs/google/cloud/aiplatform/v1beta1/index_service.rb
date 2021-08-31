@@ -139,6 +139,9 @@ module Google
         #     contentsDeltaUri is provided as part of {::Google::Cloud::AIPlatform::V1beta1::Index#metadata Index.metadata}. Please note
         #     that, currently for those files that are broken or has unsupported file
         #     format, we will not have the stats for those files.
+        # @!attribute [rw] data_bytes_count
+        #   @return [::Integer]
+        #     The ingested data size in bytes.
         class NearestNeighborSearchOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

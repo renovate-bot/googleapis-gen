@@ -20,8 +20,7 @@ class PredictionFormat
      */
     const PREDICTION_FORMAT_UNSPECIFIED = 0;
     /**
-     * Predictions are in JSONL files, consistent from the definition here
-     * (http://shortn/_4bS0hL7ofb).
+     * Predictions are in JSONL files.
      *
      * Generated from protobuf enum <code>JSONL = 2;</code>
      */

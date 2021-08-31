@@ -16,8 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateTensorboardRunRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -46,8 +46,8 @@ class CreateTensorboardRunRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     *           Format:
+     *           Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     *           in. Format:
      *           `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      *     @type \Google\Cloud\AIPlatform\V1beta1\TensorboardRun $tensorboard_run
      *           Required. The TensorboardRun to create.
@@ -64,8 +64,8 @@ class CreateTensorboardRunRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -77,8 +77,8 @@ class CreateTensorboardRunRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>

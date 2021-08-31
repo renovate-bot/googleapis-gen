@@ -19,6 +19,8 @@
 namespace Google\Cloud\AIPlatform\V1beta1;
 
 /**
+ * The service that handles the CRUD of Vertex AI Dataset and its child
+ * resources.
  */
 class DatasetServiceGrpcClient extends \Grpc\BaseStub {
 

@@ -229,7 +229,8 @@ func (c *MetadataClient) ListMetadataStores(ctx context.Context, req *aiplatform
 	return c.internalClient.ListMetadataStores(ctx, req, opts...)
 }
 
-// DeleteMetadataStore deletes a single MetadataStore.
+// DeleteMetadataStore deletes a single MetadataStore and all its child resources (Artifacts,
+// Executions, and Contexts).
 func (c *MetadataClient) DeleteMetadataStore(ctx context.Context, req *aiplatformpb.DeleteMetadataStoreRequest, opts ...gax.CallOption) (*DeleteMetadataStoreOperation, error) {
 	return c.internalClient.DeleteMetadataStore(ctx, req, opts...)
 }

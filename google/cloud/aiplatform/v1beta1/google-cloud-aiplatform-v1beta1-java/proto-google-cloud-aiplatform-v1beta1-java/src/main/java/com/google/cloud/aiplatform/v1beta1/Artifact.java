@@ -879,6 +879,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Properties of the Artifact.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -891,6 +892,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Properties of the Artifact.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -903,6 +905,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Properties of the Artifact.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2740,6 +2743,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2751,6 +2755,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2766,6 +2771,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2786,6 +2792,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2804,6 +2811,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2826,6 +2834,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2844,6 +2853,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2856,6 +2866,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>
@@ -2871,6 +2882,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Artifact.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 16;</code>

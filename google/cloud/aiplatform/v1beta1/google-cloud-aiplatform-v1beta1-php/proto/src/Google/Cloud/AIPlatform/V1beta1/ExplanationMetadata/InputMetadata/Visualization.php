@@ -16,11 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Visualization extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Type of the image visualization. Only applicable to [Integrated
-     * Gradients attribution]
-     * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-     * shows regions of attribution, while PIXELS shows per-pixel attribution.
-     * Defaults to OUTLINES.
+     * Type of the image visualization. Only applicable to
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+     * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+     * attribution. Defaults to OUTLINES.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Type type = 1;</code>
      */
@@ -34,8 +33,8 @@ class Visualization extends \Google\Protobuf\Internal\Message
     protected $polarity = 0;
     /**
      * The color scheme used for the highlighted areas.
-     * Defaults to PINK_GREEN for [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution],
+     * Defaults to PINK_GREEN for
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
      * which shows positive attributions in green and negative in pink.
      * Defaults to VIRIDIS for
      * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -78,18 +77,17 @@ class Visualization extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $type
-     *           Type of the image visualization. Only applicable to [Integrated
-     *           Gradients attribution]
-     *           [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-     *           shows regions of attribution, while PIXELS shows per-pixel attribution.
-     *           Defaults to OUTLINES.
+     *           Type of the image visualization. Only applicable to
+     *           [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+     *           OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+     *           attribution. Defaults to OUTLINES.
      *     @type int $polarity
      *           Whether to only highlight pixels with positive contributions, negative
      *           or both. Defaults to POSITIVE.
      *     @type int $color_map
      *           The color scheme used for the highlighted areas.
-     *           Defaults to PINK_GREEN for [Integrated Gradients
-     *           attribution][ExplanationParameters.integrated_gradients_attribution],
+     *           Defaults to PINK_GREEN for
+     *           [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
      *           which shows positive attributions in green and negative in pink.
      *           Defaults to VIRIDIS for
      *           [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -116,11 +114,10 @@ class Visualization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the image visualization. Only applicable to [Integrated
-     * Gradients attribution]
-     * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-     * shows regions of attribution, while PIXELS shows per-pixel attribution.
-     * Defaults to OUTLINES.
+     * Type of the image visualization. Only applicable to
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+     * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+     * attribution. Defaults to OUTLINES.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Type type = 1;</code>
      * @return int
@@ -131,11 +128,10 @@ class Visualization extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the image visualization. Only applicable to [Integrated
-     * Gradients attribution]
-     * [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
-     * shows regions of attribution, while PIXELS shows per-pixel attribution.
-     * Defaults to OUTLINES.
+     * Type of the image visualization. Only applicable to
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution].
+     * OUTLINES shows regions of attribution, while PIXELS shows per-pixel
+     * attribution. Defaults to OUTLINES.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.Visualization.Type type = 1;</code>
      * @param int $var
@@ -179,8 +175,8 @@ class Visualization extends \Google\Protobuf\Internal\Message
 
     /**
      * The color scheme used for the highlighted areas.
-     * Defaults to PINK_GREEN for [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution],
+     * Defaults to PINK_GREEN for
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
      * which shows positive attributions in green and negative in pink.
      * Defaults to VIRIDIS for
      * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which
@@ -197,8 +193,8 @@ class Visualization extends \Google\Protobuf\Internal\Message
 
     /**
      * The color scheme used for the highlighted areas.
-     * Defaults to PINK_GREEN for [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution],
+     * Defaults to PINK_GREEN for
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
      * which shows positive attributions in green and negative in pink.
      * Defaults to VIRIDIS for
      * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution], which

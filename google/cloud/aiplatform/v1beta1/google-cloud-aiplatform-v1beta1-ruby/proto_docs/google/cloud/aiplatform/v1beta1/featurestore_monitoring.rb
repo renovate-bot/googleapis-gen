@@ -48,8 +48,8 @@ module Google
           #     Explicitly Disable the snapshot analysis based monitoring.
           # @!attribute [rw] monitoring_interval
           #   @return [::Google::Protobuf::Duration]
-          #     Configuration of the snapshot analysis based monitoring pipeline
-          #     running interval. The value is rolled up to full day.
+          #     Configuration of the snapshot analysis based monitoring pipeline running
+          #     interval. The value is rolled up to full day.
           # @!attribute [rw] monitoring_interval_days
           #   @return [::Integer]
           #     Configuration of the snapshot analysis based monitoring pipeline

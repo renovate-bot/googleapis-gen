@@ -51,6 +51,22 @@ class TensorboardRun extends \Google\Protobuf\Internal\Message
      */
     protected $update_time = null;
     /**
+     * The labels with user-defined metadata to organize your TensorboardRuns.
+     * This field will be used to filter and visualize Runs in the Tensorboard UI.
+     * For example, a Vertex AI training job can set a label
+     * aiplatform.googleapis.com/training_job_id=xxxxx to all the runs created
+     * within that job. An end user can set a label experiment_id=xxxxx for all
+     * the runs produced in a Jupyter notebook. These runs can be grouped by a
+     * label value and visualized together in the Tensorboard UI.
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * No more than 64 user labels can be associated with one TensorboardRun
+     * (System labels are excluded).
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     *
      * Generated from protobuf field <code>map<string, string> labels = 8;</code>
      */
     private $labels;
@@ -83,6 +99,21 @@ class TensorboardRun extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Timestamp when this TensorboardRun was last updated.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
+     *           The labels with user-defined metadata to organize your TensorboardRuns.
+     *           This field will be used to filter and visualize Runs in the Tensorboard UI.
+     *           For example, a Vertex AI training job can set a label
+     *           aiplatform.googleapis.com/training_job_id=xxxxx to all the runs created
+     *           within that job. An end user can set a label experiment_id=xxxxx for all
+     *           the runs produced in a Jupyter notebook. These runs can be grouped by a
+     *           label value and visualized together in the Tensorboard UI.
+     *           Label keys and values can be no longer than 64 characters
+     *           (Unicode codepoints), can only contain lowercase letters, numeric
+     *           characters, underscores and dashes. International characters are allowed.
+     *           No more than 64 user labels can be associated with one TensorboardRun
+     *           (System labels are excluded).
+     *           See https://goo.gl/xmQnxf for more information and examples of labels.
+     *           System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     *           and are immutable.
      *     @type string $etag
      *           Used to perform a consistent read-modify-write updates. If not set, a blind
      *           "overwrite" update happens.
@@ -252,6 +283,22 @@ class TensorboardRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The labels with user-defined metadata to organize your TensorboardRuns.
+     * This field will be used to filter and visualize Runs in the Tensorboard UI.
+     * For example, a Vertex AI training job can set a label
+     * aiplatform.googleapis.com/training_job_id=xxxxx to all the runs created
+     * within that job. An end user can set a label experiment_id=xxxxx for all
+     * the runs produced in a Jupyter notebook. These runs can be grouped by a
+     * label value and visualized together in the Tensorboard UI.
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * No more than 64 user labels can be associated with one TensorboardRun
+     * (System labels are excluded).
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     *
      * Generated from protobuf field <code>map<string, string> labels = 8;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -261,6 +308,22 @@ class TensorboardRun extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The labels with user-defined metadata to organize your TensorboardRuns.
+     * This field will be used to filter and visualize Runs in the Tensorboard UI.
+     * For example, a Vertex AI training job can set a label
+     * aiplatform.googleapis.com/training_job_id=xxxxx to all the runs created
+     * within that job. An end user can set a label experiment_id=xxxxx for all
+     * the runs produced in a Jupyter notebook. These runs can be grouped by a
+     * label value and visualized together in the Tensorboard UI.
+     * Label keys and values can be no longer than 64 characters
+     * (Unicode codepoints), can only contain lowercase letters, numeric
+     * characters, underscores and dashes. International characters are allowed.
+     * No more than 64 user labels can be associated with one TensorboardRun
+     * (System labels are excluded).
+     * See https://goo.gl/xmQnxf for more information and examples of labels.
+     * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
+     * and are immutable.
+     *
      * Generated from protobuf field <code>map<string, string> labels = 8;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this

@@ -39,7 +39,8 @@ module Google
             rpc :GetMetadataStore, ::Google::Cloud::AIPlatform::V1beta1::GetMetadataStoreRequest, ::Google::Cloud::AIPlatform::V1beta1::MetadataStore
             # Lists MetadataStores for a Location.
             rpc :ListMetadataStores, ::Google::Cloud::AIPlatform::V1beta1::ListMetadataStoresRequest, ::Google::Cloud::AIPlatform::V1beta1::ListMetadataStoresResponse
-            # Deletes a single MetadataStore.
+            # Deletes a single MetadataStore and all its child resources (Artifacts,
+            # Executions, and Contexts).
             rpc :DeleteMetadataStore, ::Google::Cloud::AIPlatform::V1beta1::DeleteMetadataStoreRequest, ::Google::Longrunning::Operation
             # Creates an Artifact associated with a MetadataStore.
             rpc :CreateArtifact, ::Google::Cloud::AIPlatform::V1beta1::CreateArtifactRequest, ::Google::Cloud::AIPlatform::V1beta1::Artifact

@@ -17,11 +17,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class OnlineServingConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      *
-     * Generated from protobuf field <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>int32 fixed_node_count = 2;</code>
      */
     protected $fixed_node_count = 0;
 
@@ -32,7 +32,7 @@ class OnlineServingConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $fixed_node_count
-     *           Required. The number of nodes for each cluster. The number of nodes will not
+     *           The number of nodes for each cluster. The number of nodes will not
      *           scale automatically but can be scaled manually by providing different
      *           values when updating.
      * }
@@ -43,11 +43,11 @@ class OnlineServingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      *
-     * Generated from protobuf field <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>int32 fixed_node_count = 2;</code>
      * @return int
      */
     public function getFixedNodeCount()
@@ -56,11 +56,11 @@ class OnlineServingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      *
-     * Generated from protobuf field <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>int32 fixed_node_count = 2;</code>
      * @param int $var
      * @return $this
      */

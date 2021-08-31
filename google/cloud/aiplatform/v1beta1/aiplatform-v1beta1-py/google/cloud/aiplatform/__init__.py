@@ -364,6 +364,7 @@ from google.cloud.aiplatform_v1beta1.types.prediction_service import ExplainRequ
 from google.cloud.aiplatform_v1beta1.types.prediction_service import ExplainResponse
 from google.cloud.aiplatform_v1beta1.types.prediction_service import PredictRequest
 from google.cloud.aiplatform_v1beta1.types.prediction_service import PredictResponse
+from google.cloud.aiplatform_v1beta1.types.prediction_service import RawPredictRequest
 from google.cloud.aiplatform_v1beta1.types.specialist_pool import SpecialistPool
 from google.cloud.aiplatform_v1beta1.types.specialist_pool_service import CreateSpecialistPoolOperationMetadata
 from google.cloud.aiplatform_v1beta1.types.specialist_pool_service import CreateSpecialistPoolRequest
@@ -386,6 +387,10 @@ from google.cloud.aiplatform_v1beta1.types.tensorboard_data import TimeSeriesDat
 from google.cloud.aiplatform_v1beta1.types.tensorboard_data import TimeSeriesDataPoint
 from google.cloud.aiplatform_v1beta1.types.tensorboard_experiment import TensorboardExperiment
 from google.cloud.aiplatform_v1beta1.types.tensorboard_run import TensorboardRun
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardRunsRequest
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardRunsResponse
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardTimeSeriesResponse
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import CreateTensorboardExperimentRequest
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import CreateTensorboardOperationMetadata
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import CreateTensorboardRequest
@@ -418,6 +423,8 @@ from google.cloud.aiplatform_v1beta1.types.tensorboard_service import UpdateTens
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import UpdateTensorboardRequest
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import UpdateTensorboardRunRequest
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import UpdateTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import WriteTensorboardExperimentDataRequest
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import WriteTensorboardExperimentDataResponse
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import WriteTensorboardRunDataRequest
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import WriteTensorboardRunDataResponse
 from google.cloud.aiplatform_v1beta1.types.tensorboard_time_series import TensorboardTimeSeries
@@ -805,6 +812,7 @@ __all__ = ('DatasetServiceClient',
     'ExplainResponse',
     'PredictRequest',
     'PredictResponse',
+    'RawPredictRequest',
     'SpecialistPool',
     'CreateSpecialistPoolOperationMetadata',
     'CreateSpecialistPoolRequest',
@@ -827,6 +835,10 @@ __all__ = ('DatasetServiceClient',
     'TimeSeriesDataPoint',
     'TensorboardExperiment',
     'TensorboardRun',
+    'BatchCreateTensorboardRunsRequest',
+    'BatchCreateTensorboardRunsResponse',
+    'BatchCreateTensorboardTimeSeriesRequest',
+    'BatchCreateTensorboardTimeSeriesResponse',
     'CreateTensorboardExperimentRequest',
     'CreateTensorboardOperationMetadata',
     'CreateTensorboardRequest',
@@ -859,6 +871,8 @@ __all__ = ('DatasetServiceClient',
     'UpdateTensorboardRequest',
     'UpdateTensorboardRunRequest',
     'UpdateTensorboardTimeSeriesRequest',
+    'WriteTensorboardExperimentDataRequest',
+    'WriteTensorboardExperimentDataResponse',
     'WriteTensorboardRunDataRequest',
     'WriteTensorboardRunDataResponse',
     'TensorboardTimeSeries',

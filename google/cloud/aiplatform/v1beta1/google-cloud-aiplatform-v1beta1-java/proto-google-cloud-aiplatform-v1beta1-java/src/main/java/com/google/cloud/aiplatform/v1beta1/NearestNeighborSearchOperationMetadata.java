@@ -63,6 +63,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats.parser(), extensionRegistry));
             break;
           }
+          case 16: {
+
+            dataBytesCount_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -3058,6 +3063,21 @@ private static final long serialVersionUID = 0L;
     return contentValidationStats_.get(index);
   }
 
+  public static final int DATA_BYTES_COUNT_FIELD_NUMBER = 2;
+  private long dataBytesCount_;
+  /**
+   * <pre>
+   * The ingested data size in bytes.
+   * </pre>
+   *
+   * <code>int64 data_bytes_count = 2;</code>
+   * @return The dataBytesCount.
+   */
+  @java.lang.Override
+  public long getDataBytesCount() {
+    return dataBytesCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -3075,6 +3095,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < contentValidationStats_.size(); i++) {
       output.writeMessage(1, contentValidationStats_.get(i));
     }
+    if (dataBytesCount_ != 0L) {
+      output.writeInt64(2, dataBytesCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3087,6 +3110,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < contentValidationStats_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, contentValidationStats_.get(i));
+    }
+    if (dataBytesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, dataBytesCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3105,6 +3132,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getContentValidationStatsList()
         .equals(other.getContentValidationStatsList())) return false;
+    if (getDataBytesCount()
+        != other.getDataBytesCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3120,6 +3149,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CONTENT_VALIDATION_STATS_FIELD_NUMBER;
       hash = (53 * hash) + getContentValidationStatsList().hashCode();
     }
+    hash = (37 * hash) + DATA_BYTES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDataBytesCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3264,6 +3296,8 @@ private static final long serialVersionUID = 0L;
       } else {
         contentValidationStatsBuilder_.clear();
       }
+      dataBytesCount_ = 0L;
+
       return this;
     }
 
@@ -3300,6 +3334,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.contentValidationStats_ = contentValidationStatsBuilder_.build();
       }
+      result.dataBytesCount_ = dataBytesCount_;
       onBuilt();
       return result;
     }
@@ -3373,6 +3408,9 @@ private static final long serialVersionUID = 0L;
             contentValidationStatsBuilder_.addAllMessages(other.contentValidationStats_);
           }
         }
+      }
+      if (other.getDataBytesCount() != 0L) {
+        setDataBytesCount(other.getDataBytesCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3786,6 +3824,49 @@ private static final long serialVersionUID = 0L;
         contentValidationStats_ = null;
       }
       return contentValidationStatsBuilder_;
+    }
+
+    private long dataBytesCount_ ;
+    /**
+     * <pre>
+     * The ingested data size in bytes.
+     * </pre>
+     *
+     * <code>int64 data_bytes_count = 2;</code>
+     * @return The dataBytesCount.
+     */
+    @java.lang.Override
+    public long getDataBytesCount() {
+      return dataBytesCount_;
+    }
+    /**
+     * <pre>
+     * The ingested data size in bytes.
+     * </pre>
+     *
+     * <code>int64 data_bytes_count = 2;</code>
+     * @param value The dataBytesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataBytesCount(long value) {
+      
+      dataBytesCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ingested data size in bytes.
+     * </pre>
+     *
+     * <code>int64 data_bytes_count = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDataBytesCount() {
+      
+      dataBytesCount_ = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

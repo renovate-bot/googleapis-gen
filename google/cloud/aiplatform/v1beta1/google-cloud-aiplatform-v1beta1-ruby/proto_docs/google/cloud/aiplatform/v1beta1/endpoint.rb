@@ -86,6 +86,12 @@ module Google
         #     projects/\\{project}/global/networks/\\{network}.
         #     Where \\{project} is a project number, as in '12345', and \\{network} is
         #     network name.
+        # @!attribute [r] model_deployment_monitoring_job
+        #   @return [::String]
+        #     Output only. Resource name of the Model Monitoring job associated with this Endpoint
+        #     if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+        #     Format:
+        #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
         class Endpoint
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -116,8 +122,8 @@ module Google
         #     that need a higher degree of manual configuration.
         # @!attribute [rw] automatic_resources
         #   @return [::Google::Cloud::AIPlatform::V1beta1::AutomaticResources]
-        #     A description of resources that to large degree are decided by AI
-        #     Platform, and require only a modest additional configuration.
+        #     A description of resources that to large degree are decided by Vertex
+        #     AI, and require only a modest additional configuration.
         # @!attribute [r] id
         #   @return [::String]
         #     Output only. The ID of the DeployedModel.

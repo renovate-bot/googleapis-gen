@@ -63,30 +63,33 @@ public interface StudySpecOrBuilder extends
 
   /**
    * <pre>
+   * Deprecated.
    * The automated early stopping using convex stopping rule.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
    * @return Whether the convexStopConfig field is set.
    */
-  boolean hasConvexStopConfig();
+  @java.lang.Deprecated boolean hasConvexStopConfig();
   /**
    * <pre>
+   * Deprecated.
    * The automated early stopping using convex stopping rule.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
    * @return The convexStopConfig.
    */
-  com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig();
+  @java.lang.Deprecated com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig();
   /**
    * <pre>
+   * Deprecated.
    * The automated early stopping using convex stopping rule.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
    */
-  com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder getConvexStopConfigOrBuilder();
+  @java.lang.Deprecated com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder getConvexStopConfigOrBuilder();
 
   /**
    * <pre>

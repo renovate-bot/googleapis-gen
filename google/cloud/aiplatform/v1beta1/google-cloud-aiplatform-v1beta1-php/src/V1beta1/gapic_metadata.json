@@ -778,6 +778,11 @@
                             "methods": [
                                 "predict"
                             ]
+                        },
+                        "RawPredict": {
+                            "methods": [
+                                "rawPredict"
+                            ]
                         }
                     }
                 }
@@ -822,6 +827,16 @@
                 "grpc": {
                     "libraryClient": "TensorboardServiceGapicClient",
                     "rpcs": {
+                        "BatchCreateTensorboardRuns": {
+                            "methods": [
+                                "batchCreateTensorboardRuns"
+                            ]
+                        },
+                        "BatchCreateTensorboardTimeSeries": {
+                            "methods": [
+                                "batchCreateTensorboardTimeSeries"
+                            ]
+                        },
                         "CreateTensorboard": {
                             "methods": [
                                 "createTensorboard"
@@ -935,6 +950,11 @@
                         "UpdateTensorboardTimeSeries": {
                             "methods": [
                                 "updateTensorboardTimeSeries"
+                            ]
+                        },
+                        "WriteTensorboardExperimentData": {
+                            "methods": [
+                                "writeTensorboardExperimentData"
                             ]
                         },
                         "WriteTensorboardRunData": {

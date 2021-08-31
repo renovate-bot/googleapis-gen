@@ -120,6 +120,15 @@ module Google
         # @!attribute [rw] stats_anomalies_base_directory
         #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsDestination]
         #     Stats anomalies base folder path.
+        # @!attribute [rw] encryption_spec
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
+        #     Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+        #     set, this ModelDeploymentMonitoringJob and all sub-resources of this
+        #     ModelDeploymentMonitoringJob will be secured by this key.
+        # @!attribute [r] error
+        #   @return [::Google::Rpc::Status]
+        #     Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+        #     `JOB_STATE_CANCELLED`.
         class ModelDeploymentMonitoringJob
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

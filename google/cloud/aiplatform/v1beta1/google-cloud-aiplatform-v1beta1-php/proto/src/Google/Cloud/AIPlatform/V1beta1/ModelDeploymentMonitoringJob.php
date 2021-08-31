@@ -167,6 +167,21 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination stats_anomalies_base_directory = 20;</code>
      */
     protected $stats_anomalies_base_directory = null;
+    /**
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     */
+    protected $encryption_spec = null;
+    /**
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $error = null;
 
     /**
      * Constructor.
@@ -248,6 +263,13 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      *           next round.
      *     @type \Google\Cloud\AIPlatform\V1beta1\GcsDestination $stats_anomalies_base_directory
      *           Stats anomalies base folder path.
+     *     @type \Google\Cloud\AIPlatform\V1beta1\EncryptionSpec $encryption_spec
+     *           Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     *           set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     *           ModelDeploymentMonitoringJob will be secured by this key.
+     *     @type \Google\Rpc\Status $error
+     *           Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     *           `JOB_STATE_CANCELLED`.
      * }
      */
     public function __construct($data = NULL) {
@@ -907,6 +929,84 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\GcsDestination::class);
         $this->stats_anomalies_base_directory = $var;
+
+        return $this;
+    }
+
+    /**
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     * @return \Google\Cloud\AIPlatform\V1beta1\EncryptionSpec|null
+     */
+    public function getEncryptionSpec()
+    {
+        return isset($this->encryption_spec) ? $this->encryption_spec : null;
+    }
+
+    public function hasEncryptionSpec()
+    {
+        return isset($this->encryption_spec);
+    }
+
+    public function clearEncryptionSpec()
+    {
+        unset($this->encryption_spec);
+    }
+
+    /**
+     * Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
+     * set, this ModelDeploymentMonitoringJob and all sub-resources of this
+     * ModelDeploymentMonitoringJob will be secured by this key.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 21;</code>
+     * @param \Google\Cloud\AIPlatform\V1beta1\EncryptionSpec $var
+     * @return $this
+     */
+    public function setEncryptionSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\EncryptionSpec::class);
+        $this->encryption_spec = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Rpc\Status|null
+     */
+    public function getError()
+    {
+        return isset($this->error) ? $this->error : null;
+    }
+
+    public function hasError()
+    {
+        return isset($this->error);
+    }
+
+    public function clearError()
+    {
+        unset($this->error);
+    }
+
+    /**
+     * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
+     * `JOB_STATE_CANCELLED`.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status error = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Rpc\Status $var
+     * @return $this
+     */
+    public function setError($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Rpc\Status::class);
+        $this->error = $var;
 
         return $this;
     }

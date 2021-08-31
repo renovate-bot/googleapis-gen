@@ -284,6 +284,7 @@ public interface ExecutionOrBuilder extends
   /**
    * <pre>
    * Properties of the Execution.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -293,6 +294,7 @@ public interface ExecutionOrBuilder extends
   /**
    * <pre>
    * Properties of the Execution.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -302,6 +304,7 @@ public interface ExecutionOrBuilder extends
   /**
    * <pre>
    * Properties of the Execution.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>

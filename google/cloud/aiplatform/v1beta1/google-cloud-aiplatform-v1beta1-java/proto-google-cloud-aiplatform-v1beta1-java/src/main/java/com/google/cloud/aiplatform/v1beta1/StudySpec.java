@@ -12604,7 +12604,7 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface ConvexStopConfigOrBuilder extends
+  @java.lang.Deprecated public interface ConvexStopConfigOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig)
       com.google.protobuf.MessageOrBuilder {
 
@@ -12697,7 +12697,7 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig}
    */
-  public static final class ConvexStopConfig extends
+  @java.lang.Deprecated public static final class ConvexStopConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig)
       ConvexStopConfigOrBuilder {
@@ -13694,7 +13694,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DECAY_CURVE_STOPPING_SPEC(4),
     MEDIAN_AUTOMATED_STOPPING_SPEC(5),
-    CONVEX_STOP_CONFIG(8),
+    @java.lang.Deprecated CONVEX_STOP_CONFIG(8),
     AUTOMATEDSTOPPINGSPEC_NOT_SET(0);
     private final int value;
     private AutomatedStoppingSpecCase(int value) {
@@ -13819,26 +13819,28 @@ private static final long serialVersionUID = 0L;
   public static final int CONVEX_STOP_CONFIG_FIELD_NUMBER = 8;
   /**
    * <pre>
+   * Deprecated.
    * The automated early stopping using convex stopping rule.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
-  public boolean hasConvexStopConfig() {
+  @java.lang.Deprecated public boolean hasConvexStopConfig() {
     return automatedStoppingSpecCase_ == 8;
   }
   /**
    * <pre>
+   * Deprecated.
    * The automated early stopping using convex stopping rule.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
    * @return The convexStopConfig.
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig() {
+  @java.lang.Deprecated public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig() {
     if (automatedStoppingSpecCase_ == 8) {
        return (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig) automatedStoppingSpec_;
     }
@@ -13846,13 +13848,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated.
    * The automated early stopping using convex stopping rule.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder getConvexStopConfigOrBuilder() {
+  @java.lang.Deprecated public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder getConvexStopConfigOrBuilder() {
     if (automatedStoppingSpecCase_ == 8) {
        return (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig) automatedStoppingSpec_;
     }
@@ -14981,26 +14984,28 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig, com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.Builder, com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder> convexStopConfigBuilder_;
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
-    public boolean hasConvexStopConfig() {
+    @java.lang.Deprecated public boolean hasConvexStopConfig() {
       return automatedStoppingSpecCase_ == 8;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      * @return The convexStopConfig.
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig() {
+    @java.lang.Deprecated public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig getConvexStopConfig() {
       if (convexStopConfigBuilder_ == null) {
         if (automatedStoppingSpecCase_ == 8) {
           return (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig) automatedStoppingSpec_;
@@ -15015,12 +15020,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
-    public Builder setConvexStopConfig(com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig value) {
+    @java.lang.Deprecated public Builder setConvexStopConfig(com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig value) {
       if (convexStopConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -15035,12 +15041,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
-    public Builder setConvexStopConfig(
+    @java.lang.Deprecated public Builder setConvexStopConfig(
         com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.Builder builderForValue) {
       if (convexStopConfigBuilder_ == null) {
         automatedStoppingSpec_ = builderForValue.build();
@@ -15053,12 +15060,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
-    public Builder mergeConvexStopConfig(com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig value) {
+    @java.lang.Deprecated public Builder mergeConvexStopConfig(com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig value) {
       if (convexStopConfigBuilder_ == null) {
         if (automatedStoppingSpecCase_ == 8 &&
             automatedStoppingSpec_ != com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.getDefaultInstance()) {
@@ -15079,12 +15087,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
-    public Builder clearConvexStopConfig() {
+    @java.lang.Deprecated public Builder clearConvexStopConfig() {
       if (convexStopConfigBuilder_ == null) {
         if (automatedStoppingSpecCase_ == 8) {
           automatedStoppingSpecCase_ = 0;
@@ -15102,23 +15111,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
-    public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.Builder getConvexStopConfigBuilder() {
+    @java.lang.Deprecated public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.Builder getConvexStopConfigBuilder() {
       return getConvexStopConfigFieldBuilder().getBuilder();
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
     @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder getConvexStopConfigOrBuilder() {
+    @java.lang.Deprecated public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder getConvexStopConfigOrBuilder() {
       if ((automatedStoppingSpecCase_ == 8) && (convexStopConfigBuilder_ != null)) {
         return convexStopConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -15130,10 +15141,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated.
      * The automated early stopping using convex stopping rule.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8;</code>
+     * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig convex_stop_config = 8 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig, com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.Builder, com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfigOrBuilder> 

@@ -106,6 +106,15 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string network = 13 [(.google.api.resource_reference) = {</code>
      */
     protected $network = '';
+    /**
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     *
+     * Generated from protobuf field <code>string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $model_deployment_monitoring_job = '';
 
     /**
      * Constructor.
@@ -159,6 +168,11 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      *           projects/{project}/global/networks/{network}.
      *           Where {project} is a project number, as in '12345', and {network} is
      *           network name.
+     *     @type string $model_deployment_monitoring_job
+     *           Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     *           if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     *           Format:
+     *           `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
      * }
      */
     public function __construct($data = NULL) {
@@ -526,6 +540,38 @@ class Endpoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->network = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     *
+     * Generated from protobuf field <code>string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getModelDeploymentMonitoringJob()
+    {
+        return $this->model_deployment_monitoring_job;
+    }
+
+    /**
+     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
+     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
+     * Format:
+     * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     *
+     * Generated from protobuf field <code>string model_deployment_monitoring_job = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModelDeploymentMonitoringJob($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->model_deployment_monitoring_job = $var;
 
         return $this;
     }

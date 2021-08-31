@@ -655,6 +655,7 @@ def test_get_dataset(transport: str = 'grpc', request_type=dataset_service.GetDa
         call.return_value = dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
+            description='description_value',
             metadata_schema_uri='metadata_schema_uri_value',
             etag='etag_value',
         )
@@ -669,6 +670,7 @@ def test_get_dataset(transport: str = 'grpc', request_type=dataset_service.GetDa
     assert isinstance(response, dataset.Dataset)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.description == 'description_value'
     assert response.metadata_schema_uri == 'metadata_schema_uri_value'
     assert response.etag == 'etag_value'
 
@@ -714,6 +716,7 @@ async def test_get_dataset_async(transport: str = 'grpc_asyncio', request_type=d
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
+            description='description_value',
             metadata_schema_uri='metadata_schema_uri_value',
             etag='etag_value',
         ))
@@ -728,6 +731,7 @@ async def test_get_dataset_async(transport: str = 'grpc_asyncio', request_type=d
     assert isinstance(response, dataset.Dataset)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.description == 'description_value'
     assert response.metadata_schema_uri == 'metadata_schema_uri_value'
     assert response.etag == 'etag_value'
 
@@ -898,6 +902,7 @@ def test_update_dataset(transport: str = 'grpc', request_type=dataset_service.Up
         call.return_value = gca_dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
+            description='description_value',
             metadata_schema_uri='metadata_schema_uri_value',
             etag='etag_value',
         )
@@ -912,6 +917,7 @@ def test_update_dataset(transport: str = 'grpc', request_type=dataset_service.Up
     assert isinstance(response, gca_dataset.Dataset)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.description == 'description_value'
     assert response.metadata_schema_uri == 'metadata_schema_uri_value'
     assert response.etag == 'etag_value'
 
@@ -957,6 +963,7 @@ async def test_update_dataset_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
+            description='description_value',
             metadata_schema_uri='metadata_schema_uri_value',
             etag='etag_value',
         ))
@@ -971,6 +978,7 @@ async def test_update_dataset_async(transport: str = 'grpc_asyncio', request_typ
     assert isinstance(response, gca_dataset.Dataset)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.description == 'description_value'
     assert response.metadata_schema_uri == 'metadata_schema_uri_value'
     assert response.etag == 'etag_value'
 

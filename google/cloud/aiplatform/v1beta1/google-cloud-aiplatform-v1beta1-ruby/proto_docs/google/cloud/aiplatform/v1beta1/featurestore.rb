@@ -63,7 +63,7 @@ module Google
           # resources.
           # @!attribute [rw] fixed_node_count
           #   @return [::Integer]
-          #     Required. The number of nodes for each cluster. The number of nodes will not
+          #     The number of nodes for each cluster. The number of nodes will not
           #     scale automatically but can be scaled manually by providing different
           #     values when updating.
           class OnlineServingConfig

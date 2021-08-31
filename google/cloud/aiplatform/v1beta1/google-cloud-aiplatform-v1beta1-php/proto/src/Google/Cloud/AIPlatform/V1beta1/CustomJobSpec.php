@@ -32,7 +32,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      *
@@ -84,8 +84,12 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      */
     protected $tensorboard = '';
     /**
-     * Optional. Vertex AI will enable web portal access to the containers. The portals
-     * can be accessed on web via the URLs given by [web_access_uris][].
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      *
      * Generated from protobuf field <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -106,7 +110,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *     @type string $service_account
      *           Specifies the service account for workload run-as account.
      *           Users submitting jobs must have act-as permission on this run-as account.
-     *           If unspecified, the [AI Platform Custom Code Service
+     *           If unspecified, the [Vertex AI Custom Code Service
      *           Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      *           for the CustomJob's project is used.
      *     @type string $network
@@ -142,8 +146,12 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *           Format:
      *           `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      *     @type bool $enable_web_access
-     *           Optional. Vertex AI will enable web portal access to the containers. The portals
-     *           can be accessed on web via the URLs given by [web_access_uris][].
+     *           Optional. Whether you want Vertex AI to enable [interactive shell
+     *           access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     *           to training containers.
+     *           If set to `true`, you can access interactive shells at the URIs given
+     *           by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     *           [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * }
      */
     public function __construct($data = NULL) {
@@ -220,7 +228,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      *
@@ -235,7 +243,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     /**
      * Specifies the service account for workload run-as account.
      * Users submitting jobs must have act-as permission on this run-as account.
-     * If unspecified, the [AI Platform Custom Code Service
+     * If unspecified, the [Vertex AI Custom Code Service
      * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
      * for the CustomJob's project is used.
      *
@@ -392,8 +400,12 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Vertex AI will enable web portal access to the containers. The portals
-     * can be accessed on web via the URLs given by [web_access_uris][].
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      *
      * Generated from protobuf field <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return bool
@@ -404,8 +416,12 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Vertex AI will enable web portal access to the containers. The portals
-     * can be accessed on web via the URLs given by [web_access_uris][].
+     * Optional. Whether you want Vertex AI to enable [interactive shell
+     * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
+     * to training containers.
+     * If set to `true`, you can access interactive shells at the URIs given
+     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      *
      * Generated from protobuf field <code>bool enable_web_access = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param bool $var

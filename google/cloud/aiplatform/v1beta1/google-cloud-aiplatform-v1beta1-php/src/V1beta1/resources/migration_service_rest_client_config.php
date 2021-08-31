@@ -91,6 +91,10 @@ return [
                     ],
                     [
                         'method' => 'post',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}:cancel',
+                    ],
+                    [
+                        'method' => 'post',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}:cancel',
                     ],
                     [
@@ -200,6 +204,10 @@ return [
                     [
                         'method' => 'post',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:cancel',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}:cancel',
                     ],
                     [
                         'method' => 'post',
@@ -324,6 +332,10 @@ return [
                     ],
                     [
                         'method' => 'delete',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'delete',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}',
                     ],
                     [
@@ -433,6 +445,10 @@ return [
                     [
                         'method' => 'delete',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'delete',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
                     ],
                     [
                         'method' => 'delete',
@@ -557,6 +573,14 @@ return [
                     ],
                     [
                         'method' => 'get',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDeploymentJobs/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}',
                     ],
                     [
@@ -666,6 +690,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}',
                     ],
                     [
                         'method' => 'get',
@@ -790,6 +818,10 @@ return [
                     ],
                     [
                         'method' => 'get',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*}/operations',
+                    ],
+                    [
+                        'method' => 'get',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*}/operations',
                     ],
                     [
@@ -899,6 +931,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*}/operations',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*}/operations',
                     ],
                     [
                         'method' => 'get',
@@ -1023,6 +1059,10 @@ return [
                     ],
                     [
                         'method' => 'post',
+                        'uriTemplate' => '/ui/{name=projects/*/locations/*/edgeDevices/*/operations/*}:wait',
+                    ],
+                    [
+                        'method' => 'post',
                         'uriTemplate' => '/ui/{name=projects/*/locations/*/endpoints/*/operations/*}:wait',
                     ],
                     [
@@ -1132,6 +1172,10 @@ return [
                     [
                         'method' => 'post',
                         'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/datasets/*/dataItems/*/annotations/*/operations/*}:wait',
+                    ],
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/edgeDevices/*/operations/*}:wait',
                     ],
                     [
                         'method' => 'post',

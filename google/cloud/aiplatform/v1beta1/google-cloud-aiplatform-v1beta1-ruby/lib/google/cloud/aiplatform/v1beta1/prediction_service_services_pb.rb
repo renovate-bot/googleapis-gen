@@ -35,6 +35,8 @@ module Google
 
             # Perform an online prediction.
             rpc :Predict, ::Google::Cloud::AIPlatform::V1beta1::PredictRequest, ::Google::Cloud::AIPlatform::V1beta1::PredictResponse
+            # Perform an online prediction with arbitrary http payload.
+            rpc :RawPredict, ::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest, ::Google::Api::HttpBody
             # Perform an online explanation.
             #
             # If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is specified,

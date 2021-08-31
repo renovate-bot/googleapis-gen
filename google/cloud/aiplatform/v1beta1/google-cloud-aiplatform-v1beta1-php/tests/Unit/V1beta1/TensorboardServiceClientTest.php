@@ -29,9 +29,11 @@ use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsResponse;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesResponse;
+
 use Google\Cloud\AIPlatform\V1beta1\ExportTensorboardTimeSeriesDataResponse;
 use Google\Cloud\AIPlatform\V1beta1\ListTensorboardExperimentsResponse;
-
 use Google\Cloud\AIPlatform\V1beta1\ListTensorboardRunsResponse;
 use Google\Cloud\AIPlatform\V1beta1\ListTensorboardsResponse;
 use Google\Cloud\AIPlatform\V1beta1\ListTensorboardTimeSeriesResponse;
@@ -44,6 +46,7 @@ use Google\Cloud\AIPlatform\V1beta1\TensorboardServiceClient;
 use Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries;
 use Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries\ValueType;
 use Google\Cloud\AIPlatform\V1beta1\TimeSeriesDataPoint;
+use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardExperimentDataResponse;
 use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
@@ -85,6 +88,138 @@ class TensorboardServiceClientTest extends GeneratedTest
             'credentials' => $this->createCredentials(),
         ];
         return new TensorboardServiceClient($options);
+    }
+
+    /**
+     * @test
+     */
+    public function batchCreateTensorboardRunsTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new BatchCreateTensorboardRunsResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedParent = $client->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+        $requests = [];
+        $response = $client->batchCreateTensorboardRuns($formattedParent, $requests);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1beta1.TensorboardService/BatchCreateTensorboardRuns', $actualFuncCall);
+        $actualValue = $actualRequestObject->getParent();
+        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $actualValue = $actualRequestObject->getRequests();
+        $this->assertProtobufEquals($requests, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchCreateTensorboardRunsExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedParent = $client->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+        $requests = [];
+        try {
+            $client->batchCreateTensorboardRuns($formattedParent, $requests);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchCreateTensorboardTimeSeriesTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new BatchCreateTensorboardTimeSeriesResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedParent = $client->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+        $requests = [];
+        $response = $client->batchCreateTensorboardTimeSeries($formattedParent, $requests);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1beta1.TensorboardService/BatchCreateTensorboardTimeSeries', $actualFuncCall);
+        $actualValue = $actualRequestObject->getParent();
+        $this->assertProtobufEquals($formattedParent, $actualValue);
+        $actualValue = $actualRequestObject->getRequests();
+        $this->assertProtobufEquals($requests, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function batchCreateTensorboardTimeSeriesExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedParent = $client->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+        $requests = [];
+        try {
+            $client->batchCreateTensorboardTimeSeries($formattedParent, $requests);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
     }
 
     /**
@@ -2112,6 +2247,72 @@ class TensorboardServiceClientTest extends GeneratedTest
         $tensorboardTimeSeries->setValueType($tensorboardTimeSeriesValueType);
         try {
             $client->updateTensorboardTimeSeries($updateMask, $tensorboardTimeSeries);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function writeTensorboardExperimentDataTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $expectedResponse = new WriteTensorboardExperimentDataResponse();
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedTensorboardExperiment = $client->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+        $writeRunDataRequests = [];
+        $response = $client->writeTensorboardExperimentData($formattedTensorboardExperiment, $writeRunDataRequests);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1beta1.TensorboardService/WriteTensorboardExperimentData', $actualFuncCall);
+        $actualValue = $actualRequestObject->getTensorboardExperiment();
+        $this->assertProtobufEquals($formattedTensorboardExperiment, $actualValue);
+        $actualValue = $actualRequestObject->getWriteRunDataRequests();
+        $this->assertProtobufEquals($writeRunDataRequests, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function writeTensorboardExperimentDataExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedTensorboardExperiment = $client->tensorboardExperimentName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]');
+        $writeRunDataRequests = [];
+        try {
+            $client->writeTensorboardExperimentData($formattedTensorboardExperiment, $writeRunDataRequests);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

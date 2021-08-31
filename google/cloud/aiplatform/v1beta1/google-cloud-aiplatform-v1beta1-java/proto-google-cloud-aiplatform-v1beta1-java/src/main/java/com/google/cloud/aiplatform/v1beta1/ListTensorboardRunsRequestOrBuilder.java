@@ -9,7 +9,7 @@ public interface ListTensorboardRunsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to list TensorboardRuns.
+   * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    * Format:
    * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
    * </pre>
@@ -20,7 +20,7 @@ public interface ListTensorboardRunsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to list TensorboardRuns.
+   * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    * Format:
    * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
    * </pre>

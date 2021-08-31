@@ -703,6 +703,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Properties of the Context.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -715,6 +716,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Properties of the Context.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -727,6 +729,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Properties of the Context.
+   * The size of this field should not exceed 200KB.
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2530,6 +2533,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2541,6 +2545,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2556,6 +2561,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2576,6 +2582,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2594,6 +2601,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2616,6 +2624,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2634,6 +2643,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2646,6 +2656,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>
@@ -2661,6 +2672,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Properties of the Context.
+     * The size of this field should not exceed 200KB.
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 15;</code>

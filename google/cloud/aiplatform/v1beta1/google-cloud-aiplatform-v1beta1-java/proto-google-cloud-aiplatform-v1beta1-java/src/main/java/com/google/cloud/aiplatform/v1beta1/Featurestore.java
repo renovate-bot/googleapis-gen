@@ -339,12 +339,12 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      * </pre>
      *
-     * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 fixed_node_count = 2;</code>
      * @return The fixedNodeCount.
      */
     int getFixedNodeCount();
@@ -440,12 +440,12 @@ private static final long serialVersionUID = 0L;
     private int fixedNodeCount_;
     /**
      * <pre>
-     * Required. The number of nodes for each cluster. The number of nodes will not
+     * The number of nodes for each cluster. The number of nodes will not
      * scale automatically but can be scaled manually by providing different
      * values when updating.
      * </pre>
      *
-     * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int32 fixed_node_count = 2;</code>
      * @return The fixedNodeCount.
      */
     @java.lang.Override
@@ -763,12 +763,12 @@ private static final long serialVersionUID = 0L;
       private int fixedNodeCount_ ;
       /**
        * <pre>
-       * Required. The number of nodes for each cluster. The number of nodes will not
+       * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
        * </pre>
        *
-       * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>int32 fixed_node_count = 2;</code>
        * @return The fixedNodeCount.
        */
       @java.lang.Override
@@ -777,12 +777,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The number of nodes for each cluster. The number of nodes will not
+       * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
        * </pre>
        *
-       * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>int32 fixed_node_count = 2;</code>
        * @param value The fixedNodeCount to set.
        * @return This builder for chaining.
        */
@@ -794,12 +794,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The number of nodes for each cluster. The number of nodes will not
+       * The number of nodes for each cluster. The number of nodes will not
        * scale automatically but can be scaled manually by providing different
        * values when updating.
        * </pre>
        *
-       * <code>int32 fixed_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>int32 fixed_node_count = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearFixedNodeCount() {

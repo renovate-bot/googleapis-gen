@@ -234,6 +234,90 @@ module Google
             end
 
             ##
+            # Perform an online prediction with arbitrary http payload.
+            #
+            # @overload raw_predict(request, options = nil)
+            #   Pass arguments to `raw_predict` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload raw_predict(endpoint: nil, http_body: nil)
+            #   Pass arguments to `raw_predict` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param endpoint [::String]
+            #     Required. The name of the Endpoint requested to serve the prediction.
+            #     Format:
+            #     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+            #   @param http_body [::Google::Api::HttpBody, ::Hash]
+            #     The prediction input. Supports HTTP headers and arbitrary data payload.
+            #
+            #     A {::Google::Cloud::AIPlatform::V1beta1::DeployedModel DeployedModel} may have an upper limit on the number of instances it
+            #     supports per request. When this limit it is exceeded for an AutoML model,
+            #     the {::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client#raw_predict RawPredict} method returns an error.
+            #     When this limit is exceeded for a custom-trained model, the behavior varies
+            #     depending on the model.
+            #
+            #     You can specify the schema for each instance in the
+            #     {::Google::Cloud::AIPlatform::V1beta1::PredictSchemata#instance_schema_uri predict_schemata.instance_schema_uri}
+            #     field when you create a {::Google::Cloud::AIPlatform::V1beta1::Model Model}. This schema applies when you deploy the
+            #     `Model` as a `DeployedModel` to an {::Google::Cloud::AIPlatform::V1beta1::Endpoint Endpoint} and use the `RawPredict`
+            #     method.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Api::HttpBody]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Api::HttpBody]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def raw_predict request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.raw_predict.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "endpoint" => request.endpoint
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.raw_predict.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.raw_predict.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @prediction_service_stub.call_rpc :raw_predict, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Perform an online explanation.
             #
             # If {::Google::Cloud::AIPlatform::V1beta1::ExplainRequest#deployed_model_id deployed_model_id} is specified,
@@ -480,6 +564,11 @@ module Google
                 #
                 attr_reader :predict
                 ##
+                # RPC-specific configuration for `raw_predict`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :raw_predict
+                ##
                 # RPC-specific configuration for `explain`
                 # @return [::Gapic::Config::Method]
                 #
@@ -489,6 +578,8 @@ module Google
                 def initialize parent_rpcs = nil
                   predict_config = parent_rpcs.predict if parent_rpcs.respond_to? :predict
                   @predict = ::Gapic::Config::Method.new predict_config
+                  raw_predict_config = parent_rpcs.raw_predict if parent_rpcs.respond_to? :raw_predict
+                  @raw_predict = ::Gapic::Config::Method.new raw_predict_config
                   explain_config = parent_rpcs.explain if parent_rpcs.respond_to? :explain
                   @explain = ::Gapic::Config::Method.new explain_config
 

@@ -16,6 +16,16 @@
                 }
             },
             "methods": {
+                "BatchCreateTensorboardRuns": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
+                "BatchCreateTensorboardTimeSeries": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "CreateTensorboard": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "no_retry_codes",
@@ -125,6 +135,11 @@
                     "retry_params_name": "no_retry_params"
                 },
                 "UpdateTensorboardTimeSeries": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
+                "WriteTensorboardExperimentData": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "no_retry_codes",
                     "retry_params_name": "no_retry_params"

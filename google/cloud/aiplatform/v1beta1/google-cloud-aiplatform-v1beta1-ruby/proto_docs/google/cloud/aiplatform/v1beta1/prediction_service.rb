@@ -65,6 +65,32 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client#raw_predict PredictionService.RawPredict}.
+        # @!attribute [rw] endpoint
+        #   @return [::String]
+        #     Required. The name of the Endpoint requested to serve the prediction.
+        #     Format:
+        #     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+        # @!attribute [rw] http_body
+        #   @return [::Google::Api::HttpBody]
+        #     The prediction input. Supports HTTP headers and arbitrary data payload.
+        #
+        #     A {::Google::Cloud::AIPlatform::V1beta1::DeployedModel DeployedModel} may have an upper limit on the number of instances it
+        #     supports per request. When this limit it is exceeded for an AutoML model,
+        #     the {::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client#raw_predict RawPredict} method returns an error.
+        #     When this limit is exceeded for a custom-trained model, the behavior varies
+        #     depending on the model.
+        #
+        #     You can specify the schema for each instance in the
+        #     {::Google::Cloud::AIPlatform::V1beta1::PredictSchemata#instance_schema_uri predict_schemata.instance_schema_uri}
+        #     field when you create a {::Google::Cloud::AIPlatform::V1beta1::Model Model}. This schema applies when you deploy the
+        #     `Model` as a `DeployedModel` to an {::Google::Cloud::AIPlatform::V1beta1::Endpoint Endpoint} and use the `RawPredict`
+        #     method.
+        class RawPredictRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request message for {::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client#explain PredictionService.Explain}.
         # @!attribute [rw] endpoint
         #   @return [::String]

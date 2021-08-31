@@ -21,8 +21,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -92,10 +91,10 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
     private $index_feature_mapping;
     /**
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      *
@@ -121,9 +120,8 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      *
      * Generated from protobuf field <code>string group_name = 12;</code>
      */
@@ -139,8 +137,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      *           Baseline inputs for this feature.
      *           If no baseline is specified, Vertex AI chooses the baseline for this
      *           feature. If multiple baselines are specified, Vertex AI returns the
-     *           average attributions across them in
-     *           [Attributions.baseline_attribution][].
+     *           average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      *           For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      *           of each baseline must match the shape of the input tensor. If a scalar is
      *           provided, we broadcast to the same shape as the input tensor.
@@ -178,10 +175,10 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      *           BAG_OF_FEATURES_SPARSE, INDICATOR.
      *     @type string $encoded_tensor_name
      *           Encoded tensor is a transformation of the input tensor. Must be provided
-     *           if choosing [Integrated Gradients
-     *           attribution][ExplanationParameters.integrated_gradients_attribution] or
-     *           [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     *           and the input tensor is not differentiable.
+     *           if choosing
+     *           [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     *           or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     *           input tensor is not differentiable.
      *           An encoded tensor is generated if the input tensor is encoded by a lookup
      *           table.
      *     @type \Google\Protobuf\Value[]|\Google\Protobuf\Internal\RepeatedField $encoded_baselines
@@ -195,9 +192,8 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      *           Name of the group that the input belongs to. Features with the same group
      *           name will be treated as one feature when computing attributions. Features
      *           grouped together can have different shapes in value. If provided, there
-     *           will be one single attribution generated in [
-     *           featureAttributions][Attribution.feature_attributions], keyed by the
-     *           group name.
+     *           will be one single attribution generated in
+     *           [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      * }
      */
     public function __construct($data = NULL) {
@@ -209,8 +205,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -234,8 +229,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Baseline inputs for this feature.
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
-     * average attributions across them in
-     * [Attributions.baseline_attribution][].
+     * average attributions across them in [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
@@ -475,10 +469,10 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      *
@@ -492,10 +486,10 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Encoded tensor is a transformation of the input tensor. Must be provided
-     * if choosing [Integrated Gradients
-     * attribution][ExplanationParameters.integrated_gradients_attribution] or
-     * [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution]
-     * and the input tensor is not differentiable.
+     * if choosing
+     * [Integrated Gradients attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution]
+     * or [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution] and the
+     * input tensor is not differentiable.
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      *
@@ -583,9 +577,8 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      *
      * Generated from protobuf field <code>string group_name = 12;</code>
      * @return string
@@ -599,9 +592,8 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      * Name of the group that the input belongs to. Features with the same group
      * name will be treated as one feature when computing attributions. Features
      * grouped together can have different shapes in value. If provided, there
-     * will be one single attribution generated in [
-     * featureAttributions][Attribution.feature_attributions], keyed by the
-     * group name.
+     * will be one single attribution generated in
+     * [Attribution.feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions], keyed by the group name.
      *
      * Generated from protobuf field <code>string group_name = 12;</code>
      * @param string $var

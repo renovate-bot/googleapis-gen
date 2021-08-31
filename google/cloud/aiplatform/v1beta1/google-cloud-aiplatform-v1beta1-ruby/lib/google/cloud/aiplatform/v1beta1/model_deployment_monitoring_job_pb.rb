@@ -13,6 +13,7 @@ require 'google/cloud/aiplatform/v1beta1/model_monitoring_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
+require 'google/rpc/status_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/model_deployment_monitoring_job.proto", :syntax => :proto3) do
@@ -36,6 +37,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :update_time, :message, 13, "google.protobuf.Timestamp"
       optional :next_schedule_time, :message, 14, "google.protobuf.Timestamp"
       optional :stats_anomalies_base_directory, :message, 20, "google.cloud.aiplatform.v1beta1.GcsDestination"
+      optional :encryption_spec, :message, 21, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
+      optional :error, :message, 23, "google.rpc.Status"
     end
     add_enum "google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.MonitoringScheduleState" do
       value :MONITORING_SCHEDULE_STATE_UNSPECIFIED, 0

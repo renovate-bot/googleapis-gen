@@ -27,6 +27,8 @@ module Google
           ##
           # Client for the EndpointService service.
           #
+          # A service for managing Vertex AI's Endpoints.
+          #
           class Client
             include Paths
 

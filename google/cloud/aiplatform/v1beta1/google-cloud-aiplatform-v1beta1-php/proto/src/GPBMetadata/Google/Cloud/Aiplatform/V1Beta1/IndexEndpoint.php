@@ -22,7 +22,7 @@ class IndexEndpoint
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-÷
+ı
 4google/cloud/aiplatform/v1beta1/index_endpoint.protogoogle.cloud.aiplatform.v1beta1google/api/field_behavior.protogoogle/api/resource.proto7google/cloud/aiplatform/v1beta1/machine_resources.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"¶
 IndexEndpoint
 name (	B‡A
@@ -37,7 +37,7 @@ class IndexEndpoint
 LabelsEntry
 key (	
 value (	:8:uÍAr
-\'aiplatform.googleapis.com/IndexEndpointGprojects/{project}/locations/{location}/indexEndpoints/{index_endpoint}"µ
+\'aiplatform.googleapis.com/IndexEndpointGprojects/{project}/locations/{location}/indexEndpoints/{index_endpoint}"‘
 DeployedIndex
 id (	B‡A6
 index (	B\'‡A˙A!
@@ -50,7 +50,8 @@ class IndexEndpoint
 enable_access_logging (B‡Aa
 deployed_index_auth_config	 (28.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfigB‡A
 reserved_ip_ranges
- (	B‡A"≥
+ (	B‡A
+deployment_group (	B‡A"≥
 DeployedIndexAuthConfig\\
 auth_provider (2E.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider:
 AuthProvider

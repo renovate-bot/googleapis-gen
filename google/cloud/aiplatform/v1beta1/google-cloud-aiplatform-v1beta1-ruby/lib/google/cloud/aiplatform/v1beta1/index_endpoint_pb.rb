@@ -33,6 +33,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :enable_access_logging, :bool, 8
       optional :deployed_index_auth_config, :message, 9, "google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig"
       repeated :reserved_ip_ranges, :string, 10
+      optional :deployment_group, :string, 11
     end
     add_message "google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig" do
       optional :auth_provider, :message, 1, "google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider"

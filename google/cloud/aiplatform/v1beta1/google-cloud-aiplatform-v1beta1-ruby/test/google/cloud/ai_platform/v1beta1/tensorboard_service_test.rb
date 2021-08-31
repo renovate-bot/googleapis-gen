@@ -749,6 +749,66 @@ class ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::ClientTest < Min
     end
   end
 
+  def test_batch_create_tensorboard_runs
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    requests = [{}]
+
+    batch_create_tensorboard_runs_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :batch_create_tensorboard_runs, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardRunRequest, request["requests"].first
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, batch_create_tensorboard_runs_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.batch_create_tensorboard_runs({ parent: parent, requests: requests }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.batch_create_tensorboard_runs parent: parent, requests: requests do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.batch_create_tensorboard_runs ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest.new(parent: parent, requests: requests) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.batch_create_tensorboard_runs({ parent: parent, requests: requests }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.batch_create_tensorboard_runs(::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest.new(parent: parent, requests: requests), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, batch_create_tensorboard_runs_client_stub.call_rpc_count
+    end
+  end
+
   def test_get_tensorboard_run
     # Create GRPC objects.
     grpc_response = ::Google::Cloud::AIPlatform::V1beta1::TensorboardRun.new
@@ -1000,6 +1060,66 @@ class ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::ClientTest < Min
 
       # Verify method calls
       assert_equal 5, delete_tensorboard_run_client_stub.call_rpc_count
+    end
+  end
+
+  def test_batch_create_tensorboard_time_series
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    requests = [{}]
+
+    batch_create_tensorboard_time_series_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :batch_create_tensorboard_time_series, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardTimeSeriesRequest, request["requests"].first
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, batch_create_tensorboard_time_series_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.batch_create_tensorboard_time_series({ parent: parent, requests: requests }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.batch_create_tensorboard_time_series parent: parent, requests: requests do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.batch_create_tensorboard_time_series ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest.new(parent: parent, requests: requests) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.batch_create_tensorboard_time_series({ parent: parent, requests: requests }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.batch_create_tensorboard_time_series(::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest.new(parent: parent, requests: requests), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, batch_create_tensorboard_time_series_client_stub.call_rpc_count
     end
   end
 
@@ -1453,6 +1573,66 @@ class ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::ClientTest < Min
 
       # Verify method calls
       assert_equal 5, read_tensorboard_blob_data_client_stub.call_rpc_count
+    end
+  end
+
+  def test_write_tensorboard_experiment_data
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    tensorboard_experiment = "hello world"
+    write_run_data_requests = [{}]
+
+    write_tensorboard_experiment_data_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :write_tensorboard_experiment_data, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest, request
+      assert_equal "hello world", request["tensorboard_experiment"]
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardRunDataRequest, request["write_run_data_requests"].first
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, write_tensorboard_experiment_data_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.write_tensorboard_experiment_data({ tensorboard_experiment: tensorboard_experiment, write_run_data_requests: write_run_data_requests }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.write_tensorboard_experiment_data tensorboard_experiment: tensorboard_experiment, write_run_data_requests: write_run_data_requests do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.write_tensorboard_experiment_data ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest.new(tensorboard_experiment: tensorboard_experiment, write_run_data_requests: write_run_data_requests) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.write_tensorboard_experiment_data({ tensorboard_experiment: tensorboard_experiment, write_run_data_requests: write_run_data_requests }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.write_tensorboard_experiment_data(::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest.new(tensorboard_experiment: tensorboard_experiment, write_run_data_requests: write_run_data_requests), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, write_tensorboard_experiment_data_client_stub.call_rpc_count
     end
   end
 

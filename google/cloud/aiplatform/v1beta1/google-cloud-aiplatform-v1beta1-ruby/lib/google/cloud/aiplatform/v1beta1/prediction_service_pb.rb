@@ -21,6 +21,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :predictions, :message, 1, "google.protobuf.Value"
       optional :deployed_model_id, :string, 2
     end
+    add_message "google.cloud.aiplatform.v1beta1.RawPredictRequest" do
+      optional :endpoint, :string, 1
+      optional :http_body, :message, 2, "google.api.HttpBody"
+    end
     add_message "google.cloud.aiplatform.v1beta1.ExplainRequest" do
       optional :endpoint, :string, 1
       repeated :instances, :message, 2, "google.protobuf.Value"
@@ -42,6 +46,7 @@ module Google
       module V1beta1
         PredictRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PredictRequest").msgclass
         PredictResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PredictResponse").msgclass
+        RawPredictRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.RawPredictRequest").msgclass
         ExplainRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExplainRequest").msgclass
         ExplainResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExplainResponse").msgclass
       end

@@ -31,6 +31,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest;
@@ -68,6 +72,8 @@ import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest;
+import com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest;
+import com.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse;
 import com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest;
 import com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse;
 import com.google.common.collect.ImmutableMap;
@@ -218,6 +224,20 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(TensorboardRun.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+      batchCreateTensorboardRunsMethodDescriptor =
+          MethodDescriptor
+              .<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.TensorboardService/BatchCreateTensorboardRuns")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateTensorboardRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchCreateTensorboardRunsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetTensorboardRunRequest, TensorboardRun>
       getTensorboardRunMethodDescriptor =
           MethodDescriptor.<GetTensorboardRunRequest, TensorboardRun>newBuilder()
@@ -261,6 +281,23 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+      batchCreateTensorboardTimeSeriesMethodDescriptor =
+          MethodDescriptor
+              .<BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.TensorboardService/BatchCreateTensorboardTimeSeries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      BatchCreateTensorboardTimeSeriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      BatchCreateTensorboardTimeSeriesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -354,6 +391,22 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .build();
 
   private static final MethodDescriptor<
+          WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+      writeTensorboardExperimentDataMethodDescriptor =
+          MethodDescriptor
+              .<WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.TensorboardService/WriteTensorboardExperimentData")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(WriteTensorboardExperimentDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      WriteTensorboardExperimentDataResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>
       writeTensorboardRunDataMethodDescriptor =
           MethodDescriptor
@@ -418,6 +471,8 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
       deleteTensorboardExperimentOperationCallable;
   private final UnaryCallable<CreateTensorboardRunRequest, TensorboardRun>
       createTensorboardRunCallable;
+  private final UnaryCallable<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+      batchCreateTensorboardRunsCallable;
   private final UnaryCallable<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunCallable;
   private final UnaryCallable<UpdateTensorboardRunRequest, TensorboardRun>
       updateTensorboardRunCallable;
@@ -428,6 +483,9 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   private final UnaryCallable<DeleteTensorboardRunRequest, Operation> deleteTensorboardRunCallable;
   private final OperationCallable<DeleteTensorboardRunRequest, Empty, DeleteOperationMetadata>
       deleteTensorboardRunOperationCallable;
+  private final UnaryCallable<
+          BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+      batchCreateTensorboardTimeSeriesCallable;
   private final UnaryCallable<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
       createTensorboardTimeSeriesCallable;
   private final UnaryCallable<GetTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -450,6 +508,9 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   private final ServerStreamingCallable<
           ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
       readTensorboardBlobDataCallable;
+  private final UnaryCallable<
+          WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+      writeTensorboardExperimentDataCallable;
   private final UnaryCallable<WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>
       writeTensorboardRunDataCallable;
   private final UnaryCallable<
@@ -624,6 +685,18 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+        batchCreateTensorboardRunsTransportSettings =
+            GrpcCallSettings
+                .<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateTensorboardRunsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunTransportSettings =
         GrpcCallSettings.<GetTensorboardRunRequest, TensorboardRun>newBuilder()
             .setMethodDescriptor(getTensorboardRunMethodDescriptor)
@@ -668,6 +741,20 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<
+            BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+        batchCreateTensorboardTimeSeriesTransportSettings =
+            GrpcCallSettings
+                .<BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchCreateTensorboardTimeSeriesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
         createTensorboardTimeSeriesTransportSettings =
             GrpcCallSettings.<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>newBuilder()
@@ -750,6 +837,21 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                     request -> {
                       ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                       params.put("time_series", String.valueOf(request.getTimeSeries()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+        writeTensorboardExperimentDataTransportSettings =
+            GrpcCallSettings
+                .<WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+                    newBuilder()
+                .setMethodDescriptor(writeTensorboardExperimentDataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "tensorboard_experiment",
+                          String.valueOf(request.getTensorboardExperiment()));
                       return params.build();
                     })
                 .build();
@@ -865,6 +967,11 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             createTensorboardRunTransportSettings,
             settings.createTensorboardRunSettings(),
             clientContext);
+    this.batchCreateTensorboardRunsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateTensorboardRunsTransportSettings,
+            settings.batchCreateTensorboardRunsSettings(),
+            clientContext);
     this.getTensorboardRunCallable =
         callableFactory.createUnaryCallable(
             getTensorboardRunTransportSettings,
@@ -896,6 +1003,11 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             settings.deleteTensorboardRunOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchCreateTensorboardTimeSeriesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateTensorboardTimeSeriesTransportSettings,
+            settings.batchCreateTensorboardTimeSeriesSettings(),
+            clientContext);
     this.createTensorboardTimeSeriesCallable =
         callableFactory.createUnaryCallable(
             createTensorboardTimeSeriesTransportSettings,
@@ -941,6 +1053,11 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
         callableFactory.createServerStreamingCallable(
             readTensorboardBlobDataTransportSettings,
             settings.readTensorboardBlobDataSettings(),
+            clientContext);
+    this.writeTensorboardExperimentDataCallable =
+        callableFactory.createUnaryCallable(
+            writeTensorboardExperimentDataTransportSettings,
+            settings.writeTensorboardExperimentDataSettings(),
             clientContext);
     this.writeTensorboardRunDataCallable =
         callableFactory.createUnaryCallable(
@@ -1066,6 +1183,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   }
 
   @Override
+  public UnaryCallable<BatchCreateTensorboardRunsRequest, BatchCreateTensorboardRunsResponse>
+      batchCreateTensorboardRunsCallable() {
+    return batchCreateTensorboardRunsCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunCallable() {
     return getTensorboardRunCallable;
   }
@@ -1096,6 +1219,13 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   public OperationCallable<DeleteTensorboardRunRequest, Empty, DeleteOperationMetadata>
       deleteTensorboardRunOperationCallable() {
     return deleteTensorboardRunOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchCreateTensorboardTimeSeriesRequest, BatchCreateTensorboardTimeSeriesResponse>
+      batchCreateTensorboardTimeSeriesCallable() {
+    return batchCreateTensorboardTimeSeriesCallable;
   }
 
   @Override
@@ -1150,6 +1280,13 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   public ServerStreamingCallable<ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
       readTensorboardBlobDataCallable() {
     return readTensorboardBlobDataCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          WriteTensorboardExperimentDataRequest, WriteTensorboardExperimentDataResponse>
+      writeTensorboardExperimentDataCallable() {
+    return writeTensorboardExperimentDataCallable;
   }
 
   @Override

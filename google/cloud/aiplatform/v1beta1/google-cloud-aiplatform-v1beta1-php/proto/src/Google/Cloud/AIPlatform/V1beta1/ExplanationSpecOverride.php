@@ -9,8 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at [online
- * explanation][PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
+ * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at
+ * [online explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.ExplanationSpecOverride</code>
  */

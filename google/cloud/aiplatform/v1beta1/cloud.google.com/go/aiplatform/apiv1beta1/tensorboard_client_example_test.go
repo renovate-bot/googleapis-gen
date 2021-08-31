@@ -284,6 +284,26 @@ func ExampleTensorboardClient_CreateTensorboardRun() {
 	_ = resp
 }
 
+func ExampleTensorboardClient_BatchCreateTensorboardRuns() {
+	ctx := context.Background()
+	c, err := aiplatform.NewTensorboardClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.BatchCreateTensorboardRunsRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#BatchCreateTensorboardRunsRequest.
+	}
+	resp, err := c.BatchCreateTensorboardRuns(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleTensorboardClient_GetTensorboardRun() {
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)
@@ -371,6 +391,26 @@ func ExampleTensorboardClient_DeleteTensorboardRun() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+}
+
+func ExampleTensorboardClient_BatchCreateTensorboardTimeSeries() {
+	ctx := context.Background()
+	c, err := aiplatform.NewTensorboardClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.BatchCreateTensorboardTimeSeriesRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#BatchCreateTensorboardTimeSeriesRequest.
+	}
+	resp, err := c.BatchCreateTensorboardTimeSeries(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
 }
 
 func ExampleTensorboardClient_CreateTensorboardTimeSeries() {
@@ -495,6 +535,26 @@ func ExampleTensorboardClient_ReadTensorboardTimeSeriesData() {
 		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#ReadTensorboardTimeSeriesDataRequest.
 	}
 	resp, err := c.ReadTensorboardTimeSeriesData(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleTensorboardClient_WriteTensorboardExperimentData() {
+	ctx := context.Background()
+	c, err := aiplatform.NewTensorboardClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.WriteTensorboardExperimentDataRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#WriteTensorboardExperimentDataRequest.
+	}
+	resp, err := c.WriteTensorboardExperimentData(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}

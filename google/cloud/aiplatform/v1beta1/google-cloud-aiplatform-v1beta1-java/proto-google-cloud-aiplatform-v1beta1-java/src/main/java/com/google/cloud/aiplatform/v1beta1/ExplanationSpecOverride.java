@@ -5,8 +5,8 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at [online
- * explanation][PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
+ * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at
+ * [online explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationSpecOverride}
@@ -371,8 +371,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at [online
-   * explanation][PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
+   * The [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] entries that can be overridden at
+   * [online explanation][google.cloud.aiplatform.v1beta1.PredictionService.Explain] time.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationSpecOverride}

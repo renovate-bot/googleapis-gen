@@ -397,7 +397,7 @@ module Google
             #   @param parent [::String]
             #     Required. The resource name of the Location to list Tensorboards.
             #     Format:
-            #     'projects/\\{project}/locations/\\{location}'
+            #     `projects/{project}/locations/{location}`
             #   @param filter [::String]
             #     Lists the Tensorboards that match the filter expression.
             #   @param page_size [::Integer]
@@ -942,8 +942,8 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param parent [::String]
-            #     Required. The resource name of the Tensorboard to create the TensorboardRun in.
-            #     Format:
+            #     Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+            #     in. Format:
             #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
             #   @param tensorboard_run [::Google::Cloud::AIPlatform::V1beta1::TensorboardRun, ::Hash]
             #     Required. The TensorboardRun to create.
@@ -994,6 +994,81 @@ module Google
                                      retry_policy: @config.retry_policy
 
               @tensorboard_service_stub.call_rpc :create_tensorboard_run, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Batch create TensorboardRuns.
+            #
+            # @overload batch_create_tensorboard_runs(request, options = nil)
+            #   Pass arguments to `batch_create_tensorboard_runs` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload batch_create_tensorboard_runs(parent: nil, requests: nil)
+            #   Pass arguments to `batch_create_tensorboard_runs` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The resource name of the TensorboardExperiment to create the
+            #     TensorboardRuns in. Format:
+            #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+            #     The parent field in the CreateTensorboardRunRequest messages must match
+            #     this field.
+            #   @param requests [::Array<::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardRunRequest, ::Hash>]
+            #     Required. The request message specifying the TensorboardRuns to create.
+            #     A maximum of 1000 TensorboardRuns can be created in a batch.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def batch_create_tensorboard_runs request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardRunsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.batch_create_tensorboard_runs.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.batch_create_tensorboard_runs.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.batch_create_tensorboard_runs.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @tensorboard_service_stub.call_rpc :batch_create_tensorboard_runs, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -1167,7 +1242,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param parent [::String]
-            #     Required. The resource name of the Tensorboard to list TensorboardRuns.
+            #     Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
             #     Format:
             #     'projects/\\{project}/locations/\\{location}/tensorboards/\\{tensorboard}/experiments/\\{experiment}'
             #   @param filter [::String]
@@ -1302,6 +1377,83 @@ module Google
 
               @tensorboard_service_stub.call_rpc :delete_tensorboard_run, request, options: options do |response, operation|
                 response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
+            #
+            # @overload batch_create_tensorboard_time_series(request, options = nil)
+            #   Pass arguments to `batch_create_tensorboard_time_series` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload batch_create_tensorboard_time_series(parent: nil, requests: nil)
+            #   Pass arguments to `batch_create_tensorboard_time_series` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The resource name of the TensorboardExperiment to create the
+            #     TensorboardTimeSeries in.
+            #     Format:
+            #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+            #     The TensorboardRuns referenced by the parent fields in the
+            #     CreateTensorboardTimeSeriesRequest messages must be sub resources of this
+            #     TensorboardExperiment.
+            #   @param requests [::Array<::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardTimeSeriesRequest, ::Hash>]
+            #     Required. The request message specifying the TensorboardTimeSeries to create.
+            #     A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def batch_create_tensorboard_time_series request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1beta1::BatchCreateTensorboardTimeSeriesRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.batch_create_tensorboard_time_series.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.batch_create_tensorboard_time_series.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.batch_create_tensorboard_time_series.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @tensorboard_service_stub.call_rpc :batch_create_tensorboard_time_series, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -1854,6 +2006,80 @@ module Google
             end
 
             ##
+            # Write time series data points of multiple TensorboardTimeSeries in multiple
+            # TensorboardRun's. If any data fail to be ingested, an error will be
+            # returned.
+            #
+            # @overload write_tensorboard_experiment_data(request, options = nil)
+            #   Pass arguments to `write_tensorboard_experiment_data` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload write_tensorboard_experiment_data(tensorboard_experiment: nil, write_run_data_requests: nil)
+            #   Pass arguments to `write_tensorboard_experiment_data` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param tensorboard_experiment [::String]
+            #     Required. The resource name of the TensorboardExperiment to write data to.
+            #     Format:
+            #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+            #   @param write_run_data_requests [::Array<::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardRunDataRequest, ::Hash>]
+            #     Required. Requests containing per-run TensorboardTimeSeries data to write.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def write_tensorboard_experiment_data request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardExperimentDataRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.write_tensorboard_experiment_data.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "tensorboard_experiment" => request.tensorboard_experiment
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.write_tensorboard_experiment_data.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.write_tensorboard_experiment_data.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @tensorboard_service_stub.call_rpc :write_tensorboard_experiment_data, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Write time series data points into multiple TensorboardTimeSeries under
             # a TensorboardRun. If any data fail to be ingested, an error will be
             # returned.
@@ -2212,6 +2438,11 @@ module Google
                 #
                 attr_reader :create_tensorboard_run
                 ##
+                # RPC-specific configuration for `batch_create_tensorboard_runs`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :batch_create_tensorboard_runs
+                ##
                 # RPC-specific configuration for `get_tensorboard_run`
                 # @return [::Gapic::Config::Method]
                 #
@@ -2231,6 +2462,11 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :delete_tensorboard_run
+                ##
+                # RPC-specific configuration for `batch_create_tensorboard_time_series`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :batch_create_tensorboard_time_series
                 ##
                 # RPC-specific configuration for `create_tensorboard_time_series`
                 # @return [::Gapic::Config::Method]
@@ -2267,6 +2503,11 @@ module Google
                 #
                 attr_reader :read_tensorboard_blob_data
                 ##
+                # RPC-specific configuration for `write_tensorboard_experiment_data`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :write_tensorboard_experiment_data
+                ##
                 # RPC-specific configuration for `write_tensorboard_run_data`
                 # @return [::Gapic::Config::Method]
                 #
@@ -2301,6 +2542,8 @@ module Google
                   @delete_tensorboard_experiment = ::Gapic::Config::Method.new delete_tensorboard_experiment_config
                   create_tensorboard_run_config = parent_rpcs.create_tensorboard_run if parent_rpcs.respond_to? :create_tensorboard_run
                   @create_tensorboard_run = ::Gapic::Config::Method.new create_tensorboard_run_config
+                  batch_create_tensorboard_runs_config = parent_rpcs.batch_create_tensorboard_runs if parent_rpcs.respond_to? :batch_create_tensorboard_runs
+                  @batch_create_tensorboard_runs = ::Gapic::Config::Method.new batch_create_tensorboard_runs_config
                   get_tensorboard_run_config = parent_rpcs.get_tensorboard_run if parent_rpcs.respond_to? :get_tensorboard_run
                   @get_tensorboard_run = ::Gapic::Config::Method.new get_tensorboard_run_config
                   update_tensorboard_run_config = parent_rpcs.update_tensorboard_run if parent_rpcs.respond_to? :update_tensorboard_run
@@ -2309,6 +2552,8 @@ module Google
                   @list_tensorboard_runs = ::Gapic::Config::Method.new list_tensorboard_runs_config
                   delete_tensorboard_run_config = parent_rpcs.delete_tensorboard_run if parent_rpcs.respond_to? :delete_tensorboard_run
                   @delete_tensorboard_run = ::Gapic::Config::Method.new delete_tensorboard_run_config
+                  batch_create_tensorboard_time_series_config = parent_rpcs.batch_create_tensorboard_time_series if parent_rpcs.respond_to? :batch_create_tensorboard_time_series
+                  @batch_create_tensorboard_time_series = ::Gapic::Config::Method.new batch_create_tensorboard_time_series_config
                   create_tensorboard_time_series_config = parent_rpcs.create_tensorboard_time_series if parent_rpcs.respond_to? :create_tensorboard_time_series
                   @create_tensorboard_time_series = ::Gapic::Config::Method.new create_tensorboard_time_series_config
                   get_tensorboard_time_series_config = parent_rpcs.get_tensorboard_time_series if parent_rpcs.respond_to? :get_tensorboard_time_series
@@ -2323,6 +2568,8 @@ module Google
                   @read_tensorboard_time_series_data = ::Gapic::Config::Method.new read_tensorboard_time_series_data_config
                   read_tensorboard_blob_data_config = parent_rpcs.read_tensorboard_blob_data if parent_rpcs.respond_to? :read_tensorboard_blob_data
                   @read_tensorboard_blob_data = ::Gapic::Config::Method.new read_tensorboard_blob_data_config
+                  write_tensorboard_experiment_data_config = parent_rpcs.write_tensorboard_experiment_data if parent_rpcs.respond_to? :write_tensorboard_experiment_data
+                  @write_tensorboard_experiment_data = ::Gapic::Config::Method.new write_tensorboard_experiment_data_config
                   write_tensorboard_run_data_config = parent_rpcs.write_tensorboard_run_data if parent_rpcs.respond_to? :write_tensorboard_run_data
                   @write_tensorboard_run_data = ::Gapic::Config::Method.new write_tensorboard_run_data_config
                   export_tensorboard_time_series_data_config = parent_rpcs.export_tensorboard_time_series_data if parent_rpcs.respond_to? :export_tensorboard_time_series_data

@@ -44,6 +44,8 @@ class aiplatformCallTransformer(cst.CSTTransformer):
           'add_execution_events': ('execution', 'events', ),
           'add_trial_measurement': ('trial_name', 'measurement', ),
           'batch_create_features': ('parent', 'requests', ),
+          'batch_create_tensorboard_runs': ('parent', 'requests', ),
+          'batch_create_tensorboard_time_series': ('parent', 'requests', ),
           'batch_migrate_resources': ('parent', 'migrate_resource_requests', ),
           'batch_read_feature_values': ('featurestore', 'destination', 'entity_type_specs', 'csv_read_instances', 'bigquery_read_instances', 'pass_through_fields', ),
           'cancel_batch_prediction_job': ('name', ),
@@ -186,6 +188,7 @@ class aiplatformCallTransformer(cst.CSTTransformer):
           'query_artifact_lineage_subgraph': ('artifact', 'max_hops', 'filter', ),
           'query_context_lineage_subgraph': ('context', ),
           'query_execution_inputs_and_outputs': ('execution', ),
+          'raw_predict': ('endpoint', 'http_body', ),
           'read_feature_values': ('entity_type', 'entity_id', 'feature_selector', ),
           'read_tensorboard_blob_data': ('time_series', 'blob_ids', ),
           'read_tensorboard_time_series_data': ('tensorboard_time_series', 'max_data_points', 'filter', ),
@@ -216,6 +219,7 @@ class aiplatformCallTransformer(cst.CSTTransformer):
           'update_tensorboard_run': ('update_mask', 'tensorboard_run', ),
           'update_tensorboard_time_series': ('update_mask', 'tensorboard_time_series', ),
           'upload_model': ('parent', 'model', ),
+          'write_tensorboard_experiment_data': ('tensorboard_experiment', 'write_run_data_requests', ),
           'write_tensorboard_run_data': ('tensorboard_run', 'time_series_data', ),
     }
 

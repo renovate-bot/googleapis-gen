@@ -9,8 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Config for migrating Dataset in datalabeling.googleapis.com to AI
- * Platform's Dataset.
+ * Config for migrating Dataset in datalabeling.googleapis.com to Vertex
+ * AI's Dataset.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig</code>
  */

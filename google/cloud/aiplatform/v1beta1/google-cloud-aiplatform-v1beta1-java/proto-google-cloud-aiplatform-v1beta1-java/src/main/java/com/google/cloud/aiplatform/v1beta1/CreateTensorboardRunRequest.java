@@ -115,8 +115,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   * Format:
+   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+   * in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
@@ -138,8 +138,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-   * Format:
+   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+   * in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
@@ -607,8 +607,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -629,8 +629,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -652,8 +652,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -673,8 +673,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -689,8 +689,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Tensorboard to create the TensorboardRun in.
-     * Format:
+     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+     * in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *

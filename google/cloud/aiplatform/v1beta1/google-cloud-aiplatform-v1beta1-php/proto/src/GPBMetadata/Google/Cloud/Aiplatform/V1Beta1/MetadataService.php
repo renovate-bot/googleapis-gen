@@ -30,7 +30,7 @@ class MetadataService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-°p
+´p
 6google/cloud/aiplatform/v1beta1/metadata_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/cloud/aiplatform/v1beta1/artifact.proto-google/cloud/aiplatform/v1beta1/context.proto+google/cloud/aiplatform/v1beta1/event.proto/google/cloud/aiplatform/v1beta1/execution.proto6google/cloud/aiplatform/v1beta1/lineage_subgraph.proto5google/cloud/aiplatform/v1beta1/metadata_schema.proto4google/cloud/aiplatform/v1beta1/metadata_store.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"¿
 CreateMetadataStoreRequest9
 parent (	B)àAúA#
@@ -50,11 +50,11 @@ $CreateMetadataStoreOperationMetadataS
 page_token (	"~
 ListMetadataStoresResponseG
 metadata_stores (2..google.cloud.aiplatform.v1beta1.MetadataStore
-next_page_token (	"j
+next_page_token (	"n
 DeleteMetadataStoreRequest=
 name (	B/àAúA)
-\'aiplatform.googleapis.com/MetadataStore
-force ("{
+\'aiplatform.googleapis.com/MetadataStore
+force (B"{
 $DeleteMetadataStoreOperationMetadataS
 generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"¯
 CreateArtifactRequest?

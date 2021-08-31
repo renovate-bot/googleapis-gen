@@ -50,7 +50,7 @@ module Google
         #   @return [::String]
         #     Required. The resource name of the Location to list Tensorboards.
         #     Format:
-        #     'projects/\\{project}/locations/\\{location}'
+        #     `projects/{project}/locations/{location}`
         # @!attribute [rw] filter
         #   @return [::String]
         #     Lists the Tensorboards that match the filter expression.
@@ -235,11 +235,37 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#batch_create_tensorboard_runs TensorboardService.BatchCreateTensorboardRuns}.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The resource name of the TensorboardExperiment to create the
+        #     TensorboardRuns in. Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+        #     The parent field in the CreateTensorboardRunRequest messages must match
+        #     this field.
+        # @!attribute [rw] requests
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardRunRequest>]
+        #     Required. The request message specifying the TensorboardRuns to create.
+        #     A maximum of 1000 TensorboardRuns can be created in a batch.
+        class BatchCreateTensorboardRunsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#batch_create_tensorboard_runs TensorboardService.BatchCreateTensorboardRuns}.
+        # @!attribute [rw] tensorboard_runs
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardRun>]
+        #     The created TensorboardRuns.
+        class BatchCreateTensorboardRunsResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#create_tensorboard_run TensorboardService.CreateTensorboardRun}.
         # @!attribute [rw] parent
         #   @return [::String]
-        #     Required. The resource name of the Tensorboard to create the TensorboardRun in.
-        #     Format:
+        #     Required. The resource name of the TensorboardExperiment to create the TensorboardRun
+        #     in. Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
         # @!attribute [rw] tensorboard_run
         #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardRun]
@@ -293,7 +319,7 @@ module Google
         # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns}.
         # @!attribute [rw] parent
         #   @return [::String]
-        #     Required. The resource name of the Tensorboard to list TensorboardRuns.
+        #     Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
         #     Format:
         #     'projects/\\{project}/locations/\\{location}/tensorboards/\\{tensorboard}/experiments/\\{experiment}'
         # @!attribute [rw] filter
@@ -365,6 +391,34 @@ module Google
         #     Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
         class DeleteTensorboardRunRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#batch_create_tensorboard_time_series TensorboardService.BatchCreateTensorboardTimeSeries}.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The resource name of the TensorboardExperiment to create the
+        #     TensorboardTimeSeries in.
+        #     Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+        #     The TensorboardRuns referenced by the parent fields in the
+        #     CreateTensorboardTimeSeriesRequest messages must be sub resources of this
+        #     TensorboardExperiment.
+        # @!attribute [rw] requests
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::CreateTensorboardTimeSeriesRequest>]
+        #     Required. The request message specifying the TensorboardTimeSeries to create.
+        #     A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+        class BatchCreateTensorboardTimeSeriesRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#batch_create_tensorboard_time_series TensorboardService.BatchCreateTensorboardTimeSeries}.
+        # @!attribute [rw] tensorboard_time_series
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries>]
+        #     The created TensorboardTimeSeries.
+        class BatchCreateTensorboardTimeSeriesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
@@ -507,6 +561,26 @@ module Google
         #   @return [::Google::Cloud::AIPlatform::V1beta1::TimeSeriesData]
         #     The returned time series data.
         class ReadTensorboardTimeSeriesDataResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#write_tensorboard_experiment_data TensorboardService.WriteTensorboardExperimentData}.
+        # @!attribute [rw] tensorboard_experiment
+        #   @return [::String]
+        #     Required. The resource name of the TensorboardExperiment to write data to.
+        #     Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
+        # @!attribute [rw] write_run_data_requests
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::WriteTensorboardRunDataRequest>]
+        #     Required. Requests containing per-run TensorboardTimeSeries data to write.
+        class WriteTensorboardExperimentDataRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#write_tensorboard_experiment_data TensorboardService.WriteTensorboardExperimentData}.
+        class WriteTensorboardExperimentDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

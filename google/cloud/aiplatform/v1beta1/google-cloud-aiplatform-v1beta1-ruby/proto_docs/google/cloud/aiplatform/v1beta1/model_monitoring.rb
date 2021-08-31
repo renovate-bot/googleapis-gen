@@ -180,8 +180,7 @@ module Google
                 # Should not be set.
                 PREDICTION_FORMAT_UNSPECIFIED = 0
 
-                # Predictions are in JSONL files, consistent from the definition here
-                # (http://shortn/_4bS0hL7ofb).
+                # Predictions are in JSONL files.
                 JSONL = 2
 
                 # Predictions are in BigQuery.

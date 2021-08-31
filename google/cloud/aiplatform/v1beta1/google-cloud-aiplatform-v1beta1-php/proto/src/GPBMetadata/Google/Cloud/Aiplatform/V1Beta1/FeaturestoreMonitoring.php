@@ -18,13 +18,13 @@ class FeaturestoreMonitoring
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ç
-=google/cloud/aiplatform/v1beta1/featurestore_monitoring.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"â
+í
+=google/cloud/aiplatform/v1beta1/featurestore_monitoring.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"é
 FeaturestoreMonitoringConfigi
-snapshot_analysis (2N.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis~
+snapshot_analysis (2N.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysisÇ
 SnapshotAnalysis
-disabled (6
-monitoring_interval (2.google.protobuf.Duration 
+disabled (:
+monitoring_interval (2.google.protobuf.DurationB 
 monitoring_interval_days (B¯
 #com.google.cloud.aiplatform.v1beta1BFeaturestoreMonitoringProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);

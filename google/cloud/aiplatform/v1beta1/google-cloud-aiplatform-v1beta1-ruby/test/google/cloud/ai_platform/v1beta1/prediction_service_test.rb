@@ -109,6 +109,66 @@ class ::Google::Cloud::AIPlatform::V1beta1::PredictionService::ClientTest < Mini
     end
   end
 
+  def test_raw_predict
+    # Create GRPC objects.
+    grpc_response = ::Google::Api::HttpBody.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    endpoint = "hello world"
+    http_body = {}
+
+    raw_predict_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :raw_predict, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest, request
+      assert_equal "hello world", request["endpoint"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Api::HttpBody), request["http_body"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, raw_predict_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.raw_predict({ endpoint: endpoint, http_body: http_body }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.raw_predict endpoint: endpoint, http_body: http_body do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.raw_predict ::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest.new(endpoint: endpoint, http_body: http_body) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.raw_predict({ endpoint: endpoint, http_body: http_body }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.raw_predict(::Google::Cloud::AIPlatform::V1beta1::RawPredictRequest.new(endpoint: endpoint, http_body: http_body), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, raw_predict_client_stub.call_rpc_count
+    end
+  end
+
   def test_explain
     # Create GRPC objects.
     grpc_response = ::Google::Cloud::AIPlatform::V1beta1::ExplainResponse.new

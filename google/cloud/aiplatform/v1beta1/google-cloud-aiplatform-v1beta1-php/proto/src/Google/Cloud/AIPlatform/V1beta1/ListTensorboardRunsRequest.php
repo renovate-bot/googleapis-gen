@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListTensorboardRunsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      *
@@ -69,7 +69,7 @@ class ListTensorboardRunsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The resource name of the Tensorboard to list TensorboardRuns.
+     *           Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      *           Format:
      *           'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      *     @type string $filter
@@ -98,7 +98,7 @@ class ListTensorboardRunsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      *
@@ -111,7 +111,7 @@ class ListTensorboardRunsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource name of the Tensorboard to list TensorboardRuns.
+     * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
      * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
      *

@@ -6,11 +6,11 @@ package com.google.cloud.aiplatform.v1beta1;
 /**
  * <pre>
  * SpecialistPool represents customers' own workforce to work on their data
- * labeling jobs. It includes a group of specialist managers who are responsible
- * for managing the labelers in this pool as well as customers' data labeling
- * jobs associated with this pool.
- * Customers create specialist pool as well as start data labeling jobs on
- * Cloud, managers and labelers work with the jobs using CrowdCompute console.
+ * labeling jobs. It includes a group of specialist managers and workers.
+ * Managers are responsible for managing the workers in this pool as well as
+ * customers' data labeling jobs associated with this pool. Customers create
+ * specialist pool as well as start data labeling jobs on Cloud, managers and
+ * workers handle the jobs using CrowdCompute console.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.SpecialistPool}
@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
   private int specialistManagersCount_;
   /**
    * <pre>
-   * Output only. The number of Specialists in this SpecialistPool.
+   * Output only. The number of managers in this SpecialistPool.
    * </pre>
    *
    * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -252,7 +252,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList specialistManagerEmails_;
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -287,7 +287,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The email addresses of the specialists in the SpecialistPool.
+   * The email addresses of the managers in the SpecialistPool.
    * </pre>
    *
    * <code>repeated string specialist_manager_emails = 4;</code>
@@ -562,11 +562,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * SpecialistPool represents customers' own workforce to work on their data
-   * labeling jobs. It includes a group of specialist managers who are responsible
-   * for managing the labelers in this pool as well as customers' data labeling
-   * jobs associated with this pool.
-   * Customers create specialist pool as well as start data labeling jobs on
-   * Cloud, managers and labelers work with the jobs using CrowdCompute console.
+   * labeling jobs. It includes a group of specialist managers and workers.
+   * Managers are responsible for managing the workers in this pool as well as
+   * customers' data labeling jobs associated with this pool. Customers create
+   * specialist pool as well as start data labeling jobs on Cloud, managers and
+   * workers handle the jobs using CrowdCompute console.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.SpecialistPool}
@@ -975,7 +975,7 @@ private static final long serialVersionUID = 0L;
     private int specialistManagersCount_ ;
     /**
      * <pre>
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      * </pre>
      *
      * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -987,7 +987,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      * </pre>
      *
      * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1002,7 +1002,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The number of Specialists in this SpecialistPool.
+     * Output only. The number of managers in this SpecialistPool.
      * </pre>
      *
      * <code>int32 specialist_managers_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1024,7 +1024,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1047,7 +1047,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1072,7 +1072,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1092,7 +1092,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1111,7 +1111,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1128,7 +1128,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>
@@ -1142,7 +1142,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The email addresses of the specialists in the SpecialistPool.
+     * The email addresses of the managers in the SpecialistPool.
      * </pre>
      *
      * <code>repeated string specialist_manager_emails = 4;</code>

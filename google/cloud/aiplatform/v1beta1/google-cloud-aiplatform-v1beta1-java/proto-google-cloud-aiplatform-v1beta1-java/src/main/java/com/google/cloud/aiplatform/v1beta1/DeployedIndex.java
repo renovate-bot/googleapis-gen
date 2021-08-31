@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     index_ = "";
     displayName_ = "";
     reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    deploymentGroup_ = "";
   }
 
   @java.lang.Override
@@ -152,6 +153,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             reservedIpRanges_.add(s);
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deploymentGroup_ = s;
             break;
           }
           default: {
@@ -692,6 +699,70 @@ private static final long serialVersionUID = 0L;
     return reservedIpRanges_.getByteString(index);
   }
 
+  public static final int DEPLOYMENT_GROUP_FIELD_NUMBER = 11;
+  private volatile java.lang.Object deploymentGroup_;
+  /**
+   * <pre>
+   * Optional. The deployment group can be no longer than 64 characters (eg:
+   * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+   * practice when the peered network has multiple peering ranges. This creates
+   * your deployments from predictable IP spaces for easier traffic
+   * administration. Also, one deployment_group (except 'default') can only be
+   * used with the same reserved_ip_ranges which means if the deployment_group
+   * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+   * [d, e] is disallowed.
+   * Note: we only support up to 5 deployment groups(not including 'default').
+   * </pre>
+   *
+   * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The deploymentGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getDeploymentGroup() {
+    java.lang.Object ref = deploymentGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deploymentGroup_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. The deployment group can be no longer than 64 characters (eg:
+   * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+   * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+   * practice when the peered network has multiple peering ranges. This creates
+   * your deployments from predictable IP spaces for easier traffic
+   * administration. Also, one deployment_group (except 'default') can only be
+   * used with the same reserved_ip_ranges which means if the deployment_group
+   * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+   * [d, e] is disallowed.
+   * Note: we only support up to 5 deployment groups(not including 'default').
+   * </pre>
+   *
+   * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for deploymentGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeploymentGroupBytes() {
+    java.lang.Object ref = deploymentGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deploymentGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -735,6 +806,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, reservedIpRanges_.getRaw(i));
+    }
+    if (!getDeploymentGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, deploymentGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -786,6 +860,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getReservedIpRangesList().size();
     }
+    if (!getDeploymentGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, deploymentGroup_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -836,6 +913,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getReservedIpRangesList()
         .equals(other.getReservedIpRangesList())) return false;
+    if (!getDeploymentGroup()
+        .equals(other.getDeploymentGroup())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -880,6 +959,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RESERVED_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getReservedIpRangesList().hashCode();
     }
+    hash = (37 * hash) + DEPLOYMENT_GROUP_FIELD_NUMBER;
+    hash = (53 * hash) + getDeploymentGroup().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1057,6 +1138,8 @@ private static final long serialVersionUID = 0L;
       }
       reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      deploymentGroup_ = "";
+
       return this;
     }
 
@@ -1118,6 +1201,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.reservedIpRanges_ = reservedIpRanges_;
+      result.deploymentGroup_ = deploymentGroup_;
       onBuilt();
       return result;
     }
@@ -1204,6 +1288,10 @@ private static final long serialVersionUID = 0L;
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
         }
+        onChanged();
+      }
+      if (!other.getDeploymentGroup().isEmpty()) {
+        deploymentGroup_ = other.deploymentGroup_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2785,6 +2873,147 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deploymentGroup_ = "";
+    /**
+     * <pre>
+     * Optional. The deployment group can be no longer than 64 characters (eg:
+     * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+     * practice when the peered network has multiple peering ranges. This creates
+     * your deployments from predictable IP spaces for easier traffic
+     * administration. Also, one deployment_group (except 'default') can only be
+     * used with the same reserved_ip_ranges which means if the deployment_group
+     * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+     * [d, e] is disallowed.
+     * Note: we only support up to 5 deployment groups(not including 'default').
+     * </pre>
+     *
+     * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The deploymentGroup.
+     */
+    public java.lang.String getDeploymentGroup() {
+      java.lang.Object ref = deploymentGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deploymentGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The deployment group can be no longer than 64 characters (eg:
+     * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+     * practice when the peered network has multiple peering ranges. This creates
+     * your deployments from predictable IP spaces for easier traffic
+     * administration. Also, one deployment_group (except 'default') can only be
+     * used with the same reserved_ip_ranges which means if the deployment_group
+     * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+     * [d, e] is disallowed.
+     * Note: we only support up to 5 deployment groups(not including 'default').
+     * </pre>
+     *
+     * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for deploymentGroup.
+     */
+    public com.google.protobuf.ByteString
+        getDeploymentGroupBytes() {
+      java.lang.Object ref = deploymentGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deploymentGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The deployment group can be no longer than 64 characters (eg:
+     * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+     * practice when the peered network has multiple peering ranges. This creates
+     * your deployments from predictable IP spaces for easier traffic
+     * administration. Also, one deployment_group (except 'default') can only be
+     * used with the same reserved_ip_ranges which means if the deployment_group
+     * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+     * [d, e] is disallowed.
+     * Note: we only support up to 5 deployment groups(not including 'default').
+     * </pre>
+     *
+     * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The deploymentGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentGroup(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deploymentGroup_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The deployment group can be no longer than 64 characters (eg:
+     * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+     * practice when the peered network has multiple peering ranges. This creates
+     * your deployments from predictable IP spaces for easier traffic
+     * administration. Also, one deployment_group (except 'default') can only be
+     * used with the same reserved_ip_ranges which means if the deployment_group
+     * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+     * [d, e] is disallowed.
+     * Note: we only support up to 5 deployment groups(not including 'default').
+     * </pre>
+     *
+     * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeploymentGroup() {
+      
+      deploymentGroup_ = getDefaultInstance().getDeploymentGroup();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The deployment group can be no longer than 64 characters (eg:
+     * 'test', 'prod'). If not set, we will use the 'default' deployment group.
+     * Creating `deployment_groups` with `reserved_ip_ranges` is a recommended
+     * practice when the peered network has multiple peering ranges. This creates
+     * your deployments from predictable IP spaces for easier traffic
+     * administration. Also, one deployment_group (except 'default') can only be
+     * used with the same reserved_ip_ranges which means if the deployment_group
+     * has been used with reserved_ip_ranges: [a, b, c], using it with [a, b] or
+     * [d, e] is disallowed.
+     * Note: we only support up to 5 deployment groups(not including 'default').
+     * </pre>
+     *
+     * <code>string deployment_group = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for deploymentGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentGroupBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deploymentGroup_ = value;
       onChanged();
       return this;
     }

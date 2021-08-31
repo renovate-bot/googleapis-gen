@@ -25,6 +25,12 @@ class NearestNeighborSearchOperationMetadata extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats content_validation_stats = 1;</code>
      */
     private $content_validation_stats;
+    /**
+     * The ingested data size in bytes.
+     *
+     * Generated from protobuf field <code>int64 data_bytes_count = 2;</code>
+     */
+    protected $data_bytes_count = 0;
 
     /**
      * Constructor.
@@ -38,6 +44,8 @@ class NearestNeighborSearchOperationMetadata extends \Google\Protobuf\Internal\M
      *           contentsDeltaUri is provided as part of [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please note
      *           that, currently for those files that are broken or has unsupported file
      *           format, we will not have the stats for those files.
+     *     @type int|string $data_bytes_count
+     *           The ingested data size in bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -75,6 +83,32 @@ class NearestNeighborSearchOperationMetadata extends \Google\Protobuf\Internal\M
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\AIPlatform\V1beta1\NearestNeighborSearchOperationMetadata\ContentValidationStats::class);
         $this->content_validation_stats = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The ingested data size in bytes.
+     *
+     * Generated from protobuf field <code>int64 data_bytes_count = 2;</code>
+     * @return int|string
+     */
+    public function getDataBytesCount()
+    {
+        return $this->data_bytes_count;
+    }
+
+    /**
+     * The ingested data size in bytes.
+     *
+     * Generated from protobuf field <code>int64 data_bytes_count = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setDataBytesCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->data_bytes_count = $var;
 
         return $this;
     }

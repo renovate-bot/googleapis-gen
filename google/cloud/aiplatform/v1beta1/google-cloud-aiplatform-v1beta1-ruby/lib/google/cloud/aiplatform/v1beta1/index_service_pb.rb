@@ -48,6 +48,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata" do
       repeated :content_validation_stats, :message, 1, "google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats"
+      optional :data_bytes_count, :int64, 2
     end
     add_message "google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError" do
       optional :error_type, :enum, 1, "google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError.RecordErrorType"

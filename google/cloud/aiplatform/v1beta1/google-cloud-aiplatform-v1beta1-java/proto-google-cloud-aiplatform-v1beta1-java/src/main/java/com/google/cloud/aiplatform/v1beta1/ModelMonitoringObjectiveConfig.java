@@ -5038,8 +5038,7 @@ private static final long serialVersionUID = 0L;
         PREDICTION_FORMAT_UNSPECIFIED(0),
         /**
          * <pre>
-         * Predictions are in JSONL files, consistent from the definition here
-         * (http://shortn/_4bS0hL7ofb).
+         * Predictions are in JSONL files.
          * </pre>
          *
          * <code>JSONL = 2;</code>
@@ -5066,8 +5065,7 @@ private static final long serialVersionUID = 0L;
         public static final int PREDICTION_FORMAT_UNSPECIFIED_VALUE = 0;
         /**
          * <pre>
-         * Predictions are in JSONL files, consistent from the definition here
-         * (http://shortn/_4bS0hL7ofb).
+         * Predictions are in JSONL files.
          * </pre>
          *
          * <code>JSONL = 2;</code>

@@ -35,6 +35,11 @@
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_10_codes",
                     "retry_params_name": "no_retry_10_params"
+                },
+                "RawPredict": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 }
             }
         }

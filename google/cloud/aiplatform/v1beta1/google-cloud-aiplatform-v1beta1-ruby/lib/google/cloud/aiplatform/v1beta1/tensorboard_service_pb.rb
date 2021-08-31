@@ -70,6 +70,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest" do
       optional :name, :string, 1
     end
+    add_message "google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest" do
+      optional :parent, :string, 1
+      repeated :requests, :message, 2, "google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse" do
+      repeated :tensorboard_runs, :message, 1, "google.cloud.aiplatform.v1beta1.TensorboardRun"
+    end
     add_message "google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest" do
       optional :parent, :string, 1
       optional :tensorboard_run, :message, 2, "google.cloud.aiplatform.v1beta1.TensorboardRun"
@@ -103,6 +110,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest" do
       optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest" do
+      optional :parent, :string, 1
+      repeated :requests, :message, 2, "google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse" do
+      repeated :tensorboard_time_series, :message, 1, "google.cloud.aiplatform.v1beta1.TensorboardTimeSeries"
     end
     add_message "google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest" do
       optional :parent, :string, 1
@@ -138,6 +152,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse" do
       optional :time_series_data, :message, 1, "google.cloud.aiplatform.v1beta1.TimeSeriesData"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest" do
+      optional :tensorboard_experiment, :string, 1
+      repeated :write_run_data_requests, :message, 2, "google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse" do
     end
     add_message "google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest" do
       optional :tensorboard_run, :string, 1
@@ -181,6 +201,8 @@ module Google
         ListTensorboardExperimentsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsResponse").msgclass
         UpdateTensorboardExperimentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest").msgclass
         DeleteTensorboardExperimentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest").msgclass
+        BatchCreateTensorboardRunsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsRequest").msgclass
+        BatchCreateTensorboardRunsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchCreateTensorboardRunsResponse").msgclass
         CreateTensorboardRunRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest").msgclass
         GetTensorboardRunRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest").msgclass
         ReadTensorboardBlobDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest").msgclass
@@ -189,6 +211,8 @@ module Google
         ListTensorboardRunsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListTensorboardRunsResponse").msgclass
         UpdateTensorboardRunRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest").msgclass
         DeleteTensorboardRunRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest").msgclass
+        BatchCreateTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest").msgclass
+        BatchCreateTensorboardTimeSeriesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse").msgclass
         CreateTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest").msgclass
         GetTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GetTensorboardTimeSeriesRequest").msgclass
         ListTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest").msgclass
@@ -197,6 +221,8 @@ module Google
         DeleteTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest").msgclass
         ReadTensorboardTimeSeriesDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest").msgclass
         ReadTensorboardTimeSeriesDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse").msgclass
+        WriteTensorboardExperimentDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest").msgclass
+        WriteTensorboardExperimentDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse").msgclass
         WriteTensorboardRunDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest").msgclass
         WriteTensorboardRunDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse").msgclass
         ExportTensorboardTimeSeriesDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataRequest").msgclass

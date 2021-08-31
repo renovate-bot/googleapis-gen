@@ -24,6 +24,8 @@ module Google
     module AIPlatform
       module V1beta1
         module DatasetService
+          # The service that handles the CRUD of Vertex AI Dataset and its child
+          # resources.
           class Service
 
             include GRPC::GenericService

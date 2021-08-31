@@ -744,9 +744,10 @@ export class MetadataServiceClient {
  *   projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A FieldMask indicating which fields should be updated.
+ *   Functionality of this field is not yet supported.
  * @param {boolean} request.allowMissing
- *   If set to true, and the {@link google.cloud.aiplatform.v1beta1.Artifact|Artifact} is not found, a new {@link google.cloud.aiplatform.v1beta1.Artifact|Artifact} will
- *   be created. In this situation, `update_mask` is ignored.
+ *   If set to true, and the {@link google.cloud.aiplatform.v1beta1.Artifact|Artifact} is not found, a new {@link google.cloud.aiplatform.v1beta1.Artifact|Artifact} is
+ *   created.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -981,9 +982,10 @@ export class MetadataServiceClient {
  *   projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A FieldMask indicating which fields should be updated.
+ *   Functionality of this field is not yet supported.
  * @param {boolean} request.allowMissing
- *   If set to true, and the {@link google.cloud.aiplatform.v1beta1.Context|Context} is not found, a new {@link google.cloud.aiplatform.v1beta1.Context|Context} will be
- *   created. In this situation, `update_mask` is ignored.
+ *   If set to true, and the {@link google.cloud.aiplatform.v1beta1.Context|Context} is not found, a new {@link google.cloud.aiplatform.v1beta1.Context|Context} is
+ *   created.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1465,9 +1467,10 @@ export class MetadataServiceClient {
  *   projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. A FieldMask indicating which fields should be updated.
+ *   Functionality of this field is not yet supported.
  * @param {boolean} request.allowMissing
  *   If set to true, and the {@link google.cloud.aiplatform.v1beta1.Execution|Execution} is not found, a new {@link google.cloud.aiplatform.v1beta1.Execution|Execution}
- *   will be created. In this situation, `update_mask` is ignored.
+ *   is created.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -2062,7 +2065,8 @@ export class MetadataServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Deletes a single MetadataStore.
+ * Deletes a single MetadataStore and all its child resources (Artifacts,
+ * Executions, and Contexts).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -2071,9 +2075,7 @@ export class MetadataServiceClient {
  *   Format:
  *   projects/{project}/locations/{location}/metadataStores/{metadatastore}
  * @param {boolean} request.force
- *   If set to true, any child resources of this MetadataStore will be deleted.
- *   (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
- *   MetadataStore has any child resources.)
+ *   Deprecated: Field is no longer supported.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

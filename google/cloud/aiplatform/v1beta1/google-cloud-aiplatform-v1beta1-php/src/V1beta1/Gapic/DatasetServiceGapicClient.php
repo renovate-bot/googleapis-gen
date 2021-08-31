@@ -60,7 +60,8 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description:
+ * Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
+ * resources.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

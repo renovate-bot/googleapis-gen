@@ -123,33 +123,33 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      * @return Whether the monitoringInterval field is set.
      */
-    boolean hasMonitoringInterval();
+    @java.lang.Deprecated boolean hasMonitoringInterval();
     /**
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      * @return The monitoringInterval.
      */
-    com.google.protobuf.Duration getMonitoringInterval();
+    @java.lang.Deprecated com.google.protobuf.Duration getMonitoringInterval();
     /**
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      */
-    com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder();
+    @java.lang.Deprecated com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder();
 
     /**
      * <pre>
@@ -304,40 +304,40 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Duration monitoringInterval_;
     /**
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      * @return Whether the monitoringInterval field is set.
      */
     @java.lang.Override
-    public boolean hasMonitoringInterval() {
+    @java.lang.Deprecated public boolean hasMonitoringInterval() {
       return monitoringInterval_ != null;
     }
     /**
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      * @return The monitoringInterval.
      */
     @java.lang.Override
-    public com.google.protobuf.Duration getMonitoringInterval() {
+    @java.lang.Deprecated public com.google.protobuf.Duration getMonitoringInterval() {
       return monitoringInterval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : monitoringInterval_;
     }
     /**
      * <pre>
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      * </pre>
      *
-     * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
       return getMonitoringInterval();
     }
 
@@ -798,26 +798,26 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> monitoringIntervalBuilder_;
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        * @return Whether the monitoringInterval field is set.
        */
-      public boolean hasMonitoringInterval() {
+      @java.lang.Deprecated public boolean hasMonitoringInterval() {
         return monitoringIntervalBuilder_ != null || monitoringInterval_ != null;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        * @return The monitoringInterval.
        */
-      public com.google.protobuf.Duration getMonitoringInterval() {
+      @java.lang.Deprecated public com.google.protobuf.Duration getMonitoringInterval() {
         if (monitoringIntervalBuilder_ == null) {
           return monitoringInterval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : monitoringInterval_;
         } else {
@@ -826,13 +826,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
-      public Builder setMonitoringInterval(com.google.protobuf.Duration value) {
+      @java.lang.Deprecated public Builder setMonitoringInterval(com.google.protobuf.Duration value) {
         if (monitoringIntervalBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -847,13 +847,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
-      public Builder setMonitoringInterval(
+      @java.lang.Deprecated public Builder setMonitoringInterval(
           com.google.protobuf.Duration.Builder builderForValue) {
         if (monitoringIntervalBuilder_ == null) {
           monitoringInterval_ = builderForValue.build();
@@ -866,13 +866,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
-      public Builder mergeMonitoringInterval(com.google.protobuf.Duration value) {
+      @java.lang.Deprecated public Builder mergeMonitoringInterval(com.google.protobuf.Duration value) {
         if (monitoringIntervalBuilder_ == null) {
           if (monitoringInterval_ != null) {
             monitoringInterval_ =
@@ -889,13 +889,13 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
-      public Builder clearMonitoringInterval() {
+      @java.lang.Deprecated public Builder clearMonitoringInterval() {
         if (monitoringIntervalBuilder_ == null) {
           monitoringInterval_ = null;
           onChanged();
@@ -908,26 +908,26 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf.Duration.Builder getMonitoringIntervalBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.Duration.Builder getMonitoringIntervalBuilder() {
         
         onChanged();
         return getMonitoringIntervalFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder() {
         if (monitoringIntervalBuilder_ != null) {
           return monitoringIntervalBuilder_.getMessageOrBuilder();
         } else {
@@ -937,11 +937,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Configuration of the snapshot analysis based monitoring pipeline
-       * running interval. The value is rolled up to full day.
+       * Configuration of the snapshot analysis based monitoring pipeline running
+       * interval. The value is rolled up to full day.
        * </pre>
        *
-       * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+       * <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 

@@ -11,7 +11,7 @@ public interface ListTensorboardsRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the Location to list Tensorboards.
    * Format:
-   * 'projects/{project}/locations/{location}'
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,7 +22,7 @@ public interface ListTensorboardsRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the Location to list Tensorboards.
    * Format:
-   * 'projects/{project}/locations/{location}'
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

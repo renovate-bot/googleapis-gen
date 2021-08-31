@@ -112,9 +112,7 @@ module Google
         #     projects/\\{project}/locations/\\{location}/metadataStores/\\{metadatastore}
         # @!attribute [rw] force
         #   @return [::Boolean]
-        #     If set to true, any child resources of this MetadataStore will be deleted.
-        #     (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-        #     MetadataStore has any child resources.)
+        #     Deprecated: Field is no longer supported.
         class DeleteMetadataStoreRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -241,10 +239,11 @@ module Google
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. A FieldMask indicating which fields should be updated.
+        #     Functionality of this field is not yet supported.
         # @!attribute [rw] allow_missing
         #   @return [::Boolean]
-        #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} will
-        #     be created. In this situation, `update_mask` is ignored.
+        #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Artifact Artifact} is
+        #     created.
         class UpdateArtifactRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -426,10 +425,11 @@ module Google
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. A FieldMask indicating which fields should be updated.
+        #     Functionality of this field is not yet supported.
         # @!attribute [rw] allow_missing
         #   @return [::Boolean]
-        #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Context Context} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Context Context} will be
-        #     created. In this situation, `update_mask` is ignored.
+        #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Context Context} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Context Context} is
+        #     created.
         class UpdateContextRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -679,10 +679,11 @@ module Google
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. A FieldMask indicating which fields should be updated.
+        #     Functionality of this field is not yet supported.
         # @!attribute [rw] allow_missing
         #   @return [::Boolean]
         #     If set to true, and the {::Google::Cloud::AIPlatform::V1beta1::Execution Execution} is not found, a new {::Google::Cloud::AIPlatform::V1beta1::Execution Execution}
-        #     will be created. In this situation, `update_mask` is ignored.
+        #     is created.
         class UpdateExecutionRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

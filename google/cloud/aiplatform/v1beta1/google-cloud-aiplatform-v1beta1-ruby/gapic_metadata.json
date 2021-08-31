@@ -774,6 +774,11 @@
                 "predict"
               ]
             },
+            "RawPredict": {
+              "methods": [
+                "raw_predict"
+              ]
+            },
             "Explain": {
               "methods": [
                 "explain"
@@ -877,6 +882,11 @@
                 "create_tensorboard_run"
               ]
             },
+            "BatchCreateTensorboardRuns": {
+              "methods": [
+                "batch_create_tensorboard_runs"
+              ]
+            },
             "GetTensorboardRun": {
               "methods": [
                 "get_tensorboard_run"
@@ -895,6 +905,11 @@
             "DeleteTensorboardRun": {
               "methods": [
                 "delete_tensorboard_run"
+              ]
+            },
+            "BatchCreateTensorboardTimeSeries": {
+              "methods": [
+                "batch_create_tensorboard_time_series"
               ]
             },
             "CreateTensorboardTimeSeries": {
@@ -930,6 +945,11 @@
             "ReadTensorboardBlobData": {
               "methods": [
                 "read_tensorboard_blob_data"
+              ]
+            },
+            "WriteTensorboardExperimentData": {
+              "methods": [
+                "write_tensorboard_experiment_data"
               ]
             },
             "WriteTensorboardRunData": {

@@ -70,4 +70,14 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder extends
    */
   com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStatsOrBuilder getContentValidationStatsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The ingested data size in bytes.
+   * </pre>
+   *
+   * <code>int64 data_bytes_count = 2;</code>
+   * @return The dataBytesCount.
+   */
+  long getDataBytesCount();
 }

@@ -1061,7 +1061,8 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a single MetadataStore.
+     * Deletes a single MetadataStore and all its child resources (Artifacts,
+     * Executions, and Contexts).
      * </pre>
      */
     public void deleteMetadataStore(com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest request,
@@ -1627,7 +1628,8 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a single MetadataStore.
+     * Deletes a single MetadataStore and all its child resources (Artifacts,
+     * Executions, and Contexts).
      * </pre>
      */
     public void deleteMetadataStore(com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest request,
@@ -1996,7 +1998,8 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a single MetadataStore.
+     * Deletes a single MetadataStore and all its child resources (Artifacts,
+     * Executions, and Contexts).
      * </pre>
      */
     public com.google.longrunning.Operation deleteMetadataStore(com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest request) {
@@ -2340,7 +2343,8 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a single MetadataStore.
+     * Deletes a single MetadataStore and all its child resources (Artifacts,
+     * Executions, and Contexts).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteMetadataStore(

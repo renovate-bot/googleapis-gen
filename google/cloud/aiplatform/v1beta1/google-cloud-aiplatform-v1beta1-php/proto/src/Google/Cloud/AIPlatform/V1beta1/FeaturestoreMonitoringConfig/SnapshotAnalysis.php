@@ -35,10 +35,11 @@ class SnapshotAnalysis extends \Google\Protobuf\Internal\Message
      */
     protected $disabled = false;
     /**
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $monitoring_interval = null;
     /**
@@ -74,8 +75,8 @@ class SnapshotAnalysis extends \Google\Protobuf\Internal\Message
      *             monitoring_interval regardless of the EntityType-level config.
      *           Explicitly Disable the snapshot analysis based monitoring.
      *     @type \Google\Protobuf\Duration $monitoring_interval
-     *           Configuration of the snapshot analysis based monitoring pipeline
-     *           running interval. The value is rolled up to full day.
+     *           Configuration of the snapshot analysis based monitoring pipeline running
+     *           interval. The value is rolled up to full day.
      *     @type int $monitoring_interval_days
      *           Configuration of the snapshot analysis based monitoring pipeline
      *           running interval. The value indicates number of days.
@@ -139,37 +140,43 @@ class SnapshotAnalysis extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Duration|null
+     * @deprecated
      */
     public function getMonitoringInterval()
     {
+        @trigger_error('monitoring_interval is deprecated.', E_USER_DEPRECATED);
         return isset($this->monitoring_interval) ? $this->monitoring_interval : null;
     }
 
     public function hasMonitoringInterval()
     {
+        @trigger_error('monitoring_interval is deprecated.', E_USER_DEPRECATED);
         return isset($this->monitoring_interval);
     }
 
     public function clearMonitoringInterval()
     {
+        @trigger_error('monitoring_interval is deprecated.', E_USER_DEPRECATED);
         unset($this->monitoring_interval);
     }
 
     /**
-     * Configuration of the snapshot analysis based monitoring pipeline
-     * running interval. The value is rolled up to full day.
+     * Configuration of the snapshot analysis based monitoring pipeline running
+     * interval. The value is rolled up to full day.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration monitoring_interval = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration monitoring_interval = 2 [deprecated = true];</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
+     * @deprecated
      */
     public function setMonitoringInterval($var)
     {
+        @trigger_error('monitoring_interval is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->monitoring_interval = $var;
 
