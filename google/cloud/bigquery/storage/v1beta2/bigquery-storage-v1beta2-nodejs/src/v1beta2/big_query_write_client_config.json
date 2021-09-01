@@ -35,6 +35,7 @@
           "retry_params_name": "default"
         },
         "AppendRows": {
+          "timeout_millis": 86400000,
           "retry_codes_name": "resource_exhausted_unavailable",
           "retry_params_name": "default"
         },

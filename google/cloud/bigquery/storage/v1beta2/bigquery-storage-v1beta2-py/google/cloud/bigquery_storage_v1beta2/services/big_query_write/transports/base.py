@@ -169,9 +169,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                         core_exceptions.ResourceExhausted,
                         core_exceptions.ServiceUnavailable,
                     ),
-                    deadline=None,
+                    deadline=86400.0,
                 ),
-                default_timeout=None,
+                default_timeout=86400.0,
                 client_info=client_info,
             ),
             self.get_write_stream: gapic_v1.method.wrap_method(
