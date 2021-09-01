@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Gkehub V1beta API
+--title=GKE Hub V1beta API
 --exclude _pb\.rb$
 --format yaml
 --template-path ../template

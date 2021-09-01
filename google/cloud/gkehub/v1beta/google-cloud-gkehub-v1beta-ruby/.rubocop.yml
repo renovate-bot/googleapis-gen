@@ -3,7 +3,7 @@ inherit_gem:
 
 AllCops:
   Exclude:
-    - "google-cloud-gkehub-v1beta.gemspec"
+    - "google-cloud-gke_hub-v1beta.gemspec"
     - "lib/**/*_pb.rb"
     - "proto_docs/**/*"
     - "test/**/*"
@@ -27,4 +27,4 @@ Metrics/PerceivedComplexity:
   Enabled: false
 Naming/FileName:
   Exclude:
-    - "lib/google-cloud-gkehub-v1beta.rb"
+    - "lib/google-cloud-gke_hub-v1beta.rb"

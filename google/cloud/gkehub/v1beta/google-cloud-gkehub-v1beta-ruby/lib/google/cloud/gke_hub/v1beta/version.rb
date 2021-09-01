@@ -19,8 +19,8 @@
 
 module Google
   module Cloud
-    module Gkehub
-      module V1
+    module GkeHub
+      module V1beta
         VERSION = "0.0.1"
       end
     end

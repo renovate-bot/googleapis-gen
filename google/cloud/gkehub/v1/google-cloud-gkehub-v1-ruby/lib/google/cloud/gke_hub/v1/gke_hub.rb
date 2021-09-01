@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/gkehub/v1/version"
+require "google/cloud/gke_hub/v1/version"
 
 require "google/cloud/gke_hub/v1/gke_hub/credentials"
 require "google/cloud/gke_hub/v1/gke_hub/paths"

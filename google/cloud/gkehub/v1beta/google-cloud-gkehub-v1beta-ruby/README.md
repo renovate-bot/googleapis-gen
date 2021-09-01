@@ -1,21 +1,21 @@
-# Ruby Client for the Google Cloud Gkehub V1beta API
+# Ruby Client for the GKE Hub V1beta API
 
-API Client library for the Google Cloud Gkehub V1beta API
+API Client library for the GKE Hub V1beta API
 
-google-cloud-gkehub-v1beta is the official client library for the Google Cloud Gkehub V1beta API.
+The GKE Hub API centrally manages features and services on all your Kubernetes clusters running in a variety of environments, including Google cloud, on premises in customer datacenters, or other third party clouds.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Gkehub V1beta API. Most users should consider using
+specific version of the GKE Hub V1beta API. Most users should consider using
 the main client gem,
-[google-cloud-gkehub](https://rubygems.org/gems/google-cloud-gkehub).
+[google-cloud-gke_hub](https://rubygems.org/gems/google-cloud-gke_hub).
 See the section below titled *Which client should I use?* for more information.
 
 ## Installation
 
 ```
-$ gem install google-cloud-gkehub-v1beta
+$ gem install google-cloud-gke_hub-v1beta
 ```
 
 ## Before You Begin
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/gkehub.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -36,8 +37,11 @@ request = ::Google::Cloud::GkeHub::V1beta::ListFeaturesRequest.new # (request fi
 response = client.list_features request
 ```
 
-View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-gkehub-v1beta/latest)
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-gke_hub-v1beta/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/anthos/clusters/docs)
+for general usage information.
 
 ## Enabling Logging
 
@@ -79,9 +83,9 @@ about the Ruby support schedule.
 ## Which client should I use?
 
 Most modern Ruby client libraries for Google APIs come in two flavors: the main
-client library with a name such as `google-cloud-gkehub`,
+client library with a name such as `google-cloud-gke_hub`,
 and lower-level _versioned_ client libraries with names such as
-`google-cloud-gkehub-v1beta`.
+`google-cloud-gke_hub-v1beta`.
 _In most cases, you should install the main client._
 
 ### What's the difference between the main client and a versioned client?
@@ -106,7 +110,7 @@ service version.
 
 We recommend that most users install the main client gem for a service. You can
 identify this gem as the one _without_ a version in its name, e.g.
-`google-cloud-gkehub`.
+`google-cloud-gke_hub`.
 The main client is recommended because it will embody the best practices for
 accessing the service, and may also provide more convenient interfaces or
 tighter integration into frameworks and third-party libraries. In addition, the
@@ -119,7 +123,7 @@ You can use a versioned client if you are content with a possibly lower-level
 class interface, you explicitly want to avoid features provided by the main
 client, or you want to access a specific service version not be covered by the
 main client. You can identify versioned client gems because the service version
-is part of the name, e.g. `google-cloud-gkehub-v1beta`.
+is part of the name, e.g. `google-cloud-gke_hub-v1beta`.
 
 ### What about the google-apis-<name> clients?
 

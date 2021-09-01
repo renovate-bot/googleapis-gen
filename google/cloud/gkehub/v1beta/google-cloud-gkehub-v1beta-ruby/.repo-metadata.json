@@ -1,10 +1,15 @@
 {
-    "client_documentation": "https://googleapis.dev/ruby/google-cloud-gkehub-v1beta/latest",
-    "distribution_name": "google-cloud-gkehub-v1beta",
+    "api_id": "gkehub.googleapis.com",
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-gke_hub-v1beta/latest",
+    "distribution_name": "google-cloud-gke_hub-v1beta",
     "language": "ruby",
-    "name_pretty": "Google Cloud Gkehub V1beta API",
+    "name": "gkehub",
+    "name_pretty": "GKE Hub V1beta API",
+    "product_documentation": "https://cloud.google.com/anthos/clusters/docs",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
-    "ruby-cloud-description": "google-cloud-gkehub-v1beta is the official client library for the Google Cloud Gkehub V1beta API. Note that google-cloud-gkehub-v1beta is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-gkehub instead. See the readme for more details.",
+    "ruby-cloud-description": "The GKE Hub API centrally manages features and services on all your Kubernetes clusters running in a variety of environments, including Google cloud, on premises in customer datacenters, or other third party clouds. Note that google-cloud-gke_hub-v1beta is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-gke_hub instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "GKE_HUB",
+    "ruby-cloud-product-url": "https://cloud.google.com/anthos/clusters/docs",
     "library_type": "GAPIC_AUTO"
 }
