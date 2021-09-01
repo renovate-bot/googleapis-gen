@@ -38,7 +38,9 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
             string query = "";
             // Make the request
+#pragma warning disable CS0612
             PagedAsyncEnumerable<SearchAssignmentsResponse, Assignment> response = reservationServiceClient.SearchAssignmentsAsync(parent, query);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             await response.ForEachAsync((Assignment item) =>

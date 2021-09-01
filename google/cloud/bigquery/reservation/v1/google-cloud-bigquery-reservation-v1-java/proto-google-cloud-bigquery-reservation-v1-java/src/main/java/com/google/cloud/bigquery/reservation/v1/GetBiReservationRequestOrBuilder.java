@@ -10,7 +10,7 @@ public interface GetBiReservationRequestOrBuilder extends
   /**
    * <pre>
    * Required. Name of the requested reservation, for example:
-   * `projects/{project_id}/locations/{location_id}/bireservation`
+   * `projects/{project_id}/locations/{location_id}/biReservation`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface GetBiReservationRequestOrBuilder extends
   /**
    * <pre>
    * Required. Name of the requested reservation, for example:
-   * `projects/{project_id}/locations/{location_id}/bireservation`
+   * `projects/{project_id}/locations/{location_id}/biReservation`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -34,6 +34,7 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             DeleteCapacityCommitmentRequest request = new DeleteCapacityCommitmentRequest
             {
                 CapacityCommitmentName = CapacityCommitmentName.FromProjectLocationCapacityCommitment("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]"),
+                Force = false,
             };
             // Make the request
             await reservationServiceClient.DeleteCapacityCommitmentAsync(request);

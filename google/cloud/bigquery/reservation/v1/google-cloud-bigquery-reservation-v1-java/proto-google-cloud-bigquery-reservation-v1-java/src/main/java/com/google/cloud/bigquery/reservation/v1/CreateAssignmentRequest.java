@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateAssignmentRequest() {
     parent_ = "";
+    assignmentId_ = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
               assignment_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            assignmentId_ = s;
             break;
           }
           default: {
@@ -192,6 +199,58 @@ private static final long serialVersionUID = 0L;
     return getAssignment();
   }
 
+  public static final int ASSIGNMENT_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object assignmentId_;
+  /**
+   * <pre>
+   * The optional assignment ID. Assignment name will be generated automatically
+   * if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dash.
+   * Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string assignment_id = 4;</code>
+   * @return The assignmentId.
+   */
+  @java.lang.Override
+  public java.lang.String getAssignmentId() {
+    java.lang.Object ref = assignmentId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      assignmentId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The optional assignment ID. Assignment name will be generated automatically
+   * if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dash.
+   * Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string assignment_id = 4;</code>
+   * @return The bytes for assignmentId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAssignmentIdBytes() {
+    java.lang.Object ref = assignmentId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      assignmentId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -212,6 +271,9 @@ private static final long serialVersionUID = 0L;
     if (assignment_ != null) {
       output.writeMessage(2, getAssignment());
     }
+    if (!getAssignmentIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, assignmentId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +289,9 @@ private static final long serialVersionUID = 0L;
     if (assignment_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getAssignment());
+    }
+    if (!getAssignmentIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, assignmentId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -250,6 +315,8 @@ private static final long serialVersionUID = 0L;
       if (!getAssignment()
           .equals(other.getAssignment())) return false;
     }
+    if (!getAssignmentId()
+        .equals(other.getAssignmentId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +334,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ASSIGNMENT_FIELD_NUMBER;
       hash = (53 * hash) + getAssignment().hashCode();
     }
+    hash = (37 * hash) + ASSIGNMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAssignmentId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +483,8 @@ private static final long serialVersionUID = 0L;
         assignment_ = null;
         assignmentBuilder_ = null;
       }
+      assignmentId_ = "";
+
       return this;
     }
 
@@ -446,6 +517,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.assignment_ = assignmentBuilder_.build();
       }
+      result.assignmentId_ = assignmentId_;
       onBuilt();
       return result;
     }
@@ -500,6 +572,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAssignment()) {
         mergeAssignment(other.getAssignment());
+      }
+      if (!other.getAssignmentId().isEmpty()) {
+        assignmentId_ = other.assignmentId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -784,6 +860,117 @@ private static final long serialVersionUID = 0L;
         assignment_ = null;
       }
       return assignmentBuilder_;
+    }
+
+    private java.lang.Object assignmentId_ = "";
+    /**
+     * <pre>
+     * The optional assignment ID. Assignment name will be generated automatically
+     * if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 4;</code>
+     * @return The assignmentId.
+     */
+    public java.lang.String getAssignmentId() {
+      java.lang.Object ref = assignmentId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assignmentId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The optional assignment ID. Assignment name will be generated automatically
+     * if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 4;</code>
+     * @return The bytes for assignmentId.
+     */
+    public com.google.protobuf.ByteString
+        getAssignmentIdBytes() {
+      java.lang.Object ref = assignmentId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        assignmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The optional assignment ID. Assignment name will be generated automatically
+     * if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 4;</code>
+     * @param value The assignmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssignmentId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      assignmentId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The optional assignment ID. Assignment name will be generated automatically
+     * if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssignmentId() {
+      
+      assignmentId_ = getDefaultInstance().getAssignmentId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The optional assignment ID. Assignment name will be generated automatically
+     * if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 4;</code>
+     * @param value The bytes for assignmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssignmentIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      assignmentId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

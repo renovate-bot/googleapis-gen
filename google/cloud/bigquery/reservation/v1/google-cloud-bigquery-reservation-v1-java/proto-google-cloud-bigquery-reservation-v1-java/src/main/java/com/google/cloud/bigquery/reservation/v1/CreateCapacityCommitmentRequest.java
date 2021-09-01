@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateCapacityCommitmentRequest() {
     parent_ = "";
+    capacityCommitmentId_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,12 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             enforceSingleAdminProjectPerOrg_ = input.readBool();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            capacityCommitmentId_ = s;
             break;
           }
           default: {
@@ -211,6 +218,60 @@ private static final long serialVersionUID = 0L;
     return enforceSingleAdminProjectPerOrg_;
   }
 
+  public static final int CAPACITY_COMMITMENT_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object capacityCommitmentId_;
+  /**
+   * <pre>
+   * The optional capacity commitment ID. Capacity commitment name will be
+   * generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dash.
+   * Max length is 64 characters.
+   * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 5;</code>
+   * @return The capacityCommitmentId.
+   */
+  @java.lang.Override
+  public java.lang.String getCapacityCommitmentId() {
+    java.lang.Object ref = capacityCommitmentId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      capacityCommitmentId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The optional capacity commitment ID. Capacity commitment name will be
+   * generated automatically if this field is empty.
+   * This field must only contain lower case alphanumeric characters or dash.
+   * Max length is 64 characters.
+   * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+   * </pre>
+   *
+   * <code>string capacity_commitment_id = 5;</code>
+   * @return The bytes for capacityCommitmentId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCapacityCommitmentIdBytes() {
+    java.lang.Object ref = capacityCommitmentId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      capacityCommitmentId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +295,9 @@ private static final long serialVersionUID = 0L;
     if (enforceSingleAdminProjectPerOrg_ != false) {
       output.writeBool(4, enforceSingleAdminProjectPerOrg_);
     }
+    if (!getCapacityCommitmentIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, capacityCommitmentId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -253,6 +317,9 @@ private static final long serialVersionUID = 0L;
     if (enforceSingleAdminProjectPerOrg_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, enforceSingleAdminProjectPerOrg_);
+    }
+    if (!getCapacityCommitmentIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, capacityCommitmentId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -278,6 +345,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getEnforceSingleAdminProjectPerOrg()
         != other.getEnforceSingleAdminProjectPerOrg()) return false;
+    if (!getCapacityCommitmentId()
+        .equals(other.getCapacityCommitmentId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -298,6 +367,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENFORCE_SINGLE_ADMIN_PROJECT_PER_ORG_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnforceSingleAdminProjectPerOrg());
+    hash = (37 * hash) + CAPACITY_COMMITMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCapacityCommitmentId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -445,6 +516,8 @@ private static final long serialVersionUID = 0L;
       }
       enforceSingleAdminProjectPerOrg_ = false;
 
+      capacityCommitmentId_ = "";
+
       return this;
     }
 
@@ -478,6 +551,7 @@ private static final long serialVersionUID = 0L;
         result.capacityCommitment_ = capacityCommitmentBuilder_.build();
       }
       result.enforceSingleAdminProjectPerOrg_ = enforceSingleAdminProjectPerOrg_;
+      result.capacityCommitmentId_ = capacityCommitmentId_;
       onBuilt();
       return result;
     }
@@ -535,6 +609,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEnforceSingleAdminProjectPerOrg() != false) {
         setEnforceSingleAdminProjectPerOrg(other.getEnforceSingleAdminProjectPerOrg());
+      }
+      if (!other.getCapacityCommitmentId().isEmpty()) {
+        capacityCommitmentId_ = other.capacityCommitmentId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -863,6 +941,122 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnforceSingleAdminProjectPerOrg() {
       
       enforceSingleAdminProjectPerOrg_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object capacityCommitmentId_ = "";
+    /**
+     * <pre>
+     * The optional capacity commitment ID. Capacity commitment name will be
+     * generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 5;</code>
+     * @return The capacityCommitmentId.
+     */
+    public java.lang.String getCapacityCommitmentId() {
+      java.lang.Object ref = capacityCommitmentId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        capacityCommitmentId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The optional capacity commitment ID. Capacity commitment name will be
+     * generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 5;</code>
+     * @return The bytes for capacityCommitmentId.
+     */
+    public com.google.protobuf.ByteString
+        getCapacityCommitmentIdBytes() {
+      java.lang.Object ref = capacityCommitmentId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        capacityCommitmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The optional capacity commitment ID. Capacity commitment name will be
+     * generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 5;</code>
+     * @param value The capacityCommitmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapacityCommitmentId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      capacityCommitmentId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The optional capacity commitment ID. Capacity commitment name will be
+     * generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCapacityCommitmentId() {
+      
+      capacityCommitmentId_ = getDefaultInstance().getCapacityCommitmentId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The optional capacity commitment ID. Capacity commitment name will be
+     * generated automatically if this field is empty.
+     * This field must only contain lower case alphanumeric characters or dash.
+     * Max length is 64 characters.
+     * NOTE: this ID won't be kept if the capacity commitment is split or merged.
+     * </pre>
+     *
+     * <code>string capacity_commitment_id = 5;</code>
+     * @param value The bytes for capacityCommitmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCapacityCommitmentIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      capacityCommitmentId_ = value;
       onChanged();
       return this;
     }

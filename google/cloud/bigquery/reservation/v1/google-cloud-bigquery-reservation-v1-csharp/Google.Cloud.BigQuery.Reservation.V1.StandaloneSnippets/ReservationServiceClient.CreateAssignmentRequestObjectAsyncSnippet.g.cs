@@ -35,6 +35,7 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             {
                 ParentAsReservationName = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]"),
                 Assignment = new Assignment(),
+                AssignmentId = "",
             };
             // Make the request
             Assignment response = await reservationServiceClient.CreateAssignmentAsync(request);

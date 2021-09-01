@@ -38,6 +38,8 @@ from google.cloud.bigquery_reservation_v1.types.reservation import ListReservati
 from google.cloud.bigquery_reservation_v1.types.reservation import MergeCapacityCommitmentsRequest
 from google.cloud.bigquery_reservation_v1.types.reservation import MoveAssignmentRequest
 from google.cloud.bigquery_reservation_v1.types.reservation import Reservation
+from google.cloud.bigquery_reservation_v1.types.reservation import SearchAllAssignmentsRequest
+from google.cloud.bigquery_reservation_v1.types.reservation import SearchAllAssignmentsResponse
 from google.cloud.bigquery_reservation_v1.types.reservation import SearchAssignmentsRequest
 from google.cloud.bigquery_reservation_v1.types.reservation import SearchAssignmentsResponse
 from google.cloud.bigquery_reservation_v1.types.reservation import SplitCapacityCommitmentRequest
@@ -69,6 +71,8 @@ __all__ = ('ReservationServiceClient',
     'MergeCapacityCommitmentsRequest',
     'MoveAssignmentRequest',
     'Reservation',
+    'SearchAllAssignmentsRequest',
+    'SearchAllAssignmentsResponse',
     'SearchAssignmentsRequest',
     'SearchAssignmentsResponse',
     'SplitCapacityCommitmentRequest',

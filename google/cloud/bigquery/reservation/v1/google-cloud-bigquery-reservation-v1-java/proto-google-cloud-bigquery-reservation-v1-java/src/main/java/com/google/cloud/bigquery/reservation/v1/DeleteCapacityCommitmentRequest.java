@@ -59,6 +59,11 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          case 24: {
+
+            force_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -139,6 +144,23 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 3;
+  private boolean force_;
+  /**
+   * <pre>
+   * Can be used to force delete commitments even if assignments exist. Deleting
+   * commitments with assignments may cause queries to fail if they no longer
+   * have access to slots.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -156,6 +178,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(3, force_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -167,6 +192,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, force_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -185,6 +214,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (getForce()
+        != other.getForce()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -198,6 +229,9 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getForce());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -337,6 +371,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -364,6 +400,7 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest buildPartial() {
       com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest result = new com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -415,6 +452,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -542,6 +582,55 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_ ;
+    /**
+     * <pre>
+     * Can be used to force delete commitments even if assignments exist. Deleting
+     * commitments with assignments may cause queries to fail if they no longer
+     * have access to slots.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     * <pre>
+     * Can be used to force delete commitments even if assignments exist. Deleting
+     * commitments with assignments may cause queries to fail if they no longer
+     * have access to slots.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+      
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Can be used to force delete commitments even if assignments exist. Deleting
+     * commitments with assignments may cause queries to fail if they no longer
+     * have access to slots.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+      
+      force_ = false;
       onChanged();
       return this;
     }

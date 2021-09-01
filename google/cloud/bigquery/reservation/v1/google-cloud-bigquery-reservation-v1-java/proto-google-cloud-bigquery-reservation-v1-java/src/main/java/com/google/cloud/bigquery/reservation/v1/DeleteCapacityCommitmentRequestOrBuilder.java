@@ -28,4 +28,16 @@ public interface DeleteCapacityCommitmentRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * Can be used to force delete commitments even if assignments exist. Deleting
+   * commitments with assignments may cause queries to fail if they no longer
+   * have access to slots.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   * @return The force.
+   */
+  boolean getForce();
 }

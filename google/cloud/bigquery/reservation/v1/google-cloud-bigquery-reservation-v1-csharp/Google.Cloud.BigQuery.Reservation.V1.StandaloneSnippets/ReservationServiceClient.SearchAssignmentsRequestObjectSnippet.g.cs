@@ -39,7 +39,9 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
                 Query = "",
             };
             // Make the request
+#pragma warning disable CS0612
             PagedEnumerable<SearchAssignmentsResponse, Assignment> response = reservationServiceClient.SearchAssignments(request);
+#pragma warning restore CS0612
 
             // Iterate over all response items, lazily performing RPCs as required
             foreach (Assignment item in response)

@@ -36,6 +36,7 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 CapacityCommitment = new CapacityCommitment(),
                 EnforceSingleAdminProjectPerOrg = false,
+                CapacityCommitmentId = "",
             };
             // Make the request
             CapacityCommitment response = reservationServiceClient.CreateCapacityCommitment(request);

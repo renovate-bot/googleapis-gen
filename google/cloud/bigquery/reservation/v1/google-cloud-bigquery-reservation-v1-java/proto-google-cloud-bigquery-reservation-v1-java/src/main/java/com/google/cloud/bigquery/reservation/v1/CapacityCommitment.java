@@ -118,6 +118,19 @@ private static final long serialVersionUID = 0L;
             renewalPlan_ = rawValue;
             break;
           }
+          case 74: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (commitmentStartTime_ != null) {
+              subBuilder = commitmentStartTime_.toBuilder();
+            }
+            commitmentStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(commitmentStartTime_);
+              commitmentStartTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -634,6 +647,47 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.bigquery.reservation.v1.CapacityCommitment.State.UNRECOGNIZED : result;
   }
 
+  public static final int COMMITMENT_START_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp commitmentStartTime_;
+  /**
+   * <pre>
+   * Output only. The start of the current commitment period. It is applicable only for
+   * ACTIVE capacity commitments.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the commitmentStartTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCommitmentStartTime() {
+    return commitmentStartTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The start of the current commitment period. It is applicable only for
+   * ACTIVE capacity commitments.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The commitmentStartTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCommitmentStartTime() {
+    return commitmentStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitmentStartTime_;
+  }
+  /**
+   * <pre>
+   * Output only. The start of the current commitment period. It is applicable only for
+   * ACTIVE capacity commitments.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCommitmentStartTimeOrBuilder() {
+    return getCommitmentStartTime();
+  }
+
   public static final int COMMITMENT_END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp commitmentEndTime_;
   /**
@@ -779,6 +833,9 @@ private static final long serialVersionUID = 0L;
     if (renewalPlan_ != com.google.cloud.bigquery.reservation.v1.CapacityCommitment.CommitmentPlan.COMMITMENT_PLAN_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, renewalPlan_);
     }
+    if (commitmentStartTime_ != null) {
+      output.writeMessage(9, getCommitmentStartTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -815,6 +872,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, renewalPlan_);
     }
+    if (commitmentStartTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getCommitmentStartTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -836,6 +897,11 @@ private static final long serialVersionUID = 0L;
         != other.getSlotCount()) return false;
     if (plan_ != other.plan_) return false;
     if (state_ != other.state_) return false;
+    if (hasCommitmentStartTime() != other.hasCommitmentStartTime()) return false;
+    if (hasCommitmentStartTime()) {
+      if (!getCommitmentStartTime()
+          .equals(other.getCommitmentStartTime())) return false;
+    }
     if (hasCommitmentEndTime() != other.hasCommitmentEndTime()) return false;
     if (hasCommitmentEndTime()) {
       if (!getCommitmentEndTime()
@@ -867,6 +933,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + plan_;
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasCommitmentStartTime()) {
+      hash = (37 * hash) + COMMITMENT_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCommitmentStartTime().hashCode();
+    }
     if (hasCommitmentEndTime()) {
       hash = (37 * hash) + COMMITMENT_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCommitmentEndTime().hashCode();
@@ -1029,6 +1099,12 @@ private static final long serialVersionUID = 0L;
 
       state_ = 0;
 
+      if (commitmentStartTimeBuilder_ == null) {
+        commitmentStartTime_ = null;
+      } else {
+        commitmentStartTime_ = null;
+        commitmentStartTimeBuilder_ = null;
+      }
       if (commitmentEndTimeBuilder_ == null) {
         commitmentEndTime_ = null;
       } else {
@@ -1073,6 +1149,11 @@ private static final long serialVersionUID = 0L;
       result.slotCount_ = slotCount_;
       result.plan_ = plan_;
       result.state_ = state_;
+      if (commitmentStartTimeBuilder_ == null) {
+        result.commitmentStartTime_ = commitmentStartTime_;
+      } else {
+        result.commitmentStartTime_ = commitmentStartTimeBuilder_.build();
+      }
       if (commitmentEndTimeBuilder_ == null) {
         result.commitmentEndTime_ = commitmentEndTime_;
       } else {
@@ -1144,6 +1225,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasCommitmentStartTime()) {
+        mergeCommitmentStartTime(other.getCommitmentStartTime());
       }
       if (other.hasCommitmentEndTime()) {
         mergeCommitmentEndTime(other.getCommitmentEndTime());
@@ -1473,6 +1557,170 @@ private static final long serialVersionUID = 0L;
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp commitmentStartTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> commitmentStartTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the commitmentStartTime field is set.
+     */
+    public boolean hasCommitmentStartTime() {
+      return commitmentStartTimeBuilder_ != null || commitmentStartTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The commitmentStartTime.
+     */
+    public com.google.protobuf.Timestamp getCommitmentStartTime() {
+      if (commitmentStartTimeBuilder_ == null) {
+        return commitmentStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitmentStartTime_;
+      } else {
+        return commitmentStartTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setCommitmentStartTime(com.google.protobuf.Timestamp value) {
+      if (commitmentStartTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        commitmentStartTime_ = value;
+        onChanged();
+      } else {
+        commitmentStartTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setCommitmentStartTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (commitmentStartTimeBuilder_ == null) {
+        commitmentStartTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        commitmentStartTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeCommitmentStartTime(com.google.protobuf.Timestamp value) {
+      if (commitmentStartTimeBuilder_ == null) {
+        if (commitmentStartTime_ != null) {
+          commitmentStartTime_ =
+            com.google.protobuf.Timestamp.newBuilder(commitmentStartTime_).mergeFrom(value).buildPartial();
+        } else {
+          commitmentStartTime_ = value;
+        }
+        onChanged();
+      } else {
+        commitmentStartTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearCommitmentStartTime() {
+      if (commitmentStartTimeBuilder_ == null) {
+        commitmentStartTime_ = null;
+        onChanged();
+      } else {
+        commitmentStartTime_ = null;
+        commitmentStartTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCommitmentStartTimeBuilder() {
+      
+      onChanged();
+      return getCommitmentStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCommitmentStartTimeOrBuilder() {
+      if (commitmentStartTimeBuilder_ != null) {
+        return commitmentStartTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return commitmentStartTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : commitmentStartTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The start of the current commitment period. It is applicable only for
+     * ACTIVE capacity commitments.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp commitment_start_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCommitmentStartTimeFieldBuilder() {
+      if (commitmentStartTimeBuilder_ == null) {
+        commitmentStartTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCommitmentStartTime(),
+                getParentForChildren(),
+                isClean());
+        commitmentStartTime_ = null;
+      }
+      return commitmentStartTimeBuilder_;
     }
 
     private com.google.protobuf.Timestamp commitmentEndTime_;

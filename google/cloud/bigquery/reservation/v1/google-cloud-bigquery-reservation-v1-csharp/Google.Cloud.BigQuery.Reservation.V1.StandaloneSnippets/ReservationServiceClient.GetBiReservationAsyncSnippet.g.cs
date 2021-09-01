@@ -31,7 +31,7 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
-            string name = "projects/[PROJECT]/locations/[LOCATION]/bireservation";
+            string name = "projects/[PROJECT]/locations/[LOCATION]/biReservation";
             // Make the request
             BiReservation response = await reservationServiceClient.GetBiReservationAsync(name);
         }

@@ -147,6 +147,15 @@ private static final long serialVersionUID = 0L;
      * <code>QUERY = 2;</code>
      */
     QUERY(2),
+    /**
+     * <pre>
+     * BigQuery ML jobs that use services external to BigQuery for model
+     * training. These jobs will not utilize idle slots from other reservations.
+     * </pre>
+     *
+     * <code>ML_EXTERNAL = 3;</code>
+     */
+    ML_EXTERNAL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -175,6 +184,15 @@ private static final long serialVersionUID = 0L;
      * <code>QUERY = 2;</code>
      */
     public static final int QUERY_VALUE = 2;
+    /**
+     * <pre>
+     * BigQuery ML jobs that use services external to BigQuery for model
+     * training. These jobs will not utilize idle slots from other reservations.
+     * </pre>
+     *
+     * <code>ML_EXTERNAL = 3;</code>
+     */
+    public static final int ML_EXTERNAL_VALUE = 3;
 
 
     public final int getNumber() {
@@ -204,6 +222,7 @@ private static final long serialVersionUID = 0L;
         case 0: return JOB_TYPE_UNSPECIFIED;
         case 1: return PIPELINE;
         case 2: return QUERY;
+        case 3: return ML_EXTERNAL;
         default: return null;
       }
     }
