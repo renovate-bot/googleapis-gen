@@ -542,8 +542,12 @@ export class DocumentsClient {
 /**
  * Creates a new document.
  *
- * Operation <response: {@link google.cloud.dialogflow.v2.Document|Document},
- *            metadata: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}>
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2.Document|Document}
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -644,8 +648,13 @@ export class DocumentsClient {
 /**
  * Deletes the specified document.
  *
- * Operation <response: {@link google.protobuf.Empty|google.protobuf.Empty},
- *            metadata: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}>
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: An [Empty
+ *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -744,8 +753,12 @@ export class DocumentsClient {
 /**
  * Updates the specified document.
  *
- * Operation <response: {@link google.cloud.dialogflow.v2.Document|Document},
- *            metadata: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}>
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2.Document|Document}
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -849,11 +862,15 @@ export class DocumentsClient {
  * Note: Even when the content of the document has not changed, there still
  * may be side effects because of internal implementation changes.
  *
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2.Document|Document}
+ *
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
- *
- * Operation <response: {@link google.cloud.dialogflow.v2.Document|Document},
- *            metadata: {@link google.cloud.dialogflow.v2.KnowledgeOperationMetadata|KnowledgeOperationMetadata}>
  *
  * @param {Object} request
  *   The request object that will be sent.

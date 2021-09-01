@@ -368,6 +368,16 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
 
         Trains the specified agent.
 
+        This method is a `long-running
+        operation <https://cloud.google.com/dialogflow/es/docs/how/long-running-operations>`__.
+        The returned ``Operation`` type has the following
+        method-specific fields:
+
+        -  ``metadata``: An empty `Struct
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct>`__
+        -  ``response``: An `Empty
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty>`__
+
         Note: You should always train an agent prior to sending it
         queries. See the `training
         documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
@@ -397,6 +407,16 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         r"""Return a callable for the export agent method over gRPC.
 
         Exports the specified agent to a ZIP file.
+
+        This method is a `long-running
+        operation <https://cloud.google.com/dialogflow/es/docs/how/long-running-operations>`__.
+        The returned ``Operation`` type has the following
+        method-specific fields:
+
+        -  ``metadata``: An empty `Struct
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct>`__
+        -  ``response``:
+           [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]
 
         Returns:
             Callable[[~.ExportAgentRequest],
@@ -435,9 +455,18 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         and wait for the operation it returns in order to train
         explicitly.
 
-        An operation which tracks when importing is complete. It only
-        tracks when the draft agent is updated not when it is done
-        training.
+        This method is a `long-running
+        operation <https://cloud.google.com/dialogflow/es/docs/how/long-running-operations>`__.
+        The returned ``Operation`` type has the following
+        method-specific fields:
+
+        -  ``metadata``: An empty `Struct
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct>`__
+        -  ``response``: An `Empty
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty>`__
+
+        The operation only tracks when importing is complete, not when
+        it is done training.
 
         Note: You should always train an agent prior to sending it
         queries. See the `training
@@ -478,9 +507,18 @@ class AgentsGrpcAsyncIOTransport(AgentsTransport):
         and wait for the operation it returns in order to train
         explicitly.
 
-        An operation which tracks when restoring is complete. It only
-        tracks when the draft agent is updated not when it is done
-        training.
+        This method is a `long-running
+        operation <https://cloud.google.com/dialogflow/es/docs/how/long-running-operations>`__.
+        The returned ``Operation`` type has the following
+        method-specific fields:
+
+        -  ``metadata``: An empty `Struct
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct>`__
+        -  ``response``: An `Empty
+           message <https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty>`__
+
+        The operation only tracks when restoring is complete, not when
+        it is done training.
 
         Note: You should always train an agent prior to sending it
         queries. See the `training
