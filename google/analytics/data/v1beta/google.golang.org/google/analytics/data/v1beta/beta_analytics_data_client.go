@@ -43,6 +43,7 @@ type BetaAnalyticsDataCallOptions struct {
 	BatchRunPivotReports []gax.CallOption
 	GetMetadata          []gax.CallOption
 	RunRealtimeReport    []gax.CallOption
+	CheckCompatibility   []gax.CallOption
 }
 
 func defaultBetaAnalyticsDataGRPCClientOptions() []option.ClientOption {
@@ -76,6 +77,17 @@ func defaultBetaAnalyticsDataCallOptions() *BetaAnalyticsDataCallOptions {
 			}),
 		},
 		RunRealtimeReport: []gax.CallOption{},
+		CheckCompatibility: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unknown,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 	}
 }
 
@@ -90,6 +102,7 @@ type internalBetaAnalyticsDataClient interface {
 	BatchRunPivotReports(context.Context, *datapb.BatchRunPivotReportsRequest, ...gax.CallOption) (*datapb.BatchRunPivotReportsResponse, error)
 	GetMetadata(context.Context, *datapb.GetMetadataRequest, ...gax.CallOption) (*datapb.Metadata, error)
 	RunRealtimeReport(context.Context, *datapb.RunRealtimeReportRequest, ...gax.CallOption) (*datapb.RunRealtimeReportResponse, error)
+	CheckCompatibility(context.Context, *datapb.CheckCompatibilityRequest, ...gax.CallOption) (*datapb.CheckCompatibilityResponse, error)
 }
 
 // BetaAnalyticsDataClient is a client for interacting with Google Analytics Data API.
@@ -177,6 +190,20 @@ func (c *BetaAnalyticsDataClient) GetMetadata(ctx context.Context, req *datapb.G
 // last 30 minutes.
 func (c *BetaAnalyticsDataClient) RunRealtimeReport(ctx context.Context, req *datapb.RunRealtimeReportRequest, opts ...gax.CallOption) (*datapb.RunRealtimeReportResponse, error) {
 	return c.internalClient.RunRealtimeReport(ctx, req, opts...)
+}
+
+// CheckCompatibility this compatibility method lists dimensions and metrics that can be added to
+// a report request and maintain compatibility. This method fails if the
+// request’s dimensions and metrics are incompatible.
+//
+// In Google Analytics, reports fail if they request incompatible dimensions
+// and/or metrics; in that case, you will need to remove dimensions and/or
+// metrics from the incompatible report until the report is compatible.
+//
+// The Realtime and Core reports have different compatibility rules. This
+// method checks compatibility for Core reports.
+func (c *BetaAnalyticsDataClient) CheckCompatibility(ctx context.Context, req *datapb.CheckCompatibilityRequest, opts ...gax.CallOption) (*datapb.CheckCompatibilityResponse, error) {
+	return c.internalClient.CheckCompatibility(ctx, req, opts...)
 }
 
 // betaAnalyticsDataGRPCClient is a client for interacting with Google Analytics Data API over gRPC transport.
@@ -377,6 +404,27 @@ func (c *betaAnalyticsDataGRPCClient) RunRealtimeReport(ctx context.Context, req
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.betaAnalyticsDataClient.RunRealtimeReport(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *betaAnalyticsDataGRPCClient) CheckCompatibility(ctx context.Context, req *datapb.CheckCompatibilityRequest, opts ...gax.CallOption) (*datapb.CheckCompatibilityResponse, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "property", url.QueryEscape(req.GetProperty())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).CheckCompatibility[0:len((*c.CallOptions).CheckCompatibility):len((*c.CallOptions).CheckCompatibility)], opts...)
+	var resp *datapb.CheckCompatibilityResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.betaAnalyticsDataClient.CheckCompatibility(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

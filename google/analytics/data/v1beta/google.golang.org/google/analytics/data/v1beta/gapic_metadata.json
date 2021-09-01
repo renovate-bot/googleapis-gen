@@ -20,6 +20,11 @@
                 "BatchRunReports"
               ]
             },
+            "CheckCompatibility": {
+              "methods": [
+                "CheckCompatibility"
+              ]
+            },
             "GetMetadata": {
               "methods": [
                 "GetMetadata"

@@ -154,3 +154,23 @@ func ExampleBetaAnalyticsDataClient_RunRealtimeReport() {
 	// TODO: Use resp.
 	_ = resp
 }
+
+func ExampleBetaAnalyticsDataClient_CheckCompatibility() {
+	ctx := context.Background()
+	c, err := data.NewBetaAnalyticsDataClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &datapb.CheckCompatibilityRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/analytics/data/v1beta#CheckCompatibilityRequest.
+	}
+	resp, err := c.CheckCompatibility(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}

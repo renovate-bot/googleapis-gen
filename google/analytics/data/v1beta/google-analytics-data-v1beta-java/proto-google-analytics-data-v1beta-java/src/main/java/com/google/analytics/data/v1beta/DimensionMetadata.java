@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     uiName_ = "";
     description_ = "";
     deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    category_ = "";
   }
 
   @java.lang.Override
@@ -87,6 +88,12 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             customDefinition_ = input.readBool();
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            category_ = s;
             break;
           }
           default: {
@@ -344,6 +351,54 @@ private static final long serialVersionUID = 0L;
     return customDefinition_;
   }
 
+  public static final int CATEGORY_FIELD_NUMBER = 7;
+  private volatile java.lang.Object category_;
+  /**
+   * <pre>
+   * The display name of the category that this dimension belongs to. Similar
+   * dimensions and metrics are categorized together.
+   * </pre>
+   *
+   * <code>string category = 7;</code>
+   * @return The category.
+   */
+  @java.lang.Override
+  public java.lang.String getCategory() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      category_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The display name of the category that this dimension belongs to. Similar
+   * dimensions and metrics are categorized together.
+   * </pre>
+   *
+   * <code>string category = 7;</code>
+   * @return The bytes for category.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCategoryBytes() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      category_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -372,6 +427,9 @@ private static final long serialVersionUID = 0L;
     }
     if (customDefinition_ != false) {
       output.writeBool(5, customDefinition_);
+    }
+    if (!getCategoryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, category_);
     }
     unknownFields.writeTo(output);
   }
@@ -403,6 +461,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, customDefinition_);
     }
+    if (!getCategoryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, category_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -428,6 +489,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDeprecatedApiNamesList())) return false;
     if (getCustomDefinition()
         != other.getCustomDefinition()) return false;
+    if (!getCategory()
+        .equals(other.getCategory())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -452,6 +515,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CUSTOM_DEFINITION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCustomDefinition());
+    hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getCategory().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -599,6 +664,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       customDefinition_ = false;
 
+      category_ = "";
+
       return this;
     }
 
@@ -635,6 +702,7 @@ private static final long serialVersionUID = 0L;
       }
       result.deprecatedApiNames_ = deprecatedApiNames_;
       result.customDefinition_ = customDefinition_;
+      result.category_ = category_;
       onBuilt();
       return result;
     }
@@ -707,6 +775,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCustomDefinition() != false) {
         setCustomDefinition(other.getCustomDefinition());
+      }
+      if (!other.getCategory().isEmpty()) {
+        category_ = other.category_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1248,6 +1320,107 @@ private static final long serialVersionUID = 0L;
     public Builder clearCustomDefinition() {
       
       customDefinition_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object category_ = "";
+    /**
+     * <pre>
+     * The display name of the category that this dimension belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 7;</code>
+     * @return The category.
+     */
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The display name of the category that this dimension belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 7;</code>
+     * @return The bytes for category.
+     */
+    public com.google.protobuf.ByteString
+        getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The display name of the category that this dimension belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 7;</code>
+     * @param value The category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategory(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      category_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The display name of the category that this dimension belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCategory() {
+      
+      category_ = getDefaultInstance().getCategory();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The display name of the category that this dimension belongs to. Similar
+     * dimensions and metrics are categorized together.
+     * </pre>
+     *
+     * <code>string category = 7;</code>
+     * @param value The bytes for category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategoryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      category_ = value;
       onChanged();
       return this;
     }

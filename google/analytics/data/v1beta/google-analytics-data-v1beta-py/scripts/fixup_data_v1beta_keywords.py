@@ -41,6 +41,7 @@ class dataCallTransformer(cst.CSTTransformer):
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
           'batch_run_pivot_reports': ('property', 'requests', ),
           'batch_run_reports': ('property', 'requests', ),
+          'check_compatibility': ('property', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'compatibility_filter', ),
           'get_metadata': ('name', ),
           'run_pivot_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'pivots', 'dimension_filter', 'metric_filter', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
           'run_realtime_report': ('property', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'limit', 'metric_aggregations', 'order_bys', 'return_property_quota', 'minute_ranges', ),
