@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const service = require('@google-cloud/composer');
+const service = require('@google-cloud/orchestration-airflow');
 
 function main() {
   const environmentsClient = new service.EnvironmentsClient();
