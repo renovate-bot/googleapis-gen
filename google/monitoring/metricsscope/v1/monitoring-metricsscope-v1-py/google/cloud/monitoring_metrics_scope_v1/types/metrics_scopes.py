@@ -15,7 +15,7 @@
 #
 import proto  # type: ignore
 
-from google.monitoring.metricsscope_v1.types import metrics_scope
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scope
 from google.protobuf import timestamp_pb2  # type: ignore
 
 
@@ -65,7 +65,7 @@ class ListMetricsScopesByMonitoredProjectRequest(proto.Message):
 class ListMetricsScopesByMonitoredProjectResponse(proto.Message):
     r"""Response for the ``ListMetricsScopesByMonitoredProject`` method.
     Attributes:
-        metrics_scopes (Sequence[google.monitoring.metricsscope_v1.types.MetricsScope]):
+        metrics_scopes (Sequence[google.cloud.monitoring_metrics_scope_v1.types.MetricsScope]):
             A set of all metrics scopes that the
             specified monitored project has been added to.
     """
@@ -84,7 +84,7 @@ class CreateMonitoredProjectRequest(proto.Message):
             Required. The resource name of the existing
             ``Metrics Scope`` that will monitor this project. Example:
             ``locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}``
-        monitored_project (google.monitoring.metricsscope_v1.types.MonitoredProject):
+        monitored_project (google.cloud.monitoring_metrics_scope_v1.types.MonitoredProject):
             Required. The initial ``MonitoredProject`` configuration.
             Specify only the ``monitored_project.name`` field. All other
             fields are ignored. The ``monitored_project.name`` must be
@@ -128,7 +128,7 @@ class OperationMetadata(proto.Message):
     Metrics Scope endpoints.
 
     Attributes:
-        state (google.monitoring.metricsscope_v1.types.OperationMetadata.State):
+        state (google.cloud.monitoring_metrics_scope_v1.types.OperationMetadata.State):
             Current state of the batch operation.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             The time when the batch request was received.

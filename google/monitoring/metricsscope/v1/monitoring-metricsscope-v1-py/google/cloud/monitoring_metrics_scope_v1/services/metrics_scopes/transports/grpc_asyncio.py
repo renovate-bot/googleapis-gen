@@ -26,9 +26,9 @@ import packaging.version
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scope
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scopes
 from google.longrunning import operations_pb2  # type: ignore
-from google.monitoring.metricsscope_v1.types import metrics_scope
-from google.monitoring.metricsscope_v1.types import metrics_scopes
 from .base import MetricsScopesTransport, DEFAULT_CLIENT_INFO
 from .grpc import MetricsScopesGrpcTransport
 

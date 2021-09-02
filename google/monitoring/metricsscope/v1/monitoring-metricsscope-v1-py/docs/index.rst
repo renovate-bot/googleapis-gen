@@ -3,5 +3,5 @@ API Reference
 .. toctree::
     :maxdepth: 2
 
-    metricsscope_v1/services
-    metricsscope_v1/types
+    monitoring_metrics_scope_v1/services
+    monitoring_metrics_scope_v1/types

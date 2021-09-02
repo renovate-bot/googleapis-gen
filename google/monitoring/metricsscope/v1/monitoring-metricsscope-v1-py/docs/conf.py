@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-monitoring-metricsscope documentation build configuration file
+# google-cloud-monitoring-metrics-scope documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-monitoring-metricsscope"
+project = u"google-cloud-monitoring-metrics-scope"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -146,7 +146,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Monitoring Client Libraries for Python",
+    "description": "Google Cloud Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-monitoring-metricsscope-doc"
+htmlhelp_basename = "google-cloud-monitoring-metrics-scope-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-monitoring-metricsscope.tex",
-        u"google-monitoring-metricsscope Documentation",
+        "google-cloud-monitoring-metrics-scope.tex",
+        u"google-cloud-monitoring-metrics-scope Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-monitoring-metricsscope",
-        u"Google Monitoring Metricsscope Documentation",
+        "google-cloud-monitoring-metrics-scope",
+        u"Google Cloud Monitoring Metrics Scope Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-monitoring-metricsscope",
-        u"google-monitoring-metricsscope Documentation",
+        "google-cloud-monitoring-metrics-scope",
+        u"google-cloud-monitoring-metrics-scope Documentation",
         author,
-        "google-monitoring-metricsscope",
-        "GAPIC library for Google Monitoring Metricsscope API",
+        "google-cloud-monitoring-metrics-scope",
+        "GAPIC library for Google Cloud Monitoring Metrics Scope API",
         "APIs",
     )
 ]

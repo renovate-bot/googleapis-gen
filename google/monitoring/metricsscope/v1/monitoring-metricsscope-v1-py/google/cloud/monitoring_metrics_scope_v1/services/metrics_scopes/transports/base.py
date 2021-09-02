@@ -27,14 +27,14 @@ from google.api_core import operations_v1  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scope
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scopes
 from google.longrunning import operations_pb2  # type: ignore
-from google.monitoring.metricsscope_v1.types import metrics_scope
-from google.monitoring.metricsscope_v1.types import metrics_scopes
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-monitoring-metricsscope',
+            'google-cloud-monitoring-metrics-scope',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

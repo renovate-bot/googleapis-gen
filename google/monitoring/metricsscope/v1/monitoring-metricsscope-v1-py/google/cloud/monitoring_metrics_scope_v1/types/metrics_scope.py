@@ -46,7 +46,7 @@ class MetricsScope(proto.Message):
         update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time when this ``Metrics Scope`` record was
             last updated.
-        monitored_projects (Sequence[google.monitoring.metricsscope_v1.types.MonitoredProject]):
+        monitored_projects (Sequence[google.cloud.monitoring_metrics_scope_v1.types.MonitoredProject]):
             Output only. The list of projects monitored by this
             ``Metrics Scope``.
     """

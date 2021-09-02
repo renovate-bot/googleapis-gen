@@ -28,8 +28,8 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.monitoring.metricsscope_v1.types import metrics_scope
-from google.monitoring.metricsscope_v1.types import metrics_scopes
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scope
+from google.cloud.monitoring_metrics_scope_v1.types import metrics_scopes
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import MetricsScopesTransport, DEFAULT_CLIENT_INFO
@@ -163,7 +163,7 @@ class MetricsScopesAsyncClient:
         r"""Returns a specific ``Metrics Scope``.
 
         Args:
-            request (:class:`google.monitoring.metricsscope_v1.types.GetMetricsScopeRequest`):
+            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.GetMetricsScopeRequest`):
                 The request object. Request for the `GetMetricsScope`
                 method.
             name (:class:`str`):
@@ -181,7 +181,7 @@ class MetricsScopesAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.monitoring.metricsscope_v1.types.MetricsScope:
+            google.cloud.monitoring_metrics_scope_v1.types.MetricsScope:
                 Represents a [Metrics
                    Scope](\ https://cloud.google.com/monitoring/settings#concept-scope)
                    in Cloud Monitoring, which specifies one or more
@@ -244,7 +244,7 @@ class MetricsScopesAsyncClient:
         first entry in the response.
 
         Args:
-            request (:class:`google.monitoring.metricsscope_v1.types.ListMetricsScopesByMonitoredProjectRequest`):
+            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.ListMetricsScopesByMonitoredProjectRequest`):
                 The request object. Request for the
                 `ListMetricsScopesByMonitoredProject` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -254,7 +254,7 @@ class MetricsScopesAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.monitoring.metricsscope_v1.types.ListMetricsScopesByMonitoredProjectResponse:
+            google.cloud.monitoring_metrics_scope_v1.types.ListMetricsScopesByMonitoredProjectResponse:
                 Response for the ListMetricsScopesByMonitoredProject
                 method.
 
@@ -294,7 +294,7 @@ class MetricsScopesAsyncClient:
         specified ``Metrics Scope``.
 
         Args:
-            request (:class:`google.monitoring.metricsscope_v1.types.CreateMonitoredProjectRequest`):
+            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.CreateMonitoredProjectRequest`):
                 The request object. Request for the
                 `CreateMonitoredProject` method.
             parent (:class:`str`):
@@ -306,7 +306,7 @@ class MetricsScopesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            monitored_project (:class:`google.monitoring.metricsscope_v1.types.MonitoredProject`):
+            monitored_project (:class:`google.cloud.monitoring_metrics_scope_v1.types.MonitoredProject`):
                 Required. The initial ``MonitoredProject``
                 configuration. Specify only the
                 ``monitored_project.name`` field. All other fields are
@@ -327,7 +327,7 @@ class MetricsScopesAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.monitoring.metricsscope_v1.types.MonitoredProject` A [project being
+                The result type for the operation will be :class:`google.cloud.monitoring_metrics_scope_v1.types.MonitoredProject` A [project being
                    monitored](\ https://cloud.google.com/monitoring/settings/multiple-projects#create-multi)
                    by a Metrics Scope.
 
@@ -396,7 +396,7 @@ class MetricsScopesAsyncClient:
         ``Metrics Scope``.
 
         Args:
-            request (:class:`google.monitoring.metricsscope_v1.types.DeleteMonitoredProjectRequest`):
+            request (:class:`google.cloud.monitoring_metrics_scope_v1.types.DeleteMonitoredProjectRequest`):
                 The request object. Request for the
                 `DeleteMonitoredProject` method.
             name (:class:`str`):
@@ -494,7 +494,7 @@ class MetricsScopesAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-monitoring-metricsscope",
+            "google-cloud-monitoring-metrics-scope",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
