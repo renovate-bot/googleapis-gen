@@ -222,6 +222,14 @@ func (c *DocumentsClient) GetDocument(ctx context.Context, req *dialogflowpb.Get
 
 // CreateDocument creates a new document.
 //
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: KnowledgeOperationMetadata
+//
+//   response: Document
+//
 // Note: The projects.agent.knowledgeBases.documents resource is deprecated;
 // only use projects.knowledgeBases.documents.
 func (c *DocumentsClient) CreateDocument(ctx context.Context, req *dialogflowpb.CreateDocumentRequest, opts ...gax.CallOption) (*CreateDocumentOperation, error) {
@@ -237,6 +245,14 @@ func (c *DocumentsClient) CreateDocumentOperation(name string) *CreateDocumentOp
 // ImportDocuments create documents by importing data from external sources.
 // Dialogflow supports up to 350 documents in each request. If you try to
 // import more, Dialogflow will return an error.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: KnowledgeOperationMetadata
+//
+//   response: ImportDocumentsResponse
 func (c *DocumentsClient) ImportDocuments(ctx context.Context, req *dialogflowpb.ImportDocumentsRequest, opts ...gax.CallOption) (*ImportDocumentsOperation, error) {
 	return c.internalClient.ImportDocuments(ctx, req, opts...)
 }
@@ -248,6 +264,15 @@ func (c *DocumentsClient) ImportDocumentsOperation(name string) *ImportDocuments
 }
 
 // DeleteDocument deletes the specified document.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: KnowledgeOperationMetadata
+//
+//   response: An Empty
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
 //
 // Note: The projects.agent.knowledgeBases.documents resource is deprecated;
 // only use projects.knowledgeBases.documents.
@@ -262,6 +287,14 @@ func (c *DocumentsClient) DeleteDocumentOperation(name string) *DeleteDocumentOp
 }
 
 // UpdateDocument updates the specified document.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: KnowledgeOperationMetadata
+//
+//   response: Document
 //
 // Note: The projects.agent.knowledgeBases.documents resource is deprecated;
 // only use projects.knowledgeBases.documents.
@@ -282,6 +315,14 @@ func (c *DocumentsClient) UpdateDocumentOperation(name string) *UpdateDocumentOp
 // Note: If the document source is Google Cloud Storage URI, its metadata will
 // be replaced with the custom metadata from Google Cloud Storage if the
 // import_gcs_custom_metadata field is set to true in the request.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: KnowledgeOperationMetadata
+//
+//   response: Document
 //
 // Note: The projects.agent.knowledgeBases.documents resource is deprecated;
 // only use projects.knowledgeBases.documents.

@@ -261,6 +261,16 @@ func (c *AgentsClient) SearchAgents(ctx context.Context, req *dialogflowpb.Searc
 
 // TrainAgent trains the specified agent.
 //
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: An empty Struct
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+//
+//   response: An Empty
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+//
 // Note: You should always train an agent prior to sending it queries. See the
 // training
 // documentation (at https://cloud.google.com/dialogflow/es/docs/training).
@@ -275,6 +285,15 @@ func (c *AgentsClient) TrainAgentOperation(name string) *TrainAgentOperation {
 }
 
 // ExportAgent exports the specified agent to a ZIP file.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: An empty Struct
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+//
+//   response: ExportAgentResponse
 func (c *AgentsClient) ExportAgent(ctx context.Context, req *dialogflowpb.ExportAgentRequest, opts ...gax.CallOption) (*ExportAgentOperation, error) {
 	return c.internalClient.ExportAgent(ctx, req, opts...)
 }
@@ -294,6 +313,19 @@ func (c *AgentsClient) ExportAgentOperation(name string) *ExportAgentOperation {
 // However, once the import is done, training may not be completed yet. Please
 // call TrainAgent and wait for the operation it returns in order to train
 // explicitly.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: An empty Struct
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+//
+//   response: An Empty
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+//
+// The operation only tracks when importing is complete, not when it is done
+// training.
 //
 // Note: You should always train an agent prior to sending it queries. See the
 // training
@@ -316,6 +348,19 @@ func (c *AgentsClient) ImportAgentOperation(name string) *ImportAgentOperation {
 // agent settings). However, once the restore is done, training may not be
 // completed yet. Please call TrainAgent and wait for the operation it
 // returns in order to train explicitly.
+//
+// This method is a long-running
+// operation (at https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+// The returned Operation type has the following method-specific fields:
+//
+//   metadata: An empty Struct
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+//
+//   response: An Empty
+//   message (at https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+//
+// The operation only tracks when restoring is complete, not when it is done
+// training.
 //
 // Note: You should always train an agent prior to sending it queries. See the
 // training

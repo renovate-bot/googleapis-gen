@@ -32,8 +32,8 @@ use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
-
 use Google\ApiCore\PathTemplate;
+
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -46,7 +46,9 @@ use Google\Cloud\Dialogflow\V2beta1\GcsSource;
 use Google\Cloud\Dialogflow\V2beta1\GcsSources;
 use Google\Cloud\Dialogflow\V2beta1\GetDocumentRequest;
 use Google\Cloud\Dialogflow\V2beta1\ImportDocumentsRequest;
+use Google\Cloud\Dialogflow\V2beta1\ImportDocumentsResponse;
 use Google\Cloud\Dialogflow\V2beta1\ImportDocumentTemplate;
+use Google\Cloud\Dialogflow\V2beta1\KnowledgeOperationMetadata;
 use Google\Cloud\Dialogflow\V2beta1\ListDocumentsRequest;
 use Google\Cloud\Dialogflow\V2beta1\ListDocumentsResponse;
 use Google\Cloud\Dialogflow\V2beta1\ReloadDocumentRequest;
@@ -511,6 +513,13 @@ class DocumentsGapicClient
     /**
      * Creates a new document.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
+     *
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      *
@@ -592,6 +601,14 @@ class DocumentsGapicClient
 
     /**
      * Deletes the specified document.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      *
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
@@ -711,6 +728,13 @@ class DocumentsGapicClient
      * Create documents by importing data from external sources.
      * Dialogflow supports up to 350 documents in each request. If you try to
      * import more, Dialogflow will return an error.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [ImportDocumentsResponse][google.cloud.dialogflow.v2beta1.ImportDocumentsResponse]
      *
      * Sample code:
      * ```
@@ -910,6 +934,13 @@ class DocumentsGapicClient
      * be replaced with the custom metadata from Google Cloud Storage if the
      * `import_gcs_custom_metadata` field is set to true in the request.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
+     *
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.
      *
@@ -995,6 +1026,13 @@ class DocumentsGapicClient
 
     /**
      * Updates the specified document.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]
+     * - `response`: [Document][google.cloud.dialogflow.v2beta1.Document]
      *
      * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
      * only use `projects.knowledgeBases.documents`.

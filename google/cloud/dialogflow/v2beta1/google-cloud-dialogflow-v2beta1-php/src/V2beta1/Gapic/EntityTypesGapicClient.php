@@ -32,7 +32,6 @@ use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
-
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -44,6 +43,7 @@ use Google\Cloud\Dialogflow\V2beta1\BatchDeleteEntitiesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchDeleteEntityTypesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntitiesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntityTypesRequest;
+use Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntityTypesResponse;
 use Google\Cloud\Dialogflow\V2beta1\CreateEntityTypeRequest;
 use Google\Cloud\Dialogflow\V2beta1\DeleteEntityTypeRequest;
 use Google\Cloud\Dialogflow\V2beta1\EntityType;
@@ -56,6 +56,7 @@ use Google\Cloud\Dialogflow\V2beta1\UpdateEntityTypeRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Struct;
 
 /**
  * Service Description: Service for managing [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
@@ -500,6 +501,15 @@ class EntityTypesGapicClient
     /**
      * Creates multiple new entities in the specified entity type.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     *
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -585,6 +595,15 @@ class EntityTypesGapicClient
 
     /**
      * Deletes entities in the specified entity type.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      *
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
@@ -674,6 +693,15 @@ class EntityTypesGapicClient
     /**
      * Deletes entity types in the specified agent.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     *
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -755,6 +783,15 @@ class EntityTypesGapicClient
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      *
      * Sample code:
      * ```
@@ -843,6 +880,14 @@ class EntityTypesGapicClient
 
     /**
      * Updates/Creates multiple entity types in the specified agent.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
      *
      * Note: You should always train an agent prior to sending it queries. See the
      * [training

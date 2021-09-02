@@ -57,17 +57,43 @@ module Google
             rpc :DeleteEntityType, ::Google::Cloud::Dialogflow::V2beta1::DeleteEntityTypeRequest, ::Google::Protobuf::Empty
             # Updates/Creates multiple entity types in the specified agent.
             #
+            # This method is a [long-running
+            # operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+            # The returned `Operation` type has the following method-specific fields:
+            #
+            # - `metadata`: An empty [Struct
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+            # - `response`: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]
+            #
             # Note: You should always train an agent prior to sending it queries. See the
             # [training
             # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchUpdateEntityTypes, ::Google::Cloud::Dialogflow::V2beta1::BatchUpdateEntityTypesRequest, ::Google::Longrunning::Operation
             # Deletes entity types in the specified agent.
             #
+            # This method is a [long-running
+            # operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+            # The returned `Operation` type has the following method-specific fields:
+            #
+            # - `metadata`: An empty [Struct
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+            # - `response`: An [Empty
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+            #
             # Note: You should always train an agent prior to sending it queries. See the
             # [training
             # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchDeleteEntityTypes, ::Google::Cloud::Dialogflow::V2beta1::BatchDeleteEntityTypesRequest, ::Google::Longrunning::Operation
             # Creates multiple new entities in the specified entity type.
+            #
+            # This method is a [long-running
+            # operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+            # The returned `Operation` type has the following method-specific fields:
+            #
+            # - `metadata`: An empty [Struct
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+            # - `response`: An [Empty
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
             #
             # Note: You should always train an agent prior to sending it queries. See the
             # [training
@@ -80,8 +106,26 @@ module Google
             # Note: You should always train an agent prior to sending it queries. See the
             # [training
             # documentation](https://cloud.google.com/dialogflow/es/docs/training).
+            #
+            # This method is a [long-running
+            # operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+            # The returned `Operation` type has the following method-specific fields:
+            #
+            # - `metadata`: An empty [Struct
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+            # - `response`: An [Empty
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
             rpc :BatchUpdateEntities, ::Google::Cloud::Dialogflow::V2beta1::BatchUpdateEntitiesRequest, ::Google::Longrunning::Operation
             # Deletes entities in the specified entity type.
+            #
+            # This method is a [long-running
+            # operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+            # The returned `Operation` type has the following method-specific fields:
+            #
+            # - `metadata`: An empty [Struct
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+            # - `response`: An [Empty
+            #   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
             #
             # Note: You should always train an agent prior to sending it queries. See the
             # [training

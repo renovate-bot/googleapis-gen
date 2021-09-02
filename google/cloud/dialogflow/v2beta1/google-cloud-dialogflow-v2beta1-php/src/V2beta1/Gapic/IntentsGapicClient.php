@@ -32,7 +32,6 @@ use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
-
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -41,6 +40,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\V2beta1\BatchDeleteIntentsRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchUpdateIntentsRequest;
+use Google\Cloud\Dialogflow\V2beta1\BatchUpdateIntentsResponse;
 use Google\Cloud\Dialogflow\V2beta1\CreateIntentRequest;
 use Google\Cloud\Dialogflow\V2beta1\DeleteIntentRequest;
 use Google\Cloud\Dialogflow\V2beta1\GetIntentRequest;
@@ -51,8 +51,9 @@ use Google\Cloud\Dialogflow\V2beta1\ListIntentsResponse;
 use Google\Cloud\Dialogflow\V2beta1\UpdateIntentRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
-
 use Google\Protobuf\GPBEmpty;
+
+use Google\Protobuf\Struct;
 
 /**
  * Service Description: Service for managing [Intents][google.cloud.dialogflow.v2beta1.Intent].
@@ -497,6 +498,15 @@ class IntentsGapicClient
     /**
      * Deletes intents in the specified agent.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     *
      * Note: You should always train an agent prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
@@ -573,6 +583,14 @@ class IntentsGapicClient
 
     /**
      * Updates/Creates multiple intents in the specified agent.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]
      *
      * Note: You should always train an agent prior to sending it queries. See the
      * [training

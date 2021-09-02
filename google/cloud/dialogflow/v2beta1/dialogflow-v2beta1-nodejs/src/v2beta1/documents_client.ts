@@ -553,6 +553,13 @@ export class DocumentsClient {
 /**
  * Creates a new document.
  *
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2beta1.Document|Document}
+ *
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
  *
@@ -659,6 +666,13 @@ export class DocumentsClient {
  * Create documents by importing data from external sources.
  * Dialogflow supports up to 350 documents in each request. If you try to
  * import more, Dialogflow will return an error.
+ *
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2beta1.ImportDocumentsResponse|ImportDocumentsResponse}
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -769,6 +783,14 @@ export class DocumentsClient {
 /**
  * Deletes the specified document.
  *
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: An [Empty
+ *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+ *
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
  *
@@ -868,6 +890,13 @@ export class DocumentsClient {
           {}|null|undefined>): void;
 /**
  * Updates the specified document.
+ *
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2beta1.Document|Document}
  *
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
@@ -976,6 +1005,13 @@ export class DocumentsClient {
  * Note: If the document source is Google Cloud Storage URI, its metadata will
  * be replaced with the custom metadata from Google Cloud Storage if the
  * `import_gcs_custom_metadata` field is set to true in the request.
+ *
+ * This method is a [long-running
+ * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+ * The returned `Operation` type has the following method-specific fields:
+ *
+ * - `metadata`: {@link google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata|KnowledgeOperationMetadata}
+ * - `response`: {@link google.cloud.dialogflow.v2beta1.Document|Document}
  *
  * Note: The `projects.agent.knowledgeBases.documents` resource is deprecated;
  * only use `projects.knowledgeBases.documents`.
