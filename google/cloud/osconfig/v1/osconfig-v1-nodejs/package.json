@@ -21,7 +21,8 @@
     "cloud",
     "google osconfig",
     "osconfig",
-    "os config service"
+    "os config service",
+    "os config zonal service"
   ],
   "scripts": {
     "clean": "gts clean",

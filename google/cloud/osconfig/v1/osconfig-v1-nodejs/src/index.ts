@@ -19,7 +19,9 @@
 import * as v1 from './v1';
 const OsConfigServiceClient = v1.OsConfigServiceClient;
 type OsConfigServiceClient = v1.OsConfigServiceClient;
-export {v1, OsConfigServiceClient};
-export default {v1, OsConfigServiceClient};
+const OsConfigZonalServiceClient = v1.OsConfigZonalServiceClient;
+type OsConfigZonalServiceClient = v1.OsConfigZonalServiceClient;
+export {v1, OsConfigServiceClient, OsConfigZonalServiceClient};
+export default {v1, OsConfigServiceClient, OsConfigZonalServiceClient};
 import * as protos from '../protos/protos';
 export {protos}

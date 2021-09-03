@@ -22,6 +22,7 @@ const osconfig = require('@google-cloud/os-config');
 
 function main() {
   const osConfigServiceClient = new osconfig.OsConfigServiceClient();
+  const osConfigZonalServiceClient = new osconfig.OsConfigZonalServiceClient();
 }
 
 main();

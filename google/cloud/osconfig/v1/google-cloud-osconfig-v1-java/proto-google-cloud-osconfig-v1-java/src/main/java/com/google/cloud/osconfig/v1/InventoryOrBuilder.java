@@ -9,6 +9,30 @@ public interface InventoryOrBuilder extends
 
   /**
    * <pre>
+   * Output only. The `Inventory` API resource name.
+   * Format:
+   * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * Output only. The `Inventory` API resource name.
+   * Format:
+   * `projects/{project_number}/locations/{location}/instances/{instance_id}/inventory`
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
    * Base level operating system information for the VM.
    * </pre>
    *
@@ -102,4 +126,31 @@ public interface InventoryOrBuilder extends
 
   com.google.cloud.osconfig.v1.Inventory.Item getItemsOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Output only. Timestamp of the last reported inventory for the VM.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   * <pre>
+   * Output only. Timestamp of the last reported inventory for the VM.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   * <pre>
+   * Output only. Timestamp of the last reported inventory for the VM.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

@@ -1340,6 +1340,52 @@ describe('v1.OsConfigServiceClient', () => {
 
     describe('Path templates', () => {
 
+        describe('inventory', () => {
+            const fakePath = "/rendered/path/inventory";
+            const expectedParameters = {
+                project: "projectValue",
+                location: "locationValue",
+                instance: "instanceValue",
+            };
+            const client = new osconfigserviceModule.v1.OsConfigServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.inventoryPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.inventoryPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('inventoryPath', () => {
+                const result = client.inventoryPath("projectValue", "locationValue", "instanceValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.inventoryPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromInventoryName', () => {
+                const result = client.matchProjectFromInventoryName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.inventoryPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchLocationFromInventoryName', () => {
+                const result = client.matchLocationFromInventoryName(fakePath);
+                assert.strictEqual(result, "locationValue");
+                assert((client.pathTemplates.inventoryPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchInstanceFromInventoryName', () => {
+                const result = client.matchInstanceFromInventoryName(fakePath);
+                assert.strictEqual(result, "instanceValue");
+                assert((client.pathTemplates.inventoryPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
         describe('patchDeployment', () => {
             const fakePath = "/rendered/path/patchDeployment";
             const expectedParameters = {
@@ -1412,6 +1458,52 @@ describe('v1.OsConfigServiceClient', () => {
                 const result = client.matchPatchJobFromPatchJobName(fakePath);
                 assert.strictEqual(result, "patchJobValue");
                 assert((client.pathTemplates.patchJobPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('vulnerabilityReport', () => {
+            const fakePath = "/rendered/path/vulnerabilityReport";
+            const expectedParameters = {
+                project: "projectValue",
+                location: "locationValue",
+                instance: "instanceValue",
+            };
+            const client = new osconfigserviceModule.v1.OsConfigServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.vulnerabilityReportPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.vulnerabilityReportPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('vulnerabilityReportPath', () => {
+                const result = client.vulnerabilityReportPath("projectValue", "locationValue", "instanceValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.vulnerabilityReportPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromVulnerabilityReportName', () => {
+                const result = client.matchProjectFromVulnerabilityReportName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.vulnerabilityReportPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchLocationFromVulnerabilityReportName', () => {
+                const result = client.matchLocationFromVulnerabilityReportName(fakePath);
+                assert.strictEqual(result, "locationValue");
+                assert((client.pathTemplates.vulnerabilityReportPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchInstanceFromVulnerabilityReportName', () => {
+                const result = client.matchInstanceFromVulnerabilityReportName(fakePath);
+                assert.strictEqual(result, "instanceValue");
+                assert((client.pathTemplates.vulnerabilityReportPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
         });

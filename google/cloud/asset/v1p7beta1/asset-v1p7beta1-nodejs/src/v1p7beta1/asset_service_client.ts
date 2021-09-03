@@ -160,6 +160,9 @@ export class AssetServiceClient {
       accessPolicyPathTemplate: new this._gaxModule.PathTemplate(
         'accessPolicies/{access_policy}'
       ),
+      inventoryPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/locations/{location}/instances/{instance}/inventory'
+      ),
       servicePerimeterPathTemplate: new this._gaxModule.PathTemplate(
         'accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}'
       ),
@@ -525,6 +528,55 @@ export class AssetServiceClient {
    */
   matchAccessPolicyFromAccessPolicyName(accessPolicyName: string) {
     return this.pathTemplates.accessPolicyPathTemplate.match(accessPolicyName).access_policy;
+  }
+
+  /**
+   * Return a fully-qualified inventory resource name string.
+   *
+   * @param {string} project
+   * @param {string} location
+   * @param {string} instance
+   * @returns {string} Resource name string.
+   */
+  inventoryPath(project:string,location:string,instance:string) {
+    return this.pathTemplates.inventoryPathTemplate.render({
+      project: project,
+      location: location,
+      instance: instance,
+    });
+  }
+
+  /**
+   * Parse the project from Inventory resource.
+   *
+   * @param {string} inventoryName
+   *   A fully-qualified path representing Inventory resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromInventoryName(inventoryName: string) {
+    return this.pathTemplates.inventoryPathTemplate.match(inventoryName).project;
+  }
+
+  /**
+   * Parse the location from Inventory resource.
+   *
+   * @param {string} inventoryName
+   *   A fully-qualified path representing Inventory resource.
+   * @returns {string} A string representing the location.
+   */
+  matchLocationFromInventoryName(inventoryName: string) {
+    return this.pathTemplates.inventoryPathTemplate.match(inventoryName).location;
+  }
+
+  /**
+   * Parse the instance from Inventory resource.
+   *
+   * @param {string} inventoryName
+   *   A fully-qualified path representing Inventory resource.
+   * @returns {string} A string representing the instance.
+   */
+  matchInstanceFromInventoryName(inventoryName: string) {
+    return this.pathTemplates.inventoryPathTemplate.match(inventoryName).instance;
   }
 
   /**

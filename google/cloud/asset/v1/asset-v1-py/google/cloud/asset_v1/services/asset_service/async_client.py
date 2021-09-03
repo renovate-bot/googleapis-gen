@@ -53,6 +53,8 @@ class AssetServiceAsyncClient:
     parse_asset_path = staticmethod(AssetServiceClient.parse_asset_path)
     feed_path = staticmethod(AssetServiceClient.feed_path)
     parse_feed_path = staticmethod(AssetServiceClient.parse_feed_path)
+    inventory_path = staticmethod(AssetServiceClient.inventory_path)
+    parse_inventory_path = staticmethod(AssetServiceClient.parse_inventory_path)
     service_perimeter_path = staticmethod(AssetServiceClient.service_perimeter_path)
     parse_service_perimeter_path = staticmethod(AssetServiceClient.parse_service_perimeter_path)
     common_billing_account_path = staticmethod(AssetServiceClient.common_billing_account_path)

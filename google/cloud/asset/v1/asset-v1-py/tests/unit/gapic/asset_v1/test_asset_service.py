@@ -4139,9 +4139,30 @@ def test_parse_feed_path():
     actual = AssetServiceClient.parse_feed_path(path)
     assert expected == actual
 
+def test_inventory_path():
+    project = "scallop"
+    location = "abalone"
+    instance = "squid"
+    expected = "projects/{project}/locations/{location}/instances/{instance}/inventory".format(project=project, location=location, instance=instance, )
+    actual = AssetServiceClient.inventory_path(project, location, instance)
+    assert expected == actual
+
+
+def test_parse_inventory_path():
+    expected = {
+        "project": "clam",
+        "location": "whelk",
+        "instance": "octopus",
+    }
+    path = AssetServiceClient.inventory_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = AssetServiceClient.parse_inventory_path(path)
+    assert expected == actual
+
 def test_service_perimeter_path():
-    access_policy = "scallop"
-    service_perimeter = "abalone"
+    access_policy = "oyster"
+    service_perimeter = "nudibranch"
     expected = "accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}".format(access_policy=access_policy, service_perimeter=service_perimeter, )
     actual = AssetServiceClient.service_perimeter_path(access_policy, service_perimeter)
     assert expected == actual
@@ -4149,8 +4170,8 @@ def test_service_perimeter_path():
 
 def test_parse_service_perimeter_path():
     expected = {
-        "access_policy": "squid",
-        "service_perimeter": "clam",
+        "access_policy": "cuttlefish",
+        "service_perimeter": "mussel",
     }
     path = AssetServiceClient.service_perimeter_path(**expected)
 
@@ -4159,7 +4180,7 @@ def test_parse_service_perimeter_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "whelk"
+    billing_account = "winkle"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AssetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4167,7 +4188,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+        "billing_account": "nautilus",
     }
     path = AssetServiceClient.common_billing_account_path(**expected)
 
@@ -4176,7 +4197,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "oyster"
+    folder = "scallop"
     expected = "folders/{folder}".format(folder=folder, )
     actual = AssetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -4184,7 +4205,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+        "folder": "abalone",
     }
     path = AssetServiceClient.common_folder_path(**expected)
 
@@ -4193,7 +4214,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "cuttlefish"
+    organization = "squid"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AssetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -4201,7 +4222,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+        "organization": "clam",
     }
     path = AssetServiceClient.common_organization_path(**expected)
 
@@ -4210,7 +4231,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "winkle"
+    project = "whelk"
     expected = "projects/{project}".format(project=project, )
     actual = AssetServiceClient.common_project_path(project)
     assert expected == actual
@@ -4218,7 +4239,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+        "project": "octopus",
     }
     path = AssetServiceClient.common_project_path(**expected)
 
@@ -4227,8 +4248,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "scallop"
-    location = "abalone"
+    project = "oyster"
+    location = "nudibranch"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AssetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -4236,8 +4257,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = AssetServiceClient.common_location_path(**expected)
 

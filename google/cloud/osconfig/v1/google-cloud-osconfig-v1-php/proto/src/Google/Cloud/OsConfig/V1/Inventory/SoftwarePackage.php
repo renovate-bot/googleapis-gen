@@ -55,7 +55,7 @@ class SoftwarePackage extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\OsConfig\V1\Inventory\VersionedPackage $cos_package
      *           Details of a COS package.
      *     @type \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication $windows_application
-     *           Details of a Windows Application
+     *           Details of Windows Application.
      * }
      */
     public function __construct($data = NULL) {
@@ -342,7 +342,7 @@ class SoftwarePackage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Details of a Windows Application
+     * Details of Windows Application.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
      * @return \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication|null
@@ -358,7 +358,7 @@ class SoftwarePackage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Details of a Windows Application
+     * Details of Windows Application.
      *
      * Generated from protobuf field <code>.google.cloud.osconfig.v1.Inventory.WindowsApplication windows_application = 9;</code>
      * @param \Google\Cloud\OsConfig\V1\Inventory\WindowsApplication $var
