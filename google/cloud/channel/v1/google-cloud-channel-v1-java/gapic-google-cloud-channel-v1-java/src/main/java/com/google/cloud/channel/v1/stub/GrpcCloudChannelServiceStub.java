@@ -52,6 +52,7 @@ import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.GetCustomerRequest;
 import com.google.cloud.channel.v1.GetEntitlementRequest;
+import com.google.cloud.channel.v1.ImportCustomerRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
@@ -172,6 +173,16 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportCustomerRequest, Customer>
+      importCustomerMethodDescriptor =
+          MethodDescriptor.<ImportCustomerRequest, Customer>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ImportCustomer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportCustomerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Customer.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ProvisionCloudIdentityRequest, Operation>
@@ -480,6 +491,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   private final UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable;
   private final UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable;
   private final UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable;
+  private final UnaryCallable<ImportCustomerRequest, Customer> importCustomerCallable;
   private final UnaryCallable<ProvisionCloudIdentityRequest, Operation>
       provisionCloudIdentityCallable;
   private final OperationCallable<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
@@ -670,6 +682,16 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ImportCustomerRequest, Customer> importCustomerTransportSettings =
+        GrpcCallSettings.<ImportCustomerRequest, Customer>newBuilder()
+            .setMethodDescriptor(importCustomerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
                   return params.build();
                 })
             .build();
@@ -989,6 +1011,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
     this.deleteCustomerCallable =
         callableFactory.createUnaryCallable(
             deleteCustomerTransportSettings, settings.deleteCustomerSettings(), clientContext);
+    this.importCustomerCallable =
+        callableFactory.createUnaryCallable(
+            importCustomerTransportSettings, settings.importCustomerSettings(), clientContext);
     this.provisionCloudIdentityCallable =
         callableFactory.createUnaryCallable(
             provisionCloudIdentityTransportSettings,
@@ -1260,6 +1285,11 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   @Override
   public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
     return deleteCustomerCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportCustomerRequest, Customer> importCustomerCallable() {
+    return importCustomerCallable;
   }
 
   @Override

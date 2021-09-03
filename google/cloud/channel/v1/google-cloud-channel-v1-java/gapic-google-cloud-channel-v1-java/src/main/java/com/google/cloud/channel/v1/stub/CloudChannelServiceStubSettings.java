@@ -71,6 +71,7 @@ import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.GetChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.GetCustomerRequest;
 import com.google.cloud.channel.v1.GetEntitlementRequest;
+import com.google.cloud.channel.v1.ImportCustomerRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksRequest;
 import com.google.cloud.channel.v1.ListChannelPartnerLinksResponse;
 import com.google.cloud.channel.v1.ListCustomersRequest;
@@ -174,6 +175,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
   private final UnaryCallSettings<CreateCustomerRequest, Customer> createCustomerSettings;
   private final UnaryCallSettings<UpdateCustomerRequest, Customer> updateCustomerSettings;
   private final UnaryCallSettings<DeleteCustomerRequest, Empty> deleteCustomerSettings;
+  private final UnaryCallSettings<ImportCustomerRequest, Customer> importCustomerSettings;
   private final UnaryCallSettings<ProvisionCloudIdentityRequest, Operation>
       provisionCloudIdentitySettings;
   private final OperationCallSettings<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
@@ -937,6 +939,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return deleteCustomerSettings;
   }
 
+  /** Returns the object with the settings used for calls to importCustomer. */
+  public UnaryCallSettings<ImportCustomerRequest, Customer> importCustomerSettings() {
+    return importCustomerSettings;
+  }
+
   /** Returns the object with the settings used for calls to provisionCloudIdentity. */
   public UnaryCallSettings<ProvisionCloudIdentityRequest, Operation>
       provisionCloudIdentitySettings() {
@@ -1256,6 +1263,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     createCustomerSettings = settingsBuilder.createCustomerSettings().build();
     updateCustomerSettings = settingsBuilder.updateCustomerSettings().build();
     deleteCustomerSettings = settingsBuilder.deleteCustomerSettings().build();
+    importCustomerSettings = settingsBuilder.importCustomerSettings().build();
     provisionCloudIdentitySettings = settingsBuilder.provisionCloudIdentitySettings().build();
     provisionCloudIdentityOperationSettings =
         settingsBuilder.provisionCloudIdentityOperationSettings().build();
@@ -1320,6 +1328,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     private final UnaryCallSettings.Builder<CreateCustomerRequest, Customer> createCustomerSettings;
     private final UnaryCallSettings.Builder<UpdateCustomerRequest, Customer> updateCustomerSettings;
     private final UnaryCallSettings.Builder<DeleteCustomerRequest, Empty> deleteCustomerSettings;
+    private final UnaryCallSettings.Builder<ImportCustomerRequest, Customer> importCustomerSettings;
     private final UnaryCallSettings.Builder<ProvisionCloudIdentityRequest, Operation>
         provisionCloudIdentitySettings;
     private final OperationCallSettings.Builder<
@@ -1475,6 +1484,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       createCustomerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCustomerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCustomerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importCustomerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       provisionCloudIdentitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       provisionCloudIdentityOperationSettings = OperationCallSettings.newBuilder();
       listEntitlementsSettings = PagedCallSettings.newBuilder(LIST_ENTITLEMENTS_PAGE_STR_FACT);
@@ -1528,6 +1538,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               createCustomerSettings,
               updateCustomerSettings,
               deleteCustomerSettings,
+              importCustomerSettings,
               provisionCloudIdentitySettings,
               listEntitlementsSettings,
               listTransferableSkusSettings,
@@ -1569,6 +1580,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       createCustomerSettings = settings.createCustomerSettings.toBuilder();
       updateCustomerSettings = settings.updateCustomerSettings.toBuilder();
       deleteCustomerSettings = settings.deleteCustomerSettings.toBuilder();
+      importCustomerSettings = settings.importCustomerSettings.toBuilder();
       provisionCloudIdentitySettings = settings.provisionCloudIdentitySettings.toBuilder();
       provisionCloudIdentityOperationSettings =
           settings.provisionCloudIdentityOperationSettings.toBuilder();
@@ -1624,6 +1636,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               createCustomerSettings,
               updateCustomerSettings,
               deleteCustomerSettings,
+              importCustomerSettings,
               provisionCloudIdentitySettings,
               listEntitlementsSettings,
               listTransferableSkusSettings,
@@ -1695,6 +1708,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .deleteCustomerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importCustomerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2153,6 +2171,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     /** Returns the builder for the settings used for calls to deleteCustomer. */
     public UnaryCallSettings.Builder<DeleteCustomerRequest, Empty> deleteCustomerSettings() {
       return deleteCustomerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importCustomer. */
+    public UnaryCallSettings.Builder<ImportCustomerRequest, Customer> importCustomerSettings() {
+      return importCustomerSettings;
     }
 
     /** Returns the builder for the settings used for calls to provisionCloudIdentity. */

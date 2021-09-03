@@ -183,6 +183,11 @@ class CloudChannelServiceTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.import_customer: gapic_v1.method.wrap_method(
+                self.import_customer,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.provision_cloud_identity: gapic_v1.method.wrap_method(
                 self.provision_cloud_identity,
                 default_timeout=60.0,
@@ -381,6 +386,15 @@ class CloudChannelServiceTransport(abc.ABC):
             Union[
                 empty_pb2.Empty,
                 Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def import_customer(self) -> Callable[
+            [service.ImportCustomerRequest],
+            Union[
+                customers.Customer,
+                Awaitable[customers.Customer]
             ]]:
         raise NotImplementedError()
 

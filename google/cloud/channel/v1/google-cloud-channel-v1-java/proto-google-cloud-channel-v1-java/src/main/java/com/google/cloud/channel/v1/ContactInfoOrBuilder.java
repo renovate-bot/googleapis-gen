@@ -9,7 +9,7 @@ public interface ContactInfoOrBuilder extends
 
   /**
    * <pre>
-   * The customer account contact's first name.
+   * The customer account contact's first name. Optional for Team customers.
    * </pre>
    *
    * <code>string first_name = 1;</code>
@@ -18,7 +18,7 @@ public interface ContactInfoOrBuilder extends
   java.lang.String getFirstName();
   /**
    * <pre>
-   * The customer account contact's first name.
+   * The customer account contact's first name. Optional for Team customers.
    * </pre>
    *
    * <code>string first_name = 1;</code>
@@ -29,7 +29,7 @@ public interface ContactInfoOrBuilder extends
 
   /**
    * <pre>
-   * The customer account contact's last name.
+   * The customer account contact's last name. Optional for Team customers.
    * </pre>
    *
    * <code>string last_name = 2;</code>
@@ -38,7 +38,7 @@ public interface ContactInfoOrBuilder extends
   java.lang.String getLastName();
   /**
    * <pre>
-   * The customer account contact's last name.
+   * The customer account contact's last name. Optional for Team customers.
    * </pre>
    *
    * <code>string last_name = 2;</code>
@@ -73,7 +73,7 @@ public interface ContactInfoOrBuilder extends
    * <pre>
    * The customer account's contact email. Required for entitlements that create
    * admin.google.com accounts, and serves as the customer's username for those
-   * accounts.
+   * accounts. Use this email to invite Team customers.
    * </pre>
    *
    * <code>string email = 5;</code>
@@ -84,7 +84,7 @@ public interface ContactInfoOrBuilder extends
    * <pre>
    * The customer account's contact email. Required for entitlements that create
    * admin.google.com accounts, and serves as the customer's username for those
-   * accounts.
+   * accounts. Use this email to invite Team customers.
    * </pre>
    *
    * <code>string email = 5;</code>

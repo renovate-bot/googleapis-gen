@@ -118,6 +118,11 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     return ((CloudChannelServiceStubSettings) getStubSettings()).deleteCustomerSettings();
   }
 
+  /** Returns the object with the settings used for calls to importCustomer. */
+  public UnaryCallSettings<ImportCustomerRequest, Customer> importCustomerSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).importCustomerSettings();
+  }
+
   /** Returns the object with the settings used for calls to provisionCloudIdentity. */
   public UnaryCallSettings<ProvisionCloudIdentityRequest, Operation>
       provisionCloudIdentitySettings() {
@@ -494,6 +499,11 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     /** Returns the builder for the settings used for calls to deleteCustomer. */
     public UnaryCallSettings.Builder<DeleteCustomerRequest, Empty> deleteCustomerSettings() {
       return getStubSettingsBuilder().deleteCustomerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importCustomer. */
+    public UnaryCallSettings.Builder<ImportCustomerRequest, Customer> importCustomerSettings() {
+      return getStubSettingsBuilder().importCustomerSettings();
     }
 
     /** Returns the builder for the settings used for calls to provisionCloudIdentity. */

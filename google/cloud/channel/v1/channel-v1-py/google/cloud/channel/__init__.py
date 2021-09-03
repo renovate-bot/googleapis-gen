@@ -71,6 +71,7 @@ from google.cloud.channel_v1.types.service import DeleteCustomerRequest
 from google.cloud.channel_v1.types.service import GetChannelPartnerLinkRequest
 from google.cloud.channel_v1.types.service import GetCustomerRequest
 from google.cloud.channel_v1.types.service import GetEntitlementRequest
+from google.cloud.channel_v1.types.service import ImportCustomerRequest
 from google.cloud.channel_v1.types.service import ListChannelPartnerLinksRequest
 from google.cloud.channel_v1.types.service import ListChannelPartnerLinksResponse
 from google.cloud.channel_v1.types.service import ListCustomersRequest
@@ -169,6 +170,7 @@ __all__ = ('CloudChannelServiceClient',
     'GetChannelPartnerLinkRequest',
     'GetCustomerRequest',
     'GetEntitlementRequest',
+    'ImportCustomerRequest',
     'ListChannelPartnerLinksRequest',
     'ListChannelPartnerLinksResponse',
     'ListCustomersRequest',
