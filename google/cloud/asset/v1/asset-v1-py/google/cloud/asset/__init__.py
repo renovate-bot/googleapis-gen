@@ -63,6 +63,8 @@ from google.cloud.asset_v1.types.assets import IamPolicyAnalysisState
 from google.cloud.asset_v1.types.assets import IamPolicySearchResult
 from google.cloud.asset_v1.types.assets import RelatedAsset
 from google.cloud.asset_v1.types.assets import RelatedAssets
+from google.cloud.asset_v1.types.assets import RelatedResource
+from google.cloud.asset_v1.types.assets import RelatedResources
 from google.cloud.asset_v1.types.assets import RelationshipAttributes
 from google.cloud.asset_v1.types.assets import Resource
 from google.cloud.asset_v1.types.assets import ResourceSearchResult
@@ -118,6 +120,8 @@ __all__ = ('AssetServiceClient',
     'IamPolicySearchResult',
     'RelatedAsset',
     'RelatedAssets',
+    'RelatedResource',
+    'RelatedResources',
     'RelationshipAttributes',
     'Resource',
     'ResourceSearchResult',
