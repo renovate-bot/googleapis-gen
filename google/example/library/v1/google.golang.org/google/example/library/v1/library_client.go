@@ -211,7 +211,7 @@ type internalClient interface {
 // Client is a client for interacting with Example Library API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// This API represents a simple digital library.  It lets you manage Shelf
+// This API represents a simple digital library. It lets you manage Shelf
 // resources and Book resources in the library. It defines the following
 // resource model:
 //
@@ -339,7 +339,7 @@ type gRPCClient struct {
 // NewClient creates a new library service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// This API represents a simple digital library.  It lets you manage Shelf
+// This API represents a simple digital library. It lets you manage Shelf
 // resources and Book resources in the library. It defines the following
 // resource model:
 //

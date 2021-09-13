@@ -291,7 +291,7 @@ namespace Google.Example.Library.V1
 
     /// <summary>LibraryService client wrapper, for convenient use.</summary>
     /// <remarks>
-    /// This API represents a simple digital library.  It lets you manage Shelf
+    /// This API represents a simple digital library. It lets you manage Shelf
     /// resources and Book resources in the library. It defines the following
     /// resource model:
     /// 
@@ -1531,7 +1531,7 @@ namespace Google.Example.Library.V1
 
     /// <summary>LibraryService client wrapper implementation, for convenient use.</summary>
     /// <remarks>
-    /// This API represents a simple digital library.  It lets you manage Shelf
+    /// This API represents a simple digital library. It lets you manage Shelf
     /// resources and Book resources in the library. It defines the following
     /// resource model:
     /// 

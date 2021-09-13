@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * This API represents a simple digital library.  It lets you manage Shelf
+ * This API represents a simple digital library. It lets you manage Shelf
  * resources and Book resources in the library. It defines the following
  * resource model:
  * - The API has a collection of [Shelf][google.example.library.v1.Shelf]
@@ -410,7 +410,7 @@ public final class LibraryServiceGrpc {
 
   /**
    * <pre>
-   * This API represents a simple digital library.  It lets you manage Shelf
+   * This API represents a simple digital library. It lets you manage Shelf
    * resources and Book resources in the library. It defines the following
    * resource model:
    * - The API has a collection of [Shelf][google.example.library.v1.Shelf]
@@ -626,7 +626,7 @@ public final class LibraryServiceGrpc {
 
   /**
    * <pre>
-   * This API represents a simple digital library.  It lets you manage Shelf
+   * This API represents a simple digital library. It lets you manage Shelf
    * resources and Book resources in the library. It defines the following
    * resource model:
    * - The API has a collection of [Shelf][google.example.library.v1.Shelf]
@@ -781,7 +781,7 @@ public final class LibraryServiceGrpc {
 
   /**
    * <pre>
-   * This API represents a simple digital library.  It lets you manage Shelf
+   * This API represents a simple digital library. It lets you manage Shelf
    * resources and Book resources in the library. It defines the following
    * resource model:
    * - The API has a collection of [Shelf][google.example.library.v1.Shelf]
@@ -925,7 +925,7 @@ public final class LibraryServiceGrpc {
 
   /**
    * <pre>
-   * This API represents a simple digital library.  It lets you manage Shelf
+   * This API represents a simple digital library. It lets you manage Shelf
    * resources and Book resources in the library. It defines the following
    * resource model:
    * - The API has a collection of [Shelf][google.example.library.v1.Shelf]

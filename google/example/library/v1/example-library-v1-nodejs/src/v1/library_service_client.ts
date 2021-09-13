@@ -34,7 +34,7 @@ import * as gapicConfig from './library_service_client_config.json';
 const version = require('../../../package.json').version;
 
 /**
- *  This API represents a simple digital library.  It lets you manage Shelf
+ *  This API represents a simple digital library. It lets you manage Shelf
  *  resources and Book resources in the library. It defines the following
  *  resource model:
  *
