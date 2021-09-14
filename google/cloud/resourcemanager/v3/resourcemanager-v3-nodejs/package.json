@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/resourcemanager",
+  "name": "@google-cloud/resource-manager",
   "version": "0.1.0",
   "description": "Resourcemanager client for Node.js",
   "repository": "googleapis/nodejs-resourcemanager",
