@@ -48,7 +48,7 @@ namespace Google.Cloud.Talent.V4.Snippets
                 OrderBy = "",
                 DiversificationLevel = SearchJobsRequest.Types.DiversificationLevel.Unspecified,
                 CustomRankingInfo = new SearchJobsRequest.Types.CustomRankingInfo(),
-                DisableKeywordMatch = false,
+                KeywordMatchMode = SearchJobsRequest.Types.KeywordMatchMode.Unspecified,
             };
             // Make the request
             SearchJobsResponse response = jobServiceClient.SearchJobsForAlert(request);
