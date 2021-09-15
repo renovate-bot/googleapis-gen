@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private HttpsTrigger() {
     url_ = "";
+    securityLevel_ = 0;
   }
 
   @java.lang.Override
@@ -59,6 +60,12 @@ private static final long serialVersionUID = 0L;
             url_ = s;
             break;
           }
+          case 16: {
+            int rawValue = input.readEnum();
+
+            securityLevel_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -89,6 +96,161 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.functions.v1.FunctionsProto.internal_static_google_cloud_functions_v1_HttpsTrigger_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.functions.v1.HttpsTrigger.class, com.google.cloud.functions.v1.HttpsTrigger.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Available security level settings.
+   * This controls the methods to enforce security (HTTPS) on a URL.
+   * If unspecified, SECURE_OPTIONAL will be used.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.functions.v1.HttpsTrigger.SecurityLevel}
+   */
+  public enum SecurityLevel
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>SECURITY_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    SECURITY_LEVEL_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Requests for a URL that match this handler that do not use HTTPS are
+     * automatically redirected to the HTTPS URL with the same path. Query
+     * parameters are reserved for the redirect.
+     * </pre>
+     *
+     * <code>SECURE_ALWAYS = 1;</code>
+     */
+    SECURE_ALWAYS(1),
+    /**
+     * <pre>
+     * Both HTTP and HTTPS requests with URLs that match the handler succeed
+     * without redirects. The application can examine the request to determine
+     * which protocol was used and respond accordingly.
+     * </pre>
+     *
+     * <code>SECURE_OPTIONAL = 2;</code>
+     */
+    SECURE_OPTIONAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>SECURITY_LEVEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int SECURITY_LEVEL_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Requests for a URL that match this handler that do not use HTTPS are
+     * automatically redirected to the HTTPS URL with the same path. Query
+     * parameters are reserved for the redirect.
+     * </pre>
+     *
+     * <code>SECURE_ALWAYS = 1;</code>
+     */
+    public static final int SECURE_ALWAYS_VALUE = 1;
+    /**
+     * <pre>
+     * Both HTTP and HTTPS requests with URLs that match the handler succeed
+     * without redirects. The application can examine the request to determine
+     * which protocol was used and respond accordingly.
+     * </pre>
+     *
+     * <code>SECURE_OPTIONAL = 2;</code>
+     */
+    public static final int SECURE_OPTIONAL_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SecurityLevel valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SecurityLevel forNumber(int value) {
+      switch (value) {
+        case 0: return SECURITY_LEVEL_UNSPECIFIED;
+        case 1: return SECURE_ALWAYS;
+        case 2: return SECURE_OPTIONAL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SecurityLevel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SecurityLevel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SecurityLevel>() {
+            public SecurityLevel findValueByNumber(int number) {
+              return SecurityLevel.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.functions.v1.HttpsTrigger.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SecurityLevel[] VALUES = values();
+
+    public static SecurityLevel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SecurityLevel(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.functions.v1.HttpsTrigger.SecurityLevel)
   }
 
   public static final int URL_FIELD_NUMBER = 1;
@@ -137,6 +299,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SECURITY_LEVEL_FIELD_NUMBER = 2;
+  private int securityLevel_;
+  /**
+   * <pre>
+   * The security level for the function.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+   * @return The enum numeric value on the wire for securityLevel.
+   */
+  @java.lang.Override public int getSecurityLevelValue() {
+    return securityLevel_;
+  }
+  /**
+   * <pre>
+   * The security level for the function.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+   * @return The securityLevel.
+   */
+  @java.lang.Override public com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel getSecurityLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel result = com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.valueOf(securityLevel_);
+    return result == null ? com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -154,6 +343,9 @@ private static final long serialVersionUID = 0L;
     if (!getUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
     }
+    if (securityLevel_ != com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.SECURITY_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, securityLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -165,6 +357,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
+    }
+    if (securityLevel_ != com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.SECURITY_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, securityLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -183,6 +379,7 @@ private static final long serialVersionUID = 0L;
 
     if (!getUrl()
         .equals(other.getUrl())) return false;
+    if (securityLevel_ != other.securityLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -196,6 +393,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + URL_FIELD_NUMBER;
     hash = (53 * hash) + getUrl().hashCode();
+    hash = (37 * hash) + SECURITY_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + securityLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,6 +534,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       url_ = "";
 
+      securityLevel_ = 0;
+
       return this;
     }
 
@@ -362,6 +563,7 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.functions.v1.HttpsTrigger buildPartial() {
       com.google.cloud.functions.v1.HttpsTrigger result = new com.google.cloud.functions.v1.HttpsTrigger(this);
       result.url_ = url_;
+      result.securityLevel_ = securityLevel_;
       onBuilt();
       return result;
     }
@@ -413,6 +615,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
         onChanged();
+      }
+      if (other.securityLevel_ != 0) {
+        setSecurityLevelValue(other.getSecurityLevelValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -535,6 +740,80 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       url_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int securityLevel_ = 0;
+    /**
+     * <pre>
+     * The security level for the function.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @return The enum numeric value on the wire for securityLevel.
+     */
+    @java.lang.Override public int getSecurityLevelValue() {
+      return securityLevel_;
+    }
+    /**
+     * <pre>
+     * The security level for the function.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @param value The enum numeric value on the wire for securityLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityLevelValue(int value) {
+      
+      securityLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The security level for the function.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @return The securityLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel getSecurityLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel result = com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.valueOf(securityLevel_);
+      return result == null ? com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The security level for the function.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @param value The securityLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecurityLevel(com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      securityLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The security level for the function.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSecurityLevel() {
+      
+      securityLevel_ = 0;
       onChanged();
       return this;
     }

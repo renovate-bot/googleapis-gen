@@ -21,6 +21,12 @@ class HttpsTrigger extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $url = '';
+    /**
+     * The security level for the function.
+     *
+     * Generated from protobuf field <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     */
+    protected $security_level = 0;
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class HttpsTrigger extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url
      *           Output only. The deployed url for the function.
+     *     @type int $security_level
+     *           The security level for the function.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +67,32 @@ class HttpsTrigger extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * The security level for the function.
+     *
+     * Generated from protobuf field <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @return int
+     */
+    public function getSecurityLevel()
+    {
+        return $this->security_level;
+    }
+
+    /**
+     * The security level for the function.
+     *
+     * Generated from protobuf field <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSecurityLevel($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Functions\V1\HttpsTrigger\SecurityLevel::class);
+        $this->security_level = $var;
 
         return $this;
     }

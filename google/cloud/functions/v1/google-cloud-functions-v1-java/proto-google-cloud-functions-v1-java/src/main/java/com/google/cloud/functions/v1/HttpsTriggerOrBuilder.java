@@ -26,4 +26,23 @@ public interface HttpsTriggerOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUrlBytes();
+
+  /**
+   * <pre>
+   * The security level for the function.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+   * @return The enum numeric value on the wire for securityLevel.
+   */
+  int getSecurityLevelValue();
+  /**
+   * <pre>
+   * The security level for the function.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.HttpsTrigger.SecurityLevel security_level = 2;</code>
+   * @return The securityLevel.
+   */
+  com.google.cloud.functions.v1.HttpsTrigger.SecurityLevel getSecurityLevel();
 }
