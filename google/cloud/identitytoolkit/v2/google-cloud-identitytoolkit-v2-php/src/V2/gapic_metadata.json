@@ -1,0 +1,52 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.identitytoolkit.v2",
+    "libraryPackage": "Google\\Cloud\\IdentityToolkit\\V2",
+    "services": {
+        "AccountManagementService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AccountManagementServiceGapicClient",
+                    "rpcs": {
+                        "FinalizeMfaEnrollment": {
+                            "methods": [
+                                "finalizeMfaEnrollment"
+                            ]
+                        },
+                        "StartMfaEnrollment": {
+                            "methods": [
+                                "startMfaEnrollment"
+                            ]
+                        },
+                        "WithdrawMfa": {
+                            "methods": [
+                                "withdrawMfa"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "AuthenticationService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AuthenticationServiceGapicClient",
+                    "rpcs": {
+                        "FinalizeMfaSignIn": {
+                            "methods": [
+                                "finalizeMfaSignIn"
+                            ]
+                        },
+                        "StartMfaSignIn": {
+                            "methods": [
+                                "startMfaSignIn"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

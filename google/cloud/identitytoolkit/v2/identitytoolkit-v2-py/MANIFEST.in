@@ -1,0 +1,2 @@
+recursive-include google/cloud/identitytoolkit *.py
+recursive-include google/cloud/identitytoolkit_v2 *.py
