@@ -255,7 +255,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -282,7 +282,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -309,7 +309,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -336,7 +336,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="parent">
@@ -384,7 +384,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="parent">
@@ -432,7 +432,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="parent">
@@ -475,7 +475,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="parent">
@@ -523,7 +523,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="parent">
@@ -571,7 +571,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="parent">
@@ -806,7 +806,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -836,7 +836,7 @@ namespace Google.Cloud.BigQuery.Storage.V1
         /// limits are enforced based on the number of pre-filtered rows, so some
         /// filters can lead to lopsided assignments.
         /// 
-        /// Read sessions automatically expire 24 hours after they are created and do
+        /// Read sessions automatically expire 6 hours after they are created and do
         /// not require manual clean-up by the caller.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
