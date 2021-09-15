@@ -15,6 +15,24 @@ use Google\Protobuf\Internal\GPBUtil;
  * of Kubernetes labels applied to them, which may be used to reference them
  * during pod scheduling. They may also be resized up or down, to accommodate
  * the workload.
+ * These upgrade settings control the level of parallelism and the level of
+ * disruption caused by an upgrade.
+ * maxUnavailable controls the number of nodes that can be simultaneously
+ * unavailable.
+ * maxSurge controls the number of additional nodes that can be added to the
+ * node pool temporarily for the time of the upgrade to increase the number of
+ * available nodes.
+ * (maxUnavailable + maxSurge) determines the level of parallelism (how many
+ * nodes are being upgraded at the same time).
+ * Note: upgrades inevitably introduce some disruption since workloads need to
+ * be moved from old nodes to new, upgraded ones. Even if maxUnavailable=0,
+ * this holds true. (Disruption stays within the limits of
+ * PodDisruptionBudget, if it is configured.)
+ * Consider a hypothetical node pool with 5 nodes having maxSurge=2,
+ * maxUnavailable=1. This means the upgrade process upgrades 3 nodes
+ * simultaneously. It creates 2 additional (upgraded) nodes, then it brings
+ * down 3 old (not yet upgraded) nodes at the same time. This ensures that
+ * there are always at least 4 nodes available.
  *
  * Generated from protobuf message <code>google.container.v1beta1.NodePool</code>
  */
@@ -54,6 +72,13 @@ class NodePool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string locations = 13;</code>
      */
     private $locations;
+    /**
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     */
+    protected $network_config = null;
     /**
      * [Output only] Server-defined URL for the resource.
      *
@@ -152,6 +177,9 @@ class NodePool extends \Google\Protobuf\Internal\Message
      *           value will be used, instead.
      *           Warning: changing node pool locations will result in nodes being added
      *           and/or removed.
+     *     @type \Google\Cloud\Container\V1beta1\NodeNetworkConfig $network_config
+     *           Networking configuration for this NodePool. If specified, it overrides the
+     *           cluster-level defaults.
      *     @type string $self_link
      *           [Output only] Server-defined URL for the resource.
      *     @type string $version
@@ -317,6 +345,44 @@ class NodePool extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->locations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     * @return \Google\Cloud\Container\V1beta1\NodeNetworkConfig|null
+     */
+    public function getNetworkConfig()
+    {
+        return isset($this->network_config) ? $this->network_config : null;
+    }
+
+    public function hasNetworkConfig()
+    {
+        return isset($this->network_config);
+    }
+
+    public function clearNetworkConfig()
+    {
+        unset($this->network_config);
+    }
+
+    /**
+     * Networking configuration for this NodePool. If specified, it overrides the
+     * cluster-level defaults.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeNetworkConfig network_config = 14;</code>
+     * @param \Google\Cloud\Container\V1beta1\NodeNetworkConfig $var
+     * @return $this
+     */
+    public function setNetworkConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\NodeNetworkConfig::class);
+        $this->network_config = $var;
 
         return $this;
     }

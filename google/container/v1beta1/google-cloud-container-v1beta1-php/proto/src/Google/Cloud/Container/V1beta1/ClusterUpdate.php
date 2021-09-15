@@ -174,11 +174,23 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     protected $desired_tpu_config = null;
     /**
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     */
+    protected $desired_l4ilb_subsetting_config = null;
+    /**
      * The desired datapath provider for the cluster.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.DatapathProvider desired_datapath_provider = 50;</code>
      */
     protected $desired_datapath_provider = 0;
+    /**
+     * The desired state of IPv6 connectivity to Google Services.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;</code>
+     */
+    protected $desired_private_ipv6_google_access = 0;
     /**
      * The desired notification configuration.
      *
@@ -212,6 +224,13 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     protected $desired_workload_identity_config = null;
     /**
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.WorkloadCertificates desired_workload_certificates = 61;</code>
+     */
+    protected $desired_workload_certificates = null;
+    /**
      * Configuration for Shielded Nodes.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.ShieldedNodes desired_shielded_nodes = 48;</code>
@@ -224,12 +243,43 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      */
     protected $desired_master = null;
     /**
+     * DNSConfig contains clusterDNS config for this cluster.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.DNSConfig desired_dns_config = 53;</code>
+     */
+    protected $desired_dns_config = null;
+    /**
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;</code>
+     */
+    protected $desired_service_external_ips_config = null;
+    /**
      * AuthenticatorGroupsConfig specifies the config for the cluster security
      * groups settings.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.AuthenticatorGroupsConfig desired_authenticator_groups_config = 63;</code>
      */
     protected $desired_authenticator_groups_config = null;
+    /**
+     * The desired logging configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.LoggingConfig desired_logging_config = 64;</code>
+     */
+    protected $desired_logging_config = null;
+    /**
+     * The desired monitoring configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.MonitoringConfig desired_monitoring_config = 65;</code>
+     */
+    protected $desired_monitoring_config = null;
+    /**
+     * The desired Identity Service component configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    protected $desired_identity_service_config = null;
 
     /**
      * Constructor.
@@ -313,8 +363,12 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      *           The desired release channel configuration.
      *     @type \Google\Cloud\Container\V1beta1\TpuConfig $desired_tpu_config
      *           The desired Cloud TPU configuration.
+     *     @type \Google\Cloud\Container\V1beta1\ILBSubsettingConfig $desired_l4ilb_subsetting_config
+     *           The desired L4 Internal Load Balancer Subsetting configuration.
      *     @type int $desired_datapath_provider
      *           The desired datapath provider for the cluster.
+     *     @type int $desired_private_ipv6_google_access
+     *           The desired state of IPv6 connectivity to Google Services.
      *     @type \Google\Cloud\Container\V1beta1\NotificationConfig $desired_notification_config
      *           The desired notification configuration.
      *     @type string $desired_master_version
@@ -331,13 +385,27 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
      *           Configuration of etcd encryption.
      *     @type \Google\Cloud\Container\V1beta1\WorkloadIdentityConfig $desired_workload_identity_config
      *           Configuration for Workload Identity.
+     *     @type \Google\Cloud\Container\V1beta1\WorkloadCertificates $desired_workload_certificates
+     *           Configuration for issuance of mTLS keys and certificates to Kubernetes
+     *           pods.
      *     @type \Google\Cloud\Container\V1beta1\ShieldedNodes $desired_shielded_nodes
      *           Configuration for Shielded Nodes.
      *     @type \Google\Cloud\Container\V1beta1\Master $desired_master
      *           Configuration for master components.
+     *     @type \Google\Cloud\Container\V1beta1\DNSConfig $desired_dns_config
+     *           DNSConfig contains clusterDNS config for this cluster.
+     *     @type \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig $desired_service_external_ips_config
+     *           ServiceExternalIPsConfig specifies the config for the use of Services with
+     *           ExternalIPs field.
      *     @type \Google\Cloud\Container\V1beta1\AuthenticatorGroupsConfig $desired_authenticator_groups_config
      *           AuthenticatorGroupsConfig specifies the config for the cluster security
      *           groups settings.
+     *     @type \Google\Cloud\Container\V1beta1\LoggingConfig $desired_logging_config
+     *           The desired logging configuration.
+     *     @type \Google\Cloud\Container\V1beta1\MonitoringConfig $desired_monitoring_config
+     *           The desired monitoring configuration.
+     *     @type \Google\Cloud\Container\V1beta1\IdentityServiceConfig $desired_identity_service_config
+     *           The desired Identity Service component configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -1078,6 +1146,42 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     * @return \Google\Cloud\Container\V1beta1\ILBSubsettingConfig|null
+     */
+    public function getDesiredL4IlbSubsettingConfig()
+    {
+        return isset($this->desired_l4ilb_subsetting_config) ? $this->desired_l4ilb_subsetting_config : null;
+    }
+
+    public function hasDesiredL4IlbSubsettingConfig()
+    {
+        return isset($this->desired_l4ilb_subsetting_config);
+    }
+
+    public function clearDesiredL4IlbSubsettingConfig()
+    {
+        unset($this->desired_l4ilb_subsetting_config);
+    }
+
+    /**
+     * The desired L4 Internal Load Balancer Subsetting configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ILBSubsettingConfig desired_l4ilb_subsetting_config = 39;</code>
+     * @param \Google\Cloud\Container\V1beta1\ILBSubsettingConfig $var
+     * @return $this
+     */
+    public function setDesiredL4IlbSubsettingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\ILBSubsettingConfig::class);
+        $this->desired_l4ilb_subsetting_config = $var;
+
+        return $this;
+    }
+
+    /**
      * The desired datapath provider for the cluster.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.DatapathProvider desired_datapath_provider = 50;</code>
@@ -1099,6 +1203,32 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Container\V1beta1\DatapathProvider::class);
         $this->desired_datapath_provider = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired state of IPv6 connectivity to Google Services.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;</code>
+     * @return int
+     */
+    public function getDesiredPrivateIpv6GoogleAccess()
+    {
+        return $this->desired_private_ipv6_google_access;
+    }
+
+    /**
+     * The desired state of IPv6 connectivity to Google Services.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.PrivateIPv6GoogleAccess desired_private_ipv6_google_access = 51;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDesiredPrivateIpv6GoogleAccess($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Container\V1beta1\PrivateIPv6GoogleAccess::class);
+        $this->desired_private_ipv6_google_access = $var;
 
         return $this;
     }
@@ -1254,6 +1384,44 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.WorkloadCertificates desired_workload_certificates = 61;</code>
+     * @return \Google\Cloud\Container\V1beta1\WorkloadCertificates|null
+     */
+    public function getDesiredWorkloadCertificates()
+    {
+        return isset($this->desired_workload_certificates) ? $this->desired_workload_certificates : null;
+    }
+
+    public function hasDesiredWorkloadCertificates()
+    {
+        return isset($this->desired_workload_certificates);
+    }
+
+    public function clearDesiredWorkloadCertificates()
+    {
+        unset($this->desired_workload_certificates);
+    }
+
+    /**
+     * Configuration for issuance of mTLS keys and certificates to Kubernetes
+     * pods.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.WorkloadCertificates desired_workload_certificates = 61;</code>
+     * @param \Google\Cloud\Container\V1beta1\WorkloadCertificates $var
+     * @return $this
+     */
+    public function setDesiredWorkloadCertificates($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\WorkloadCertificates::class);
+        $this->desired_workload_certificates = $var;
+
+        return $this;
+    }
+
+    /**
      * Configuration for Shielded Nodes.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.ShieldedNodes desired_shielded_nodes = 48;</code>
@@ -1326,6 +1494,80 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * DNSConfig contains clusterDNS config for this cluster.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.DNSConfig desired_dns_config = 53;</code>
+     * @return \Google\Cloud\Container\V1beta1\DNSConfig|null
+     */
+    public function getDesiredDnsConfig()
+    {
+        return isset($this->desired_dns_config) ? $this->desired_dns_config : null;
+    }
+
+    public function hasDesiredDnsConfig()
+    {
+        return isset($this->desired_dns_config);
+    }
+
+    public function clearDesiredDnsConfig()
+    {
+        unset($this->desired_dns_config);
+    }
+
+    /**
+     * DNSConfig contains clusterDNS config for this cluster.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.DNSConfig desired_dns_config = 53;</code>
+     * @param \Google\Cloud\Container\V1beta1\DNSConfig $var
+     * @return $this
+     */
+    public function setDesiredDnsConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\DNSConfig::class);
+        $this->desired_dns_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;</code>
+     * @return \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig|null
+     */
+    public function getDesiredServiceExternalIpsConfig()
+    {
+        return isset($this->desired_service_external_ips_config) ? $this->desired_service_external_ips_config : null;
+    }
+
+    public function hasDesiredServiceExternalIpsConfig()
+    {
+        return isset($this->desired_service_external_ips_config);
+    }
+
+    public function clearDesiredServiceExternalIpsConfig()
+    {
+        unset($this->desired_service_external_ips_config);
+    }
+
+    /**
+     * ServiceExternalIPsConfig specifies the config for the use of Services with
+     * ExternalIPs field.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ServiceExternalIPsConfig desired_service_external_ips_config = 60;</code>
+     * @param \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig $var
+     * @return $this
+     */
+    public function setDesiredServiceExternalIpsConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig::class);
+        $this->desired_service_external_ips_config = $var;
+
+        return $this;
+    }
+
+    /**
      * AuthenticatorGroupsConfig specifies the config for the cluster security
      * groups settings.
      *
@@ -1359,6 +1601,114 @@ class ClusterUpdate extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\AuthenticatorGroupsConfig::class);
         $this->desired_authenticator_groups_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired logging configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.LoggingConfig desired_logging_config = 64;</code>
+     * @return \Google\Cloud\Container\V1beta1\LoggingConfig|null
+     */
+    public function getDesiredLoggingConfig()
+    {
+        return isset($this->desired_logging_config) ? $this->desired_logging_config : null;
+    }
+
+    public function hasDesiredLoggingConfig()
+    {
+        return isset($this->desired_logging_config);
+    }
+
+    public function clearDesiredLoggingConfig()
+    {
+        unset($this->desired_logging_config);
+    }
+
+    /**
+     * The desired logging configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.LoggingConfig desired_logging_config = 64;</code>
+     * @param \Google\Cloud\Container\V1beta1\LoggingConfig $var
+     * @return $this
+     */
+    public function setDesiredLoggingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\LoggingConfig::class);
+        $this->desired_logging_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired monitoring configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.MonitoringConfig desired_monitoring_config = 65;</code>
+     * @return \Google\Cloud\Container\V1beta1\MonitoringConfig|null
+     */
+    public function getDesiredMonitoringConfig()
+    {
+        return isset($this->desired_monitoring_config) ? $this->desired_monitoring_config : null;
+    }
+
+    public function hasDesiredMonitoringConfig()
+    {
+        return isset($this->desired_monitoring_config);
+    }
+
+    public function clearDesiredMonitoringConfig()
+    {
+        unset($this->desired_monitoring_config);
+    }
+
+    /**
+     * The desired monitoring configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.MonitoringConfig desired_monitoring_config = 65;</code>
+     * @param \Google\Cloud\Container\V1beta1\MonitoringConfig $var
+     * @return $this
+     */
+    public function setDesiredMonitoringConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\MonitoringConfig::class);
+        $this->desired_monitoring_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired Identity Service component configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     * @return \Google\Cloud\Container\V1beta1\IdentityServiceConfig|null
+     */
+    public function getDesiredIdentityServiceConfig()
+    {
+        return isset($this->desired_identity_service_config) ? $this->desired_identity_service_config : null;
+    }
+
+    public function hasDesiredIdentityServiceConfig()
+    {
+        return isset($this->desired_identity_service_config);
+    }
+
+    public function clearDesiredIdentityServiceConfig()
+    {
+        unset($this->desired_identity_service_config);
+    }
+
+    /**
+     * The desired Identity Service component configuration.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     * @param \Google\Cloud\Container\V1beta1\IdentityServiceConfig $var
+     * @return $this
+     */
+    public function setDesiredIdentityServiceConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\IdentityServiceConfig::class);
+        $this->desired_identity_service_config = $var;
 
         return $this;
     }

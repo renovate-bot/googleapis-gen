@@ -274,6 +274,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 234: {
+            com.google.container.v1beta1.VirtualNIC.Builder subBuilder = null;
+            if (gvnic_ != null) {
+              subBuilder = gvnic_.toBuilder();
+            }
+            gvnic_ = input.readMessage(com.google.container.v1beta1.VirtualNIC.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gvnic_);
+              gvnic_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -598,8 +611,6 @@ private static final long serialVersionUID = 0L;
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -649,8 +660,6 @@ private static final long serialVersionUID = 0L;
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -690,8 +699,6 @@ private static final long serialVersionUID = 0L;
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -736,8 +743,6 @@ private static final long serialVersionUID = 0L;
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -1665,6 +1670,44 @@ private static final long serialVersionUID = 0L;
     return getEphemeralStorageConfig();
   }
 
+  public static final int GVNIC_FIELD_NUMBER = 29;
+  private com.google.container.v1beta1.VirtualNIC gvnic_;
+  /**
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   * @return Whether the gvnic field is set.
+   */
+  @java.lang.Override
+  public boolean hasGvnic() {
+    return gvnic_ != null;
+  }
+  /**
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   * @return The gvnic.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.VirtualNIC getGvnic() {
+    return gvnic_ == null ? com.google.container.v1beta1.VirtualNIC.getDefaultInstance() : gvnic_;
+  }
+  /**
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder() {
+    return getGvnic();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1753,6 +1796,9 @@ private static final long serialVersionUID = 0L;
     }
     if (ephemeralStorageConfig_ != null) {
       output.writeMessage(24, getEphemeralStorageConfig());
+    }
+    if (gvnic_ != null) {
+      output.writeMessage(29, getGvnic());
     }
     unknownFields.writeTo(output);
   }
@@ -1868,6 +1914,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(24, getEphemeralStorageConfig());
     }
+    if (gvnic_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(29, getGvnic());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1949,6 +1999,11 @@ private static final long serialVersionUID = 0L;
     if (hasEphemeralStorageConfig()) {
       if (!getEphemeralStorageConfig()
           .equals(other.getEphemeralStorageConfig())) return false;
+    }
+    if (hasGvnic() != other.hasGvnic()) return false;
+    if (hasGvnic()) {
+      if (!getGvnic()
+          .equals(other.getGvnic())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2033,6 +2088,10 @@ private static final long serialVersionUID = 0L;
     if (hasEphemeralStorageConfig()) {
       hash = (37 * hash) + EPHEMERAL_STORAGE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEphemeralStorageConfig().hashCode();
+    }
+    if (hasGvnic()) {
+      hash = (37 * hash) + GVNIC_FIELD_NUMBER;
+      hash = (53 * hash) + getGvnic().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2279,6 +2338,12 @@ private static final long serialVersionUID = 0L;
         ephemeralStorageConfig_ = null;
         ephemeralStorageConfigBuilder_ = null;
       }
+      if (gvnicBuilder_ == null) {
+        gvnic_ = null;
+      } else {
+        gvnic_ = null;
+        gvnicBuilder_ = null;
+      }
       return this;
     }
 
@@ -2382,6 +2447,11 @@ private static final long serialVersionUID = 0L;
         result.ephemeralStorageConfig_ = ephemeralStorageConfig_;
       } else {
         result.ephemeralStorageConfig_ = ephemeralStorageConfigBuilder_.build();
+      }
+      if (gvnicBuilder_ == null) {
+        result.gvnic_ = gvnic_;
+      } else {
+        result.gvnic_ = gvnicBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2564,6 +2634,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasEphemeralStorageConfig()) {
         mergeEphemeralStorageConfig(other.getEphemeralStorageConfig());
+      }
+      if (other.hasGvnic()) {
+        mergeGvnic(other.getGvnic());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3158,8 +3231,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3209,8 +3280,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3250,8 +3319,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3296,8 +3363,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3350,8 +3415,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3402,8 +3465,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3447,8 +3508,6 @@ private static final long serialVersionUID = 0L;
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -6327,6 +6386,161 @@ private static final long serialVersionUID = 0L;
         ephemeralStorageConfig_ = null;
       }
       return ephemeralStorageConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.VirtualNIC gvnic_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1beta1.VirtualNIC, com.google.container.v1beta1.VirtualNIC.Builder, com.google.container.v1beta1.VirtualNICOrBuilder> gvnicBuilder_;
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     * @return Whether the gvnic field is set.
+     */
+    public boolean hasGvnic() {
+      return gvnicBuilder_ != null || gvnic_ != null;
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     * @return The gvnic.
+     */
+    public com.google.container.v1beta1.VirtualNIC getGvnic() {
+      if (gvnicBuilder_ == null) {
+        return gvnic_ == null ? com.google.container.v1beta1.VirtualNIC.getDefaultInstance() : gvnic_;
+      } else {
+        return gvnicBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder setGvnic(com.google.container.v1beta1.VirtualNIC value) {
+      if (gvnicBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gvnic_ = value;
+        onChanged();
+      } else {
+        gvnicBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder setGvnic(
+        com.google.container.v1beta1.VirtualNIC.Builder builderForValue) {
+      if (gvnicBuilder_ == null) {
+        gvnic_ = builderForValue.build();
+        onChanged();
+      } else {
+        gvnicBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder mergeGvnic(com.google.container.v1beta1.VirtualNIC value) {
+      if (gvnicBuilder_ == null) {
+        if (gvnic_ != null) {
+          gvnic_ =
+            com.google.container.v1beta1.VirtualNIC.newBuilder(gvnic_).mergeFrom(value).buildPartial();
+        } else {
+          gvnic_ = value;
+        }
+        onChanged();
+      } else {
+        gvnicBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    public Builder clearGvnic() {
+      if (gvnicBuilder_ == null) {
+        gvnic_ = null;
+        onChanged();
+      } else {
+        gvnic_ = null;
+        gvnicBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    public com.google.container.v1beta1.VirtualNIC.Builder getGvnicBuilder() {
+      
+      onChanged();
+      return getGvnicFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    public com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder() {
+      if (gvnicBuilder_ != null) {
+        return gvnicBuilder_.getMessageOrBuilder();
+      } else {
+        return gvnic_ == null ?
+            com.google.container.v1beta1.VirtualNIC.getDefaultInstance() : gvnic_;
+      }
+    }
+    /**
+     * <pre>
+     * Enable or disable gvnic on the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1beta1.VirtualNIC, com.google.container.v1beta1.VirtualNIC.Builder, com.google.container.v1beta1.VirtualNICOrBuilder> 
+        getGvnicFieldBuilder() {
+      if (gvnicBuilder_ == null) {
+        gvnicBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.VirtualNIC, com.google.container.v1beta1.VirtualNIC.Builder, com.google.container.v1beta1.VirtualNICOrBuilder>(
+                getGvnic(),
+                getParentForChildren(),
+                isClean());
+        gvnic_ = null;
+      }
+      return gvnicBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

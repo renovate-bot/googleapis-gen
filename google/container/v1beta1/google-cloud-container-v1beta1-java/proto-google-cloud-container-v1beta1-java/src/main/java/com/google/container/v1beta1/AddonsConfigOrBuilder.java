@@ -295,27 +295,27 @@ public interface AddonsConfigOrBuilder extends
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    * @return Whether the kalmConfig field is set.
    */
-  boolean hasKalmConfig();
+  @java.lang.Deprecated boolean hasKalmConfig();
   /**
    * <pre>
    * Configuration for the KALM addon, which manages the lifecycle of k8s
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    * @return The kalmConfig.
    */
-  com.google.container.v1beta1.KalmConfig getKalmConfig();
+  @java.lang.Deprecated com.google.container.v1beta1.KalmConfig getKalmConfig();
   /**
    * <pre>
    * Configuration for the KALM addon, which manages the lifecycle of k8s
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    */
-  com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder();
+  @java.lang.Deprecated com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder();
 }

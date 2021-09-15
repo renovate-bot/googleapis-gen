@@ -212,6 +212,8 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 TpuConfig = new TpuConfig(),
                 NotificationConfig = new NotificationConfig(),
                 ConfidentialNodes = new ConfidentialNodes(),
+                WorkloadCertificates = new WorkloadCertificates(),
+                IdentityServiceConfig = new IdentityServiceConfig(),
                 SelfLink = "self_link7e87f12d",
 #pragma warning disable CS0612
                 Zone = "zone255f4ea8",
@@ -247,6 +249,11 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                     new StatusCondition(),
                 },
                 Master = new Master(),
+                Autopilot = new Autopilot(),
+                Id = "id74b70bb8",
+                NodePoolDefaults = new NodePoolDefaults(),
+                LoggingConfig = new LoggingConfig(),
+                MonitoringConfig = new MonitoringConfig(),
             };
             mockGrpcClient.Setup(x => x.GetCluster(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
@@ -323,6 +330,8 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 TpuConfig = new TpuConfig(),
                 NotificationConfig = new NotificationConfig(),
                 ConfidentialNodes = new ConfidentialNodes(),
+                WorkloadCertificates = new WorkloadCertificates(),
+                IdentityServiceConfig = new IdentityServiceConfig(),
                 SelfLink = "self_link7e87f12d",
 #pragma warning disable CS0612
                 Zone = "zone255f4ea8",
@@ -358,6 +367,11 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                     new StatusCondition(),
                 },
                 Master = new Master(),
+                Autopilot = new Autopilot(),
+                Id = "id74b70bb8",
+                NodePoolDefaults = new NodePoolDefaults(),
+                LoggingConfig = new LoggingConfig(),
+                MonitoringConfig = new MonitoringConfig(),
             };
             mockGrpcClient.Setup(x => x.GetClusterAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Cluster>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
@@ -435,6 +449,8 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 TpuConfig = new TpuConfig(),
                 NotificationConfig = new NotificationConfig(),
                 ConfidentialNodes = new ConfidentialNodes(),
+                WorkloadCertificates = new WorkloadCertificates(),
+                IdentityServiceConfig = new IdentityServiceConfig(),
                 SelfLink = "self_link7e87f12d",
 #pragma warning disable CS0612
                 Zone = "zone255f4ea8",
@@ -470,6 +486,11 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                     new StatusCondition(),
                 },
                 Master = new Master(),
+                Autopilot = new Autopilot(),
+                Id = "id74b70bb8",
+                NodePoolDefaults = new NodePoolDefaults(),
+                LoggingConfig = new LoggingConfig(),
+                MonitoringConfig = new MonitoringConfig(),
             };
             mockGrpcClient.Setup(x => x.GetCluster(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
@@ -547,6 +568,8 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 TpuConfig = new TpuConfig(),
                 NotificationConfig = new NotificationConfig(),
                 ConfidentialNodes = new ConfidentialNodes(),
+                WorkloadCertificates = new WorkloadCertificates(),
+                IdentityServiceConfig = new IdentityServiceConfig(),
                 SelfLink = "self_link7e87f12d",
 #pragma warning disable CS0612
                 Zone = "zone255f4ea8",
@@ -582,6 +605,11 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                     new StatusCondition(),
                 },
                 Master = new Master(),
+                Autopilot = new Autopilot(),
+                Id = "id74b70bb8",
+                NodePoolDefaults = new NodePoolDefaults(),
+                LoggingConfig = new LoggingConfig(),
+                MonitoringConfig = new MonitoringConfig(),
             };
             mockGrpcClient.Setup(x => x.GetClusterAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Cluster>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
@@ -1053,8 +1081,12 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 },
                 WorkloadMetadataConfig = new WorkloadMetadataConfig(),
                 UpgradeSettings = new NodePool.Types.UpgradeSettings(),
+                Tags = new NetworkTags(),
+                Taints = new NodeTaints(),
+                Labels = new NodeLabels(),
                 LinuxNodeConfig = new LinuxNodeConfig(),
                 KubeletConfig = new NodeKubeletConfig(),
+                Gvnic = new VirtualNIC(),
             };
             Operation expectedResponse = new Operation
             {
@@ -1116,8 +1148,12 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 },
                 WorkloadMetadataConfig = new WorkloadMetadataConfig(),
                 UpgradeSettings = new NodePool.Types.UpgradeSettings(),
+                Tags = new NetworkTags(),
+                Taints = new NodeTaints(),
+                Labels = new NodeLabels(),
                 LinuxNodeConfig = new LinuxNodeConfig(),
                 KubeletConfig = new NodeKubeletConfig(),
+                Gvnic = new VirtualNIC(),
             };
             Operation expectedResponse = new Operation
             {
@@ -3162,6 +3198,13 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 {
                     new ServerConfig.Types.ReleaseChannelConfig(),
                 },
+                WindowsVersionMaps =
+                {
+                    {
+                        "key8a0b6e3c",
+                        new WindowsVersions()
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetServerConfig(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
@@ -3201,6 +3244,13 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 Channels =
                 {
                     new ServerConfig.Types.ReleaseChannelConfig(),
+                },
+                WindowsVersionMaps =
+                {
+                    {
+                        "key8a0b6e3c",
+                        new WindowsVersions()
+                    },
                 },
             };
             mockGrpcClient.Setup(x => x.GetServerConfigAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<ServerConfig>(stt::Task.FromResult(expectedResponse), null, null, null, null));
@@ -3243,6 +3293,13 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 {
                     new ServerConfig.Types.ReleaseChannelConfig(),
                 },
+                WindowsVersionMaps =
+                {
+                    {
+                        "key8a0b6e3c",
+                        new WindowsVersions()
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetServerConfig(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ClusterManagerClient client = new ClusterManagerClientImpl(mockGrpcClient.Object, null);
@@ -3283,6 +3340,13 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 Channels =
                 {
                     new ServerConfig.Types.ReleaseChannelConfig(),
+                },
+                WindowsVersionMaps =
+                {
+                    {
+                        "key8a0b6e3c",
+                        new WindowsVersions()
+                    },
                 },
             };
             mockGrpcClient.Setup(x => x.GetServerConfigAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<ServerConfig>(stt::Task.FromResult(expectedResponse), null, null, null, null));
@@ -3463,6 +3527,7 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 {
                     "locationsc7b6c0b4",
                 },
+                NetworkConfig = new NodeNetworkConfig(),
                 SelfLink = "self_link7e87f12d",
                 Version = "version102ff72a",
                 InstanceGroupUrls =
@@ -3513,6 +3578,7 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 {
                     "locationsc7b6c0b4",
                 },
+                NetworkConfig = new NodeNetworkConfig(),
                 SelfLink = "self_link7e87f12d",
                 Version = "version102ff72a",
                 InstanceGroupUrls =
@@ -3564,6 +3630,7 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 {
                     "locationsc7b6c0b4",
                 },
+                NetworkConfig = new NodeNetworkConfig(),
                 SelfLink = "self_link7e87f12d",
                 Version = "version102ff72a",
                 InstanceGroupUrls =
@@ -3615,6 +3682,7 @@ namespace Google.Cloud.Container.V1Beta1.Tests
                 {
                     "locationsc7b6c0b4",
                 },
+                NetworkConfig = new NodeNetworkConfig(),
                 SelfLink = "self_link7e87f12d",
                 Version = "version102ff72a",
                 InstanceGroupUrls =

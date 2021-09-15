@@ -65,11 +65,14 @@ use Google\Cloud\Container\V1beta1\ListUsableSubnetworksResponse;
 use Google\Cloud\Container\V1beta1\MaintenancePolicy;
 use Google\Cloud\Container\V1beta1\MasterAuth;
 use Google\Cloud\Container\V1beta1\NetworkPolicy;
+use Google\Cloud\Container\V1beta1\NetworkTags;
 use Google\Cloud\Container\V1beta1\NodeKubeletConfig;
+use Google\Cloud\Container\V1beta1\NodeLabels;
 use Google\Cloud\Container\V1beta1\NodeManagement;
 use Google\Cloud\Container\V1beta1\NodePool;
 use Google\Cloud\Container\V1beta1\NodePool\UpgradeSettings;
 use Google\Cloud\Container\V1beta1\NodePoolAutoscaling;
+use Google\Cloud\Container\V1beta1\NodeTaints;
 use Google\Cloud\Container\V1beta1\Operation;
 use Google\Cloud\Container\V1beta1\RollbackNodePoolUpgradeRequest;
 use Google\Cloud\Container\V1beta1\ServerConfig;
@@ -90,6 +93,7 @@ use Google\Cloud\Container\V1beta1\StartIPRotationRequest;
 use Google\Cloud\Container\V1beta1\UpdateClusterRequest;
 use Google\Cloud\Container\V1beta1\UpdateMasterRequest;
 use Google\Cloud\Container\V1beta1\UpdateNodePoolRequest;
+use Google\Cloud\Container\V1beta1\VirtualNIC;
 use Google\Cloud\Container\V1beta1\WorkloadMetadataConfig;
 use Google\Protobuf\GPBEmpty;
 
@@ -1349,8 +1353,8 @@ class ClusterManagerGapicClient
      *                                   field.
      * @param string       $clusterId    Required. Deprecated. The name of the cluster to upgrade.
      *                                   This field has been deprecated and replaced by the name field.
-     * @param AddonsConfig $addonsConfig Required. The desired configurations for the various addons available to run in the
-     *                                   cluster.
+     * @param AddonsConfig $addonsConfig Required. The desired configurations for the various addons available to
+     *                                   run in the cluster.
      * @param array        $optionalArgs {
      *     Optional.
      *
@@ -2118,7 +2122,9 @@ class ClusterManagerGapicClient
     }
 
     /**
-     * Sets the size for a specific node pool.
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
      *
      * Sample code:
      * ```
@@ -2462,10 +2468,24 @@ class ClusterManagerGapicClient
      *           `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/*`.
      *     @type UpgradeSettings $upgradeSettings
      *           Upgrade settings control disruption and speed of the upgrade.
+     *     @type NetworkTags $tags
+     *           The desired network tags to be applied to all nodes in the node pool.
+     *           If this field is not present, the tags will not be changed. Otherwise,
+     *           the existing network tags will be *replaced* with the provided tags.
+     *     @type NodeTaints $taints
+     *           The desired node taints to be applied to all nodes in the node pool.
+     *           If this field is not present, the taints will not be changed. Otherwise,
+     *           the existing node taints will be *replaced* with the provided taints.
+     *     @type NodeLabels $labels
+     *           The desired node labels to be applied to all nodes in the node pool.
+     *           If this field is not present, the labels will not be changed. Otherwise,
+     *           the existing node labels will be *replaced* with the provided labels.
      *     @type LinuxNodeConfig $linuxNodeConfig
      *           Parameters that can be configured on Linux nodes.
      *     @type NodeKubeletConfig $kubeletConfig
      *           Node kubelet configs.
+     *     @type VirtualNIC $gvnic
+     *           Enable or disable gvnic on the node pool.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -2510,12 +2530,28 @@ class ClusterManagerGapicClient
             $request->setUpgradeSettings($optionalArgs['upgradeSettings']);
         }
 
+        if (isset($optionalArgs['tags'])) {
+            $request->setTags($optionalArgs['tags']);
+        }
+
+        if (isset($optionalArgs['taints'])) {
+            $request->setTaints($optionalArgs['taints']);
+        }
+
+        if (isset($optionalArgs['labels'])) {
+            $request->setLabels($optionalArgs['labels']);
+        }
+
         if (isset($optionalArgs['linuxNodeConfig'])) {
             $request->setLinuxNodeConfig($optionalArgs['linuxNodeConfig']);
         }
 
         if (isset($optionalArgs['kubeletConfig'])) {
             $request->setKubeletConfig($optionalArgs['kubeletConfig']);
+        }
+
+        if (isset($optionalArgs['gvnic'])) {
+            $request->setGvnic($optionalArgs['gvnic']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

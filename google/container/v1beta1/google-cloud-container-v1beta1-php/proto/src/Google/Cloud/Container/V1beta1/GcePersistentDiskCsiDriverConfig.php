@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Configuration for the Compute Engine PD CSI driver. This option can only be
- * enabled at cluster creation time.
+ * Configuration for the Compute Engine PD CSI driver.
  *
  * Generated from protobuf message <code>google.container.v1beta1.GcePersistentDiskCsiDriverConfig</code>
  */

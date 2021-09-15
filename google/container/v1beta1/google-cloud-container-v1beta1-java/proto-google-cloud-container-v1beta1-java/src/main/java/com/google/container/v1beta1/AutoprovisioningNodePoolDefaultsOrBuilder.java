@@ -301,7 +301,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder extends
 
   /**
    * <pre>
-   * The image type to use for node created by NodeAutoprovisioning.
+   * The image type to use for NAP created node.
    * </pre>
    *
    * <code>string image_type = 10;</code>
@@ -310,7 +310,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder extends
   java.lang.String getImageType();
   /**
    * <pre>
-   * The image type to use for node created by NodeAutoprovisioning.
+   * The image type to use for NAP created node.
    * </pre>
    *
    * <code>string image_type = 10;</code>

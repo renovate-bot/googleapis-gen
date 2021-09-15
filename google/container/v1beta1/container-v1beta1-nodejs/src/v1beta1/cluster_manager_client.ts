@@ -706,10 +706,24 @@ export class ClusterManagerClient {
  *   `projects/* /locations/* /clusters/* /nodePools/*`.
  * @param {google.container.v1beta1.NodePool.UpgradeSettings} request.upgradeSettings
  *   Upgrade settings control disruption and speed of the upgrade.
+ * @param {google.container.v1beta1.NetworkTags} request.tags
+ *   The desired network tags to be applied to all nodes in the node pool.
+ *   If this field is not present, the tags will not be changed. Otherwise,
+ *   the existing network tags will be *replaced* with the provided tags.
+ * @param {google.container.v1beta1.NodeTaints} request.taints
+ *   The desired node taints to be applied to all nodes in the node pool.
+ *   If this field is not present, the taints will not be changed. Otherwise,
+ *   the existing node taints will be *replaced* with the provided taints.
+ * @param {google.container.v1beta1.NodeLabels} request.labels
+ *   The desired node labels to be applied to all nodes in the node pool.
+ *   If this field is not present, the labels will not be changed. Otherwise,
+ *   the existing node labels will be *replaced* with the provided labels.
  * @param {google.container.v1beta1.LinuxNodeConfig} request.linuxNodeConfig
  *   Parameters that can be configured on Linux nodes.
  * @param {google.container.v1beta1.NodeKubeletConfig} request.kubeletConfig
  *   Node kubelet configs.
+ * @param {google.container.v1beta1.VirtualNIC} request.gvnic
+ *   Enable or disable gvnic on the node pool.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1078,8 +1092,8 @@ export class ClusterManagerClient {
  *   Required. Deprecated. The name of the cluster to upgrade.
  *   This field has been deprecated and replaced by the name field.
  * @param {google.container.v1beta1.AddonsConfig} request.addonsConfig
- *   Required. The desired configurations for the various addons available to run in the
- *   cluster.
+ *   Required. The desired configurations for the various addons available to
+ *   run in the cluster.
  * @param {string} request.name
  *   The name (project, location, cluster) of the cluster to set addons.
  *   Specified in the format `projects/* /locations/* /clusters/*`.
@@ -2822,7 +2836,9 @@ export class ClusterManagerClient {
           protos.google.container.v1beta1.ISetNodePoolSizeRequest|null|undefined,
           {}|null|undefined>): void;
 /**
- * Sets the size for a specific node pool.
+ * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+ * used for all replicas, including future replicas created by modifying
+ * {@link google.container.v1beta1.NodePool.locations|NodePool.locations}.
  *
  * @param {Object} request
  *   The request object that will be sent.

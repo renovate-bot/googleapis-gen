@@ -31,7 +31,7 @@ class NodePoolAutoscaling extends \Google\Protobuf\Internal\Message
     protected $min_node_count = 0;
     /**
      * Maximum number of nodes in the NodePool. Must be >= min_node_count. There
-     * has to enough quota to scale up the cluster.
+     * has to be enough quota to scale up the cluster.
      *
      * Generated from protobuf field <code>int32 max_node_count = 3;</code>
      */
@@ -56,7 +56,7 @@ class NodePoolAutoscaling extends \Google\Protobuf\Internal\Message
      *           max_node_count.
      *     @type int $max_node_count
      *           Maximum number of nodes in the NodePool. Must be >= min_node_count. There
-     *           has to enough quota to scale up the cluster.
+     *           has to be enough quota to scale up the cluster.
      *     @type bool $autoprovisioned
      *           Can this node pool be deleted automatically.
      * }
@@ -122,7 +122,7 @@ class NodePoolAutoscaling extends \Google\Protobuf\Internal\Message
 
     /**
      * Maximum number of nodes in the NodePool. Must be >= min_node_count. There
-     * has to enough quota to scale up the cluster.
+     * has to be enough quota to scale up the cluster.
      *
      * Generated from protobuf field <code>int32 max_node_count = 3;</code>
      * @return int
@@ -134,7 +134,7 @@ class NodePoolAutoscaling extends \Google\Protobuf\Internal\Message
 
     /**
      * Maximum number of nodes in the NodePool. Must be >= min_node_count. There
-     * has to enough quota to scale up the cluster.
+     * has to be enough quota to scale up the cluster.
      *
      * Generated from protobuf field <code>int32 max_node_count = 3;</code>
      * @param int $var

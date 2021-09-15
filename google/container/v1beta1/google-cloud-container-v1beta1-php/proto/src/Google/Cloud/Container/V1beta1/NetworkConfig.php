@@ -50,12 +50,39 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
      */
     protected $default_snat_status = null;
     /**
+     * Whether L4ILB Subsetting is enabled for this cluster.
+     *
+     * Generated from protobuf field <code>bool enable_l4ilb_subsetting = 10;</code>
+     */
+    protected $enable_l4ilb_subsetting = false;
+    /**
      * The desired datapath provider for this cluster. By default, uses the
      * IPTables-based kube-proxy implementation.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.DatapathProvider datapath_provider = 11;</code>
      */
     protected $datapath_provider = 0;
+    /**
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+     */
+    protected $private_ipv6_google_access = 0;
+    /**
+     * DNSConfig contains clusterDNS config for this cluster.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     */
+    protected $dns_config = null;
+    /**
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
+     */
+    protected $service_external_ips_config = null;
 
     /**
      * Constructor.
@@ -81,9 +108,20 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
      *           will be disabled when default_snat_status is disabled. When disabled is set
      *           to false, default IP masquerade rules will be applied to the nodes to
      *           prevent sNAT on cluster internal traffic.
+     *     @type bool $enable_l4ilb_subsetting
+     *           Whether L4ILB Subsetting is enabled for this cluster.
      *     @type int $datapath_provider
      *           The desired datapath provider for this cluster. By default, uses the
      *           IPTables-based kube-proxy implementation.
+     *     @type int $private_ipv6_google_access
+     *           The desired state of IPv6 connectivity to Google Services.
+     *           By default, no private IPv6 access to or from Google Services (all access
+     *           will be via IPv4)
+     *     @type \Google\Cloud\Container\V1beta1\DNSConfig $dns_config
+     *           DNSConfig contains clusterDNS config for this cluster.
+     *     @type \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig $service_external_ips_config
+     *           ServiceExternalIPsConfig specifies if services with externalIPs field are
+     *           blocked or not.
      * }
      */
     public function __construct($data = NULL) {
@@ -226,6 +264,32 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Whether L4ILB Subsetting is enabled for this cluster.
+     *
+     * Generated from protobuf field <code>bool enable_l4ilb_subsetting = 10;</code>
+     * @return bool
+     */
+    public function getEnableL4IlbSubsetting()
+    {
+        return $this->enable_l4ilb_subsetting;
+    }
+
+    /**
+     * Whether L4ILB Subsetting is enabled for this cluster.
+     *
+     * Generated from protobuf field <code>bool enable_l4ilb_subsetting = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableL4IlbSubsetting($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_l4ilb_subsetting = $var;
+
+        return $this;
+    }
+
+    /**
      * The desired datapath provider for this cluster. By default, uses the
      * IPTables-based kube-proxy implementation.
      *
@@ -249,6 +313,110 @@ class NetworkConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Container\V1beta1\DatapathProvider::class);
         $this->datapath_provider = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+     * @return int
+     */
+    public function getPrivateIpv6GoogleAccess()
+    {
+        return $this->private_ipv6_google_access;
+    }
+
+    /**
+     * The desired state of IPv6 connectivity to Google Services.
+     * By default, no private IPv6 access to or from Google Services (all access
+     * will be via IPv4)
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.PrivateIPv6GoogleAccess private_ipv6_google_access = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPrivateIpv6GoogleAccess($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\Container\V1beta1\PrivateIPv6GoogleAccess::class);
+        $this->private_ipv6_google_access = $var;
+
+        return $this;
+    }
+
+    /**
+     * DNSConfig contains clusterDNS config for this cluster.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     * @return \Google\Cloud\Container\V1beta1\DNSConfig|null
+     */
+    public function getDnsConfig()
+    {
+        return isset($this->dns_config) ? $this->dns_config : null;
+    }
+
+    public function hasDnsConfig()
+    {
+        return isset($this->dns_config);
+    }
+
+    public function clearDnsConfig()
+    {
+        unset($this->dns_config);
+    }
+
+    /**
+     * DNSConfig contains clusterDNS config for this cluster.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.DNSConfig dns_config = 13;</code>
+     * @param \Google\Cloud\Container\V1beta1\DNSConfig $var
+     * @return $this
+     */
+    public function setDnsConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\DNSConfig::class);
+        $this->dns_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
+     * @return \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig|null
+     */
+    public function getServiceExternalIpsConfig()
+    {
+        return isset($this->service_external_ips_config) ? $this->service_external_ips_config : null;
+    }
+
+    public function hasServiceExternalIpsConfig()
+    {
+        return isset($this->service_external_ips_config);
+    }
+
+    public function clearServiceExternalIpsConfig()
+    {
+        unset($this->service_external_ips_config);
+    }
+
+    /**
+     * ServiceExternalIPsConfig specifies if services with externalIPs field are
+     * blocked or not.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.ServiceExternalIPsConfig service_external_ips_config = 15;</code>
+     * @param \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig $var
+     * @return $this
+     */
+    public function setServiceExternalIpsConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\ServiceExternalIPsConfig::class);
+        $this->service_external_ips_config = $var;
 
         return $this;
     }

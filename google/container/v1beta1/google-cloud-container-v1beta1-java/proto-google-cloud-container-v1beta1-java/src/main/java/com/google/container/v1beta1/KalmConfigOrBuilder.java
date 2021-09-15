@@ -12,8 +12,8 @@ public interface KalmConfigOrBuilder extends
    * Whether KALM is enabled for this cluster.
    * </pre>
    *
-   * <code>bool enabled = 1;</code>
+   * <code>bool enabled = 1 [deprecated = true];</code>
    * @return The enabled.
    */
-  boolean getEnabled();
+  @java.lang.Deprecated boolean getEnabled();
 }

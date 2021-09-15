@@ -88,7 +88,8 @@ class AddonsConfig extends \Google\Protobuf\Internal\Message
      * Configuration for the KALM addon, which manages the lifecycle of k8s
      * applications.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * Generated from protobuf field <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
+     * @deprecated
      */
     protected $kalm_config = null;
 
@@ -499,21 +500,25 @@ class AddonsConfig extends \Google\Protobuf\Internal\Message
      * Configuration for the KALM addon, which manages the lifecycle of k8s
      * applications.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * Generated from protobuf field <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      * @return \Google\Cloud\Container\V1beta1\KalmConfig|null
+     * @deprecated
      */
     public function getKalmConfig()
     {
+        @trigger_error('kalm_config is deprecated.', E_USER_DEPRECATED);
         return isset($this->kalm_config) ? $this->kalm_config : null;
     }
 
     public function hasKalmConfig()
     {
+        @trigger_error('kalm_config is deprecated.', E_USER_DEPRECATED);
         return isset($this->kalm_config);
     }
 
     public function clearKalmConfig()
     {
+        @trigger_error('kalm_config is deprecated.', E_USER_DEPRECATED);
         unset($this->kalm_config);
     }
 
@@ -521,12 +526,14 @@ class AddonsConfig extends \Google\Protobuf\Internal\Message
      * Configuration for the KALM addon, which manages the lifecycle of k8s
      * applications.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * Generated from protobuf field <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      * @param \Google\Cloud\Container\V1beta1\KalmConfig $var
      * @return $this
+     * @deprecated
      */
     public function setKalmConfig($var)
     {
+        @trigger_error('kalm_config is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\KalmConfig::class);
         $this->kalm_config = $var;
 

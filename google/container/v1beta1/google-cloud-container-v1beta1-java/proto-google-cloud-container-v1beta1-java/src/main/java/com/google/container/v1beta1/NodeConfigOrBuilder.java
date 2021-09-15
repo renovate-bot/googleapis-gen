@@ -180,8 +180,6 @@ public interface NodeConfigOrBuilder extends
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -217,8 +215,6 @@ public interface NodeConfigOrBuilder extends
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -261,8 +257,6 @@ public interface NodeConfigOrBuilder extends
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -299,8 +293,6 @@ public interface NodeConfigOrBuilder extends
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -339,8 +331,6 @@ public interface NodeConfigOrBuilder extends
    *  - "k8s-node-setup-psm1"
    *  - "install-ssh-psm1"
    *  - "user-profile-psm1"
-   * The following keys are reserved for Windows nodes:
-   *  - "serial-port-logging-enable"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -963,4 +953,31 @@ public interface NodeConfigOrBuilder extends
    * <code>.google.container.v1beta1.EphemeralStorageConfig ephemeral_storage_config = 24;</code>
    */
   com.google.container.v1beta1.EphemeralStorageConfigOrBuilder getEphemeralStorageConfigOrBuilder();
+
+  /**
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   * @return Whether the gvnic field is set.
+   */
+  boolean hasGvnic();
+  /**
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   * @return The gvnic.
+   */
+  com.google.container.v1beta1.VirtualNIC getGvnic();
+  /**
+   * <pre>
+   * Enable or disable gvnic on the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+   */
+  com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder();
 }

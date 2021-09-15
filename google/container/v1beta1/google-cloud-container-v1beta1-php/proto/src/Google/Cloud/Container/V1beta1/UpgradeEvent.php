@@ -17,40 +17,40 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpgradeEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      */
     protected $resource_type = 0;
     /**
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      *
-     * Generated from protobuf field <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string operation = 2;</code>
      */
     protected $operation = '';
     /**
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     protected $operation_start_time = null;
     /**
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      *
-     * Generated from protobuf field <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string current_version = 4;</code>
      */
     protected $current_version = '';
     /**
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      *
-     * Generated from protobuf field <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_version = 5;</code>
      */
     protected $target_version = '';
     /**
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      *
-     * Generated from protobuf field <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string resource = 6;</code>
      */
     protected $resource = '';
 
@@ -61,17 +61,17 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $resource_type
-     *           Required. The resource type that is upgrading.
+     *           The resource type that is upgrading.
      *     @type string $operation
-     *           Required. The operation associated with this upgrade.
+     *           The operation associated with this upgrade.
      *     @type \Google\Protobuf\Timestamp $operation_start_time
-     *           Required. The time when the operation was started.
+     *           The time when the operation was started.
      *     @type string $current_version
-     *           Required. The current version before the upgrade.
+     *           The current version before the upgrade.
      *     @type string $target_version
-     *           Required. The target version for the upgrade.
+     *           The target version for the upgrade.
      *     @type string $resource
-     *           Optional. Optional relative path to the resource. For example in node pool upgrades,
+     *           Optional relative path to the resource. For example in node pool upgrades,
      *           the relative path of the node pool.
      * }
      */
@@ -81,9 +81,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @return int
      */
     public function getResourceType()
@@ -92,9 +92,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      *
-     * Generated from protobuf field <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @param int $var
      * @return $this
      */
@@ -107,9 +107,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      *
-     * Generated from protobuf field <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string operation = 2;</code>
      * @return string
      */
     public function getOperation()
@@ -118,9 +118,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      *
-     * Generated from protobuf field <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string operation = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -133,9 +133,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getOperationStartTime()
@@ -154,9 +154,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -169,9 +169,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      *
-     * Generated from protobuf field <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string current_version = 4;</code>
      * @return string
      */
     public function getCurrentVersion()
@@ -180,9 +180,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      *
-     * Generated from protobuf field <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string current_version = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -195,9 +195,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      *
-     * Generated from protobuf field <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_version = 5;</code>
      * @return string
      */
     public function getTargetVersion()
@@ -206,9 +206,9 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      *
-     * Generated from protobuf field <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string target_version = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -221,10 +221,10 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      *
-     * Generated from protobuf field <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string resource = 6;</code>
      * @return string
      */
     public function getResource()
@@ -233,10 +233,10 @@ class UpgradeEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      *
-     * Generated from protobuf field <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string resource = 6;</code>
      * @param string $var
      * @return $this
      */

@@ -38,4 +38,28 @@ public interface AcceleratorConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAcceleratorTypeBytes();
+
+  /**
+   * <pre>
+   * Size of partitions to create on the GPU. Valid values are described in the
+   * NVIDIA [mig user
+   * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+   * </pre>
+   *
+   * <code>string gpu_partition_size = 3;</code>
+   * @return The gpuPartitionSize.
+   */
+  java.lang.String getGpuPartitionSize();
+  /**
+   * <pre>
+   * Size of partitions to create on the GPU. Valid values are described in the
+   * NVIDIA [mig user
+   * guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
+   * </pre>
+   *
+   * <code>string gpu_partition_size = 3;</code>
+   * @return The bytes for gpuPartitionSize.
+   */
+  com.google.protobuf.ByteString
+      getGpuPartitionSizeBytes();
 }

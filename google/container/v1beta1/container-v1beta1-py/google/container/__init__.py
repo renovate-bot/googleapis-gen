@@ -20,6 +20,7 @@ from google.container_v1beta1.services.cluster_manager.async_client import Clust
 from google.container_v1beta1.types.cluster_service import AcceleratorConfig
 from google.container_v1beta1.types.cluster_service import AddonsConfig
 from google.container_v1beta1.types.cluster_service import AuthenticatorGroupsConfig
+from google.container_v1beta1.types.cluster_service import Autopilot
 from google.container_v1beta1.types.cluster_service import AutoprovisioningNodePoolDefaults
 from google.container_v1beta1.types.cluster_service import AutoUpgradeOptions
 from google.container_v1beta1.types.cluster_service import BinaryAuthorization
@@ -41,6 +42,7 @@ from google.container_v1beta1.types.cluster_service import DefaultSnatStatus
 from google.container_v1beta1.types.cluster_service import DeleteClusterRequest
 from google.container_v1beta1.types.cluster_service import DeleteNodePoolRequest
 from google.container_v1beta1.types.cluster_service import DnsCacheConfig
+from google.container_v1beta1.types.cluster_service import DNSConfig
 from google.container_v1beta1.types.cluster_service import EphemeralStorageConfig
 from google.container_v1beta1.types.cluster_service import GcePersistentDiskCsiDriverConfig
 from google.container_v1beta1.types.cluster_service import GetClusterRequest
@@ -53,6 +55,8 @@ from google.container_v1beta1.types.cluster_service import GetOperationRequest
 from google.container_v1beta1.types.cluster_service import GetServerConfigRequest
 from google.container_v1beta1.types.cluster_service import HorizontalPodAutoscaling
 from google.container_v1beta1.types.cluster_service import HttpLoadBalancing
+from google.container_v1beta1.types.cluster_service import IdentityServiceConfig
+from google.container_v1beta1.types.cluster_service import ILBSubsettingConfig
 from google.container_v1beta1.types.cluster_service import IntraNodeVisibilityConfig
 from google.container_v1beta1.types.cluster_service import IPAllocationPolicy
 from google.container_v1beta1.types.cluster_service import IstioConfig
@@ -72,21 +76,31 @@ from google.container_v1beta1.types.cluster_service import ListOperationsRespons
 from google.container_v1beta1.types.cluster_service import ListUsableSubnetworksRequest
 from google.container_v1beta1.types.cluster_service import ListUsableSubnetworksResponse
 from google.container_v1beta1.types.cluster_service import Location
+from google.container_v1beta1.types.cluster_service import LoggingComponentConfig
+from google.container_v1beta1.types.cluster_service import LoggingConfig
 from google.container_v1beta1.types.cluster_service import MaintenancePolicy
 from google.container_v1beta1.types.cluster_service import MaintenanceWindow
 from google.container_v1beta1.types.cluster_service import Master
 from google.container_v1beta1.types.cluster_service import MasterAuth
 from google.container_v1beta1.types.cluster_service import MasterAuthorizedNetworksConfig
 from google.container_v1beta1.types.cluster_service import MaxPodsConstraint
+from google.container_v1beta1.types.cluster_service import MonitoringComponentConfig
+from google.container_v1beta1.types.cluster_service import MonitoringConfig
 from google.container_v1beta1.types.cluster_service import NetworkConfig
 from google.container_v1beta1.types.cluster_service import NetworkPolicy
 from google.container_v1beta1.types.cluster_service import NetworkPolicyConfig
+from google.container_v1beta1.types.cluster_service import NetworkTags
 from google.container_v1beta1.types.cluster_service import NodeConfig
+from google.container_v1beta1.types.cluster_service import NodeConfigDefaults
 from google.container_v1beta1.types.cluster_service import NodeKubeletConfig
+from google.container_v1beta1.types.cluster_service import NodeLabels
 from google.container_v1beta1.types.cluster_service import NodeManagement
+from google.container_v1beta1.types.cluster_service import NodeNetworkConfig
 from google.container_v1beta1.types.cluster_service import NodePool
 from google.container_v1beta1.types.cluster_service import NodePoolAutoscaling
+from google.container_v1beta1.types.cluster_service import NodePoolDefaults
 from google.container_v1beta1.types.cluster_service import NodeTaint
+from google.container_v1beta1.types.cluster_service import NodeTaints
 from google.container_v1beta1.types.cluster_service import NotificationConfig
 from google.container_v1beta1.types.cluster_service import Operation
 from google.container_v1beta1.types.cluster_service import OperationProgress
@@ -101,6 +115,7 @@ from google.container_v1beta1.types.cluster_service import ResourceUsageExportCo
 from google.container_v1beta1.types.cluster_service import RollbackNodePoolUpgradeRequest
 from google.container_v1beta1.types.cluster_service import SandboxConfig
 from google.container_v1beta1.types.cluster_service import ServerConfig
+from google.container_v1beta1.types.cluster_service import ServiceExternalIPsConfig
 from google.container_v1beta1.types.cluster_service import SetAddonsConfigRequest
 from google.container_v1beta1.types.cluster_service import SetLabelsRequest
 from google.container_v1beta1.types.cluster_service import SetLegacyAbacRequest
@@ -122,13 +137,18 @@ from google.container_v1beta1.types.cluster_service import TpuConfig
 from google.container_v1beta1.types.cluster_service import UpdateClusterRequest
 from google.container_v1beta1.types.cluster_service import UpdateMasterRequest
 from google.container_v1beta1.types.cluster_service import UpdateNodePoolRequest
+from google.container_v1beta1.types.cluster_service import UpgradeAvailableEvent
 from google.container_v1beta1.types.cluster_service import UpgradeEvent
 from google.container_v1beta1.types.cluster_service import UsableSubnetwork
 from google.container_v1beta1.types.cluster_service import UsableSubnetworkSecondaryRange
 from google.container_v1beta1.types.cluster_service import VerticalPodAutoscaling
+from google.container_v1beta1.types.cluster_service import VirtualNIC
+from google.container_v1beta1.types.cluster_service import WindowsVersions
+from google.container_v1beta1.types.cluster_service import WorkloadCertificates
 from google.container_v1beta1.types.cluster_service import WorkloadIdentityConfig
 from google.container_v1beta1.types.cluster_service import WorkloadMetadataConfig
 from google.container_v1beta1.types.cluster_service import DatapathProvider
+from google.container_v1beta1.types.cluster_service import PrivateIPv6GoogleAccess
 from google.container_v1beta1.types.cluster_service import UpgradeResourceType
 
 __all__ = ('ClusterManagerClient',
@@ -136,6 +156,7 @@ __all__ = ('ClusterManagerClient',
     'AcceleratorConfig',
     'AddonsConfig',
     'AuthenticatorGroupsConfig',
+    'Autopilot',
     'AutoprovisioningNodePoolDefaults',
     'AutoUpgradeOptions',
     'BinaryAuthorization',
@@ -157,6 +178,7 @@ __all__ = ('ClusterManagerClient',
     'DeleteClusterRequest',
     'DeleteNodePoolRequest',
     'DnsCacheConfig',
+    'DNSConfig',
     'EphemeralStorageConfig',
     'GcePersistentDiskCsiDriverConfig',
     'GetClusterRequest',
@@ -169,6 +191,8 @@ __all__ = ('ClusterManagerClient',
     'GetServerConfigRequest',
     'HorizontalPodAutoscaling',
     'HttpLoadBalancing',
+    'IdentityServiceConfig',
+    'ILBSubsettingConfig',
     'IntraNodeVisibilityConfig',
     'IPAllocationPolicy',
     'IstioConfig',
@@ -188,21 +212,31 @@ __all__ = ('ClusterManagerClient',
     'ListUsableSubnetworksRequest',
     'ListUsableSubnetworksResponse',
     'Location',
+    'LoggingComponentConfig',
+    'LoggingConfig',
     'MaintenancePolicy',
     'MaintenanceWindow',
     'Master',
     'MasterAuth',
     'MasterAuthorizedNetworksConfig',
     'MaxPodsConstraint',
+    'MonitoringComponentConfig',
+    'MonitoringConfig',
     'NetworkConfig',
     'NetworkPolicy',
     'NetworkPolicyConfig',
+    'NetworkTags',
     'NodeConfig',
+    'NodeConfigDefaults',
     'NodeKubeletConfig',
+    'NodeLabels',
     'NodeManagement',
+    'NodeNetworkConfig',
     'NodePool',
     'NodePoolAutoscaling',
+    'NodePoolDefaults',
     'NodeTaint',
+    'NodeTaints',
     'NotificationConfig',
     'Operation',
     'OperationProgress',
@@ -217,6 +251,7 @@ __all__ = ('ClusterManagerClient',
     'RollbackNodePoolUpgradeRequest',
     'SandboxConfig',
     'ServerConfig',
+    'ServiceExternalIPsConfig',
     'SetAddonsConfigRequest',
     'SetLabelsRequest',
     'SetLegacyAbacRequest',
@@ -238,12 +273,17 @@ __all__ = ('ClusterManagerClient',
     'UpdateClusterRequest',
     'UpdateMasterRequest',
     'UpdateNodePoolRequest',
+    'UpgradeAvailableEvent',
     'UpgradeEvent',
     'UsableSubnetwork',
     'UsableSubnetworkSecondaryRange',
     'VerticalPodAutoscaling',
+    'VirtualNIC',
+    'WindowsVersions',
+    'WorkloadCertificates',
     'WorkloadIdentityConfig',
     'WorkloadMetadataConfig',
     'DatapathProvider',
+    'PrivateIPv6GoogleAccess',
     'UpgradeResourceType',
 )

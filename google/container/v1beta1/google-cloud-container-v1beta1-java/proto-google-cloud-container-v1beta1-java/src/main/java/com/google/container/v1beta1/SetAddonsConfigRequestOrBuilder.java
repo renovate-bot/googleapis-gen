@@ -81,8 +81,8 @@ public interface SetAddonsConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,8 +91,8 @@ public interface SetAddonsConfigRequestOrBuilder extends
   boolean hasAddonsConfig();
   /**
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,8 +101,8 @@ public interface SetAddonsConfigRequestOrBuilder extends
   com.google.container.v1beta1.AddonsConfig getAddonsConfig();
   /**
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>

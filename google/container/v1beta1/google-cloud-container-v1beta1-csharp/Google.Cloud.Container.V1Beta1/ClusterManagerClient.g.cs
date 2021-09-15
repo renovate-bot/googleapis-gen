@@ -1576,8 +1576,8 @@ namespace Google.Cloud.Container.V1Beta1
         /// This field has been deprecated and replaced by the name field.
         /// </param>
         /// <param name="addonsConfig">
-        /// Required. The desired configurations for the various addons available to run in the
-        /// cluster.
+        /// Required. The desired configurations for the various addons available to
+        /// run in the cluster.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1610,8 +1610,8 @@ namespace Google.Cloud.Container.V1Beta1
         /// This field has been deprecated and replaced by the name field.
         /// </param>
         /// <param name="addonsConfig">
-        /// Required. The desired configurations for the various addons available to run in the
-        /// cluster.
+        /// Required. The desired configurations for the various addons available to
+        /// run in the cluster.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1644,8 +1644,8 @@ namespace Google.Cloud.Container.V1Beta1
         /// This field has been deprecated and replaced by the name field.
         /// </param>
         /// <param name="addonsConfig">
-        /// Required. The desired configurations for the various addons available to run in the
-        /// cluster.
+        /// Required. The desired configurations for the various addons available to
+        /// run in the cluster.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -3828,7 +3828,9 @@ namespace Google.Cloud.Container.V1Beta1
             CompleteIPRotationAsync(projectId, zone, clusterId, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
-        /// Sets the size for a specific node pool.
+        /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+        /// used for all replicas, including future replicas created by modifying
+        /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -3837,7 +3839,9 @@ namespace Google.Cloud.Container.V1Beta1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Sets the size for a specific node pool.
+        /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+        /// used for all replicas, including future replicas created by modifying
+        /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -3846,7 +3850,9 @@ namespace Google.Cloud.Container.V1Beta1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Sets the size for a specific node pool.
+        /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+        /// used for all replicas, including future replicas created by modifying
+        /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -5285,7 +5291,9 @@ namespace Google.Cloud.Container.V1Beta1
         }
 
         /// <summary>
-        /// Sets the size for a specific node pool.
+        /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+        /// used for all replicas, including future replicas created by modifying
+        /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -5297,7 +5305,9 @@ namespace Google.Cloud.Container.V1Beta1
         }
 
         /// <summary>
-        /// Sets the size for a specific node pool.
+        /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+        /// used for all replicas, including future replicas created by modifying
+        /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

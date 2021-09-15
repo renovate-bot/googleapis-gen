@@ -18,7 +18,8 @@ class KalmConfig extends \Google\Protobuf\Internal\Message
     /**
      * Whether KALM is enabled for this cluster.
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>bool enabled = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $enabled = false;
 
@@ -40,23 +41,27 @@ class KalmConfig extends \Google\Protobuf\Internal\Message
     /**
      * Whether KALM is enabled for this cluster.
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>bool enabled = 1 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getEnabled()
     {
+        @trigger_error('enabled is deprecated.', E_USER_DEPRECATED);
         return $this->enabled;
     }
 
     /**
      * Whether KALM is enabled for this cluster.
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>bool enabled = 1 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setEnabled($var)
     {
+        @trigger_error('enabled is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->enabled = $var;
 

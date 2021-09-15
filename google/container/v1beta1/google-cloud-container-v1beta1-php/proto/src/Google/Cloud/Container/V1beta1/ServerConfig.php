@@ -51,6 +51,12 @@ class ServerConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.container.v1beta1.ServerConfig.ReleaseChannelConfig channels = 9;</code>
      */
     private $channels;
+    /**
+     * Maps of Kubernetes version and supported Windows server versions.
+     *
+     * Generated from protobuf field <code>map<string, .google.container.v1beta1.WindowsVersions> windows_version_maps = 10;</code>
+     */
+    private $windows_version_maps;
 
     /**
      * Constructor.
@@ -70,6 +76,8 @@ class ServerConfig extends \Google\Protobuf\Internal\Message
      *           List of valid master versions, in descending order.
      *     @type \Google\Cloud\Container\V1beta1\ServerConfig\ReleaseChannelConfig[]|\Google\Protobuf\Internal\RepeatedField $channels
      *           List of release channel configurations.
+     *     @type array|\Google\Protobuf\Internal\MapField $windows_version_maps
+     *           Maps of Kubernetes version and supported Windows server versions.
      * }
      */
     public function __construct($data = NULL) {
@@ -229,6 +237,32 @@ class ServerConfig extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Container\V1beta1\ServerConfig\ReleaseChannelConfig::class);
         $this->channels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Maps of Kubernetes version and supported Windows server versions.
+     *
+     * Generated from protobuf field <code>map<string, .google.container.v1beta1.WindowsVersions> windows_version_maps = 10;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getWindowsVersionMaps()
+    {
+        return $this->windows_version_maps;
+    }
+
+    /**
+     * Maps of Kubernetes version and supported Windows server versions.
+     *
+     * Generated from protobuf field <code>map<string, .google.container.v1beta1.WindowsVersions> windows_version_maps = 10;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setWindowsVersionMaps($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Container\V1beta1\WindowsVersions::class);
+        $this->windows_version_maps = $arr;
 
         return $this;
     }

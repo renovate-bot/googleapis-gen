@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.container.v1beta1.StatusCondition.Code}
    */
-  public enum Code
+  @java.lang.Deprecated public enum Code
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
@@ -161,12 +161,20 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Unable to perform an encrypt operation against the CloudKMS key used for
      * etcd level encryption.
-     * More codes TBA
      * </pre>
      *
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     CLOUD_KMS_KEY_ERROR(7),
+    /**
+     * <pre>
+     * Cluster CA is expiring soon.
+     * More codes TBA
+     * </pre>
+     *
+     * <code>CA_EXPIRING = 9;</code>
+     */
+    CA_EXPIRING(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -216,12 +224,20 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Unable to perform an encrypt operation against the CloudKMS key used for
      * etcd level encryption.
-     * More codes TBA
      * </pre>
      *
      * <code>CLOUD_KMS_KEY_ERROR = 7;</code>
      */
     public static final int CLOUD_KMS_KEY_ERROR_VALUE = 7;
+    /**
+     * <pre>
+     * Cluster CA is expiring soon.
+     * More codes TBA
+     * </pre>
+     *
+     * <code>CA_EXPIRING = 9;</code>
+     */
+    public static final int CA_EXPIRING_VALUE = 9;
 
 
     public final int getNumber() {
@@ -254,6 +270,7 @@ private static final long serialVersionUID = 0L;
         case 3: return GCE_QUOTA_EXCEEDED;
         case 4: return SET_BY_OPERATOR;
         case 7: return CLOUD_KMS_KEY_ERROR;
+        case 9: return CA_EXPIRING;
         default: return null;
       }
     }

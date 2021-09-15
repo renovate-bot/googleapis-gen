@@ -279,8 +279,8 @@ private static final long serialVersionUID = 0L;
   private com.google.container.v1beta1.AddonsConfig addonsConfig_;
   /**
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -292,8 +292,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -305,8 +305,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The desired configurations for the various addons available to run in the
-   * cluster.
+   * Required. The desired configurations for the various addons available to
+   * run in the cluster.
    * </pre>
    *
    * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1074,8 +1074,8 @@ private static final long serialVersionUID = 0L;
         com.google.container.v1beta1.AddonsConfig, com.google.container.v1beta1.AddonsConfig.Builder, com.google.container.v1beta1.AddonsConfigOrBuilder> addonsConfigBuilder_;
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1086,8 +1086,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1102,8 +1102,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1123,8 +1123,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1142,8 +1142,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1165,8 +1165,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1184,8 +1184,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1197,8 +1197,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1213,8 +1213,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The desired configurations for the various addons available to run in the
-     * cluster.
+     * Required. The desired configurations for the various addons available to
+     * run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1beta1.AddonsConfig addons_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>

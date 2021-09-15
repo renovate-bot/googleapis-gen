@@ -137,10 +137,10 @@ private static final long serialVersionUID = 0L;
   private int resourceType_;
   /**
    * <pre>
-   * Required. The resource type that is upgrading.
+   * The resource type that is upgrading.
    * </pre>
    *
-   * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
    * @return The enum numeric value on the wire for resourceType.
    */
   @java.lang.Override public int getResourceTypeValue() {
@@ -148,10 +148,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource type that is upgrading.
+   * The resource type that is upgrading.
    * </pre>
    *
-   * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
    * @return The resourceType.
    */
   @java.lang.Override public com.google.container.v1beta1.UpgradeResourceType getResourceType() {
@@ -164,10 +164,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object operation_;
   /**
    * <pre>
-   * Required. The operation associated with this upgrade.
+   * The operation associated with this upgrade.
    * </pre>
    *
-   * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string operation = 2;</code>
    * @return The operation.
    */
   @java.lang.Override
@@ -185,10 +185,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The operation associated with this upgrade.
+   * The operation associated with this upgrade.
    * </pre>
    *
-   * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string operation = 2;</code>
    * @return The bytes for operation.
    */
   @java.lang.Override
@@ -210,10 +210,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp operationStartTime_;
   /**
    * <pre>
-   * Required. The time when the operation was started.
+   * The time when the operation was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
    * @return Whether the operationStartTime field is set.
    */
   @java.lang.Override
@@ -222,10 +222,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The time when the operation was started.
+   * The time when the operation was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
    * @return The operationStartTime.
    */
   @java.lang.Override
@@ -234,10 +234,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The time when the operation was started.
+   * The time when the operation was started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getOperationStartTimeOrBuilder() {
@@ -248,10 +248,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object currentVersion_;
   /**
    * <pre>
-   * Required. The current version before the upgrade.
+   * The current version before the upgrade.
    * </pre>
    *
-   * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string current_version = 4;</code>
    * @return The currentVersion.
    */
   @java.lang.Override
@@ -269,10 +269,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The current version before the upgrade.
+   * The current version before the upgrade.
    * </pre>
    *
-   * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string current_version = 4;</code>
    * @return The bytes for currentVersion.
    */
   @java.lang.Override
@@ -294,10 +294,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object targetVersion_;
   /**
    * <pre>
-   * Required. The target version for the upgrade.
+   * The target version for the upgrade.
    * </pre>
    *
-   * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_version = 5;</code>
    * @return The targetVersion.
    */
   @java.lang.Override
@@ -315,10 +315,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The target version for the upgrade.
+   * The target version for the upgrade.
    * </pre>
    *
-   * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_version = 5;</code>
    * @return The bytes for targetVersion.
    */
   @java.lang.Override
@@ -340,11 +340,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object resource_;
   /**
    * <pre>
-   * Optional. Optional relative path to the resource. For example in node pool upgrades,
+   * Optional relative path to the resource. For example in node pool upgrades,
    * the relative path of the node pool.
    * </pre>
    *
-   * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string resource = 6;</code>
    * @return The resource.
    */
   @java.lang.Override
@@ -362,11 +362,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Optional relative path to the resource. For example in node pool upgrades,
+   * Optional relative path to the resource. For example in node pool upgrades,
    * the relative path of the node pool.
    * </pre>
    *
-   * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string resource = 6;</code>
    * @return The bytes for resource.
    */
   @java.lang.Override
@@ -791,10 +791,10 @@ private static final long serialVersionUID = 0L;
     private int resourceType_ = 0;
     /**
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @return The enum numeric value on the wire for resourceType.
      */
     @java.lang.Override public int getResourceTypeValue() {
@@ -802,10 +802,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @param value The enum numeric value on the wire for resourceType to set.
      * @return This builder for chaining.
      */
@@ -817,10 +817,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @return The resourceType.
      */
     @java.lang.Override
@@ -831,10 +831,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @param value The resourceType to set.
      * @return This builder for chaining.
      */
@@ -849,10 +849,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource type that is upgrading.
+     * The resource type that is upgrading.
      * </pre>
      *
-     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.container.v1beta1.UpgradeResourceType resource_type = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
@@ -865,10 +865,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object operation_ = "";
     /**
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      * @return The operation.
      */
     public java.lang.String getOperation() {
@@ -885,10 +885,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      * @return The bytes for operation.
      */
     public com.google.protobuf.ByteString
@@ -906,10 +906,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      * @param value The operation to set.
      * @return This builder for chaining.
      */
@@ -925,10 +925,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
@@ -939,10 +939,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The operation associated with this upgrade.
+     * The operation associated with this upgrade.
      * </pre>
      *
-     * <code>string operation = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string operation = 2;</code>
      * @param value The bytes for operation to set.
      * @return This builder for chaining.
      */
@@ -963,10 +963,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> operationStartTimeBuilder_;
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      * @return Whether the operationStartTime field is set.
      */
     public boolean hasOperationStartTime() {
@@ -974,10 +974,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      * @return The operationStartTime.
      */
     public com.google.protobuf.Timestamp getOperationStartTime() {
@@ -989,10 +989,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder setOperationStartTime(com.google.protobuf.Timestamp value) {
       if (operationStartTimeBuilder_ == null) {
@@ -1009,10 +1009,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder setOperationStartTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1027,10 +1027,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder mergeOperationStartTime(com.google.protobuf.Timestamp value) {
       if (operationStartTimeBuilder_ == null) {
@@ -1049,10 +1049,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public Builder clearOperationStartTime() {
       if (operationStartTimeBuilder_ == null) {
@@ -1067,10 +1067,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getOperationStartTimeBuilder() {
       
@@ -1079,10 +1079,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getOperationStartTimeOrBuilder() {
       if (operationStartTimeBuilder_ != null) {
@@ -1094,10 +1094,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The time when the operation was started.
+     * The time when the operation was started.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp operation_start_time = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Timestamp operation_start_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1116,10 +1116,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object currentVersion_ = "";
     /**
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      * @return The currentVersion.
      */
     public java.lang.String getCurrentVersion() {
@@ -1136,10 +1136,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      * @return The bytes for currentVersion.
      */
     public com.google.protobuf.ByteString
@@ -1157,10 +1157,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      * @param value The currentVersion to set.
      * @return This builder for chaining.
      */
@@ -1176,10 +1176,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearCurrentVersion() {
@@ -1190,10 +1190,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The current version before the upgrade.
+     * The current version before the upgrade.
      * </pre>
      *
-     * <code>string current_version = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string current_version = 4;</code>
      * @param value The bytes for currentVersion to set.
      * @return This builder for chaining.
      */
@@ -1212,10 +1212,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object targetVersion_ = "";
     /**
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      * @return The targetVersion.
      */
     public java.lang.String getTargetVersion() {
@@ -1232,10 +1232,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      * @return The bytes for targetVersion.
      */
     public com.google.protobuf.ByteString
@@ -1253,10 +1253,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      * @param value The targetVersion to set.
      * @return This builder for chaining.
      */
@@ -1272,10 +1272,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetVersion() {
@@ -1286,10 +1286,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The target version for the upgrade.
+     * The target version for the upgrade.
      * </pre>
      *
-     * <code>string target_version = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_version = 5;</code>
      * @param value The bytes for targetVersion to set.
      * @return This builder for chaining.
      */
@@ -1308,11 +1308,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object resource_ = "";
     /**
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      * @return The resource.
      */
     public java.lang.String getResource() {
@@ -1329,11 +1329,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      * @return The bytes for resource.
      */
     public com.google.protobuf.ByteString
@@ -1351,11 +1351,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      * @param value The resource to set.
      * @return This builder for chaining.
      */
@@ -1371,11 +1371,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearResource() {
@@ -1386,11 +1386,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Optional relative path to the resource. For example in node pool upgrades,
+     * Optional relative path to the resource. For example in node pool upgrades,
      * the relative path of the node pool.
      * </pre>
      *
-     * <code>string resource = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string resource = 6;</code>
      * @param value The bytes for resource to set.
      * @return This builder for chaining.
      */

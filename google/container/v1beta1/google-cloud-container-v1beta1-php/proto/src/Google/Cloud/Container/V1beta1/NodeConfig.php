@@ -82,8 +82,6 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -241,6 +239,12 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.container.v1beta1.EphemeralStorageConfig ephemeral_storage_config = 24;</code>
      */
     protected $ephemeral_storage_config = null;
+    /**
+     * Enable or disable gvnic on the node pool.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    protected $gvnic = null;
 
     /**
      * Constructor.
@@ -299,8 +303,6 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      *            - "k8s-node-setup-psm1"
      *            - "install-ssh-psm1"
      *            - "user-profile-psm1"
-     *           The following keys are reserved for Windows nodes:
-     *            - "serial-port-logging-enable"
      *           Values are free-form strings, and only have meaning as interpreted by
      *           the image running in the instance. The only restriction placed on them is
      *           that each value's size must be less than or equal to 32 KB.
@@ -382,6 +384,8 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Container\V1beta1\EphemeralStorageConfig $ephemeral_storage_config
      *           Parameters for the ephemeral storage filesystem.
      *           If unspecified, ephemeral storage is backed by the boot disk.
+     *     @type \Google\Cloud\Container\V1beta1\VirtualNIC $gvnic
+     *           Enable or disable gvnic on the node pool.
      * }
      */
     public function __construct($data = NULL) {
@@ -554,8 +558,6 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -594,8 +596,6 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
      *  - "k8s-node-setup-psm1"
      *  - "install-ssh-psm1"
      *  - "user-profile-psm1"
-     * The following keys are reserved for Windows nodes:
-     *  - "serial-port-logging-enable"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -1229,6 +1229,42 @@ class NodeConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\EphemeralStorageConfig::class);
         $this->ephemeral_storage_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Enable or disable gvnic on the node pool.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     * @return \Google\Cloud\Container\V1beta1\VirtualNIC|null
+     */
+    public function getGvnic()
+    {
+        return isset($this->gvnic) ? $this->gvnic : null;
+    }
+
+    public function hasGvnic()
+    {
+        return isset($this->gvnic);
+    }
+
+    public function clearGvnic()
+    {
+        unset($this->gvnic);
+    }
+
+    /**
+     * Enable or disable gvnic on the node pool.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     * @param \Google\Cloud\Container\V1beta1\VirtualNIC $var
+     * @return $this
+     */
+    public function setGvnic($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\VirtualNIC::class);
+        $this->gvnic = $var;
 
         return $this;
     }

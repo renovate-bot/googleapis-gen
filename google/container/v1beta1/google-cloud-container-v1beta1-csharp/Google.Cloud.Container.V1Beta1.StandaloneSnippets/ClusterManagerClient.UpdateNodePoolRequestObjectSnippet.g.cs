@@ -38,8 +38,12 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
                 Locations = { "", },
                 WorkloadMetadataConfig = new WorkloadMetadataConfig(),
                 UpgradeSettings = new NodePool.Types.UpgradeSettings(),
+                Tags = new NetworkTags(),
+                Taints = new NodeTaints(),
+                Labels = new NodeLabels(),
                 LinuxNodeConfig = new LinuxNodeConfig(),
                 KubeletConfig = new NodeKubeletConfig(),
+                Gvnic = new VirtualNIC(),
             };
             // Make the request
             Operation response = clusterManagerClient.UpdateNodePool(request);

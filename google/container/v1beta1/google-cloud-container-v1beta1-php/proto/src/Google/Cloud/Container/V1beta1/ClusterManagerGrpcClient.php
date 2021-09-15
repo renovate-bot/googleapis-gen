@@ -484,7 +484,9 @@ class ClusterManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Sets the size for a specific node pool.
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
      * @param \Google\Cloud\Container\V1beta1\SetNodePoolSizeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

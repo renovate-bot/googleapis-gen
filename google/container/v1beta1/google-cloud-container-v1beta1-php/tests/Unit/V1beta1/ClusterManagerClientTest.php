@@ -641,6 +641,7 @@ class ClusterManagerClientTest extends GeneratedTest
         $location = 'location1901043637';
         $enableTpu = false;
         $tpuIpv4CidrBlock = 'tpuIpv4CidrBlock1137906646';
+        $id = 'id3355';
         $expectedResponse = new Cluster();
         $expectedResponse->setName($name2);
         $expectedResponse->setDescription($description);
@@ -669,6 +670,7 @@ class ClusterManagerClientTest extends GeneratedTest
         $expectedResponse->setLocation($location);
         $expectedResponse->setEnableTpu($enableTpu);
         $expectedResponse->setTpuIpv4CidrBlock($tpuIpv4CidrBlock);
+        $expectedResponse->setId($id);
         $transport->addResponse($expectedResponse);
         // Mock request
         $projectId = 'projectId-1969970175';

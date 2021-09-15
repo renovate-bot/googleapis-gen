@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object imageType_;
   /**
    * <pre>
-   * The image type to use for node created by NodeAutoprovisioning.
+   * The image type to use for NAP created node.
    * </pre>
    *
    * <code>string image_type = 10;</code>
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The image type to use for node created by NodeAutoprovisioning.
+   * The image type to use for NAP created node.
    * </pre>
    *
    * <code>string image_type = 10;</code>
@@ -2417,7 +2417,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object imageType_ = "";
     /**
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2437,7 +2437,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2458,7 +2458,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2477,7 +2477,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>
@@ -2491,7 +2491,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The image type to use for node created by NodeAutoprovisioning.
+     * The image type to use for NAP created node.
      * </pre>
      *
      * <code>string image_type = 10;</code>

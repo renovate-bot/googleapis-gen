@@ -604,11 +604,11 @@ private static final long serialVersionUID = 0L;
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Override
-  public boolean hasKalmConfig() {
+  @java.lang.Deprecated public boolean hasKalmConfig() {
     return kalmConfig_ != null;
   }
   /**
@@ -617,11 +617,11 @@ private static final long serialVersionUID = 0L;
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    * @return The kalmConfig.
    */
   @java.lang.Override
-  public com.google.container.v1beta1.KalmConfig getKalmConfig() {
+  @java.lang.Deprecated public com.google.container.v1beta1.KalmConfig getKalmConfig() {
     return kalmConfig_ == null ? com.google.container.v1beta1.KalmConfig.getDefaultInstance() : kalmConfig_;
   }
   /**
@@ -630,10 +630,10 @@ private static final long serialVersionUID = 0L;
    * applications.
    * </pre>
    *
-   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+   * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder() {
+  @java.lang.Deprecated public com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder() {
     return getKalmConfig();
   }
 
@@ -2748,10 +2748,10 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      * @return Whether the kalmConfig field is set.
      */
-    public boolean hasKalmConfig() {
+    @java.lang.Deprecated public boolean hasKalmConfig() {
       return kalmConfigBuilder_ != null || kalmConfig_ != null;
     }
     /**
@@ -2760,10 +2760,10 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      * @return The kalmConfig.
      */
-    public com.google.container.v1beta1.KalmConfig getKalmConfig() {
+    @java.lang.Deprecated public com.google.container.v1beta1.KalmConfig getKalmConfig() {
       if (kalmConfigBuilder_ == null) {
         return kalmConfig_ == null ? com.google.container.v1beta1.KalmConfig.getDefaultInstance() : kalmConfig_;
       } else {
@@ -2776,9 +2776,9 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
-    public Builder setKalmConfig(com.google.container.v1beta1.KalmConfig value) {
+    @java.lang.Deprecated public Builder setKalmConfig(com.google.container.v1beta1.KalmConfig value) {
       if (kalmConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2797,9 +2797,9 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
-    public Builder setKalmConfig(
+    @java.lang.Deprecated public Builder setKalmConfig(
         com.google.container.v1beta1.KalmConfig.Builder builderForValue) {
       if (kalmConfigBuilder_ == null) {
         kalmConfig_ = builderForValue.build();
@@ -2816,9 +2816,9 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
-    public Builder mergeKalmConfig(com.google.container.v1beta1.KalmConfig value) {
+    @java.lang.Deprecated public Builder mergeKalmConfig(com.google.container.v1beta1.KalmConfig value) {
       if (kalmConfigBuilder_ == null) {
         if (kalmConfig_ != null) {
           kalmConfig_ =
@@ -2839,9 +2839,9 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
-    public Builder clearKalmConfig() {
+    @java.lang.Deprecated public Builder clearKalmConfig() {
       if (kalmConfigBuilder_ == null) {
         kalmConfig_ = null;
         onChanged();
@@ -2858,9 +2858,9 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
-    public com.google.container.v1beta1.KalmConfig.Builder getKalmConfigBuilder() {
+    @java.lang.Deprecated public com.google.container.v1beta1.KalmConfig.Builder getKalmConfigBuilder() {
       
       onChanged();
       return getKalmConfigFieldBuilder().getBuilder();
@@ -2871,9 +2871,9 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
-    public com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder() {
+    @java.lang.Deprecated public com.google.container.v1beta1.KalmConfigOrBuilder getKalmConfigOrBuilder() {
       if (kalmConfigBuilder_ != null) {
         return kalmConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -2887,7 +2887,7 @@ private static final long serialVersionUID = 0L;
      * applications.
      * </pre>
      *
-     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12;</code>
+     * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.container.v1beta1.KalmConfig, com.google.container.v1beta1.KalmConfig.Builder, com.google.container.v1beta1.KalmConfigOrBuilder> 

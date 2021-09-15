@@ -686,7 +686,9 @@ namespace Google.Cloud.Container.V1Beta1 {
       }
 
       /// <summary>
-      /// Sets the size for a specific node pool.
+      /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+      /// used for all replicas, including future replicas created by modifying
+      /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2122,7 +2124,9 @@ namespace Google.Cloud.Container.V1Beta1 {
         return CallInvoker.AsyncUnaryCall(__Method_CompleteIPRotation, null, options, request);
       }
       /// <summary>
-      /// Sets the size for a specific node pool.
+      /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+      /// used for all replicas, including future replicas created by modifying
+      /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2134,7 +2138,9 @@ namespace Google.Cloud.Container.V1Beta1 {
         return SetNodePoolSize(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sets the size for a specific node pool.
+      /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+      /// used for all replicas, including future replicas created by modifying
+      /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2144,7 +2150,9 @@ namespace Google.Cloud.Container.V1Beta1 {
         return CallInvoker.BlockingUnaryCall(__Method_SetNodePoolSize, null, options, request);
       }
       /// <summary>
-      /// Sets the size for a specific node pool.
+      /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+      /// used for all replicas, including future replicas created by modifying
+      /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2156,7 +2164,9 @@ namespace Google.Cloud.Container.V1Beta1 {
         return SetNodePoolSizeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Sets the size for a specific node pool.
+      /// SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+      /// used for all replicas, including future replicas created by modifying
+      /// [NodePool.locations][google.container.v1beta1.NodePool.locations].
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

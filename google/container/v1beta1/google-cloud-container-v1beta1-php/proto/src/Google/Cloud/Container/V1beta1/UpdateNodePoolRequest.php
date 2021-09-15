@@ -101,6 +101,30 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      */
     protected $upgrade_settings = null;
     /**
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
+     */
+    protected $tags = null;
+    /**
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
+     */
+    protected $taints = null;
+    /**
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
+     */
+    protected $labels = null;
+    /**
      * Parameters that can be configured on Linux nodes.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.LinuxNodeConfig linux_node_config = 19;</code>
@@ -112,6 +136,12 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.container.v1beta1.NodeKubeletConfig kubelet_config = 20;</code>
      */
     protected $kubelet_config = null;
+    /**
+     * Enable or disable gvnic on the node pool.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     */
+    protected $gvnic = null;
 
     /**
      * Constructor.
@@ -160,10 +190,24 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
      *           `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
      *     @type \Google\Cloud\Container\V1beta1\NodePool\UpgradeSettings $upgrade_settings
      *           Upgrade settings control disruption and speed of the upgrade.
+     *     @type \Google\Cloud\Container\V1beta1\NetworkTags $tags
+     *           The desired network tags to be applied to all nodes in the node pool.
+     *           If this field is not present, the tags will not be changed. Otherwise,
+     *           the existing network tags will be *replaced* with the provided tags.
+     *     @type \Google\Cloud\Container\V1beta1\NodeTaints $taints
+     *           The desired node taints to be applied to all nodes in the node pool.
+     *           If this field is not present, the taints will not be changed. Otherwise,
+     *           the existing node taints will be *replaced* with the provided taints.
+     *     @type \Google\Cloud\Container\V1beta1\NodeLabels $labels
+     *           The desired node labels to be applied to all nodes in the node pool.
+     *           If this field is not present, the labels will not be changed. Otherwise,
+     *           the existing node labels will be *replaced* with the provided labels.
      *     @type \Google\Cloud\Container\V1beta1\LinuxNodeConfig $linux_node_config
      *           Parameters that can be configured on Linux nodes.
      *     @type \Google\Cloud\Container\V1beta1\NodeKubeletConfig $kubelet_config
      *           Node kubelet configs.
+     *     @type \Google\Cloud\Container\V1beta1\VirtualNIC $gvnic
+     *           Enable or disable gvnic on the node pool.
      * }
      */
     public function __construct($data = NULL) {
@@ -510,6 +554,126 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
+     * @return \Google\Cloud\Container\V1beta1\NetworkTags|null
+     */
+    public function getTags()
+    {
+        return isset($this->tags) ? $this->tags : null;
+    }
+
+    public function hasTags()
+    {
+        return isset($this->tags);
+    }
+
+    public function clearTags()
+    {
+        unset($this->tags);
+    }
+
+    /**
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NetworkTags tags = 16;</code>
+     * @param \Google\Cloud\Container\V1beta1\NetworkTags $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\NetworkTags::class);
+        $this->tags = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
+     * @return \Google\Cloud\Container\V1beta1\NodeTaints|null
+     */
+    public function getTaints()
+    {
+        return isset($this->taints) ? $this->taints : null;
+    }
+
+    public function hasTaints()
+    {
+        return isset($this->taints);
+    }
+
+    public function clearTaints()
+    {
+        unset($this->taints);
+    }
+
+    /**
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeTaints taints = 17;</code>
+     * @param \Google\Cloud\Container\V1beta1\NodeTaints $var
+     * @return $this
+     */
+    public function setTaints($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\NodeTaints::class);
+        $this->taints = $var;
+
+        return $this;
+    }
+
+    /**
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
+     * @return \Google\Cloud\Container\V1beta1\NodeLabels|null
+     */
+    public function getLabels()
+    {
+        return isset($this->labels) ? $this->labels : null;
+    }
+
+    public function hasLabels()
+    {
+        return isset($this->labels);
+    }
+
+    public function clearLabels()
+    {
+        unset($this->labels);
+    }
+
+    /**
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.NodeLabels labels = 18;</code>
+     * @param \Google\Cloud\Container\V1beta1\NodeLabels $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\NodeLabels::class);
+        $this->labels = $var;
+
+        return $this;
+    }
+
+    /**
      * Parameters that can be configured on Linux nodes.
      *
      * Generated from protobuf field <code>.google.container.v1beta1.LinuxNodeConfig linux_node_config = 19;</code>
@@ -577,6 +741,42 @@ class UpdateNodePoolRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\NodeKubeletConfig::class);
         $this->kubelet_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Enable or disable gvnic on the node pool.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     * @return \Google\Cloud\Container\V1beta1\VirtualNIC|null
+     */
+    public function getGvnic()
+    {
+        return isset($this->gvnic) ? $this->gvnic : null;
+    }
+
+    public function hasGvnic()
+    {
+        return isset($this->gvnic);
+    }
+
+    public function clearGvnic()
+    {
+        unset($this->gvnic);
+    }
+
+    /**
+     * Enable or disable gvnic on the node pool.
+     *
+     * Generated from protobuf field <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
+     * @param \Google\Cloud\Container\V1beta1\VirtualNIC $var
+     * @return $this
+     */
+    public function setGvnic($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Container\V1beta1\VirtualNIC::class);
+        $this->gvnic = $var;
 
         return $this;
     }
