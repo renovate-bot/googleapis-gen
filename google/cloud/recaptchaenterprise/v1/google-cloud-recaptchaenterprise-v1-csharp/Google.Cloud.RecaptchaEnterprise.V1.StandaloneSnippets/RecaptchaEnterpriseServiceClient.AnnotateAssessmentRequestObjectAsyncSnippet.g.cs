@@ -35,6 +35,10 @@ namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
             {
                 AssessmentName = AssessmentName.FromProjectAssessment("[PROJECT]", "[ASSESSMENT]"),
                 Annotation = AnnotateAssessmentRequest.Types.Annotation.Unspecified,
+                Reasons =
+                {
+                    AnnotateAssessmentRequest.Types.Reason.Unspecified,
+                },
             };
             // Make the request
             AnnotateAssessmentResponse response = await recaptchaEnterpriseServiceClient.AnnotateAssessmentAsync(request);

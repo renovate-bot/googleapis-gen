@@ -132,20 +132,20 @@ public interface KeyOrBuilder extends
 
   /**
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
   /**
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(
       java.lang.String key);
@@ -157,21 +157,21 @@ public interface KeyOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getLabelsMap();
   /**
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
 
   java.lang.String getLabelsOrDefault(
@@ -179,11 +179,11 @@ public interface KeyOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Optional. See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
+   * See &lt;a href="https://cloud.google.com/recaptcha-enterprise/docs/labels"&gt;
    * Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>map&lt;string, string&gt; labels = 6;</code>
    */
 
   java.lang.String getLabelsOrThrow(
@@ -215,6 +215,33 @@ public interface KeyOrBuilder extends
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Options for user acceptance testing.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * @return Whether the testingOptions field is set.
+   */
+  boolean hasTestingOptions();
+  /**
+   * <pre>
+   * Options for user acceptance testing.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   * @return The testingOptions.
+   */
+  com.google.recaptchaenterprise.v1.TestingOptions getTestingOptions();
+  /**
+   * <pre>
+   * Options for user acceptance testing.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.TestingOptions testing_options = 9;</code>
+   */
+  com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder getTestingOptionsOrBuilder();
 
   public com.google.recaptchaenterprise.v1.Key.PlatformSettingsCase getPlatformSettingsCase();
 }

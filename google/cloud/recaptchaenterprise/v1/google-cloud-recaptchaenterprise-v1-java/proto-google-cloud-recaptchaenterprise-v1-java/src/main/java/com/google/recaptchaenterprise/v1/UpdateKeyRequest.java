@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -747,7 +747,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -821,7 +821,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The mask to control which field of the key get updated. If the mask is not
+     * Optional. The mask to control which fields of the key get updated. If the mask is not
      * present, all fields will be updated.
      * </pre>
      *

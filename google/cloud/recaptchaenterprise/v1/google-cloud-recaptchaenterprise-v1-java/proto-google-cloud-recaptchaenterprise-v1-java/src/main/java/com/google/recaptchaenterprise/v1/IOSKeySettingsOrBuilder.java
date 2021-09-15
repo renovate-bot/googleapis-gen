@@ -9,6 +9,16 @@ public interface IOSKeySettingsOrBuilder extends
 
   /**
    * <pre>
+   * If set to true, it means allowed_bundle_ids will not be enforced.
+   * </pre>
+   *
+   * <code>bool allow_all_bundle_ids = 2;</code>
+   * @return The allowAllBundleIds.
+   */
+  boolean getAllowAllBundleIds();
+
+  /**
+   * <pre>
    * iOS bundle ids of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
    * </pre>

@@ -36,7 +36,7 @@ public interface UpdateKeyRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface UpdateKeyRequestOrBuilder extends
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface UpdateKeyRequestOrBuilder extends
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Optional. The mask to control which field of the key get updated. If the mask is not
+   * Optional. The mask to control which fields of the key get updated. If the mask is not
    * present, all fields will be updated.
    * </pre>
    *

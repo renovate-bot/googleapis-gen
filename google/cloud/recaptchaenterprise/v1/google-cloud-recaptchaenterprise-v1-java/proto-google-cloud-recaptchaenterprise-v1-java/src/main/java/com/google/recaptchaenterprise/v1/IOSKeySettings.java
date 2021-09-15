@@ -63,6 +63,11 @@ private static final long serialVersionUID = 0L;
             allowedBundleIds_.add(s);
             break;
           }
+          case 16: {
+
+            allowAllBundleIds_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -96,6 +101,21 @@ private static final long serialVersionUID = 0L;
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto.internal_static_google_cloud_recaptchaenterprise_v1_IOSKeySettings_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.recaptchaenterprise.v1.IOSKeySettings.class, com.google.recaptchaenterprise.v1.IOSKeySettings.Builder.class);
+  }
+
+  public static final int ALLOW_ALL_BUNDLE_IDS_FIELD_NUMBER = 2;
+  private boolean allowAllBundleIds_;
+  /**
+   * <pre>
+   * If set to true, it means allowed_bundle_ids will not be enforced.
+   * </pre>
+   *
+   * <code>bool allow_all_bundle_ids = 2;</code>
+   * @return The allowAllBundleIds.
+   */
+  @java.lang.Override
+  public boolean getAllowAllBundleIds() {
+    return allowAllBundleIds_;
   }
 
   public static final int ALLOWED_BUNDLE_IDS_FIELD_NUMBER = 1;
@@ -170,6 +190,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < allowedBundleIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, allowedBundleIds_.getRaw(i));
     }
+    if (allowAllBundleIds_ != false) {
+      output.writeBool(2, allowAllBundleIds_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -187,6 +210,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAllowedBundleIdsList().size();
     }
+    if (allowAllBundleIds_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, allowAllBundleIds_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -202,6 +229,8 @@ private static final long serialVersionUID = 0L;
     }
     com.google.recaptchaenterprise.v1.IOSKeySettings other = (com.google.recaptchaenterprise.v1.IOSKeySettings) obj;
 
+    if (getAllowAllBundleIds()
+        != other.getAllowAllBundleIds()) return false;
     if (!getAllowedBundleIdsList()
         .equals(other.getAllowedBundleIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -215,6 +244,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ALLOW_ALL_BUNDLE_IDS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowAllBundleIds());
     if (getAllowedBundleIdsCount() > 0) {
       hash = (37 * hash) + ALLOWED_BUNDLE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedBundleIdsList().hashCode();
@@ -356,6 +388,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      allowAllBundleIds_ = false;
+
       allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -385,6 +419,7 @@ private static final long serialVersionUID = 0L;
     public com.google.recaptchaenterprise.v1.IOSKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.IOSKeySettings result = new com.google.recaptchaenterprise.v1.IOSKeySettings(this);
       int from_bitField0_ = bitField0_;
+      result.allowAllBundleIds_ = allowAllBundleIds_;
       if (((bitField0_ & 0x00000001) != 0)) {
         allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -438,6 +473,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.recaptchaenterprise.v1.IOSKeySettings other) {
       if (other == com.google.recaptchaenterprise.v1.IOSKeySettings.getDefaultInstance()) return this;
+      if (other.getAllowAllBundleIds() != false) {
+        setAllowAllBundleIds(other.getAllowAllBundleIds());
+      }
       if (!other.allowedBundleIds_.isEmpty()) {
         if (allowedBundleIds_.isEmpty()) {
           allowedBundleIds_ = other.allowedBundleIds_;
@@ -477,6 +515,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
+
+    private boolean allowAllBundleIds_ ;
+    /**
+     * <pre>
+     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * </pre>
+     *
+     * <code>bool allow_all_bundle_ids = 2;</code>
+     * @return The allowAllBundleIds.
+     */
+    @java.lang.Override
+    public boolean getAllowAllBundleIds() {
+      return allowAllBundleIds_;
+    }
+    /**
+     * <pre>
+     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * </pre>
+     *
+     * <code>bool allow_all_bundle_ids = 2;</code>
+     * @param value The allowAllBundleIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowAllBundleIds(boolean value) {
+      
+      allowAllBundleIds_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to true, it means allowed_bundle_ids will not be enforced.
+     * </pre>
+     *
+     * <code>bool allow_all_bundle_ids = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowAllBundleIds() {
+      
+      allowAllBundleIds_ = false;
+      onChanged();
+      return this;
+    }
 
     private com.google.protobuf.LazyStringList allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAllowedBundleIdsIsMutable() {

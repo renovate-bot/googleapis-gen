@@ -119,7 +119,6 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * LINT.IfChange(classification_reason)
    * Reasons contributing to the risk analysis verdict.
    * </pre>
    *

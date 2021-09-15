@@ -540,6 +540,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+   * This can only be set for the SCORE integration type.
    * </pre>
    *
    * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1221,6 +1222,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+     * This can only be set for the SCORE integration type.
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1233,6 +1235,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+     * This can only be set for the SCORE integration type.
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1248,6 +1251,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Whether this key can be used on AMP (Accelerated Mobile Pages) websites.
+     * This can only be set for the SCORE integration type.
      * </pre>
      *
      * <code>bool allow_amp_traffic = 2 [(.google.api.field_behavior) = REQUIRED];</code>
