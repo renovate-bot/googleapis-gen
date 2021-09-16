@@ -136,6 +136,19 @@ private static final long serialVersionUID = 0L;
             roleMatch_ = rawValue;
             break;
           }
+          case 90: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (updateTime_ != null) {
+              subBuilder = updateTime_.toBuilder();
+            }
+            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updateTime_);
+              updateTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -725,6 +738,44 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED : result;
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   * <pre>
+   * Output only. The most recent time at which the phrase matcher was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The most recent time at which the phrase matcher was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   * <pre>
+   * Output only. The most recent time at which the phrase matcher was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return getUpdateTime();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -768,6 +819,9 @@ private static final long serialVersionUID = 0L;
     }
     if (roleMatch_ != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.ROLE_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, roleMatch_);
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(11, getUpdateTime());
     }
     unknownFields.writeTo(output);
   }
@@ -814,6 +868,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(10, roleMatch_);
     }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -853,6 +911,11 @@ private static final long serialVersionUID = 0L;
           .equals(other.getActivationUpdateTime())) return false;
     }
     if (roleMatch_ != other.roleMatch_) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime()
+          .equals(other.getUpdateTime())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -891,6 +954,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ROLE_MATCH_FIELD_NUMBER;
     hash = (53 * hash) + roleMatch_;
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1061,6 +1128,12 @@ private static final long serialVersionUID = 0L;
       }
       roleMatch_ = 0;
 
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1114,6 +1187,11 @@ private static final long serialVersionUID = 0L;
         result.activationUpdateTime_ = activationUpdateTimeBuilder_.build();
       }
       result.roleMatch_ = roleMatch_;
+      if (updateTimeBuilder_ == null) {
+        result.updateTime_ = updateTime_;
+      } else {
+        result.updateTime_ = updateTimeBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1218,6 +1296,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.roleMatch_ != 0) {
         setRoleMatchValue(other.getRoleMatchValue());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2493,6 +2574,161 @@ private static final long serialVersionUID = 0L;
       roleMatch_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return updateTimeBuilder_ != null || updateTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setUpdateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (updateTime_ != null) {
+          updateTime_ =
+            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        } else {
+          updateTime_ = value;
+        }
+        onChanged();
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = null;
+        onChanged();
+      } else {
+        updateTime_ = null;
+        updateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The most recent time at which the phrase matcher was updated.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(),
+                getParentForChildren(),
+                isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

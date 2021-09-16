@@ -84,6 +84,12 @@ class PhraseMatcher extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
      */
     protected $role_match = 0;
+    /**
+     * Output only. The most recent time at which the phrase matcher was updated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $update_time = null;
 
     /**
      * Constructor.
@@ -120,6 +126,8 @@ class PhraseMatcher extends \Google\Protobuf\Internal\Message
      *           The role whose utterances the phrase matcher should be matched
      *           against. If the role is ROLE_UNSPECIFIED it will be matched against any
      *           utterances in the transcript.
+     *     @type \Google\Protobuf\Timestamp $update_time
+     *           Output only. The most recent time at which the phrase matcher was updated.
      * }
      */
     public function __construct($data = NULL) {
@@ -421,6 +429,42 @@ class PhraseMatcher extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant\Role::class);
         $this->role_match = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The most recent time at which the phrase matcher was updated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getUpdateTime()
+    {
+        return isset($this->update_time) ? $this->update_time : null;
+    }
+
+    public function hasUpdateTime()
+    {
+        return isset($this->update_time);
+    }
+
+    public function clearUpdateTime()
+    {
+        unset($this->update_time);
+    }
+
+    /**
+     * Output only. The most recent time at which the phrase matcher was updated.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdateTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->update_time = $var;
 
         return $this;
     }
