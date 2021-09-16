@@ -1,0 +1,10 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-sql-v1/latest",
+    "distribution_name": "google-cloud-sql-v1",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Sql V1 API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-sql-v1 is the official client library for the Google Cloud Sql V1 API. Note that google-cloud-sql-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-sql instead. See the readme for more details.",
+    "library_type": "GAPIC_AUTO"
+}

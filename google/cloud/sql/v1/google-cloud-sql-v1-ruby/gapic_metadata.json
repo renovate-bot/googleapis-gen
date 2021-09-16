@@ -1,0 +1,344 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.sql.v1",
+  "libraryPackage": "::Google::Cloud::Sql::V1",
+  "services": {
+    "SqlBackupRunsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlBackupRunsService::Client",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlConnectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlConnectService::Client",
+          "rpcs": {
+            "GetConnectSettings": {
+              "methods": [
+                "get_connect_settings"
+              ]
+            },
+            "GenerateEphemeralCert": {
+              "methods": [
+                "generate_ephemeral_cert"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlDatabasesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlDatabasesService::Client",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "Patch": {
+              "methods": [
+                "patch"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlFlagsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlFlagsService::Client",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlInstanceNamesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlInstanceNamesService::Client",
+          "rpcs": {
+          }
+        }
+      }
+    },
+    "SqlInstancesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlInstancesService::Client",
+          "rpcs": {
+            "AddServerCa": {
+              "methods": [
+                "add_server_ca"
+              ]
+            },
+            "Clone": {
+              "methods": [
+                "call_clone"
+              ]
+            },
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "DemoteMaster": {
+              "methods": [
+                "demote_master"
+              ]
+            },
+            "Export": {
+              "methods": [
+                "export"
+              ]
+            },
+            "Failover": {
+              "methods": [
+                "failover"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Import": {
+              "methods": [
+                "import"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "ListServerCas": {
+              "methods": [
+                "list_server_cas"
+              ]
+            },
+            "Patch": {
+              "methods": [
+                "patch"
+              ]
+            },
+            "PromoteReplica": {
+              "methods": [
+                "promote_replica"
+              ]
+            },
+            "ResetSslConfig": {
+              "methods": [
+                "reset_ssl_config"
+              ]
+            },
+            "Restart": {
+              "methods": [
+                "restart"
+              ]
+            },
+            "RestoreBackup": {
+              "methods": [
+                "restore_backup"
+              ]
+            },
+            "RotateServerCa": {
+              "methods": [
+                "rotate_server_ca"
+              ]
+            },
+            "StartReplica": {
+              "methods": [
+                "start_replica"
+              ]
+            },
+            "StopReplica": {
+              "methods": [
+                "stop_replica"
+              ]
+            },
+            "TruncateLog": {
+              "methods": [
+                "truncate_log"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            },
+            "CreateEphemeral": {
+              "methods": [
+                "create_ephemeral"
+              ]
+            },
+            "RescheduleMaintenance": {
+              "methods": [
+                "reschedule_maintenance"
+              ]
+            },
+            "VerifyExternalSyncSettings": {
+              "methods": [
+                "verify_external_sync_settings"
+              ]
+            },
+            "StartExternalSync": {
+              "methods": [
+                "start_external_sync"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlOperationsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlOperationsService::Client",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlSslCertsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlSslCertsService::Client",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlTiersService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlTiersService::Client",
+          "rpcs": {
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "SqlUsersService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1::SqlUsersService::Client",
+          "rpcs": {
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            },
+            "Update": {
+              "methods": [
+                "update"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
