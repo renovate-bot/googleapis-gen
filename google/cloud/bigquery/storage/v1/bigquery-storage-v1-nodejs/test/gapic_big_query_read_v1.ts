@@ -501,5 +501,105 @@ describe('v1.BigQueryReadClient', () => {
                     .getCall(-1).calledWith(fakePath));
             });
         });
+
+        describe('table', () => {
+            const fakePath = "/rendered/path/table";
+            const expectedParameters = {
+                project: "projectValue",
+                dataset: "datasetValue",
+                table: "tableValue",
+            };
+            const client = new bigqueryreadModule.v1.BigQueryReadClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.tablePathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.tablePathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('tablePath', () => {
+                const result = client.tablePath("projectValue", "datasetValue", "tableValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.tablePathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromTableName', () => {
+                const result = client.matchProjectFromTableName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.tablePathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchDatasetFromTableName', () => {
+                const result = client.matchDatasetFromTableName(fakePath);
+                assert.strictEqual(result, "datasetValue");
+                assert((client.pathTemplates.tablePathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchTableFromTableName', () => {
+                const result = client.matchTableFromTableName(fakePath);
+                assert.strictEqual(result, "tableValue");
+                assert((client.pathTemplates.tablePathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('writeStream', () => {
+            const fakePath = "/rendered/path/writeStream";
+            const expectedParameters = {
+                project: "projectValue",
+                dataset: "datasetValue",
+                table: "tableValue",
+                stream: "streamValue",
+            };
+            const client = new bigqueryreadModule.v1.BigQueryReadClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.writeStreamPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.writeStreamPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('writeStreamPath', () => {
+                const result = client.writeStreamPath("projectValue", "datasetValue", "tableValue", "streamValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.writeStreamPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchProjectFromWriteStreamName', () => {
+                const result = client.matchProjectFromWriteStreamName(fakePath);
+                assert.strictEqual(result, "projectValue");
+                assert((client.pathTemplates.writeStreamPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchDatasetFromWriteStreamName', () => {
+                const result = client.matchDatasetFromWriteStreamName(fakePath);
+                assert.strictEqual(result, "datasetValue");
+                assert((client.pathTemplates.writeStreamPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchTableFromWriteStreamName', () => {
+                const result = client.matchTableFromWriteStreamName(fakePath);
+                assert.strictEqual(result, "tableValue");
+                assert((client.pathTemplates.writeStreamPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchStreamFromWriteStreamName', () => {
+                const result = client.matchStreamFromWriteStreamName(fakePath);
+                assert.strictEqual(result, "streamValue");
+                assert((client.pathTemplates.writeStreamPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
     });
 });

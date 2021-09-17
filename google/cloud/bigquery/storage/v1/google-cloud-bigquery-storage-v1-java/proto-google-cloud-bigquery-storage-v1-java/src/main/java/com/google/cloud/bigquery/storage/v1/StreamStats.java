@@ -5,7 +5,7 @@ package com.google.cloud.bigquery.storage.v1;
 
 /**
  * <pre>
- * Estimated stream statistics for a given Stream.
+ * Estimated stream statistics for a given read Stream.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.storage.v1.StreamStats}
@@ -949,7 +949,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Estimated stream statistics for a given Stream.
+   * Estimated stream statistics for a given read Stream.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1.StreamStats}

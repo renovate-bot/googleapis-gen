@@ -21,7 +21,8 @@
     "cloud",
     "google storage",
     "storage",
-    "big query read"
+    "big query read",
+    "big query write"
   ],
   "scripts": {
     "clean": "gts clean",

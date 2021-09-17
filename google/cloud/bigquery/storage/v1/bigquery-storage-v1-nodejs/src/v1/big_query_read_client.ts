@@ -164,6 +164,12 @@ export class BigQueryReadClient {
       readStreamPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/locations/{location}/sessions/{session}/streams/{stream}'
       ),
+      tablePathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/datasets/{dataset}/tables/{table}'
+      ),
+      writeStreamPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}'
+      ),
     };
 
     // Some of the methods on this service provide streaming responses.
@@ -674,6 +680,117 @@ export class BigQueryReadClient {
    */
   matchStreamFromReadStreamName(readStreamName: string) {
     return this.pathTemplates.readStreamPathTemplate.match(readStreamName).stream;
+  }
+
+  /**
+   * Return a fully-qualified table resource name string.
+   *
+   * @param {string} project
+   * @param {string} dataset
+   * @param {string} table
+   * @returns {string} Resource name string.
+   */
+  tablePath(project:string,dataset:string,table:string) {
+    return this.pathTemplates.tablePathTemplate.render({
+      project: project,
+      dataset: dataset,
+      table: table,
+    });
+  }
+
+  /**
+   * Parse the project from Table resource.
+   *
+   * @param {string} tableName
+   *   A fully-qualified path representing Table resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromTableName(tableName: string) {
+    return this.pathTemplates.tablePathTemplate.match(tableName).project;
+  }
+
+  /**
+   * Parse the dataset from Table resource.
+   *
+   * @param {string} tableName
+   *   A fully-qualified path representing Table resource.
+   * @returns {string} A string representing the dataset.
+   */
+  matchDatasetFromTableName(tableName: string) {
+    return this.pathTemplates.tablePathTemplate.match(tableName).dataset;
+  }
+
+  /**
+   * Parse the table from Table resource.
+   *
+   * @param {string} tableName
+   *   A fully-qualified path representing Table resource.
+   * @returns {string} A string representing the table.
+   */
+  matchTableFromTableName(tableName: string) {
+    return this.pathTemplates.tablePathTemplate.match(tableName).table;
+  }
+
+  /**
+   * Return a fully-qualified writeStream resource name string.
+   *
+   * @param {string} project
+   * @param {string} dataset
+   * @param {string} table
+   * @param {string} stream
+   * @returns {string} Resource name string.
+   */
+  writeStreamPath(project:string,dataset:string,table:string,stream:string) {
+    return this.pathTemplates.writeStreamPathTemplate.render({
+      project: project,
+      dataset: dataset,
+      table: table,
+      stream: stream,
+    });
+  }
+
+  /**
+   * Parse the project from WriteStream resource.
+   *
+   * @param {string} writeStreamName
+   *   A fully-qualified path representing WriteStream resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromWriteStreamName(writeStreamName: string) {
+    return this.pathTemplates.writeStreamPathTemplate.match(writeStreamName).project;
+  }
+
+  /**
+   * Parse the dataset from WriteStream resource.
+   *
+   * @param {string} writeStreamName
+   *   A fully-qualified path representing WriteStream resource.
+   * @returns {string} A string representing the dataset.
+   */
+  matchDatasetFromWriteStreamName(writeStreamName: string) {
+    return this.pathTemplates.writeStreamPathTemplate.match(writeStreamName).dataset;
+  }
+
+  /**
+   * Parse the table from WriteStream resource.
+   *
+   * @param {string} writeStreamName
+   *   A fully-qualified path representing WriteStream resource.
+   * @returns {string} A string representing the table.
+   */
+  matchTableFromWriteStreamName(writeStreamName: string) {
+    return this.pathTemplates.writeStreamPathTemplate.match(writeStreamName).table;
+  }
+
+  /**
+   * Parse the stream from WriteStream resource.
+   *
+   * @param {string} writeStreamName
+   *   A fully-qualified path representing WriteStream resource.
+   * @returns {string} A string representing the stream.
+   */
+  matchStreamFromWriteStreamName(writeStreamName: string) {
+    return this.pathTemplates.writeStreamPathTemplate.match(writeStreamName).stream;
   }
 
   /**

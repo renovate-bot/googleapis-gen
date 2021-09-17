@@ -22,19 +22,39 @@ from .avro import (
     AvroRows,
     AvroSchema,
 )
+from .protobuf import (
+    ProtoRows,
+    ProtoSchema,
+)
 from .storage import (
+    AppendRowsRequest,
+    AppendRowsResponse,
+    BatchCommitWriteStreamsRequest,
+    BatchCommitWriteStreamsResponse,
     CreateReadSessionRequest,
+    CreateWriteStreamRequest,
+    FinalizeWriteStreamRequest,
+    FinalizeWriteStreamResponse,
+    FlushRowsRequest,
+    FlushRowsResponse,
+    GetWriteStreamRequest,
     ReadRowsRequest,
     ReadRowsResponse,
     SplitReadStreamRequest,
     SplitReadStreamResponse,
+    StorageError,
     StreamStats,
     ThrottleState,
 )
 from .stream import (
     ReadSession,
     ReadStream,
+    WriteStream,
     DataFormat,
+)
+from .table import (
+    TableFieldSchema,
+    TableSchema,
 )
 
 __all__ = (
@@ -43,14 +63,30 @@ __all__ = (
     'ArrowSerializationOptions',
     'AvroRows',
     'AvroSchema',
+    'ProtoRows',
+    'ProtoSchema',
+    'AppendRowsRequest',
+    'AppendRowsResponse',
+    'BatchCommitWriteStreamsRequest',
+    'BatchCommitWriteStreamsResponse',
     'CreateReadSessionRequest',
+    'CreateWriteStreamRequest',
+    'FinalizeWriteStreamRequest',
+    'FinalizeWriteStreamResponse',
+    'FlushRowsRequest',
+    'FlushRowsResponse',
+    'GetWriteStreamRequest',
     'ReadRowsRequest',
     'ReadRowsResponse',
     'SplitReadStreamRequest',
     'SplitReadStreamResponse',
+    'StorageError',
     'StreamStats',
     'ThrottleState',
     'ReadSession',
     'ReadStream',
+    'WriteStream',
     'DataFormat',
+    'TableFieldSchema',
+    'TableSchema',
 )
