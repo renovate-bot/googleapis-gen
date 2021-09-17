@@ -93,6 +93,12 @@ namespace Google.Maps.Roads.V1Op
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public RoadsServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public RoadsServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = RoadsServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref RoadsServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<RoadsServiceClient> task);
@@ -157,7 +163,19 @@ namespace Google.Maps.Roads.V1Op
         /// <remarks>The default RoadsService scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="RoadsServiceClient"/> using the default credentials, endpoint and

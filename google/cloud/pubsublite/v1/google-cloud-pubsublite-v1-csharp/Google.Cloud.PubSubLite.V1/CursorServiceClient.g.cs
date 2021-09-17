@@ -116,6 +116,12 @@ namespace Google.Cloud.PubSubLite.V1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public CursorServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public CursorServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = CursorServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref CursorServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<CursorServiceClient> task);
@@ -191,7 +197,19 @@ namespace Google.Cloud.PubSubLite.V1
             "https://www.googleapis.com/auth/cloud-platform",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="CursorServiceClient"/> using the default credentials, endpoint and

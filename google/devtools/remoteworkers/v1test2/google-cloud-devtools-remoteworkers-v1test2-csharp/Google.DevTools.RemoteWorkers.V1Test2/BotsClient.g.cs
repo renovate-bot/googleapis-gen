@@ -88,6 +88,12 @@ namespace Google.DevTools.RemoteWorkers.V1Test2
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public BotsSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public BotsClientBuilder()
+        {
+            UseJwtAccessWithScopes = BotsClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref BotsClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<BotsClient> task);
@@ -179,7 +185,19 @@ namespace Google.DevTools.RemoteWorkers.V1Test2
         /// <remarks>The default Bots scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="BotsClient"/> using the default credentials, endpoint and settings. To

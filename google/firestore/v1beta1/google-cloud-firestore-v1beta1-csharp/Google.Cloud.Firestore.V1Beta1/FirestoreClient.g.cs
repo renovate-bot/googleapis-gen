@@ -278,6 +278,12 @@ namespace Google.Cloud.Firestore.V1Beta1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public FirestoreSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public FirestoreClientBuilder()
+        {
+            UseJwtAccessWithScopes = FirestoreClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref FirestoreClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<FirestoreClient> task);
@@ -360,7 +366,19 @@ namespace Google.Cloud.Firestore.V1Beta1
             "https://www.googleapis.com/auth/datastore",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="FirestoreClient"/> using the default credentials, endpoint and settings.

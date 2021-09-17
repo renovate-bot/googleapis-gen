@@ -154,6 +154,12 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public AgentEndpointServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public AgentEndpointServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = AgentEndpointServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref AgentEndpointServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<AgentEndpointServiceClient> task);
@@ -219,7 +225,19 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta
         /// <remarks>The default AgentEndpointService scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="AgentEndpointServiceClient"/> using the default credentials, endpoint

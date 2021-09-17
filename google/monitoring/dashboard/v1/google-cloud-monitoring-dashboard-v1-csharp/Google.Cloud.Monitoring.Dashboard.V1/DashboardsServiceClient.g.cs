@@ -135,6 +135,12 @@ namespace Google.Cloud.Monitoring.Dashboard.V1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public DashboardsServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public DashboardsServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = DashboardsServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref DashboardsServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<DashboardsServiceClient> task);
@@ -215,7 +221,19 @@ namespace Google.Cloud.Monitoring.Dashboard.V1
             "https://www.googleapis.com/auth/monitoring.write",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="DashboardsServiceClient"/> using the default credentials, endpoint and

@@ -99,6 +99,12 @@ namespace Google.Ads.GoogleAds.V8.Services
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public AdGroupCriterionServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public AdGroupCriterionServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = AdGroupCriterionServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref AdGroupCriterionServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<AdGroupCriterionServiceClient> task);
@@ -170,7 +176,19 @@ namespace Google.Ads.GoogleAds.V8.Services
             "https://www.googleapis.com/auth/adwords",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="AdGroupCriterionServiceClient"/> using the default credentials, endpoint

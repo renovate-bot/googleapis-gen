@@ -139,6 +139,12 @@ namespace Google.Home.Graph.V1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public HomeGraphApiServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public HomeGraphApiServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = HomeGraphApiServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref HomeGraphApiServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<HomeGraphApiServiceClient> task);
@@ -210,7 +216,19 @@ namespace Google.Home.Graph.V1
         /// <remarks>The default HomeGraphApiService scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="HomeGraphApiServiceClient"/> using the default credentials, endpoint and

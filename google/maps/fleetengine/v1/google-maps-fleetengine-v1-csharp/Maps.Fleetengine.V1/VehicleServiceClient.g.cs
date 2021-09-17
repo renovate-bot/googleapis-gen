@@ -184,6 +184,12 @@ namespace Maps.Fleetengine.V1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public VehicleServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public VehicleServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = VehicleServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref VehicleServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<VehicleServiceClient> task);
@@ -249,7 +255,19 @@ namespace Maps.Fleetengine.V1
         /// <remarks>The default VehicleService scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="VehicleServiceClient"/> using the default credentials, endpoint and

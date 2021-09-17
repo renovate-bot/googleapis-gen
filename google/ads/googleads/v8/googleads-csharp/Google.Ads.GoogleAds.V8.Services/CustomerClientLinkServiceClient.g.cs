@@ -99,6 +99,12 @@ namespace Google.Ads.GoogleAds.V8.Services
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public CustomerClientLinkServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public CustomerClientLinkServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = CustomerClientLinkServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref CustomerClientLinkServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<CustomerClientLinkServiceClient> task);
@@ -170,7 +176,19 @@ namespace Google.Ads.GoogleAds.V8.Services
             "https://www.googleapis.com/auth/adwords",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="CustomerClientLinkServiceClient"/> using the default credentials,

@@ -140,6 +140,12 @@ namespace Maps.Fleetengine.V1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public TripServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public TripServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = TripServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref TripServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<TripServiceClient> task);
@@ -205,7 +211,19 @@ namespace Maps.Fleetengine.V1
         /// <remarks>The default TripService scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="TripServiceClient"/> using the default credentials, endpoint and

@@ -201,6 +201,12 @@ namespace Google.Cloud.GkeHub.V1Beta
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public GkeHubSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public GkeHubClientBuilder()
+        {
+            UseJwtAccessWithScopes = GkeHubClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref GkeHubClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<GkeHubClient> task);
@@ -286,7 +292,19 @@ namespace Google.Cloud.GkeHub.V1Beta
             "https://www.googleapis.com/auth/cloud-platform",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="GkeHubClient"/> using the default credentials, endpoint and settings. To

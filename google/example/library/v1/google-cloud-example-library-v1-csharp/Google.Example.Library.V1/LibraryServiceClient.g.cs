@@ -240,6 +240,12 @@ namespace Google.Example.Library.V1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public LibraryServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public LibraryServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = LibraryServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref LibraryServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<LibraryServiceClient> task);
@@ -313,7 +319,19 @@ namespace Google.Example.Library.V1
         /// <remarks>The default LibraryService scopes are:<list type="bullet"></list></remarks>
         public static scg::IReadOnlyList<string> DefaultScopes { get; } = new sco::ReadOnlyCollection<string>(new string[] { });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="LibraryServiceClient"/> using the default credentials, endpoint and

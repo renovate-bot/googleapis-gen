@@ -80,6 +80,12 @@ namespace Google.Apps.Drive.Activity.V2
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public DriveActivityServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public DriveActivityServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = DriveActivityServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref DriveActivityServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<DriveActivityServiceClient> task);
@@ -157,7 +163,19 @@ namespace Google.Apps.Drive.Activity.V2
             "https://www.googleapis.com/auth/drive.activity.readonly",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="DriveActivityServiceClient"/> using the default credentials, endpoint

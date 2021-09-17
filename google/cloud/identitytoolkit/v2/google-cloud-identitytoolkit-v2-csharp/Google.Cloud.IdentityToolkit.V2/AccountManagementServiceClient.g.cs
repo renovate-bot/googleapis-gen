@@ -106,6 +106,12 @@ namespace Google.Cloud.IdentityToolkit.V2
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public AccountManagementServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public AccountManagementServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = AccountManagementServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref AccountManagementServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<AccountManagementServiceClient> task);
@@ -179,7 +185,19 @@ namespace Google.Cloud.IdentityToolkit.V2
             "https://www.googleapis.com/auth/cloud-platform",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="AccountManagementServiceClient"/> using the default credentials,

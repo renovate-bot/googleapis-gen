@@ -79,6 +79,12 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public WebpageViewServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public WebpageViewServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = WebpageViewServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref WebpageViewServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<WebpageViewServiceClient> task);
@@ -150,7 +156,19 @@ namespace Google.Ads.GoogleAds.V7.Services
             "https://www.googleapis.com/auth/adwords",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="WebpageViewServiceClient"/> using the default credentials, endpoint and

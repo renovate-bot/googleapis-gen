@@ -153,6 +153,12 @@ namespace Google.Chromeos.Moblab.V1Beta1
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public BuildServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public BuildServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = BuildServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref BuildServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<BuildServiceClient> task);
@@ -226,7 +232,19 @@ namespace Google.Chromeos.Moblab.V1Beta1
             "https://www.googleapis.com/auth/moblabapi",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="BuildServiceClient"/> using the default credentials, endpoint and

@@ -428,6 +428,12 @@ namespace Google.Iam.V1Beta
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public WorkloadIdentityPoolsSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public WorkloadIdentityPoolsClientBuilder()
+        {
+            UseJwtAccessWithScopes = WorkloadIdentityPoolsClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref WorkloadIdentityPoolsClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<WorkloadIdentityPoolsClient> task);
@@ -501,7 +507,19 @@ namespace Google.Iam.V1Beta
             "https://www.googleapis.com/auth/cloud-platform",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="WorkloadIdentityPoolsClient"/> using the default credentials, endpoint

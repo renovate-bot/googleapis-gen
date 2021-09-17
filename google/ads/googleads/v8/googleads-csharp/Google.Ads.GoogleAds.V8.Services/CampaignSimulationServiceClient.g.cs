@@ -82,6 +82,12 @@ namespace Google.Ads.GoogleAds.V8.Services
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public CampaignSimulationServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public CampaignSimulationServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = CampaignSimulationServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref CampaignSimulationServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<CampaignSimulationServiceClient> task);
@@ -153,7 +159,19 @@ namespace Google.Ads.GoogleAds.V8.Services
             "https://www.googleapis.com/auth/adwords",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="CampaignSimulationServiceClient"/> using the default credentials,

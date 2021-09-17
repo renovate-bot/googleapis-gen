@@ -310,6 +310,12 @@ namespace Google.Cloud.Osconfig.V1Beta
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public OsConfigServiceSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public OsConfigServiceClientBuilder()
+        {
+            UseJwtAccessWithScopes = OsConfigServiceClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref OsConfigServiceClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<OsConfigServiceClient> task);
@@ -386,7 +392,19 @@ namespace Google.Cloud.Osconfig.V1Beta
             "https://www.googleapis.com/auth/cloud-platform",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="OsConfigServiceClient"/> using the default credentials, endpoint and

@@ -159,6 +159,12 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta2
         /// <summary>The settings to use for RPCs, or <c>null</c> for the default settings.</summary>
         public BigQueryWriteSettings Settings { get; set; }
 
+        /// <summary>Creates a new builder with default settings.</summary>
+        public BigQueryWriteClientBuilder()
+        {
+            UseJwtAccessWithScopes = BigQueryWriteClient.UseJwtAccessWithScopes;
+        }
+
         partial void InterceptBuild(ref BigQueryWriteClient client);
 
         partial void InterceptBuildAsync(st::CancellationToken cancellationToken, ref stt::Task<BigQueryWriteClient> task);
@@ -238,7 +244,19 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta2
             "https://www.googleapis.com/auth/cloud-platform",
         });
 
-        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes);
+        internal static gaxgrpc::ChannelPool ChannelPool { get; } = new gaxgrpc::ChannelPool(DefaultScopes, UseJwtAccessWithScopes);
+
+        internal static bool UseJwtAccessWithScopes
+        {
+            get
+            {
+                bool useJwtAccessWithScopes = true;
+                MaybeUseJwtAccessWithScopes(ref useJwtAccessWithScopes);
+                return useJwtAccessWithScopes;
+            }
+        }
+
+        static partial void MaybeUseJwtAccessWithScopes(ref bool useJwtAccessWithScopes);
 
         /// <summary>
         /// Asynchronously creates a <see cref="BigQueryWriteClient"/> using the default credentials, endpoint and
