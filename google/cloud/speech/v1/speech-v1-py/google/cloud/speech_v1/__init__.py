@@ -33,6 +33,7 @@ from .types.cloud_speech import StreamingRecognitionConfig
 from .types.cloud_speech import StreamingRecognitionResult
 from .types.cloud_speech import StreamingRecognizeRequest
 from .types.cloud_speech import StreamingRecognizeResponse
+from .types.cloud_speech import TranscriptOutputConfig
 from .types.cloud_speech import WordInfo
 
 __all__ = (
@@ -54,5 +55,6 @@ __all__ = (
 'StreamingRecognitionResult',
 'StreamingRecognizeRequest',
 'StreamingRecognizeResponse',
+'TranscriptOutputConfig',
 'WordInfo',
 )

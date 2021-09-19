@@ -33,6 +33,7 @@ from google.cloud.speech_v1.types.cloud_speech import StreamingRecognitionConfig
 from google.cloud.speech_v1.types.cloud_speech import StreamingRecognitionResult
 from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeRequest
 from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeResponse
+from google.cloud.speech_v1.types.cloud_speech import TranscriptOutputConfig
 from google.cloud.speech_v1.types.cloud_speech import WordInfo
 
 __all__ = ('SpeechClient',
@@ -53,5 +54,6 @@ __all__ = ('SpeechClient',
     'StreamingRecognitionResult',
     'StreamingRecognizeRequest',
     'StreamingRecognizeResponse',
+    'TranscriptOutputConfig',
     'WordInfo',
 )

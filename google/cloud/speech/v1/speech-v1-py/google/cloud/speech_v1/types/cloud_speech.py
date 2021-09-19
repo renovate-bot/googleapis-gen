@@ -25,6 +25,7 @@ __protobuf__ = proto.module(
     manifest={
         'RecognizeRequest',
         'LongRunningRecognizeRequest',
+        'TranscriptOutputConfig',
         'StreamingRecognizeRequest',
         'StreamingRecognitionConfig',
         'RecognitionConfig',
@@ -80,6 +81,9 @@ class LongRunningRecognizeRequest(proto.Message):
             request.
         audio (google.cloud.speech_v1.types.RecognitionAudio):
             Required. The audio data to be recognized.
+        output_config (google.cloud.speech_v1.types.TranscriptOutputConfig):
+            Optional. Specifies an optional destination
+            for the recognition results.
     """
 
     config = proto.Field(
@@ -91,6 +95,30 @@ class LongRunningRecognizeRequest(proto.Message):
         proto.MESSAGE,
         number=2,
         message='RecognitionAudio',
+    )
+    output_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message='TranscriptOutputConfig',
+    )
+
+
+class TranscriptOutputConfig(proto.Message):
+    r"""Specifies an optional destination for the recognition
+    results.
+
+    Attributes:
+        gcs_uri (str):
+            Specifies a Cloud Storage URI for the recognition results.
+            Must be specified in the format:
+            ``gs://bucket_name/object_name``, and the bucket must
+            already exist.
+    """
+
+    gcs_uri = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='output_type',
     )
 
 
