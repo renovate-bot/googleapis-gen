@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/networksecurity/v1beta1/version"
+require "google/cloud/network_security/v1beta1/version"
 
 require "google/cloud/network_security/v1beta1/network_security/credentials"
 require "google/cloud/network_security/v1beta1/network_security/paths"

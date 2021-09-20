@@ -3,7 +3,7 @@ inherit_gem:
 
 AllCops:
   Exclude:
-    - "google-cloud-networksecurity-v1beta1.gemspec"
+    - "google-cloud-network_security-v1beta1.gemspec"
     - "lib/**/*_pb.rb"
     - "proto_docs/**/*"
     - "test/**/*"
@@ -27,4 +27,4 @@ Metrics/PerceivedComplexity:
   Enabled: false
 Naming/FileName:
   Exclude:
-    - "lib/google-cloud-networksecurity-v1beta1.rb"
+    - "lib/google-cloud-network_security-v1beta1.rb"

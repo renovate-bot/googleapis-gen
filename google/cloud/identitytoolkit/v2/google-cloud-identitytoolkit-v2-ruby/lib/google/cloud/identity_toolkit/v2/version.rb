@@ -19,8 +19,8 @@
 
 module Google
   module Cloud
-    module Networksecurity
-      module V1beta1
+    module IdentityToolkit
+      module V2
         VERSION = "0.0.1"
       end
     end
