@@ -419,6 +419,10 @@ export class GkeHubClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMembership(request);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.get_membership.js</caption>
+ * region_tag:gkehub_get_membership_sample
+ *
  */
   getMembership(
       request?: protos.google.cloud.gkehub.v1.IGetMembershipRequest,
@@ -491,6 +495,10 @@ export class GkeHubClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeature(request);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.get_feature.js</caption>
+ * region_tag:gkehub_get_feature_sample
+ *
  */
   getFeature(
       request?: protos.google.cloud.gkehub.v1.IGetFeatureRequest,
@@ -588,6 +596,10 @@ export class GkeHubClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateConnectManifest(request);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.generate_connect_manifest.js</caption>
+ * region_tag:gkehub_generate_connect_manifest_sample
+ *
  */
   generateConnectManifest(
       request?: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
@@ -694,6 +706,10 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.createMembership(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.create_membership.js</caption>
+ * region_tag:gkehub_create_membership_sample
+ *
  */
   createMembership(
       request?: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
@@ -743,6 +759,10 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.create_membership.js</caption>
+ * region_tag:gkehub_create_membership_sample
+ *
  */
   async checkCreateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Membership, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -808,6 +828,10 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.createFeature(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.create_feature.js</caption>
+ * region_tag:gkehub_create_feature_sample
+ *
  */
   createFeature(
       request?: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
@@ -857,6 +881,10 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.create_feature.js</caption>
+ * region_tag:gkehub_create_feature_sample
+ *
  */
   async checkCreateFeatureProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Feature, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -922,6 +950,10 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.deleteMembership(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_membership.js</caption>
+ * region_tag:gkehub_delete_membership_sample
+ *
  */
   deleteMembership(
       request?: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
@@ -971,6 +1003,10 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_membership.js</caption>
+ * region_tag:gkehub_delete_membership_sample
+ *
  */
   async checkDeleteMembershipProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1036,6 +1072,10 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.deleteFeature(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_feature.js</caption>
+ * region_tag:gkehub_delete_feature_sample
+ *
  */
   deleteFeature(
       request?: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
@@ -1085,6 +1125,10 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_feature.js</caption>
+ * region_tag:gkehub_delete_feature_sample
+ *
  */
   async checkDeleteFeatureProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1157,6 +1201,10 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.updateMembership(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.update_membership.js</caption>
+ * region_tag:gkehub_update_membership_sample
+ *
  */
   updateMembership(
       request?: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
@@ -1206,6 +1254,10 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.update_membership.js</caption>
+ * region_tag:gkehub_update_membership_sample
+ *
  */
   async checkUpdateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Membership, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1278,6 +1330,10 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.updateFeature(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.update_feature.js</caption>
+ * region_tag:gkehub_update_feature_sample
+ *
  */
   updateFeature(
       request?: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
@@ -1327,6 +1383,10 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.update_feature.js</caption>
+ * region_tag:gkehub_update_feature_sample
+ *
  */
   async checkUpdateFeatureProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Feature, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1407,6 +1467,10 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.list_memberships.js</caption>
+ * region_tag:gkehub_list_memberships_sample
+ *
  */
   listMemberships(
       request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
@@ -1494,6 +1558,10 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.list_memberships.js</caption>
+ * region_tag:gkehub_list_memberships_sample
+ *
  */
   listMembershipsStream(
       request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
@@ -1508,7 +1576,8 @@ export class GkeHubClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMemberships'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMemberships.createStream(
       this.innerApiCalls.listMemberships as gax.GaxCall,
@@ -1573,6 +1642,10 @@ export class GkeHubClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.list_memberships.js</caption>
+ * region_tag:gkehub_list_memberships_sample
+ *
  */
   listMembershipsAsync(
       request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
@@ -1588,7 +1661,8 @@ export class GkeHubClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMemberships'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMemberships.asyncIterate(
       this.innerApiCalls['listMemberships'] as GaxCall,
@@ -1665,6 +1739,10 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.list_features.js</caption>
+ * region_tag:gkehub_list_features_sample
+ *
  */
   listFeatures(
       request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
@@ -1748,6 +1826,10 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.list_features.js</caption>
+ * region_tag:gkehub_list_features_sample
+ *
  */
   listFeaturesStream(
       request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
@@ -1762,7 +1844,8 @@ export class GkeHubClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFeatures'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFeatures.createStream(
       this.innerApiCalls.listFeatures as gax.GaxCall,
@@ -1823,6 +1906,10 @@ export class GkeHubClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/gke_hub.list_features.js</caption>
+ * region_tag:gkehub_list_features_sample
+ *
  */
   listFeaturesAsync(
       request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
@@ -1838,7 +1925,8 @@ export class GkeHubClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFeatures'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFeatures.asyncIterate(
       this.innerApiCalls['listFeatures'] as GaxCall,

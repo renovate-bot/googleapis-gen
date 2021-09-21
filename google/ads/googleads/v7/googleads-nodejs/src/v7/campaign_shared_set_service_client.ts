@@ -690,6 +690,10 @@ export class CampaignSharedSetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignSharedSet(request);
+ *
+ * @example <caption>include:samples/generated/v7/campaign_shared_set_service.get_campaign_shared_set.js</caption>
+ * region_tag:googleads_get_campaign_shared_set_sample
+ *
  */
   getCampaignSharedSet(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignSharedSetRequest,
@@ -798,6 +802,10 @@ export class CampaignSharedSetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignSharedSets(request);
+ *
+ * @example <caption>include:samples/generated/v7/campaign_shared_set_service.mutate_campaign_shared_sets.js</caption>
+ * region_tag:googleads_mutate_campaign_shared_sets_sample
+ *
  */
   mutateCampaignSharedSets(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignSharedSetsRequest,

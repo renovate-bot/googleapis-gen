@@ -419,6 +419,10 @@ export class WorkloadIdentityPoolsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWorkloadIdentityPool(request);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.get_workload_identity_pool.js</caption>
+ * region_tag:iam_get_workload_identity_pool_sample
+ *
  */
   getWorkloadIdentityPool(
       request?: protos.google.iam.v1beta.IGetWorkloadIdentityPoolRequest,
@@ -491,6 +495,10 @@ export class WorkloadIdentityPoolsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWorkloadIdentityPoolProvider(request);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.get_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_get_workload_identity_pool_provider_sample
+ *
  */
   getWorkloadIdentityPoolProvider(
       request?: protos.google.iam.v1beta.IGetWorkloadIdentityPoolProviderRequest,
@@ -577,6 +585,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.createWorkloadIdentityPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.create_workload_identity_pool.js</caption>
+ * region_tag:iam_create_workload_identity_pool_sample
+ *
  */
   createWorkloadIdentityPool(
       request?: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolRequest,
@@ -626,6 +638,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.create_workload_identity_pool.js</caption>
+ * region_tag:iam_create_workload_identity_pool_sample
+ *
  */
   async checkCreateWorkloadIdentityPoolProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -675,6 +691,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.updateWorkloadIdentityPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.update_workload_identity_pool.js</caption>
+ * region_tag:iam_update_workload_identity_pool_sample
+ *
  */
   updateWorkloadIdentityPool(
       request?: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolRequest,
@@ -724,6 +744,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.update_workload_identity_pool.js</caption>
+ * region_tag:iam_update_workload_identity_pool_sample
+ *
  */
   async checkUpdateWorkloadIdentityPoolProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -781,6 +805,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.deleteWorkloadIdentityPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.delete_workload_identity_pool.js</caption>
+ * region_tag:iam_delete_workload_identity_pool_sample
+ *
  */
   deleteWorkloadIdentityPool(
       request?: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolRequest,
@@ -830,6 +858,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.delete_workload_identity_pool.js</caption>
+ * region_tag:iam_delete_workload_identity_pool_sample
+ *
  */
   async checkDeleteWorkloadIdentityPoolProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -877,6 +909,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.undeleteWorkloadIdentityPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.undelete_workload_identity_pool.js</caption>
+ * region_tag:iam_undelete_workload_identity_pool_sample
+ *
  */
   undeleteWorkloadIdentityPool(
       request?: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolRequest,
@@ -926,6 +962,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.undelete_workload_identity_pool.js</caption>
+ * region_tag:iam_undelete_workload_identity_pool_sample
+ *
  */
   async checkUndeleteWorkloadIdentityPoolProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPool, protos.google.iam.v1beta.WorkloadIdentityPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -984,6 +1024,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.createWorkloadIdentityPoolProvider(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.create_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_create_workload_identity_pool_provider_sample
+ *
  */
   createWorkloadIdentityPoolProvider(
       request?: protos.google.iam.v1beta.ICreateWorkloadIdentityPoolProviderRequest,
@@ -1033,6 +1077,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.create_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_create_workload_identity_pool_provider_sample
+ *
  */
   async checkCreateWorkloadIdentityPoolProviderProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1082,6 +1130,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.updateWorkloadIdentityPoolProvider(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.update_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_update_workload_identity_pool_provider_sample
+ *
  */
   updateWorkloadIdentityPoolProvider(
       request?: protos.google.iam.v1beta.IUpdateWorkloadIdentityPoolProviderRequest,
@@ -1131,6 +1183,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.update_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_update_workload_identity_pool_provider_sample
+ *
  */
   async checkUpdateWorkloadIdentityPoolProviderProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1183,6 +1239,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.deleteWorkloadIdentityPoolProvider(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.delete_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_delete_workload_identity_pool_provider_sample
+ *
  */
   deleteWorkloadIdentityPoolProvider(
       request?: protos.google.iam.v1beta.IDeleteWorkloadIdentityPoolProviderRequest,
@@ -1232,6 +1292,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.delete_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_delete_workload_identity_pool_provider_sample
+ *
  */
   async checkDeleteWorkloadIdentityPoolProviderProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1280,6 +1344,10 @@ export class WorkloadIdentityPoolsClient {
  * @example
  * const [operation] = await client.undeleteWorkloadIdentityPoolProvider(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.undelete_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_undelete_workload_identity_pool_provider_sample
+ *
  */
   undeleteWorkloadIdentityPoolProvider(
       request?: protos.google.iam.v1beta.IUndeleteWorkloadIdentityPoolProviderRequest,
@@ -1329,6 +1397,10 @@ export class WorkloadIdentityPoolsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.undelete_workload_identity_pool_provider.js</caption>
+ * region_tag:iam_undelete_workload_identity_pool_provider_sample
+ *
  */
   async checkUndeleteWorkloadIdentityPoolProviderProgress(name: string): Promise<LROperation<protos.google.iam.v1beta.WorkloadIdentityPoolProvider, protos.google.iam.v1beta.WorkloadIdentityPoolProviderOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1388,6 +1460,10 @@ export class WorkloadIdentityPoolsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.list_workload_identity_pools.js</caption>
+ * region_tag:iam_list_workload_identity_pools_sample
+ *
  */
   listWorkloadIdentityPools(
       request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
@@ -1451,6 +1527,10 @@ export class WorkloadIdentityPoolsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.list_workload_identity_pools.js</caption>
+ * region_tag:iam_list_workload_identity_pools_sample
+ *
  */
   listWorkloadIdentityPoolsStream(
       request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
@@ -1465,7 +1545,8 @@ export class WorkloadIdentityPoolsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkloadIdentityPools'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkloadIdentityPools.createStream(
       this.innerApiCalls.listWorkloadIdentityPools as gax.GaxCall,
@@ -1506,6 +1587,10 @@ export class WorkloadIdentityPoolsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.list_workload_identity_pools.js</caption>
+ * region_tag:iam_list_workload_identity_pools_sample
+ *
  */
   listWorkloadIdentityPoolsAsync(
       request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolsRequest,
@@ -1521,7 +1606,8 @@ export class WorkloadIdentityPoolsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkloadIdentityPools'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkloadIdentityPools.asyncIterate(
       this.innerApiCalls['listWorkloadIdentityPools'] as GaxCall,
@@ -1582,6 +1668,10 @@ export class WorkloadIdentityPoolsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.list_workload_identity_pool_providers.js</caption>
+ * region_tag:iam_list_workload_identity_pool_providers_sample
+ *
  */
   listWorkloadIdentityPoolProviders(
       request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
@@ -1646,6 +1736,10 @@ export class WorkloadIdentityPoolsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.list_workload_identity_pool_providers.js</caption>
+ * region_tag:iam_list_workload_identity_pool_providers_sample
+ *
  */
   listWorkloadIdentityPoolProvidersStream(
       request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
@@ -1660,7 +1754,8 @@ export class WorkloadIdentityPoolsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkloadIdentityPoolProviders'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkloadIdentityPoolProviders.createStream(
       this.innerApiCalls.listWorkloadIdentityPoolProviders as gax.GaxCall,
@@ -1702,6 +1797,10 @@ export class WorkloadIdentityPoolsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta/workload_identity_pools.list_workload_identity_pool_providers.js</caption>
+ * region_tag:iam_list_workload_identity_pool_providers_sample
+ *
  */
   listWorkloadIdentityPoolProvidersAsync(
       request?: protos.google.iam.v1beta.IListWorkloadIdentityPoolProvidersRequest,
@@ -1717,7 +1816,8 @@ export class WorkloadIdentityPoolsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkloadIdentityPoolProviders'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkloadIdentityPoolProviders.asyncIterate(
       this.innerApiCalls['listWorkloadIdentityPoolProviders'] as GaxCall,

@@ -735,6 +735,10 @@ export class ConversionUploadServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.uploadClickConversions(request);
+ *
+ * @example <caption>include:samples/generated/v8/conversion_upload_service.upload_click_conversions.js</caption>
+ * region_tag:googleads_upload_click_conversions_sample
+ *
  */
   uploadClickConversions(
       request?: protos.google.ads.googleads.v8.services.IUploadClickConversionsRequest,
@@ -828,6 +832,10 @@ export class ConversionUploadServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.uploadCallConversions(request);
+ *
+ * @example <caption>include:samples/generated/v8/conversion_upload_service.upload_call_conversions.js</caption>
+ * region_tag:googleads_upload_call_conversions_sample
+ *
  */
   uploadCallConversions(
       request?: protos.google.ads.googleads.v8.services.IUploadCallConversionsRequest,

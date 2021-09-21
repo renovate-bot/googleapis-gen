@@ -372,6 +372,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.create_reservation.js</caption>
+ * region_tag:reservation_create_reservation_sample
+ *
  */
   createReservation(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateReservationRequest,
@@ -444,6 +448,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.get_reservation.js</caption>
+ * region_tag:reservation_get_reservation_sample
+ *
  */
   getReservation(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetReservationRequest,
@@ -518,6 +526,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.delete_reservation.js</caption>
+ * region_tag:reservation_delete_reservation_sample
+ *
  */
   deleteReservation(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteReservationRequest,
@@ -591,6 +603,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.update_reservation.js</caption>
+ * region_tag:reservation_update_reservation_sample
+ *
  */
   updateReservation(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateReservationRequest,
@@ -668,6 +684,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCapacityCommitment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.create_capacity_commitment.js</caption>
+ * region_tag:reservation_create_capacity_commitment_sample
+ *
  */
   createCapacityCommitment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateCapacityCommitmentRequest,
@@ -740,6 +760,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCapacityCommitment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.get_capacity_commitment.js</caption>
+ * region_tag:reservation_get_capacity_commitment_sample
+ *
  */
   getCapacityCommitment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetCapacityCommitmentRequest,
@@ -814,6 +838,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCapacityCommitment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.delete_capacity_commitment.js</caption>
+ * region_tag:reservation_delete_capacity_commitment_sample
+ *
  */
   deleteCapacityCommitment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteCapacityCommitmentRequest,
@@ -893,6 +921,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCapacityCommitment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.update_capacity_commitment.js</caption>
+ * region_tag:reservation_update_capacity_commitment_sample
+ *
  */
   updateCapacityCommitment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateCapacityCommitmentRequest,
@@ -974,6 +1006,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.splitCapacityCommitment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.split_capacity_commitment.js</caption>
+ * region_tag:reservation_split_capacity_commitment_sample
+ *
  */
   splitCapacityCommitment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ISplitCapacityCommitmentRequest,
@@ -1056,6 +1092,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mergeCapacityCommitments(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.merge_capacity_commitments.js</caption>
+ * region_tag:reservation_merge_capacity_commitments_sample
+ *
  */
   mergeCapacityCommitments(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IMergeCapacityCommitmentsRequest,
@@ -1159,6 +1199,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAssignment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.create_assignment.js</caption>
+ * region_tag:reservation_create_assignment_sample
+ *
  */
   createAssignment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ICreateAssignmentRequest,
@@ -1245,6 +1289,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAssignment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.delete_assignment.js</caption>
+ * region_tag:reservation_delete_assignment_sample
+ *
  */
   deleteAssignment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IDeleteAssignmentRequest,
@@ -1325,6 +1373,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.moveAssignment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.move_assignment.js</caption>
+ * region_tag:reservation_move_assignment_sample
+ *
  */
   moveAssignment(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IMoveAssignmentRequest,
@@ -1397,6 +1449,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBiReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.get_bi_reservation.js</caption>
+ * region_tag:reservation_get_bi_reservation_sample
+ *
  */
   getBiReservation(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IGetBiReservationRequest,
@@ -1477,6 +1533,10 @@ export class ReservationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBiReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.update_bi_reservation.js</caption>
+ * region_tag:reservation_update_bi_reservation_sample
+ *
  */
   updateBiReservation(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IUpdateBiReservationRequest,
@@ -1564,6 +1624,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_reservations.js</caption>
+ * region_tag:reservation_list_reservations_sample
+ *
  */
   listReservations(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
@@ -1629,6 +1693,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_reservations.js</caption>
+ * region_tag:reservation_list_reservations_sample
+ *
  */
   listReservationsStream(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
@@ -1643,7 +1711,8 @@ export class ReservationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReservations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReservations.createStream(
       this.innerApiCalls.listReservations as gax.GaxCall,
@@ -1686,6 +1755,10 @@ export class ReservationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_reservations.js</caption>
+ * region_tag:reservation_list_reservations_sample
+ *
  */
   listReservationsAsync(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListReservationsRequest,
@@ -1701,7 +1774,8 @@ export class ReservationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReservations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReservations.asyncIterate(
       this.innerApiCalls['listReservations'] as GaxCall,
@@ -1754,6 +1828,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_capacity_commitments.js</caption>
+ * region_tag:reservation_list_capacity_commitments_sample
+ *
  */
   listCapacityCommitments(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
@@ -1813,6 +1891,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_capacity_commitments.js</caption>
+ * region_tag:reservation_list_capacity_commitments_sample
+ *
  */
   listCapacityCommitmentsStream(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
@@ -1827,7 +1909,8 @@ export class ReservationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCapacityCommitments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCapacityCommitments.createStream(
       this.innerApiCalls.listCapacityCommitments as gax.GaxCall,
@@ -1864,6 +1947,10 @@ export class ReservationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_capacity_commitments.js</caption>
+ * region_tag:reservation_list_capacity_commitments_sample
+ *
  */
   listCapacityCommitmentsAsync(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListCapacityCommitmentsRequest,
@@ -1879,7 +1966,8 @@ export class ReservationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCapacityCommitments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCapacityCommitments.asyncIterate(
       this.innerApiCalls['listCapacityCommitments'] as GaxCall,
@@ -1957,6 +2045,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_assignments.js</caption>
+ * region_tag:reservation_list_assignments_sample
+ *
  */
   listAssignments(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
@@ -2021,6 +2113,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_assignments.js</caption>
+ * region_tag:reservation_list_assignments_sample
+ *
  */
   listAssignmentsStream(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
@@ -2035,7 +2131,8 @@ export class ReservationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAssignments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAssignments.createStream(
       this.innerApiCalls.listAssignments as gax.GaxCall,
@@ -2077,6 +2174,10 @@ export class ReservationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.list_assignments.js</caption>
+ * region_tag:reservation_list_assignments_sample
+ *
  */
   listAssignmentsAsync(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.IListAssignmentsRequest,
@@ -2092,7 +2193,8 @@ export class ReservationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAssignments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAssignments.asyncIterate(
       this.innerApiCalls['listAssignments'] as GaxCall,
@@ -2176,6 +2278,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.search_assignments.js</caption>
+ * region_tag:reservation_search_assignments_sample
+ *
  */
   searchAssignments(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
@@ -2244,6 +2350,10 @@ export class ReservationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.search_assignments.js</caption>
+ * region_tag:reservation_search_assignments_sample
+ *
  */
   searchAssignmentsStream(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
@@ -2258,7 +2368,8 @@ export class ReservationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchAssignments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchAssignments.createStream(
       this.innerApiCalls.searchAssignments as gax.GaxCall,
@@ -2304,6 +2415,10 @@ export class ReservationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/reservation_service.search_assignments.js</caption>
+ * region_tag:reservation_search_assignments_sample
+ *
  */
   searchAssignmentsAsync(
       request?: protos.google.cloud.bigquery.reservation.v1beta1.ISearchAssignmentsRequest,
@@ -2319,7 +2434,8 @@ export class ReservationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchAssignments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchAssignments.asyncIterate(
       this.innerApiCalls['searchAssignments'] as GaxCall,

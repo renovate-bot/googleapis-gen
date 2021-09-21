@@ -690,6 +690,10 @@ export class AdGroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroup(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_group_service.get_ad_group.js</caption>
+ * region_tag:googleads_get_ad_group_sample
+ *
  */
   getAdGroup(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
@@ -807,6 +811,10 @@ export class AdGroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroups(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_group_service.mutate_ad_groups.js</caption>
+ * region_tag:googleads_mutate_ad_groups_sample
+ *
  */
   mutateAdGroups(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,

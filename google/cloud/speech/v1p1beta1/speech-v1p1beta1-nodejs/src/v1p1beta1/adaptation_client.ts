@@ -353,6 +353,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPhraseSet(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.create_phrase_set.js</caption>
+ * region_tag:speech_create_phrase_set_sample
+ *
  */
   createPhraseSet(
       request?: protos.google.cloud.speech.v1p1beta1.ICreatePhraseSetRequest,
@@ -426,6 +430,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPhraseSet(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.get_phrase_set.js</caption>
+ * region_tag:speech_get_phrase_set_sample
+ *
  */
   getPhraseSet(
       request?: protos.google.cloud.speech.v1p1beta1.IGetPhraseSetRequest,
@@ -503,6 +511,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updatePhraseSet(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.update_phrase_set.js</caption>
+ * region_tag:speech_update_phrase_set_sample
+ *
  */
   updatePhraseSet(
       request?: protos.google.cloud.speech.v1p1beta1.IUpdatePhraseSetRequest,
@@ -576,6 +588,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePhraseSet(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.delete_phrase_set.js</caption>
+ * region_tag:speech_delete_phrase_set_sample
+ *
  */
   deletePhraseSet(
       request?: protos.google.cloud.speech.v1p1beta1.IDeletePhraseSetRequest,
@@ -657,6 +673,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCustomClass(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.create_custom_class.js</caption>
+ * region_tag:speech_create_custom_class_sample
+ *
  */
   createCustomClass(
       request?: protos.google.cloud.speech.v1p1beta1.ICreateCustomClassRequest,
@@ -730,6 +750,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomClass(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.get_custom_class.js</caption>
+ * region_tag:speech_get_custom_class_sample
+ *
  */
   getCustomClass(
       request?: protos.google.cloud.speech.v1p1beta1.IGetCustomClassRequest,
@@ -807,6 +831,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCustomClass(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.update_custom_class.js</caption>
+ * region_tag:speech_update_custom_class_sample
+ *
  */
   updateCustomClass(
       request?: protos.google.cloud.speech.v1p1beta1.IUpdateCustomClassRequest,
@@ -880,6 +908,10 @@ export class AdaptationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCustomClass(request);
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.delete_custom_class.js</caption>
+ * region_tag:speech_delete_custom_class_sample
+ *
  */
   deleteCustomClass(
       request?: protos.google.cloud.speech.v1p1beta1.IDeleteCustomClassRequest,
@@ -969,6 +1001,10 @@ export class AdaptationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.list_phrase_set.js</caption>
+ * region_tag:speech_list_phrase_set_sample
+ *
  */
   listPhraseSet(
       request?: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
@@ -1036,6 +1072,10 @@ export class AdaptationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.list_phrase_set.js</caption>
+ * region_tag:speech_list_phrase_set_sample
+ *
  */
   listPhraseSetStream(
       request?: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
@@ -1050,7 +1090,8 @@ export class AdaptationClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listPhraseSet'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listPhraseSet.createStream(
       this.innerApiCalls.listPhraseSet as gax.GaxCall,
@@ -1095,6 +1136,10 @@ export class AdaptationClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.list_phrase_set.js</caption>
+ * region_tag:speech_list_phrase_set_sample
+ *
  */
   listPhraseSetAsync(
       request?: protos.google.cloud.speech.v1p1beta1.IListPhraseSetRequest,
@@ -1110,7 +1155,8 @@ export class AdaptationClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listPhraseSet'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listPhraseSet.asyncIterate(
       this.innerApiCalls['listPhraseSet'] as GaxCall,
@@ -1171,6 +1217,10 @@ export class AdaptationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.list_custom_classes.js</caption>
+ * region_tag:speech_list_custom_classes_sample
+ *
  */
   listCustomClasses(
       request?: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
@@ -1238,6 +1288,10 @@ export class AdaptationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.list_custom_classes.js</caption>
+ * region_tag:speech_list_custom_classes_sample
+ *
  */
   listCustomClassesStream(
       request?: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
@@ -1252,7 +1306,8 @@ export class AdaptationClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCustomClasses'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCustomClasses.createStream(
       this.innerApiCalls.listCustomClasses as gax.GaxCall,
@@ -1297,6 +1352,10 @@ export class AdaptationClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1p1beta1/adaptation.list_custom_classes.js</caption>
+ * region_tag:speech_list_custom_classes_sample
+ *
  */
   listCustomClassesAsync(
       request?: protos.google.cloud.speech.v1p1beta1.IListCustomClassesRequest,
@@ -1312,7 +1371,8 @@ export class AdaptationClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCustomClasses'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCustomClasses.asyncIterate(
       this.innerApiCalls['listCustomClasses'] as GaxCall,

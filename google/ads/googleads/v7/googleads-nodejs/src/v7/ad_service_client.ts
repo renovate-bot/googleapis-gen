@@ -690,6 +690,10 @@ export class AdServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAd(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_service.get_ad.js</caption>
+ * region_tag:googleads_get_ad_sample
+ *
  */
   getAd(
       request?: protos.google.ads.googleads.v7.services.IGetAdRequest,
@@ -815,6 +819,10 @@ export class AdServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAds(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_service.mutate_ads.js</caption>
+ * region_tag:googleads_mutate_ads_sample
+ *
  */
   mutateAds(
       request?: protos.google.ads.googleads.v7.services.IMutateAdsRequest,

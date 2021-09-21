@@ -341,6 +341,10 @@ export class ErrorStatsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteEvents(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.delete_events.js</caption>
+ * region_tag:clouderrorreporting_delete_events_sample
+ *
  */
   deleteEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
@@ -456,6 +460,10 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
+ * region_tag:clouderrorreporting_list_group_stats_sample
+ *
  */
   listGroupStats(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -549,6 +557,10 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
+ * region_tag:clouderrorreporting_list_group_stats_sample
+ *
  */
   listGroupStatsStream(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -563,7 +575,8 @@ export class ErrorStatsServiceClient {
     ] = gax.routingHeader.fromParams({
       'project_name': request.projectName || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGroupStats'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGroupStats.createStream(
       this.innerApiCalls.listGroupStats as gax.GaxCall,
@@ -634,6 +647,10 @@ export class ErrorStatsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
+ * region_tag:clouderrorreporting_list_group_stats_sample
+ *
  */
   listGroupStatsAsync(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -649,7 +666,8 @@ export class ErrorStatsServiceClient {
       'project_name': request.projectName || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGroupStats'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGroupStats.asyncIterate(
       this.innerApiCalls['listGroupStats'] as GaxCall,
@@ -716,6 +734,10 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
+ * region_tag:clouderrorreporting_list_events_sample
+ *
  */
   listEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
@@ -789,6 +811,10 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
+ * region_tag:clouderrorreporting_list_events_sample
+ *
  */
   listEventsStream(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
@@ -803,7 +829,8 @@ export class ErrorStatsServiceClient {
     ] = gax.routingHeader.fromParams({
       'project_name': request.projectName || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEvents'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEvents.createStream(
       this.innerApiCalls.listEvents as gax.GaxCall,
@@ -854,6 +881,10 @@ export class ErrorStatsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
+ * region_tag:clouderrorreporting_list_events_sample
+ *
  */
   listEventsAsync(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
@@ -869,7 +900,8 @@ export class ErrorStatsServiceClient {
       'project_name': request.projectName || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEvents'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEvents.asyncIterate(
       this.innerApiCalls['listEvents'] as GaxCall,

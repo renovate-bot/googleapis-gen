@@ -338,6 +338,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.get_job.js</caption>
+ * region_tag:scheduler_get_job_sample
+ *
  */
   getJob(
       request?: protos.google.cloud.scheduler.v1.IGetJobRequest,
@@ -416,6 +420,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.create_job.js</caption>
+ * region_tag:scheduler_create_job_sample
+ *
  */
   createJob(
       request?: protos.google.cloud.scheduler.v1.ICreateJobRequest,
@@ -500,6 +508,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.update_job.js</caption>
+ * region_tag:scheduler_update_job_sample
+ *
  */
   updateJob(
       request?: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
@@ -572,6 +584,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.delete_job.js</caption>
+ * region_tag:scheduler_delete_job_sample
+ *
  */
   deleteJob(
       request?: protos.google.cloud.scheduler.v1.IDeleteJobRequest,
@@ -650,6 +666,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.pauseJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.pause_job.js</caption>
+ * region_tag:scheduler_pause_job_sample
+ *
  */
   pauseJob(
       request?: protos.google.cloud.scheduler.v1.IPauseJobRequest,
@@ -727,6 +747,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.resumeJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.resume_job.js</caption>
+ * region_tag:scheduler_resume_job_sample
+ *
  */
   resumeJob(
       request?: protos.google.cloud.scheduler.v1.IResumeJobRequest,
@@ -802,6 +826,10 @@ export class CloudSchedulerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.runJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.run_job.js</caption>
+ * region_tag:scheduler_run_job_sample
+ *
  */
   runJob(
       request?: protos.google.cloud.scheduler.v1.IRunJobRequest,
@@ -894,6 +922,10 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.list_jobs.js</caption>
+ * region_tag:scheduler_list_jobs_sample
+ *
  */
   listJobs(
       request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
@@ -964,6 +996,10 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.list_jobs.js</caption>
+ * region_tag:scheduler_list_jobs_sample
+ *
  */
   listJobsStream(
       request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
@@ -978,7 +1014,8 @@ export class CloudSchedulerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listJobs.createStream(
       this.innerApiCalls.listJobs as gax.GaxCall,
@@ -1026,6 +1063,10 @@ export class CloudSchedulerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.list_jobs.js</caption>
+ * region_tag:scheduler_list_jobs_sample
+ *
  */
   listJobsAsync(
       request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
@@ -1041,7 +1082,8 @@ export class CloudSchedulerClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listJobs.asyncIterate(
       this.innerApiCalls['listJobs'] as GaxCall,

@@ -411,6 +411,10 @@ export class AssetServiceClient {
  * @example
  * const [operation] = await client.exportAssets(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1p7beta1/asset_service.export_assets.js</caption>
+ * region_tag:asset_export_assets_sample
+ *
  */
   exportAssets(
       request?: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
@@ -460,6 +464,10 @@ export class AssetServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1p7beta1/asset_service.export_assets.js</caption>
+ * region_tag:asset_export_assets_sample
+ *
  */
   async checkExportAssetsProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1p7beta1.ExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.ExportAssetsRequest>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

@@ -720,6 +720,10 @@ export class CustomerClientLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerClientLink(request);
+ *
+ * @example <caption>include:samples/generated/v8/customer_client_link_service.get_customer_client_link.js</caption>
+ * region_tag:googleads_get_customer_client_link_sample
+ *
  */
   getCustomerClientLink(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerClientLinkRequest,
@@ -810,6 +814,10 @@ export class CustomerClientLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerClientLink(request);
+ *
+ * @example <caption>include:samples/generated/v8/customer_client_link_service.mutate_customer_client_link.js</caption>
+ * region_tag:googleads_mutate_customer_client_link_sample
+ *
  */
   mutateCustomerClientLink(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerClientLinkRequest,

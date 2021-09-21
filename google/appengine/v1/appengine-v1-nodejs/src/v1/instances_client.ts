@@ -365,6 +365,10 @@ export class InstancesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstance(request);
+ *
+ * @example <caption>include:samples/generated/v1/instances.get_instance.js</caption>
+ * region_tag:appengine_get_instance_sample
+ *
  */
   getInstance(
       request?: protos.google.appengine.v1.IGetInstanceRequest,
@@ -452,6 +456,10 @@ export class InstancesClient {
  * @example
  * const [operation] = await client.deleteInstance(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/instances.delete_instance.js</caption>
+ * region_tag:appengine_delete_instance_sample
+ *
  */
   deleteInstance(
       request?: protos.google.appengine.v1.IDeleteInstanceRequest,
@@ -501,6 +509,10 @@ export class InstancesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/instances.delete_instance.js</caption>
+ * region_tag:appengine_delete_instance_sample
+ *
  */
   async checkDeleteInstanceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -563,6 +575,10 @@ export class InstancesClient {
  * @example
  * const [operation] = await client.debugInstance(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/instances.debug_instance.js</caption>
+ * region_tag:appengine_debug_instance_sample
+ *
  */
   debugInstance(
       request?: protos.google.appengine.v1.IDebugInstanceRequest,
@@ -612,6 +628,10 @@ export class InstancesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/instances.debug_instance.js</caption>
+ * region_tag:appengine_debug_instance_sample
+ *
  */
   async checkDebugInstanceProgress(name: string): Promise<LROperation<protos.google.appengine.v1.Instance, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -667,6 +687,10 @@ export class InstancesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/instances.list_instances.js</caption>
+ * region_tag:appengine_list_instances_sample
+ *
  */
   listInstances(
       request?: protos.google.appengine.v1.IListInstancesRequest,
@@ -726,6 +750,10 @@ export class InstancesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/instances.list_instances.js</caption>
+ * region_tag:appengine_list_instances_sample
+ *
  */
   listInstancesStream(
       request?: protos.google.appengine.v1.IListInstancesRequest,
@@ -740,7 +768,8 @@ export class InstancesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInstances'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInstances.createStream(
       this.innerApiCalls.listInstances as gax.GaxCall,
@@ -777,6 +806,10 @@ export class InstancesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/instances.list_instances.js</caption>
+ * region_tag:appengine_list_instances_sample
+ *
  */
   listInstancesAsync(
       request?: protos.google.appengine.v1.IListInstancesRequest,
@@ -792,7 +825,8 @@ export class InstancesClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInstances'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInstances.asyncIterate(
       this.innerApiCalls['listInstances'] as GaxCall,

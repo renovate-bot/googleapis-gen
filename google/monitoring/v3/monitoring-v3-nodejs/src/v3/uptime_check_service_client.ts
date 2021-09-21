@@ -415,6 +415,10 @@ export class UptimeCheckServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getUptimeCheckConfig(request);
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.get_uptime_check_config.js</caption>
+ * region_tag:monitoring_get_uptime_check_config_sample
+ *
  */
   getUptimeCheckConfig(
       request?: protos.google.monitoring.v3.IGetUptimeCheckConfigRequest,
@@ -491,6 +495,10 @@ export class UptimeCheckServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createUptimeCheckConfig(request);
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.create_uptime_check_config.js</caption>
+ * region_tag:monitoring_create_uptime_check_config_sample
+ *
  */
   createUptimeCheckConfig(
       request?: protos.google.monitoring.v3.ICreateUptimeCheckConfigRequest,
@@ -580,6 +588,10 @@ export class UptimeCheckServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateUptimeCheckConfig(request);
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.update_uptime_check_config.js</caption>
+ * region_tag:monitoring_update_uptime_check_config_sample
+ *
  */
   updateUptimeCheckConfig(
       request?: protos.google.monitoring.v3.IUpdateUptimeCheckConfigRequest,
@@ -655,6 +667,10 @@ export class UptimeCheckServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteUptimeCheckConfig(request);
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.delete_uptime_check_config.js</caption>
+ * region_tag:monitoring_delete_uptime_check_config_sample
+ *
  */
   deleteUptimeCheckConfig(
       request?: protos.google.monitoring.v3.IDeleteUptimeCheckConfigRequest,
@@ -744,6 +760,10 @@ export class UptimeCheckServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.list_uptime_check_configs.js</caption>
+ * region_tag:monitoring_list_uptime_check_configs_sample
+ *
  */
   listUptimeCheckConfigs(
       request?: protos.google.monitoring.v3.IListUptimeCheckConfigsRequest,
@@ -810,6 +830,10 @@ export class UptimeCheckServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.list_uptime_check_configs.js</caption>
+ * region_tag:monitoring_list_uptime_check_configs_sample
+ *
  */
   listUptimeCheckConfigsStream(
       request?: protos.google.monitoring.v3.IListUptimeCheckConfigsRequest,
@@ -824,7 +848,8 @@ export class UptimeCheckServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUptimeCheckConfigs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUptimeCheckConfigs.createStream(
       this.innerApiCalls.listUptimeCheckConfigs as gax.GaxCall,
@@ -868,6 +893,10 @@ export class UptimeCheckServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.list_uptime_check_configs.js</caption>
+ * region_tag:monitoring_list_uptime_check_configs_sample
+ *
  */
   listUptimeCheckConfigsAsync(
       request?: protos.google.monitoring.v3.IListUptimeCheckConfigsRequest,
@@ -883,7 +912,8 @@ export class UptimeCheckServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUptimeCheckConfigs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUptimeCheckConfigs.asyncIterate(
       this.innerApiCalls['listUptimeCheckConfigs'] as GaxCall,
@@ -940,6 +970,10 @@ export class UptimeCheckServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.list_uptime_check_ips.js</caption>
+ * region_tag:monitoring_list_uptime_check_ips_sample
+ *
  */
   listUptimeCheckIps(
       request?: protos.google.monitoring.v3.IListUptimeCheckIpsRequest,
@@ -996,6 +1030,10 @@ export class UptimeCheckServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.list_uptime_check_ips.js</caption>
+ * region_tag:monitoring_list_uptime_check_ips_sample
+ *
  */
   listUptimeCheckIpsStream(
       request?: protos.google.monitoring.v3.IListUptimeCheckIpsRequest,
@@ -1003,7 +1041,8 @@ export class UptimeCheckServiceClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUptimeCheckIps'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUptimeCheckIps.createStream(
       this.innerApiCalls.listUptimeCheckIps as gax.GaxCall,
@@ -1044,6 +1083,10 @@ export class UptimeCheckServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/uptime_check_service.list_uptime_check_ips.js</caption>
+ * region_tag:monitoring_list_uptime_check_ips_sample
+ *
  */
   listUptimeCheckIpsAsync(
       request?: protos.google.monitoring.v3.IListUptimeCheckIpsRequest,
@@ -1052,7 +1095,8 @@ export class UptimeCheckServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUptimeCheckIps'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUptimeCheckIps.asyncIterate(
       this.innerApiCalls['listUptimeCheckIps'] as GaxCall,

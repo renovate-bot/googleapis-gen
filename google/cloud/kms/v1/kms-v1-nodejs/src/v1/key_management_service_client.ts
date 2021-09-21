@@ -366,6 +366,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKeyRing(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.get_key_ring.js</caption>
+ * region_tag:kms_get_key_ring_sample
+ *
  */
   getKeyRing(
       request?: protos.google.cloud.kms.v1.IGetKeyRingRequest,
@@ -438,6 +442,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCryptoKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.get_crypto_key.js</caption>
+ * region_tag:kms_get_crypto_key_sample
+ *
  */
   getCryptoKey(
       request?: protos.google.cloud.kms.v1.IGetCryptoKeyRequest,
@@ -509,6 +517,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCryptoKeyVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.get_crypto_key_version.js</caption>
+ * region_tag:kms_get_crypto_key_version_sample
+ *
  */
   getCryptoKeyVersion(
       request?: protos.google.cloud.kms.v1.IGetCryptoKeyVersionRequest,
@@ -584,6 +596,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPublicKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.get_public_key.js</caption>
+ * region_tag:kms_get_public_key_sample
+ *
  */
   getPublicKey(
       request?: protos.google.cloud.kms.v1.IGetPublicKeyRequest,
@@ -655,6 +671,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getImportJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.get_import_job.js</caption>
+ * region_tag:kms_get_import_job_sample
+ *
  */
   getImportJob(
       request?: protos.google.cloud.kms.v1.IGetImportJobRequest,
@@ -732,6 +752,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createKeyRing(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.create_key_ring.js</caption>
+ * region_tag:kms_create_key_ring_sample
+ *
  */
   createKeyRing(
       request?: protos.google.cloud.kms.v1.ICreateKeyRingRequest,
@@ -819,6 +843,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCryptoKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.create_crypto_key.js</caption>
+ * region_tag:kms_create_crypto_key_sample
+ *
  */
   createCryptoKey(
       request?: protos.google.cloud.kms.v1.ICreateCryptoKeyRequest,
@@ -897,6 +925,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCryptoKeyVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.create_crypto_key_version.js</caption>
+ * region_tag:kms_create_crypto_key_version_sample
+ *
  */
   createCryptoKeyVersion(
       request?: protos.google.cloud.kms.v1.ICreateCryptoKeyVersionRequest,
@@ -1024,6 +1056,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.importCryptoKeyVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.import_crypto_key_version.js</caption>
+ * region_tag:kms_import_crypto_key_version_sample
+ *
  */
   importCryptoKeyVersion(
       request?: protos.google.cloud.kms.v1.IImportCryptoKeyVersionRequest,
@@ -1103,6 +1139,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createImportJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.create_import_job.js</caption>
+ * region_tag:kms_create_import_job_sample
+ *
  */
   createImportJob(
       request?: protos.google.cloud.kms.v1.ICreateImportJobRequest,
@@ -1176,6 +1216,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCryptoKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.update_crypto_key.js</caption>
+ * region_tag:kms_update_crypto_key_sample
+ *
  */
   updateCryptoKey(
       request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyRequest,
@@ -1255,6 +1299,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCryptoKeyVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.update_crypto_key_version.js</caption>
+ * region_tag:kms_update_crypto_key_version_sample
+ *
  */
   updateCryptoKeyVersion(
       request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyVersionRequest,
@@ -1331,6 +1379,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCryptoKeyPrimaryVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.update_crypto_key_primary_version.js</caption>
+ * region_tag:kms_update_crypto_key_primary_version_sample
+ *
  */
   updateCryptoKeyPrimaryVersion(
       request?: protos.google.cloud.kms.v1.IUpdateCryptoKeyPrimaryVersionRequest,
@@ -1414,6 +1466,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.destroyCryptoKeyVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.destroy_crypto_key_version.js</caption>
+ * region_tag:kms_destroy_crypto_key_version_sample
+ *
  */
   destroyCryptoKeyVersion(
       request?: protos.google.cloud.kms.v1.IDestroyCryptoKeyVersionRequest,
@@ -1491,6 +1547,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.restoreCryptoKeyVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.restore_crypto_key_version.js</caption>
+ * region_tag:kms_restore_crypto_key_version_sample
+ *
  */
   restoreCryptoKeyVersion(
       request?: protos.google.cloud.kms.v1.IRestoreCryptoKeyVersionRequest,
@@ -1616,6 +1676,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.encrypt(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.encrypt.js</caption>
+ * region_tag:kms_encrypt_sample
+ *
  */
   encrypt(
       request?: protos.google.cloud.kms.v1.IEncryptRequest,
@@ -1724,6 +1788,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.decrypt(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.decrypt.js</caption>
+ * region_tag:kms_decrypt_sample
+ *
  */
   decrypt(
       request?: protos.google.cloud.kms.v1.IDecryptRequest,
@@ -1815,6 +1883,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.asymmetricSign(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.asymmetric_sign.js</caption>
+ * region_tag:kms_asymmetric_sign_sample
+ *
  */
   asymmetricSign(
       request?: protos.google.cloud.kms.v1.IAsymmetricSignRequest,
@@ -1906,6 +1978,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.asymmetricDecrypt(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.asymmetric_decrypt.js</caption>
+ * region_tag:kms_asymmetric_decrypt_sample
+ *
  */
   asymmetricDecrypt(
       request?: protos.google.cloud.kms.v1.IAsymmetricDecryptRequest,
@@ -1996,6 +2072,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.macSign(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.mac_sign.js</caption>
+ * region_tag:kms_mac_sign_sample
+ *
  */
   macSign(
       request?: protos.google.cloud.kms.v1.IMacSignRequest,
@@ -2102,6 +2182,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.macVerify(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.mac_verify.js</caption>
+ * region_tag:kms_mac_verify_sample
+ *
  */
   macVerify(
       request?: protos.google.cloud.kms.v1.IMacVerifyRequest,
@@ -2181,6 +2265,10 @@ export class KeyManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateRandomBytes(request);
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.generate_random_bytes.js</caption>
+ * region_tag:kms_generate_random_bytes_sample
+ *
  */
   generateRandomBytes(
       request?: protos.google.cloud.kms.v1.IGenerateRandomBytesRequest,
@@ -2276,6 +2364,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_key_rings.js</caption>
+ * region_tag:kms_list_key_rings_sample
+ *
  */
   listKeyRings(
       request?: protos.google.cloud.kms.v1.IListKeyRingsRequest,
@@ -2349,6 +2441,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_key_rings.js</caption>
+ * region_tag:kms_list_key_rings_sample
+ *
  */
   listKeyRingsStream(
       request?: protos.google.cloud.kms.v1.IListKeyRingsRequest,
@@ -2363,7 +2459,8 @@ export class KeyManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKeyRings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKeyRings.createStream(
       this.innerApiCalls.listKeyRings as gax.GaxCall,
@@ -2414,6 +2511,10 @@ export class KeyManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_key_rings.js</caption>
+ * region_tag:kms_list_key_rings_sample
+ *
  */
   listKeyRingsAsync(
       request?: protos.google.cloud.kms.v1.IListKeyRingsRequest,
@@ -2429,7 +2530,8 @@ export class KeyManagementServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKeyRings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKeyRings.asyncIterate(
       this.innerApiCalls['listKeyRings'] as GaxCall,
@@ -2498,6 +2600,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_crypto_keys.js</caption>
+ * region_tag:kms_list_crypto_keys_sample
+ *
  */
   listCryptoKeys(
       request?: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
@@ -2573,6 +2679,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_crypto_keys.js</caption>
+ * region_tag:kms_list_crypto_keys_sample
+ *
  */
   listCryptoKeysStream(
       request?: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
@@ -2587,7 +2697,8 @@ export class KeyManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCryptoKeys'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCryptoKeys.createStream(
       this.innerApiCalls.listCryptoKeys as gax.GaxCall,
@@ -2640,6 +2751,10 @@ export class KeyManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_crypto_keys.js</caption>
+ * region_tag:kms_list_crypto_keys_sample
+ *
  */
   listCryptoKeysAsync(
       request?: protos.google.cloud.kms.v1.IListCryptoKeysRequest,
@@ -2655,7 +2770,8 @@ export class KeyManagementServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCryptoKeys'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCryptoKeys.asyncIterate(
       this.innerApiCalls['listCryptoKeys'] as GaxCall,
@@ -2725,6 +2841,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_crypto_key_versions.js</caption>
+ * region_tag:kms_list_crypto_key_versions_sample
+ *
  */
   listCryptoKeyVersions(
       request?: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
@@ -2801,6 +2921,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_crypto_key_versions.js</caption>
+ * region_tag:kms_list_crypto_key_versions_sample
+ *
  */
   listCryptoKeyVersionsStream(
       request?: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
@@ -2815,7 +2939,8 @@ export class KeyManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCryptoKeyVersions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCryptoKeyVersions.createStream(
       this.innerApiCalls.listCryptoKeyVersions as gax.GaxCall,
@@ -2869,6 +2994,10 @@ export class KeyManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_crypto_key_versions.js</caption>
+ * region_tag:kms_list_crypto_key_versions_sample
+ *
  */
   listCryptoKeyVersionsAsync(
       request?: protos.google.cloud.kms.v1.IListCryptoKeyVersionsRequest,
@@ -2884,7 +3013,8 @@ export class KeyManagementServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listCryptoKeyVersions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listCryptoKeyVersions.asyncIterate(
       this.innerApiCalls['listCryptoKeyVersions'] as GaxCall,
@@ -2951,6 +3081,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_import_jobs.js</caption>
+ * region_tag:kms_list_import_jobs_sample
+ *
  */
   listImportJobs(
       request?: protos.google.cloud.kms.v1.IListImportJobsRequest,
@@ -3024,6 +3158,10 @@ export class KeyManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_import_jobs.js</caption>
+ * region_tag:kms_list_import_jobs_sample
+ *
  */
   listImportJobsStream(
       request?: protos.google.cloud.kms.v1.IListImportJobsRequest,
@@ -3038,7 +3176,8 @@ export class KeyManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listImportJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listImportJobs.createStream(
       this.innerApiCalls.listImportJobs as gax.GaxCall,
@@ -3089,6 +3228,10 @@ export class KeyManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/key_management_service.list_import_jobs.js</caption>
+ * region_tag:kms_list_import_jobs_sample
+ *
  */
   listImportJobsAsync(
       request?: protos.google.cloud.kms.v1.IListImportJobsRequest,
@@ -3104,7 +3247,8 @@ export class KeyManagementServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listImportJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listImportJobs.asyncIterate(
       this.innerApiCalls['listImportJobs'] as GaxCall,

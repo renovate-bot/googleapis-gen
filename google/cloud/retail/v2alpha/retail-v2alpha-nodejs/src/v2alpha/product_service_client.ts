@@ -404,6 +404,10 @@ export class ProductServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createProduct(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.create_product.js</caption>
+ * region_tag:retail_create_product_sample
+ *
  */
   createProduct(
       request?: protos.google.cloud.retail.v2alpha.ICreateProductRequest,
@@ -484,6 +488,10 @@ export class ProductServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getProduct(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.get_product.js</caption>
+ * region_tag:retail_get_product_sample
+ *
  */
   getProduct(
       request?: protos.google.cloud.retail.v2alpha.IGetProductRequest,
@@ -576,6 +584,10 @@ export class ProductServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateProduct(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.update_product.js</caption>
+ * region_tag:retail_update_product_sample
+ *
  */
   updateProduct(
       request?: protos.google.cloud.retail.v2alpha.IUpdateProductRequest,
@@ -668,6 +680,10 @@ export class ProductServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteProduct(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.delete_product.js</caption>
+ * region_tag:retail_delete_product_sample
+ *
  */
   deleteProduct(
       request?: protos.google.cloud.retail.v2alpha.IDeleteProductRequest,
@@ -784,6 +800,10 @@ export class ProductServiceClient {
  * @example
  * const [operation] = await client.importProducts(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.import_products.js</caption>
+ * region_tag:retail_import_products_sample
+ *
  */
   importProducts(
       request?: protos.google.cloud.retail.v2alpha.IImportProductsRequest,
@@ -833,6 +853,10 @@ export class ProductServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.import_products.js</caption>
+ * region_tag:retail_import_products_sample
+ *
  */
   async checkImportProductsProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2alpha.ImportProductsResponse, protos.google.cloud.retail.v2alpha.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -972,6 +996,10 @@ export class ProductServiceClient {
  * @example
  * const [operation] = await client.setInventory(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.set_inventory.js</caption>
+ * region_tag:retail_set_inventory_sample
+ *
  */
   setInventory(
       request?: protos.google.cloud.retail.v2alpha.ISetInventoryRequest,
@@ -1021,6 +1049,10 @@ export class ProductServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.set_inventory.js</caption>
+ * region_tag:retail_set_inventory_sample
+ *
  */
   async checkSetInventoryProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2alpha.SetInventoryResponse, protos.google.cloud.retail.v2alpha.SetInventoryMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1134,6 +1166,10 @@ export class ProductServiceClient {
  * @example
  * const [operation] = await client.addFulfillmentPlaces(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.add_fulfillment_places.js</caption>
+ * region_tag:retail_add_fulfillment_places_sample
+ *
  */
   addFulfillmentPlaces(
       request?: protos.google.cloud.retail.v2alpha.IAddFulfillmentPlacesRequest,
@@ -1183,6 +1219,10 @@ export class ProductServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.add_fulfillment_places.js</caption>
+ * region_tag:retail_add_fulfillment_places_sample
+ *
  */
   async checkAddFulfillmentPlacesProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse, protos.google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1291,6 +1331,10 @@ export class ProductServiceClient {
  * @example
  * const [operation] = await client.removeFulfillmentPlaces(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.remove_fulfillment_places.js</caption>
+ * region_tag:retail_remove_fulfillment_places_sample
+ *
  */
   removeFulfillmentPlaces(
       request?: protos.google.cloud.retail.v2alpha.IRemoveFulfillmentPlacesRequest,
@@ -1340,6 +1384,10 @@ export class ProductServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.remove_fulfillment_places.js</caption>
+ * region_tag:retail_remove_fulfillment_places_sample
+ *
  */
   async checkRemoveFulfillmentPlacesProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1468,6 +1516,10 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.list_products.js</caption>
+ * region_tag:retail_list_products_sample
+ *
  */
   listProducts(
       request?: protos.google.cloud.retail.v2alpha.IListProductsRequest,
@@ -1603,6 +1655,10 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.list_products.js</caption>
+ * region_tag:retail_list_products_sample
+ *
  */
   listProductsStream(
       request?: protos.google.cloud.retail.v2alpha.IListProductsRequest,
@@ -1617,7 +1673,8 @@ export class ProductServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listProducts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listProducts.createStream(
       this.innerApiCalls.listProducts as gax.GaxCall,
@@ -1730,6 +1787,10 @@ export class ProductServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2alpha/product_service.list_products.js</caption>
+ * region_tag:retail_list_products_sample
+ *
  */
   listProductsAsync(
       request?: protos.google.cloud.retail.v2alpha.IListProductsRequest,
@@ -1745,7 +1806,8 @@ export class ProductServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listProducts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listProducts.asyncIterate(
       this.innerApiCalls['listProducts'] as GaxCall,

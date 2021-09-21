@@ -380,6 +380,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.create_topic.js</caption>
+ * region_tag:pubsublite_create_topic_sample
+ *
  */
   createTopic(
       request?: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
@@ -451,6 +455,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.get_topic.js</caption>
+ * region_tag:pubsublite_get_topic_sample
+ *
  */
   getTopic(
       request?: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
@@ -522,6 +530,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTopicPartitions(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.get_topic_partitions.js</caption>
+ * region_tag:pubsublite_get_topic_partitions_sample
+ *
  */
   getTopicPartitions(
       request?: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
@@ -595,6 +607,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.update_topic.js</caption>
+ * region_tag:pubsublite_update_topic_sample
+ *
  */
   updateTopic(
       request?: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
@@ -666,6 +682,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.delete_topic.js</caption>
+ * region_tag:pubsublite_delete_topic_sample
+ *
  */
   deleteTopic(
       request?: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
@@ -749,6 +769,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.create_subscription.js</caption>
+ * region_tag:pubsublite_create_subscription_sample
+ *
  */
   createSubscription(
       request?: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
@@ -820,6 +844,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.get_subscription.js</caption>
+ * region_tag:pubsublite_get_subscription_sample
+ *
  */
   getSubscription(
       request?: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
@@ -894,6 +922,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.update_subscription.js</caption>
+ * region_tag:pubsublite_update_subscription_sample
+ *
  */
   updateSubscription(
       request?: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
@@ -965,6 +997,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.delete_subscription.js</caption>
+ * region_tag:pubsublite_delete_subscription_sample
+ *
  */
   deleteSubscription(
       request?: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
@@ -1044,6 +1080,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.create_reservation.js</caption>
+ * region_tag:pubsublite_create_reservation_sample
+ *
  */
   createReservation(
       request?: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
@@ -1117,6 +1157,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.get_reservation.js</caption>
+ * region_tag:pubsublite_get_reservation_sample
+ *
  */
   getReservation(
       request?: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
@@ -1190,6 +1234,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.update_reservation.js</caption>
+ * region_tag:pubsublite_update_reservation_sample
+ *
  */
   updateReservation(
       request?: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
@@ -1263,6 +1311,10 @@ export class AdminServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteReservation(request);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.delete_reservation.js</caption>
+ * region_tag:pubsublite_delete_reservation_sample
+ *
  */
   deleteReservation(
       request?: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
@@ -1364,6 +1416,10 @@ export class AdminServiceClient {
  * @example
  * const [operation] = await client.seekSubscription(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.seek_subscription.js</caption>
+ * region_tag:pubsublite_seek_subscription_sample
+ *
  */
   seekSubscription(
       request?: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
@@ -1413,6 +1469,10 @@ export class AdminServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.seek_subscription.js</caption>
+ * region_tag:pubsublite_seek_subscription_sample
+ *
  */
   async checkSeekSubscriptionProgress(name: string): Promise<LROperation<protos.google.cloud.pubsublite.v1.SeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1471,6 +1531,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_topics.js</caption>
+ * region_tag:pubsublite_list_topics_sample
+ *
  */
   listTopics(
       request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
@@ -1536,6 +1600,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_topics.js</caption>
+ * region_tag:pubsublite_list_topics_sample
+ *
  */
   listTopicsStream(
       request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
@@ -1550,7 +1618,8 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopics'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopics.createStream(
       this.innerApiCalls.listTopics as gax.GaxCall,
@@ -1593,6 +1662,10 @@ export class AdminServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_topics.js</caption>
+ * region_tag:pubsublite_list_topics_sample
+ *
  */
   listTopicsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
@@ -1608,7 +1681,8 @@ export class AdminServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopics'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopics.asyncIterate(
       this.innerApiCalls['listTopics'] as GaxCall,
@@ -1666,6 +1740,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_topic_subscriptions.js</caption>
+ * region_tag:pubsublite_list_topic_subscriptions_sample
+ *
  */
   listTopicSubscriptions(
       request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
@@ -1730,6 +1808,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_topic_subscriptions.js</caption>
+ * region_tag:pubsublite_list_topic_subscriptions_sample
+ *
  */
   listTopicSubscriptionsStream(
       request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
@@ -1744,7 +1826,8 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopicSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopicSubscriptions.createStream(
       this.innerApiCalls.listTopicSubscriptions as gax.GaxCall,
@@ -1786,6 +1869,10 @@ export class AdminServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_topic_subscriptions.js</caption>
+ * region_tag:pubsublite_list_topic_subscriptions_sample
+ *
  */
   listTopicSubscriptionsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
@@ -1801,7 +1888,8 @@ export class AdminServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopicSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopicSubscriptions.asyncIterate(
       this.innerApiCalls['listTopicSubscriptions'] as GaxCall,
@@ -1860,6 +1948,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_subscriptions.js</caption>
+ * region_tag:pubsublite_list_subscriptions_sample
+ *
  */
   listSubscriptions(
       request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
@@ -1925,6 +2017,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_subscriptions.js</caption>
+ * region_tag:pubsublite_list_subscriptions_sample
+ *
  */
   listSubscriptionsStream(
       request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
@@ -1939,7 +2035,8 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSubscriptions.createStream(
       this.innerApiCalls.listSubscriptions as gax.GaxCall,
@@ -1982,6 +2079,10 @@ export class AdminServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_subscriptions.js</caption>
+ * region_tag:pubsublite_list_subscriptions_sample
+ *
  */
   listSubscriptionsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
@@ -1997,7 +2098,8 @@ export class AdminServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSubscriptions.asyncIterate(
       this.innerApiCalls['listSubscriptions'] as GaxCall,
@@ -2056,6 +2158,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservations.js</caption>
+ * region_tag:pubsublite_list_reservations_sample
+ *
  */
   listReservations(
       request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
@@ -2121,6 +2227,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservations.js</caption>
+ * region_tag:pubsublite_list_reservations_sample
+ *
  */
   listReservationsStream(
       request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
@@ -2135,7 +2245,8 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReservations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReservations.createStream(
       this.innerApiCalls.listReservations as gax.GaxCall,
@@ -2178,6 +2289,10 @@ export class AdminServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservations.js</caption>
+ * region_tag:pubsublite_list_reservations_sample
+ *
  */
   listReservationsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
@@ -2193,7 +2308,8 @@ export class AdminServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReservations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReservations.asyncIterate(
       this.innerApiCalls['listReservations'] as GaxCall,
@@ -2253,6 +2369,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservation_topics.js</caption>
+ * region_tag:pubsublite_list_reservation_topics_sample
+ *
  */
   listReservationTopics(
       request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
@@ -2319,6 +2439,10 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservation_topics.js</caption>
+ * region_tag:pubsublite_list_reservation_topics_sample
+ *
  */
   listReservationTopicsStream(
       request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
@@ -2333,7 +2457,8 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReservationTopics'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReservationTopics.createStream(
       this.innerApiCalls.listReservationTopics as gax.GaxCall,
@@ -2377,6 +2502,10 @@ export class AdminServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservation_topics.js</caption>
+ * region_tag:pubsublite_list_reservation_topics_sample
+ *
  */
   listReservationTopicsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
@@ -2392,7 +2521,8 @@ export class AdminServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReservationTopics'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReservationTopics.asyncIterate(
       this.innerApiCalls['listReservationTopics'] as GaxCall,

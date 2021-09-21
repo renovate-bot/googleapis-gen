@@ -1,0 +1,81 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+'use strict';
+
+function main(parent) {
+  // [START recommender_list_insights_sample]
+  /**
+   * TODO(developer): Uncomment these variables before running the sample.
+   */
+  /**
+   *  Required. The container resource on which to execute the request.
+   *  Acceptable formats:
+   *  1.
+   *  "projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]",
+   *  LOCATION here refers to GCP Locations:
+   *  https://cloud.google.com/about/locations/
+   *  INSIGHT_TYPE_ID refers to supported insight types:
+   *  https://cloud.google.com/recommender/docs/insights/insight-types.)
+   */
+  // const parent = 'abc123'
+  /**
+   *  Optional. The maximum number of results to return from this request.  Non-positive
+   *  values are ignored. If not specified, the server will determine the number
+   *  of results to return.
+   */
+  // const pageSize = 1234
+  /**
+   *  Optional. If present, retrieves the next batch of results from the preceding call to
+   *  this method. `page_token` must be the value of `next_page_token` from the
+   *  previous response. The values of other method parameters must be identical
+   *  to those in the previous call.
+   */
+  // const pageToken = 'abc123'
+  /**
+   *  Optional. Filter expression to restrict the insights returned. Supported
+   *  filter fields: state
+   *  Eg: `state:"DISMISSED" or state:"ACTIVE"
+   */
+  // const filter = 'abc123'
+
+  // Imports the Recommender library
+  const {RecommenderClient} = require('@google-cloud/recommender').v1;
+
+  // Instantiates a client
+  const recommenderClient = new RecommenderClient();
+
+  async function listInsights() {
+    // Construct request
+    const request = {
+      parent,
+    };
+
+    // Run request
+    const iterable = await recommenderClient.listInsightsAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
+  }
+
+  listInsights();
+  // [END recommender_list_insights_sample]
+}
+
+process.on('unhandledRejection', err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});
+main(...process.argv.slice(2));

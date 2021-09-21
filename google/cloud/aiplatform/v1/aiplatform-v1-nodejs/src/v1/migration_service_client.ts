@@ -434,6 +434,10 @@ export class MigrationServiceClient {
  * @example
  * const [operation] = await client.batchMigrateResources(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/migration_service.batch_migrate_resources.js</caption>
+ * region_tag:aiplatform_batch_migrate_resources_sample
+ *
  */
   batchMigrateResources(
       request?: protos.google.cloud.aiplatform.v1.IBatchMigrateResourcesRequest,
@@ -483,6 +487,10 @@ export class MigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/migration_service.batch_migrate_resources.js</caption>
+ * region_tag:aiplatform_batch_migrate_resources_sample
+ *
  */
   async checkBatchMigrateResourcesProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.BatchMigrateResourcesResponse, protos.google.cloud.aiplatform.v1.BatchMigrateResourcesOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -554,6 +562,10 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/migration_service.search_migratable_resources.js</caption>
+ * region_tag:aiplatform_search_migratable_resources_sample
+ *
  */
   searchMigratableResources(
       request?: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
@@ -630,6 +642,10 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/migration_service.search_migratable_resources.js</caption>
+ * region_tag:aiplatform_search_migratable_resources_sample
+ *
  */
   searchMigratableResourcesStream(
       request?: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
@@ -644,7 +660,8 @@ export class MigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchMigratableResources'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchMigratableResources.createStream(
       this.innerApiCalls.searchMigratableResources as gax.GaxCall,
@@ -698,6 +715,10 @@ export class MigrationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/migration_service.search_migratable_resources.js</caption>
+ * region_tag:aiplatform_search_migratable_resources_sample
+ *
  */
   searchMigratableResourcesAsync(
       request?: protos.google.cloud.aiplatform.v1.ISearchMigratableResourcesRequest,
@@ -713,7 +734,8 @@ export class MigrationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchMigratableResources'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchMigratableResources.asyncIterate(
       this.innerApiCalls['searchMigratableResources'] as GaxCall,

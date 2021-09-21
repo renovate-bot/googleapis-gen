@@ -419,6 +419,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSource(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.create_source.js</caption>
+ * region_tag:securitycenter_create_source_sample
+ *
  */
   createSource(
       request?: protos.google.cloud.securitycenter.v1.ICreateSourceRequest,
@@ -499,6 +503,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createFinding(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.create_finding.js</caption>
+ * region_tag:securitycenter_create_finding_sample
+ *
  */
   createFinding(
       request?: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
@@ -579,6 +587,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createNotificationConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.create_notification_config.js</caption>
+ * region_tag:securitycenter_create_notification_config_sample
+ *
  */
   createNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
@@ -651,6 +663,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteNotificationConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.delete_notification_config.js</caption>
+ * region_tag:securitycenter_delete_notification_config_sample
+ *
  */
   deleteNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IDeleteNotificationConfigRequest,
@@ -726,6 +742,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.get_iam_policy.js</caption>
+ * region_tag:securitycenter_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -798,6 +818,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNotificationConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.get_notification_config.js</caption>
+ * region_tag:securitycenter_get_notification_config_sample
+ *
  */
   getNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IGetNotificationConfigRequest,
@@ -870,6 +894,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOrganizationSettings(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.get_organization_settings.js</caption>
+ * region_tag:securitycenter_get_organization_settings_sample
+ *
  */
   getOrganizationSettings(
       request?: protos.google.cloud.securitycenter.v1.IGetOrganizationSettingsRequest,
@@ -942,6 +970,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSource(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.get_source.js</caption>
+ * region_tag:securitycenter_get_source_sample
+ *
  */
   getSource(
       request?: protos.google.cloud.securitycenter.v1.IGetSourceRequest,
@@ -1020,6 +1052,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setFindingState(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.set_finding_state.js</caption>
+ * region_tag:securitycenter_set_finding_state_sample
+ *
  */
   setFindingState(
       request?: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
@@ -1097,6 +1133,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.set_iam_policy.js</caption>
+ * region_tag:securitycenter_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -1174,6 +1214,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.test_iam_permissions.js</caption>
+ * region_tag:securitycenter_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -1259,6 +1303,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateFinding(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.update_finding.js</caption>
+ * region_tag:securitycenter_update_finding_sample
+ *
  */
   updateFinding(
       request?: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
@@ -1336,6 +1384,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateNotificationConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.update_notification_config.js</caption>
+ * region_tag:securitycenter_update_notification_config_sample
+ *
  */
   updateNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
@@ -1411,6 +1463,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateOrganizationSettings(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.update_organization_settings.js</caption>
+ * region_tag:securitycenter_update_organization_settings_sample
+ *
  */
   updateOrganizationSettings(
       request?: protos.google.cloud.securitycenter.v1.IUpdateOrganizationSettingsRequest,
@@ -1486,6 +1542,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSource(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.update_source.js</caption>
+ * region_tag:securitycenter_update_source_sample
+ *
  */
   updateSource(
       request?: protos.google.cloud.securitycenter.v1.IUpdateSourceRequest,
@@ -1567,6 +1627,10 @@ export class SecurityCenterClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSecurityMarks(request);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.update_security_marks.js</caption>
+ * region_tag:securitycenter_update_security_marks_sample
+ *
  */
   updateSecurityMarks(
       request?: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
@@ -1648,6 +1712,10 @@ export class SecurityCenterClient {
  * @example
  * const [operation] = await client.runAssetDiscovery(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/security_center.run_asset_discovery.js</caption>
+ * region_tag:securitycenter_run_asset_discovery_sample
+ *
  */
   runAssetDiscovery(
       request?: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
@@ -1697,6 +1765,10 @@ export class SecurityCenterClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/security_center.run_asset_discovery.js</caption>
+ * region_tag:securitycenter_run_asset_discovery_sample
+ *
  */
   async checkRunAssetDiscoveryProgress(name: string): Promise<LROperation<protos.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1869,6 +1941,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.group_assets.js</caption>
+ * region_tag:securitycenter_group_assets_sample
+ *
  */
   groupAssets(
       request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
@@ -2047,6 +2123,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.group_assets.js</caption>
+ * region_tag:securitycenter_group_assets_sample
+ *
  */
   groupAssetsStream(
       request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
@@ -2061,7 +2141,8 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['groupAssets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.groupAssets.createStream(
       this.innerApiCalls.groupAssets as gax.GaxCall,
@@ -2217,6 +2298,10 @@ export class SecurityCenterClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/security_center.group_assets.js</caption>
+ * region_tag:securitycenter_group_assets_sample
+ *
  */
   groupAssetsAsync(
       request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
@@ -2232,7 +2317,8 @@ export class SecurityCenterClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['groupAssets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.groupAssets.asyncIterate(
       this.innerApiCalls['groupAssets'] as GaxCall,
@@ -2413,6 +2499,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.group_findings.js</caption>
+ * region_tag:securitycenter_group_findings_sample
+ *
  */
   groupFindings(
       request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
@@ -2594,6 +2684,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.group_findings.js</caption>
+ * region_tag:securitycenter_group_findings_sample
+ *
  */
   groupFindingsStream(
       request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
@@ -2608,7 +2702,8 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['groupFindings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.groupFindings.createStream(
       this.innerApiCalls.groupFindings as gax.GaxCall,
@@ -2767,6 +2862,10 @@ export class SecurityCenterClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/security_center.group_findings.js</caption>
+ * region_tag:securitycenter_group_findings_sample
+ *
  */
   groupFindingsAsync(
       request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
@@ -2782,7 +2881,8 @@ export class SecurityCenterClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['groupFindings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.groupFindings.asyncIterate(
       this.innerApiCalls['groupFindings'] as GaxCall,
@@ -2958,6 +3058,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_assets.js</caption>
+ * region_tag:securitycenter_list_assets_sample
+ *
  */
   listAssets(
       request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
@@ -3140,6 +3244,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_assets.js</caption>
+ * region_tag:securitycenter_list_assets_sample
+ *
  */
   listAssetsStream(
       request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
@@ -3154,7 +3262,8 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAssets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAssets.createStream(
       this.innerApiCalls.listAssets as gax.GaxCall,
@@ -3314,6 +3423,10 @@ export class SecurityCenterClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_assets.js</caption>
+ * region_tag:securitycenter_list_assets_sample
+ *
  */
   listAssetsAsync(
       request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
@@ -3329,7 +3442,8 @@ export class SecurityCenterClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAssets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAssets.asyncIterate(
       this.innerApiCalls['listAssets'] as GaxCall,
@@ -3512,6 +3626,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_findings.js</caption>
+ * region_tag:securitycenter_list_findings_sample
+ *
  */
   listFindings(
       request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
@@ -3698,6 +3816,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_findings.js</caption>
+ * region_tag:securitycenter_list_findings_sample
+ *
  */
   listFindingsStream(
       request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
@@ -3712,7 +3834,8 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFindings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFindings.createStream(
       this.innerApiCalls.listFindings as gax.GaxCall,
@@ -3876,6 +3999,10 @@ export class SecurityCenterClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_findings.js</caption>
+ * region_tag:securitycenter_list_findings_sample
+ *
  */
   listFindingsAsync(
       request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
@@ -3891,7 +4018,8 @@ export class SecurityCenterClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFindings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFindings.asyncIterate(
       this.innerApiCalls['listFindings'] as GaxCall,
@@ -3947,6 +4075,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_notification_configs.js</caption>
+ * region_tag:securitycenter_list_notification_configs_sample
+ *
  */
   listNotificationConfigs(
       request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
@@ -4009,6 +4141,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_notification_configs.js</caption>
+ * region_tag:securitycenter_list_notification_configs_sample
+ *
  */
   listNotificationConfigsStream(
       request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
@@ -4023,7 +4159,8 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listNotificationConfigs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listNotificationConfigs.createStream(
       this.innerApiCalls.listNotificationConfigs as gax.GaxCall,
@@ -4063,6 +4200,10 @@ export class SecurityCenterClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_notification_configs.js</caption>
+ * region_tag:securitycenter_list_notification_configs_sample
+ *
  */
   listNotificationConfigsAsync(
       request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
@@ -4078,7 +4219,8 @@ export class SecurityCenterClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listNotificationConfigs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listNotificationConfigs.asyncIterate(
       this.innerApiCalls['listNotificationConfigs'] as GaxCall,
@@ -4135,6 +4277,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_sources.js</caption>
+ * region_tag:securitycenter_list_sources_sample
+ *
  */
   listSources(
       request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
@@ -4198,6 +4344,10 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_sources.js</caption>
+ * region_tag:securitycenter_list_sources_sample
+ *
  */
   listSourcesStream(
       request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
@@ -4212,7 +4362,8 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSources'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSources.createStream(
       this.innerApiCalls.listSources as gax.GaxCall,
@@ -4253,6 +4404,10 @@ export class SecurityCenterClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/security_center.list_sources.js</caption>
+ * region_tag:securitycenter_list_sources_sample
+ *
  */
   listSourcesAsync(
       request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
@@ -4268,7 +4423,8 @@ export class SecurityCenterClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSources'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSources.asyncIterate(
       this.innerApiCalls['listSources'] as GaxCall,

@@ -690,6 +690,10 @@ export class ParentalStatusViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getParentalStatusView(request);
+ *
+ * @example <caption>include:samples/generated/v7/parental_status_view_service.get_parental_status_view.js</caption>
+ * region_tag:googleads_get_parental_status_view_sample
+ *
  */
   getParentalStatusView(
       request?: protos.google.ads.googleads.v7.services.IGetParentalStatusViewRequest,

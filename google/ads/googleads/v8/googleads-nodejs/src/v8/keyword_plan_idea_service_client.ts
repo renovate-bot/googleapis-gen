@@ -777,6 +777,10 @@ export class KeywordPlanIdeaServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v8/keyword_plan_idea_service.generate_keyword_ideas.js</caption>
+ * region_tag:googleads_generate_keyword_ideas_sample
+ *
  */
   generateKeywordIdeas(
       request?: protos.google.ads.googleads.v8.services.IGenerateKeywordIdeasRequest,
@@ -870,6 +874,10 @@ export class KeywordPlanIdeaServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v8/keyword_plan_idea_service.generate_keyword_ideas.js</caption>
+ * region_tag:googleads_generate_keyword_ideas_sample
+ *
  */
   generateKeywordIdeasStream(
       request?: protos.google.ads.googleads.v8.services.IGenerateKeywordIdeasRequest,
@@ -884,7 +892,8 @@ export class KeywordPlanIdeaServiceClient {
     ] = gax.routingHeader.fromParams({
       'customer_id': request.customerId || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['generateKeywordIdeas'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.generateKeywordIdeas.createStream(
       this.innerApiCalls.generateKeywordIdeas as gax.GaxCall,
@@ -955,6 +964,10 @@ export class KeywordPlanIdeaServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v8/keyword_plan_idea_service.generate_keyword_ideas.js</caption>
+ * region_tag:googleads_generate_keyword_ideas_sample
+ *
  */
   generateKeywordIdeasAsync(
       request?: protos.google.ads.googleads.v8.services.IGenerateKeywordIdeasRequest,
@@ -970,7 +983,8 @@ export class KeywordPlanIdeaServiceClient {
       'customer_id': request.customerId || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['generateKeywordIdeas'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.generateKeywordIdeas.asyncIterate(
       this.innerApiCalls['generateKeywordIdeas'] as GaxCall,

@@ -339,6 +339,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAssessment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.create_assessment.js</caption>
+ * region_tag:recaptchaenterprise_create_assessment_sample
+ *
  */
   createAssessment(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.ICreateAssessmentRequest,
@@ -414,6 +418,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.annotateAssessment(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.annotate_assessment.js</caption>
+ * region_tag:recaptchaenterprise_annotate_assessment_sample
+ *
  */
   annotateAssessment(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IAnnotateAssessmentRequest,
@@ -488,6 +496,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.createKey(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.create_key.js</caption>
+ * region_tag:recaptchaenterprise_create_key_sample
+ *
  */
   createKey(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.ICreateKeyRequest,
@@ -560,6 +572,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKey(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.get_key.js</caption>
+ * region_tag:recaptchaenterprise_get_key_sample
+ *
  */
   getKey(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IGetKeyRequest,
@@ -634,6 +650,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateKey(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.update_key.js</caption>
+ * region_tag:recaptchaenterprise_update_key_sample
+ *
  */
   updateKey(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IUpdateKeyRequest,
@@ -706,6 +726,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteKey(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.delete_key.js</caption>
+ * region_tag:recaptchaenterprise_delete_key_sample
+ *
  */
   deleteKey(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IDeleteKeyRequest,
@@ -789,6 +813,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.list_keys.js</caption>
+ * region_tag:recaptchaenterprise_list_keys_sample
+ *
  */
   listKeys(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IListKeysRequest,
@@ -850,6 +878,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.list_keys.js</caption>
+ * region_tag:recaptchaenterprise_list_keys_sample
+ *
  */
   listKeysStream(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IListKeysRequest,
@@ -864,7 +896,8 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKeys'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKeys.createStream(
       this.innerApiCalls.listKeys as gax.GaxCall,
@@ -903,6 +936,10 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/recaptcha_enterprise_service_v1_beta1.list_keys.js</caption>
+ * region_tag:recaptchaenterprise_list_keys_sample
+ *
  */
   listKeysAsync(
       request?: protos.google.cloud.recaptchaenterprise.v1beta1.IListKeysRequest,
@@ -918,7 +955,8 @@ export class RecaptchaEnterpriseServiceV1Beta1Client {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKeys'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKeys.asyncIterate(
       this.innerApiCalls['listKeys'] as GaxCall,

@@ -720,6 +720,10 @@ export class AdParameterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdParameter(request);
+ *
+ * @example <caption>include:samples/generated/v8/ad_parameter_service.get_ad_parameter.js</caption>
+ * region_tag:googleads_get_ad_parameter_sample
+ *
  */
   getAdParameter(
       request?: protos.google.ads.googleads.v8.services.IGetAdParameterRequest,
@@ -819,6 +823,10 @@ export class AdParameterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdParameters(request);
+ *
+ * @example <caption>include:samples/generated/v8/ad_parameter_service.mutate_ad_parameters.js</caption>
+ * region_tag:googleads_mutate_ad_parameters_sample
+ *
  */
   mutateAdParameters(
       request?: protos.google.ads.googleads.v8.services.IMutateAdParametersRequest,

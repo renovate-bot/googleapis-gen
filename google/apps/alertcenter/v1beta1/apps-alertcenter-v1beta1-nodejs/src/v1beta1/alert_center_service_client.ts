@@ -325,6 +325,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAlert(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.get_alert.js</caption>
+ * region_tag:alertcenter_get_alert_sample
+ *
  */
   getAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
@@ -404,6 +408,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAlert(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.delete_alert.js</caption>
+ * region_tag:alertcenter_delete_alert_sample
+ *
  */
   deleteAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
@@ -483,6 +491,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.undeleteAlert(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.undelete_alert.js</caption>
+ * region_tag:alertcenter_undelete_alert_sample
+ *
  */
   undeleteAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
@@ -563,6 +575,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAlertFeedback(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.create_alert_feedback.js</caption>
+ * region_tag:alertcenter_create_alert_feedback_sample
+ *
  */
   createAlertFeedback(
       request?: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
@@ -646,6 +662,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listAlertFeedback(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.list_alert_feedback.js</caption>
+ * region_tag:alertcenter_list_alert_feedback_sample
+ *
  */
   listAlertFeedback(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
@@ -722,6 +742,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAlertMetadata(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.get_alert_metadata.js</caption>
+ * region_tag:alertcenter_get_alert_metadata_sample
+ *
  */
   getAlertMetadata(
       request?: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
@@ -795,6 +819,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSettings(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.get_settings.js</caption>
+ * region_tag:alertcenter_get_settings_sample
+ *
  */
   getSettings(
       request?: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
@@ -863,6 +891,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSettings(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.update_settings.js</caption>
+ * region_tag:alertcenter_update_settings_sample
+ *
  */
   updateSettings(
       request?: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
@@ -930,6 +962,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchDeleteAlerts(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.batch_delete_alerts.js</caption>
+ * region_tag:alertcenter_batch_delete_alerts_sample
+ *
  */
   batchDeleteAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
@@ -997,6 +1033,10 @@ export class AlertCenterServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchUndeleteAlerts(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.batch_undelete_alerts.js</caption>
+ * region_tag:alertcenter_batch_undelete_alerts_sample
+ *
  */
   batchUndeleteAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
@@ -1089,6 +1129,10 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.list_alerts.js</caption>
+ * region_tag:alertcenter_list_alerts_sample
+ *
  */
   listAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
@@ -1159,6 +1203,10 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.list_alerts.js</caption>
+ * region_tag:alertcenter_list_alerts_sample
+ *
  */
   listAlertsStream(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
@@ -1166,7 +1214,8 @@ export class AlertCenterServiceClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAlerts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAlerts.createStream(
       this.innerApiCalls.listAlerts as gax.GaxCall,
@@ -1221,6 +1270,10 @@ export class AlertCenterServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.list_alerts.js</caption>
+ * region_tag:alertcenter_list_alerts_sample
+ *
  */
   listAlertsAsync(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
@@ -1229,7 +1282,8 @@ export class AlertCenterServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAlerts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAlerts.asyncIterate(
       this.innerApiCalls['listAlerts'] as GaxCall,

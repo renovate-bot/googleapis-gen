@@ -690,6 +690,10 @@ export class ConversionCustomVariableServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConversionCustomVariable(request);
+ *
+ * @example <caption>include:samples/generated/v7/conversion_custom_variable_service.get_conversion_custom_variable.js</caption>
+ * region_tag:googleads_get_conversion_custom_variable_sample
+ *
  */
   getConversionCustomVariable(
       request?: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
@@ -787,6 +791,10 @@ export class ConversionCustomVariableServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateConversionCustomVariables(request);
+ *
+ * @example <caption>include:samples/generated/v7/conversion_custom_variable_service.mutate_conversion_custom_variables.js</caption>
+ * region_tag:googleads_mutate_conversion_custom_variables_sample
+ *
  */
   mutateConversionCustomVariables(
       request?: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,

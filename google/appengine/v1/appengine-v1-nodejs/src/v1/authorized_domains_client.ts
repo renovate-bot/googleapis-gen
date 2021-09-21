@@ -343,6 +343,10 @@ export class AuthorizedDomainsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
+ * region_tag:appengine_list_authorized_domains_sample
+ *
  */
   listAuthorizedDomains(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
@@ -401,6 +405,10 @@ export class AuthorizedDomainsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
+ * region_tag:appengine_list_authorized_domains_sample
+ *
  */
   listAuthorizedDomainsStream(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
@@ -415,7 +423,8 @@ export class AuthorizedDomainsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAuthorizedDomains'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAuthorizedDomains.createStream(
       this.innerApiCalls.listAuthorizedDomains as gax.GaxCall,
@@ -451,6 +460,10 @@ export class AuthorizedDomainsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
+ * region_tag:appengine_list_authorized_domains_sample
+ *
  */
   listAuthorizedDomainsAsync(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
@@ -466,7 +479,8 @@ export class AuthorizedDomainsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAuthorizedDomains'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAuthorizedDomains.asyncIterate(
       this.innerApiCalls['listAuthorizedDomains'] as GaxCall,

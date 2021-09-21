@@ -690,6 +690,10 @@ export class DetailPlacementViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDetailPlacementView(request);
+ *
+ * @example <caption>include:samples/generated/v7/detail_placement_view_service.get_detail_placement_view.js</caption>
+ * region_tag:googleads_get_detail_placement_view_sample
+ *
  */
   getDetailPlacementView(
       request?: protos.google.ads.googleads.v7.services.IGetDetailPlacementViewRequest,

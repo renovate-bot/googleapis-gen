@@ -324,6 +324,10 @@ export class PublisherServiceClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v1/publisher_service.publish.js</caption>
+ * region_tag:pubsublite_publish_sample
+ *
  */
   publish(
       options?: CallOptions):

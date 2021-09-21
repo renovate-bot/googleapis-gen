@@ -690,6 +690,10 @@ export class HotelPerformanceViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getHotelPerformanceView(request);
+ *
+ * @example <caption>include:samples/generated/v7/hotel_performance_view_service.get_hotel_performance_view.js</caption>
+ * region_tag:googleads_get_hotel_performance_view_sample
+ *
  */
   getHotelPerformanceView(
       request?: protos.google.ads.googleads.v7.services.IGetHotelPerformanceViewRequest,

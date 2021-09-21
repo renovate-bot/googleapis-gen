@@ -341,6 +341,10 @@ export class MigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createMigrationWorkflow(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.create_migration_workflow.js</caption>
+ * region_tag:migration_create_migration_workflow_sample
+ *
  */
   createMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
@@ -415,6 +419,10 @@ export class MigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMigrationWorkflow(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.get_migration_workflow.js</caption>
+ * region_tag:migration_get_migration_workflow_sample
+ *
  */
   getMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
@@ -487,6 +495,10 @@ export class MigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteMigrationWorkflow(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.delete_migration_workflow.js</caption>
+ * region_tag:migration_delete_migration_workflow_sample
+ *
  */
   deleteMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
@@ -562,6 +574,10 @@ export class MigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startMigrationWorkflow(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.start_migration_workflow.js</caption>
+ * region_tag:migration_start_migration_workflow_sample
+ *
  */
   startMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
@@ -636,6 +652,10 @@ export class MigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMigrationSubtask(request);
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.get_migration_subtask.js</caption>
+ * region_tag:migration_get_migration_subtask_sample
+ *
  */
   getMigrationSubtask(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
@@ -724,6 +744,10 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_workflows.js</caption>
+ * region_tag:migration_list_migration_workflows_sample
+ *
  */
   listMigrationWorkflows(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
@@ -790,6 +814,10 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_workflows.js</caption>
+ * region_tag:migration_list_migration_workflows_sample
+ *
  */
   listMigrationWorkflowsStream(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
@@ -804,7 +832,8 @@ export class MigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMigrationWorkflows'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMigrationWorkflows.createStream(
       this.innerApiCalls.listMigrationWorkflows as gax.GaxCall,
@@ -848,6 +877,10 @@ export class MigrationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_workflows.js</caption>
+ * region_tag:migration_list_migration_workflows_sample
+ *
  */
   listMigrationWorkflowsAsync(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
@@ -863,7 +896,8 @@ export class MigrationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMigrationWorkflows'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMigrationWorkflows.asyncIterate(
       this.innerApiCalls['listMigrationWorkflows'] as GaxCall,
@@ -927,6 +961,10 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_subtasks.js</caption>
+ * region_tag:migration_list_migration_subtasks_sample
+ *
  */
   listMigrationSubtasks(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
@@ -997,6 +1035,10 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_subtasks.js</caption>
+ * region_tag:migration_list_migration_subtasks_sample
+ *
  */
   listMigrationSubtasksStream(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
@@ -1011,7 +1053,8 @@ export class MigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMigrationSubtasks'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMigrationSubtasks.createStream(
       this.innerApiCalls.listMigrationSubtasks as gax.GaxCall,
@@ -1059,6 +1102,10 @@ export class MigrationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_subtasks.js</caption>
+ * region_tag:migration_list_migration_subtasks_sample
+ *
  */
   listMigrationSubtasksAsync(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
@@ -1074,7 +1121,8 @@ export class MigrationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMigrationSubtasks'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMigrationSubtasks.asyncIterate(
       this.innerApiCalls['listMigrationSubtasks'] as GaxCall,

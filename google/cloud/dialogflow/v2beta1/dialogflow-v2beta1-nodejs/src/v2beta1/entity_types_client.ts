@@ -499,6 +499,10 @@ export class EntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEntityType(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.get_entity_type.js</caption>
+ * region_tag:dialogflow_get_entity_type_sample
+ *
  */
   getEntityType(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetEntityTypeRequest,
@@ -585,6 +589,10 @@ export class EntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createEntityType(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.create_entity_type.js</caption>
+ * region_tag:dialogflow_create_entity_type_sample
+ *
  */
   createEntityType(
       request?: protos.google.cloud.dialogflow.v2beta1.ICreateEntityTypeRequest,
@@ -668,6 +676,10 @@ export class EntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateEntityType(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.update_entity_type.js</caption>
+ * region_tag:dialogflow_update_entity_type_sample
+ *
  */
   updateEntityType(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateEntityTypeRequest,
@@ -747,6 +759,10 @@ export class EntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteEntityType(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.delete_entity_type.js</caption>
+ * region_tag:dialogflow_delete_entity_type_sample
+ *
  */
   deleteEntityType(
       request?: protos.google.cloud.dialogflow.v2beta1.IDeleteEntityTypeRequest,
@@ -852,6 +868,10 @@ export class EntityTypesClient {
  * @example
  * const [operation] = await client.batchUpdateEntityTypes(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_update_entity_types.js</caption>
+ * region_tag:dialogflow_batch_update_entity_types_sample
+ *
  */
   batchUpdateEntityTypes(
       request?: protos.google.cloud.dialogflow.v2beta1.IBatchUpdateEntityTypesRequest,
@@ -901,6 +921,10 @@ export class EntityTypesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_update_entity_types.js</caption>
+ * region_tag:dialogflow_batch_update_entity_types_sample
+ *
  */
   async checkBatchUpdateEntityTypesProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -966,6 +990,10 @@ export class EntityTypesClient {
  * @example
  * const [operation] = await client.batchDeleteEntityTypes(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_delete_entity_types.js</caption>
+ * region_tag:dialogflow_batch_delete_entity_types_sample
+ *
  */
   batchDeleteEntityTypes(
       request?: protos.google.cloud.dialogflow.v2beta1.IBatchDeleteEntityTypesRequest,
@@ -1015,6 +1043,10 @@ export class EntityTypesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_delete_entity_types.js</caption>
+ * region_tag:dialogflow_batch_delete_entity_types_sample
+ *
  */
   async checkBatchDeleteEntityTypesProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1086,6 +1118,10 @@ export class EntityTypesClient {
  * @example
  * const [operation] = await client.batchCreateEntities(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_create_entities.js</caption>
+ * region_tag:dialogflow_batch_create_entities_sample
+ *
  */
   batchCreateEntities(
       request?: protos.google.cloud.dialogflow.v2beta1.IBatchCreateEntitiesRequest,
@@ -1135,6 +1171,10 @@ export class EntityTypesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_create_entities.js</caption>
+ * region_tag:dialogflow_batch_create_entities_sample
+ *
  */
   async checkBatchCreateEntitiesProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1210,6 +1250,10 @@ export class EntityTypesClient {
  * @example
  * const [operation] = await client.batchUpdateEntities(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_update_entities.js</caption>
+ * region_tag:dialogflow_batch_update_entities_sample
+ *
  */
   batchUpdateEntities(
       request?: protos.google.cloud.dialogflow.v2beta1.IBatchUpdateEntitiesRequest,
@@ -1259,6 +1303,10 @@ export class EntityTypesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_update_entities.js</caption>
+ * region_tag:dialogflow_batch_update_entities_sample
+ *
  */
   async checkBatchUpdateEntitiesProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1332,6 +1380,10 @@ export class EntityTypesClient {
  * @example
  * const [operation] = await client.batchDeleteEntities(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_delete_entities.js</caption>
+ * region_tag:dialogflow_batch_delete_entities_sample
+ *
  */
   batchDeleteEntities(
       request?: protos.google.cloud.dialogflow.v2beta1.IBatchDeleteEntitiesRequest,
@@ -1381,6 +1433,10 @@ export class EntityTypesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.batch_delete_entities.js</caption>
+ * region_tag:dialogflow_batch_delete_entities_sample
+ *
  */
   async checkBatchDeleteEntitiesProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1442,6 +1498,10 @@ export class EntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.list_entity_types.js</caption>
+ * region_tag:dialogflow_list_entity_types_sample
+ *
  */
   listEntityTypes(
       request?: protos.google.cloud.dialogflow.v2beta1.IListEntityTypesRequest,
@@ -1510,6 +1570,10 @@ export class EntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.list_entity_types.js</caption>
+ * region_tag:dialogflow_list_entity_types_sample
+ *
  */
   listEntityTypesStream(
       request?: protos.google.cloud.dialogflow.v2beta1.IListEntityTypesRequest,
@@ -1524,7 +1588,8 @@ export class EntityTypesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEntityTypes'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEntityTypes.createStream(
       this.innerApiCalls.listEntityTypes as gax.GaxCall,
@@ -1570,6 +1635,10 @@ export class EntityTypesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2beta1/entity_types.list_entity_types.js</caption>
+ * region_tag:dialogflow_list_entity_types_sample
+ *
  */
   listEntityTypesAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListEntityTypesRequest,
@@ -1585,7 +1654,8 @@ export class EntityTypesClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEntityTypes'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEntityTypes.asyncIterate(
       this.innerApiCalls['listEntityTypes'] as GaxCall,

@@ -364,6 +364,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.get_service_account.js</caption>
+ * region_tag:admin_get_service_account_sample
+ *
  */
   getServiceAccount(
       request?: protos.google.iam.admin.v1.IGetServiceAccountRequest,
@@ -445,6 +449,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.create_service_account.js</caption>
+ * region_tag:admin_create_service_account_sample
+ *
  */
   createServiceAccount(
       request?: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
@@ -562,6 +570,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.update_service_account.js</caption>
+ * region_tag:admin_update_service_account_sample
+ *
  */
   updateServiceAccount(
       request?: protos.google.iam.admin.v1.IServiceAccount,
@@ -633,6 +645,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.patch_service_account.js</caption>
+ * region_tag:admin_patch_service_account_sample
+ *
  */
   patchServiceAccount(
       request?: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
@@ -722,6 +738,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.delete_service_account.js</caption>
+ * region_tag:admin_delete_service_account_sample
+ *
  */
   deleteServiceAccount(
       request?: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
@@ -803,6 +823,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.undeleteServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.undelete_service_account.js</caption>
+ * region_tag:admin_undelete_service_account_sample
+ *
  */
   undeleteServiceAccount(
       request?: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
@@ -885,6 +909,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.enableServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.enable_service_account.js</caption>
+ * region_tag:admin_enable_service_account_sample
+ *
  */
   enableServiceAccount(
       request?: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
@@ -975,6 +1003,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.disableServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.disable_service_account.js</caption>
+ * region_tag:admin_disable_service_account_sample
+ *
  */
   disableServiceAccount(
       request?: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
@@ -1055,6 +1087,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listServiceAccountKeys(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_service_account_keys.js</caption>
+ * region_tag:admin_list_service_account_keys_sample
+ *
  */
   listServiceAccountKeys(
       request?: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
@@ -1134,6 +1170,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServiceAccountKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.get_service_account_key.js</caption>
+ * region_tag:admin_get_service_account_key_sample
+ *
  */
   getServiceAccountKey(
       request?: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
@@ -1217,6 +1257,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createServiceAccountKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.create_service_account_key.js</caption>
+ * region_tag:admin_create_service_account_key_sample
+ *
  */
   createServiceAccountKey(
       request?: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
@@ -1297,6 +1341,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.uploadServiceAccountKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.upload_service_account_key.js</caption>
+ * region_tag:admin_upload_service_account_key_sample
+ *
  */
   uploadServiceAccountKey(
       request?: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
@@ -1374,6 +1422,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteServiceAccountKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.delete_service_account_key.js</caption>
+ * region_tag:admin_delete_service_account_key_sample
+ *
  */
   deleteServiceAccountKey(
       request?: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
@@ -1464,6 +1516,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.signBlob(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.sign_blob.js</caption>
+ * region_tag:admin_sign_blob_sample
+ *
  * @deprecated SignBlob is deprecated and may be removed in a future version.
  */
   signBlob(
@@ -1566,6 +1622,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.signJwt(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.sign_jwt.js</caption>
+ * region_tag:admin_sign_jwt_sample
+ *
  * @deprecated SignJwt is deprecated and may be removed in a future version.
  */
   signJwt(
@@ -1652,6 +1712,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.get_iam_policy.js</caption>
+ * region_tag:admin_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -1745,6 +1809,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.set_iam_policy.js</caption>
+ * region_tag:admin_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -1823,6 +1891,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.test_iam_permissions.js</caption>
+ * region_tag:admin_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -1920,6 +1992,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRole(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.get_role.js</caption>
+ * region_tag:admin_get_role_sample
+ *
  */
   getRole(
       request?: protos.google.iam.admin.v1.IGetRoleRequest,
@@ -2018,6 +2094,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createRole(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.create_role.js</caption>
+ * region_tag:admin_create_role_sample
+ *
  */
   createRole(
       request?: protos.google.iam.admin.v1.ICreateRoleRequest,
@@ -2112,6 +2192,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateRole(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.update_role.js</caption>
+ * region_tag:admin_update_role_sample
+ *
  */
   updateRole(
       request?: protos.google.iam.admin.v1.IUpdateRoleRequest,
@@ -2220,6 +2304,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteRole(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.delete_role.js</caption>
+ * region_tag:admin_delete_role_sample
+ *
  */
   deleteRole(
       request?: protos.google.iam.admin.v1.IDeleteRoleRequest,
@@ -2312,6 +2400,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.undeleteRole(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.undelete_role.js</caption>
+ * region_tag:admin_undelete_role_sample
+ *
  */
   undeleteRole(
       request?: protos.google.iam.admin.v1.IUndeleteRoleRequest,
@@ -2392,6 +2484,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.queryAuditableServices(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_auditable_services.js</caption>
+ * region_tag:admin_query_auditable_services_sample
+ *
  */
   queryAuditableServices(
       request?: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
@@ -2471,6 +2567,10 @@ export class IAMClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.lintPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.lint_policy.js</caption>
+ * region_tag:admin_lint_policy_sample
+ *
  */
   lintPolicy(
       request?: protos.google.iam.admin.v1.ILintPolicyRequest,
@@ -2551,6 +2651,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_service_accounts.js</caption>
+ * region_tag:admin_list_service_accounts_sample
+ *
  */
   listServiceAccounts(
       request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
@@ -2616,6 +2720,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_service_accounts.js</caption>
+ * region_tag:admin_list_service_accounts_sample
+ *
  */
   listServiceAccountsStream(
       request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
@@ -2630,7 +2738,8 @@ export class IAMClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listServiceAccounts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listServiceAccounts.createStream(
       this.innerApiCalls.listServiceAccounts as gax.GaxCall,
@@ -2673,6 +2782,10 @@ export class IAMClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_service_accounts.js</caption>
+ * region_tag:admin_list_service_accounts_sample
+ *
  */
   listServiceAccountsAsync(
       request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
@@ -2688,7 +2801,8 @@ export class IAMClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listServiceAccounts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listServiceAccounts.asyncIterate(
       this.innerApiCalls['listServiceAccounts'] as GaxCall,
@@ -2750,6 +2864,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_grantable_roles.js</caption>
+ * region_tag:admin_query_grantable_roles_sample
+ *
  */
   queryGrantableRoles(
       request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
@@ -2809,6 +2927,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_grantable_roles.js</caption>
+ * region_tag:admin_query_grantable_roles_sample
+ *
  */
   queryGrantableRolesStream(
       request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
@@ -2816,7 +2938,8 @@ export class IAMClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['queryGrantableRoles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.queryGrantableRoles.createStream(
       this.innerApiCalls.queryGrantableRoles as gax.GaxCall,
@@ -2860,6 +2983,10 @@ export class IAMClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_grantable_roles.js</caption>
+ * region_tag:admin_query_grantable_roles_sample
+ *
  */
   queryGrantableRolesAsync(
       request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
@@ -2868,7 +2995,8 @@ export class IAMClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['queryGrantableRoles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.queryGrantableRoles.asyncIterate(
       this.innerApiCalls['queryGrantableRoles'] as GaxCall,
@@ -2956,6 +3084,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_roles.js</caption>
+ * region_tag:admin_list_roles_sample
+ *
  */
   listRoles(
       request?: protos.google.iam.admin.v1.IListRolesRequest,
@@ -3049,6 +3181,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_roles.js</caption>
+ * region_tag:admin_list_roles_sample
+ *
  */
   listRolesStream(
       request?: protos.google.iam.admin.v1.IListRolesRequest,
@@ -3063,7 +3199,8 @@ export class IAMClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listRoles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listRoles.createStream(
       this.innerApiCalls.listRoles as gax.GaxCall,
@@ -3134,6 +3271,10 @@ export class IAMClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.list_roles.js</caption>
+ * region_tag:admin_list_roles_sample
+ *
  */
   listRolesAsync(
       request?: protos.google.iam.admin.v1.IListRolesRequest,
@@ -3149,7 +3290,8 @@ export class IAMClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listRoles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listRoles.asyncIterate(
       this.innerApiCalls['listRoles'] as GaxCall,
@@ -3211,6 +3353,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_testable_permissions.js</caption>
+ * region_tag:admin_query_testable_permissions_sample
+ *
  */
   queryTestablePermissions(
       request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
@@ -3270,6 +3416,10 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_testable_permissions.js</caption>
+ * region_tag:admin_query_testable_permissions_sample
+ *
  */
   queryTestablePermissionsStream(
       request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
@@ -3277,7 +3427,8 @@ export class IAMClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['queryTestablePermissions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.queryTestablePermissions.createStream(
       this.innerApiCalls.queryTestablePermissions as gax.GaxCall,
@@ -3321,6 +3472,10 @@ export class IAMClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/i_a_m.query_testable_permissions.js</caption>
+ * region_tag:admin_query_testable_permissions_sample
+ *
  */
   queryTestablePermissionsAsync(
       request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
@@ -3329,7 +3484,8 @@ export class IAMClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['queryTestablePermissions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.queryTestablePermissions.asyncIterate(
       this.innerApiCalls['queryTestablePermissions'] as GaxCall,

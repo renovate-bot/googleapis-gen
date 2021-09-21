@@ -377,6 +377,10 @@ export class BuildServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.checkBuildStageStatus(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.check_build_stage_status.js</caption>
+ * region_tag:moblab_check_build_stage_status_sample
+ *
  */
   checkBuildStageStatus(
       request?: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
@@ -461,6 +465,10 @@ export class BuildServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.findMostStableBuild(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.find_most_stable_build.js</caption>
+ * region_tag:moblab_find_most_stable_build_sample
+ *
  */
   findMostStableBuild(
       request?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
@@ -546,6 +554,10 @@ export class BuildServiceClient {
  * @example
  * const [operation] = await client.stageBuild(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.stage_build.js</caption>
+ * region_tag:moblab_stage_build_sample
+ *
  */
   stageBuild(
       request?: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
@@ -595,6 +607,10 @@ export class BuildServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.stage_build.js</caption>
+ * region_tag:moblab_stage_build_sample
+ *
  */
   async checkStageBuildProgress(name: string): Promise<LROperation<protos.google.chromeos.moblab.v1beta1.StageBuildResponse, protos.google.chromeos.moblab.v1beta1.StageBuildMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -645,6 +661,10 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_build_targets.js</caption>
+ * region_tag:moblab_list_build_targets_sample
+ *
  */
   listBuildTargets(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
@@ -695,6 +715,10 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_build_targets.js</caption>
+ * region_tag:moblab_list_build_targets_sample
+ *
  */
   listBuildTargetsStream(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
@@ -702,7 +726,8 @@ export class BuildServiceClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuildTargets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuildTargets.createStream(
       this.innerApiCalls.listBuildTargets as gax.GaxCall,
@@ -737,6 +762,10 @@ export class BuildServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_build_targets.js</caption>
+ * region_tag:moblab_list_build_targets_sample
+ *
  */
   listBuildTargetsAsync(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
@@ -745,7 +774,8 @@ export class BuildServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuildTargets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuildTargets.asyncIterate(
       this.innerApiCalls['listBuildTargets'] as GaxCall,
@@ -798,6 +828,10 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_models.js</caption>
+ * region_tag:moblab_list_models_sample
+ *
  */
   listModels(
       request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
@@ -857,6 +891,10 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_models.js</caption>
+ * region_tag:moblab_list_models_sample
+ *
  */
   listModelsStream(
       request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
@@ -871,7 +909,8 @@ export class BuildServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listModels'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listModels.createStream(
       this.innerApiCalls.listModels as gax.GaxCall,
@@ -908,6 +947,10 @@ export class BuildServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_models.js</caption>
+ * region_tag:moblab_list_models_sample
+ *
  */
   listModelsAsync(
       request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
@@ -923,7 +966,8 @@ export class BuildServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listModels'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listModels.asyncIterate(
       this.innerApiCalls['listModels'] as GaxCall,
@@ -995,6 +1039,10 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_builds.js</caption>
+ * region_tag:moblab_list_builds_sample
+ *
  */
   listBuilds(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
@@ -1072,6 +1120,10 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_builds.js</caption>
+ * region_tag:moblab_list_builds_sample
+ *
  */
   listBuildsStream(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
@@ -1086,7 +1138,8 @@ export class BuildServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuilds'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuilds.createStream(
       this.innerApiCalls.listBuilds as gax.GaxCall,
@@ -1141,6 +1194,10 @@ export class BuildServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_builds.js</caption>
+ * region_tag:moblab_list_builds_sample
+ *
  */
   listBuildsAsync(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
@@ -1156,7 +1213,8 @@ export class BuildServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuilds'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuilds.asyncIterate(
       this.innerApiCalls['listBuilds'] as GaxCall,

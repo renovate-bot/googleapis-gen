@@ -349,6 +349,10 @@ export class TestEnvironmentDiscoveryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTestEnvironmentCatalog(request);
+ *
+ * @example <caption>include:samples/generated/v1/test_environment_discovery_service.get_test_environment_catalog.js</caption>
+ * region_tag:testing_get_test_environment_catalog_sample
+ *
  */
   getTestEnvironmentCatalog(
       request?: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,

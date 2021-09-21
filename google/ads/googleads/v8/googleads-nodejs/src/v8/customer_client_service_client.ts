@@ -720,6 +720,10 @@ export class CustomerClientServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerClient(request);
+ *
+ * @example <caption>include:samples/generated/v8/customer_client_service.get_customer_client.js</caption>
+ * region_tag:googleads_get_customer_client_sample
+ *
  */
   getCustomerClient(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerClientRequest,

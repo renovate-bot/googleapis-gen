@@ -314,6 +314,10 @@ export class AuthenticationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.finalizeMfaSignIn(request);
+ *
+ * @example <caption>include:samples/generated/v2/authentication_service.finalize_mfa_sign_in.js</caption>
+ * region_tag:identitytoolkit_finalize_mfa_sign_in_sample
+ *
  */
   finalizeMfaSignIn(
       request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaSignInRequest,
@@ -385,6 +389,10 @@ export class AuthenticationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startMfaSignIn(request);
+ *
+ * @example <caption>include:samples/generated/v2/authentication_service.start_mfa_sign_in.js</caption>
+ * region_tag:identitytoolkit_start_mfa_sign_in_sample
+ *
  */
   startMfaSignIn(
       request?: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,

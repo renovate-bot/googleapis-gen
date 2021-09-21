@@ -722,6 +722,10 @@ export class ReachPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listPlannableLocations(request);
+ *
+ * @example <caption>include:samples/generated/v8/reach_plan_service.list_plannable_locations.js</caption>
+ * region_tag:googleads_list_plannable_locations_sample
+ *
  */
   listPlannableLocations(
       request?: protos.google.ads.googleads.v8.services.IListPlannableLocationsRequest,
@@ -796,6 +800,10 @@ export class ReachPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listPlannableProducts(request);
+ *
+ * @example <caption>include:samples/generated/v8/reach_plan_service.list_plannable_products.js</caption>
+ * region_tag:googleads_list_plannable_products_sample
+ *
  */
   listPlannableProducts(
       request?: protos.google.ads.googleads.v8.services.IListPlannableProductsRequest,
@@ -884,6 +892,10 @@ export class ReachPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateProductMixIdeas(request);
+ *
+ * @example <caption>include:samples/generated/v8/reach_plan_service.generate_product_mix_ideas.js</caption>
+ * region_tag:googleads_generate_product_mix_ideas_sample
+ *
  */
   generateProductMixIdeas(
       request?: protos.google.ads.googleads.v8.services.IGenerateProductMixIdeasRequest,
@@ -1016,6 +1028,10 @@ export class ReachPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateReachForecast(request);
+ *
+ * @example <caption>include:samples/generated/v8/reach_plan_service.generate_reach_forecast.js</caption>
+ * region_tag:googleads_generate_reach_forecast_sample
+ *
  */
   generateReachForecast(
       request?: protos.google.ads.googleads.v8.services.IGenerateReachForecastRequest,

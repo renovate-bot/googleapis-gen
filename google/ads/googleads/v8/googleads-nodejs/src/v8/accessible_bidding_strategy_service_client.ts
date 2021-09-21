@@ -712,6 +712,10 @@ export class AccessibleBiddingStrategyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAccessibleBiddingStrategy(request);
+ *
+ * @example <caption>include:samples/generated/v8/accessible_bidding_strategy_service.get_accessible_bidding_strategy.js</caption>
+ * region_tag:googleads_get_accessible_bidding_strategy_sample
+ *
  */
   getAccessibleBiddingStrategy(
       request?: protos.google.ads.googleads.v8.services.IGetAccessibleBiddingStrategyRequest,

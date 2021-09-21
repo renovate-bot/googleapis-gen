@@ -348,6 +348,10 @@ export class OrganizationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOrganization(request);
+ *
+ * @example <caption>include:samples/generated/v3/organizations.get_organization.js</caption>
+ * region_tag:resourcemanager_get_organization_sample
+ *
  */
   getOrganization(
       request?: protos.google.cloud.resourcemanager.v3.IGetOrganizationRequest,
@@ -428,6 +432,10 @@ export class OrganizationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v3/organizations.get_iam_policy.js</caption>
+ * region_tag:resourcemanager_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -510,6 +518,10 @@ export class OrganizationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v3/organizations.set_iam_policy.js</caption>
+ * region_tag:resourcemanager_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -591,6 +603,10 @@ export class OrganizationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v3/organizations.test_iam_permissions.js</caption>
+ * region_tag:resourcemanager_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -695,6 +711,10 @@ export class OrganizationsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/organizations.search_organizations.js</caption>
+ * region_tag:resourcemanager_search_organizations_sample
+ *
  */
   searchOrganizations(
       request?: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
@@ -764,6 +784,10 @@ export class OrganizationsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/organizations.search_organizations.js</caption>
+ * region_tag:resourcemanager_search_organizations_sample
+ *
  */
   searchOrganizationsStream(
       request?: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
@@ -771,7 +795,8 @@ export class OrganizationsClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchOrganizations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchOrganizations.createStream(
       this.innerApiCalls.searchOrganizations as gax.GaxCall,
@@ -825,6 +850,10 @@ export class OrganizationsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/organizations.search_organizations.js</caption>
+ * region_tag:resourcemanager_search_organizations_sample
+ *
  */
   searchOrganizationsAsync(
       request?: protos.google.cloud.resourcemanager.v3.ISearchOrganizationsRequest,
@@ -833,7 +862,8 @@ export class OrganizationsClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchOrganizations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchOrganizations.asyncIterate(
       this.innerApiCalls['searchOrganizations'] as GaxCall,

@@ -690,6 +690,10 @@ export class TopicConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTopicConstant(request);
+ *
+ * @example <caption>include:samples/generated/v7/topic_constant_service.get_topic_constant.js</caption>
+ * region_tag:googleads_get_topic_constant_sample
+ *
  */
   getTopicConstant(
       request?: protos.google.ads.googleads.v7.services.IGetTopicConstantRequest,

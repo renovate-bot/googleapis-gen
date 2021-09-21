@@ -690,6 +690,10 @@ export class DynamicSearchAdsSearchTermViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDynamicSearchAdsSearchTermView(request);
+ *
+ * @example <caption>include:samples/generated/v7/dynamic_search_ads_search_term_view_service.get_dynamic_search_ads_search_term_view.js</caption>
+ * region_tag:googleads_get_dynamic_search_ads_search_term_view_sample
+ *
  */
   getDynamicSearchAdsSearchTermView(
       request?: protos.google.ads.googleads.v7.services.IGetDynamicSearchAdsSearchTermViewRequest,

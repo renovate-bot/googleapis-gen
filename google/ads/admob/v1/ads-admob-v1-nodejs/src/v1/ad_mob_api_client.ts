@@ -340,6 +340,10 @@ export class AdMobApiClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPublisherAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/ad_mob_api.get_publisher_account.js</caption>
+ * region_tag:admob_get_publisher_account_sample
+ *
  */
   getPublisherAccount(
       request?: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
@@ -501,6 +505,10 @@ export class AdMobApiClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/ad_mob_api.list_publisher_accounts.js</caption>
+ * region_tag:admob_list_publisher_accounts_sample
+ *
  */
   listPublisherAccounts(
       request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
@@ -552,6 +560,10 @@ export class AdMobApiClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/ad_mob_api.list_publisher_accounts.js</caption>
+ * region_tag:admob_list_publisher_accounts_sample
+ *
  */
   listPublisherAccountsStream(
       request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
@@ -559,7 +571,8 @@ export class AdMobApiClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listPublisherAccounts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listPublisherAccounts.createStream(
       this.innerApiCalls.listPublisherAccounts as gax.GaxCall,
@@ -595,6 +608,10 @@ export class AdMobApiClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/ad_mob_api.list_publisher_accounts.js</caption>
+ * region_tag:admob_list_publisher_accounts_sample
+ *
  */
   listPublisherAccountsAsync(
       request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
@@ -603,7 +620,8 @@ export class AdMobApiClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listPublisherAccounts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listPublisherAccounts.asyncIterate(
       this.innerApiCalls['listPublisherAccounts'] as GaxCall,

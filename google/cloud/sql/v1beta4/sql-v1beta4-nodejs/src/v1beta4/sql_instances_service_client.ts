@@ -315,6 +315,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.addServerCa(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.add_server_ca.js</caption>
+ * region_tag:sql_add_server_ca_sample
+ *
  */
   addServerCa(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesAddServerCaRequest,
@@ -391,6 +395,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.clone(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.clone.js</caption>
+ * region_tag:sql_clone_sample
+ *
  */
   clone(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesCloneRequest,
@@ -464,6 +472,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.delete(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.delete.js</caption>
+ * region_tag:sql_delete_sample
+ *
  */
   delete(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesDeleteRequest,
@@ -539,6 +551,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.demoteMaster(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.demote_master.js</caption>
+ * region_tag:sql_demote_master_sample
+ *
  */
   demoteMaster(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesDemoteMasterRequest,
@@ -614,6 +630,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.export(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.export.js</caption>
+ * region_tag:sql_export_sample
+ *
  */
   export(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesExportRequest,
@@ -689,6 +709,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.failover(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.failover.js</caption>
+ * region_tag:sql_failover_sample
+ *
  */
   failover(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesFailoverRequest,
@@ -762,6 +786,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.get(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.get.js</caption>
+ * region_tag:sql_get_sample
+ *
  */
   get(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesGetRequest,
@@ -837,6 +865,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.import(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.import.js</caption>
+ * region_tag:sql_import_sample
+ *
  */
   import(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesImportRequest,
@@ -910,6 +942,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insert(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.insert.js</caption>
+ * region_tag:sql_insert_sample
+ *
  */
   insert(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesInsertRequest,
@@ -996,6 +1032,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.list(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.list.js</caption>
+ * region_tag:sql_list_sample
+ *
  */
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesListRequest,
@@ -1073,6 +1113,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listServerCas(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.list_server_cas.js</caption>
+ * region_tag:sql_list_server_cas_sample
+ *
  */
   listServerCas(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesListServerCasRequest,
@@ -1148,6 +1192,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patch(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.patch.js</caption>
+ * region_tag:sql_patch_sample
+ *
  */
   patch(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesPatchRequest,
@@ -1222,6 +1270,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.promoteReplica(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.promote_replica.js</caption>
+ * region_tag:sql_promote_replica_sample
+ *
  */
   promoteReplica(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesPromoteReplicaRequest,
@@ -1296,6 +1348,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.resetSslConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.reset_ssl_config.js</caption>
+ * region_tag:sql_reset_ssl_config_sample
+ *
  */
   resetSslConfig(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesResetSslConfigRequest,
@@ -1369,6 +1425,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.restart(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.restart.js</caption>
+ * region_tag:sql_restart_sample
+ *
  */
   restart(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRestartRequest,
@@ -1444,6 +1504,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.restoreBackup(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.restore_backup.js</caption>
+ * region_tag:sql_restore_backup_sample
+ *
  */
   restoreBackup(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRestoreBackupRequest,
@@ -1519,6 +1583,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.rotateServerCa(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.rotate_server_ca.js</caption>
+ * region_tag:sql_rotate_server_ca_sample
+ *
  */
   rotateServerCa(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRotateServerCaRequest,
@@ -1592,6 +1660,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startReplica(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.start_replica.js</caption>
+ * region_tag:sql_start_replica_sample
+ *
  */
   startReplica(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStartReplicaRequest,
@@ -1665,6 +1737,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.stopReplica(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.stop_replica.js</caption>
+ * region_tag:sql_stop_replica_sample
+ *
  */
   stopReplica(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStopReplicaRequest,
@@ -1740,6 +1816,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.truncateLog(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.truncate_log.js</caption>
+ * region_tag:sql_truncate_log_sample
+ *
  */
   truncateLog(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesTruncateLogRequest,
@@ -1815,6 +1895,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.update(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.update.js</caption>
+ * region_tag:sql_update_sample
+ *
  */
   update(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesUpdateRequest,
@@ -1892,6 +1976,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createEphemeral(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.create_ephemeral.js</caption>
+ * region_tag:sql_create_ephemeral_sample
+ *
  */
   createEphemeral(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesCreateEphemeralCertRequest,
@@ -1966,6 +2054,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.rescheduleMaintenance(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.reschedule_maintenance.js</caption>
+ * region_tag:sql_reschedule_maintenance_sample
+ *
  */
   rescheduleMaintenance(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesRescheduleMaintenanceRequest,
@@ -2043,6 +2135,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.verifyExternalSyncSettings(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.verify_external_sync_settings.js</caption>
+ * region_tag:sql_verify_external_sync_settings_sample
+ *
  */
   verifyExternalSyncSettings(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesVerifyExternalSyncSettingsRequest,
@@ -2120,6 +2216,10 @@ export class SqlInstancesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startExternalSync(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_instances_service.start_external_sync.js</caption>
+ * region_tag:sql_start_external_sync_sample
+ *
  */
   startExternalSync(
       request?: protos.google.cloud.sql.v1beta4.ISqlInstancesStartExternalSyncRequest,

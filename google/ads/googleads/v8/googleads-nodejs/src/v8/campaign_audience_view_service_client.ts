@@ -720,6 +720,10 @@ export class CampaignAudienceViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignAudienceView(request);
+ *
+ * @example <caption>include:samples/generated/v8/campaign_audience_view_service.get_campaign_audience_view.js</caption>
+ * region_tag:googleads_get_campaign_audience_view_sample
+ *
  */
   getCampaignAudienceView(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignAudienceViewRequest,

@@ -347,6 +347,10 @@ export class BotsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createBotSession(request);
+ *
+ * @example <caption>include:samples/generated/v1test2/bots.create_bot_session.js</caption>
+ * region_tag:remoteworkers_create_bot_session_sample
+ *
  */
   createBotSession(
       request?: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
@@ -425,6 +429,10 @@ export class BotsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBotSession(request);
+ *
+ * @example <caption>include:samples/generated/v1test2/bots.update_bot_session.js</caption>
+ * region_tag:remoteworkers_update_bot_session_sample
+ *
  */
   updateBotSession(
       request?: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,

@@ -483,6 +483,10 @@ export class DocumentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDocument(request);
+ *
+ * @example <caption>include:samples/generated/v2/documents.get_document.js</caption>
+ * region_tag:dialogflow_get_document_sample
+ *
  */
   getDocument(
       request?: protos.google.cloud.dialogflow.v2.IGetDocumentRequest,
@@ -569,6 +573,10 @@ export class DocumentsClient {
  * @example
  * const [operation] = await client.createDocument(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/documents.create_document.js</caption>
+ * region_tag:dialogflow_create_document_sample
+ *
  */
   createDocument(
       request?: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
@@ -618,6 +626,10 @@ export class DocumentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/documents.create_document.js</caption>
+ * region_tag:dialogflow_create_document_sample
+ *
  */
   async checkCreateDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -674,6 +686,10 @@ export class DocumentsClient {
  * @example
  * const [operation] = await client.deleteDocument(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/documents.delete_document.js</caption>
+ * region_tag:dialogflow_delete_document_sample
+ *
  */
   deleteDocument(
       request?: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
@@ -723,6 +739,10 @@ export class DocumentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/documents.delete_document.js</caption>
+ * region_tag:dialogflow_delete_document_sample
+ *
  */
   async checkDeleteDocumentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -780,6 +800,10 @@ export class DocumentsClient {
  * @example
  * const [operation] = await client.updateDocument(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/documents.update_document.js</caption>
+ * region_tag:dialogflow_update_document_sample
+ *
  */
   updateDocument(
       request?: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
@@ -829,6 +853,10 @@ export class DocumentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/documents.update_document.js</caption>
+ * region_tag:dialogflow_update_document_sample
+ *
  */
   async checkUpdateDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -896,6 +924,10 @@ export class DocumentsClient {
  * @example
  * const [operation] = await client.reloadDocument(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/documents.reload_document.js</caption>
+ * region_tag:dialogflow_reload_document_sample
+ *
  */
   reloadDocument(
       request?: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
@@ -945,6 +977,10 @@ export class DocumentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/documents.reload_document.js</caption>
+ * region_tag:dialogflow_reload_document_sample
+ *
  */
   async checkReloadDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -999,6 +1035,10 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/documents.list_documents.js</caption>
+ * region_tag:dialogflow_list_documents_sample
+ *
  */
   listDocuments(
       request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
@@ -1060,6 +1100,10 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/documents.list_documents.js</caption>
+ * region_tag:dialogflow_list_documents_sample
+ *
  */
   listDocumentsStream(
       request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
@@ -1074,7 +1118,8 @@ export class DocumentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDocuments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDocuments.createStream(
       this.innerApiCalls.listDocuments as gax.GaxCall,
@@ -1113,6 +1158,10 @@ export class DocumentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/documents.list_documents.js</caption>
+ * region_tag:dialogflow_list_documents_sample
+ *
  */
   listDocumentsAsync(
       request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
@@ -1128,7 +1177,8 @@ export class DocumentsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDocuments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDocuments.asyncIterate(
       this.innerApiCalls['listDocuments'] as GaxCall,

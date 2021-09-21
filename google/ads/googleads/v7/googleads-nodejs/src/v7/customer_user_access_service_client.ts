@@ -690,6 +690,10 @@ export class CustomerUserAccessServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerUserAccess(request);
+ *
+ * @example <caption>include:samples/generated/v7/customer_user_access_service.get_customer_user_access.js</caption>
+ * region_tag:googleads_get_customer_user_access_sample
+ *
  */
   getCustomerUserAccess(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessRequest,
@@ -775,6 +779,10 @@ export class CustomerUserAccessServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerUserAccess(request);
+ *
+ * @example <caption>include:samples/generated/v7/customer_user_access_service.mutate_customer_user_access.js</caption>
+ * region_tag:googleads_mutate_customer_user_access_sample
+ *
  */
   mutateCustomerUserAccess(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessRequest,

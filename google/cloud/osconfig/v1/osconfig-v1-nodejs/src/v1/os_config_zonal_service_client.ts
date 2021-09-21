@@ -355,6 +355,10 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInventory(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.get_inventory.js</caption>
+ * region_tag:osconfig_get_inventory_sample
+ *
  */
   getInventory(
       request?: protos.google.cloud.osconfig.v1.IGetInventoryRequest,
@@ -434,6 +438,10 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVulnerabilityReport(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.get_vulnerability_report.js</caption>
+ * region_tag:osconfig_get_vulnerability_report_sample
+ *
  */
   getVulnerabilityReport(
       request?: protos.google.cloud.osconfig.v1.IGetVulnerabilityReportRequest,
@@ -526,6 +534,10 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.list_inventories.js</caption>
+ * region_tag:osconfig_list_inventories_sample
+ *
  */
   listInventories(
       request?: protos.google.cloud.osconfig.v1.IListInventoriesRequest,
@@ -596,6 +608,10 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.list_inventories.js</caption>
+ * region_tag:osconfig_list_inventories_sample
+ *
  */
   listInventoriesStream(
       request?: protos.google.cloud.osconfig.v1.IListInventoriesRequest,
@@ -610,7 +626,8 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInventories'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInventories.createStream(
       this.innerApiCalls.listInventories as gax.GaxCall,
@@ -658,6 +675,10 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.list_inventories.js</caption>
+ * region_tag:osconfig_list_inventories_sample
+ *
  */
   listInventoriesAsync(
       request?: protos.google.cloud.osconfig.v1.IListInventoriesRequest,
@@ -673,7 +694,8 @@ export class OsConfigZonalServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInventories'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInventories.asyncIterate(
       this.innerApiCalls['listInventories'] as GaxCall,
@@ -734,6 +756,10 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.list_vulnerability_reports.js</caption>
+ * region_tag:osconfig_list_vulnerability_reports_sample
+ *
  */
   listVulnerabilityReports(
       request?: protos.google.cloud.osconfig.v1.IListVulnerabilityReportsRequest,
@@ -801,6 +827,10 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.list_vulnerability_reports.js</caption>
+ * region_tag:osconfig_list_vulnerability_reports_sample
+ *
  */
   listVulnerabilityReportsStream(
       request?: protos.google.cloud.osconfig.v1.IListVulnerabilityReportsRequest,
@@ -815,7 +845,8 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listVulnerabilityReports'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listVulnerabilityReports.createStream(
       this.innerApiCalls.listVulnerabilityReports as gax.GaxCall,
@@ -860,6 +891,10 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/os_config_zonal_service.list_vulnerability_reports.js</caption>
+ * region_tag:osconfig_list_vulnerability_reports_sample
+ *
  */
   listVulnerabilityReportsAsync(
       request?: protos.google.cloud.osconfig.v1.IListVulnerabilityReportsRequest,
@@ -875,7 +910,8 @@ export class OsConfigZonalServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listVulnerabilityReports'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listVulnerabilityReports.asyncIterate(
       this.innerApiCalls['listVulnerabilityReports'] as GaxCall,

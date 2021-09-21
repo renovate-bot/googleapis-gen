@@ -701,6 +701,10 @@ export class GoogleAdsFieldServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGoogleAdsField(request);
+ *
+ * @example <caption>include:samples/generated/v7/google_ads_field_service.get_google_ads_field.js</caption>
+ * region_tag:googleads_get_google_ads_field_sample
+ *
  */
   getGoogleAdsField(
       request?: protos.google.ads.googleads.v7.services.IGetGoogleAdsFieldRequest,
@@ -794,6 +798,10 @@ export class GoogleAdsFieldServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v7/google_ads_field_service.search_google_ads_fields.js</caption>
+ * region_tag:googleads_search_google_ads_fields_sample
+ *
  */
   searchGoogleAdsFields(
       request?: protos.google.ads.googleads.v7.services.ISearchGoogleAdsFieldsRequest,
@@ -849,6 +857,10 @@ export class GoogleAdsFieldServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v7/google_ads_field_service.search_google_ads_fields.js</caption>
+ * region_tag:googleads_search_google_ads_fields_sample
+ *
  */
   searchGoogleAdsFieldsStream(
       request?: protos.google.ads.googleads.v7.services.ISearchGoogleAdsFieldsRequest,
@@ -856,7 +868,8 @@ export class GoogleAdsFieldServiceClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchGoogleAdsFields.createStream(
       this.innerApiCalls.searchGoogleAdsFields as gax.GaxCall,
@@ -896,6 +909,10 @@ export class GoogleAdsFieldServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v7/google_ads_field_service.search_google_ads_fields.js</caption>
+ * region_tag:googleads_search_google_ads_fields_sample
+ *
  */
   searchGoogleAdsFieldsAsync(
       request?: protos.google.ads.googleads.v7.services.ISearchGoogleAdsFieldsRequest,
@@ -904,7 +921,8 @@ export class GoogleAdsFieldServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchGoogleAdsFields.asyncIterate(
       this.innerApiCalls['searchGoogleAdsFields'] as GaxCall,

@@ -690,6 +690,10 @@ export class LocationViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getLocationView(request);
+ *
+ * @example <caption>include:samples/generated/v7/location_view_service.get_location_view.js</caption>
+ * region_tag:googleads_get_location_view_sample
+ *
  */
   getLocationView(
       request?: protos.google.ads.googleads.v7.services.IGetLocationViewRequest,

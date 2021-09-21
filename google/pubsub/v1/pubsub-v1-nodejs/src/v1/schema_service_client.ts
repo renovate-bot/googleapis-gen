@@ -359,6 +359,10 @@ export class SchemaServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSchema(request);
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.create_schema.js</caption>
+ * region_tag:pubsub_create_schema_sample
+ *
  */
   createSchema(
       request?: protos.google.pubsub.v1.ICreateSchemaRequest,
@@ -435,6 +439,10 @@ export class SchemaServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSchema(request);
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.get_schema.js</caption>
+ * region_tag:pubsub_get_schema_sample
+ *
  */
   getSchema(
       request?: protos.google.pubsub.v1.IGetSchemaRequest,
@@ -507,6 +515,10 @@ export class SchemaServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSchema(request);
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.delete_schema.js</caption>
+ * region_tag:pubsub_delete_schema_sample
+ *
  */
   deleteSchema(
       request?: protos.google.pubsub.v1.IDeleteSchemaRequest,
@@ -581,6 +593,10 @@ export class SchemaServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.validateSchema(request);
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.validate_schema.js</caption>
+ * region_tag:pubsub_validate_schema_sample
+ *
  */
   validateSchema(
       request?: protos.google.pubsub.v1.IValidateSchemaRequest,
@@ -663,6 +679,10 @@ export class SchemaServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.validateMessage(request);
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.validate_message.js</caption>
+ * region_tag:pubsub_validate_message_sample
+ *
  */
   validateMessage(
       request?: protos.google.pubsub.v1.IValidateMessageRequest,
@@ -750,6 +770,10 @@ export class SchemaServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.list_schemas.js</caption>
+ * region_tag:pubsub_list_schemas_sample
+ *
  */
   listSchemas(
       request?: protos.google.pubsub.v1.IListSchemasRequest,
@@ -815,6 +839,10 @@ export class SchemaServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.list_schemas.js</caption>
+ * region_tag:pubsub_list_schemas_sample
+ *
  */
   listSchemasStream(
       request?: protos.google.pubsub.v1.IListSchemasRequest,
@@ -829,7 +857,8 @@ export class SchemaServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSchemas'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSchemas.createStream(
       this.innerApiCalls.listSchemas as gax.GaxCall,
@@ -872,6 +901,10 @@ export class SchemaServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/schema_service.list_schemas.js</caption>
+ * region_tag:pubsub_list_schemas_sample
+ *
  */
   listSchemasAsync(
       request?: protos.google.pubsub.v1.IListSchemasRequest,
@@ -887,7 +920,8 @@ export class SchemaServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSchemas'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSchemas.asyncIterate(
       this.innerApiCalls['listSchemas'] as GaxCall,

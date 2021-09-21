@@ -359,6 +359,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTaxonomy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.create_taxonomy.js</caption>
+ * region_tag:datacatalog_create_taxonomy_sample
+ *
  */
   createTaxonomy(
       request?: protos.google.cloud.datacatalog.v1beta1.ICreateTaxonomyRequest,
@@ -432,6 +436,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteTaxonomy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.delete_taxonomy.js</caption>
+ * region_tag:datacatalog_delete_taxonomy_sample
+ *
  */
   deleteTaxonomy(
       request?: protos.google.cloud.datacatalog.v1beta1.IDeleteTaxonomyRequest,
@@ -509,6 +517,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateTaxonomy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.update_taxonomy.js</caption>
+ * region_tag:datacatalog_update_taxonomy_sample
+ *
  */
   updateTaxonomy(
       request?: protos.google.cloud.datacatalog.v1beta1.IUpdateTaxonomyRequest,
@@ -580,6 +592,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTaxonomy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.get_taxonomy.js</caption>
+ * region_tag:datacatalog_get_taxonomy_sample
+ *
  */
   getTaxonomy(
       request?: protos.google.cloud.datacatalog.v1beta1.IGetTaxonomyRequest,
@@ -653,6 +669,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPolicyTag(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.create_policy_tag.js</caption>
+ * region_tag:datacatalog_create_policy_tag_sample
+ *
  */
   createPolicyTag(
       request?: protos.google.cloud.datacatalog.v1beta1.ICreatePolicyTagRequest,
@@ -725,6 +745,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePolicyTag(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.delete_policy_tag.js</caption>
+ * region_tag:datacatalog_delete_policy_tag_sample
+ *
  */
   deletePolicyTag(
       request?: protos.google.cloud.datacatalog.v1beta1.IDeletePolicyTagRequest,
@@ -805,6 +829,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updatePolicyTag(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.update_policy_tag.js</caption>
+ * region_tag:datacatalog_update_policy_tag_sample
+ *
  */
   updatePolicyTag(
       request?: protos.google.cloud.datacatalog.v1beta1.IUpdatePolicyTagRequest,
@@ -876,6 +904,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPolicyTag(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.get_policy_tag.js</caption>
+ * region_tag:datacatalog_get_policy_tag_sample
+ *
  */
   getPolicyTag(
       request?: protos.google.cloud.datacatalog.v1beta1.IGetPolicyTagRequest,
@@ -951,6 +983,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.get_iam_policy.js</caption>
+ * region_tag:datacatalog_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -1028,6 +1064,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.set_iam_policy.js</caption>
+ * region_tag:datacatalog_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -1106,6 +1146,10 @@ export class PolicyTagManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.test_iam_permissions.js</caption>
+ * region_tag:datacatalog_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -1189,6 +1233,10 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.list_taxonomies.js</caption>
+ * region_tag:datacatalog_list_taxonomies_sample
+ *
  */
   listTaxonomies(
       request?: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
@@ -1249,6 +1297,10 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.list_taxonomies.js</caption>
+ * region_tag:datacatalog_list_taxonomies_sample
+ *
  */
   listTaxonomiesStream(
       request?: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
@@ -1263,7 +1315,8 @@ export class PolicyTagManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTaxonomies'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTaxonomies.createStream(
       this.innerApiCalls.listTaxonomies as gax.GaxCall,
@@ -1301,6 +1354,10 @@ export class PolicyTagManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.list_taxonomies.js</caption>
+ * region_tag:datacatalog_list_taxonomies_sample
+ *
  */
   listTaxonomiesAsync(
       request?: protos.google.cloud.datacatalog.v1beta1.IListTaxonomiesRequest,
@@ -1316,7 +1373,8 @@ export class PolicyTagManagerClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTaxonomies'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTaxonomies.asyncIterate(
       this.innerApiCalls['listTaxonomies'] as GaxCall,
@@ -1370,6 +1428,10 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.list_policy_tags.js</caption>
+ * region_tag:datacatalog_list_policy_tags_sample
+ *
  */
   listPolicyTags(
       request?: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
@@ -1430,6 +1492,10 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.list_policy_tags.js</caption>
+ * region_tag:datacatalog_list_policy_tags_sample
+ *
  */
   listPolicyTagsStream(
       request?: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
@@ -1444,7 +1510,8 @@ export class PolicyTagManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listPolicyTags'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listPolicyTags.createStream(
       this.innerApiCalls.listPolicyTags as gax.GaxCall,
@@ -1482,6 +1549,10 @@ export class PolicyTagManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/policy_tag_manager.list_policy_tags.js</caption>
+ * region_tag:datacatalog_list_policy_tags_sample
+ *
  */
   listPolicyTagsAsync(
       request?: protos.google.cloud.datacatalog.v1beta1.IListPolicyTagsRequest,
@@ -1497,7 +1568,8 @@ export class PolicyTagManagerClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listPolicyTags'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listPolicyTags.asyncIterate(
       this.innerApiCalls['listPolicyTags'] as GaxCall,

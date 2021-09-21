@@ -348,6 +348,10 @@ export class FirewallClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchUpdateIngressRules(request);
+ *
+ * @example <caption>include:samples/generated/v1/firewall.batch_update_ingress_rules.js</caption>
+ * region_tag:appengine_batch_update_ingress_rules_sample
+ *
  */
   batchUpdateIngressRules(
       request?: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
@@ -431,6 +435,10 @@ export class FirewallClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createIngressRule(request);
+ *
+ * @example <caption>include:samples/generated/v1/firewall.create_ingress_rule.js</caption>
+ * region_tag:appengine_create_ingress_rule_sample
+ *
  */
   createIngressRule(
       request?: protos.google.appengine.v1.ICreateIngressRuleRequest,
@@ -503,6 +511,10 @@ export class FirewallClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIngressRule(request);
+ *
+ * @example <caption>include:samples/generated/v1/firewall.get_ingress_rule.js</caption>
+ * region_tag:appengine_get_ingress_rule_sample
+ *
  */
   getIngressRule(
       request?: protos.google.appengine.v1.IGetIngressRuleRequest,
@@ -579,6 +591,10 @@ export class FirewallClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateIngressRule(request);
+ *
+ * @example <caption>include:samples/generated/v1/firewall.update_ingress_rule.js</caption>
+ * region_tag:appengine_update_ingress_rule_sample
+ *
  */
   updateIngressRule(
       request?: protos.google.appengine.v1.IUpdateIngressRuleRequest,
@@ -651,6 +667,10 @@ export class FirewallClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteIngressRule(request);
+ *
+ * @example <caption>include:samples/generated/v1/firewall.delete_ingress_rule.js</caption>
+ * region_tag:appengine_delete_ingress_rule_sample
+ *
  */
   deleteIngressRule(
       request?: protos.google.appengine.v1.IDeleteIngressRuleRequest,
@@ -736,6 +756,10 @@ export class FirewallClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/firewall.list_ingress_rules.js</caption>
+ * region_tag:appengine_list_ingress_rules_sample
+ *
  */
   listIngressRules(
       request?: protos.google.appengine.v1.IListIngressRulesRequest,
@@ -799,6 +823,10 @@ export class FirewallClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/firewall.list_ingress_rules.js</caption>
+ * region_tag:appengine_list_ingress_rules_sample
+ *
  */
   listIngressRulesStream(
       request?: protos.google.appengine.v1.IListIngressRulesRequest,
@@ -813,7 +841,8 @@ export class FirewallClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listIngressRules'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listIngressRules.createStream(
       this.innerApiCalls.listIngressRules as gax.GaxCall,
@@ -854,6 +883,10 @@ export class FirewallClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/firewall.list_ingress_rules.js</caption>
+ * region_tag:appengine_list_ingress_rules_sample
+ *
  */
   listIngressRulesAsync(
       request?: protos.google.appengine.v1.IListIngressRulesRequest,
@@ -869,7 +902,8 @@ export class FirewallClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listIngressRules'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listIngressRules.asyncIterate(
       this.innerApiCalls['listIngressRules'] as GaxCall,

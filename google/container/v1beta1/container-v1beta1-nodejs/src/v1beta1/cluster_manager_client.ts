@@ -332,6 +332,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listClusters(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_clusters.js</caption>
+ * region_tag:container_list_clusters_sample
+ *
  */
   listClusters(
       request?: protos.google.container.v1beta1.IListClustersRequest,
@@ -417,6 +421,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCluster(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.get_cluster.js</caption>
+ * region_tag:container_get_cluster_sample
+ *
  */
   getCluster(
       request?: protos.google.container.v1beta1.IGetClusterRequest,
@@ -515,6 +523,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCluster(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.create_cluster.js</caption>
+ * region_tag:container_create_cluster_sample
+ *
  */
   createCluster(
       request?: protos.google.container.v1beta1.ICreateClusterRequest,
@@ -602,6 +614,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCluster(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.update_cluster.js</caption>
+ * region_tag:container_update_cluster_sample
+ *
  */
   updateCluster(
       request?: protos.google.container.v1beta1.IUpdateClusterRequest,
@@ -733,6 +749,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateNodePool(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.update_node_pool.js</caption>
+ * region_tag:container_update_node_pool_sample
+ *
  */
   updateNodePool(
       request?: protos.google.container.v1beta1.IUpdateNodePoolRequest,
@@ -824,6 +844,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setNodePoolAutoscaling(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_node_pool_autoscaling.js</caption>
+ * region_tag:container_set_node_pool_autoscaling_sample
+ *
  */
   setNodePoolAutoscaling(
       request?: protos.google.container.v1beta1.ISetNodePoolAutoscalingRequest,
@@ -921,6 +945,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setLoggingService(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_logging_service.js</caption>
+ * region_tag:container_set_logging_service_sample
+ *
  */
   setLoggingService(
       request?: protos.google.container.v1beta1.ISetLoggingServiceRequest,
@@ -1018,6 +1046,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setMonitoringService(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_monitoring_service.js</caption>
+ * region_tag:container_set_monitoring_service_sample
+ *
  */
   setMonitoringService(
       request?: protos.google.container.v1beta1.ISetMonitoringServiceRequest,
@@ -1106,6 +1138,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setAddonsConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_addons_config.js</caption>
+ * region_tag:container_set_addons_config_sample
+ *
  */
   setAddonsConfig(
       request?: protos.google.container.v1beta1.ISetAddonsConfigRequest,
@@ -1202,6 +1238,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setLocations(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_locations.js</caption>
+ * region_tag:container_set_locations_sample
+ *
  * @deprecated SetLocations is deprecated and may be removed in a future version.
  */
   setLocations(
@@ -1300,6 +1340,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateMaster(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.update_master.js</caption>
+ * region_tag:container_update_master_sample
+ *
  */
   updateMaster(
       request?: protos.google.container.v1beta1.IUpdateMasterRequest,
@@ -1391,6 +1435,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setMasterAuth(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_master_auth.js</caption>
+ * region_tag:container_set_master_auth_sample
+ *
  */
   setMasterAuth(
       request?: protos.google.container.v1beta1.ISetMasterAuthRequest,
@@ -1484,6 +1532,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCluster(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.delete_cluster.js</caption>
+ * region_tag:container_delete_cluster_sample
+ *
  */
   deleteCluster(
       request?: protos.google.container.v1beta1.IDeleteClusterRequest,
@@ -1567,6 +1619,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listOperations(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_operations.js</caption>
+ * region_tag:container_list_operations_sample
+ *
  */
   listOperations(
       request?: protos.google.container.v1beta1.IListOperationsRequest,
@@ -1652,6 +1708,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOperation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.get_operation.js</caption>
+ * region_tag:container_get_operation_sample
+ *
  */
   getOperation(
       request?: protos.google.container.v1beta1.IGetOperationRequest,
@@ -1737,6 +1797,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.cancelOperation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.cancel_operation.js</caption>
+ * region_tag:container_cancel_operation_sample
+ *
  */
   cancelOperation(
       request?: protos.google.container.v1beta1.ICancelOperationRequest,
@@ -1819,6 +1883,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServerConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.get_server_config.js</caption>
+ * region_tag:container_get_server_config_sample
+ *
  */
   getServerConfig(
       request?: protos.google.container.v1beta1.IGetServerConfigRequest,
@@ -1904,6 +1972,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listNodePools(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_node_pools.js</caption>
+ * region_tag:container_list_node_pools_sample
+ *
  */
   listNodePools(
       request?: protos.google.container.v1beta1.IListNodePoolsRequest,
@@ -1980,6 +2052,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJSONWebKeys(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.get_j_s_o_n_web_keys.js</caption>
+ * region_tag:container_get_j_s_o_n_web_keys_sample
+ *
  */
   getJSONWebKeys(
       request?: protos.google.container.v1beta1.IGetJSONWebKeysRequest,
@@ -2068,6 +2144,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNodePool(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.get_node_pool.js</caption>
+ * region_tag:container_get_node_pool_sample
+ *
  */
   getNodePool(
       request?: protos.google.container.v1beta1.IGetNodePoolRequest,
@@ -2156,6 +2236,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createNodePool(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.create_node_pool.js</caption>
+ * region_tag:container_create_node_pool_sample
+ *
  */
   createNodePool(
       request?: protos.google.container.v1beta1.ICreateNodePoolRequest,
@@ -2245,6 +2329,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteNodePool(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.delete_node_pool.js</caption>
+ * region_tag:container_delete_node_pool_sample
+ *
  */
   deleteNodePool(
       request?: protos.google.container.v1beta1.IDeleteNodePoolRequest,
@@ -2335,6 +2423,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.rollbackNodePoolUpgrade(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.rollback_node_pool_upgrade.js</caption>
+ * region_tag:container_rollback_node_pool_upgrade_sample
+ *
  */
   rollbackNodePoolUpgrade(
       request?: protos.google.container.v1beta1.IRollbackNodePoolUpgradeRequest,
@@ -2426,6 +2518,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setNodePoolManagement(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_node_pool_management.js</caption>
+ * region_tag:container_set_node_pool_management_sample
+ *
  */
   setNodePoolManagement(
       request?: protos.google.container.v1beta1.ISetNodePoolManagementRequest,
@@ -2520,6 +2616,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setLabels(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_labels.js</caption>
+ * region_tag:container_set_labels_sample
+ *
  */
   setLabels(
       request?: protos.google.container.v1beta1.ISetLabelsRequest,
@@ -2607,6 +2707,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setLegacyAbac(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_legacy_abac.js</caption>
+ * region_tag:container_set_legacy_abac_sample
+ *
  */
   setLegacyAbac(
       request?: protos.google.container.v1beta1.ISetLegacyAbacRequest,
@@ -2694,6 +2798,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startIPRotation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.start_i_p_rotation.js</caption>
+ * region_tag:container_start_i_p_rotation_sample
+ *
  */
   startIPRotation(
       request?: protos.google.container.v1beta1.IStartIPRotationRequest,
@@ -2779,6 +2887,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.completeIPRotation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.complete_i_p_rotation.js</caption>
+ * region_tag:container_complete_i_p_rotation_sample
+ *
  */
   completeIPRotation(
       request?: protos.google.container.v1beta1.ICompleteIPRotationRequest,
@@ -2872,6 +2984,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setNodePoolSize(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_node_pool_size.js</caption>
+ * region_tag:container_set_node_pool_size_sample
+ *
  */
   setNodePoolSize(
       request?: protos.google.container.v1beta1.ISetNodePoolSizeRequest,
@@ -2959,6 +3075,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setNetworkPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_network_policy.js</caption>
+ * region_tag:container_set_network_policy_sample
+ *
  */
   setNetworkPolicy(
       request?: protos.google.container.v1beta1.ISetNetworkPolicyRequest,
@@ -3045,6 +3165,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setMaintenancePolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.set_maintenance_policy.js</caption>
+ * region_tag:container_set_maintenance_policy_sample
+ *
  */
   setMaintenancePolicy(
       request?: protos.google.container.v1beta1.ISetMaintenancePolicyRequest,
@@ -3118,6 +3242,10 @@ export class ClusterManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listLocations(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_locations.js</caption>
+ * region_tag:container_list_locations_sample
+ *
  */
   listLocations(
       request?: protos.google.container.v1beta1.IListLocationsRequest,
@@ -3208,6 +3336,10 @@ export class ClusterManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_usable_subnetworks.js</caption>
+ * region_tag:container_list_usable_subnetworks_sample
+ *
  */
   listUsableSubnetworks(
       request?: protos.google.container.v1beta1.IListUsableSubnetworksRequest,
@@ -3276,6 +3408,10 @@ export class ClusterManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_usable_subnetworks.js</caption>
+ * region_tag:container_list_usable_subnetworks_sample
+ *
  */
   listUsableSubnetworksStream(
       request?: protos.google.container.v1beta1.IListUsableSubnetworksRequest,
@@ -3290,7 +3426,8 @@ export class ClusterManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUsableSubnetworks'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUsableSubnetworks.createStream(
       this.innerApiCalls.listUsableSubnetworks as gax.GaxCall,
@@ -3336,6 +3473,10 @@ export class ClusterManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/cluster_manager.list_usable_subnetworks.js</caption>
+ * region_tag:container_list_usable_subnetworks_sample
+ *
  */
   listUsableSubnetworksAsync(
       request?: protos.google.container.v1beta1.IListUsableSubnetworksRequest,
@@ -3351,7 +3492,8 @@ export class ClusterManagerClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUsableSubnetworks'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUsableSubnetworks.asyncIterate(
       this.innerApiCalls['listUsableSubnetworks'] as GaxCall,

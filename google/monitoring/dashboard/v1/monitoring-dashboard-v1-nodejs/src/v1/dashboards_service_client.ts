@@ -350,6 +350,10 @@ export class DashboardsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createDashboard(request);
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.create_dashboard.js</caption>
+ * region_tag:dashboard_create_dashboard_sample
+ *
  */
   createDashboard(
       request?: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
@@ -429,6 +433,10 @@ export class DashboardsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDashboard(request);
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.get_dashboard.js</caption>
+ * region_tag:dashboard_get_dashboard_sample
+ *
  */
   getDashboard(
       request?: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
@@ -506,6 +514,10 @@ export class DashboardsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDashboard(request);
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.delete_dashboard.js</caption>
+ * region_tag:dashboard_delete_dashboard_sample
+ *
  */
   deleteDashboard(
       request?: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
@@ -584,6 +596,10 @@ export class DashboardsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateDashboard(request);
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.update_dashboard.js</caption>
+ * region_tag:dashboard_update_dashboard_sample
+ *
  */
   updateDashboard(
       request?: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
@@ -673,6 +689,10 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.list_dashboards.js</caption>
+ * region_tag:dashboard_list_dashboards_sample
+ *
  */
   listDashboards(
       request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
@@ -736,6 +756,10 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.list_dashboards.js</caption>
+ * region_tag:dashboard_list_dashboards_sample
+ *
  */
   listDashboardsStream(
       request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
@@ -750,7 +774,8 @@ export class DashboardsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDashboards'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDashboards.createStream(
       this.innerApiCalls.listDashboards as gax.GaxCall,
@@ -791,6 +816,10 @@ export class DashboardsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/dashboards_service.list_dashboards.js</caption>
+ * region_tag:dashboard_list_dashboards_sample
+ *
  */
   listDashboardsAsync(
       request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
@@ -806,7 +835,8 @@ export class DashboardsServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDashboards'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDashboards.asyncIterate(
       this.innerApiCalls['listDashboards'] as GaxCall,

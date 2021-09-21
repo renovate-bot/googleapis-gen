@@ -357,6 +357,10 @@ export class AutoscalingPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAutoscalingPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.create_autoscaling_policy.js</caption>
+ * region_tag:dataproc_create_autoscaling_policy_sample
+ *
  */
   createAutoscalingPolicy(
       request?: protos.google.cloud.dataproc.v1.ICreateAutoscalingPolicyRequest,
@@ -431,6 +435,10 @@ export class AutoscalingPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateAutoscalingPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.update_autoscaling_policy.js</caption>
+ * region_tag:dataproc_update_autoscaling_policy_sample
+ *
  */
   updateAutoscalingPolicy(
       request?: protos.google.cloud.dataproc.v1.IUpdateAutoscalingPolicyRequest,
@@ -511,6 +519,10 @@ export class AutoscalingPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAutoscalingPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.get_autoscaling_policy.js</caption>
+ * region_tag:dataproc_get_autoscaling_policy_sample
+ *
  */
   getAutoscalingPolicy(
       request?: protos.google.cloud.dataproc.v1.IGetAutoscalingPolicyRequest,
@@ -592,6 +604,10 @@ export class AutoscalingPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAutoscalingPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.delete_autoscaling_policy.js</caption>
+ * region_tag:dataproc_delete_autoscaling_policy_sample
+ *
  */
   deleteAutoscalingPolicy(
       request?: protos.google.cloud.dataproc.v1.IDeleteAutoscalingPolicyRequest,
@@ -683,6 +699,10 @@ export class AutoscalingPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.list_autoscaling_policies.js</caption>
+ * region_tag:dataproc_list_autoscaling_policies_sample
+ *
  */
   listAutoscalingPolicies(
       request?: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
@@ -752,6 +772,10 @@ export class AutoscalingPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.list_autoscaling_policies.js</caption>
+ * region_tag:dataproc_list_autoscaling_policies_sample
+ *
  */
   listAutoscalingPoliciesStream(
       request?: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
@@ -766,7 +790,8 @@ export class AutoscalingPolicyServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAutoscalingPolicies'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAutoscalingPolicies.createStream(
       this.innerApiCalls.listAutoscalingPolicies as gax.GaxCall,
@@ -813,6 +838,10 @@ export class AutoscalingPolicyServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/autoscaling_policy_service.list_autoscaling_policies.js</caption>
+ * region_tag:dataproc_list_autoscaling_policies_sample
+ *
  */
   listAutoscalingPoliciesAsync(
       request?: protos.google.cloud.dataproc.v1.IListAutoscalingPoliciesRequest,
@@ -828,7 +857,8 @@ export class AutoscalingPolicyServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAutoscalingPolicies'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAutoscalingPolicies.asyncIterate(
       this.innerApiCalls['listAutoscalingPolicies'] as GaxCall,

@@ -340,6 +340,10 @@ export class Controller2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.registerDebuggee(request);
+ *
+ * @example <caption>include:samples/generated/v2/controller2.register_debuggee.js</caption>
+ * region_tag:clouddebugger_register_debuggee_sample
+ *
  */
   registerDebuggee(
       request?: protos.google.devtools.clouddebugger.v2.IRegisterDebuggeeRequest,
@@ -428,6 +432,10 @@ export class Controller2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.listActiveBreakpoints(request);
+ *
+ * @example <caption>include:samples/generated/v2/controller2.list_active_breakpoints.js</caption>
+ * region_tag:clouddebugger_list_active_breakpoints_sample
+ *
  */
   listActiveBreakpoints(
       request?: protos.google.devtools.clouddebugger.v2.IListActiveBreakpointsRequest,
@@ -510,6 +518,10 @@ export class Controller2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateActiveBreakpoint(request);
+ *
+ * @example <caption>include:samples/generated/v2/controller2.update_active_breakpoint.js</caption>
+ * region_tag:clouddebugger_update_active_breakpoint_sample
+ *
  */
   updateActiveBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IUpdateActiveBreakpointRequest,

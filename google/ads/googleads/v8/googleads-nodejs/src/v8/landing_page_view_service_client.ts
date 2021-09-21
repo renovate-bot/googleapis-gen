@@ -720,6 +720,10 @@ export class LandingPageViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getLandingPageView(request);
+ *
+ * @example <caption>include:samples/generated/v8/landing_page_view_service.get_landing_page_view.js</caption>
+ * region_tag:googleads_get_landing_page_view_sample
+ *
  */
   getLandingPageView(
       request?: protos.google.ads.googleads.v8.services.IGetLandingPageViewRequest,

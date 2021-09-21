@@ -720,6 +720,10 @@ export class CampaignBudgetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignBudget(request);
+ *
+ * @example <caption>include:samples/generated/v8/campaign_budget_service.get_campaign_budget.js</caption>
+ * region_tag:googleads_get_campaign_budget_sample
+ *
  */
   getCampaignBudget(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignBudgetRequest,
@@ -824,6 +828,10 @@ export class CampaignBudgetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignBudgets(request);
+ *
+ * @example <caption>include:samples/generated/v8/campaign_budget_service.mutate_campaign_budgets.js</caption>
+ * region_tag:googleads_mutate_campaign_budgets_sample
+ *
  */
   mutateCampaignBudgets(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignBudgetsRequest,

@@ -365,6 +365,10 @@ export class UserEventServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.writeUserEvent(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.write_user_event.js</caption>
+ * region_tag:recommendationengine_write_user_event_sample
+ *
  */
   writeUserEvent(
       request?: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
@@ -452,6 +456,10 @@ export class UserEventServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.collectUserEvent(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.collect_user_event.js</caption>
+ * region_tag:recommendationengine_collect_user_event_sample
+ *
  */
   collectUserEvent(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
@@ -555,6 +563,10 @@ export class UserEventServiceClient {
  * @example
  * const [operation] = await client.purgeUserEvents(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.purge_user_events.js</caption>
+ * region_tag:recommendationengine_purge_user_events_sample
+ *
  */
   purgeUserEvents(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
@@ -604,6 +616,10 @@ export class UserEventServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.purge_user_events.js</caption>
+ * region_tag:recommendationengine_purge_user_events_sample
+ *
  */
   async checkPurgeUserEventsProgress(name: string): Promise<LROperation<protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -668,6 +684,10 @@ export class UserEventServiceClient {
  * @example
  * const [operation] = await client.importUserEvents(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.import_user_events.js</caption>
+ * region_tag:recommendationengine_import_user_events_sample
+ *
  */
   importUserEvents(
       request?: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
@@ -717,6 +737,10 @@ export class UserEventServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.import_user_events.js</caption>
+ * region_tag:recommendationengine_import_user_events_sample
+ *
  */
   async checkImportUserEventsProgress(name: string): Promise<LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -803,6 +827,10 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.list_user_events.js</caption>
+ * region_tag:recommendationengine_list_user_events_sample
+ *
  */
   listUserEvents(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
@@ -896,6 +924,10 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.list_user_events.js</caption>
+ * region_tag:recommendationengine_list_user_events_sample
+ *
  */
   listUserEventsStream(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
@@ -910,7 +942,8 @@ export class UserEventServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUserEvents'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUserEvents.createStream(
       this.innerApiCalls.listUserEvents as gax.GaxCall,
@@ -981,6 +1014,10 @@ export class UserEventServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.list_user_events.js</caption>
+ * region_tag:recommendationengine_list_user_events_sample
+ *
  */
   listUserEventsAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
@@ -996,7 +1033,8 @@ export class UserEventServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listUserEvents'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listUserEvents.asyncIterate(
       this.innerApiCalls['listUserEvents'] as GaxCall,

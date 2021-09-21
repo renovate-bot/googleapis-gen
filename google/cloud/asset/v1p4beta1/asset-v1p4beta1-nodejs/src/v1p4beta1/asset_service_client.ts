@@ -336,6 +336,10 @@ export class AssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1p4beta1/asset_service.analyze_iam_policy.js</caption>
+ * region_tag:asset_analyze_iam_policy_sample
+ *
  */
   analyzeIamPolicy(
       request?: protos.google.cloud.asset.v1p4beta1.IAnalyzeIamPolicyRequest,
@@ -418,6 +422,10 @@ export class AssetServiceClient {
  * @example
  * const [operation] = await client.exportIamPolicyAnalysis(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1p4beta1/asset_service.export_iam_policy_analysis.js</caption>
+ * region_tag:asset_export_iam_policy_analysis_sample
+ *
  */
   exportIamPolicyAnalysis(
       request?: protos.google.cloud.asset.v1p4beta1.IExportIamPolicyAnalysisRequest,
@@ -467,6 +475,10 @@ export class AssetServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1p4beta1/asset_service.export_iam_policy_analysis.js</caption>
+ * region_tag:asset_export_iam_policy_analysis_sample
+ *
  */
   async checkExportIamPolicyAnalysisProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisResponse, protos.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

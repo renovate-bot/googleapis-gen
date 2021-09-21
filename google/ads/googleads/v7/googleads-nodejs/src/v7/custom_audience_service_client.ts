@@ -690,6 +690,10 @@ export class CustomAudienceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomAudience(request);
+ *
+ * @example <caption>include:samples/generated/v7/custom_audience_service.get_custom_audience.js</caption>
+ * region_tag:googleads_get_custom_audience_sample
+ *
  */
   getCustomAudience(
       request?: protos.google.ads.googleads.v7.services.IGetCustomAudienceRequest,
@@ -781,6 +785,10 @@ export class CustomAudienceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomAudiences(request);
+ *
+ * @example <caption>include:samples/generated/v7/custom_audience_service.mutate_custom_audiences.js</caption>
+ * region_tag:googleads_mutate_custom_audiences_sample
+ *
  */
   mutateCustomAudiences(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomAudiencesRequest,

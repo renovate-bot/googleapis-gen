@@ -720,6 +720,10 @@ export class CarrierConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCarrierConstant(request);
+ *
+ * @example <caption>include:samples/generated/v8/carrier_constant_service.get_carrier_constant.js</caption>
+ * region_tag:googleads_get_carrier_constant_sample
+ *
  */
   getCarrierConstant(
       request?: protos.google.ads.googleads.v8.services.IGetCarrierConstantRequest,

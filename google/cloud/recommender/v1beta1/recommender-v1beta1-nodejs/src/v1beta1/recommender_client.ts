@@ -375,6 +375,10 @@ export class RecommenderClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInsight(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.get_insight.js</caption>
+ * region_tag:recommender_get_insight_sample
+ *
  */
   getInsight(
       request?: protos.google.cloud.recommender.v1beta1.IGetInsightRequest,
@@ -456,6 +460,10 @@ export class RecommenderClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.markInsightAccepted(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.mark_insight_accepted.js</caption>
+ * region_tag:recommender_mark_insight_accepted_sample
+ *
  */
   markInsightAccepted(
       request?: protos.google.cloud.recommender.v1beta1.IMarkInsightAcceptedRequest,
@@ -528,6 +536,10 @@ export class RecommenderClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRecommendation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.get_recommendation.js</caption>
+ * region_tag:recommender_get_recommendation_sample
+ *
  */
   getRecommendation(
       request?: protos.google.cloud.recommender.v1beta1.IGetRecommendationRequest,
@@ -615,6 +627,10 @@ export class RecommenderClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.markRecommendationClaimed(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.mark_recommendation_claimed.js</caption>
+ * region_tag:recommender_mark_recommendation_claimed_sample
+ *
  */
   markRecommendationClaimed(
       request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationClaimedRequest,
@@ -703,6 +719,10 @@ export class RecommenderClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.markRecommendationSucceeded(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.mark_recommendation_succeeded.js</caption>
+ * region_tag:recommender_mark_recommendation_succeeded_sample
+ *
  */
   markRecommendationSucceeded(
       request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationSucceededRequest,
@@ -791,6 +811,10 @@ export class RecommenderClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.markRecommendationFailed(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.mark_recommendation_failed.js</caption>
+ * region_tag:recommender_mark_recommendation_failed_sample
+ *
  */
   markRecommendationFailed(
       request?: protos.google.cloud.recommender.v1beta1.IMarkRecommendationFailedRequest,
@@ -890,6 +914,10 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.list_insights.js</caption>
+ * region_tag:recommender_list_insights_sample
+ *
  */
   listInsights(
       request?: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
@@ -966,6 +994,10 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.list_insights.js</caption>
+ * region_tag:recommender_list_insights_sample
+ *
  */
   listInsightsStream(
       request?: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
@@ -980,7 +1012,8 @@ export class RecommenderClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInsights'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInsights.createStream(
       this.innerApiCalls.listInsights as gax.GaxCall,
@@ -1034,6 +1067,10 @@ export class RecommenderClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.list_insights.js</caption>
+ * region_tag:recommender_list_insights_sample
+ *
  */
   listInsightsAsync(
       request?: protos.google.cloud.recommender.v1beta1.IListInsightsRequest,
@@ -1049,7 +1086,8 @@ export class RecommenderClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInsights'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInsights.asyncIterate(
       this.innerApiCalls['listInsights'] as GaxCall,
@@ -1120,6 +1158,10 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.list_recommendations.js</caption>
+ * region_tag:recommender_list_recommendations_sample
+ *
  */
   listRecommendations(
       request?: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
@@ -1196,6 +1238,10 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.list_recommendations.js</caption>
+ * region_tag:recommender_list_recommendations_sample
+ *
  */
   listRecommendationsStream(
       request?: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
@@ -1210,7 +1256,8 @@ export class RecommenderClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listRecommendations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listRecommendations.createStream(
       this.innerApiCalls.listRecommendations as gax.GaxCall,
@@ -1264,6 +1311,10 @@ export class RecommenderClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/recommender.list_recommendations.js</caption>
+ * region_tag:recommender_list_recommendations_sample
+ *
  */
   listRecommendationsAsync(
       request?: protos.google.cloud.recommender.v1beta1.IListRecommendationsRequest,
@@ -1279,7 +1330,8 @@ export class RecommenderClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listRecommendations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listRecommendations.asyncIterate(
       this.innerApiCalls['listRecommendations'] as GaxCall,

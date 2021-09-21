@@ -481,6 +481,10 @@ export class DatasetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.get_dataset.js</caption>
+ * region_tag:aiplatform_get_dataset_sample
+ *
  */
   getDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetDatasetRequest,
@@ -560,6 +564,10 @@ export class DatasetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.update_dataset.js</caption>
+ * region_tag:aiplatform_update_dataset_sample
+ *
  */
   updateDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
@@ -635,6 +643,10 @@ export class DatasetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAnnotationSpec(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.get_annotation_spec.js</caption>
+ * region_tag:aiplatform_get_annotation_spec_sample
+ *
  */
   getAnnotationSpec(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetAnnotationSpecRequest,
@@ -713,6 +725,10 @@ export class DatasetServiceClient {
  * @example
  * const [operation] = await client.createDataset(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.create_dataset.js</caption>
+ * region_tag:aiplatform_create_dataset_sample
+ *
  */
   createDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateDatasetRequest,
@@ -762,6 +778,10 @@ export class DatasetServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.create_dataset.js</caption>
+ * region_tag:aiplatform_create_dataset_sample
+ *
  */
   async checkCreateDatasetProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.Dataset, protos.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -810,6 +830,10 @@ export class DatasetServiceClient {
  * @example
  * const [operation] = await client.deleteDataset(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.delete_dataset.js</caption>
+ * region_tag:aiplatform_delete_dataset_sample
+ *
  */
   deleteDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteDatasetRequest,
@@ -859,6 +883,10 @@ export class DatasetServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.delete_dataset.js</caption>
+ * region_tag:aiplatform_delete_dataset_sample
+ *
  */
   async checkDeleteDatasetProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -910,6 +938,10 @@ export class DatasetServiceClient {
  * @example
  * const [operation] = await client.importData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.import_data.js</caption>
+ * region_tag:aiplatform_import_data_sample
+ *
  */
   importData(
       request?: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
@@ -959,6 +991,10 @@ export class DatasetServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.import_data.js</caption>
+ * region_tag:aiplatform_import_data_sample
+ *
  */
   async checkImportDataProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ImportDataResponse, protos.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1009,6 +1045,10 @@ export class DatasetServiceClient {
  * @example
  * const [operation] = await client.exportData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.export_data.js</caption>
+ * region_tag:aiplatform_export_data_sample
+ *
  */
   exportData(
       request?: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
@@ -1058,6 +1098,10 @@ export class DatasetServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.export_data.js</caption>
+ * region_tag:aiplatform_export_data_sample
+ *
  */
   async checkExportDataProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ExportDataResponse, protos.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1133,6 +1177,10 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_datasets.js</caption>
+ * region_tag:aiplatform_list_datasets_sample
+ *
  */
   listDatasets(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
@@ -1215,6 +1263,10 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_datasets.js</caption>
+ * region_tag:aiplatform_list_datasets_sample
+ *
  */
   listDatasetsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
@@ -1229,7 +1281,8 @@ export class DatasetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDatasets.createStream(
       this.innerApiCalls.listDatasets as gax.GaxCall,
@@ -1289,6 +1342,10 @@ export class DatasetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_datasets.js</caption>
+ * region_tag:aiplatform_list_datasets_sample
+ *
  */
   listDatasetsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
@@ -1304,7 +1361,8 @@ export class DatasetServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDatasets.asyncIterate(
       this.innerApiCalls['listDatasets'] as GaxCall,
@@ -1365,6 +1423,10 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_data_items.js</caption>
+ * region_tag:aiplatform_list_data_items_sample
+ *
  */
   listDataItems(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
@@ -1432,6 +1494,10 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_data_items.js</caption>
+ * region_tag:aiplatform_list_data_items_sample
+ *
  */
   listDataItemsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
@@ -1446,7 +1512,8 @@ export class DatasetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDataItems'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDataItems.createStream(
       this.innerApiCalls.listDataItems as gax.GaxCall,
@@ -1491,6 +1558,10 @@ export class DatasetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_data_items.js</caption>
+ * region_tag:aiplatform_list_data_items_sample
+ *
  */
   listDataItemsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
@@ -1506,7 +1577,8 @@ export class DatasetServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDataItems'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDataItems.asyncIterate(
       this.innerApiCalls['listDataItems'] as GaxCall,
@@ -1567,6 +1639,10 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_annotations.js</caption>
+ * region_tag:aiplatform_list_annotations_sample
+ *
  */
   listAnnotations(
       request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
@@ -1634,6 +1710,10 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_annotations.js</caption>
+ * region_tag:aiplatform_list_annotations_sample
+ *
  */
   listAnnotationsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
@@ -1648,7 +1728,8 @@ export class DatasetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAnnotations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAnnotations.createStream(
       this.innerApiCalls.listAnnotations as gax.GaxCall,
@@ -1693,6 +1774,10 @@ export class DatasetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_annotations.js</caption>
+ * region_tag:aiplatform_list_annotations_sample
+ *
  */
   listAnnotationsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
@@ -1708,7 +1793,8 @@ export class DatasetServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAnnotations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAnnotations.asyncIterate(
       this.innerApiCalls['listAnnotations'] as GaxCall,

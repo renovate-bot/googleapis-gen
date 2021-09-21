@@ -448,6 +448,10 @@ export class FlowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createFlow(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.create_flow.js</caption>
+ * region_tag:cx_create_flow_sample
+ *
  */
   createFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateFlowRequest,
@@ -532,6 +536,10 @@ export class FlowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteFlow(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.delete_flow.js</caption>
+ * region_tag:cx_delete_flow_sample
+ *
  */
   deleteFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteFlowRequest,
@@ -619,6 +627,10 @@ export class FlowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFlow(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.get_flow.js</caption>
+ * region_tag:cx_get_flow_sample
+ *
  */
   getFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowRequest,
@@ -710,6 +722,10 @@ export class FlowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateFlow(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.update_flow.js</caption>
+ * region_tag:cx_update_flow_sample
+ *
  */
   updateFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateFlowRequest,
@@ -787,6 +803,10 @@ export class FlowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.validateFlow(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.validate_flow.js</caption>
+ * region_tag:cx_validate_flow_sample
+ *
  */
   validateFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IValidateFlowRequest,
@@ -863,6 +883,10 @@ export class FlowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFlowValidationResult(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.get_flow_validation_result.js</caption>
+ * region_tag:cx_get_flow_validation_result_sample
+ *
  */
   getFlowValidationResult(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetFlowValidationResultRequest,
@@ -945,6 +969,10 @@ export class FlowsClient {
  * @example
  * const [operation] = await client.trainFlow(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.train_flow.js</caption>
+ * region_tag:cx_train_flow_sample
+ *
  */
   trainFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.ITrainFlowRequest,
@@ -994,6 +1022,10 @@ export class FlowsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.train_flow.js</caption>
+ * region_tag:cx_train_flow_sample
+ *
  */
   async checkTrainFlowProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1053,6 +1085,10 @@ export class FlowsClient {
  * @example
  * const [operation] = await client.importFlow(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.import_flow.js</caption>
+ * region_tag:cx_import_flow_sample
+ *
  */
   importFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IImportFlowRequest,
@@ -1102,6 +1138,10 @@ export class FlowsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.import_flow.js</caption>
+ * region_tag:cx_import_flow_sample
+ *
  */
   async checkImportFlowProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1160,6 +1200,10 @@ export class FlowsClient {
  * @example
  * const [operation] = await client.exportFlow(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.export_flow.js</caption>
+ * region_tag:cx_export_flow_sample
+ *
  */
   exportFlow(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IExportFlowRequest,
@@ -1209,6 +1253,10 @@ export class FlowsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.export_flow.js</caption>
+ * region_tag:cx_export_flow_sample
+ *
  */
   async checkExportFlowProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1276,6 +1324,10 @@ export class FlowsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.list_flows.js</caption>
+ * region_tag:cx_list_flows_sample
+ *
  */
   listFlows(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
@@ -1350,6 +1402,10 @@ export class FlowsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.list_flows.js</caption>
+ * region_tag:cx_list_flows_sample
+ *
  */
   listFlowsStream(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
@@ -1364,7 +1420,8 @@ export class FlowsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFlows'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFlows.createStream(
       this.innerApiCalls.listFlows as gax.GaxCall,
@@ -1416,6 +1473,10 @@ export class FlowsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3beta1/flows.list_flows.js</caption>
+ * region_tag:cx_list_flows_sample
+ *
  */
   listFlowsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListFlowsRequest,
@@ -1431,7 +1492,8 @@ export class FlowsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFlows'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFlows.asyncIterate(
       this.innerApiCalls['listFlows'] as GaxCall,

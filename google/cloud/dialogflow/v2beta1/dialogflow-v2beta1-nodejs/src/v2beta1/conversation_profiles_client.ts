@@ -438,6 +438,10 @@ export class ConversationProfilesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConversationProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.get_conversation_profile.js</caption>
+ * region_tag:dialogflow_get_conversation_profile_sample
+ *
  */
   getConversationProfile(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetConversationProfileRequest,
@@ -516,6 +520,10 @@ export class ConversationProfilesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createConversationProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.create_conversation_profile.js</caption>
+ * region_tag:dialogflow_create_conversation_profile_sample
+ *
  */
   createConversationProfile(
       request?: protos.google.cloud.dialogflow.v2beta1.ICreateConversationProfileRequest,
@@ -593,6 +601,10 @@ export class ConversationProfilesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateConversationProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.update_conversation_profile.js</caption>
+ * region_tag:dialogflow_update_conversation_profile_sample
+ *
  */
   updateConversationProfile(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateConversationProfileRequest,
@@ -666,6 +678,10 @@ export class ConversationProfilesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteConversationProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.delete_conversation_profile.js</caption>
+ * region_tag:dialogflow_delete_conversation_profile_sample
+ *
  */
   deleteConversationProfile(
       request?: protos.google.cloud.dialogflow.v2beta1.IDeleteConversationProfileRequest,
@@ -748,6 +764,10 @@ export class ConversationProfilesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.list_conversation_profiles.js</caption>
+ * region_tag:dialogflow_list_conversation_profiles_sample
+ *
  */
   listConversationProfiles(
       request?: protos.google.cloud.dialogflow.v2beta1.IListConversationProfilesRequest,
@@ -808,6 +828,10 @@ export class ConversationProfilesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.list_conversation_profiles.js</caption>
+ * region_tag:dialogflow_list_conversation_profiles_sample
+ *
  */
   listConversationProfilesStream(
       request?: protos.google.cloud.dialogflow.v2beta1.IListConversationProfilesRequest,
@@ -822,7 +846,8 @@ export class ConversationProfilesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listConversationProfiles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listConversationProfiles.createStream(
       this.innerApiCalls.listConversationProfiles as gax.GaxCall,
@@ -860,6 +885,10 @@ export class ConversationProfilesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2beta1/conversation_profiles.list_conversation_profiles.js</caption>
+ * region_tag:dialogflow_list_conversation_profiles_sample
+ *
  */
   listConversationProfilesAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListConversationProfilesRequest,
@@ -875,7 +904,8 @@ export class ConversationProfilesClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listConversationProfiles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listConversationProfiles.asyncIterate(
       this.innerApiCalls['listConversationProfiles'] as GaxCall,

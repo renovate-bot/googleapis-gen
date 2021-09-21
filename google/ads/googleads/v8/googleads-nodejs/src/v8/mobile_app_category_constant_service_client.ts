@@ -720,6 +720,10 @@ export class MobileAppCategoryConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMobileAppCategoryConstant(request);
+ *
+ * @example <caption>include:samples/generated/v8/mobile_app_category_constant_service.get_mobile_app_category_constant.js</caption>
+ * region_tag:googleads_get_mobile_app_category_constant_sample
+ *
  */
   getMobileAppCategoryConstant(
       request?: protos.google.ads.googleads.v8.services.IGetMobileAppCategoryConstantRequest,

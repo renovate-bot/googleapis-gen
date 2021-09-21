@@ -315,6 +315,10 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getModel(request);
+ *
+ * @example <caption>include:samples/generated/v2/model_service.get_model.js</caption>
+ * region_tag:bigquery_get_model_sample
+ *
  */
   getModel(
       request?: protos.google.cloud.bigquery.v2.IGetModelRequest,
@@ -396,6 +400,10 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listModels(request);
+ *
+ * @example <caption>include:samples/generated/v2/model_service.list_models.js</caption>
+ * region_tag:bigquery_list_models_sample
+ *
  */
   listModels(
       request?: protos.google.cloud.bigquery.v2.IListModelsRequest,
@@ -475,6 +483,10 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchModel(request);
+ *
+ * @example <caption>include:samples/generated/v2/model_service.patch_model.js</caption>
+ * region_tag:bigquery_patch_model_sample
+ *
  */
   patchModel(
       request?: protos.google.cloud.bigquery.v2.IPatchModelRequest,
@@ -550,6 +562,10 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteModel(request);
+ *
+ * @example <caption>include:samples/generated/v2/model_service.delete_model.js</caption>
+ * region_tag:bigquery_delete_model_sample
+ *
  */
   deleteModel(
       request?: protos.google.cloud.bigquery.v2.IDeleteModelRequest,

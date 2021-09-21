@@ -1,0 +1,79 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+'use strict';
+
+function main() {
+  // [START admin_create_role_sample]
+  /**
+   * TODO(developer): Uncomment these variables before running the sample.
+   */
+  /**
+   *  The `parent` parameter's value depends on the target resource for the
+   *  request, namely
+   *  [`projects`](/iam/reference/rest/v1/projects.roles) or
+   *  [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+   *  resource type's `parent` value format is described below:
+   *  * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
+   *    `projects/{PROJECT_ID}`. This method creates project-level
+   *    [custom roles](/iam/docs/understanding-custom-roles).
+   *    Example request URL:
+   *    `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+   *  * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
+   *    `organizations/{ORGANIZATION_ID}`. This method creates organization-level
+   *    [custom roles](/iam/docs/understanding-custom-roles). Example request
+   *    URL:
+   *    `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+   *  Note: Wildcard (*) values are invalid; you must specify a complete project
+   *  ID or organization ID.
+   */
+  // const parent = 'abc123'
+  /**
+   *  The role ID to use for this role.
+   *  A role ID may contain alphanumeric characters, underscores (`_`), and
+   *  periods (`.`). It must contain a minimum of 3 characters and a maximum of
+   *  64 characters.
+   */
+  // const roleId = 'abc123'
+  /**
+   *  The Role resource to create.
+   */
+  // const role = ''
+
+  // Imports the Admin library
+  const {IAMClient} = require('@google-cloud/admin').v1;
+
+  // Instantiates a client
+  const adminClient = new IAMClient();
+
+  async function createRole() {
+    // Construct request
+    const request = {
+    };
+
+    // Run request
+    const response = await adminClient.createRole(request);
+    console.log(response);
+  }
+
+  createRole();
+  // [END admin_create_role_sample]
+}
+
+process.on('unhandledRejection', err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});
+main(...process.argv.slice(2));

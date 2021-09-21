@@ -720,6 +720,10 @@ export class BiddingStrategyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBiddingStrategy(request);
+ *
+ * @example <caption>include:samples/generated/v8/bidding_strategy_service.get_bidding_strategy.js</caption>
+ * region_tag:googleads_get_bidding_strategy_sample
+ *
  */
   getBiddingStrategy(
       request?: protos.google.ads.googleads.v8.services.IGetBiddingStrategyRequest,
@@ -833,6 +837,10 @@ export class BiddingStrategyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateBiddingStrategies(request);
+ *
+ * @example <caption>include:samples/generated/v8/bidding_strategy_service.mutate_bidding_strategies.js</caption>
+ * region_tag:googleads_mutate_bidding_strategies_sample
+ *
  */
   mutateBiddingStrategies(
       request?: protos.google.ads.googleads.v8.services.IMutateBiddingStrategiesRequest,

@@ -411,6 +411,10 @@ export class FoldersClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFolder(request);
+ *
+ * @example <caption>include:samples/generated/v3/folders.get_folder.js</caption>
+ * region_tag:resourcemanager_get_folder_sample
+ *
  */
   getFolder(
       request?: protos.google.cloud.resourcemanager.v3.IGetFolderRequest,
@@ -490,6 +494,10 @@ export class FoldersClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v3/folders.get_iam_policy.js</caption>
+ * region_tag:resourcemanager_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -571,6 +579,10 @@ export class FoldersClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v3/folders.set_iam_policy.js</caption>
+ * region_tag:resourcemanager_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -652,6 +664,10 @@ export class FoldersClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v3/folders.test_iam_permissions.js</caption>
+ * region_tag:resourcemanager_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -754,6 +770,10 @@ export class FoldersClient {
  * @example
  * const [operation] = await client.createFolder(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/folders.create_folder.js</caption>
+ * region_tag:resourcemanager_create_folder_sample
+ *
  */
   createFolder(
       request?: protos.google.cloud.resourcemanager.v3.ICreateFolderRequest,
@@ -796,6 +816,10 @@ export class FoldersClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/folders.create_folder.js</caption>
+ * region_tag:resourcemanager_create_folder_sample
+ *
  */
   async checkCreateFolderProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.CreateFolderMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -860,6 +884,10 @@ export class FoldersClient {
  * @example
  * const [operation] = await client.updateFolder(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/folders.update_folder.js</caption>
+ * region_tag:resourcemanager_update_folder_sample
+ *
  */
   updateFolder(
       request?: protos.google.cloud.resourcemanager.v3.IUpdateFolderRequest,
@@ -909,6 +937,10 @@ export class FoldersClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/folders.update_folder.js</caption>
+ * region_tag:resourcemanager_update_folder_sample
+ *
  */
   async checkUpdateFolderProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.UpdateFolderMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -976,6 +1008,10 @@ export class FoldersClient {
  * @example
  * const [operation] = await client.moveFolder(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/folders.move_folder.js</caption>
+ * region_tag:resourcemanager_move_folder_sample
+ *
  */
   moveFolder(
       request?: protos.google.cloud.resourcemanager.v3.IMoveFolderRequest,
@@ -1025,6 +1061,10 @@ export class FoldersClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/folders.move_folder.js</caption>
+ * region_tag:resourcemanager_move_folder_sample
+ *
  */
   async checkMoveFolderProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.MoveFolderMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1080,6 +1120,10 @@ export class FoldersClient {
  * @example
  * const [operation] = await client.deleteFolder(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/folders.delete_folder.js</caption>
+ * region_tag:resourcemanager_delete_folder_sample
+ *
  */
   deleteFolder(
       request?: protos.google.cloud.resourcemanager.v3.IDeleteFolderRequest,
@@ -1129,6 +1173,10 @@ export class FoldersClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/folders.delete_folder.js</caption>
+ * region_tag:resourcemanager_delete_folder_sample
+ *
  */
   async checkDeleteFolderProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.DeleteFolderMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1184,6 +1232,10 @@ export class FoldersClient {
  * @example
  * const [operation] = await client.undeleteFolder(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/folders.undelete_folder.js</caption>
+ * region_tag:resourcemanager_undelete_folder_sample
+ *
  */
   undeleteFolder(
       request?: protos.google.cloud.resourcemanager.v3.IUndeleteFolderRequest,
@@ -1233,6 +1285,10 @@ export class FoldersClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/folders.undelete_folder.js</caption>
+ * region_tag:resourcemanager_undelete_folder_sample
+ *
  */
   async checkUndeleteFolderProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Folder, protos.google.cloud.resourcemanager.v3.UndeleteFolderMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1300,6 +1356,10 @@ export class FoldersClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/folders.list_folders.js</caption>
+ * region_tag:resourcemanager_list_folders_sample
+ *
  */
   listFolders(
       request?: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
@@ -1361,6 +1421,10 @@ export class FoldersClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/folders.list_folders.js</caption>
+ * region_tag:resourcemanager_list_folders_sample
+ *
  */
   listFoldersStream(
       request?: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
@@ -1368,7 +1432,8 @@ export class FoldersClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFolders'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFolders.createStream(
       this.innerApiCalls.listFolders as gax.GaxCall,
@@ -1414,6 +1479,10 @@ export class FoldersClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/folders.list_folders.js</caption>
+ * region_tag:resourcemanager_list_folders_sample
+ *
  */
   listFoldersAsync(
       request?: protos.google.cloud.resourcemanager.v3.IListFoldersRequest,
@@ -1422,7 +1491,8 @@ export class FoldersClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listFolders'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listFolders.asyncIterate(
       this.innerApiCalls['listFolders'] as GaxCall,
@@ -1509,6 +1579,10 @@ export class FoldersClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/folders.search_folders.js</caption>
+ * region_tag:resourcemanager_search_folders_sample
+ *
  */
   searchFolders(
       request?: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
@@ -1590,6 +1664,10 @@ export class FoldersClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/folders.search_folders.js</caption>
+ * region_tag:resourcemanager_search_folders_sample
+ *
  */
   searchFoldersStream(
       request?: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
@@ -1597,7 +1675,8 @@ export class FoldersClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchFolders'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchFolders.createStream(
       this.innerApiCalls.searchFolders as gax.GaxCall,
@@ -1663,6 +1742,10 @@ export class FoldersClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/folders.search_folders.js</caption>
+ * region_tag:resourcemanager_search_folders_sample
+ *
  */
   searchFoldersAsync(
       request?: protos.google.cloud.resourcemanager.v3.ISearchFoldersRequest,
@@ -1671,7 +1754,8 @@ export class FoldersClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchFolders'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchFolders.asyncIterate(
       this.innerApiCalls['searchFolders'] as GaxCall,

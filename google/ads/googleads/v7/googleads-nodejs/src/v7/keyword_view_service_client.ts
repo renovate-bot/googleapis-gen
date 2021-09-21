@@ -690,6 +690,10 @@ export class KeywordViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKeywordView(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_view_service.get_keyword_view.js</caption>
+ * region_tag:googleads_get_keyword_view_sample
+ *
  */
   getKeywordView(
       request?: protos.google.ads.googleads.v7.services.IGetKeywordViewRequest,

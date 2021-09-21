@@ -357,6 +357,10 @@ export class PublishBuildEventClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.publishLifecycleEvent(request);
+ *
+ * @example <caption>include:samples/generated/v1/publish_build_event.publish_lifecycle_event.js</caption>
+ * region_tag:build_publish_lifecycle_event_sample
+ *
  */
   publishLifecycleEvent(
       request?: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
@@ -412,6 +416,10 @@ export class PublishBuildEventClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v1/publish_build_event.publish_build_tool_event_stream.js</caption>
+ * region_tag:build_publish_build_tool_event_stream_sample
+ *
  */
   publishBuildToolEventStream(
       options?: CallOptions):

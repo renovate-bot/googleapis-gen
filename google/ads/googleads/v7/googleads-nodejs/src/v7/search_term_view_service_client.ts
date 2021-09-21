@@ -690,6 +690,10 @@ export class SearchTermViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSearchTermView(request);
+ *
+ * @example <caption>include:samples/generated/v7/search_term_view_service.get_search_term_view.js</caption>
+ * region_tag:googleads_get_search_term_view_sample
+ *
  */
   getSearchTermView(
       request?: protos.google.ads.googleads.v7.services.IGetSearchTermViewRequest,

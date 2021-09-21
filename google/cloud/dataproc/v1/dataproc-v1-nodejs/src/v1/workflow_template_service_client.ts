@@ -389,6 +389,10 @@ export class WorkflowTemplateServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createWorkflowTemplate(request);
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.create_workflow_template.js</caption>
+ * region_tag:dataproc_create_workflow_template_sample
+ *
  */
   createWorkflowTemplate(
       request?: protos.google.cloud.dataproc.v1.ICreateWorkflowTemplateRequest,
@@ -477,6 +481,10 @@ export class WorkflowTemplateServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWorkflowTemplate(request);
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.get_workflow_template.js</caption>
+ * region_tag:dataproc_get_workflow_template_sample
+ *
  */
   getWorkflowTemplate(
       request?: protos.google.cloud.dataproc.v1.IGetWorkflowTemplateRequest,
@@ -551,6 +559,10 @@ export class WorkflowTemplateServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateWorkflowTemplate(request);
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.update_workflow_template.js</caption>
+ * region_tag:dataproc_update_workflow_template_sample
+ *
  */
   updateWorkflowTemplate(
       request?: protos.google.cloud.dataproc.v1.IUpdateWorkflowTemplateRequest,
@@ -635,6 +647,10 @@ export class WorkflowTemplateServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteWorkflowTemplate(request);
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.delete_workflow_template.js</caption>
+ * region_tag:dataproc_delete_workflow_template_sample
+ *
  */
   deleteWorkflowTemplate(
       request?: protos.google.cloud.dataproc.v1.IDeleteWorkflowTemplateRequest,
@@ -758,6 +774,10 @@ export class WorkflowTemplateServiceClient {
  * @example
  * const [operation] = await client.instantiateWorkflowTemplate(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.instantiate_workflow_template.js</caption>
+ * region_tag:dataproc_instantiate_workflow_template_sample
+ *
  */
   instantiateWorkflowTemplate(
       request?: protos.google.cloud.dataproc.v1.IInstantiateWorkflowTemplateRequest,
@@ -807,6 +827,10 @@ export class WorkflowTemplateServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.instantiate_workflow_template.js</caption>
+ * region_tag:dataproc_instantiate_workflow_template_sample
+ *
  */
   async checkInstantiateWorkflowTemplateProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.WorkflowMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -898,6 +922,10 @@ export class WorkflowTemplateServiceClient {
  * @example
  * const [operation] = await client.instantiateInlineWorkflowTemplate(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.instantiate_inline_workflow_template.js</caption>
+ * region_tag:dataproc_instantiate_inline_workflow_template_sample
+ *
  */
   instantiateInlineWorkflowTemplate(
       request?: protos.google.cloud.dataproc.v1.IInstantiateInlineWorkflowTemplateRequest,
@@ -947,6 +975,10 @@ export class WorkflowTemplateServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.instantiate_inline_workflow_template.js</caption>
+ * region_tag:dataproc_instantiate_inline_workflow_template_sample
+ *
  */
   async checkInstantiateInlineWorkflowTemplateProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.WorkflowMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1008,6 +1040,10 @@ export class WorkflowTemplateServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.list_workflow_templates.js</caption>
+ * region_tag:dataproc_list_workflow_templates_sample
+ *
  */
   listWorkflowTemplates(
       request?: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
@@ -1076,6 +1112,10 @@ export class WorkflowTemplateServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.list_workflow_templates.js</caption>
+ * region_tag:dataproc_list_workflow_templates_sample
+ *
  */
   listWorkflowTemplatesStream(
       request?: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
@@ -1090,7 +1130,8 @@ export class WorkflowTemplateServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkflowTemplates'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkflowTemplates.createStream(
       this.innerApiCalls.listWorkflowTemplates as gax.GaxCall,
@@ -1136,6 +1177,10 @@ export class WorkflowTemplateServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/workflow_template_service.list_workflow_templates.js</caption>
+ * region_tag:dataproc_list_workflow_templates_sample
+ *
  */
   listWorkflowTemplatesAsync(
       request?: protos.google.cloud.dataproc.v1.IListWorkflowTemplatesRequest,
@@ -1151,7 +1196,8 @@ export class WorkflowTemplateServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkflowTemplates'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkflowTemplates.asyncIterate(
       this.innerApiCalls['listWorkflowTemplates'] as GaxCall,

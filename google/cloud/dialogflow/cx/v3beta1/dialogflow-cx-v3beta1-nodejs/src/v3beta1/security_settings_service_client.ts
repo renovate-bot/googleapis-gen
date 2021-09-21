@@ -403,6 +403,10 @@ export class SecuritySettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSecuritySettings(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.create_security_settings.js</caption>
+ * region_tag:cx_create_security_settings_sample
+ *
  */
   createSecuritySettings(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSecuritySettingsRequest,
@@ -477,6 +481,10 @@ export class SecuritySettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSecuritySettings(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.get_security_settings.js</caption>
+ * region_tag:cx_get_security_settings_sample
+ *
  */
   getSecuritySettings(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetSecuritySettingsRequest,
@@ -552,6 +560,10 @@ export class SecuritySettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSecuritySettings(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.update_security_settings.js</caption>
+ * region_tag:cx_update_security_settings_sample
+ *
  */
   updateSecuritySettings(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSecuritySettingsRequest,
@@ -625,6 +637,10 @@ export class SecuritySettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSecuritySettings(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.delete_security_settings.js</caption>
+ * region_tag:cx_delete_security_settings_sample
+ *
  */
   deleteSecuritySettings(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSecuritySettingsRequest,
@@ -707,6 +723,10 @@ export class SecuritySettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.list_security_settings.js</caption>
+ * region_tag:cx_list_security_settings_sample
+ *
  */
   listSecuritySettings(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSecuritySettingsRequest,
@@ -767,6 +787,10 @@ export class SecuritySettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.list_security_settings.js</caption>
+ * region_tag:cx_list_security_settings_sample
+ *
  */
   listSecuritySettingsStream(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSecuritySettingsRequest,
@@ -781,7 +805,8 @@ export class SecuritySettingsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSecuritySettings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSecuritySettings.createStream(
       this.innerApiCalls.listSecuritySettings as gax.GaxCall,
@@ -819,6 +844,10 @@ export class SecuritySettingsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3beta1/security_settings_service.list_security_settings.js</caption>
+ * region_tag:cx_list_security_settings_sample
+ *
  */
   listSecuritySettingsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSecuritySettingsRequest,
@@ -834,7 +863,8 @@ export class SecuritySettingsServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSecuritySettings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSecuritySettings.asyncIterate(
       this.innerApiCalls['listSecuritySettings'] as GaxCall,

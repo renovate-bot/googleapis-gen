@@ -332,6 +332,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBucketAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_bucket_access_control.js</caption>
+ * region_tag:storage_delete_bucket_access_control_sample
+ *
  */
   deleteBucketAccessControl(
       request?: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
@@ -406,6 +410,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBucketAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_bucket_access_control.js</caption>
+ * region_tag:storage_get_bucket_access_control_sample
+ *
  */
   getBucketAccessControl(
       request?: protos.google.storage.v1.IGetBucketAccessControlRequest,
@@ -474,6 +482,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insertBucketAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.insert_bucket_access_control.js</caption>
+ * region_tag:storage_insert_bucket_access_control_sample
+ *
  */
   insertBucketAccessControl(
       request?: protos.google.storage.v1.IInsertBucketAccessControlRequest,
@@ -540,6 +552,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listBucketAccessControls(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_bucket_access_controls.js</caption>
+ * region_tag:storage_list_bucket_access_controls_sample
+ *
  */
   listBucketAccessControls(
       request?: protos.google.storage.v1.IListBucketAccessControlsRequest,
@@ -618,6 +634,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBucketAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.update_bucket_access_control.js</caption>
+ * region_tag:storage_update_bucket_access_control_sample
+ *
  */
   updateBucketAccessControl(
       request?: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
@@ -704,6 +724,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchBucketAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.patch_bucket_access_control.js</caption>
+ * region_tag:storage_patch_bucket_access_control_sample
+ *
  */
   patchBucketAccessControl(
       request?: protos.google.storage.v1.IPatchBucketAccessControlRequest,
@@ -775,6 +799,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBucket(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_bucket.js</caption>
+ * region_tag:storage_delete_bucket_sample
+ *
  */
   deleteBucket(
       request?: protos.google.storage.v1.IDeleteBucketRequest,
@@ -849,6 +877,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBucket(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_bucket.js</caption>
+ * region_tag:storage_get_bucket_sample
+ *
  */
   getBucket(
       request?: protos.google.storage.v1.IGetBucketRequest,
@@ -925,6 +957,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insertBucket(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.insert_bucket.js</caption>
+ * region_tag:storage_insert_bucket_sample
+ *
  */
   insertBucket(
       request?: protos.google.storage.v1.IInsertBucketRequest,
@@ -991,6 +1027,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listChannels(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_channels.js</caption>
+ * region_tag:storage_list_channels_sample
+ *
  */
   listChannels(
       request?: protos.google.storage.v1.IListChannelsRequest,
@@ -1067,6 +1107,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listBuckets(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_buckets.js</caption>
+ * region_tag:storage_list_buckets_sample
+ *
  */
   listBuckets(
       request?: protos.google.storage.v1.IListBucketsRequest,
@@ -1136,6 +1180,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.lockBucketRetentionPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.lock_bucket_retention_policy.js</caption>
+ * region_tag:storage_lock_bucket_retention_policy_sample
+ *
  */
   lockBucketRetentionPolicy(
       request?: protos.google.storage.v1.ILockRetentionPolicyRequest,
@@ -1202,6 +1250,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBucketIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_bucket_iam_policy.js</caption>
+ * region_tag:storage_get_bucket_iam_policy_sample
+ *
  */
   getBucketIamPolicy(
       request?: protos.google.storage.v1.IGetIamPolicyRequest,
@@ -1268,6 +1320,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setBucketIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.set_bucket_iam_policy.js</caption>
+ * region_tag:storage_set_bucket_iam_policy_sample
+ *
  */
   setBucketIamPolicy(
       request?: protos.google.storage.v1.ISetIamPolicyRequest,
@@ -1335,6 +1391,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testBucketIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.test_bucket_iam_permissions.js</caption>
+ * region_tag:storage_test_bucket_iam_permissions_sample
+ *
  */
   testBucketIamPermissions(
       request?: protos.google.storage.v1.ITestIamPermissionsRequest,
@@ -1427,6 +1487,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchBucket(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.patch_bucket.js</caption>
+ * region_tag:storage_patch_bucket_sample
+ *
  */
   patchBucket(
       request?: protos.google.storage.v1.IPatchBucketRequest,
@@ -1511,6 +1575,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBucket(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.update_bucket.js</caption>
+ * region_tag:storage_update_bucket_sample
+ *
  */
   updateBucket(
       request?: protos.google.storage.v1.IUpdateBucketRequest,
@@ -1580,6 +1648,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.stopChannel(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.stop_channel.js</caption>
+ * region_tag:storage_stop_channel_sample
+ *
  */
   stopChannel(
       request?: protos.google.storage.v1.IStopChannelRequest,
@@ -1655,6 +1727,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDefaultObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_default_object_access_control.js</caption>
+ * region_tag:storage_delete_default_object_access_control_sample
+ *
  */
   deleteDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
@@ -1730,6 +1806,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDefaultObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_default_object_access_control.js</caption>
+ * region_tag:storage_get_default_object_access_control_sample
+ *
  */
   getDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
@@ -1798,6 +1878,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insertDefaultObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.insert_default_object_access_control.js</caption>
+ * region_tag:storage_insert_default_object_access_control_sample
+ *
  */
   insertDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
@@ -1870,6 +1954,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listDefaultObjectAccessControls(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_default_object_access_controls.js</caption>
+ * region_tag:storage_list_default_object_access_controls_sample
+ *
  */
   listDefaultObjectAccessControls(
       request?: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
@@ -1957,6 +2045,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchDefaultObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.patch_default_object_access_control.js</caption>
+ * region_tag:storage_patch_default_object_access_control_sample
+ *
  */
   patchDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
@@ -2035,6 +2127,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateDefaultObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.update_default_object_access_control.js</caption>
+ * region_tag:storage_update_default_object_access_control_sample
+ *
  */
   updateDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
@@ -2105,6 +2201,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteNotification(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_notification.js</caption>
+ * region_tag:storage_delete_notification_sample
+ *
  */
   deleteNotification(
       request?: protos.google.storage.v1.IDeleteNotificationRequest,
@@ -2174,6 +2274,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNotification(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_notification.js</caption>
+ * region_tag:storage_get_notification_sample
+ *
  */
   getNotification(
       request?: protos.google.storage.v1.IGetNotificationRequest,
@@ -2245,6 +2349,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insertNotification(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.insert_notification.js</caption>
+ * region_tag:storage_insert_notification_sample
+ *
  */
   insertNotification(
       request?: protos.google.storage.v1.IInsertNotificationRequest,
@@ -2311,6 +2419,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listNotifications(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_notifications.js</caption>
+ * region_tag:storage_list_notifications_sample
+ *
  */
   listNotifications(
       request?: protos.google.storage.v1.IListNotificationsRequest,
@@ -2391,6 +2503,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_object_access_control.js</caption>
+ * region_tag:storage_delete_object_access_control_sample
+ *
  */
   deleteObjectAccessControl(
       request?: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
@@ -2470,6 +2586,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_object_access_control.js</caption>
+ * region_tag:storage_get_object_access_control_sample
+ *
  */
   getObjectAccessControl(
       request?: protos.google.storage.v1.IGetObjectAccessControlRequest,
@@ -2543,6 +2663,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insertObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.insert_object_access_control.js</caption>
+ * region_tag:storage_insert_object_access_control_sample
+ *
  */
   insertObjectAccessControl(
       request?: protos.google.storage.v1.IInsertObjectAccessControlRequest,
@@ -2614,6 +2738,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listObjectAccessControls(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_object_access_controls.js</caption>
+ * region_tag:storage_list_object_access_controls_sample
+ *
  */
   listObjectAccessControls(
       request?: protos.google.storage.v1.IListObjectAccessControlsRequest,
@@ -2709,6 +2837,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.patch_object_access_control.js</caption>
+ * region_tag:storage_patch_object_access_control_sample
+ *
  */
   patchObjectAccessControl(
       request?: protos.google.storage.v1.IPatchObjectAccessControlRequest,
@@ -2802,6 +2934,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateObjectAccessControl(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.update_object_access_control.js</caption>
+ * region_tag:storage_update_object_access_control_sample
+ *
  */
   updateObjectAccessControl(
       request?: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
@@ -2892,6 +3028,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.composeObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.compose_object.js</caption>
+ * region_tag:storage_compose_object_sample
+ *
  */
   composeObject(
       request?: protos.google.storage.v1.IComposeObjectRequest,
@@ -3015,6 +3155,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.copyObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.copy_object.js</caption>
+ * region_tag:storage_copy_object_sample
+ *
  */
   copyObject(
       request?: protos.google.storage.v1.ICopyObjectRequest,
@@ -3109,6 +3253,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_object.js</caption>
+ * region_tag:storage_delete_object_sample
+ *
  */
   deleteObject(
       request?: protos.google.storage.v1.IDeleteObjectRequest,
@@ -3199,6 +3347,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_object.js</caption>
+ * region_tag:storage_get_object_sample
+ *
  */
   getObject(
       request?: protos.google.storage.v1.IGetObjectRequest,
@@ -3293,6 +3445,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listObjects(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_objects.js</caption>
+ * region_tag:storage_list_objects_sample
+ *
  */
   listObjects(
       request?: protos.google.storage.v1.IListObjectsRequest,
@@ -3435,6 +3591,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.rewriteObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.rewrite_object.js</caption>
+ * region_tag:storage_rewrite_object_sample
+ *
  */
   rewriteObject(
       request?: protos.google.storage.v1.IRewriteObjectRequest,
@@ -3505,6 +3665,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startResumableWrite(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.start_resumable_write.js</caption>
+ * region_tag:storage_start_resumable_write_sample
+ *
  */
   startResumableWrite(
       request?: protos.google.storage.v1.IStartResumableWriteRequest,
@@ -3586,6 +3750,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.queryWriteStatus(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.query_write_status.js</caption>
+ * region_tag:storage_query_write_status_sample
+ *
  */
   queryWriteStatus(
       request?: protos.google.storage.v1.IQueryWriteStatusRequest,
@@ -3691,6 +3859,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.patch_object.js</caption>
+ * region_tag:storage_patch_object_sample
+ *
  */
   patchObject(
       request?: protos.google.storage.v1.IPatchObjectRequest,
@@ -3787,6 +3959,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateObject(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.update_object.js</caption>
+ * region_tag:storage_update_object_sample
+ *
  */
   updateObject(
       request?: protos.google.storage.v1.IUpdateObjectRequest,
@@ -3853,6 +4029,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getObjectIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_object_iam_policy.js</caption>
+ * region_tag:storage_get_object_iam_policy_sample
+ *
  */
   getObjectIamPolicy(
       request?: protos.google.storage.v1.IGetIamPolicyRequest,
@@ -3919,6 +4099,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setObjectIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.set_object_iam_policy.js</caption>
+ * region_tag:storage_set_object_iam_policy_sample
+ *
  */
   setObjectIamPolicy(
       request?: protos.google.storage.v1.ISetIamPolicyRequest,
@@ -3986,6 +4170,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testObjectIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.test_object_iam_permissions.js</caption>
+ * region_tag:storage_test_object_iam_permissions_sample
+ *
  */
   testObjectIamPermissions(
       request?: protos.google.storage.v1.ITestIamPermissionsRequest,
@@ -4082,6 +4270,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.watchAllObjects(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.watch_all_objects.js</caption>
+ * region_tag:storage_watch_all_objects_sample
+ *
  */
   watchAllObjects(
       request?: protos.google.storage.v1.IWatchAllObjectsRequest,
@@ -4148,6 +4340,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServiceAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_service_account.js</caption>
+ * region_tag:storage_get_service_account_sample
+ *
  */
   getServiceAccount(
       request?: protos.google.storage.v1.IGetProjectServiceAccountRequest,
@@ -4216,6 +4412,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createHmacKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.create_hmac_key.js</caption>
+ * region_tag:storage_create_hmac_key_sample
+ *
  */
   createHmacKey(
       request?: protos.google.storage.v1.ICreateHmacKeyRequest,
@@ -4284,6 +4484,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteHmacKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.delete_hmac_key.js</caption>
+ * region_tag:storage_delete_hmac_key_sample
+ *
  */
   deleteHmacKey(
       request?: protos.google.storage.v1.IDeleteHmacKeyRequest,
@@ -4352,6 +4556,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getHmacKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.get_hmac_key.js</caption>
+ * region_tag:storage_get_hmac_key_sample
+ *
  */
   getHmacKey(
       request?: protos.google.storage.v1.IGetHmacKeyRequest,
@@ -4426,6 +4634,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listHmacKeys(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.list_hmac_keys.js</caption>
+ * region_tag:storage_list_hmac_keys_sample
+ *
  */
   listHmacKeys(
       request?: protos.google.storage.v1.IListHmacKeysRequest,
@@ -4496,6 +4708,10 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateHmacKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/storage.update_hmac_key.js</caption>
+ * region_tag:storage_update_hmac_key_sample
+ *
  */
   updateHmacKey(
       request?: protos.google.storage.v1.IUpdateHmacKeyRequest,

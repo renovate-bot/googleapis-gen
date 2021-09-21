@@ -408,6 +408,10 @@ export class ProjectsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getProject(request);
+ *
+ * @example <caption>include:samples/generated/v3/projects.get_project.js</caption>
+ * region_tag:resourcemanager_get_project_sample
+ *
  */
   getProject(
       request?: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
@@ -484,6 +488,10 @@ export class ProjectsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v3/projects.get_iam_policy.js</caption>
+ * region_tag:resourcemanager_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -604,6 +612,10 @@ export class ProjectsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v3/projects.set_iam_policy.js</caption>
+ * region_tag:resourcemanager_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -681,6 +693,10 @@ export class ProjectsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v3/projects.test_iam_permissions.js</caption>
+ * region_tag:resourcemanager_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -768,6 +784,10 @@ export class ProjectsClient {
  * @example
  * const [operation] = await client.createProject(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/projects.create_project.js</caption>
+ * region_tag:resourcemanager_create_project_sample
+ *
  */
   createProject(
       request?: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
@@ -810,6 +830,10 @@ export class ProjectsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/projects.create_project.js</caption>
+ * region_tag:resourcemanager_create_project_sample
+ *
  */
   async checkCreateProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.CreateProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -863,6 +887,10 @@ export class ProjectsClient {
  * @example
  * const [operation] = await client.updateProject(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/projects.update_project.js</caption>
+ * region_tag:resourcemanager_update_project_sample
+ *
  */
   updateProject(
       request?: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
@@ -912,6 +940,10 @@ export class ProjectsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/projects.update_project.js</caption>
+ * region_tag:resourcemanager_update_project_sample
+ *
  */
   async checkUpdateProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UpdateProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -972,6 +1004,10 @@ export class ProjectsClient {
  * @example
  * const [operation] = await client.moveProject(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/projects.move_project.js</caption>
+ * region_tag:resourcemanager_move_project_sample
+ *
  */
   moveProject(
       request?: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
@@ -1021,6 +1057,10 @@ export class ProjectsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/projects.move_project.js</caption>
+ * region_tag:resourcemanager_move_project_sample
+ *
  */
   async checkMoveProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.MoveProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1098,6 +1138,10 @@ export class ProjectsClient {
  * @example
  * const [operation] = await client.deleteProject(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/projects.delete_project.js</caption>
+ * region_tag:resourcemanager_delete_project_sample
+ *
  */
   deleteProject(
       request?: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
@@ -1147,6 +1191,10 @@ export class ProjectsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/projects.delete_project.js</caption>
+ * region_tag:resourcemanager_delete_project_sample
+ *
  */
   async checkDeleteProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.DeleteProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1203,6 +1251,10 @@ export class ProjectsClient {
  * @example
  * const [operation] = await client.undeleteProject(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v3/projects.undelete_project.js</caption>
+ * region_tag:resourcemanager_undelete_project_sample
+ *
  */
   undeleteProject(
       request?: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
@@ -1252,6 +1304,10 @@ export class ProjectsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v3/projects.undelete_project.js</caption>
+ * region_tag:resourcemanager_undelete_project_sample
+ *
  */
   async checkUndeleteProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UndeleteProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1318,6 +1374,10 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/projects.list_projects.js</caption>
+ * region_tag:resourcemanager_list_projects_sample
+ *
  */
   listProjects(
       request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
@@ -1379,6 +1439,10 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/projects.list_projects.js</caption>
+ * region_tag:resourcemanager_list_projects_sample
+ *
  */
   listProjectsStream(
       request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
@@ -1386,7 +1450,8 @@ export class ProjectsClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listProjects'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listProjects.createStream(
       this.innerApiCalls.listProjects as gax.GaxCall,
@@ -1432,6 +1497,10 @@ export class ProjectsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/projects.list_projects.js</caption>
+ * region_tag:resourcemanager_list_projects_sample
+ *
  */
   listProjectsAsync(
       request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
@@ -1440,7 +1509,8 @@ export class ProjectsClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listProjects'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listProjects.asyncIterate(
       this.innerApiCalls['listProjects'] as GaxCall,
@@ -1539,6 +1609,10 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/projects.search_projects.js</caption>
+ * region_tag:resourcemanager_search_projects_sample
+ *
  */
   searchProjects(
       request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
@@ -1628,6 +1702,10 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/projects.search_projects.js</caption>
+ * region_tag:resourcemanager_search_projects_sample
+ *
  */
   searchProjectsStream(
       request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
@@ -1635,7 +1713,8 @@ export class ProjectsClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchProjects'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchProjects.createStream(
       this.innerApiCalls.searchProjects as gax.GaxCall,
@@ -1709,6 +1788,10 @@ export class ProjectsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/projects.search_projects.js</caption>
+ * region_tag:resourcemanager_search_projects_sample
+ *
  */
   searchProjectsAsync(
       request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
@@ -1717,7 +1800,8 @@ export class ProjectsClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchProjects'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchProjects.asyncIterate(
       this.innerApiCalls['searchProjects'] as GaxCall,

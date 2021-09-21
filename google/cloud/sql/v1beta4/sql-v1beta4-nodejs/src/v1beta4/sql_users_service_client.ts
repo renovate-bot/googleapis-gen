@@ -315,6 +315,10 @@ export class SqlUsersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.delete(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.delete.js</caption>
+ * region_tag:sql_delete_sample
+ *
  */
   delete(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
@@ -389,6 +393,10 @@ export class SqlUsersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.insert(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.insert.js</caption>
+ * region_tag:sql_insert_sample
+ *
  */
   insert(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersInsertRequest,
@@ -462,6 +470,10 @@ export class SqlUsersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.list(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.list.js</caption>
+ * region_tag:sql_list_sample
+ *
  */
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersListRequest,
@@ -540,6 +552,10 @@ export class SqlUsersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.update(request);
+ *
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.update.js</caption>
+ * region_tag:sql_update_sample
+ *
  */
   update(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,

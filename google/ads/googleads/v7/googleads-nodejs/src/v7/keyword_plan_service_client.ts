@@ -690,6 +690,10 @@ export class KeywordPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKeywordPlan(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_plan_service.get_keyword_plan.js</caption>
+ * region_tag:googleads_get_keyword_plan_sample
+ *
  */
   getKeywordPlan(
       request?: protos.google.ads.googleads.v7.services.IGetKeywordPlanRequest,
@@ -787,6 +791,10 @@ export class KeywordPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateKeywordPlans(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_plan_service.mutate_keyword_plans.js</caption>
+ * region_tag:googleads_mutate_keyword_plans_sample
+ *
  */
   mutateKeywordPlans(
       request?: protos.google.ads.googleads.v7.services.IMutateKeywordPlansRequest,
@@ -872,6 +880,10 @@ export class KeywordPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateForecastCurve(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_plan_service.generate_forecast_curve.js</caption>
+ * region_tag:googleads_generate_forecast_curve_sample
+ *
  */
   generateForecastCurve(
       request?: protos.google.ads.googleads.v7.services.IGenerateForecastCurveRequest,
@@ -958,6 +970,10 @@ export class KeywordPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateForecastTimeSeries(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_plan_service.generate_forecast_time_series.js</caption>
+ * region_tag:googleads_generate_forecast_time_series_sample
+ *
  */
   generateForecastTimeSeries(
       request?: protos.google.ads.googleads.v7.services.IGenerateForecastTimeSeriesRequest,
@@ -1038,6 +1054,10 @@ export class KeywordPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateForecastMetrics(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_plan_service.generate_forecast_metrics.js</caption>
+ * region_tag:googleads_generate_forecast_metrics_sample
+ *
  */
   generateForecastMetrics(
       request?: protos.google.ads.googleads.v7.services.IGenerateForecastMetricsRequest,
@@ -1123,6 +1143,10 @@ export class KeywordPlanServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateHistoricalMetrics(request);
+ *
+ * @example <caption>include:samples/generated/v7/keyword_plan_service.generate_historical_metrics.js</caption>
+ * region_tag:googleads_generate_historical_metrics_sample
+ *
  */
   generateHistoricalMetrics(
       request?: protos.google.ads.googleads.v7.services.IGenerateHistoricalMetricsRequest,

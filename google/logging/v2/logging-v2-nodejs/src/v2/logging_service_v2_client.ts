@@ -452,6 +452,10 @@ export class LoggingServiceV2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteLog(request);
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.delete_log.js</caption>
+ * region_tag:logging_delete_log_sample
+ *
  */
   deleteLog(
       request?: protos.google.logging.v2.IDeleteLogRequest,
@@ -594,6 +598,10 @@ export class LoggingServiceV2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.writeLogEntries(request);
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.write_log_entries.js</caption>
+ * region_tag:logging_write_log_entries_sample
+ *
  */
   writeLogEntries(
       request?: protos.google.logging.v2.IWriteLogEntriesRequest,
@@ -642,6 +650,10 @@ export class LoggingServiceV2Client {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.tail_log_entries.js</caption>
+ * region_tag:logging_tail_log_entries_sample
+ *
  */
   tailLogEntries(
       options?: CallOptions):
@@ -732,6 +744,10 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_log_entries.js</caption>
+ * region_tag:logging_list_log_entries_sample
+ *
  */
   listLogEntries(
       request?: protos.google.logging.v2.IListLogEntriesRequest,
@@ -818,6 +834,10 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_log_entries.js</caption>
+ * region_tag:logging_list_log_entries_sample
+ *
  */
   listLogEntriesStream(
       request?: protos.google.logging.v2.IListLogEntriesRequest,
@@ -825,7 +845,8 @@ export class LoggingServiceV2Client {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listLogEntries'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listLogEntries.createStream(
       this.innerApiCalls.listLogEntries as gax.GaxCall,
@@ -896,6 +917,10 @@ export class LoggingServiceV2Client {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_log_entries.js</caption>
+ * region_tag:logging_list_log_entries_sample
+ *
  */
   listLogEntriesAsync(
       request?: protos.google.logging.v2.IListLogEntriesRequest,
@@ -904,7 +929,8 @@ export class LoggingServiceV2Client {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listLogEntries'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listLogEntries.asyncIterate(
       this.innerApiCalls['listLogEntries'] as GaxCall,
@@ -959,6 +985,10 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_monitored_resource_descriptors.js</caption>
+ * region_tag:logging_list_monitored_resource_descriptors_sample
+ *
  */
   listMonitoredResourceDescriptors(
       request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
@@ -1013,6 +1043,10 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_monitored_resource_descriptors.js</caption>
+ * region_tag:logging_list_monitored_resource_descriptors_sample
+ *
  */
   listMonitoredResourceDescriptorsStream(
       request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
@@ -1020,7 +1054,8 @@ export class LoggingServiceV2Client {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMonitoredResourceDescriptors.createStream(
       this.innerApiCalls.listMonitoredResourceDescriptors as gax.GaxCall,
@@ -1059,6 +1094,10 @@ export class LoggingServiceV2Client {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_monitored_resource_descriptors.js</caption>
+ * region_tag:logging_list_monitored_resource_descriptors_sample
+ *
  */
   listMonitoredResourceDescriptorsAsync(
       request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
@@ -1067,7 +1106,8 @@ export class LoggingServiceV2Client {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMonitoredResourceDescriptors.asyncIterate(
       this.innerApiCalls['listMonitoredResourceDescriptors'] as GaxCall,
@@ -1142,6 +1182,10 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_logs.js</caption>
+ * region_tag:logging_list_logs_sample
+ *
  */
   listLogs(
       request?: protos.google.logging.v2.IListLogsRequest,
@@ -1222,6 +1266,10 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_logs.js</caption>
+ * region_tag:logging_list_logs_sample
+ *
  */
   listLogsStream(
       request?: protos.google.logging.v2.IListLogsRequest,
@@ -1236,7 +1284,8 @@ export class LoggingServiceV2Client {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listLogs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listLogs.createStream(
       this.innerApiCalls.listLogs as gax.GaxCall,
@@ -1294,6 +1343,10 @@ export class LoggingServiceV2Client {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_logs.js</caption>
+ * region_tag:logging_list_logs_sample
+ *
  */
   listLogsAsync(
       request?: protos.google.logging.v2.IListLogsRequest,
@@ -1309,7 +1362,8 @@ export class LoggingServiceV2Client {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listLogs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listLogs.asyncIterate(
       this.innerApiCalls['listLogs'] as GaxCall,

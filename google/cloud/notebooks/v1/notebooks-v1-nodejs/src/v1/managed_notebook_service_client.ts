@@ -422,6 +422,10 @@ export class ManagedNotebookServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRuntime(request);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.get_runtime.js</caption>
+ * region_tag:notebooks_get_runtime_sample
+ *
  */
   getRuntime(
       request?: protos.google.cloud.notebooks.v1.IGetRuntimeRequest,
@@ -502,6 +506,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.createRuntime(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.create_runtime.js</caption>
+ * region_tag:notebooks_create_runtime_sample
+ *
  */
   createRuntime(
       request?: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
@@ -551,6 +559,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.create_runtime.js</caption>
+ * region_tag:notebooks_create_runtime_sample
+ *
  */
   async checkCreateRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -598,6 +610,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.deleteRuntime(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.delete_runtime.js</caption>
+ * region_tag:notebooks_delete_runtime_sample
+ *
  */
   deleteRuntime(
       request?: protos.google.cloud.notebooks.v1.IDeleteRuntimeRequest,
@@ -647,6 +663,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.delete_runtime.js</caption>
+ * region_tag:notebooks_delete_runtime_sample
+ *
  */
   async checkDeleteRuntimeProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -698,6 +718,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.startRuntime(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.start_runtime.js</caption>
+ * region_tag:notebooks_start_runtime_sample
+ *
  */
   startRuntime(
       request?: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
@@ -747,6 +771,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.start_runtime.js</caption>
+ * region_tag:notebooks_start_runtime_sample
+ *
  */
   async checkStartRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -798,6 +826,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.stopRuntime(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.stop_runtime.js</caption>
+ * region_tag:notebooks_stop_runtime_sample
+ *
  */
   stopRuntime(
       request?: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
@@ -847,6 +879,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.stop_runtime.js</caption>
+ * region_tag:notebooks_stop_runtime_sample
+ *
  */
   async checkStopRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -898,6 +934,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.switchRuntime(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.switch_runtime.js</caption>
+ * region_tag:notebooks_switch_runtime_sample
+ *
  */
   switchRuntime(
       request?: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
@@ -947,6 +987,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.switch_runtime.js</caption>
+ * region_tag:notebooks_switch_runtime_sample
+ *
  */
   async checkSwitchRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -994,6 +1038,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.resetRuntime(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.reset_runtime.js</caption>
+ * region_tag:notebooks_reset_runtime_sample
+ *
  */
   resetRuntime(
       request?: protos.google.cloud.notebooks.v1.IResetRuntimeRequest,
@@ -1043,6 +1091,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.reset_runtime.js</caption>
+ * region_tag:notebooks_reset_runtime_sample
+ *
  */
   async checkResetRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1095,6 +1147,10 @@ export class ManagedNotebookServiceClient {
  * @example
  * const [operation] = await client.reportRuntimeEvent(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.report_runtime_event.js</caption>
+ * region_tag:notebooks_report_runtime_event_sample
+ *
  */
   reportRuntimeEvent(
       request?: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
@@ -1144,6 +1200,10 @@ export class ManagedNotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.report_runtime_event.js</caption>
+ * region_tag:notebooks_report_runtime_event_sample
+ *
  */
   async checkReportRuntimeEventProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1197,6 +1257,10 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.list_runtimes.js</caption>
+ * region_tag:notebooks_list_runtimes_sample
+ *
  */
   listRuntimes(
       request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
@@ -1257,6 +1321,10 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.list_runtimes.js</caption>
+ * region_tag:notebooks_list_runtimes_sample
+ *
  */
   listRuntimesStream(
       request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
@@ -1271,7 +1339,8 @@ export class ManagedNotebookServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listRuntimes'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listRuntimes.createStream(
       this.innerApiCalls.listRuntimes as gax.GaxCall,
@@ -1309,6 +1378,10 @@ export class ManagedNotebookServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.list_runtimes.js</caption>
+ * region_tag:notebooks_list_runtimes_sample
+ *
  */
   listRuntimesAsync(
       request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
@@ -1324,7 +1397,8 @@ export class ManagedNotebookServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listRuntimes'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listRuntimes.asyncIterate(
       this.innerApiCalls['listRuntimes'] as GaxCall,

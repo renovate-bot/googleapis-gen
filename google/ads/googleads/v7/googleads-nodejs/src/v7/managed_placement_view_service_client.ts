@@ -690,6 +690,10 @@ export class ManagedPlacementViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getManagedPlacementView(request);
+ *
+ * @example <caption>include:samples/generated/v7/managed_placement_view_service.get_managed_placement_view.js</caption>
+ * region_tag:googleads_get_managed_placement_view_sample
+ *
  */
   getManagedPlacementView(
       request?: protos.google.ads.googleads.v7.services.IGetManagedPlacementViewRequest,

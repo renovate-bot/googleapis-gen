@@ -720,6 +720,10 @@ export class SharedCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSharedCriterion(request);
+ *
+ * @example <caption>include:samples/generated/v8/shared_criterion_service.get_shared_criterion.js</caption>
+ * region_tag:googleads_get_shared_criterion_sample
+ *
  */
   getSharedCriterion(
       request?: protos.google.ads.googleads.v8.services.IGetSharedCriterionRequest,
@@ -826,6 +830,10 @@ export class SharedCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateSharedCriteria(request);
+ *
+ * @example <caption>include:samples/generated/v8/shared_criterion_service.mutate_shared_criteria.js</caption>
+ * region_tag:googleads_mutate_shared_criteria_sample
+ *
  */
   mutateSharedCriteria(
       request?: protos.google.ads.googleads.v8.services.IMutateSharedCriteriaRequest,

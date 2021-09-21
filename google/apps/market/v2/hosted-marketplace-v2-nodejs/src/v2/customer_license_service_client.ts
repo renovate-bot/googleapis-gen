@@ -311,6 +311,10 @@ export class CustomerLicenseServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.get(request);
+ *
+ * @example <caption>include:samples/generated/v2/customer_license_service.get.js</caption>
+ * region_tag:marketplace_get_sample
+ *
  */
   get(
       request?: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,

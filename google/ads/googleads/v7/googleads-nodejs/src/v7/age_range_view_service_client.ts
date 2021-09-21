@@ -690,6 +690,10 @@ export class AgeRangeViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAgeRangeView(request);
+ *
+ * @example <caption>include:samples/generated/v7/age_range_view_service.get_age_range_view.js</caption>
+ * region_tag:googleads_get_age_range_view_sample
+ *
  */
   getAgeRangeView(
       request?: protos.google.ads.googleads.v7.services.IGetAgeRangeViewRequest,

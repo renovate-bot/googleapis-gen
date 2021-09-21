@@ -1,0 +1,91 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+'use strict';
+
+function main(name) {
+  // [START monitoring_list_groups_sample]
+  /**
+   * TODO(developer): Uncomment these variables before running the sample.
+   */
+  /**
+   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *  whose groups are to be listed. The format is:
+   *      projects/[PROJECT_ID_OR_NUMBER]
+   */
+  // const name = 'abc123'
+  /**
+   *  A group name. The format is:
+   *      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *  Returns groups whose `parent_name` field contains the group
+   *  name.  If no groups have this parent, the results are empty.
+   */
+  // const childrenOfGroup = 'abc123'
+  /**
+   *  A group name. The format is:
+   *      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *  Returns groups that are ancestors of the specified group.
+   *  The groups are returned in order, starting with the immediate parent and
+   *  ending with the most distant ancestor.  If the specified group has no
+   *  immediate parent, the results are empty.
+   */
+  // const ancestorsOfGroup = 'abc123'
+  /**
+   *  A group name. The format is:
+   *      projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *  Returns the descendants of the specified group.  This is a superset of
+   *  the results returned by the `children_of_group` filter, and includes
+   *  children-of-children, and so forth.
+   */
+  // const descendantsOfGroup = 'abc123'
+  /**
+   *  A positive number that is the maximum number of results to return.
+   */
+  // const pageSize = 1234
+  /**
+   *  If this field is not empty then it must contain the `next_page_token` value
+   *  returned by a previous call to this method.  Using this field causes the
+   *  method to return additional results from the previous method call.
+   */
+  // const pageToken = 'abc123'
+
+  // Imports the Monitoring library
+  const {GroupServiceClient} = require('@google-cloud/monitoring').v3;
+
+  // Instantiates a client
+  const monitoringClient = new GroupServiceClient();
+
+  async function listGroups() {
+    // Construct request
+    const request = {
+      name,
+    };
+
+    // Run request
+    const iterable = await monitoringClient.listGroupsAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
+  }
+
+  listGroups();
+  // [END monitoring_list_groups_sample]
+}
+
+process.on('unhandledRejection', err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});
+main(...process.argv.slice(2));

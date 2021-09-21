@@ -720,6 +720,10 @@ export class KeywordPlanCampaignServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKeywordPlanCampaign(request);
+ *
+ * @example <caption>include:samples/generated/v8/keyword_plan_campaign_service.get_keyword_plan_campaign.js</caption>
+ * region_tag:googleads_get_keyword_plan_campaign_sample
+ *
  */
   getKeywordPlanCampaign(
       request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanCampaignRequest,
@@ -819,6 +823,10 @@ export class KeywordPlanCampaignServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateKeywordPlanCampaigns(request);
+ *
+ * @example <caption>include:samples/generated/v8/keyword_plan_campaign_service.mutate_keyword_plan_campaigns.js</caption>
+ * region_tag:googleads_mutate_keyword_plan_campaigns_sample
+ *
  */
   mutateKeywordPlanCampaigns(
       request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanCampaignsRequest,

@@ -342,6 +342,10 @@ export class ServiceControllerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.check(request);
+ *
+ * @example <caption>include:samples/generated/v1/service_controller.check.js</caption>
+ * region_tag:servicecontrol_check_sample
+ *
  */
   check(
       request?: protos.google.api.servicecontrol.v1.ICheckRequest,
@@ -450,6 +454,10 @@ export class ServiceControllerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.report(request);
+ *
+ * @example <caption>include:samples/generated/v1/service_controller.report.js</caption>
+ * region_tag:servicecontrol_report_sample
+ *
  */
   report(
       request?: protos.google.api.servicecontrol.v1.IReportRequest,

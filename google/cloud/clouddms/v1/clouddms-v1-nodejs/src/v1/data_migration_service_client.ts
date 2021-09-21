@@ -453,6 +453,10 @@ export class DataMigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMigrationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.get_migration_job.js</caption>
+ * region_tag:clouddms_get_migration_job_sample
+ *
  */
   getMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
@@ -533,6 +537,10 @@ export class DataMigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateSshScript(request);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.generate_ssh_script.js</caption>
+ * region_tag:clouddms_generate_ssh_script_sample
+ *
  */
   generateSshScript(
       request?: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
@@ -604,6 +612,10 @@ export class DataMigrationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConnectionProfile(request);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.get_connection_profile.js</caption>
+ * region_tag:clouddms_get_connection_profile_sample
+ *
  */
   getConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
@@ -693,6 +705,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.createMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_migration_job.js</caption>
+ * region_tag:clouddms_create_migration_job_sample
+ *
  */
   createMigrationJob(
       request?: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
@@ -742,6 +758,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_migration_job.js</caption>
+ * region_tag:clouddms_create_migration_job_sample
+ *
  */
   async checkCreateMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -799,6 +819,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.updateMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_migration_job.js</caption>
+ * region_tag:clouddms_update_migration_job_sample
+ *
  */
   updateMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
@@ -848,6 +872,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_migration_job.js</caption>
+ * region_tag:clouddms_update_migration_job_sample
+ *
  */
   async checkUpdateMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -906,6 +934,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.deleteMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_migration_job.js</caption>
+ * region_tag:clouddms_delete_migration_job_sample
+ *
  */
   deleteMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
@@ -955,6 +987,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_migration_job.js</caption>
+ * region_tag:clouddms_delete_migration_job_sample
+ *
  */
   async checkDeleteMigrationJobProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1001,6 +1037,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.startMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.start_migration_job.js</caption>
+ * region_tag:clouddms_start_migration_job_sample
+ *
  */
   startMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
@@ -1050,6 +1090,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.start_migration_job.js</caption>
+ * region_tag:clouddms_start_migration_job_sample
+ *
  */
   async checkStartMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1096,6 +1140,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.stopMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.stop_migration_job.js</caption>
+ * region_tag:clouddms_stop_migration_job_sample
+ *
  */
   stopMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
@@ -1145,6 +1193,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.stop_migration_job.js</caption>
+ * region_tag:clouddms_stop_migration_job_sample
+ *
  */
   async checkStopMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1192,6 +1244,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.resumeMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.resume_migration_job.js</caption>
+ * region_tag:clouddms_resume_migration_job_sample
+ *
  */
   resumeMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
@@ -1241,6 +1297,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.resume_migration_job.js</caption>
+ * region_tag:clouddms_resume_migration_job_sample
+ *
  */
   async checkResumeMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1288,6 +1348,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.promoteMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.promote_migration_job.js</caption>
+ * region_tag:clouddms_promote_migration_job_sample
+ *
  */
   promoteMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
@@ -1337,6 +1401,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.promote_migration_job.js</caption>
+ * region_tag:clouddms_promote_migration_job_sample
+ *
  */
   async checkPromoteMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1384,6 +1452,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.verifyMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.verify_migration_job.js</caption>
+ * region_tag:clouddms_verify_migration_job_sample
+ *
  */
   verifyMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
@@ -1433,6 +1505,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.verify_migration_job.js</caption>
+ * region_tag:clouddms_verify_migration_job_sample
+ *
  */
   async checkVerifyMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1481,6 +1557,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.restartMigrationJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.restart_migration_job.js</caption>
+ * region_tag:clouddms_restart_migration_job_sample
+ *
  */
   restartMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
@@ -1530,6 +1610,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.restart_migration_job.js</caption>
+ * region_tag:clouddms_restart_migration_job_sample
+ *
  */
   async checkRestartMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1588,6 +1672,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.createConnectionProfile(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_connection_profile.js</caption>
+ * region_tag:clouddms_create_connection_profile_sample
+ *
  */
   createConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
@@ -1637,6 +1725,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_connection_profile.js</caption>
+ * region_tag:clouddms_create_connection_profile_sample
+ *
  */
   async checkCreateConnectionProfileProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1694,6 +1786,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.updateConnectionProfile(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_connection_profile.js</caption>
+ * region_tag:clouddms_update_connection_profile_sample
+ *
  */
   updateConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
@@ -1743,6 +1839,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_connection_profile.js</caption>
+ * region_tag:clouddms_update_connection_profile_sample
+ *
  */
   async checkUpdateConnectionProfileProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1802,6 +1902,10 @@ export class DataMigrationServiceClient {
  * @example
  * const [operation] = await client.deleteConnectionProfile(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_connection_profile.js</caption>
+ * region_tag:clouddms_delete_connection_profile_sample
+ *
  */
   deleteConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
@@ -1851,6 +1955,10 @@ export class DataMigrationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_connection_profile.js</caption>
+ * region_tag:clouddms_delete_connection_profile_sample
+ *
  */
   async checkDeleteConnectionProfileProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1922,6 +2030,10 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_migration_jobs.js</caption>
+ * region_tag:clouddms_list_migration_jobs_sample
+ *
  */
   listMigrationJobs(
       request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
@@ -2000,6 +2112,10 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_migration_jobs.js</caption>
+ * region_tag:clouddms_list_migration_jobs_sample
+ *
  */
   listMigrationJobsStream(
       request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
@@ -2014,7 +2130,8 @@ export class DataMigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMigrationJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMigrationJobs.createStream(
       this.innerApiCalls.listMigrationJobs as gax.GaxCall,
@@ -2070,6 +2187,10 @@ export class DataMigrationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_migration_jobs.js</caption>
+ * region_tag:clouddms_list_migration_jobs_sample
+ *
  */
   listMigrationJobsAsync(
       request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
@@ -2085,7 +2206,8 @@ export class DataMigrationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMigrationJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMigrationJobs.asyncIterate(
       this.innerApiCalls['listMigrationJobs'] as GaxCall,
@@ -2156,6 +2278,10 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_connection_profiles.js</caption>
+ * region_tag:clouddms_list_connection_profiles_sample
+ *
  */
   listConnectionProfiles(
       request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
@@ -2233,6 +2359,10 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_connection_profiles.js</caption>
+ * region_tag:clouddms_list_connection_profiles_sample
+ *
  */
   listConnectionProfilesStream(
       request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
@@ -2247,7 +2377,8 @@ export class DataMigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listConnectionProfiles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listConnectionProfiles.createStream(
       this.innerApiCalls.listConnectionProfiles as gax.GaxCall,
@@ -2302,6 +2433,10 @@ export class DataMigrationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_connection_profiles.js</caption>
+ * region_tag:clouddms_list_connection_profiles_sample
+ *
  */
   listConnectionProfilesAsync(
       request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
@@ -2317,7 +2452,8 @@ export class DataMigrationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listConnectionProfiles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listConnectionProfiles.asyncIterate(
       this.innerApiCalls['listConnectionProfiles'] as GaxCall,

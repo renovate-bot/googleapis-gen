@@ -350,6 +350,10 @@ export class BigQueryWriteClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createWriteStream(request);
+ *
+ * @example <caption>include:samples/generated/v1beta2/big_query_write.create_write_stream.js</caption>
+ * region_tag:storage_create_write_stream_sample
+ *
  */
   createWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1beta2.ICreateWriteStreamRequest,
@@ -422,6 +426,10 @@ export class BigQueryWriteClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWriteStream(request);
+ *
+ * @example <caption>include:samples/generated/v1beta2/big_query_write.get_write_stream.js</caption>
+ * region_tag:storage_get_write_stream_sample
+ *
  */
   getWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1beta2.IGetWriteStreamRequest,
@@ -495,6 +503,10 @@ export class BigQueryWriteClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.finalizeWriteStream(request);
+ *
+ * @example <caption>include:samples/generated/v1beta2/big_query_write.finalize_write_stream.js</caption>
+ * region_tag:storage_finalize_write_stream_sample
+ *
  */
   finalizeWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1beta2.IFinalizeWriteStreamRequest,
@@ -573,6 +585,10 @@ export class BigQueryWriteClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCommitWriteStreams(request);
+ *
+ * @example <caption>include:samples/generated/v1beta2/big_query_write.batch_commit_write_streams.js</caption>
+ * region_tag:storage_batch_commit_write_streams_sample
+ *
  */
   batchCommitWriteStreams(
       request?: protos.google.cloud.bigquery.storage.v1beta2.IBatchCommitWriteStreamsRequest,
@@ -652,6 +668,10 @@ export class BigQueryWriteClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.flushRows(request);
+ *
+ * @example <caption>include:samples/generated/v1beta2/big_query_write.flush_rows.js</caption>
+ * region_tag:storage_flush_rows_sample
+ *
  */
   flushRows(
       request?: protos.google.cloud.bigquery.storage.v1beta2.IFlushRowsRequest,
@@ -724,6 +744,10 @@ export class BigQueryWriteClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v1beta2/big_query_write.append_rows.js</caption>
+ * region_tag:storage_append_rows_sample
+ *
  */
   appendRows(
       options?: CallOptions):

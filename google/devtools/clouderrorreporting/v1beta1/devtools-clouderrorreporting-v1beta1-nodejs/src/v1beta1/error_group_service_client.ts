@@ -324,6 +324,10 @@ export class ErrorGroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGroup(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_group_service.get_group.js</caption>
+ * region_tag:clouderrorreporting_get_group_sample
+ *
  */
   getGroup(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
@@ -396,6 +400,10 @@ export class ErrorGroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateGroup(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/error_group_service.update_group.js</caption>
+ * region_tag:clouderrorreporting_update_group_sample
+ *
  */
   updateGroup(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,

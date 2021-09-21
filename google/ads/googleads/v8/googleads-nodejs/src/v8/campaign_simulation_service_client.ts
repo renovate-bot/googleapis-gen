@@ -712,6 +712,10 @@ export class CampaignSimulationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignSimulation(request);
+ *
+ * @example <caption>include:samples/generated/v8/campaign_simulation_service.get_campaign_simulation.js</caption>
+ * region_tag:googleads_get_campaign_simulation_sample
+ *
  */
   getCampaignSimulation(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignSimulationRequest,

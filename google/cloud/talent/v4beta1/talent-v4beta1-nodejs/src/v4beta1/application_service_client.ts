@@ -356,6 +356,10 @@ export class ApplicationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createApplication(request);
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.create_application.js</caption>
+ * region_tag:talent_create_application_sample
+ *
  */
   createApplication(
       request?: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
@@ -431,6 +435,10 @@ export class ApplicationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getApplication(request);
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.get_application.js</caption>
+ * region_tag:talent_get_application_sample
+ *
  */
   getApplication(
       request?: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
@@ -510,6 +518,10 @@ export class ApplicationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateApplication(request);
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.update_application.js</caption>
+ * region_tag:talent_update_application_sample
+ *
  */
   updateApplication(
       request?: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
@@ -585,6 +597,10 @@ export class ApplicationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteApplication(request);
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.delete_application.js</caption>
+ * region_tag:talent_delete_application_sample
+ *
  */
   deleteApplication(
       request?: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
@@ -670,6 +686,10 @@ export class ApplicationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.list_applications.js</caption>
+ * region_tag:talent_list_applications_sample
+ *
  */
   listApplications(
       request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
@@ -733,6 +753,10 @@ export class ApplicationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.list_applications.js</caption>
+ * region_tag:talent_list_applications_sample
+ *
  */
   listApplicationsStream(
       request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
@@ -747,7 +771,8 @@ export class ApplicationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listApplications'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listApplications.createStream(
       this.innerApiCalls.listApplications as gax.GaxCall,
@@ -788,6 +813,10 @@ export class ApplicationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v4beta1/application_service.list_applications.js</caption>
+ * region_tag:talent_list_applications_sample
+ *
  */
   listApplicationsAsync(
       request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
@@ -803,7 +832,8 @@ export class ApplicationServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listApplications'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listApplications.asyncIterate(
       this.innerApiCalls['listApplications'] as GaxCall,

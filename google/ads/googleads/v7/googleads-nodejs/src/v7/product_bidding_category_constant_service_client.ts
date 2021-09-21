@@ -690,6 +690,10 @@ export class ProductBiddingCategoryConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getProductBiddingCategoryConstant(request);
+ *
+ * @example <caption>include:samples/generated/v7/product_bidding_category_constant_service.get_product_bidding_category_constant.js</caption>
+ * region_tag:googleads_get_product_bidding_category_constant_sample
+ *
  */
   getProductBiddingCategoryConstant(
       request?: protos.google.ads.googleads.v7.services.IGetProductBiddingCategoryConstantRequest,

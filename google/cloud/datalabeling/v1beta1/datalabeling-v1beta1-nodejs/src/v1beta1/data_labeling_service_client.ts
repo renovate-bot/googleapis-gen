@@ -437,6 +437,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.create_dataset.js</caption>
+ * region_tag:datalabeling_create_dataset_sample
+ *
  */
   createDataset(
       request?: protos.google.cloud.datalabeling.v1beta1.ICreateDatasetRequest,
@@ -509,6 +513,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_dataset.js</caption>
+ * region_tag:datalabeling_get_dataset_sample
+ *
  */
   getDataset(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetDatasetRequest,
@@ -581,6 +589,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.delete_dataset.js</caption>
+ * region_tag:datalabeling_delete_dataset_sample
+ *
  */
   deleteDataset(
       request?: protos.google.cloud.datalabeling.v1beta1.IDeleteDatasetRequest,
@@ -654,6 +666,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDataItem(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_data_item.js</caption>
+ * region_tag:datalabeling_get_data_item_sample
+ *
  */
   getDataItem(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetDataItemRequest,
@@ -727,6 +743,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAnnotatedDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_annotated_dataset.js</caption>
+ * region_tag:datalabeling_get_annotated_dataset_sample
+ *
  */
   getAnnotatedDataset(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetAnnotatedDatasetRequest,
@@ -800,6 +820,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAnnotatedDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.delete_annotated_dataset.js</caption>
+ * region_tag:datalabeling_delete_annotated_dataset_sample
+ *
  */
   deleteAnnotatedDataset(
       request?: protos.google.cloud.datalabeling.v1beta1.IDeleteAnnotatedDatasetRequest,
@@ -877,6 +901,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getExample(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_example.js</caption>
+ * region_tag:datalabeling_get_example_sample
+ *
  */
   getExample(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetExampleRequest,
@@ -953,6 +981,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAnnotationSpecSet(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.create_annotation_spec_set.js</caption>
+ * region_tag:datalabeling_create_annotation_spec_set_sample
+ *
  */
   createAnnotationSpecSet(
       request?: protos.google.cloud.datalabeling.v1beta1.ICreateAnnotationSpecSetRequest,
@@ -1025,6 +1057,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAnnotationSpecSet(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_annotation_spec_set.js</caption>
+ * region_tag:datalabeling_get_annotation_spec_set_sample
+ *
  */
   getAnnotationSpecSet(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetAnnotationSpecSetRequest,
@@ -1097,6 +1133,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAnnotationSpecSet(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.delete_annotation_spec_set.js</caption>
+ * region_tag:datalabeling_delete_annotation_spec_set_sample
+ *
  */
   deleteAnnotationSpecSet(
       request?: protos.google.cloud.datalabeling.v1beta1.IDeleteAnnotationSpecSetRequest,
@@ -1169,6 +1209,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstruction(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_instruction.js</caption>
+ * region_tag:datalabeling_get_instruction_sample
+ *
  */
   getInstruction(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetInstructionRequest,
@@ -1241,6 +1285,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteInstruction(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.delete_instruction.js</caption>
+ * region_tag:datalabeling_delete_instruction_sample
+ *
  */
   deleteInstruction(
       request?: protos.google.cloud.datalabeling.v1beta1.IDeleteInstructionRequest,
@@ -1315,6 +1363,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEvaluation(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_evaluation.js</caption>
+ * region_tag:datalabeling_get_evaluation_sample
+ *
  */
   getEvaluation(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetEvaluationRequest,
@@ -1389,6 +1441,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createEvaluationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.create_evaluation_job.js</caption>
+ * region_tag:datalabeling_create_evaluation_job_sample
+ *
  */
   createEvaluationJob(
       request?: protos.google.cloud.datalabeling.v1beta1.ICreateEvaluationJobRequest,
@@ -1475,6 +1531,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateEvaluationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.update_evaluation_job.js</caption>
+ * region_tag:datalabeling_update_evaluation_job_sample
+ *
  */
   updateEvaluationJob(
       request?: protos.google.cloud.datalabeling.v1beta1.IUpdateEvaluationJobRequest,
@@ -1548,6 +1608,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEvaluationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.get_evaluation_job.js</caption>
+ * region_tag:datalabeling_get_evaluation_job_sample
+ *
  */
   getEvaluationJob(
       request?: protos.google.cloud.datalabeling.v1beta1.IGetEvaluationJobRequest,
@@ -1622,6 +1686,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.pauseEvaluationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.pause_evaluation_job.js</caption>
+ * region_tag:datalabeling_pause_evaluation_job_sample
+ *
  */
   pauseEvaluationJob(
       request?: protos.google.cloud.datalabeling.v1beta1.IPauseEvaluationJobRequest,
@@ -1696,6 +1764,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.resumeEvaluationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.resume_evaluation_job.js</caption>
+ * region_tag:datalabeling_resume_evaluation_job_sample
+ *
  */
   resumeEvaluationJob(
       request?: protos.google.cloud.datalabeling.v1beta1.IResumeEvaluationJobRequest,
@@ -1769,6 +1841,10 @@ export class DataLabelingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteEvaluationJob(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.delete_evaluation_job.js</caption>
+ * region_tag:datalabeling_delete_evaluation_job_sample
+ *
  */
   deleteEvaluationJob(
       request?: protos.google.cloud.datalabeling.v1beta1.IDeleteEvaluationJobRequest,
@@ -1854,6 +1930,10 @@ export class DataLabelingServiceClient {
  * @example
  * const [operation] = await client.importData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.import_data.js</caption>
+ * region_tag:datalabeling_import_data_sample
+ *
  */
   importData(
       request?: protos.google.cloud.datalabeling.v1beta1.IImportDataRequest,
@@ -1903,6 +1983,10 @@ export class DataLabelingServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.import_data.js</caption>
+ * region_tag:datalabeling_import_data_sample
+ *
  */
   async checkImportDataProgress(name: string): Promise<LROperation<protos.google.cloud.datalabeling.v1beta1.ImportDataOperationResponse, protos.google.cloud.datalabeling.v1beta1.ImportDataOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1963,6 +2047,10 @@ export class DataLabelingServiceClient {
  * @example
  * const [operation] = await client.exportData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.export_data.js</caption>
+ * region_tag:datalabeling_export_data_sample
+ *
  */
   exportData(
       request?: protos.google.cloud.datalabeling.v1beta1.IExportDataRequest,
@@ -2012,6 +2100,10 @@ export class DataLabelingServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.export_data.js</caption>
+ * region_tag:datalabeling_export_data_sample
+ *
  */
   async checkExportDataProgress(name: string): Promise<LROperation<protos.google.cloud.datalabeling.v1beta1.ExportDataOperationResponse, protos.google.cloud.datalabeling.v1beta1.ExportDataOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2080,6 +2172,10 @@ export class DataLabelingServiceClient {
  * @example
  * const [operation] = await client.labelImage(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.label_image.js</caption>
+ * region_tag:datalabeling_label_image_sample
+ *
  */
   labelImage(
       request?: protos.google.cloud.datalabeling.v1beta1.ILabelImageRequest,
@@ -2129,6 +2225,10 @@ export class DataLabelingServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.label_image.js</caption>
+ * region_tag:datalabeling_label_image_sample
+ *
  */
   async checkLabelImageProgress(name: string): Promise<LROperation<protos.google.cloud.datalabeling.v1beta1.AnnotatedDataset, protos.google.cloud.datalabeling.v1beta1.LabelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2197,6 +2297,10 @@ export class DataLabelingServiceClient {
  * @example
  * const [operation] = await client.labelVideo(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.label_video.js</caption>
+ * region_tag:datalabeling_label_video_sample
+ *
  */
   labelVideo(
       request?: protos.google.cloud.datalabeling.v1beta1.ILabelVideoRequest,
@@ -2246,6 +2350,10 @@ export class DataLabelingServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.label_video.js</caption>
+ * region_tag:datalabeling_label_video_sample
+ *
  */
   async checkLabelVideoProgress(name: string): Promise<LROperation<protos.google.cloud.datalabeling.v1beta1.AnnotatedDataset, protos.google.cloud.datalabeling.v1beta1.LabelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2306,6 +2414,10 @@ export class DataLabelingServiceClient {
  * @example
  * const [operation] = await client.labelText(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.label_text.js</caption>
+ * region_tag:datalabeling_label_text_sample
+ *
  */
   labelText(
       request?: protos.google.cloud.datalabeling.v1beta1.ILabelTextRequest,
@@ -2355,6 +2467,10 @@ export class DataLabelingServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.label_text.js</caption>
+ * region_tag:datalabeling_label_text_sample
+ *
  */
   async checkLabelTextProgress(name: string): Promise<LROperation<protos.google.cloud.datalabeling.v1beta1.AnnotatedDataset, protos.google.cloud.datalabeling.v1beta1.LabelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2404,6 +2520,10 @@ export class DataLabelingServiceClient {
  * @example
  * const [operation] = await client.createInstruction(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.create_instruction.js</caption>
+ * region_tag:datalabeling_create_instruction_sample
+ *
  */
   createInstruction(
       request?: protos.google.cloud.datalabeling.v1beta1.ICreateInstructionRequest,
@@ -2453,6 +2573,10 @@ export class DataLabelingServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.create_instruction.js</caption>
+ * region_tag:datalabeling_create_instruction_sample
+ *
  */
   async checkCreateInstructionProgress(name: string): Promise<LROperation<protos.google.cloud.datalabeling.v1beta1.Instruction, protos.google.cloud.datalabeling.v1beta1.CreateInstructionMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2512,6 +2636,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_datasets.js</caption>
+ * region_tag:datalabeling_list_datasets_sample
+ *
  */
   listDatasets(
       request?: protos.google.cloud.datalabeling.v1beta1.IListDatasetsRequest,
@@ -2578,6 +2706,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_datasets.js</caption>
+ * region_tag:datalabeling_list_datasets_sample
+ *
  */
   listDatasetsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListDatasetsRequest,
@@ -2592,7 +2724,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDatasets.createStream(
       this.innerApiCalls.listDatasets as gax.GaxCall,
@@ -2636,6 +2769,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_datasets.js</caption>
+ * region_tag:datalabeling_list_datasets_sample
+ *
  */
   listDatasetsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListDatasetsRequest,
@@ -2651,7 +2788,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDatasets.asyncIterate(
       this.innerApiCalls['listDatasets'] as GaxCall,
@@ -2712,6 +2850,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_data_items.js</caption>
+ * region_tag:datalabeling_list_data_items_sample
+ *
  */
   listDataItems(
       request?: protos.google.cloud.datalabeling.v1beta1.IListDataItemsRequest,
@@ -2778,6 +2920,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_data_items.js</caption>
+ * region_tag:datalabeling_list_data_items_sample
+ *
  */
   listDataItemsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListDataItemsRequest,
@@ -2792,7 +2938,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDataItems'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDataItems.createStream(
       this.innerApiCalls.listDataItems as gax.GaxCall,
@@ -2836,6 +2983,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_data_items.js</caption>
+ * region_tag:datalabeling_list_data_items_sample
+ *
  */
   listDataItemsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListDataItemsRequest,
@@ -2851,7 +3002,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDataItems'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDataItems.asyncIterate(
       this.innerApiCalls['listDataItems'] as GaxCall,
@@ -2911,6 +3063,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_annotated_datasets.js</caption>
+ * region_tag:datalabeling_list_annotated_datasets_sample
+ *
  */
   listAnnotatedDatasets(
       request?: protos.google.cloud.datalabeling.v1beta1.IListAnnotatedDatasetsRequest,
@@ -2977,6 +3133,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_annotated_datasets.js</caption>
+ * region_tag:datalabeling_list_annotated_datasets_sample
+ *
  */
   listAnnotatedDatasetsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListAnnotatedDatasetsRequest,
@@ -2991,7 +3151,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAnnotatedDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAnnotatedDatasets.createStream(
       this.innerApiCalls.listAnnotatedDatasets as gax.GaxCall,
@@ -3035,6 +3196,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_annotated_datasets.js</caption>
+ * region_tag:datalabeling_list_annotated_datasets_sample
+ *
  */
   listAnnotatedDatasetsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListAnnotatedDatasetsRequest,
@@ -3050,7 +3215,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAnnotatedDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAnnotatedDatasets.asyncIterate(
       this.innerApiCalls['listAnnotatedDatasets'] as GaxCall,
@@ -3112,6 +3278,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_examples.js</caption>
+ * region_tag:datalabeling_list_examples_sample
+ *
  */
   listExamples(
       request?: protos.google.cloud.datalabeling.v1beta1.IListExamplesRequest,
@@ -3180,6 +3350,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_examples.js</caption>
+ * region_tag:datalabeling_list_examples_sample
+ *
  */
   listExamplesStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListExamplesRequest,
@@ -3194,7 +3368,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listExamples'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listExamples.createStream(
       this.innerApiCalls.listExamples as gax.GaxCall,
@@ -3240,6 +3415,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_examples.js</caption>
+ * region_tag:datalabeling_list_examples_sample
+ *
  */
   listExamplesAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListExamplesRequest,
@@ -3255,7 +3434,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listExamples'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listExamples.asyncIterate(
       this.innerApiCalls['listExamples'] as GaxCall,
@@ -3315,6 +3495,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_annotation_spec_sets.js</caption>
+ * region_tag:datalabeling_list_annotation_spec_sets_sample
+ *
  */
   listAnnotationSpecSets(
       request?: protos.google.cloud.datalabeling.v1beta1.IListAnnotationSpecSetsRequest,
@@ -3381,6 +3565,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_annotation_spec_sets.js</caption>
+ * region_tag:datalabeling_list_annotation_spec_sets_sample
+ *
  */
   listAnnotationSpecSetsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListAnnotationSpecSetsRequest,
@@ -3395,7 +3583,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAnnotationSpecSets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAnnotationSpecSets.createStream(
       this.innerApiCalls.listAnnotationSpecSets as gax.GaxCall,
@@ -3439,6 +3628,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_annotation_spec_sets.js</caption>
+ * region_tag:datalabeling_list_annotation_spec_sets_sample
+ *
  */
   listAnnotationSpecSetsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListAnnotationSpecSetsRequest,
@@ -3454,7 +3647,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAnnotationSpecSets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAnnotationSpecSets.asyncIterate(
       this.innerApiCalls['listAnnotationSpecSets'] as GaxCall,
@@ -3514,6 +3708,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_instructions.js</caption>
+ * region_tag:datalabeling_list_instructions_sample
+ *
  */
   listInstructions(
       request?: protos.google.cloud.datalabeling.v1beta1.IListInstructionsRequest,
@@ -3580,6 +3778,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_instructions.js</caption>
+ * region_tag:datalabeling_list_instructions_sample
+ *
  */
   listInstructionsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListInstructionsRequest,
@@ -3594,7 +3796,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInstructions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInstructions.createStream(
       this.innerApiCalls.listInstructions as gax.GaxCall,
@@ -3638,6 +3841,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_instructions.js</caption>
+ * region_tag:datalabeling_list_instructions_sample
+ *
  */
   listInstructionsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListInstructionsRequest,
@@ -3653,7 +3860,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listInstructions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listInstructions.asyncIterate(
       this.innerApiCalls['listInstructions'] as GaxCall,
@@ -3745,6 +3953,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.search_evaluations.js</caption>
+ * region_tag:datalabeling_search_evaluations_sample
+ *
  */
   searchEvaluations(
       request?: protos.google.cloud.datalabeling.v1beta1.ISearchEvaluationsRequest,
@@ -3843,6 +4055,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.search_evaluations.js</caption>
+ * region_tag:datalabeling_search_evaluations_sample
+ *
  */
   searchEvaluationsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.ISearchEvaluationsRequest,
@@ -3857,7 +4073,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchEvaluations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchEvaluations.createStream(
       this.innerApiCalls.searchEvaluations as gax.GaxCall,
@@ -3933,6 +4150,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.search_evaluations.js</caption>
+ * region_tag:datalabeling_search_evaluations_sample
+ *
  */
   searchEvaluationsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.ISearchEvaluationsRequest,
@@ -3948,7 +4169,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchEvaluations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchEvaluations.asyncIterate(
       this.innerApiCalls['searchEvaluations'] as GaxCall,
@@ -4012,6 +4234,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.search_example_comparisons.js</caption>
+ * region_tag:datalabeling_search_example_comparisons_sample
+ *
  */
   searchExampleComparisons(
       request?: protos.google.cloud.datalabeling.v1beta1.ISearchExampleComparisonsRequest,
@@ -4080,6 +4306,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.search_example_comparisons.js</caption>
+ * region_tag:datalabeling_search_example_comparisons_sample
+ *
  */
   searchExampleComparisonsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.ISearchExampleComparisonsRequest,
@@ -4094,7 +4324,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchExampleComparisons'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchExampleComparisons.createStream(
       this.innerApiCalls.searchExampleComparisons as gax.GaxCall,
@@ -4140,6 +4371,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.search_example_comparisons.js</caption>
+ * region_tag:datalabeling_search_example_comparisons_sample
+ *
  */
   searchExampleComparisonsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.ISearchExampleComparisonsRequest,
@@ -4155,7 +4390,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['searchExampleComparisons'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.searchExampleComparisons.asyncIterate(
       this.innerApiCalls['searchExampleComparisons'] as GaxCall,
@@ -4223,6 +4459,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_evaluation_jobs.js</caption>
+ * region_tag:datalabeling_list_evaluation_jobs_sample
+ *
  */
   listEvaluationJobs(
       request?: protos.google.cloud.datalabeling.v1beta1.IListEvaluationJobsRequest,
@@ -4296,6 +4536,10 @@ export class DataLabelingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_evaluation_jobs.js</caption>
+ * region_tag:datalabeling_list_evaluation_jobs_sample
+ *
  */
   listEvaluationJobsStream(
       request?: protos.google.cloud.datalabeling.v1beta1.IListEvaluationJobsRequest,
@@ -4310,7 +4554,8 @@ export class DataLabelingServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEvaluationJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEvaluationJobs.createStream(
       this.innerApiCalls.listEvaluationJobs as gax.GaxCall,
@@ -4361,6 +4606,10 @@ export class DataLabelingServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/data_labeling_service.list_evaluation_jobs.js</caption>
+ * region_tag:datalabeling_list_evaluation_jobs_sample
+ *
  */
   listEvaluationJobsAsync(
       request?: protos.google.cloud.datalabeling.v1beta1.IListEvaluationJobsRequest,
@@ -4376,7 +4625,8 @@ export class DataLabelingServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEvaluationJobs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEvaluationJobs.asyncIterate(
       this.innerApiCalls['listEvaluationJobs'] as GaxCall,

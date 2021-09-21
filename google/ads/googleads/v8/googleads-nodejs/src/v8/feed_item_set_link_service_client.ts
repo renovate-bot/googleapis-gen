@@ -720,6 +720,10 @@ export class FeedItemSetLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeedItemSetLink(request);
+ *
+ * @example <caption>include:samples/generated/v8/feed_item_set_link_service.get_feed_item_set_link.js</caption>
+ * region_tag:googleads_get_feed_item_set_link_sample
+ *
  */
   getFeedItemSetLink(
       request?: protos.google.ads.googleads.v8.services.IGetFeedItemSetLinkRequest,
@@ -809,6 +813,10 @@ export class FeedItemSetLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateFeedItemSetLinks(request);
+ *
+ * @example <caption>include:samples/generated/v8/feed_item_set_link_service.mutate_feed_item_set_links.js</caption>
+ * region_tag:googleads_mutate_feed_item_set_links_sample
+ *
  */
   mutateFeedItemSetLinks(
       request?: protos.google.ads.googleads.v8.services.IMutateFeedItemSetLinksRequest,

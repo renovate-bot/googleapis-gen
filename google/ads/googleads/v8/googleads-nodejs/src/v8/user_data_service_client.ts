@@ -730,6 +730,10 @@ export class UserDataServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.uploadUserData(request);
+ *
+ * @example <caption>include:samples/generated/v8/user_data_service.upload_user_data.js</caption>
+ * region_tag:googleads_upload_user_data_sample
+ *
  */
   uploadUserData(
       request?: protos.google.ads.googleads.v8.services.IUploadUserDataRequest,

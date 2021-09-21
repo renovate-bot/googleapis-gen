@@ -377,6 +377,10 @@ export class VersionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVersion(request);
+ *
+ * @example <caption>include:samples/generated/v1/versions.get_version.js</caption>
+ * region_tag:appengine_get_version_sample
+ *
  */
   getVersion(
       request?: protos.google.appengine.v1.IGetVersionRequest,
@@ -455,6 +459,10 @@ export class VersionsClient {
  * @example
  * const [operation] = await client.createVersion(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/versions.create_version.js</caption>
+ * region_tag:appengine_create_version_sample
+ *
  */
   createVersion(
       request?: protos.google.appengine.v1.ICreateVersionRequest,
@@ -504,6 +512,10 @@ export class VersionsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/versions.create_version.js</caption>
+ * region_tag:appengine_create_version_sample
+ *
  */
   async checkCreateVersionProgress(name: string): Promise<LROperation<protos.google.appengine.v1.Version, protos.google.appengine.v1.CreateVersionMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -591,6 +603,10 @@ export class VersionsClient {
  * @example
  * const [operation] = await client.updateVersion(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/versions.update_version.js</caption>
+ * region_tag:appengine_update_version_sample
+ *
  */
   updateVersion(
       request?: protos.google.appengine.v1.IUpdateVersionRequest,
@@ -640,6 +656,10 @@ export class VersionsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/versions.update_version.js</caption>
+ * region_tag:appengine_update_version_sample
+ *
  */
   async checkUpdateVersionProgress(name: string): Promise<LROperation<protos.google.appengine.v1.Version, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -687,6 +707,10 @@ export class VersionsClient {
  * @example
  * const [operation] = await client.deleteVersion(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/versions.delete_version.js</caption>
+ * region_tag:appengine_delete_version_sample
+ *
  */
   deleteVersion(
       request?: protos.google.appengine.v1.IDeleteVersionRequest,
@@ -736,6 +760,10 @@ export class VersionsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/versions.delete_version.js</caption>
+ * region_tag:appengine_delete_version_sample
+ *
  */
   async checkDeleteVersionProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -790,6 +818,10 @@ export class VersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/versions.list_versions.js</caption>
+ * region_tag:appengine_list_versions_sample
+ *
  */
   listVersions(
       request?: protos.google.appengine.v1.IListVersionsRequest,
@@ -851,6 +883,10 @@ export class VersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/versions.list_versions.js</caption>
+ * region_tag:appengine_list_versions_sample
+ *
  */
   listVersionsStream(
       request?: protos.google.appengine.v1.IListVersionsRequest,
@@ -865,7 +901,8 @@ export class VersionsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listVersions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listVersions.createStream(
       this.innerApiCalls.listVersions as gax.GaxCall,
@@ -904,6 +941,10 @@ export class VersionsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/versions.list_versions.js</caption>
+ * region_tag:appengine_list_versions_sample
+ *
  */
   listVersionsAsync(
       request?: protos.google.appengine.v1.IListVersionsRequest,
@@ -919,7 +960,8 @@ export class VersionsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listVersions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listVersions.asyncIterate(
       this.innerApiCalls['listVersions'] as GaxCall,

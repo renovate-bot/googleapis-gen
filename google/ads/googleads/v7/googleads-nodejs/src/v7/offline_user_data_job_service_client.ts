@@ -723,6 +723,10 @@ export class OfflineUserDataJobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createOfflineUserDataJob(request);
+ *
+ * @example <caption>include:samples/generated/v7/offline_user_data_job_service.create_offline_user_data_job.js</caption>
+ * region_tag:googleads_create_offline_user_data_job_sample
+ *
  */
   createOfflineUserDataJob(
       request?: protos.google.ads.googleads.v7.services.ICreateOfflineUserDataJobRequest,
@@ -802,6 +806,10 @@ export class OfflineUserDataJobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOfflineUserDataJob(request);
+ *
+ * @example <caption>include:samples/generated/v7/offline_user_data_job_service.get_offline_user_data_job.js</caption>
+ * region_tag:googleads_get_offline_user_data_job_sample
+ *
  */
   getOfflineUserDataJob(
       request?: protos.google.ads.googleads.v7.services.IGetOfflineUserDataJobRequest,
@@ -892,6 +900,10 @@ export class OfflineUserDataJobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.addOfflineUserDataJobOperations(request);
+ *
+ * @example <caption>include:samples/generated/v7/offline_user_data_job_service.add_offline_user_data_job_operations.js</caption>
+ * region_tag:googleads_add_offline_user_data_job_operations_sample
+ *
  */
   addOfflineUserDataJobOperations(
       request?: protos.google.ads.googleads.v7.services.IAddOfflineUserDataJobOperationsRequest,
@@ -983,6 +995,10 @@ export class OfflineUserDataJobServiceClient {
  * @example
  * const [operation] = await client.runOfflineUserDataJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v7/offline_user_data_job_service.run_offline_user_data_job.js</caption>
+ * region_tag:googleads_run_offline_user_data_job_sample
+ *
  */
   runOfflineUserDataJob(
       request?: protos.google.ads.googleads.v7.services.IRunOfflineUserDataJobRequest,
@@ -1032,6 +1048,10 @@ export class OfflineUserDataJobServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v7/offline_user_data_job_service.run_offline_user_data_job.js</caption>
+ * region_tag:googleads_run_offline_user_data_job_sample
+ *
  */
   async checkRunOfflineUserDataJobProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

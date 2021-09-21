@@ -712,6 +712,10 @@ export class BiddingSeasonalityAdjustmentServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBiddingSeasonalityAdjustment(request);
+ *
+ * @example <caption>include:samples/generated/v8/bidding_seasonality_adjustment_service.get_bidding_seasonality_adjustment.js</caption>
+ * region_tag:googleads_get_bidding_seasonality_adjustment_sample
+ *
  */
   getBiddingSeasonalityAdjustment(
       request?: protos.google.ads.googleads.v8.services.IGetBiddingSeasonalityAdjustmentRequest,
@@ -797,6 +801,10 @@ export class BiddingSeasonalityAdjustmentServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateBiddingSeasonalityAdjustments(request);
+ *
+ * @example <caption>include:samples/generated/v8/bidding_seasonality_adjustment_service.mutate_bidding_seasonality_adjustments.js</caption>
+ * region_tag:googleads_mutate_bidding_seasonality_adjustments_sample
+ *
  */
   mutateBiddingSeasonalityAdjustments(
       request?: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,

@@ -401,6 +401,10 @@ export class PublisherClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/publisher.create_topic.js</caption>
+ * region_tag:pubsub_create_topic_sample
+ *
  */
   createTopic(
       request?: protos.google.pubsub.v1.ITopic,
@@ -479,6 +483,10 @@ export class PublisherClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/publisher.update_topic.js</caption>
+ * region_tag:pubsub_update_topic_sample
+ *
  */
   updateTopic(
       request?: protos.google.pubsub.v1.IUpdateTopicRequest,
@@ -554,6 +562,10 @@ export class PublisherClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.publish(request);
+ *
+ * @example <caption>include:samples/generated/v1/publisher.publish.js</caption>
+ * region_tag:pubsub_publish_sample
+ *
  */
   publish(
       request?: protos.google.pubsub.v1.IPublishRequest,
@@ -626,6 +638,10 @@ export class PublisherClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/publisher.get_topic.js</caption>
+ * region_tag:pubsub_get_topic_sample
+ *
  */
   getTopic(
       request?: protos.google.pubsub.v1.IGetTopicRequest,
@@ -702,6 +718,10 @@ export class PublisherClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteTopic(request);
+ *
+ * @example <caption>include:samples/generated/v1/publisher.delete_topic.js</caption>
+ * region_tag:pubsub_delete_topic_sample
+ *
  */
   deleteTopic(
       request?: protos.google.pubsub.v1.IDeleteTopicRequest,
@@ -777,6 +797,10 @@ export class PublisherClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.detachSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/publisher.detach_subscription.js</caption>
+ * region_tag:pubsub_detach_subscription_sample
+ *
  */
   detachSubscription(
       request?: protos.google.pubsub.v1.IDetachSubscriptionRequest,
@@ -860,6 +884,10 @@ export class PublisherClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topics.js</caption>
+ * region_tag:pubsub_list_topics_sample
+ *
  */
   listTopics(
       request?: protos.google.pubsub.v1.IListTopicsRequest,
@@ -921,6 +949,10 @@ export class PublisherClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topics.js</caption>
+ * region_tag:pubsub_list_topics_sample
+ *
  */
   listTopicsStream(
       request?: protos.google.pubsub.v1.IListTopicsRequest,
@@ -935,7 +967,8 @@ export class PublisherClient {
     ] = gax.routingHeader.fromParams({
       'project': request.project || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopics'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopics.createStream(
       this.innerApiCalls.listTopics as gax.GaxCall,
@@ -974,6 +1007,10 @@ export class PublisherClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topics.js</caption>
+ * region_tag:pubsub_list_topics_sample
+ *
  */
   listTopicsAsync(
       request?: protos.google.pubsub.v1.IListTopicsRequest,
@@ -989,7 +1026,8 @@ export class PublisherClient {
       'project': request.project || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopics'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopics.asyncIterate(
       this.innerApiCalls['listTopics'] as GaxCall,
@@ -1044,6 +1082,10 @@ export class PublisherClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topic_subscriptions.js</caption>
+ * region_tag:pubsub_list_topic_subscriptions_sample
+ *
  */
   listTopicSubscriptions(
       request?: protos.google.pubsub.v1.IListTopicSubscriptionsRequest,
@@ -1105,6 +1147,10 @@ export class PublisherClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topic_subscriptions.js</caption>
+ * region_tag:pubsub_list_topic_subscriptions_sample
+ *
  */
   listTopicSubscriptionsStream(
       request?: protos.google.pubsub.v1.IListTopicSubscriptionsRequest,
@@ -1119,7 +1165,8 @@ export class PublisherClient {
     ] = gax.routingHeader.fromParams({
       'topic': request.topic || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopicSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopicSubscriptions.createStream(
       this.innerApiCalls.listTopicSubscriptions as gax.GaxCall,
@@ -1158,6 +1205,10 @@ export class PublisherClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topic_subscriptions.js</caption>
+ * region_tag:pubsub_list_topic_subscriptions_sample
+ *
  */
   listTopicSubscriptionsAsync(
       request?: protos.google.pubsub.v1.IListTopicSubscriptionsRequest,
@@ -1173,7 +1224,8 @@ export class PublisherClient {
       'topic': request.topic || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopicSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopicSubscriptions.asyncIterate(
       this.innerApiCalls['listTopicSubscriptions'] as GaxCall,
@@ -1232,6 +1284,10 @@ export class PublisherClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topic_snapshots.js</caption>
+ * region_tag:pubsub_list_topic_snapshots_sample
+ *
  */
   listTopicSnapshots(
       request?: protos.google.pubsub.v1.IListTopicSnapshotsRequest,
@@ -1293,6 +1349,10 @@ export class PublisherClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topic_snapshots.js</caption>
+ * region_tag:pubsub_list_topic_snapshots_sample
+ *
  */
   listTopicSnapshotsStream(
       request?: protos.google.pubsub.v1.IListTopicSnapshotsRequest,
@@ -1307,7 +1367,8 @@ export class PublisherClient {
     ] = gax.routingHeader.fromParams({
       'topic': request.topic || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopicSnapshots'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopicSnapshots.createStream(
       this.innerApiCalls.listTopicSnapshots as gax.GaxCall,
@@ -1346,6 +1407,10 @@ export class PublisherClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/publisher.list_topic_snapshots.js</caption>
+ * region_tag:pubsub_list_topic_snapshots_sample
+ *
  */
   listTopicSnapshotsAsync(
       request?: protos.google.pubsub.v1.IListTopicSnapshotsRequest,
@@ -1361,7 +1426,8 @@ export class PublisherClient {
       'topic': request.topic || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTopicSnapshots'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTopicSnapshots.asyncIterate(
       this.innerApiCalls['listTopicSnapshots'] as GaxCall,

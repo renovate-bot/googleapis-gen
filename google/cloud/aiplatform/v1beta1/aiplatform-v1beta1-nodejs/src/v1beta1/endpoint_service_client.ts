@@ -476,6 +476,10 @@ export class EndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEndpoint(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.get_endpoint.js</caption>
+ * region_tag:aiplatform_get_endpoint_sample
+ *
  */
   getEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetEndpointRequest,
@@ -549,6 +553,10 @@ export class EndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateEndpoint(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.update_endpoint.js</caption>
+ * region_tag:aiplatform_update_endpoint_sample
+ *
  */
   updateEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateEndpointRequest,
@@ -627,6 +635,10 @@ export class EndpointServiceClient {
  * @example
  * const [operation] = await client.createEndpoint(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.create_endpoint.js</caption>
+ * region_tag:aiplatform_create_endpoint_sample
+ *
  */
   createEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateEndpointRequest,
@@ -676,6 +688,10 @@ export class EndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.create_endpoint.js</caption>
+ * region_tag:aiplatform_create_endpoint_sample
+ *
  */
   async checkCreateEndpointProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.Endpoint, protos.google.cloud.aiplatform.v1beta1.CreateEndpointOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -724,6 +740,10 @@ export class EndpointServiceClient {
  * @example
  * const [operation] = await client.deleteEndpoint(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.delete_endpoint.js</caption>
+ * region_tag:aiplatform_delete_endpoint_sample
+ *
  */
   deleteEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteEndpointRequest,
@@ -773,6 +793,10 @@ export class EndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.delete_endpoint.js</caption>
+ * region_tag:aiplatform_delete_endpoint_sample
+ *
  */
   async checkDeleteEndpointProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -838,6 +862,10 @@ export class EndpointServiceClient {
  * @example
  * const [operation] = await client.deployModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.deploy_model.js</caption>
+ * region_tag:aiplatform_deploy_model_sample
+ *
  */
   deployModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeployModelRequest,
@@ -887,6 +915,10 @@ export class EndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.deploy_model.js</caption>
+ * region_tag:aiplatform_deploy_model_sample
+ *
  */
   async checkDeployModelProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.DeployModelResponse, protos.google.cloud.aiplatform.v1beta1.DeployModelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -946,6 +978,10 @@ export class EndpointServiceClient {
  * @example
  * const [operation] = await client.undeployModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.undeploy_model.js</caption>
+ * region_tag:aiplatform_undeploy_model_sample
+ *
  */
   undeployModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IUndeployModelRequest,
@@ -995,6 +1031,10 @@ export class EndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.undeploy_model.js</caption>
+ * region_tag:aiplatform_undeploy_model_sample
+ *
  */
   async checkUndeployModelProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.UndeployModelResponse, protos.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1068,6 +1108,10 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.list_endpoints.js</caption>
+ * region_tag:aiplatform_list_endpoints_sample
+ *
  */
   listEndpoints(
       request?: protos.google.cloud.aiplatform.v1beta1.IListEndpointsRequest,
@@ -1148,6 +1192,10 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.list_endpoints.js</caption>
+ * region_tag:aiplatform_list_endpoints_sample
+ *
  */
   listEndpointsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListEndpointsRequest,
@@ -1162,7 +1210,8 @@ export class EndpointServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEndpoints'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEndpoints.createStream(
       this.innerApiCalls.listEndpoints as gax.GaxCall,
@@ -1220,6 +1269,10 @@ export class EndpointServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta1/endpoint_service.list_endpoints.js</caption>
+ * region_tag:aiplatform_list_endpoints_sample
+ *
  */
   listEndpointsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListEndpointsRequest,
@@ -1235,7 +1288,8 @@ export class EndpointServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listEndpoints'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listEndpoints.asyncIterate(
       this.innerApiCalls['listEndpoints'] as GaxCall,

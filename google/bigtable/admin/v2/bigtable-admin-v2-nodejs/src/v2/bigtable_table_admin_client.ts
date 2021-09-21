@@ -432,6 +432,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTable(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.create_table.js</caption>
+ * region_tag:admin_create_table_sample
+ *
  */
   createTable(
       request?: protos.google.bigtable.admin.v2.ICreateTableRequest,
@@ -508,6 +512,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTable(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.get_table.js</caption>
+ * region_tag:admin_get_table_sample
+ *
  */
   getTable(
       request?: protos.google.bigtable.admin.v2.IGetTableRequest,
@@ -581,6 +589,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteTable(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.delete_table.js</caption>
+ * region_tag:admin_delete_table_sample
+ *
  */
   deleteTable(
       request?: protos.google.bigtable.admin.v2.IDeleteTableRequest,
@@ -662,6 +674,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.modifyColumnFamilies(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.modify_column_families.js</caption>
+ * region_tag:admin_modify_column_families_sample
+ *
  */
   modifyColumnFamilies(
       request?: protos.google.bigtable.admin.v2.IModifyColumnFamiliesRequest,
@@ -742,6 +758,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.dropRowRange(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.drop_row_range.js</caption>
+ * region_tag:admin_drop_row_range_sample
+ *
  */
   dropRowRange(
       request?: protos.google.bigtable.admin.v2.IDropRowRangeRequest,
@@ -818,6 +838,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateConsistencyToken(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.generate_consistency_token.js</caption>
+ * region_tag:admin_generate_consistency_token_sample
+ *
  */
   generateConsistencyToken(
       request?: protos.google.bigtable.admin.v2.IGenerateConsistencyTokenRequest,
@@ -895,6 +919,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.checkConsistency(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.check_consistency.js</caption>
+ * region_tag:admin_check_consistency_sample
+ *
  */
   checkConsistency(
       request?: protos.google.bigtable.admin.v2.ICheckConsistencyRequest,
@@ -974,6 +1002,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSnapshot(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.get_snapshot.js</caption>
+ * region_tag:admin_get_snapshot_sample
+ *
  */
   getSnapshot(
       request?: protos.google.bigtable.admin.v2.IGetSnapshotRequest,
@@ -1053,6 +1085,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSnapshot(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.delete_snapshot.js</caption>
+ * region_tag:admin_delete_snapshot_sample
+ *
  */
   deleteSnapshot(
       request?: protos.google.bigtable.admin.v2.IDeleteSnapshotRequest,
@@ -1126,6 +1162,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBackup(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.get_backup.js</caption>
+ * region_tag:admin_get_backup_sample
+ *
  */
   getBackup(
       request?: protos.google.bigtable.admin.v2.IGetBackupRequest,
@@ -1206,6 +1246,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBackup(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.update_backup.js</caption>
+ * region_tag:admin_update_backup_sample
+ *
  */
   updateBackup(
       request?: protos.google.bigtable.admin.v2.IUpdateBackupRequest,
@@ -1279,6 +1323,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBackup(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.delete_backup.js</caption>
+ * region_tag:admin_delete_backup_sample
+ *
  */
   deleteBackup(
       request?: protos.google.bigtable.admin.v2.IDeleteBackupRequest,
@@ -1356,6 +1404,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.get_iam_policy.js</caption>
+ * region_tag:admin_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -1434,6 +1486,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.set_iam_policy.js</caption>
+ * region_tag:admin_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -1511,6 +1567,10 @@ export class BigtableTableAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.test_iam_permissions.js</caption>
+ * region_tag:admin_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -1602,6 +1662,10 @@ export class BigtableTableAdminClient {
  * @example
  * const [operation] = await client.createTableFromSnapshot(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.create_table_from_snapshot.js</caption>
+ * region_tag:admin_create_table_from_snapshot_sample
+ *
  */
   createTableFromSnapshot(
       request?: protos.google.bigtable.admin.v2.ICreateTableFromSnapshotRequest,
@@ -1651,6 +1715,10 @@ export class BigtableTableAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.create_table_from_snapshot.js</caption>
+ * region_tag:admin_create_table_from_snapshot_sample
+ *
  */
   async checkCreateTableFromSnapshotProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Table, protos.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1722,6 +1790,10 @@ export class BigtableTableAdminClient {
  * @example
  * const [operation] = await client.snapshotTable(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.snapshot_table.js</caption>
+ * region_tag:admin_snapshot_table_sample
+ *
  */
   snapshotTable(
       request?: protos.google.bigtable.admin.v2.ISnapshotTableRequest,
@@ -1771,6 +1843,10 @@ export class BigtableTableAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.snapshot_table.js</caption>
+ * region_tag:admin_snapshot_table_sample
+ *
  */
   async checkSnapshotTableProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Snapshot, protos.google.bigtable.admin.v2.SnapshotTableMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1835,6 +1911,10 @@ export class BigtableTableAdminClient {
  * @example
  * const [operation] = await client.createBackup(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.create_backup.js</caption>
+ * region_tag:admin_create_backup_sample
+ *
  */
   createBackup(
       request?: protos.google.bigtable.admin.v2.ICreateBackupRequest,
@@ -1884,6 +1964,10 @@ export class BigtableTableAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.create_backup.js</caption>
+ * region_tag:admin_create_backup_sample
+ *
  */
   async checkCreateBackupProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Backup, protos.google.bigtable.admin.v2.CreateBackupMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1947,6 +2031,10 @@ export class BigtableTableAdminClient {
  * @example
  * const [operation] = await client.restoreTable(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.restore_table.js</caption>
+ * region_tag:admin_restore_table_sample
+ *
  */
   restoreTable(
       request?: protos.google.bigtable.admin.v2.IRestoreTableRequest,
@@ -1996,6 +2084,10 @@ export class BigtableTableAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.restore_table.js</caption>
+ * region_tag:admin_restore_table_sample
+ *
  */
   async checkRestoreTableProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Table, protos.google.bigtable.admin.v2.RestoreTableMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2059,6 +2151,10 @@ export class BigtableTableAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_tables.js</caption>
+ * region_tag:admin_list_tables_sample
+ *
  */
   listTables(
       request?: protos.google.bigtable.admin.v2.IListTablesRequest,
@@ -2129,6 +2225,10 @@ export class BigtableTableAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_tables.js</caption>
+ * region_tag:admin_list_tables_sample
+ *
  */
   listTablesStream(
       request?: protos.google.bigtable.admin.v2.IListTablesRequest,
@@ -2143,7 +2243,8 @@ export class BigtableTableAdminClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTables'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTables.createStream(
       this.innerApiCalls.listTables as gax.GaxCall,
@@ -2191,6 +2292,10 @@ export class BigtableTableAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_tables.js</caption>
+ * region_tag:admin_list_tables_sample
+ *
  */
   listTablesAsync(
       request?: protos.google.bigtable.admin.v2.IListTablesRequest,
@@ -2206,7 +2311,8 @@ export class BigtableTableAdminClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTables'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTables.asyncIterate(
       this.innerApiCalls['listTables'] as GaxCall,
@@ -2269,6 +2375,10 @@ export class BigtableTableAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_snapshots.js</caption>
+ * region_tag:admin_list_snapshots_sample
+ *
  */
   listSnapshots(
       request?: protos.google.bigtable.admin.v2.IListSnapshotsRequest,
@@ -2332,6 +2442,10 @@ export class BigtableTableAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_snapshots.js</caption>
+ * region_tag:admin_list_snapshots_sample
+ *
  */
   listSnapshotsStream(
       request?: protos.google.bigtable.admin.v2.IListSnapshotsRequest,
@@ -2346,7 +2460,8 @@ export class BigtableTableAdminClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSnapshots'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSnapshots.createStream(
       this.innerApiCalls.listSnapshots as gax.GaxCall,
@@ -2387,6 +2502,10 @@ export class BigtableTableAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_snapshots.js</caption>
+ * region_tag:admin_list_snapshots_sample
+ *
  */
   listSnapshotsAsync(
       request?: protos.google.bigtable.admin.v2.IListSnapshotsRequest,
@@ -2402,7 +2521,8 @@ export class BigtableTableAdminClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSnapshots'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSnapshots.asyncIterate(
       this.innerApiCalls['listSnapshots'] as GaxCall,
@@ -2516,6 +2636,10 @@ export class BigtableTableAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_backups.js</caption>
+ * region_tag:admin_list_backups_sample
+ *
  */
   listBackups(
       request?: protos.google.bigtable.admin.v2.IListBackupsRequest,
@@ -2635,6 +2759,10 @@ export class BigtableTableAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_backups.js</caption>
+ * region_tag:admin_list_backups_sample
+ *
  */
   listBackupsStream(
       request?: protos.google.bigtable.admin.v2.IListBackupsRequest,
@@ -2649,7 +2777,8 @@ export class BigtableTableAdminClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBackups'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBackups.createStream(
       this.innerApiCalls.listBackups as gax.GaxCall,
@@ -2746,6 +2875,10 @@ export class BigtableTableAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_table_admin.list_backups.js</caption>
+ * region_tag:admin_list_backups_sample
+ *
  */
   listBackupsAsync(
       request?: protos.google.bigtable.admin.v2.IListBackupsRequest,
@@ -2761,7 +2894,8 @@ export class BigtableTableAdminClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBackups'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBackups.asyncIterate(
       this.innerApiCalls['listBackups'] as GaxCall,

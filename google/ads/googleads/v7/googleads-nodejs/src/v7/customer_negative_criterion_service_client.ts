@@ -690,6 +690,10 @@ export class CustomerNegativeCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerNegativeCriterion(request);
+ *
+ * @example <caption>include:samples/generated/v7/customer_negative_criterion_service.get_customer_negative_criterion.js</caption>
+ * region_tag:googleads_get_customer_negative_criterion_sample
+ *
  */
   getCustomerNegativeCriterion(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerNegativeCriterionRequest,
@@ -786,6 +790,10 @@ export class CustomerNegativeCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerNegativeCriteria(request);
+ *
+ * @example <caption>include:samples/generated/v7/customer_negative_criterion_service.mutate_customer_negative_criteria.js</caption>
+ * region_tag:googleads_mutate_customer_negative_criteria_sample
+ *
  */
   mutateCustomerNegativeCriteria(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerNegativeCriteriaRequest,

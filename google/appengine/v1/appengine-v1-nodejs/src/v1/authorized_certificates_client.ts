@@ -336,6 +336,10 @@ export class AuthorizedCertificatesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAuthorizedCertificate(request);
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.get_authorized_certificate.js</caption>
+ * region_tag:appengine_get_authorized_certificate_sample
+ *
  */
   getAuthorizedCertificate(
       request?: protos.google.appengine.v1.IGetAuthorizedCertificateRequest,
@@ -409,6 +413,10 @@ export class AuthorizedCertificatesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAuthorizedCertificate(request);
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.create_authorized_certificate.js</caption>
+ * region_tag:appengine_create_authorized_certificate_sample
+ *
  */
   createAuthorizedCertificate(
       request?: protos.google.appengine.v1.ICreateAuthorizedCertificateRequest,
@@ -491,6 +499,10 @@ export class AuthorizedCertificatesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateAuthorizedCertificate(request);
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.update_authorized_certificate.js</caption>
+ * region_tag:appengine_update_authorized_certificate_sample
+ *
  */
   updateAuthorizedCertificate(
       request?: protos.google.appengine.v1.IUpdateAuthorizedCertificateRequest,
@@ -563,6 +575,10 @@ export class AuthorizedCertificatesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAuthorizedCertificate(request);
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.delete_authorized_certificate.js</caption>
+ * region_tag:appengine_delete_authorized_certificate_sample
+ *
  */
   deleteAuthorizedCertificate(
       request?: protos.google.appengine.v1.IDeleteAuthorizedCertificateRequest,
@@ -645,6 +661,10 @@ export class AuthorizedCertificatesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.list_authorized_certificates.js</caption>
+ * region_tag:appengine_list_authorized_certificates_sample
+ *
  */
   listAuthorizedCertificates(
       request?: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
@@ -705,6 +725,10 @@ export class AuthorizedCertificatesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.list_authorized_certificates.js</caption>
+ * region_tag:appengine_list_authorized_certificates_sample
+ *
  */
   listAuthorizedCertificatesStream(
       request?: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
@@ -719,7 +743,8 @@ export class AuthorizedCertificatesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAuthorizedCertificates'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAuthorizedCertificates.createStream(
       this.innerApiCalls.listAuthorizedCertificates as gax.GaxCall,
@@ -757,6 +782,10 @@ export class AuthorizedCertificatesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/authorized_certificates.list_authorized_certificates.js</caption>
+ * region_tag:appengine_list_authorized_certificates_sample
+ *
  */
   listAuthorizedCertificatesAsync(
       request?: protos.google.appengine.v1.IListAuthorizedCertificatesRequest,
@@ -772,7 +801,8 @@ export class AuthorizedCertificatesClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAuthorizedCertificates'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAuthorizedCertificates.asyncIterate(
       this.innerApiCalls['listAuthorizedCertificates'] as GaxCall,

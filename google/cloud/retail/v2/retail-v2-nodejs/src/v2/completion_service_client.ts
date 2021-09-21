@@ -412,6 +412,10 @@ export class CompletionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.completeQuery(request);
+ *
+ * @example <caption>include:samples/generated/v2/completion_service.complete_query.js</caption>
+ * region_tag:retail_complete_query_sample
+ *
  */
   completeQuery(
       request?: protos.google.cloud.retail.v2.ICompleteQueryRequest,
@@ -503,6 +507,10 @@ export class CompletionServiceClient {
  * @example
  * const [operation] = await client.importCompletionData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/completion_service.import_completion_data.js</caption>
+ * region_tag:retail_import_completion_data_sample
+ *
  */
   importCompletionData(
       request?: protos.google.cloud.retail.v2.IImportCompletionDataRequest,
@@ -552,6 +560,10 @@ export class CompletionServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/completion_service.import_completion_data.js</caption>
+ * region_tag:retail_import_completion_data_sample
+ *
  */
   async checkImportCompletionDataProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2.ImportCompletionDataResponse, protos.google.cloud.retail.v2.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

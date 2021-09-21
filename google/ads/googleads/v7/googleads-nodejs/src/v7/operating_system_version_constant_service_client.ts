@@ -690,6 +690,10 @@ export class OperatingSystemVersionConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOperatingSystemVersionConstant(request);
+ *
+ * @example <caption>include:samples/generated/v7/operating_system_version_constant_service.get_operating_system_version_constant.js</caption>
+ * region_tag:googleads_get_operating_system_version_constant_sample
+ *
  */
   getOperatingSystemVersionConstant(
       request?: protos.google.ads.googleads.v7.services.IGetOperatingSystemVersionConstantRequest,

@@ -454,6 +454,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBuild(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.get_build.js</caption>
+ * region_tag:cloudbuild_get_build_sample
+ *
  */
   getBuild(
       request?: protos.google.devtools.cloudbuild.v1.IGetBuildRequest,
@@ -531,6 +535,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.cancelBuild(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.cancel_build.js</caption>
+ * region_tag:cloudbuild_cancel_build_sample
+ *
  */
   cancelBuild(
       request?: protos.google.devtools.cloudbuild.v1.ICancelBuildRequest,
@@ -610,6 +618,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createBuildTrigger(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.create_build_trigger.js</caption>
+ * region_tag:cloudbuild_create_build_trigger_sample
+ *
  */
   createBuildTrigger(
       request?: protos.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest,
@@ -689,6 +701,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBuildTrigger(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.get_build_trigger.js</caption>
+ * region_tag:cloudbuild_get_build_trigger_sample
+ *
  */
   getBuildTrigger(
       request?: protos.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest,
@@ -768,6 +784,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBuildTrigger(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.delete_build_trigger.js</caption>
+ * region_tag:cloudbuild_delete_build_trigger_sample
+ *
  */
   deleteBuildTrigger(
       request?: protos.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest,
@@ -846,6 +866,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBuildTrigger(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.update_build_trigger.js</caption>
+ * region_tag:cloudbuild_update_build_trigger_sample
+ *
  */
   updateBuildTrigger(
       request?: protos.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest,
@@ -928,6 +952,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.receiveTriggerWebhook(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.receive_trigger_webhook.js</caption>
+ * region_tag:cloudbuild_receive_trigger_webhook_sample
+ *
  */
   receiveTriggerWebhook(
       request?: protos.google.devtools.cloudbuild.v1.IReceiveTriggerWebhookRequest,
@@ -1001,6 +1029,10 @@ export class CloudBuildClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWorkerPool(request);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.get_worker_pool.js</caption>
+ * region_tag:cloudbuild_get_worker_pool_sample
+ *
  */
   getWorkerPool(
       request?: protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest,
@@ -1085,6 +1117,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.createBuild(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.create_build.js</caption>
+ * region_tag:cloudbuild_create_build_sample
+ *
  */
   createBuild(
       request?: protos.google.devtools.cloudbuild.v1.ICreateBuildRequest,
@@ -1135,6 +1171,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.create_build.js</caption>
+ * region_tag:cloudbuild_create_build_sample
+ *
  */
   async checkCreateBuildProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1212,6 +1252,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.retryBuild(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.retry_build.js</caption>
+ * region_tag:cloudbuild_retry_build_sample
+ *
  */
   retryBuild(
       request?: protos.google.devtools.cloudbuild.v1.IRetryBuildRequest,
@@ -1262,6 +1306,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.retry_build.js</caption>
+ * region_tag:cloudbuild_retry_build_sample
+ *
  */
   async checkRetryBuildProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1316,6 +1364,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.approveBuild(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.approve_build.js</caption>
+ * region_tag:cloudbuild_approve_build_sample
+ *
  */
   approveBuild(
       request?: protos.google.devtools.cloudbuild.v1.IApproveBuildRequest,
@@ -1365,6 +1417,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.approve_build.js</caption>
+ * region_tag:cloudbuild_approve_build_sample
+ *
  */
   async checkApproveBuildProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1418,6 +1474,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.runBuildTrigger(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.run_build_trigger.js</caption>
+ * region_tag:cloudbuild_run_build_trigger_sample
+ *
  */
   runBuildTrigger(
       request?: protos.google.devtools.cloudbuild.v1.IRunBuildTriggerRequest,
@@ -1468,6 +1528,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.run_build_trigger.js</caption>
+ * region_tag:cloudbuild_run_build_trigger_sample
+ *
  */
   async checkRunBuildTriggerProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1526,6 +1590,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.createWorkerPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.create_worker_pool.js</caption>
+ * region_tag:cloudbuild_create_worker_pool_sample
+ *
  */
   createWorkerPool(
       request?: protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest,
@@ -1575,6 +1643,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.create_worker_pool.js</caption>
+ * region_tag:cloudbuild_create_worker_pool_sample
+ *
  */
   async checkCreateWorkerPoolProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.WorkerPool, protos.google.devtools.cloudbuild.v1.CreateWorkerPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1632,6 +1704,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.deleteWorkerPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.delete_worker_pool.js</caption>
+ * region_tag:cloudbuild_delete_worker_pool_sample
+ *
  */
   deleteWorkerPool(
       request?: protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest,
@@ -1681,6 +1757,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.delete_worker_pool.js</caption>
+ * region_tag:cloudbuild_delete_worker_pool_sample
+ *
  */
   async checkDeleteWorkerPoolProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.devtools.cloudbuild.v1.DeleteWorkerPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1735,6 +1815,10 @@ export class CloudBuildClient {
  * @example
  * const [operation] = await client.updateWorkerPool(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.update_worker_pool.js</caption>
+ * region_tag:cloudbuild_update_worker_pool_sample
+ *
  */
   updateWorkerPool(
       request?: protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest,
@@ -1784,6 +1868,10 @@ export class CloudBuildClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.update_worker_pool.js</caption>
+ * region_tag:cloudbuild_update_worker_pool_sample
+ *
  */
   async checkUpdateWorkerPoolProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.WorkerPool, protos.google.devtools.cloudbuild.v1.UpdateWorkerPoolOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1851,6 +1939,10 @@ export class CloudBuildClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_builds.js</caption>
+ * region_tag:cloudbuild_list_builds_sample
+ *
  */
   listBuilds(
       request?: protos.google.devtools.cloudbuild.v1.IListBuildsRequest,
@@ -1923,6 +2015,10 @@ export class CloudBuildClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_builds.js</caption>
+ * region_tag:cloudbuild_list_builds_sample
+ *
  */
   listBuildsStream(
       request?: protos.google.devtools.cloudbuild.v1.IListBuildsRequest,
@@ -1938,7 +2034,8 @@ export class CloudBuildClient {
       'project_id': request.projectId || '',
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuilds'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuilds.createStream(
       this.innerApiCalls.listBuilds as gax.GaxCall,
@@ -1987,6 +2084,10 @@ export class CloudBuildClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_builds.js</caption>
+ * region_tag:cloudbuild_list_builds_sample
+ *
  */
   listBuildsAsync(
       request?: protos.google.devtools.cloudbuild.v1.IListBuildsRequest,
@@ -2003,7 +2104,8 @@ export class CloudBuildClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuilds'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuilds.asyncIterate(
       this.innerApiCalls['listBuilds'] as GaxCall,
@@ -2060,6 +2162,10 @@ export class CloudBuildClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_build_triggers.js</caption>
+ * region_tag:cloudbuild_list_build_triggers_sample
+ *
  */
   listBuildTriggers(
       request?: protos.google.devtools.cloudbuild.v1.IListBuildTriggersRequest,
@@ -2122,6 +2228,10 @@ export class CloudBuildClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_build_triggers.js</caption>
+ * region_tag:cloudbuild_list_build_triggers_sample
+ *
  */
   listBuildTriggersStream(
       request?: protos.google.devtools.cloudbuild.v1.IListBuildTriggersRequest,
@@ -2137,7 +2247,8 @@ export class CloudBuildClient {
       'project_id': request.projectId || '',
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuildTriggers'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuildTriggers.createStream(
       this.innerApiCalls.listBuildTriggers as gax.GaxCall,
@@ -2176,6 +2287,10 @@ export class CloudBuildClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_build_triggers.js</caption>
+ * region_tag:cloudbuild_list_build_triggers_sample
+ *
  */
   listBuildTriggersAsync(
       request?: protos.google.devtools.cloudbuild.v1.IListBuildTriggersRequest,
@@ -2192,7 +2307,8 @@ export class CloudBuildClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuildTriggers'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuildTriggers.asyncIterate(
       this.innerApiCalls['listBuildTriggers'] as GaxCall,
@@ -2247,6 +2363,10 @@ export class CloudBuildClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_worker_pools.js</caption>
+ * region_tag:cloudbuild_list_worker_pools_sample
+ *
  */
   listWorkerPools(
       request?: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
@@ -2308,6 +2428,10 @@ export class CloudBuildClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_worker_pools.js</caption>
+ * region_tag:cloudbuild_list_worker_pools_sample
+ *
  */
   listWorkerPoolsStream(
       request?: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
@@ -2322,7 +2446,8 @@ export class CloudBuildClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkerPools'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkerPools.createStream(
       this.innerApiCalls.listWorkerPools as gax.GaxCall,
@@ -2361,6 +2486,10 @@ export class CloudBuildClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/cloud_build.list_worker_pools.js</caption>
+ * region_tag:cloudbuild_list_worker_pools_sample
+ *
  */
   listWorkerPoolsAsync(
       request?: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
@@ -2376,7 +2505,8 @@ export class CloudBuildClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkerPools'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkerPools.asyncIterate(
       this.innerApiCalls['listWorkerPools'] as GaxCall,

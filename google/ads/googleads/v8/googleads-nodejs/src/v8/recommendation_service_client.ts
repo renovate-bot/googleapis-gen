@@ -720,6 +720,10 @@ export class RecommendationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRecommendation(request);
+ *
+ * @example <caption>include:samples/generated/v8/recommendation_service.get_recommendation.js</caption>
+ * region_tag:googleads_get_recommendation_sample
+ *
  */
   getRecommendation(
       request?: protos.google.ads.googleads.v8.services.IGetRecommendationRequest,
@@ -813,6 +817,10 @@ export class RecommendationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.applyRecommendation(request);
+ *
+ * @example <caption>include:samples/generated/v8/recommendation_service.apply_recommendation.js</caption>
+ * region_tag:googleads_apply_recommendation_sample
+ *
  */
   applyRecommendation(
       request?: protos.google.ads.googleads.v8.services.IApplyRecommendationRequest,
@@ -902,6 +910,10 @@ export class RecommendationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.dismissRecommendation(request);
+ *
+ * @example <caption>include:samples/generated/v8/recommendation_service.dismiss_recommendation.js</caption>
+ * region_tag:googleads_dismiss_recommendation_sample
+ *
  */
   dismissRecommendation(
       request?: protos.google.ads.googleads.v8.services.IDismissRecommendationRequest,

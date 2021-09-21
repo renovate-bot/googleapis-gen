@@ -682,6 +682,10 @@ export class LifeEventServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getLifeEvent(request);
+ *
+ * @example <caption>include:samples/generated/v7/life_event_service.get_life_event.js</caption>
+ * region_tag:googleads_get_life_event_sample
+ *
  */
   getLifeEvent(
       request?: protos.google.ads.googleads.v7.services.IGetLifeEventRequest,

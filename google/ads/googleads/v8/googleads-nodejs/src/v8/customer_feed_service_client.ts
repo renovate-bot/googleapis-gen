@@ -720,6 +720,10 @@ export class CustomerFeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerFeed(request);
+ *
+ * @example <caption>include:samples/generated/v8/customer_feed_service.get_customer_feed.js</caption>
+ * region_tag:googleads_get_customer_feed_sample
+ *
  */
   getCustomerFeed(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerFeedRequest,
@@ -829,6 +833,10 @@ export class CustomerFeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerFeeds(request);
+ *
+ * @example <caption>include:samples/generated/v8/customer_feed_service.mutate_customer_feeds.js</caption>
+ * region_tag:googleads_mutate_customer_feeds_sample
+ *
  */
   mutateCustomerFeeds(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerFeedsRequest,

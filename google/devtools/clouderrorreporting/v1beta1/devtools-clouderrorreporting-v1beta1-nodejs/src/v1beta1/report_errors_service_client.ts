@@ -345,6 +345,10 @@ export class ReportErrorsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportErrorEvent(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/report_errors_service.report_error_event.js</caption>
+ * region_tag:clouderrorreporting_report_error_event_sample
+ *
  */
   reportErrorEvent(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,

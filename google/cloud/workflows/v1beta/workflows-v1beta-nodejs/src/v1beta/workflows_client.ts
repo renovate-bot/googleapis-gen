@@ -376,6 +376,10 @@ export class WorkflowsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWorkflow(request);
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.get_workflow.js</caption>
+ * region_tag:workflows_get_workflow_sample
+ *
  */
   getWorkflow(
       request?: protos.google.cloud.workflows.v1beta.IGetWorkflowRequest,
@@ -465,6 +469,10 @@ export class WorkflowsClient {
  * @example
  * const [operation] = await client.createWorkflow(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.create_workflow.js</caption>
+ * region_tag:workflows_create_workflow_sample
+ *
  */
   createWorkflow(
       request?: protos.google.cloud.workflows.v1beta.ICreateWorkflowRequest,
@@ -514,6 +522,10 @@ export class WorkflowsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.create_workflow.js</caption>
+ * region_tag:workflows_create_workflow_sample
+ *
  */
   async checkCreateWorkflowProgress(name: string): Promise<LROperation<protos.google.cloud.workflows.v1beta.Workflow, protos.google.cloud.workflows.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -563,6 +575,10 @@ export class WorkflowsClient {
  * @example
  * const [operation] = await client.deleteWorkflow(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.delete_workflow.js</caption>
+ * region_tag:workflows_delete_workflow_sample
+ *
  */
   deleteWorkflow(
       request?: protos.google.cloud.workflows.v1beta.IDeleteWorkflowRequest,
@@ -612,6 +628,10 @@ export class WorkflowsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.delete_workflow.js</caption>
+ * region_tag:workflows_delete_workflow_sample
+ *
  */
   async checkDeleteWorkflowProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.workflows.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -665,6 +685,10 @@ export class WorkflowsClient {
  * @example
  * const [operation] = await client.updateWorkflow(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.update_workflow.js</caption>
+ * region_tag:workflows_update_workflow_sample
+ *
  */
   updateWorkflow(
       request?: protos.google.cloud.workflows.v1beta.IUpdateWorkflowRequest,
@@ -714,6 +738,10 @@ export class WorkflowsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.update_workflow.js</caption>
+ * region_tag:workflows_update_workflow_sample
+ *
  */
   async checkUpdateWorkflowProgress(name: string): Promise<LROperation<protos.google.cloud.workflows.v1beta.Workflow, protos.google.cloud.workflows.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -781,6 +809,10 @@ export class WorkflowsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.list_workflows.js</caption>
+ * region_tag:workflows_list_workflows_sample
+ *
  */
   listWorkflows(
       request?: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
@@ -854,6 +886,10 @@ export class WorkflowsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.list_workflows.js</caption>
+ * region_tag:workflows_list_workflows_sample
+ *
  */
   listWorkflowsStream(
       request?: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
@@ -868,7 +904,8 @@ export class WorkflowsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkflows'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkflows.createStream(
       this.innerApiCalls.listWorkflows as gax.GaxCall,
@@ -919,6 +956,10 @@ export class WorkflowsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta/workflows.list_workflows.js</caption>
+ * region_tag:workflows_list_workflows_sample
+ *
  */
   listWorkflowsAsync(
       request?: protos.google.cloud.workflows.v1beta.IListWorkflowsRequest,
@@ -934,7 +975,8 @@ export class WorkflowsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkflows'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkflows.asyncIterate(
       this.innerApiCalls['listWorkflows'] as GaxCall,

@@ -712,6 +712,10 @@ export class ConversionValueRuleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConversionValueRule(request);
+ *
+ * @example <caption>include:samples/generated/v8/conversion_value_rule_service.get_conversion_value_rule.js</caption>
+ * region_tag:googleads_get_conversion_value_rule_sample
+ *
  */
   getConversionValueRule(
       request?: protos.google.ads.googleads.v8.services.IGetConversionValueRuleRequest,
@@ -797,6 +801,10 @@ export class ConversionValueRuleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateConversionValueRules(request);
+ *
+ * @example <caption>include:samples/generated/v8/conversion_value_rule_service.mutate_conversion_value_rules.js</caption>
+ * region_tag:googleads_mutate_conversion_value_rules_sample
+ *
  */
   mutateConversionValueRules(
       request?: protos.google.ads.googleads.v8.services.IMutateConversionValueRulesRequest,

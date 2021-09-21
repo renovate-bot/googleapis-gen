@@ -1,0 +1,140 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+'use strict';
+
+function main(parent, vehicleTypeCategories) {
+  // [START fleetengine_list_vehicles_sample]
+  /**
+   * TODO(developer): Uncomment these variables before running the sample.
+   */
+  /**
+   *  The standard Fleet Engine request header.
+   */
+  // const header = ''
+  /**
+   *  Required. Must be in the format "providers/{provider}".
+   *  The provider must be the Project ID (for example, sample-cloud-project)
+   *  of the Google Cloud Project of which the service account making
+   *  this call is a member.
+   */
+  // const parent = 'abc123'
+  /**
+   *  The maximum number of vehicles to return.
+   *  Default value: 100.
+   */
+  // const pageSize = 1234
+  /**
+   *  The next_page_token value returned from a previous response, if any.
+   */
+  // const pageToken = 'abc123'
+  /**
+   *  Specifies the required minimum capacity of the vehicle.
+   *  The driver is not considered in the capacity search.
+   *  This is just the number of passengers being considered for a trip.
+   *  If set, must be greater or equal to 0.
+   */
+  // const minimumCapacity = ''
+  /**
+   *  Restrict the search to only those vehicles that support at least
+   *  one of the specified trip types.
+   */
+  // const tripTypes = 1234
+  /**
+   *  Restrict the search to only those vehicles that have updated
+   *  their locations within the specified duration back from now.
+   *  If present, must be a valid positive duration.
+   */
+  // const maximumStaleness = ''
+  /**
+   *  Required. Restrict the search to those vehicles with the specified type categories.
+   */
+  // const vehicleTypeCategories = 1234
+  /**
+   *  Callers can form complex logical operations using the
+   *  requiredAttributes and requiredOneOfAttributes fields.
+   *  requiredAttributes is a list; requiredOneOfAttributes uses a message which
+   *  allows a list of lists. In combination, the two fields allow the
+   *  composition of this expression:
+   *  ```
+   *  (required_attribute[0] AND required_attribute[1] AND ...)
+   *  AND
+   *  (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+   *  AND
+   *  (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+   *  ```
+   *  Restrict the search to only those vehicles
+   *  with the specified attributes. This field is a conjunction/AND operation.
+   *  Your app can specify up to 100 attributes; however, the combined
+   *  key:value string length cannot exceed 1024 characters.
+   */
+  // const requiredAttributes = 'abc123'
+  /**
+   *  Restrict the search to only those vehicles with at least one
+   *  of the specified attributes applied to each VehicleAttributeList.
+   *  Within each list, a vehicle must match at least one of the attributes.
+   *  This field is an inclusive disjunction/OR operation in each
+   *  VehicleAttributeList and a conjunction/AND operation across the collection
+   *  of VehicleAttributeList.
+   *  Format: key1:value1|key2:value2|key3:value3...
+   */
+  // const requiredOneOfAttributes = 'abc123'
+  /**
+   *  Restrict the search to only those vehicles with at least one set of the
+   *  specified attributes in the VehicleAttributeList. Within each list, a
+   *  vehicle must match all of the attributes. This field is a conjunction/AND
+   *  operation in each VehicleAttributeList and inclusive disjunction/OR
+   *  operation across the collection of VehicleAttributeList.
+   *  Format: key1:value1|key2:value2|key3:value3...
+   */
+  // const requiredOneOfAttributeSets = 'abc123'
+  /**
+   *  Restrict the search to only those vehicles that have this vehicle state.
+   */
+  // const vehicleState = ''
+  /**
+   *  Only return the vehicles with current trip(s).
+   */
+  // const onTripOnly = true
+
+  // Imports the Fleetengine library
+  const {VehicleServiceClient} = require('@googlemaps/fleetengine').v1;
+
+  // Instantiates a client
+  const fleetengineClient = new VehicleServiceClient();
+
+  async function listVehicles() {
+    // Construct request
+    const request = {
+      parent,
+      vehicleTypeCategories,
+    };
+
+    // Run request
+    const iterable = await fleetengineClient.listVehiclesAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
+  }
+
+  listVehicles();
+  // [END fleetengine_list_vehicles_sample]
+}
+
+process.on('unhandledRejection', err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});
+main(...process.argv.slice(2));

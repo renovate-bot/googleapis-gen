@@ -316,6 +316,10 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startNextTask(request);
+ *
+ * @example <caption>include:samples/generated/v1/agent_endpoint_service.start_next_task.js</caption>
+ * region_tag:agentendpoint_start_next_task_sample
+ *
  */
   startNextTask(
       request?: protos.google.cloud.osconfig.agentendpoint.v1.IStartNextTaskRequest,
@@ -398,6 +402,10 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportTaskProgress(request);
+ *
+ * @example <caption>include:samples/generated/v1/agent_endpoint_service.report_task_progress.js</caption>
+ * region_tag:agentendpoint_report_task_progress_sample
+ *
  */
   reportTaskProgress(
       request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskProgressRequest,
@@ -483,6 +491,10 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportTaskComplete(request);
+ *
+ * @example <caption>include:samples/generated/v1/agent_endpoint_service.report_task_complete.js</caption>
+ * region_tag:agentendpoint_report_task_complete_sample
+ *
  */
   reportTaskComplete(
       request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportTaskCompleteRequest,
@@ -567,6 +579,10 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.registerAgent(request);
+ *
+ * @example <caption>include:samples/generated/v1/agent_endpoint_service.register_agent.js</caption>
+ * region_tag:agentendpoint_register_agent_sample
+ *
  */
   registerAgent(
       request?: protos.google.cloud.osconfig.agentendpoint.v1.IRegisterAgentRequest,
@@ -641,6 +657,10 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportInventory(request);
+ *
+ * @example <caption>include:samples/generated/v1/agent_endpoint_service.report_inventory.js</caption>
+ * region_tag:agentendpoint_report_inventory_sample
+ *
  */
   reportInventory(
       request?: protos.google.cloud.osconfig.agentendpoint.v1.IReportInventoryRequest,

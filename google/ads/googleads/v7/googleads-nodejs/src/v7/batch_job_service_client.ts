@@ -728,6 +728,10 @@ export class BatchJobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateBatchJob(request);
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.mutate_batch_job.js</caption>
+ * region_tag:googleads_mutate_batch_job_sample
+ *
  */
   mutateBatchJob(
       request?: protos.google.ads.googleads.v7.services.IMutateBatchJobRequest,
@@ -807,6 +811,10 @@ export class BatchJobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBatchJob(request);
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.get_batch_job.js</caption>
+ * region_tag:googleads_get_batch_job_sample
+ *
  */
   getBatchJob(
       request?: protos.google.ads.googleads.v7.services.IGetBatchJobRequest,
@@ -905,6 +913,10 @@ export class BatchJobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.addBatchJobOperations(request);
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.add_batch_job_operations.js</caption>
+ * region_tag:googleads_add_batch_job_operations_sample
+ *
  */
   addBatchJobOperations(
       request?: protos.google.ads.googleads.v7.services.IAddBatchJobOperationsRequest,
@@ -993,6 +1005,10 @@ export class BatchJobServiceClient {
  * @example
  * const [operation] = await client.runBatchJob(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.run_batch_job.js</caption>
+ * region_tag:googleads_run_batch_job_sample
+ *
  */
   runBatchJob(
       request?: protos.google.ads.googleads.v7.services.IRunBatchJobRequest,
@@ -1042,6 +1058,10 @@ export class BatchJobServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.run_batch_job.js</caption>
+ * region_tag:googleads_run_batch_job_sample
+ *
  */
   async checkRunBatchJobProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v7.resources.BatchJob.BatchJobMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1111,6 +1131,10 @@ export class BatchJobServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.list_batch_job_results.js</caption>
+ * region_tag:googleads_list_batch_job_results_sample
+ *
  */
   listBatchJobResults(
       request?: protos.google.ads.googleads.v7.services.IListBatchJobResultsRequest,
@@ -1177,6 +1201,10 @@ export class BatchJobServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.list_batch_job_results.js</caption>
+ * region_tag:googleads_list_batch_job_results_sample
+ *
  */
   listBatchJobResultsStream(
       request?: protos.google.ads.googleads.v7.services.IListBatchJobResultsRequest,
@@ -1191,7 +1219,8 @@ export class BatchJobServiceClient {
     ] = gax.routingHeader.fromParams({
       'resource_name': request.resourceName || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBatchJobResults'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBatchJobResults.createStream(
       this.innerApiCalls.listBatchJobResults as gax.GaxCall,
@@ -1235,6 +1264,10 @@ export class BatchJobServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v7/batch_job_service.list_batch_job_results.js</caption>
+ * region_tag:googleads_list_batch_job_results_sample
+ *
  */
   listBatchJobResultsAsync(
       request?: protos.google.ads.googleads.v7.services.IListBatchJobResultsRequest,
@@ -1250,7 +1283,8 @@ export class BatchJobServiceClient {
       'resource_name': request.resourceName || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBatchJobResults'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBatchJobResults.asyncIterate(
       this.innerApiCalls['listBatchJobResults'] as GaxCall,

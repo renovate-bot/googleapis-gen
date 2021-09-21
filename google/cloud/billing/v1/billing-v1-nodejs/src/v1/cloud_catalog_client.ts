@@ -346,6 +346,10 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_catalog.list_services.js</caption>
+ * region_tag:billing_list_services_sample
+ *
  */
   listServices(
       request?: protos.google.cloud.billing.v1.IListServicesRequest,
@@ -397,6 +401,10 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_catalog.list_services.js</caption>
+ * region_tag:billing_list_services_sample
+ *
  */
   listServicesStream(
       request?: protos.google.cloud.billing.v1.IListServicesRequest,
@@ -404,7 +412,8 @@ export class CloudCatalogClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listServices'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listServices.createStream(
       this.innerApiCalls.listServices as gax.GaxCall,
@@ -440,6 +449,10 @@ export class CloudCatalogClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/cloud_catalog.list_services.js</caption>
+ * region_tag:billing_list_services_sample
+ *
  */
   listServicesAsync(
       request?: protos.google.cloud.billing.v1.IListServicesRequest,
@@ -448,7 +461,8 @@ export class CloudCatalogClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listServices'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listServices.asyncIterate(
       this.innerApiCalls['listServices'] as GaxCall,
@@ -521,6 +535,10 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_catalog.list_skus.js</caption>
+ * region_tag:billing_list_skus_sample
+ *
  */
   listSkus(
       request?: protos.google.cloud.billing.v1.IListSkusRequest,
@@ -600,6 +618,10 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/cloud_catalog.list_skus.js</caption>
+ * region_tag:billing_list_skus_sample
+ *
  */
   listSkusStream(
       request?: protos.google.cloud.billing.v1.IListSkusRequest,
@@ -614,7 +636,8 @@ export class CloudCatalogClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSkus'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSkus.createStream(
       this.innerApiCalls.listSkus as gax.GaxCall,
@@ -671,6 +694,10 @@ export class CloudCatalogClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/cloud_catalog.list_skus.js</caption>
+ * region_tag:billing_list_skus_sample
+ *
  */
   listSkusAsync(
       request?: protos.google.cloud.billing.v1.IListSkusRequest,
@@ -686,7 +713,8 @@ export class CloudCatalogClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSkus'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSkus.asyncIterate(
       this.innerApiCalls['listSkus'] as GaxCall,

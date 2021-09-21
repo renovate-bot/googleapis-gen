@@ -690,6 +690,10 @@ export class DomainCategoryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDomainCategory(request);
+ *
+ * @example <caption>include:samples/generated/v7/domain_category_service.get_domain_category.js</caption>
+ * region_tag:googleads_get_domain_category_sample
+ *
  */
   getDomainCategory(
       request?: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,

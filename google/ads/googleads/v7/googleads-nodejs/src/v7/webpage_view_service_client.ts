@@ -682,6 +682,10 @@ export class WebpageViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWebpageView(request);
+ *
+ * @example <caption>include:samples/generated/v7/webpage_view_service.get_webpage_view.js</caption>
+ * region_tag:googleads_get_webpage_view_sample
+ *
  */
   getWebpageView(
       request?: protos.google.ads.googleads.v7.services.IGetWebpageViewRequest,

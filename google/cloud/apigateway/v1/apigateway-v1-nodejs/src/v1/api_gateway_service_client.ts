@@ -429,6 +429,10 @@ export class ApiGatewayServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGateway(request);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.get_gateway.js</caption>
+ * region_tag:apigateway_get_gateway_sample
+ *
  */
   getGateway(
       request?: protos.google.cloud.apigateway.v1.IGetGatewayRequest,
@@ -501,6 +505,10 @@ export class ApiGatewayServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getApi(request);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.get_api.js</caption>
+ * region_tag:apigateway_get_api_sample
+ *
  */
   getApi(
       request?: protos.google.cloud.apigateway.v1.IGetApiRequest,
@@ -576,6 +584,10 @@ export class ApiGatewayServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getApiConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.get_api_config.js</caption>
+ * region_tag:apigateway_get_api_config_sample
+ *
  */
   getApiConfig(
       request?: protos.google.cloud.apigateway.v1.IGetApiConfigRequest,
@@ -657,6 +669,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.createGateway(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.create_gateway.js</caption>
+ * region_tag:apigateway_create_gateway_sample
+ *
  */
   createGateway(
       request?: protos.google.cloud.apigateway.v1.ICreateGatewayRequest,
@@ -706,6 +722,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.create_gateway.js</caption>
+ * region_tag:apigateway_create_gateway_sample
+ *
  */
   async checkCreateGatewayProgress(name: string): Promise<LROperation<protos.google.cloud.apigateway.v1.Gateway, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -758,6 +778,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.updateGateway(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.update_gateway.js</caption>
+ * region_tag:apigateway_update_gateway_sample
+ *
  */
   updateGateway(
       request?: protos.google.cloud.apigateway.v1.IUpdateGatewayRequest,
@@ -807,6 +831,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.update_gateway.js</caption>
+ * region_tag:apigateway_update_gateway_sample
+ *
  */
   async checkUpdateGatewayProgress(name: string): Promise<LROperation<protos.google.cloud.apigateway.v1.Gateway, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -854,6 +882,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.deleteGateway(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.delete_gateway.js</caption>
+ * region_tag:apigateway_delete_gateway_sample
+ *
  */
   deleteGateway(
       request?: protos.google.cloud.apigateway.v1.IDeleteGatewayRequest,
@@ -903,6 +935,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.delete_gateway.js</caption>
+ * region_tag:apigateway_delete_gateway_sample
+ *
  */
   async checkDeleteGatewayProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -955,6 +991,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.createApi(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.create_api.js</caption>
+ * region_tag:apigateway_create_api_sample
+ *
  */
   createApi(
       request?: protos.google.cloud.apigateway.v1.ICreateApiRequest,
@@ -1004,6 +1044,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.create_api.js</caption>
+ * region_tag:apigateway_create_api_sample
+ *
  */
   async checkCreateApiProgress(name: string): Promise<LROperation<protos.google.cloud.apigateway.v1.Api, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1056,6 +1100,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.updateApi(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.update_api.js</caption>
+ * region_tag:apigateway_update_api_sample
+ *
  */
   updateApi(
       request?: protos.google.cloud.apigateway.v1.IUpdateApiRequest,
@@ -1105,6 +1153,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.update_api.js</caption>
+ * region_tag:apigateway_update_api_sample
+ *
  */
   async checkUpdateApiProgress(name: string): Promise<LROperation<protos.google.cloud.apigateway.v1.Api, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1152,6 +1204,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.deleteApi(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.delete_api.js</caption>
+ * region_tag:apigateway_delete_api_sample
+ *
  */
   deleteApi(
       request?: protos.google.cloud.apigateway.v1.IDeleteApiRequest,
@@ -1201,6 +1257,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.delete_api.js</caption>
+ * region_tag:apigateway_delete_api_sample
+ *
  */
   async checkDeleteApiProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1253,6 +1313,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.createApiConfig(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.create_api_config.js</caption>
+ * region_tag:apigateway_create_api_config_sample
+ *
  */
   createApiConfig(
       request?: protos.google.cloud.apigateway.v1.ICreateApiConfigRequest,
@@ -1302,6 +1366,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.create_api_config.js</caption>
+ * region_tag:apigateway_create_api_config_sample
+ *
  */
   async checkCreateApiConfigProgress(name: string): Promise<LROperation<protos.google.cloud.apigateway.v1.ApiConfig, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1354,6 +1422,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.updateApiConfig(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.update_api_config.js</caption>
+ * region_tag:apigateway_update_api_config_sample
+ *
  */
   updateApiConfig(
       request?: protos.google.cloud.apigateway.v1.IUpdateApiConfigRequest,
@@ -1403,6 +1475,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.update_api_config.js</caption>
+ * region_tag:apigateway_update_api_config_sample
+ *
  */
   async checkUpdateApiConfigProgress(name: string): Promise<LROperation<protos.google.cloud.apigateway.v1.ApiConfig, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1450,6 +1526,10 @@ export class ApiGatewayServiceClient {
  * @example
  * const [operation] = await client.deleteApiConfig(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.delete_api_config.js</caption>
+ * region_tag:apigateway_delete_api_config_sample
+ *
  */
   deleteApiConfig(
       request?: protos.google.cloud.apigateway.v1.IDeleteApiConfigRequest,
@@ -1499,6 +1579,10 @@ export class ApiGatewayServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.delete_api_config.js</caption>
+ * region_tag:apigateway_delete_api_config_sample
+ *
  */
   async checkDeleteApiConfigProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.apigateway.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1555,6 +1639,10 @@ export class ApiGatewayServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_gateways.js</caption>
+ * region_tag:apigateway_list_gateways_sample
+ *
  */
   listGateways(
       request?: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
@@ -1618,6 +1706,10 @@ export class ApiGatewayServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_gateways.js</caption>
+ * region_tag:apigateway_list_gateways_sample
+ *
  */
   listGatewaysStream(
       request?: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
@@ -1632,7 +1724,8 @@ export class ApiGatewayServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGateways'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGateways.createStream(
       this.innerApiCalls.listGateways as gax.GaxCall,
@@ -1673,6 +1766,10 @@ export class ApiGatewayServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_gateways.js</caption>
+ * region_tag:apigateway_list_gateways_sample
+ *
  */
   listGatewaysAsync(
       request?: protos.google.cloud.apigateway.v1.IListGatewaysRequest,
@@ -1688,7 +1785,8 @@ export class ApiGatewayServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGateways'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGateways.asyncIterate(
       this.innerApiCalls['listGateways'] as GaxCall,
@@ -1745,6 +1843,10 @@ export class ApiGatewayServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_apis.js</caption>
+ * region_tag:apigateway_list_apis_sample
+ *
  */
   listApis(
       request?: protos.google.cloud.apigateway.v1.IListApisRequest,
@@ -1808,6 +1910,10 @@ export class ApiGatewayServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_apis.js</caption>
+ * region_tag:apigateway_list_apis_sample
+ *
  */
   listApisStream(
       request?: protos.google.cloud.apigateway.v1.IListApisRequest,
@@ -1822,7 +1928,8 @@ export class ApiGatewayServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listApis'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listApis.createStream(
       this.innerApiCalls.listApis as gax.GaxCall,
@@ -1863,6 +1970,10 @@ export class ApiGatewayServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_apis.js</caption>
+ * region_tag:apigateway_list_apis_sample
+ *
  */
   listApisAsync(
       request?: protos.google.cloud.apigateway.v1.IListApisRequest,
@@ -1878,7 +1989,8 @@ export class ApiGatewayServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listApis'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listApis.asyncIterate(
       this.innerApiCalls['listApis'] as GaxCall,
@@ -1935,6 +2047,10 @@ export class ApiGatewayServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_api_configs.js</caption>
+ * region_tag:apigateway_list_api_configs_sample
+ *
  */
   listApiConfigs(
       request?: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
@@ -1998,6 +2114,10 @@ export class ApiGatewayServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_api_configs.js</caption>
+ * region_tag:apigateway_list_api_configs_sample
+ *
  */
   listApiConfigsStream(
       request?: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
@@ -2012,7 +2132,8 @@ export class ApiGatewayServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listApiConfigs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listApiConfigs.createStream(
       this.innerApiCalls.listApiConfigs as gax.GaxCall,
@@ -2053,6 +2174,10 @@ export class ApiGatewayServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/api_gateway_service.list_api_configs.js</caption>
+ * region_tag:apigateway_list_api_configs_sample
+ *
  */
   listApiConfigsAsync(
       request?: protos.google.cloud.apigateway.v1.IListApiConfigsRequest,
@@ -2068,7 +2193,8 @@ export class ApiGatewayServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listApiConfigs'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listApiConfigs.asyncIterate(
       this.innerApiCalls['listApiConfigs'] as GaxCall,

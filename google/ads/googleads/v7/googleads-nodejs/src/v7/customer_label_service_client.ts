@@ -690,6 +690,10 @@ export class CustomerLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerLabel(request);
+ *
+ * @example <caption>include:samples/generated/v7/customer_label_service.get_customer_label.js</caption>
+ * region_tag:googleads_get_customer_label_sample
+ *
  */
   getCustomerLabel(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
@@ -783,6 +787,10 @@ export class CustomerLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerLabels(request);
+ *
+ * @example <caption>include:samples/generated/v7/customer_label_service.mutate_customer_labels.js</caption>
+ * region_tag:googleads_mutate_customer_labels_sample
+ *
  */
   mutateCustomerLabels(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,

@@ -690,6 +690,10 @@ export class AdGroupSimulationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupSimulation(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_group_simulation_service.get_ad_group_simulation.js</caption>
+ * region_tag:googleads_get_ad_group_simulation_sample
+ *
  */
   getAdGroupSimulation(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,

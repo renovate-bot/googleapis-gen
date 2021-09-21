@@ -339,6 +339,10 @@ export class ActionsTestingClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.sendInteraction(request);
+ *
+ * @example <caption>include:samples/generated/v2/actions_testing.send_interaction.js</caption>
+ * region_tag:sdk_send_interaction_sample
+ *
  */
   sendInteraction(
       request?: protos.google.actions.sdk.v2.ISendInteractionRequest,
@@ -418,6 +422,10 @@ export class ActionsTestingClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.matchIntents(request);
+ *
+ * @example <caption>include:samples/generated/v2/actions_testing.match_intents.js</caption>
+ * region_tag:sdk_match_intents_sample
+ *
  */
   matchIntents(
       request?: protos.google.actions.sdk.v2.IMatchIntentsRequest,
@@ -499,6 +507,10 @@ export class ActionsTestingClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setWebAndAppActivityControl(request);
+ *
+ * @example <caption>include:samples/generated/v2/actions_testing.set_web_and_app_activity_control.js</caption>
+ * region_tag:sdk_set_web_and_app_activity_control_sample
+ *
  */
   setWebAndAppActivityControl(
       request?: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,

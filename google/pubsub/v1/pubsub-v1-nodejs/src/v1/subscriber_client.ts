@@ -466,6 +466,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.create_subscription.js</caption>
+ * region_tag:pubsub_create_subscription_sample
+ *
  */
   createSubscription(
       request?: protos.google.pubsub.v1.ISubscription,
@@ -538,6 +542,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.get_subscription.js</caption>
+ * region_tag:pubsub_get_subscription_sample
+ *
  */
   getSubscription(
       request?: protos.google.pubsub.v1.IGetSubscriptionRequest,
@@ -613,6 +621,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.update_subscription.js</caption>
+ * region_tag:pubsub_update_subscription_sample
+ *
  */
   updateSubscription(
       request?: protos.google.pubsub.v1.IUpdateSubscriptionRequest,
@@ -689,6 +701,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSubscription(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.delete_subscription.js</caption>
+ * region_tag:pubsub_delete_subscription_sample
+ *
  */
   deleteSubscription(
       request?: protos.google.pubsub.v1.IDeleteSubscriptionRequest,
@@ -776,6 +792,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.modifyAckDeadline(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.modify_ack_deadline.js</caption>
+ * region_tag:pubsub_modify_ack_deadline_sample
+ *
  */
   modifyAckDeadline(
       request?: protos.google.pubsub.v1.IModifyAckDeadlineRequest,
@@ -858,6 +878,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.acknowledge(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.acknowledge.js</caption>
+ * region_tag:pubsub_acknowledge_sample
+ *
  */
   acknowledge(
       request?: protos.google.pubsub.v1.IAcknowledgeRequest,
@@ -944,6 +968,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.pull(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.pull.js</caption>
+ * region_tag:pubsub_pull_sample
+ *
  */
   pull(
       request?: protos.google.pubsub.v1.IPullRequest,
@@ -1028,6 +1056,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.modifyPushConfig(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.modify_push_config.js</caption>
+ * region_tag:pubsub_modify_push_config_sample
+ *
  */
   modifyPushConfig(
       request?: protos.google.pubsub.v1.IModifyPushConfigRequest,
@@ -1104,6 +1136,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSnapshot(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.get_snapshot.js</caption>
+ * region_tag:pubsub_get_snapshot_sample
+ *
  */
   getSnapshot(
       request?: protos.google.pubsub.v1.IGetSnapshotRequest,
@@ -1208,6 +1244,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSnapshot(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.create_snapshot.js</caption>
+ * region_tag:pubsub_create_snapshot_sample
+ *
  */
   createSnapshot(
       request?: protos.google.pubsub.v1.ICreateSnapshotRequest,
@@ -1287,6 +1327,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSnapshot(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.update_snapshot.js</caption>
+ * region_tag:pubsub_update_snapshot_sample
+ *
  */
   updateSnapshot(
       request?: protos.google.pubsub.v1.IUpdateSnapshotRequest,
@@ -1367,6 +1411,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSnapshot(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.delete_snapshot.js</caption>
+ * region_tag:pubsub_delete_snapshot_sample
+ *
  */
   deleteSnapshot(
       request?: protos.google.pubsub.v1.IDeleteSnapshotRequest,
@@ -1460,6 +1508,10 @@ export class SubscriberClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.seek(request);
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.seek.js</caption>
+ * region_tag:pubsub_seek_sample
+ *
  */
   seek(
       request?: protos.google.pubsub.v1.ISeekRequest,
@@ -1520,6 +1572,10 @@ export class SubscriberClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.streaming_pull.js</caption>
+ * region_tag:pubsub_streaming_pull_sample
+ *
  */
   streamingPull(
       options?: CallOptions):
@@ -1575,6 +1631,10 @@ export class SubscriberClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.list_subscriptions.js</caption>
+ * region_tag:pubsub_list_subscriptions_sample
+ *
  */
   listSubscriptions(
       request?: protos.google.pubsub.v1.IListSubscriptionsRequest,
@@ -1636,6 +1696,10 @@ export class SubscriberClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.list_subscriptions.js</caption>
+ * region_tag:pubsub_list_subscriptions_sample
+ *
  */
   listSubscriptionsStream(
       request?: protos.google.pubsub.v1.IListSubscriptionsRequest,
@@ -1650,7 +1714,8 @@ export class SubscriberClient {
     ] = gax.routingHeader.fromParams({
       'project': request.project || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSubscriptions.createStream(
       this.innerApiCalls.listSubscriptions as gax.GaxCall,
@@ -1689,6 +1754,10 @@ export class SubscriberClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.list_subscriptions.js</caption>
+ * region_tag:pubsub_list_subscriptions_sample
+ *
  */
   listSubscriptionsAsync(
       request?: protos.google.pubsub.v1.IListSubscriptionsRequest,
@@ -1704,7 +1773,8 @@ export class SubscriberClient {
       'project': request.project || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSubscriptions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSubscriptions.asyncIterate(
       this.innerApiCalls['listSubscriptions'] as GaxCall,
@@ -1763,6 +1833,10 @@ export class SubscriberClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.list_snapshots.js</caption>
+ * region_tag:pubsub_list_snapshots_sample
+ *
  */
   listSnapshots(
       request?: protos.google.pubsub.v1.IListSnapshotsRequest,
@@ -1824,6 +1898,10 @@ export class SubscriberClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.list_snapshots.js</caption>
+ * region_tag:pubsub_list_snapshots_sample
+ *
  */
   listSnapshotsStream(
       request?: protos.google.pubsub.v1.IListSnapshotsRequest,
@@ -1838,7 +1916,8 @@ export class SubscriberClient {
     ] = gax.routingHeader.fromParams({
       'project': request.project || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSnapshots'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSnapshots.createStream(
       this.innerApiCalls.listSnapshots as gax.GaxCall,
@@ -1877,6 +1956,10 @@ export class SubscriberClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/subscriber.list_snapshots.js</caption>
+ * region_tag:pubsub_list_snapshots_sample
+ *
  */
   listSnapshotsAsync(
       request?: protos.google.pubsub.v1.IListSnapshotsRequest,
@@ -1892,7 +1975,8 @@ export class SubscriberClient {
       'project': request.project || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSnapshots'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSnapshots.asyncIterate(
       this.innerApiCalls['listSnapshots'] as GaxCall,

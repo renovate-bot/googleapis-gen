@@ -435,6 +435,10 @@ export class KnowledgeBasesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKnowledgeBase(request);
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.get_knowledge_base.js</caption>
+ * region_tag:dialogflow_get_knowledge_base_sample
+ *
  */
   getKnowledgeBase(
       request?: protos.google.cloud.dialogflow.v2.IGetKnowledgeBaseRequest,
@@ -509,6 +513,10 @@ export class KnowledgeBasesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createKnowledgeBase(request);
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.create_knowledge_base.js</caption>
+ * region_tag:dialogflow_create_knowledge_base_sample
+ *
  */
   createKnowledgeBase(
       request?: protos.google.cloud.dialogflow.v2.ICreateKnowledgeBaseRequest,
@@ -585,6 +593,10 @@ export class KnowledgeBasesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteKnowledgeBase(request);
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.delete_knowledge_base.js</caption>
+ * region_tag:dialogflow_delete_knowledge_base_sample
+ *
  */
   deleteKnowledgeBase(
       request?: protos.google.cloud.dialogflow.v2.IDeleteKnowledgeBaseRequest,
@@ -660,6 +672,10 @@ export class KnowledgeBasesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateKnowledgeBase(request);
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.update_knowledge_base.js</caption>
+ * region_tag:dialogflow_update_knowledge_base_sample
+ *
  */
   updateKnowledgeBase(
       request?: protos.google.cloud.dialogflow.v2.IUpdateKnowledgeBaseRequest,
@@ -742,6 +758,10 @@ export class KnowledgeBasesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.list_knowledge_bases.js</caption>
+ * region_tag:dialogflow_list_knowledge_bases_sample
+ *
  */
   listKnowledgeBases(
       request?: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
@@ -802,6 +822,10 @@ export class KnowledgeBasesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.list_knowledge_bases.js</caption>
+ * region_tag:dialogflow_list_knowledge_bases_sample
+ *
  */
   listKnowledgeBasesStream(
       request?: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
@@ -816,7 +840,8 @@ export class KnowledgeBasesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKnowledgeBases'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKnowledgeBases.createStream(
       this.innerApiCalls.listKnowledgeBases as gax.GaxCall,
@@ -854,6 +879,10 @@ export class KnowledgeBasesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/knowledge_bases.list_knowledge_bases.js</caption>
+ * region_tag:dialogflow_list_knowledge_bases_sample
+ *
  */
   listKnowledgeBasesAsync(
       request?: protos.google.cloud.dialogflow.v2.IListKnowledgeBasesRequest,
@@ -869,7 +898,8 @@ export class KnowledgeBasesClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKnowledgeBases'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKnowledgeBases.asyncIterate(
       this.innerApiCalls['listKnowledgeBases'] as GaxCall,

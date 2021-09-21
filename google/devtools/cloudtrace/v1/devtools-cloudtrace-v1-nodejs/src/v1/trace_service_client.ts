@@ -328,6 +328,10 @@ export class TraceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTrace(request);
+ *
+ * @example <caption>include:samples/generated/v1/trace_service.get_trace.js</caption>
+ * region_tag:cloudtrace_get_trace_sample
+ *
  */
   getTrace(
       request?: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
@@ -405,6 +409,10 @@ export class TraceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.patchTraces(request);
+ *
+ * @example <caption>include:samples/generated/v1/trace_service.patch_traces.js</caption>
+ * region_tag:cloudtrace_patch_traces_sample
+ *
  */
   patchTraces(
       request?: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
@@ -542,6 +550,10 @@ export class TraceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/trace_service.list_traces.js</caption>
+ * region_tag:cloudtrace_list_traces_sample
+ *
  */
   listTraces(
       request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
@@ -657,6 +669,10 @@ export class TraceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/trace_service.list_traces.js</caption>
+ * region_tag:cloudtrace_list_traces_sample
+ *
  */
   listTracesStream(
       request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
@@ -671,7 +687,8 @@ export class TraceServiceClient {
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTraces'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTraces.createStream(
       this.innerApiCalls.listTraces as gax.GaxCall,
@@ -764,6 +781,10 @@ export class TraceServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/trace_service.list_traces.js</caption>
+ * region_tag:cloudtrace_list_traces_sample
+ *
  */
   listTracesAsync(
       request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
@@ -779,7 +800,8 @@ export class TraceServiceClient {
       'project_id': request.projectId || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTraces'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTraces.asyncIterate(
       this.innerApiCalls['listTraces'] as GaxCall,

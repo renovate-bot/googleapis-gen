@@ -413,6 +413,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstance(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_instance.js</caption>
+ * region_tag:admin_get_instance_sample
+ *
  */
   getInstance(
       request?: protos.google.bigtable.admin.v2.IGetInstanceRequest,
@@ -487,6 +491,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listInstances(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_instances.js</caption>
+ * region_tag:admin_list_instances_sample
+ *
  */
   listInstances(
       request?: protos.google.bigtable.admin.v2.IListInstancesRequest,
@@ -582,6 +590,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateInstance(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_instance.js</caption>
+ * region_tag:admin_update_instance_sample
+ *
  */
   updateInstance(
       request?: protos.google.bigtable.admin.v2.IInstance,
@@ -654,6 +666,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteInstance(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.delete_instance.js</caption>
+ * region_tag:admin_delete_instance_sample
+ *
  */
   deleteInstance(
       request?: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
@@ -726,6 +742,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCluster(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_cluster.js</caption>
+ * region_tag:admin_get_cluster_sample
+ *
  */
   getCluster(
       request?: protos.google.bigtable.admin.v2.IGetClusterRequest,
@@ -802,6 +822,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listClusters(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_clusters.js</caption>
+ * region_tag:admin_list_clusters_sample
+ *
  */
   listClusters(
       request?: protos.google.bigtable.admin.v2.IListClustersRequest,
@@ -874,6 +898,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCluster(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.delete_cluster.js</caption>
+ * region_tag:admin_delete_cluster_sample
+ *
  */
   deleteCluster(
       request?: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
@@ -956,6 +984,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAppProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_app_profile.js</caption>
+ * region_tag:admin_create_app_profile_sample
+ *
  */
   createAppProfile(
       request?: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
@@ -1028,6 +1060,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAppProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_app_profile.js</caption>
+ * region_tag:admin_get_app_profile_sample
+ *
  */
   getAppProfile(
       request?: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
@@ -1102,6 +1138,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAppProfile(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.delete_app_profile.js</caption>
+ * region_tag:admin_delete_app_profile_sample
+ *
  */
   deleteAppProfile(
       request?: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
@@ -1178,6 +1218,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_iam_policy.js</caption>
+ * region_tag:admin_get_iam_policy_sample
+ *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -1256,6 +1300,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.set_iam_policy.js</caption>
+ * region_tag:admin_set_iam_policy_sample
+ *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -1333,6 +1381,10 @@ export class BigtableInstanceAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.test_iam_permissions.js</caption>
+ * region_tag:admin_test_iam_permissions_sample
+ *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -1422,6 +1474,10 @@ export class BigtableInstanceAdminClient {
  * @example
  * const [operation] = await client.createInstance(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_instance.js</caption>
+ * region_tag:admin_create_instance_sample
+ *
  */
   createInstance(
       request?: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
@@ -1471,6 +1527,10 @@ export class BigtableInstanceAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_instance.js</caption>
+ * region_tag:admin_create_instance_sample
+ *
  */
   async checkCreateInstanceProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.CreateInstanceMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1521,6 +1581,10 @@ export class BigtableInstanceAdminClient {
  * @example
  * const [operation] = await client.partialUpdateInstance(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.partial_update_instance.js</caption>
+ * region_tag:admin_partial_update_instance_sample
+ *
  */
   partialUpdateInstance(
       request?: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
@@ -1570,6 +1634,10 @@ export class BigtableInstanceAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.partial_update_instance.js</caption>
+ * region_tag:admin_partial_update_instance_sample
+ *
  */
   async checkPartialUpdateInstanceProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.UpdateInstanceMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1625,6 +1693,10 @@ export class BigtableInstanceAdminClient {
  * @example
  * const [operation] = await client.createCluster(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_cluster.js</caption>
+ * region_tag:admin_create_cluster_sample
+ *
  */
   createCluster(
       request?: protos.google.bigtable.admin.v2.ICreateClusterRequest,
@@ -1674,6 +1746,10 @@ export class BigtableInstanceAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_cluster.js</caption>
+ * region_tag:admin_create_cluster_sample
+ *
  */
   async checkCreateClusterProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.CreateClusterMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1738,6 +1814,10 @@ export class BigtableInstanceAdminClient {
  * @example
  * const [operation] = await client.updateCluster(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_cluster.js</caption>
+ * region_tag:admin_update_cluster_sample
+ *
  */
   updateCluster(
       request?: protos.google.bigtable.admin.v2.ICluster,
@@ -1787,6 +1867,10 @@ export class BigtableInstanceAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_cluster.js</caption>
+ * region_tag:admin_update_cluster_sample
+ *
  */
   async checkUpdateClusterProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.UpdateClusterMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1838,6 +1922,10 @@ export class BigtableInstanceAdminClient {
  * @example
  * const [operation] = await client.updateAppProfile(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_app_profile.js</caption>
+ * region_tag:admin_update_app_profile_sample
+ *
  */
   updateAppProfile(
       request?: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
@@ -1887,6 +1975,10 @@ export class BigtableInstanceAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_app_profile.js</caption>
+ * region_tag:admin_update_app_profile_sample
+ *
  */
   async checkUpdateAppProfileProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.AppProfile, protos.google.bigtable.admin.v2.UpdateAppProfileMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1950,6 +2042,10 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_app_profiles.js</caption>
+ * region_tag:admin_list_app_profiles_sample
+ *
  */
   listAppProfiles(
       request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
@@ -2020,6 +2116,10 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_app_profiles.js</caption>
+ * region_tag:admin_list_app_profiles_sample
+ *
  */
   listAppProfilesStream(
       request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
@@ -2034,7 +2134,8 @@ export class BigtableInstanceAdminClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAppProfiles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAppProfiles.createStream(
       this.innerApiCalls.listAppProfiles as gax.GaxCall,
@@ -2082,6 +2183,10 @@ export class BigtableInstanceAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_app_profiles.js</caption>
+ * region_tag:admin_list_app_profiles_sample
+ *
  */
   listAppProfilesAsync(
       request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
@@ -2097,7 +2202,8 @@ export class BigtableInstanceAdminClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listAppProfiles'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listAppProfiles.asyncIterate(
       this.innerApiCalls['listAppProfiles'] as GaxCall,

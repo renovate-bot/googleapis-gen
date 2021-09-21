@@ -447,6 +447,10 @@ export class AutoMlClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.get_dataset.js</caption>
+ * region_tag:automl_get_dataset_sample
+ *
  */
   getDataset(
       request?: protos.google.cloud.automl.v1.IGetDatasetRequest,
@@ -520,6 +524,10 @@ export class AutoMlClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateDataset(request);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.update_dataset.js</caption>
+ * region_tag:automl_update_dataset_sample
+ *
  */
   updateDataset(
       request?: protos.google.cloud.automl.v1.IUpdateDatasetRequest,
@@ -591,6 +599,10 @@ export class AutoMlClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAnnotationSpec(request);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.get_annotation_spec.js</caption>
+ * region_tag:automl_get_annotation_spec_sample
+ *
  */
   getAnnotationSpec(
       request?: protos.google.cloud.automl.v1.IGetAnnotationSpecRequest,
@@ -662,6 +674,10 @@ export class AutoMlClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getModel(request);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.get_model.js</caption>
+ * region_tag:automl_get_model_sample
+ *
  */
   getModel(
       request?: protos.google.cloud.automl.v1.IGetModelRequest,
@@ -735,6 +751,10 @@ export class AutoMlClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateModel(request);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.update_model.js</caption>
+ * region_tag:automl_update_model_sample
+ *
  */
   updateModel(
       request?: protos.google.cloud.automl.v1.IUpdateModelRequest,
@@ -806,6 +826,10 @@ export class AutoMlClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getModelEvaluation(request);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.get_model_evaluation.js</caption>
+ * region_tag:automl_get_model_evaluation_sample
+ *
  */
   getModelEvaluation(
       request?: protos.google.cloud.automl.v1.IGetModelEvaluationRequest,
@@ -883,6 +907,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.createDataset(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.create_dataset.js</caption>
+ * region_tag:automl_create_dataset_sample
+ *
  */
   createDataset(
       request?: protos.google.cloud.automl.v1.ICreateDatasetRequest,
@@ -932,6 +960,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.create_dataset.js</caption>
+ * region_tag:automl_create_dataset_sample
+ *
  */
   async checkCreateDatasetProgress(name: string): Promise<LROperation<protos.google.cloud.automl.v1.Dataset, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -982,6 +1014,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.deleteDataset(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.delete_dataset.js</caption>
+ * region_tag:automl_delete_dataset_sample
+ *
  */
   deleteDataset(
       request?: protos.google.cloud.automl.v1.IDeleteDatasetRequest,
@@ -1031,6 +1067,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.delete_dataset.js</caption>
+ * region_tag:automl_delete_dataset_sample
+ *
  */
   async checkDeleteDatasetProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1089,6 +1129,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.importData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.import_data.js</caption>
+ * region_tag:automl_import_data_sample
+ *
  */
   importData(
       request?: protos.google.cloud.automl.v1.IImportDataRequest,
@@ -1138,6 +1182,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.import_data.js</caption>
+ * region_tag:automl_import_data_sample
+ *
  */
   async checkImportDataProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1188,6 +1236,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.exportData(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.export_data.js</caption>
+ * region_tag:automl_export_data_sample
+ *
  */
   exportData(
       request?: protos.google.cloud.automl.v1.IExportDataRequest,
@@ -1237,6 +1289,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.export_data.js</caption>
+ * region_tag:automl_export_data_sample
+ *
  */
   async checkExportDataProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1289,6 +1345,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.createModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.create_model.js</caption>
+ * region_tag:automl_create_model_sample
+ *
  */
   createModel(
       request?: protos.google.cloud.automl.v1.ICreateModelRequest,
@@ -1338,6 +1398,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.create_model.js</caption>
+ * region_tag:automl_create_model_sample
+ *
  */
   async checkCreateModelProgress(name: string): Promise<LROperation<protos.google.cloud.automl.v1.Model, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1388,6 +1452,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.deleteModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.delete_model.js</caption>
+ * region_tag:automl_delete_model_sample
+ *
  */
   deleteModel(
       request?: protos.google.cloud.automl.v1.IDeleteModelRequest,
@@ -1437,6 +1505,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.delete_model.js</caption>
+ * region_tag:automl_delete_model_sample
+ *
  */
   async checkDeleteModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1498,6 +1570,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.deployModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.deploy_model.js</caption>
+ * region_tag:automl_deploy_model_sample
+ *
  */
   deployModel(
       request?: protos.google.cloud.automl.v1.IDeployModelRequest,
@@ -1547,6 +1623,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.deploy_model.js</caption>
+ * region_tag:automl_deploy_model_sample
+ *
  */
   async checkDeployModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1599,6 +1679,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.undeployModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.undeploy_model.js</caption>
+ * region_tag:automl_undeploy_model_sample
+ *
  */
   undeployModel(
       request?: protos.google.cloud.automl.v1.IUndeployModelRequest,
@@ -1648,6 +1732,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.undeploy_model.js</caption>
+ * region_tag:automl_undeploy_model_sample
+ *
  */
   async checkUndeployModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1702,6 +1790,10 @@ export class AutoMlClient {
  * @example
  * const [operation] = await client.exportModel(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.export_model.js</caption>
+ * region_tag:automl_export_model_sample
+ *
  */
   exportModel(
       request?: protos.google.cloud.automl.v1.IExportModelRequest,
@@ -1751,6 +1843,10 @@ export class AutoMlClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.export_model.js</caption>
+ * region_tag:automl_export_model_sample
+ *
  */
   async checkExportModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.automl.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1814,6 +1910,10 @@ export class AutoMlClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_datasets.js</caption>
+ * region_tag:automl_list_datasets_sample
+ *
  */
   listDatasets(
       request?: protos.google.cloud.automl.v1.IListDatasetsRequest,
@@ -1884,6 +1984,10 @@ export class AutoMlClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_datasets.js</caption>
+ * region_tag:automl_list_datasets_sample
+ *
  */
   listDatasetsStream(
       request?: protos.google.cloud.automl.v1.IListDatasetsRequest,
@@ -1898,7 +2002,8 @@ export class AutoMlClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDatasets.createStream(
       this.innerApiCalls.listDatasets as gax.GaxCall,
@@ -1946,6 +2051,10 @@ export class AutoMlClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_datasets.js</caption>
+ * region_tag:automl_list_datasets_sample
+ *
  */
   listDatasetsAsync(
       request?: protos.google.cloud.automl.v1.IListDatasetsRequest,
@@ -1961,7 +2070,8 @@ export class AutoMlClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDatasets'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDatasets.asyncIterate(
       this.innerApiCalls['listDatasets'] as GaxCall,
@@ -2026,6 +2136,10 @@ export class AutoMlClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_models.js</caption>
+ * region_tag:automl_list_models_sample
+ *
  */
   listModels(
       request?: protos.google.cloud.automl.v1.IListModelsRequest,
@@ -2097,6 +2211,10 @@ export class AutoMlClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_models.js</caption>
+ * region_tag:automl_list_models_sample
+ *
  */
   listModelsStream(
       request?: protos.google.cloud.automl.v1.IListModelsRequest,
@@ -2111,7 +2229,8 @@ export class AutoMlClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listModels'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listModels.createStream(
       this.innerApiCalls.listModels as gax.GaxCall,
@@ -2160,6 +2279,10 @@ export class AutoMlClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_models.js</caption>
+ * region_tag:automl_list_models_sample
+ *
  */
   listModelsAsync(
       request?: protos.google.cloud.automl.v1.IListModelsRequest,
@@ -2175,7 +2298,8 @@ export class AutoMlClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listModels'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listModels.asyncIterate(
       this.innerApiCalls['listModels'] as GaxCall,
@@ -2244,6 +2368,10 @@ export class AutoMlClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_model_evaluations.js</caption>
+ * region_tag:automl_list_model_evaluations_sample
+ *
  */
   listModelEvaluations(
       request?: protos.google.cloud.automl.v1.IListModelEvaluationsRequest,
@@ -2319,6 +2447,10 @@ export class AutoMlClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_model_evaluations.js</caption>
+ * region_tag:automl_list_model_evaluations_sample
+ *
  */
   listModelEvaluationsStream(
       request?: protos.google.cloud.automl.v1.IListModelEvaluationsRequest,
@@ -2333,7 +2465,8 @@ export class AutoMlClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listModelEvaluations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listModelEvaluations.createStream(
       this.innerApiCalls.listModelEvaluations as gax.GaxCall,
@@ -2386,6 +2519,10 @@ export class AutoMlClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/auto_ml.list_model_evaluations.js</caption>
+ * region_tag:automl_list_model_evaluations_sample
+ *
  */
   listModelEvaluationsAsync(
       request?: protos.google.cloud.automl.v1.IListModelEvaluationsRequest,
@@ -2401,7 +2538,8 @@ export class AutoMlClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listModelEvaluations'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listModelEvaluations.asyncIterate(
       this.innerApiCalls['listModelEvaluations'] as GaxCall,

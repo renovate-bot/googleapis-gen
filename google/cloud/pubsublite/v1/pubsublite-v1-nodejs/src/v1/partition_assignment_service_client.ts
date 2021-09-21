@@ -322,6 +322,10 @@ export class PartitionAssignmentServiceClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v1/partition_assignment_service.assign_partitions.js</caption>
+ * region_tag:pubsublite_assign_partitions_sample
+ *
  */
   assignPartitions(
       options?: CallOptions):

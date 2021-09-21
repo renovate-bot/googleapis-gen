@@ -720,6 +720,10 @@ export class GenderViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGenderView(request);
+ *
+ * @example <caption>include:samples/generated/v8/gender_view_service.get_gender_view.js</caption>
+ * region_tag:googleads_get_gender_view_sample
+ *
  */
   getGenderView(
       request?: protos.google.ads.googleads.v8.services.IGetGenderViewRequest,

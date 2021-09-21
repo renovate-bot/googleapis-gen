@@ -720,6 +720,10 @@ export class GeoTargetConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGeoTargetConstant(request);
+ *
+ * @example <caption>include:samples/generated/v8/geo_target_constant_service.get_geo_target_constant.js</caption>
+ * region_tag:googleads_get_geo_target_constant_sample
+ *
  */
   getGeoTargetConstant(
       request?: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
@@ -808,6 +812,10 @@ export class GeoTargetConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestGeoTargetConstants(request);
+ *
+ * @example <caption>include:samples/generated/v8/geo_target_constant_service.suggest_geo_target_constants.js</caption>
+ * region_tag:googleads_suggest_geo_target_constants_sample
+ *
  */
   suggestGeoTargetConstants(
       request?: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,

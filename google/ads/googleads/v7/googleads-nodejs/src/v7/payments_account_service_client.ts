@@ -694,6 +694,10 @@ export class PaymentsAccountServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listPaymentsAccounts(request);
+ *
+ * @example <caption>include:samples/generated/v7/payments_account_service.list_payments_accounts.js</caption>
+ * region_tag:googleads_list_payments_accounts_sample
+ *
  */
   listPaymentsAccounts(
       request?: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,

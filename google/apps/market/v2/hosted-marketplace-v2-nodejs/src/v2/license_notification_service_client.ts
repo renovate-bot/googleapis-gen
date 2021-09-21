@@ -312,6 +312,10 @@ export class LicenseNotificationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.list(request);
+ *
+ * @example <caption>include:samples/generated/v2/license_notification_service.list.js</caption>
+ * region_tag:marketplace_list_sample
+ *
  */
   list(
       request?: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,

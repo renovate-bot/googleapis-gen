@@ -353,6 +353,10 @@ export class ResourceSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSetting(request);
+ *
+ * @example <caption>include:samples/generated/v1/resource_settings_service.get_setting.js</caption>
+ * region_tag:resourcesettings_get_setting_sample
+ *
  */
   getSetting(
       request?: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
@@ -439,6 +443,10 @@ export class ResourceSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSetting(request);
+ *
+ * @example <caption>include:samples/generated/v1/resource_settings_service.update_setting.js</caption>
+ * region_tag:resourcesettings_update_setting_sample
+ *
  */
   updateSetting(
       request?: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
@@ -527,6 +535,10 @@ export class ResourceSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/resource_settings_service.list_settings.js</caption>
+ * region_tag:resourcesettings_list_settings_sample
+ *
  */
   listSettings(
       request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
@@ -593,6 +605,10 @@ export class ResourceSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/resource_settings_service.list_settings.js</caption>
+ * region_tag:resourcesettings_list_settings_sample
+ *
  */
   listSettingsStream(
       request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
@@ -607,7 +623,8 @@ export class ResourceSettingsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSettings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSettings.createStream(
       this.innerApiCalls.listSettings as gax.GaxCall,
@@ -651,6 +668,10 @@ export class ResourceSettingsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/resource_settings_service.list_settings.js</caption>
+ * region_tag:resourcesettings_list_settings_sample
+ *
  */
   listSettingsAsync(
       request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
@@ -666,7 +687,8 @@ export class ResourceSettingsServiceClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSettings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSettings.asyncIterate(
       this.innerApiCalls['listSettings'] as GaxCall,

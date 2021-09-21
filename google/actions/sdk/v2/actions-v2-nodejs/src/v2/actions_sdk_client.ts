@@ -362,6 +362,10 @@ export class ActionsSdkClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.encryptSecret(request);
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.encrypt_secret.js</caption>
+ * region_tag:sdk_encrypt_secret_sample
+ *
  */
   encryptSecret(
       request?: protos.google.actions.sdk.v2.IEncryptSecretRequest,
@@ -427,6 +431,10 @@ export class ActionsSdkClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.decryptSecret(request);
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.decrypt_secret.js</caption>
+ * region_tag:sdk_decrypt_secret_sample
+ *
  */
   decryptSecret(
       request?: protos.google.actions.sdk.v2.IDecryptSecretRequest,
@@ -730,6 +738,10 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_sample_projects.js</caption>
+ * region_tag:sdk_list_sample_projects_sample
+ *
  */
   listSampleProjects(
       request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
@@ -783,6 +795,10 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_sample_projects.js</caption>
+ * region_tag:sdk_list_sample_projects_sample
+ *
  */
   listSampleProjectsStream(
       request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
@@ -790,7 +806,8 @@ export class ActionsSdkClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSampleProjects'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSampleProjects.createStream(
       this.innerApiCalls.listSampleProjects as gax.GaxCall,
@@ -828,6 +845,10 @@ export class ActionsSdkClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_sample_projects.js</caption>
+ * region_tag:sdk_list_sample_projects_sample
+ *
  */
   listSampleProjectsAsync(
       request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
@@ -836,7 +857,8 @@ export class ActionsSdkClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listSampleProjects'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listSampleProjects.asyncIterate(
       this.innerApiCalls['listSampleProjects'] as GaxCall,
@@ -894,6 +916,10 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_release_channels.js</caption>
+ * region_tag:sdk_list_release_channels_sample
+ *
  */
   listReleaseChannels(
       request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
@@ -958,6 +984,10 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_release_channels.js</caption>
+ * region_tag:sdk_list_release_channels_sample
+ *
  */
   listReleaseChannelsStream(
       request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
@@ -972,7 +1002,8 @@ export class ActionsSdkClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReleaseChannels'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReleaseChannels.createStream(
       this.innerApiCalls.listReleaseChannels as gax.GaxCall,
@@ -1014,6 +1045,10 @@ export class ActionsSdkClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_release_channels.js</caption>
+ * region_tag:sdk_list_release_channels_sample
+ *
  */
   listReleaseChannelsAsync(
       request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
@@ -1029,7 +1064,8 @@ export class ActionsSdkClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listReleaseChannels'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listReleaseChannels.asyncIterate(
       this.innerApiCalls['listReleaseChannels'] as GaxCall,
@@ -1087,6 +1123,10 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_versions.js</caption>
+ * region_tag:sdk_list_versions_sample
+ *
  */
   listVersions(
       request?: protos.google.actions.sdk.v2.IListVersionsRequest,
@@ -1151,6 +1191,10 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_versions.js</caption>
+ * region_tag:sdk_list_versions_sample
+ *
  */
   listVersionsStream(
       request?: protos.google.actions.sdk.v2.IListVersionsRequest,
@@ -1165,7 +1209,8 @@ export class ActionsSdkClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listVersions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listVersions.createStream(
       this.innerApiCalls.listVersions as gax.GaxCall,
@@ -1207,6 +1252,10 @@ export class ActionsSdkClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_versions.js</caption>
+ * region_tag:sdk_list_versions_sample
+ *
  */
   listVersionsAsync(
       request?: protos.google.actions.sdk.v2.IListVersionsRequest,
@@ -1222,7 +1271,8 @@ export class ActionsSdkClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listVersions'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listVersions.asyncIterate(
       this.innerApiCalls['listVersions'] as GaxCall,

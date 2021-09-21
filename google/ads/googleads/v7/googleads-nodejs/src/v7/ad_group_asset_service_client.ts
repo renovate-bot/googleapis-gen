@@ -690,6 +690,10 @@ export class AdGroupAssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupAsset(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_group_asset_service.get_ad_group_asset.js</caption>
+ * region_tag:googleads_get_ad_group_asset_sample
+ *
  */
   getAdGroupAsset(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
@@ -785,6 +789,10 @@ export class AdGroupAssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupAssets(request);
+ *
+ * @example <caption>include:samples/generated/v7/ad_group_asset_service.mutate_ad_group_assets.js</caption>
+ * region_tag:googleads_mutate_ad_group_assets_sample
+ *
  */
   mutateAdGroupAssets(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,

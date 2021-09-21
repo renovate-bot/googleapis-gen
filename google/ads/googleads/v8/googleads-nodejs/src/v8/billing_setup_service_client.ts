@@ -728,6 +728,10 @@ export class BillingSetupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBillingSetup(request);
+ *
+ * @example <caption>include:samples/generated/v8/billing_setup_service.get_billing_setup.js</caption>
+ * region_tag:googleads_get_billing_setup_sample
+ *
  */
   getBillingSetup(
       request?: protos.google.ads.googleads.v8.services.IGetBillingSetupRequest,
@@ -813,6 +817,10 @@ export class BillingSetupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateBillingSetup(request);
+ *
+ * @example <caption>include:samples/generated/v8/billing_setup_service.mutate_billing_setup.js</caption>
+ * region_tag:googleads_mutate_billing_setup_sample
+ *
  */
   mutateBillingSetup(
       request?: protos.google.ads.googleads.v8.services.IMutateBillingSetupRequest,

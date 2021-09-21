@@ -350,6 +350,10 @@ export class TestExecutionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTestMatrix(request);
+ *
+ * @example <caption>include:samples/generated/v1/test_execution_service.create_test_matrix.js</caption>
+ * region_tag:testing_create_test_matrix_sample
+ *
  */
   createTestMatrix(
       request?: protos.google.devtools.testing.v1.ICreateTestMatrixRequest,
@@ -429,6 +433,10 @@ export class TestExecutionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTestMatrix(request);
+ *
+ * @example <caption>include:samples/generated/v1/test_execution_service.get_test_matrix.js</caption>
+ * region_tag:testing_get_test_matrix_sample
+ *
  */
   getTestMatrix(
       request?: protos.google.devtools.testing.v1.IGetTestMatrixRequest,
@@ -510,6 +518,10 @@ export class TestExecutionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.cancelTestMatrix(request);
+ *
+ * @example <caption>include:samples/generated/v1/test_execution_service.cancel_test_matrix.js</caption>
+ * region_tag:testing_cancel_test_matrix_sample
+ *
  */
   cancelTestMatrix(
       request?: protos.google.devtools.testing.v1.ICancelTestMatrixRequest,

@@ -331,6 +331,10 @@ export class OsLoginServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePosixAccount(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_login_service.delete_posix_account.js</caption>
+ * region_tag:oslogin_delete_posix_account_sample
+ *
  */
   deletePosixAccount(
       request?: protos.google.cloud.oslogin.v1.IDeletePosixAccountRequest,
@@ -404,6 +408,10 @@ export class OsLoginServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSshPublicKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_login_service.delete_ssh_public_key.js</caption>
+ * region_tag:oslogin_delete_ssh_public_key_sample
+ *
  */
   deleteSshPublicKey(
       request?: protos.google.cloud.oslogin.v1.IDeleteSshPublicKeyRequest,
@@ -480,6 +488,10 @@ export class OsLoginServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getLoginProfile(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_login_service.get_login_profile.js</caption>
+ * region_tag:oslogin_get_login_profile_sample
+ *
  */
   getLoginProfile(
       request?: protos.google.cloud.oslogin.v1.IGetLoginProfileRequest,
@@ -553,6 +565,10 @@ export class OsLoginServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSshPublicKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_login_service.get_ssh_public_key.js</caption>
+ * region_tag:oslogin_get_ssh_public_key_sample
+ *
  */
   getSshPublicKey(
       request?: protos.google.cloud.oslogin.v1.IGetSshPublicKeyRequest,
@@ -630,6 +646,10 @@ export class OsLoginServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.importSshPublicKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_login_service.import_ssh_public_key.js</caption>
+ * region_tag:oslogin_import_ssh_public_key_sample
+ *
  */
   importSshPublicKey(
       request?: protos.google.cloud.oslogin.v1.IImportSshPublicKeyRequest,
@@ -708,6 +728,10 @@ export class OsLoginServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSshPublicKey(request);
+ *
+ * @example <caption>include:samples/generated/v1/os_login_service.update_ssh_public_key.js</caption>
+ * region_tag:oslogin_update_ssh_public_key_sample
+ *
  */
   updateSshPublicKey(
       request?: protos.google.cloud.oslogin.v1.IUpdateSshPublicKeyRequest,

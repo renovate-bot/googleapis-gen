@@ -414,6 +414,10 @@ export class SessionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.detectIntent(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/sessions.detect_intent.js</caption>
+ * region_tag:cx_detect_intent_sample
+ *
  */
   detectIntent(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IDetectIntentRequest,
@@ -501,6 +505,10 @@ export class SessionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.matchIntent(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/sessions.match_intent.js</caption>
+ * region_tag:cx_match_intent_sample
+ *
  */
   matchIntent(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IMatchIntentRequest,
@@ -579,6 +587,10 @@ export class SessionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.fulfillIntent(request);
+ *
+ * @example <caption>include:samples/generated/v3beta1/sessions.fulfill_intent.js</caption>
+ * region_tag:cx_fulfill_intent_sample
+ *
  */
   fulfillIntent(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IFulfillIntentRequest,
@@ -639,6 +651,10 @@ export class SessionsClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
+ *
+ * @example <caption>include:samples/generated/v3beta1/sessions.streaming_detect_intent.js</caption>
+ * region_tag:cx_streaming_detect_intent_sample
+ *
  */
   streamingDetectIntent(
       options?: CallOptions):

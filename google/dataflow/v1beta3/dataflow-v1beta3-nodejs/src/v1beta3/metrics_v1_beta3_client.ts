@@ -341,6 +341,10 @@ export class MetricsV1Beta3Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJobMetrics(request);
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_job_metrics.js</caption>
+ * region_tag:dataflow_get_job_metrics_sample
+ *
  */
   getJobMetrics(
       request?: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
@@ -426,6 +430,10 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_job_execution_details.js</caption>
+ * region_tag:dataflow_get_job_execution_details_sample
+ *
  */
   getJobExecutionDetails(
       request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
@@ -487,6 +495,10 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_job_execution_details.js</caption>
+ * region_tag:dataflow_get_job_execution_details_sample
+ *
  */
   getJobExecutionDetailsStream(
       request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
@@ -494,7 +506,8 @@ export class MetricsV1Beta3Client {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['getJobExecutionDetails'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.getJobExecutionDetails.createStream(
       this.innerApiCalls.getJobExecutionDetails as gax.GaxCall,
@@ -540,6 +553,10 @@ export class MetricsV1Beta3Client {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_job_execution_details.js</caption>
+ * region_tag:dataflow_get_job_execution_details_sample
+ *
  */
   getJobExecutionDetailsAsync(
       request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
@@ -548,7 +565,8 @@ export class MetricsV1Beta3Client {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['getJobExecutionDetails'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.getJobExecutionDetails.asyncIterate(
       this.innerApiCalls['getJobExecutionDetails'] as GaxCall,
@@ -619,6 +637,10 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_stage_execution_details.js</caption>
+ * region_tag:dataflow_get_stage_execution_details_sample
+ *
  */
   getStageExecutionDetails(
       request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
@@ -686,6 +708,10 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_stage_execution_details.js</caption>
+ * region_tag:dataflow_get_stage_execution_details_sample
+ *
  */
   getStageExecutionDetailsStream(
       request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
@@ -693,7 +719,8 @@ export class MetricsV1Beta3Client {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['getStageExecutionDetails'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.getStageExecutionDetails.createStream(
       this.innerApiCalls.getStageExecutionDetails as gax.GaxCall,
@@ -745,6 +772,10 @@ export class MetricsV1Beta3Client {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_stage_execution_details.js</caption>
+ * region_tag:dataflow_get_stage_execution_details_sample
+ *
  */
   getStageExecutionDetailsAsync(
       request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
@@ -753,7 +784,8 @@ export class MetricsV1Beta3Client {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['getStageExecutionDetails'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.getStageExecutionDetails.asyncIterate(
       this.innerApiCalls['getStageExecutionDetails'] as GaxCall,

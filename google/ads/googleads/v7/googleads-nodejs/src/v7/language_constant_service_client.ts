@@ -690,6 +690,10 @@ export class LanguageConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getLanguageConstant(request);
+ *
+ * @example <caption>include:samples/generated/v7/language_constant_service.get_language_constant.js</caption>
+ * region_tag:googleads_get_language_constant_sample
+ *
  */
   getLanguageConstant(
       request?: protos.google.ads.googleads.v7.services.IGetLanguageConstantRequest,

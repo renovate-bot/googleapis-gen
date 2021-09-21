@@ -369,6 +369,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAuthorization(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.get_authorization.js</caption>
+ * region_tag:gsuiteaddons_get_authorization_sample
+ *
  */
   getAuthorization(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
@@ -447,6 +451,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createDeployment(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.create_deployment.js</caption>
+ * region_tag:gsuiteaddons_create_deployment_sample
+ *
  */
   createDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
@@ -518,6 +526,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.replaceDeployment(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.replace_deployment.js</caption>
+ * region_tag:gsuiteaddons_replace_deployment_sample
+ *
  */
   replaceDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
@@ -591,6 +603,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDeployment(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.get_deployment.js</caption>
+ * region_tag:gsuiteaddons_get_deployment_sample
+ *
  */
   getDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
@@ -667,6 +683,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDeployment(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.delete_deployment.js</caption>
+ * region_tag:gsuiteaddons_delete_deployment_sample
+ *
  */
   deleteDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
@@ -742,6 +762,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.installDeployment(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.install_deployment.js</caption>
+ * region_tag:gsuiteaddons_install_deployment_sample
+ *
  */
   installDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
@@ -817,6 +841,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.uninstallDeployment(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.uninstall_deployment.js</caption>
+ * region_tag:gsuiteaddons_uninstall_deployment_sample
+ *
  */
   uninstallDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
@@ -890,6 +918,10 @@ export class GSuiteAddOnsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstallStatus(request);
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.get_install_status.js</caption>
+ * region_tag:gsuiteaddons_get_install_status_sample
+ *
  */
   getInstallStatus(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
@@ -979,6 +1011,10 @@ export class GSuiteAddOnsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.list_deployments.js</caption>
+ * region_tag:gsuiteaddons_list_deployments_sample
+ *
  */
   listDeployments(
       request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
@@ -1046,6 +1082,10 @@ export class GSuiteAddOnsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.list_deployments.js</caption>
+ * region_tag:gsuiteaddons_list_deployments_sample
+ *
  */
   listDeploymentsStream(
       request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
@@ -1060,7 +1100,8 @@ export class GSuiteAddOnsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDeployments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDeployments.createStream(
       this.innerApiCalls.listDeployments as gax.GaxCall,
@@ -1105,6 +1146,10 @@ export class GSuiteAddOnsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.list_deployments.js</caption>
+ * region_tag:gsuiteaddons_list_deployments_sample
+ *
  */
   listDeploymentsAsync(
       request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
@@ -1120,7 +1165,8 @@ export class GSuiteAddOnsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDeployments'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDeployments.asyncIterate(
       this.innerApiCalls['listDeployments'] as GaxCall,

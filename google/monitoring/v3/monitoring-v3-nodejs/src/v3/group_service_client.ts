@@ -419,6 +419,10 @@ export class GroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGroup(request);
+ *
+ * @example <caption>include:samples/generated/v3/group_service.get_group.js</caption>
+ * region_tag:monitoring_get_group_sample
+ *
  */
   getGroup(
       request?: protos.google.monitoring.v3.IGetGroupRequest,
@@ -498,6 +502,10 @@ export class GroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createGroup(request);
+ *
+ * @example <caption>include:samples/generated/v3/group_service.create_group.js</caption>
+ * region_tag:monitoring_create_group_sample
+ *
  */
   createGroup(
       request?: protos.google.monitoring.v3.ICreateGroupRequest,
@@ -573,6 +581,10 @@ export class GroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateGroup(request);
+ *
+ * @example <caption>include:samples/generated/v3/group_service.update_group.js</caption>
+ * region_tag:monitoring_update_group_sample
+ *
  */
   updateGroup(
       request?: protos.google.monitoring.v3.IUpdateGroupRequest,
@@ -650,6 +662,10 @@ export class GroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteGroup(request);
+ *
+ * @example <caption>include:samples/generated/v3/group_service.delete_group.js</caption>
+ * region_tag:monitoring_delete_group_sample
+ *
  */
   deleteGroup(
       request?: protos.google.monitoring.v3.IDeleteGroupRequest,
@@ -759,6 +775,10 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/group_service.list_groups.js</caption>
+ * region_tag:monitoring_list_groups_sample
+ *
  */
   listGroups(
       request?: protos.google.monitoring.v3.IListGroupsRequest,
@@ -846,6 +866,10 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/group_service.list_groups.js</caption>
+ * region_tag:monitoring_list_groups_sample
+ *
  */
   listGroupsStream(
       request?: protos.google.monitoring.v3.IListGroupsRequest,
@@ -860,7 +884,8 @@ export class GroupServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGroups'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGroups.createStream(
       this.innerApiCalls.listGroups as gax.GaxCall,
@@ -925,6 +950,10 @@ export class GroupServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/group_service.list_groups.js</caption>
+ * region_tag:monitoring_list_groups_sample
+ *
  */
   listGroupsAsync(
       request?: protos.google.monitoring.v3.IListGroupsRequest,
@@ -940,7 +969,8 @@ export class GroupServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGroups'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGroups.asyncIterate(
       this.innerApiCalls['listGroups'] as GaxCall,
@@ -1010,6 +1040,10 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/group_service.list_group_members.js</caption>
+ * region_tag:monitoring_list_group_members_sample
+ *
  */
   listGroupMembers(
       request?: protos.google.monitoring.v3.IListGroupMembersRequest,
@@ -1086,6 +1120,10 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/group_service.list_group_members.js</caption>
+ * region_tag:monitoring_list_group_members_sample
+ *
  */
   listGroupMembersStream(
       request?: protos.google.monitoring.v3.IListGroupMembersRequest,
@@ -1100,7 +1138,8 @@ export class GroupServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGroupMembers'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGroupMembers.createStream(
       this.innerApiCalls.listGroupMembers as gax.GaxCall,
@@ -1154,6 +1193,10 @@ export class GroupServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/group_service.list_group_members.js</caption>
+ * region_tag:monitoring_list_group_members_sample
+ *
  */
   listGroupMembersAsync(
       request?: protos.google.monitoring.v3.IListGroupMembersRequest,
@@ -1169,7 +1212,8 @@ export class GroupServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listGroupMembers'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listGroupMembers.asyncIterate(
       this.innerApiCalls['listGroupMembers'] as GaxCall,

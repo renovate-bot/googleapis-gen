@@ -720,6 +720,10 @@ export class FeedPlaceholderViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeedPlaceholderView(request);
+ *
+ * @example <caption>include:samples/generated/v8/feed_placeholder_view_service.get_feed_placeholder_view.js</caption>
+ * region_tag:googleads_get_feed_placeholder_view_sample
+ *
  */
   getFeedPlaceholderView(
       request?: protos.google.ads.googleads.v8.services.IGetFeedPlaceholderViewRequest,

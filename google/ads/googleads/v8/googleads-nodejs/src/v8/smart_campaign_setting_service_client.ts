@@ -712,6 +712,10 @@ export class SmartCampaignSettingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSmartCampaignSetting(request);
+ *
+ * @example <caption>include:samples/generated/v8/smart_campaign_setting_service.get_smart_campaign_setting.js</caption>
+ * region_tag:googleads_get_smart_campaign_setting_sample
+ *
  */
   getSmartCampaignSetting(
       request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
@@ -796,6 +800,10 @@ export class SmartCampaignSettingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateSmartCampaignSettings(request);
+ *
+ * @example <caption>include:samples/generated/v8/smart_campaign_setting_service.mutate_smart_campaign_settings.js</caption>
+ * region_tag:googleads_mutate_smart_campaign_settings_sample
+ *
  */
   mutateSmartCampaignSettings(
       request?: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,

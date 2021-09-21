@@ -352,6 +352,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOccurrence(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.get_occurrence.js</caption>
+ * region_tag:containeranalysis_get_occurrence_sample
+ *
  */
   getOccurrence(
       request?: protos.grafeas.v1.IGetOccurrenceRequest,
@@ -426,6 +430,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteOccurrence(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.delete_occurrence.js</caption>
+ * region_tag:containeranalysis_delete_occurrence_sample
+ *
  */
   deleteOccurrence(
       request?: protos.grafeas.v1.IDeleteOccurrenceRequest,
@@ -500,6 +508,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createOccurrence(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.create_occurrence.js</caption>
+ * region_tag:containeranalysis_create_occurrence_sample
+ *
  */
   createOccurrence(
       request?: protos.grafeas.v1.ICreateOccurrenceRequest,
@@ -574,6 +586,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCreateOccurrences(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.batch_create_occurrences.js</caption>
+ * region_tag:containeranalysis_batch_create_occurrences_sample
+ *
  */
   batchCreateOccurrences(
       request?: protos.grafeas.v1.IBatchCreateOccurrencesRequest,
@@ -650,6 +666,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateOccurrence(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.update_occurrence.js</caption>
+ * region_tag:containeranalysis_update_occurrence_sample
+ *
  */
   updateOccurrence(
       request?: protos.grafeas.v1.IUpdateOccurrenceRequest,
@@ -723,6 +743,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOccurrenceNote(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.get_occurrence_note.js</caption>
+ * region_tag:containeranalysis_get_occurrence_note_sample
+ *
  */
   getOccurrenceNote(
       request?: protos.grafeas.v1.IGetOccurrenceNoteRequest,
@@ -795,6 +819,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNote(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.get_note.js</caption>
+ * region_tag:containeranalysis_get_note_sample
+ *
  */
   getNote(
       request?: protos.grafeas.v1.IGetNoteRequest,
@@ -867,6 +895,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteNote(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.delete_note.js</caption>
+ * region_tag:containeranalysis_delete_note_sample
+ *
  */
   deleteNote(
       request?: protos.grafeas.v1.IDeleteNoteRequest,
@@ -943,6 +975,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createNote(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.create_note.js</caption>
+ * region_tag:containeranalysis_create_note_sample
+ *
  */
   createNote(
       request?: protos.grafeas.v1.ICreateNoteRequest,
@@ -1017,6 +1053,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCreateNotes(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.batch_create_notes.js</caption>
+ * region_tag:containeranalysis_batch_create_notes_sample
+ *
  */
   batchCreateNotes(
       request?: protos.grafeas.v1.IBatchCreateNotesRequest,
@@ -1093,6 +1133,10 @@ export class GrafeasClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateNote(request);
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.update_note.js</caption>
+ * region_tag:containeranalysis_update_note_sample
+ *
  */
   updateNote(
       request?: protos.grafeas.v1.IUpdateNoteRequest,
@@ -1177,6 +1221,10 @@ export class GrafeasClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_occurrences.js</caption>
+ * region_tag:containeranalysis_list_occurrences_sample
+ *
  */
   listOccurrences(
       request?: protos.grafeas.v1.IListOccurrencesRequest,
@@ -1239,6 +1287,10 @@ export class GrafeasClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_occurrences.js</caption>
+ * region_tag:containeranalysis_list_occurrences_sample
+ *
  */
   listOccurrencesStream(
       request?: protos.grafeas.v1.IListOccurrencesRequest,
@@ -1253,7 +1305,8 @@ export class GrafeasClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listOccurrences'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listOccurrences.createStream(
       this.innerApiCalls.listOccurrences as gax.GaxCall,
@@ -1293,6 +1346,10 @@ export class GrafeasClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_occurrences.js</caption>
+ * region_tag:containeranalysis_list_occurrences_sample
+ *
  */
   listOccurrencesAsync(
       request?: protos.grafeas.v1.IListOccurrencesRequest,
@@ -1308,7 +1365,8 @@ export class GrafeasClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listOccurrences'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listOccurrences.asyncIterate(
       this.innerApiCalls['listOccurrences'] as GaxCall,
@@ -1364,6 +1422,10 @@ export class GrafeasClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_notes.js</caption>
+ * region_tag:containeranalysis_list_notes_sample
+ *
  */
   listNotes(
       request?: protos.grafeas.v1.IListNotesRequest,
@@ -1426,6 +1488,10 @@ export class GrafeasClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_notes.js</caption>
+ * region_tag:containeranalysis_list_notes_sample
+ *
  */
   listNotesStream(
       request?: protos.grafeas.v1.IListNotesRequest,
@@ -1440,7 +1506,8 @@ export class GrafeasClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listNotes'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listNotes.createStream(
       this.innerApiCalls.listNotes as gax.GaxCall,
@@ -1480,6 +1547,10 @@ export class GrafeasClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_notes.js</caption>
+ * region_tag:containeranalysis_list_notes_sample
+ *
  */
   listNotesAsync(
       request?: protos.grafeas.v1.IListNotesRequest,
@@ -1495,7 +1566,8 @@ export class GrafeasClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listNotes'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listNotes.asyncIterate(
       this.innerApiCalls['listNotes'] as GaxCall,
@@ -1552,6 +1624,10 @@ export class GrafeasClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_note_occurrences.js</caption>
+ * region_tag:containeranalysis_list_note_occurrences_sample
+ *
  */
   listNoteOccurrences(
       request?: protos.grafeas.v1.IListNoteOccurrencesRequest,
@@ -1613,6 +1689,10 @@ export class GrafeasClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_note_occurrences.js</caption>
+ * region_tag:containeranalysis_list_note_occurrences_sample
+ *
  */
   listNoteOccurrencesStream(
       request?: protos.grafeas.v1.IListNoteOccurrencesRequest,
@@ -1627,7 +1707,8 @@ export class GrafeasClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listNoteOccurrences'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listNoteOccurrences.createStream(
       this.innerApiCalls.listNoteOccurrences as gax.GaxCall,
@@ -1666,6 +1747,10 @@ export class GrafeasClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/grafeas.list_note_occurrences.js</caption>
+ * region_tag:containeranalysis_list_note_occurrences_sample
+ *
  */
   listNoteOccurrencesAsync(
       request?: protos.grafeas.v1.IListNoteOccurrencesRequest,
@@ -1681,7 +1766,8 @@ export class GrafeasClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listNoteOccurrences'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listNoteOccurrences.asyncIterate(
       this.innerApiCalls['listNoteOccurrences'] as GaxCall,

@@ -373,6 +373,10 @@ export class DomainMappingsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDomainMapping(request);
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.get_domain_mapping.js</caption>
+ * region_tag:appengine_get_domain_mapping_sample
+ *
  */
   getDomainMapping(
       request?: protos.google.appengine.v1.IGetDomainMappingRequest,
@@ -455,6 +459,10 @@ export class DomainMappingsClient {
  * @example
  * const [operation] = await client.createDomainMapping(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.create_domain_mapping.js</caption>
+ * region_tag:appengine_create_domain_mapping_sample
+ *
  */
   createDomainMapping(
       request?: protos.google.appengine.v1.ICreateDomainMappingRequest,
@@ -504,6 +512,10 @@ export class DomainMappingsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.create_domain_mapping.js</caption>
+ * region_tag:appengine_create_domain_mapping_sample
+ *
  */
   async checkCreateDomainMappingProgress(name: string): Promise<LROperation<protos.google.appengine.v1.DomainMapping, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -559,6 +571,10 @@ export class DomainMappingsClient {
  * @example
  * const [operation] = await client.updateDomainMapping(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.update_domain_mapping.js</caption>
+ * region_tag:appengine_update_domain_mapping_sample
+ *
  */
   updateDomainMapping(
       request?: protos.google.appengine.v1.IUpdateDomainMappingRequest,
@@ -608,6 +624,10 @@ export class DomainMappingsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.update_domain_mapping.js</caption>
+ * region_tag:appengine_update_domain_mapping_sample
+ *
  */
   async checkUpdateDomainMappingProgress(name: string): Promise<LROperation<protos.google.appengine.v1.DomainMapping, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -657,6 +677,10 @@ export class DomainMappingsClient {
  * @example
  * const [operation] = await client.deleteDomainMapping(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.delete_domain_mapping.js</caption>
+ * region_tag:appengine_delete_domain_mapping_sample
+ *
  */
   deleteDomainMapping(
       request?: protos.google.appengine.v1.IDeleteDomainMappingRequest,
@@ -706,6 +730,10 @@ export class DomainMappingsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.delete_domain_mapping.js</caption>
+ * region_tag:appengine_delete_domain_mapping_sample
+ *
  */
   async checkDeleteDomainMappingProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -757,6 +785,10 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.list_domain_mappings.js</caption>
+ * region_tag:appengine_list_domain_mappings_sample
+ *
  */
   listDomainMappings(
       request?: protos.google.appengine.v1.IListDomainMappingsRequest,
@@ -815,6 +847,10 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.list_domain_mappings.js</caption>
+ * region_tag:appengine_list_domain_mappings_sample
+ *
  */
   listDomainMappingsStream(
       request?: protos.google.appengine.v1.IListDomainMappingsRequest,
@@ -829,7 +865,8 @@ export class DomainMappingsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDomainMappings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDomainMappings.createStream(
       this.innerApiCalls.listDomainMappings as gax.GaxCall,
@@ -865,6 +902,10 @@ export class DomainMappingsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v1/domain_mappings.list_domain_mappings.js</caption>
+ * region_tag:appengine_list_domain_mappings_sample
+ *
  */
   listDomainMappingsAsync(
       request?: protos.google.appengine.v1.IListDomainMappingsRequest,
@@ -880,7 +921,8 @@ export class DomainMappingsClient {
       'parent': request.parent || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listDomainMappings'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listDomainMappings.asyncIterate(
       this.innerApiCalls['listDomainMappings'] as GaxCall,

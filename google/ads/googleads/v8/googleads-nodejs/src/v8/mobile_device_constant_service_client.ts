@@ -720,6 +720,10 @@ export class MobileDeviceConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMobileDeviceConstant(request);
+ *
+ * @example <caption>include:samples/generated/v8/mobile_device_constant_service.get_mobile_device_constant.js</caption>
+ * region_tag:googleads_get_mobile_device_constant_sample
+ *
  */
   getMobileDeviceConstant(
       request?: protos.google.ads.googleads.v8.services.IGetMobileDeviceConstantRequest,

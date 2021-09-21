@@ -368,6 +368,10 @@ export class WorkflowsServiceV2BetaClient {
  * @example
  * const [operation] = await client.runPipeline(request);
  * const [response] = await operation.promise();
+ *
+ * @example <caption>include:samples/generated/v2beta/workflows_service_v2_beta.run_pipeline.js</caption>
+ * region_tag:lifesciences_run_pipeline_sample
+ *
  */
   runPipeline(
       request?: protos.google.cloud.lifesciences.v2beta.IRunPipelineRequest,
@@ -417,6 +421,10 @@ export class WorkflowsServiceV2BetaClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
+ *
+ * @example <caption>include:samples/generated/v2beta/workflows_service_v2_beta.run_pipeline.js</caption>
+ * region_tag:lifesciences_run_pipeline_sample
+ *
  */
   async checkRunPipelineProgress(name: string): Promise<LROperation<protos.google.cloud.lifesciences.v2beta.RunPipelineResponse, protos.google.cloud.lifesciences.v2beta.Metadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

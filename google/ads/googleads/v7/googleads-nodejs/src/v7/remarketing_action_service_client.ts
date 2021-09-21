@@ -690,6 +690,10 @@ export class RemarketingActionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRemarketingAction(request);
+ *
+ * @example <caption>include:samples/generated/v7/remarketing_action_service.get_remarketing_action.js</caption>
+ * region_tag:googleads_get_remarketing_action_sample
+ *
  */
   getRemarketingAction(
       request?: protos.google.ads.googleads.v7.services.IGetRemarketingActionRequest,
@@ -780,6 +784,10 @@ export class RemarketingActionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateRemarketingActions(request);
+ *
+ * @example <caption>include:samples/generated/v7/remarketing_action_service.mutate_remarketing_actions.js</caption>
+ * region_tag:googleads_mutate_remarketing_actions_sample
+ *
  */
   mutateRemarketingActions(
       request?: protos.google.ads.googleads.v7.services.IMutateRemarketingActionsRequest,

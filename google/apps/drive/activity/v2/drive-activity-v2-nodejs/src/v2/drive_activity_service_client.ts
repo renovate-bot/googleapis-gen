@@ -365,6 +365,10 @@ export class DriveActivityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/drive_activity_service.query_drive_activity.js</caption>
+ * region_tag:activity_query_drive_activity_sample
+ *
  */
   queryDriveActivity(
       request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
@@ -449,6 +453,10 @@ export class DriveActivityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v2/drive_activity_service.query_drive_activity.js</caption>
+ * region_tag:activity_query_drive_activity_sample
+ *
  */
   queryDriveActivityStream(
       request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
@@ -456,7 +464,8 @@ export class DriveActivityServiceClient {
     Transform{
     request = request || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['queryDriveActivity'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.queryDriveActivity.createStream(
       this.innerApiCalls.queryDriveActivity as gax.GaxCall,
@@ -525,6 +534,10 @@ export class DriveActivityServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v2/drive_activity_service.query_drive_activity.js</caption>
+ * region_tag:activity_query_drive_activity_sample
+ *
  */
   queryDriveActivityAsync(
       request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
@@ -533,7 +546,8 @@ export class DriveActivityServiceClient {
     request = request || {};
     options = options || {};
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['queryDriveActivity'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.queryDriveActivity.asyncIterate(
       this.innerApiCalls['queryDriveActivity'] as GaxCall,

@@ -368,6 +368,10 @@ export class BigQueryStorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createReadSession(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.create_read_session.js</caption>
+ * region_tag:storage_create_read_session_sample
+ *
  */
   createReadSession(
       request?: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
@@ -447,6 +451,10 @@ export class BigQueryStorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCreateReadSessionStreams(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.batch_create_read_session_streams.js</caption>
+ * region_tag:storage_batch_create_read_session_streams_sample
+ *
  */
   batchCreateReadSessionStreams(
       request?: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
@@ -531,6 +539,10 @@ export class BigQueryStorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.finalizeStream(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.finalize_stream.js</caption>
+ * region_tag:storage_finalize_stream_sample
+ *
  */
   finalizeStream(
       request?: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
@@ -622,6 +634,10 @@ export class BigQueryStorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.splitReadStream(request);
+ *
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.split_read_stream.js</caption>
+ * region_tag:storage_split_read_stream_sample
+ *
  */
   splitReadStream(
       request?: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,

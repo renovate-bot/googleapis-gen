@@ -436,6 +436,10 @@ export class MetricServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMonitoredResourceDescriptor(request);
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.get_monitored_resource_descriptor.js</caption>
+ * region_tag:monitoring_get_monitored_resource_descriptor_sample
+ *
  */
   getMonitoredResourceDescriptor(
       request?: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
@@ -512,6 +516,10 @@ export class MetricServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMetricDescriptor(request);
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.get_metric_descriptor.js</caption>
+ * region_tag:monitoring_get_metric_descriptor_sample
+ *
  */
   getMetricDescriptor(
       request?: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
@@ -591,6 +599,10 @@ export class MetricServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createMetricDescriptor(request);
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.create_metric_descriptor.js</caption>
+ * region_tag:monitoring_create_metric_descriptor_sample
+ *
  */
   createMetricDescriptor(
       request?: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
@@ -669,6 +681,10 @@ export class MetricServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteMetricDescriptor(request);
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.delete_metric_descriptor.js</caption>
+ * region_tag:monitoring_delete_metric_descriptor_sample
+ *
  */
   deleteMetricDescriptor(
       request?: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
@@ -754,6 +770,10 @@ export class MetricServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTimeSeries(request);
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.create_time_series.js</caption>
+ * region_tag:monitoring_create_time_series_sample
+ *
  */
   createTimeSeries(
       request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
@@ -846,6 +866,10 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_monitored_resource_descriptors.js</caption>
+ * region_tag:monitoring_list_monitored_resource_descriptors_sample
+ *
  */
   listMonitoredResourceDescriptors(
       request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
@@ -916,6 +940,10 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_monitored_resource_descriptors.js</caption>
+ * region_tag:monitoring_list_monitored_resource_descriptors_sample
+ *
  */
   listMonitoredResourceDescriptorsStream(
       request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
@@ -930,7 +958,8 @@ export class MetricServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMonitoredResourceDescriptors.createStream(
       this.innerApiCalls.listMonitoredResourceDescriptors as gax.GaxCall,
@@ -978,6 +1007,10 @@ export class MetricServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_monitored_resource_descriptors.js</caption>
+ * region_tag:monitoring_list_monitored_resource_descriptors_sample
+ *
  */
   listMonitoredResourceDescriptorsAsync(
       request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
@@ -993,7 +1026,8 @@ export class MetricServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMonitoredResourceDescriptors.asyncIterate(
       this.innerApiCalls['listMonitoredResourceDescriptors'] as GaxCall,
@@ -1059,6 +1093,10 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_metric_descriptors.js</caption>
+ * region_tag:monitoring_list_metric_descriptors_sample
+ *
  */
   listMetricDescriptors(
       request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
@@ -1131,6 +1169,10 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_metric_descriptors.js</caption>
+ * region_tag:monitoring_list_metric_descriptors_sample
+ *
  */
   listMetricDescriptorsStream(
       request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
@@ -1145,7 +1187,8 @@ export class MetricServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMetricDescriptors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMetricDescriptors.createStream(
       this.innerApiCalls.listMetricDescriptors as gax.GaxCall,
@@ -1195,6 +1238,10 @@ export class MetricServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_metric_descriptors.js</caption>
+ * region_tag:monitoring_list_metric_descriptors_sample
+ *
  */
   listMetricDescriptorsAsync(
       request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
@@ -1210,7 +1257,8 @@ export class MetricServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listMetricDescriptors'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listMetricDescriptors.asyncIterate(
       this.innerApiCalls['listMetricDescriptors'] as GaxCall,
@@ -1299,6 +1347,10 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_time_series.js</caption>
+ * region_tag:monitoring_list_time_series_sample
+ *
  */
   listTimeSeries(
       request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
@@ -1394,6 +1446,10 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_time_series.js</caption>
+ * region_tag:monitoring_list_time_series_sample
+ *
  */
   listTimeSeriesStream(
       request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
@@ -1408,7 +1464,8 @@ export class MetricServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTimeSeries'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTimeSeries.createStream(
       this.innerApiCalls.listTimeSeries as gax.GaxCall,
@@ -1481,6 +1538,10 @@ export class MetricServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
+ *
+ * @example <caption>include:samples/generated/v3/metric_service.list_time_series.js</caption>
+ * region_tag:monitoring_list_time_series_sample
+ *
  */
   listTimeSeriesAsync(
       request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
@@ -1496,7 +1557,8 @@ export class MetricServiceClient {
       'name': request.name || '',
     });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listTimeSeries'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listTimeSeries.asyncIterate(
       this.innerApiCalls['listTimeSeries'] as GaxCall,
