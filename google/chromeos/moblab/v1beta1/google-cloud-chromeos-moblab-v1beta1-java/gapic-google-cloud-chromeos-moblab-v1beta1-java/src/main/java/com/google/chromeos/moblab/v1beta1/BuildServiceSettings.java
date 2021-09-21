@@ -18,6 +18,7 @@ package com.google.chromeos.moblab.v1beta1;
 
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -79,6 +80,12 @@ public class BuildServiceSettings extends ClientSettings<BuildServiceSettings> {
           ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
       listBuildTargetsSettings() {
     return ((BuildServiceStubSettings) getStubSettings()).listBuildTargetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listModels. */
+  public PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      listModelsSettings() {
+    return ((BuildServiceStubSettings) getStubSettings()).listModelsSettings();
   }
 
   /** Returns the object with the settings used for calls to listBuilds. */
@@ -212,6 +219,12 @@ public class BuildServiceSettings extends ClientSettings<BuildServiceSettings> {
             ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
         listBuildTargetsSettings() {
       return getStubSettingsBuilder().listBuildTargetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listModels. */
+    public PagedCallSettings.Builder<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+        listModelsSettings() {
+      return getStubSettingsBuilder().listModelsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listBuilds. */

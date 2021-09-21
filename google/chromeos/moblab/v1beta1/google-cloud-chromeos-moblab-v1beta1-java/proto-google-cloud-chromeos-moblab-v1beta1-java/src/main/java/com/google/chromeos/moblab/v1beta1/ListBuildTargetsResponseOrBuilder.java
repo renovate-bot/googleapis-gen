@@ -53,8 +53,8 @@ public interface ListBuildTargetsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Token to retrieve the next page of builds. If this field is omitted, there
-   * are no subsequent pages.
+   * Token to retrieve the next page of build targets. If this field is omitted,
+   * there are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -63,8 +63,8 @@ public interface ListBuildTargetsResponseOrBuilder extends
   java.lang.String getNextPageToken();
   /**
    * <pre>
-   * Token to retrieve the next page of builds. If this field is omitted, there
-   * are no subsequent pages.
+   * Token to retrieve the next page of build targets. If this field is omitted,
+   * there are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

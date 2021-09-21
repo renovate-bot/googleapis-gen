@@ -9,27 +9,27 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Response message for listing build targets.
+ * Response message for listing models.
  *
- * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.ListBuildTargetsResponse</code>
+ * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.ListModelsResponse</code>
  */
-class ListBuildTargetsResponse extends \Google\Protobuf\Internal\Message
+class ListModelsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The list of build targets.
+     * The list of models.
      *
-     * Generated from protobuf field <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * Generated from protobuf field <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    private $build_targets;
+    private $models;
     /**
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
     protected $next_page_token = '';
     /**
-     * Total number of build targets.
+     * Total number of models.
      *
      * Generated from protobuf field <code>int32 total_size = 3;</code>
      */
@@ -41,13 +41,13 @@ class ListBuildTargetsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Chromeos\Moblab\V1beta1\BuildTarget[]|\Google\Protobuf\Internal\RepeatedField $build_targets
-     *           The list of build targets.
+     *     @type \Google\Chromeos\Moblab\V1beta1\Model[]|\Google\Protobuf\Internal\RepeatedField $models
+     *           The list of models.
      *     @type string $next_page_token
-     *           Token to retrieve the next page of build targets. If this field is omitted,
-     *           there are no subsequent pages.
+     *           Token to retrieve the next page of models. If this field is omitted, there
+     *           are no subsequent pages.
      *     @type int $total_size
-     *           Total number of build targets.
+     *           Total number of models.
      * }
      */
     public function __construct($data = NULL) {
@@ -56,34 +56,34 @@ class ListBuildTargetsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of build targets.
+     * The list of models.
      *
-     * Generated from protobuf field <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * Generated from protobuf field <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getBuildTargets()
+    public function getModels()
     {
-        return $this->build_targets;
+        return $this->models;
     }
 
     /**
-     * The list of build targets.
+     * The list of models.
      *
-     * Generated from protobuf field <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
-     * @param \Google\Chromeos\Moblab\V1beta1\BuildTarget[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
+     * @param \Google\Chromeos\Moblab\V1beta1\Model[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setBuildTargets($var)
+    public function setModels($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Chromeos\Moblab\V1beta1\BuildTarget::class);
-        $this->build_targets = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Chromeos\Moblab\V1beta1\Model::class);
+        $this->models = $arr;
 
         return $this;
     }
 
     /**
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      * @return string
@@ -94,8 +94,8 @@ class ListBuildTargetsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      * @param string $var
@@ -110,7 +110,7 @@ class ListBuildTargetsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Total number of build targets.
+     * Total number of models.
      *
      * Generated from protobuf field <code>int32 total_size = 3;</code>
      * @return int
@@ -121,7 +121,7 @@ class ListBuildTargetsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Total number of build targets.
+     * Total number of models.
      *
      * Generated from protobuf field <code>int32 total_size = 3;</code>
      * @param int $var

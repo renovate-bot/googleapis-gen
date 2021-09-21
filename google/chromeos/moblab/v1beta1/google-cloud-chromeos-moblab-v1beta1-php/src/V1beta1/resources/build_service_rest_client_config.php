@@ -40,6 +40,17 @@ return [
                     ],
                 ],
             ],
+            'ListModels' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=buildTargets/*}/models',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'StageBuild' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:stage',

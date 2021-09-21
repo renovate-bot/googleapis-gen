@@ -30,6 +30,11 @@
                 "ListBuilds"
               ]
             },
+            "ListModels": {
+              "methods": [
+                "ListModels"
+              ]
+            },
             "StageBuild": {
               "methods": [
                 "StageBuild"

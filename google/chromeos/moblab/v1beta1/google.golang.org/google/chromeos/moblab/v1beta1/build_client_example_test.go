@@ -62,6 +62,32 @@ func ExampleBuildClient_ListBuildTargets() {
 	}
 }
 
+func ExampleBuildClient_ListModels() {
+	ctx := context.Background()
+	c, err := moblab.NewBuildClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &moblabpb.ListModelsRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/chromeos/moblab/v1beta1#ListModelsRequest.
+	}
+	it := c.ListModels(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
+	}
+}
+
 func ExampleBuildClient_ListBuilds() {
 	ctx := context.Background()
 	c, err := moblab.NewBuildClient(ctx)

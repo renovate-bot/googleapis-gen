@@ -22,6 +22,9 @@
             "ListBuilds": {
               "methods": ["listBuilds", "listBuilds", "listBuilds", "listBuildsPagedCallable", "listBuildsCallable"]
             },
+            "ListModels": {
+              "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]
+            },
             "StageBuild": {
               "methods": ["stageBuildAsync", "stageBuildAsync", "stageBuildAsync", "stageBuildOperationCallable", "stageBuildCallable"]
             }

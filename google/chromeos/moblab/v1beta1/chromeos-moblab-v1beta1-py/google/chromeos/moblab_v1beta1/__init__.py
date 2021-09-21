@@ -25,6 +25,8 @@ from .types.build_service import ListBuildsRequest
 from .types.build_service import ListBuildsResponse
 from .types.build_service import ListBuildTargetsRequest
 from .types.build_service import ListBuildTargetsResponse
+from .types.build_service import ListModelsRequest
+from .types.build_service import ListModelsResponse
 from .types.build_service import StageBuildMetadata
 from .types.build_service import StageBuildRequest
 from .types.build_service import StageBuildResponse
@@ -48,6 +50,8 @@ __all__ = (
 'ListBuildTargetsResponse',
 'ListBuildsRequest',
 'ListBuildsResponse',
+'ListModelsRequest',
+'ListModelsResponse',
 'Milestone',
 'Model',
 'StageBuildMetadata',

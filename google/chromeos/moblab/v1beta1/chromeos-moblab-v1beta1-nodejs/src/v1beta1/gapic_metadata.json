@@ -32,6 +32,13 @@
                 "listBuildTargetsAsync"
               ]
             },
+            "ListModels": {
+              "methods": [
+                "listModels",
+                "listModelsStream",
+                "listModelsAsync"
+              ]
+            },
             "ListBuilds": {
               "methods": [
                 "listBuilds",
@@ -64,6 +71,13 @@
                 "listBuildTargets",
                 "listBuildTargetsStream",
                 "listBuildTargetsAsync"
+              ]
+            },
+            "ListModels": {
+              "methods": [
+                "listModels",
+                "listModelsStream",
+                "listModelsAsync"
               ]
             },
             "ListBuilds": {

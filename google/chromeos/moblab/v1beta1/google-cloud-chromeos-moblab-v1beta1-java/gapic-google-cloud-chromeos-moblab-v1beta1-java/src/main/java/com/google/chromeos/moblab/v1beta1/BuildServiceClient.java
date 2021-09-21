@@ -251,6 +251,139 @@ public class BuildServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists all models for the given build target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   BuildTargetName parent = BuildTargetName.of("[BUILD_TARGET]");
+   *   for (Model element : buildServiceClient.listModels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The full resource name of build target.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelsPagedResponse listModels(BuildTargetName parent) {
+    ListModelsRequest request =
+        ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listModels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all models for the given build target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   String parent = BuildTargetName.of("[BUILD_TARGET]").toString();
+   *   for (Model element : buildServiceClient.listModels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The full resource name of build target.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelsPagedResponse listModels(String parent) {
+    ListModelsRequest request = ListModelsRequest.newBuilder().setParent(parent).build();
+    return listModels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all models for the given build target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListModelsRequest request =
+   *       ListModelsRequest.newBuilder()
+   *           .setParent(BuildTargetName.of("[BUILD_TARGET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Model element : buildServiceClient.listModels(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelsPagedResponse listModels(ListModelsRequest request) {
+    return listModelsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all models for the given build target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListModelsRequest request =
+   *       ListModelsRequest.newBuilder()
+   *           .setParent(BuildTargetName.of("[BUILD_TARGET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Model> future = buildServiceClient.listModelsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Model element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
+    return stub.listModelsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all models for the given build target.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   ListModelsRequest request =
+   *       ListModelsRequest.newBuilder()
+   *           .setParent(BuildTargetName.of("[BUILD_TARGET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListModelsResponse response = buildServiceClient.listModelsCallable().call(request);
+   *     for (Model element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
+    return stub.listModelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists all builds for the given build target and model in descending order for the milestones
    * and build versions.
    *
@@ -871,6 +1004,73 @@ public class BuildServiceClient implements BackgroundResource {
     protected ListBuildTargetsFixedSizeCollection createCollection(
         List<ListBuildTargetsPage> pages, int collectionSize) {
       return new ListBuildTargetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListModelsPagedResponse
+      extends AbstractPagedListResponse<
+          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
+          ListModelsFixedSizeCollection> {
+
+    public static ApiFuture<ListModelsPagedResponse> createAsync(
+        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        ApiFuture<ListModelsResponse> futureResponse) {
+      ApiFuture<ListModelsPage> futurePage =
+          ListModelsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListModelsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListModelsPagedResponse(ListModelsPage page) {
+      super(page, ListModelsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListModelsPage
+      extends AbstractPage<ListModelsRequest, ListModelsResponse, Model, ListModelsPage> {
+
+    private ListModelsPage(
+        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        ListModelsResponse response) {
+      super(context, response);
+    }
+
+    private static ListModelsPage createEmptyPage() {
+      return new ListModelsPage(null, null);
+    }
+
+    @Override
+    protected ListModelsPage createPage(
+        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        ListModelsResponse response) {
+      return new ListModelsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListModelsPage> createPageAsync(
+        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        ApiFuture<ListModelsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListModelsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
+          ListModelsFixedSizeCollection> {
+
+    private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListModelsFixedSizeCollection createEmptyCollection() {
+      return new ListModelsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListModelsFixedSizeCollection createCollection(
+        List<ListModelsPage> pages, int collectionSize) {
+      return new ListModelsFixedSizeCollection(pages, collectionSize);
     }
   }
 

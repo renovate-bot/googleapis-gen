@@ -664,6 +664,229 @@ describe('v1beta1.BuildServiceClient', () => {
         });
     });
 
+    describe('listModels', () => {
+        it('invokes listModels without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+            ];
+            client.innerApiCalls.listModels = stubSimpleCall(expectedResponse);
+            const [response] = await client.listModels(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listModels as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listModels without error using callback', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+            ];
+            client.innerApiCalls.listModels = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listModels(
+                    request,
+                    (err?: Error|null, result?: protos.google.chromeos.moblab.v1beta1.IModel[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listModels as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listModels with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listModels = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listModels(request), expectedError);
+            assert((client.innerApiCalls.listModels as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listModelsStream without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+            ];
+            client.descriptors.page.listModels.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listModelsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.chromeos.moblab.v1beta1.Model[] = [];
+                stream.on('data', (response: protos.google.chromeos.moblab.v1beta1.Model) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listModels.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listModels, request));
+            assert.strictEqual(
+                (client.descriptors.page.listModels.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listModelsStream with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listModels.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listModelsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.chromeos.moblab.v1beta1.Model[] = [];
+                stream.on('data', (response: protos.google.chromeos.moblab.v1beta1.Model) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listModels.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listModels, request));
+            assert.strictEqual(
+                (client.descriptors.page.listModels.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listModels without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+              generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Model()),
+            ];
+            client.descriptors.page.listModels.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.chromeos.moblab.v1beta1.IModel[] = [];
+            const iterable = client.listModelsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listModels.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listModels.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listModels with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListModelsRequest());
+            request.parent = '';
+            const expectedHeaderRequestParams = "parent=";const expectedError = new Error('expected');
+            client.descriptors.page.listModels.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listModelsAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.chromeos.moblab.v1beta1.IModel[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listModels.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listModels.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
     describe('listBuilds', () => {
         it('invokes listBuilds without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({

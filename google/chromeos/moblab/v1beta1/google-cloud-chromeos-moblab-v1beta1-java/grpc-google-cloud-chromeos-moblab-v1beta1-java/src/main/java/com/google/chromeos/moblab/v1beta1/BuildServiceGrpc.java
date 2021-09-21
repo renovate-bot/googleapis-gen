@@ -48,6 +48,37 @@ public final class BuildServiceGrpc {
     return getListBuildTargetsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListModelsRequest,
+      com.google.chromeos.moblab.v1beta1.ListModelsResponse> getListModelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModels",
+      requestType = com.google.chromeos.moblab.v1beta1.ListModelsRequest.class,
+      responseType = com.google.chromeos.moblab.v1beta1.ListModelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListModelsRequest,
+      com.google.chromeos.moblab.v1beta1.ListModelsResponse> getListModelsMethod() {
+    io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListModelsRequest, com.google.chromeos.moblab.v1beta1.ListModelsResponse> getListModelsMethod;
+    if ((getListModelsMethod = BuildServiceGrpc.getListModelsMethod) == null) {
+      synchronized (BuildServiceGrpc.class) {
+        if ((getListModelsMethod = BuildServiceGrpc.getListModelsMethod) == null) {
+          BuildServiceGrpc.getListModelsMethod = getListModelsMethod =
+              io.grpc.MethodDescriptor.<com.google.chromeos.moblab.v1beta1.ListModelsRequest, com.google.chromeos.moblab.v1beta1.ListModelsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModels"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.chromeos.moblab.v1beta1.ListModelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.chromeos.moblab.v1beta1.ListModelsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BuildServiceMethodDescriptorSupplier("ListModels"))
+              .build();
+        }
+      }
+    }
+    return getListModelsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.ListBuildsRequest,
       com.google.chromeos.moblab.v1beta1.ListBuildsResponse> getListBuildsMethod;
 
@@ -235,6 +266,16 @@ public final class BuildServiceGrpc {
 
     /**
      * <pre>
+     * Lists all models for the given build target.
+     * </pre>
+     */
+    public void listModels(com.google.chromeos.moblab.v1beta1.ListModelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListModelsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListModelsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * </pre>
@@ -299,6 +340,13 @@ public final class BuildServiceGrpc {
                 com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse>(
                   this, METHODID_LIST_BUILD_TARGETS)))
           .addMethod(
+            getListModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.chromeos.moblab.v1beta1.ListModelsRequest,
+                com.google.chromeos.moblab.v1beta1.ListModelsResponse>(
+                  this, METHODID_LIST_MODELS)))
+          .addMethod(
             getListBuildsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -356,6 +404,17 @@ public final class BuildServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBuildTargetsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists all models for the given build target.
+     * </pre>
+     */
+    public void listModels(com.google.chromeos.moblab.v1beta1.ListModelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListModelsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListModelsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -448,6 +507,16 @@ public final class BuildServiceGrpc {
 
     /**
      * <pre>
+     * Lists all models for the given build target.
+     * </pre>
+     */
+    public com.google.chromeos.moblab.v1beta1.ListModelsResponse listModels(com.google.chromeos.moblab.v1beta1.ListModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * </pre>
@@ -533,6 +602,17 @@ public final class BuildServiceGrpc {
 
     /**
      * <pre>
+     * Lists all models for the given build target.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chromeos.moblab.v1beta1.ListModelsResponse> listModels(
+        com.google.chromeos.moblab.v1beta1.ListModelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListModelsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Lists all builds for the given build target and model in descending order
      * for the milestones and build versions.
      * </pre>
@@ -593,10 +673,11 @@ public final class BuildServiceGrpc {
   }
 
   private static final int METHODID_LIST_BUILD_TARGETS = 0;
-  private static final int METHODID_LIST_BUILDS = 1;
-  private static final int METHODID_CHECK_BUILD_STAGE_STATUS = 2;
-  private static final int METHODID_STAGE_BUILD = 3;
-  private static final int METHODID_FIND_MOST_STABLE_BUILD = 4;
+  private static final int METHODID_LIST_MODELS = 1;
+  private static final int METHODID_LIST_BUILDS = 2;
+  private static final int METHODID_CHECK_BUILD_STAGE_STATUS = 3;
+  private static final int METHODID_STAGE_BUILD = 4;
+  private static final int METHODID_FIND_MOST_STABLE_BUILD = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -618,6 +699,10 @@ public final class BuildServiceGrpc {
         case METHODID_LIST_BUILD_TARGETS:
           serviceImpl.listBuildTargets((com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MODELS:
+          serviceImpl.listModels((com.google.chromeos.moblab.v1beta1.ListModelsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.ListModelsResponse>) responseObserver);
           break;
         case METHODID_LIST_BUILDS:
           serviceImpl.listBuilds((com.google.chromeos.moblab.v1beta1.ListBuildsRequest) request,
@@ -697,6 +782,7 @@ public final class BuildServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BuildServiceFileDescriptorSupplier())
               .addMethod(getListBuildTargetsMethod())
+              .addMethod(getListModelsMethod())
               .addMethod(getListBuildsMethod())
               .addMethod(getCheckBuildStageStatusMethod())
               .addMethod(getStageBuildMethod())

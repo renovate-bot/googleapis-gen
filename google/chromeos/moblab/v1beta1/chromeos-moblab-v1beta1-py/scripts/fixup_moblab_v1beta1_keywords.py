@@ -43,6 +43,7 @@ class moblabCallTransformer(cst.CSTTransformer):
           'find_most_stable_build': ('build_target', ),
           'list_builds': ('parent', 'page_size', 'page_token', 'filter', 'read_mask', 'group_by', ),
           'list_build_targets': ('page_size', 'page_token', ),
+          'list_models': ('parent', 'page_size', 'page_token', ),
           'stage_build': ('name', 'filter', ),
     }
 

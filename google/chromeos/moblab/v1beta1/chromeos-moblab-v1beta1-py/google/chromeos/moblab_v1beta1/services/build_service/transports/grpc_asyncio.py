@@ -270,6 +270,32 @@ class BuildServiceGrpcAsyncIOTransport(BuildServiceTransport):
         return self._stubs['list_build_targets']
 
     @property
+    def list_models(self) -> Callable[
+            [build_service.ListModelsRequest],
+            Awaitable[build_service.ListModelsResponse]]:
+        r"""Return a callable for the list models method over gRPC.
+
+        Lists all models for the given build target.
+
+        Returns:
+            Callable[[~.ListModelsRequest],
+                    Awaitable[~.ListModelsResponse]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'list_models' not in self._stubs:
+            self._stubs['list_models'] = self.grpc_channel.unary_unary(
+                '/google.chromeos.moblab.v1beta1.BuildService/ListModels',
+                request_serializer=build_service.ListModelsRequest.serialize,
+                response_deserializer=build_service.ListModelsResponse.deserialize,
+            )
+        return self._stubs['list_models']
+
+    @property
     def list_builds(self) -> Callable[
             [build_service.ListBuildsRequest],
             Awaitable[build_service.ListBuildsResponse]]:

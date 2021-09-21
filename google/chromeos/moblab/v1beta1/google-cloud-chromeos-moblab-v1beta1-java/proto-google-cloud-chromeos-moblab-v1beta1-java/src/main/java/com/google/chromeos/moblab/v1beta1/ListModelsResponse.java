@@ -5,22 +5,22 @@ package com.google.chromeos.moblab.v1beta1;
 
 /**
  * <pre>
- * Response message for listing build targets.
+ * Response message for listing models.
  * </pre>
  *
- * Protobuf type {@code google.chromeos.moblab.v1beta1.ListBuildTargetsResponse}
+ * Protobuf type {@code google.chromeos.moblab.v1beta1.ListModelsResponse}
  */
-public final class ListBuildTargetsResponse extends
+public final class ListModelsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.chromeos.moblab.v1beta1.ListBuildTargetsResponse)
-    ListBuildTargetsResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.chromeos.moblab.v1beta1.ListModelsResponse)
+    ListModelsResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListBuildTargetsResponse.newBuilder() to construct.
-  private ListBuildTargetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListModelsResponse.newBuilder() to construct.
+  private ListModelsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListBuildTargetsResponse() {
-    buildTargets_ = java.util.Collections.emptyList();
+  private ListModelsResponse() {
+    models_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListBuildTargetsResponse();
+    return new ListModelsResponse();
   }
 
   @java.lang.Override
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListBuildTargetsResponse(
+  private ListModelsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -57,11 +57,11 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              buildTargets_ = new java.util.ArrayList<com.google.chromeos.moblab.v1beta1.BuildTarget>();
+              models_ = new java.util.ArrayList<com.google.chromeos.moblab.v1beta1.Model>();
               mutable_bitField0_ |= 0x00000001;
             }
-            buildTargets_.add(
-                input.readMessage(com.google.chromeos.moblab.v1beta1.BuildTarget.parser(), extensionRegistry));
+            models_.add(
+                input.readMessage(com.google.chromeos.moblab.v1beta1.Model.parser(), extensionRegistry));
             break;
           }
           case 18: {
@@ -91,7 +91,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        buildTargets_ = java.util.Collections.unmodifiableList(buildTargets_);
+        models_ = java.util.Collections.unmodifiableList(models_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -99,83 +99,83 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_descriptor;
+    return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListModelsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_fieldAccessorTable
+    return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListModelsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.class, com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.Builder.class);
+            com.google.chromeos.moblab.v1beta1.ListModelsResponse.class, com.google.chromeos.moblab.v1beta1.ListModelsResponse.Builder.class);
   }
 
-  public static final int BUILD_TARGETS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.chromeos.moblab.v1beta1.BuildTarget> buildTargets_;
+  public static final int MODELS_FIELD_NUMBER = 1;
+  private java.util.List<com.google.chromeos.moblab.v1beta1.Model> models_;
   /**
    * <pre>
-   * The list of build targets.
+   * The list of models.
    * </pre>
    *
-   * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+   * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.chromeos.moblab.v1beta1.BuildTarget> getBuildTargetsList() {
-    return buildTargets_;
+  public java.util.List<com.google.chromeos.moblab.v1beta1.Model> getModelsList() {
+    return models_;
   }
   /**
    * <pre>
-   * The list of build targets.
+   * The list of models.
    * </pre>
    *
-   * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+   * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder> 
-      getBuildTargetsOrBuilderList() {
-    return buildTargets_;
+  public java.util.List<? extends com.google.chromeos.moblab.v1beta1.ModelOrBuilder> 
+      getModelsOrBuilderList() {
+    return models_;
   }
   /**
    * <pre>
-   * The list of build targets.
+   * The list of models.
    * </pre>
    *
-   * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+   * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
    */
   @java.lang.Override
-  public int getBuildTargetsCount() {
-    return buildTargets_.size();
+  public int getModelsCount() {
+    return models_.size();
   }
   /**
    * <pre>
-   * The list of build targets.
+   * The list of models.
    * </pre>
    *
-   * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+   * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
    */
   @java.lang.Override
-  public com.google.chromeos.moblab.v1beta1.BuildTarget getBuildTargets(int index) {
-    return buildTargets_.get(index);
+  public com.google.chromeos.moblab.v1beta1.Model getModels(int index) {
+    return models_.get(index);
   }
   /**
    * <pre>
-   * The list of build targets.
+   * The list of models.
    * </pre>
    *
-   * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+   * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
    */
   @java.lang.Override
-  public com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder getBuildTargetsOrBuilder(
+  public com.google.chromeos.moblab.v1beta1.ModelOrBuilder getModelsOrBuilder(
       int index) {
-    return buildTargets_.get(index);
+    return models_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
    * <pre>
-   * Token to retrieve the next page of build targets. If this field is omitted,
-   * there are no subsequent pages.
+   * Token to retrieve the next page of models. If this field is omitted, there
+   * are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -196,8 +196,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Token to retrieve the next page of build targets. If this field is omitted,
-   * there are no subsequent pages.
+   * Token to retrieve the next page of models. If this field is omitted, there
+   * are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
   private int totalSize_;
   /**
    * <pre>
-   * Total number of build targets.
+   * Total number of models.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
@@ -247,8 +247,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < buildTargets_.size(); i++) {
-      output.writeMessage(1, buildTargets_.get(i));
+    for (int i = 0; i < models_.size(); i++) {
+      output.writeMessage(1, models_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
@@ -265,9 +265,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < buildTargets_.size(); i++) {
+    for (int i = 0; i < models_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, buildTargets_.get(i));
+        .computeMessageSize(1, models_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -286,13 +286,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse)) {
+    if (!(obj instanceof com.google.chromeos.moblab.v1beta1.ListModelsResponse)) {
       return super.equals(obj);
     }
-    com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse other = (com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse) obj;
+    com.google.chromeos.moblab.v1beta1.ListModelsResponse other = (com.google.chromeos.moblab.v1beta1.ListModelsResponse) obj;
 
-    if (!getBuildTargetsList()
-        .equals(other.getBuildTargetsList())) return false;
+    if (!getModelsList()
+        .equals(other.getModelsList())) return false;
     if (!getNextPageToken()
         .equals(other.getNextPageToken())) return false;
     if (getTotalSize()
@@ -308,9 +308,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getBuildTargetsCount() > 0) {
-      hash = (37 * hash) + BUILD_TARGETS_FIELD_NUMBER;
-      hash = (53 * hash) + getBuildTargetsList().hashCode();
+    if (getModelsCount() > 0) {
+      hash = (37 * hash) + MODELS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelsList().hashCode();
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
@@ -321,69 +321,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(byte[] data)
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(java.io.InputStream input)
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseDelimitedFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parseFrom(
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse prototype) {
+  public static Builder newBuilder(com.google.chromeos.moblab.v1beta1.ListModelsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -413,29 +413,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Response message for listing build targets.
+   * Response message for listing models.
    * </pre>
    *
-   * Protobuf type {@code google.chromeos.moblab.v1beta1.ListBuildTargetsResponse}
+   * Protobuf type {@code google.chromeos.moblab.v1beta1.ListModelsResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.chromeos.moblab.v1beta1.ListBuildTargetsResponse)
-      com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.chromeos.moblab.v1beta1.ListModelsResponse)
+      com.google.chromeos.moblab.v1beta1.ListModelsResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_descriptor;
+      return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListModelsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_fieldAccessorTable
+      return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListModelsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.class, com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.Builder.class);
+              com.google.chromeos.moblab.v1beta1.ListModelsResponse.class, com.google.chromeos.moblab.v1beta1.ListModelsResponse.Builder.class);
     }
 
-    // Construct using com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.newBuilder()
+    // Construct using com.google.chromeos.moblab.v1beta1.ListModelsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -448,17 +448,17 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getBuildTargetsFieldBuilder();
+        getModelsFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (buildTargetsBuilder_ == null) {
-        buildTargets_ = java.util.Collections.emptyList();
+      if (modelsBuilder_ == null) {
+        models_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        buildTargetsBuilder_.clear();
+        modelsBuilder_.clear();
       }
       nextPageToken_ = "";
 
@@ -470,17 +470,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListBuildTargetsResponse_descriptor;
+      return com.google.chromeos.moblab.v1beta1.BuildServiceProto.internal_static_google_chromeos_moblab_v1beta1_ListModelsResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse getDefaultInstanceForType() {
-      return com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.getDefaultInstance();
+    public com.google.chromeos.moblab.v1beta1.ListModelsResponse getDefaultInstanceForType() {
+      return com.google.chromeos.moblab.v1beta1.ListModelsResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse build() {
-      com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse result = buildPartial();
+    public com.google.chromeos.moblab.v1beta1.ListModelsResponse build() {
+      com.google.chromeos.moblab.v1beta1.ListModelsResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -488,17 +488,17 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse buildPartial() {
-      com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse result = new com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse(this);
+    public com.google.chromeos.moblab.v1beta1.ListModelsResponse buildPartial() {
+      com.google.chromeos.moblab.v1beta1.ListModelsResponse result = new com.google.chromeos.moblab.v1beta1.ListModelsResponse(this);
       int from_bitField0_ = bitField0_;
-      if (buildTargetsBuilder_ == null) {
+      if (modelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          buildTargets_ = java.util.Collections.unmodifiableList(buildTargets_);
+          models_ = java.util.Collections.unmodifiableList(models_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.buildTargets_ = buildTargets_;
+        result.models_ = models_;
       } else {
-        result.buildTargets_ = buildTargetsBuilder_.build();
+        result.models_ = modelsBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
       result.totalSize_ = totalSize_;
@@ -540,39 +540,39 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse) {
-        return mergeFrom((com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse)other);
+      if (other instanceof com.google.chromeos.moblab.v1beta1.ListModelsResponse) {
+        return mergeFrom((com.google.chromeos.moblab.v1beta1.ListModelsResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse other) {
-      if (other == com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse.getDefaultInstance()) return this;
-      if (buildTargetsBuilder_ == null) {
-        if (!other.buildTargets_.isEmpty()) {
-          if (buildTargets_.isEmpty()) {
-            buildTargets_ = other.buildTargets_;
+    public Builder mergeFrom(com.google.chromeos.moblab.v1beta1.ListModelsResponse other) {
+      if (other == com.google.chromeos.moblab.v1beta1.ListModelsResponse.getDefaultInstance()) return this;
+      if (modelsBuilder_ == null) {
+        if (!other.models_.isEmpty()) {
+          if (models_.isEmpty()) {
+            models_ = other.models_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureBuildTargetsIsMutable();
-            buildTargets_.addAll(other.buildTargets_);
+            ensureModelsIsMutable();
+            models_.addAll(other.models_);
           }
           onChanged();
         }
       } else {
-        if (!other.buildTargets_.isEmpty()) {
-          if (buildTargetsBuilder_.isEmpty()) {
-            buildTargetsBuilder_.dispose();
-            buildTargetsBuilder_ = null;
-            buildTargets_ = other.buildTargets_;
+        if (!other.models_.isEmpty()) {
+          if (modelsBuilder_.isEmpty()) {
+            modelsBuilder_.dispose();
+            modelsBuilder_ = null;
+            models_ = other.models_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            buildTargetsBuilder_ = 
+            modelsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBuildTargetsFieldBuilder() : null;
+                 getModelsFieldBuilder() : null;
           } else {
-            buildTargetsBuilder_.addAllMessages(other.buildTargets_);
+            modelsBuilder_.addAllMessages(other.models_);
           }
         }
       }
@@ -598,11 +598,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse parsedMessage = null;
+      com.google.chromeos.moblab.v1beta1.ListModelsResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.google.chromeos.moblab.v1beta1.ListModelsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -613,323 +613,323 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.google.chromeos.moblab.v1beta1.BuildTarget> buildTargets_ =
+    private java.util.List<com.google.chromeos.moblab.v1beta1.Model> models_ =
       java.util.Collections.emptyList();
-    private void ensureBuildTargetsIsMutable() {
+    private void ensureModelsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        buildTargets_ = new java.util.ArrayList<com.google.chromeos.moblab.v1beta1.BuildTarget>(buildTargets_);
+        models_ = new java.util.ArrayList<com.google.chromeos.moblab.v1beta1.Model>(models_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.chromeos.moblab.v1beta1.BuildTarget, com.google.chromeos.moblab.v1beta1.BuildTarget.Builder, com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder> buildTargetsBuilder_;
+        com.google.chromeos.moblab.v1beta1.Model, com.google.chromeos.moblab.v1beta1.Model.Builder, com.google.chromeos.moblab.v1beta1.ModelOrBuilder> modelsBuilder_;
 
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public java.util.List<com.google.chromeos.moblab.v1beta1.BuildTarget> getBuildTargetsList() {
-      if (buildTargetsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(buildTargets_);
+    public java.util.List<com.google.chromeos.moblab.v1beta1.Model> getModelsList() {
+      if (modelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(models_);
       } else {
-        return buildTargetsBuilder_.getMessageList();
+        return modelsBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public int getBuildTargetsCount() {
-      if (buildTargetsBuilder_ == null) {
-        return buildTargets_.size();
+    public int getModelsCount() {
+      if (modelsBuilder_ == null) {
+        return models_.size();
       } else {
-        return buildTargetsBuilder_.getCount();
+        return modelsBuilder_.getCount();
       }
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public com.google.chromeos.moblab.v1beta1.BuildTarget getBuildTargets(int index) {
-      if (buildTargetsBuilder_ == null) {
-        return buildTargets_.get(index);
+    public com.google.chromeos.moblab.v1beta1.Model getModels(int index) {
+      if (modelsBuilder_ == null) {
+        return models_.get(index);
       } else {
-        return buildTargetsBuilder_.getMessage(index);
+        return modelsBuilder_.getMessage(index);
       }
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder setBuildTargets(
-        int index, com.google.chromeos.moblab.v1beta1.BuildTarget value) {
-      if (buildTargetsBuilder_ == null) {
+    public Builder setModels(
+        int index, com.google.chromeos.moblab.v1beta1.Model value) {
+      if (modelsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureBuildTargetsIsMutable();
-        buildTargets_.set(index, value);
+        ensureModelsIsMutable();
+        models_.set(index, value);
         onChanged();
       } else {
-        buildTargetsBuilder_.setMessage(index, value);
+        modelsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder setBuildTargets(
-        int index, com.google.chromeos.moblab.v1beta1.BuildTarget.Builder builderForValue) {
-      if (buildTargetsBuilder_ == null) {
-        ensureBuildTargetsIsMutable();
-        buildTargets_.set(index, builderForValue.build());
+    public Builder setModels(
+        int index, com.google.chromeos.moblab.v1beta1.Model.Builder builderForValue) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.set(index, builderForValue.build());
         onChanged();
       } else {
-        buildTargetsBuilder_.setMessage(index, builderForValue.build());
+        modelsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder addBuildTargets(com.google.chromeos.moblab.v1beta1.BuildTarget value) {
-      if (buildTargetsBuilder_ == null) {
+    public Builder addModels(com.google.chromeos.moblab.v1beta1.Model value) {
+      if (modelsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureBuildTargetsIsMutable();
-        buildTargets_.add(value);
+        ensureModelsIsMutable();
+        models_.add(value);
         onChanged();
       } else {
-        buildTargetsBuilder_.addMessage(value);
+        modelsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder addBuildTargets(
-        int index, com.google.chromeos.moblab.v1beta1.BuildTarget value) {
-      if (buildTargetsBuilder_ == null) {
+    public Builder addModels(
+        int index, com.google.chromeos.moblab.v1beta1.Model value) {
+      if (modelsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureBuildTargetsIsMutable();
-        buildTargets_.add(index, value);
+        ensureModelsIsMutable();
+        models_.add(index, value);
         onChanged();
       } else {
-        buildTargetsBuilder_.addMessage(index, value);
+        modelsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder addBuildTargets(
-        com.google.chromeos.moblab.v1beta1.BuildTarget.Builder builderForValue) {
-      if (buildTargetsBuilder_ == null) {
-        ensureBuildTargetsIsMutable();
-        buildTargets_.add(builderForValue.build());
+    public Builder addModels(
+        com.google.chromeos.moblab.v1beta1.Model.Builder builderForValue) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.add(builderForValue.build());
         onChanged();
       } else {
-        buildTargetsBuilder_.addMessage(builderForValue.build());
+        modelsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder addBuildTargets(
-        int index, com.google.chromeos.moblab.v1beta1.BuildTarget.Builder builderForValue) {
-      if (buildTargetsBuilder_ == null) {
-        ensureBuildTargetsIsMutable();
-        buildTargets_.add(index, builderForValue.build());
+    public Builder addModels(
+        int index, com.google.chromeos.moblab.v1beta1.Model.Builder builderForValue) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.add(index, builderForValue.build());
         onChanged();
       } else {
-        buildTargetsBuilder_.addMessage(index, builderForValue.build());
+        modelsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder addAllBuildTargets(
-        java.lang.Iterable<? extends com.google.chromeos.moblab.v1beta1.BuildTarget> values) {
-      if (buildTargetsBuilder_ == null) {
-        ensureBuildTargetsIsMutable();
+    public Builder addAllModels(
+        java.lang.Iterable<? extends com.google.chromeos.moblab.v1beta1.Model> values) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, buildTargets_);
+            values, models_);
         onChanged();
       } else {
-        buildTargetsBuilder_.addAllMessages(values);
+        modelsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder clearBuildTargets() {
-      if (buildTargetsBuilder_ == null) {
-        buildTargets_ = java.util.Collections.emptyList();
+    public Builder clearModels() {
+      if (modelsBuilder_ == null) {
+        models_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        buildTargetsBuilder_.clear();
+        modelsBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public Builder removeBuildTargets(int index) {
-      if (buildTargetsBuilder_ == null) {
-        ensureBuildTargetsIsMutable();
-        buildTargets_.remove(index);
+    public Builder removeModels(int index) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.remove(index);
         onChanged();
       } else {
-        buildTargetsBuilder_.remove(index);
+        modelsBuilder_.remove(index);
       }
       return this;
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public com.google.chromeos.moblab.v1beta1.BuildTarget.Builder getBuildTargetsBuilder(
+    public com.google.chromeos.moblab.v1beta1.Model.Builder getModelsBuilder(
         int index) {
-      return getBuildTargetsFieldBuilder().getBuilder(index);
+      return getModelsFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder getBuildTargetsOrBuilder(
+    public com.google.chromeos.moblab.v1beta1.ModelOrBuilder getModelsOrBuilder(
         int index) {
-      if (buildTargetsBuilder_ == null) {
-        return buildTargets_.get(index);  } else {
-        return buildTargetsBuilder_.getMessageOrBuilder(index);
+      if (modelsBuilder_ == null) {
+        return models_.get(index);  } else {
+        return modelsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public java.util.List<? extends com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder> 
-         getBuildTargetsOrBuilderList() {
-      if (buildTargetsBuilder_ != null) {
-        return buildTargetsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.google.chromeos.moblab.v1beta1.ModelOrBuilder> 
+         getModelsOrBuilderList() {
+      if (modelsBuilder_ != null) {
+        return modelsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(buildTargets_);
+        return java.util.Collections.unmodifiableList(models_);
       }
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public com.google.chromeos.moblab.v1beta1.BuildTarget.Builder addBuildTargetsBuilder() {
-      return getBuildTargetsFieldBuilder().addBuilder(
-          com.google.chromeos.moblab.v1beta1.BuildTarget.getDefaultInstance());
+    public com.google.chromeos.moblab.v1beta1.Model.Builder addModelsBuilder() {
+      return getModelsFieldBuilder().addBuilder(
+          com.google.chromeos.moblab.v1beta1.Model.getDefaultInstance());
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public com.google.chromeos.moblab.v1beta1.BuildTarget.Builder addBuildTargetsBuilder(
+    public com.google.chromeos.moblab.v1beta1.Model.Builder addModelsBuilder(
         int index) {
-      return getBuildTargetsFieldBuilder().addBuilder(
-          index, com.google.chromeos.moblab.v1beta1.BuildTarget.getDefaultInstance());
+      return getModelsFieldBuilder().addBuilder(
+          index, com.google.chromeos.moblab.v1beta1.Model.getDefaultInstance());
     }
     /**
      * <pre>
-     * The list of build targets.
+     * The list of models.
      * </pre>
      *
-     * <code>repeated .google.chromeos.moblab.v1beta1.BuildTarget build_targets = 1;</code>
+     * <code>repeated .google.chromeos.moblab.v1beta1.Model models = 1;</code>
      */
-    public java.util.List<com.google.chromeos.moblab.v1beta1.BuildTarget.Builder> 
-         getBuildTargetsBuilderList() {
-      return getBuildTargetsFieldBuilder().getBuilderList();
+    public java.util.List<com.google.chromeos.moblab.v1beta1.Model.Builder> 
+         getModelsBuilderList() {
+      return getModelsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.chromeos.moblab.v1beta1.BuildTarget, com.google.chromeos.moblab.v1beta1.BuildTarget.Builder, com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder> 
-        getBuildTargetsFieldBuilder() {
-      if (buildTargetsBuilder_ == null) {
-        buildTargetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.chromeos.moblab.v1beta1.BuildTarget, com.google.chromeos.moblab.v1beta1.BuildTarget.Builder, com.google.chromeos.moblab.v1beta1.BuildTargetOrBuilder>(
-                buildTargets_,
+        com.google.chromeos.moblab.v1beta1.Model, com.google.chromeos.moblab.v1beta1.Model.Builder, com.google.chromeos.moblab.v1beta1.ModelOrBuilder> 
+        getModelsFieldBuilder() {
+      if (modelsBuilder_ == null) {
+        modelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.chromeos.moblab.v1beta1.Model, com.google.chromeos.moblab.v1beta1.Model.Builder, com.google.chromeos.moblab.v1beta1.ModelOrBuilder>(
+                models_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        buildTargets_ = null;
+        models_ = null;
       }
-      return buildTargetsBuilder_;
+      return modelsBuilder_;
     }
 
     private java.lang.Object nextPageToken_ = "";
     /**
      * <pre>
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -949,8 +949,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -971,8 +971,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -991,8 +991,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1006,8 +1006,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token to retrieve the next page of build targets. If this field is omitted,
-     * there are no subsequent pages.
+     * Token to retrieve the next page of models. If this field is omitted, there
+     * are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1029,7 +1029,7 @@ private static final long serialVersionUID = 0L;
     private int totalSize_ ;
     /**
      * <pre>
-     * Total number of build targets.
+     * Total number of models.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Total number of build targets.
+     * Total number of models.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1056,7 +1056,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Total number of build targets.
+     * Total number of models.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1081,41 +1081,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.chromeos.moblab.v1beta1.ListBuildTargetsResponse)
+    // @@protoc_insertion_point(builder_scope:google.chromeos.moblab.v1beta1.ListModelsResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.chromeos.moblab.v1beta1.ListBuildTargetsResponse)
-  private static final com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.chromeos.moblab.v1beta1.ListModelsResponse)
+  private static final com.google.chromeos.moblab.v1beta1.ListModelsResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse();
+    DEFAULT_INSTANCE = new com.google.chromeos.moblab.v1beta1.ListModelsResponse();
   }
 
-  public static com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse getDefaultInstance() {
+  public static com.google.chromeos.moblab.v1beta1.ListModelsResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListBuildTargetsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListBuildTargetsResponse>() {
+  private static final com.google.protobuf.Parser<ListModelsResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ListModelsResponse>() {
     @java.lang.Override
-    public ListBuildTargetsResponse parsePartialFrom(
+    public ListModelsResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListBuildTargetsResponse(input, extensionRegistry);
+      return new ListModelsResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListBuildTargetsResponse> parser() {
+  public static com.google.protobuf.Parser<ListModelsResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListBuildTargetsResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListModelsResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse getDefaultInstanceForType() {
+  public com.google.chromeos.moblab.v1beta1.ListModelsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

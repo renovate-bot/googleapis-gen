@@ -179,6 +179,8 @@ export class BuildServiceClient {
     this.descriptors.page = {
       listBuildTargets:
           new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'buildTargets'),
+      listModels:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'models'),
       listBuilds:
           new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'builds')
     };
@@ -248,7 +250,7 @@ export class BuildServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const buildServiceStubMethods =
-        ['listBuildTargets', 'listBuilds', 'checkBuildStageStatus', 'stageBuild', 'findMostStableBuild'];
+        ['listBuildTargets', 'listModels', 'listBuilds', 'checkBuildStageStatus', 'stageBuild', 'findMostStableBuild'];
     for (const methodName of buildServiceStubMethods) {
       const callPromise = this.buildServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -750,6 +752,184 @@ export class BuildServiceClient {
       request as unknown as RequestType,
       callSettings
     ) as AsyncIterable<protos.google.chromeos.moblab.v1beta1.IBuildTarget>;
+  }
+  listModels(
+      request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IModel[],
+        protos.google.chromeos.moblab.v1beta1.IListModelsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListModelsResponse
+      ]>;
+  listModels(
+      request: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IModel>): void;
+  listModels(
+      request: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IModel>): void;
+/**
+ * Lists all models for the given build target.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The full resource name of build target.
+ * @param {number} [request.pageSize]
+ *   Optional. The number of models to return in a page.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous `ListModels` call. Provide
+ *   this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [Model]{@link google.chromeos.moblab.v1beta1.Model}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listModelsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listModels(
+      request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IModel>,
+      callback?: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IModel>):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IModel[],
+        protos.google.chromeos.moblab.v1beta1.IListModelsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListModelsResponse
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.listModels(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The full resource name of build target.
+ * @param {number} [request.pageSize]
+ *   Optional. The number of models to return in a page.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous `ListModels` call. Provide
+ *   this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [Model]{@link google.chromeos.moblab.v1beta1.Model} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listModelsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listModelsStream(
+      request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listModels.createStream(
+      this.innerApiCalls.listModels as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `listModels`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The full resource name of build target.
+ * @param {number} [request.pageSize]
+ *   Optional. The number of models to return in a page.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous `ListModels` call. Provide
+ *   this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [Model]{@link google.chromeos.moblab.v1beta1.Model}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example
+ * const iterable = client.listModelsAsync(request);
+ * for await (const response of iterable) {
+ *   // process response
+ * }
+ */
+  listModelsAsync(
+      request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.chromeos.moblab.v1beta1.IModel>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'parent': request.parent || '',
+    });
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listModels.asyncIterate(
+      this.innerApiCalls['listModels'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.chromeos.moblab.v1beta1.IModel>;
   }
   listBuilds(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,

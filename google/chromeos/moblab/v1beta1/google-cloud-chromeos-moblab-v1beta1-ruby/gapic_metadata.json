@@ -15,6 +15,11 @@
                 "list_build_targets"
               ]
             },
+            "ListModels": {
+              "methods": [
+                "list_models"
+              ]
+            },
             "ListBuilds": {
               "methods": [
                 "list_builds"

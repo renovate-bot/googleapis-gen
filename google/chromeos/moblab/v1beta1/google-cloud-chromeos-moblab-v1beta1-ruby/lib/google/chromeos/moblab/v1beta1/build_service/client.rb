@@ -235,6 +235,80 @@ module Google
             end
 
             ##
+            # Lists all models for the given build target.
+            #
+            # @overload list_models(request, options = nil)
+            #   Pass arguments to `list_models` via a request object, either of type
+            #   {::Google::Chromeos::Moblab::V1beta1::ListModelsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Chromeos::Moblab::V1beta1::ListModelsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload list_models(parent: nil, page_size: nil, page_token: nil)
+            #   Pass arguments to `list_models` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The full resource name of build target.
+            #   @param page_size [::Integer]
+            #     Optional. The number of models to return in a page.
+            #   @param page_token [::String]
+            #     Optional. A page token, received from a previous `ListModels` call. Provide
+            #     this to retrieve the subsequent page.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Chromeos::Moblab::V1beta1::Model>]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::PagedEnumerable<::Google::Chromeos::Moblab::V1beta1::Model>]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def list_models request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Chromeos::Moblab::V1beta1::ListModelsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.list_models.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.list_models.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.list_models.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @build_service_stub.call_rpc :list_models, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @build_service_stub, :list_models, request, response, operation, options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Lists all builds for the given build target and model in descending order
             # for the milestones and build versions.
             #
@@ -703,6 +777,11 @@ module Google
                 #
                 attr_reader :list_build_targets
                 ##
+                # RPC-specific configuration for `list_models`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :list_models
+                ##
                 # RPC-specific configuration for `list_builds`
                 # @return [::Gapic::Config::Method]
                 #
@@ -727,6 +806,8 @@ module Google
                 def initialize parent_rpcs = nil
                   list_build_targets_config = parent_rpcs.list_build_targets if parent_rpcs.respond_to? :list_build_targets
                   @list_build_targets = ::Gapic::Config::Method.new list_build_targets_config
+                  list_models_config = parent_rpcs.list_models if parent_rpcs.respond_to? :list_models
+                  @list_models = ::Gapic::Config::Method.new list_models_config
                   list_builds_config = parent_rpcs.list_builds if parent_rpcs.respond_to? :list_builds
                   @list_builds = ::Gapic::Config::Method.new list_builds_config
                   check_build_stage_status_config = parent_rpcs.check_build_stage_status if parent_rpcs.respond_to? :check_build_stage_status

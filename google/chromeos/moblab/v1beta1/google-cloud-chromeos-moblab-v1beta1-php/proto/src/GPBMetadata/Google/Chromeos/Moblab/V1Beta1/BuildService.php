@@ -24,7 +24,7 @@ class BuildService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-˚
+Ø
 2google/chromeos/moblab/v1beta1/build_service.protogoogle.chromeos.moblab.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/chromeos/moblab/v1beta1/resources.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"e
 FindMostStableBuildRequestG
 build_target (	B1‡A˙A+
@@ -37,6 +37,17 @@ class BuildService
 page_token (	B‡A"ã
 ListBuildTargetsResponseB
 build_targets (2+.google.chromeos.moblab.v1beta1.BuildTarget
+next_page_token (	
+
+total_size ("á
+ListModelsRequestA
+parent (	B1‡A˙A+
+)chromeosmoblab.googleapis.com/BuildTarget
+	page_size (B‡A
+
+page_token (	B‡A"x
+ListModelsResponse5
+models (2%.google.chromeos.moblab.v1beta1.Model
 next_page_token (	
 
 total_size ("˝
@@ -72,9 +83,12 @@ total_size ("v
 progress_percent (.
 
 start_time (2.google.protobuf.Timestamp,
-end_time (2.google.protobuf.Timestamp2Ï
+end_time (2.google.protobuf.Timestamp2ú
+
 BuildService§
-ListBuildTargets7.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest8.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse"Ç”‰ì/v1beta1/buildTargets∂
+ListBuildTargets7.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest8.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse"Ç”‰ì/v1beta1/buildTargets≠
+
+ListModels1.google.chromeos.moblab.v1beta1.ListModelsRequest2.google.chromeos.moblab.v1beta1.ListModelsResponse"8Ç”‰ì)\'/v1beta1/{parent=buildTargets/*}/models⁄Aparent∂
 
 ListBuilds1.google.chromeos.moblab.v1beta1.ListBuildsRequest2.google.chromeos.moblab.v1beta1.ListBuildsResponse"AÇ”‰ì20/v1beta1/{parent=buildTargets/*/models/*}/builds⁄AparentÁ
 CheckBuildStageStatus<.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest=.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse"QÇ”‰ìDB/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:check⁄Anameﬂ

@@ -18,6 +18,7 @@ package com.google.chromeos.moblab.v1beta1;
 
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -130,6 +131,94 @@ public class BuildServiceClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.listBuildTargets(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelsTest() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockBuildService.addResponse(expectedResponse);
+
+    BuildTargetName parent = BuildTargetName.of("[BUILD_TARGET]");
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBuildService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelsRequest actualRequest = ((ListModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBuildService.addException(exception);
+
+    try {
+      BuildTargetName parent = BuildTargetName.of("[BUILD_TARGET]");
+      client.listModels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelsTest2() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelsResponse expectedResponse =
+        ListModelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockBuildService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListModelsPagedResponse pagedListResponse = client.listModels(parent);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBuildService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelsRequest actualRequest = ((ListModelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBuildService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listModels(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

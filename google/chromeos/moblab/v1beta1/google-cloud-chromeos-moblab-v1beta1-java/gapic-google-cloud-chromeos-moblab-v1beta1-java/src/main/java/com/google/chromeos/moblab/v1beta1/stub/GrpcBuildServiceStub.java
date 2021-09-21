@@ -18,6 +18,7 @@ package com.google.chromeos.moblab.v1beta1.stub;
 
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,6 +36,8 @@ import com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildsResponse;
+import com.google.chromeos.moblab.v1beta1.ListModelsRequest;
+import com.google.chromeos.moblab.v1beta1.ListModelsResponse;
 import com.google.chromeos.moblab.v1beta1.StageBuildMetadata;
 import com.google.chromeos.moblab.v1beta1.StageBuildRequest;
 import com.google.chromeos.moblab.v1beta1.StageBuildResponse;
@@ -66,6 +69,15 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
                   ProtoUtils.marshaller(ListBuildTargetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBuildTargetsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
+      listModelsMethodDescriptor =
+          MethodDescriptor.<ListModelsRequest, ListModelsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chromeos.moblab.v1beta1.BuildService/ListModels")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListBuildsRequest, ListBuildsResponse>
@@ -112,6 +124,8 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
       listBuildTargetsCallable;
   private final UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsPagedResponse>
       listBuildTargetsPagedCallable;
+  private final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable;
+  private final UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable;
   private final UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable;
   private final UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable;
   private final UnaryCallable<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse>
@@ -169,6 +183,16 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
             GrpcCallSettings.<ListBuildTargetsRequest, ListBuildTargetsResponse>newBuilder()
                 .setMethodDescriptor(listBuildTargetsMethodDescriptor)
                 .build();
+    GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
+        GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
+            .setMethodDescriptor(listModelsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
         GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
             .setMethodDescriptor(listBuildsMethodDescriptor)
@@ -219,6 +243,12 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
     this.listBuildTargetsPagedCallable =
         callableFactory.createPagedCallable(
             listBuildTargetsTransportSettings, settings.listBuildTargetsSettings(), clientContext);
+    this.listModelsCallable =
+        callableFactory.createUnaryCallable(
+            listModelsTransportSettings, settings.listModelsSettings(), clientContext);
+    this.listModelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listModelsTransportSettings, settings.listModelsSettings(), clientContext);
     this.listBuildsCallable =
         callableFactory.createUnaryCallable(
             listBuildsTransportSettings, settings.listBuildsSettings(), clientContext);
@@ -263,6 +293,16 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
   public UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsPagedResponse>
       listBuildTargetsPagedCallable() {
     return listBuildTargetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
+    return listModelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
+    return listModelsPagedCallable;
   }
 
   @Override

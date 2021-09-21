@@ -30,6 +30,18 @@ namespace Google.Chromeos.Moblab.V1Beta1
         }
     }
 
+    public partial class ListModelsRequest
+    {
+        /// <summary>
+        /// <see cref="BuildTargetName"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// </summary>
+        public BuildTargetName ParentAsBuildTargetName
+        {
+            get => string.IsNullOrEmpty(Parent) ? null : BuildTargetName.Parse(Parent, allowUnparsed: true);
+            set => Parent = value?.ToString() ?? "";
+        }
+    }
+
     public partial class ListBuildsRequest
     {
         /// <summary><see cref="ModelName"/>-typed view over the <see cref="Parent"/> resource name property.</summary>

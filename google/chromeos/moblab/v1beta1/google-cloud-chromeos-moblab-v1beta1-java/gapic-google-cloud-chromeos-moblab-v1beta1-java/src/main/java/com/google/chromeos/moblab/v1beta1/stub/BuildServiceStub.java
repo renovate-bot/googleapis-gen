@@ -18,6 +18,7 @@ package com.google.chromeos.moblab.v1beta1.stub;
 
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -31,6 +32,8 @@ import com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildsResponse;
+import com.google.chromeos.moblab.v1beta1.ListModelsRequest;
+import com.google.chromeos.moblab.v1beta1.ListModelsResponse;
 import com.google.chromeos.moblab.v1beta1.StageBuildMetadata;
 import com.google.chromeos.moblab.v1beta1.StageBuildRequest;
 import com.google.chromeos.moblab.v1beta1.StageBuildResponse;
@@ -60,6 +63,14 @@ public abstract class BuildServiceStub implements BackgroundResource {
   public UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsResponse>
       listBuildTargetsCallable() {
     throw new UnsupportedOperationException("Not implemented: listBuildTargetsCallable()");
+  }
+
+  public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelsPagedCallable()");
+  }
+
+  public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelsCallable()");
   }
 
   public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {

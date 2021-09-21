@@ -116,6 +116,282 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             // End snippet
         }
 
+        /// <summary>Snippet for ListModels</summary>
+        public void ListModelsRequestObject()
+        {
+            // Snippet: ListModels(ListModelsRequest, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            ListModelsRequest request = new ListModelsRequest
+            {
+                ParentAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            // Make the request
+            PagedEnumerable<ListModelsResponse, Model> response = buildServiceClient.ListModels(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (Model item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListModelsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Model item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Model> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Model item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListModelsAsync</summary>
+        public async Task ListModelsRequestObjectAsync()
+        {
+            // Snippet: ListModelsAsync(ListModelsRequest, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ListModelsRequest request = new ListModelsRequest
+            {
+                ParentAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            // Make the request
+            PagedAsyncEnumerable<ListModelsResponse, Model> response = buildServiceClient.ListModelsAsync(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((Model item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListModelsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Model item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Model> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Model item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListModels</summary>
+        public void ListModels()
+        {
+            // Snippet: ListModels(string, string, int?, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            string parent = "buildTargets/[BUILD_TARGET]";
+            // Make the request
+            PagedEnumerable<ListModelsResponse, Model> response = buildServiceClient.ListModels(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (Model item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListModelsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Model item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Model> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Model item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListModelsAsync</summary>
+        public async Task ListModelsAsync()
+        {
+            // Snippet: ListModelsAsync(string, string, int?, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string parent = "buildTargets/[BUILD_TARGET]";
+            // Make the request
+            PagedAsyncEnumerable<ListModelsResponse, Model> response = buildServiceClient.ListModelsAsync(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((Model item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListModelsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Model item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Model> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Model item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListModels</summary>
+        public void ListModelsResourceNames()
+        {
+            // Snippet: ListModels(BuildTargetName, string, int?, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            BuildTargetName parent = BuildTargetName.FromBuildTarget("[BUILD_TARGET]");
+            // Make the request
+            PagedEnumerable<ListModelsResponse, Model> response = buildServiceClient.ListModels(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (Model item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (ListModelsResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Model item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Model> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Model item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for ListModelsAsync</summary>
+        public async Task ListModelsResourceNamesAsync()
+        {
+            // Snippet: ListModelsAsync(BuildTargetName, string, int?, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            BuildTargetName parent = BuildTargetName.FromBuildTarget("[BUILD_TARGET]");
+            // Make the request
+            PagedAsyncEnumerable<ListModelsResponse, Model> response = buildServiceClient.ListModelsAsync(parent);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((Model item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((ListModelsResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (Model item in page)
+                {
+                    // Do something with each item
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<Model> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (Model item in singlePage)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
         /// <summary>Snippet for ListBuilds</summary>
         public void ListBuildsRequestObject()
         {

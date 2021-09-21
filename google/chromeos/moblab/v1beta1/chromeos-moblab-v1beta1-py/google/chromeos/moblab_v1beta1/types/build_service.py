@@ -27,6 +27,8 @@ __protobuf__ = proto.module(
         'FindMostStableBuildResponse',
         'ListBuildTargetsRequest',
         'ListBuildTargetsResponse',
+        'ListModelsRequest',
+        'ListModelsResponse',
         'ListBuildsRequest',
         'ListBuildsResponse',
         'CheckBuildStageStatusRequest',
@@ -95,9 +97,9 @@ class ListBuildTargetsResponse(proto.Message):
         build_targets (Sequence[google.chromeos.moblab_v1beta1.types.BuildTarget]):
             The list of build targets.
         next_page_token (str):
-            Token to retrieve the next page of builds. If
-            this field is omitted, there are no subsequent
-            pages.
+            Token to retrieve the next page of build
+            targets. If this field is omitted, there are no
+            subsequent pages.
         total_size (int):
             Total number of build targets.
     """
@@ -110,6 +112,67 @@ class ListBuildTargetsResponse(proto.Message):
         proto.MESSAGE,
         number=1,
         message=resources.BuildTarget,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+
+
+class ListModelsRequest(proto.Message):
+    r"""Request message for listing models.
+    Attributes:
+        parent (str):
+            Required. The full resource name of build
+            target.
+        page_size (int):
+            Optional. The number of models to return in a
+            page.
+        page_token (str):
+            Optional. A page token, received from a previous
+            ``ListModels`` call. Provide this to retrieve the subsequent
+            page.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class ListModelsResponse(proto.Message):
+    r"""Response message for listing models.
+    Attributes:
+        models (Sequence[google.chromeos.moblab_v1beta1.types.Model]):
+            The list of models.
+        next_page_token (str):
+            Token to retrieve the next page of models. If
+            this field is omitted, there are no subsequent
+            pages.
+        total_size (int):
+            Total number of models.
+    """
+
+    @property
+    def raw_page(self):
+        return self
+
+    models = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=resources.Model,
     )
     next_page_token = proto.Field(
         proto.STRING,

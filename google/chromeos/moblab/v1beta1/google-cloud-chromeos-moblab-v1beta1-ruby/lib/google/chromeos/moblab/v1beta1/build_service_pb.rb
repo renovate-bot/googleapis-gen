@@ -28,6 +28,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :next_page_token, :string, 2
       optional :total_size, :int32, 3
     end
+    add_message "google.chromeos.moblab.v1beta1.ListModelsRequest" do
+      optional :parent, :string, 1
+      optional :page_size, :int32, 2
+      optional :page_token, :string, 3
+    end
+    add_message "google.chromeos.moblab.v1beta1.ListModelsResponse" do
+      repeated :models, :message, 1, "google.chromeos.moblab.v1beta1.Model"
+      optional :next_page_token, :string, 2
+      optional :total_size, :int32, 3
+    end
     add_message "google.chromeos.moblab.v1beta1.ListBuildsRequest" do
       optional :parent, :string, 1
       optional :page_size, :int32, 2
@@ -73,6 +83,8 @@ module Google
         FindMostStableBuildResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.FindMostStableBuildResponse").msgclass
         ListBuildTargetsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildTargetsRequest").msgclass
         ListBuildTargetsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildTargetsResponse").msgclass
+        ListModelsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListModelsRequest").msgclass
+        ListModelsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListModelsResponse").msgclass
         ListBuildsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildsRequest").msgclass
         ListBuildsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildsResponse").msgclass
         CheckBuildStageStatusRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest").msgclass

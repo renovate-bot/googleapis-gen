@@ -60,12 +60,44 @@ module Google
         #     The list of build targets.
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     Token to retrieve the next page of builds. If this field is omitted, there
-        #     are no subsequent pages.
+        #     Token to retrieve the next page of build targets. If this field is omitted,
+        #     there are no subsequent pages.
         # @!attribute [rw] total_size
         #   @return [::Integer]
         #     Total number of build targets.
         class ListBuildTargetsResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for listing models.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The full resource name of build target.
+        # @!attribute [rw] page_size
+        #   @return [::Integer]
+        #     Optional. The number of models to return in a page.
+        # @!attribute [rw] page_token
+        #   @return [::String]
+        #     Optional. A page token, received from a previous `ListModels` call. Provide
+        #     this to retrieve the subsequent page.
+        class ListModelsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for listing models.
+        # @!attribute [rw] models
+        #   @return [::Array<::Google::Chromeos::Moblab::V1beta1::Model>]
+        #     The list of models.
+        # @!attribute [rw] next_page_token
+        #   @return [::String]
+        #     Token to retrieve the next page of models. If this field is omitted, there
+        #     are no subsequent pages.
+        # @!attribute [rw] total_size
+        #   @return [::Integer]
+        #     Total number of models.
+        class ListModelsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

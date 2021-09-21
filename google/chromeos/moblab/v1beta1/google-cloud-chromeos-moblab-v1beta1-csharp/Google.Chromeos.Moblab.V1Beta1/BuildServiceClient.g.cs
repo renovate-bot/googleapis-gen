@@ -46,6 +46,7 @@ namespace Google.Chromeos.Moblab.V1Beta1
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
             ListBuildTargetsSettings = existing.ListBuildTargetsSettings;
+            ListModelsSettings = existing.ListModelsSettings;
             ListBuildsSettings = existing.ListBuildsSettings;
             CheckBuildStageStatusSettings = existing.CheckBuildStageStatusSettings;
             StageBuildSettings = existing.StageBuildSettings;
@@ -67,6 +68,18 @@ namespace Google.Chromeos.Moblab.V1Beta1
         /// </list>
         /// </remarks>
         public gaxgrpc::CallSettings ListBuildTargetsSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>BuildServiceClient.ListModels</c> and <c>BuildServiceClient.ListModelsAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings ListModelsSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -317,6 +330,120 @@ namespace Google.Chromeos.Moblab.V1Beta1
         /// <returns>A pageable asynchronous sequence of <see cref="BuildTarget"/> resources.</returns>
         public virtual gax::PagedAsyncEnumerable<ListBuildTargetsResponse, BuildTarget> ListBuildTargetsAsync(ListBuildTargetsRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Model"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListModelsResponse, Model> ListModels(ListModelsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Model"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListModelsResponse, Model> ListModelsAsync(ListModelsRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The full resource name of build target.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Model"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListModelsResponse, Model> ListModels(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListModels(new ListModelsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The full resource name of build target.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Model"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListModelsResponse, Model> ListModelsAsync(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListModelsAsync(new ListModelsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The full resource name of build target.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Model"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListModelsResponse, Model> ListModels(BuildTargetName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListModels(new ListModelsRequest
+            {
+                ParentAsBuildTargetName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The full resource name of build target.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Model"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListModelsResponse, Model> ListModelsAsync(BuildTargetName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListModelsAsync(new ListModelsRequest
+            {
+                ParentAsBuildTargetName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
 
         /// <summary>
         /// Lists all builds for the given build target and model in descending order
@@ -980,6 +1107,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
     {
         private readonly gaxgrpc::ApiCall<ListBuildTargetsRequest, ListBuildTargetsResponse> _callListBuildTargets;
 
+        private readonly gaxgrpc::ApiCall<ListModelsRequest, ListModelsResponse> _callListModels;
+
         private readonly gaxgrpc::ApiCall<ListBuildsRequest, ListBuildsResponse> _callListBuilds;
 
         private readonly gaxgrpc::ApiCall<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse> _callCheckBuildStageStatus;
@@ -1002,6 +1131,9 @@ namespace Google.Chromeos.Moblab.V1Beta1
             _callListBuildTargets = clientHelper.BuildApiCall<ListBuildTargetsRequest, ListBuildTargetsResponse>(grpcClient.ListBuildTargetsAsync, grpcClient.ListBuildTargets, effectiveSettings.ListBuildTargetsSettings);
             Modify_ApiCall(ref _callListBuildTargets);
             Modify_ListBuildTargetsApiCall(ref _callListBuildTargets);
+            _callListModels = clientHelper.BuildApiCall<ListModelsRequest, ListModelsResponse>(grpcClient.ListModelsAsync, grpcClient.ListModels, effectiveSettings.ListModelsSettings).WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callListModels);
+            Modify_ListModelsApiCall(ref _callListModels);
             _callListBuilds = clientHelper.BuildApiCall<ListBuildsRequest, ListBuildsResponse>(grpcClient.ListBuildsAsync, grpcClient.ListBuilds, effectiveSettings.ListBuildsSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callListBuilds);
             Modify_ListBuildsApiCall(ref _callListBuilds);
@@ -1021,6 +1153,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
 
         partial void Modify_ListBuildTargetsApiCall(ref gaxgrpc::ApiCall<ListBuildTargetsRequest, ListBuildTargetsResponse> call);
 
+        partial void Modify_ListModelsApiCall(ref gaxgrpc::ApiCall<ListModelsRequest, ListModelsResponse> call);
+
         partial void Modify_ListBuildsApiCall(ref gaxgrpc::ApiCall<ListBuildsRequest, ListBuildsResponse> call);
 
         partial void Modify_CheckBuildStageStatusApiCall(ref gaxgrpc::ApiCall<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse> call);
@@ -1035,6 +1169,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
         public override BuildService.BuildServiceClient GrpcClient { get; }
 
         partial void Modify_ListBuildTargetsRequest(ref ListBuildTargetsRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_ListModelsRequest(ref ListModelsRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_ListBuildsRequest(ref ListBuildsRequest request, ref gaxgrpc::CallSettings settings);
 
@@ -1066,6 +1202,30 @@ namespace Google.Chromeos.Moblab.V1Beta1
         {
             Modify_ListBuildTargetsRequest(ref request, ref callSettings);
             return new gaxgrpc::GrpcPagedAsyncEnumerable<ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget>(_callListBuildTargets, request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Model"/> resources.</returns>
+        public override gax::PagedEnumerable<ListModelsResponse, Model> ListModels(ListModelsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListModelsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<ListModelsRequest, ListModelsResponse, Model>(_callListModels, request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists all models for the given build target.
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Model"/> resources.</returns>
+        public override gax::PagedAsyncEnumerable<ListModelsResponse, Model> ListModelsAsync(ListModelsRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListModelsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<ListModelsRequest, ListModelsResponse, Model>(_callListModels, request, callSettings);
         }
 
         /// <summary>
@@ -1206,6 +1366,10 @@ namespace Google.Chromeos.Moblab.V1Beta1
     {
     }
 
+    public partial class ListModelsRequest : gaxgrpc::IPageRequest
+    {
+    }
+
     public partial class ListBuildsRequest : gaxgrpc::IPageRequest
     {
     }
@@ -1214,6 +1378,14 @@ namespace Google.Chromeos.Moblab.V1Beta1
     {
         /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
         public scg::IEnumerator<BuildTarget> GetEnumerator() => BuildTargets.GetEnumerator();
+
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public partial class ListModelsResponse : gaxgrpc::IPageResponse<Model>
+    {
+        /// <summary>Returns an enumerator that iterates through the resources in this response.</summary>
+        public scg::IEnumerator<Model> GetEnumerator() => Models.GetEnumerator();
 
         sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
     }

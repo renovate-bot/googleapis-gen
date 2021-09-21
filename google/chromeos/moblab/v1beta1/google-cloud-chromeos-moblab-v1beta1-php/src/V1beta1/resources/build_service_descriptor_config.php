@@ -33,6 +33,16 @@ return [
                     'resourcesGetMethod' => 'getBuilds',
                 ],
             ],
+            'ListModels' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getModels',
+                ],
+            ],
         ],
     ],
 ];

@@ -30,6 +30,11 @@
                 "list_builds"
               ]
             },
+            "ListModels": {
+              "methods": [
+                "list_models"
+              ]
+            },
             "StageBuild": {
               "methods": [
                 "stage_build"
@@ -58,6 +63,11 @@
             "ListBuilds": {
               "methods": [
                 "list_builds"
+              ]
+            },
+            "ListModels": {
+              "methods": [
+                "list_models"
               ]
             },
             "StageBuild": {

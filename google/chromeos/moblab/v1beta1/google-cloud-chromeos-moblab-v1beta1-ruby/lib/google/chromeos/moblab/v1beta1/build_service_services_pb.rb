@@ -35,6 +35,8 @@ module Google
 
             # Lists all build targets that a user has access to.
             rpc :ListBuildTargets, ::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsRequest, ::Google::Chromeos::Moblab::V1beta1::ListBuildTargetsResponse
+            # Lists all models for the given build target.
+            rpc :ListModels, ::Google::Chromeos::Moblab::V1beta1::ListModelsRequest, ::Google::Chromeos::Moblab::V1beta1::ListModelsResponse
             # Lists all builds for the given build target and model in descending order
             # for the milestones and build versions.
             rpc :ListBuilds, ::Google::Chromeos::Moblab::V1beta1::ListBuildsRequest, ::Google::Chromeos::Moblab::V1beta1::ListBuildsResponse

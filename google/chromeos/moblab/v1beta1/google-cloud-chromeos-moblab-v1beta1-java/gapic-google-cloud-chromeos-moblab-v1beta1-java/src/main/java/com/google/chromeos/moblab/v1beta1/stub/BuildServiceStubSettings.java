@@ -18,6 +18,7 @@ package com.google.chromeos.moblab.v1beta1.stub;
 
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildTargetsPagedResponse;
 import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListBuildsPagedResponse;
+import static com.google.chromeos.moblab.v1beta1.BuildServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -55,6 +56,9 @@ import com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildsResponse;
+import com.google.chromeos.moblab.v1beta1.ListModelsRequest;
+import com.google.chromeos.moblab.v1beta1.ListModelsResponse;
+import com.google.chromeos.moblab.v1beta1.Model;
 import com.google.chromeos.moblab.v1beta1.StageBuildMetadata;
 import com.google.chromeos.moblab.v1beta1.StageBuildRequest;
 import com.google.chromeos.moblab.v1beta1.StageBuildResponse;
@@ -111,6 +115,8 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
   private final PagedCallSettings<
           ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
       listBuildTargetsSettings;
+  private final PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      listModelsSettings;
   private final PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
       listBuildsSettings;
   private final UnaryCallSettings<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse>
@@ -158,6 +164,42 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
               return payload.getBuildTargetsList() == null
                   ? ImmutableList.<BuildTarget>of()
                   : payload.getBuildTargetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
+      LIST_MODELS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelsRequest injectToken(ListModelsRequest payload, String token) {
+              return ListModelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelsRequest injectPageSize(ListModelsRequest payload, int pageSize) {
+              return ListModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Model> extractResources(ListModelsResponse payload) {
+              return payload.getModelsList() == null
+                  ? ImmutableList.<Model>of()
+                  : payload.getModelsList();
             }
           };
 
@@ -217,6 +259,23 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
+          ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      LIST_MODELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelsRequest, ListModelsResponse> callable,
+                ListModelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelsResponse> futureResponse) {
+              PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
+                  PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
+              return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
       LIST_BUILDS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -238,6 +297,12 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
           ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
       listBuildTargetsSettings() {
     return listBuildTargetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listModels. */
+  public PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      listModelsSettings() {
+    return listModelsSettings;
   }
 
   /** Returns the object with the settings used for calls to listBuilds. */
@@ -346,6 +411,7 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     super(settingsBuilder);
 
     listBuildTargetsSettings = settingsBuilder.listBuildTargetsSettings().build();
+    listModelsSettings = settingsBuilder.listModelsSettings().build();
     listBuildsSettings = settingsBuilder.listBuildsSettings().build();
     checkBuildStageStatusSettings = settingsBuilder.checkBuildStageStatusSettings().build();
     stageBuildSettings = settingsBuilder.stageBuildSettings().build();
@@ -359,6 +425,9 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     private final PagedCallSettings.Builder<
             ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
         listBuildTargetsSettings;
+    private final PagedCallSettings.Builder<
+            ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+        listModelsSettings;
     private final PagedCallSettings.Builder<
             ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
         listBuildsSettings;
@@ -423,6 +492,7 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
       super(clientContext);
 
       listBuildTargetsSettings = PagedCallSettings.newBuilder(LIST_BUILD_TARGETS_PAGE_STR_FACT);
+      listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
       listBuildsSettings = PagedCallSettings.newBuilder(LIST_BUILDS_PAGE_STR_FACT);
       checkBuildStageStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stageBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -432,6 +502,7 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listBuildTargetsSettings,
+              listModelsSettings,
               listBuildsSettings,
               checkBuildStageStatusSettings,
               stageBuildSettings,
@@ -443,6 +514,7 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
       super(settings);
 
       listBuildTargetsSettings = settings.listBuildTargetsSettings.toBuilder();
+      listModelsSettings = settings.listModelsSettings.toBuilder();
       listBuildsSettings = settings.listBuildsSettings.toBuilder();
       checkBuildStageStatusSettings = settings.checkBuildStageStatusSettings.toBuilder();
       stageBuildSettings = settings.stageBuildSettings.toBuilder();
@@ -452,6 +524,7 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listBuildTargetsSettings,
+              listModelsSettings,
               listBuildsSettings,
               checkBuildStageStatusSettings,
               stageBuildSettings,
@@ -474,6 +547,11 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     private static Builder initDefaults(Builder builder) {
       builder
           .listBuildTargetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listModelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -543,6 +621,12 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
             ListBuildTargetsRequest, ListBuildTargetsResponse, ListBuildTargetsPagedResponse>
         listBuildTargetsSettings() {
       return listBuildTargetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listModels. */
+    public PagedCallSettings.Builder<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+        listModelsSettings() {
+      return listModelsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listBuilds. */

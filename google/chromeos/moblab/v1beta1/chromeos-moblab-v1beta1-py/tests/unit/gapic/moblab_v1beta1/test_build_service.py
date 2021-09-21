@@ -666,6 +666,427 @@ async def test_list_build_targets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+def test_list_models(transport: str = 'grpc', request_type=build_service.ListModelsRequest):
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = build_service.ListModelsResponse(
+            next_page_token='next_page_token_value',
+            total_size=1086,
+        )
+        response = client.list_models(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == build_service.ListModelsRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.ListModelsPager)
+    assert response.next_page_token == 'next_page_token_value'
+    assert response.total_size == 1086
+
+
+def test_list_models_from_dict():
+    test_list_models(request_type=dict)
+
+
+def test_list_models_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        client.list_models()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == build_service.ListModelsRequest()
+
+
+@pytest.mark.asyncio
+async def test_list_models_async(transport: str = 'grpc_asyncio', request_type=build_service.ListModelsRequest):
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(build_service.ListModelsResponse(
+            next_page_token='next_page_token_value',
+            total_size=1086,
+        ))
+        response = await client.list_models(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == build_service.ListModelsRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.ListModelsAsyncPager)
+    assert response.next_page_token == 'next_page_token_value'
+    assert response.total_size == 1086
+
+
+@pytest.mark.asyncio
+async def test_list_models_async_from_dict():
+    await test_list_models_async(request_type=dict)
+
+
+def test_list_models_field_headers():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = build_service.ListModelsRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        call.return_value = build_service.ListModelsResponse()
+        client.list_models(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_list_models_field_headers_async():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = build_service.ListModelsRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(build_service.ListModelsResponse())
+        await client.list_models(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+def test_list_models_flattened():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = build_service.ListModelsResponse()
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.list_models(
+            parent='parent_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0].parent == 'parent_value'
+
+
+def test_list_models_flattened_error():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.list_models(
+            build_service.ListModelsRequest(),
+            parent='parent_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_list_models_flattened_async():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = build_service.ListModelsResponse()
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(build_service.ListModelsResponse())
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.list_models(
+            parent='parent_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0].parent == 'parent_value'
+
+
+@pytest.mark.asyncio
+async def test_list_models_flattened_error_async():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.list_models(
+            build_service.ListModelsRequest(),
+            parent='parent_value',
+        )
+
+
+def test_list_models_pager():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                    resources.Model(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListModelsResponse(
+                models=[],
+                next_page_token='def',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', ''),
+            )),
+        )
+        pager = client.list_models(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, resources.Model)
+                   for i in results)
+
+def test_list_models_pages():
+    client = BuildServiceClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                    resources.Model(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListModelsResponse(
+                models=[],
+                next_page_token='def',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.list_models(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_list_models_async_pager():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                    resources.Model(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListModelsResponse(
+                models=[],
+                next_page_token='def',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.list_models(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, resources.Model)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_list_models_async_pages():
+    client = BuildServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                    resources.Model(),
+                ],
+                next_page_token='abc',
+            ),
+            build_service.ListModelsResponse(
+                models=[],
+                next_page_token='def',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                ],
+                next_page_token='ghi',
+            ),
+            build_service.ListModelsResponse(
+                models=[
+                    resources.Model(),
+                    resources.Model(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.list_models(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
 def test_list_builds(transport: str = 'grpc', request_type=build_service.ListBuildsRequest):
     client = BuildServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1870,6 +2291,7 @@ def test_build_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'list_build_targets',
+        'list_models',
         'list_builds',
         'check_build_stage_status',
         'stage_build',

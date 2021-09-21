@@ -442,6 +442,91 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # Done; return the response.
         return response
 
+    def list_models(self,
+            request: build_service.ListModelsRequest = None,
+            *,
+            parent: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListModelsPager:
+        r"""Lists all models for the given build target.
+
+        Args:
+            request (google.chromeos.moblab_v1beta1.types.ListModelsRequest):
+                The request object. Request message for listing models.
+            parent (str):
+                Required. The full resource name of
+                build target.
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.chromeos.moblab_v1beta1.services.build_service.pagers.ListModelsPager:
+                Response message for listing models.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
+
+        # Minor optimization to avoid making a copy if the user passes
+        # in a build_service.ListModelsRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, build_service.ListModelsRequest):
+            request = build_service.ListModelsRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if parent is not None:
+                request.parent = parent
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = self._transport._wrapped_methods[self._transport.list_models]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__iter__` convenience method.
+        response = pagers.ListModelsPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     def list_builds(self,
             request: build_service.ListBuildsRequest = None,
             *,

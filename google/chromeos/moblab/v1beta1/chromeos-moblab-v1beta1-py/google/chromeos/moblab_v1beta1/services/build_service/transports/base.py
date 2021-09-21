@@ -153,6 +153,11 @@ class BuildServiceTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.list_models: gapic_v1.method.wrap_method(
+                self.list_models,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.list_builds: gapic_v1.method.wrap_method(
                 self.list_builds,
                 default_retry=retries.Retry(
@@ -198,6 +203,15 @@ initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if
             Union[
                 build_service.ListBuildTargetsResponse,
                 Awaitable[build_service.ListBuildTargetsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_models(self) -> Callable[
+            [build_service.ListModelsRequest],
+            Union[
+                build_service.ListModelsResponse,
+                Awaitable[build_service.ListModelsResponse]
             ]]:
         raise NotImplementedError()
 
