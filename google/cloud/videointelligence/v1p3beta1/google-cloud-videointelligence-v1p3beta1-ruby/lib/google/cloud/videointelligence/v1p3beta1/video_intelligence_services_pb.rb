@@ -27,7 +27,7 @@ module Google
           # Service that implements the Video Intelligence API.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode
@@ -46,7 +46,7 @@ module Google
           # Service that implements streaming Video Intelligence API.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

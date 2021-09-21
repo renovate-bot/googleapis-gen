@@ -29,7 +29,7 @@ module Google
           # Service to fetch operations for database instances.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

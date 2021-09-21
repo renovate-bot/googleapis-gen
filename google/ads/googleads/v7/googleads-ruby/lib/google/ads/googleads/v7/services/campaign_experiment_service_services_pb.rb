@@ -39,7 +39,7 @@ module Google
             # and will be a snapshot of changes in the draft at the time of creation.
             class Service
 
-              include GRPC::GenericService
+              include ::GRPC::GenericService
 
               self.marshal_class_method = :encode
               self.unmarshal_class_method = :decode

@@ -27,7 +27,7 @@ module Google
           # This service allows users to get stats about messages in their topic.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

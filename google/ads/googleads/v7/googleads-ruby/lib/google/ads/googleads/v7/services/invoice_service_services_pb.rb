@@ -30,7 +30,7 @@ module Google
             # A service to fetch invoices issued for a billing setup during a given month.
             class Service
 
-              include GRPC::GenericService
+              include ::GRPC::GenericService
 
               self.marshal_class_method = :encode
               self.unmarshal_class_method = :decode

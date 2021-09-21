@@ -34,7 +34,7 @@ module Google
             # includes campaign negative keywords and ad group negative keywords.
             class Service
 
-              include GRPC::GenericService
+              include ::GRPC::GenericService
 
               self.marshal_class_method = :encode
               self.unmarshal_class_method = :decode

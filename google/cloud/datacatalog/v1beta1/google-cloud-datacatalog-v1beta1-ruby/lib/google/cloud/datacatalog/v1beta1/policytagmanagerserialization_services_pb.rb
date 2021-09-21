@@ -28,7 +28,7 @@ module Google
           # their taxonomies and policy tags data with serialized format.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

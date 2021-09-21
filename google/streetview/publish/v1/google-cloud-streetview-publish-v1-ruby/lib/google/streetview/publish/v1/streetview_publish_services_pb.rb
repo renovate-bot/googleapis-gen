@@ -29,7 +29,7 @@ module Google
           # Publishes and connects user-contributed photos on Street View.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

@@ -28,7 +28,7 @@ module Google
           # on Google Cloud Platform via Skaffold (https://skaffold.dev).
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

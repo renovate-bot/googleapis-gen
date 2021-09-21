@@ -41,7 +41,7 @@ module Google
           # more than one build tool stream for an invocation attempt of a build.
           class Service
 
-            include GRPC::GenericService
+            include ::GRPC::GenericService
 
             self.marshal_class_method = :encode
             self.unmarshal_class_method = :decode

@@ -30,7 +30,7 @@ module Google
             # Service to manage Smart campaign search term views.
             class Service
 
-              include GRPC::GenericService
+              include ::GRPC::GenericService
 
               self.marshal_class_method = :encode
               self.unmarshal_class_method = :decode
