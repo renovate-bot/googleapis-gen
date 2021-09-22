@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.devtools.artifactregistry.v1",
+  "libraryPackage": "cloud.google.com/go/devtools/artifactregistry/apiv1",
+  "services": {
+    "ArtifactRegistry": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Client",
+          "rpcs": {
+            "GetRepository": {
+              "methods": [
+                "GetRepository"
+              ]
+            },
+            "ListDockerImages": {
+              "methods": [
+                "ListDockerImages"
+              ]
+            },
+            "ListRepositories": {
+              "methods": [
+                "ListRepositories"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

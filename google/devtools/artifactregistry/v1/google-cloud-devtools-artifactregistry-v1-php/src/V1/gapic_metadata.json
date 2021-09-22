@@ -1,0 +1,33 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.devtools.artifactregistry.v1",
+    "libraryPackage": "Google\\Cloud\\ArtifactRegistry\\V1",
+    "services": {
+        "ArtifactRegistry": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "ArtifactRegistryGapicClient",
+                    "rpcs": {
+                        "GetRepository": {
+                            "methods": [
+                                "getRepository"
+                            ]
+                        },
+                        "ListDockerImages": {
+                            "methods": [
+                                "listDockerImages"
+                            ]
+                        },
+                        "ListRepositories": {
+                            "methods": [
+                                "listRepositories"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
