@@ -30,30 +30,26 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.api_core import operation  # type: ignore
-from google.api_core import operation_async  # type: ignore
-from google.cloud.aiplatform_v1.services.migration_service import pagers
-from google.cloud.aiplatform_v1.types import migratable_resource
-from google.cloud.aiplatform_v1.types import migration_service
-from .transports.base import MigrationServiceTransport, DEFAULT_CLIENT_INFO
-from .transports.grpc import MigrationServiceGrpcTransport
-from .transports.grpc_asyncio import MigrationServiceGrpcAsyncIOTransport
+from google.cloud.binaryauthorization_v1.types import service
+from .transports.base import ValidationHelperV1Transport, DEFAULT_CLIENT_INFO
+from .transports.grpc import ValidationHelperV1GrpcTransport
+from .transports.grpc_asyncio import ValidationHelperV1GrpcAsyncIOTransport
 
 
-class MigrationServiceClientMeta(type):
-    """Metaclass for the MigrationService client.
+class ValidationHelperV1ClientMeta(type):
+    """Metaclass for the ValidationHelperV1 client.
 
     This provides class-level methods for building and retrieving
     support objects (e.g. transport) without polluting the client instance
     objects.
     """
-    _transport_registry = OrderedDict()  # type: Dict[str, Type[MigrationServiceTransport]]
-    _transport_registry["grpc"] = MigrationServiceGrpcTransport
-    _transport_registry["grpc_asyncio"] = MigrationServiceGrpcAsyncIOTransport
+    _transport_registry = OrderedDict()  # type: Dict[str, Type[ValidationHelperV1Transport]]
+    _transport_registry["grpc"] = ValidationHelperV1GrpcTransport
+    _transport_registry["grpc_asyncio"] = ValidationHelperV1GrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
-        ) -> Type[MigrationServiceTransport]:
+        ) -> Type[ValidationHelperV1Transport]:
         """Returns an appropriate transport class.
 
         Args:
@@ -72,10 +68,8 @@ class MigrationServiceClientMeta(type):
         return next(iter(cls._transport_registry.values()))
 
 
-class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
-    """A service that migrates resources from automl.googleapis.com,
-    datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
-    """
+class ValidationHelperV1Client(metaclass=ValidationHelperV1ClientMeta):
+    """BinAuthz Attestor verification"""
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
@@ -107,7 +101,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = "aiplatform.googleapis.com"
+    DEFAULT_ENDPOINT = "binaryauthorization.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
@@ -123,7 +117,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            MigrationServiceClient: The constructed client.
+            ValidationHelperV1Client: The constructed client.
         """
         credentials = service_account.Credentials.from_service_account_info(info)
         kwargs["credentials"] = credentials
@@ -141,7 +135,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            MigrationServiceClient: The constructed client.
+            ValidationHelperV1Client: The constructed client.
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
@@ -151,91 +145,14 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
     from_service_account_json = from_service_account_file
 
     @property
-    def transport(self) -> MigrationServiceTransport:
+    def transport(self) -> ValidationHelperV1Transport:
         """Returns the transport used by the client instance.
 
         Returns:
-            MigrationServiceTransport: The transport used by the client
+            ValidationHelperV1Transport: The transport used by the client
                 instance.
         """
         return self._transport
-
-    @staticmethod
-    def annotated_dataset_path(project: str,dataset: str,annotated_dataset: str,) -> str:
-        """Returns a fully-qualified annotated_dataset string."""
-        return "projects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}".format(project=project, dataset=dataset, annotated_dataset=annotated_dataset, )
-
-    @staticmethod
-    def parse_annotated_dataset_path(path: str) -> Dict[str,str]:
-        """Parses a annotated_dataset path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/datasets/(?P<dataset>.+?)/annotatedDatasets/(?P<annotated_dataset>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def dataset_path(project: str,location: str,dataset: str,) -> str:
-        """Returns a fully-qualified dataset string."""
-        return "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-
-    @staticmethod
-    def parse_dataset_path(path: str) -> Dict[str,str]:
-        """Parses a dataset path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/datasets/(?P<dataset>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def dataset_path(project: str,dataset: str,) -> str:
-        """Returns a fully-qualified dataset string."""
-        return "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-
-    @staticmethod
-    def parse_dataset_path(path: str) -> Dict[str,str]:
-        """Parses a dataset path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/datasets/(?P<dataset>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def dataset_path(project: str,location: str,dataset: str,) -> str:
-        """Returns a fully-qualified dataset string."""
-        return "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-
-    @staticmethod
-    def parse_dataset_path(path: str) -> Dict[str,str]:
-        """Parses a dataset path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/datasets/(?P<dataset>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def model_path(project: str,location: str,model: str,) -> str:
-        """Returns a fully-qualified model string."""
-        return "projects/{project}/locations/{location}/models/{model}".format(project=project, location=location, model=model, )
-
-    @staticmethod
-    def parse_model_path(path: str) -> Dict[str,str]:
-        """Parses a model path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/models/(?P<model>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def model_path(project: str,location: str,model: str,) -> str:
-        """Returns a fully-qualified model string."""
-        return "projects/{project}/locations/{location}/models/{model}".format(project=project, location=location, model=model, )
-
-    @staticmethod
-    def parse_model_path(path: str) -> Dict[str,str]:
-        """Parses a model path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/models/(?P<model>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def version_path(project: str,model: str,version: str,) -> str:
-        """Returns a fully-qualified version string."""
-        return "projects/{project}/models/{model}/versions/{version}".format(project=project, model=model, version=version, )
-
-    @staticmethod
-    def parse_version_path(path: str) -> Dict[str,str]:
-        """Parses a version path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/models/(?P<model>.+?)/versions/(?P<version>.+?)$", path)
-        return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
@@ -294,11 +211,11 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
     def __init__(self, *,
             credentials: Optional[ga_credentials.Credentials] = None,
-            transport: Union[str, MigrationServiceTransport, None] = None,
+            transport: Union[str, ValidationHelperV1Transport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiates the migration service client.
+        """Instantiates the validation helper v1 client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -306,7 +223,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, MigrationServiceTransport]): The
+            transport (Union[str, ValidationHelperV1Transport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
             client_options (google.api_core.client_options.ClientOptions): Custom options for the
@@ -379,8 +296,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # Save or instantiate the transport.
         # Ordinarily, we provide the transport, but allowing a custom transport
         # instance provides an extensibility point for unusual situations.
-        if isinstance(transport, MigrationServiceTransport):
-            # transport is a MigrationServiceTransport instance.
+        if isinstance(transport, ValidationHelperV1Transport):
+            # transport is a ValidationHelperV1Transport instance.
             if credentials or client_options.credentials_file:
                 raise ValueError("When providing a transport instance, "
                                  "provide its credentials directly.")
@@ -406,33 +323,20 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 ),
             )
 
-    def search_migratable_resources(self,
-            request: migration_service.SearchMigratableResourcesRequest = None,
+    def validate_attestation_occurrence(self,
+            request: service.ValidateAttestationOccurrenceRequest = None,
             *,
-            parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> pagers.SearchMigratableResourcesPager:
-        r"""Searches all of the resources in
-        automl.googleapis.com, datalabeling.googleapis.com and
-        ml.googleapis.com that can be migrated to Vertex AI's
-        given location.
+            ) -> service.ValidateAttestationOccurrenceResponse:
+        r"""Returns whether the given Attestation for the given
+        image URI was signed by the given Attestor
 
         Args:
-            request (google.cloud.aiplatform_v1.types.SearchMigratableResourcesRequest):
+            request (google.cloud.binaryauthorization_v1.types.ValidateAttestationOccurrenceRequest):
                 The request object. Request message for
-                [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
-            parent (str):
-                Required. The location that the migratable resources
-                should be searched from. It's the Vertex AI location
-                that the resources can be migrated to, not the
-                resources' original location. Format:
-                ``projects/{project}/locations/{location}``
-
-                This corresponds to the ``parent`` field
-                on the ``request`` instance; if ``request`` is provided, this
-                should not be set.
+                [ValidationHelperV1.ValidateAttestationOccurrence][google.cloud.binaryauthorization.v1.ValidationHelperV1.ValidateAttestationOccurrence].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -440,42 +344,28 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.aiplatform_v1.services.migration_service.pagers.SearchMigratableResourcesPager:
+            google.cloud.binaryauthorization_v1.types.ValidateAttestationOccurrenceResponse:
                 Response message for
-                [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
-
-                Iterating over this object will yield results and
-                resolve additional pages automatically.
+                   [ValidationHelperV1.ValidateAttestationOccurrence][google.cloud.binaryauthorization.v1.ValidationHelperV1.ValidateAttestationOccurrence].
 
         """
         # Create or coerce a protobuf request object.
-        # Sanity check: If we got a request object, we should *not* have
-        # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([parent])
-        if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
-
         # Minor optimization to avoid making a copy if the user passes
-        # in a migration_service.SearchMigratableResourcesRequest.
+        # in a service.ValidateAttestationOccurrenceRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
-        if not isinstance(request, migration_service.SearchMigratableResourcesRequest):
-            request = migration_service.SearchMigratableResourcesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
-            # request, apply these.
-            if parent is not None:
-                request.parent = parent
+        if not isinstance(request, service.ValidateAttestationOccurrenceRequest):
+            request = service.ValidateAttestationOccurrenceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.search_migratable_resources]
+        rpc = self._transport._wrapped_methods[self._transport.validate_attestation_occurrence]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ("parent", request.parent),
+                ("attestor", request.attestor),
             )),
         )
 
@@ -485,118 +375,6 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
             retry=retry,
             timeout=timeout,
             metadata=metadata,
-        )
-
-        # This method is paged; wrap the response in a pager, which provides
-        # an `__iter__` convenience method.
-        response = pagers.SearchMigratableResourcesPager(
-            method=rpc,
-            request=request,
-            response=response,
-            metadata=metadata,
-        )
-
-        # Done; return the response.
-        return response
-
-    def batch_migrate_resources(self,
-            request: migration_service.BatchMigrateResourcesRequest = None,
-            *,
-            parent: str = None,
-            migrate_resource_requests: Sequence[migration_service.MigrateResourceRequest] = None,
-            retry: retries.Retry = gapic_v1.method.DEFAULT,
-            timeout: float = None,
-            metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation.Operation:
-        r"""Batch migrates resources from ml.googleapis.com,
-        automl.googleapis.com, and datalabeling.googleapis.com
-        to Vertex AI.
-
-        Args:
-            request (google.cloud.aiplatform_v1.types.BatchMigrateResourcesRequest):
-                The request object. Request message for
-                [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1.MigrationService.BatchMigrateResources].
-            parent (str):
-                Required. The location of the migrated resource will
-                live in. Format:
-                ``projects/{project}/locations/{location}``
-
-                This corresponds to the ``parent`` field
-                on the ``request`` instance; if ``request`` is provided, this
-                should not be set.
-            migrate_resource_requests (Sequence[google.cloud.aiplatform_v1.types.MigrateResourceRequest]):
-                Required. The request messages
-                specifying the resources to migrate.
-                They must be in the same location as the
-                destination. Up to 50 resources can be
-                migrated in one batch.
-
-                This corresponds to the ``migrate_resource_requests`` field
-                on the ``request`` instance; if ``request`` is provided, this
-                should not be set.
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
-
-        Returns:
-            google.api_core.operation.Operation:
-                An object representing a long-running operation.
-
-                The result type for the operation will be
-                :class:`google.cloud.aiplatform_v1.types.BatchMigrateResourcesResponse`
-                Response message for
-                [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1.MigrationService.BatchMigrateResources].
-
-        """
-        # Create or coerce a protobuf request object.
-        # Sanity check: If we got a request object, we should *not* have
-        # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([parent, migrate_resource_requests])
-        if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
-
-        # Minor optimization to avoid making a copy if the user passes
-        # in a migration_service.BatchMigrateResourcesRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, migration_service.BatchMigrateResourcesRequest):
-            request = migration_service.BatchMigrateResourcesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
-            # request, apply these.
-            if parent is not None:
-                request.parent = parent
-            if migrate_resource_requests is not None:
-                request.migrate_resource_requests = migrate_resource_requests
-
-        # Wrap the RPC method; this adds retry and timeout information,
-        # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.batch_migrate_resources]
-
-        # Certain fields should be provided within the metadata header;
-        # add these here.
-        metadata = tuple(metadata) + (
-            gapic_v1.routing_header.to_grpc_metadata((
-                ("parent", request.parent),
-            )),
-        )
-
-        # Send the request.
-        response = rpc(
-            request,
-            retry=retry,
-            timeout=timeout,
-            metadata=metadata,
-        )
-
-        # Wrap the response in an operation future.
-        response = operation.from_gapic(
-            response,
-            self._transport.operations_client,
-            migration_service.BatchMigrateResourcesResponse,
-            metadata_type=migration_service.BatchMigrateResourcesOperationMetadata,
         )
 
         # Done; return the response.
@@ -609,7 +387,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-aiplatform",
+            "google-cloud-binaryauthorization",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -617,5 +395,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    "MigrationServiceClient",
+    "ValidationHelperV1Client",
 )
