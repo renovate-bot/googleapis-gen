@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-deploy-v1 is the official client library for the Google Cloud Deploy V1 API. Note that google-cloud-deploy-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-deploy instead. See the readme for more details."
+  gem.description   = "Google Cloud Deploy is a managed service that automates delivery of your applications to a series of target environments in a defined promotion sequence. Note that google-cloud-deploy-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-deploy instead. See the readme for more details."
   gem.summary       = "API Client library for the Google Cloud Deploy V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
