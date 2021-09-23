@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -329,7 +329,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             )
 
     def get_model(self,
-            request: model.GetModelRequest = None,
+            request: Union[model.GetModelRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
@@ -341,7 +341,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Gets the specified model resource by model ID.
 
         Args:
-            request (google.cloud.bigquery_v2.types.GetModelRequest):
+            request (Union[google.cloud.bigquery_v2.types.GetModelRequest, dict]):
                 The request object.
             project_id (str):
                 Required. Project ID of the requested
@@ -423,7 +423,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def list_models(self,
-            request: model.ListModelsRequest = None,
+            request: Union[model.ListModelsRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
@@ -438,7 +438,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         by calling the models.get method.
 
         Args:
-            request (google.cloud.bigquery_v2.types.ListModelsRequest):
+            request (Union[google.cloud.bigquery_v2.types.ListModelsRequest, dict]):
                 The request object.
             project_id (str):
                 Required. Project ID of the models to
@@ -521,7 +521,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def patch_model(self,
-            request: gcb_model.PatchModelRequest = None,
+            request: Union[gcb_model.PatchModelRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
@@ -534,7 +534,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Patch specific fields in the specified model.
 
         Args:
-            request (google.cloud.bigquery_v2.types.PatchModelRequest):
+            request (Union[google.cloud.bigquery_v2.types.PatchModelRequest, dict]):
                 The request object.
             project_id (str):
                 Required. Project ID of the model to
@@ -627,7 +627,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def delete_model(self,
-            request: model.DeleteModelRequest = None,
+            request: Union[model.DeleteModelRequest, dict] = None,
             *,
             project_id: str = None,
             dataset_id: str = None,
@@ -640,7 +640,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         dataset.
 
         Args:
-            request (google.cloud.bigquery_v2.types.DeleteModelRequest):
+            request (Union[google.cloud.bigquery_v2.types.DeleteModelRequest, dict]):
                 The request object.
             project_id (str):
                 Required. Project ID of the model to

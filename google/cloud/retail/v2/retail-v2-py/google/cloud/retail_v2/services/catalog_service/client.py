@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -351,7 +351,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
             )
 
     def list_catalogs(self,
-            request: catalog_service.ListCatalogsRequest = None,
+            request: Union[catalog_service.ListCatalogsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -362,7 +362,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         associated with the project.
 
         Args:
-            request (google.cloud.retail_v2.types.ListCatalogsRequest):
+            request (Union[google.cloud.retail_v2.types.ListCatalogsRequest, dict]):
                 The request object. Request for
                 [CatalogService.ListCatalogs][google.cloud.retail.v2.CatalogService.ListCatalogs]
                 method.
@@ -446,7 +446,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         return response
 
     def update_catalog(self,
-            request: catalog_service.UpdateCatalogRequest = None,
+            request: Union[catalog_service.UpdateCatalogRequest, dict] = None,
             *,
             catalog: gcr_catalog.Catalog = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -457,7 +457,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         r"""Updates the [Catalog][google.cloud.retail.v2.Catalog]s.
 
         Args:
-            request (google.cloud.retail_v2.types.UpdateCatalogRequest):
+            request (Union[google.cloud.retail_v2.types.UpdateCatalogRequest, dict]):
                 The request object. Request for
                 [CatalogService.UpdateCatalog][google.cloud.retail.v2.CatalogService.UpdateCatalog]
                 method.
@@ -541,7 +541,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         return response
 
     def set_default_branch(self,
-            request: catalog_service.SetDefaultBranchRequest = None,
+            request: Union[catalog_service.SetDefaultBranchRequest, dict] = None,
             *,
             catalog: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -590,7 +590,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         sales if you are interested in using Retail Search.
 
         Args:
-            request (google.cloud.retail_v2.types.SetDefaultBranchRequest):
+            request (Union[google.cloud.retail_v2.types.SetDefaultBranchRequest, dict]):
                 The request object. Request message to set a specified
                 branch as new default_branch.
             catalog (str):
@@ -646,7 +646,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         )
 
     def get_default_branch(self,
-            request: catalog_service.GetDefaultBranchRequest = None,
+            request: Union[catalog_service.GetDefaultBranchRequest, dict] = None,
             *,
             catalog: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -663,7 +663,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         sales if you are interested in using Retail Search.
 
         Args:
-            request (google.cloud.retail_v2.types.GetDefaultBranchRequest):
+            request (Union[google.cloud.retail_v2.types.GetDefaultBranchRequest, dict]):
                 The request object. Request message to show which branch
                 is currently the default branch.
             catalog (str):

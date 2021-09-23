@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -385,7 +385,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             )
 
     def get_occurrence(self,
-            request: grafeas.GetOccurrenceRequest = None,
+            request: Union[grafeas.GetOccurrenceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -395,7 +395,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Gets the specified occurrence.
 
         Args:
-            request (grafeas.grafeas_v1.types.GetOccurrenceRequest):
+            request (Union[grafeas.grafeas_v1.types.GetOccurrenceRequest, dict]):
                 The request object. Request to get an occurrence.
             name (str):
                 The name of the occurrence in the form of
@@ -459,7 +459,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def list_occurrences(self,
-            request: grafeas.ListOccurrencesRequest = None,
+            request: Union[grafeas.ListOccurrencesRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -470,7 +470,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Lists occurrences for the specified project.
 
         Args:
-            request (grafeas.grafeas_v1.types.ListOccurrencesRequest):
+            request (Union[grafeas.grafeas_v1.types.ListOccurrencesRequest, dict]):
                 The request object. Request to list occurrences.
             parent (str):
                 The name of the project to list occurrences for in the
@@ -552,7 +552,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def delete_occurrence(self,
-            request: grafeas.DeleteOccurrenceRequest = None,
+            request: Union[grafeas.DeleteOccurrenceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -564,7 +564,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         is no longer applicable for the given resource.
 
         Args:
-            request (grafeas.grafeas_v1.types.DeleteOccurrenceRequest):
+            request (Union[grafeas.grafeas_v1.types.DeleteOccurrenceRequest, dict]):
                 The request object. Request to delete an occurrence.
             name (str):
                 The name of the occurrence in the form of
@@ -619,7 +619,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         )
 
     def create_occurrence(self,
-            request: grafeas.CreateOccurrenceRequest = None,
+            request: Union[grafeas.CreateOccurrenceRequest, dict] = None,
             *,
             parent: str = None,
             occurrence: grafeas.Occurrence = None,
@@ -630,7 +630,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Creates a new occurrence.
 
         Args:
-            request (grafeas.grafeas_v1.types.CreateOccurrenceRequest):
+            request (Union[grafeas.grafeas_v1.types.CreateOccurrenceRequest, dict]):
                 The request object. Request to create a new occurrence.
             parent (str):
                 The name of the project in the form of
@@ -702,7 +702,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def batch_create_occurrences(self,
-            request: grafeas.BatchCreateOccurrencesRequest = None,
+            request: Union[grafeas.BatchCreateOccurrencesRequest, dict] = None,
             *,
             parent: str = None,
             occurrences: Sequence[grafeas.Occurrence] = None,
@@ -713,7 +713,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Creates new occurrences in batch.
 
         Args:
-            request (grafeas.grafeas_v1.types.BatchCreateOccurrencesRequest):
+            request (Union[grafeas.grafeas_v1.types.BatchCreateOccurrencesRequest, dict]):
                 The request object. Request to create occurrences in
                 batch.
             parent (str):
@@ -788,7 +788,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def update_occurrence(self,
-            request: grafeas.UpdateOccurrenceRequest = None,
+            request: Union[grafeas.UpdateOccurrenceRequest, dict] = None,
             *,
             name: str = None,
             occurrence: grafeas.Occurrence = None,
@@ -800,7 +800,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Updates the specified occurrence.
 
         Args:
-            request (grafeas.grafeas_v1.types.UpdateOccurrenceRequest):
+            request (Union[grafeas.grafeas_v1.types.UpdateOccurrenceRequest, dict]):
                 The request object. Request to update an occurrence.
             name (str):
                 The name of the occurrence in the form of
@@ -878,7 +878,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def get_occurrence_note(self,
-            request: grafeas.GetOccurrenceNoteRequest = None,
+            request: Union[grafeas.GetOccurrenceNoteRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -890,7 +890,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         belongs to a provider project.
 
         Args:
-            request (grafeas.grafeas_v1.types.GetOccurrenceNoteRequest):
+            request (Union[grafeas.grafeas_v1.types.GetOccurrenceNoteRequest, dict]):
                 The request object. Request to get the note to which the
                 specified occurrence is attached.
             name (str):
@@ -955,7 +955,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def get_note(self,
-            request: grafeas.GetNoteRequest = None,
+            request: Union[grafeas.GetNoteRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -965,7 +965,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Gets the specified note.
 
         Args:
-            request (grafeas.grafeas_v1.types.GetNoteRequest):
+            request (Union[grafeas.grafeas_v1.types.GetNoteRequest, dict]):
                 The request object. Request to get a note.
             name (str):
                 The name of the note in the form of
@@ -1029,7 +1029,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def list_notes(self,
-            request: grafeas.ListNotesRequest = None,
+            request: Union[grafeas.ListNotesRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -1040,7 +1040,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Lists notes for the specified project.
 
         Args:
-            request (grafeas.grafeas_v1.types.ListNotesRequest):
+            request (Union[grafeas.grafeas_v1.types.ListNotesRequest, dict]):
                 The request object. Request to list notes.
             parent (str):
                 The name of the project to list notes for in the form of
@@ -1122,7 +1122,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def delete_note(self,
-            request: grafeas.DeleteNoteRequest = None,
+            request: Union[grafeas.DeleteNoteRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1132,7 +1132,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Deletes the specified note.
 
         Args:
-            request (grafeas.grafeas_v1.types.DeleteNoteRequest):
+            request (Union[grafeas.grafeas_v1.types.DeleteNoteRequest, dict]):
                 The request object. Request to delete a note.
             name (str):
                 The name of the note in the form of
@@ -1187,7 +1187,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         )
 
     def create_note(self,
-            request: grafeas.CreateNoteRequest = None,
+            request: Union[grafeas.CreateNoteRequest, dict] = None,
             *,
             parent: str = None,
             note_id: str = None,
@@ -1199,7 +1199,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Creates a new note.
 
         Args:
-            request (grafeas.grafeas_v1.types.CreateNoteRequest):
+            request (Union[grafeas.grafeas_v1.types.CreateNoteRequest, dict]):
                 The request object. Request to create a new note.
             parent (str):
                 The name of the project in the form of
@@ -1278,7 +1278,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def batch_create_notes(self,
-            request: grafeas.BatchCreateNotesRequest = None,
+            request: Union[grafeas.BatchCreateNotesRequest, dict] = None,
             *,
             parent: str = None,
             notes: Sequence[grafeas.BatchCreateNotesRequest.NotesEntry] = None,
@@ -1289,7 +1289,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Creates new notes in batch.
 
         Args:
-            request (grafeas.grafeas_v1.types.BatchCreateNotesRequest):
+            request (Union[grafeas.grafeas_v1.types.BatchCreateNotesRequest, dict]):
                 The request object. Request to create notes in batch.
             parent (str):
                 The name of the project in the form of
@@ -1361,7 +1361,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def update_note(self,
-            request: grafeas.UpdateNoteRequest = None,
+            request: Union[grafeas.UpdateNoteRequest, dict] = None,
             *,
             name: str = None,
             note: grafeas.Note = None,
@@ -1373,7 +1373,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         r"""Updates the specified note.
 
         Args:
-            request (grafeas.grafeas_v1.types.UpdateNoteRequest):
+            request (Union[grafeas.grafeas_v1.types.UpdateNoteRequest, dict]):
                 The request object. Request to update a note.
             name (str):
                 The name of the note in the form of
@@ -1451,7 +1451,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return response
 
     def list_note_occurrences(self,
-            request: grafeas.ListNoteOccurrencesRequest = None,
+            request: Union[grafeas.ListNoteOccurrencesRequest, dict] = None,
             *,
             name: str = None,
             filter: str = None,
@@ -1465,7 +1465,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         specified note.
 
         Args:
-            request (grafeas.grafeas_v1.types.ListNoteOccurrencesRequest):
+            request (Union[grafeas.grafeas_v1.types.ListNoteOccurrencesRequest, dict]):
                 The request object. Request to list occurrences for a
                 note.
             name (str):

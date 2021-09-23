@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -363,7 +363,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
             )
 
     def create_topic(self,
-            request: pubsub.Topic = None,
+            request: Union[pubsub.Topic, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -375,7 +375,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         (https://cloud.google.com/pubsub/docs/admin#resource_names).
 
         Args:
-            request (google.pubsub_v1.types.Topic):
+            request (Union[google.pubsub_v1.types.Topic, dict]):
                 The request object. A topic resource.
             name (str):
                 Required. The name of the topic. It must have the format
@@ -443,7 +443,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def update_topic(self,
-            request: pubsub.UpdateTopicRequest = None,
+            request: Union[pubsub.UpdateTopicRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -453,7 +453,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         properties of a topic are not modifiable.
 
         Args:
-            request (google.pubsub_v1.types.UpdateTopicRequest):
+            request (Union[google.pubsub_v1.types.UpdateTopicRequest, dict]):
                 The request object. Request for the UpdateTopic method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -497,7 +497,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def publish(self,
-            request: pubsub.PublishRequest = None,
+            request: Union[pubsub.PublishRequest, dict] = None,
             *,
             topic: str = None,
             messages: Sequence[pubsub.PubsubMessage] = None,
@@ -509,7 +509,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         the topic does not exist.
 
         Args:
-            request (google.pubsub_v1.types.PublishRequest):
+            request (Union[google.pubsub_v1.types.PublishRequest, dict]):
                 The request object. Request for the Publish method.
             topic (str):
                 Required. The messages in the request will be published
@@ -579,7 +579,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def get_topic(self,
-            request: pubsub.GetTopicRequest = None,
+            request: Union[pubsub.GetTopicRequest, dict] = None,
             *,
             topic: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -589,7 +589,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         r"""Gets the configuration of a topic.
 
         Args:
-            request (google.pubsub_v1.types.GetTopicRequest):
+            request (Union[google.pubsub_v1.types.GetTopicRequest, dict]):
                 The request object. Request for the GetTopic method.
             topic (str):
                 Required. The name of the topic to get. Format is
@@ -651,7 +651,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def list_topics(self,
-            request: pubsub.ListTopicsRequest = None,
+            request: Union[pubsub.ListTopicsRequest, dict] = None,
             *,
             project: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -661,7 +661,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         r"""Lists matching topics.
 
         Args:
-            request (google.pubsub_v1.types.ListTopicsRequest):
+            request (Union[google.pubsub_v1.types.ListTopicsRequest, dict]):
                 The request object. Request for the `ListTopics` method.
             project (str):
                 Required. The name of the project in which to list
@@ -736,7 +736,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def list_topic_subscriptions(self,
-            request: pubsub.ListTopicSubscriptionsRequest = None,
+            request: Union[pubsub.ListTopicSubscriptionsRequest, dict] = None,
             *,
             topic: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -747,7 +747,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         topic.
 
         Args:
-            request (google.pubsub_v1.types.ListTopicSubscriptionsRequest):
+            request (Union[google.pubsub_v1.types.ListTopicSubscriptionsRequest, dict]):
                 The request object. Request for the
                 `ListTopicSubscriptions` method.
             topic (str):
@@ -824,7 +824,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def list_topic_snapshots(self,
-            request: pubsub.ListTopicSnapshotsRequest = None,
+            request: Union[pubsub.ListTopicSnapshotsRequest, dict] = None,
             *,
             topic: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -839,7 +839,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         in an existing subscription to the state captured by a snapshot.
 
         Args:
-            request (google.pubsub_v1.types.ListTopicSnapshotsRequest):
+            request (Union[google.pubsub_v1.types.ListTopicSnapshotsRequest, dict]):
                 The request object. Request for the `ListTopicSnapshots`
                 method.
             topic (str):
@@ -916,7 +916,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         return response
 
     def delete_topic(self,
-            request: pubsub.DeleteTopicRequest = None,
+            request: Union[pubsub.DeleteTopicRequest, dict] = None,
             *,
             topic: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -931,7 +931,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         field is set to ``_deleted-topic_``.
 
         Args:
-            request (google.pubsub_v1.types.DeleteTopicRequest):
+            request (Union[google.pubsub_v1.types.DeleteTopicRequest, dict]):
                 The request object. Request for the `DeleteTopic`
                 method.
             topic (str):
@@ -987,7 +987,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         )
 
     def detach_subscription(self,
-            request: pubsub.DetachSubscriptionRequest = None,
+            request: Union[pubsub.DetachSubscriptionRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1000,7 +1000,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
         will stop.
 
         Args:
-            request (google.pubsub_v1.types.DetachSubscriptionRequest):
+            request (Union[google.pubsub_v1.types.DetachSubscriptionRequest, dict]):
                 The request object. Request for the DetachSubscription
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

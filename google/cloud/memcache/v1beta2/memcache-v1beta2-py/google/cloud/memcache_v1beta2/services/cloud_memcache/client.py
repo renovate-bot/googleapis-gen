@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -360,7 +360,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             )
 
     def list_instances(self,
-            request: cloud_memcache.ListInstancesRequest = None,
+            request: Union[cloud_memcache.ListInstancesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -370,7 +370,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         r"""Lists Instances in a given location.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.ListInstancesRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.ListInstancesRequest, dict]):
                 The request object. Request for
                 [ListInstances][google.cloud.memcache.v1beta2.CloudMemcache.ListInstances].
             parent (str):
@@ -449,7 +449,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def get_instance(self,
-            request: cloud_memcache.GetInstanceRequest = None,
+            request: Union[cloud_memcache.GetInstanceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -459,7 +459,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         r"""Gets details of a single Instance.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.GetInstanceRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.GetInstanceRequest, dict]):
                 The request object. Request for
                 [GetInstance][google.cloud.memcache.v1beta2.CloudMemcache.GetInstance].
             name (str):
@@ -524,7 +524,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def create_instance(self,
-            request: cloud_memcache.CreateInstanceRequest = None,
+            request: Union[cloud_memcache.CreateInstanceRequest, dict] = None,
             *,
             parent: str = None,
             instance_id: str = None,
@@ -536,7 +536,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         r"""Creates a new Instance in a given location.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.CreateInstanceRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.CreateInstanceRequest, dict]):
                 The request object. Request for
                 [CreateInstance][google.cloud.memcache.v1beta2.CloudMemcache.CreateInstance].
             parent (str):
@@ -640,7 +640,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def update_instance(self,
-            request: cloud_memcache.UpdateInstanceRequest = None,
+            request: Union[cloud_memcache.UpdateInstanceRequest, dict] = None,
             *,
             update_mask: field_mask_pb2.FieldMask = None,
             resource: cloud_memcache.Instance = None,
@@ -652,7 +652,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         location.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.UpdateInstanceRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.UpdateInstanceRequest, dict]):
                 The request object. Request for
                 [UpdateInstance][google.cloud.memcache.v1beta2.CloudMemcache.UpdateInstance].
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
@@ -738,7 +738,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def update_parameters(self,
-            request: cloud_memcache.UpdateParametersRequest = None,
+            request: Union[cloud_memcache.UpdateParametersRequest, dict] = None,
             *,
             name: str = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -753,7 +753,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         of the Memcached instance.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.UpdateParametersRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.UpdateParametersRequest, dict]):
                 The request object. Request for
                 [UpdateParameters][google.cloud.memcache.v1beta2.CloudMemcache.UpdateParameters].
             name (str):
@@ -846,7 +846,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def delete_instance(self,
-            request: cloud_memcache.DeleteInstanceRequest = None,
+            request: Union[cloud_memcache.DeleteInstanceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -856,7 +856,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         r"""Deletes a single Instance.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.DeleteInstanceRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.DeleteInstanceRequest, dict]):
                 The request object. Request for
                 [DeleteInstance][google.cloud.memcache.v1beta2.CloudMemcache.DeleteInstance].
             name (str):
@@ -944,7 +944,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def apply_parameters(self,
-            request: cloud_memcache.ApplyParametersRequest = None,
+            request: Union[cloud_memcache.ApplyParametersRequest, dict] = None,
             *,
             name: str = None,
             node_ids: Sequence[str] = None,
@@ -958,7 +958,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         Memcached Instance.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.ApplyParametersRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.ApplyParametersRequest, dict]):
                 The request object. Request for
                 [ApplyParameters][google.cloud.memcache.v1beta2.CloudMemcache.ApplyParameters].
             name (str):
@@ -1055,7 +1055,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return response
 
     def apply_software_update(self,
-            request: cloud_memcache.ApplySoftwareUpdateRequest = None,
+            request: Union[cloud_memcache.ApplySoftwareUpdateRequest, dict] = None,
             *,
             instance: str = None,
             node_ids: Sequence[str] = None,
@@ -1068,7 +1068,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         Instance.
 
         Args:
-            request (google.cloud.memcache_v1beta2.types.ApplySoftwareUpdateRequest):
+            request (Union[google.cloud.memcache_v1beta2.types.ApplySoftwareUpdateRequest, dict]):
                 The request object. Request for
                 [ApplySoftwareUpdate][google.cloud.memcache.v1beta2.CloudMemcache.ApplySoftwareUpdate].
             instance (str):

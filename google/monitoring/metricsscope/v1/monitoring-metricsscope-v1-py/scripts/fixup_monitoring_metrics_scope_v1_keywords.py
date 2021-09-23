@@ -39,10 +39,10 @@ def partition(
 class monitoring_metrics_scopeCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_monitored_project': ('parent', 'monitored_project', ),
-          'delete_monitored_project': ('name', ),
-          'get_metrics_scope': ('name', ),
-          'list_metrics_scopes_by_monitored_project': ('monitored_resource_container', ),
+        'create_monitored_project': ('parent', 'monitored_project', ),
+        'delete_monitored_project': ('name', ),
+        'get_metrics_scope': ('name', ),
+        'list_metrics_scopes_by_monitored_project': ('monitored_resource_container', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -61,7 +61,7 @@ class monitoring_metrics_scopeCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

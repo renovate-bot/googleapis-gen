@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -342,7 +342,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
             )
 
     def request_sync_devices(self,
-            request: homegraph.RequestSyncDevicesRequest = None,
+            request: Union[homegraph.RequestSyncDevicesRequest, dict] = None,
             *,
             agent_user_id: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -361,7 +361,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         credentials from your Actions console project.
 
         Args:
-            request (google.home.graph_v1.types.RequestSyncDevicesRequest):
+            request (Union[google.home.graph_v1.types.RequestSyncDevicesRequest, dict]):
                 The request object. Request type for the
                 [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices)
                 call.
@@ -421,7 +421,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         return response
 
     def report_state_and_notification(self,
-            request: homegraph.ReportStateAndNotificationRequest = None,
+            request: Union[homegraph.ReportStateAndNotificationRequest, dict] = None,
             *,
             request_id: str = None,
             event_id: str = None,
@@ -450,7 +450,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         credentials from your Actions console project.
 
         Args:
-            request (google.home.graph_v1.types.ReportStateAndNotificationRequest):
+            request (Union[google.home.graph_v1.types.ReportStateAndNotificationRequest, dict]):
                 The request object. Request type for the
                 [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
                 call. It may include states, notifications, or both.
@@ -555,7 +555,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         return response
 
     def delete_agent_user(self,
-            request: homegraph.DeleteAgentUserRequest = None,
+            request: Union[homegraph.DeleteAgentUserRequest, dict] = None,
             *,
             request_id: str = None,
             agent_user_id: str = None,
@@ -577,7 +577,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         credentials from your Actions console project.
 
         Args:
-            request (google.home.graph_v1.types.DeleteAgentUserRequest):
+            request (Union[google.home.graph_v1.types.DeleteAgentUserRequest, dict]):
                 The request object. Request type for the
                 [`DeleteAgentUser`](#google.home.graph.v1.HomeGraphApiService.DeleteAgentUser)
                 call.
@@ -639,7 +639,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         )
 
     def query(self,
-            request: homegraph.QueryRequest = None,
+            request: Union[homegraph.QueryRequest, dict] = None,
             *,
             request_id: str = None,
             agent_user_id: str = None,
@@ -658,7 +658,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         Actions console project.
 
         Args:
-            request (google.home.graph_v1.types.QueryRequest):
+            request (Union[google.home.graph_v1.types.QueryRequest, dict]):
                 The request object. Request type for the
                 [`Query`](#google.home.graph.v1.HomeGraphApiService.Query)
                 call.
@@ -737,7 +737,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         return response
 
     def sync(self,
-            request: homegraph.SyncRequest = None,
+            request: Union[homegraph.SyncRequest, dict] = None,
             *,
             request_id: str = None,
             agent_user_id: str = None,
@@ -754,7 +754,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         Actions console project.
 
         Args:
-            request (google.home.graph_v1.types.SyncRequest):
+            request (Union[google.home.graph_v1.types.SyncRequest, dict]):
                 The request object. Request type for the
                 [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
                 call.

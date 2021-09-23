@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -370,7 +370,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
             )
 
     def get_question(self,
-            request: question_service.GetQuestionRequest = None,
+            request: Union[question_service.GetQuestionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -380,7 +380,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         r"""Gets a previously created question.
 
         Args:
-            request (google.cloud.dataqna_v1alpha.types.GetQuestionRequest):
+            request (Union[google.cloud.dataqna_v1alpha.types.GetQuestionRequest, dict]):
                 The request object. A request to get a previously
                 created question.
             name (str):
@@ -448,7 +448,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         return response
 
     def create_question(self,
-            request: question_service.CreateQuestionRequest = None,
+            request: Union[question_service.CreateQuestionRequest, dict] = None,
             *,
             parent: str = None,
             question: gcd_question.Question = None,
@@ -459,7 +459,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         r"""Creates a question.
 
         Args:
-            request (google.cloud.dataqna_v1alpha.types.CreateQuestionRequest):
+            request (Union[google.cloud.dataqna_v1alpha.types.CreateQuestionRequest, dict]):
                 The request object. Request to create a question
                 resource.
             parent (str):
@@ -535,7 +535,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         return response
 
     def execute_question(self,
-            request: question_service.ExecuteQuestionRequest = None,
+            request: Union[question_service.ExecuteQuestionRequest, dict] = None,
             *,
             name: str = None,
             interpretation_index: int = None,
@@ -546,7 +546,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         r"""Executes an interpretation.
 
         Args:
-            request (google.cloud.dataqna_v1alpha.types.ExecuteQuestionRequest):
+            request (Union[google.cloud.dataqna_v1alpha.types.ExecuteQuestionRequest, dict]):
                 The request object. Request to execute an
                 interpretation.
             name (str):
@@ -623,7 +623,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         return response
 
     def get_user_feedback(self,
-            request: question_service.GetUserFeedbackRequest = None,
+            request: Union[question_service.GetUserFeedbackRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -633,7 +633,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         r"""Gets previously created user feedback.
 
         Args:
-            request (google.cloud.dataqna_v1alpha.types.GetUserFeedbackRequest):
+            request (Union[google.cloud.dataqna_v1alpha.types.GetUserFeedbackRequest, dict]):
                 The request object. Request to get user feedback.
             name (str):
                 Required. The unique identifier for the user feedback.
@@ -697,7 +697,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         return response
 
     def update_user_feedback(self,
-            request: question_service.UpdateUserFeedbackRequest = None,
+            request: Union[question_service.UpdateUserFeedbackRequest, dict] = None,
             *,
             user_feedback: gcd_user_feedback.UserFeedback = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -709,7 +709,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         there was none before (upsert).
 
         Args:
-            request (google.cloud.dataqna_v1alpha.types.UpdateUserFeedbackRequest):
+            request (Union[google.cloud.dataqna_v1alpha.types.UpdateUserFeedbackRequest, dict]):
                 The request object. Request to updates user feedback.
             user_feedback (google.cloud.dataqna_v1alpha.types.UserFeedback):
                 Required. The user feedback to

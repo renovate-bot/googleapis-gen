@@ -39,21 +39,21 @@ def partition(
 class secretmanagerCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'access_secret_version': ('name', ),
-          'add_secret_version': ('parent', 'payload', ),
-          'create_secret': ('parent', 'secret_id', 'secret', ),
-          'delete_secret': ('name', ),
-          'destroy_secret_version': ('name', ),
-          'disable_secret_version': ('name', ),
-          'enable_secret_version': ('name', ),
-          'get_iam_policy': ('resource', 'options', ),
-          'get_secret': ('name', ),
-          'get_secret_version': ('name', ),
-          'list_secrets': ('parent', 'page_size', 'page_token', ),
-          'list_secret_versions': ('parent', 'page_size', 'page_token', ),
-          'set_iam_policy': ('resource', 'policy', ),
-          'test_iam_permissions': ('resource', 'permissions', ),
-          'update_secret': ('secret', 'update_mask', ),
+        'access_secret_version': ('name', ),
+        'add_secret_version': ('parent', 'payload', ),
+        'create_secret': ('parent', 'secret_id', 'secret', ),
+        'delete_secret': ('name', ),
+        'destroy_secret_version': ('name', ),
+        'disable_secret_version': ('name', ),
+        'enable_secret_version': ('name', ),
+        'get_iam_policy': ('resource', 'options', ),
+        'get_secret': ('name', ),
+        'get_secret_version': ('name', ),
+        'list_secrets': ('parent', 'page_size', 'page_token', ),
+        'list_secret_versions': ('parent', 'page_size', 'page_token', ),
+        'set_iam_policy': ('resource', 'policy', ),
+        'test_iam_permissions': ('resource', 'permissions', ),
+        'update_secret': ('secret', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -72,7 +72,7 @@ class secretmanagerCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

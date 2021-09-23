@@ -328,7 +328,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
               )
 
     def get_asset(self,
-            request: asset_service.GetAssetRequest = None,
+            request: Union[asset_service.GetAssetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -342,7 +342,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAssetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAssetRequest, dict]):
                 The request object. Request message for
                 [AssetService.GetAsset][google.ads.googleads.v7.services.AssetService.GetAsset]
             resource_name (:class:`str`):
@@ -411,7 +411,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         return response
 
     def mutate_assets(self,
-            request: asset_service.MutateAssetsRequest = None,
+            request: Union[asset_service.MutateAssetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[asset_service.AssetOperation] = None,
@@ -435,7 +435,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         `UrlFieldError <>`__ `YoutubeVideoRegistrationError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAssetsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAssetsRequest, dict]):
                 The request object. Request message for
                 [AssetService.MutateAssets][google.ads.googleads.v7.services.AssetService.MutateAssets]
             customer_id (:class:`str`):

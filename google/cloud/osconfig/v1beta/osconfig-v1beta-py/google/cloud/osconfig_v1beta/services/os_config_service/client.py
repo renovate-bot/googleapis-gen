@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -345,7 +345,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
             )
 
     def execute_patch_job(self,
-            request: patch_jobs.ExecutePatchJobRequest = None,
+            request: Union[patch_jobs.ExecutePatchJobRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -355,7 +355,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         job.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.ExecutePatchJobRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.ExecutePatchJobRequest, dict]):
                 The request object. A request message to initiate
                 patching across Google Compute Engine instances.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -410,7 +410,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def get_patch_job(self,
-            request: patch_jobs.GetPatchJobRequest = None,
+            request: Union[patch_jobs.GetPatchJobRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -421,7 +421,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         of completed jobs.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.GetPatchJobRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.GetPatchJobRequest, dict]):
                 The request object. Request to get an active or
                 completed patch job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -476,7 +476,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def cancel_patch_job(self,
-            request: patch_jobs.CancelPatchJobRequest = None,
+            request: Union[patch_jobs.CancelPatchJobRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -486,7 +486,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         Canceled patch jobs cannot be restarted.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.CancelPatchJobRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.CancelPatchJobRequest, dict]):
                 The request object. Message for canceling a patch job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -540,7 +540,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def list_patch_jobs(self,
-            request: patch_jobs.ListPatchJobsRequest = None,
+            request: Union[patch_jobs.ListPatchJobsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -549,7 +549,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Get a list of patch jobs.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.ListPatchJobsRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.ListPatchJobsRequest, dict]):
                 The request object. A request message for listing patch
                 jobs.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -608,7 +608,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def list_patch_job_instance_details(self,
-            request: patch_jobs.ListPatchJobInstanceDetailsRequest = None,
+            request: Union[patch_jobs.ListPatchJobInstanceDetailsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -618,7 +618,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Get a list of instance details for a given patch job.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.ListPatchJobInstanceDetailsRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.ListPatchJobInstanceDetailsRequest, dict]):
                 The request object. Request to list details for all
                 instances that are part of a patch job.
             parent (str):
@@ -695,7 +695,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def create_patch_deployment(self,
-            request: patch_deployments.CreatePatchDeploymentRequest = None,
+            request: Union[patch_deployments.CreatePatchDeploymentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -704,7 +704,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Create an OS Config patch deployment.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.CreatePatchDeploymentRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.CreatePatchDeploymentRequest, dict]):
                 The request object. A request message for creating a
                 patch deployment.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -755,7 +755,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def get_patch_deployment(self,
-            request: patch_deployments.GetPatchDeploymentRequest = None,
+            request: Union[patch_deployments.GetPatchDeploymentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -764,7 +764,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Get an OS Config patch deployment.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.GetPatchDeploymentRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.GetPatchDeploymentRequest, dict]):
                 The request object. A request message for retrieving a
                 patch deployment.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -815,7 +815,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def list_patch_deployments(self,
-            request: patch_deployments.ListPatchDeploymentsRequest = None,
+            request: Union[patch_deployments.ListPatchDeploymentsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -824,7 +824,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Get a page of OS Config patch deployments.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.ListPatchDeploymentsRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.ListPatchDeploymentsRequest, dict]):
                 The request object. A request message for listing patch
                 deployments.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -883,7 +883,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def delete_patch_deployment(self,
-            request: patch_deployments.DeletePatchDeploymentRequest = None,
+            request: Union[patch_deployments.DeletePatchDeploymentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -892,7 +892,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Delete an OS Config patch deployment.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.DeletePatchDeploymentRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.DeletePatchDeploymentRequest, dict]):
                 The request object. A request message for deleting a
                 patch deployment.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -930,7 +930,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         )
 
     def create_guest_policy(self,
-            request: guest_policies.CreateGuestPolicyRequest = None,
+            request: Union[guest_policies.CreateGuestPolicyRequest, dict] = None,
             *,
             parent: str = None,
             guest_policy: guest_policies.GuestPolicy = None,
@@ -941,7 +941,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Create an OS Config guest policy.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.CreateGuestPolicyRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.CreateGuestPolicyRequest, dict]):
                 The request object. A request message for creating a
                 guest policy.
             parent (str):
@@ -1018,7 +1018,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def get_guest_policy(self,
-            request: guest_policies.GetGuestPolicyRequest = None,
+            request: Union[guest_policies.GetGuestPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1028,7 +1028,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Get an OS Config guest policy.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.GetGuestPolicyRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.GetGuestPolicyRequest, dict]):
                 The request object. A request message for retrieving a
                 guest policy.
             name (str):
@@ -1099,7 +1099,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def list_guest_policies(self,
-            request: guest_policies.ListGuestPoliciesRequest = None,
+            request: Union[guest_policies.ListGuestPoliciesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1109,7 +1109,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Get a page of OS Config guest policies.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.ListGuestPoliciesRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.ListGuestPoliciesRequest, dict]):
                 The request object. A request message for listing guest
                 policies.
             parent (str):
@@ -1186,7 +1186,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def update_guest_policy(self,
-            request: guest_policies.UpdateGuestPolicyRequest = None,
+            request: Union[guest_policies.UpdateGuestPolicyRequest, dict] = None,
             *,
             guest_policy: guest_policies.GuestPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1197,7 +1197,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Update an OS Config guest policy.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.UpdateGuestPolicyRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.UpdateGuestPolicyRequest, dict]):
                 The request object. A request message for updating a
                 guest policy.
             guest_policy (google.cloud.osconfig_v1beta.types.GuestPolicy):
@@ -1274,7 +1274,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         return response
 
     def delete_guest_policy(self,
-            request: guest_policies.DeleteGuestPolicyRequest = None,
+            request: Union[guest_policies.DeleteGuestPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1284,7 +1284,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         r"""Delete an OS Config guest policy.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.DeleteGuestPolicyRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.DeleteGuestPolicyRequest, dict]):
                 The request object. A request message for deleting a
                 guest policy.
             name (str):
@@ -1341,7 +1341,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         )
 
     def lookup_effective_guest_policy(self,
-            request: guest_policies.LookupEffectiveGuestPolicyRequest = None,
+            request: Union[guest_policies.LookupEffectiveGuestPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1352,7 +1352,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         assigned to the instance ancestry.
 
         Args:
-            request (google.cloud.osconfig_v1beta.types.LookupEffectiveGuestPolicyRequest):
+            request (Union[google.cloud.osconfig_v1beta.types.LookupEffectiveGuestPolicyRequest, dict]):
                 The request object. A request message for getting the
                 effective guest policy assigned to the instance.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

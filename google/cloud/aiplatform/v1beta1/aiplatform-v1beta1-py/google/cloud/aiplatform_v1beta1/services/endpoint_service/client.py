@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -378,7 +378,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
             )
 
     def create_endpoint(self,
-            request: endpoint_service.CreateEndpointRequest = None,
+            request: Union[endpoint_service.CreateEndpointRequest, dict] = None,
             *,
             parent: str = None,
             endpoint: gca_endpoint.Endpoint = None,
@@ -389,7 +389,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         r"""Creates an Endpoint.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateEndpointRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateEndpointRequest, dict]):
                 The request object. Request message for
                 [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
             parent (str):
@@ -472,7 +472,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return response
 
     def get_endpoint(self,
-            request: endpoint_service.GetEndpointRequest = None,
+            request: Union[endpoint_service.GetEndpointRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -482,7 +482,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         r"""Gets an Endpoint.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetEndpointRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetEndpointRequest, dict]):
                 The request object. Request message for
                 [EndpointService.GetEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.GetEndpoint]
             name (str):
@@ -548,7 +548,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return response
 
     def list_endpoints(self,
-            request: endpoint_service.ListEndpointsRequest = None,
+            request: Union[endpoint_service.ListEndpointsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -558,7 +558,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         r"""Lists Endpoints in a Location.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListEndpointsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListEndpointsRequest, dict]):
                 The request object. Request message for
                 [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints].
             parent (str):
@@ -636,7 +636,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return response
 
     def update_endpoint(self,
-            request: endpoint_service.UpdateEndpointRequest = None,
+            request: Union[endpoint_service.UpdateEndpointRequest, dict] = None,
             *,
             endpoint: gca_endpoint.Endpoint = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -647,7 +647,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         r"""Updates an Endpoint.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateEndpointRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateEndpointRequest, dict]):
                 The request object. Request message for
                 [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.UpdateEndpoint].
             endpoint (google.cloud.aiplatform_v1beta1.types.Endpoint):
@@ -722,7 +722,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return response
 
     def delete_endpoint(self,
-            request: endpoint_service.DeleteEndpointRequest = None,
+            request: Union[endpoint_service.DeleteEndpointRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -732,7 +732,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         r"""Deletes an Endpoint.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteEndpointRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteEndpointRequest, dict]):
                 The request object. Request message for
                 [EndpointService.DeleteEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeleteEndpoint].
             name (str):
@@ -819,7 +819,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return response
 
     def deploy_model(self,
-            request: endpoint_service.DeployModelRequest = None,
+            request: Union[endpoint_service.DeployModelRequest, dict] = None,
             *,
             endpoint: str = None,
             deployed_model: gca_endpoint.DeployedModel = None,
@@ -832,7 +832,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         DeployedModel within it.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeployModelRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeployModelRequest, dict]):
                 The request object. Request message for
                 [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel].
             endpoint (str):
@@ -945,7 +945,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return response
 
     def undeploy_model(self,
-            request: endpoint_service.UndeployModelRequest = None,
+            request: Union[endpoint_service.UndeployModelRequest, dict] = None,
             *,
             endpoint: str = None,
             deployed_model_id: str = None,
@@ -959,7 +959,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         using.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UndeployModelRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UndeployModelRequest, dict]):
                 The request object. Request message for
                 [EndpointService.UndeployModel][google.cloud.aiplatform.v1beta1.EndpointService.UndeployModel].
             endpoint (str):

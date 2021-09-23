@@ -344,7 +344,7 @@ class CampaignExtensionSettingServiceClient(metaclass=CampaignExtensionSettingSe
               )
 
     def get_campaign_extension_setting(self,
-            request: campaign_extension_setting_service.GetCampaignExtensionSettingRequest = None,
+            request: Union[campaign_extension_setting_service.GetCampaignExtensionSettingRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -358,7 +358,7 @@ class CampaignExtensionSettingServiceClient(metaclass=CampaignExtensionSettingSe
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignExtensionSettingRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignExtensionSettingRequest, dict]):
                 The request object. Request message for
                 [CampaignExtensionSettingService.GetCampaignExtensionSetting][google.ads.googleads.v8.services.CampaignExtensionSettingService.GetCampaignExtensionSetting].
             resource_name (:class:`str`):
@@ -420,7 +420,7 @@ class CampaignExtensionSettingServiceClient(metaclass=CampaignExtensionSettingSe
         return response
 
     def mutate_campaign_extension_settings(self,
-            request: campaign_extension_setting_service.MutateCampaignExtensionSettingsRequest = None,
+            request: Union[campaign_extension_setting_service.MutateCampaignExtensionSettingsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_extension_setting_service.CampaignExtensionSettingOperation] = None,
@@ -445,7 +445,7 @@ class CampaignExtensionSettingServiceClient(metaclass=CampaignExtensionSettingSe
         `StringLengthError <>`__ `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCampaignExtensionSettingsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCampaignExtensionSettingsRequest, dict]):
                 The request object. Request message for
                 [CampaignExtensionSettingService.MutateCampaignExtensionSettings][google.ads.googleads.v8.services.CampaignExtensionSettingService.MutateCampaignExtensionSettings].
             customer_id (:class:`str`):

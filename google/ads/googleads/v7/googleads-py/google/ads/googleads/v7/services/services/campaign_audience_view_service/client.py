@@ -321,7 +321,7 @@ class CampaignAudienceViewServiceClient(metaclass=CampaignAudienceViewServiceCli
               )
 
     def get_campaign_audience_view(self,
-            request: campaign_audience_view_service.GetCampaignAudienceViewRequest = None,
+            request: Union[campaign_audience_view_service.GetCampaignAudienceViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class CampaignAudienceViewServiceClient(metaclass=CampaignAudienceViewServiceCli
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignAudienceViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignAudienceViewRequest, dict]):
                 The request object. Request message for
                 [CampaignAudienceViewService.GetCampaignAudienceView][google.ads.googleads.v7.services.CampaignAudienceViewService.GetCampaignAudienceView].
             resource_name (:class:`str`):

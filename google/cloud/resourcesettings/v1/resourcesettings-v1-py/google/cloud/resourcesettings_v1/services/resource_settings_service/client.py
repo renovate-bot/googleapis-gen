@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -349,7 +349,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
             )
 
     def list_settings(self,
-            request: resource_settings.ListSettingsRequest = None,
+            request: Union[resource_settings.ListSettingsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -360,7 +360,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         ``parent``.
 
         Args:
-            request (google.cloud.resourcesettings_v1.types.ListSettingsRequest):
+            request (Union[google.cloud.resourcesettings_v1.types.ListSettingsRequest, dict]):
                 The request object. The request for ListSettings.
             parent (str):
                 Required. The Cloud resource that parents the setting.
@@ -440,7 +440,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         return response
 
     def get_setting(self,
-            request: resource_settings.GetSettingRequest = None,
+            request: Union[resource_settings.GetSettingRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -453,7 +453,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         ``google.rpc.Code.NOT_FOUND`` if the setting does not exist.
 
         Args:
-            request (google.cloud.resourcesettings_v1.types.GetSettingRequest):
+            request (Union[google.cloud.resourcesettings_v1.types.GetSettingRequest, dict]):
                 The request object. The request for GetSetting.
             name (str):
                 Required. The name of the setting to get. See
@@ -516,7 +516,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         return response
 
     def update_setting(self,
-            request: resource_settings.UpdateSettingRequest = None,
+            request: Union[resource_settings.UpdateSettingRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -540,7 +540,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         ``local_value`` field.
 
         Args:
-            request (google.cloud.resourcesettings_v1.types.UpdateSettingRequest):
+            request (Union[google.cloud.resourcesettings_v1.types.UpdateSettingRequest, dict]):
                 The request object. The request for UpdateSetting.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

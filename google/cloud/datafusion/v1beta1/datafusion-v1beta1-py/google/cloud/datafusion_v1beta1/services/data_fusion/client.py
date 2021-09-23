@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -355,7 +355,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
             )
 
     def list_available_versions(self,
-            request: v1beta1.ListAvailableVersionsRequest = None,
+            request: Union[v1beta1.ListAvailableVersionsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -366,7 +366,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         the specified project and location.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.ListAvailableVersionsRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.ListAvailableVersionsRequest, dict]):
                 The request object. Request message for the list
                 available versions request.
             parent (str):
@@ -445,7 +445,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def list_instances(self,
-            request: v1beta1.ListInstancesRequest = None,
+            request: Union[v1beta1.ListInstancesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -455,7 +455,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         and location.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.ListInstancesRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.ListInstancesRequest, dict]):
                 The request object. Request message for listing Data
                 Fusion instances.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -514,7 +514,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def get_instance(self,
-            request: v1beta1.GetInstanceRequest = None,
+            request: Union[v1beta1.GetInstanceRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -523,7 +523,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""Gets details of a single Data Fusion instance.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.GetInstanceRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.GetInstanceRequest, dict]):
                 The request object. Request message for getting details
                 about a Data Fusion instance.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -568,7 +568,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def create_instance(self,
-            request: v1beta1.CreateInstanceRequest = None,
+            request: Union[v1beta1.CreateInstanceRequest, dict] = None,
             *,
             parent: str = None,
             instance: v1beta1.Instance = None,
@@ -581,7 +581,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         project and location.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.CreateInstanceRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.CreateInstanceRequest, dict]):
                 The request object. Request message for creating a Data
                 Fusion instance.
             parent (str):
@@ -672,7 +672,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def delete_instance(self,
-            request: v1beta1.DeleteInstanceRequest = None,
+            request: Union[v1beta1.DeleteInstanceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -682,7 +682,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""Deletes a single Data Fusion instance.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.DeleteInstanceRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.DeleteInstanceRequest, dict]):
                 The request object. Request message for deleting a Data
                 Fusion instance.
             name (str):
@@ -769,7 +769,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def update_instance(self,
-            request: v1beta1.UpdateInstanceRequest = None,
+            request: Union[v1beta1.UpdateInstanceRequest, dict] = None,
             *,
             instance: v1beta1.Instance = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -780,7 +780,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""Updates a single Data Fusion instance.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.UpdateInstanceRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.UpdateInstanceRequest, dict]):
                 The request object. Request message for updating a Data
                 Fusion instance. Data Fusion only allows updating the
                 labels, options, and stack driver settings.
@@ -875,7 +875,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def restart_instance(self,
-            request: v1beta1.RestartInstanceRequest = None,
+            request: Union[v1beta1.RestartInstanceRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -885,7 +885,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         At the end of an operation instance is fully restarted.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.RestartInstanceRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.RestartInstanceRequest, dict]):
                 The request object. Request message for restarting a
                 Data Fusion instance.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -943,7 +943,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def upgrade_instance(self,
-            request: v1beta1.UpgradeInstanceRequest = None,
+            request: Union[v1beta1.UpgradeInstanceRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -953,7 +953,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         At the end of an operation instance is fully upgraded.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.UpgradeInstanceRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.UpgradeInstanceRequest, dict]):
                 The request object. Request message for upgrading a Data
                 Fusion instance. To change the instance properties,
                 instance update should be used.
@@ -1012,7 +1012,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def remove_iam_policy(self,
-            request: v1beta1.RemoveIamPolicyRequest = None,
+            request: Union[v1beta1.RemoveIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1022,7 +1022,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         resource.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.RemoveIamPolicyRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.RemoveIamPolicyRequest, dict]):
                 The request object. Request message for RemoveIamPolicy
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1069,7 +1069,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def list_namespaces(self,
-            request: v1beta1.ListNamespacesRequest = None,
+            request: Union[v1beta1.ListNamespacesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1079,7 +1079,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""List namespaces in a given instance
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.ListNamespacesRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.ListNamespacesRequest, dict]):
                 The request object. List namespaces request.
             parent (str):
                 Required. The instance to list its
@@ -1154,7 +1154,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def add_dns_peering(self,
-            request: v1beta1.AddDnsPeeringRequest = None,
+            request: Union[v1beta1.AddDnsPeeringRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1164,7 +1164,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""Add DNS peering on the given resource.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.AddDnsPeeringRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.AddDnsPeeringRequest, dict]):
                 The request object. Request message to create dns
                 peering.
             parent (str):
@@ -1229,7 +1229,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def remove_dns_peering(self,
-            request: v1beta1.RemoveDnsPeeringRequest = None,
+            request: Union[v1beta1.RemoveDnsPeeringRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1239,7 +1239,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""Remove DNS peering on the given resource.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.RemoveDnsPeeringRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.RemoveDnsPeeringRequest, dict]):
                 The request object. Request message to remove dns
                 peering.
             parent (str):
@@ -1304,7 +1304,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         return response
 
     def list_dns_peerings(self,
-            request: v1beta1.ListDnsPeeringsRequest = None,
+            request: Union[v1beta1.ListDnsPeeringsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1314,7 +1314,7 @@ class DataFusionClient(metaclass=DataFusionClientMeta):
         r"""List DNS peering for a given resource.
 
         Args:
-            request (google.cloud.datafusion_v1beta1.types.ListDnsPeeringsRequest):
+            request (Union[google.cloud.datafusion_v1beta1.types.ListDnsPeeringsRequest, dict]):
                 The request object. List dns peering request.
             parent (str):
                 Required. The resource on which dns

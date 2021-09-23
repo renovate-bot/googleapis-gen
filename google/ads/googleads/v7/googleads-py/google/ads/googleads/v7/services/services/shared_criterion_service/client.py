@@ -334,7 +334,7 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
               )
 
     def get_shared_criterion(self,
-            request: shared_criterion_service.GetSharedCriterionRequest = None,
+            request: Union[shared_criterion_service.GetSharedCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -348,7 +348,7 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetSharedCriterionRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetSharedCriterionRequest, dict]):
                 The request object. Request message for
                 [SharedCriterionService.GetSharedCriterion][google.ads.googleads.v7.services.SharedCriterionService.GetSharedCriterion].
             resource_name (:class:`str`):
@@ -412,7 +412,7 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
         return response
 
     def mutate_shared_criteria(self,
-            request: shared_criterion_service.MutateSharedCriteriaRequest = None,
+            request: Union[shared_criterion_service.MutateSharedCriteriaRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[shared_criterion_service.SharedCriterionOperation] = None,
@@ -434,7 +434,7 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
         `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateSharedCriteriaRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateSharedCriteriaRequest, dict]):
                 The request object. Request message for
                 [SharedCriterionService.MutateSharedCriteria][google.ads.googleads.v7.services.SharedCriterionService.MutateSharedCriteria].
             customer_id (:class:`str`):

@@ -39,10 +39,10 @@ def partition(
 class admobCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'generate_mediation_report': ('parent', 'report_spec', ),
-          'generate_network_report': ('parent', 'report_spec', ),
-          'get_publisher_account': ('name', ),
-          'list_publisher_accounts': ('page_size', 'page_token', ),
+        'generate_mediation_report': ('parent', 'report_spec', ),
+        'generate_network_report': ('parent', 'report_spec', ),
+        'get_publisher_account': ('name', ),
+        'list_publisher_accounts': ('page_size', 'page_token', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -61,7 +61,7 @@ class admobCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

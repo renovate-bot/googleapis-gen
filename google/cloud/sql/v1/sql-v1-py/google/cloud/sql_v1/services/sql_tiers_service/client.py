@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -326,7 +326,7 @@ class SqlTiersServiceClient(metaclass=SqlTiersServiceClientMeta):
             )
 
     def list(self,
-            request: cloud_sql_tiers.SqlTiersListRequest = None,
+            request: Union[cloud_sql_tiers.SqlTiersListRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -337,7 +337,7 @@ class SqlTiersServiceClient(metaclass=SqlTiersServiceClientMeta):
         information, see https://cloud.google.com/sql/pricing.
 
         Args:
-            request (google.cloud.sql_v1.types.SqlTiersListRequest):
+            request (Union[google.cloud.sql_v1.types.SqlTiersListRequest, dict]):
                 The request object. Tiers list request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

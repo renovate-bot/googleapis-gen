@@ -323,7 +323,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
               )
 
     def get_custom_interest(self,
-            request: custom_interest_service.GetCustomInterestRequest = None,
+            request: Union[custom_interest_service.GetCustomInterestRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -337,7 +337,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCustomInterestRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCustomInterestRequest, dict]):
                 The request object. Request message for
                 [CustomInterestService.GetCustomInterest][google.ads.googleads.v8.services.CustomInterestService.GetCustomInterest].
             resource_name (:class:`str`):
@@ -401,7 +401,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         return response
 
     def mutate_custom_interests(self,
-            request: custom_interest_service.MutateCustomInterestsRequest = None,
+            request: Union[custom_interest_service.MutateCustomInterestsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[custom_interest_service.CustomInterestOperation] = None,
@@ -420,7 +420,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         `RequestError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCustomInterestsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCustomInterestsRequest, dict]):
                 The request object. Request message for
                 [CustomInterestService.MutateCustomInterests][google.ads.googleads.v8.services.CustomInterestService.MutateCustomInterests].
             customer_id (:class:`str`):

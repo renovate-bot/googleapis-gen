@@ -343,7 +343,7 @@ class BillingSetupServiceClient(metaclass=BillingSetupServiceClientMeta):
               )
 
     def get_billing_setup(self,
-            request: billing_setup_service.GetBillingSetupRequest = None,
+            request: Union[billing_setup_service.GetBillingSetupRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -357,7 +357,7 @@ class BillingSetupServiceClient(metaclass=BillingSetupServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetBillingSetupRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetBillingSetupRequest, dict]):
                 The request object. Request message for
                 [BillingSetupService.GetBillingSetup][google.ads.googleads.v8.services.BillingSetupService.GetBillingSetup].
             resource_name (:class:`str`):
@@ -423,7 +423,7 @@ class BillingSetupServiceClient(metaclass=BillingSetupServiceClientMeta):
         return response
 
     def mutate_billing_setup(self,
-            request: billing_setup_service.MutateBillingSetupRequest = None,
+            request: Union[billing_setup_service.MutateBillingSetupRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: billing_setup_service.BillingSetupOperation = None,
@@ -440,7 +440,7 @@ class BillingSetupServiceClient(metaclass=BillingSetupServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateBillingSetupRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateBillingSetupRequest, dict]):
                 The request object. Request message for billing setup
                 mutate operations.
             customer_id (:class:`str`):

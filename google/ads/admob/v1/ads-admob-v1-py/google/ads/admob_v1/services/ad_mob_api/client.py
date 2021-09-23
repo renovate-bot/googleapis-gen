@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -339,7 +339,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
             )
 
     def get_publisher_account(self,
-            request: admob_api.GetPublisherAccountRequest = None,
+            request: Union[admob_api.GetPublisherAccountRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -350,7 +350,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         account.
 
         Args:
-            request (google.ads.admob_v1.types.GetPublisherAccountRequest):
+            request (Union[google.ads.admob_v1.types.GetPublisherAccountRequest, dict]):
                 The request object. Request to retrieve the specified
                 publisher account.
             name (str):
@@ -418,7 +418,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         return response
 
     def list_publisher_accounts(self,
-            request: admob_api.ListPublisherAccountsRequest = None,
+            request: Union[admob_api.ListPublisherAccountsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -429,7 +429,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         access to at most one AdMob account.
 
         Args:
-            request (google.ads.admob_v1.types.ListPublisherAccountsRequest):
+            request (Union[google.ads.admob_v1.types.ListPublisherAccountsRequest, dict]):
                 The request object. Request to retrieve the AdMob
                 publisher account accessible with the client credential.
                 Currently all credentials have access to at most 1
@@ -482,7 +482,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         return response
 
     def generate_network_report(self,
-            request: admob_api.GenerateNetworkReportRequest = None,
+            request: Union[admob_api.GenerateNetworkReportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -492,7 +492,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         provided report specification.
 
         Args:
-            request (google.ads.admob_v1.types.GenerateNetworkReportRequest):
+            request (Union[google.ads.admob_v1.types.GenerateNetworkReportRequest, dict]):
                 The request object. Request to generate an AdMob Network
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -562,7 +562,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         return response
 
     def generate_mediation_report(self,
-            request: admob_api.GenerateMediationReportRequest = None,
+            request: Union[admob_api.GenerateMediationReportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -572,7 +572,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         provided report specification.
 
         Args:
-            request (google.ads.admob_v1.types.GenerateMediationReportRequest):
+            request (Union[google.ads.admob_v1.types.GenerateMediationReportRequest, dict]):
                 The request object. Request to generate an AdMob
                 Mediation report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

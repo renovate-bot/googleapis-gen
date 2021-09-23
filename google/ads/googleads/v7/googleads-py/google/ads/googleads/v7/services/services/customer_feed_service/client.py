@@ -335,7 +335,7 @@ class CustomerFeedServiceClient(metaclass=CustomerFeedServiceClientMeta):
               )
 
     def get_customer_feed(self,
-            request: customer_feed_service.GetCustomerFeedRequest = None,
+            request: Union[customer_feed_service.GetCustomerFeedRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -349,7 +349,7 @@ class CustomerFeedServiceClient(metaclass=CustomerFeedServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCustomerFeedRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCustomerFeedRequest, dict]):
                 The request object. Request message for
                 [CustomerFeedService.GetCustomerFeed][google.ads.googleads.v7.services.CustomerFeedService.GetCustomerFeed].
             resource_name (:class:`str`):
@@ -411,7 +411,7 @@ class CustomerFeedServiceClient(metaclass=CustomerFeedServiceClientMeta):
         return response
 
     def mutate_customer_feeds(self,
-            request: customer_feed_service.MutateCustomerFeedsRequest = None,
+            request: Union[customer_feed_service.MutateCustomerFeedsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[customer_feed_service.CustomerFeedOperation] = None,
@@ -434,7 +434,7 @@ class CustomerFeedServiceClient(metaclass=CustomerFeedServiceClientMeta):
         `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCustomerFeedsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCustomerFeedsRequest, dict]):
                 The request object. Request message for
                 [CustomerFeedService.MutateCustomerFeeds][google.ads.googleads.v7.services.CustomerFeedService.MutateCustomerFeeds].
             customer_id (:class:`str`):

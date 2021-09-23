@@ -39,12 +39,12 @@ def partition(
 class moblabCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'check_build_stage_status': ('name', 'filter', ),
-          'find_most_stable_build': ('build_target', ),
-          'list_builds': ('parent', 'page_size', 'page_token', 'filter', 'read_mask', 'group_by', ),
-          'list_build_targets': ('page_size', 'page_token', ),
-          'list_models': ('parent', 'page_size', 'page_token', ),
-          'stage_build': ('name', 'filter', ),
+        'check_build_stage_status': ('name', 'filter', ),
+        'find_most_stable_build': ('build_target', ),
+        'list_builds': ('parent', 'page_size', 'page_token', 'filter', 'read_mask', 'group_by', ),
+        'list_build_targets': ('page_size', 'page_token', ),
+        'list_models': ('parent', 'page_size', 'page_token', ),
+        'stage_build': ('name', 'filter', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -63,7 +63,7 @@ class moblabCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

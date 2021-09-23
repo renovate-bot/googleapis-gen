@@ -336,7 +336,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
               )
 
     def get_account_link(self,
-            request: account_link_service.GetAccountLinkRequest = None,
+            request: Union[account_link_service.GetAccountLinkRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -350,7 +350,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAccountLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAccountLinkRequest, dict]):
                 The request object. Request message for
                 [AccountLinkService.GetAccountLink][google.ads.googleads.v8.services.AccountLinkService.GetAccountLink].
             resource_name (:class:`str`):
@@ -415,7 +415,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         return response
 
     def create_account_link(self,
-            request: account_link_service.CreateAccountLinkRequest = None,
+            request: Union[account_link_service.CreateAccountLinkRequest, dict] = None,
             *,
             customer_id: str = None,
             account_link: gagr_account_link.AccountLink = None,
@@ -432,7 +432,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         `ThirdPartyAppAnalyticsLinkError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.CreateAccountLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.CreateAccountLinkRequest, dict]):
                 The request object. Request message for
                 [AccountLinkService.CreateAccountLink][google.ads.googleads.v8.services.AccountLinkService.CreateAccountLink].
             customer_id (:class:`str`):
@@ -505,7 +505,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         return response
 
     def mutate_account_link(self,
-            request: account_link_service.MutateAccountLinkRequest = None,
+            request: Union[account_link_service.MutateAccountLinkRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: account_link_service.AccountLinkOperation = None,
@@ -523,7 +523,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         `MutateError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateAccountLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateAccountLinkRequest, dict]):
                 The request object. Request message for
                 [AccountLinkService.MutateAccountLink][google.ads.googleads.v8.services.AccountLinkService.MutateAccountLink].
             customer_id (:class:`str`):

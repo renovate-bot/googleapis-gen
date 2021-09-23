@@ -39,12 +39,12 @@ def partition(
 class agentendpointCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'receive_task_notification': ('instance_id_token', 'agent_version', ),
-          'register_agent': ('instance_id_token', 'agent_version', 'supported_capabilities', 'os_long_name', 'os_short_name', 'os_version', 'os_architecture', ),
-          'report_inventory': ('instance_id_token', 'inventory_checksum', 'inventory', ),
-          'report_task_complete': ('instance_id_token', 'task_id', 'task_type', 'error_message', 'apply_patches_task_output', 'exec_step_task_output', 'apply_config_task_output', ),
-          'report_task_progress': ('instance_id_token', 'task_id', 'task_type', 'apply_patches_task_progress', 'exec_step_task_progress', 'apply_config_task_progress', ),
-          'start_next_task': ('instance_id_token', ),
+        'receive_task_notification': ('instance_id_token', 'agent_version', ),
+        'register_agent': ('instance_id_token', 'agent_version', 'supported_capabilities', 'os_long_name', 'os_short_name', 'os_version', 'os_architecture', ),
+        'report_inventory': ('instance_id_token', 'inventory_checksum', 'inventory', ),
+        'report_task_complete': ('instance_id_token', 'task_id', 'task_type', 'error_message', 'apply_patches_task_output', 'exec_step_task_output', 'apply_config_task_output', ),
+        'report_task_progress': ('instance_id_token', 'task_id', 'task_type', 'apply_patches_task_progress', 'exec_step_task_progress', 'apply_config_task_progress', ),
+        'start_next_task': ('instance_id_token', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -63,7 +63,7 @@ class agentendpointCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

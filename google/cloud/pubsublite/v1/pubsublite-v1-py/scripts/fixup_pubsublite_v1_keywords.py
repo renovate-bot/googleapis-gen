@@ -39,34 +39,34 @@ def partition(
 class pubsubliteCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'assign_partitions': ('initial', 'ack', ),
-          'commit_cursor': ('subscription', 'partition', 'cursor', ),
-          'compute_head_cursor': ('topic', 'partition', ),
-          'compute_message_stats': ('topic', 'partition', 'start_cursor', 'end_cursor', ),
-          'compute_time_cursor': ('topic', 'partition', 'target', ),
-          'create_reservation': ('parent', 'reservation', 'reservation_id', ),
-          'create_subscription': ('parent', 'subscription', 'subscription_id', 'skip_backlog', ),
-          'create_topic': ('parent', 'topic', 'topic_id', ),
-          'delete_reservation': ('name', ),
-          'delete_subscription': ('name', ),
-          'delete_topic': ('name', ),
-          'get_reservation': ('name', ),
-          'get_subscription': ('name', ),
-          'get_topic': ('name', ),
-          'get_topic_partitions': ('name', ),
-          'list_partition_cursors': ('parent', 'page_size', 'page_token', ),
-          'list_reservations': ('parent', 'page_size', 'page_token', ),
-          'list_reservation_topics': ('name', 'page_size', 'page_token', ),
-          'list_subscriptions': ('parent', 'page_size', 'page_token', ),
-          'list_topics': ('parent', 'page_size', 'page_token', ),
-          'list_topic_subscriptions': ('name', 'page_size', 'page_token', ),
-          'publish': ('initial_request', 'message_publish_request', ),
-          'seek_subscription': ('name', 'named_target', 'time_target', ),
-          'streaming_commit_cursor': ('initial', 'commit', ),
-          'subscribe': ('initial', 'seek', 'flow_control', ),
-          'update_reservation': ('reservation', 'update_mask', ),
-          'update_subscription': ('subscription', 'update_mask', ),
-          'update_topic': ('topic', 'update_mask', ),
+        'assign_partitions': ('initial', 'ack', ),
+        'commit_cursor': ('subscription', 'partition', 'cursor', ),
+        'compute_head_cursor': ('topic', 'partition', ),
+        'compute_message_stats': ('topic', 'partition', 'start_cursor', 'end_cursor', ),
+        'compute_time_cursor': ('topic', 'partition', 'target', ),
+        'create_reservation': ('parent', 'reservation', 'reservation_id', ),
+        'create_subscription': ('parent', 'subscription', 'subscription_id', 'skip_backlog', ),
+        'create_topic': ('parent', 'topic', 'topic_id', ),
+        'delete_reservation': ('name', ),
+        'delete_subscription': ('name', ),
+        'delete_topic': ('name', ),
+        'get_reservation': ('name', ),
+        'get_subscription': ('name', ),
+        'get_topic': ('name', ),
+        'get_topic_partitions': ('name', ),
+        'list_partition_cursors': ('parent', 'page_size', 'page_token', ),
+        'list_reservations': ('parent', 'page_size', 'page_token', ),
+        'list_reservation_topics': ('name', 'page_size', 'page_token', ),
+        'list_subscriptions': ('parent', 'page_size', 'page_token', ),
+        'list_topics': ('parent', 'page_size', 'page_token', ),
+        'list_topic_subscriptions': ('name', 'page_size', 'page_token', ),
+        'publish': ('initial_request', 'message_publish_request', ),
+        'seek_subscription': ('name', 'named_target', 'time_target', ),
+        'streaming_commit_cursor': ('initial', 'commit', ),
+        'subscribe': ('initial', 'seek', 'flow_control', ),
+        'update_reservation': ('reservation', 'update_mask', ),
+        'update_subscription': ('subscription', 'update_mask', ),
+        'update_topic': ('topic', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -85,7 +85,7 @@ class pubsubliteCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

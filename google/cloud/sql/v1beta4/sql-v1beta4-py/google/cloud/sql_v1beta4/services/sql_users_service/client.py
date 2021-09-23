@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -330,7 +330,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
             )
 
     def delete(self,
-            request: cloud_sql_users.SqlUsersDeleteRequest = None,
+            request: Union[cloud_sql_users.SqlUsersDeleteRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -339,7 +339,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         r"""Deletes a user from a Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlUsersDeleteRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlUsersDeleteRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -380,7 +380,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         return response
 
     def insert(self,
-            request: cloud_sql_users.SqlUsersInsertRequest = None,
+            request: Union[cloud_sql_users.SqlUsersInsertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -389,7 +389,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         r"""Creates a new user in a Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlUsersInsertRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlUsersInsertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -430,7 +430,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         return response
 
     def list(self,
-            request: cloud_sql_users.SqlUsersListRequest = None,
+            request: Union[cloud_sql_users.SqlUsersListRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -439,7 +439,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         r"""Lists users in the specified Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlUsersListRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlUsersListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -475,7 +475,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         return response
 
     def update(self,
-            request: cloud_sql_users.SqlUsersUpdateRequest = None,
+            request: Union[cloud_sql_users.SqlUsersUpdateRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -484,7 +484,7 @@ class SqlUsersServiceClient(metaclass=SqlUsersServiceClientMeta):
         r"""Updates an existing user in a Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlUsersUpdateRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlUsersUpdateRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

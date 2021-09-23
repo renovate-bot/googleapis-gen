@@ -321,7 +321,7 @@ class AdGroupAudienceViewServiceClient(metaclass=AdGroupAudienceViewServiceClien
               )
 
     def get_ad_group_audience_view(self,
-            request: ad_group_audience_view_service.GetAdGroupAudienceViewRequest = None,
+            request: Union[ad_group_audience_view_service.GetAdGroupAudienceViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class AdGroupAudienceViewServiceClient(metaclass=AdGroupAudienceViewServiceClien
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupAudienceViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupAudienceViewRequest, dict]):
                 The request object. Request message for
                 [AdGroupAudienceViewService.GetAdGroupAudienceView][google.ads.googleads.v7.services.AdGroupAudienceViewService.GetAdGroupAudienceView].
             resource_name (:class:`str`):

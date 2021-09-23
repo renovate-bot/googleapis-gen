@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -405,7 +405,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             )
 
     def search_catalog(self,
-            request: datacatalog.SearchCatalogRequest = None,
+            request: Union[datacatalog.SearchCatalogRequest, dict] = None,
             *,
             scope: datacatalog.SearchCatalogRequest.Scope = None,
             query: str = None,
@@ -431,7 +431,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
 
         Args:
-            request (google.cloud.datacatalog_v1.types.SearchCatalogRequest):
+            request (Union[google.cloud.datacatalog_v1.types.SearchCatalogRequest, dict]):
                 The request object. Request message for
                 [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
             scope (google.cloud.datacatalog_v1.types.SearchCatalogRequest.Scope):
@@ -525,7 +525,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def create_entry_group(self,
-            request: datacatalog.CreateEntryGroupRequest = None,
+            request: Union[datacatalog.CreateEntryGroupRequest, dict] = None,
             *,
             parent: str = None,
             entry_group_id: str = None,
@@ -566,7 +566,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreateEntryGroupRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreateEntryGroupRequest, dict]):
                 The request object. Request message for
                 [CreateEntryGroup][google.cloud.datacatalog.v1.DataCatalog.CreateEntryGroup].
             parent (str):
@@ -660,7 +660,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def get_entry_group(self,
-            request: datacatalog.GetEntryGroupRequest = None,
+            request: Union[datacatalog.GetEntryGroupRequest, dict] = None,
             *,
             name: str = None,
             read_mask: field_mask_pb2.FieldMask = None,
@@ -671,7 +671,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Gets an entry group.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.GetEntryGroupRequest):
+            request (Union[google.cloud.datacatalog_v1.types.GetEntryGroupRequest, dict]):
                 The request object. Request message for
                 [GetEntryGroup][google.cloud.datacatalog.v1.DataCatalog.GetEntryGroup].
             name (str):
@@ -748,7 +748,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def update_entry_group(self,
-            request: datacatalog.UpdateEntryGroupRequest = None,
+            request: Union[datacatalog.UpdateEntryGroupRequest, dict] = None,
             *,
             entry_group: datacatalog.EntryGroup = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -764,7 +764,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdateEntryGroupRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdateEntryGroupRequest, dict]):
                 The request object. Request message for
                 [UpdateEntryGroup][google.cloud.datacatalog.v1.DataCatalog.UpdateEntryGroup].
             entry_group (google.cloud.datacatalog_v1.types.EntryGroup):
@@ -846,7 +846,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def delete_entry_group(self,
-            request: datacatalog.DeleteEntryGroupRequest = None,
+            request: Union[datacatalog.DeleteEntryGroupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -861,7 +861,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeleteEntryGroupRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeleteEntryGroupRequest, dict]):
                 The request object. Request message for
                 [DeleteEntryGroup][google.cloud.datacatalog.v1.DataCatalog.DeleteEntryGroup].
             name (str):
@@ -917,7 +917,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         )
 
     def list_entry_groups(self,
-            request: datacatalog.ListEntryGroupsRequest = None,
+            request: Union[datacatalog.ListEntryGroupsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -927,7 +927,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Lists entry groups.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.ListEntryGroupsRequest):
+            request (Union[google.cloud.datacatalog_v1.types.ListEntryGroupsRequest, dict]):
                 The request object. Request message for
                 [ListEntryGroups][google.cloud.datacatalog.v1.DataCatalog.ListEntryGroups].
             parent (str):
@@ -1005,7 +1005,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def create_entry(self,
-            request: datacatalog.CreateEntryRequest = None,
+            request: Union[datacatalog.CreateEntryRequest, dict] = None,
             *,
             parent: str = None,
             entry_id: str = None,
@@ -1029,7 +1029,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         An entry group can have a maximum of 100,000 entries.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreateEntryRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreateEntryRequest, dict]):
                 The request object. Request message for
                 [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry].
             parent (str):
@@ -1125,7 +1125,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def update_entry(self,
-            request: datacatalog.UpdateEntryRequest = None,
+            request: Union[datacatalog.UpdateEntryRequest, dict] = None,
             *,
             entry: datacatalog.Entry = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1141,7 +1141,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdateEntryRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdateEntryRequest, dict]):
                 The request object. Request message for
                 [UpdateEntry][google.cloud.datacatalog.v1.DataCatalog.UpdateEntry].
             entry (google.cloud.datacatalog_v1.types.Entry):
@@ -1252,7 +1252,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def delete_entry(self,
-            request: datacatalog.DeleteEntryRequest = None,
+            request: Union[datacatalog.DeleteEntryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1271,7 +1271,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeleteEntryRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeleteEntryRequest, dict]):
                 The request object. Request message for
                 [DeleteEntry][google.cloud.datacatalog.v1.DataCatalog.DeleteEntry].
             name (str):
@@ -1327,7 +1327,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         )
 
     def get_entry(self,
-            request: datacatalog.GetEntryRequest = None,
+            request: Union[datacatalog.GetEntryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1337,7 +1337,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Gets an entry.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.GetEntryRequest):
+            request (Union[google.cloud.datacatalog_v1.types.GetEntryRequest, dict]):
                 The request object. Request message for
                 [GetEntry][google.cloud.datacatalog.v1.DataCatalog.GetEntry].
             name (str):
@@ -1411,7 +1411,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def lookup_entry(self,
-            request: datacatalog.LookupEntryRequest = None,
+            request: Union[datacatalog.LookupEntryRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1422,7 +1422,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         Platform service.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.LookupEntryRequest):
+            request (Union[google.cloud.datacatalog_v1.types.LookupEntryRequest, dict]):
                 The request object. Request message for
                 [LookupEntry][google.cloud.datacatalog.v1.DataCatalog.LookupEntry].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1470,7 +1470,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def list_entries(self,
-            request: datacatalog.ListEntriesRequest = None,
+            request: Union[datacatalog.ListEntriesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1480,7 +1480,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Lists entries.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.ListEntriesRequest):
+            request (Union[google.cloud.datacatalog_v1.types.ListEntriesRequest, dict]):
                 The request object. Request message for
                 [ListEntries][google.cloud.datacatalog.v1.DataCatalog.ListEntries].
             parent (str):
@@ -1558,7 +1558,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def create_tag_template(self,
-            request: datacatalog.CreateTagTemplateRequest = None,
+            request: Union[datacatalog.CreateTagTemplateRequest, dict] = None,
             *,
             parent: str = None,
             tag_template_id: str = None,
@@ -1575,7 +1575,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreateTagTemplateRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreateTagTemplateRequest, dict]):
                 The request object. Request message for
                 [CreateTagTemplate][google.cloud.datacatalog.v1.DataCatalog.CreateTagTemplate].
             parent (str):
@@ -1670,7 +1670,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def get_tag_template(self,
-            request: datacatalog.GetTagTemplateRequest = None,
+            request: Union[datacatalog.GetTagTemplateRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1680,7 +1680,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Gets a tag template.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.GetTagTemplateRequest):
+            request (Union[google.cloud.datacatalog_v1.types.GetTagTemplateRequest, dict]):
                 The request object. Request message for
                 [GetTagTemplate][google.cloud.datacatalog.v1.DataCatalog.GetTagTemplate].
             name (str):
@@ -1754,7 +1754,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def update_tag_template(self,
-            request: datacatalog.UpdateTagTemplateRequest = None,
+            request: Union[datacatalog.UpdateTagTemplateRequest, dict] = None,
             *,
             tag_template: tags.TagTemplate = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1774,7 +1774,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdateTagTemplateRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdateTagTemplateRequest, dict]):
                 The request object. Request message for
                 [UpdateTagTemplate][google.cloud.datacatalog.v1.DataCatalog.UpdateTagTemplate].
             tag_template (google.cloud.datacatalog_v1.types.TagTemplate):
@@ -1863,7 +1863,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def delete_tag_template(self,
-            request: datacatalog.DeleteTagTemplateRequest = None,
+            request: Union[datacatalog.DeleteTagTemplateRequest, dict] = None,
             *,
             name: str = None,
             force: bool = None,
@@ -1879,7 +1879,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeleteTagTemplateRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeleteTagTemplateRequest, dict]):
                 The request object. Request message for
                 [DeleteTagTemplate][google.cloud.datacatalog.v1.DataCatalog.DeleteTagTemplate].
             name (str):
@@ -1946,7 +1946,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         )
 
     def create_tag_template_field(self,
-            request: datacatalog.CreateTagTemplateFieldRequest = None,
+            request: Union[datacatalog.CreateTagTemplateFieldRequest, dict] = None,
             *,
             parent: str = None,
             tag_template_field_id: str = None,
@@ -1963,7 +1963,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreateTagTemplateFieldRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreateTagTemplateFieldRequest, dict]):
                 The request object. Request message for
                 [CreateTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.CreateTagTemplateField].
             parent (str):
@@ -2055,7 +2055,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def update_tag_template_field(self,
-            request: datacatalog.UpdateTagTemplateFieldRequest = None,
+            request: Union[datacatalog.UpdateTagTemplateFieldRequest, dict] = None,
             *,
             name: str = None,
             tag_template_field: tags.TagTemplateField = None,
@@ -2074,7 +2074,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdateTagTemplateFieldRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdateTagTemplateFieldRequest, dict]):
                 The request object. Request message for
                 [UpdateTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.UpdateTagTemplateField].
             name (str):
@@ -2171,7 +2171,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def rename_tag_template_field(self,
-            request: datacatalog.RenameTagTemplateFieldRequest = None,
+            request: Union[datacatalog.RenameTagTemplateFieldRequest, dict] = None,
             *,
             name: str = None,
             new_tag_template_field_id: str = None,
@@ -2187,7 +2187,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
 
         Args:
-            request (google.cloud.datacatalog_v1.types.RenameTagTemplateFieldRequest):
+            request (Union[google.cloud.datacatalog_v1.types.RenameTagTemplateFieldRequest, dict]):
                 The request object. Request message for
                 [RenameTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.RenameTagTemplateField].
             name (str):
@@ -2261,7 +2261,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def rename_tag_template_field_enum_value(self,
-            request: datacatalog.RenameTagTemplateFieldEnumValueRequest = None,
+            request: Union[datacatalog.RenameTagTemplateFieldEnumValueRequest, dict] = None,
             *,
             name: str = None,
             new_enum_value_display_name: str = None,
@@ -2273,7 +2273,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         Within a single enum field, enum values must be unique.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.RenameTagTemplateFieldEnumValueRequest):
+            request (Union[google.cloud.datacatalog_v1.types.RenameTagTemplateFieldEnumValueRequest, dict]):
                 The request object. Request message for
                 [RenameTagTemplateFieldEnumValue][google.cloud.datacatalog.v1.DataCatalog.RenameTagTemplateFieldEnumValue].
             name (str):
@@ -2347,7 +2347,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def delete_tag_template_field(self,
-            request: datacatalog.DeleteTagTemplateFieldRequest = None,
+            request: Union[datacatalog.DeleteTagTemplateFieldRequest, dict] = None,
             *,
             name: str = None,
             force: bool = None,
@@ -2364,7 +2364,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         project <https://cloud.google.com/data-catalog/docs/concepts/resource-project>`__.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeleteTagTemplateFieldRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeleteTagTemplateFieldRequest, dict]):
                 The request object. Request message for
                 [DeleteTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.DeleteTagTemplateField].
             name (str):
@@ -2431,7 +2431,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         )
 
     def create_tag(self,
-            request: datacatalog.CreateTagRequest = None,
+            request: Union[datacatalog.CreateTagRequest, dict] = None,
             *,
             parent: str = None,
             tag: tags.Tag = None,
@@ -2456,7 +2456,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         used to create the tag must be in the same organization.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreateTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreateTagRequest, dict]):
                 The request object. Request message for
                 [CreateTag][google.cloud.datacatalog.v1.DataCatalog.CreateTag].
             parent (str):
@@ -2540,7 +2540,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def update_tag(self,
-            request: datacatalog.UpdateTagRequest = None,
+            request: Union[datacatalog.UpdateTagRequest, dict] = None,
             *,
             tag: tags.Tag = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -2551,7 +2551,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Updates an existing tag.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdateTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdateTagRequest, dict]):
                 The request object. Request message for
                 [UpdateTag][google.cloud.datacatalog.v1.DataCatalog.UpdateTag].
             tag (google.cloud.datacatalog_v1.types.Tag):
@@ -2636,7 +2636,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def delete_tag(self,
-            request: datacatalog.DeleteTagRequest = None,
+            request: Union[datacatalog.DeleteTagRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2646,7 +2646,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         r"""Deletes a tag.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeleteTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeleteTagRequest, dict]):
                 The request object. Request message for
                 [DeleteTag][google.cloud.datacatalog.v1.DataCatalog.DeleteTag].
             name (str):
@@ -2702,7 +2702,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         )
 
     def list_tags(self,
-            request: datacatalog.ListTagsRequest = None,
+            request: Union[datacatalog.ListTagsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2713,7 +2713,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         [Entry][google.cloud.datacatalog.v1.Entry].
 
         Args:
-            request (google.cloud.datacatalog_v1.types.ListTagsRequest):
+            request (Union[google.cloud.datacatalog_v1.types.ListTagsRequest, dict]):
                 The request object. Request message for
                 [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags].
             parent (str):
@@ -2795,7 +2795,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2824,7 +2824,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
            entry groups.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -2943,7 +2943,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2976,7 +2976,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
            entry groups.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -3095,7 +3095,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -3117,7 +3117,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         method.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

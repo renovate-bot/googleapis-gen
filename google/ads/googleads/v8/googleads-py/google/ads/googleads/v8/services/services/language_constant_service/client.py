@@ -321,7 +321,7 @@ class LanguageConstantServiceClient(metaclass=LanguageConstantServiceClientMeta)
               )
 
     def get_language_constant(self,
-            request: language_constant_service.GetLanguageConstantRequest = None,
+            request: Union[language_constant_service.GetLanguageConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class LanguageConstantServiceClient(metaclass=LanguageConstantServiceClientMeta)
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetLanguageConstantRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetLanguageConstantRequest, dict]):
                 The request object. Request message for
                 [LanguageConstantService.GetLanguageConstant][google.ads.googleads.v8.services.LanguageConstantService.GetLanguageConstant].
             resource_name (:class:`str`):

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -387,7 +387,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
             )
 
     def export_entities(self,
-            request: datastore_admin.ExportEntitiesRequest = None,
+            request: Union[datastore_admin.ExportEntitiesRequest, dict] = None,
             *,
             project_id: str = None,
             labels: Sequence[datastore_admin.ExportEntitiesRequest.LabelsEntry] = None,
@@ -409,7 +409,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         Google Cloud Storage.
 
         Args:
-            request (google.cloud.datastore_admin_v1.types.ExportEntitiesRequest):
+            request (Union[google.cloud.datastore_admin_v1.types.ExportEntitiesRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ExportEntities][google.datastore.admin.v1.DatastoreAdmin.ExportEntities].
             project_id (str):
@@ -523,7 +523,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         return response
 
     def import_entities(self,
-            request: datastore_admin.ImportEntitiesRequest = None,
+            request: Union[datastore_admin.ImportEntitiesRequest, dict] = None,
             *,
             project_id: str = None,
             labels: Sequence[datastore_admin.ImportEntitiesRequest.LabelsEntry] = None,
@@ -542,7 +542,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         imported to Cloud Datastore.
 
         Args:
-            request (google.cloud.datastore_admin_v1.types.ImportEntitiesRequest):
+            request (Union[google.cloud.datastore_admin_v1.types.ImportEntitiesRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ImportEntities][google.datastore.admin.v1.DatastoreAdmin.ImportEntities].
             project_id (str):
@@ -662,7 +662,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         return response
 
     def create_index(self,
-            request: datastore_admin.CreateIndexRequest = None,
+            request: Union[datastore_admin.CreateIndexRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -685,7 +685,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         Indexes with a single property cannot be created.
 
         Args:
-            request (google.cloud.datastore_admin_v1.types.CreateIndexRequest):
+            request (Union[google.cloud.datastore_admin_v1.types.CreateIndexRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.CreateIndex][google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -735,7 +735,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         return response
 
     def delete_index(self,
-            request: datastore_admin.DeleteIndexRequest = None,
+            request: Union[datastore_admin.DeleteIndexRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -757,7 +757,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         again.
 
         Args:
-            request (google.cloud.datastore_admin_v1.types.DeleteIndexRequest):
+            request (Union[google.cloud.datastore_admin_v1.types.DeleteIndexRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.DeleteIndex][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -807,7 +807,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         return response
 
     def get_index(self,
-            request: datastore_admin.GetIndexRequest = None,
+            request: Union[datastore_admin.GetIndexRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -816,7 +816,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         r"""Gets an index.
 
         Args:
-            request (google.cloud.datastore_admin_v1.types.GetIndexRequest):
+            request (Union[google.cloud.datastore_admin_v1.types.GetIndexRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -853,7 +853,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         return response
 
     def list_indexes(self,
-            request: datastore_admin.ListIndexesRequest = None,
+            request: Union[datastore_admin.ListIndexesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -865,7 +865,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         results.
 
         Args:
-            request (google.cloud.datastore_admin_v1.types.ListIndexesRequest):
+            request (Union[google.cloud.datastore_admin_v1.types.ListIndexesRequest, dict]):
                 The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ListIndexes][google.datastore.admin.v1.DatastoreAdmin.ListIndexes].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

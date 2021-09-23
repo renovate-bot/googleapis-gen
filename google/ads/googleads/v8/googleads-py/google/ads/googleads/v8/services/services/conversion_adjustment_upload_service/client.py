@@ -311,7 +311,7 @@ class ConversionAdjustmentUploadServiceClient(metaclass=ConversionAdjustmentUplo
               )
 
     def upload_conversion_adjustments(self,
-            request: conversion_adjustment_upload_service.UploadConversionAdjustmentsRequest = None,
+            request: Union[conversion_adjustment_upload_service.UploadConversionAdjustmentsRequest, dict] = None,
             *,
             customer_id: str = None,
             conversion_adjustments: Sequence[conversion_adjustment_upload_service.ConversionAdjustment] = None,
@@ -328,7 +328,7 @@ class ConversionAdjustmentUploadServiceClient(metaclass=ConversionAdjustmentUplo
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.UploadConversionAdjustmentsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.UploadConversionAdjustmentsRequest, dict]):
                 The request object. Request message for
                 [ConversionAdjustmentUploadService.UploadConversionAdjustments][google.ads.googleads.v8.services.ConversionAdjustmentUploadService.UploadConversionAdjustments].
             customer_id (:class:`str`):

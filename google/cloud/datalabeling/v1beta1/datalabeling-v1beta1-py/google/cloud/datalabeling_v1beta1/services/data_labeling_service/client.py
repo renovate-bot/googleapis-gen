@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -430,7 +430,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             )
 
     def create_dataset(self,
-            request: data_labeling_service.CreateDatasetRequest = None,
+            request: Union[data_labeling_service.CreateDatasetRequest, dict] = None,
             *,
             parent: str = None,
             dataset: gcd_dataset.Dataset = None,
@@ -442,7 +442,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         resource.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.CreateDatasetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.CreateDatasetRequest, dict]):
                 The request object. Request message for CreateDataset.
             parent (str):
                 Required. Dataset resource parent, format:
@@ -515,7 +515,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_dataset(self,
-            request: data_labeling_service.GetDatasetRequest = None,
+            request: Union[data_labeling_service.GetDatasetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -525,7 +525,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets dataset by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetDatasetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetDatasetRequest, dict]):
                 The request object. Request message for GetDataSet.
             name (str):
                 Required. Dataset resource name, format:
@@ -591,7 +591,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def list_datasets(self,
-            request: data_labeling_service.ListDatasetsRequest = None,
+            request: Union[data_labeling_service.ListDatasetsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -603,7 +603,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListDatasetsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListDatasetsRequest, dict]):
                 The request object. Request message for ListDataset.
             parent (str):
                 Required. Dataset resource parent, format:
@@ -688,7 +688,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def delete_dataset(self,
-            request: data_labeling_service.DeleteDatasetRequest = None,
+            request: Union[data_labeling_service.DeleteDatasetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -698,7 +698,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes a dataset by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.DeleteDatasetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.DeleteDatasetRequest, dict]):
                 The request object. Request message for DeleteDataset.
             name (str):
                 Required. Dataset resource name, format:
@@ -753,7 +753,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def import_data(self,
-            request: data_labeling_service.ImportDataRequest = None,
+            request: Union[data_labeling_service.ImportDataRequest, dict] = None,
             *,
             name: str = None,
             input_config: dataset.InputConfig = None,
@@ -769,7 +769,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         started while importing is still ongoing. Vice versa.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ImportDataRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ImportDataRequest, dict]):
                 The request object. Request message for ImportData API.
             name (str):
                 Required. Dataset resource name, format:
@@ -853,7 +853,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def export_data(self,
-            request: data_labeling_service.ExportDataRequest = None,
+            request: Union[data_labeling_service.ExportDataRequest, dict] = None,
             *,
             name: str = None,
             annotated_dataset: str = None,
@@ -866,7 +866,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Exports data and annotations from dataset.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ExportDataRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ExportDataRequest, dict]):
                 The request object. Request message for ExportData API.
             name (str):
                 Required. Dataset resource name, format:
@@ -971,7 +971,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_data_item(self,
-            request: data_labeling_service.GetDataItemRequest = None,
+            request: Union[data_labeling_service.GetDataItemRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -982,7 +982,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         API can be called after data are imported into dataset.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetDataItemRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetDataItemRequest, dict]):
                 The request object. Request message for GetDataItem.
             name (str):
                 Required. The name of the data item to get, format:
@@ -1046,7 +1046,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def list_data_items(self,
-            request: data_labeling_service.ListDataItemsRequest = None,
+            request: Union[data_labeling_service.ListDataItemsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -1059,7 +1059,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListDataItemsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListDataItemsRequest, dict]):
                 The request object. Request message for ListDataItems.
             parent (str):
                 Required. Name of the dataset to list data items,
@@ -1144,7 +1144,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_annotated_dataset(self,
-            request: data_labeling_service.GetAnnotatedDatasetRequest = None,
+            request: Union[data_labeling_service.GetAnnotatedDatasetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1154,7 +1154,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an annotated dataset by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetAnnotatedDatasetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetAnnotatedDatasetRequest, dict]):
                 The request object. Request message for
                 GetAnnotatedDataset.
             name (str):
@@ -1223,7 +1223,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def list_annotated_datasets(self,
-            request: data_labeling_service.ListAnnotatedDatasetsRequest = None,
+            request: Union[data_labeling_service.ListAnnotatedDatasetsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -1235,7 +1235,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListAnnotatedDatasetsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListAnnotatedDatasetsRequest, dict]):
                 The request object. Request message for
                 ListAnnotatedDatasets.
             parent (str):
@@ -1322,7 +1322,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def delete_annotated_dataset(self,
-            request: data_labeling_service.DeleteAnnotatedDatasetRequest = None,
+            request: Union[data_labeling_service.DeleteAnnotatedDatasetRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1331,7 +1331,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes an annotated dataset by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest, dict]):
                 The request object. Request message for
                 DeleteAnnotatedDataset.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1369,7 +1369,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def label_image(self,
-            request: data_labeling_service.LabelImageRequest = None,
+            request: Union[data_labeling_service.LabelImageRequest, dict] = None,
             *,
             parent: str = None,
             basic_config: human_annotation_config.HumanAnnotationConfig = None,
@@ -1382,7 +1382,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeling task is configured by feature in the request.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.LabelImageRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.LabelImageRequest, dict]):
                 The request object. Request message for starting an
                 image labeling task.
             parent (str):
@@ -1476,7 +1476,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def label_video(self,
-            request: data_labeling_service.LabelVideoRequest = None,
+            request: Union[data_labeling_service.LabelVideoRequest, dict] = None,
             *,
             parent: str = None,
             basic_config: human_annotation_config.HumanAnnotationConfig = None,
@@ -1489,7 +1489,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeling task is configured by feature in the request.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.LabelVideoRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.LabelVideoRequest, dict]):
                 The request object. Request message for LabelVideo.
             parent (str):
                 Required. Name of the dataset to request labeling task,
@@ -1582,7 +1582,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def label_text(self,
-            request: data_labeling_service.LabelTextRequest = None,
+            request: Union[data_labeling_service.LabelTextRequest, dict] = None,
             *,
             parent: str = None,
             basic_config: human_annotation_config.HumanAnnotationConfig = None,
@@ -1595,7 +1595,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeling task is configured by feature in the request.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.LabelTextRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.LabelTextRequest, dict]):
                 The request object. Request message for LabelText.
             parent (str):
                 Required. Name of the data set to request labeling task,
@@ -1688,7 +1688,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_example(self,
-            request: data_labeling_service.GetExampleRequest = None,
+            request: Union[data_labeling_service.GetExampleRequest, dict] = None,
             *,
             name: str = None,
             filter: str = None,
@@ -1700,7 +1700,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         and annotation.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetExampleRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetExampleRequest, dict]):
                 The request object. Request message for GetExample
             name (str):
                 Required. Name of example, format:
@@ -1776,7 +1776,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def list_examples(self,
-            request: data_labeling_service.ListExamplesRequest = None,
+            request: Union[data_labeling_service.ListExamplesRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -1788,7 +1788,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListExamplesRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListExamplesRequest, dict]):
                 The request object. Request message for ListExamples.
             parent (str):
                 Required. Example resource parent.
@@ -1873,7 +1873,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def create_annotation_spec_set(self,
-            request: data_labeling_service.CreateAnnotationSpecSetRequest = None,
+            request: Union[data_labeling_service.CreateAnnotationSpecSetRequest, dict] = None,
             *,
             parent: str = None,
             annotation_spec_set: gcd_annotation_spec_set.AnnotationSpecSet = None,
@@ -1885,7 +1885,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labels.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.CreateAnnotationSpecSetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.CreateAnnotationSpecSetRequest, dict]):
                 The request object. Request message for
                 CreateAnnotationSpecSet.
             parent (str):
@@ -1964,7 +1964,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_annotation_spec_set(self,
-            request: data_labeling_service.GetAnnotationSpecSetRequest = None,
+            request: Union[data_labeling_service.GetAnnotationSpecSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1974,7 +1974,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an annotation spec set by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetAnnotationSpecSetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetAnnotationSpecSetRequest, dict]):
                 The request object. Request message for
                 GetAnnotationSpecSet.
             name (str):
@@ -2043,7 +2043,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def list_annotation_spec_sets(self,
-            request: data_labeling_service.ListAnnotationSpecSetsRequest = None,
+            request: Union[data_labeling_service.ListAnnotationSpecSetsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -2055,7 +2055,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         is supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListAnnotationSpecSetsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListAnnotationSpecSetsRequest, dict]):
                 The request object. Request message for
                 ListAnnotationSpecSets.
             parent (str):
@@ -2141,7 +2141,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def delete_annotation_spec_set(self,
-            request: data_labeling_service.DeleteAnnotationSpecSetRequest = None,
+            request: Union[data_labeling_service.DeleteAnnotationSpecSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2151,7 +2151,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes an annotation spec set by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotationSpecSetRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.DeleteAnnotationSpecSetRequest, dict]):
                 The request object. Request message for
                 DeleteAnnotationSpecSet.
             name (str):
@@ -2207,7 +2207,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def create_instruction(self,
-            request: data_labeling_service.CreateInstructionRequest = None,
+            request: Union[data_labeling_service.CreateInstructionRequest, dict] = None,
             *,
             parent: str = None,
             instruction: gcd_instruction.Instruction = None,
@@ -2219,7 +2219,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         labeled.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.CreateInstructionRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.CreateInstructionRequest, dict]):
                 The request object. Request message for
                 CreateInstruction.
             parent (str):
@@ -2303,7 +2303,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_instruction(self,
-            request: data_labeling_service.GetInstructionRequest = None,
+            request: Union[data_labeling_service.GetInstructionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2313,7 +2313,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an instruction by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetInstructionRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetInstructionRequest, dict]):
                 The request object. Request message for GetInstruction.
             name (str):
                 Required. Instruction resource name, format:
@@ -2379,7 +2379,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def list_instructions(self,
-            request: data_labeling_service.ListInstructionsRequest = None,
+            request: Union[data_labeling_service.ListInstructionsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -2391,7 +2391,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListInstructionsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListInstructionsRequest, dict]):
                 The request object. Request message for
                 ListInstructions.
             parent (str):
@@ -2477,7 +2477,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def delete_instruction(self,
-            request: data_labeling_service.DeleteInstructionRequest = None,
+            request: Union[data_labeling_service.DeleteInstructionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2487,7 +2487,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Deletes an instruction object by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.DeleteInstructionRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.DeleteInstructionRequest, dict]):
                 The request object. Request message for
                 DeleteInstruction.
             name (str):
@@ -2543,7 +2543,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def get_evaluation(self,
-            request: data_labeling_service.GetEvaluationRequest = None,
+            request: Union[data_labeling_service.GetEvaluationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2554,7 +2554,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetEvaluationRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetEvaluationRequest, dict]):
                 The request object. Request message for GetEvaluation.
             name (str):
                 Required. Name of the evaluation. Format:
@@ -2621,7 +2621,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def search_evaluations(self,
-            request: data_labeling_service.SearchEvaluationsRequest = None,
+            request: Union[data_labeling_service.SearchEvaluationsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -2634,7 +2634,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         within a project.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.SearchEvaluationsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.SearchEvaluationsRequest, dict]):
                 The request object. Request message for
                 SearchEvaluation.
             parent (str):
@@ -2750,7 +2750,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def search_example_comparisons(self,
-            request: data_labeling_service.SearchExampleComparisonsRequest = None,
+            request: Union[data_labeling_service.SearchExampleComparisonsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2763,7 +2763,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         Search by providing an evaluation ID.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsRequest, dict]):
                 The request object. Request message of
                 SearchExampleComparisons.
             parent (str):
@@ -2843,7 +2843,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def create_evaluation_job(self,
-            request: data_labeling_service.CreateEvaluationJobRequest = None,
+            request: Union[data_labeling_service.CreateEvaluationJobRequest, dict] = None,
             *,
             parent: str = None,
             job: evaluation_job.EvaluationJob = None,
@@ -2854,7 +2854,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Creates an evaluation job.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.CreateEvaluationJobRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.CreateEvaluationJobRequest, dict]):
                 The request object. Request message for
                 CreateEvaluationJob.
             parent (str):
@@ -2932,7 +2932,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def update_evaluation_job(self,
-            request: data_labeling_service.UpdateEvaluationJobRequest = None,
+            request: Union[data_labeling_service.UpdateEvaluationJobRequest, dict] = None,
             *,
             evaluation_job: gcd_evaluation_job.EvaluationJob = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -2950,7 +2950,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         you must delete the job and create a new one.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.UpdateEvaluationJobRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.UpdateEvaluationJobRequest, dict]):
                 The request object. Request message for
                 UpdateEvaluationJob.
             evaluation_job (google.cloud.datalabeling_v1beta1.types.EvaluationJob):
@@ -3035,7 +3035,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def get_evaluation_job(self,
-            request: data_labeling_service.GetEvaluationJobRequest = None,
+            request: Union[data_labeling_service.GetEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -3045,7 +3045,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Gets an evaluation job by resource name.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.GetEvaluationJobRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.GetEvaluationJobRequest, dict]):
                 The request object. Request message for
                 GetEvaluationJob.
             name (str):
@@ -3115,7 +3115,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return response
 
     def pause_evaluation_job(self,
-            request: data_labeling_service.PauseEvaluationJobRequest = None,
+            request: Union[data_labeling_service.PauseEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -3126,7 +3126,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         already in a ``PAUSED`` state is a no-op.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.PauseEvaluationJobRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.PauseEvaluationJobRequest, dict]):
                 The request object. Request message for
                 PauseEvaluationJob.
             name (str):
@@ -3184,7 +3184,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def resume_evaluation_job(self,
-            request: data_labeling_service.ResumeEvaluationJobRequest = None,
+            request: Union[data_labeling_service.ResumeEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -3196,7 +3196,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         evaluation job is a no-op.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ResumeEvaluationJobRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ResumeEvaluationJobRequest, dict]):
                 The request object. Request message ResumeEvaluationJob.
             name (str):
                 Required. Name of the evaluation job that is going to be
@@ -3253,7 +3253,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def delete_evaluation_job(self,
-            request: data_labeling_service.DeleteEvaluationJobRequest = None,
+            request: Union[data_labeling_service.DeleteEvaluationJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -3263,7 +3263,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         r"""Stops and deletes an evaluation job.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.DeleteEvaluationJobRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.DeleteEvaluationJobRequest, dict]):
                 The request object. Request message DeleteEvaluationJob.
             name (str):
                 Required. Name of the evaluation job that is going to be
@@ -3320,7 +3320,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         )
 
     def list_evaluation_jobs(self,
-            request: data_labeling_service.ListEvaluationJobsRequest = None,
+            request: Union[data_labeling_service.ListEvaluationJobsRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -3332,7 +3332,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         possible filters. Pagination is supported.
 
         Args:
-            request (google.cloud.datalabeling_v1beta1.types.ListEvaluationJobsRequest):
+            request (Union[google.cloud.datalabeling_v1beta1.types.ListEvaluationJobsRequest, dict]):
                 The request object. Request message for
                 ListEvaluationJobs.
             parent (str):

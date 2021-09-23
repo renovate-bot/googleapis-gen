@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -383,7 +383,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
             )
 
     def create_product_set(self,
-            request: product_search_service.CreateProductSetRequest = None,
+            request: Union[product_search_service.CreateProductSetRequest, dict] = None,
             *,
             parent: str = None,
             product_set: product_search_service.ProductSet = None,
@@ -400,7 +400,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            longer than 4096 characters.
 
         Args:
-            request (google.cloud.vision_v1.types.CreateProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.CreateProductSetRequest, dict]):
                 The request object. Request message for the
                 `CreateProductSet` method.
             parent (str):
@@ -489,7 +489,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def list_product_sets(self,
-            request: product_search_service.ListProductSetsRequest = None,
+            request: Union[product_search_service.ListProductSetsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -504,7 +504,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            less than 1.
 
         Args:
-            request (google.cloud.vision_v1.types.ListProductSetsRequest):
+            request (Union[google.cloud.vision_v1.types.ListProductSetsRequest, dict]):
                 The request object. Request message for the
                 `ListProductSets` method.
             parent (str):
@@ -582,7 +582,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def get_product_set(self,
-            request: product_search_service.GetProductSetRequest = None,
+            request: Union[product_search_service.GetProductSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -596,7 +596,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         -  Returns NOT_FOUND if the ProductSet does not exist.
 
         Args:
-            request (google.cloud.vision_v1.types.GetProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.GetProductSetRequest, dict]):
                 The request object. Request message for the
                 `GetProductSet` method.
             name (str):
@@ -666,7 +666,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def update_product_set(self,
-            request: product_search_service.UpdateProductSetRequest = None,
+            request: Union[product_search_service.UpdateProductSetRequest, dict] = None,
             *,
             product_set: product_search_service.ProductSet = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -685,7 +685,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            characters.
 
         Args:
-            request (google.cloud.vision_v1.types.UpdateProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.UpdateProductSetRequest, dict]):
                 The request object. Request message for the
                 `UpdateProductSet` method.
             product_set (google.cloud.vision_v1.types.ProductSet):
@@ -764,7 +764,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def delete_product_set(self,
-            request: product_search_service.DeleteProductSetRequest = None,
+            request: Union[product_search_service.DeleteProductSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -777,7 +777,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         Storage.
 
         Args:
-            request (google.cloud.vision_v1.types.DeleteProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.DeleteProductSetRequest, dict]):
                 The request object. Request message for the
                 `DeleteProductSet` method.
             name (str):
@@ -835,7 +835,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         )
 
     def create_product(self,
-            request: product_search_service.CreateProductRequest = None,
+            request: Union[product_search_service.CreateProductRequest, dict] = None,
             *,
             parent: str = None,
             product: product_search_service.Product = None,
@@ -856,7 +856,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            invalid.
 
         Args:
-            request (google.cloud.vision_v1.types.CreateProductRequest):
+            request (Union[google.cloud.vision_v1.types.CreateProductRequest, dict]):
                 The request object. Request message for the
                 `CreateProduct` method.
             parent (str):
@@ -940,7 +940,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def list_products(self,
-            request: product_search_service.ListProductsRequest = None,
+            request: Union[product_search_service.ListProductsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -955,7 +955,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            less than 1.
 
         Args:
-            request (google.cloud.vision_v1.types.ListProductsRequest):
+            request (Union[google.cloud.vision_v1.types.ListProductsRequest, dict]):
                 The request object. Request message for the
                 `ListProducts` method.
             parent (str):
@@ -1033,7 +1033,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def get_product(self,
-            request: product_search_service.GetProductRequest = None,
+            request: Union[product_search_service.GetProductRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1047,7 +1047,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         -  Returns NOT_FOUND if the Product does not exist.
 
         Args:
-            request (google.cloud.vision_v1.types.GetProductRequest):
+            request (Union[google.cloud.vision_v1.types.GetProductRequest, dict]):
                 The request object. Request message for the `GetProduct`
                 method.
             name (str):
@@ -1112,7 +1112,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def update_product(self,
-            request: product_search_service.UpdateProductRequest = None,
+            request: Union[product_search_service.UpdateProductRequest, dict] = None,
             *,
             product: product_search_service.Product = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1138,7 +1138,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            update_mask.
 
         Args:
-            request (google.cloud.vision_v1.types.UpdateProductRequest):
+            request (Union[google.cloud.vision_v1.types.UpdateProductRequest, dict]):
                 The request object. Request message for the
                 `UpdateProduct` method.
             product (google.cloud.vision_v1.types.Product):
@@ -1214,7 +1214,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def delete_product(self,
-            request: product_search_service.DeleteProductRequest = None,
+            request: Union[product_search_service.DeleteProductRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1229,7 +1229,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         all related caches are refreshed.
 
         Args:
-            request (google.cloud.vision_v1.types.DeleteProductRequest):
+            request (Union[google.cloud.vision_v1.types.DeleteProductRequest, dict]):
                 The request object. Request message for the
                 `DeleteProduct` method.
             name (str):
@@ -1287,7 +1287,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         )
 
     def create_reference_image(self,
-            request: product_search_service.CreateReferenceImageRequest = None,
+            request: Union[product_search_service.CreateReferenceImageRequest, dict] = None,
             *,
             parent: str = None,
             reference_image: product_search_service.ReferenceImage = None,
@@ -1320,7 +1320,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            10 polygons.
 
         Args:
-            request (google.cloud.vision_v1.types.CreateReferenceImageRequest):
+            request (Union[google.cloud.vision_v1.types.CreateReferenceImageRequest, dict]):
                 The request object. Request message for the
                 `CreateReferenceImage` method.
             parent (str):
@@ -1410,7 +1410,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def delete_reference_image(self,
-            request: product_search_service.DeleteReferenceImageRequest = None,
+            request: Union[product_search_service.DeleteReferenceImageRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1426,7 +1426,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         Storage.
 
         Args:
-            request (google.cloud.vision_v1.types.DeleteReferenceImageRequest):
+            request (Union[google.cloud.vision_v1.types.DeleteReferenceImageRequest, dict]):
                 The request object. Request message for the
                 `DeleteReferenceImage` method.
             name (str):
@@ -1485,7 +1485,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         )
 
     def list_reference_images(self,
-            request: product_search_service.ListReferenceImagesRequest = None,
+            request: Union[product_search_service.ListReferenceImagesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1501,7 +1501,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            100, or less than 1.
 
         Args:
-            request (google.cloud.vision_v1.types.ListReferenceImagesRequest):
+            request (Union[google.cloud.vision_v1.types.ListReferenceImagesRequest, dict]):
                 The request object. Request message for the
                 `ListReferenceImages` method.
             parent (str):
@@ -1580,7 +1580,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def get_reference_image(self,
-            request: product_search_service.GetReferenceImageRequest = None,
+            request: Union[product_search_service.GetReferenceImageRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1594,7 +1594,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         -  Returns NOT_FOUND if the specified image does not exist.
 
         Args:
-            request (google.cloud.vision_v1.types.GetReferenceImageRequest):
+            request (Union[google.cloud.vision_v1.types.GetReferenceImageRequest, dict]):
                 The request object. Request message for the
                 `GetReferenceImage` method.
             name (str):
@@ -1662,7 +1662,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def add_product_to_product_set(self,
-            request: product_search_service.AddProductToProductSetRequest = None,
+            request: Union[product_search_service.AddProductToProductSetRequest, dict] = None,
             *,
             name: str = None,
             product: str = None,
@@ -1681,7 +1681,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            exist.
 
         Args:
-            request (google.cloud.vision_v1.types.AddProductToProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.AddProductToProductSetRequest, dict]):
                 The request object. Request message for the
                 `AddProductToProductSet` method.
             name (str):
@@ -1752,7 +1752,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         )
 
     def remove_product_from_product_set(self,
-            request: product_search_service.RemoveProductFromProductSetRequest = None,
+            request: Union[product_search_service.RemoveProductFromProductSetRequest, dict] = None,
             *,
             name: str = None,
             product: str = None,
@@ -1763,7 +1763,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         r"""Removes a Product from the specified ProductSet.
 
         Args:
-            request (google.cloud.vision_v1.types.RemoveProductFromProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.RemoveProductFromProductSetRequest, dict]):
                 The request object. Request message for the
                 `RemoveProductFromProductSet` method.
             name (str):
@@ -1834,7 +1834,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         )
 
     def list_products_in_product_set(self,
-            request: product_search_service.ListProductsInProductSetRequest = None,
+            request: Union[product_search_service.ListProductsInProductSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1851,7 +1851,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
            less than 1.
 
         Args:
-            request (google.cloud.vision_v1.types.ListProductsInProductSetRequest):
+            request (Union[google.cloud.vision_v1.types.ListProductsInProductSetRequest, dict]):
                 The request object. Request message for the
                 `ListProductsInProductSet` method.
             name (str):
@@ -1931,7 +1931,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def import_product_sets(self,
-            request: product_search_service.ImportProductSetsRequest = None,
+            request: Union[product_search_service.ImportProductSetsRequest, dict] = None,
             *,
             parent: str = None,
             input_config: product_search_service.ImportProductSetsInputConfig = None,
@@ -1953,7 +1953,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].
 
         Args:
-            request (google.cloud.vision_v1.types.ImportProductSetsRequest):
+            request (Union[google.cloud.vision_v1.types.ImportProductSetsRequest, dict]):
                 The request object. Request message for the
                 `ImportProductSets` method.
             parent (str):
@@ -2046,7 +2046,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         return response
 
     def purge_products(self,
-            request: product_search_service.PurgeProductsRequest = None,
+            request: Union[product_search_service.PurgeProductsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2082,7 +2082,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         ``BatchOperationMetadata``. (progress)
 
         Args:
-            request (google.cloud.vision_v1.types.PurgeProductsRequest):
+            request (Union[google.cloud.vision_v1.types.PurgeProductsRequest, dict]):
                 The request object. Request message for the
                 `PurgeProducts` method.
             parent (str):

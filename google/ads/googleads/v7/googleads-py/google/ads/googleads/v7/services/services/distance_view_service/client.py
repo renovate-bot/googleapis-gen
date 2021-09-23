@@ -322,7 +322,7 @@ class DistanceViewServiceClient(metaclass=DistanceViewServiceClientMeta):
               )
 
     def get_distance_view(self,
-            request: distance_view_service.GetDistanceViewRequest = None,
+            request: Union[distance_view_service.GetDistanceViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class DistanceViewServiceClient(metaclass=DistanceViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetDistanceViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetDistanceViewRequest, dict]):
                 The request object. Request message for
                 [DistanceViewService.GetDistanceView][google.ads.googleads.v7.services.DistanceViewService.GetDistanceView].
             resource_name (:class:`str`):

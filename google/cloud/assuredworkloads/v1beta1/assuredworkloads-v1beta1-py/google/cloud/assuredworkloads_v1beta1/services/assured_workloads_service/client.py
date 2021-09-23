@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -340,7 +340,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
             )
 
     def create_workload(self,
-            request: assuredworkloads_v1beta1.CreateWorkloadRequest = None,
+            request: Union[assuredworkloads_v1beta1.CreateWorkloadRequest, dict] = None,
             *,
             parent: str = None,
             workload: assuredworkloads_v1beta1.Workload = None,
@@ -351,7 +351,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         r"""Creates Assured Workload.
 
         Args:
-            request (google.cloud.assuredworkloads_v1beta1.types.CreateWorkloadRequest):
+            request (Union[google.cloud.assuredworkloads_v1beta1.types.CreateWorkloadRequest, dict]):
                 The request object. Request for creating a workload.
             parent (str):
                 Required. The resource name of the new Workload's
@@ -433,7 +433,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         return response
 
     def update_workload(self,
-            request: assuredworkloads_v1beta1.UpdateWorkloadRequest = None,
+            request: Union[assuredworkloads_v1beta1.UpdateWorkloadRequest, dict] = None,
             *,
             workload: assuredworkloads_v1beta1.Workload = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -447,7 +447,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         workload can be in progress.
 
         Args:
-            request (google.cloud.assuredworkloads_v1beta1.types.UpdateWorkloadRequest):
+            request (Union[google.cloud.assuredworkloads_v1beta1.types.UpdateWorkloadRequest, dict]):
                 The request object. Request for Updating a workload.
             workload (google.cloud.assuredworkloads_v1beta1.types.Workload):
                 Required. The workload to update. The workload’s
@@ -523,7 +523,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         return response
 
     def delete_workload(self,
-            request: assuredworkloads_v1beta1.DeleteWorkloadRequest = None,
+            request: Union[assuredworkloads_v1beta1.DeleteWorkloadRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -535,7 +535,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         with a FAILED_PRECONDITION error.
 
         Args:
-            request (google.cloud.assuredworkloads_v1beta1.types.DeleteWorkloadRequest):
+            request (Union[google.cloud.assuredworkloads_v1beta1.types.DeleteWorkloadRequest, dict]):
                 The request object. Request for deleting a Workload.
             name (str):
                 Required. The ``name`` field is used to identify the
@@ -591,7 +591,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         )
 
     def get_workload(self,
-            request: assuredworkloads_v1beta1.GetWorkloadRequest = None,
+            request: Union[assuredworkloads_v1beta1.GetWorkloadRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -601,7 +601,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         r"""Gets Assured Workload associated with a CRM Node
 
         Args:
-            request (google.cloud.assuredworkloads_v1beta1.types.GetWorkloadRequest):
+            request (Union[google.cloud.assuredworkloads_v1beta1.types.GetWorkloadRequest, dict]):
                 The request object. Request for fetching a workload.
             name (str):
                 Required. The resource name of the Workload to fetch.
@@ -670,7 +670,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         return response
 
     def list_workloads(self,
-            request: assuredworkloads_v1beta1.ListWorkloadsRequest = None,
+            request: Union[assuredworkloads_v1beta1.ListWorkloadsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -680,7 +680,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         r"""Lists Assured Workloads under a CRM Node.
 
         Args:
-            request (google.cloud.assuredworkloads_v1beta1.types.ListWorkloadsRequest):
+            request (Union[google.cloud.assuredworkloads_v1beta1.types.ListWorkloadsRequest, dict]):
                 The request object. Request for fetching workloads in an
                 organization.
             parent (str):

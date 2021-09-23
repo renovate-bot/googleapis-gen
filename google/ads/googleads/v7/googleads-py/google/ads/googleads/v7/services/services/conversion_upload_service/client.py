@@ -321,7 +321,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
               )
 
     def upload_click_conversions(self,
-            request: conversion_upload_service.UploadClickConversionsRequest = None,
+            request: Union[conversion_upload_service.UploadClickConversionsRequest, dict] = None,
             *,
             customer_id: str = None,
             conversions: Sequence[conversion_upload_service.ClickConversion] = None,
@@ -338,7 +338,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
         `PartialFailureError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.UploadClickConversionsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.UploadClickConversionsRequest, dict]):
                 The request object. Request message for
                 [ConversionUploadService.UploadClickConversions][google.ads.googleads.v7.services.ConversionUploadService.UploadClickConversions].
             customer_id (:class:`str`):
@@ -430,7 +430,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
         return response
 
     def upload_call_conversions(self,
-            request: conversion_upload_service.UploadCallConversionsRequest = None,
+            request: Union[conversion_upload_service.UploadCallConversionsRequest, dict] = None,
             *,
             customer_id: str = None,
             conversions: Sequence[conversion_upload_service.CallConversion] = None,
@@ -447,7 +447,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.UploadCallConversionsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.UploadCallConversionsRequest, dict]):
                 The request object. Request message for
                 [ConversionUploadService.UploadCallConversions][google.ads.googleads.v7.services.ConversionUploadService.UploadCallConversions].
             customer_id (:class:`str`):

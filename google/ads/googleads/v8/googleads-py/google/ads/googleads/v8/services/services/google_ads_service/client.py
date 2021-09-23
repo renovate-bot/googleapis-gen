@@ -1603,7 +1603,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
               )
 
     def search(self,
-            request: google_ads_service.SearchGoogleAdsRequest = None,
+            request: Union[google_ads_service.SearchGoogleAdsRequest, dict] = None,
             *,
             customer_id: str = None,
             query: str = None,
@@ -1620,7 +1620,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SearchGoogleAdsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SearchGoogleAdsRequest, dict]):
                 The request object. Request message for
                 [GoogleAdsService.Search][google.ads.googleads.v8.services.GoogleAdsService.Search].
             customer_id (:class:`str`):
@@ -1703,7 +1703,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         return response
 
     def search_stream(self,
-            request: google_ads_service.SearchGoogleAdsStreamRequest = None,
+            request: Union[google_ads_service.SearchGoogleAdsStreamRequest, dict] = None,
             *,
             customer_id: str = None,
             query: str = None,
@@ -1720,7 +1720,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SearchGoogleAdsStreamRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SearchGoogleAdsStreamRequest, dict]):
                 The request object. Request message for
                 [GoogleAdsService.SearchStream][google.ads.googleads.v8.services.GoogleAdsService.SearchStream].
             customer_id (:class:`str`):
@@ -1791,7 +1791,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         return response
 
     def mutate(self,
-            request: google_ads_service.MutateGoogleAdsRequest = None,
+            request: Union[google_ads_service.MutateGoogleAdsRequest, dict] = None,
             *,
             customer_id: str = None,
             mutate_operations: Sequence[google_ads_service.MutateOperation] = None,
@@ -1888,7 +1888,7 @@ class GoogleAdsServiceClient(metaclass=GoogleAdsServiceClientMeta):
         `YoutubeVideoRegistrationError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateGoogleAdsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateGoogleAdsRequest, dict]):
                 The request object. Request message for
                 [GoogleAdsService.Mutate][google.ads.googleads.v8.services.GoogleAdsService.Mutate].
             customer_id (:class:`str`):

@@ -322,7 +322,7 @@ class MobileDeviceConstantServiceClient(metaclass=MobileDeviceConstantServiceCli
               )
 
     def get_mobile_device_constant(self,
-            request: mobile_device_constant_service.GetMobileDeviceConstantRequest = None,
+            request: Union[mobile_device_constant_service.GetMobileDeviceConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class MobileDeviceConstantServiceClient(metaclass=MobileDeviceConstantServiceCli
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetMobileDeviceConstantRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetMobileDeviceConstantRequest, dict]):
                 The request object. Request message for
                 [MobileDeviceConstantService.GetMobileDeviceConstant][google.ads.googleads.v7.services.MobileDeviceConstantService.GetMobileDeviceConstant].
             resource_name (:class:`str`):

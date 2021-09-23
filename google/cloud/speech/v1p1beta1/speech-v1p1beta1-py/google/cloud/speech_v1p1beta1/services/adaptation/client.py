@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -349,7 +349,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
             )
 
     def create_phrase_set(self,
-            request: cloud_speech_adaptation.CreatePhraseSetRequest = None,
+            request: Union[cloud_speech_adaptation.CreatePhraseSetRequest, dict] = None,
             *,
             parent: str = None,
             phrase_set: resource.PhraseSet = None,
@@ -364,7 +364,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         when you send a call that includes the PhraseSet.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.CreatePhraseSetRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.CreatePhraseSetRequest, dict]):
                 The request object. Message sent by the client for the
                 `CreatePhraseSet` method.
             parent (str):
@@ -451,7 +451,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def get_phrase_set(self,
-            request: cloud_speech_adaptation.GetPhraseSetRequest = None,
+            request: Union[cloud_speech_adaptation.GetPhraseSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -461,7 +461,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Get a phrase set.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.GetPhraseSetRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.GetPhraseSetRequest, dict]):
                 The request object. Message sent by the client for the
                 `GetPhraseSet` method.
             name (str):
@@ -528,7 +528,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def list_phrase_set(self,
-            request: cloud_speech_adaptation.ListPhraseSetRequest = None,
+            request: Union[cloud_speech_adaptation.ListPhraseSetRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -538,7 +538,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""List phrase sets.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.ListPhraseSetRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.ListPhraseSetRequest, dict]):
                 The request object. Message sent by the client for the
                 `ListPhraseSet` method.
             parent (str):
@@ -616,7 +616,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def update_phrase_set(self,
-            request: cloud_speech_adaptation.UpdatePhraseSetRequest = None,
+            request: Union[cloud_speech_adaptation.UpdatePhraseSetRequest, dict] = None,
             *,
             phrase_set: resource.PhraseSet = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -627,7 +627,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Update a phrase set.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.UpdatePhraseSetRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.UpdatePhraseSetRequest, dict]):
                 The request object. Message sent by the client for the
                 `UpdatePhraseSet` method.
             phrase_set (google.cloud.speech_v1p1beta1.types.PhraseSet):
@@ -703,7 +703,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def delete_phrase_set(self,
-            request: cloud_speech_adaptation.DeletePhraseSetRequest = None,
+            request: Union[cloud_speech_adaptation.DeletePhraseSetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -713,7 +713,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Delete a phrase set.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.DeletePhraseSetRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.DeletePhraseSetRequest, dict]):
                 The request object. Message sent by the client for the
                 `DeletePhraseSet` method.
             name (str):
@@ -769,7 +769,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         )
 
     def create_custom_class(self,
-            request: cloud_speech_adaptation.CreateCustomClassRequest = None,
+            request: Union[cloud_speech_adaptation.CreateCustomClassRequest, dict] = None,
             *,
             parent: str = None,
             custom_class: resource.CustomClass = None,
@@ -781,7 +781,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Create a custom class.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.CreateCustomClassRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.CreateCustomClassRequest, dict]):
                 The request object. Message sent by the client for the
                 `CreateCustomClass` method.
             parent (str):
@@ -872,7 +872,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def get_custom_class(self,
-            request: cloud_speech_adaptation.GetCustomClassRequest = None,
+            request: Union[cloud_speech_adaptation.GetCustomClassRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -882,7 +882,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Get a custom class.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.GetCustomClassRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.GetCustomClassRequest, dict]):
                 The request object. Message sent by the client for the
                 `GetCustomClass` method.
             name (str):
@@ -953,7 +953,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def list_custom_classes(self,
-            request: cloud_speech_adaptation.ListCustomClassesRequest = None,
+            request: Union[cloud_speech_adaptation.ListCustomClassesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -963,7 +963,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""List custom classes.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.ListCustomClassesRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.ListCustomClassesRequest, dict]):
                 The request object. Message sent by the client for the
                 `ListCustomClasses` method.
             parent (str):
@@ -1041,7 +1041,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def update_custom_class(self,
-            request: cloud_speech_adaptation.UpdateCustomClassRequest = None,
+            request: Union[cloud_speech_adaptation.UpdateCustomClassRequest, dict] = None,
             *,
             custom_class: resource.CustomClass = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1052,7 +1052,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Update a custom class.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.UpdateCustomClassRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.UpdateCustomClassRequest, dict]):
                 The request object. Message sent by the client for the
                 `UpdateCustomClass` method.
             custom_class (google.cloud.speech_v1p1beta1.types.CustomClass):
@@ -1132,7 +1132,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         return response
 
     def delete_custom_class(self,
-            request: cloud_speech_adaptation.DeleteCustomClassRequest = None,
+            request: Union[cloud_speech_adaptation.DeleteCustomClassRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1142,7 +1142,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         r"""Delete a custom class.
 
         Args:
-            request (google.cloud.speech_v1p1beta1.types.DeleteCustomClassRequest):
+            request (Union[google.cloud.speech_v1p1beta1.types.DeleteCustomClassRequest, dict]):
                 The request object. Message sent by the client for the
                 `DeleteCustomClass` method.
             name (str):

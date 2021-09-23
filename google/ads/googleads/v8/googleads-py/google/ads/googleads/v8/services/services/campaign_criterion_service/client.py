@@ -335,7 +335,7 @@ class CampaignCriterionServiceClient(metaclass=CampaignCriterionServiceClientMet
               )
 
     def get_campaign_criterion(self,
-            request: campaign_criterion_service.GetCampaignCriterionRequest = None,
+            request: Union[campaign_criterion_service.GetCampaignCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -349,7 +349,7 @@ class CampaignCriterionServiceClient(metaclass=CampaignCriterionServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignCriterionRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignCriterionRequest, dict]):
                 The request object. Request message for
                 [CampaignCriterionService.GetCampaignCriterion][google.ads.googleads.v8.services.CampaignCriterionService.GetCampaignCriterion].
             resource_name (:class:`str`):
@@ -411,7 +411,7 @@ class CampaignCriterionServiceClient(metaclass=CampaignCriterionServiceClientMet
         return response
 
     def mutate_campaign_criteria(self,
-            request: campaign_criterion_service.MutateCampaignCriteriaRequest = None,
+            request: Union[campaign_criterion_service.MutateCampaignCriteriaRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_criterion_service.CampaignCriterionOperation] = None,
@@ -437,7 +437,7 @@ class CampaignCriterionServiceClient(metaclass=CampaignCriterionServiceClientMet
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCampaignCriteriaRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCampaignCriteriaRequest, dict]):
                 The request object. Request message for
                 [CampaignCriterionService.MutateCampaignCriteria][google.ads.googleads.v8.services.CampaignCriterionService.MutateCampaignCriteria].
             customer_id (:class:`str`):

@@ -321,7 +321,7 @@ class DisplayKeywordViewServiceClient(metaclass=DisplayKeywordViewServiceClientM
               )
 
     def get_display_keyword_view(self,
-            request: display_keyword_view_service.GetDisplayKeywordViewRequest = None,
+            request: Union[display_keyword_view_service.GetDisplayKeywordViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class DisplayKeywordViewServiceClient(metaclass=DisplayKeywordViewServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetDisplayKeywordViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetDisplayKeywordViewRequest, dict]):
                 The request object. Request message for
                 [DisplayKeywordViewService.GetDisplayKeywordView][google.ads.googleads.v8.services.DisplayKeywordViewService.GetDisplayKeywordView].
             resource_name (:class:`str`):

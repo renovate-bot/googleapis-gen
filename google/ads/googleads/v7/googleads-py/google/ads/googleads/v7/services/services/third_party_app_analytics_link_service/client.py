@@ -323,7 +323,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
               )
 
     def get_third_party_app_analytics_link(self,
-            request: third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest = None,
+            request: Union[third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -336,7 +336,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetThirdPartyAppAnalyticsLinkRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetThirdPartyAppAnalyticsLinkRequest, dict]):
                 The request object. Request message for
                 [ThirdPartyAppAnalyticsLinkService.GetThirdPartyAppAnalyticsLink][google.ads.googleads.v7.services.ThirdPartyAppAnalyticsLinkService.GetThirdPartyAppAnalyticsLink].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -384,7 +384,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
         return response
 
     def regenerate_shareable_link_id(self,
-            request: third_party_app_analytics_link_service.RegenerateShareableLinkIdRequest = None,
+            request: Union[third_party_app_analytics_link_service.RegenerateShareableLinkIdRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -399,7 +399,7 @@ class ThirdPartyAppAnalyticsLinkServiceClient(metaclass=ThirdPartyAppAnalyticsLi
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.RegenerateShareableLinkIdRequest`):
+            request (Union[google.ads.googleads.v7.services.types.RegenerateShareableLinkIdRequest, dict]):
                 The request object. Request message for
                 [ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId][google.ads.googleads.v7.services.ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -341,7 +341,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
             )
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -359,7 +359,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         occurrences.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -478,7 +478,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -496,7 +496,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         occurrences.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -615,7 +615,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
@@ -633,7 +633,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         occurrences.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
@@ -708,7 +708,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         return response
 
     def get_vulnerability_occurrences_summary(self,
-            request: containeranalysis.GetVulnerabilityOccurrencesSummaryRequest = None,
+            request: Union[containeranalysis.GetVulnerabilityOccurrencesSummaryRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -720,7 +720,7 @@ class ContainerAnalysisClient(metaclass=ContainerAnalysisClientMeta):
         occurrences.
 
         Args:
-            request (google.cloud.devtools.containeranalysis_v1.types.GetVulnerabilityOccurrencesSummaryRequest):
+            request (Union[google.cloud.devtools.containeranalysis_v1.types.GetVulnerabilityOccurrencesSummaryRequest, dict]):
                 The request object. Request to get a vulnerability
                 summary for some set of occurrences.
             parent (str):

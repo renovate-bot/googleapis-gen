@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -370,7 +370,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
             )
 
     def list_authorization_policies(self,
-            request: authorization_policy.ListAuthorizationPoliciesRequest = None,
+            request: Union[authorization_policy.ListAuthorizationPoliciesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -381,7 +381,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         location.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.ListAuthorizationPoliciesRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.ListAuthorizationPoliciesRequest, dict]):
                 The request object. Request used with the
                 ListAuthorizationPolicies method.
             parent (str):
@@ -459,7 +459,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def get_authorization_policy(self,
-            request: authorization_policy.GetAuthorizationPolicyRequest = None,
+            request: Union[authorization_policy.GetAuthorizationPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -469,7 +469,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Gets details of a single AuthorizationPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.GetAuthorizationPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.GetAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 GetAuthorizationPolicy method.
             name (str):
@@ -540,7 +540,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def create_authorization_policy(self,
-            request: gcn_authorization_policy.CreateAuthorizationPolicyRequest = None,
+            request: Union[gcn_authorization_policy.CreateAuthorizationPolicyRequest, dict] = None,
             *,
             parent: str = None,
             authorization_policy: gcn_authorization_policy.AuthorizationPolicy = None,
@@ -553,7 +553,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         and location.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.CreateAuthorizationPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.CreateAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 CreateAuthorizationPolicy method.
             parent (str):
@@ -653,7 +653,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def update_authorization_policy(self,
-            request: gcn_authorization_policy.UpdateAuthorizationPolicyRequest = None,
+            request: Union[gcn_authorization_policy.UpdateAuthorizationPolicyRequest, dict] = None,
             *,
             authorization_policy: gcn_authorization_policy.AuthorizationPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -665,7 +665,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         AuthorizationPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.UpdateAuthorizationPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.UpdateAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 UpdateAuthorizationPolicy method.
             authorization_policy (google.cloud.network_security_v1beta1.types.AuthorizationPolicy):
@@ -757,7 +757,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def delete_authorization_policy(self,
-            request: authorization_policy.DeleteAuthorizationPolicyRequest = None,
+            request: Union[authorization_policy.DeleteAuthorizationPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -767,7 +767,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Deletes a single AuthorizationPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.DeleteAuthorizationPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.DeleteAuthorizationPolicyRequest, dict]):
                 The request object. Request used by the
                 DeleteAuthorizationPolicy method.
             name (str):
@@ -854,7 +854,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def list_server_tls_policies(self,
-            request: server_tls_policy.ListServerTlsPoliciesRequest = None,
+            request: Union[server_tls_policy.ListServerTlsPoliciesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -865,7 +865,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         location.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.ListServerTlsPoliciesRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.ListServerTlsPoliciesRequest, dict]):
                 The request object. Request used by the
                 ListServerTlsPolicies method.
             parent (str):
@@ -943,7 +943,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def get_server_tls_policy(self,
-            request: server_tls_policy.GetServerTlsPolicyRequest = None,
+            request: Union[server_tls_policy.GetServerTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -953,7 +953,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Gets details of a single ServerTlsPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.GetServerTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.GetServerTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 GetServerTlsPolicy method.
             name (str):
@@ -1024,7 +1024,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def create_server_tls_policy(self,
-            request: gcn_server_tls_policy.CreateServerTlsPolicyRequest = None,
+            request: Union[gcn_server_tls_policy.CreateServerTlsPolicyRequest, dict] = None,
             *,
             parent: str = None,
             server_tls_policy: gcn_server_tls_policy.ServerTlsPolicy = None,
@@ -1037,7 +1037,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         location.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.CreateServerTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.CreateServerTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 CreateServerTlsPolicy method.
             parent (str):
@@ -1137,7 +1137,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def update_server_tls_policy(self,
-            request: gcn_server_tls_policy.UpdateServerTlsPolicyRequest = None,
+            request: Union[gcn_server_tls_policy.UpdateServerTlsPolicyRequest, dict] = None,
             *,
             server_tls_policy: gcn_server_tls_policy.ServerTlsPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1148,7 +1148,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Updates the parameters of a single ServerTlsPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.UpdateServerTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.UpdateServerTlsPolicyRequest, dict]):
                 The request object. Request used by
                 UpdateServerTlsPolicy method.
             server_tls_policy (google.cloud.network_security_v1beta1.types.ServerTlsPolicy):
@@ -1240,7 +1240,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def delete_server_tls_policy(self,
-            request: server_tls_policy.DeleteServerTlsPolicyRequest = None,
+            request: Union[server_tls_policy.DeleteServerTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1250,7 +1250,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Deletes a single ServerTlsPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.DeleteServerTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.DeleteServerTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 DeleteServerTlsPolicy method.
             name (str):
@@ -1337,7 +1337,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def list_client_tls_policies(self,
-            request: client_tls_policy.ListClientTlsPoliciesRequest = None,
+            request: Union[client_tls_policy.ListClientTlsPoliciesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1348,7 +1348,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         location.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.ListClientTlsPoliciesRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.ListClientTlsPoliciesRequest, dict]):
                 The request object. Request used by the
                 ListClientTlsPolicies method.
             parent (str):
@@ -1426,7 +1426,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def get_client_tls_policy(self,
-            request: client_tls_policy.GetClientTlsPolicyRequest = None,
+            request: Union[client_tls_policy.GetClientTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1436,7 +1436,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Gets details of a single ClientTlsPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.GetClientTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.GetClientTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 GetClientTlsPolicy method.
             name (str):
@@ -1506,7 +1506,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def create_client_tls_policy(self,
-            request: gcn_client_tls_policy.CreateClientTlsPolicyRequest = None,
+            request: Union[gcn_client_tls_policy.CreateClientTlsPolicyRequest, dict] = None,
             *,
             parent: str = None,
             client_tls_policy: gcn_client_tls_policy.ClientTlsPolicy = None,
@@ -1519,7 +1519,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         location.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.CreateClientTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.CreateClientTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 CreateClientTlsPolicy method.
             parent (str):
@@ -1618,7 +1618,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def update_client_tls_policy(self,
-            request: gcn_client_tls_policy.UpdateClientTlsPolicyRequest = None,
+            request: Union[gcn_client_tls_policy.UpdateClientTlsPolicyRequest, dict] = None,
             *,
             client_tls_policy: gcn_client_tls_policy.ClientTlsPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1629,7 +1629,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Updates the parameters of a single ClientTlsPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.UpdateClientTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.UpdateClientTlsPolicyRequest, dict]):
                 The request object. Request used by
                 UpdateClientTlsPolicy method.
             client_tls_policy (google.cloud.network_security_v1beta1.types.ClientTlsPolicy):
@@ -1720,7 +1720,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         return response
 
     def delete_client_tls_policy(self,
-            request: client_tls_policy.DeleteClientTlsPolicyRequest = None,
+            request: Union[client_tls_policy.DeleteClientTlsPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1730,7 +1730,7 @@ class NetworkSecurityClient(metaclass=NetworkSecurityClientMeta):
         r"""Deletes a single ClientTlsPolicy.
 
         Args:
-            request (google.cloud.network_security_v1beta1.types.DeleteClientTlsPolicyRequest):
+            request (Union[google.cloud.network_security_v1beta1.types.DeleteClientTlsPolicyRequest, dict]):
                 The request object. Request used by the
                 DeleteClientTlsPolicy method.
             name (str):

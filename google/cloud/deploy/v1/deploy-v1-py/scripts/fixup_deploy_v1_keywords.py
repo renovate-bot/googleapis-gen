@@ -39,24 +39,24 @@ def partition(
 class deployCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'approve_rollout': ('name', 'approved', ),
-          'create_delivery_pipeline': ('parent', 'delivery_pipeline_id', 'delivery_pipeline', 'request_id', 'validate_only', ),
-          'create_release': ('parent', 'release_id', 'release', 'request_id', 'validate_only', ),
-          'create_rollout': ('parent', 'rollout_id', 'rollout', 'request_id', 'validate_only', ),
-          'create_target': ('parent', 'target_id', 'target', 'request_id', 'validate_only', ),
-          'delete_delivery_pipeline': ('name', 'request_id', 'allow_missing', 'validate_only', 'force', 'etag', ),
-          'delete_target': ('name', 'request_id', 'allow_missing', 'validate_only', 'etag', ),
-          'get_config': ('name', ),
-          'get_delivery_pipeline': ('name', ),
-          'get_release': ('name', ),
-          'get_rollout': ('name', ),
-          'get_target': ('name', ),
-          'list_delivery_pipelines': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_releases': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_rollouts': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_targets': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'update_delivery_pipeline': ('update_mask', 'delivery_pipeline', 'request_id', 'allow_missing', 'validate_only', ),
-          'update_target': ('update_mask', 'target', 'request_id', 'allow_missing', 'validate_only', ),
+        'approve_rollout': ('name', 'approved', ),
+        'create_delivery_pipeline': ('parent', 'delivery_pipeline_id', 'delivery_pipeline', 'request_id', 'validate_only', ),
+        'create_release': ('parent', 'release_id', 'release', 'request_id', 'validate_only', ),
+        'create_rollout': ('parent', 'rollout_id', 'rollout', 'request_id', 'validate_only', ),
+        'create_target': ('parent', 'target_id', 'target', 'request_id', 'validate_only', ),
+        'delete_delivery_pipeline': ('name', 'request_id', 'allow_missing', 'validate_only', 'force', 'etag', ),
+        'delete_target': ('name', 'request_id', 'allow_missing', 'validate_only', 'etag', ),
+        'get_config': ('name', ),
+        'get_delivery_pipeline': ('name', ),
+        'get_release': ('name', ),
+        'get_rollout': ('name', ),
+        'get_target': ('name', ),
+        'list_delivery_pipelines': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'list_releases': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'list_rollouts': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'list_targets': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'update_delivery_pipeline': ('update_mask', 'delivery_pipeline', 'request_id', 'allow_missing', 'validate_only', ),
+        'update_target': ('update_mask', 'target', 'request_id', 'allow_missing', 'validate_only', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -75,7 +75,7 @@ class deployCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

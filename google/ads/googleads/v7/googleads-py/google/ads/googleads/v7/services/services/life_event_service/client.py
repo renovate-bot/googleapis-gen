@@ -322,7 +322,7 @@ class LifeEventServiceClient(metaclass=LifeEventServiceClientMeta):
               )
 
     def get_life_event(self,
-            request: life_event_service.GetLifeEventRequest = None,
+            request: Union[life_event_service.GetLifeEventRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -332,7 +332,7 @@ class LifeEventServiceClient(metaclass=LifeEventServiceClientMeta):
         r"""Returns the requested life event in full detail.
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetLifeEventRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetLifeEventRequest, dict]):
                 The request object. Request message for
                 [LifeEventService.GetLifeEvent][google.ads.googleads.v7.services.LifeEventService.GetLifeEvent].
             resource_name (:class:`str`):

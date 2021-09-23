@@ -39,7 +39,7 @@ def partition(
 class activityCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'query_drive_activity': ('item_name', 'ancestor_name', 'consolidation_strategy', 'page_size', 'page_token', 'filter', ),
+        'query_drive_activity': ('item_name', 'ancestor_name', 'consolidation_strategy', 'page_size', 'page_token', 'filter', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -58,7 +58,7 @@ class activityCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

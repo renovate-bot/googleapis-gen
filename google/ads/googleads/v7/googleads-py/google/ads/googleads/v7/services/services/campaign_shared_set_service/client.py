@@ -343,7 +343,7 @@ class CampaignSharedSetServiceClient(metaclass=CampaignSharedSetServiceClientMet
               )
 
     def get_campaign_shared_set(self,
-            request: campaign_shared_set_service.GetCampaignSharedSetRequest = None,
+            request: Union[campaign_shared_set_service.GetCampaignSharedSetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -357,7 +357,7 @@ class CampaignSharedSetServiceClient(metaclass=CampaignSharedSetServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignSharedSetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignSharedSetRequest, dict]):
                 The request object. Request message for
                 [CampaignSharedSetService.GetCampaignSharedSet][google.ads.googleads.v7.services.CampaignSharedSetService.GetCampaignSharedSet].
             resource_name (:class:`str`):
@@ -422,7 +422,7 @@ class CampaignSharedSetServiceClient(metaclass=CampaignSharedSetServiceClientMet
         return response
 
     def mutate_campaign_shared_sets(self,
-            request: campaign_shared_set_service.MutateCampaignSharedSetsRequest = None,
+            request: Union[campaign_shared_set_service.MutateCampaignSharedSetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_shared_set_service.CampaignSharedSetOperation] = None,
@@ -444,7 +444,7 @@ class CampaignSharedSetServiceClient(metaclass=CampaignSharedSetServiceClientMet
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCampaignSharedSetsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCampaignSharedSetsRequest, dict]):
                 The request object. Request message for
                 [CampaignSharedSetService.MutateCampaignSharedSets][google.ads.googleads.v7.services.CampaignSharedSetService.MutateCampaignSharedSets].
             customer_id (:class:`str`):

@@ -333,7 +333,7 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
               )
 
     def list_payments_accounts(self,
-            request: payments_account_service.ListPaymentsAccountsRequest = None,
+            request: Union[payments_account_service.ListPaymentsAccountsRequest, dict] = None,
             *,
             customer_id: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -350,7 +350,7 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListPaymentsAccountsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListPaymentsAccountsRequest, dict]):
                 The request object. Request message for fetching all
                 accessible payments accounts.
             customer_id (:class:`str`):

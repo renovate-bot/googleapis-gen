@@ -331,7 +331,7 @@ class CustomerClientServiceClient(metaclass=CustomerClientServiceClientMeta):
               )
 
     def get_customer_client(self,
-            request: customer_client_service.GetCustomerClientRequest = None,
+            request: Union[customer_client_service.GetCustomerClientRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -345,7 +345,7 @@ class CustomerClientServiceClient(metaclass=CustomerClientServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCustomerClientRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCustomerClientRequest, dict]):
                 The request object. Request message for
                 [CustomerClientService.GetCustomerClient][google.ads.googleads.v7.services.CustomerClientService.GetCustomerClient].
             resource_name (:class:`str`):

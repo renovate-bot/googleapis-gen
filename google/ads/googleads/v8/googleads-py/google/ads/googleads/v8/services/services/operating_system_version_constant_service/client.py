@@ -322,7 +322,7 @@ class OperatingSystemVersionConstantServiceClient(metaclass=OperatingSystemVersi
               )
 
     def get_operating_system_version_constant(self,
-            request: operating_system_version_constant_service.GetOperatingSystemVersionConstantRequest = None,
+            request: Union[operating_system_version_constant_service.GetOperatingSystemVersionConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class OperatingSystemVersionConstantServiceClient(metaclass=OperatingSystemVersi
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetOperatingSystemVersionConstantRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetOperatingSystemVersionConstantRequest, dict]):
                 The request object. Request message for
                 [OperatingSystemVersionConstantService.GetOperatingSystemVersionConstant][google.ads.googleads.v8.services.OperatingSystemVersionConstantService.GetOperatingSystemVersionConstant].
             resource_name (:class:`str`):

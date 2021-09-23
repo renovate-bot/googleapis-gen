@@ -329,7 +329,7 @@ class AdServiceClient(metaclass=AdServiceClientMeta):
               )
 
     def get_ad(self,
-            request: ad_service.GetAdRequest = None,
+            request: Union[ad_service.GetAdRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -343,7 +343,7 @@ class AdServiceClient(metaclass=AdServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAdRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAdRequest, dict]):
                 The request object. Request message for
                 [AdService.GetAd][google.ads.googleads.v8.services.AdService.GetAd].
             resource_name (:class:`str`):
@@ -405,7 +405,7 @@ class AdServiceClient(metaclass=AdServiceClientMeta):
         return response
 
     def mutate_ads(self,
-            request: ad_service.MutateAdsRequest = None,
+            request: Union[ad_service.MutateAdsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_service.AdOperation] = None,
@@ -435,7 +435,7 @@ class AdServiceClient(metaclass=AdServiceClientMeta):
         `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateAdsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateAdsRequest, dict]):
                 The request object. Request message for
                 [AdService.MutateAds][google.ads.googleads.v8.services.AdService.MutateAds].
             customer_id (:class:`str`):

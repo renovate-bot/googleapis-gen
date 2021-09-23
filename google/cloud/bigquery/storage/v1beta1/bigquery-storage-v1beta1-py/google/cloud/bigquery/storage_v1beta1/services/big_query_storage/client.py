@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -353,7 +353,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
             )
 
     def create_read_session(self,
-            request: storage.CreateReadSessionRequest = None,
+            request: Union[storage.CreateReadSessionRequest, dict] = None,
             *,
             table_reference: gcbs_table_reference.TableReference = None,
             parent: str = None,
@@ -378,7 +378,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         caller.
 
         Args:
-            request (google.cloud.bigquery.storage_v1beta1.types.CreateReadSessionRequest):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.CreateReadSessionRequest, dict]):
                 The request object. Creates a new read session, which
                 may include additional options such as requested
                 parallelism, projection filters and constraints.
@@ -470,7 +470,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         return response
 
     def read_rows(self,
-            request: storage.ReadRowsRequest = None,
+            request: Union[storage.ReadRowsRequest, dict] = None,
             *,
             read_position: storage.StreamPosition = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -491,7 +491,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         read data.
 
         Args:
-            request (google.cloud.bigquery.storage_v1beta1.types.ReadRowsRequest):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.ReadRowsRequest, dict]):
                 The request object. Requesting row data via `ReadRows`
                 must provide Stream position information.
             read_position (google.cloud.bigquery.storage_v1beta1.types.StreamPosition):
@@ -559,7 +559,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         return response
 
     def batch_create_read_session_streams(self,
-            request: storage.BatchCreateReadSessionStreamsRequest = None,
+            request: Union[storage.BatchCreateReadSessionStreamsRequest, dict] = None,
             *,
             session: storage.ReadSession = None,
             requested_streams: int = None,
@@ -573,7 +573,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         workers.
 
         Args:
-            request (google.cloud.bigquery.storage_v1beta1.types.BatchCreateReadSessionStreamsRequest):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.BatchCreateReadSessionStreamsRequest, dict]):
                 The request object. Information needed to request
                 additional streams for an established read session.
             session (google.cloud.bigquery.storage_v1beta1.types.ReadSession):
@@ -652,7 +652,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         return response
 
     def finalize_stream(self,
-            request: storage.FinalizeStreamRequest = None,
+            request: Union[storage.FinalizeStreamRequest, dict] = None,
             *,
             stream: storage.Stream = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -678,7 +678,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         been called on the given Stream.
 
         Args:
-            request (google.cloud.bigquery.storage_v1beta1.types.FinalizeStreamRequest):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.FinalizeStreamRequest, dict]):
                 The request object. Request information for invoking
                 `FinalizeStream`.
             stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
@@ -732,7 +732,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         )
 
     def split_read_stream(self,
-            request: storage.SplitReadStreamRequest = None,
+            request: Union[storage.SplitReadStreamRequest, dict] = None,
             *,
             original_stream: storage.Stream = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -755,7 +755,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         This method is guaranteed to be idempotent.
 
         Args:
-            request (google.cloud.bigquery.storage_v1beta1.types.SplitReadStreamRequest):
+            request (Union[google.cloud.bigquery.storage_v1beta1.types.SplitReadStreamRequest, dict]):
                 The request object. Request information for
                 `SplitReadStream`.
             original_stream (google.cloud.bigquery.storage_v1beta1.types.Stream):

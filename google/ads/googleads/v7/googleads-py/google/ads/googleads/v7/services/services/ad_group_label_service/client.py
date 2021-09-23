@@ -342,7 +342,7 @@ class AdGroupLabelServiceClient(metaclass=AdGroupLabelServiceClientMeta):
               )
 
     def get_ad_group_label(self,
-            request: ad_group_label_service.GetAdGroupLabelRequest = None,
+            request: Union[ad_group_label_service.GetAdGroupLabelRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -356,7 +356,7 @@ class AdGroupLabelServiceClient(metaclass=AdGroupLabelServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupLabelRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupLabelRequest, dict]):
                 The request object. Request message for
                 [AdGroupLabelService.GetAdGroupLabel][google.ads.googleads.v7.services.AdGroupLabelService.GetAdGroupLabel].
             resource_name (:class:`str`):
@@ -420,7 +420,7 @@ class AdGroupLabelServiceClient(metaclass=AdGroupLabelServiceClientMeta):
         return response
 
     def mutate_ad_group_labels(self,
-            request: ad_group_label_service.MutateAdGroupLabelsRequest = None,
+            request: Union[ad_group_label_service.MutateAdGroupLabelsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_label_service.AdGroupLabelOperation] = None,
@@ -438,7 +438,7 @@ class AdGroupLabelServiceClient(metaclass=AdGroupLabelServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupLabelsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdGroupLabelsRequest, dict]):
                 The request object. Request message for
                 [AdGroupLabelService.MutateAdGroupLabels][google.ads.googleads.v7.services.AdGroupLabelService.MutateAdGroupLabels].
             customer_id (:class:`str`):

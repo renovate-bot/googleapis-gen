@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -362,7 +362,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             )
 
     def list_docker_images(self,
-            request: artifact.ListDockerImagesRequest = None,
+            request: Union[artifact.ListDockerImagesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -372,7 +372,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists docker images.
 
         Args:
-            request (google.devtools.artifactregistry_v1.types.ListDockerImagesRequest):
+            request (Union[google.devtools.artifactregistry_v1.types.ListDockerImagesRequest, dict]):
                 The request object. The request to list docker images.
             parent (str):
                 Required. The name of the parent
@@ -449,7 +449,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def list_repositories(self,
-            request: repository.ListRepositoriesRequest = None,
+            request: Union[repository.ListRepositoriesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -459,7 +459,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists repositories.
 
         Args:
-            request (google.devtools.artifactregistry_v1.types.ListRepositoriesRequest):
+            request (Union[google.devtools.artifactregistry_v1.types.ListRepositoriesRequest, dict]):
                 The request object. The request to list repositories.
             parent (str):
                 Required. The name of the parent
@@ -536,7 +536,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_repository(self,
-            request: repository.GetRepositoryRequest = None,
+            request: Union[repository.GetRepositoryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -546,7 +546,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a repository.
 
         Args:
-            request (google.devtools.artifactregistry_v1.types.GetRepositoryRequest):
+            request (Union[google.devtools.artifactregistry_v1.types.GetRepositoryRequest, dict]):
                 The request object. The request to retrieve a
                 repository.
             name (str):

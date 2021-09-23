@@ -349,7 +349,7 @@ class AdGroupCriterionServiceClient(metaclass=AdGroupCriterionServiceClientMeta)
               )
 
     def get_ad_group_criterion(self,
-            request: ad_group_criterion_service.GetAdGroupCriterionRequest = None,
+            request: Union[ad_group_criterion_service.GetAdGroupCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -363,7 +363,7 @@ class AdGroupCriterionServiceClient(metaclass=AdGroupCriterionServiceClientMeta)
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupCriterionRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupCriterionRequest, dict]):
                 The request object. Request message for
                 [AdGroupCriterionService.GetAdGroupCriterion][google.ads.googleads.v7.services.AdGroupCriterionService.GetAdGroupCriterion].
             resource_name (:class:`str`):
@@ -425,7 +425,7 @@ class AdGroupCriterionServiceClient(metaclass=AdGroupCriterionServiceClientMeta)
         return response
 
     def mutate_ad_group_criteria(self,
-            request: ad_group_criterion_service.MutateAdGroupCriteriaRequest = None,
+            request: Union[ad_group_criterion_service.MutateAdGroupCriteriaRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_criterion_service.AdGroupCriterionOperation] = None,
@@ -453,7 +453,7 @@ class AdGroupCriterionServiceClient(metaclass=AdGroupCriterionServiceClientMeta)
         `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupCriteriaRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdGroupCriteriaRequest, dict]):
                 The request object. Request message for
                 [AdGroupCriterionService.MutateAdGroupCriteria][google.ads.googleads.v7.services.AdGroupCriterionService.MutateAdGroupCriteria].
             customer_id (:class:`str`):

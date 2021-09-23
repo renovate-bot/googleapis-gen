@@ -333,7 +333,7 @@ class CampaignBidModifierServiceClient(metaclass=CampaignBidModifierServiceClien
               )
 
     def get_campaign_bid_modifier(self,
-            request: campaign_bid_modifier_service.GetCampaignBidModifierRequest = None,
+            request: Union[campaign_bid_modifier_service.GetCampaignBidModifierRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -347,7 +347,7 @@ class CampaignBidModifierServiceClient(metaclass=CampaignBidModifierServiceClien
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignBidModifierRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignBidModifierRequest, dict]):
                 The request object. Request message for
                 [CampaignBidModifierService.GetCampaignBidModifier][google.ads.googleads.v8.services.CampaignBidModifierService.GetCampaignBidModifier].
             resource_name (:class:`str`):
@@ -411,7 +411,7 @@ class CampaignBidModifierServiceClient(metaclass=CampaignBidModifierServiceClien
         return response
 
     def mutate_campaign_bid_modifiers(self,
-            request: campaign_bid_modifier_service.MutateCampaignBidModifiersRequest = None,
+            request: Union[campaign_bid_modifier_service.MutateCampaignBidModifiersRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_bid_modifier_service.CampaignBidModifierOperation] = None,
@@ -433,7 +433,7 @@ class CampaignBidModifierServiceClient(metaclass=CampaignBidModifierServiceClien
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCampaignBidModifiersRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCampaignBidModifiersRequest, dict]):
                 The request object. Request message for
                 [CampaignBidModifierService.MutateCampaignBidModifiers][google.ads.googleads.v8.services.CampaignBidModifierService.MutateCampaignBidModifiers].
             customer_id (:class:`str`):

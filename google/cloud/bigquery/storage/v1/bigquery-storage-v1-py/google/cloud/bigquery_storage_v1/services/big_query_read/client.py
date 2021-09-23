@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -363,7 +363,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
             )
 
     def create_read_session(self,
-            request: storage.CreateReadSessionRequest = None,
+            request: Union[storage.CreateReadSessionRequest, dict] = None,
             *,
             parent: str = None,
             read_session: stream.ReadSession = None,
@@ -397,7 +397,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         caller.
 
         Args:
-            request (google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest):
+            request (Union[google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest, dict]):
                 The request object. Request message for
                 `CreateReadSession`.
             parent (str):
@@ -488,7 +488,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         return response
 
     def read_rows(self,
-            request: storage.ReadRowsRequest = None,
+            request: Union[storage.ReadRowsRequest, dict] = None,
             *,
             read_stream: str = None,
             offset: int = None,
@@ -506,7 +506,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         reflecting the current state of the stream.
 
         Args:
-            request (google.cloud.bigquery_storage_v1.types.ReadRowsRequest):
+            request (Union[google.cloud.bigquery_storage_v1.types.ReadRowsRequest, dict]):
                 The request object. Request message for `ReadRows`.
             read_stream (str):
                 Required. Stream to read rows from.
@@ -580,7 +580,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         return response
 
     def split_read_stream(self,
-            request: storage.SplitReadStreamRequest = None,
+            request: Union[storage.SplitReadStreamRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -601,7 +601,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         once the streams have been read to completion.
 
         Args:
-            request (google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest):
+            request (Union[google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest, dict]):
                 The request object. Request message for
                 `SplitReadStream`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

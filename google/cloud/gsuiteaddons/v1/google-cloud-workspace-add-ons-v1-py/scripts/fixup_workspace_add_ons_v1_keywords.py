@@ -39,15 +39,15 @@ def partition(
 class workspace_add_onsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_deployment': ('parent', 'deployment_id', 'deployment', ),
-          'delete_deployment': ('name', 'etag', ),
-          'get_authorization': ('name', ),
-          'get_deployment': ('name', ),
-          'get_install_status': ('name', ),
-          'install_deployment': ('name', ),
-          'list_deployments': ('parent', 'page_size', 'page_token', ),
-          'replace_deployment': ('deployment', ),
-          'uninstall_deployment': ('name', ),
+        'create_deployment': ('parent', 'deployment_id', 'deployment', ),
+        'delete_deployment': ('name', 'etag', ),
+        'get_authorization': ('name', ),
+        'get_deployment': ('name', ),
+        'get_install_status': ('name', ),
+        'install_deployment': ('name', ),
+        'list_deployments': ('parent', 'page_size', 'page_token', ),
+        'replace_deployment': ('deployment', ),
+        'uninstall_deployment': ('name', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -66,7 +66,7 @@ class workspace_add_onsCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

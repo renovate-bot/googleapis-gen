@@ -324,7 +324,7 @@ class SharedSetServiceClient(metaclass=SharedSetServiceClientMeta):
               )
 
     def get_shared_set(self,
-            request: shared_set_service.GetSharedSetRequest = None,
+            request: Union[shared_set_service.GetSharedSetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class SharedSetServiceClient(metaclass=SharedSetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetSharedSetRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetSharedSetRequest, dict]):
                 The request object. Request message for
                 [SharedSetService.GetSharedSet][google.ads.googleads.v8.services.SharedSetService.GetSharedSet].
             resource_name (:class:`str`):
@@ -403,7 +403,7 @@ class SharedSetServiceClient(metaclass=SharedSetServiceClientMeta):
         return response
 
     def mutate_shared_sets(self,
-            request: shared_set_service.MutateSharedSetsRequest = None,
+            request: Union[shared_set_service.MutateSharedSetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[shared_set_service.SharedSetOperation] = None,
@@ -426,7 +426,7 @@ class SharedSetServiceClient(metaclass=SharedSetServiceClientMeta):
         `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateSharedSetsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateSharedSetsRequest, dict]):
                 The request object. Request message for
                 [SharedSetService.MutateSharedSets][google.ads.googleads.v8.services.SharedSetService.MutateSharedSets].
             customer_id (:class:`str`):

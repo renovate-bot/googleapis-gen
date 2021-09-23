@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -398,7 +398,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
             )
 
     def list_gateways(self,
-            request: apigateway.ListGatewaysRequest = None,
+            request: Union[apigateway.ListGatewaysRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -408,7 +408,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Lists Gateways in a given project and location.
 
         Args:
-            request (google.cloud.apigateway_v1.types.ListGatewaysRequest):
+            request (Union[google.cloud.apigateway_v1.types.ListGatewaysRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.ListGateways
             parent (str):
@@ -485,7 +485,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def get_gateway(self,
-            request: apigateway.GetGatewayRequest = None,
+            request: Union[apigateway.GetGatewayRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -495,7 +495,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Gets details of a single Gateway.
 
         Args:
-            request (google.cloud.apigateway_v1.types.GetGatewayRequest):
+            request (Union[google.cloud.apigateway_v1.types.GetGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.GetGateway
             name (str):
@@ -564,7 +564,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def create_gateway(self,
-            request: apigateway.CreateGatewayRequest = None,
+            request: Union[apigateway.CreateGatewayRequest, dict] = None,
             *,
             parent: str = None,
             gateway: apigateway.Gateway = None,
@@ -577,7 +577,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         location.
 
         Args:
-            request (google.cloud.apigateway_v1.types.CreateGatewayRequest):
+            request (Union[google.cloud.apigateway_v1.types.CreateGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.CreateGateway
             parent (str):
@@ -671,7 +671,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def update_gateway(self,
-            request: apigateway.UpdateGatewayRequest = None,
+            request: Union[apigateway.UpdateGatewayRequest, dict] = None,
             *,
             gateway: apigateway.Gateway = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -682,7 +682,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Updates the parameters of a single Gateway.
 
         Args:
-            request (google.cloud.apigateway_v1.types.UpdateGatewayRequest):
+            request (Union[google.cloud.apigateway_v1.types.UpdateGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.UpdateGateway
             gateway (google.cloud.apigateway_v1.types.Gateway):
@@ -770,7 +770,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def delete_gateway(self,
-            request: apigateway.DeleteGatewayRequest = None,
+            request: Union[apigateway.DeleteGatewayRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -780,7 +780,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Deletes a single Gateway.
 
         Args:
-            request (google.cloud.apigateway_v1.types.DeleteGatewayRequest):
+            request (Union[google.cloud.apigateway_v1.types.DeleteGatewayRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.DeleteGateway
             name (str):
@@ -866,7 +866,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def list_apis(self,
-            request: apigateway.ListApisRequest = None,
+            request: Union[apigateway.ListApisRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -876,7 +876,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Lists Apis in a given project and location.
 
         Args:
-            request (google.cloud.apigateway_v1.types.ListApisRequest):
+            request (Union[google.cloud.apigateway_v1.types.ListApisRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.ListApis
             parent (str):
@@ -953,7 +953,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def get_api(self,
-            request: apigateway.GetApiRequest = None,
+            request: Union[apigateway.GetApiRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -963,7 +963,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Gets details of a single Api.
 
         Args:
-            request (google.cloud.apigateway_v1.types.GetApiRequest):
+            request (Union[google.cloud.apigateway_v1.types.GetApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.GetApi
             name (str):
@@ -1028,7 +1028,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def create_api(self,
-            request: apigateway.CreateApiRequest = None,
+            request: Union[apigateway.CreateApiRequest, dict] = None,
             *,
             parent: str = None,
             api: apigateway.Api = None,
@@ -1040,7 +1040,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Creates a new Api in a given project and location.
 
         Args:
-            request (google.cloud.apigateway_v1.types.CreateApiRequest):
+            request (Union[google.cloud.apigateway_v1.types.CreateApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.CreateApi
             parent (str):
@@ -1133,7 +1133,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def update_api(self,
-            request: apigateway.UpdateApiRequest = None,
+            request: Union[apigateway.UpdateApiRequest, dict] = None,
             *,
             api: apigateway.Api = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1144,7 +1144,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Updates the parameters of a single Api.
 
         Args:
-            request (google.cloud.apigateway_v1.types.UpdateApiRequest):
+            request (Union[google.cloud.apigateway_v1.types.UpdateApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.UpdateApi
             api (google.cloud.apigateway_v1.types.Api):
@@ -1231,7 +1231,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def delete_api(self,
-            request: apigateway.DeleteApiRequest = None,
+            request: Union[apigateway.DeleteApiRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1241,7 +1241,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Deletes a single Api.
 
         Args:
-            request (google.cloud.apigateway_v1.types.DeleteApiRequest):
+            request (Union[google.cloud.apigateway_v1.types.DeleteApiRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.DeleteApi
             name (str):
@@ -1327,7 +1327,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def list_api_configs(self,
-            request: apigateway.ListApiConfigsRequest = None,
+            request: Union[apigateway.ListApiConfigsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1337,7 +1337,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Lists ApiConfigs in a given project and location.
 
         Args:
-            request (google.cloud.apigateway_v1.types.ListApiConfigsRequest):
+            request (Union[google.cloud.apigateway_v1.types.ListApiConfigsRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.ListApiConfigs
             parent (str):
@@ -1414,7 +1414,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def get_api_config(self,
-            request: apigateway.GetApiConfigRequest = None,
+            request: Union[apigateway.GetApiConfigRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1424,7 +1424,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Gets details of a single ApiConfig.
 
         Args:
-            request (google.cloud.apigateway_v1.types.GetApiConfigRequest):
+            request (Union[google.cloud.apigateway_v1.types.GetApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.GetApiConfig
             name (str):
@@ -1490,7 +1490,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def create_api_config(self,
-            request: apigateway.CreateApiConfigRequest = None,
+            request: Union[apigateway.CreateApiConfigRequest, dict] = None,
             *,
             parent: str = None,
             api_config: apigateway.ApiConfig = None,
@@ -1503,7 +1503,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         location.
 
         Args:
-            request (google.cloud.apigateway_v1.types.CreateApiConfigRequest):
+            request (Union[google.cloud.apigateway_v1.types.CreateApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.CreateApiConfig
             parent (str):
@@ -1595,7 +1595,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def update_api_config(self,
-            request: apigateway.UpdateApiConfigRequest = None,
+            request: Union[apigateway.UpdateApiConfigRequest, dict] = None,
             *,
             api_config: apigateway.ApiConfig = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1606,7 +1606,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Updates the parameters of a single ApiConfig.
 
         Args:
-            request (google.cloud.apigateway_v1.types.UpdateApiConfigRequest):
+            request (Union[google.cloud.apigateway_v1.types.UpdateApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (google.cloud.apigateway_v1.types.ApiConfig):
@@ -1692,7 +1692,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         return response
 
     def delete_api_config(self,
-            request: apigateway.DeleteApiConfigRequest = None,
+            request: Union[apigateway.DeleteApiConfigRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1702,7 +1702,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         r"""Deletes a single ApiConfig.
 
         Args:
-            request (google.cloud.apigateway_v1.types.DeleteApiConfigRequest):
+            request (Union[google.cloud.apigateway_v1.types.DeleteApiConfigRequest, dict]):
                 The request object. Request message for
                 ApiGatewayService.DeleteApiConfig
             name (str):

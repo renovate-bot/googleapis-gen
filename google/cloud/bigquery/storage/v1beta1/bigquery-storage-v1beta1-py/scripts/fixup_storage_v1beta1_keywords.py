@@ -39,11 +39,11 @@ def partition(
 class storageCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_create_read_session_streams': ('session', 'requested_streams', ),
-          'create_read_session': ('table_reference', 'parent', 'table_modifiers', 'requested_streams', 'read_options', 'format_', 'sharding_strategy', ),
-          'finalize_stream': ('stream', ),
-          'read_rows': ('read_position', ),
-          'split_read_stream': ('original_stream', 'fraction', ),
+        'batch_create_read_session_streams': ('session', 'requested_streams', ),
+        'create_read_session': ('table_reference', 'parent', 'table_modifiers', 'requested_streams', 'read_options', 'format_', 'sharding_strategy', ),
+        'finalize_stream': ('stream', ),
+        'read_rows': ('read_position', ),
+        'split_read_stream': ('original_stream', 'fraction', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -62,7 +62,7 @@ class storageCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

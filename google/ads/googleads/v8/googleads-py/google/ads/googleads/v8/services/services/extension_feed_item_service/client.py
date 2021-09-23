@@ -367,7 +367,7 @@ class ExtensionFeedItemServiceClient(metaclass=ExtensionFeedItemServiceClientMet
               )
 
     def get_extension_feed_item(self,
-            request: extension_feed_item_service.GetExtensionFeedItemRequest = None,
+            request: Union[extension_feed_item_service.GetExtensionFeedItemRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -381,7 +381,7 @@ class ExtensionFeedItemServiceClient(metaclass=ExtensionFeedItemServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetExtensionFeedItemRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetExtensionFeedItemRequest, dict]):
                 The request object. Request message for
                 [ExtensionFeedItemService.GetExtensionFeedItem][google.ads.googleads.v8.services.ExtensionFeedItemService.GetExtensionFeedItem].
             resource_name (:class:`str`):
@@ -443,7 +443,7 @@ class ExtensionFeedItemServiceClient(metaclass=ExtensionFeedItemServiceClientMet
         return response
 
     def mutate_extension_feed_items(self,
-            request: extension_feed_item_service.MutateExtensionFeedItemsRequest = None,
+            request: Union[extension_feed_item_service.MutateExtensionFeedItemsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[extension_feed_item_service.ExtensionFeedItemOperation] = None,
@@ -466,7 +466,7 @@ class ExtensionFeedItemServiceClient(metaclass=ExtensionFeedItemServiceClientMet
         `StringLengthError <>`__ `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateExtensionFeedItemsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateExtensionFeedItemsRequest, dict]):
                 The request object. Request message for
                 [ExtensionFeedItemService.MutateExtensionFeedItems][google.ads.googleads.v8.services.ExtensionFeedItemService.MutateExtensionFeedItems].
             customer_id (:class:`str`):

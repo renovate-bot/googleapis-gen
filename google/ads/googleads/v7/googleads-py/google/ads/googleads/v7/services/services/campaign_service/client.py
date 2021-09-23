@@ -387,7 +387,7 @@ class CampaignServiceClient(metaclass=CampaignServiceClientMeta):
               )
 
     def get_campaign(self,
-            request: campaign_service.GetCampaignRequest = None,
+            request: Union[campaign_service.GetCampaignRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -401,7 +401,7 @@ class CampaignServiceClient(metaclass=CampaignServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignRequest, dict]):
                 The request object. Request message for
                 [CampaignService.GetCampaign][google.ads.googleads.v7.services.CampaignService.GetCampaign].
             resource_name (:class:`str`):
@@ -463,7 +463,7 @@ class CampaignServiceClient(metaclass=CampaignServiceClientMeta):
         return response
 
     def mutate_campaigns(self,
-            request: campaign_service.MutateCampaignsRequest = None,
+            request: Union[campaign_service.MutateCampaignsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_service.CampaignOperation] = None,
@@ -492,7 +492,7 @@ class CampaignServiceClient(metaclass=CampaignServiceClientMeta):
         `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCampaignsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCampaignsRequest, dict]):
                 The request object. Request message for
                 [CampaignService.MutateCampaigns][google.ads.googleads.v7.services.CampaignService.MutateCampaigns].
             customer_id (:class:`str`):

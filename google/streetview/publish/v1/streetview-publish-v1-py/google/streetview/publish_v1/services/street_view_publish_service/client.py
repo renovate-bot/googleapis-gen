@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -332,7 +332,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             )
 
     def start_upload(self,
-            request: empty_pb2.Empty = None,
+            request: Union[empty_pb2.Empty, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -363,7 +363,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         entry.
 
         Args:
-            request (google.protobuf.empty_pb2.Empty):
+            request (Union[google.protobuf.empty_pb2.Empty, dict]):
                 The request object. A generic empty message that you can
                 re-use to avoid defining duplicated empty messages in
                 your APIs. A typical example is to use it as the request
@@ -410,7 +410,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def create_photo(self,
-            request: rpcmessages.CreatePhotoRequest = None,
+            request: Union[rpcmessages.CreatePhotoRequest, dict] = None,
             *,
             photo: resources.Photo = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -442,7 +442,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
            if the account has reached the storage limit.
 
         Args:
-            request (google.streetview.publish_v1.types.CreatePhotoRequest):
+            request (Union[google.streetview.publish_v1.types.CreatePhotoRequest, dict]):
                 The request object. Request to create a
                 [Photo][google.streetview.publish.v1.Photo].
             photo (google.streetview.publish_v1.types.Photo):
@@ -497,7 +497,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def get_photo(self,
-            request: rpcmessages.GetPhotoRequest = None,
+            request: Union[rpcmessages.GetPhotoRequest, dict] = None,
             *,
             photo_id: str = None,
             view: rpcmessages.PhotoView = None,
@@ -521,7 +521,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
            still being indexed.
 
         Args:
-            request (google.streetview.publish_v1.types.GetPhotoRequest):
+            request (Union[google.streetview.publish_v1.types.GetPhotoRequest, dict]):
                 The request object. Request to get a
                 [Photo][google.streetview.publish.v1.Photo].
                 By default
@@ -595,7 +595,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def batch_get_photos(self,
-            request: rpcmessages.BatchGetPhotosRequest = None,
+            request: Union[rpcmessages.BatchGetPhotosRequest, dict] = None,
             *,
             photo_ids: Sequence[str] = None,
             view: rpcmessages.PhotoView = None,
@@ -621,7 +621,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         for specific failures that can occur per photo.
 
         Args:
-            request (google.streetview.publish_v1.types.BatchGetPhotosRequest):
+            request (Union[google.streetview.publish_v1.types.BatchGetPhotosRequest, dict]):
                 The request object. Request to get one or more
                 [Photos][google.streetview.publish.v1.Photo]. By default
                 * does not return the download URL for the photo bytes.
@@ -695,7 +695,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def list_photos(self,
-            request: rpcmessages.ListPhotosRequest = None,
+            request: Union[rpcmessages.ListPhotosRequest, dict] = None,
             *,
             view: rpcmessages.PhotoView = None,
             filter: str = None,
@@ -712,7 +712,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             being indexed are not returned in the response.</aside>
 
         Args:
-            request (google.streetview.publish_v1.types.ListPhotosRequest):
+            request (Union[google.streetview.publish_v1.types.ListPhotosRequest, dict]):
                 The request object. Request to list all photos that
                 belong to the user sending the request.
                 By default
@@ -806,7 +806,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def update_photo(self,
-            request: rpcmessages.UpdatePhotoRequest = None,
+            request: Union[rpcmessages.UpdatePhotoRequest, dict] = None,
             *,
             photo: resources.Photo = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -837,7 +837,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
            still being indexed.
 
         Args:
-            request (google.streetview.publish_v1.types.UpdatePhotoRequest):
+            request (Union[google.streetview.publish_v1.types.UpdatePhotoRequest, dict]):
                 The request object. Request to update the metadata of a
                 [Photo][google.streetview.publish.v1.Photo]. Updating
                 the pixels of a photo is not supported.
@@ -931,7 +931,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def batch_update_photos(self,
-            request: rpcmessages.BatchUpdatePhotosRequest = None,
+            request: Union[rpcmessages.BatchUpdatePhotosRequest, dict] = None,
             *,
             update_photo_requests: Sequence[rpcmessages.UpdatePhotoRequest] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -976,7 +976,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             filled as well. Otherwise, the request will fail.</aside>
 
         Args:
-            request (google.streetview.publish_v1.types.BatchUpdatePhotosRequest):
+            request (Union[google.streetview.publish_v1.types.BatchUpdatePhotosRequest, dict]):
                 The request object. Request to update the metadata of
                 photos. Updating the pixels of photos is not supported.
             update_photo_requests (Sequence[google.streetview.publish_v1.types.UpdatePhotoRequest]):
@@ -1033,7 +1033,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return response
 
     def delete_photo(self,
-            request: rpcmessages.DeletePhotoRequest = None,
+            request: Union[rpcmessages.DeletePhotoRequest, dict] = None,
             *,
             photo_id: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1051,7 +1051,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
            photo ID does not exist.
 
         Args:
-            request (google.streetview.publish_v1.types.DeletePhotoRequest):
+            request (Union[google.streetview.publish_v1.types.DeletePhotoRequest, dict]):
                 The request object. Request to delete a
                 [Photo][google.streetview.publish.v1.Photo].
             photo_id (str):
@@ -1099,7 +1099,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         )
 
     def batch_delete_photos(self,
-            request: rpcmessages.BatchDeletePhotosRequest = None,
+            request: Union[rpcmessages.BatchDeletePhotosRequest, dict] = None,
             *,
             photo_ids: Sequence[str] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1124,7 +1124,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         for specific failures that can occur per photo.
 
         Args:
-            request (google.streetview.publish_v1.types.BatchDeletePhotosRequest):
+            request (Union[google.streetview.publish_v1.types.BatchDeletePhotosRequest, dict]):
                 The request object. Request to delete multiple
                 [Photos][google.streetview.publish.v1.Photo].
             photo_ids (Sequence[str]):

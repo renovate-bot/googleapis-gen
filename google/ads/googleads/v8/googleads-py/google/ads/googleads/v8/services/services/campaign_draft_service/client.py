@@ -337,7 +337,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
               )
 
     def get_campaign_draft(self,
-            request: campaign_draft_service.GetCampaignDraftRequest = None,
+            request: Union[campaign_draft_service.GetCampaignDraftRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -351,7 +351,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignDraftRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignDraftRequest, dict]):
                 The request object. Request message for
                 [CampaignDraftService.GetCampaignDraft][google.ads.googleads.v8.services.CampaignDraftService.GetCampaignDraft].
             resource_name (:class:`str`):
@@ -413,7 +413,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         return response
 
     def mutate_campaign_drafts(self,
-            request: campaign_draft_service.MutateCampaignDraftsRequest = None,
+            request: Union[campaign_draft_service.MutateCampaignDraftsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_draft_service.CampaignDraftOperation] = None,
@@ -431,7 +431,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCampaignDraftsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCampaignDraftsRequest, dict]):
                 The request object. Request message for
                 [CampaignDraftService.MutateCampaignDrafts][google.ads.googleads.v8.services.CampaignDraftService.MutateCampaignDrafts].
             customer_id (:class:`str`):
@@ -505,7 +505,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         return response
 
     def promote_campaign_draft(self,
-            request: campaign_draft_service.PromoteCampaignDraftRequest = None,
+            request: Union[campaign_draft_service.PromoteCampaignDraftRequest, dict] = None,
             *,
             campaign_draft: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -529,7 +529,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.PromoteCampaignDraftRequest`):
+            request (Union[google.ads.googleads.v8.services.types.PromoteCampaignDraftRequest, dict]):
                 The request object. Request message for
                 [CampaignDraftService.PromoteCampaignDraft][google.ads.googleads.v8.services.CampaignDraftService.PromoteCampaignDraft].
             campaign_draft (:class:`str`):
@@ -614,7 +614,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         return response
 
     def list_campaign_draft_async_errors(self,
-            request: campaign_draft_service.ListCampaignDraftAsyncErrorsRequest = None,
+            request: Union[campaign_draft_service.ListCampaignDraftAsyncErrorsRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -630,7 +630,7 @@ class CampaignDraftServiceClient(metaclass=CampaignDraftServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListCampaignDraftAsyncErrorsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListCampaignDraftAsyncErrorsRequest, dict]):
                 The request object. Request message for
                 [CampaignDraftService.ListCampaignDraftAsyncErrors][google.ads.googleads.v8.services.CampaignDraftService.ListCampaignDraftAsyncErrors].
             resource_name (:class:`str`):

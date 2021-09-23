@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -359,7 +359,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
             )
 
     def create_product(self,
-            request: product_service.CreateProductRequest = None,
+            request: Union[product_service.CreateProductRequest, dict] = None,
             *,
             parent: str = None,
             product: gcr_product.Product = None,
@@ -371,7 +371,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         r"""Creates a [Product][google.cloud.retail.v2.Product].
 
         Args:
-            request (google.cloud.retail_v2.types.CreateProductRequest):
+            request (Union[google.cloud.retail_v2.types.CreateProductRequest, dict]):
                 The request object. Request message for
                 [CreateProduct][] method.
             parent (str):
@@ -471,7 +471,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def get_product(self,
-            request: product_service.GetProductRequest = None,
+            request: Union[product_service.GetProductRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -481,7 +481,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         r"""Gets a [Product][google.cloud.retail.v2.Product].
 
         Args:
-            request (google.cloud.retail_v2.types.GetProductRequest):
+            request (Union[google.cloud.retail_v2.types.GetProductRequest, dict]):
                 The request object. Request message for [GetProduct][]
                 method.
             name (str):
@@ -557,7 +557,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def list_products(self,
-            request: product_service.ListProductsRequest = None,
+            request: Union[product_service.ListProductsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -567,7 +567,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         r"""Gets a list of [Product][google.cloud.retail.v2.Product]s.
 
         Args:
-            request (google.cloud.retail_v2.types.ListProductsRequest):
+            request (Union[google.cloud.retail_v2.types.ListProductsRequest, dict]):
                 The request object. Request message for
                 [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts]
                 method.
@@ -653,7 +653,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def update_product(self,
-            request: product_service.UpdateProductRequest = None,
+            request: Union[product_service.UpdateProductRequest, dict] = None,
             *,
             product: gcr_product.Product = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -664,7 +664,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         r"""Updates a [Product][google.cloud.retail.v2.Product].
 
         Args:
-            request (google.cloud.retail_v2.types.UpdateProductRequest):
+            request (Union[google.cloud.retail_v2.types.UpdateProductRequest, dict]):
                 The request object. Request message for
                 [UpdateProduct][] method.
             product (google.cloud.retail_v2.types.Product):
@@ -754,7 +754,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def delete_product(self,
-            request: product_service.DeleteProductRequest = None,
+            request: Union[product_service.DeleteProductRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -764,7 +764,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         r"""Deletes a [Product][google.cloud.retail.v2.Product].
 
         Args:
-            request (google.cloud.retail_v2.types.DeleteProductRequest):
+            request (Union[google.cloud.retail_v2.types.DeleteProductRequest, dict]):
                 The request object. Request message for
                 [DeleteProduct][] method.
             name (str):
@@ -843,7 +843,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         )
 
     def import_products(self,
-            request: import_config.ImportProductsRequest = None,
+            request: Union[import_config.ImportProductsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -860,7 +860,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         updated.
 
         Args:
-            request (google.cloud.retail_v2.types.ImportProductsRequest):
+            request (Union[google.cloud.retail_v2.types.ImportProductsRequest, dict]):
                 The request object. Request message for Import methods.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -920,7 +920,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def set_inventory(self,
-            request: product_service.SetInventoryRequest = None,
+            request: Union[product_service.SetInventoryRequest, dict] = None,
             *,
             inventory: product.Product = None,
             set_mask: field_mask_pb2.FieldMask = None,
@@ -977,7 +977,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         sales if you are interested in using Retail Search.
 
         Args:
-            request (google.cloud.retail_v2.types.SetInventoryRequest):
+            request (Union[google.cloud.retail_v2.types.SetInventoryRequest, dict]):
                 The request object. Request message for [SetInventory][]
                 method.
             inventory (google.cloud.retail_v2.types.Product):
@@ -1107,7 +1107,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def add_fulfillment_places(self,
-            request: product_service.AddFulfillmentPlacesRequest = None,
+            request: Union[product_service.AddFulfillmentPlacesRequest, dict] = None,
             *,
             product: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1134,7 +1134,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         sales if you are interested in using Retail Search.
 
         Args:
-            request (google.cloud.retail_v2.types.AddFulfillmentPlacesRequest):
+            request (Union[google.cloud.retail_v2.types.AddFulfillmentPlacesRequest, dict]):
                 The request object. Request message for
                 [AddFulfillmentPlaces][] method.
             product (str):
@@ -1216,7 +1216,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         return response
 
     def remove_fulfillment_places(self,
-            request: product_service.RemoveFulfillmentPlacesRequest = None,
+            request: Union[product_service.RemoveFulfillmentPlacesRequest, dict] = None,
             *,
             product: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1243,7 +1243,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         sales if you are interested in using Retail Search.
 
         Args:
-            request (google.cloud.retail_v2.types.RemoveFulfillmentPlacesRequest):
+            request (Union[google.cloud.retail_v2.types.RemoveFulfillmentPlacesRequest, dict]):
                 The request object. Request message for
                 [RemoveFulfillmentPlaces][] method.
             product (str):

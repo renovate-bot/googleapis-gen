@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -400,7 +400,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
             )
 
     def create_metadata_store(self,
-            request: metadata_service.CreateMetadataStoreRequest = None,
+            request: Union[metadata_service.CreateMetadataStoreRequest, dict] = None,
             *,
             parent: str = None,
             metadata_store: gca_metadata_store.MetadataStore = None,
@@ -413,7 +413,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         resources.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateMetadataStoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateMetadataStoreRequest, dict]):
                 The request object. Request message for
                 [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
             parent (str):
@@ -516,7 +516,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def get_metadata_store(self,
-            request: metadata_service.GetMetadataStoreRequest = None,
+            request: Union[metadata_service.GetMetadataStoreRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -526,7 +526,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Retrieves a specific MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetMetadataStoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetMetadataStoreRequest, dict]):
                 The request object. Request message for
                 [MetadataService.GetMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.GetMetadataStore].
             name (str):
@@ -593,7 +593,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def list_metadata_stores(self,
-            request: metadata_service.ListMetadataStoresRequest = None,
+            request: Union[metadata_service.ListMetadataStoresRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -603,7 +603,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Lists MetadataStores for a Location.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListMetadataStoresRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListMetadataStoresRequest, dict]):
                 The request object. Request message for
                 [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataStores].
             parent (str):
@@ -681,7 +681,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def delete_metadata_store(self,
-            request: metadata_service.DeleteMetadataStoreRequest = None,
+            request: Union[metadata_service.DeleteMetadataStoreRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -692,7 +692,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         resources (Artifacts, Executions, and Contexts).
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteMetadataStoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteMetadataStoreRequest, dict]):
                 The request object. Request message for
                 [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.DeleteMetadataStore].
             name (str):
@@ -779,7 +779,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def create_artifact(self,
-            request: metadata_service.CreateArtifactRequest = None,
+            request: Union[metadata_service.CreateArtifactRequest, dict] = None,
             *,
             parent: str = None,
             artifact: gca_artifact.Artifact = None,
@@ -791,7 +791,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Creates an Artifact associated with a MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateArtifactRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateArtifactRequest, dict]):
                 The request object. Request message for
                 [MetadataService.CreateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.CreateArtifact].
             parent (str):
@@ -880,7 +880,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def get_artifact(self,
-            request: metadata_service.GetArtifactRequest = None,
+            request: Union[metadata_service.GetArtifactRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -890,7 +890,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Retrieves a specific Artifact.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetArtifactRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetArtifactRequest, dict]):
                 The request object. Request message for
                 [MetadataService.GetArtifact][google.cloud.aiplatform.v1beta1.MetadataService.GetArtifact].
             name (str):
@@ -954,7 +954,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def list_artifacts(self,
-            request: metadata_service.ListArtifactsRequest = None,
+            request: Union[metadata_service.ListArtifactsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -964,7 +964,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Lists Artifacts in the MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListArtifactsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListArtifactsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
             parent (str):
@@ -1042,7 +1042,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def update_artifact(self,
-            request: metadata_service.UpdateArtifactRequest = None,
+            request: Union[metadata_service.UpdateArtifactRequest, dict] = None,
             *,
             artifact: gca_artifact.Artifact = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1053,7 +1053,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Updates a stored Artifact.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateArtifactRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateArtifactRequest, dict]):
                 The request object. Request message for
                 [MetadataService.UpdateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.UpdateArtifact].
             artifact (google.cloud.aiplatform_v1beta1.types.Artifact):
@@ -1131,7 +1131,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def delete_artifact(self,
-            request: metadata_service.DeleteArtifactRequest = None,
+            request: Union[metadata_service.DeleteArtifactRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1141,7 +1141,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Deletes an Artifact.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteArtifactRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteArtifactRequest, dict]):
                 The request object. Request message for
                 [MetadataService.DeleteArtifact][google.cloud.aiplatform.v1beta1.MetadataService.DeleteArtifact].
             name (str):
@@ -1228,7 +1228,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def purge_artifacts(self,
-            request: metadata_service.PurgeArtifactsRequest = None,
+            request: Union[metadata_service.PurgeArtifactsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1238,7 +1238,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Purges Artifacts.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.PurgeArtifactsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.PurgeArtifactsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
             parent (str):
@@ -1316,7 +1316,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def create_context(self,
-            request: metadata_service.CreateContextRequest = None,
+            request: Union[metadata_service.CreateContextRequest, dict] = None,
             *,
             parent: str = None,
             context: gca_context.Context = None,
@@ -1328,7 +1328,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Creates a Context associated with a MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateContextRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateContextRequest, dict]):
                 The request object. Request message for
                 [MetadataService.CreateContext][google.cloud.aiplatform.v1beta1.MetadataService.CreateContext].
             parent (str):
@@ -1417,7 +1417,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def get_context(self,
-            request: metadata_service.GetContextRequest = None,
+            request: Union[metadata_service.GetContextRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1427,7 +1427,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Retrieves a specific Context.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetContextRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetContextRequest, dict]):
                 The request object. Request message for
                 [MetadataService.GetContext][google.cloud.aiplatform.v1beta1.MetadataService.GetContext].
             name (str):
@@ -1491,7 +1491,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def list_contexts(self,
-            request: metadata_service.ListContextsRequest = None,
+            request: Union[metadata_service.ListContextsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1501,7 +1501,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Lists Contexts on the MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListContextsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListContextsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.ListContexts][google.cloud.aiplatform.v1beta1.MetadataService.ListContexts]
             parent (str):
@@ -1579,7 +1579,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def update_context(self,
-            request: metadata_service.UpdateContextRequest = None,
+            request: Union[metadata_service.UpdateContextRequest, dict] = None,
             *,
             context: gca_context.Context = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1590,7 +1590,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Updates a stored Context.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateContextRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateContextRequest, dict]):
                 The request object. Request message for
                 [MetadataService.UpdateContext][google.cloud.aiplatform.v1beta1.MetadataService.UpdateContext].
             context (google.cloud.aiplatform_v1beta1.types.Context):
@@ -1667,7 +1667,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def delete_context(self,
-            request: metadata_service.DeleteContextRequest = None,
+            request: Union[metadata_service.DeleteContextRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1677,7 +1677,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Deletes a stored Context.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteContextRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteContextRequest, dict]):
                 The request object. Request message for
                 [MetadataService.DeleteContext][google.cloud.aiplatform.v1beta1.MetadataService.DeleteContext].
             name (str):
@@ -1764,7 +1764,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def purge_contexts(self,
-            request: metadata_service.PurgeContextsRequest = None,
+            request: Union[metadata_service.PurgeContextsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1774,7 +1774,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Purges Contexts.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.PurgeContextsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.PurgeContextsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
             parent (str):
@@ -1852,7 +1852,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def add_context_artifacts_and_executions(self,
-            request: metadata_service.AddContextArtifactsAndExecutionsRequest = None,
+            request: Union[metadata_service.AddContextArtifactsAndExecutionsRequest, dict] = None,
             *,
             context: str = None,
             artifacts: Sequence[str] = None,
@@ -1866,7 +1866,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         added to a Context, they are simply skipped.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.AddContextArtifactsAndExecutionsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.AddContextArtifactsAndExecutionsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
             context (str):
@@ -1956,7 +1956,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def add_context_children(self,
-            request: metadata_service.AddContextChildrenRequest = None,
+            request: Union[metadata_service.AddContextChildrenRequest, dict] = None,
             *,
             context: str = None,
             child_contexts: Sequence[str] = None,
@@ -1971,7 +1971,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         request will fail with an INVALID_ARGUMENT error.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.AddContextChildrenRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.AddContextChildrenRequest, dict]):
                 The request object. Request message for
                 [MetadataService.AddContextChildren][google.cloud.aiplatform.v1beta1.MetadataService.AddContextChildren].
             context (str):
@@ -2047,7 +2047,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def query_context_lineage_subgraph(self,
-            request: metadata_service.QueryContextLineageSubgraphRequest = None,
+            request: Union[metadata_service.QueryContextLineageSubgraphRequest, dict] = None,
             *,
             context: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2059,7 +2059,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         as a LineageSubgraph.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.QueryContextLineageSubgraphRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.QueryContextLineageSubgraphRequest, dict]):
                 The request object. Request message for
                 [MetadataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryContextLineageSubgraph].
             context (str):
@@ -2132,7 +2132,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def create_execution(self,
-            request: metadata_service.CreateExecutionRequest = None,
+            request: Union[metadata_service.CreateExecutionRequest, dict] = None,
             *,
             parent: str = None,
             execution: gca_execution.Execution = None,
@@ -2144,7 +2144,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Creates an Execution associated with a MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateExecutionRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateExecutionRequest, dict]):
                 The request object. Request message for
                 [MetadataService.CreateExecution][google.cloud.aiplatform.v1beta1.MetadataService.CreateExecution].
             parent (str):
@@ -2233,7 +2233,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def get_execution(self,
-            request: metadata_service.GetExecutionRequest = None,
+            request: Union[metadata_service.GetExecutionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2243,7 +2243,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Retrieves a specific Execution.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetExecutionRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetExecutionRequest, dict]):
                 The request object. Request message for
                 [MetadataService.GetExecution][google.cloud.aiplatform.v1beta1.MetadataService.GetExecution].
             name (str):
@@ -2307,7 +2307,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def list_executions(self,
-            request: metadata_service.ListExecutionsRequest = None,
+            request: Union[metadata_service.ListExecutionsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2317,7 +2317,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Lists Executions in the MetadataStore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListExecutionsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListExecutionsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions].
             parent (str):
@@ -2395,7 +2395,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def update_execution(self,
-            request: metadata_service.UpdateExecutionRequest = None,
+            request: Union[metadata_service.UpdateExecutionRequest, dict] = None,
             *,
             execution: gca_execution.Execution = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -2406,7 +2406,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Updates a stored Execution.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateExecutionRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateExecutionRequest, dict]):
                 The request object. Request message for
                 [MetadataService.UpdateExecution][google.cloud.aiplatform.v1beta1.MetadataService.UpdateExecution].
             execution (google.cloud.aiplatform_v1beta1.types.Execution):
@@ -2484,7 +2484,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def delete_execution(self,
-            request: metadata_service.DeleteExecutionRequest = None,
+            request: Union[metadata_service.DeleteExecutionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2494,7 +2494,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Deletes an Execution.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteExecutionRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteExecutionRequest, dict]):
                 The request object. Request message for
                 [MetadataService.DeleteExecution][google.cloud.aiplatform.v1beta1.MetadataService.DeleteExecution].
             name (str):
@@ -2581,7 +2581,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def purge_executions(self,
-            request: metadata_service.PurgeExecutionsRequest = None,
+            request: Union[metadata_service.PurgeExecutionsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2591,7 +2591,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Purges Executions.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.PurgeExecutionsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.PurgeExecutionsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
             parent (str):
@@ -2669,7 +2669,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def add_execution_events(self,
-            request: metadata_service.AddExecutionEventsRequest = None,
+            request: Union[metadata_service.AddExecutionEventsRequest, dict] = None,
             *,
             execution: str = None,
             events: Sequence[event.Event] = None,
@@ -2684,7 +2684,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         skipped.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.AddExecutionEventsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.AddExecutionEventsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1beta1.MetadataService.AddExecutionEvents].
             execution (str):
@@ -2758,7 +2758,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def query_execution_inputs_and_outputs(self,
-            request: metadata_service.QueryExecutionInputsAndOutputsRequest = None,
+            request: Union[metadata_service.QueryExecutionInputsAndOutputsRequest, dict] = None,
             *,
             execution: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2770,7 +2770,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         contains the Execution and connecting Events.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.QueryExecutionInputsAndOutputsRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.QueryExecutionInputsAndOutputsRequest, dict]):
                 The request object. Request message for
                 [MetadataService.QueryExecutionInputsAndOutputs][google.cloud.aiplatform.v1beta1.MetadataService.QueryExecutionInputsAndOutputs].
             execution (str):
@@ -2839,7 +2839,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def create_metadata_schema(self,
-            request: metadata_service.CreateMetadataSchemaRequest = None,
+            request: Union[metadata_service.CreateMetadataSchemaRequest, dict] = None,
             *,
             parent: str = None,
             metadata_schema: gca_metadata_schema.MetadataSchema = None,
@@ -2851,7 +2851,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Creates a MetadataSchema.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateMetadataSchemaRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateMetadataSchemaRequest, dict]):
                 The request object. Request message for
                 [MetadataService.CreateMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataSchema].
             parent (str):
@@ -2942,7 +2942,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def get_metadata_schema(self,
-            request: metadata_service.GetMetadataSchemaRequest = None,
+            request: Union[metadata_service.GetMetadataSchemaRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2952,7 +2952,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Retrieves a specific MetadataSchema.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetMetadataSchemaRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetMetadataSchemaRequest, dict]):
                 The request object. Request message for
                 [MetadataService.GetMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.GetMetadataSchema].
             name (str):
@@ -3016,7 +3016,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def list_metadata_schemas(self,
-            request: metadata_service.ListMetadataSchemasRequest = None,
+            request: Union[metadata_service.ListMetadataSchemasRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -3026,7 +3026,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         r"""Lists MetadataSchemas.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListMetadataSchemasRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListMetadataSchemasRequest, dict]):
                 The request object. Request message for
                 [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
             parent (str):
@@ -3105,7 +3105,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         return response
 
     def query_artifact_lineage_subgraph(self,
-            request: metadata_service.QueryArtifactLineageSubgraphRequest = None,
+            request: Union[metadata_service.QueryArtifactLineageSubgraphRequest, dict] = None,
             *,
             artifact: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -3117,7 +3117,7 @@ class MetadataServiceClient(metaclass=MetadataServiceClientMeta):
         returned as a LineageSubgraph.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.QueryArtifactLineageSubgraphRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.QueryArtifactLineageSubgraphRequest, dict]):
                 The request object. Request message for
                 [MetadataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryArtifactLineageSubgraph].
             artifact (str):

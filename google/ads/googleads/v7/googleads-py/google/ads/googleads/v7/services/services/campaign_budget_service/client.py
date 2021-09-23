@@ -326,7 +326,7 @@ class CampaignBudgetServiceClient(metaclass=CampaignBudgetServiceClientMeta):
               )
 
     def get_campaign_budget(self,
-            request: campaign_budget_service.GetCampaignBudgetRequest = None,
+            request: Union[campaign_budget_service.GetCampaignBudgetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -340,7 +340,7 @@ class CampaignBudgetServiceClient(metaclass=CampaignBudgetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignBudgetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignBudgetRequest, dict]):
                 The request object. Request message for
                 [CampaignBudgetService.GetCampaignBudget][google.ads.googleads.v7.services.CampaignBudgetService.GetCampaignBudget].
             resource_name (:class:`str`):
@@ -402,7 +402,7 @@ class CampaignBudgetServiceClient(metaclass=CampaignBudgetServiceClientMeta):
         return response
 
     def mutate_campaign_budgets(self,
-            request: campaign_budget_service.MutateCampaignBudgetsRequest = None,
+            request: Union[campaign_budget_service.MutateCampaignBudgetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_budget_service.CampaignBudgetOperation] = None,
@@ -423,7 +423,7 @@ class CampaignBudgetServiceClient(metaclass=CampaignBudgetServiceClientMeta):
         `ResourceCountLimitExceededError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCampaignBudgetsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCampaignBudgetsRequest, dict]):
                 The request object. Request message for
                 [CampaignBudgetService.MutateCampaignBudgets][google.ads.googleads.v7.services.CampaignBudgetService.MutateCampaignBudgets].
             customer_id (:class:`str`):

@@ -321,7 +321,7 @@ class AgeRangeViewServiceClient(metaclass=AgeRangeViewServiceClientMeta):
               )
 
     def get_age_range_view(self,
-            request: age_range_view_service.GetAgeRangeViewRequest = None,
+            request: Union[age_range_view_service.GetAgeRangeViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class AgeRangeViewServiceClient(metaclass=AgeRangeViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAgeRangeViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAgeRangeViewRequest, dict]):
                 The request object. Request message for
                 [AgeRangeViewService.GetAgeRangeView][google.ads.googleads.v7.services.AgeRangeViewService.GetAgeRangeView].
             resource_name (:class:`str`):

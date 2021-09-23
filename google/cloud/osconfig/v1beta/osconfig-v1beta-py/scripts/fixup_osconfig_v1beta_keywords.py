@@ -39,21 +39,21 @@ def partition(
 class osconfigCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'cancel_patch_job': ('name', ),
-          'create_guest_policy': ('parent', 'guest_policy_id', 'guest_policy', ),
-          'create_patch_deployment': ('parent', 'patch_deployment_id', 'patch_deployment', ),
-          'delete_guest_policy': ('name', ),
-          'delete_patch_deployment': ('name', ),
-          'execute_patch_job': ('parent', 'instance_filter', 'description', 'patch_config', 'duration', 'dry_run', 'display_name', ),
-          'get_guest_policy': ('name', ),
-          'get_patch_deployment': ('name', ),
-          'get_patch_job': ('name', ),
-          'list_guest_policies': ('parent', 'page_size', 'page_token', ),
-          'list_patch_deployments': ('parent', 'page_size', 'page_token', ),
-          'list_patch_job_instance_details': ('parent', 'page_size', 'page_token', 'filter', ),
-          'list_patch_jobs': ('parent', 'page_size', 'page_token', 'filter', ),
-          'lookup_effective_guest_policy': ('instance', 'os_short_name', 'os_version', 'os_architecture', ),
-          'update_guest_policy': ('guest_policy', 'update_mask', ),
+        'cancel_patch_job': ('name', ),
+        'create_guest_policy': ('parent', 'guest_policy_id', 'guest_policy', ),
+        'create_patch_deployment': ('parent', 'patch_deployment_id', 'patch_deployment', ),
+        'delete_guest_policy': ('name', ),
+        'delete_patch_deployment': ('name', ),
+        'execute_patch_job': ('parent', 'instance_filter', 'description', 'patch_config', 'duration', 'dry_run', 'display_name', ),
+        'get_guest_policy': ('name', ),
+        'get_patch_deployment': ('name', ),
+        'get_patch_job': ('name', ),
+        'list_guest_policies': ('parent', 'page_size', 'page_token', ),
+        'list_patch_deployments': ('parent', 'page_size', 'page_token', ),
+        'list_patch_job_instance_details': ('parent', 'page_size', 'page_token', 'filter', ),
+        'list_patch_jobs': ('parent', 'page_size', 'page_token', 'filter', ),
+        'lookup_effective_guest_policy': ('instance', 'os_short_name', 'os_version', 'os_architecture', ),
+        'update_guest_policy': ('guest_policy', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -72,7 +72,7 @@ class osconfigCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -368,7 +368,7 @@ class BotsClient(metaclass=BotsClientMeta):
             )
 
     def create_bot_session(self,
-            request: bots.CreateBotSessionRequest = None,
+            request: Union[bots.CreateBotSessionRequest, dict] = None,
             *,
             parent: str = None,
             bot_session: bots.BotSession = None,
@@ -382,7 +382,7 @@ class BotsClient(metaclass=BotsClientMeta):
         accidentally.
 
         Args:
-            request (google.devtools.remoteworkers_v1.types.CreateBotSessionRequest):
+            request (Union[google.devtools.remoteworkers_v1.types.CreateBotSessionRequest, dict]):
                 The request object. Request message for
                 CreateBotSession.
             parent (str):
@@ -462,7 +462,7 @@ class BotsClient(metaclass=BotsClientMeta):
         return response
 
     def update_bot_session(self,
-            request: bots.UpdateBotSessionRequest = None,
+            request: Union[bots.UpdateBotSessionRequest, dict] = None,
             *,
             name: str = None,
             bot_session: bots.BotSession = None,
@@ -477,7 +477,7 @@ class BotsClient(metaclass=BotsClientMeta):
         requests from the server.
 
         Args:
-            request (google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest):
+            request (Union[google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest, dict]):
                 The request object. Request message for
                 UpdateBotSession.
             name (str):

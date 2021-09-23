@@ -331,7 +331,7 @@ class DomainCategoryServiceClient(metaclass=DomainCategoryServiceClientMeta):
               )
 
     def get_domain_category(self,
-            request: domain_category_service.GetDomainCategoryRequest = None,
+            request: Union[domain_category_service.GetDomainCategoryRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -345,7 +345,7 @@ class DomainCategoryServiceClient(metaclass=DomainCategoryServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetDomainCategoryRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetDomainCategoryRequest, dict]):
                 The request object. Request message for
                 [DomainCategoryService.GetDomainCategory][google.ads.googleads.v7.services.DomainCategoryService.GetDomainCategory].
             resource_name (:class:`str`):

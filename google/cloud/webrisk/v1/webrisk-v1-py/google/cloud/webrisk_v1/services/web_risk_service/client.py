@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -327,7 +327,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
             )
 
     def compute_threat_list_diff(self,
-            request: webrisk.ComputeThreatListDiffRequest = None,
+            request: Union[webrisk.ComputeThreatListDiffRequest, dict] = None,
             *,
             threat_type: webrisk.ThreatType = None,
             version_token: bytes = None,
@@ -346,7 +346,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         once for each list.
 
         Args:
-            request (google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest):
+            request (Union[google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest, dict]):
                 The request object. Describes an API diff request.
             threat_type (google.cloud.webrisk_v1.types.ThreatType):
                 Required. The threat list to update.
@@ -426,7 +426,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         return response
 
     def search_uris(self,
-            request: webrisk.SearchUrisRequest = None,
+            request: Union[webrisk.SearchUrisRequest, dict] = None,
             *,
             uri: str = None,
             threat_types: Sequence[webrisk.ThreatType] = None,
@@ -442,7 +442,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         response will be returned.
 
         Args:
-            request (google.cloud.webrisk_v1.types.SearchUrisRequest):
+            request (Union[google.cloud.webrisk_v1.types.SearchUrisRequest, dict]):
                 The request object. Request to check URI entries against
                 threatLists.
             uri (str):
@@ -507,7 +507,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         return response
 
     def search_hashes(self,
-            request: webrisk.SearchHashesRequest = None,
+            request: Union[webrisk.SearchHashesRequest, dict] = None,
             *,
             hash_prefix: bytes = None,
             threat_types: Sequence[webrisk.ThreatType] = None,
@@ -523,7 +523,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         match of a threat.
 
         Args:
-            request (google.cloud.webrisk_v1.types.SearchHashesRequest):
+            request (Union[google.cloud.webrisk_v1.types.SearchHashesRequest, dict]):
                 The request object. Request to return full hashes
                 matched by the provided hash prefixes.
             hash_prefix (bytes):
@@ -590,7 +590,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         return response
 
     def create_submission(self,
-            request: webrisk.CreateSubmissionRequest = None,
+            request: Union[webrisk.CreateSubmissionRequest, dict] = None,
             *,
             parent: str = None,
             submission: webrisk.Submission = None,
@@ -608,7 +608,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         visibility can use this method.
 
         Args:
-            request (google.cloud.webrisk_v1.types.CreateSubmissionRequest):
+            request (Union[google.cloud.webrisk_v1.types.CreateSubmissionRequest, dict]):
                 The request object. Request to send a potentially phishy
                 URI to WebRisk.
             parent (str):

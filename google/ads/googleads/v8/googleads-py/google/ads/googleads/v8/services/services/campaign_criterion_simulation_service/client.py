@@ -324,7 +324,7 @@ class CampaignCriterionSimulationServiceClient(metaclass=CampaignCriterionSimula
               )
 
     def get_campaign_criterion_simulation(self,
-            request: campaign_criterion_simulation_service.GetCampaignCriterionSimulationRequest = None,
+            request: Union[campaign_criterion_simulation_service.GetCampaignCriterionSimulationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -339,7 +339,7 @@ class CampaignCriterionSimulationServiceClient(metaclass=CampaignCriterionSimula
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignCriterionSimulationRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignCriterionSimulationRequest, dict]):
                 The request object. Request message for
                 [CampaignCriterionSimulationService.GetCampaignCriterionSimulation][google.ads.googleads.v8.services.CampaignCriterionSimulationService.GetCampaignCriterionSimulation].
             resource_name (:class:`str`):

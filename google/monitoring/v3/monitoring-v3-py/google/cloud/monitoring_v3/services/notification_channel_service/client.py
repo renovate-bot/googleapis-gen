@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -356,7 +356,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
             )
 
     def list_notification_channel_descriptors(self,
-            request: notification_service.ListNotificationChannelDescriptorsRequest = None,
+            request: Union[notification_service.ListNotificationChannelDescriptorsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -368,7 +368,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         types to be dynamically added.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListNotificationChannelDescriptorsRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListNotificationChannelDescriptorsRequest, dict]):
                 The request object. The
                 `ListNotificationChannelDescriptors` request.
             name (str):
@@ -457,7 +457,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def get_notification_channel_descriptor(self,
-            request: notification_service.GetNotificationChannelDescriptorRequest = None,
+            request: Union[notification_service.GetNotificationChannelDescriptorRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -469,7 +469,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         notification channel of the given type.
 
         Args:
-            request (google.cloud.monitoring_v3.types.GetNotificationChannelDescriptorRequest):
+            request (Union[google.cloud.monitoring_v3.types.GetNotificationChannelDescriptorRequest, dict]):
                 The request object. The
                 `GetNotificationChannelDescriptor` response.
             name (str):
@@ -541,7 +541,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def list_notification_channels(self,
-            request: notification_service.ListNotificationChannelsRequest = None,
+            request: Union[notification_service.ListNotificationChannelsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -552,7 +552,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         created for the project.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListNotificationChannelsRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListNotificationChannelsRequest, dict]):
                 The request object. The `ListNotificationChannels`
                 request.
             name (str):
@@ -640,7 +640,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def get_notification_channel(self,
-            request: notification_service.GetNotificationChannelRequest = None,
+            request: Union[notification_service.GetNotificationChannelRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -656,7 +656,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         call to the create method.
 
         Args:
-            request (google.cloud.monitoring_v3.types.GetNotificationChannelRequest):
+            request (Union[google.cloud.monitoring_v3.types.GetNotificationChannelRequest, dict]):
                 The request object. The `GetNotificationChannel`
                 request.
             name (str):
@@ -730,7 +730,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def create_notification_channel(self,
-            request: notification_service.CreateNotificationChannelRequest = None,
+            request: Union[notification_service.CreateNotificationChannelRequest, dict] = None,
             *,
             name: str = None,
             notification_channel: notification.NotificationChannel = None,
@@ -743,7 +743,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         SMS number, or PagerDuty service.
 
         Args:
-            request (google.cloud.monitoring_v3.types.CreateNotificationChannelRequest):
+            request (Union[google.cloud.monitoring_v3.types.CreateNotificationChannelRequest, dict]):
                 The request object. The `CreateNotificationChannel`
                 request.
             name (str):
@@ -834,7 +834,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def update_notification_channel(self,
-            request: notification_service.UpdateNotificationChannelRequest = None,
+            request: Union[notification_service.UpdateNotificationChannelRequest, dict] = None,
             *,
             update_mask: field_mask_pb2.FieldMask = None,
             notification_channel: notification.NotificationChannel = None,
@@ -846,7 +846,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         in the field mask remain unchanged.
 
         Args:
-            request (google.cloud.monitoring_v3.types.UpdateNotificationChannelRequest):
+            request (Union[google.cloud.monitoring_v3.types.UpdateNotificationChannelRequest, dict]):
                 The request object. The `UpdateNotificationChannel`
                 request.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
@@ -926,7 +926,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def delete_notification_channel(self,
-            request: notification_service.DeleteNotificationChannelRequest = None,
+            request: Union[notification_service.DeleteNotificationChannelRequest, dict] = None,
             *,
             name: str = None,
             force: bool = None,
@@ -937,7 +937,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         r"""Deletes a notification channel.
 
         Args:
-            request (google.cloud.monitoring_v3.types.DeleteNotificationChannelRequest):
+            request (Union[google.cloud.monitoring_v3.types.DeleteNotificationChannelRequest, dict]):
                 The request object. The `DeleteNotificationChannel`
                 request.
             name (str):
@@ -1012,7 +1012,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         )
 
     def send_notification_channel_verification_code(self,
-            request: notification_service.SendNotificationChannelVerificationCodeRequest = None,
+            request: Union[notification_service.SendNotificationChannelVerificationCodeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1024,7 +1024,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         verify the channel.
 
         Args:
-            request (google.cloud.monitoring_v3.types.SendNotificationChannelVerificationCodeRequest):
+            request (Union[google.cloud.monitoring_v3.types.SendNotificationChannelVerificationCodeRequest, dict]):
                 The request object. The
                 `SendNotificationChannelVerificationCode` request.
             name (str):
@@ -1080,7 +1080,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         )
 
     def get_notification_channel_verification_code(self,
-            request: notification_service.GetNotificationChannelVerificationCodeRequest = None,
+            request: Union[notification_service.GetNotificationChannelVerificationCodeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1117,7 +1117,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         string that has a longer expiration time.
 
         Args:
-            request (google.cloud.monitoring_v3.types.GetNotificationChannelVerificationCodeRequest):
+            request (Union[google.cloud.monitoring_v3.types.GetNotificationChannelVerificationCodeRequest, dict]):
                 The request object. The
                 `GetNotificationChannelVerificationCode` request.
             name (str):
@@ -1184,7 +1184,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         return response
 
     def verify_notification_channel(self,
-            request: notification_service.VerifyNotificationChannelRequest = None,
+            request: Union[notification_service.VerifyNotificationChannelRequest, dict] = None,
             *,
             name: str = None,
             code: str = None,
@@ -1197,7 +1197,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         ``SendNotificationChannelVerificationCode``.
 
         Args:
-            request (google.cloud.monitoring_v3.types.VerifyNotificationChannelRequest):
+            request (Union[google.cloud.monitoring_v3.types.VerifyNotificationChannelRequest, dict]):
                 The request object. The `VerifyNotificationChannel`
                 request.
             name (str):

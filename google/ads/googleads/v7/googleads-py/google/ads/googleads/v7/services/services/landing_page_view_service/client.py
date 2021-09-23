@@ -321,7 +321,7 @@ class LandingPageViewServiceClient(metaclass=LandingPageViewServiceClientMeta):
               )
 
     def get_landing_page_view(self,
-            request: landing_page_view_service.GetLandingPageViewRequest = None,
+            request: Union[landing_page_view_service.GetLandingPageViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class LandingPageViewServiceClient(metaclass=LandingPageViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetLandingPageViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetLandingPageViewRequest, dict]):
                 The request object. Request message for
                 [LandingPageViewService.GetLandingPageView][google.ads.googleads.v7.services.LandingPageViewService.GetLandingPageView].
             resource_name (:class:`str`):

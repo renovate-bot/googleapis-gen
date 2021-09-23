@@ -324,7 +324,7 @@ class BiddingStrategySimulationServiceClient(metaclass=BiddingStrategySimulation
               )
 
     def get_bidding_strategy_simulation(self,
-            request: bidding_strategy_simulation_service.GetBiddingStrategySimulationRequest = None,
+            request: Union[bidding_strategy_simulation_service.GetBiddingStrategySimulationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class BiddingStrategySimulationServiceClient(metaclass=BiddingStrategySimulation
         full detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetBiddingStrategySimulationRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetBiddingStrategySimulationRequest, dict]):
                 The request object. Request message for
                 [BiddingStrategySimulationService.GetBiddingStrategySimulation][google.ads.googleads.v8.services.BiddingStrategySimulationService.GetBiddingStrategySimulation].
             resource_name (:class:`str`):

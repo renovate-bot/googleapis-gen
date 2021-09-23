@@ -311,7 +311,7 @@ def test_get_campaign(transport: str = 'grpc', request_type=campaign_service.Get
             final_url_suffix='final_url_suffix_value',
             video_brand_safety_suitability=brand_safety_suitability.BrandSafetySuitabilityEnum.BrandSafetySuitability.UNKNOWN,
             payment_mode=payment_mode.PaymentModeEnum.PaymentMode.UNKNOWN,
-            optimization_score=0.1954,
+            optimization_score=0.19540000000000002,
             excluded_parent_asset_field_types=[asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN],
             bidding_strategy='bidding_strategy_value',
         )
@@ -343,7 +343,7 @@ def test_get_campaign(transport: str = 'grpc', request_type=campaign_service.Get
     assert response.final_url_suffix == 'final_url_suffix_value'
     assert response.video_brand_safety_suitability == brand_safety_suitability.BrandSafetySuitabilityEnum.BrandSafetySuitability.UNKNOWN
     assert response.payment_mode == payment_mode.PaymentModeEnum.PaymentMode.UNKNOWN
-    assert math.isclose(response.optimization_score, 0.1954, rel_tol=1e-6)
+    assert math.isclose(response.optimization_score, 0.19540000000000002, rel_tol=1e-6)
     assert response.excluded_parent_asset_field_types == [asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN]
 
 

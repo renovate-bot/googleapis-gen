@@ -321,7 +321,7 @@ class KeywordThemeConstantServiceClient(metaclass=KeywordThemeConstantServiceCli
               )
 
     def get_keyword_theme_constant(self,
-            request: keyword_theme_constant_service.GetKeywordThemeConstantRequest = None,
+            request: Union[keyword_theme_constant_service.GetKeywordThemeConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -332,7 +332,7 @@ class KeywordThemeConstantServiceClient(metaclass=KeywordThemeConstantServiceCli
         detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetKeywordThemeConstantRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetKeywordThemeConstantRequest, dict]):
                 The request object. Request message for
                 [KeywordThemeConstantService.GetKeywordThemeConstant][google.ads.googleads.v8.services.KeywordThemeConstantService.GetKeywordThemeConstant].
             resource_name (:class:`str`):
@@ -396,7 +396,7 @@ class KeywordThemeConstantServiceClient(metaclass=KeywordThemeConstantServiceCli
         return response
 
     def suggest_keyword_theme_constants(self,
-            request: keyword_theme_constant_service.SuggestKeywordThemeConstantsRequest = None,
+            request: Union[keyword_theme_constant_service.SuggestKeywordThemeConstantsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -409,7 +409,7 @@ class KeywordThemeConstantServiceClient(metaclass=KeywordThemeConstantServiceCli
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SuggestKeywordThemeConstantsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SuggestKeywordThemeConstantsRequest, dict]):
                 The request object. Request message for
                 [KeywordThemeConstantService.SuggestKeywordThemeConstants][google.ads.googleads.v8.services.KeywordThemeConstantService.SuggestKeywordThemeConstants].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

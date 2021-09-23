@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -351,7 +351,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
             )
 
     def list_groups(self,
-            request: group_service.ListGroupsRequest = None,
+            request: Union[group_service.ListGroupsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -361,7 +361,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         r"""Lists the existing groups.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListGroupsRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListGroupsRequest, dict]):
                 The request object. The `ListGroup` request.
             name (str):
                 Required. The
@@ -441,7 +441,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         return response
 
     def get_group(self,
-            request: group_service.GetGroupRequest = None,
+            request: Union[group_service.GetGroupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -451,7 +451,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         r"""Gets a single group.
 
         Args:
-            request (google.cloud.monitoring_v3.types.GetGroupRequest):
+            request (Union[google.cloud.monitoring_v3.types.GetGroupRequest, dict]):
                 The request object. The `GetGroup` request.
             name (str):
                 Required. The group to retrieve. The format is:
@@ -549,7 +549,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         return response
 
     def create_group(self,
-            request: group_service.CreateGroupRequest = None,
+            request: Union[group_service.CreateGroupRequest, dict] = None,
             *,
             name: str = None,
             group: gm_group.Group = None,
@@ -560,7 +560,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         r"""Creates a new group.
 
         Args:
-            request (google.cloud.monitoring_v3.types.CreateGroupRequest):
+            request (Union[google.cloud.monitoring_v3.types.CreateGroupRequest, dict]):
                 The request object. The `CreateGroup` request.
             name (str):
                 Required. The
@@ -669,7 +669,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         return response
 
     def update_group(self,
-            request: group_service.UpdateGroupRequest = None,
+            request: Union[group_service.UpdateGroupRequest, dict] = None,
             *,
             group: gm_group.Group = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -680,7 +680,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         except ``name``.
 
         Args:
-            request (google.cloud.monitoring_v3.types.UpdateGroupRequest):
+            request (Union[google.cloud.monitoring_v3.types.UpdateGroupRequest, dict]):
                 The request object. The `UpdateGroup` request.
             group (google.cloud.monitoring_v3.types.Group):
                 Required. The new definition of the group. All fields of
@@ -776,7 +776,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         return response
 
     def delete_group(self,
-            request: group_service.DeleteGroupRequest = None,
+            request: Union[group_service.DeleteGroupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -786,7 +786,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         r"""Deletes an existing group.
 
         Args:
-            request (google.cloud.monitoring_v3.types.DeleteGroupRequest):
+            request (Union[google.cloud.monitoring_v3.types.DeleteGroupRequest, dict]):
                 The request object. The `DeleteGroup` request. The
                 default behavior is to be able to delete a single group
                 without any descendants.
@@ -846,7 +846,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         )
 
     def list_group_members(self,
-            request: group_service.ListGroupMembersRequest = None,
+            request: Union[group_service.ListGroupMembersRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -857,7 +857,7 @@ class GroupServiceClient(metaclass=GroupServiceClientMeta):
         group.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListGroupMembersRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListGroupMembersRequest, dict]):
                 The request object. The `ListGroupMembers` request.
             name (str):
                 Required. The group whose members are listed. The format

@@ -39,13 +39,13 @@ def partition(
 class sdmCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'execute_device_command': ('name', 'command', 'params', ),
-          'get_device': ('name', ),
-          'get_room': ('name', ),
-          'get_structure': ('name', ),
-          'list_devices': ('parent', 'page_size', 'page_token', 'filter', ),
-          'list_rooms': ('parent', 'page_size', 'page_token', ),
-          'list_structures': ('parent', 'page_size', 'page_token', 'filter', ),
+        'execute_device_command': ('name', 'command', 'params', ),
+        'get_device': ('name', ),
+        'get_room': ('name', ),
+        'get_structure': ('name', ),
+        'list_devices': ('parent', 'page_size', 'page_token', 'filter', ),
+        'list_rooms': ('parent', 'page_size', 'page_token', ),
+        'list_structures': ('parent', 'page_size', 'page_token', 'filter', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -64,7 +64,7 @@ class sdmCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

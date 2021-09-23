@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -394,7 +394,7 @@ class PagesClient(metaclass=PagesClientMeta):
             )
 
     def list_pages(self,
-            request: page.ListPagesRequest = None,
+            request: Union[page.ListPagesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -404,7 +404,7 @@ class PagesClient(metaclass=PagesClientMeta):
         r"""Returns the list of all pages in the specified flow.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.ListPagesRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.ListPagesRequest, dict]):
                 The request object. The request message for
                 [Pages.ListPages][google.cloud.dialogflow.cx.v3.Pages.ListPages].
             parent (str):
@@ -481,7 +481,7 @@ class PagesClient(metaclass=PagesClientMeta):
         return response
 
     def get_page(self,
-            request: page.GetPageRequest = None,
+            request: Union[page.GetPageRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -491,7 +491,7 @@ class PagesClient(metaclass=PagesClientMeta):
         r"""Retrieves the specified page.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.GetPageRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetPageRequest, dict]):
                 The request object. The request message for
                 [Pages.GetPage][google.cloud.dialogflow.cx.v3.Pages.GetPage].
             name (str):
@@ -576,7 +576,7 @@ class PagesClient(metaclass=PagesClientMeta):
         return response
 
     def create_page(self,
-            request: gcdc_page.CreatePageRequest = None,
+            request: Union[gcdc_page.CreatePageRequest, dict] = None,
             *,
             parent: str = None,
             page: gcdc_page.Page = None,
@@ -591,7 +591,7 @@ class PagesClient(metaclass=PagesClientMeta):
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.CreatePageRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.CreatePageRequest, dict]):
                 The request object. The request message for
                 [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage].
             parent (str):
@@ -683,7 +683,7 @@ class PagesClient(metaclass=PagesClientMeta):
         return response
 
     def update_page(self,
-            request: gcdc_page.UpdatePageRequest = None,
+            request: Union[gcdc_page.UpdatePageRequest, dict] = None,
             *,
             page: gcdc_page.Page = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -698,7 +698,7 @@ class PagesClient(metaclass=PagesClientMeta):
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.UpdatePageRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.UpdatePageRequest, dict]):
                 The request object. The request message for
                 [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage].
             page (google.cloud.dialogflowcx_v3.types.Page):
@@ -791,7 +791,7 @@ class PagesClient(metaclass=PagesClientMeta):
         return response
 
     def delete_page(self,
-            request: page.DeletePageRequest = None,
+            request: Union[page.DeletePageRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -805,7 +805,7 @@ class PagesClient(metaclass=PagesClientMeta):
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.DeletePageRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.DeletePageRequest, dict]):
                 The request object. The request message for
                 [Pages.DeletePage][google.cloud.dialogflow.cx.v3.Pages.DeletePage].
             name (str):

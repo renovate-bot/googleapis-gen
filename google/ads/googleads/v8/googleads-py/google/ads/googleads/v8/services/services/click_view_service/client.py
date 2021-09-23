@@ -363,7 +363,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
               )
 
     def get_click_view(self,
-            request: click_view_service.GetClickViewRequest = None,
+            request: Union[click_view_service.GetClickViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -377,7 +377,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetClickViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetClickViewRequest, dict]):
                 The request object. Request message for
                 [ClickViewService.GetClickView][google.ads.googleads.v8.services.ClickViewService.GetClickView].
             resource_name (:class:`str`):

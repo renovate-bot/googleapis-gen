@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -339,7 +339,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
             )
 
     def translate_text(self,
-            request: translation_service.TranslateTextRequest = None,
+            request: Union[translation_service.TranslateTextRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -348,7 +348,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         r"""Translates input text and returns translated text.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.TranslateTextRequest):
+            request (Union[google.cloud.translate_v3beta1.types.TranslateTextRequest, dict]):
                 The request object. The request message for synchronous
                 translation.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -393,7 +393,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def detect_language(self,
-            request: translation_service.DetectLanguageRequest = None,
+            request: Union[translation_service.DetectLanguageRequest, dict] = None,
             *,
             parent: str = None,
             model: str = None,
@@ -405,7 +405,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         r"""Detects the language of text within a request.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.DetectLanguageRequest):
+            request (Union[google.cloud.translate_v3beta1.types.DetectLanguageRequest, dict]):
                 The request object. The request message for language
                 detection.
             parent (str):
@@ -510,7 +510,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def get_supported_languages(self,
-            request: translation_service.GetSupportedLanguagesRequest = None,
+            request: Union[translation_service.GetSupportedLanguagesRequest, dict] = None,
             *,
             parent: str = None,
             display_language_code: str = None,
@@ -523,7 +523,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         translation.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.GetSupportedLanguagesRequest):
+            request (Union[google.cloud.translate_v3beta1.types.GetSupportedLanguagesRequest, dict]):
                 The request object. The request message for discovering
                 supported languages.
             parent (str):
@@ -633,7 +633,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def translate_document(self,
-            request: translation_service.TranslateDocumentRequest = None,
+            request: Union[translation_service.TranslateDocumentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -642,7 +642,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         r"""Translates documents in synchronous mode.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.TranslateDocumentRequest):
+            request (Union[google.cloud.translate_v3beta1.types.TranslateDocumentRequest, dict]):
                 The request object. A document translation request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -688,7 +688,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def batch_translate_text(self,
-            request: translation_service.BatchTranslateTextRequest = None,
+            request: Union[translation_service.BatchTranslateTextRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -705,7 +705,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         of the call.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.BatchTranslateTextRequest):
+            request (Union[google.cloud.translate_v3beta1.types.BatchTranslateTextRequest, dict]):
                 The request object. The batch translation request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -763,7 +763,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def batch_translate_document(self,
-            request: translation_service.BatchTranslateDocumentRequest = None,
+            request: Union[translation_service.BatchTranslateDocumentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -780,7 +780,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         the call.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.BatchTranslateDocumentRequest):
+            request (Union[google.cloud.translate_v3beta1.types.BatchTranslateDocumentRequest, dict]):
                 The request object. The BatchTranslateDocument request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -838,7 +838,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def create_glossary(self,
-            request: translation_service.CreateGlossaryRequest = None,
+            request: Union[translation_service.CreateGlossaryRequest, dict] = None,
             *,
             parent: str = None,
             glossary: translation_service.Glossary = None,
@@ -850,7 +850,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         Returns NOT_FOUND, if the project doesn't exist.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.CreateGlossaryRequest):
+            request (Union[google.cloud.translate_v3beta1.types.CreateGlossaryRequest, dict]):
                 The request object. Request message for CreateGlossary.
             parent (str):
                 Required. The project name.
@@ -930,7 +930,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def list_glossaries(self,
-            request: translation_service.ListGlossariesRequest = None,
+            request: Union[translation_service.ListGlossariesRequest, dict] = None,
             *,
             parent: str = None,
             filter: str = None,
@@ -942,7 +942,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         doesn't exist.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.ListGlossariesRequest):
+            request (Union[google.cloud.translate_v3beta1.types.ListGlossariesRequest, dict]):
                 The request object. Request message for ListGlossaries.
             parent (str):
                 Required. The name of the project
@@ -1054,7 +1054,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def get_glossary(self,
-            request: translation_service.GetGlossaryRequest = None,
+            request: Union[translation_service.GetGlossaryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1065,7 +1065,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         exist.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.GetGlossaryRequest):
+            request (Union[google.cloud.translate_v3beta1.types.GetGlossaryRequest, dict]):
                 The request object. Request message for GetGlossary.
             name (str):
                 Required. The name of the glossary to
@@ -1129,7 +1129,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         return response
 
     def delete_glossary(self,
-            request: translation_service.DeleteGlossaryRequest = None,
+            request: Union[translation_service.DeleteGlossaryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1141,7 +1141,7 @@ class TranslationServiceClient(metaclass=TranslationServiceClientMeta):
         doesn't exist.
 
         Args:
-            request (google.cloud.translate_v3beta1.types.DeleteGlossaryRequest):
+            request (Union[google.cloud.translate_v3beta1.types.DeleteGlossaryRequest, dict]):
                 The request object. Request message for DeleteGlossary.
             name (str):
                 Required. The name of the glossary to

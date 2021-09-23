@@ -39,18 +39,18 @@ def partition(
 class billingCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_billing_account': ('billing_account', ),
-          'get_billing_account': ('name', ),
-          'get_iam_policy': ('resource', 'options', ),
-          'get_project_billing_info': ('name', ),
-          'list_billing_accounts': ('page_size', 'page_token', 'filter', ),
-          'list_project_billing_info': ('name', 'page_size', 'page_token', ),
-          'list_services': ('page_size', 'page_token', ),
-          'list_skus': ('parent', 'start_time', 'end_time', 'currency_code', 'page_size', 'page_token', ),
-          'set_iam_policy': ('resource', 'policy', ),
-          'test_iam_permissions': ('resource', 'permissions', ),
-          'update_billing_account': ('name', 'account', 'update_mask', ),
-          'update_project_billing_info': ('name', 'project_billing_info', ),
+        'create_billing_account': ('billing_account', ),
+        'get_billing_account': ('name', ),
+        'get_iam_policy': ('resource', 'options', ),
+        'get_project_billing_info': ('name', ),
+        'list_billing_accounts': ('page_size', 'page_token', 'filter', ),
+        'list_project_billing_info': ('name', 'page_size', 'page_token', ),
+        'list_services': ('page_size', 'page_token', ),
+        'list_skus': ('parent', 'start_time', 'end_time', 'currency_code', 'page_size', 'page_token', ),
+        'set_iam_policy': ('resource', 'policy', ),
+        'test_iam_permissions': ('resource', 'permissions', ),
+        'update_billing_account': ('name', 'account', 'update_mask', ),
+        'update_project_billing_info': ('name', 'project_billing_info', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -69,7 +69,7 @@ class billingCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

@@ -344,7 +344,7 @@ class AdGroupAssetServiceClient(metaclass=AdGroupAssetServiceClientMeta):
               )
 
     def get_ad_group_asset(self,
-            request: ad_group_asset_service.GetAdGroupAssetRequest = None,
+            request: Union[ad_group_asset_service.GetAdGroupAssetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -358,7 +358,7 @@ class AdGroupAssetServiceClient(metaclass=AdGroupAssetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupAssetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupAssetRequest, dict]):
                 The request object. Request message for
                 [AdGroupAssetService.GetAdGroupAsset][google.ads.googleads.v7.services.AdGroupAssetService.GetAdGroupAsset].
             resource_name (:class:`str`):
@@ -422,7 +422,7 @@ class AdGroupAssetServiceClient(metaclass=AdGroupAssetServiceClientMeta):
         return response
 
     def mutate_ad_group_assets(self,
-            request: ad_group_asset_service.MutateAdGroupAssetsRequest = None,
+            request: Union[ad_group_asset_service.MutateAdGroupAssetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_asset_service.AdGroupAssetOperation] = None,
@@ -440,7 +440,7 @@ class AdGroupAssetServiceClient(metaclass=AdGroupAssetServiceClientMeta):
         `NotAllowlistedError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupAssetsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdGroupAssetsRequest, dict]):
                 The request object. Request message for
                 [AdGroupAssetService.MutateAdGroupAssets][google.ads.googleads.v7.services.AdGroupAssetService.MutateAdGroupAssets].
             customer_id (:class:`str`):

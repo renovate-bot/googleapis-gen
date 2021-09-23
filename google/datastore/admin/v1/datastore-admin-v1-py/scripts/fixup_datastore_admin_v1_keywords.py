@@ -39,12 +39,12 @@ def partition(
 class datastore_adminCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_index': ('project_id', 'index', ),
-          'delete_index': ('project_id', 'index_id', ),
-          'export_entities': ('project_id', 'output_url_prefix', 'labels', 'entity_filter', ),
-          'get_index': ('project_id', 'index_id', ),
-          'import_entities': ('project_id', 'input_url', 'labels', 'entity_filter', ),
-          'list_indexes': ('project_id', 'filter', 'page_size', 'page_token', ),
+        'create_index': ('project_id', 'index', ),
+        'delete_index': ('project_id', 'index_id', ),
+        'export_entities': ('project_id', 'output_url_prefix', 'labels', 'entity_filter', ),
+        'get_index': ('project_id', 'index_id', ),
+        'import_entities': ('project_id', 'input_url', 'labels', 'entity_filter', ),
+        'list_indexes': ('project_id', 'filter', 'page_size', 'page_token', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -63,7 +63,7 @@ class datastore_adminCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

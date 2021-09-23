@@ -333,7 +333,7 @@ class FeedItemSetServiceClient(metaclass=FeedItemSetServiceClientMeta):
               )
 
     def get_feed_item_set(self,
-            request: feed_item_set_service.GetFeedItemSetRequest = None,
+            request: Union[feed_item_set_service.GetFeedItemSetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -347,7 +347,7 @@ class FeedItemSetServiceClient(metaclass=FeedItemSetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetFeedItemSetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetFeedItemSetRequest, dict]):
                 The request object. Request message for
                 [FeedItemSetService.GetFeedItemSet][google.ads.googleads.v7.services.FeedItemSetService.GetFeedItemSet].
             resource_name (:class:`str`):
@@ -415,7 +415,7 @@ class FeedItemSetServiceClient(metaclass=FeedItemSetServiceClientMeta):
         return response
 
     def mutate_feed_item_sets(self,
-            request: feed_item_set_service.MutateFeedItemSetsRequest = None,
+            request: Union[feed_item_set_service.MutateFeedItemSetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[feed_item_set_service.FeedItemSetOperation] = None,
@@ -432,7 +432,7 @@ class FeedItemSetServiceClient(metaclass=FeedItemSetServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateFeedItemSetsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateFeedItemSetsRequest, dict]):
                 The request object. Request message for
                 [FeedItemSetService.MutateFeedItemSets][google.ads.googleads.v7.services.FeedItemSetService.MutateFeedItemSets].
             customer_id (:class:`str`):

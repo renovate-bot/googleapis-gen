@@ -321,7 +321,7 @@ class ParentalStatusViewServiceClient(metaclass=ParentalStatusViewServiceClientM
               )
 
     def get_parental_status_view(self,
-            request: parental_status_view_service.GetParentalStatusViewRequest = None,
+            request: Union[parental_status_view_service.GetParentalStatusViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class ParentalStatusViewServiceClient(metaclass=ParentalStatusViewServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetParentalStatusViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetParentalStatusViewRequest, dict]):
                 The request object. Request message for
                 [ParentalStatusViewService.GetParentalStatusView][google.ads.googleads.v8.services.ParentalStatusViewService.GetParentalStatusView].
             resource_name (:class:`str`):

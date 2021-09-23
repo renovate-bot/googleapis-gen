@@ -39,11 +39,11 @@ def partition(
 class testingCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'cancel_test_matrix': ('project_id', 'test_matrix_id', ),
-          'create_test_matrix': ('project_id', 'test_matrix', 'request_id', ),
-          'get_apk_details': ('location', ),
-          'get_test_environment_catalog': ('environment_type', 'project_id', ),
-          'get_test_matrix': ('project_id', 'test_matrix_id', ),
+        'cancel_test_matrix': ('project_id', 'test_matrix_id', ),
+        'create_test_matrix': ('project_id', 'test_matrix', 'request_id', ),
+        'get_apk_details': ('location', ),
+        'get_test_environment_catalog': ('environment_type', 'project_id', ),
+        'get_test_matrix': ('project_id', 'test_matrix_id', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -62,7 +62,7 @@ class testingCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

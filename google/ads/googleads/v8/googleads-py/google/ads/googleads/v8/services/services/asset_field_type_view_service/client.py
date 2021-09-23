@@ -322,7 +322,7 @@ class AssetFieldTypeViewServiceClient(metaclass=AssetFieldTypeViewServiceClientM
               )
 
     def get_asset_field_type_view(self,
-            request: asset_field_type_view_service.GetAssetFieldTypeViewRequest = None,
+            request: Union[asset_field_type_view_service.GetAssetFieldTypeViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -333,7 +333,7 @@ class AssetFieldTypeViewServiceClient(metaclass=AssetFieldTypeViewServiceClientM
         detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAssetFieldTypeViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAssetFieldTypeViewRequest, dict]):
                 The request object. Request message for
                 [AssetFieldTypeViewService.GetAssetFieldTypeView][google.ads.googleads.v8.services.AssetFieldTypeViewService.GetAssetFieldTypeView].
             resource_name (:class:`str`):

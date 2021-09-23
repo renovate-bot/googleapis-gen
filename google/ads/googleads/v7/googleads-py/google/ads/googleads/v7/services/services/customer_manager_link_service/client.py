@@ -332,7 +332,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
               )
 
     def get_customer_manager_link(self,
-            request: customer_manager_link_service.GetCustomerManagerLinkRequest = None,
+            request: Union[customer_manager_link_service.GetCustomerManagerLinkRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCustomerManagerLinkRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCustomerManagerLinkRequest, dict]):
                 The request object. Request message for
                 [CustomerManagerLinkService.GetCustomerManagerLink][google.ads.googleads.v7.services.CustomerManagerLinkService.GetCustomerManagerLink].
             resource_name (:class:`str`):
@@ -410,7 +410,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
         return response
 
     def mutate_customer_manager_link(self,
-            request: customer_manager_link_service.MutateCustomerManagerLinkRequest = None,
+            request: Union[customer_manager_link_service.MutateCustomerManagerLinkRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[customer_manager_link_service.CustomerManagerLinkOperation] = None,
@@ -428,7 +428,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCustomerManagerLinkRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCustomerManagerLinkRequest, dict]):
                 The request object. Request message for
                 [CustomerManagerLinkService.MutateCustomerManagerLink][google.ads.googleads.v7.services.CustomerManagerLinkService.MutateCustomerManagerLink].
             customer_id (:class:`str`):
@@ -503,7 +503,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
         return response
 
     def move_manager_link(self,
-            request: customer_manager_link_service.MoveManagerLinkRequest = None,
+            request: Union[customer_manager_link_service.MoveManagerLinkRequest, dict] = None,
             *,
             customer_id: str = None,
             previous_customer_manager_link: str = None,
@@ -525,7 +525,7 @@ class CustomerManagerLinkServiceClient(metaclass=CustomerManagerLinkServiceClien
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MoveManagerLinkRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MoveManagerLinkRequest, dict]):
                 The request object. Request message for
                 [CustomerManagerLinkService.MoveManagerLink][google.ads.googleads.v7.services.CustomerManagerLinkService.MoveManagerLink].
             customer_id (:class:`str`):

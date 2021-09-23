@@ -324,7 +324,7 @@ class GoogleAdsFieldServiceClient(metaclass=GoogleAdsFieldServiceClientMeta):
               )
 
     def get_google_ads_field(self,
-            request: google_ads_field_service.GetGoogleAdsFieldRequest = None,
+            request: Union[google_ads_field_service.GetGoogleAdsFieldRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class GoogleAdsFieldServiceClient(metaclass=GoogleAdsFieldServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetGoogleAdsFieldRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetGoogleAdsFieldRequest, dict]):
                 The request object. Request message for
                 [GoogleAdsFieldService.GetGoogleAdsField][google.ads.googleads.v8.services.GoogleAdsFieldService.GetGoogleAdsField].
             resource_name (:class:`str`):
@@ -402,7 +402,7 @@ class GoogleAdsFieldServiceClient(metaclass=GoogleAdsFieldServiceClientMeta):
         return response
 
     def search_google_ads_fields(self,
-            request: google_ads_field_service.SearchGoogleAdsFieldsRequest = None,
+            request: Union[google_ads_field_service.SearchGoogleAdsFieldsRequest, dict] = None,
             *,
             query: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -417,7 +417,7 @@ class GoogleAdsFieldServiceClient(metaclass=GoogleAdsFieldServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SearchGoogleAdsFieldsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SearchGoogleAdsFieldsRequest, dict]):
                 The request object. Request message for
                 [GoogleAdsFieldService.SearchGoogleAdsFields][google.ads.googleads.v8.services.GoogleAdsFieldService.SearchGoogleAdsFields].
             query (:class:`str`):

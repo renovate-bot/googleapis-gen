@@ -321,7 +321,7 @@ class DynamicSearchAdsSearchTermViewServiceClient(metaclass=DynamicSearchAdsSear
               )
 
     def get_dynamic_search_ads_search_term_view(self,
-            request: dynamic_search_ads_search_term_view_service.GetDynamicSearchAdsSearchTermViewRequest = None,
+            request: Union[dynamic_search_ads_search_term_view_service.GetDynamicSearchAdsSearchTermViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class DynamicSearchAdsSearchTermViewServiceClient(metaclass=DynamicSearchAdsSear
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetDynamicSearchAdsSearchTermViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetDynamicSearchAdsSearchTermViewRequest, dict]):
                 The request object. Request message for
                 [DynamicSearchAdsSearchTermViewService.GetDynamicSearchAdsSearchTermView][google.ads.googleads.v7.services.DynamicSearchAdsSearchTermViewService.GetDynamicSearchAdsSearchTermView].
             resource_name (:class:`str`):

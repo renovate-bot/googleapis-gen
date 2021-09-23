@@ -342,7 +342,7 @@ class CustomerLabelServiceClient(metaclass=CustomerLabelServiceClientMeta):
               )
 
     def get_customer_label(self,
-            request: customer_label_service.GetCustomerLabelRequest = None,
+            request: Union[customer_label_service.GetCustomerLabelRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -357,7 +357,7 @@ class CustomerLabelServiceClient(metaclass=CustomerLabelServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCustomerLabelRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCustomerLabelRequest, dict]):
                 The request object. Request message for
                 [CustomerLabelService.GetCustomerLabel][google.ads.googleads.v7.services.CustomerLabelService.GetCustomerLabel].
             resource_name (:class:`str`):
@@ -426,7 +426,7 @@ class CustomerLabelServiceClient(metaclass=CustomerLabelServiceClientMeta):
         return response
 
     def mutate_customer_labels(self,
-            request: customer_label_service.MutateCustomerLabelsRequest = None,
+            request: Union[customer_label_service.MutateCustomerLabelsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[customer_label_service.CustomerLabelOperation] = None,
@@ -443,7 +443,7 @@ class CustomerLabelServiceClient(metaclass=CustomerLabelServiceClientMeta):
         `MutateError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCustomerLabelsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCustomerLabelsRequest, dict]):
                 The request object. Request message for
                 [CustomerLabelService.MutateCustomerLabels][google.ads.googleads.v7.services.CustomerLabelService.MutateCustomerLabels].
             customer_id (:class:`str`):

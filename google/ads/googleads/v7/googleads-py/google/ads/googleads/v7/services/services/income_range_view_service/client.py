@@ -321,7 +321,7 @@ class IncomeRangeViewServiceClient(metaclass=IncomeRangeViewServiceClientMeta):
               )
 
     def get_income_range_view(self,
-            request: income_range_view_service.GetIncomeRangeViewRequest = None,
+            request: Union[income_range_view_service.GetIncomeRangeViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class IncomeRangeViewServiceClient(metaclass=IncomeRangeViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetIncomeRangeViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetIncomeRangeViewRequest, dict]):
                 The request object. Request message for
                 [IncomeRangeViewService.GetIncomeRangeView][google.ads.googleads.v7.services.IncomeRangeViewService.GetIncomeRangeView].
             resource_name (:class:`str`):

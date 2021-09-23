@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -326,7 +326,7 @@ class ApplicationDetailServiceClient(metaclass=ApplicationDetailServiceClientMet
             )
 
     def get_apk_details(self,
-            request: application_details.GetApkDetailsRequest = None,
+            request: Union[application_details.GetApkDetailsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -335,7 +335,7 @@ class ApplicationDetailServiceClient(metaclass=ApplicationDetailServiceClientMet
         r"""Gets the details of an Android application APK.
 
         Args:
-            request (google.devtools.testing_v1.types.GetApkDetailsRequest):
+            request (Union[google.devtools.testing_v1.types.GetApkDetailsRequest, dict]):
                 The request object. A request to get the details of an
                 Android application APK.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

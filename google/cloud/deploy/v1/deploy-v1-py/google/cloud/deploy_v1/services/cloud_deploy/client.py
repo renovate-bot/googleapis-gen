@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -421,7 +421,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
             )
 
     def list_delivery_pipelines(self,
-            request: cloud_deploy.ListDeliveryPipelinesRequest = None,
+            request: Union[cloud_deploy.ListDeliveryPipelinesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -432,7 +432,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         location.
 
         Args:
-            request (google.cloud.deploy_v1.types.ListDeliveryPipelinesRequest):
+            request (Union[google.cloud.deploy_v1.types.ListDeliveryPipelinesRequest, dict]):
                 The request object. The request object for
                 `ListDeliveryPipelines`.
             parent (str):
@@ -509,7 +509,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def get_delivery_pipeline(self,
-            request: cloud_deploy.GetDeliveryPipelineRequest = None,
+            request: Union[cloud_deploy.GetDeliveryPipelineRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -519,7 +519,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Gets details of a single DeliveryPipeline.
 
         Args:
-            request (google.cloud.deploy_v1.types.GetDeliveryPipelineRequest):
+            request (Union[google.cloud.deploy_v1.types.GetDeliveryPipelineRequest, dict]):
                 The request object. The request object for
                 `GetDeliveryPipeline`
             name (str):
@@ -588,7 +588,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def create_delivery_pipeline(self,
-            request: cloud_deploy.CreateDeliveryPipelineRequest = None,
+            request: Union[cloud_deploy.CreateDeliveryPipelineRequest, dict] = None,
             *,
             parent: str = None,
             delivery_pipeline: cloud_deploy.DeliveryPipeline = None,
@@ -601,7 +601,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         location.
 
         Args:
-            request (google.cloud.deploy_v1.types.CreateDeliveryPipelineRequest):
+            request (Union[google.cloud.deploy_v1.types.CreateDeliveryPipelineRequest, dict]):
                 The request object. The request object for
                 `CreateDeliveryPipeline`.
             parent (str):
@@ -696,7 +696,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def update_delivery_pipeline(self,
-            request: cloud_deploy.UpdateDeliveryPipelineRequest = None,
+            request: Union[cloud_deploy.UpdateDeliveryPipelineRequest, dict] = None,
             *,
             delivery_pipeline: cloud_deploy.DeliveryPipeline = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -707,7 +707,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Updates the parameters of a single DeliveryPipeline.
 
         Args:
-            request (google.cloud.deploy_v1.types.UpdateDeliveryPipelineRequest):
+            request (Union[google.cloud.deploy_v1.types.UpdateDeliveryPipelineRequest, dict]):
                 The request object. The request object for
                 `UpdateDeliveryPipeline`.
             delivery_pipeline (google.cloud.deploy_v1.types.DeliveryPipeline):
@@ -799,7 +799,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def delete_delivery_pipeline(self,
-            request: cloud_deploy.DeleteDeliveryPipelineRequest = None,
+            request: Union[cloud_deploy.DeleteDeliveryPipelineRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -809,7 +809,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Deletes a single DeliveryPipeline.
 
         Args:
-            request (google.cloud.deploy_v1.types.DeleteDeliveryPipelineRequest):
+            request (Union[google.cloud.deploy_v1.types.DeleteDeliveryPipelineRequest, dict]):
                 The request object. The request object for
                 `DeleteDeliveryPipeline`.
             name (str):
@@ -896,7 +896,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def list_targets(self,
-            request: cloud_deploy.ListTargetsRequest = None,
+            request: Union[cloud_deploy.ListTargetsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -906,7 +906,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Lists Targets in a given project and location.
 
         Args:
-            request (google.cloud.deploy_v1.types.ListTargetsRequest):
+            request (Union[google.cloud.deploy_v1.types.ListTargetsRequest, dict]):
                 The request object. The request object for
                 `ListTargets`.
             parent (str):
@@ -983,7 +983,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def get_target(self,
-            request: cloud_deploy.GetTargetRequest = None,
+            request: Union[cloud_deploy.GetTargetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -993,7 +993,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Gets details of a single Target.
 
         Args:
-            request (google.cloud.deploy_v1.types.GetTargetRequest):
+            request (Union[google.cloud.deploy_v1.types.GetTargetRequest, dict]):
                 The request object. The request object for `GetTarget`.
             name (str):
                 Required. Name of the ``Target``. Format must be
@@ -1059,7 +1059,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def create_target(self,
-            request: cloud_deploy.CreateTargetRequest = None,
+            request: Union[cloud_deploy.CreateTargetRequest, dict] = None,
             *,
             parent: str = None,
             target: cloud_deploy.Target = None,
@@ -1071,7 +1071,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Creates a new Target in a given project and location.
 
         Args:
-            request (google.cloud.deploy_v1.types.CreateTargetRequest):
+            request (Union[google.cloud.deploy_v1.types.CreateTargetRequest, dict]):
                 The request object. The request object for
                 `CreateTarget`.
             parent (str):
@@ -1165,7 +1165,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def update_target(self,
-            request: cloud_deploy.UpdateTargetRequest = None,
+            request: Union[cloud_deploy.UpdateTargetRequest, dict] = None,
             *,
             target: cloud_deploy.Target = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1176,7 +1176,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Updates the parameters of a single Target.
 
         Args:
-            request (google.cloud.deploy_v1.types.UpdateTargetRequest):
+            request (Union[google.cloud.deploy_v1.types.UpdateTargetRequest, dict]):
                 The request object. The request object for
                 `UpdateTarget`.
             target (google.cloud.deploy_v1.types.Target):
@@ -1266,7 +1266,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def delete_target(self,
-            request: cloud_deploy.DeleteTargetRequest = None,
+            request: Union[cloud_deploy.DeleteTargetRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1276,7 +1276,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Deletes a single Target.
 
         Args:
-            request (google.cloud.deploy_v1.types.DeleteTargetRequest):
+            request (Union[google.cloud.deploy_v1.types.DeleteTargetRequest, dict]):
                 The request object. The request object for
                 `DeleteTarget`.
             name (str):
@@ -1363,7 +1363,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def list_releases(self,
-            request: cloud_deploy.ListReleasesRequest = None,
+            request: Union[cloud_deploy.ListReleasesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1373,7 +1373,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Lists Releases in a given project and location.
 
         Args:
-            request (google.cloud.deploy_v1.types.ListReleasesRequest):
+            request (Union[google.cloud.deploy_v1.types.ListReleasesRequest, dict]):
                 The request object. The request object for
                 `ListReleases`.
             parent (str):
@@ -1449,7 +1449,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def get_release(self,
-            request: cloud_deploy.GetReleaseRequest = None,
+            request: Union[cloud_deploy.GetReleaseRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1459,7 +1459,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Gets details of a single Release.
 
         Args:
-            request (google.cloud.deploy_v1.types.GetReleaseRequest):
+            request (Union[google.cloud.deploy_v1.types.GetReleaseRequest, dict]):
                 The request object. The request object for `GetRelease`.
             name (str):
                 Required. Name of the ``Release``. Format must be
@@ -1525,7 +1525,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def create_release(self,
-            request: cloud_deploy.CreateReleaseRequest = None,
+            request: Union[cloud_deploy.CreateReleaseRequest, dict] = None,
             *,
             parent: str = None,
             release: cloud_deploy.Release = None,
@@ -1538,7 +1538,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         location.
 
         Args:
-            request (google.cloud.deploy_v1.types.CreateReleaseRequest):
+            request (Union[google.cloud.deploy_v1.types.CreateReleaseRequest, dict]):
                 The request object. The request object for
                 `CreateRelease`,
             parent (str):
@@ -1632,7 +1632,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def approve_rollout(self,
-            request: cloud_deploy.ApproveRolloutRequest = None,
+            request: Union[cloud_deploy.ApproveRolloutRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1642,7 +1642,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Approves a Rollout.
 
         Args:
-            request (google.cloud.deploy_v1.types.ApproveRolloutRequest):
+            request (Union[google.cloud.deploy_v1.types.ApproveRolloutRequest, dict]):
                 The request object. The request object used by
                 `ApproveRollout`.
             name (str):
@@ -1707,7 +1707,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def list_rollouts(self,
-            request: cloud_deploy.ListRolloutsRequest = None,
+            request: Union[cloud_deploy.ListRolloutsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1717,7 +1717,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Lists Rollouts in a given project and location.
 
         Args:
-            request (google.cloud.deploy_v1.types.ListRolloutsRequest):
+            request (Union[google.cloud.deploy_v1.types.ListRolloutsRequest, dict]):
                 The request object. ListRolloutsRequest is the request
                 object used by `ListRollouts`.
             parent (str):
@@ -1794,7 +1794,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def get_rollout(self,
-            request: cloud_deploy.GetRolloutRequest = None,
+            request: Union[cloud_deploy.GetRolloutRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1804,7 +1804,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Gets details of a single Rollout.
 
         Args:
-            request (google.cloud.deploy_v1.types.GetRolloutRequest):
+            request (Union[google.cloud.deploy_v1.types.GetRolloutRequest, dict]):
                 The request object. GetRolloutRequest is the request
                 object used by `GetRollout`.
             name (str):
@@ -1871,7 +1871,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def create_rollout(self,
-            request: cloud_deploy.CreateRolloutRequest = None,
+            request: Union[cloud_deploy.CreateRolloutRequest, dict] = None,
             *,
             parent: str = None,
             rollout: cloud_deploy.Rollout = None,
@@ -1884,7 +1884,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         location.
 
         Args:
-            request (google.cloud.deploy_v1.types.CreateRolloutRequest):
+            request (Union[google.cloud.deploy_v1.types.CreateRolloutRequest, dict]):
                 The request object. CreateRolloutRequest is the request
                 object used by `CreateRollout`.
             parent (str):
@@ -1978,7 +1978,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         return response
 
     def get_config(self,
-            request: cloud_deploy.GetConfigRequest = None,
+            request: Union[cloud_deploy.GetConfigRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1988,7 +1988,7 @@ class CloudDeployClient(metaclass=CloudDeployClientMeta):
         r"""Gets the configuration for a location.
 
         Args:
-            request (google.cloud.deploy_v1.types.GetConfigRequest):
+            request (Union[google.cloud.deploy_v1.types.GetConfigRequest, dict]):
                 The request object. Request to get a configuration.
             name (str):
                 Required. Name of requested

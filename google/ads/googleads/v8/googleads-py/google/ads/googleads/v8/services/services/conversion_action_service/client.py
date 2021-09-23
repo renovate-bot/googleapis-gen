@@ -338,7 +338,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
               )
 
     def get_conversion_action(self,
-            request: conversion_action_service.GetConversionActionRequest = None,
+            request: Union[conversion_action_service.GetConversionActionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -352,7 +352,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetConversionActionRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetConversionActionRequest, dict]):
                 The request object. Request message for
                 [ConversionActionService.GetConversionAction][google.ads.googleads.v8.services.ConversionActionService.GetConversionAction].
             resource_name (:class:`str`):
@@ -414,7 +414,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         return response
 
     def mutate_conversion_actions(self,
-            request: conversion_action_service.MutateConversionActionsRequest = None,
+            request: Union[conversion_action_service.MutateConversionActionsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[conversion_action_service.ConversionActionOperation] = None,
@@ -434,7 +434,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         `ResourceCountLimitExceededError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateConversionActionsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateConversionActionsRequest, dict]):
                 The request object. Request message for
                 [ConversionActionService.MutateConversionActions][google.ads.googleads.v8.services.ConversionActionService.MutateConversionActions].
             customer_id (:class:`str`):

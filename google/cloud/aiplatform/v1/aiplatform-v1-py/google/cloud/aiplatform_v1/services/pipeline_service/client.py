@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -442,7 +442,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
             )
 
     def create_training_pipeline(self,
-            request: pipeline_service.CreateTrainingPipelineRequest = None,
+            request: Union[pipeline_service.CreateTrainingPipelineRequest, dict] = None,
             *,
             parent: str = None,
             training_pipeline: gca_training_pipeline.TrainingPipeline = None,
@@ -454,7 +454,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         TrainingPipeline right away will be attempted to be run.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.CreateTrainingPipelineRequest):
+            request (Union[google.cloud.aiplatform_v1.types.CreateTrainingPipelineRequest, dict]):
                 The request object. Request message for
                 [PipelineService.CreateTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CreateTrainingPipeline].
             parent (str):
@@ -533,7 +533,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def get_training_pipeline(self,
-            request: pipeline_service.GetTrainingPipelineRequest = None,
+            request: Union[pipeline_service.GetTrainingPipelineRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -543,7 +543,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         r"""Gets a TrainingPipeline.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.GetTrainingPipelineRequest):
+            request (Union[google.cloud.aiplatform_v1.types.GetTrainingPipelineRequest, dict]):
                 The request object. Request message for
                 [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.GetTrainingPipeline].
             name (str):
@@ -613,7 +613,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def list_training_pipelines(self,
-            request: pipeline_service.ListTrainingPipelinesRequest = None,
+            request: Union[pipeline_service.ListTrainingPipelinesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -623,7 +623,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         r"""Lists TrainingPipelines in a Location.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.ListTrainingPipelinesRequest):
+            request (Union[google.cloud.aiplatform_v1.types.ListTrainingPipelinesRequest, dict]):
                 The request object. Request message for
                 [PipelineService.ListTrainingPipelines][google.cloud.aiplatform.v1.PipelineService.ListTrainingPipelines].
             parent (str):
@@ -701,7 +701,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def delete_training_pipeline(self,
-            request: pipeline_service.DeleteTrainingPipelineRequest = None,
+            request: Union[pipeline_service.DeleteTrainingPipelineRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -711,7 +711,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         r"""Deletes a TrainingPipeline.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.DeleteTrainingPipelineRequest):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteTrainingPipelineRequest, dict]):
                 The request object. Request message for
                 [PipelineService.DeleteTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.DeleteTrainingPipeline].
             name (str):
@@ -798,7 +798,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def cancel_training_pipeline(self,
-            request: pipeline_service.CancelTrainingPipelineRequest = None,
+            request: Union[pipeline_service.CancelTrainingPipelineRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -820,7 +820,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         is set to ``CANCELLED``.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.CancelTrainingPipelineRequest):
+            request (Union[google.cloud.aiplatform_v1.types.CancelTrainingPipelineRequest, dict]):
                 The request object. Request message for
                 [PipelineService.CancelTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CancelTrainingPipeline].
             name (str):
@@ -877,7 +877,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         )
 
     def create_pipeline_job(self,
-            request: pipeline_service.CreatePipelineJobRequest = None,
+            request: Union[pipeline_service.CreatePipelineJobRequest, dict] = None,
             *,
             parent: str = None,
             pipeline_job: gca_pipeline_job.PipelineJob = None,
@@ -890,7 +890,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         immediately when created.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.CreatePipelineJobRequest):
+            request (Union[google.cloud.aiplatform_v1.types.CreatePipelineJobRequest, dict]):
                 The request object. Request message for
                 [PipelineService.CreatePipelineJob][google.cloud.aiplatform.v1.PipelineService.CreatePipelineJob].
             parent (str):
@@ -976,7 +976,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def get_pipeline_job(self,
-            request: pipeline_service.GetPipelineJobRequest = None,
+            request: Union[pipeline_service.GetPipelineJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -986,7 +986,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         r"""Gets a PipelineJob.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.GetPipelineJobRequest):
+            request (Union[google.cloud.aiplatform_v1.types.GetPipelineJobRequest, dict]):
                 The request object. Request message for
                 [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob].
             name (str):
@@ -1051,7 +1051,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def list_pipeline_jobs(self,
-            request: pipeline_service.ListPipelineJobsRequest = None,
+            request: Union[pipeline_service.ListPipelineJobsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1061,7 +1061,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         r"""Lists PipelineJobs in a Location.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.ListPipelineJobsRequest):
+            request (Union[google.cloud.aiplatform_v1.types.ListPipelineJobsRequest, dict]):
                 The request object. Request message for
                 [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs].
             parent (str):
@@ -1139,7 +1139,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def delete_pipeline_job(self,
-            request: pipeline_service.DeletePipelineJobRequest = None,
+            request: Union[pipeline_service.DeletePipelineJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1149,7 +1149,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         r"""Deletes a PipelineJob.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.DeletePipelineJobRequest):
+            request (Union[google.cloud.aiplatform_v1.types.DeletePipelineJobRequest, dict]):
                 The request object. Request message for
                 [PipelineService.DeletePipelineJob][google.cloud.aiplatform.v1.PipelineService.DeletePipelineJob].
             name (str):
@@ -1236,7 +1236,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         return response
 
     def cancel_pipeline_job(self,
-            request: pipeline_service.CancelPipelineJobRequest = None,
+            request: Union[pipeline_service.CancelPipelineJobRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1258,7 +1258,7 @@ class PipelineServiceClient(metaclass=PipelineServiceClientMeta):
         is set to ``CANCELLED``.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.CancelPipelineJobRequest):
+            request (Union[google.cloud.aiplatform_v1.types.CancelPipelineJobRequest, dict]):
                 The request object. Request message for
                 [PipelineService.CancelPipelineJob][google.cloud.aiplatform.v1.PipelineService.CancelPipelineJob].
             name (str):

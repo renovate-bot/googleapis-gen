@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -324,7 +324,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
             )
 
     def snap_to_roads(self,
-            request: roads.SnapToRoadsRequest = None,
+            request: Union[roads.SnapToRoadsRequest, dict] = None,
             *,
             path: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         point.
 
         Args:
-            request (google.maps.roads_v1.types.SnapToRoadsRequest):
+            request (Union[google.maps.roads_v1.types.SnapToRoadsRequest, dict]):
                 The request object. A request to the SnapToRoads method,
                 requesting that a sequence of points be snapped to road
                 segments.
@@ -397,7 +397,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         return response
 
     def list_nearest_roads(self,
-            request: roads.ListNearestRoadsRequest = None,
+            request: Union[roads.ListNearestRoadsRequest, dict] = None,
             *,
             points: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -409,7 +409,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         a place ID for each snapped point.
 
         Args:
-            request (google.maps.roads_v1.types.ListNearestRoadsRequest):
+            request (Union[google.maps.roads_v1.types.ListNearestRoadsRequest, dict]):
                 The request object. A request to the ListNearestRoads
                 method, requesting that a sequence of points be snapped
                 individually to the road segment that each is closest

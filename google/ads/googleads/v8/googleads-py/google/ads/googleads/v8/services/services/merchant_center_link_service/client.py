@@ -324,7 +324,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
               )
 
     def list_merchant_center_links(self,
-            request: merchant_center_link_service.ListMerchantCenterLinksRequest = None,
+            request: Union[merchant_center_link_service.ListMerchantCenterLinksRequest, dict] = None,
             *,
             customer_id: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListMerchantCenterLinksRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListMerchantCenterLinksRequest, dict]):
                 The request object. Request message for
                 [MerchantCenterLinkService.ListMerchantCenterLinks][google.ads.googleads.v8.services.MerchantCenterLinkService.ListMerchantCenterLinks].
             customer_id (:class:`str`):
@@ -403,7 +403,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         return response
 
     def get_merchant_center_link(self,
-            request: merchant_center_link_service.GetMerchantCenterLinkRequest = None,
+            request: Union[merchant_center_link_service.GetMerchantCenterLinkRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -417,7 +417,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetMerchantCenterLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetMerchantCenterLinkRequest, dict]):
                 The request object. Request message for
                 [MerchantCenterLinkService.GetMerchantCenterLink][google.ads.googleads.v8.services.MerchantCenterLinkService.GetMerchantCenterLink].
             resource_name (:class:`str`):
@@ -482,7 +482,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         return response
 
     def mutate_merchant_center_link(self,
-            request: merchant_center_link_service.MutateMerchantCenterLinkRequest = None,
+            request: Union[merchant_center_link_service.MutateMerchantCenterLinkRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: merchant_center_link_service.MerchantCenterLinkOperation = None,
@@ -498,7 +498,7 @@ class MerchantCenterLinkServiceClient(metaclass=MerchantCenterLinkServiceClientM
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateMerchantCenterLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateMerchantCenterLinkRequest, dict]):
                 The request object. Request message for
                 [MerchantCenterLinkService.MutateMerchantCenterLink][google.ads.googleads.v8.services.MerchantCenterLinkService.MutateMerchantCenterLink].
             customer_id (:class:`str`):

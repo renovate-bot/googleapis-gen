@@ -343,7 +343,7 @@ class AdGroupAdAssetViewServiceClient(metaclass=AdGroupAdAssetViewServiceClientM
               )
 
     def get_ad_group_ad_asset_view(self,
-            request: ad_group_ad_asset_view_service.GetAdGroupAdAssetViewRequest = None,
+            request: Union[ad_group_ad_asset_view_service.GetAdGroupAdAssetViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -357,7 +357,7 @@ class AdGroupAdAssetViewServiceClient(metaclass=AdGroupAdAssetViewServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAdGroupAdAssetViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAdGroupAdAssetViewRequest, dict]):
                 The request object. Request message for
                 [AdGroupAdAssetViewService.GetAdGroupAdAssetView][google.ads.googleads.v8.services.AdGroupAdAssetViewService.GetAdGroupAdAssetView].
             resource_name (:class:`str`):

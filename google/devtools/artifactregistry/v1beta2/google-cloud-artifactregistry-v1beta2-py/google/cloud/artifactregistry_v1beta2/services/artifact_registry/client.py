@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -374,7 +374,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             )
 
     def list_repositories(self,
-            request: repository.ListRepositoriesRequest = None,
+            request: Union[repository.ListRepositoriesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -384,7 +384,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists repositories.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.ListRepositoriesRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.ListRepositoriesRequest, dict]):
                 The request object. The request to list repositories.
             parent (str):
                 The name of the parent resource whose
@@ -460,7 +460,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_repository(self,
-            request: repository.GetRepositoryRequest = None,
+            request: Union[repository.GetRepositoryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -470,7 +470,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a repository.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.GetRepositoryRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.GetRepositoryRequest, dict]):
                 The request object. The request to retrieve a
                 repository.
             name (str):
@@ -535,7 +535,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def create_repository(self,
-            request: gda_repository.CreateRepositoryRequest = None,
+            request: Union[gda_repository.CreateRepositoryRequest, dict] = None,
             *,
             parent: str = None,
             repository: gda_repository.Repository = None,
@@ -549,7 +549,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         response will be the created Repository.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.CreateRepositoryRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.CreateRepositoryRequest, dict]):
                 The request object. The request to create a new
                 repository.
             parent (str):
@@ -642,7 +642,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def update_repository(self,
-            request: gda_repository.UpdateRepositoryRequest = None,
+            request: Union[gda_repository.UpdateRepositoryRequest, dict] = None,
             *,
             repository: gda_repository.Repository = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -653,7 +653,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Updates a repository.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.UpdateRepositoryRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.UpdateRepositoryRequest, dict]):
                 The request object. The request to update a repository.
             repository (google.cloud.artifactregistry_v1beta2.types.Repository):
                 The repository that replaces the
@@ -727,7 +727,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def delete_repository(self,
-            request: repository.DeleteRepositoryRequest = None,
+            request: Union[repository.DeleteRepositoryRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -740,7 +740,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         and will return a google.protobuf.Empty response.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.DeleteRepositoryRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.DeleteRepositoryRequest, dict]):
                 The request object. The request to delete a repository.
             name (str):
                 The name of the repository to delete.
@@ -823,7 +823,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def list_packages(self,
-            request: package.ListPackagesRequest = None,
+            request: Union[package.ListPackagesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -833,7 +833,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists packages.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.ListPackagesRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.ListPackagesRequest, dict]):
                 The request object. The request to list packages.
             parent (str):
                 The name of the parent resource whose
@@ -908,7 +908,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_package(self,
-            request: package.GetPackageRequest = None,
+            request: Union[package.GetPackageRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -918,7 +918,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a package.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.GetPackageRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.GetPackageRequest, dict]):
                 The request object. The request to retrieve a package.
             name (str):
                 The name of the package to retrieve.
@@ -980,7 +980,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def delete_package(self,
-            request: package.DeletePackageRequest = None,
+            request: Union[package.DeletePackageRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -992,7 +992,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         has been deleted.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.DeletePackageRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.DeletePackageRequest, dict]):
                 The request object. The request to delete a package.
             name (str):
                 The name of the package to delete.
@@ -1075,7 +1075,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def list_versions(self,
-            request: version.ListVersionsRequest = None,
+            request: Union[version.ListVersionsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1085,7 +1085,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists versions.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.ListVersionsRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.ListVersionsRequest, dict]):
                 The request object. The request to list versions.
             parent (str):
                 The name of the parent resource whose
@@ -1160,7 +1160,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_version(self,
-            request: version.GetVersionRequest = None,
+            request: Union[version.GetVersionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1170,7 +1170,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a version
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.GetVersionRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.GetVersionRequest, dict]):
                 The request object. The request to retrieve a version.
             name (str):
                 The name of the version to retrieve.
@@ -1235,7 +1235,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def delete_version(self,
-            request: version.DeleteVersionRequest = None,
+            request: Union[version.DeleteVersionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1247,7 +1247,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         been deleted.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.DeleteVersionRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.DeleteVersionRequest, dict]):
                 The request object. The request to delete a version.
             name (str):
                 The name of the version to delete.
@@ -1330,7 +1330,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def list_files(self,
-            request: file.ListFilesRequest = None,
+            request: Union[file.ListFilesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1340,7 +1340,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists files.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.ListFilesRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.ListFilesRequest, dict]):
                 The request object. The request to list files.
             parent (str):
                 The name of the parent resource whose
@@ -1415,7 +1415,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_file(self,
-            request: file.GetFileRequest = None,
+            request: Union[file.GetFileRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1425,7 +1425,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a file.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.GetFileRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.GetFileRequest, dict]):
                 The request object. The request to retrieve a file.
             name (str):
                 The name of the file to retrieve.
@@ -1488,7 +1488,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def list_tags(self,
-            request: tag.ListTagsRequest = None,
+            request: Union[tag.ListTagsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1498,7 +1498,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists tags.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.ListTagsRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.ListTagsRequest, dict]):
                 The request object. The request to list tags.
             parent (str):
                 The name of the parent resource whose
@@ -1573,7 +1573,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_tag(self,
-            request: tag.GetTagRequest = None,
+            request: Union[tag.GetTagRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1583,7 +1583,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a tag.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.GetTagRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.GetTagRequest, dict]):
                 The request object. The request to retrieve a tag.
             name (str):
                 The name of the tag to retrieve.
@@ -1646,7 +1646,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def create_tag(self,
-            request: gda_tag.CreateTagRequest = None,
+            request: Union[gda_tag.CreateTagRequest, dict] = None,
             *,
             parent: str = None,
             tag: gda_tag.Tag = None,
@@ -1658,7 +1658,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Creates a tag.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.CreateTagRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.CreateTagRequest, dict]):
                 The request object. The request to create a new tag.
             parent (str):
                 The name of the parent resource where
@@ -1739,7 +1739,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def update_tag(self,
-            request: gda_tag.UpdateTagRequest = None,
+            request: Union[gda_tag.UpdateTagRequest, dict] = None,
             *,
             tag: gda_tag.Tag = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1750,7 +1750,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Updates a tag.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.UpdateTagRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.UpdateTagRequest, dict]):
                 The request object. The request to create or update a
                 tag.
             tag (google.cloud.artifactregistry_v1beta2.types.Tag):
@@ -1826,7 +1826,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def delete_tag(self,
-            request: tag.DeleteTagRequest = None,
+            request: Union[tag.DeleteTagRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1836,7 +1836,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Deletes a tag.
 
         Args:
-            request (google.cloud.artifactregistry_v1beta2.types.DeleteTagRequest):
+            request (Union[google.cloud.artifactregistry_v1beta2.types.DeleteTagRequest, dict]):
                 The request object. The request to delete a tag.
             name (str):
                 The name of the tag to delete.
@@ -1889,7 +1889,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         )
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1898,7 +1898,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Updates the IAM policy for a given resource.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1999,7 +1999,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2008,7 +2008,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets the IAM policy for a given resource.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2109,7 +2109,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2119,7 +2119,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         resource.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

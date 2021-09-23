@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 import warnings
 
@@ -371,7 +371,7 @@ class IAMClient(metaclass=IAMClientMeta):
             )
 
     def list_service_accounts(self,
-            request: iam.ListServiceAccountsRequest = None,
+            request: Union[iam.ListServiceAccountsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -382,7 +382,7 @@ class IAMClient(metaclass=IAMClientMeta):
         that belongs to a specific project.
 
         Args:
-            request (google.iam.admin_v1.types.ListServiceAccountsRequest):
+            request (Union[google.iam.admin_v1.types.ListServiceAccountsRequest, dict]):
                 The request object. The service account list request.
             name (str):
                 Required. The resource name of the project associated
@@ -458,7 +458,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def get_service_account(self,
-            request: iam.GetServiceAccountRequest = None,
+            request: Union[iam.GetServiceAccountRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -468,7 +468,7 @@ class IAMClient(metaclass=IAMClientMeta):
         r"""Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
-            request (google.iam.admin_v1.types.GetServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.GetServiceAccountRequest, dict]):
                 The request object. The service account get request.
             name (str):
                 Required. The resource name of the service account in
@@ -548,7 +548,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def create_service_account(self,
-            request: iam.CreateServiceAccountRequest = None,
+            request: Union[iam.CreateServiceAccountRequest, dict] = None,
             *,
             name: str = None,
             account_id: str = None,
@@ -560,7 +560,7 @@ class IAMClient(metaclass=IAMClientMeta):
         r"""Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
-            request (google.iam.admin_v1.types.CreateServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.CreateServiceAccountRequest, dict]):
                 The request object. The service account create request.
             name (str):
                 Required. The resource name of the project associated
@@ -659,7 +659,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def update_service_account(self,
-            request: iam.ServiceAccount = None,
+            request: Union[iam.ServiceAccount, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -675,7 +675,7 @@ class IAMClient(metaclass=IAMClientMeta):
         fields.
 
         Args:
-            request (google.iam.admin_v1.types.ServiceAccount):
+            request (Union[google.iam.admin_v1.types.ServiceAccount, dict]):
                 The request object. An IAM service account.
                 A service account is an account for an application or a
                 virtual machine (VM) instance, not a person. You can use
@@ -743,7 +743,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def patch_service_account(self,
-            request: iam.PatchServiceAccountRequest = None,
+            request: Union[iam.PatchServiceAccountRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -752,7 +752,7 @@ class IAMClient(metaclass=IAMClientMeta):
         r"""Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
-            request (google.iam.admin_v1.types.PatchServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.PatchServiceAccountRequest, dict]):
                 The request object. The request for
                 [PatchServiceAccount][google.iam.admin.v1.PatchServiceAccount].
                 You can patch only the `display_name` and `description`
@@ -816,7 +816,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def delete_service_account(self,
-            request: iam.DeleteServiceAccountRequest = None,
+            request: Union[iam.DeleteServiceAccountRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -844,7 +844,7 @@ class IAMClient(metaclass=IAMClientMeta):
         consequences, you can delete the service account.
 
         Args:
-            request (google.iam.admin_v1.types.DeleteServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.DeleteServiceAccountRequest, dict]):
                 The request object. The service account delete request.
             name (str):
                 Required. The resource name of the service account in
@@ -904,7 +904,7 @@ class IAMClient(metaclass=IAMClientMeta):
         )
 
     def undelete_service_account(self,
-            request: iam.UndeleteServiceAccountRequest = None,
+            request: Union[iam.UndeleteServiceAccountRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -921,7 +921,7 @@ class IAMClient(metaclass=IAMClientMeta):
         deleted service account that has been permanently removed.
 
         Args:
-            request (google.iam.admin_v1.types.UndeleteServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.UndeleteServiceAccountRequest, dict]):
                 The request object. The service account undelete
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -966,7 +966,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def enable_service_account(self,
-            request: iam.EnableServiceAccountRequest = None,
+            request: Union[iam.EnableServiceAccountRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -985,7 +985,7 @@ class IAMClient(metaclass=IAMClientMeta):
         account.
 
         Args:
-            request (google.iam.admin_v1.types.EnableServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.EnableServiceAccountRequest, dict]):
                 The request object. The service account enable request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1022,7 +1022,7 @@ class IAMClient(metaclass=IAMClientMeta):
         )
 
     def disable_service_account(self,
-            request: iam.DisableServiceAccountRequest = None,
+            request: Union[iam.DisableServiceAccountRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1049,7 +1049,7 @@ class IAMClient(metaclass=IAMClientMeta):
         [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
 
         Args:
-            request (google.iam.admin_v1.types.DisableServiceAccountRequest):
+            request (Union[google.iam.admin_v1.types.DisableServiceAccountRequest, dict]):
                 The request object. The service account disable request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1086,7 +1086,7 @@ class IAMClient(metaclass=IAMClientMeta):
         )
 
     def list_service_account_keys(self,
-            request: iam.ListServiceAccountKeysRequest = None,
+            request: Union[iam.ListServiceAccountKeysRequest, dict] = None,
             *,
             name: str = None,
             key_types: Sequence[iam.ListServiceAccountKeysRequest.KeyType] = None,
@@ -1099,7 +1099,7 @@ class IAMClient(metaclass=IAMClientMeta):
         service account.
 
         Args:
-            request (google.iam.admin_v1.types.ListServiceAccountKeysRequest):
+            request (Union[google.iam.admin_v1.types.ListServiceAccountKeysRequest, dict]):
                 The request object. The service account keys list
                 request.
             name (str):
@@ -1182,7 +1182,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def get_service_account_key(self,
-            request: iam.GetServiceAccountKeyRequest = None,
+            request: Union[iam.GetServiceAccountKeyRequest, dict] = None,
             *,
             name: str = None,
             public_key_type: iam.ServiceAccountPublicKeyType = None,
@@ -1194,7 +1194,7 @@ class IAMClient(metaclass=IAMClientMeta):
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
 
         Args:
-            request (google.iam.admin_v1.types.GetServiceAccountKeyRequest):
+            request (Union[google.iam.admin_v1.types.GetServiceAccountKeyRequest, dict]):
                 The request object. The service account key get by id
                 request.
             name (str):
@@ -1306,7 +1306,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def create_service_account_key(self,
-            request: iam.CreateServiceAccountKeyRequest = None,
+            request: Union[iam.CreateServiceAccountKeyRequest, dict] = None,
             *,
             name: str = None,
             private_key_type: iam.ServiceAccountPrivateKeyType = None,
@@ -1319,7 +1319,7 @@ class IAMClient(metaclass=IAMClientMeta):
         [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
 
         Args:
-            request (google.iam.admin_v1.types.CreateServiceAccountKeyRequest):
+            request (Union[google.iam.admin_v1.types.CreateServiceAccountKeyRequest, dict]):
                 The request object. The service account key create
                 request.
             name (str):
@@ -1442,7 +1442,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def upload_service_account_key(self,
-            request: iam.UploadServiceAccountKeyRequest = None,
+            request: Union[iam.UploadServiceAccountKeyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1453,7 +1453,7 @@ class IAMClient(metaclass=IAMClientMeta):
         using a public key that you provide.
 
         Args:
-            request (google.iam.admin_v1.types.UploadServiceAccountKeyRequest):
+            request (Union[google.iam.admin_v1.types.UploadServiceAccountKeyRequest, dict]):
                 The request object. The service account key upload
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1532,7 +1532,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def delete_service_account_key(self,
-            request: iam.DeleteServiceAccountKeyRequest = None,
+            request: Union[iam.DeleteServiceAccountKeyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1546,7 +1546,7 @@ class IAMClient(metaclass=IAMClientMeta):
         key.
 
         Args:
-            request (google.iam.admin_v1.types.DeleteServiceAccountKeyRequest):
+            request (Union[google.iam.admin_v1.types.DeleteServiceAccountKeyRequest, dict]):
                 The request object. The service account key delete
                 request.
             name (str):
@@ -1607,7 +1607,7 @@ class IAMClient(metaclass=IAMClientMeta):
         )
 
     def sign_blob(self,
-            request: iam.SignBlobRequest = None,
+            request: Union[iam.SignBlobRequest, dict] = None,
             *,
             name: str = None,
             bytes_to_sign: bytes = None,
@@ -1626,7 +1626,7 @@ class IAMClient(metaclass=IAMClientMeta):
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
-            request (google.iam.admin_v1.types.SignBlobRequest):
+            request (Union[google.iam.admin_v1.types.SignBlobRequest, dict]):
                 The request object. Deprecated. [Migrate to Service
                 Account Credentials
                 API](https://cloud.google.com/iam/help/credentials/migrate-
@@ -1720,7 +1720,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def sign_jwt(self,
-            request: iam.SignJwtRequest = None,
+            request: Union[iam.SignJwtRequest, dict] = None,
             *,
             name: str = None,
             payload: str = None,
@@ -1739,7 +1739,7 @@ class IAMClient(metaclass=IAMClientMeta):
         key for a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
-            request (google.iam.admin_v1.types.SignJwtRequest):
+            request (Union[google.iam.admin_v1.types.SignJwtRequest, dict]):
                 The request object. Deprecated. [Migrate to Service
                 Account Credentials
                 API](https://cloud.google.com/iam/help/credentials/migrate-
@@ -1843,7 +1843,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1864,7 +1864,7 @@ class IAMClient(metaclass=IAMClientMeta):
         method.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -1983,7 +1983,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2013,7 +2013,7 @@ class IAMClient(metaclass=IAMClientMeta):
         resources <https://cloud.google.com/iam/help/service-accounts/granting-access-to-service-accounts>`__.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -2132,7 +2132,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
@@ -2144,7 +2144,7 @@ class IAMClient(metaclass=IAMClientMeta):
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
@@ -2219,7 +2219,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def query_grantable_roles(self,
-            request: iam.QueryGrantableRolesRequest = None,
+            request: Union[iam.QueryGrantableRolesRequest, dict] = None,
             *,
             full_resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2231,7 +2231,7 @@ class IAMClient(metaclass=IAMClientMeta):
         resource can contain bindings to the role.
 
         Args:
-            request (google.iam.admin_v1.types.QueryGrantableRolesRequest):
+            request (Union[google.iam.admin_v1.types.QueryGrantableRolesRequest, dict]):
                 The request object. The grantable role query request.
             full_resource_name (str):
                 Required. The full resource name to query from the list
@@ -2303,7 +2303,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def list_roles(self,
-            request: iam.ListRolesRequest = None,
+            request: Union[iam.ListRolesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2314,7 +2314,7 @@ class IAMClient(metaclass=IAMClientMeta):
         organization or project.
 
         Args:
-            request (google.iam.admin_v1.types.ListRolesRequest):
+            request (Union[google.iam.admin_v1.types.ListRolesRequest, dict]):
                 The request object. The request to get all roles defined
                 under a resource.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2365,7 +2365,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def get_role(self,
-            request: iam.GetRoleRequest = None,
+            request: Union[iam.GetRoleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2374,7 +2374,7 @@ class IAMClient(metaclass=IAMClientMeta):
         r"""Gets the definition of a [Role][google.iam.admin.v1.Role].
 
         Args:
-            request (google.iam.admin_v1.types.GetRoleRequest):
+            request (Union[google.iam.admin_v1.types.GetRoleRequest, dict]):
                 The request object. The request to get the definition of
                 an existing role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2421,7 +2421,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def create_role(self,
-            request: iam.CreateRoleRequest = None,
+            request: Union[iam.CreateRoleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2430,7 +2430,7 @@ class IAMClient(metaclass=IAMClientMeta):
         r"""Creates a new custom [Role][google.iam.admin.v1.Role].
 
         Args:
-            request (google.iam.admin_v1.types.CreateRoleRequest):
+            request (Union[google.iam.admin_v1.types.CreateRoleRequest, dict]):
                 The request object. The request to create a new role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2476,7 +2476,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def update_role(self,
-            request: iam.UpdateRoleRequest = None,
+            request: Union[iam.UpdateRoleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2486,7 +2486,7 @@ class IAMClient(metaclass=IAMClientMeta):
         [Role][google.iam.admin.v1.Role].
 
         Args:
-            request (google.iam.admin_v1.types.UpdateRoleRequest):
+            request (Union[google.iam.admin_v1.types.UpdateRoleRequest, dict]):
                 The request object. The request to update a role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2532,7 +2532,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def delete_role(self,
-            request: iam.DeleteRoleRequest = None,
+            request: Union[iam.DeleteRoleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2560,7 +2560,7 @@ class IAMClient(metaclass=IAMClientMeta):
            binding is permanently removed.
 
         Args:
-            request (google.iam.admin_v1.types.DeleteRoleRequest):
+            request (Union[google.iam.admin_v1.types.DeleteRoleRequest, dict]):
                 The request object. The request to delete an existing
                 role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2607,7 +2607,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def undelete_role(self,
-            request: iam.UndeleteRoleRequest = None,
+            request: Union[iam.UndeleteRoleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2616,7 +2616,7 @@ class IAMClient(metaclass=IAMClientMeta):
         r"""Undeletes a custom [Role][google.iam.admin.v1.Role].
 
         Args:
-            request (google.iam.admin_v1.types.UndeleteRoleRequest):
+            request (Union[google.iam.admin_v1.types.UndeleteRoleRequest, dict]):
                 The request object. The request to undelete an existing
                 role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2663,7 +2663,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def query_testable_permissions(self,
-            request: iam.QueryTestablePermissionsRequest = None,
+            request: Union[iam.QueryTestablePermissionsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2674,7 +2674,7 @@ class IAMClient(metaclass=IAMClientMeta):
         whether a member has that permission on the resource.
 
         Args:
-            request (google.iam.admin_v1.types.QueryTestablePermissionsRequest):
+            request (Union[google.iam.admin_v1.types.QueryTestablePermissionsRequest, dict]):
                 The request object. A request to get permissions which
                 can be tested on a resource.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2725,7 +2725,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def query_auditable_services(self,
-            request: iam.QueryAuditableServicesRequest = None,
+            request: Union[iam.QueryAuditableServicesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2738,7 +2738,7 @@ class IAMClient(metaclass=IAMClientMeta):
         documentation <https://cloud.google.com/logging/docs/audit>`__.
 
         Args:
-            request (google.iam.admin_v1.types.QueryAuditableServicesRequest):
+            request (Union[google.iam.admin_v1.types.QueryAuditableServicesRequest, dict]):
                 The request object. A request to get the list of
                 auditable services for a resource.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2777,7 +2777,7 @@ class IAMClient(metaclass=IAMClientMeta):
         return response
 
     def lint_policy(self,
-            request: iam.LintPolicyRequest = None,
+            request: Union[iam.LintPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2792,7 +2792,7 @@ class IAMClient(metaclass=IAMClientMeta):
         policy.
 
         Args:
-            request (google.iam.admin_v1.types.LintPolicyRequest):
+            request (Union[google.iam.admin_v1.types.LintPolicyRequest, dict]):
                 The request object. The request to lint a Cloud IAM
                 policy object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

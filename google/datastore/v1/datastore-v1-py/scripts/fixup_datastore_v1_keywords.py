@@ -39,13 +39,13 @@ def partition(
 class datastoreCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'allocate_ids': ('project_id', 'keys', ),
-          'begin_transaction': ('project_id', 'transaction_options', ),
-          'commit': ('project_id', 'mode', 'transaction', 'mutations', ),
-          'lookup': ('project_id', 'keys', 'read_options', ),
-          'reserve_ids': ('project_id', 'keys', 'database_id', ),
-          'rollback': ('project_id', 'transaction', ),
-          'run_query': ('project_id', 'partition_id', 'read_options', 'query', 'gql_query', ),
+        'allocate_ids': ('project_id', 'keys', ),
+        'begin_transaction': ('project_id', 'transaction_options', ),
+        'commit': ('project_id', 'mode', 'transaction', 'mutations', ),
+        'lookup': ('project_id', 'keys', 'read_options', ),
+        'reserve_ids': ('project_id', 'keys', 'database_id', ),
+        'rollback': ('project_id', 'transaction', ),
+        'run_query': ('project_id', 'partition_id', 'read_options', 'query', 'gql_query', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -64,7 +64,7 @@ class datastoreCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

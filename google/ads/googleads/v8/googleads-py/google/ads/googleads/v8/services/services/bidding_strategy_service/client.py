@@ -325,7 +325,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
               )
 
     def get_bidding_strategy(self,
-            request: bidding_strategy_service.GetBiddingStrategyRequest = None,
+            request: Union[bidding_strategy_service.GetBiddingStrategyRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -339,7 +339,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetBiddingStrategyRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetBiddingStrategyRequest, dict]):
                 The request object. Request message for
                 [BiddingStrategyService.GetBiddingStrategy][google.ads.googleads.v8.services.BiddingStrategyService.GetBiddingStrategy].
             resource_name (:class:`str`):
@@ -401,7 +401,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
         return response
 
     def mutate_bidding_strategies(self,
-            request: bidding_strategy_service.MutateBiddingStrategiesRequest = None,
+            request: Union[bidding_strategy_service.MutateBiddingStrategiesRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[bidding_strategy_service.BiddingStrategyOperation] = None,
@@ -426,7 +426,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
         `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateBiddingStrategiesRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateBiddingStrategiesRequest, dict]):
                 The request object. Request message for
                 [BiddingStrategyService.MutateBiddingStrategies][google.ads.googleads.v8.services.BiddingStrategyService.MutateBiddingStrategies].
             customer_id (:class:`str`):

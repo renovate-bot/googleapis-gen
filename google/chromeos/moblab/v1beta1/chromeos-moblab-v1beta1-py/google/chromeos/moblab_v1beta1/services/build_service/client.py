@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -383,7 +383,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
             )
 
     def list_build_targets(self,
-            request: build_service.ListBuildTargetsRequest = None,
+            request: Union[build_service.ListBuildTargetsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -392,7 +392,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         r"""Lists all build targets that a user has access to.
 
         Args:
-            request (google.chromeos.moblab_v1beta1.types.ListBuildTargetsRequest):
+            request (Union[google.chromeos.moblab_v1beta1.types.ListBuildTargetsRequest, dict]):
                 The request object. Request message for listing build
                 targets.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -443,7 +443,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         return response
 
     def list_models(self,
-            request: build_service.ListModelsRequest = None,
+            request: Union[build_service.ListModelsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -453,7 +453,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         r"""Lists all models for the given build target.
 
         Args:
-            request (google.chromeos.moblab_v1beta1.types.ListModelsRequest):
+            request (Union[google.chromeos.moblab_v1beta1.types.ListModelsRequest, dict]):
                 The request object. Request message for listing models.
             parent (str):
                 Required. The full resource name of
@@ -528,7 +528,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         return response
 
     def list_builds(self,
-            request: build_service.ListBuildsRequest = None,
+            request: Union[build_service.ListBuildsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -540,7 +540,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         versions.
 
         Args:
-            request (google.chromeos.moblab_v1beta1.types.ListBuildsRequest):
+            request (Union[google.chromeos.moblab_v1beta1.types.ListBuildsRequest, dict]):
                 The request object. Request message for listing builds.
             parent (str):
                 Required. The full resource name of
@@ -618,7 +618,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         return response
 
     def check_build_stage_status(self,
-            request: build_service.CheckBuildStageStatusRequest = None,
+            request: Union[build_service.CheckBuildStageStatusRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -629,7 +629,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         a partner Google Cloud Storage bucket.
 
         Args:
-            request (google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest):
+            request (Union[google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest, dict]):
                 The request object. Request message for checking if the
                 build artifact is staged.
             name (str):
@@ -696,7 +696,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         return response
 
     def stage_build(self,
-            request: build_service.StageBuildRequest = None,
+            request: Union[build_service.StageBuildRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -712,7 +712,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         [StageBuildMetadata][google.chromeos.moblab.v1beta1.StageBuildMetadata]>
 
         Args:
-            request (google.chromeos.moblab_v1beta1.types.StageBuildRequest):
+            request (Union[google.chromeos.moblab_v1beta1.types.StageBuildRequest, dict]):
                 The request object. Request message for staging a build
                 artifact.
             name (str):
@@ -790,7 +790,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         return response
 
     def find_most_stable_build(self,
-            request: build_service.FindMostStableBuildRequest = None,
+            request: Union[build_service.FindMostStableBuildRequest, dict] = None,
             *,
             build_target: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -813,7 +813,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         build status Pass
 
         Args:
-            request (google.chromeos.moblab_v1beta1.types.FindMostStableBuildRequest):
+            request (Union[google.chromeos.moblab_v1beta1.types.FindMostStableBuildRequest, dict]):
                 The request object. Request message for finding the most
                 stable build.
             build_target (str):

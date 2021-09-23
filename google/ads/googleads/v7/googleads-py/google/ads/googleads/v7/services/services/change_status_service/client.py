@@ -423,7 +423,7 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
               )
 
     def get_change_status(self,
-            request: change_status_service.GetChangeStatusRequest = None,
+            request: Union[change_status_service.GetChangeStatusRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -437,7 +437,7 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetChangeStatusRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetChangeStatusRequest, dict]):
                 The request object. Request message for
                 '[ChangeStatusService.GetChangeStatus][google.ads.googleads.v7.services.ChangeStatusService.GetChangeStatus]'.
             resource_name (:class:`str`):

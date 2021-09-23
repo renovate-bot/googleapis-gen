@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -330,7 +330,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             )
 
     def create_microsoft_ad_domain(self,
-            request: managed_identities_service.CreateMicrosoftAdDomainRequest = None,
+            request: Union[managed_identities_service.CreateMicrosoftAdDomainRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -339,7 +339,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Creates a Microsoft AD domain.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.CreateMicrosoftAdDomainRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.CreateMicrosoftAdDomainRequest, dict]):
                 The request object. Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -397,7 +397,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def reset_admin_password(self,
-            request: managed_identities_service.ResetAdminPasswordRequest = None,
+            request: Union[managed_identities_service.ResetAdminPasswordRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -406,7 +406,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Resets a domain's administrator password.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.ResetAdminPasswordRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.ResetAdminPasswordRequest, dict]):
                 The request object. Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1beta1.ResetAdminPassword]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -453,7 +453,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def list_domains(self,
-            request: managed_identities_service.ListDomainsRequest = None,
+            request: Union[managed_identities_service.ListDomainsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -462,7 +462,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Lists domains in a project.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.ListDomainsRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.ListDomainsRequest, dict]):
                 The request object. Request message for
                 [ListDomains][google.cloud.managedidentities.v1beta1.ListDomains]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -521,7 +521,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def get_domain(self,
-            request: managed_identities_service.GetDomainRequest = None,
+            request: Union[managed_identities_service.GetDomainRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -530,7 +530,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Gets information about a domain.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.GetDomainRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.GetDomainRequest, dict]):
                 The request object. Request message for
                 [GetDomain][google.cloud.managedidentities.v1beta1.GetDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -577,7 +577,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def update_domain(self,
-            request: managed_identities_service.UpdateDomainRequest = None,
+            request: Union[managed_identities_service.UpdateDomainRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -586,7 +586,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Updates the metadata and configuration of a domain.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.UpdateDomainRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.UpdateDomainRequest, dict]):
                 The request object. Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1beta1.UpdateDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -644,7 +644,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def delete_domain(self,
-            request: managed_identities_service.DeleteDomainRequest = None,
+            request: Union[managed_identities_service.DeleteDomainRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -653,7 +653,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Deletes a domain.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.DeleteDomainRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.DeleteDomainRequest, dict]):
                 The request object. Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1beta1.DeleteDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -721,7 +721,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def attach_trust(self,
-            request: managed_identities_service.AttachTrustRequest = None,
+            request: Union[managed_identities_service.AttachTrustRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -730,7 +730,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Adds an AD trust to a domain.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.AttachTrustRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.AttachTrustRequest, dict]):
                 The request object. Request message for
                 [AttachTrust][google.cloud.managedidentities.v1beta1.AttachTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -788,7 +788,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def reconfigure_trust(self,
-            request: managed_identities_service.ReconfigureTrustRequest = None,
+            request: Union[managed_identities_service.ReconfigureTrustRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -797,7 +797,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Updates the DNS conditional forwarder.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.ReconfigureTrustRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.ReconfigureTrustRequest, dict]):
                 The request object. Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1beta1.ReconfigureTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -855,7 +855,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def detach_trust(self,
-            request: managed_identities_service.DetachTrustRequest = None,
+            request: Union[managed_identities_service.DetachTrustRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -864,7 +864,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         r"""Removes an AD trust.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.DetachTrustRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.DetachTrustRequest, dict]):
                 The request object. Request message for
                 [DetachTrust][google.cloud.managedidentities.v1beta1.DetachTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -922,7 +922,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return response
 
     def validate_trust(self,
-            request: managed_identities_service.ValidateTrustRequest = None,
+            request: Union[managed_identities_service.ValidateTrustRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -933,7 +933,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         incoming trust requests.
 
         Args:
-            request (google.cloud.managedidentities_v1beta1.types.ValidateTrustRequest):
+            request (Union[google.cloud.managedidentities_v1beta1.types.ValidateTrustRequest, dict]):
                 The request object. Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1beta1.ValidateTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

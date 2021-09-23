@@ -324,7 +324,7 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
               )
 
     def get_media_file(self,
-            request: media_file_service.GetMediaFileRequest = None,
+            request: Union[media_file_service.GetMediaFileRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetMediaFileRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetMediaFileRequest, dict]):
                 The request object. Request message for
                 [MediaFileService.GetMediaFile][google.ads.googleads.v8.services.MediaFileService.GetMediaFile]
             resource_name (:class:`str`):
@@ -400,7 +400,7 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
         return response
 
     def mutate_media_files(self,
-            request: media_file_service.MutateMediaFilesRequest = None,
+            request: Union[media_file_service.MutateMediaFilesRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[media_file_service.MediaFileOperation] = None,
@@ -421,7 +421,7 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateMediaFilesRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateMediaFilesRequest, dict]):
                 The request object. Request message for
                 [MediaFileService.MutateMediaFiles][google.ads.googleads.v8.services.MediaFileService.MutateMediaFiles]
             customer_id (:class:`str`):

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -365,7 +365,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             )
 
     def create_topic(self,
-            request: admin.CreateTopicRequest = None,
+            request: Union[admin.CreateTopicRequest, dict] = None,
             *,
             parent: str = None,
             topic: common.Topic = None,
@@ -377,7 +377,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Creates a new topic.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.CreateTopicRequest):
+            request (Union[google.cloud.pubsublite_v1.types.CreateTopicRequest, dict]):
                 The request object. Request for CreateTopic.
             parent (str):
                 Required. The parent location in which to create the
@@ -460,7 +460,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def get_topic(self,
-            request: admin.GetTopicRequest = None,
+            request: Union[admin.GetTopicRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -470,7 +470,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Returns the topic configuration.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.GetTopicRequest):
+            request (Union[google.cloud.pubsublite_v1.types.GetTopicRequest, dict]):
                 The request object. Request for GetTopic.
             name (str):
                 Required. The name of the topic whose
@@ -532,7 +532,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def get_topic_partitions(self,
-            request: admin.GetTopicPartitionsRequest = None,
+            request: Union[admin.GetTopicPartitionsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -543,7 +543,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         topic.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.GetTopicPartitionsRequest):
+            request (Union[google.cloud.pubsublite_v1.types.GetTopicPartitionsRequest, dict]):
                 The request object. Request for GetTopicPartitions.
             name (str):
                 Required. The topic whose partition
@@ -605,7 +605,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def list_topics(self,
-            request: admin.ListTopicsRequest = None,
+            request: Union[admin.ListTopicsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -615,7 +615,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Returns the list of topics for the given project.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.ListTopicsRequest):
+            request (Union[google.cloud.pubsublite_v1.types.ListTopicsRequest, dict]):
                 The request object. Request for ListTopics.
             parent (str):
                 Required. The parent whose topics are to be listed.
@@ -691,7 +691,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def update_topic(self,
-            request: admin.UpdateTopicRequest = None,
+            request: Union[admin.UpdateTopicRequest, dict] = None,
             *,
             topic: common.Topic = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -702,7 +702,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Updates properties of the specified topic.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.UpdateTopicRequest):
+            request (Union[google.cloud.pubsublite_v1.types.UpdateTopicRequest, dict]):
                 The request object. Request for UpdateTopic.
             topic (google.cloud.pubsublite_v1.types.Topic):
                 Required. The topic to update. Its ``name`` field must
@@ -773,7 +773,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def delete_topic(self,
-            request: admin.DeleteTopicRequest = None,
+            request: Union[admin.DeleteTopicRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -783,7 +783,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Deletes the specified topic.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.DeleteTopicRequest):
+            request (Union[google.cloud.pubsublite_v1.types.DeleteTopicRequest, dict]):
                 The request object. Request for DeleteTopic.
             name (str):
                 Required. The name of the topic to
@@ -838,7 +838,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         )
 
     def list_topic_subscriptions(self,
-            request: admin.ListTopicSubscriptionsRequest = None,
+            request: Union[admin.ListTopicSubscriptionsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -849,7 +849,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         topic.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.ListTopicSubscriptionsRequest):
+            request (Union[google.cloud.pubsublite_v1.types.ListTopicSubscriptionsRequest, dict]):
                 The request object. Request for ListTopicSubscriptions.
             name (str):
                 Required. The name of the topic whose
@@ -924,7 +924,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def create_subscription(self,
-            request: admin.CreateSubscriptionRequest = None,
+            request: Union[admin.CreateSubscriptionRequest, dict] = None,
             *,
             parent: str = None,
             subscription: common.Subscription = None,
@@ -936,7 +936,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Creates a new subscription.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.CreateSubscriptionRequest):
+            request (Union[google.cloud.pubsublite_v1.types.CreateSubscriptionRequest, dict]):
                 The request object. Request for CreateSubscription.
             parent (str):
                 Required. The parent location in which to create the
@@ -1021,7 +1021,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def get_subscription(self,
-            request: admin.GetSubscriptionRequest = None,
+            request: Union[admin.GetSubscriptionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1031,7 +1031,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Returns the subscription configuration.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.GetSubscriptionRequest):
+            request (Union[google.cloud.pubsublite_v1.types.GetSubscriptionRequest, dict]):
                 The request object. Request for GetSubscription.
             name (str):
                 Required. The name of the
@@ -1096,7 +1096,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def list_subscriptions(self,
-            request: admin.ListSubscriptionsRequest = None,
+            request: Union[admin.ListSubscriptionsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1107,7 +1107,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         project.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.ListSubscriptionsRequest):
+            request (Union[google.cloud.pubsublite_v1.types.ListSubscriptionsRequest, dict]):
                 The request object. Request for ListSubscriptions.
             parent (str):
                 Required. The parent whose subscriptions are to be
@@ -1183,7 +1183,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def update_subscription(self,
-            request: admin.UpdateSubscriptionRequest = None,
+            request: Union[admin.UpdateSubscriptionRequest, dict] = None,
             *,
             subscription: common.Subscription = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1194,7 +1194,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Updates properties of the specified subscription.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.UpdateSubscriptionRequest):
+            request (Union[google.cloud.pubsublite_v1.types.UpdateSubscriptionRequest, dict]):
                 The request object. Request for UpdateSubscription.
             subscription (google.cloud.pubsublite_v1.types.Subscription):
                 Required. The subscription to update. Its ``name`` field
@@ -1267,7 +1267,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def delete_subscription(self,
-            request: admin.DeleteSubscriptionRequest = None,
+            request: Union[admin.DeleteSubscriptionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1277,7 +1277,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Deletes the specified subscription.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.DeleteSubscriptionRequest):
+            request (Union[google.cloud.pubsublite_v1.types.DeleteSubscriptionRequest, dict]):
                 The request object. Request for DeleteSubscription.
             name (str):
                 Required. The name of the
@@ -1332,7 +1332,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         )
 
     def seek_subscription(self,
-            request: admin.SeekSubscriptionRequest = None,
+            request: Union[admin.SeekSubscriptionRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1367,7 +1367,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         supersede it.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.SeekSubscriptionRequest):
+            request (Union[google.cloud.pubsublite_v1.types.SeekSubscriptionRequest, dict]):
                 The request object. Request for SeekSubscription.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1424,7 +1424,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def create_reservation(self,
-            request: admin.CreateReservationRequest = None,
+            request: Union[admin.CreateReservationRequest, dict] = None,
             *,
             parent: str = None,
             reservation: common.Reservation = None,
@@ -1436,7 +1436,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Creates a new reservation.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.CreateReservationRequest):
+            request (Union[google.cloud.pubsublite_v1.types.CreateReservationRequest, dict]):
                 The request object. Request for CreateReservation.
             parent (str):
                 Required. The parent location in which to create the
@@ -1521,7 +1521,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def get_reservation(self,
-            request: admin.GetReservationRequest = None,
+            request: Union[admin.GetReservationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1531,7 +1531,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Returns the reservation configuration.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.GetReservationRequest):
+            request (Union[google.cloud.pubsublite_v1.types.GetReservationRequest, dict]):
                 The request object. Request for GetReservation.
             name (str):
                 Required. The name of the reservation whose
@@ -1596,7 +1596,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def list_reservations(self,
-            request: admin.ListReservationsRequest = None,
+            request: Union[admin.ListReservationsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1607,7 +1607,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         project.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.ListReservationsRequest):
+            request (Union[google.cloud.pubsublite_v1.types.ListReservationsRequest, dict]):
                 The request object. Request for ListReservations.
             parent (str):
                 Required. The parent whose reservations are to be
@@ -1683,7 +1683,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def update_reservation(self,
-            request: admin.UpdateReservationRequest = None,
+            request: Union[admin.UpdateReservationRequest, dict] = None,
             *,
             reservation: common.Reservation = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1694,7 +1694,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Updates properties of the specified reservation.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.UpdateReservationRequest):
+            request (Union[google.cloud.pubsublite_v1.types.UpdateReservationRequest, dict]):
                 The request object. Request for UpdateReservation.
             reservation (google.cloud.pubsublite_v1.types.Reservation):
                 Required. The reservation to update. Its ``name`` field
@@ -1767,7 +1767,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         return response
 
     def delete_reservation(self,
-            request: admin.DeleteReservationRequest = None,
+            request: Union[admin.DeleteReservationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1777,7 +1777,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         r"""Deletes the specified reservation.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.DeleteReservationRequest):
+            request (Union[google.cloud.pubsublite_v1.types.DeleteReservationRequest, dict]):
                 The request object. Request for DeleteReservation.
             name (str):
                 Required. The name of the reservation to delete.
@@ -1833,7 +1833,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         )
 
     def list_reservation_topics(self,
-            request: admin.ListReservationTopicsRequest = None,
+            request: Union[admin.ListReservationTopicsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1844,7 +1844,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         reservation.
 
         Args:
-            request (google.cloud.pubsublite_v1.types.ListReservationTopicsRequest):
+            request (Union[google.cloud.pubsublite_v1.types.ListReservationTopicsRequest, dict]):
                 The request object. Request for ListReservationTopics.
             name (str):
                 Required. The name of the reservation whose topics to

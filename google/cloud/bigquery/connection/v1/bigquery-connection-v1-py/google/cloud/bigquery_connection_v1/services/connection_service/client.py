@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -340,7 +340,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
             )
 
     def create_connection(self,
-            request: gcbc_connection.CreateConnectionRequest = None,
+            request: Union[gcbc_connection.CreateConnectionRequest, dict] = None,
             *,
             parent: str = None,
             connection: gcbc_connection.Connection = None,
@@ -352,7 +352,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         r"""Creates a new connection.
 
         Args:
-            request (google.cloud.bigquery_connection_v1.types.CreateConnectionRequest):
+            request (Union[google.cloud.bigquery_connection_v1.types.CreateConnectionRequest, dict]):
                 The request object. The request for
                 [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1.ConnectionService.CreateConnection].
             parent (str):
@@ -434,7 +434,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         return response
 
     def get_connection(self,
-            request: connection.GetConnectionRequest = None,
+            request: Union[connection.GetConnectionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -444,7 +444,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         r"""Returns specified connection.
 
         Args:
-            request (google.cloud.bigquery_connection_v1.types.GetConnectionRequest):
+            request (Union[google.cloud.bigquery_connection_v1.types.GetConnectionRequest, dict]):
                 The request object. The request for
                 [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1.ConnectionService.GetConnection].
             name (str):
@@ -510,7 +510,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         return response
 
     def list_connections(self,
-            request: connection.ListConnectionsRequest = None,
+            request: Union[connection.ListConnectionsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -520,7 +520,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         r"""Returns a list of connections in the given project.
 
         Args:
-            request (google.cloud.bigquery_connection_v1.types.ListConnectionsRequest):
+            request (Union[google.cloud.bigquery_connection_v1.types.ListConnectionsRequest, dict]):
                 The request object. The request for
                 [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1.ConnectionService.ListConnections].
             parent (str):
@@ -597,7 +597,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         return response
 
     def update_connection(self,
-            request: gcbc_connection.UpdateConnectionRequest = None,
+            request: Union[gcbc_connection.UpdateConnectionRequest, dict] = None,
             *,
             name: str = None,
             connection: gcbc_connection.Connection = None,
@@ -611,7 +611,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         are in the update field mask.
 
         Args:
-            request (google.cloud.bigquery_connection_v1.types.UpdateConnectionRequest):
+            request (Union[google.cloud.bigquery_connection_v1.types.UpdateConnectionRequest, dict]):
                 The request object. The request for
                 [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1.ConnectionService.UpdateConnection].
             name (str):
@@ -695,7 +695,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         return response
 
     def delete_connection(self,
-            request: connection.DeleteConnectionRequest = None,
+            request: Union[connection.DeleteConnectionRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -705,7 +705,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         r"""Deletes connection and associated credential.
 
         Args:
-            request (google.cloud.bigquery_connection_v1.types.DeleteConnectionRequest):
+            request (Union[google.cloud.bigquery_connection_v1.types.DeleteConnectionRequest, dict]):
                 The request object. The request for
                 [ConnectionService.DeleteConnectionRequest][].
             name (str):
@@ -761,7 +761,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         )
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -773,7 +773,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         not have a policy set.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -892,7 +892,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -906,7 +906,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         ``PERMISSION_DENIED`` errors.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -1025,7 +1025,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
@@ -1043,7 +1043,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         warning.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):

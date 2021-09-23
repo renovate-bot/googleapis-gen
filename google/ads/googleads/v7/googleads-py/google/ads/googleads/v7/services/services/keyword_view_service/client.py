@@ -321,7 +321,7 @@ class KeywordViewServiceClient(metaclass=KeywordViewServiceClientMeta):
               )
 
     def get_keyword_view(self,
-            request: keyword_view_service.GetKeywordViewRequest = None,
+            request: Union[keyword_view_service.GetKeywordViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class KeywordViewServiceClient(metaclass=KeywordViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetKeywordViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetKeywordViewRequest, dict]):
                 The request object. Request message for
                 [KeywordViewService.GetKeywordView][google.ads.googleads.v7.services.KeywordViewService.GetKeywordView].
             resource_name (:class:`str`):

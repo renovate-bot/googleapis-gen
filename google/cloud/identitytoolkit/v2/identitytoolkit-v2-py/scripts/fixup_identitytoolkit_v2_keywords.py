@@ -39,11 +39,11 @@ def partition(
 class identitytoolkitCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'finalize_mfa_enrollment': ('id_token', 'display_name', 'phone_verification_info', 'tenant_id', ),
-          'finalize_mfa_sign_in': ('mfa_pending_credential', 'phone_verification_info', 'tenant_id', ),
-          'start_mfa_enrollment': ('id_token', 'phone_enrollment_info', 'tenant_id', ),
-          'start_mfa_sign_in': ('mfa_pending_credential', 'mfa_enrollment_id', 'phone_sign_in_info', 'tenant_id', ),
-          'withdraw_mfa': ('id_token', 'mfa_enrollment_id', 'tenant_id', ),
+        'finalize_mfa_enrollment': ('id_token', 'display_name', 'phone_verification_info', 'tenant_id', ),
+        'finalize_mfa_sign_in': ('mfa_pending_credential', 'phone_verification_info', 'tenant_id', ),
+        'start_mfa_enrollment': ('id_token', 'phone_enrollment_info', 'tenant_id', ),
+        'start_mfa_sign_in': ('mfa_pending_credential', 'mfa_enrollment_id', 'phone_sign_in_info', 'tenant_id', ),
+        'withdraw_mfa': ('id_token', 'mfa_enrollment_id', 'tenant_id', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -62,7 +62,7 @@ class identitytoolkitCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

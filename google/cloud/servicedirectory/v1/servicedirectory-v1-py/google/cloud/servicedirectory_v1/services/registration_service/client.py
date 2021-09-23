@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -382,7 +382,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
             )
 
     def create_namespace(self,
-            request: registration_service.CreateNamespaceRequest = None,
+            request: Union[registration_service.CreateNamespaceRequest, dict] = None,
             *,
             parent: str = None,
             namespace: gcs_namespace.Namespace = None,
@@ -394,7 +394,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Creates a namespace, and returns the new Namespace.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.CreateNamespaceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.CreateNamespaceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1.RegistrationService.CreateNamespace].
             parent (str):
@@ -486,7 +486,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def list_namespaces(self,
-            request: registration_service.ListNamespacesRequest = None,
+            request: Union[registration_service.ListNamespacesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -496,7 +496,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Lists all namespaces.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.ListNamespacesRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.ListNamespacesRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1.RegistrationService.ListNamespaces].
             parent (str):
@@ -574,7 +574,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def get_namespace(self,
-            request: registration_service.GetNamespaceRequest = None,
+            request: Union[registration_service.GetNamespaceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -584,7 +584,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Gets a namespace.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.GetNamespaceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.GetNamespaceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.GetNamespace][google.cloud.servicedirectory.v1.RegistrationService.GetNamespace].
             name (str):
@@ -651,7 +651,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def update_namespace(self,
-            request: registration_service.UpdateNamespaceRequest = None,
+            request: Union[registration_service.UpdateNamespaceRequest, dict] = None,
             *,
             namespace: gcs_namespace.Namespace = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -662,7 +662,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Updates a namespace.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.UpdateNamespaceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.UpdateNamespaceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1.RegistrationService.UpdateNamespace].
             namespace (google.cloud.servicedirectory_v1.types.Namespace):
@@ -736,7 +736,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def delete_namespace(self,
-            request: registration_service.DeleteNamespaceRequest = None,
+            request: Union[registration_service.DeleteNamespaceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -747,7 +747,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         and endpoints in the namespace.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.DeleteNamespaceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.DeleteNamespaceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1.RegistrationService.DeleteNamespace].
             name (str):
@@ -803,7 +803,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         )
 
     def create_service(self,
-            request: registration_service.CreateServiceRequest = None,
+            request: Union[registration_service.CreateServiceRequest, dict] = None,
             *,
             parent: str = None,
             service: gcs_service.Service = None,
@@ -815,7 +815,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Creates a service, and returns the new Service.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.CreateServiceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.CreateServiceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.CreateService][google.cloud.servicedirectory.v1.RegistrationService.CreateService].
             parent (str):
@@ -906,7 +906,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def list_services(self,
-            request: registration_service.ListServicesRequest = None,
+            request: Union[registration_service.ListServicesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -916,7 +916,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Lists all services belonging to a namespace.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.ListServicesRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.ListServicesRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.ListServices][google.cloud.servicedirectory.v1.RegistrationService.ListServices].
             parent (str):
@@ -994,7 +994,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def get_service(self,
-            request: registration_service.GetServiceRequest = None,
+            request: Union[registration_service.GetServiceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1004,7 +1004,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Gets a service.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.GetServiceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.GetServiceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.GetService][google.cloud.servicedirectory.v1.RegistrationService.GetService].
                 This should not be used for looking up a service.
@@ -1074,7 +1074,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def update_service(self,
-            request: registration_service.UpdateServiceRequest = None,
+            request: Union[registration_service.UpdateServiceRequest, dict] = None,
             *,
             service: gcs_service.Service = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1085,7 +1085,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Updates a service.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.UpdateServiceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.UpdateServiceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.UpdateService][google.cloud.servicedirectory.v1.RegistrationService.UpdateService].
             service (google.cloud.servicedirectory_v1.types.Service):
@@ -1159,7 +1159,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def delete_service(self,
-            request: registration_service.DeleteServiceRequest = None,
+            request: Union[registration_service.DeleteServiceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1170,7 +1170,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         associated with the service.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.DeleteServiceRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.DeleteServiceRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.DeleteService][google.cloud.servicedirectory.v1.RegistrationService.DeleteService].
             name (str):
@@ -1226,7 +1226,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         )
 
     def create_endpoint(self,
-            request: registration_service.CreateEndpointRequest = None,
+            request: Union[registration_service.CreateEndpointRequest, dict] = None,
             *,
             parent: str = None,
             endpoint: gcs_endpoint.Endpoint = None,
@@ -1238,7 +1238,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Creates a endpoint, and returns the new Endpoint.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.CreateEndpointRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.CreateEndpointRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1.RegistrationService.CreateEndpoint].
             parent (str):
@@ -1328,7 +1328,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def list_endpoints(self,
-            request: registration_service.ListEndpointsRequest = None,
+            request: Union[registration_service.ListEndpointsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1338,7 +1338,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Lists all endpoints.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.ListEndpointsRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.ListEndpointsRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
             parent (str):
@@ -1416,7 +1416,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def get_endpoint(self,
-            request: registration_service.GetEndpointRequest = None,
+            request: Union[registration_service.GetEndpointRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1426,7 +1426,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Gets a endpoint.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.GetEndpointRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.GetEndpointRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1.RegistrationService.GetEndpoint].
                 This should not be used to lookup endpoints at runtime.
@@ -1494,7 +1494,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def update_endpoint(self,
-            request: registration_service.UpdateEndpointRequest = None,
+            request: Union[registration_service.UpdateEndpointRequest, dict] = None,
             *,
             endpoint: gcs_endpoint.Endpoint = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1505,7 +1505,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Updates a endpoint.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.UpdateEndpointRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.UpdateEndpointRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1.RegistrationService.UpdateEndpoint].
             endpoint (google.cloud.servicedirectory_v1.types.Endpoint):
@@ -1578,7 +1578,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def delete_endpoint(self,
-            request: registration_service.DeleteEndpointRequest = None,
+            request: Union[registration_service.DeleteEndpointRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1588,7 +1588,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         r"""Deletes a endpoint.
 
         Args:
-            request (google.cloud.servicedirectory_v1.types.DeleteEndpointRequest):
+            request (Union[google.cloud.servicedirectory_v1.types.DeleteEndpointRequest, dict]):
                 The request object. The request message for
                 [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1.RegistrationService.DeleteEndpoint].
             name (str):
@@ -1644,7 +1644,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         )
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1654,7 +1654,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         service only).
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1755,7 +1755,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1765,7 +1765,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         service only).
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1866,7 +1866,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1876,7 +1876,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         service only).
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -344,7 +344,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
             )
 
     def list_workflows(self,
-            request: workflows.ListWorkflowsRequest = None,
+            request: Union[workflows.ListWorkflowsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -355,7 +355,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         The default order is not specified.
 
         Args:
-            request (google.cloud.workflows_v1.types.ListWorkflowsRequest):
+            request (Union[google.cloud.workflows_v1.types.ListWorkflowsRequest, dict]):
                 The request object. Request for the
                 [ListWorkflows][google.cloud.workflows.v1.Workflows.ListWorkflows]
                 method.
@@ -436,7 +436,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         return response
 
     def get_workflow(self,
-            request: workflows.GetWorkflowRequest = None,
+            request: Union[workflows.GetWorkflowRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -446,7 +446,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         r"""Gets details of a single Workflow.
 
         Args:
-            request (google.cloud.workflows_v1.types.GetWorkflowRequest):
+            request (Union[google.cloud.workflows_v1.types.GetWorkflowRequest, dict]):
                 The request object. Request for the
                 [GetWorkflow][google.cloud.workflows.v1.Workflows.GetWorkflow]
                 method.
@@ -513,7 +513,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         return response
 
     def create_workflow(self,
-            request: workflows.CreateWorkflowRequest = None,
+            request: Union[workflows.CreateWorkflowRequest, dict] = None,
             *,
             parent: str = None,
             workflow: workflows.Workflow = None,
@@ -528,7 +528,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
 
         Args:
-            request (google.cloud.workflows_v1.types.CreateWorkflowRequest):
+            request (Union[google.cloud.workflows_v1.types.CreateWorkflowRequest, dict]):
                 The request object. Request for the
                 [CreateWorkflow][google.cloud.workflows.v1.Workflows.CreateWorkflow]
                 method.
@@ -631,7 +631,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         return response
 
     def delete_workflow(self,
-            request: workflows.DeleteWorkflowRequest = None,
+            request: Union[workflows.DeleteWorkflowRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -643,7 +643,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         executions of the workflow.
 
         Args:
-            request (google.cloud.workflows_v1.types.DeleteWorkflowRequest):
+            request (Union[google.cloud.workflows_v1.types.DeleteWorkflowRequest, dict]):
                 The request object. Request for the
                 [DeleteWorkflow][google.cloud.workflows.v1.Workflows.DeleteWorkflow]
                 method.
@@ -731,7 +731,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         return response
 
     def update_workflow(self,
-            request: workflows.UpdateWorkflowRequest = None,
+            request: Union[workflows.UpdateWorkflowRequest, dict] = None,
             *,
             workflow: workflows.Workflow = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -747,7 +747,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         used in new workflow executions.
 
         Args:
-            request (google.cloud.workflows_v1.types.UpdateWorkflowRequest):
+            request (Union[google.cloud.workflows_v1.types.UpdateWorkflowRequest, dict]):
                 The request object. Request for the
                 [UpdateWorkflow][google.cloud.workflows.v1.Workflows.UpdateWorkflow]
                 method.

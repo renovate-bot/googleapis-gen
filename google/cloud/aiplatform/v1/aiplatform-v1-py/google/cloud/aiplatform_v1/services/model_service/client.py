@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -394,7 +394,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             )
 
     def upload_model(self,
-            request: model_service.UploadModelRequest = None,
+            request: Union[model_service.UploadModelRequest, dict] = None,
             *,
             parent: str = None,
             model: gca_model.Model = None,
@@ -405,7 +405,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Uploads a Model artifact into Vertex AI.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.UploadModelRequest):
+            request (Union[google.cloud.aiplatform_v1.types.UploadModelRequest, dict]):
                 The request object. Request message for
                 [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel].
             parent (str):
@@ -491,7 +491,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def get_model(self,
-            request: model_service.GetModelRequest = None,
+            request: Union[model_service.GetModelRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -501,7 +501,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Gets a Model.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.GetModelRequest):
+            request (Union[google.cloud.aiplatform_v1.types.GetModelRequest, dict]):
                 The request object. Request message for
                 [ModelService.GetModel][google.cloud.aiplatform.v1.ModelService.GetModel].
             name (str):
@@ -564,7 +564,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def list_models(self,
-            request: model_service.ListModelsRequest = None,
+            request: Union[model_service.ListModelsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -574,7 +574,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Lists Models in a Location.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.ListModelsRequest):
+            request (Union[google.cloud.aiplatform_v1.types.ListModelsRequest, dict]):
                 The request object. Request message for
                 [ModelService.ListModels][google.cloud.aiplatform.v1.ModelService.ListModels].
             parent (str):
@@ -652,7 +652,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def update_model(self,
-            request: model_service.UpdateModelRequest = None,
+            request: Union[model_service.UpdateModelRequest, dict] = None,
             *,
             model: gca_model.Model = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -663,7 +663,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Updates a Model.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.UpdateModelRequest):
+            request (Union[google.cloud.aiplatform_v1.types.UpdateModelRequest, dict]):
                 The request object. Request message for
                 [ModelService.UpdateModel][google.cloud.aiplatform.v1.ModelService.UpdateModel].
             model (google.cloud.aiplatform_v1.types.Model):
@@ -736,7 +736,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def delete_model(self,
-            request: model_service.DeleteModelRequest = None,
+            request: Union[model_service.DeleteModelRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -748,7 +748,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         DeployedModels created from it.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.DeleteModelRequest):
+            request (Union[google.cloud.aiplatform_v1.types.DeleteModelRequest, dict]):
                 The request object. Request message for
                 [ModelService.DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel].
             name (str):
@@ -835,7 +835,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def export_model(self,
-            request: model_service.ExportModelRequest = None,
+            request: Union[model_service.ExportModelRequest, dict] = None,
             *,
             name: str = None,
             output_config: model_service.ExportModelRequest.OutputConfig = None,
@@ -849,7 +849,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         format][google.cloud.aiplatform.v1.Model.supported_export_formats].
 
         Args:
-            request (google.cloud.aiplatform_v1.types.ExportModelRequest):
+            request (Union[google.cloud.aiplatform_v1.types.ExportModelRequest, dict]):
                 The request object. Request message for
                 [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel].
             name (str):
@@ -937,7 +937,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def get_model_evaluation(self,
-            request: model_service.GetModelEvaluationRequest = None,
+            request: Union[model_service.GetModelEvaluationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -947,7 +947,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Gets a ModelEvaluation.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.GetModelEvaluationRequest):
+            request (Union[google.cloud.aiplatform_v1.types.GetModelEvaluationRequest, dict]):
                 The request object. Request message for
                 [ModelService.GetModelEvaluation][google.cloud.aiplatform.v1.ModelService.GetModelEvaluation].
             name (str):
@@ -1015,7 +1015,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def list_model_evaluations(self,
-            request: model_service.ListModelEvaluationsRequest = None,
+            request: Union[model_service.ListModelEvaluationsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1025,7 +1025,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Lists ModelEvaluations in a Model.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.ListModelEvaluationsRequest):
+            request (Union[google.cloud.aiplatform_v1.types.ListModelEvaluationsRequest, dict]):
                 The request object. Request message for
                 [ModelService.ListModelEvaluations][google.cloud.aiplatform.v1.ModelService.ListModelEvaluations].
             parent (str):
@@ -1103,7 +1103,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def get_model_evaluation_slice(self,
-            request: model_service.GetModelEvaluationSliceRequest = None,
+            request: Union[model_service.GetModelEvaluationSliceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1113,7 +1113,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Gets a ModelEvaluationSlice.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.GetModelEvaluationSliceRequest):
+            request (Union[google.cloud.aiplatform_v1.types.GetModelEvaluationSliceRequest, dict]):
                 The request object. Request message for
                 [ModelService.GetModelEvaluationSlice][google.cloud.aiplatform.v1.ModelService.GetModelEvaluationSlice].
             name (str):
@@ -1181,7 +1181,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         return response
 
     def list_model_evaluation_slices(self,
-            request: model_service.ListModelEvaluationSlicesRequest = None,
+            request: Union[model_service.ListModelEvaluationSlicesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1191,7 +1191,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         r"""Lists ModelEvaluationSlices in a ModelEvaluation.
 
         Args:
-            request (google.cloud.aiplatform_v1.types.ListModelEvaluationSlicesRequest):
+            request (Union[google.cloud.aiplatform_v1.types.ListModelEvaluationSlicesRequest, dict]):
                 The request object. Request message for
                 [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices].
             parent (str):

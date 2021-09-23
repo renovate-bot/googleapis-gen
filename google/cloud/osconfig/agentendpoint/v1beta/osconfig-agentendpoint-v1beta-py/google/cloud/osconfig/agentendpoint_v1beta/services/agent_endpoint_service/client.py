@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -326,7 +326,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             )
 
     def receive_task_notification(self,
-            request: agentendpoint.ReceiveTaskNotificationRequest = None,
+            request: Union[agentendpoint.ReceiveTaskNotificationRequest, dict] = None,
             *,
             instance_id_token: str = None,
             agent_version: str = None,
@@ -338,7 +338,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         notifications.
 
         Args:
-            request (google.cloud.osconfig.agentendpoint_v1beta.types.ReceiveTaskNotificationRequest):
+            request (Union[google.cloud.osconfig.agentendpoint_v1beta.types.ReceiveTaskNotificationRequest, dict]):
                 The request object. A request message to receive task
                 notifications.
             instance_id_token (str):
@@ -410,7 +410,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         return response
 
     def start_next_task(self,
-            request: agentendpoint.StartNextTaskRequest = None,
+            request: Union[agentendpoint.StartNextTaskRequest, dict] = None,
             *,
             instance_id_token: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -421,7 +421,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         task info.
 
         Args:
-            request (google.cloud.osconfig.agentendpoint_v1beta.types.StartNextTaskRequest):
+            request (Union[google.cloud.osconfig.agentendpoint_v1beta.types.StartNextTaskRequest, dict]):
                 The request object. A request message for signaling the
                 start of a task execution.
             instance_id_token (str):
@@ -482,7 +482,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         return response
 
     def report_task_progress(self,
-            request: agentendpoint.ReportTaskProgressRequest = None,
+            request: Union[agentendpoint.ReportTaskProgressRequest, dict] = None,
             *,
             instance_id_token: str = None,
             task_id: str = None,
@@ -495,7 +495,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         execution.
 
         Args:
-            request (google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskProgressRequest):
+            request (Union[google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskProgressRequest, dict]):
                 The request object. A request message for reporting the
                 progress of current task.
             instance_id_token (str):
@@ -578,7 +578,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         return response
 
     def report_task_complete(self,
-            request: agentendpoint.ReportTaskCompleteRequest = None,
+            request: Union[agentendpoint.ReportTaskCompleteRequest, dict] = None,
             *,
             instance_id_token: str = None,
             task_id: str = None,
@@ -592,7 +592,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         optionally returns the next task.
 
         Args:
-            request (google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskCompleteRequest):
+            request (Union[google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskCompleteRequest, dict]):
                 The request object. A request message for signaling the
                 completion of a task execution.
             instance_id_token (str):
@@ -683,7 +683,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         return response
 
     def lookup_effective_guest_policy(self,
-            request: guest_policies.LookupEffectiveGuestPolicyRequest = None,
+            request: Union[guest_policies.LookupEffectiveGuestPolicyRequest, dict] = None,
             *,
             instance_id_token: str = None,
             os_short_name: str = None,
@@ -698,7 +698,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         assigned to the instance ancestry.
 
         Args:
-            request (google.cloud.osconfig.agentendpoint_v1beta.types.LookupEffectiveGuestPolicyRequest):
+            request (Union[google.cloud.osconfig.agentendpoint_v1beta.types.LookupEffectiveGuestPolicyRequest, dict]):
                 The request object. A request message for getting
                 effective policy assigned to the instance.
             instance_id_token (str):
@@ -793,7 +793,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         return response
 
     def register_agent(self,
-            request: agentendpoint.RegisterAgentRequest = None,
+            request: Union[agentendpoint.RegisterAgentRequest, dict] = None,
             *,
             instance_id_token: str = None,
             agent_version: str = None,
@@ -805,7 +805,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         r"""Registers the agent running on the VM.
 
         Args:
-            request (google.cloud.osconfig.agentendpoint_v1beta.types.RegisterAgentRequest):
+            request (Union[google.cloud.osconfig.agentendpoint_v1beta.types.RegisterAgentRequest, dict]):
                 The request object. The request message for registering
                 the agent.
             instance_id_token (str):

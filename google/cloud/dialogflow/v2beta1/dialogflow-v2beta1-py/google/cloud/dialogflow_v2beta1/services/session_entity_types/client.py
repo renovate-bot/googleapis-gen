@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -341,7 +341,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             )
 
     def list_session_entity_types(self,
-            request: session_entity_type.ListSessionEntityTypesRequest = None,
+            request: Union[session_entity_type.ListSessionEntityTypesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -355,7 +355,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         use session entities with Google Assistant integration.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.ListSessionEntityTypesRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.ListSessionEntityTypesRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityTypes.ListSessionEntityTypes].
             parent (str):
@@ -442,7 +442,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def get_session_entity_type(self,
-            request: session_entity_type.GetSessionEntityTypeRequest = None,
+            request: Union[session_entity_type.GetSessionEntityTypeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -455,7 +455,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         use session entities with Google Assistant integration.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.GetSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.GetSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.GetSessionEntityType].
             name (str):
@@ -538,7 +538,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def create_session_entity_type(self,
-            request: gcd_session_entity_type.CreateSessionEntityTypeRequest = None,
+            request: Union[gcd_session_entity_type.CreateSessionEntityTypeRequest, dict] = None,
             *,
             parent: str = None,
             session_entity_type: gcd_session_entity_type.SessionEntityType = None,
@@ -555,7 +555,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         use session entities with Google Assistant integration.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.CreateSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.CreateSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.CreateSessionEntityType].
             parent (str):
@@ -647,7 +647,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def update_session_entity_type(self,
-            request: gcd_session_entity_type.UpdateSessionEntityTypeRequest = None,
+            request: Union[gcd_session_entity_type.UpdateSessionEntityTypeRequest, dict] = None,
             *,
             session_entity_type: gcd_session_entity_type.SessionEntityType = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -661,7 +661,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         use session entities with Google Assistant integration.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.UpdateSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.UpdateSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
             session_entity_type (google.cloud.dialogflow_v2beta1.types.SessionEntityType):
@@ -743,7 +743,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def delete_session_entity_type(self,
-            request: session_entity_type.DeleteSessionEntityTypeRequest = None,
+            request: Union[session_entity_type.DeleteSessionEntityTypeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -756,7 +756,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         use session entities with Google Assistant integration.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.DeleteSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.DeleteSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.DeleteSessionEntityType].
             name (str):

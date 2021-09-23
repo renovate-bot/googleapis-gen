@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -341,7 +341,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
             )
 
     def create_company(self,
-            request: company_service.CreateCompanyRequest = None,
+            request: Union[company_service.CreateCompanyRequest, dict] = None,
             *,
             parent: str = None,
             company: gct_company.Company = None,
@@ -352,7 +352,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         r"""Creates a new company entity.
 
         Args:
-            request (google.cloud.talent_v4beta1.types.CreateCompanyRequest):
+            request (Union[google.cloud.talent_v4beta1.types.CreateCompanyRequest, dict]):
                 The request object. The Request of the CreateCompany
                 method.
             parent (str):
@@ -434,7 +434,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         return response
 
     def get_company(self,
-            request: company_service.GetCompanyRequest = None,
+            request: Union[company_service.GetCompanyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -444,7 +444,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         r"""Retrieves specified company.
 
         Args:
-            request (google.cloud.talent_v4beta1.types.GetCompanyRequest):
+            request (Union[google.cloud.talent_v4beta1.types.GetCompanyRequest, dict]):
                 The request object. Request for getting a company by
                 name.
             name (str):
@@ -521,7 +521,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         return response
 
     def update_company(self,
-            request: company_service.UpdateCompanyRequest = None,
+            request: Union[company_service.UpdateCompanyRequest, dict] = None,
             *,
             company: gct_company.Company = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -531,7 +531,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         r"""Updates specified company.
 
         Args:
-            request (google.cloud.talent_v4beta1.types.UpdateCompanyRequest):
+            request (Union[google.cloud.talent_v4beta1.types.UpdateCompanyRequest, dict]):
                 The request object. Request for updating a specified
                 company.
             company (google.cloud.talent_v4beta1.types.Company):
@@ -601,7 +601,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         return response
 
     def delete_company(self,
-            request: company_service.DeleteCompanyRequest = None,
+            request: Union[company_service.DeleteCompanyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -613,7 +613,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         it.
 
         Args:
-            request (google.cloud.talent_v4beta1.types.DeleteCompanyRequest):
+            request (Union[google.cloud.talent_v4beta1.types.DeleteCompanyRequest, dict]):
                 The request object. Request to delete a company.
             name (str):
                 Required. The resource name of the company to be
@@ -675,7 +675,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         )
 
     def list_companies(self,
-            request: company_service.ListCompaniesRequest = None,
+            request: Union[company_service.ListCompaniesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -685,7 +685,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         r"""Lists all companies associated with the project.
 
         Args:
-            request (google.cloud.talent_v4beta1.types.ListCompaniesRequest):
+            request (Union[google.cloud.talent_v4beta1.types.ListCompaniesRequest, dict]):
                 The request object. List companies for which the client
                 has ACL visibility.
             parent (str):

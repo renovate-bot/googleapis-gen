@@ -39,29 +39,29 @@ def partition(
 class visionCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'add_product_to_product_set': ('name', 'product', ),
-          'async_batch_annotate_files': ('requests', ),
-          'async_batch_annotate_images': ('requests', 'output_config', ),
-          'batch_annotate_files': ('requests', ),
-          'batch_annotate_images': ('requests', ),
-          'create_product': ('parent', 'product', 'product_id', ),
-          'create_product_set': ('parent', 'product_set', 'product_set_id', ),
-          'create_reference_image': ('parent', 'reference_image', 'reference_image_id', ),
-          'delete_product': ('name', ),
-          'delete_product_set': ('name', ),
-          'delete_reference_image': ('name', ),
-          'get_product': ('name', ),
-          'get_product_set': ('name', ),
-          'get_reference_image': ('name', ),
-          'import_product_sets': ('parent', 'input_config', ),
-          'list_products': ('parent', 'page_size', 'page_token', ),
-          'list_product_sets': ('parent', 'page_size', 'page_token', ),
-          'list_products_in_product_set': ('name', 'page_size', 'page_token', ),
-          'list_reference_images': ('parent', 'page_size', 'page_token', ),
-          'purge_products': ('parent', 'product_set_purge_config', 'delete_orphan_products', 'force', ),
-          'remove_product_from_product_set': ('name', 'product', ),
-          'update_product': ('product', 'update_mask', ),
-          'update_product_set': ('product_set', 'update_mask', ),
+        'add_product_to_product_set': ('name', 'product', ),
+        'async_batch_annotate_files': ('requests', ),
+        'async_batch_annotate_images': ('requests', 'output_config', ),
+        'batch_annotate_files': ('requests', ),
+        'batch_annotate_images': ('requests', ),
+        'create_product': ('parent', 'product', 'product_id', ),
+        'create_product_set': ('parent', 'product_set', 'product_set_id', ),
+        'create_reference_image': ('parent', 'reference_image', 'reference_image_id', ),
+        'delete_product': ('name', ),
+        'delete_product_set': ('name', ),
+        'delete_reference_image': ('name', ),
+        'get_product': ('name', ),
+        'get_product_set': ('name', ),
+        'get_reference_image': ('name', ),
+        'import_product_sets': ('parent', 'input_config', ),
+        'list_products': ('parent', 'page_size', 'page_token', ),
+        'list_product_sets': ('parent', 'page_size', 'page_token', ),
+        'list_products_in_product_set': ('name', 'page_size', 'page_token', ),
+        'list_reference_images': ('parent', 'page_size', 'page_token', ),
+        'purge_products': ('parent', 'product_set_purge_config', 'delete_orphan_products', 'force', ),
+        'remove_product_from_product_set': ('name', 'product', ),
+        'update_product': ('product', 'update_mask', ),
+        'update_product_set': ('product_set', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -80,7 +80,7 @@ class visionCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

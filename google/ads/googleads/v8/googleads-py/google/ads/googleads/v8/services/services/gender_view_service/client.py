@@ -321,7 +321,7 @@ class GenderViewServiceClient(metaclass=GenderViewServiceClientMeta):
               )
 
     def get_gender_view(self,
-            request: gender_view_service.GetGenderViewRequest = None,
+            request: Union[gender_view_service.GetGenderViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class GenderViewServiceClient(metaclass=GenderViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetGenderViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetGenderViewRequest, dict]):
                 The request object. Request message for
                 [GenderViewService.GetGenderView][google.ads.googleads.v8.services.GenderViewService.GetGenderView].
             resource_name (:class:`str`):

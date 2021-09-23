@@ -322,7 +322,7 @@ class GeographicViewServiceClient(metaclass=GeographicViewServiceClientMeta):
               )
 
     def get_geographic_view(self,
-            request: geographic_view_service.GetGeographicViewRequest = None,
+            request: Union[geographic_view_service.GetGeographicViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class GeographicViewServiceClient(metaclass=GeographicViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetGeographicViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetGeographicViewRequest, dict]):
                 The request object. Request message for
                 [GeographicViewService.GetGeographicView][google.ads.googleads.v7.services.GeographicViewService.GetGeographicView].
             resource_name (:class:`str`):

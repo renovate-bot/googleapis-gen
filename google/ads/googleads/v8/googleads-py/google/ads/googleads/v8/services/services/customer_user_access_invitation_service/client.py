@@ -325,7 +325,7 @@ class CustomerUserAccessInvitationServiceClient(metaclass=CustomerUserAccessInvi
               )
 
     def get_customer_user_access_invitation(self,
-            request: customer_user_access_invitation_service.GetCustomerUserAccessInvitationRequest = None,
+            request: Union[customer_user_access_invitation_service.GetCustomerUserAccessInvitationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -339,7 +339,7 @@ class CustomerUserAccessInvitationServiceClient(metaclass=CustomerUserAccessInvi
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCustomerUserAccessInvitationRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCustomerUserAccessInvitationRequest, dict]):
                 The request object. Request message for
                 [CustomerUserAccessInvitation.GetCustomerUserAccessInvitation][]
             resource_name (:class:`str`):
@@ -403,7 +403,7 @@ class CustomerUserAccessInvitationServiceClient(metaclass=CustomerUserAccessInvi
         return response
 
     def mutate_customer_user_access_invitation(self,
-            request: customer_user_access_invitation_service.MutateCustomerUserAccessInvitationRequest = None,
+            request: Union[customer_user_access_invitation_service.MutateCustomerUserAccessInvitationRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: customer_user_access_invitation_service.CustomerUserAccessInvitationOperation = None,
@@ -419,7 +419,7 @@ class CustomerUserAccessInvitationServiceClient(metaclass=CustomerUserAccessInvi
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCustomerUserAccessInvitationRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCustomerUserAccessInvitationRequest, dict]):
                 The request object. Request message for
                 [CustomerUserAccessInvitation.MutateCustomerUserAccessInvitation][]
             customer_id (:class:`str`):

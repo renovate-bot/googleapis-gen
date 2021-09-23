@@ -355,7 +355,7 @@ class ConversionValueRuleSetServiceClient(metaclass=ConversionValueRuleSetServic
               )
 
     def get_conversion_value_rule_set(self,
-            request: conversion_value_rule_set_service.GetConversionValueRuleSetRequest = None,
+            request: Union[conversion_value_rule_set_service.GetConversionValueRuleSetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -365,7 +365,7 @@ class ConversionValueRuleSetServiceClient(metaclass=ConversionValueRuleSetServic
         r"""Returns the requested conversion value rule set.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetConversionValueRuleSetRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetConversionValueRuleSetRequest, dict]):
                 The request object. Request message for
                 [ConversionValueRuleSetService.GetConversionValueRuleSet][google.ads.googleads.v8.services.ConversionValueRuleSetService.GetConversionValueRuleSet].
             resource_name (:class:`str`):
@@ -427,7 +427,7 @@ class ConversionValueRuleSetServiceClient(metaclass=ConversionValueRuleSetServic
         return response
 
     def mutate_conversion_value_rule_sets(self,
-            request: conversion_value_rule_set_service.MutateConversionValueRuleSetsRequest = None,
+            request: Union[conversion_value_rule_set_service.MutateConversionValueRuleSetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[conversion_value_rule_set_service.ConversionValueRuleSetOperation] = None,
@@ -439,7 +439,7 @@ class ConversionValueRuleSetServiceClient(metaclass=ConversionValueRuleSetServic
         sets. Operation statuses are returned.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateConversionValueRuleSetsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateConversionValueRuleSetsRequest, dict]):
                 The request object. Request message for
                 [ConversionValueRuleSetService.MutateConversionValueRuleSets][google.ads.googleads.v8.services.ConversionValueRuleSetService.MutateConversionValueRuleSets].
             customer_id (:class:`str`):

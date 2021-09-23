@@ -324,7 +324,7 @@ class FeedServiceClient(metaclass=FeedServiceClientMeta):
               )
 
     def get_feed(self,
-            request: feed_service.GetFeedRequest = None,
+            request: Union[feed_service.GetFeedRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class FeedServiceClient(metaclass=FeedServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetFeedRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetFeedRequest, dict]):
                 The request object. Request message for
                 [FeedService.GetFeed][google.ads.googleads.v8.services.FeedService.GetFeed].
             resource_name (:class:`str`):
@@ -400,7 +400,7 @@ class FeedServiceClient(metaclass=FeedServiceClientMeta):
         return response
 
     def mutate_feeds(self,
-            request: feed_service.MutateFeedsRequest = None,
+            request: Union[feed_service.MutateFeedsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[feed_service.FeedOperation] = None,
@@ -423,7 +423,7 @@ class FeedServiceClient(metaclass=FeedServiceClientMeta):
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateFeedsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateFeedsRequest, dict]):
                 The request object. Request message for
                 [FeedService.MutateFeeds][google.ads.googleads.v8.services.FeedService.MutateFeeds].
             customer_id (:class:`str`):

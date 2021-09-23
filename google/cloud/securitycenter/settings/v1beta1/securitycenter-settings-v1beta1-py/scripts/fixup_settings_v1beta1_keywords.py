@@ -39,19 +39,19 @@ def partition(
 class settingsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_calculate_effective_settings': ('parent', 'requests', ),
-          'batch_get_settings': ('parent', 'names', ),
-          'calculate_effective_component_settings': ('name', ),
-          'calculate_effective_settings': ('name', ),
-          'get_component_settings': ('name', ),
-          'get_service_account': ('name', ),
-          'get_settings': ('name', ),
-          'list_components': ('parent', 'page_size', 'page_token', ),
-          'list_detectors': ('parent', 'filter', 'page_size', 'page_token', ),
-          'reset_component_settings': ('name', 'etag', ),
-          'reset_settings': ('name', 'etag', ),
-          'update_component_settings': ('component_settings', 'update_mask', ),
-          'update_settings': ('settings', 'update_mask', ),
+        'batch_calculate_effective_settings': ('parent', 'requests', ),
+        'batch_get_settings': ('parent', 'names', ),
+        'calculate_effective_component_settings': ('name', ),
+        'calculate_effective_settings': ('name', ),
+        'get_component_settings': ('name', ),
+        'get_service_account': ('name', ),
+        'get_settings': ('name', ),
+        'list_components': ('parent', 'page_size', 'page_token', ),
+        'list_detectors': ('parent', 'filter', 'page_size', 'page_token', ),
+        'reset_component_settings': ('name', 'etag', ),
+        'reset_settings': ('name', 'etag', ),
+        'update_component_settings': ('component_settings', 'update_mask', ),
+        'update_settings': ('settings', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -70,7 +70,7 @@ class settingsCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

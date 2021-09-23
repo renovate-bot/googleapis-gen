@@ -324,7 +324,7 @@ class LabelServiceClient(metaclass=LabelServiceClientMeta):
               )
 
     def get_label(self,
-            request: label_service.GetLabelRequest = None,
+            request: Union[label_service.GetLabelRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class LabelServiceClient(metaclass=LabelServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetLabelRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetLabelRequest, dict]):
                 The request object. Request message for
                 [LabelService.GetLabel][google.ads.googleads.v8.services.LabelService.GetLabel].
             resource_name (:class:`str`):
@@ -400,7 +400,7 @@ class LabelServiceClient(metaclass=LabelServiceClientMeta):
         return response
 
     def mutate_labels(self,
-            request: label_service.MutateLabelsRequest = None,
+            request: Union[label_service.MutateLabelsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[label_service.LabelOperation] = None,
@@ -423,7 +423,7 @@ class LabelServiceClient(metaclass=LabelServiceClientMeta):
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateLabelsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateLabelsRequest, dict]):
                 The request object. Request message for
                 [LabelService.MutateLabels][google.ads.googleads.v8.services.LabelService.MutateLabels].
             customer_id (:class:`str`):

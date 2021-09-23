@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -356,7 +356,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
             )
 
     def create_taxonomy(self,
-            request: policytagmanager.CreateTaxonomyRequest = None,
+            request: Union[policytagmanager.CreateTaxonomyRequest, dict] = None,
             *,
             parent: str = None,
             taxonomy: policytagmanager.Taxonomy = None,
@@ -369,7 +369,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         contain policy tags.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreateTaxonomyRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreateTaxonomyRequest, dict]):
                 The request object. Request message for
                 [CreateTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.CreateTaxonomy].
             parent (str):
@@ -452,7 +452,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def delete_taxonomy(self,
-            request: policytagmanager.DeleteTaxonomyRequest = None,
+            request: Union[policytagmanager.DeleteTaxonomyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -464,7 +464,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         references from BigQuery columns.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeleteTaxonomyRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeleteTaxonomyRequest, dict]):
                 The request object. Request message for
                 [DeleteTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.DeleteTaxonomy].
             name (str):
@@ -522,7 +522,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         )
 
     def update_taxonomy(self,
-            request: policytagmanager.UpdateTaxonomyRequest = None,
+            request: Union[policytagmanager.UpdateTaxonomyRequest, dict] = None,
             *,
             taxonomy: policytagmanager.Taxonomy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -533,7 +533,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         description, and activated policy types.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdateTaxonomyRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdateTaxonomyRequest, dict]):
                 The request object. Request message for
                 [UpdateTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.UpdateTaxonomy].
             taxonomy (google.cloud.datacatalog_v1.types.Taxonomy):
@@ -609,7 +609,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def list_taxonomies(self,
-            request: policytagmanager.ListTaxonomiesRequest = None,
+            request: Union[policytagmanager.ListTaxonomiesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -620,7 +620,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         location that you have a permission to view.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.ListTaxonomiesRequest):
+            request (Union[google.cloud.datacatalog_v1.types.ListTaxonomiesRequest, dict]):
                 The request object. Request message for
                 [ListTaxonomies][google.cloud.datacatalog.v1.PolicyTagManager.ListTaxonomies].
             parent (str):
@@ -697,7 +697,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def get_taxonomy(self,
-            request: policytagmanager.GetTaxonomyRequest = None,
+            request: Union[policytagmanager.GetTaxonomyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -707,7 +707,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         r"""Gets a taxonomy.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.GetTaxonomyRequest):
+            request (Union[google.cloud.datacatalog_v1.types.GetTaxonomyRequest, dict]):
                 The request object. Request message for
                 [GetTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.GetTaxonomy].
             name (str):
@@ -782,7 +782,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def create_policy_tag(self,
-            request: policytagmanager.CreatePolicyTagRequest = None,
+            request: Union[policytagmanager.CreatePolicyTagRequest, dict] = None,
             *,
             parent: str = None,
             policy_tag: policytagmanager.PolicyTag = None,
@@ -793,7 +793,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         r"""Creates a policy tag in a taxonomy.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.CreatePolicyTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.CreatePolicyTagRequest, dict]):
                 The request object. Request message for
                 [CreatePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.CreatePolicyTag].
             parent (str):
@@ -873,7 +873,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def delete_policy_tag(self,
-            request: policytagmanager.DeletePolicyTagRequest = None,
+            request: Union[policytagmanager.DeletePolicyTagRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -888,7 +888,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
            its descendants
 
         Args:
-            request (google.cloud.datacatalog_v1.types.DeletePolicyTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.DeletePolicyTagRequest, dict]):
                 The request object. Request message for
                 [DeletePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.DeletePolicyTag].
             name (str):
@@ -946,7 +946,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         )
 
     def update_policy_tag(self,
-            request: policytagmanager.UpdatePolicyTagRequest = None,
+            request: Union[policytagmanager.UpdatePolicyTagRequest, dict] = None,
             *,
             policy_tag: policytagmanager.PolicyTag = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -957,7 +957,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         name, description, and parent policy tag.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.UpdatePolicyTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.UpdatePolicyTagRequest, dict]):
                 The request object. Request message for
                 [UpdatePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.UpdatePolicyTag].
             policy_tag (google.cloud.datacatalog_v1.types.PolicyTag):
@@ -1030,7 +1030,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def list_policy_tags(self,
-            request: policytagmanager.ListPolicyTagsRequest = None,
+            request: Union[policytagmanager.ListPolicyTagsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1040,7 +1040,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         r"""Lists all policy tags in a taxonomy.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.ListPolicyTagsRequest):
+            request (Union[google.cloud.datacatalog_v1.types.ListPolicyTagsRequest, dict]):
                 The request object. Request message for
                 [ListPolicyTags][google.cloud.datacatalog.v1.PolicyTagManager.ListPolicyTags].
             parent (str):
@@ -1117,7 +1117,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def get_policy_tag(self,
-            request: policytagmanager.GetPolicyTagRequest = None,
+            request: Union[policytagmanager.GetPolicyTagRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1127,7 +1127,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         r"""Gets a policy tag.
 
         Args:
-            request (google.cloud.datacatalog_v1.types.GetPolicyTagRequest):
+            request (Union[google.cloud.datacatalog_v1.types.GetPolicyTagRequest, dict]):
                 The request object. Request message for
                 [GetPolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.GetPolicyTag].
             name (str):
@@ -1199,7 +1199,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1208,7 +1208,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         r"""Gets the IAM policy for a policy tag or a taxonomy.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1309,7 +1309,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1318,7 +1318,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         r"""Sets the IAM policy for a policy tag or a taxonomy.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1419,7 +1419,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1429,7 +1429,7 @@ class PolicyTagManagerClient(metaclass=PolicyTagManagerClientMeta):
         taxonomy.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

@@ -39,19 +39,19 @@ def partition(
 class datafusionCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'add_dns_peering': ('parent', 'dns_peering', ),
-          'create_instance': ('parent', 'instance_id', 'instance', ),
-          'delete_instance': ('name', ),
-          'get_instance': ('name', ),
-          'list_available_versions': ('parent', 'page_size', 'page_token', 'latest_patch_only', ),
-          'list_dns_peerings': ('parent', 'page_size', 'page_token', ),
-          'list_instances': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_namespaces': ('parent', 'page_size', 'page_token', 'view', ),
-          'remove_dns_peering': ('zone', 'parent', ),
-          'remove_iam_policy': ('resource', ),
-          'restart_instance': ('name', ),
-          'update_instance': ('instance', 'update_mask', ),
-          'upgrade_instance': ('name', ),
+        'add_dns_peering': ('parent', 'dns_peering', ),
+        'create_instance': ('parent', 'instance_id', 'instance', ),
+        'delete_instance': ('name', ),
+        'get_instance': ('name', ),
+        'list_available_versions': ('parent', 'page_size', 'page_token', 'latest_patch_only', ),
+        'list_dns_peerings': ('parent', 'page_size', 'page_token', ),
+        'list_instances': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'list_namespaces': ('parent', 'page_size', 'page_token', 'view', ),
+        'remove_dns_peering': ('zone', 'parent', ),
+        'remove_iam_policy': ('resource', ),
+        'restart_instance': ('name', ),
+        'update_instance': ('instance', 'update_mask', ),
+        'upgrade_instance': ('name', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -70,7 +70,7 @@ class datafusionCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

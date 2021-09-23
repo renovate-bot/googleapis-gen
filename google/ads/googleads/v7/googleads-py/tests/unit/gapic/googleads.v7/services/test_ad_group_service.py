@@ -293,7 +293,7 @@ def test_get_ad_group(transport: str = 'grpc', request_type=ad_group_service.Get
             final_url_suffix='final_url_suffix_value',
             effective_target_cpa_micros=2838,
             effective_target_cpa_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-            effective_target_roas=0.2219,
+            effective_target_roas=0.22190000000000001,
             effective_target_roas_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
             labels=['labels_value'],
             excluded_parent_asset_field_types=[asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN],
@@ -327,7 +327,7 @@ def test_get_ad_group(transport: str = 'grpc', request_type=ad_group_service.Get
     assert response.final_url_suffix == 'final_url_suffix_value'
     assert response.effective_target_cpa_micros == 2838
     assert response.effective_target_cpa_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
-    assert math.isclose(response.effective_target_roas, 0.2219, rel_tol=1e-6)
+    assert math.isclose(response.effective_target_roas, 0.22190000000000001, rel_tol=1e-6)
     assert response.effective_target_roas_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
     assert response.labels == ['labels_value']
     assert response.excluded_parent_asset_field_types == [asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN]

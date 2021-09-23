@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -336,7 +336,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
             )
 
     def run_report(self,
-            request: analytics_data_api.RunReportRequest = None,
+            request: Union[analytics_data_api.RunReportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -353,7 +353,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         criteria, such as country or event name.
 
         Args:
-            request (google.analytics.data_v1alpha.types.RunReportRequest):
+            request (Union[google.analytics.data_v1alpha.types.RunReportRequest, dict]):
                 The request object. The request to generate a report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -391,7 +391,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         return response
 
     def run_pivot_report(self,
-            request: analytics_data_api.RunPivotReportRequest = None,
+            request: Union[analytics_data_api.RunPivotReportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -405,7 +405,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         dissect your data.
 
         Args:
-            request (google.analytics.data_v1alpha.types.RunPivotReportRequest):
+            request (Union[google.analytics.data_v1alpha.types.RunPivotReportRequest, dict]):
                 The request object. The request to generate a pivot
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -444,7 +444,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         return response
 
     def batch_run_reports(self,
-            request: analytics_data_api.BatchRunReportsRequest = None,
+            request: Union[analytics_data_api.BatchRunReportsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -454,7 +454,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         be for the same Entity.
 
         Args:
-            request (google.analytics.data_v1alpha.types.BatchRunReportsRequest):
+            request (Union[google.analytics.data_v1alpha.types.BatchRunReportsRequest, dict]):
                 The request object. The batch request containing
                 multiple report requests.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -493,7 +493,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         return response
 
     def batch_run_pivot_reports(self,
-            request: analytics_data_api.BatchRunPivotReportsRequest = None,
+            request: Union[analytics_data_api.BatchRunPivotReportsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -503,7 +503,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         reports must be for the same Entity.
 
         Args:
-            request (google.analytics.data_v1alpha.types.BatchRunPivotReportsRequest):
+            request (Union[google.analytics.data_v1alpha.types.BatchRunPivotReportsRequest, dict]):
                 The request object. The batch request containing
                 multiple pivot report requests.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -542,7 +542,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         return response
 
     def get_metadata(self,
-            request: analytics_data_api.GetMetadataRequest = None,
+            request: Union[analytics_data_api.GetMetadataRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -562,7 +562,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         such as ``country`` and ``totalUsers``.
 
         Args:
-            request (google.analytics.data_v1alpha.types.GetMetadataRequest):
+            request (Union[google.analytics.data_v1alpha.types.GetMetadataRequest, dict]):
                 The request object. Request for a property's dimension
                 and metric metadata.
             name (str):
@@ -637,7 +637,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         return response
 
     def run_realtime_report(self,
-            request: analytics_data_api.RunRealtimeReportRequest = None,
+            request: Union[analytics_data_api.RunRealtimeReportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -649,7 +649,7 @@ class AlphaAnalyticsDataClient(metaclass=AlphaAnalyticsDataClientMeta):
         last 30 minutes.
 
         Args:
-            request (google.analytics.data_v1alpha.types.RunRealtimeReportRequest):
+            request (Union[google.analytics.data_v1alpha.types.RunRealtimeReportRequest, dict]):
                 The request object. The request to generate a realtime
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

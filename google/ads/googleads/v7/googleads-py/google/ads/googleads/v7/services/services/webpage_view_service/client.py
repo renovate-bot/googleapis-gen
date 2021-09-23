@@ -321,7 +321,7 @@ class WebpageViewServiceClient(metaclass=WebpageViewServiceClientMeta):
               )
 
     def get_webpage_view(self,
-            request: webpage_view_service.GetWebpageViewRequest = None,
+            request: Union[webpage_view_service.GetWebpageViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -331,7 +331,7 @@ class WebpageViewServiceClient(metaclass=WebpageViewServiceClientMeta):
         r"""Returns the requested webpage view in full detail.
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetWebpageViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetWebpageViewRequest, dict]):
                 The request object. Request message for
                 [WebpageViewService.GetWebpageView][google.ads.googleads.v7.services.WebpageViewService.GetWebpageView].
             resource_name (:class:`str`):

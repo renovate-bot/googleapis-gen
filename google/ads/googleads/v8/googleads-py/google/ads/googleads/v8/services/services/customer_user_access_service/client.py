@@ -324,7 +324,7 @@ class CustomerUserAccessServiceClient(metaclass=CustomerUserAccessServiceClientM
               )
 
     def get_customer_user_access(self,
-            request: customer_user_access_service.GetCustomerUserAccessRequest = None,
+            request: Union[customer_user_access_service.GetCustomerUserAccessRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class CustomerUserAccessServiceClient(metaclass=CustomerUserAccessServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCustomerUserAccessRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCustomerUserAccessRequest, dict]):
                 The request object. Request message for
                 [CustomerUserAccessService.GetCustomerUserAccess][google.ads.googleads.v8.services.CustomerUserAccessService.GetCustomerUserAccess].
             resource_name (:class:`str`):
@@ -402,7 +402,7 @@ class CustomerUserAccessServiceClient(metaclass=CustomerUserAccessServiceClientM
         return response
 
     def mutate_customer_user_access(self,
-            request: customer_user_access_service.MutateCustomerUserAccessRequest = None,
+            request: Union[customer_user_access_service.MutateCustomerUserAccessRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: customer_user_access_service.CustomerUserAccessOperation = None,
@@ -419,7 +419,7 @@ class CustomerUserAccessServiceClient(metaclass=CustomerUserAccessServiceClientM
         `MutateError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCustomerUserAccessRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCustomerUserAccessRequest, dict]):
                 The request object. Mutate Request for
                 [CustomerUserAccessService.MutateCustomerUserAccess][google.ads.googleads.v8.services.CustomerUserAccessService.MutateCustomerUserAccess].
             customer_id (:class:`str`):

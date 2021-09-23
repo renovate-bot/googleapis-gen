@@ -322,7 +322,7 @@ class GroupPlacementViewServiceClient(metaclass=GroupPlacementViewServiceClientM
               )
 
     def get_group_placement_view(self,
-            request: group_placement_view_service.GetGroupPlacementViewRequest = None,
+            request: Union[group_placement_view_service.GetGroupPlacementViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class GroupPlacementViewServiceClient(metaclass=GroupPlacementViewServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetGroupPlacementViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetGroupPlacementViewRequest, dict]):
                 The request object. Request message for
                 [GroupPlacementViewService.GetGroupPlacementView][google.ads.googleads.v8.services.GroupPlacementViewService.GetGroupPlacementView].
             resource_name (:class:`str`):

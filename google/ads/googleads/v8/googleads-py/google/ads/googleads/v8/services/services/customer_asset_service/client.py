@@ -334,7 +334,7 @@ class CustomerAssetServiceClient(metaclass=CustomerAssetServiceClientMeta):
               )
 
     def get_customer_asset(self,
-            request: customer_asset_service.GetCustomerAssetRequest = None,
+            request: Union[customer_asset_service.GetCustomerAssetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -348,7 +348,7 @@ class CustomerAssetServiceClient(metaclass=CustomerAssetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCustomerAssetRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCustomerAssetRequest, dict]):
                 The request object. Request message for
                 [CustomerAssetService.GetCustomerAsset][google.ads.googleads.v8.services.CustomerAssetService.GetCustomerAsset].
             resource_name (:class:`str`):
@@ -412,7 +412,7 @@ class CustomerAssetServiceClient(metaclass=CustomerAssetServiceClientMeta):
         return response
 
     def mutate_customer_assets(self,
-            request: customer_asset_service.MutateCustomerAssetsRequest = None,
+            request: Union[customer_asset_service.MutateCustomerAssetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[customer_asset_service.CustomerAssetOperation] = None,
@@ -429,7 +429,7 @@ class CustomerAssetServiceClient(metaclass=CustomerAssetServiceClientMeta):
         `MutateError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCustomerAssetsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCustomerAssetsRequest, dict]):
                 The request object. Request message for
                 [CustomerAssetService.MutateCustomerAssets][google.ads.googleads.v8.services.CustomerAssetService.MutateCustomerAssets].
             customer_id (:class:`str`):

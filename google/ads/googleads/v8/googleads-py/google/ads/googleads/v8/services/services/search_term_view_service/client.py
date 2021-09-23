@@ -332,7 +332,7 @@ class SearchTermViewServiceClient(metaclass=SearchTermViewServiceClientMeta):
               )
 
     def get_search_term_view(self,
-            request: search_term_view_service.GetSearchTermViewRequest = None,
+            request: Union[search_term_view_service.GetSearchTermViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class SearchTermViewServiceClient(metaclass=SearchTermViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetSearchTermViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetSearchTermViewRequest, dict]):
                 The request object. Request message for
                 [SearchTermViewService.GetSearchTermView][google.ads.googleads.v8.services.SearchTermViewService.GetSearchTermView].
             resource_name (:class:`str`):

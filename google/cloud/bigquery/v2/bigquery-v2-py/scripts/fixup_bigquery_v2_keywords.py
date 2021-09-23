@@ -39,10 +39,10 @@ def partition(
 class bigqueryCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'delete_model': ('project_id', 'dataset_id', 'model_id', ),
-          'get_model': ('project_id', 'dataset_id', 'model_id', ),
-          'list_models': ('project_id', 'dataset_id', 'max_results', 'page_token', ),
-          'patch_model': ('project_id', 'dataset_id', 'model_id', 'model', ),
+        'delete_model': ('project_id', 'dataset_id', 'model_id', ),
+        'get_model': ('project_id', 'dataset_id', 'model_id', ),
+        'list_models': ('project_id', 'dataset_id', 'max_results', 'page_token', ),
+        'patch_model': ('project_id', 'dataset_id', 'model_id', 'model', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -61,7 +61,7 @@ class bigqueryCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

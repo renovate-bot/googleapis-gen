@@ -341,7 +341,7 @@ class FeedItemSetLinkServiceClient(metaclass=FeedItemSetLinkServiceClientMeta):
               )
 
     def get_feed_item_set_link(self,
-            request: feed_item_set_link_service.GetFeedItemSetLinkRequest = None,
+            request: Union[feed_item_set_link_service.GetFeedItemSetLinkRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -355,7 +355,7 @@ class FeedItemSetLinkServiceClient(metaclass=FeedItemSetLinkServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetFeedItemSetLinkRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetFeedItemSetLinkRequest, dict]):
                 The request object. Request message for
                 [FeedItemSetLinkService.GetFeedItemSetLinks][].
             resource_name (:class:`str`):
@@ -419,7 +419,7 @@ class FeedItemSetLinkServiceClient(metaclass=FeedItemSetLinkServiceClientMeta):
         return response
 
     def mutate_feed_item_set_links(self,
-            request: feed_item_set_link_service.MutateFeedItemSetLinksRequest = None,
+            request: Union[feed_item_set_link_service.MutateFeedItemSetLinksRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[feed_item_set_link_service.FeedItemSetLinkOperation] = None,
@@ -434,7 +434,7 @@ class FeedItemSetLinkServiceClient(metaclass=FeedItemSetLinkServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateFeedItemSetLinksRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateFeedItemSetLinksRequest, dict]):
                 The request object. Request message for
                 [FeedItemSetLinkService.MutateFeedItemSetLinks][google.ads.googleads.v7.services.FeedItemSetLinkService.MutateFeedItemSetLinks].
             customer_id (:class:`str`):

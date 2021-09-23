@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -340,7 +340,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             )
 
     def get_document(self,
-            request: firestore.GetDocumentRequest = None,
+            request: Union[firestore.GetDocumentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -349,7 +349,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Gets a single document.
 
         Args:
-            request (google.firestore_v1beta1.types.GetDocumentRequest):
+            request (Union[google.firestore_v1beta1.types.GetDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.GetDocument][google.firestore.v1beta1.Firestore.GetDocument].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -396,7 +396,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def list_documents(self,
-            request: firestore.ListDocumentsRequest = None,
+            request: Union[firestore.ListDocumentsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -405,7 +405,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Lists documents.
 
         Args:
-            request (google.firestore_v1beta1.types.ListDocumentsRequest):
+            request (Union[google.firestore_v1beta1.types.ListDocumentsRequest, dict]):
                 The request object. The request for
                 [Firestore.ListDocuments][google.firestore.v1beta1.Firestore.ListDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -464,7 +464,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def update_document(self,
-            request: firestore.UpdateDocumentRequest = None,
+            request: Union[firestore.UpdateDocumentRequest, dict] = None,
             *,
             document: gf_document.Document = None,
             update_mask: common.DocumentMask = None,
@@ -475,7 +475,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Updates or inserts a document.
 
         Args:
-            request (google.firestore_v1beta1.types.UpdateDocumentRequest):
+            request (Union[google.firestore_v1beta1.types.UpdateDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.UpdateDocument][google.firestore.v1beta1.Firestore.UpdateDocument].
             document (google.firestore_v1beta1.types.Document):
@@ -557,7 +557,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def delete_document(self,
-            request: firestore.DeleteDocumentRequest = None,
+            request: Union[firestore.DeleteDocumentRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -567,7 +567,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Deletes a document.
 
         Args:
-            request (google.firestore_v1beta1.types.DeleteDocumentRequest):
+            request (Union[google.firestore_v1beta1.types.DeleteDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.DeleteDocument][google.firestore.v1beta1.Firestore.DeleteDocument].
             name (str):
@@ -624,7 +624,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         )
 
     def batch_get_documents(self,
-            request: firestore.BatchGetDocumentsRequest = None,
+            request: Union[firestore.BatchGetDocumentsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -635,7 +635,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         be returned in the same order that they were requested.
 
         Args:
-            request (google.firestore_v1beta1.types.BatchGetDocumentsRequest):
+            request (Union[google.firestore_v1beta1.types.BatchGetDocumentsRequest, dict]):
                 The request object. The request for
                 [Firestore.BatchGetDocuments][google.firestore.v1beta1.Firestore.BatchGetDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -682,7 +682,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def begin_transaction(self,
-            request: firestore.BeginTransactionRequest = None,
+            request: Union[firestore.BeginTransactionRequest, dict] = None,
             *,
             database: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -692,7 +692,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Starts a new transaction.
 
         Args:
-            request (google.firestore_v1beta1.types.BeginTransactionRequest):
+            request (Union[google.firestore_v1beta1.types.BeginTransactionRequest, dict]):
                 The request object. The request for
                 [Firestore.BeginTransaction][google.firestore.v1beta1.Firestore.BeginTransaction].
             database (str):
@@ -757,7 +757,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def commit(self,
-            request: firestore.CommitRequest = None,
+            request: Union[firestore.CommitRequest, dict] = None,
             *,
             database: str = None,
             writes: Sequence[gf_write.Write] = None,
@@ -769,7 +769,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         documents.
 
         Args:
-            request (google.firestore_v1beta1.types.CommitRequest):
+            request (Union[google.firestore_v1beta1.types.CommitRequest, dict]):
                 The request object. The request for
                 [Firestore.Commit][google.firestore.v1beta1.Firestore.Commit].
             database (str):
@@ -843,7 +843,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def rollback(self,
-            request: firestore.RollbackRequest = None,
+            request: Union[firestore.RollbackRequest, dict] = None,
             *,
             database: str = None,
             transaction: bytes = None,
@@ -854,7 +854,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Rolls back a transaction.
 
         Args:
-            request (google.firestore_v1beta1.types.RollbackRequest):
+            request (Union[google.firestore_v1beta1.types.RollbackRequest, dict]):
                 The request object. The request for
                 [Firestore.Rollback][google.firestore.v1beta1.Firestore.Rollback].
             database (str):
@@ -919,7 +919,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         )
 
     def run_query(self,
-            request: firestore.RunQueryRequest = None,
+            request: Union[firestore.RunQueryRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -928,7 +928,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Runs a query.
 
         Args:
-            request (google.firestore_v1beta1.types.RunQueryRequest):
+            request (Union[google.firestore_v1beta1.types.RunQueryRequest, dict]):
                 The request object. The request for
                 [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -975,7 +975,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def partition_query(self,
-            request: firestore.PartitionQueryRequest = None,
+            request: Union[firestore.PartitionQueryRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -988,7 +988,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         results.
 
         Args:
-            request (google.firestore_v1beta1.types.PartitionQueryRequest):
+            request (Union[google.firestore_v1beta1.types.PartitionQueryRequest, dict]):
                 The request object. The request for
                 [Firestore.PartitionQuery][google.firestore.v1beta1.Firestore.PartitionQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1154,7 +1154,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def list_collection_ids(self,
-            request: firestore.ListCollectionIdsRequest = None,
+            request: Union[firestore.ListCollectionIdsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1164,7 +1164,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Lists all the collection IDs underneath a document.
 
         Args:
-            request (google.firestore_v1beta1.types.ListCollectionIdsRequest):
+            request (Union[google.firestore_v1beta1.types.ListCollectionIdsRequest, dict]):
                 The request object. The request for
                 [Firestore.ListCollectionIds][google.firestore.v1beta1.Firestore.ListCollectionIds].
             parent (str):
@@ -1243,7 +1243,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def batch_write(self,
-            request: firestore.BatchWriteRequest = None,
+            request: Union[firestore.BatchWriteRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1262,7 +1262,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         [Commit][google.firestore.v1beta1.Firestore.Commit] instead.
 
         Args:
-            request (google.firestore_v1beta1.types.BatchWriteRequest):
+            request (Union[google.firestore_v1beta1.types.BatchWriteRequest, dict]):
                 The request object. The request for
                 [Firestore.BatchWrite][google.firestore.v1beta1.Firestore.BatchWrite].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1309,7 +1309,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return response
 
     def create_document(self,
-            request: firestore.CreateDocumentRequest = None,
+            request: Union[firestore.CreateDocumentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1318,7 +1318,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         r"""Creates a new document.
 
         Args:
-            request (google.firestore_v1beta1.types.CreateDocumentRequest):
+            request (Union[google.firestore_v1beta1.types.CreateDocumentRequest, dict]):
                 The request object. The request for
                 [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

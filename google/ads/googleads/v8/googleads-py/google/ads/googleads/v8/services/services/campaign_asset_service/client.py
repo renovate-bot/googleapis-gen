@@ -344,7 +344,7 @@ class CampaignAssetServiceClient(metaclass=CampaignAssetServiceClientMeta):
               )
 
     def get_campaign_asset(self,
-            request: campaign_asset_service.GetCampaignAssetRequest = None,
+            request: Union[campaign_asset_service.GetCampaignAssetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -358,7 +358,7 @@ class CampaignAssetServiceClient(metaclass=CampaignAssetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignAssetRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignAssetRequest, dict]):
                 The request object. Request message for
                 [CampaignAssetService.GetCampaignAsset][google.ads.googleads.v8.services.CampaignAssetService.GetCampaignAsset].
             resource_name (:class:`str`):
@@ -422,7 +422,7 @@ class CampaignAssetServiceClient(metaclass=CampaignAssetServiceClientMeta):
         return response
 
     def mutate_campaign_assets(self,
-            request: campaign_asset_service.MutateCampaignAssetsRequest = None,
+            request: Union[campaign_asset_service.MutateCampaignAssetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_asset_service.CampaignAssetOperation] = None,
@@ -440,7 +440,7 @@ class CampaignAssetServiceClient(metaclass=CampaignAssetServiceClientMeta):
         `NotAllowlistedError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCampaignAssetsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCampaignAssetsRequest, dict]):
                 The request object. Request message for
                 [CampaignAssetService.MutateCampaignAssets][google.ads.googleads.v8.services.CampaignAssetService.MutateCampaignAssets].
             customer_id (:class:`str`):

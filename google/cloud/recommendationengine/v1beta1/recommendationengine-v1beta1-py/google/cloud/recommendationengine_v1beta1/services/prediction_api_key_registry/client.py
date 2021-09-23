@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -353,7 +353,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
             )
 
     def create_prediction_api_key_registration(self,
-            request: prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest = None,
+            request: Union[prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest, dict] = None,
             *,
             parent: str = None,
             prediction_api_key_registration: prediction_apikey_registry_service.PredictionApiKeyRegistration = None,
@@ -364,7 +364,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         r"""Register an API key for use with predict method.
 
         Args:
-            request (google.cloud.recommendationengine_v1beta1.types.CreatePredictionApiKeyRegistrationRequest):
+            request (Union[google.cloud.recommendationengine_v1beta1.types.CreatePredictionApiKeyRegistrationRequest, dict]):
                 The request object. Request message for the
                 `CreatePredictionApiKeyRegistration` method.
             parent (str):
@@ -436,7 +436,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         return response
 
     def list_prediction_api_key_registrations(self,
-            request: prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest = None,
+            request: Union[prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -447,7 +447,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         method.
 
         Args:
-            request (google.cloud.recommendationengine_v1beta1.types.ListPredictionApiKeyRegistrationsRequest):
+            request (Union[google.cloud.recommendationengine_v1beta1.types.ListPredictionApiKeyRegistrationsRequest, dict]):
                 The request object. Request message for the
                 `ListPredictionApiKeyRegistrations`.
             parent (str):
@@ -524,7 +524,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         return response
 
     def delete_prediction_api_key_registration(self,
-            request: prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest = None,
+            request: Union[prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -534,7 +534,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         r"""Unregister an apiKey from using for predict method.
 
         Args:
-            request (google.cloud.recommendationengine_v1beta1.types.DeletePredictionApiKeyRegistrationRequest):
+            request (Union[google.cloud.recommendationengine_v1beta1.types.DeletePredictionApiKeyRegistrationRequest, dict]):
                 The request object. Request message for
                 `DeletePredictionApiKeyRegistration` method.
             name (str):

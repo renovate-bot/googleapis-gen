@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 import warnings
 
@@ -342,7 +342,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             )
 
     def create_vehicle(self,
-            request: vehicle_api.CreateVehicleRequest = None,
+            request: Union[vehicle_api.CreateVehicleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -377,7 +377,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         All other fields are optional and used if provided.
 
         Args:
-            request (maps.fleetengine_v1.types.CreateVehicleRequest):
+            request (Union[maps.fleetengine_v1.types.CreateVehicleRequest, dict]):
                 The request object. CreateVehicle request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -421,7 +421,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def get_vehicle(self,
-            request: vehicle_api.GetVehicleRequest = None,
+            request: Union[vehicle_api.GetVehicleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -430,7 +430,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         r"""GetVehicle returns a vehicle from the Fleet Engine.
 
         Args:
-            request (maps.fleetengine_v1.types.GetVehicleRequest):
+            request (Union[maps.fleetengine_v1.types.GetVehicleRequest, dict]):
                 The request object. GetVehicle request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -474,7 +474,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def update_vehicle(self,
-            request: vehicle_api.UpdateVehicleRequest = None,
+            request: Union[vehicle_api.UpdateVehicleRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -496,7 +496,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         waypoints currently on the vehicle, and no other waypoints.
 
         Args:
-            request (maps.fleetengine_v1.types.UpdateVehicleRequest):
+            request (Union[maps.fleetengine_v1.types.UpdateVehicleRequest, dict]):
                 The request object. UpdateVehicle request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -540,7 +540,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def update_vehicle_location(self,
-            request: vehicle_api.UpdateVehicleLocationRequest = None,
+            request: Union[vehicle_api.UpdateVehicleLocationRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -551,7 +551,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         method instead.
 
         Args:
-            request (maps.fleetengine_v1.types.UpdateVehicleLocationRequest):
+            request (Union[maps.fleetengine_v1.types.UpdateVehicleLocationRequest, dict]):
                 The request object. UpdateVehicleLocation request
                 message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -601,7 +601,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def update_vehicle_attributes(self,
-            request: vehicle_api.UpdateVehicleAttributesRequest = None,
+            request: Union[vehicle_api.UpdateVehicleAttributesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -615,7 +615,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         not in the request would be removed.
 
         Args:
-            request (maps.fleetengine_v1.types.UpdateVehicleAttributesRequest):
+            request (Union[maps.fleetengine_v1.types.UpdateVehicleAttributesRequest, dict]):
                 The request object. UpdateVehicleAttributes request
                 message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -662,7 +662,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def list_vehicles(self,
-            request: vehicle_api.ListVehiclesRequest = None,
+            request: Union[vehicle_api.ListVehiclesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -673,7 +673,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         options.
 
         Args:
-            request (maps.fleetengine_v1.types.ListVehiclesRequest):
+            request (Union[maps.fleetengine_v1.types.ListVehiclesRequest, dict]):
                 The request object. ListVehicles request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -730,7 +730,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def search_vehicles(self,
-            request: vehicle_api.SearchVehiclesRequest = None,
+            request: Union[vehicle_api.SearchVehiclesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -740,7 +740,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         the request options.
 
         Args:
-            request (maps.fleetengine_v1.types.SearchVehiclesRequest):
+            request (Union[maps.fleetengine_v1.types.SearchVehiclesRequest, dict]):
                 The request object. SearchVehicles request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -784,7 +784,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         return response
 
     def search_fuzzed_vehicles(self,
-            request: vehicle_api.SearchVehiclesRequest = None,
+            request: Union[vehicle_api.SearchVehiclesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -797,7 +797,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         will only have 'vehicle' and 'trip_type' field set.
 
         Args:
-            request (maps.fleetengine_v1.types.SearchVehiclesRequest):
+            request (Union[maps.fleetengine_v1.types.SearchVehiclesRequest, dict]):
                 The request object. SearchVehicles request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

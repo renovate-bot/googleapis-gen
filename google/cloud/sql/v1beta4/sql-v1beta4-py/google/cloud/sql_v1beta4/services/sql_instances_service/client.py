@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -328,7 +328,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
             )
 
     def add_server_ca(self,
-            request: cloud_sql.SqlInstancesAddServerCaRequest = None,
+            request: Union[cloud_sql.SqlInstancesAddServerCaRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -342,7 +342,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         than one CA version waiting to be rotated in.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesAddServerCaRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesAddServerCaRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -383,7 +383,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def clone(self,
-            request: cloud_sql.SqlInstancesCloneRequest = None,
+            request: Union[cloud_sql.SqlInstancesCloneRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -394,7 +394,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         to restart.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesCloneRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesCloneRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -435,7 +435,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def delete(self,
-            request: cloud_sql.SqlInstancesDeleteRequest = None,
+            request: Union[cloud_sql.SqlInstancesDeleteRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -444,7 +444,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Deletes a Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesDeleteRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesDeleteRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -485,7 +485,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def demote_master(self,
-            request: cloud_sql.SqlInstancesDemoteMasterRequest = None,
+            request: Union[cloud_sql.SqlInstancesDemoteMasterRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -495,7 +495,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         read replica for an external database server.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesDemoteMasterRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesDemoteMasterRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -536,7 +536,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def export(self,
-            request: cloud_sql.SqlInstancesExportRequest = None,
+            request: Union[cloud_sql.SqlInstancesExportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -546,7 +546,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         Storage bucket as a SQL dump or CSV file.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesExportRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesExportRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -587,7 +587,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def failover(self,
-            request: cloud_sql.SqlInstancesFailoverRequest = None,
+            request: Union[cloud_sql.SqlInstancesFailoverRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -598,7 +598,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         to restart.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesFailoverRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesFailoverRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -639,7 +639,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def get(self,
-            request: cloud_sql.SqlInstancesGetRequest = None,
+            request: Union[cloud_sql.SqlInstancesGetRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -649,7 +649,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesGetRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesGetRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -685,7 +685,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def import(self,
-            request: cloud_sql.SqlInstancesImportRequest = None,
+            request: Union[cloud_sql.SqlInstancesImportRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -695,7 +695,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         dump  or CSV file in Cloud Storage.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesImportRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesImportRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -736,7 +736,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def insert(self,
-            request: cloud_sql.SqlInstancesInsertRequest = None,
+            request: Union[cloud_sql.SqlInstancesInsertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -745,7 +745,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Creates a new Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesInsertRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesInsertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -786,7 +786,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def list(self,
-            request: cloud_sql.SqlInstancesListRequest = None,
+            request: Union[cloud_sql.SqlInstancesListRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -795,7 +795,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Lists instances under a given project.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesListRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -844,7 +844,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def list_server_cas(self,
-            request: cloud_sql.SqlInstancesListServerCasRequest = None,
+            request: Union[cloud_sql.SqlInstancesListServerCasRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -859,7 +859,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         out.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesListServerCasRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesListServerCasRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -895,7 +895,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def patch(self,
-            request: cloud_sql.SqlInstancesPatchRequest = None,
+            request: Union[cloud_sql.SqlInstancesPatchRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -905,7 +905,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         This method supports patch semantics.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesPatchRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesPatchRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -946,7 +946,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def promote_replica(self,
-            request: cloud_sql.SqlInstancesPromoteReplicaRequest = None,
+            request: Union[cloud_sql.SqlInstancesPromoteReplicaRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -957,7 +957,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         cause your instance to restart.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesPromoteReplicaRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesPromoteReplicaRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -998,7 +998,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def reset_ssl_config(self,
-            request: cloud_sql.SqlInstancesResetSslConfigRequest = None,
+            request: Union[cloud_sql.SqlInstancesResetSslConfigRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1008,7 +1008,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         server SSL certificate for the instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesResetSslConfigRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesResetSslConfigRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1049,7 +1049,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def restart(self,
-            request: cloud_sql.SqlInstancesRestartRequest = None,
+            request: Union[cloud_sql.SqlInstancesRestartRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1058,7 +1058,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Restarts a Cloud SQL instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesRestartRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesRestartRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1099,7 +1099,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def restore_backup(self,
-            request: cloud_sql.SqlInstancesRestoreBackupRequest = None,
+            request: Union[cloud_sql.SqlInstancesRestoreBackupRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1109,7 +1109,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         operation might cause your instance to restart.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesRestoreBackupRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesRestoreBackupRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1150,7 +1150,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def rotate_server_ca(self,
-            request: cloud_sql.SqlInstancesRotateServerCaRequest = None,
+            request: Union[cloud_sql.SqlInstancesRotateServerCaRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1161,7 +1161,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         the addServerCA method.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesRotateServerCaRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesRotateServerCaRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1202,7 +1202,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def start_replica(self,
-            request: cloud_sql.SqlInstancesStartReplicaRequest = None,
+            request: Union[cloud_sql.SqlInstancesStartReplicaRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1211,7 +1211,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Starts the replication in the read replica instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesStartReplicaRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesStartReplicaRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1252,7 +1252,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def stop_replica(self,
-            request: cloud_sql.SqlInstancesStopReplicaRequest = None,
+            request: Union[cloud_sql.SqlInstancesStopReplicaRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1261,7 +1261,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Stops the replication in the read replica instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesStopReplicaRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesStopReplicaRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1302,7 +1302,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def truncate_log(self,
-            request: cloud_sql.SqlInstancesTruncateLogRequest = None,
+            request: Union[cloud_sql.SqlInstancesTruncateLogRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1312,7 +1312,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         MySQL only.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesTruncateLogRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesTruncateLogRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1353,7 +1353,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def update(self,
-            request: cloud_sql.SqlInstancesUpdateRequest = None,
+            request: Union[cloud_sql.SqlInstancesUpdateRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1363,7 +1363,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         operation might cause your instance to restart.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesUpdateRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesUpdateRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1404,7 +1404,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def create_ephemeral(self,
-            request: cloud_sql.SqlInstancesCreateEphemeralCertRequest = None,
+            request: Union[cloud_sql.SqlInstancesCreateEphemeralCertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1417,7 +1417,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         connecting to the database.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesCreateEphemeralCertRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesCreateEphemeralCertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1453,7 +1453,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def reschedule_maintenance(self,
-            request: cloud_sql.SqlInstancesRescheduleMaintenanceRequest = None,
+            request: Union[cloud_sql.SqlInstancesRescheduleMaintenanceRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1462,7 +1462,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Reschedules the maintenance on the given instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesRescheduleMaintenanceRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesRescheduleMaintenanceRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1503,7 +1503,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def verify_external_sync_settings(self,
-            request: cloud_sql.SqlInstancesVerifyExternalSyncSettingsRequest = None,
+            request: Union[cloud_sql.SqlInstancesVerifyExternalSyncSettingsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1513,7 +1513,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         settings.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesVerifyExternalSyncSettingsRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesVerifyExternalSyncSettingsRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1551,7 +1551,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         return response
 
     def start_external_sync(self,
-            request: cloud_sql.SqlInstancesStartExternalSyncRequest = None,
+            request: Union[cloud_sql.SqlInstancesStartExternalSyncRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1560,7 +1560,7 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
         r"""Start External primary instance migration.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlInstancesStartExternalSyncRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlInstancesStartExternalSyncRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

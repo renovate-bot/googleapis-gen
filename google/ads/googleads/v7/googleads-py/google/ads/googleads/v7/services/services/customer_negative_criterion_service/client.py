@@ -324,7 +324,7 @@ class CustomerNegativeCriterionServiceClient(metaclass=CustomerNegativeCriterion
               )
 
     def get_customer_negative_criterion(self,
-            request: customer_negative_criterion_service.GetCustomerNegativeCriterionRequest = None,
+            request: Union[customer_negative_criterion_service.GetCustomerNegativeCriterionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class CustomerNegativeCriterionServiceClient(metaclass=CustomerNegativeCriterion
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCustomerNegativeCriterionRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCustomerNegativeCriterionRequest, dict]):
                 The request object. Request message for
                 [CustomerNegativeCriterionService.GetCustomerNegativeCriterion][google.ads.googleads.v7.services.CustomerNegativeCriterionService.GetCustomerNegativeCriterion].
             resource_name (:class:`str`):
@@ -402,7 +402,7 @@ class CustomerNegativeCriterionServiceClient(metaclass=CustomerNegativeCriterion
         return response
 
     def mutate_customer_negative_criteria(self,
-            request: customer_negative_criterion_service.MutateCustomerNegativeCriteriaRequest = None,
+            request: Union[customer_negative_criterion_service.MutateCustomerNegativeCriteriaRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[customer_negative_criterion_service.CustomerNegativeCriterionOperation] = None,
@@ -419,7 +419,7 @@ class CustomerNegativeCriterionServiceClient(metaclass=CustomerNegativeCriterion
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCustomerNegativeCriteriaRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCustomerNegativeCriteriaRequest, dict]):
                 The request object. Request message for
                 [CustomerNegativeCriterionService.MutateCustomerNegativeCriteria][google.ads.googleads.v7.services.CustomerNegativeCriterionService.MutateCustomerNegativeCriteria].
             customer_id (:class:`str`):

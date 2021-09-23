@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -327,7 +327,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
             )
 
     def delete(self,
-            request: cloud_sql.SqlBackupRunsDeleteRequest = None,
+            request: Union[cloud_sql.SqlBackupRunsDeleteRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -336,7 +336,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         r"""Deletes the backup taken by a backup run.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlBackupRunsDeleteRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlBackupRunsDeleteRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -377,7 +377,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         return response
 
     def get(self,
-            request: cloud_sql.SqlBackupRunsGetRequest = None,
+            request: Union[cloud_sql.SqlBackupRunsGetRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -387,7 +387,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         backup run.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlBackupRunsGetRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlBackupRunsGetRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -423,7 +423,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         return response
 
     def insert(self,
-            request: cloud_sql.SqlBackupRunsInsertRequest = None,
+            request: Union[cloud_sql.SqlBackupRunsInsertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -433,7 +433,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         applicable only to Second Generation instances.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlBackupRunsInsertRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlBackupRunsInsertRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -474,7 +474,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         return response
 
     def list(self,
-            request: cloud_sql.SqlBackupRunsListRequest = None,
+            request: Union[cloud_sql.SqlBackupRunsListRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -485,7 +485,7 @@ class SqlBackupRunsServiceClient(metaclass=SqlBackupRunsServiceClientMeta):
         order of the backup initiation time.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlBackupRunsListRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlBackupRunsListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

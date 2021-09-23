@@ -323,7 +323,7 @@ class RemarketingActionServiceClient(metaclass=RemarketingActionServiceClientMet
               )
 
     def get_remarketing_action(self,
-            request: remarketing_action_service.GetRemarketingActionRequest = None,
+            request: Union[remarketing_action_service.GetRemarketingActionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -337,7 +337,7 @@ class RemarketingActionServiceClient(metaclass=RemarketingActionServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetRemarketingActionRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetRemarketingActionRequest, dict]):
                 The request object. Request message for
                 [RemarketingActionService.GetRemarketingAction][google.ads.googleads.v8.services.RemarketingActionService.GetRemarketingAction].
             resource_name (:class:`str`):
@@ -405,7 +405,7 @@ class RemarketingActionServiceClient(metaclass=RemarketingActionServiceClientMet
         return response
 
     def mutate_remarketing_actions(self,
-            request: remarketing_action_service.MutateRemarketingActionsRequest = None,
+            request: Union[remarketing_action_service.MutateRemarketingActionsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[remarketing_action_service.RemarketingActionOperation] = None,
@@ -422,7 +422,7 @@ class RemarketingActionServiceClient(metaclass=RemarketingActionServiceClientMet
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateRemarketingActionsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateRemarketingActionsRequest, dict]):
                 The request object. Request message for
                 [RemarketingActionService.MutateRemarketingActions][google.ads.googleads.v8.services.RemarketingActionService.MutateRemarketingActions].
             customer_id (:class:`str`):

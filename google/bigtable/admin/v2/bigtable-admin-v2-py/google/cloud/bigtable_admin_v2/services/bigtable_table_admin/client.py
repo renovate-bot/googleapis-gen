@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -404,7 +404,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
             )
 
     def create_table(self,
-            request: bigtable_table_admin.CreateTableRequest = None,
+            request: Union[bigtable_table_admin.CreateTableRequest, dict] = None,
             *,
             parent: str = None,
             table_id: str = None,
@@ -418,7 +418,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         column families, specified in the request.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.CreateTableRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.CreateTableRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.CreateTable][google.bigtable.admin.v2.BigtableTableAdmin.CreateTable]
             parent (str):
@@ -504,7 +504,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def create_table_from_snapshot(self,
-            request: bigtable_table_admin.CreateTableFromSnapshotRequest = None,
+            request: Union[bigtable_table_admin.CreateTableFromSnapshotRequest, dict] = None,
             *,
             parent: str = None,
             table_id: str = None,
@@ -524,7 +524,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         SLA or deprecation policy.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.CreateTableFromSnapshotRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.CreateTableFromSnapshotRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.CreateTableFromSnapshot][google.bigtable.admin.v2.BigtableTableAdmin.CreateTableFromSnapshot]
                 Note: This is a private alpha release of Cloud Bigtable
@@ -628,7 +628,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def list_tables(self,
-            request: bigtable_table_admin.ListTablesRequest = None,
+            request: Union[bigtable_table_admin.ListTablesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -638,7 +638,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         r"""Lists all tables served from a specified instance.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.ListTablesRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.ListTablesRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.ListTables][google.bigtable.admin.v2.BigtableTableAdmin.ListTables]
             parent (str):
@@ -716,7 +716,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def get_table(self,
-            request: bigtable_table_admin.GetTableRequest = None,
+            request: Union[bigtable_table_admin.GetTableRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -726,7 +726,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         r"""Gets metadata information about the specified table.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.GetTableRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.GetTableRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.GetTable][google.bigtable.admin.v2.BigtableTableAdmin.GetTable]
             name (str):
@@ -794,7 +794,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def delete_table(self,
-            request: bigtable_table_admin.DeleteTableRequest = None,
+            request: Union[bigtable_table_admin.DeleteTableRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -805,7 +805,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         data.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.DeleteTableRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.DeleteTableRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.DeleteTable][google.bigtable.admin.v2.BigtableTableAdmin.DeleteTable]
             name (str):
@@ -862,7 +862,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         )
 
     def modify_column_families(self,
-            request: bigtable_table_admin.ModifyColumnFamiliesRequest = None,
+            request: Union[bigtable_table_admin.ModifyColumnFamiliesRequest, dict] = None,
             *,
             name: str = None,
             modifications: Sequence[bigtable_table_admin.ModifyColumnFamiliesRequest.Modification] = None,
@@ -877,7 +877,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         table where only some modifications have taken effect.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.ModifyColumnFamiliesRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.ModifyColumnFamiliesRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.ModifyColumnFamilies][google.bigtable.admin.v2.BigtableTableAdmin.ModifyColumnFamilies]
             name (str):
@@ -959,7 +959,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def drop_row_range(self,
-            request: bigtable_table_admin.DropRowRangeRequest = None,
+            request: Union[bigtable_table_admin.DropRowRangeRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -971,7 +971,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         prefix.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.DropRowRangeRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.DropRowRangeRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.DropRowRange][google.bigtable.admin.v2.BigtableTableAdmin.DropRowRange]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1009,7 +1009,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         )
 
     def generate_consistency_token(self,
-            request: bigtable_table_admin.GenerateConsistencyTokenRequest = None,
+            request: Union[bigtable_table_admin.GenerateConsistencyTokenRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1023,7 +1023,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         days.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.GenerateConsistencyTokenRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.GenerateConsistencyTokenRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.GenerateConsistencyToken][google.bigtable.admin.v2.BigtableTableAdmin.GenerateConsistencyToken]
             name (str):
@@ -1089,7 +1089,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def check_consistency(self,
-            request: bigtable_table_admin.CheckConsistencyRequest = None,
+            request: Union[bigtable_table_admin.CheckConsistencyRequest, dict] = None,
             *,
             name: str = None,
             consistency_token: str = None,
@@ -1103,7 +1103,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         request.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.CheckConsistencyRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.CheckConsistencyRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency][google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency]
             name (str):
@@ -1178,7 +1178,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def snapshot_table(self,
-            request: bigtable_table_admin.SnapshotTableRequest = None,
+            request: Union[bigtable_table_admin.SnapshotTableRequest, dict] = None,
             *,
             name: str = None,
             cluster: str = None,
@@ -1199,7 +1199,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         SLA or deprecation policy.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.SnapshotTableRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.SnapshotTableRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.SnapshotTable][google.bigtable.admin.v2.BigtableTableAdmin.SnapshotTable]
                 Note: This is a private alpha release of Cloud Bigtable
@@ -1318,7 +1318,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def get_snapshot(self,
-            request: bigtable_table_admin.GetSnapshotRequest = None,
+            request: Union[bigtable_table_admin.GetSnapshotRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1335,7 +1335,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         SLA or deprecation policy.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.GetSnapshotRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.GetSnapshotRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.GetSnapshot][google.bigtable.admin.v2.BigtableTableAdmin.GetSnapshot]
                 Note: This is a private alpha release of Cloud Bigtable
@@ -1417,7 +1417,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def list_snapshots(self,
-            request: bigtable_table_admin.ListSnapshotsRequest = None,
+            request: Union[bigtable_table_admin.ListSnapshotsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1434,7 +1434,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         SLA or deprecation policy.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.ListSnapshotsRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.ListSnapshotsRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.ListSnapshots][google.bigtable.admin.v2.BigtableTableAdmin.ListSnapshots]
                 Note: This is a private alpha release of Cloud Bigtable
@@ -1528,7 +1528,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def delete_snapshot(self,
-            request: bigtable_table_admin.DeleteSnapshotRequest = None,
+            request: Union[bigtable_table_admin.DeleteSnapshotRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1544,7 +1544,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         SLA or deprecation policy.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.DeleteSnapshotRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.DeleteSnapshotRequest, dict]):
                 The request object. Request message for
                 [google.bigtable.admin.v2.BigtableTableAdmin.DeleteSnapshot][google.bigtable.admin.v2.BigtableTableAdmin.DeleteSnapshot]
                 Note: This is a private alpha release of Cloud Bigtable
@@ -1607,7 +1607,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         )
 
     def create_backup(self,
-            request: bigtable_table_admin.CreateBackupRequest = None,
+            request: Union[bigtable_table_admin.CreateBackupRequest, dict] = None,
             *,
             parent: str = None,
             backup_id: str = None,
@@ -1627,7 +1627,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         delete the backup.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.CreateBackupRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.CreateBackupRequest, dict]):
                 The request object. The request for
                 [CreateBackup][google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup].
             parent (str):
@@ -1726,7 +1726,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def get_backup(self,
-            request: bigtable_table_admin.GetBackupRequest = None,
+            request: Union[bigtable_table_admin.GetBackupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1737,7 +1737,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         Bigtable Backup.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.GetBackupRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.GetBackupRequest, dict]):
                 The request object. The request for
                 [GetBackup][google.bigtable.admin.v2.BigtableTableAdmin.GetBackup].
             name (str):
@@ -1800,7 +1800,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def update_backup(self,
-            request: bigtable_table_admin.UpdateBackupRequest = None,
+            request: Union[bigtable_table_admin.UpdateBackupRequest, dict] = None,
             *,
             backup: table.Backup = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1811,7 +1811,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         r"""Updates a pending or completed Cloud Bigtable Backup.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.UpdateBackupRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.UpdateBackupRequest, dict]):
                 The request object. The request for
                 [UpdateBackup][google.bigtable.admin.v2.BigtableTableAdmin.UpdateBackup].
             backup (google.cloud.bigtable_admin_v2.types.Backup):
@@ -1892,7 +1892,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def delete_backup(self,
-            request: bigtable_table_admin.DeleteBackupRequest = None,
+            request: Union[bigtable_table_admin.DeleteBackupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1902,7 +1902,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         r"""Deletes a pending or completed Cloud Bigtable backup.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.DeleteBackupRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.DeleteBackupRequest, dict]):
                 The request object. The request for
                 [DeleteBackup][google.bigtable.admin.v2.BigtableTableAdmin.DeleteBackup].
             name (str):
@@ -1959,7 +1959,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         )
 
     def list_backups(self,
-            request: bigtable_table_admin.ListBackupsRequest = None,
+            request: Union[bigtable_table_admin.ListBackupsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1970,7 +1970,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         and pending backups.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.ListBackupsRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.ListBackupsRequest, dict]):
                 The request object. The request for
                 [ListBackups][google.bigtable.admin.v2.BigtableTableAdmin.ListBackups].
             parent (str):
@@ -2051,7 +2051,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def restore_table(self,
-            request: bigtable_table_admin.RestoreTableRequest = None,
+            request: Union[bigtable_table_admin.RestoreTableRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2068,7 +2068,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         [Table][google.bigtable.admin.v2.Table], if successful.
 
         Args:
-            request (google.cloud.bigtable_admin_v2.types.RestoreTableRequest):
+            request (Union[google.cloud.bigtable_admin_v2.types.RestoreTableRequest, dict]):
                 The request object. The request for
                 [RestoreTable][google.bigtable.admin.v2.BigtableTableAdmin.RestoreTable].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -2126,7 +2126,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2138,7 +2138,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         but does not have a policy set.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -2257,7 +2257,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2268,7 +2268,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         resource. Replaces any existing policy.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -2387,7 +2387,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
@@ -2399,7 +2399,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         specified Table or Backup resource.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):

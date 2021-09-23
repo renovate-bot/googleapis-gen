@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -357,7 +357,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
             )
 
     def write_user_event(self,
-            request: user_event_service.WriteUserEventRequest = None,
+            request: Union[user_event_service.WriteUserEventRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -366,7 +366,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         r"""Writes a single user event.
 
         Args:
-            request (google.cloud.retail_v2beta.types.WriteUserEventRequest):
+            request (Union[google.cloud.retail_v2beta.types.WriteUserEventRequest, dict]):
                 The request object. Request message for WriteUserEvent
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -415,7 +415,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         return response
 
     def collect_user_event(self,
-            request: user_event_service.CollectUserEventRequest = None,
+            request: Union[user_event_service.CollectUserEventRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -429,7 +429,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         method directly.
 
         Args:
-            request (google.cloud.retail_v2beta.types.CollectUserEventRequest):
+            request (Union[google.cloud.retail_v2beta.types.CollectUserEventRequest, dict]):
                 The request object. Request message for CollectUserEvent
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -519,7 +519,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         return response
 
     def purge_user_events(self,
-            request: purge_config.PurgeUserEventsRequest = None,
+            request: Union[purge_config.PurgeUserEventsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -532,7 +532,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         command first.
 
         Args:
-            request (google.cloud.retail_v2beta.types.PurgeUserEventsRequest):
+            request (Union[google.cloud.retail_v2beta.types.PurgeUserEventsRequest, dict]):
                 The request object. Request message for PurgeUserEvents
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -590,7 +590,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         return response
 
     def import_user_events(self,
-            request: import_config.ImportUserEventsRequest = None,
+            request: Union[import_config.ImportUserEventsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -605,7 +605,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         ImportMetadata.
 
         Args:
-            request (google.cloud.retail_v2beta.types.ImportUserEventsRequest):
+            request (Union[google.cloud.retail_v2beta.types.ImportUserEventsRequest, dict]):
                 The request object. Request message for the
                 ImportUserEvents request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -665,7 +665,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         return response
 
     def rejoin_user_events(self,
-            request: user_event_service.RejoinUserEventsRequest = None,
+            request: Union[user_event_service.RejoinUserEventsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -683,7 +683,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         catalog.
 
         Args:
-            request (google.cloud.retail_v2beta.types.RejoinUserEventsRequest):
+            request (Union[google.cloud.retail_v2beta.types.RejoinUserEventsRequest, dict]):
                 The request object. Request message for RejoinUserEvents
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

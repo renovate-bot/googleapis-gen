@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -362,7 +362,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
             )
 
     def list_environments(self,
-            request: environment.ListEnvironmentsRequest = None,
+            request: Union[environment.ListEnvironmentsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -373,7 +373,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         specified agent.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.ListEnvironmentsRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.ListEnvironmentsRequest, dict]):
                 The request object. The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2beta1.Environments.ListEnvironments].
             parent (str):
@@ -453,7 +453,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         return response
 
     def get_environment(self,
-            request: environment.GetEnvironmentRequest = None,
+            request: Union[environment.GetEnvironmentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -462,7 +462,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         r"""Retrieves the specified agent environment.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.GetEnvironmentRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.GetEnvironmentRequest, dict]):
                 The request object. The request message for
                 [Environments.GetEnvironment][google.cloud.dialogflow.v2beta1.Environments.GetEnvironment].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -528,7 +528,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         return response
 
     def create_environment(self,
-            request: environment.CreateEnvironmentRequest = None,
+            request: Union[environment.CreateEnvironmentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -537,7 +537,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         r"""Creates an agent environment.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.CreateEnvironmentRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.CreateEnvironmentRequest, dict]):
                 The request object. The request message for
                 [Environments.CreateEnvironment][google.cloud.dialogflow.v2beta1.Environments.CreateEnvironment].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -603,7 +603,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         return response
 
     def update_environment(self,
-            request: environment.UpdateEnvironmentRequest = None,
+            request: Union[environment.UpdateEnvironmentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -624,7 +624,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         draft to a version before calling this function.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.UpdateEnvironmentRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.UpdateEnvironmentRequest, dict]):
                 The request object. The request message for
                 [Environments.UpdateEnvironment][google.cloud.dialogflow.v2beta1.Environments.UpdateEnvironment].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -690,7 +690,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         return response
 
     def delete_environment(self,
-            request: environment.DeleteEnvironmentRequest = None,
+            request: Union[environment.DeleteEnvironmentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -699,7 +699,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         r"""Deletes the specified agent environment.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.DeleteEnvironmentRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.DeleteEnvironmentRequest, dict]):
                 The request object. The request message for
                 [Environments.DeleteEnvironment][google.cloud.dialogflow.v2beta1.Environments.DeleteEnvironment].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -737,7 +737,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         )
 
     def get_environment_history(self,
-            request: environment.GetEnvironmentHistoryRequest = None,
+            request: Union[environment.GetEnvironmentHistoryRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -746,7 +746,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         r"""Gets the history of the specified environment.
 
         Args:
-            request (google.cloud.dialogflow_v2beta1.types.GetEnvironmentHistoryRequest):
+            request (Union[google.cloud.dialogflow_v2beta1.types.GetEnvironmentHistoryRequest, dict]):
                 The request object. The request message for
                 [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

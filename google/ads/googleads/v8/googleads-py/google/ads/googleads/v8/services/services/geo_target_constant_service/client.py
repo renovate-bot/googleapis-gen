@@ -322,7 +322,7 @@ class GeoTargetConstantServiceClient(metaclass=GeoTargetConstantServiceClientMet
               )
 
     def get_geo_target_constant(self,
-            request: geo_target_constant_service.GetGeoTargetConstantRequest = None,
+            request: Union[geo_target_constant_service.GetGeoTargetConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class GeoTargetConstantServiceClient(metaclass=GeoTargetConstantServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetGeoTargetConstantRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetGeoTargetConstantRequest, dict]):
                 The request object. Request message for
                 [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
             resource_name (:class:`str`):
@@ -398,7 +398,7 @@ class GeoTargetConstantServiceClient(metaclass=GeoTargetConstantServiceClientMet
         return response
 
     def suggest_geo_target_constants(self,
-            request: geo_target_constant_service.SuggestGeoTargetConstantsRequest = None,
+            request: Union[geo_target_constant_service.SuggestGeoTargetConstantsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -413,7 +413,7 @@ class GeoTargetConstantServiceClient(metaclass=GeoTargetConstantServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SuggestGeoTargetConstantsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SuggestGeoTargetConstantsRequest, dict]):
                 The request object. Request message for
                 [GeoTargetConstantService.SuggestGeoTargetConstants][google.ads.googleads.v8.services.GeoTargetConstantService.SuggestGeoTargetConstants].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

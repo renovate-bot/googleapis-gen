@@ -332,7 +332,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
               )
 
     def get_customer(self,
-            request: customer_service.GetCustomerRequest = None,
+            request: Union[customer_service.GetCustomerRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCustomerRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCustomerRequest, dict]):
                 The request object. Request message for
                 [CustomerService.GetCustomer][google.ads.googleads.v7.services.CustomerService.GetCustomer].
             resource_name (:class:`str`):
@@ -408,7 +408,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         return response
 
     def mutate_customer(self,
-            request: customer_service.MutateCustomerRequest = None,
+            request: Union[customer_service.MutateCustomerRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: customer_service.CustomerOperation = None,
@@ -424,7 +424,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__ `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCustomerRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCustomerRequest, dict]):
                 The request object. Request message for
                 [CustomerService.MutateCustomer][google.ads.googleads.v7.services.CustomerService.MutateCustomer].
             customer_id (:class:`str`):
@@ -495,7 +495,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         return response
 
     def list_accessible_customers(self,
-            request: customer_service.ListAccessibleCustomersRequest = None,
+            request: Union[customer_service.ListAccessibleCustomersRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -509,7 +509,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.ListAccessibleCustomersRequest`):
+            request (Union[google.ads.googleads.v7.services.types.ListAccessibleCustomersRequest, dict]):
                 The request object. Request message for
                 [CustomerService.ListAccessibleCustomers][google.ads.googleads.v7.services.CustomerService.ListAccessibleCustomers].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -548,7 +548,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         return response
 
     def create_customer_client(self,
-            request: customer_service.CreateCustomerClientRequest = None,
+            request: Union[customer_service.CreateCustomerClientRequest, dict] = None,
             *,
             customer_id: str = None,
             customer_client: customer.Customer = None,
@@ -566,7 +566,7 @@ class CustomerServiceClient(metaclass=CustomerServiceClientMeta):
         `StringLengthError <>`__ `TimeZoneError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.CreateCustomerClientRequest`):
+            request (Union[google.ads.googleads.v7.services.types.CreateCustomerClientRequest, dict]):
                 The request object. Request message for
                 [CustomerService.CreateCustomerClient][google.ads.googleads.v7.services.CustomerService.CreateCustomerClient].
             customer_id (:class:`str`):

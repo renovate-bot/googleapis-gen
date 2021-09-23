@@ -39,8 +39,8 @@ def partition(
 class documentaiCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_process_documents': ('requests', 'parent', ),
-          'process_document': ('input_config', 'parent', 'output_config', 'document_type', 'table_extraction_params', 'form_extraction_params', 'entity_extraction_params', 'ocr_params', 'automl_params', ),
+        'batch_process_documents': ('requests', 'parent', ),
+        'process_document': ('input_config', 'parent', 'output_config', 'document_type', 'table_extraction_params', 'form_extraction_params', 'entity_extraction_params', 'ocr_params', 'automl_params', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -59,7 +59,7 @@ class documentaiCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

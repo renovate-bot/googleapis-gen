@@ -39,12 +39,12 @@ def partition(
 class dataCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_run_pivot_reports': ('entity', 'requests', ),
-          'batch_run_reports': ('entity', 'requests', ),
-          'get_metadata': ('name', ),
-          'run_pivot_report': ('entity', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'pivots', 'date_ranges', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
-          'run_realtime_report': ('property', 'dimensions', 'metrics', 'limit', 'dimension_filter', 'metric_filter', 'metric_aggregations', 'order_bys', 'return_property_quota', ),
-          'run_report': ('entity', 'dimensions', 'metrics', 'date_ranges', 'offset', 'limit', 'metric_aggregations', 'dimension_filter', 'metric_filter', 'order_bys', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
+        'batch_run_pivot_reports': ('entity', 'requests', ),
+        'batch_run_reports': ('entity', 'requests', ),
+        'get_metadata': ('name', ),
+        'run_pivot_report': ('entity', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'pivots', 'date_ranges', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
+        'run_realtime_report': ('property', 'dimensions', 'metrics', 'limit', 'dimension_filter', 'metric_filter', 'metric_aggregations', 'order_bys', 'return_property_quota', ),
+        'run_report': ('entity', 'dimensions', 'metrics', 'date_ranges', 'offset', 'limit', 'metric_aggregations', 'dimension_filter', 'metric_filter', 'order_bys', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -63,7 +63,7 @@ class dataCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

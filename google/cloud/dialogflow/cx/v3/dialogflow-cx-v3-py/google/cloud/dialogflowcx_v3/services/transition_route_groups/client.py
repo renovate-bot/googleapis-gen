@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -385,7 +385,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
             )
 
     def list_transition_route_groups(self,
-            request: transition_route_group.ListTransitionRouteGroupsRequest = None,
+            request: Union[transition_route_group.ListTransitionRouteGroupsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -396,7 +396,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         the specified flow.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.ListTransitionRouteGroupsRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.ListTransitionRouteGroupsRequest, dict]):
                 The request object. The request message for
                 [TransitionRouteGroups.ListTransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.ListTransitionRouteGroups].
             parent (str):
@@ -474,7 +474,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         return response
 
     def get_transition_route_group(self,
-            request: transition_route_group.GetTransitionRouteGroupRequest = None,
+            request: Union[transition_route_group.GetTransitionRouteGroupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -485,7 +485,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.GetTransitionRouteGroupRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetTransitionRouteGroupRequest, dict]):
                 The request object. The request message for
                 [TransitionRouteGroups.GetTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.GetTransitionRouteGroup].
             name (str):
@@ -554,7 +554,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         return response
 
     def create_transition_route_group(self,
-            request: gcdc_transition_route_group.CreateTransitionRouteGroupRequest = None,
+            request: Union[gcdc_transition_route_group.CreateTransitionRouteGroupRequest, dict] = None,
             *,
             parent: str = None,
             transition_route_group: gcdc_transition_route_group.TransitionRouteGroup = None,
@@ -571,7 +571,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.CreateTransitionRouteGroupRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.CreateTransitionRouteGroupRequest, dict]):
                 The request object. The request message for
                 [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup].
             parent (str):
@@ -649,7 +649,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         return response
 
     def update_transition_route_group(self,
-            request: gcdc_transition_route_group.UpdateTransitionRouteGroupRequest = None,
+            request: Union[gcdc_transition_route_group.UpdateTransitionRouteGroupRequest, dict] = None,
             *,
             transition_route_group: gcdc_transition_route_group.TransitionRouteGroup = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -665,7 +665,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.UpdateTransitionRouteGroupRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.UpdateTransitionRouteGroupRequest, dict]):
                 The request object. The request message for
                 [TransitionRouteGroups.UpdateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.UpdateTransitionRouteGroup].
             transition_route_group (google.cloud.dialogflowcx_v3.types.TransitionRouteGroup):
@@ -741,7 +741,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         return response
 
     def delete_transition_route_group(self,
-            request: transition_route_group.DeleteTransitionRouteGroupRequest = None,
+            request: Union[transition_route_group.DeleteTransitionRouteGroupRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -756,7 +756,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         documentation <https://cloud.google.com/dialogflow/cx/docs/concept/training>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.DeleteTransitionRouteGroupRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.DeleteTransitionRouteGroupRequest, dict]):
                 The request object. The request message for
                 [TransitionRouteGroups.DeleteTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.DeleteTransitionRouteGroup].
             name (str):

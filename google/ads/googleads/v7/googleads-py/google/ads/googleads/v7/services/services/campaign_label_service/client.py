@@ -342,7 +342,7 @@ class CampaignLabelServiceClient(metaclass=CampaignLabelServiceClientMeta):
               )
 
     def get_campaign_label(self,
-            request: campaign_label_service.GetCampaignLabelRequest = None,
+            request: Union[campaign_label_service.GetCampaignLabelRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -357,7 +357,7 @@ class CampaignLabelServiceClient(metaclass=CampaignLabelServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignLabelRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignLabelRequest, dict]):
                 The request object. Request message for
                 [CampaignLabelService.GetCampaignLabel][google.ads.googleads.v7.services.CampaignLabelService.GetCampaignLabel].
             resource_name (:class:`str`):
@@ -421,7 +421,7 @@ class CampaignLabelServiceClient(metaclass=CampaignLabelServiceClientMeta):
         return response
 
     def mutate_campaign_labels(self,
-            request: campaign_label_service.MutateCampaignLabelsRequest = None,
+            request: Union[campaign_label_service.MutateCampaignLabelsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_label_service.CampaignLabelOperation] = None,
@@ -439,7 +439,7 @@ class CampaignLabelServiceClient(metaclass=CampaignLabelServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCampaignLabelsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCampaignLabelsRequest, dict]):
                 The request object. Request message for
                 [CampaignLabelService.MutateCampaignLabels][google.ads.googleads.v7.services.CampaignLabelService.MutateCampaignLabels].
             customer_id (:class:`str`):

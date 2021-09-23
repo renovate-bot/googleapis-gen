@@ -322,7 +322,7 @@ class DetailPlacementViewServiceClient(metaclass=DetailPlacementViewServiceClien
               )
 
     def get_detail_placement_view(self,
-            request: detail_placement_view_service.GetDetailPlacementViewRequest = None,
+            request: Union[detail_placement_view_service.GetDetailPlacementViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class DetailPlacementViewServiceClient(metaclass=DetailPlacementViewServiceClien
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetDetailPlacementViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetDetailPlacementViewRequest, dict]):
                 The request object. Request message for
                 [DetailPlacementViewService.GetDetailPlacementView][google.ads.googleads.v7.services.DetailPlacementViewService.GetDetailPlacementView].
             resource_name (:class:`str`):

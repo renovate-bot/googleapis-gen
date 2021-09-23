@@ -39,35 +39,35 @@ def partition(
 class adminCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_role': ('parent', 'role_id', 'role', ),
-          'create_service_account': ('name', 'account_id', 'service_account', ),
-          'create_service_account_key': ('name', 'private_key_type', 'key_algorithm', ),
-          'delete_role': ('name', 'etag', ),
-          'delete_service_account': ('name', ),
-          'delete_service_account_key': ('name', ),
-          'disable_service_account': ('name', ),
-          'enable_service_account': ('name', ),
-          'get_iam_policy': ('resource', 'options', ),
-          'get_role': ('name', ),
-          'get_service_account': ('name', ),
-          'get_service_account_key': ('name', 'public_key_type', ),
-          'lint_policy': ('full_resource_name', 'condition', ),
-          'list_roles': ('parent', 'page_size', 'page_token', 'view', 'show_deleted', ),
-          'list_service_account_keys': ('name', 'key_types', ),
-          'list_service_accounts': ('name', 'page_size', 'page_token', ),
-          'patch_service_account': ('service_account', 'update_mask', ),
-          'query_auditable_services': ('full_resource_name', ),
-          'query_grantable_roles': ('full_resource_name', 'view', 'page_size', 'page_token', ),
-          'query_testable_permissions': ('full_resource_name', 'page_size', 'page_token', ),
-          'set_iam_policy': ('resource', 'policy', ),
-          'sign_blob': ('name', 'bytes_to_sign', ),
-          'sign_jwt': ('name', 'payload', ),
-          'test_iam_permissions': ('resource', 'permissions', ),
-          'undelete_role': ('name', 'etag', ),
-          'undelete_service_account': ('name', ),
-          'update_role': ('name', 'role', 'update_mask', ),
-          'update_service_account': ('name', 'project_id', 'unique_id', 'email', 'display_name', 'etag', 'description', 'oauth2_client_id', 'disabled', ),
-          'upload_service_account_key': ('name', 'public_key_data', ),
+        'create_role': ('parent', 'role_id', 'role', ),
+        'create_service_account': ('name', 'account_id', 'service_account', ),
+        'create_service_account_key': ('name', 'private_key_type', 'key_algorithm', ),
+        'delete_role': ('name', 'etag', ),
+        'delete_service_account': ('name', ),
+        'delete_service_account_key': ('name', ),
+        'disable_service_account': ('name', ),
+        'enable_service_account': ('name', ),
+        'get_iam_policy': ('resource', 'options', ),
+        'get_role': ('name', ),
+        'get_service_account': ('name', ),
+        'get_service_account_key': ('name', 'public_key_type', ),
+        'lint_policy': ('full_resource_name', 'condition', ),
+        'list_roles': ('parent', 'page_size', 'page_token', 'view', 'show_deleted', ),
+        'list_service_account_keys': ('name', 'key_types', ),
+        'list_service_accounts': ('name', 'page_size', 'page_token', ),
+        'patch_service_account': ('service_account', 'update_mask', ),
+        'query_auditable_services': ('full_resource_name', ),
+        'query_grantable_roles': ('full_resource_name', 'view', 'page_size', 'page_token', ),
+        'query_testable_permissions': ('full_resource_name', 'page_size', 'page_token', ),
+        'set_iam_policy': ('resource', 'policy', ),
+        'sign_blob': ('name', 'bytes_to_sign', ),
+        'sign_jwt': ('name', 'payload', ),
+        'test_iam_permissions': ('resource', 'permissions', ),
+        'undelete_role': ('name', 'etag', ),
+        'undelete_service_account': ('name', ),
+        'update_role': ('name', 'role', 'update_mask', ),
+        'update_service_account': ('name', 'project_id', 'unique_id', 'email', 'display_name', 'etag', 'description', 'oauth2_client_id', 'disabled', ),
+        'upload_service_account_key': ('name', 'public_key_data', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -86,7 +86,7 @@ class adminCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -346,7 +346,7 @@ class StorageClient(metaclass=StorageClientMeta):
             )
 
     def read_object(self,
-            request: storage.ReadObjectRequest = None,
+            request: Union[storage.ReadObjectRequest, dict] = None,
             *,
             bucket: str = None,
             object_: str = None,
@@ -358,7 +358,7 @@ class StorageClient(metaclass=StorageClientMeta):
         r"""Reads an object's data.
 
         Args:
-            request (google.storage_v2.types.ReadObjectRequest):
+            request (Union[google.storage_v2.types.ReadObjectRequest, dict]):
                 The request object. Request message for ReadObject.
             bucket (str):
                 The name of the bucket containing the
@@ -492,7 +492,7 @@ class StorageClient(metaclass=StorageClientMeta):
         return response
 
     def start_resumable_write(self,
-            request: storage.StartResumableWriteRequest = None,
+            request: Union[storage.StartResumableWriteRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -503,7 +503,7 @@ class StorageClient(metaclass=StorageClientMeta):
         operation becomes invalid, are service-dependent.
 
         Args:
-            request (google.storage_v2.types.StartResumableWriteRequest):
+            request (Union[google.storage_v2.types.StartResumableWriteRequest, dict]):
                 The request object. Request message StartResumableWrite.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -539,7 +539,7 @@ class StorageClient(metaclass=StorageClientMeta):
         return response
 
     def query_write_status(self,
-            request: storage.QueryWriteStatusRequest = None,
+            request: Union[storage.QueryWriteStatusRequest, dict] = None,
             *,
             upload_id: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -563,7 +563,7 @@ class StorageClient(metaclass=StorageClientMeta):
         non-decreasing.
 
         Args:
-            request (google.storage_v2.types.QueryWriteStatusRequest):
+            request (Union[google.storage_v2.types.QueryWriteStatusRequest, dict]):
                 The request object. Request object for
                 `QueryWriteStatus`.
             upload_id (str):

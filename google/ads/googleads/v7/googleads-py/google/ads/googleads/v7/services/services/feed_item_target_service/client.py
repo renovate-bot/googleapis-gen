@@ -366,7 +366,7 @@ class FeedItemTargetServiceClient(metaclass=FeedItemTargetServiceClientMeta):
               )
 
     def get_feed_item_target(self,
-            request: feed_item_target_service.GetFeedItemTargetRequest = None,
+            request: Union[feed_item_target_service.GetFeedItemTargetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -380,7 +380,7 @@ class FeedItemTargetServiceClient(metaclass=FeedItemTargetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetFeedItemTargetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetFeedItemTargetRequest, dict]):
                 The request object. Request message for
                 [FeedItemTargetService.GetFeedItemTarget][google.ads.googleads.v7.services.FeedItemTargetService.GetFeedItemTarget].
             resource_name (:class:`str`):
@@ -442,7 +442,7 @@ class FeedItemTargetServiceClient(metaclass=FeedItemTargetServiceClientMeta):
         return response
 
     def mutate_feed_item_targets(self,
-            request: feed_item_target_service.MutateFeedItemTargetsRequest = None,
+            request: Union[feed_item_target_service.MutateFeedItemTargetsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[feed_item_target_service.FeedItemTargetOperation] = None,
@@ -463,7 +463,7 @@ class FeedItemTargetServiceClient(metaclass=FeedItemTargetServiceClientMeta):
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateFeedItemTargetsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateFeedItemTargetsRequest, dict]):
                 The request object. Request message for
                 [FeedItemTargetService.MutateFeedItemTargets][google.ads.googleads.v7.services.FeedItemTargetService.MutateFeedItemTargets].
             customer_id (:class:`str`):

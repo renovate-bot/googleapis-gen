@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -356,7 +356,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
             )
 
     def list_features(self,
-            request: service.ListFeaturesRequest = None,
+            request: Union[service.ListFeaturesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -366,7 +366,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         r"""Lists Features in a given project and location.
 
         Args:
-            request (google.cloud.gkehub_v1beta.types.ListFeaturesRequest):
+            request (Union[google.cloud.gkehub_v1beta.types.ListFeaturesRequest, dict]):
                 The request object. Request message for
                 `GkeHub.ListFeatures` method.
             parent (str):
@@ -443,7 +443,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         return response
 
     def get_feature(self,
-            request: service.GetFeatureRequest = None,
+            request: Union[service.GetFeatureRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -453,7 +453,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         r"""Gets details of a single Feature.
 
         Args:
-            request (google.cloud.gkehub_v1beta.types.GetFeatureRequest):
+            request (Union[google.cloud.gkehub_v1beta.types.GetFeatureRequest, dict]):
                 The request object. Request message for
                 `GkeHub.GetFeature` method.
             name (str):
@@ -518,7 +518,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         return response
 
     def create_feature(self,
-            request: service.CreateFeatureRequest = None,
+            request: Union[service.CreateFeatureRequest, dict] = None,
             *,
             parent: str = None,
             resource: feature.Feature = None,
@@ -530,7 +530,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         r"""Adds a new Feature.
 
         Args:
-            request (google.cloud.gkehub_v1beta.types.CreateFeatureRequest):
+            request (Union[google.cloud.gkehub_v1beta.types.CreateFeatureRequest, dict]):
                 The request object. Request message for the
                 `GkeHub.CreateFeature` method.
             parent (str):
@@ -622,7 +622,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         return response
 
     def delete_feature(self,
-            request: service.DeleteFeatureRequest = None,
+            request: Union[service.DeleteFeatureRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -632,7 +632,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         r"""Removes a Feature.
 
         Args:
-            request (google.cloud.gkehub_v1beta.types.DeleteFeatureRequest):
+            request (Union[google.cloud.gkehub_v1beta.types.DeleteFeatureRequest, dict]):
                 The request object. Request message for
                 `GkeHub.DeleteFeature` method.
             name (str):
@@ -718,7 +718,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         return response
 
     def update_feature(self,
-            request: service.UpdateFeatureRequest = None,
+            request: Union[service.UpdateFeatureRequest, dict] = None,
             *,
             name: str = None,
             resource: feature.Feature = None,
@@ -730,7 +730,7 @@ class GkeHubClient(metaclass=GkeHubClientMeta):
         r"""Updates an existing Feature.
 
         Args:
-            request (google.cloud.gkehub_v1beta.types.UpdateFeatureRequest):
+            request (Union[google.cloud.gkehub_v1beta.types.UpdateFeatureRequest, dict]):
                 The request object. Request message for
                 `GkeHub.UpdateFeature` method.
             name (str):

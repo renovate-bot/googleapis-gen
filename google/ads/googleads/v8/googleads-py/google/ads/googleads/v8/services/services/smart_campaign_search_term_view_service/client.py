@@ -331,7 +331,7 @@ class SmartCampaignSearchTermViewServiceClient(metaclass=SmartCampaignSearchTerm
               )
 
     def get_smart_campaign_search_term_view(self,
-            request: smart_campaign_search_term_view_service.GetSmartCampaignSearchTermViewRequest = None,
+            request: Union[smart_campaign_search_term_view_service.GetSmartCampaignSearchTermViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class SmartCampaignSearchTermViewServiceClient(metaclass=SmartCampaignSearchTerm
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetSmartCampaignSearchTermViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetSmartCampaignSearchTermViewRequest, dict]):
                 The request object. Request message for
                 [SmartCampaignSearchTermViewService.GetSmartCampaignSearchTermView][google.ads.googleads.v8.services.SmartCampaignSearchTermViewService.GetSmartCampaignSearchTermView].
             resource_name (:class:`str`):

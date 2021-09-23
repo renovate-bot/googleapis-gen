@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -351,7 +351,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
             )
 
     def list_workload_identity_pools(self,
-            request: workload_identity_pool.ListWorkloadIdentityPoolsRequest = None,
+            request: Union[workload_identity_pool.ListWorkloadIdentityPoolsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -364,7 +364,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         deleted pools are also listed.
 
         Args:
-            request (google.iam_v1beta.types.ListWorkloadIdentityPoolsRequest):
+            request (Union[google.iam_v1beta.types.ListWorkloadIdentityPoolsRequest, dict]):
                 The request object. Request message for
                 ListWorkloadIdentityPools.
             parent (str):
@@ -441,7 +441,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def get_workload_identity_pool(self,
-            request: workload_identity_pool.GetWorkloadIdentityPoolRequest = None,
+            request: Union[workload_identity_pool.GetWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -452,7 +452,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
 
         Args:
-            request (google.iam_v1beta.types.GetWorkloadIdentityPoolRequest):
+            request (Union[google.iam_v1beta.types.GetWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 GetWorkloadIdentityPool.
             name (str):
@@ -519,7 +519,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def create_workload_identity_pool(self,
-            request: gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest = None,
+            request: Union[gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest, dict] = None,
             *,
             parent: str = None,
             workload_identity_pool: gi_workload_identity_pool.WorkloadIdentityPool = None,
@@ -535,7 +535,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         deletion.
 
         Args:
-            request (google.iam_v1beta.types.CreateWorkloadIdentityPoolRequest):
+            request (Union[google.iam_v1beta.types.CreateWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 CreateWorkloadIdentityPool.
             parent (str):
@@ -630,7 +630,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def update_workload_identity_pool(self,
-            request: gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest = None,
+            request: Union[gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest, dict] = None,
             *,
             workload_identity_pool: gi_workload_identity_pool.WorkloadIdentityPool = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -642,7 +642,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
 
         Args:
-            request (google.iam_v1beta.types.UpdateWorkloadIdentityPoolRequest):
+            request (Union[google.iam_v1beta.types.UpdateWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 UpdateWorkloadIdentityPool.
             workload_identity_pool (google.iam_v1beta.types.WorkloadIdentityPool):
@@ -725,7 +725,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def delete_workload_identity_pool(self,
-            request: workload_identity_pool.DeleteWorkloadIdentityPoolRequest = None,
+            request: Union[workload_identity_pool.DeleteWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -745,7 +745,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         However, you can view and list them.
 
         Args:
-            request (google.iam_v1beta.types.DeleteWorkloadIdentityPoolRequest):
+            request (Union[google.iam_v1beta.types.DeleteWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 DeleteWorkloadIdentityPool.
             name (str):
@@ -821,7 +821,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def undelete_workload_identity_pool(self,
-            request: workload_identity_pool.UndeleteWorkloadIdentityPoolRequest = None,
+            request: Union[workload_identity_pool.UndeleteWorkloadIdentityPoolRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -833,7 +833,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         as long as it was deleted fewer than 30 days ago.
 
         Args:
-            request (google.iam_v1beta.types.UndeleteWorkloadIdentityPoolRequest):
+            request (Union[google.iam_v1beta.types.UndeleteWorkloadIdentityPoolRequest, dict]):
                 The request object. Request message for
                 UndeleteWorkloadIdentityPool.
             name (str):
@@ -909,7 +909,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def list_workload_identity_pool_providers(self,
-            request: workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest = None,
+            request: Union[workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -924,7 +924,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         are also listed.
 
         Args:
-            request (google.iam_v1beta.types.ListWorkloadIdentityPoolProvidersRequest):
+            request (Union[google.iam_v1beta.types.ListWorkloadIdentityPoolProvidersRequest, dict]):
                 The request object. Request message for
                 ListWorkloadIdentityPoolProviders.
             parent (str):
@@ -1001,7 +1001,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def get_workload_identity_pool_provider(self,
-            request: workload_identity_pool.GetWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.GetWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1012,7 +1012,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
 
         Args:
-            request (google.iam_v1beta.types.GetWorkloadIdentityPoolProviderRequest):
+            request (Union[google.iam_v1beta.types.GetWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 GetWorkloadIdentityPoolProvider.
             name (str):
@@ -1077,7 +1077,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def create_workload_identity_pool_provider(self,
-            request: workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             parent: str = None,
             workload_identity_pool_provider: workload_identity_pool.WorkloadIdentityPoolProvider = None,
@@ -1095,7 +1095,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         after deletion.
 
         Args:
-            request (google.iam_v1beta.types.CreateWorkloadIdentityPoolProviderRequest):
+            request (Union[google.iam_v1beta.types.CreateWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 CreateWorkloadIdentityPoolProvider.
             parent (str):
@@ -1190,7 +1190,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def update_workload_identity_pool_provider(self,
-            request: workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             workload_identity_pool_provider: workload_identity_pool.WorkloadIdentityPoolProvider = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1202,7 +1202,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
 
         Args:
-            request (google.iam_v1beta.types.UpdateWorkloadIdentityPoolProviderRequest):
+            request (Union[google.iam_v1beta.types.UpdateWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 UpdateWorkloadIdentityPoolProvider.
             workload_identity_pool_provider (google.iam_v1beta.types.WorkloadIdentityPoolProvider):
@@ -1285,7 +1285,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def delete_workload_identity_pool_provider(self,
-            request: workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1301,7 +1301,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         view and list them.
 
         Args:
-            request (google.iam_v1beta.types.DeleteWorkloadIdentityPoolProviderRequest):
+            request (Union[google.iam_v1beta.types.DeleteWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 DeleteWorkloadIdentityPoolProvider.
             name (str):
@@ -1377,7 +1377,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         return response
 
     def undelete_workload_identity_pool_provider(self,
-            request: workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest = None,
+            request: Union[workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1389,7 +1389,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         as long as it was deleted fewer than 30 days ago.
 
         Args:
-            request (google.iam_v1beta.types.UndeleteWorkloadIdentityPoolProviderRequest):
+            request (Union[google.iam_v1beta.types.UndeleteWorkloadIdentityPoolProviderRequest, dict]):
                 The request object. Request message for
                 UndeleteWorkloadIdentityPoolProvider.
             name (str):

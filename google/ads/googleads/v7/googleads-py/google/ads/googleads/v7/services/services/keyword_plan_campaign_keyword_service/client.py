@@ -338,7 +338,7 @@ class KeywordPlanCampaignKeywordServiceClient(metaclass=KeywordPlanCampaignKeywo
               )
 
     def get_keyword_plan_campaign_keyword(self,
-            request: keyword_plan_campaign_keyword_service.GetKeywordPlanCampaignKeywordRequest = None,
+            request: Union[keyword_plan_campaign_keyword_service.GetKeywordPlanCampaignKeywordRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -352,7 +352,7 @@ class KeywordPlanCampaignKeywordServiceClient(metaclass=KeywordPlanCampaignKeywo
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetKeywordPlanCampaignKeywordRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetKeywordPlanCampaignKeywordRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanCampaignKeywordService.GetKeywordPlanCampaignKeyword][google.ads.googleads.v7.services.KeywordPlanCampaignKeywordService.GetKeywordPlanCampaignKeyword].
             resource_name (:class:`str`):
@@ -417,7 +417,7 @@ class KeywordPlanCampaignKeywordServiceClient(metaclass=KeywordPlanCampaignKeywo
         return response
 
     def mutate_keyword_plan_campaign_keywords(self,
-            request: keyword_plan_campaign_keyword_service.MutateKeywordPlanCampaignKeywordsRequest = None,
+            request: Union[keyword_plan_campaign_keyword_service.MutateKeywordPlanCampaignKeywordsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[keyword_plan_campaign_keyword_service.KeywordPlanCampaignKeywordOperation] = None,
@@ -436,7 +436,7 @@ class KeywordPlanCampaignKeywordServiceClient(metaclass=KeywordPlanCampaignKeywo
         `RequestError <>`__ `ResourceCountLimitExceededError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateKeywordPlanCampaignKeywordsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateKeywordPlanCampaignKeywordsRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanCampaignKeywordService.MutateKeywordPlanCampaignKeywords][google.ads.googleads.v7.services.KeywordPlanCampaignKeywordService.MutateKeywordPlanCampaignKeywords].
             customer_id (:class:`str`):

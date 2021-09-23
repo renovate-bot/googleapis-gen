@@ -322,7 +322,7 @@ class AccessibleBiddingStrategyServiceClient(metaclass=AccessibleBiddingStrategy
               )
 
     def get_accessible_bidding_strategy(self,
-            request: accessible_bidding_strategy_service.GetAccessibleBiddingStrategyRequest = None,
+            request: Union[accessible_bidding_strategy_service.GetAccessibleBiddingStrategyRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -333,7 +333,7 @@ class AccessibleBiddingStrategyServiceClient(metaclass=AccessibleBiddingStrategy
         full detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAccessibleBiddingStrategyRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAccessibleBiddingStrategyRequest, dict]):
                 The request object. Request message for
                 [AccessibleBiddingStrategyService.GetAccessibleBiddingStrategy][google.ads.googleads.v8.services.AccessibleBiddingStrategyService.GetAccessibleBiddingStrategy].
             resource_name (:class:`str`):

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -325,7 +325,7 @@ class SqlFlagsServiceClient(metaclass=SqlFlagsServiceClientMeta):
             )
 
     def list(self,
-            request: cloud_sql.SqlFlagsListRequest = None,
+            request: Union[cloud_sql.SqlFlagsListRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -335,7 +335,7 @@ class SqlFlagsServiceClient(metaclass=SqlFlagsServiceClientMeta):
         instances.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlFlagsListRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlFlagsListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

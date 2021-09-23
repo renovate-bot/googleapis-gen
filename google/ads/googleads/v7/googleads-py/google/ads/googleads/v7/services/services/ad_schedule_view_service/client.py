@@ -321,7 +321,7 @@ class AdScheduleViewServiceClient(metaclass=AdScheduleViewServiceClientMeta):
               )
 
     def get_ad_schedule_view(self,
-            request: ad_schedule_view_service.GetAdScheduleViewRequest = None,
+            request: Union[ad_schedule_view_service.GetAdScheduleViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class AdScheduleViewServiceClient(metaclass=AdScheduleViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdScheduleViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdScheduleViewRequest, dict]):
                 The request object. Request message for
                 [AdScheduleViewService.GetAdScheduleView][google.ads.googleads.v7.services.AdScheduleViewService.GetAdScheduleView].
             resource_name (:class:`str`):

@@ -342,7 +342,7 @@ class AdGroupCriterionLabelServiceClient(metaclass=AdGroupCriterionLabelServiceC
               )
 
     def get_ad_group_criterion_label(self,
-            request: ad_group_criterion_label_service.GetAdGroupCriterionLabelRequest = None,
+            request: Union[ad_group_criterion_label_service.GetAdGroupCriterionLabelRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -356,7 +356,7 @@ class AdGroupCriterionLabelServiceClient(metaclass=AdGroupCriterionLabelServiceC
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupCriterionLabelRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupCriterionLabelRequest, dict]):
                 The request object. Request message for
                 [AdGroupCriterionLabelService.GetAdGroupCriterionLabel][google.ads.googleads.v7.services.AdGroupCriterionLabelService.GetAdGroupCriterionLabel].
             resource_name (:class:`str`):
@@ -420,7 +420,7 @@ class AdGroupCriterionLabelServiceClient(metaclass=AdGroupCriterionLabelServiceC
         return response
 
     def mutate_ad_group_criterion_labels(self,
-            request: ad_group_criterion_label_service.MutateAdGroupCriterionLabelsRequest = None,
+            request: Union[ad_group_criterion_label_service.MutateAdGroupCriterionLabelsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_criterion_label_service.AdGroupCriterionLabelOperation] = None,
@@ -437,7 +437,7 @@ class AdGroupCriterionLabelServiceClient(metaclass=AdGroupCriterionLabelServiceC
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupCriterionLabelsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdGroupCriterionLabelsRequest, dict]):
                 The request object. Request message for
                 [AdGroupCriterionLabelService.MutateAdGroupCriterionLabels][google.ads.googleads.v7.services.AdGroupCriterionLabelService.MutateAdGroupCriterionLabels].
             customer_id (:class:`str`):

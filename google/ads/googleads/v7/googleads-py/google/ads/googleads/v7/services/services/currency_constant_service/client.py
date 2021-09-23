@@ -321,7 +321,7 @@ class CurrencyConstantServiceClient(metaclass=CurrencyConstantServiceClientMeta)
               )
 
     def get_currency_constant(self,
-            request: currency_constant_service.GetCurrencyConstantRequest = None,
+            request: Union[currency_constant_service.GetCurrencyConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class CurrencyConstantServiceClient(metaclass=CurrencyConstantServiceClientMeta)
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCurrencyConstantRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCurrencyConstantRequest, dict]):
                 The request object. Request message for
                 [CurrencyConstantService.GetCurrencyConstant][google.ads.googleads.v7.services.CurrencyConstantService.GetCurrencyConstant].
             resource_name (:class:`str`):

@@ -39,29 +39,29 @@ def partition(
 class accesscontextmanagerCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'commit_service_perimeters': ('parent', 'etag', ),
-          'create_access_level': ('parent', 'access_level', ),
-          'create_access_policy': ('name', 'parent', 'title', 'create_time', 'update_time', 'etag', ),
-          'create_gcp_user_access_binding': ('parent', 'gcp_user_access_binding', ),
-          'create_service_perimeter': ('parent', 'service_perimeter', ),
-          'delete_access_level': ('name', ),
-          'delete_access_policy': ('name', ),
-          'delete_gcp_user_access_binding': ('name', ),
-          'delete_service_perimeter': ('name', ),
-          'get_access_level': ('name', 'access_level_format', ),
-          'get_access_policy': ('name', ),
-          'get_gcp_user_access_binding': ('name', ),
-          'get_service_perimeter': ('name', ),
-          'list_access_levels': ('parent', 'page_size', 'page_token', 'access_level_format', ),
-          'list_access_policies': ('parent', 'page_size', 'page_token', ),
-          'list_gcp_user_access_bindings': ('parent', 'page_size', 'page_token', ),
-          'list_service_perimeters': ('parent', 'page_size', 'page_token', ),
-          'replace_access_levels': ('parent', 'access_levels', 'etag', ),
-          'replace_service_perimeters': ('parent', 'service_perimeters', 'etag', ),
-          'update_access_level': ('access_level', 'update_mask', ),
-          'update_access_policy': ('policy', 'update_mask', ),
-          'update_gcp_user_access_binding': ('gcp_user_access_binding', 'update_mask', ),
-          'update_service_perimeter': ('service_perimeter', 'update_mask', ),
+        'commit_service_perimeters': ('parent', 'etag', ),
+        'create_access_level': ('parent', 'access_level', ),
+        'create_access_policy': ('name', 'parent', 'title', 'create_time', 'update_time', 'etag', ),
+        'create_gcp_user_access_binding': ('parent', 'gcp_user_access_binding', ),
+        'create_service_perimeter': ('parent', 'service_perimeter', ),
+        'delete_access_level': ('name', ),
+        'delete_access_policy': ('name', ),
+        'delete_gcp_user_access_binding': ('name', ),
+        'delete_service_perimeter': ('name', ),
+        'get_access_level': ('name', 'access_level_format', ),
+        'get_access_policy': ('name', ),
+        'get_gcp_user_access_binding': ('name', ),
+        'get_service_perimeter': ('name', ),
+        'list_access_levels': ('parent', 'page_size', 'page_token', 'access_level_format', ),
+        'list_access_policies': ('parent', 'page_size', 'page_token', ),
+        'list_gcp_user_access_bindings': ('parent', 'page_size', 'page_token', ),
+        'list_service_perimeters': ('parent', 'page_size', 'page_token', ),
+        'replace_access_levels': ('parent', 'access_levels', 'etag', ),
+        'replace_service_perimeters': ('parent', 'service_perimeters', 'etag', ),
+        'update_access_level': ('access_level', 'update_mask', ),
+        'update_access_policy': ('policy', 'update_mask', ),
+        'update_gcp_user_access_binding': ('gcp_user_access_binding', 'update_mask', ),
+        'update_service_perimeter': ('service_perimeter', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -80,7 +80,7 @@ class accesscontextmanagerCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

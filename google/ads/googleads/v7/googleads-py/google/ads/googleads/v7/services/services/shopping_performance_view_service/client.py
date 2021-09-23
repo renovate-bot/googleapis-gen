@@ -321,7 +321,7 @@ class ShoppingPerformanceViewServiceClient(metaclass=ShoppingPerformanceViewServ
               )
 
     def get_shopping_performance_view(self,
-            request: shopping_performance_view_service.GetShoppingPerformanceViewRequest = None,
+            request: Union[shopping_performance_view_service.GetShoppingPerformanceViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class ShoppingPerformanceViewServiceClient(metaclass=ShoppingPerformanceViewServ
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetShoppingPerformanceViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetShoppingPerformanceViewRequest, dict]):
                 The request object. Request message for
                 [ShoppingPerformanceViewService.GetShoppingPerformanceView][google.ads.googleads.v7.services.ShoppingPerformanceViewService.GetShoppingPerformanceView].
             resource_name (:class:`str`):

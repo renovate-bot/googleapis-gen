@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -353,7 +353,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
             )
 
     def get_metrics_scope(self,
-            request: metrics_scopes.GetMetricsScopeRequest = None,
+            request: Union[metrics_scopes.GetMetricsScopeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -363,7 +363,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         r"""Returns a specific ``Metrics Scope``.
 
         Args:
-            request (google.cloud.monitoring_metrics_scope_v1.types.GetMetricsScopeRequest):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.GetMetricsScopeRequest, dict]):
                 The request object. Request for the `GetMetricsScope`
                 method.
             name (str):
@@ -432,7 +432,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         return response
 
     def list_metrics_scopes_by_monitored_project(self,
-            request: metrics_scopes.ListMetricsScopesByMonitoredProjectRequest = None,
+            request: Union[metrics_scopes.ListMetricsScopesByMonitoredProjectRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -444,7 +444,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         first entry in the response.
 
         Args:
-            request (google.cloud.monitoring_metrics_scope_v1.types.ListMetricsScopesByMonitoredProjectRequest):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.ListMetricsScopesByMonitoredProjectRequest, dict]):
                 The request object. Request for the
                 `ListMetricsScopesByMonitoredProject` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -483,7 +483,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         return response
 
     def create_monitored_project(self,
-            request: metrics_scopes.CreateMonitoredProjectRequest = None,
+            request: Union[metrics_scopes.CreateMonitoredProjectRequest, dict] = None,
             *,
             parent: str = None,
             monitored_project: metrics_scope.MonitoredProject = None,
@@ -495,7 +495,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         specified ``Metrics Scope``.
 
         Args:
-            request (google.cloud.monitoring_metrics_scope_v1.types.CreateMonitoredProjectRequest):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.CreateMonitoredProjectRequest, dict]):
                 The request object. Request for the
                 `CreateMonitoredProject` method.
             parent (str):
@@ -586,7 +586,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         return response
 
     def delete_monitored_project(self,
-            request: metrics_scopes.DeleteMonitoredProjectRequest = None,
+            request: Union[metrics_scopes.DeleteMonitoredProjectRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -597,7 +597,7 @@ class MetricsScopesClient(metaclass=MetricsScopesClientMeta):
         ``Metrics Scope``.
 
         Args:
-            request (google.cloud.monitoring_metrics_scope_v1.types.DeleteMonitoredProjectRequest):
+            request (Union[google.cloud.monitoring_metrics_scope_v1.types.DeleteMonitoredProjectRequest, dict]):
                 The request object. Request for the
                 `DeleteMonitoredProject` method.
             name (str):

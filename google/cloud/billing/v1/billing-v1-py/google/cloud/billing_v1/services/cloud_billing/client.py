@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -329,7 +329,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             )
 
     def get_billing_account(self,
-            request: cloud_billing.GetBillingAccountRequest = None,
+            request: Union[cloud_billing.GetBillingAccountRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -341,7 +341,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         account <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (google.cloud.billing_v1.types.GetBillingAccountRequest):
+            request (Union[google.cloud.billing_v1.types.GetBillingAccountRequest, dict]):
                 The request object. Request message for
                 `GetBillingAccount`.
             name (str):
@@ -408,7 +408,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def list_billing_accounts(self,
-            request: cloud_billing.ListBillingAccountsRequest = None,
+            request: Union[cloud_billing.ListBillingAccountsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -419,7 +419,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         `view <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (google.cloud.billing_v1.types.ListBillingAccountsRequest):
+            request (Union[google.cloud.billing_v1.types.ListBillingAccountsRequest, dict]):
                 The request object. Request message for
                 `ListBillingAccounts`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -469,7 +469,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def update_billing_account(self,
-            request: cloud_billing.UpdateBillingAccountRequest = None,
+            request: Union[cloud_billing.UpdateBillingAccountRequest, dict] = None,
             *,
             name: str = None,
             account: cloud_billing.BillingAccount = None,
@@ -485,7 +485,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         of the billing account.
 
         Args:
-            request (google.cloud.billing_v1.types.UpdateBillingAccountRequest):
+            request (Union[google.cloud.billing_v1.types.UpdateBillingAccountRequest, dict]):
                 The request object. Request message for
                 `UpdateBillingAccount`.
             name (str):
@@ -561,7 +561,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def create_billing_account(self,
-            request: cloud_billing.CreateBillingAccountRequest = None,
+            request: Union[cloud_billing.CreateBillingAccountRequest, dict] = None,
             *,
             billing_account: cloud_billing.BillingAccount = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -580,7 +580,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         been provisioned as a reseller account.
 
         Args:
-            request (google.cloud.billing_v1.types.CreateBillingAccountRequest):
+            request (Union[google.cloud.billing_v1.types.CreateBillingAccountRequest, dict]):
                 The request object. Request message for
                 `CreateBillingAccount`.
             billing_account (google.cloud.billing_v1.types.BillingAccount):
@@ -642,7 +642,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def list_project_billing_info(self,
-            request: cloud_billing.ListProjectBillingInfoRequest = None,
+            request: Union[cloud_billing.ListProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -656,7 +656,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         `viewers <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (google.cloud.billing_v1.types.ListProjectBillingInfoRequest):
+            request (Union[google.cloud.billing_v1.types.ListProjectBillingInfoRequest, dict]):
                 The request object. Request message for
                 `ListProjectBillingInfo`.
             name (str):
@@ -733,7 +733,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def get_project_billing_info(self,
-            request: cloud_billing.GetProjectBillingInfoRequest = None,
+            request: Union[cloud_billing.GetProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -745,7 +745,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         project <https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo>`__.
 
         Args:
-            request (google.cloud.billing_v1.types.GetProjectBillingInfoRequest):
+            request (Union[google.cloud.billing_v1.types.GetProjectBillingInfoRequest, dict]):
                 The request object. Request message for
                 `GetProjectBillingInfo`.
             name (str):
@@ -814,7 +814,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def update_project_billing_info(self,
-            request: cloud_billing.UpdateProjectBillingInfoRequest = None,
+            request: Union[cloud_billing.UpdateProjectBillingInfoRequest, dict] = None,
             *,
             name: str = None,
             project_billing_info: cloud_billing.ProjectBillingInfo = None,
@@ -860,7 +860,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         account.
 
         Args:
-            request (google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest):
+            request (Union[google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest, dict]):
                 The request object. Request message for
                 `UpdateProjectBillingInfo`.
             name (str):
@@ -939,7 +939,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -952,7 +952,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         `viewers <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -1071,7 +1071,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1085,7 +1085,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         `administrators <https://cloud.google.com/billing/docs/how-to/billing-access>`__.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -1204,7 +1204,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
@@ -1219,7 +1219,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         resource.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):

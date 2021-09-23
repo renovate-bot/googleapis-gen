@@ -39,13 +39,13 @@ def partition(
 class migrationCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_migration_workflow': ('parent', 'migration_workflow', ),
-          'delete_migration_workflow': ('name', ),
-          'get_migration_subtask': ('name', 'read_mask', ),
-          'get_migration_workflow': ('name', 'read_mask', ),
-          'list_migration_subtasks': ('parent', 'read_mask', 'page_size', 'page_token', 'filter', ),
-          'list_migration_workflows': ('parent', 'read_mask', 'page_size', 'page_token', ),
-          'start_migration_workflow': ('name', ),
+        'create_migration_workflow': ('parent', 'migration_workflow', ),
+        'delete_migration_workflow': ('name', ),
+        'get_migration_subtask': ('name', 'read_mask', ),
+        'get_migration_workflow': ('name', 'read_mask', ),
+        'list_migration_subtasks': ('parent', 'read_mask', 'page_size', 'page_token', 'filter', ),
+        'list_migration_workflows': ('parent', 'read_mask', 'page_size', 'page_token', ),
+        'start_migration_workflow': ('name', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -64,7 +64,7 @@ class migrationCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

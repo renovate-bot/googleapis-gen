@@ -358,7 +358,7 @@ class AccountBudgetProposalServiceClient(metaclass=AccountBudgetProposalServiceC
               )
 
     def get_account_budget_proposal(self,
-            request: account_budget_proposal_service.GetAccountBudgetProposalRequest = None,
+            request: Union[account_budget_proposal_service.GetAccountBudgetProposalRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -372,7 +372,7 @@ class AccountBudgetProposalServiceClient(metaclass=AccountBudgetProposalServiceC
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAccountBudgetProposalRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAccountBudgetProposalRequest, dict]):
                 The request object. Request message for
                 [AccountBudgetProposalService.GetAccountBudgetProposal][google.ads.googleads.v8.services.AccountBudgetProposalService.GetAccountBudgetProposal].
             resource_name (:class:`str`):
@@ -445,7 +445,7 @@ class AccountBudgetProposalServiceClient(metaclass=AccountBudgetProposalServiceC
         return response
 
     def mutate_account_budget_proposal(self,
-            request: account_budget_proposal_service.MutateAccountBudgetProposalRequest = None,
+            request: Union[account_budget_proposal_service.MutateAccountBudgetProposalRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: account_budget_proposal_service.AccountBudgetProposalOperation = None,
@@ -464,7 +464,7 @@ class AccountBudgetProposalServiceClient(metaclass=AccountBudgetProposalServiceC
         `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateAccountBudgetProposalRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateAccountBudgetProposalRequest, dict]):
                 The request object. Request message for
                 [AccountBudgetProposalService.MutateAccountBudgetProposal][google.ads.googleads.v8.services.AccountBudgetProposalService.MutateAccountBudgetProposal].
             customer_id (:class:`str`):

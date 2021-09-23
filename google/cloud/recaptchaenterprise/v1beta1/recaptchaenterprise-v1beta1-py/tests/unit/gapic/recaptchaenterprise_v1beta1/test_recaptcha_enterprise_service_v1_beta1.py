@@ -406,7 +406,7 @@ def test_create_assessment(transport: str = 'grpc', request_type=recaptchaenterp
         # Designate an appropriate return value for the call.
         call.return_value = recaptchaenterprise.Assessment(
             name='name_value',
-            score=0.540,
+            score=0.54,
             reasons=[recaptchaenterprise.Assessment.ClassificationReason.AUTOMATION],
         )
         response = client.create_assessment(request)
@@ -419,7 +419,7 @@ def test_create_assessment(transport: str = 'grpc', request_type=recaptchaenterp
     # Establish that the response is the type that we expect.
     assert isinstance(response, recaptchaenterprise.Assessment)
     assert response.name == 'name_value'
-    assert math.isclose(response.score, 0.540, rel_tol=1e-6)
+    assert math.isclose(response.score, 0.54, rel_tol=1e-6)
     assert response.reasons == [recaptchaenterprise.Assessment.ClassificationReason.AUTOMATION]
 
 
@@ -463,7 +463,7 @@ async def test_create_assessment_async(transport: str = 'grpc_asyncio', request_
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(recaptchaenterprise.Assessment(
             name='name_value',
-            score=0.540,
+            score=0.54,
             reasons=[recaptchaenterprise.Assessment.ClassificationReason.AUTOMATION],
         ))
         response = await client.create_assessment(request)
@@ -476,7 +476,7 @@ async def test_create_assessment_async(transport: str = 'grpc_asyncio', request_
     # Establish that the response is the type that we expect.
     assert isinstance(response, recaptchaenterprise.Assessment)
     assert response.name == 'name_value'
-    assert math.isclose(response.score, 0.540, rel_tol=1e-6)
+    assert math.isclose(response.score, 0.54, rel_tol=1e-6)
     assert response.reasons == [recaptchaenterprise.Assessment.ClassificationReason.AUTOMATION]
 
 

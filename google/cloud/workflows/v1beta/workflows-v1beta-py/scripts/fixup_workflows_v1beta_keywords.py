@@ -39,11 +39,11 @@ def partition(
 class workflowsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_workflow': ('parent', 'workflow', 'workflow_id', ),
-          'delete_workflow': ('name', ),
-          'get_workflow': ('name', ),
-          'list_workflows': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'update_workflow': ('workflow', 'update_mask', ),
+        'create_workflow': ('parent', 'workflow', 'workflow_id', ),
+        'delete_workflow': ('name', ),
+        'get_workflow': ('name', ),
+        'list_workflows': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'update_workflow': ('workflow', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -62,7 +62,7 @@ class workflowsCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

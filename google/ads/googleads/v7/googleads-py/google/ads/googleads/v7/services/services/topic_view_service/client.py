@@ -321,7 +321,7 @@ class TopicViewServiceClient(metaclass=TopicViewServiceClientMeta):
               )
 
     def get_topic_view(self,
-            request: topic_view_service.GetTopicViewRequest = None,
+            request: Union[topic_view_service.GetTopicViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class TopicViewServiceClient(metaclass=TopicViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetTopicViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetTopicViewRequest, dict]):
                 The request object. Request message for
                 [TopicViewService.GetTopicView][google.ads.googleads.v7.services.TopicViewService.GetTopicView].
             resource_name (:class:`str`):

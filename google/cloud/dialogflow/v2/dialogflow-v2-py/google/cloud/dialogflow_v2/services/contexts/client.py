@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -339,7 +339,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
             )
 
     def list_contexts(self,
-            request: context.ListContextsRequest = None,
+            request: Union[context.ListContextsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -350,7 +350,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         session.
 
         Args:
-            request (google.cloud.dialogflow_v2.types.ListContextsRequest):
+            request (Union[google.cloud.dialogflow_v2.types.ListContextsRequest, dict]):
                 The request object. The request message for
                 [Contexts.ListContexts][google.cloud.dialogflow.v2.Contexts.ListContexts].
             parent (str):
@@ -431,7 +431,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         return response
 
     def get_context(self,
-            request: context.GetContextRequest = None,
+            request: Union[context.GetContextRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -441,7 +441,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         r"""Retrieves the specified context.
 
         Args:
-            request (google.cloud.dialogflow_v2.types.GetContextRequest):
+            request (Union[google.cloud.dialogflow_v2.types.GetContextRequest, dict]):
                 The request object. The request message for
                 [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
             name (str):
@@ -528,7 +528,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         return response
 
     def create_context(self,
-            request: gcd_context.CreateContextRequest = None,
+            request: Union[gcd_context.CreateContextRequest, dict] = None,
             *,
             parent: str = None,
             context: gcd_context.Context = None,
@@ -541,7 +541,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         context.
 
         Args:
-            request (google.cloud.dialogflow_v2.types.CreateContextRequest):
+            request (Union[google.cloud.dialogflow_v2.types.CreateContextRequest, dict]):
                 The request object. The request message for
                 [Contexts.CreateContext][google.cloud.dialogflow.v2.Contexts.CreateContext].
             parent (str):
@@ -634,7 +634,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         return response
 
     def update_context(self,
-            request: gcd_context.UpdateContextRequest = None,
+            request: Union[gcd_context.UpdateContextRequest, dict] = None,
             *,
             context: gcd_context.Context = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -645,7 +645,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         r"""Updates the specified context.
 
         Args:
-            request (google.cloud.dialogflow_v2.types.UpdateContextRequest):
+            request (Union[google.cloud.dialogflow_v2.types.UpdateContextRequest, dict]):
                 The request object. The request message for
                 [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
             context (google.cloud.dialogflow_v2.types.Context):
@@ -734,7 +734,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         return response
 
     def delete_context(self,
-            request: context.DeleteContextRequest = None,
+            request: Union[context.DeleteContextRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -744,7 +744,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         r"""Deletes the specified context.
 
         Args:
-            request (google.cloud.dialogflow_v2.types.DeleteContextRequest):
+            request (Union[google.cloud.dialogflow_v2.types.DeleteContextRequest, dict]):
                 The request object. The request message for
                 [Contexts.DeleteContext][google.cloud.dialogflow.v2.Contexts.DeleteContext].
             name (str):
@@ -805,7 +805,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         )
 
     def delete_all_contexts(self,
-            request: context.DeleteAllContextsRequest = None,
+            request: Union[context.DeleteAllContextsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -815,7 +815,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         r"""Deletes all active contexts in the specified session.
 
         Args:
-            request (google.cloud.dialogflow_v2.types.DeleteAllContextsRequest):
+            request (Union[google.cloud.dialogflow_v2.types.DeleteAllContextsRequest, dict]):
                 The request object. The request message for
                 [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2.Contexts.DeleteAllContexts].
             parent (str):

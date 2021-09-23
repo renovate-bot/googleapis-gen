@@ -266,7 +266,7 @@ def test_get_domain_category(transport: str = 'grpc', request_type=domain_catego
             category='category_value',
             language_code='language_code_value',
             domain='domain_value',
-            coverage_fraction=0.1793,
+            coverage_fraction=0.17930000000000001,
             category_rank=1385,
             has_children=True,
             recommended_cpc_bid_micros=2706,
@@ -285,7 +285,7 @@ def test_get_domain_category(transport: str = 'grpc', request_type=domain_catego
     assert response.category == 'category_value'
     assert response.language_code == 'language_code_value'
     assert response.domain == 'domain_value'
-    assert math.isclose(response.coverage_fraction, 0.1793, rel_tol=1e-6)
+    assert math.isclose(response.coverage_fraction, 0.17930000000000001, rel_tol=1e-6)
     assert response.category_rank == 1385
     assert response.has_children is True
     assert response.recommended_cpc_bid_micros == 2706

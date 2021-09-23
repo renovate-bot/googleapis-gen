@@ -321,7 +321,7 @@ class ProductGroupViewServiceClient(metaclass=ProductGroupViewServiceClientMeta)
               )
 
     def get_product_group_view(self,
-            request: product_group_view_service.GetProductGroupViewRequest = None,
+            request: Union[product_group_view_service.GetProductGroupViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class ProductGroupViewServiceClient(metaclass=ProductGroupViewServiceClientMeta)
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetProductGroupViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetProductGroupViewRequest, dict]):
                 The request object. Request message for
                 [ProductGroupViewService.GetProductGroupView][google.ads.googleads.v8.services.ProductGroupViewService.GetProductGroupView].
             resource_name (:class:`str`):

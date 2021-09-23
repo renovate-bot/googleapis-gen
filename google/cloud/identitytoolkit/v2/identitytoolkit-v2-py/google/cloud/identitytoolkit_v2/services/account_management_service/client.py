@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -325,7 +325,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
             )
 
     def finalize_mfa_enrollment(self,
-            request: account_management_service.FinalizeMfaEnrollmentRequest = None,
+            request: Union[account_management_service.FinalizeMfaEnrollmentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -334,7 +334,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
         r"""Finishes enrolling a second factor for the user.
 
         Args:
-            request (google.cloud.identitytoolkit_v2.types.FinalizeMfaEnrollmentRequest):
+            request (Union[google.cloud.identitytoolkit_v2.types.FinalizeMfaEnrollmentRequest, dict]):
                 The request object. Finishes enrolling a second factor
                 for the user.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -371,7 +371,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
         return response
 
     def start_mfa_enrollment(self,
-            request: account_management_service.StartMfaEnrollmentRequest = None,
+            request: Union[account_management_service.StartMfaEnrollmentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -381,7 +381,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
         this sends an SMS verification code to the user.
 
         Args:
-            request (google.cloud.identitytoolkit_v2.types.StartMfaEnrollmentRequest):
+            request (Union[google.cloud.identitytoolkit_v2.types.StartMfaEnrollmentRequest, dict]):
                 The request object. Sends MFA enrollment verification
                 SMS for a user.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -418,7 +418,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
         return response
 
     def withdraw_mfa(self,
-            request: account_management_service.WithdrawMfaRequest = None,
+            request: Union[account_management_service.WithdrawMfaRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -428,7 +428,7 @@ class AccountManagementServiceClient(metaclass=AccountManagementServiceClientMet
         factors for an account.
 
         Args:
-            request (google.cloud.identitytoolkit_v2.types.WithdrawMfaRequest):
+            request (Union[google.cloud.identitytoolkit_v2.types.WithdrawMfaRequest, dict]):
                 The request object. Withdraws MFA.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

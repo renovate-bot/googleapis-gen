@@ -39,8 +39,8 @@ def partition(
 class marketplaceCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'get': ('application_id', 'customer_id', ),
-          'list': ('application_id', 'max_results', 'start_token', 'timestamp', ),
+        'get': ('application_id', 'customer_id', ),
+        'list': ('application_id', 'max_results', 'start_token', 'timestamp', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -59,7 +59,7 @@ class marketplaceCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

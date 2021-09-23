@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -366,7 +366,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
             )
 
     def list_monitored_resource_descriptors(self,
-            request: metric_service.ListMonitoredResourceDescriptorsRequest = None,
+            request: Union[metric_service.ListMonitoredResourceDescriptorsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -377,7 +377,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         filter. This method does not require a Workspace.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListMonitoredResourceDescriptorsRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListMonitoredResourceDescriptorsRequest, dict]):
                 The request object. The
                 `ListMonitoredResourceDescriptors` request.
             name (str):
@@ -458,7 +458,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         return response
 
     def get_monitored_resource_descriptor(self,
-            request: metric_service.GetMonitoredResourceDescriptorRequest = None,
+            request: Union[metric_service.GetMonitoredResourceDescriptorRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -469,7 +469,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         method does not require a Workspace.
 
         Args:
-            request (google.cloud.monitoring_v3.types.GetMonitoredResourceDescriptorRequest):
+            request (Union[google.cloud.monitoring_v3.types.GetMonitoredResourceDescriptorRequest, dict]):
                 The request object. The `GetMonitoredResourceDescriptor`
                 request.
             name (str):
@@ -550,7 +550,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         return response
 
     def list_metric_descriptors(self,
-            request: metric_service.ListMetricDescriptorsRequest = None,
+            request: Union[metric_service.ListMetricDescriptorsRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -561,7 +561,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         method does not require a Workspace.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListMetricDescriptorsRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListMetricDescriptorsRequest, dict]):
                 The request object. The `ListMetricDescriptors` request.
             name (str):
                 Required. The
@@ -641,7 +641,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         return response
 
     def get_metric_descriptor(self,
-            request: metric_service.GetMetricDescriptorRequest = None,
+            request: Union[metric_service.GetMetricDescriptorRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -652,7 +652,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         require a Workspace.
 
         Args:
-            request (google.cloud.monitoring_v3.types.GetMetricDescriptorRequest):
+            request (Union[google.cloud.monitoring_v3.types.GetMetricDescriptorRequest, dict]):
                 The request object. The `GetMetricDescriptor` request.
             name (str):
                 Required. The metric descriptor on which to execute the
@@ -726,7 +726,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         return response
 
     def create_metric_descriptor(self,
-            request: metric_service.CreateMetricDescriptorRequest = None,
+            request: Union[metric_service.CreateMetricDescriptorRequest, dict] = None,
             *,
             name: str = None,
             metric_descriptor: metric_pb2.MetricDescriptor = None,
@@ -739,7 +739,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         metrics <https://cloud.google.com/monitoring/custom-metrics>`__.
 
         Args:
-            request (google.cloud.monitoring_v3.types.CreateMetricDescriptorRequest):
+            request (Union[google.cloud.monitoring_v3.types.CreateMetricDescriptorRequest, dict]):
                 The request object. The `CreateMetricDescriptor`
                 request.
             name (str):
@@ -819,7 +819,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         return response
 
     def delete_metric_descriptor(self,
-            request: metric_service.DeleteMetricDescriptorRequest = None,
+            request: Union[metric_service.DeleteMetricDescriptorRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -831,7 +831,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         can be deleted.
 
         Args:
-            request (google.cloud.monitoring_v3.types.DeleteMetricDescriptorRequest):
+            request (Union[google.cloud.monitoring_v3.types.DeleteMetricDescriptorRequest, dict]):
                 The request object. The `DeleteMetricDescriptor`
                 request.
             name (str):
@@ -894,7 +894,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         )
 
     def list_time_series(self,
-            request: metric_service.ListTimeSeriesRequest = None,
+            request: Union[metric_service.ListTimeSeriesRequest, dict] = None,
             *,
             name: str = None,
             filter: str = None,
@@ -908,7 +908,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         does not require a Workspace.
 
         Args:
-            request (google.cloud.monitoring_v3.types.ListTimeSeriesRequest):
+            request (Union[google.cloud.monitoring_v3.types.ListTimeSeriesRequest, dict]):
                 The request object. The `ListTimeSeries` request.
             name (str):
                 Required. The
@@ -1030,7 +1030,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         return response
 
     def create_time_series(self,
-            request: metric_service.CreateTimeSeriesRequest = None,
+            request: Union[metric_service.CreateTimeSeriesRequest, dict] = None,
             *,
             name: str = None,
             time_series: Sequence[gm_metric.TimeSeries] = None,
@@ -1045,7 +1045,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         response.
 
         Args:
-            request (google.cloud.monitoring_v3.types.CreateTimeSeriesRequest):
+            request (Union[google.cloud.monitoring_v3.types.CreateTimeSeriesRequest, dict]):
                 The request object. The `CreateTimeSeries` request.
             name (str):
                 Required. The

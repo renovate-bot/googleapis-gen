@@ -39,13 +39,13 @@ def partition(
 class gkehubCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_membership': ('parent', 'membership_id', 'resource', ),
-          'delete_membership': ('name', ),
-          'generate_connect_manifest': ('name', 'namespace', 'proxy', 'version', 'is_upgrade', 'registry', 'image_pull_secret_content', ),
-          'get_membership': ('name', ),
-          'initialize_hub': ('project', ),
-          'list_memberships': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'update_membership': ('name', 'update_mask', 'resource', ),
+        'create_membership': ('parent', 'membership_id', 'resource', ),
+        'delete_membership': ('name', ),
+        'generate_connect_manifest': ('name', 'namespace', 'proxy', 'version', 'is_upgrade', 'registry', 'image_pull_secret_content', ),
+        'get_membership': ('name', ),
+        'initialize_hub': ('project', ),
+        'list_memberships': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'update_membership': ('name', 'update_mask', 'resource', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -64,7 +64,7 @@ class gkehubCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

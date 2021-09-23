@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -374,7 +374,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
             )
 
     def create_featurestore(self,
-            request: featurestore_service.CreateFeaturestoreRequest = None,
+            request: Union[featurestore_service.CreateFeaturestoreRequest, dict] = None,
             *,
             parent: str = None,
             featurestore: gca_featurestore.Featurestore = None,
@@ -386,7 +386,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         location.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateFeaturestoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateFeaturestoreRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.CreateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeaturestore].
             parent (str):
@@ -471,7 +471,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def get_featurestore(self,
-            request: featurestore_service.GetFeaturestoreRequest = None,
+            request: Union[featurestore_service.GetFeaturestoreRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -481,7 +481,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Gets details of a single Featurestore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetFeaturestoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetFeaturestoreRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.GetFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeaturestore].
             name (str):
@@ -547,7 +547,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def list_featurestores(self,
-            request: featurestore_service.ListFeaturestoresRequest = None,
+            request: Union[featurestore_service.ListFeaturestoresRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -557,7 +557,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Lists Featurestores in a given project and location.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListFeaturestoresRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListFeaturestoresRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
             parent (str):
@@ -635,7 +635,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def update_featurestore(self,
-            request: featurestore_service.UpdateFeaturestoreRequest = None,
+            request: Union[featurestore_service.UpdateFeaturestoreRequest, dict] = None,
             *,
             featurestore: gca_featurestore.Featurestore = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -646,7 +646,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Updates the parameters of a single Featurestore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateFeaturestoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateFeaturestoreRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.UpdateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeaturestore].
             featurestore (google.cloud.aiplatform_v1beta1.types.Featurestore):
@@ -744,7 +744,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def delete_featurestore(self,
-            request: featurestore_service.DeleteFeaturestoreRequest = None,
+            request: Union[featurestore_service.DeleteFeaturestoreRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -756,7 +756,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         to succeed.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteFeaturestoreRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteFeaturestoreRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.DeleteFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeaturestore].
             name (str):
@@ -843,7 +843,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def create_entity_type(self,
-            request: featurestore_service.CreateEntityTypeRequest = None,
+            request: Union[featurestore_service.CreateEntityTypeRequest, dict] = None,
             *,
             parent: str = None,
             entity_type: gca_entity_type.EntityType = None,
@@ -854,7 +854,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Creates a new EntityType in a given Featurestore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateEntityTypeRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateEntityTypeRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.CreateEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateEntityType].
             parent (str):
@@ -939,7 +939,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def get_entity_type(self,
-            request: featurestore_service.GetEntityTypeRequest = None,
+            request: Union[featurestore_service.GetEntityTypeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -949,7 +949,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Gets details of a single EntityType.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetEntityTypeRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetEntityTypeRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.GetEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetEntityType].
             name (str):
@@ -1018,7 +1018,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def list_entity_types(self,
-            request: featurestore_service.ListEntityTypesRequest = None,
+            request: Union[featurestore_service.ListEntityTypesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1028,7 +1028,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Lists EntityTypes in a given Featurestore.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListEntityTypesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListEntityTypesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListEntityTypes].
             parent (str):
@@ -1106,7 +1106,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def update_entity_type(self,
-            request: featurestore_service.UpdateEntityTypeRequest = None,
+            request: Union[featurestore_service.UpdateEntityTypeRequest, dict] = None,
             *,
             entity_type: gca_entity_type.EntityType = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1117,7 +1117,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Updates the parameters of a single EntityType.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateEntityTypeRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateEntityTypeRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.UpdateEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateEntityType].
             entity_type (google.cloud.aiplatform_v1beta1.types.EntityType):
@@ -1209,7 +1209,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def delete_entity_type(self,
-            request: featurestore_service.DeleteEntityTypeRequest = None,
+            request: Union[featurestore_service.DeleteEntityTypeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1221,7 +1221,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         succeed.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteEntityTypeRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteEntityTypeRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.DeleteEntityTypes][].
             name (str):
@@ -1308,7 +1308,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def create_feature(self,
-            request: featurestore_service.CreateFeatureRequest = None,
+            request: Union[featurestore_service.CreateFeatureRequest, dict] = None,
             *,
             parent: str = None,
             feature: gca_feature.Feature = None,
@@ -1319,7 +1319,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Creates a new Feature in a given EntityType.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.CreateFeatureRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.CreateFeatureRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
             parent (str):
@@ -1403,7 +1403,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def batch_create_features(self,
-            request: featurestore_service.BatchCreateFeaturesRequest = None,
+            request: Union[featurestore_service.BatchCreateFeaturesRequest, dict] = None,
             *,
             parent: str = None,
             requests: Sequence[featurestore_service.CreateFeatureRequest] = None,
@@ -1414,7 +1414,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Creates a batch of Features in a given EntityType.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.BatchCreateFeaturesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.BatchCreateFeaturesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchCreateFeatures].
             parent (str):
@@ -1505,7 +1505,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def get_feature(self,
-            request: featurestore_service.GetFeatureRequest = None,
+            request: Union[featurestore_service.GetFeatureRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1515,7 +1515,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Gets details of a single Feature.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.GetFeatureRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.GetFeatureRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.GetFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeature].
             name (str):
@@ -1583,7 +1583,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def list_features(self,
-            request: featurestore_service.ListFeaturesRequest = None,
+            request: Union[featurestore_service.ListFeaturesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1593,7 +1593,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Lists Features in a given EntityType.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ListFeaturesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ListFeaturesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
             parent (str):
@@ -1671,7 +1671,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def update_feature(self,
-            request: featurestore_service.UpdateFeatureRequest = None,
+            request: Union[featurestore_service.UpdateFeatureRequest, dict] = None,
             *,
             feature: gca_feature.Feature = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1682,7 +1682,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Updates the parameters of a single Feature.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.UpdateFeatureRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.UpdateFeatureRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeature].
             feature (google.cloud.aiplatform_v1beta1.types.Feature):
@@ -1773,7 +1773,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def delete_feature(self,
-            request: featurestore_service.DeleteFeatureRequest = None,
+            request: Union[featurestore_service.DeleteFeatureRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1783,7 +1783,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         r"""Deletes a single Feature.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.DeleteFeatureRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.DeleteFeatureRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.DeleteFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeature].
             name (str):
@@ -1870,7 +1870,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def import_feature_values(self,
-            request: featurestore_service.ImportFeatureValuesRequest = None,
+            request: Union[featurestore_service.ImportFeatureValuesRequest, dict] = None,
             *,
             entity_type: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1900,7 +1900,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
          - Online serving cluster is under-provisioned.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ImportFeatureValuesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ImportFeatureValuesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.ImportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ImportFeatureValues].
             entity_type (str):
@@ -1979,7 +1979,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def batch_read_feature_values(self,
-            request: featurestore_service.BatchReadFeatureValuesRequest = None,
+            request: Union[featurestore_service.BatchReadFeatureValuesRequest, dict] = None,
             *,
             featurestore: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1994,7 +1994,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         read instance as of each instance's read timestamp.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.BatchReadFeatureValuesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.BatchReadFeatureValuesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchReadFeatureValues].
                 (- Next Id: 6 -)
@@ -2073,7 +2073,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def export_feature_values(self,
-            request: featurestore_service.ExportFeatureValuesRequest = None,
+            request: Union[featurestore_service.ExportFeatureValuesRequest, dict] = None,
             *,
             entity_type: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2084,7 +2084,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         target EntityType.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.ExportFeatureValuesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.ExportFeatureValuesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ExportFeatureValues].
             entity_type (str):
@@ -2162,7 +2162,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         return response
 
     def search_features(self,
-            request: featurestore_service.SearchFeaturesRequest = None,
+            request: Union[featurestore_service.SearchFeaturesRequest, dict] = None,
             *,
             location: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2173,7 +2173,7 @@ class FeaturestoreServiceClient(metaclass=FeaturestoreServiceClientMeta):
         project.
 
         Args:
-            request (google.cloud.aiplatform_v1beta1.types.SearchFeaturesRequest):
+            request (Union[google.cloud.aiplatform_v1beta1.types.SearchFeaturesRequest, dict]):
                 The request object. Request message for
                 [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.SearchFeatures].
             location (str):

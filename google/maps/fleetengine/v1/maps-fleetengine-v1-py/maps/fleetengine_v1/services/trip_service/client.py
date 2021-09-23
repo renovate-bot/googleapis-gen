@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -342,7 +342,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
             )
 
     def create_trip(self,
-            request: trip_api.CreateTripRequest = None,
+            request: Union[trip_api.CreateTripRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -352,7 +352,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         new trip.
 
         Args:
-            request (maps.fleetengine_v1.types.CreateTripRequest):
+            request (Union[maps.fleetengine_v1.types.CreateTripRequest, dict]):
                 The request object. CreateTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -396,7 +396,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         return response
 
     def get_trip(self,
-            request: trip_api.GetTripRequest = None,
+            request: Union[trip_api.GetTripRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -405,7 +405,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         r"""Get information about a single trip.
 
         Args:
-            request (maps.fleetengine_v1.types.GetTripRequest):
+            request (Union[maps.fleetengine_v1.types.GetTripRequest, dict]):
                 The request object. GetTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -449,7 +449,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         return response
 
     def report_billable_trip(self,
-            request: trip_api.ReportBillableTripRequest = None,
+            request: Union[trip_api.ReportBillableTripRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -458,7 +458,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         r"""Report billable trip usage.
 
         Args:
-            request (maps.fleetengine_v1.types.ReportBillableTripRequest):
+            request (Union[maps.fleetengine_v1.types.ReportBillableTripRequest, dict]):
                 The request object. ReportBillableTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -495,7 +495,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         )
 
     def search_trips(self,
-            request: trip_api.SearchTripsRequest = None,
+            request: Union[trip_api.SearchTripsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -504,7 +504,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         r"""Get all the trips for a specific vehicle.
 
         Args:
-            request (maps.fleetengine_v1.types.SearchTripsRequest):
+            request (Union[maps.fleetengine_v1.types.SearchTripsRequest, dict]):
                 The request object. SearchTrips request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -561,7 +561,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         return response
 
     def update_trip(self,
-            request: trip_api.UpdateTripRequest = None,
+            request: Union[trip_api.UpdateTripRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -570,7 +570,7 @@ class TripServiceClient(metaclass=TripServiceClientMeta):
         r"""Updates trip data.
 
         Args:
-            request (maps.fleetengine_v1.types.UpdateTripRequest):
+            request (Union[maps.fleetengine_v1.types.UpdateTripRequest, dict]):
                 The request object. UpdateTrip request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

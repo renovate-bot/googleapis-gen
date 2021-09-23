@@ -39,11 +39,11 @@ def partition(
 class networkservicesCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_endpoint_policy': ('parent', 'endpoint_policy_id', 'endpoint_policy', ),
-          'delete_endpoint_policy': ('name', ),
-          'get_endpoint_policy': ('name', ),
-          'list_endpoint_policies': ('parent', 'page_size', 'page_token', ),
-          'update_endpoint_policy': ('endpoint_policy', 'update_mask', ),
+        'create_endpoint_policy': ('parent', 'endpoint_policy_id', 'endpoint_policy', ),
+        'delete_endpoint_policy': ('name', ),
+        'get_endpoint_policy': ('name', ),
+        'list_endpoint_policies': ('parent', 'page_size', 'page_token', ),
+        'update_endpoint_policy': ('endpoint_policy', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -62,7 +62,7 @@ class networkservicesCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

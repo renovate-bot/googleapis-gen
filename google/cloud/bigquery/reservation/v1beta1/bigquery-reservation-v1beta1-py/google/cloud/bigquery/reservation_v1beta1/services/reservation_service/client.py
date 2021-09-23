@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -390,7 +390,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
             )
 
     def create_reservation(self,
-            request: gcbr_reservation.CreateReservationRequest = None,
+            request: Union[gcbr_reservation.CreateReservationRequest, dict] = None,
             *,
             parent: str = None,
             reservation: gcbr_reservation.Reservation = None,
@@ -402,7 +402,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         r"""Creates a new reservation resource.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.CreateReservationRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.CreateReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateReservation].
             parent (str):
@@ -487,7 +487,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def list_reservations(self,
-            request: reservation.ListReservationsRequest = None,
+            request: Union[reservation.ListReservationsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -498,7 +498,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         specified location.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.ListReservationsRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.ListReservationsRequest, dict]):
                 The request object. The request for
                 [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListReservations].
             parent (str):
@@ -575,7 +575,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def get_reservation(self,
-            request: reservation.GetReservationRequest = None,
+            request: Union[reservation.GetReservationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -585,7 +585,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         r"""Returns information about the reservation.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.GetReservationRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.GetReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetReservation].
             name (str):
@@ -651,7 +651,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def delete_reservation(self,
-            request: reservation.DeleteReservationRequest = None,
+            request: Union[reservation.DeleteReservationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -663,7 +663,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         assignments.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.DeleteReservationRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.DeleteReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteReservation].
             name (str):
@@ -720,7 +720,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         )
 
     def update_reservation(self,
-            request: gcbr_reservation.UpdateReservationRequest = None,
+            request: Union[gcbr_reservation.UpdateReservationRequest, dict] = None,
             *,
             reservation: gcbr_reservation.Reservation = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -731,7 +731,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         r"""Updates an existing reservation resource.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.UpdateReservationRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.UpdateReservationRequest, dict]):
                 The request object. The request for
                 [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateReservation].
             reservation (google.cloud.bigquery.reservation_v1beta1.types.Reservation):
@@ -803,7 +803,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def create_capacity_commitment(self,
-            request: reservation.CreateCapacityCommitmentRequest = None,
+            request: Union[reservation.CreateCapacityCommitmentRequest, dict] = None,
             *,
             parent: str = None,
             capacity_commitment: reservation.CapacityCommitment = None,
@@ -814,7 +814,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         r"""Creates a new capacity commitment resource.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.CreateCapacityCommitmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.CreateCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateCapacityCommitment].
             parent (str):
@@ -900,7 +900,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def list_capacity_commitments(self,
-            request: reservation.ListCapacityCommitmentsRequest = None,
+            request: Union[reservation.ListCapacityCommitmentsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -910,7 +910,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         project.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.ListCapacityCommitmentsRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.ListCapacityCommitmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.ListCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListCapacityCommitments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -969,7 +969,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def get_capacity_commitment(self,
-            request: reservation.GetCapacityCommitmentRequest = None,
+            request: Union[reservation.GetCapacityCommitmentRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -979,7 +979,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         r"""Returns information about the capacity commitment.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.GetCapacityCommitmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.GetCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetCapacityCommitment].
             name (str):
@@ -1057,7 +1057,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def delete_capacity_commitment(self,
-            request: reservation.DeleteCapacityCommitmentRequest = None,
+            request: Union[reservation.DeleteCapacityCommitmentRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1069,7 +1069,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         error code ``google.rpc.Code.FAILED_PRECONDITION``.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.DeleteCapacityCommitmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.DeleteCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteCapacityCommitment].
             name (str):
@@ -1126,7 +1126,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         )
 
     def update_capacity_commitment(self,
-            request: reservation.UpdateCapacityCommitmentRequest = None,
+            request: Union[reservation.UpdateCapacityCommitmentRequest, dict] = None,
             *,
             capacity_commitment: reservation.CapacityCommitment = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1144,7 +1144,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         ``google.rpc.Code.FAILED_PRECONDITION``.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.UpdateCapacityCommitmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.UpdateCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.UpdateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateCapacityCommitment].
             capacity_commitment (google.cloud.bigquery.reservation_v1beta1.types.CapacityCommitment):
@@ -1230,7 +1230,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def split_capacity_commitment(self,
-            request: reservation.SplitCapacityCommitmentRequest = None,
+            request: Union[reservation.SplitCapacityCommitmentRequest, dict] = None,
             *,
             name: str = None,
             slot_count: int = None,
@@ -1249,7 +1249,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         ``FLEX`` and then delete it.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.SplitCapacityCommitmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.SplitCapacityCommitmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.SplitCapacityCommitment].
             name (str):
@@ -1323,7 +1323,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def merge_capacity_commitments(self,
-            request: reservation.MergeCapacityCommitmentsRequest = None,
+            request: Union[reservation.MergeCapacityCommitmentsRequest, dict] = None,
             *,
             parent: str = None,
             capacity_commitment_ids: Sequence[str] = None,
@@ -1343,7 +1343,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         ``google.rpc.Code.FAILED_PRECONDITION``.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.MergeCapacityCommitmentsRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.MergeCapacityCommitmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.MergeCapacityCommitments].
             parent (str):
@@ -1431,7 +1431,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def create_assignment(self,
-            request: reservation.CreateAssignmentRequest = None,
+            request: Union[reservation.CreateAssignmentRequest, dict] = None,
             *,
             parent: str = None,
             assignment: reservation.Assignment = None,
@@ -1473,7 +1473,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         the assignment does not match location of the reservation.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.CreateAssignmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.CreateAssignmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateAssignment].
                 Note: "bigquery.reservationAssignments.create"
@@ -1549,7 +1549,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def list_assignments(self,
-            request: reservation.ListAssignmentsRequest = None,
+            request: Union[reservation.ListAssignmentsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1580,7 +1580,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         **Note** "-" cannot be used for projects nor locations.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.ListAssignmentsRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.ListAssignmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListAssignments].
             parent (str):
@@ -1662,7 +1662,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def delete_assignment(self,
-            request: reservation.DeleteAssignmentRequest = None,
+            request: Union[reservation.DeleteAssignmentRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1687,7 +1687,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         ``project2`` will switch to use on-demand mode.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.DeleteAssignmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.DeleteAssignmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteAssignment].
                 Note: "bigquery.reservationAssignments.delete"
@@ -1745,7 +1745,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         )
 
     def search_assignments(self,
-            request: reservation.SearchAssignmentsRequest = None,
+            request: Union[reservation.SearchAssignmentsRequest, dict] = None,
             *,
             parent: str = None,
             query: str = None,
@@ -1780,7 +1780,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         **Note** "-" cannot be used for projects nor locations.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.SearchAssignmentsRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.SearchAssignmentsRequest, dict]):
                 The request object. The request for
                 [ReservationService.SearchAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.SearchAssignments].
                 Note: "bigquery.reservationAssignments.search"
@@ -1874,7 +1874,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def move_assignment(self,
-            request: reservation.MoveAssignmentRequest = None,
+            request: Union[reservation.MoveAssignmentRequest, dict] = None,
             *,
             name: str = None,
             destination_id: str = None,
@@ -1889,7 +1889,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         reservation.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.MoveAssignmentRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.MoveAssignmentRequest, dict]):
                 The request object. The request for
                 [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.MoveAssignment].
                 **Note**: "bigquery.reservationAssignments.create"
@@ -1970,7 +1970,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def get_bi_reservation(self,
-            request: reservation.GetBiReservationRequest = None,
+            request: Union[reservation.GetBiReservationRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1980,7 +1980,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         r"""Retrieves a BI reservation.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.GetBiReservationRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.GetBiReservationRequest, dict]):
                 The request object. A request to get a singleton BI
                 reservation.
             name (str):
@@ -2044,7 +2044,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         return response
 
     def update_bi_reservation(self,
-            request: gcbr_reservation.UpdateBiReservationRequest = None,
+            request: Union[gcbr_reservation.UpdateBiReservationRequest, dict] = None,
             *,
             reservation: gcbr_reservation.BiReservation = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -2062,7 +2062,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         must be set to 0.
 
         Args:
-            request (google.cloud.bigquery.reservation_v1beta1.types.UpdateBiReservationRequest):
+            request (Union[google.cloud.bigquery.reservation_v1beta1.types.UpdateBiReservationRequest, dict]):
                 The request object. A request to update a BI
                 reservation.
             reservation (google.cloud.bigquery.reservation_v1beta1.types.BiReservation):

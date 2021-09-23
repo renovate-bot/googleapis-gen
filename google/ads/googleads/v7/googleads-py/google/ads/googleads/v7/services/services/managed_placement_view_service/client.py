@@ -321,7 +321,7 @@ class ManagedPlacementViewServiceClient(metaclass=ManagedPlacementViewServiceCli
               )
 
     def get_managed_placement_view(self,
-            request: managed_placement_view_service.GetManagedPlacementViewRequest = None,
+            request: Union[managed_placement_view_service.GetManagedPlacementViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class ManagedPlacementViewServiceClient(metaclass=ManagedPlacementViewServiceCli
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetManagedPlacementViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetManagedPlacementViewRequest, dict]):
                 The request object. Request message for
                 [ManagedPlacementViewService.GetManagedPlacementView][google.ads.googleads.v7.services.ManagedPlacementViewService.GetManagedPlacementView].
             resource_name (:class:`str`):

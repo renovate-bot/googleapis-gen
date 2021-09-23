@@ -360,7 +360,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
               )
 
     def get_campaign_experiment(self,
-            request: campaign_experiment_service.GetCampaignExperimentRequest = None,
+            request: Union[campaign_experiment_service.GetCampaignExperimentRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -374,7 +374,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignExperimentRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignExperimentRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.GetCampaignExperiment][google.ads.googleads.v7.services.CampaignExperimentService.GetCampaignExperiment].
             resource_name (:class:`str`):
@@ -440,7 +440,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         return response
 
     def create_campaign_experiment(self,
-            request: campaign_experiment_service.CreateCampaignExperimentRequest = None,
+            request: Union[campaign_experiment_service.CreateCampaignExperimentRequest, dict] = None,
             *,
             customer_id: str = None,
             campaign_experiment: gagr_campaign_experiment.CampaignExperiment = None,
@@ -468,7 +468,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `QuotaError <>`__ `RangeError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.CreateCampaignExperimentRequest`):
+            request (Union[google.ads.googleads.v7.services.types.CreateCampaignExperimentRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.CreateCampaignExperiment][google.ads.googleads.v7.services.CampaignExperimentService.CreateCampaignExperiment].
             customer_id (:class:`str`):
@@ -563,7 +563,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         return response
 
     def mutate_campaign_experiments(self,
-            request: campaign_experiment_service.MutateCampaignExperimentsRequest = None,
+            request: Union[campaign_experiment_service.MutateCampaignExperimentsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_experiment_service.CampaignExperimentOperation] = None,
@@ -579,7 +579,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCampaignExperimentsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCampaignExperimentsRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.MutateCampaignExperiments][google.ads.googleads.v7.services.CampaignExperimentService.MutateCampaignExperiments].
             customer_id (:class:`str`):
@@ -654,7 +654,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         return response
 
     def graduate_campaign_experiment(self,
-            request: campaign_experiment_service.GraduateCampaignExperimentRequest = None,
+            request: Union[campaign_experiment_service.GraduateCampaignExperimentRequest, dict] = None,
             *,
             campaign_experiment: str = None,
             campaign_budget: str = None,
@@ -672,7 +672,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GraduateCampaignExperimentRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GraduateCampaignExperimentRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.GraduateCampaignExperiment][google.ads.googleads.v7.services.CampaignExperimentService.GraduateCampaignExperiment].
             campaign_experiment (:class:`str`):
@@ -746,7 +746,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         return response
 
     def promote_campaign_experiment(self,
-            request: campaign_experiment_service.PromoteCampaignExperimentRequest = None,
+            request: Union[campaign_experiment_service.PromoteCampaignExperimentRequest, dict] = None,
             *,
             campaign_experiment: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -767,7 +767,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.PromoteCampaignExperimentRequest`):
+            request (Union[google.ads.googleads.v7.services.types.PromoteCampaignExperimentRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.PromoteCampaignExperiment][google.ads.googleads.v7.services.CampaignExperimentService.PromoteCampaignExperiment].
             campaign_experiment (:class:`str`):
@@ -852,7 +852,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         return response
 
     def end_campaign_experiment(self,
-            request: campaign_experiment_service.EndCampaignExperimentRequest = None,
+            request: Union[campaign_experiment_service.EndCampaignExperimentRequest, dict] = None,
             *,
             campaign_experiment: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -869,7 +869,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.EndCampaignExperimentRequest`):
+            request (Union[google.ads.googleads.v7.services.types.EndCampaignExperimentRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.EndCampaignExperiment][google.ads.googleads.v7.services.CampaignExperimentService.EndCampaignExperiment].
             campaign_experiment (:class:`str`):
@@ -924,7 +924,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         )
 
     def list_campaign_experiment_async_errors(self,
-            request: campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest = None,
+            request: Union[campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -940,7 +940,7 @@ class CampaignExperimentServiceClient(metaclass=CampaignExperimentServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.ListCampaignExperimentAsyncErrorsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.ListCampaignExperimentAsyncErrorsRequest, dict]):
                 The request object. Request message for
                 [CampaignExperimentService.ListCampaignExperimentAsyncErrors][google.ads.googleads.v7.services.CampaignExperimentService.ListCampaignExperimentAsyncErrors].
             resource_name (:class:`str`):

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -352,7 +352,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
             )
 
     def list_clusters(self,
-            request: aistreams.ListClustersRequest = None,
+            request: Union[aistreams.ListClustersRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -362,7 +362,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Lists Clusters in a given project and location.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.ListClustersRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.ListClustersRequest, dict]):
                 The request object. Request message for 'ListClusters'.
             parent (str):
                 Required. The parent that owns the
@@ -437,7 +437,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def get_cluster(self,
-            request: aistreams.GetClusterRequest = None,
+            request: Union[aistreams.GetClusterRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -447,7 +447,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Gets details of a single Cluster.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.GetClusterRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.GetClusterRequest, dict]):
                 The request object. Request message for 'GetCluster'.
             name (str):
                 Required. The name of the Cluster
@@ -509,7 +509,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def create_cluster(self,
-            request: aistreams.CreateClusterRequest = None,
+            request: Union[aistreams.CreateClusterRequest, dict] = None,
             *,
             parent: str = None,
             cluster: aistreams.Cluster = None,
@@ -522,7 +522,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         location.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.CreateClusterRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.CreateClusterRequest, dict]):
                 The request object. Request message for 'CreateCluster'.
             parent (str):
                 Required. The parent that owns the
@@ -613,7 +613,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def update_cluster(self,
-            request: aistreams.UpdateClusterRequest = None,
+            request: Union[aistreams.UpdateClusterRequest, dict] = None,
             *,
             cluster: aistreams.Cluster = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -624,7 +624,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Updates the parameters of a single Cluster.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.UpdateClusterRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.UpdateClusterRequest, dict]):
                 The request object. Request message for 'UpdateCluster'.
             cluster (google.partner.aistreams_v1alpha1.types.Cluster):
                 Required. The Cluster resource to
@@ -712,7 +712,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def delete_cluster(self,
-            request: aistreams.DeleteClusterRequest = None,
+            request: Union[aistreams.DeleteClusterRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -722,7 +722,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Deletes a single Cluster.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.DeleteClusterRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.DeleteClusterRequest, dict]):
                 The request object. Request message for 'DeleteCluster'.
             name (str):
                 Required. The name of cluster to
@@ -807,7 +807,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def list_streams(self,
-            request: aistreams.ListStreamsRequest = None,
+            request: Union[aistreams.ListStreamsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -818,7 +818,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         cluster.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.ListStreamsRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.ListStreamsRequest, dict]):
                 The request object. Request message for 'ListStreams'.
             parent (str):
                 Required. The parent that owns the
@@ -893,7 +893,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def get_stream(self,
-            request: aistreams.GetStreamRequest = None,
+            request: Union[aistreams.GetStreamRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -903,7 +903,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Gets details of a single Stream.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.GetStreamRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.GetStreamRequest, dict]):
                 The request object. Request message for 'GetStream'.
             name (str):
                 Required. The name of the stream.
@@ -963,7 +963,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def create_stream(self,
-            request: aistreams.CreateStreamRequest = None,
+            request: Union[aistreams.CreateStreamRequest, dict] = None,
             *,
             parent: str = None,
             stream: aistreams.Stream = None,
@@ -975,7 +975,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Creates a new Stream in a given project and location.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.CreateStreamRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.CreateStreamRequest, dict]):
                 The request object. Request message for 'CreateStream'.
             parent (str):
                 Required. The parent that owns the
@@ -1064,7 +1064,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def update_stream(self,
-            request: aistreams.UpdateStreamRequest = None,
+            request: Union[aistreams.UpdateStreamRequest, dict] = None,
             *,
             stream: aistreams.Stream = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1075,7 +1075,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Updates the parameters of a single Stream.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.UpdateStreamRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.UpdateStreamRequest, dict]):
                 The request object. Request message for 'UpdateStream'.
             stream (google.partner.aistreams_v1alpha1.types.Stream):
                 Required. The stream resource to
@@ -1163,7 +1163,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         return response
 
     def delete_stream(self,
-            request: aistreams.DeleteStreamRequest = None,
+            request: Union[aistreams.DeleteStreamRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1173,7 +1173,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         r"""Deletes a single Stream.
 
         Args:
-            request (google.partner.aistreams_v1alpha1.types.DeleteStreamRequest):
+            request (Union[google.partner.aistreams_v1alpha1.types.DeleteStreamRequest, dict]):
                 The request object. Request message for 'DeleteStream'.
             name (str):
                 Required. The name of the stream.

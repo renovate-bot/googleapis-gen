@@ -324,7 +324,7 @@ class AdGroupCriterionSimulationServiceClient(metaclass=AdGroupCriterionSimulati
               )
 
     def get_ad_group_criterion_simulation(self,
-            request: ad_group_criterion_simulation_service.GetAdGroupCriterionSimulationRequest = None,
+            request: Union[ad_group_criterion_simulation_service.GetAdGroupCriterionSimulationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -339,7 +339,7 @@ class AdGroupCriterionSimulationServiceClient(metaclass=AdGroupCriterionSimulati
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupCriterionSimulationRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupCriterionSimulationRequest, dict]):
                 The request object. Request message for
                 [AdGroupCriterionSimulationService.GetAdGroupCriterionSimulation][google.ads.googleads.v7.services.AdGroupCriterionSimulationService.GetAdGroupCriterionSimulation].
             resource_name (:class:`str`):

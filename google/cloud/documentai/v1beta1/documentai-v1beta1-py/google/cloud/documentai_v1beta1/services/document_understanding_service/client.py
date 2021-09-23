@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -329,7 +329,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
             )
 
     def batch_process_documents(self,
-            request: document_understanding.BatchProcessDocumentsRequest = None,
+            request: Union[document_understanding.BatchProcessDocumentsRequest, dict] = None,
             *,
             requests: Sequence[document_understanding.ProcessDocumentRequest] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -339,7 +339,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
         r"""LRO endpoint to batch process many documents.
 
         Args:
-            request (google.cloud.documentai_v1beta1.types.BatchProcessDocumentsRequest):
+            request (Union[google.cloud.documentai_v1beta1.types.BatchProcessDocumentsRequest, dict]):
                 The request object. Request to batch process documents
                 as an asynchronous operation.
             requests (Sequence[google.cloud.documentai_v1beta1.types.ProcessDocumentRequest]):

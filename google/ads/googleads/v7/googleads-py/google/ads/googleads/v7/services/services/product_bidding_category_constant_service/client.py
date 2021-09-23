@@ -323,7 +323,7 @@ class ProductBiddingCategoryConstantServiceClient(metaclass=ProductBiddingCatego
               )
 
     def get_product_bidding_category_constant(self,
-            request: product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest = None,
+            request: Union[product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -337,7 +337,7 @@ class ProductBiddingCategoryConstantServiceClient(metaclass=ProductBiddingCatego
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetProductBiddingCategoryConstantRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetProductBiddingCategoryConstantRequest, dict]):
                 The request object. Request message for
                 [ProductBiddingCategoryConstantService.GetProductBiddingCategoryConstant][google.ads.googleads.v7.services.ProductBiddingCategoryConstantService.GetProductBiddingCategoryConstant].
             resource_name (:class:`str`):

@@ -277,7 +277,7 @@ def test_get_customer(transport: str = 'grpc', request_type=customer_service.Get
             manager=True,
             test_account=True,
             pay_per_conversion_eligibility_failure_reasons=[customer_pay_per_conversion_eligibility_failure_reason.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason.UNKNOWN],
-            optimization_score=0.1954,
+            optimization_score=0.19540000000000002,
             optimization_score_weight=0.2697,
         )
         response = client.get_customer(request)
@@ -301,7 +301,7 @@ def test_get_customer(transport: str = 'grpc', request_type=customer_service.Get
     assert response.manager is True
     assert response.test_account is True
     assert response.pay_per_conversion_eligibility_failure_reasons == [customer_pay_per_conversion_eligibility_failure_reason.CustomerPayPerConversionEligibilityFailureReasonEnum.CustomerPayPerConversionEligibilityFailureReason.UNKNOWN]
-    assert math.isclose(response.optimization_score, 0.1954, rel_tol=1e-6)
+    assert math.isclose(response.optimization_score, 0.19540000000000002, rel_tol=1e-6)
     assert math.isclose(response.optimization_score_weight, 0.2697, rel_tol=1e-6)
 
 

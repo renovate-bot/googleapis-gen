@@ -321,7 +321,7 @@ class SmartCampaignSuggestServiceClient(metaclass=SmartCampaignSuggestServiceCli
               )
 
     def suggest_smart_campaign_budget_options(self,
-            request: smart_campaign_suggest_service.SuggestSmartCampaignBudgetOptionsRequest = None,
+            request: Union[smart_campaign_suggest_service.SuggestSmartCampaignBudgetOptionsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -330,7 +330,7 @@ class SmartCampaignSuggestServiceClient(metaclass=SmartCampaignSuggestServiceCli
         r"""Returns BudgetOption suggestions.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SuggestSmartCampaignBudgetOptionsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SuggestSmartCampaignBudgetOptionsRequest, dict]):
                 The request object. Request message for
                 [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -380,7 +380,7 @@ class SmartCampaignSuggestServiceClient(metaclass=SmartCampaignSuggestServiceCli
         return response
 
     def suggest_smart_campaign_ad(self,
-            request: smart_campaign_suggest_service.SuggestSmartCampaignAdRequest = None,
+            request: Union[smart_campaign_suggest_service.SuggestSmartCampaignAdRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -391,7 +391,7 @@ class SmartCampaignSuggestServiceClient(metaclass=SmartCampaignSuggestServiceCli
         targeting and the business to advertise.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.SuggestSmartCampaignAdRequest`):
+            request (Union[google.ads.googleads.v8.services.types.SuggestSmartCampaignAdRequest, dict]):
                 The request object. Request message for
                 [SmartCampaignSuggestService.SuggestSmartCampaignAd][google.ads.googleads.v8.services.SmartCampaignSuggestService.SuggestSmartCampaignAd].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

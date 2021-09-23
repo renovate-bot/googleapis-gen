@@ -321,7 +321,7 @@ class PaidOrganicSearchTermViewServiceClient(metaclass=PaidOrganicSearchTermView
               )
 
     def get_paid_organic_search_term_view(self,
-            request: paid_organic_search_term_view_service.GetPaidOrganicSearchTermViewRequest = None,
+            request: Union[paid_organic_search_term_view_service.GetPaidOrganicSearchTermViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class PaidOrganicSearchTermViewServiceClient(metaclass=PaidOrganicSearchTermView
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetPaidOrganicSearchTermViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetPaidOrganicSearchTermViewRequest, dict]):
                 The request object. Request message for
                 [PaidOrganicSearchTermViewService.GetPaidOrganicSearchTermView][google.ads.googleads.v8.services.PaidOrganicSearchTermViewService.GetPaidOrganicSearchTermView].
             resource_name (:class:`str`):

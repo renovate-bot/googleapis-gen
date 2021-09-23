@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -352,7 +352,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
             )
 
     def list_webhooks(self,
-            request: webhook.ListWebhooksRequest = None,
+            request: Union[webhook.ListWebhooksRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -363,7 +363,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         agent.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.ListWebhooksRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.ListWebhooksRequest, dict]):
                 The request object. The request message for
                 [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
             parent (str):
@@ -440,7 +440,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         return response
 
     def get_webhook(self,
-            request: webhook.GetWebhookRequest = None,
+            request: Union[webhook.GetWebhookRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -450,7 +450,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         r"""Retrieves the specified webhook.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.GetWebhookRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetWebhookRequest, dict]):
                 The request object. The request message for
                 [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3.Webhooks.GetWebhook].
             name (str):
@@ -520,7 +520,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         return response
 
     def create_webhook(self,
-            request: gcdc_webhook.CreateWebhookRequest = None,
+            request: Union[gcdc_webhook.CreateWebhookRequest, dict] = None,
             *,
             parent: str = None,
             webhook: gcdc_webhook.Webhook = None,
@@ -531,7 +531,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         r"""Creates a webhook in the specified agent.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.CreateWebhookRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.CreateWebhookRequest, dict]):
                 The request object. The request message for
                 [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
             parent (str):
@@ -608,7 +608,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         return response
 
     def update_webhook(self,
-            request: gcdc_webhook.UpdateWebhookRequest = None,
+            request: Union[gcdc_webhook.UpdateWebhookRequest, dict] = None,
             *,
             webhook: gcdc_webhook.Webhook = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -619,7 +619,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         r"""Updates the specified webhook.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.UpdateWebhookRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.UpdateWebhookRequest, dict]):
                 The request object. The request message for
                 [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
             webhook (google.cloud.dialogflowcx_v3.types.Webhook):
@@ -697,7 +697,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         return response
 
     def delete_webhook(self,
-            request: webhook.DeleteWebhookRequest = None,
+            request: Union[webhook.DeleteWebhookRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -707,7 +707,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         r"""Deletes the specified webhook.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.DeleteWebhookRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.DeleteWebhookRequest, dict]):
                 The request object. The request message for
                 [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3.Webhooks.DeleteWebhook].
             name (str):

@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -394,7 +394,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
             )
 
     def list_access_policies(self,
-            request: access_context_manager.ListAccessPoliciesRequest = None,
+            request: Union[access_context_manager.ListAccessPoliciesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -405,7 +405,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         container.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.ListAccessPoliciesRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListAccessPoliciesRequest, dict]):
                 The request object. A request to list all
                 `AccessPolicies` for a container.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -455,7 +455,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def get_access_policy(self,
-            request: access_context_manager.GetAccessPolicyRequest = None,
+            request: Union[access_context_manager.GetAccessPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -466,7 +466,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.GetAccessPolicyRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetAccessPolicyRequest, dict]):
                 The request object. A request to get a particular
                 `AccessPolicy`.
             name (str):
@@ -537,7 +537,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def create_access_policy(self,
-            request: access_policy.AccessPolicy = None,
+            request: Union[access_policy.AccessPolicy, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -550,7 +550,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         be returned in ``metadata`` as a BadRequest proto.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.AccessPolicy):
+            request (Union[google.identity.accesscontextmanager_v1.types.AccessPolicy, dict]):
                 The request object. `AccessPolicy` is a container for
                 `AccessLevels` (which define the necessary attributes to
                 use Google Cloud services) and `ServicePerimeters`
@@ -609,7 +609,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def update_access_policy(self,
-            request: access_context_manager.UpdateAccessPolicyRequest = None,
+            request: Union[access_context_manager.UpdateAccessPolicyRequest, dict] = None,
             *,
             policy: access_policy.AccessPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -626,7 +626,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         errors will be returned in ``metadata`` as a BadRequest proto.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.UpdateAccessPolicyRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateAccessPolicyRequest, dict]):
                 The request object. A request to update an
                 `AccessPolicy`.
             policy (google.identity.accesscontextmanager_v1.types.AccessPolicy):
@@ -713,7 +713,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def delete_access_policy(self,
-            request: access_context_manager.DeleteAccessPolicyRequest = None,
+            request: Union[access_context_manager.DeleteAccessPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -728,7 +728,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         removed from long-lasting storage.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.DeleteAccessPolicyRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteAccessPolicyRequest, dict]):
                 The request object. A request to delete an
                 `AccessPolicy`.
             name (str):
@@ -815,7 +815,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def list_access_levels(self,
-            request: access_context_manager.ListAccessLevelsRequest = None,
+            request: Union[access_context_manager.ListAccessLevelsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -827,7 +827,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         access policy.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.ListAccessLevelsRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListAccessLevelsRequest, dict]):
                 The request object. A request to list all `AccessLevels`
                 in an `AccessPolicy`.
             parent (str):
@@ -907,7 +907,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def get_access_level(self,
-            request: access_context_manager.GetAccessLevelRequest = None,
+            request: Union[access_context_manager.GetAccessLevelRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -919,7 +919,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         resource name.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.GetAccessLevelRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetAccessLevelRequest, dict]):
                 The request object. A request to get a particular
                 `AccessLevel`.
             name (str):
@@ -988,7 +988,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def create_access_level(self,
-            request: access_context_manager.CreateAccessLevelRequest = None,
+            request: Union[access_context_manager.CreateAccessLevelRequest, dict] = None,
             *,
             parent: str = None,
             access_level: gia_access_level.AccessLevel = None,
@@ -1007,7 +1007,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         encountered.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.CreateAccessLevelRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.CreateAccessLevelRequest, dict]):
                 The request object. A request to create an
                 `AccessLevel`.
             parent (str):
@@ -1098,7 +1098,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def update_access_level(self,
-            request: access_context_manager.UpdateAccessLevelRequest = None,
+            request: Union[access_context_manager.UpdateAccessLevelRequest, dict] = None,
             *,
             access_level: gia_access_level.AccessLevel = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1117,7 +1117,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         encountered.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.UpdateAccessLevelRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateAccessLevelRequest, dict]):
                 The request object. A request to update an
                 `AccessLevel`.
             access_level (google.identity.accesscontextmanager_v1.types.AccessLevel):
@@ -1205,7 +1205,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def delete_access_level(self,
-            request: access_context_manager.DeleteAccessLevelRequest = None,
+            request: Union[access_context_manager.DeleteAccessLevelRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1220,7 +1220,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         removed from long-lasting storage.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.DeleteAccessLevelRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteAccessLevelRequest, dict]):
                 The request object. A request to delete an
                 `AccessLevel`.
             name (str):
@@ -1309,7 +1309,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def replace_access_levels(self,
-            request: access_context_manager.ReplaceAccessLevelsRequest = None,
+            request: Union[access_context_manager.ReplaceAccessLevelsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1336,7 +1336,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         result in error.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.ReplaceAccessLevelsRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.ReplaceAccessLevelsRequest, dict]):
                 The request object. A request to replace all existing
                 Access Levels in an Access Policy with the Access Levels
                 provided. This is done atomically.
@@ -1394,7 +1394,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def list_service_perimeters(self,
-            request: access_context_manager.ListServicePerimetersRequest = None,
+            request: Union[access_context_manager.ListServicePerimetersRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1406,7 +1406,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         an access policy.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.ListServicePerimetersRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListServicePerimetersRequest, dict]):
                 The request object. A request to list all
                 `ServicePerimeters` in an `AccessPolicy`.
             parent (str):
@@ -1486,7 +1486,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def get_service_perimeter(self,
-            request: access_context_manager.GetServicePerimeterRequest = None,
+            request: Union[access_context_manager.GetServicePerimeterRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1498,7 +1498,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         resource name.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.GetServicePerimeterRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetServicePerimeterRequest, dict]):
                 The request object. A request to get a particular
                 `ServicePerimeter`.
             name (str):
@@ -1577,7 +1577,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def create_service_perimeter(self,
-            request: access_context_manager.CreateServicePerimeterRequest = None,
+            request: Union[access_context_manager.CreateServicePerimeterRequest, dict] = None,
             *,
             parent: str = None,
             service_perimeter: gia_service_perimeter.ServicePerimeter = None,
@@ -1596,7 +1596,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         error encountered.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.CreateServicePerimeterRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.CreateServicePerimeterRequest, dict]):
                 The request object. A request to create a
                 `ServicePerimeter`.
             parent (str):
@@ -1698,7 +1698,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def update_service_perimeter(self,
-            request: access_context_manager.UpdateServicePerimeterRequest = None,
+            request: Union[access_context_manager.UpdateServicePerimeterRequest, dict] = None,
             *,
             service_perimeter: gia_service_perimeter.ServicePerimeter = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -1717,7 +1717,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         error encountered.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.UpdateServicePerimeterRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateServicePerimeterRequest, dict]):
                 The request object. A request to update a
                 `ServicePerimeter`.
             service_perimeter (google.identity.accesscontextmanager_v1.types.ServicePerimeter):
@@ -1813,7 +1813,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def delete_service_perimeter(self,
-            request: access_context_manager.DeleteServicePerimeterRequest = None,
+            request: Union[access_context_manager.DeleteServicePerimeterRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1828,7 +1828,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         been removed from long-lasting storage.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.DeleteServicePerimeterRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteServicePerimeterRequest, dict]):
                 The request object. A request to delete a
                 `ServicePerimeter`.
             name (str):
@@ -1917,7 +1917,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def replace_service_perimeters(self,
-            request: access_context_manager.ReplaceServicePerimetersRequest = None,
+            request: Union[access_context_manager.ReplaceServicePerimetersRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -1940,7 +1940,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         ReplaceServicePerimetersResponse.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.ReplaceServicePerimetersRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.ReplaceServicePerimetersRequest, dict]):
                 The request object. A request to replace all existing
                 Service Perimeters in an Access Policy with the Service
                 Perimeters provided. This is done atomically.
@@ -1998,7 +1998,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def commit_service_perimeters(self,
-            request: access_context_manager.CommitServicePerimetersRequest = None,
+            request: Union[access_context_manager.CommitServicePerimetersRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -2025,7 +2025,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         successful commit operation.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.CommitServicePerimetersRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.CommitServicePerimetersRequest, dict]):
                 The request object. A request to commit dry-run specs in
                 all [Service Perimeters]
                 [google.identity.accesscontextmanager.v1.ServicePerimeter]
@@ -2085,7 +2085,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def list_gcp_user_access_bindings(self,
-            request: access_context_manager.ListGcpUserAccessBindingsRequest = None,
+            request: Union[access_context_manager.ListGcpUserAccessBindingsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2097,7 +2097,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         for a Google Cloud organization.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.ListGcpUserAccessBindingsRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.ListGcpUserAccessBindingsRequest, dict]):
                 The request object. Request of
                 [ListGcpUserAccessBindings]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.ListGcpUserAccessBindings].
@@ -2175,7 +2175,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def get_gcp_user_access_binding(self,
-            request: access_context_manager.GetGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.GetGcpUserAccessBindingRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2187,7 +2187,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         with the given name.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.GetGcpUserAccessBindingRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.GetGcpUserAccessBindingRequest, dict]):
                 The request object. Request of [GetGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.GetGcpUserAccessBinding].
             name (str):
@@ -2253,7 +2253,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def create_gcp_user_access_binding(self,
-            request: access_context_manager.CreateGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.CreateGcpUserAccessBindingRequest, dict] = None,
             *,
             parent: str = None,
             gcp_user_access_binding: gia_gcp_user_access_binding.GcpUserAccessBinding = None,
@@ -2273,7 +2273,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         users, which may take more time.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.CreateGcpUserAccessBindingRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.CreateGcpUserAccessBindingRequest, dict]):
                 The request object. Request of
                 [CreateGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.CreateGcpUserAccessBinding].
@@ -2358,7 +2358,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def update_gcp_user_access_binding(self,
-            request: access_context_manager.UpdateGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.UpdateGcpUserAccessBindingRequest, dict] = None,
             *,
             gcp_user_access_binding: gia_gcp_user_access_binding.GcpUserAccessBinding = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -2373,7 +2373,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         users, which may take more time.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.UpdateGcpUserAccessBindingRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.UpdateGcpUserAccessBindingRequest, dict]):
                 The request object. Request of
                 [UpdateGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.UpdateGcpUserAccessBinding].
@@ -2461,7 +2461,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         return response
 
     def delete_gcp_user_access_binding(self,
-            request: access_context_manager.DeleteGcpUserAccessBindingRequest = None,
+            request: Union[access_context_manager.DeleteGcpUserAccessBindingRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -2475,7 +2475,7 @@ class AccessContextManagerClient(metaclass=AccessContextManagerClientMeta):
         users, which may take more time.
 
         Args:
-            request (google.identity.accesscontextmanager_v1.types.DeleteGcpUserAccessBindingRequest):
+            request (Union[google.identity.accesscontextmanager_v1.types.DeleteGcpUserAccessBindingRequest, dict]):
                 The request object. Request of
                 [DeleteGcpUserAccessBinding]
                 [google.identity.accesscontextmanager.v1.AccessContextManager.DeleteGcpUserAccessBinding].

@@ -312,7 +312,7 @@ class UserDataServiceClient(metaclass=UserDataServiceClientMeta):
               )
 
     def upload_user_data(self,
-            request: user_data_service.UploadUserDataRequest = None,
+            request: Union[user_data_service.UploadUserDataRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -327,7 +327,7 @@ class UserDataServiceClient(metaclass=UserDataServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__ `UserDataError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.UploadUserDataRequest`):
+            request (Union[google.ads.googleads.v7.services.types.UploadUserDataRequest, dict]):
                 The request object. Request message for
                 [UserDataService.UploadUserData][google.ads.googleads.v7.services.UserDataService.UploadUserData]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

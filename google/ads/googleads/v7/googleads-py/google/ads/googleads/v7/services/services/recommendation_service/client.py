@@ -363,7 +363,7 @@ class RecommendationServiceClient(metaclass=RecommendationServiceClientMeta):
               )
 
     def get_recommendation(self,
-            request: recommendation_service.GetRecommendationRequest = None,
+            request: Union[recommendation_service.GetRecommendationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -377,7 +377,7 @@ class RecommendationServiceClient(metaclass=RecommendationServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetRecommendationRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetRecommendationRequest, dict]):
                 The request object. Request message for
                 [RecommendationService.GetRecommendation][google.ads.googleads.v7.services.RecommendationService.GetRecommendation].
             resource_name (:class:`str`):
@@ -439,7 +439,7 @@ class RecommendationServiceClient(metaclass=RecommendationServiceClientMeta):
         return response
 
     def apply_recommendation(self,
-            request: recommendation_service.ApplyRecommendationRequest = None,
+            request: Union[recommendation_service.ApplyRecommendationRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[recommendation_service.ApplyRecommendationOperation] = None,
@@ -457,7 +457,7 @@ class RecommendationServiceClient(metaclass=RecommendationServiceClientMeta):
         `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.ApplyRecommendationRequest`):
+            request (Union[google.ads.googleads.v7.services.types.ApplyRecommendationRequest, dict]):
                 The request object. Request message for
                 [RecommendationService.ApplyRecommendation][google.ads.googleads.v7.services.RecommendationService.ApplyRecommendation].
             customer_id (:class:`str`):
@@ -532,7 +532,7 @@ class RecommendationServiceClient(metaclass=RecommendationServiceClientMeta):
         return response
 
     def dismiss_recommendation(self,
-            request: recommendation_service.DismissRecommendationRequest = None,
+            request: Union[recommendation_service.DismissRecommendationRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[recommendation_service.DismissRecommendationRequest.DismissRecommendationOperation] = None,
@@ -548,7 +548,7 @@ class RecommendationServiceClient(metaclass=RecommendationServiceClientMeta):
         `RecommendationError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.DismissRecommendationRequest`):
+            request (Union[google.ads.googleads.v7.services.types.DismissRecommendationRequest, dict]):
                 The request object. Request message for
                 [RecommendationService.DismissRecommendation][google.ads.googleads.v7.services.RecommendationService.DismissRecommendation].
             customer_id (:class:`str`):

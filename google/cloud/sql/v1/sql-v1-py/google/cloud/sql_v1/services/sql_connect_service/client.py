@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -325,7 +325,7 @@ class SqlConnectServiceClient(metaclass=SqlConnectServiceClientMeta):
             )
 
     def get_connect_settings(self,
-            request: cloud_sql_connect.GetConnectSettingsRequest = None,
+            request: Union[cloud_sql_connect.GetConnectSettingsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -335,7 +335,7 @@ class SqlConnectServiceClient(metaclass=SqlConnectServiceClientMeta):
         instance.
 
         Args:
-            request (google.cloud.sql_v1.types.GetConnectSettingsRequest):
+            request (Union[google.cloud.sql_v1.types.GetConnectSettingsRequest, dict]):
                 The request object. Connect settings retrieval request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -371,7 +371,7 @@ class SqlConnectServiceClient(metaclass=SqlConnectServiceClientMeta):
         return response
 
     def generate_ephemeral_cert(self,
-            request: cloud_sql_connect.GenerateEphemeralCertRequest = None,
+            request: Union[cloud_sql_connect.GenerateEphemeralCertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -384,7 +384,7 @@ class SqlConnectServiceClient(metaclass=SqlConnectServiceClientMeta):
         connecting to the database.
 
         Args:
-            request (google.cloud.sql_v1.types.GenerateEphemeralCertRequest):
+            request (Union[google.cloud.sql_v1.types.GenerateEphemeralCertRequest, dict]):
                 The request object. Ephemeral certificate creation
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

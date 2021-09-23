@@ -39,18 +39,18 @@ def partition(
 class iamCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_workload_identity_pool': ('parent', 'workload_identity_pool', 'workload_identity_pool_id', ),
-          'create_workload_identity_pool_provider': ('parent', 'workload_identity_pool_provider', 'workload_identity_pool_provider_id', ),
-          'delete_workload_identity_pool': ('name', ),
-          'delete_workload_identity_pool_provider': ('name', ),
-          'get_workload_identity_pool': ('name', ),
-          'get_workload_identity_pool_provider': ('name', ),
-          'list_workload_identity_pool_providers': ('parent', 'page_size', 'page_token', 'show_deleted', ),
-          'list_workload_identity_pools': ('parent', 'page_size', 'page_token', 'show_deleted', ),
-          'undelete_workload_identity_pool': ('name', ),
-          'undelete_workload_identity_pool_provider': ('name', ),
-          'update_workload_identity_pool': ('workload_identity_pool', 'update_mask', ),
-          'update_workload_identity_pool_provider': ('workload_identity_pool_provider', 'update_mask', ),
+        'create_workload_identity_pool': ('parent', 'workload_identity_pool', 'workload_identity_pool_id', ),
+        'create_workload_identity_pool_provider': ('parent', 'workload_identity_pool_provider', 'workload_identity_pool_provider_id', ),
+        'delete_workload_identity_pool': ('name', ),
+        'delete_workload_identity_pool_provider': ('name', ),
+        'get_workload_identity_pool': ('name', ),
+        'get_workload_identity_pool_provider': ('name', ),
+        'list_workload_identity_pool_providers': ('parent', 'page_size', 'page_token', 'show_deleted', ),
+        'list_workload_identity_pools': ('parent', 'page_size', 'page_token', 'show_deleted', ),
+        'undelete_workload_identity_pool': ('name', ),
+        'undelete_workload_identity_pool_provider': ('name', ),
+        'update_workload_identity_pool': ('workload_identity_pool', 'update_mask', ),
+        'update_workload_identity_pool_provider': ('workload_identity_pool_provider', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -69,7 +69,7 @@ class iamCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

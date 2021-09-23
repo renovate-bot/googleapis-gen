@@ -332,7 +332,7 @@ class SmartCampaignSettingServiceClient(metaclass=SmartCampaignSettingServiceCli
               )
 
     def get_smart_campaign_setting(self,
-            request: smart_campaign_setting_service.GetSmartCampaignSettingRequest = None,
+            request: Union[smart_campaign_setting_service.GetSmartCampaignSettingRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -343,7 +343,7 @@ class SmartCampaignSettingServiceClient(metaclass=SmartCampaignSettingServiceCli
         detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetSmartCampaignSettingRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetSmartCampaignSettingRequest, dict]):
                 The request object. Request message for
                 [SmartCampaignSettingService.GetSmartCampaignSetting][google.ads.googleads.v8.services.SmartCampaignSettingService.GetSmartCampaignSetting].
             resource_name (:class:`str`):
@@ -407,7 +407,7 @@ class SmartCampaignSettingServiceClient(metaclass=SmartCampaignSettingServiceCli
         return response
 
     def mutate_smart_campaign_settings(self,
-            request: smart_campaign_setting_service.MutateSmartCampaignSettingsRequest = None,
+            request: Union[smart_campaign_setting_service.MutateSmartCampaignSettingsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[smart_campaign_setting_service.SmartCampaignSettingOperation] = None,
@@ -418,7 +418,7 @@ class SmartCampaignSettingServiceClient(metaclass=SmartCampaignSettingServiceCli
         r"""Updates Smart campaign settings for campaigns.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateSmartCampaignSettingsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateSmartCampaignSettingsRequest, dict]):
                 The request object. Request message for
                 [SmartCampaignSettingService.MutateSmartCampaignSetting][].
             customer_id (:class:`str`):

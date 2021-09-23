@@ -927,7 +927,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
               )
 
     def mutate_batch_job(self,
-            request: batch_job_service.MutateBatchJobRequest = None,
+            request: Union[batch_job_service.MutateBatchJobRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: batch_job_service.BatchJobOperation = None,
@@ -943,7 +943,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         `ResourceCountLimitExceededError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateBatchJobRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateBatchJobRequest, dict]):
                 The request object. Request message for
                 [BatchJobService.MutateBatchJob][google.ads.googleads.v8.services.BatchJobService.MutateBatchJob].
             customer_id (:class:`str`):
@@ -1016,7 +1016,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         return response
 
     def get_batch_job(self,
-            request: batch_job_service.GetBatchJobRequest = None,
+            request: Union[batch_job_service.GetBatchJobRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1030,7 +1030,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetBatchJobRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetBatchJobRequest, dict]):
                 The request object. Request message for
                 [BatchJobService.GetBatchJob][google.ads.googleads.v8.services.BatchJobService.GetBatchJob].
             resource_name (:class:`str`):
@@ -1098,7 +1098,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         return response
 
     def list_batch_job_results(self,
-            request: batch_job_service.ListBatchJobResultsRequest = None,
+            request: Union[batch_job_service.ListBatchJobResultsRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1114,7 +1114,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListBatchJobResultsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListBatchJobResultsRequest, dict]):
                 The request object. Request message for
                 [BatchJobService.ListBatchJobResults][google.ads.googleads.v8.services.BatchJobService.ListBatchJobResults].
             resource_name (:class:`str`):
@@ -1191,7 +1191,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         return response
 
     def run_batch_job(self,
-            request: batch_job_service.RunBatchJobRequest = None,
+            request: Union[batch_job_service.RunBatchJobRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1211,7 +1211,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.RunBatchJobRequest`):
+            request (Union[google.ads.googleads.v8.services.types.RunBatchJobRequest, dict]):
                 The request object. Request message for
                 [BatchJobService.RunBatchJob][google.ads.googleads.v8.services.BatchJobService.RunBatchJob].
             resource_name (:class:`str`):
@@ -1296,7 +1296,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         return response
 
     def add_batch_job_operations(self,
-            request: batch_job_service.AddBatchJobOperationsRequest = None,
+            request: Union[batch_job_service.AddBatchJobOperationsRequest, dict] = None,
             *,
             resource_name: str = None,
             sequence_token: str = None,
@@ -1313,7 +1313,7 @@ class BatchJobServiceClient(metaclass=BatchJobServiceClientMeta):
         `RequestError <>`__ `ResourceCountLimitExceededError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.AddBatchJobOperationsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.AddBatchJobOperationsRequest, dict]):
                 The request object. Request message for
                 [BatchJobService.AddBatchJobOperations][google.ads.googleads.v8.services.BatchJobService.AddBatchJobOperations].
             resource_name (:class:`str`):

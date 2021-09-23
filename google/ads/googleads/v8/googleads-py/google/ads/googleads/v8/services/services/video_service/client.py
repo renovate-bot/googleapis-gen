@@ -321,7 +321,7 @@ class VideoServiceClient(metaclass=VideoServiceClientMeta):
               )
 
     def get_video(self,
-            request: video_service.GetVideoRequest = None,
+            request: Union[video_service.GetVideoRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class VideoServiceClient(metaclass=VideoServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetVideoRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetVideoRequest, dict]):
                 The request object. Request message for
                 [VideoService.GetVideo][google.ads.googleads.v8.services.VideoService.GetVideo].
             resource_name (:class:`str`):

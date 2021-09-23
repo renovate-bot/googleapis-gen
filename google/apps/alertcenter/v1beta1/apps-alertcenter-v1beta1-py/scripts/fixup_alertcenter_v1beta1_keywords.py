@@ -39,17 +39,17 @@ def partition(
 class alertcenterCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_delete_alerts': ('customer_id', 'alert_id', ),
-          'batch_undelete_alerts': ('customer_id', 'alert_id', ),
-          'create_alert_feedback': ('customer_id', 'alert_id', 'feedback', ),
-          'delete_alert': ('customer_id', 'alert_id', ),
-          'get_alert': ('customer_id', 'alert_id', ),
-          'get_alert_metadata': ('customer_id', 'alert_id', ),
-          'get_settings': ('customer_id', ),
-          'list_alert_feedback': ('customer_id', 'alert_id', 'filter', ),
-          'list_alerts': ('customer_id', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'undelete_alert': ('customer_id', 'alert_id', ),
-          'update_settings': ('customer_id', 'settings', ),
+        'batch_delete_alerts': ('customer_id', 'alert_id', ),
+        'batch_undelete_alerts': ('customer_id', 'alert_id', ),
+        'create_alert_feedback': ('customer_id', 'alert_id', 'feedback', ),
+        'delete_alert': ('customer_id', 'alert_id', ),
+        'get_alert': ('customer_id', 'alert_id', ),
+        'get_alert_metadata': ('customer_id', 'alert_id', ),
+        'get_settings': ('customer_id', ),
+        'list_alert_feedback': ('customer_id', 'alert_id', 'filter', ),
+        'list_alerts': ('customer_id', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'undelete_alert': ('customer_id', 'alert_id', ),
+        'update_settings': ('customer_id', 'settings', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -68,7 +68,7 @@ class alertcenterCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

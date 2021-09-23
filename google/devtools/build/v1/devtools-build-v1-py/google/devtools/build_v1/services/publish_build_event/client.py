@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -342,7 +342,7 @@ class PublishBuildEventClient(metaclass=PublishBuildEventClientMeta):
             )
 
     def publish_lifecycle_event(self,
-            request: publish_build_event.PublishLifecycleEventRequest = None,
+            request: Union[publish_build_event.PublishLifecycleEventRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -360,7 +360,7 @@ class PublishBuildEventClient(metaclass=PublishBuildEventClientMeta):
         code defined in //util/task/codes.proto.
 
         Args:
-            request (google.devtools.build_v1.types.PublishLifecycleEventRequest):
+            request (Union[google.devtools.build_v1.types.PublishLifecycleEventRequest, dict]):
                 The request object. Publishes 'lifecycle events' that
                 update the high-level state of a build: - BuildEnqueued:
                 When a build is scheduled. - InvocationAttemptStarted:

@@ -39,25 +39,25 @@ def partition(
 class reservationCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_assignment': ('parent', 'assignment', ),
-          'create_capacity_commitment': ('parent', 'capacity_commitment', 'enforce_single_admin_project_per_org', ),
-          'create_reservation': ('parent', 'reservation_id', 'reservation', ),
-          'delete_assignment': ('name', ),
-          'delete_capacity_commitment': ('name', ),
-          'delete_reservation': ('name', ),
-          'get_bi_reservation': ('name', ),
-          'get_capacity_commitment': ('name', ),
-          'get_reservation': ('name', ),
-          'list_assignments': ('parent', 'page_size', 'page_token', ),
-          'list_capacity_commitments': ('parent', 'page_size', 'page_token', ),
-          'list_reservations': ('parent', 'page_size', 'page_token', 'filter', ),
-          'merge_capacity_commitments': ('parent', 'capacity_commitment_ids', ),
-          'move_assignment': ('name', 'destination_id', ),
-          'search_assignments': ('parent', 'query', 'page_size', 'page_token', ),
-          'split_capacity_commitment': ('name', 'slot_count', ),
-          'update_bi_reservation': ('reservation', 'update_mask', ),
-          'update_capacity_commitment': ('capacity_commitment', 'update_mask', ),
-          'update_reservation': ('reservation', 'update_mask', ),
+        'create_assignment': ('parent', 'assignment', ),
+        'create_capacity_commitment': ('parent', 'capacity_commitment', 'enforce_single_admin_project_per_org', ),
+        'create_reservation': ('parent', 'reservation_id', 'reservation', ),
+        'delete_assignment': ('name', ),
+        'delete_capacity_commitment': ('name', ),
+        'delete_reservation': ('name', ),
+        'get_bi_reservation': ('name', ),
+        'get_capacity_commitment': ('name', ),
+        'get_reservation': ('name', ),
+        'list_assignments': ('parent', 'page_size', 'page_token', ),
+        'list_capacity_commitments': ('parent', 'page_size', 'page_token', ),
+        'list_reservations': ('parent', 'page_size', 'page_token', 'filter', ),
+        'merge_capacity_commitments': ('parent', 'capacity_commitment_ids', ),
+        'move_assignment': ('name', 'destination_id', ),
+        'search_assignments': ('parent', 'query', 'page_size', 'page_token', ),
+        'split_capacity_commitment': ('name', 'slot_count', ),
+        'update_bi_reservation': ('reservation', 'update_mask', ),
+        'update_capacity_commitment': ('capacity_commitment', 'update_mask', ),
+        'update_reservation': ('reservation', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -76,7 +76,7 @@ class reservationCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

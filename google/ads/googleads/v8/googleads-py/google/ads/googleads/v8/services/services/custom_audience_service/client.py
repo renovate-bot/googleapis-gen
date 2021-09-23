@@ -323,7 +323,7 @@ class CustomAudienceServiceClient(metaclass=CustomAudienceServiceClientMeta):
               )
 
     def get_custom_audience(self,
-            request: custom_audience_service.GetCustomAudienceRequest = None,
+            request: Union[custom_audience_service.GetCustomAudienceRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -337,7 +337,7 @@ class CustomAudienceServiceClient(metaclass=CustomAudienceServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCustomAudienceRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCustomAudienceRequest, dict]):
                 The request object. Request message for
                 [CustomAudienceService.GetCustomAudience][google.ads.googleads.v8.services.CustomAudienceService.GetCustomAudience].
             resource_name (:class:`str`):
@@ -401,7 +401,7 @@ class CustomAudienceServiceClient(metaclass=CustomAudienceServiceClientMeta):
         return response
 
     def mutate_custom_audiences(self,
-            request: custom_audience_service.MutateCustomAudiencesRequest = None,
+            request: Union[custom_audience_service.MutateCustomAudiencesRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[custom_audience_service.CustomAudienceOperation] = None,
@@ -421,7 +421,7 @@ class CustomAudienceServiceClient(metaclass=CustomAudienceServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCustomAudiencesRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCustomAudiencesRequest, dict]):
                 The request object. Request message for
                 [CustomAudienceService.MutateCustomAudiences][google.ads.googleads.v8.services.CustomAudienceService.MutateCustomAudiences].
             customer_id (:class:`str`):

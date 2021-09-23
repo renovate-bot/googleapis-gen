@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -362,7 +362,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
             )
 
     def list_approval_requests(self,
-            request: accessapproval.ListApprovalRequestsMessage = None,
+            request: Union[accessapproval.ListApprovalRequestsMessage, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -375,7 +375,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         order is reverse chronological.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.ListApprovalRequestsMessage):
+            request (Union[google.cloud.accessapproval_v1.types.ListApprovalRequestsMessage, dict]):
                 The request object. Request to list approval requests.
             parent (str):
                 The parent resource. This may be
@@ -452,7 +452,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         return response
 
     def get_approval_request(self,
-            request: accessapproval.GetApprovalRequestMessage = None,
+            request: Union[accessapproval.GetApprovalRequestMessage, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -463,7 +463,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         not exist.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.GetApprovalRequestMessage):
+            request (Union[google.cloud.accessapproval_v1.types.GetApprovalRequestMessage, dict]):
                 The request object. Request to get an approval request.
             name (str):
                 Name of the approval request to
@@ -527,7 +527,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         return response
 
     def approve_approval_request(self,
-            request: accessapproval.ApproveApprovalRequestMessage = None,
+            request: Union[accessapproval.ApproveApprovalRequestMessage, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -540,7 +540,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         pending state.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.ApproveApprovalRequestMessage):
+            request (Union[google.cloud.accessapproval_v1.types.ApproveApprovalRequestMessage, dict]):
                 The request object. Request to approve an
                 ApprovalRequest.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -587,7 +587,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         return response
 
     def dismiss_approval_request(self,
-            request: accessapproval.DismissApprovalRequestMessage = None,
+            request: Union[accessapproval.DismissApprovalRequestMessage, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -605,7 +605,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         a pending state.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.DismissApprovalRequestMessage):
+            request (Union[google.cloud.accessapproval_v1.types.DismissApprovalRequestMessage, dict]):
                 The request object. Request to dismiss an approval
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -652,7 +652,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         return response
 
     def get_access_approval_settings(self,
-            request: accessapproval.GetAccessApprovalSettingsMessage = None,
+            request: Union[accessapproval.GetAccessApprovalSettingsMessage, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -663,7 +663,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         or organization.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage):
+            request (Union[google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage, dict]):
                 The request object. Request to get access approval
                 settings.
             name (str):
@@ -729,7 +729,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         return response
 
     def update_access_approval_settings(self,
-            request: accessapproval.UpdateAccessApprovalSettingsMessage = None,
+            request: Union[accessapproval.UpdateAccessApprovalSettingsMessage, dict] = None,
             *,
             settings: accessapproval.AccessApprovalSettings = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -742,7 +742,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         field_mask.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.UpdateAccessApprovalSettingsMessage):
+            request (Union[google.cloud.accessapproval_v1.types.UpdateAccessApprovalSettingsMessage, dict]):
                 The request object. Request to update access approval
                 settings.
             settings (google.cloud.accessapproval_v1.types.AccessApprovalSettings):
@@ -824,7 +824,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         return response
 
     def delete_access_approval_settings(self,
-            request: accessapproval.DeleteAccessApprovalSettingsMessage = None,
+            request: Union[accessapproval.DeleteAccessApprovalSettingsMessage, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -841,7 +841,7 @@ class AccessApprovalClient(metaclass=AccessApprovalClientMeta):
         inherited.
 
         Args:
-            request (google.cloud.accessapproval_v1.types.DeleteAccessApprovalSettingsMessage):
+            request (Union[google.cloud.accessapproval_v1.types.DeleteAccessApprovalSettingsMessage, dict]):
                 The request object. Request to delete access approval
                 settings.
             name (str):

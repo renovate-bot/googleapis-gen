@@ -332,7 +332,7 @@ class CustomerClientLinkServiceClient(metaclass=CustomerClientLinkServiceClientM
               )
 
     def get_customer_client_link(self,
-            request: customer_client_link_service.GetCustomerClientLinkRequest = None,
+            request: Union[customer_client_link_service.GetCustomerClientLinkRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class CustomerClientLinkServiceClient(metaclass=CustomerClientLinkServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCustomerClientLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCustomerClientLinkRequest, dict]):
                 The request object. Request message for
                 [CustomerClientLinkService.GetCustomerClientLink][google.ads.googleads.v8.services.CustomerClientLinkService.GetCustomerClientLink].
             resource_name (:class:`str`):
@@ -410,7 +410,7 @@ class CustomerClientLinkServiceClient(metaclass=CustomerClientLinkServiceClientM
         return response
 
     def mutate_customer_client_link(self,
-            request: customer_client_link_service.MutateCustomerClientLinkRequest = None,
+            request: Union[customer_client_link_service.MutateCustomerClientLinkRequest, dict] = None,
             *,
             customer_id: str = None,
             operation: customer_client_link_service.CustomerClientLinkOperation = None,
@@ -429,7 +429,7 @@ class CustomerClientLinkServiceClient(metaclass=CustomerClientLinkServiceClientM
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateCustomerClientLinkRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateCustomerClientLinkRequest, dict]):
                 The request object. Request message for
                 [CustomerClientLinkService.MutateCustomerClientLink][google.ads.googleads.v8.services.CustomerClientLinkService.MutateCustomerClientLink].
             customer_id (:class:`str`):

@@ -311,7 +311,7 @@ class KeywordPlanIdeaServiceClient(metaclass=KeywordPlanIdeaServiceClientMeta):
               )
 
     def generate_keyword_ideas(self,
-            request: keyword_plan_idea_service.GenerateKeywordIdeasRequest = None,
+            request: Union[keyword_plan_idea_service.GenerateKeywordIdeasRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -326,7 +326,7 @@ class KeywordPlanIdeaServiceClient(metaclass=KeywordPlanIdeaServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateKeywordIdeasRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateKeywordIdeasRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanIdeaService.GenerateKeywordIdeas][google.ads.googleads.v8.services.KeywordPlanIdeaService.GenerateKeywordIdeas].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

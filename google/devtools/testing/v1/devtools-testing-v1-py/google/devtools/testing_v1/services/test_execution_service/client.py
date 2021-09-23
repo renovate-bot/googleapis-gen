@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -350,7 +350,7 @@ class TestExecutionServiceClient(metaclass=TestExecutionServiceClientMeta):
             )
 
     def create_test_matrix(self,
-            request: test_execution.CreateTestMatrixRequest = None,
+            request: Union[test_execution.CreateTestMatrixRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -369,7 +369,7 @@ class TestExecutionServiceClient(metaclass=TestExecutionServiceClientMeta):
            matrix tries to use too many simultaneous devices.
 
         Args:
-            request (google.devtools.testing_v1.types.CreateTestMatrixRequest):
+            request (Union[google.devtools.testing_v1.types.CreateTestMatrixRequest, dict]):
                 The request object. Request to submit a matrix of tests
                 for execution.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -411,7 +411,7 @@ class TestExecutionServiceClient(metaclass=TestExecutionServiceClientMeta):
         return response
 
     def get_test_matrix(self,
-            request: test_execution.GetTestMatrixRequest = None,
+            request: Union[test_execution.GetTestMatrixRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -427,7 +427,7 @@ class TestExecutionServiceClient(metaclass=TestExecutionServiceClientMeta):
         -  NOT_FOUND - if the Test Matrix does not exist
 
         Args:
-            request (google.devtools.testing_v1.types.GetTestMatrixRequest):
+            request (Union[google.devtools.testing_v1.types.GetTestMatrixRequest, dict]):
                 The request object. Request to get the Test Matrix with
                 the given id.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -469,7 +469,7 @@ class TestExecutionServiceClient(metaclass=TestExecutionServiceClientMeta):
         return response
 
     def cancel_test_matrix(self,
-            request: test_execution.CancelTestMatrixRequest = None,
+            request: Union[test_execution.CancelTestMatrixRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -487,7 +487,7 @@ class TestExecutionServiceClient(metaclass=TestExecutionServiceClientMeta):
         -  NOT_FOUND - if the Test Matrix does not exist
 
         Args:
-            request (google.devtools.testing_v1.types.CancelTestMatrixRequest):
+            request (Union[google.devtools.testing_v1.types.CancelTestMatrixRequest, dict]):
                 The request object. Request to stop running all of the
                 tests in the specified matrix.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

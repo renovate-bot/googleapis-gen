@@ -336,7 +336,7 @@ class BiddingDataExclusionServiceClient(metaclass=BiddingDataExclusionServiceCli
               )
 
     def get_bidding_data_exclusion(self,
-            request: bidding_data_exclusion_service.GetBiddingDataExclusionRequest = None,
+            request: Union[bidding_data_exclusion_service.GetBiddingDataExclusionRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class BiddingDataExclusionServiceClient(metaclass=BiddingDataExclusionServiceCli
         r"""Returns the requested data exclusion in full detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetBiddingDataExclusionRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetBiddingDataExclusionRequest, dict]):
                 The request object. Request message for
                 [BiddingDataExclusionService.GetBiddingDataExclusion][google.ads.googleads.v8.services.BiddingDataExclusionService.GetBiddingDataExclusion].
             resource_name (:class:`str`):
@@ -412,7 +412,7 @@ class BiddingDataExclusionServiceClient(metaclass=BiddingDataExclusionServiceCli
         return response
 
     def mutate_bidding_data_exclusions(self,
-            request: bidding_data_exclusion_service.MutateBiddingDataExclusionsRequest = None,
+            request: Union[bidding_data_exclusion_service.MutateBiddingDataExclusionsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[bidding_data_exclusion_service.BiddingDataExclusionOperation] = None,
@@ -424,7 +424,7 @@ class BiddingDataExclusionServiceClient(metaclass=BiddingDataExclusionServiceCli
         Operation statuses are returned.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateBiddingDataExclusionsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateBiddingDataExclusionsRequest, dict]):
                 The request object. Request message for
                 [BiddingDataExclusionService.MutateBiddingDataExclusions][google.ads.googleads.v8.services.BiddingDataExclusionService.MutateBiddingDataExclusions].
             customer_id (:class:`str`):

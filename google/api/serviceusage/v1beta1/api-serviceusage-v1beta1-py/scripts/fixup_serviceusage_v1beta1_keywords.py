@@ -39,25 +39,25 @@ def partition(
 class serviceusageCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_enable_services': ('parent', 'service_ids', ),
-          'create_admin_override': ('parent', 'override', 'force', 'force_only', ),
-          'create_consumer_override': ('parent', 'override', 'force', 'force_only', ),
-          'delete_admin_override': ('name', 'force', 'force_only', ),
-          'delete_consumer_override': ('name', 'force', 'force_only', ),
-          'disable_service': ('name', ),
-          'enable_service': ('name', ),
-          'generate_service_identity': ('parent', ),
-          'get_consumer_quota_limit': ('name', 'view', ),
-          'get_consumer_quota_metric': ('name', 'view', ),
-          'get_service': ('name', ),
-          'import_admin_overrides': ('parent', 'inline_source', 'force', 'force_only', ),
-          'import_consumer_overrides': ('parent', 'inline_source', 'force', 'force_only', ),
-          'list_admin_overrides': ('parent', 'page_size', 'page_token', ),
-          'list_consumer_overrides': ('parent', 'page_size', 'page_token', ),
-          'list_consumer_quota_metrics': ('parent', 'page_size', 'page_token', 'view', ),
-          'list_services': ('parent', 'page_size', 'page_token', 'filter', ),
-          'update_admin_override': ('name', 'override', 'force', 'update_mask', 'force_only', ),
-          'update_consumer_override': ('name', 'override', 'force', 'update_mask', 'force_only', ),
+        'batch_enable_services': ('parent', 'service_ids', ),
+        'create_admin_override': ('parent', 'override', 'force', 'force_only', ),
+        'create_consumer_override': ('parent', 'override', 'force', 'force_only', ),
+        'delete_admin_override': ('name', 'force', 'force_only', ),
+        'delete_consumer_override': ('name', 'force', 'force_only', ),
+        'disable_service': ('name', ),
+        'enable_service': ('name', ),
+        'generate_service_identity': ('parent', ),
+        'get_consumer_quota_limit': ('name', 'view', ),
+        'get_consumer_quota_metric': ('name', 'view', ),
+        'get_service': ('name', ),
+        'import_admin_overrides': ('parent', 'inline_source', 'force', 'force_only', ),
+        'import_consumer_overrides': ('parent', 'inline_source', 'force', 'force_only', ),
+        'list_admin_overrides': ('parent', 'page_size', 'page_token', ),
+        'list_consumer_overrides': ('parent', 'page_size', 'page_token', ),
+        'list_consumer_quota_metrics': ('parent', 'page_size', 'page_token', 'view', ),
+        'list_services': ('parent', 'page_size', 'page_token', 'filter', ),
+        'update_admin_override': ('name', 'override', 'force', 'update_mask', 'force_only', ),
+        'update_consumer_override': ('name', 'override', 'force', 'update_mask', 'force_only', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -76,7 +76,7 @@ class serviceusageCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

@@ -321,7 +321,7 @@ class CarrierConstantServiceClient(metaclass=CarrierConstantServiceClientMeta):
               )
 
     def get_carrier_constant(self,
-            request: carrier_constant_service.GetCarrierConstantRequest = None,
+            request: Union[carrier_constant_service.GetCarrierConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class CarrierConstantServiceClient(metaclass=CarrierConstantServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCarrierConstantRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCarrierConstantRequest, dict]):
                 The request object. Request message for
                 [CarrierConstantService.GetCarrierConstant][google.ads.googleads.v7.services.CarrierConstantService.GetCarrierConstant].
             resource_name (:class:`str`):

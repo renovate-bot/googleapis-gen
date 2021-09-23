@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Iterable, Iterator, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -429,7 +429,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
             )
 
     def detect_intent(self,
-            request: session.DetectIntentRequest = None,
+            request: Union[session.DetectIntentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -445,7 +445,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
         environments <https://cloud.google.com/dialogflow/cx/docs/concept/version>`__.
 
         Args:
-            request (google.cloud.dialogflowcx_v3beta1.types.DetectIntentRequest):
+            request (Union[google.cloud.dialogflowcx_v3beta1.types.DetectIntentRequest, dict]):
                 The request object. The request to detect user's intent.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -587,7 +587,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
         return response
 
     def match_intent(self,
-            request: session.MatchIntentRequest = None,
+            request: Union[session.MatchIntentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -597,7 +597,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
         change the session status.
 
         Args:
-            request (google.cloud.dialogflowcx_v3beta1.types.MatchIntentRequest):
+            request (Union[google.cloud.dialogflowcx_v3beta1.types.MatchIntentRequest, dict]):
                 The request object. Request of [MatchIntent][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -641,7 +641,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
         return response
 
     def fulfill_intent(self,
-            request: session.FulfillIntentRequest = None,
+            request: Union[session.FulfillIntentRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -656,7 +656,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
         Otherwise, the behavior is undefined.
 
         Args:
-            request (google.cloud.dialogflowcx_v3beta1.types.FulfillIntentRequest):
+            request (Union[google.cloud.dialogflowcx_v3beta1.types.FulfillIntentRequest, dict]):
                 The request object. Request of [FulfillIntent][]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

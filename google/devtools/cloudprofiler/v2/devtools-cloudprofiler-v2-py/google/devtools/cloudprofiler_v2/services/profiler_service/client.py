@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -335,7 +335,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
             )
 
     def create_profile(self,
-            request: profiler.CreateProfileRequest = None,
+            request: Union[profiler.CreateProfileRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -358,7 +358,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
         trailing metadata item named "google.rpc.retryinfo-bin".
 
         Args:
-            request (google.devtools.cloudprofiler_v2.types.CreateProfileRequest):
+            request (Union[google.devtools.cloudprofiler_v2.types.CreateProfileRequest, dict]):
                 The request object. CreateProfileRequest describes a
                 profile resource online creation request. The deployment
                 field must be populated. The profile_type specifies the
@@ -407,7 +407,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
         return response
 
     def create_offline_profile(self,
-            request: profiler.CreateOfflineProfileRequest = None,
+            request: Union[profiler.CreateOfflineProfileRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -419,7 +419,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
         it.
 
         Args:
-            request (google.devtools.cloudprofiler_v2.types.CreateOfflineProfileRequest):
+            request (Union[google.devtools.cloudprofiler_v2.types.CreateOfflineProfileRequest, dict]):
                 The request object. CreateOfflineProfileRequest
                 describes a profile resource offline creation request.
                 Profile field must be set.
@@ -465,7 +465,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
         return response
 
     def update_profile(self,
-            request: profiler.UpdateProfileRequest = None,
+            request: Union[profiler.UpdateProfileRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -478,7 +478,7 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
         must be provided at the time of the profile creation.
 
         Args:
-            request (google.devtools.cloudprofiler_v2.types.UpdateProfileRequest):
+            request (Union[google.devtools.cloudprofiler_v2.types.UpdateProfileRequest, dict]):
                 The request object. UpdateProfileRequest contains the
                 profile to update.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

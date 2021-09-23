@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -351,7 +351,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
             )
 
     def list_memberships(self,
-            request: membership.ListMembershipsRequest = None,
+            request: Union[membership.ListMembershipsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -361,7 +361,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         r"""Lists Memberships in a given project and location.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.ListMembershipsRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.ListMembershipsRequest, dict]):
                 The request object. Request message for
                 `GkeHubMembershipService.ListMemberships` method.
             parent (str):
@@ -439,7 +439,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def get_membership(self,
-            request: membership.GetMembershipRequest = None,
+            request: Union[membership.GetMembershipRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -449,7 +449,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         r"""Gets the details of a Membership.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.GetMembershipRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.GetMembershipRequest, dict]):
                 The request object. Request message for
                 `GkeHubMembershipService.GetMembership` method.
             name (str):
@@ -514,7 +514,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def create_membership(self,
-            request: membership.CreateMembershipRequest = None,
+            request: Union[membership.CreateMembershipRequest, dict] = None,
             *,
             parent: str = None,
             resource: membership.Membership = None,
@@ -530,7 +530,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.CreateMembershipRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.CreateMembershipRequest, dict]):
                 The request object. Request message for the
                 `GkeHubMembershipService.CreateMembership` method.
             parent (str):
@@ -633,7 +633,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def delete_membership(self,
-            request: membership.DeleteMembershipRequest = None,
+            request: Union[membership.DeleteMembershipRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -648,7 +648,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.DeleteMembershipRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.DeleteMembershipRequest, dict]):
                 The request object. Request message for
                 `GkeHubMembershipService.DeleteMembership` method.
             name (str):
@@ -734,7 +734,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def update_membership(self,
-            request: membership.UpdateMembershipRequest = None,
+            request: Union[membership.UpdateMembershipRequest, dict] = None,
             *,
             name: str = None,
             resource: membership.Membership = None,
@@ -746,7 +746,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         r"""Updates an existing Membership.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.UpdateMembershipRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.UpdateMembershipRequest, dict]):
                 The request object. Request message for
                 `GkeHubMembershipService.UpdateMembership` method.
             name (str):
@@ -848,7 +848,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def generate_connect_manifest(self,
-            request: membership.GenerateConnectManifestRequest = None,
+            request: Union[membership.GenerateConnectManifestRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -860,7 +860,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         Most clients should not need to call this method directly.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.GenerateConnectManifestRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.GenerateConnectManifestRequest, dict]):
                 The request object. Request message for
                 `GkeHubMembershipService.GenerateConnectManifest`
                 method. .
@@ -909,7 +909,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def validate_exclusivity(self,
-            request: membership.ValidateExclusivityRequest = None,
+            request: Union[membership.ValidateExclusivityRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -920,7 +920,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         depend on an existing Hub membership resource.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.ValidateExclusivityRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.ValidateExclusivityRequest, dict]):
                 The request object. The request to validate the existing
                 state of the membership CR in the cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -967,7 +967,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         return response
 
     def generate_exclusivity_manifest(self,
-            request: membership.GenerateExclusivityManifestRequest = None,
+            request: Union[membership.GenerateExclusivityManifestRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -989,7 +989,7 @@ class GkeHubMembershipServiceClient(metaclass=GkeHubMembershipServiceClientMeta)
         any differences between the versions.
 
         Args:
-            request (google.cloud.gkehub_v1beta1.types.GenerateExclusivityManifestRequest):
+            request (Union[google.cloud.gkehub_v1beta1.types.GenerateExclusivityManifestRequest, dict]):
                 The request object. The request to generate the
                 manifests for exclusivity artifacts.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

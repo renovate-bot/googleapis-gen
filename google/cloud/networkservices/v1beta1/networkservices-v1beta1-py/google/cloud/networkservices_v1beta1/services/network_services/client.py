@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -376,7 +376,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
             )
 
     def list_endpoint_policies(self,
-            request: endpoint_policy.ListEndpointPoliciesRequest = None,
+            request: Union[endpoint_policy.ListEndpointPoliciesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -387,7 +387,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         location.
 
         Args:
-            request (google.cloud.networkservices_v1beta1.types.ListEndpointPoliciesRequest):
+            request (Union[google.cloud.networkservices_v1beta1.types.ListEndpointPoliciesRequest, dict]):
                 The request object. Request used with the
                 ListEndpointPolicies method.
             parent (str):
@@ -465,7 +465,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         return response
 
     def get_endpoint_policy(self,
-            request: endpoint_policy.GetEndpointPolicyRequest = None,
+            request: Union[endpoint_policy.GetEndpointPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -475,7 +475,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         r"""Gets details of a single EndpointPolicy.
 
         Args:
-            request (google.cloud.networkservices_v1beta1.types.GetEndpointPolicyRequest):
+            request (Union[google.cloud.networkservices_v1beta1.types.GetEndpointPolicyRequest, dict]):
                 The request object. Request used with the
                 GetEndpointPolicy method.
             name (str):
@@ -545,7 +545,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         return response
 
     def create_endpoint_policy(self,
-            request: gcn_endpoint_policy.CreateEndpointPolicyRequest = None,
+            request: Union[gcn_endpoint_policy.CreateEndpointPolicyRequest, dict] = None,
             *,
             parent: str = None,
             endpoint_policy: gcn_endpoint_policy.EndpointPolicy = None,
@@ -558,7 +558,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         location.
 
         Args:
-            request (google.cloud.networkservices_v1beta1.types.CreateEndpointPolicyRequest):
+            request (Union[google.cloud.networkservices_v1beta1.types.CreateEndpointPolicyRequest, dict]):
                 The request object. Request used with the
                 CreateEndpointPolicy method.
             parent (str):
@@ -655,7 +655,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         return response
 
     def update_endpoint_policy(self,
-            request: gcn_endpoint_policy.UpdateEndpointPolicyRequest = None,
+            request: Union[gcn_endpoint_policy.UpdateEndpointPolicyRequest, dict] = None,
             *,
             endpoint_policy: gcn_endpoint_policy.EndpointPolicy = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -666,7 +666,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         r"""Updates the parameters of a single EndpointPolicy.
 
         Args:
-            request (google.cloud.networkservices_v1beta1.types.UpdateEndpointPolicyRequest):
+            request (Union[google.cloud.networkservices_v1beta1.types.UpdateEndpointPolicyRequest, dict]):
                 The request object. Request used with the
                 UpdateEndpointPolicy method.
             endpoint_policy (google.cloud.networkservices_v1beta1.types.EndpointPolicy):
@@ -758,7 +758,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         return response
 
     def delete_endpoint_policy(self,
-            request: endpoint_policy.DeleteEndpointPolicyRequest = None,
+            request: Union[endpoint_policy.DeleteEndpointPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -768,7 +768,7 @@ class NetworkServicesClient(metaclass=NetworkServicesClientMeta):
         r"""Deletes a single EndpointPolicy.
 
         Args:
-            request (google.cloud.networkservices_v1beta1.types.DeleteEndpointPolicyRequest):
+            request (Union[google.cloud.networkservices_v1beta1.types.DeleteEndpointPolicyRequest, dict]):
                 The request object. Request used with the
                 DeleteEndpointPolicy method.
             name (str):

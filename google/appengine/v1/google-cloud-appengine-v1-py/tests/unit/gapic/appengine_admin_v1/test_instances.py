@@ -756,7 +756,7 @@ def test_get_instance(transport: str = 'grpc', request_type=appengine.GetInstanc
             vm_id='vm_id_value',
             requests=892,
             errors=669,
-            qps=0.340,
+            qps=0.34,
             average_latency=1578,
             memory_usage=1293,
             vm_status='vm_status_value',
@@ -782,7 +782,7 @@ def test_get_instance(transport: str = 'grpc', request_type=appengine.GetInstanc
     assert response.vm_id == 'vm_id_value'
     assert response.requests == 892
     assert response.errors == 669
-    assert math.isclose(response.qps, 0.340, rel_tol=1e-6)
+    assert math.isclose(response.qps, 0.34, rel_tol=1e-6)
     assert response.average_latency == 1578
     assert response.memory_usage == 1293
     assert response.vm_status == 'vm_status_value'
@@ -839,7 +839,7 @@ async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=
             vm_id='vm_id_value',
             requests=892,
             errors=669,
-            qps=0.340,
+            qps=0.34,
             average_latency=1578,
             memory_usage=1293,
             vm_status='vm_status_value',
@@ -865,7 +865,7 @@ async def test_get_instance_async(transport: str = 'grpc_asyncio', request_type=
     assert response.vm_id == 'vm_id_value'
     assert response.requests == 892
     assert response.errors == 669
-    assert math.isclose(response.qps, 0.340, rel_tol=1e-6)
+    assert math.isclose(response.qps, 0.34, rel_tol=1e-6)
     assert response.average_latency == 1578
     assert response.memory_usage == 1293
     assert response.vm_status == 'vm_status_value'

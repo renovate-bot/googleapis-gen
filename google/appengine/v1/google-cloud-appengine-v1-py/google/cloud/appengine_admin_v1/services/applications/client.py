@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -329,7 +329,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
             )
 
     def get_application(self,
-            request: appengine.GetApplicationRequest = None,
+            request: Union[appengine.GetApplicationRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -338,7 +338,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
         r"""Gets information about an application.
 
         Args:
-            request (google.cloud.appengine_admin_v1.types.GetApplicationRequest):
+            request (Union[google.cloud.appengine_admin_v1.types.GetApplicationRequest, dict]):
                 The request object. Request message for
                 `Applications.GetApplication`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -386,7 +386,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
         return response
 
     def create_application(self,
-            request: appengine.CreateApplicationRequest = None,
+            request: Union[appengine.CreateApplicationRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -405,7 +405,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
         Billing <https://cloud.google.com/appengine/docs/standard/python/console/>`__.
 
         Args:
-            request (google.cloud.appengine_admin_v1.types.CreateApplicationRequest):
+            request (Union[google.cloud.appengine_admin_v1.types.CreateApplicationRequest, dict]):
                 The request object. Request message for
                 `Applications.CreateApplication`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -454,7 +454,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
         return response
 
     def update_application(self,
-            request: appengine.UpdateApplicationRequest = None,
+            request: Union[appengine.UpdateApplicationRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -469,7 +469,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
            the application.
 
         Args:
-            request (google.cloud.appengine_admin_v1.types.UpdateApplicationRequest):
+            request (Union[google.cloud.appengine_admin_v1.types.UpdateApplicationRequest, dict]):
                 The request object. Request message for
                 `Applications.UpdateApplication`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -526,7 +526,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
         return response
 
     def repair_application(self,
-            request: appengine.RepairApplicationRequest = None,
+            request: Union[appengine.RepairApplicationRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -545,7 +545,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
         Cloud Console Activity Log.
 
         Args:
-            request (google.cloud.appengine_admin_v1.types.RepairApplicationRequest):
+            request (Union[google.cloud.appengine_admin_v1.types.RepairApplicationRequest, dict]):
                 The request object. Request message for
                 'Applications.RepairApplication'.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

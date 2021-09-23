@@ -347,7 +347,7 @@ class AccountBudgetServiceClient(metaclass=AccountBudgetServiceClientMeta):
               )
 
     def get_account_budget(self,
-            request: account_budget_service.GetAccountBudgetRequest = None,
+            request: Union[account_budget_service.GetAccountBudgetRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -361,7 +361,7 @@ class AccountBudgetServiceClient(metaclass=AccountBudgetServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAccountBudgetRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAccountBudgetRequest, dict]):
                 The request object. Request message for
                 [AccountBudgetService.GetAccountBudget][google.ads.googleads.v7.services.AccountBudgetService.GetAccountBudget].
             resource_name (:class:`str`):

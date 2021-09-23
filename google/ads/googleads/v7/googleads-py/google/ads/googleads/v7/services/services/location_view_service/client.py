@@ -321,7 +321,7 @@ class LocationViewServiceClient(metaclass=LocationViewServiceClientMeta):
               )
 
     def get_location_view(self,
-            request: location_view_service.GetLocationViewRequest = None,
+            request: Union[location_view_service.GetLocationViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class LocationViewServiceClient(metaclass=LocationViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetLocationViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetLocationViewRequest, dict]):
                 The request object. Request message for
                 [LocationViewService.GetLocationView][google.ads.googleads.v7.services.LocationViewService.GetLocationView].
             resource_name (:class:`str`):

@@ -332,7 +332,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
               )
 
     def get_ad_parameter(self,
-            request: ad_parameter_service.GetAdParameterRequest = None,
+            request: Union[ad_parameter_service.GetAdParameterRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -346,7 +346,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdParameterRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdParameterRequest, dict]):
                 The request object. Request message for
                 [AdParameterService.GetAdParameter][google.ads.googleads.v7.services.AdParameterService.GetAdParameter]
             resource_name (:class:`str`):
@@ -416,7 +416,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
         return response
 
     def mutate_ad_parameters(self,
-            request: ad_parameter_service.MutateAdParametersRequest = None,
+            request: Union[ad_parameter_service.MutateAdParametersRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_parameter_service.AdParameterOperation] = None,
@@ -434,7 +434,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
         `MutateError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdParametersRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdParametersRequest, dict]):
                 The request object. Request message for
                 [AdParameterService.MutateAdParameters][google.ads.googleads.v7.services.AdParameterService.MutateAdParameters]
             customer_id (:class:`str`):

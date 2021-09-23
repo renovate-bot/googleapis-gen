@@ -335,7 +335,7 @@ class FeedMappingServiceClient(metaclass=FeedMappingServiceClientMeta):
               )
 
     def get_feed_mapping(self,
-            request: feed_mapping_service.GetFeedMappingRequest = None,
+            request: Union[feed_mapping_service.GetFeedMappingRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -349,7 +349,7 @@ class FeedMappingServiceClient(metaclass=FeedMappingServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetFeedMappingRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetFeedMappingRequest, dict]):
                 The request object. Request message for
                 [FeedMappingService.GetFeedMapping][google.ads.googleads.v7.services.FeedMappingService.GetFeedMapping].
             resource_name (:class:`str`):
@@ -411,7 +411,7 @@ class FeedMappingServiceClient(metaclass=FeedMappingServiceClientMeta):
         return response
 
     def mutate_feed_mappings(self,
-            request: feed_mapping_service.MutateFeedMappingsRequest = None,
+            request: Union[feed_mapping_service.MutateFeedMappingsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[feed_mapping_service.FeedMappingOperation] = None,
@@ -433,7 +433,7 @@ class FeedMappingServiceClient(metaclass=FeedMappingServiceClientMeta):
         `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateFeedMappingsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateFeedMappingsRequest, dict]):
                 The request object. Request message for
                 [FeedMappingService.MutateFeedMappings][google.ads.googleads.v7.services.FeedMappingService.MutateFeedMappings].
             customer_id (:class:`str`):

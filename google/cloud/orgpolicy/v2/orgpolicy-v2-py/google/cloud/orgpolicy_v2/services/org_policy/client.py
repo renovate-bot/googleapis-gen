@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -370,7 +370,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
             )
 
     def list_constraints(self,
-            request: orgpolicy.ListConstraintsRequest = None,
+            request: Union[orgpolicy.ListConstraintsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -381,7 +381,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         resource.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.ListConstraintsRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.ListConstraintsRequest, dict]):
                 The request object. The request sent to the
                 [ListConstraints]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListConstraints]
@@ -466,7 +466,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         return response
 
     def list_policies(self,
-            request: orgpolicy.ListPoliciesRequest = None,
+            request: Union[orgpolicy.ListPoliciesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -477,7 +477,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         resource.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.ListPoliciesRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.ListPoliciesRequest, dict]):
                 The request object. The request sent to the
                 [ListPolicies]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies]
@@ -564,7 +564,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         return response
 
     def get_policy(self,
-            request: orgpolicy.GetPolicyRequest = None,
+            request: Union[orgpolicy.GetPolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -578,7 +578,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         a ``Policy`` during read-modify-write.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.GetPolicyRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.GetPolicyRequest, dict]):
                 The request object. The request sent to the [GetPolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetPolicy] method.
             name (str):
@@ -643,7 +643,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         return response
 
     def get_effective_policy(self,
-            request: orgpolicy.GetEffectivePolicyRequest = None,
+            request: Union[orgpolicy.GetEffectivePolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -658,7 +658,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         hierarchy with 'under:' prefix will not be expanded.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest, dict]):
                 The request object. The request sent to the
                 [GetEffectivePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetEffectivePolicy]
@@ -725,7 +725,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         return response
 
     def create_policy(self,
-            request: orgpolicy.CreatePolicyRequest = None,
+            request: Union[orgpolicy.CreatePolicyRequest, dict] = None,
             *,
             parent: str = None,
             policy: orgpolicy.Policy = None,
@@ -742,7 +742,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         on the given Cloud resource.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.CreatePolicyRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.CreatePolicyRequest, dict]):
                 The request object. The request sent to the
                 [CreatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.CreatePolicy]
@@ -821,7 +821,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         return response
 
     def update_policy(self,
-            request: orgpolicy.UpdatePolicyRequest = None,
+            request: Union[orgpolicy.UpdatePolicyRequest, dict] = None,
             *,
             policy: orgpolicy.Policy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -840,7 +840,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         fields.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.UpdatePolicyRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.UpdatePolicyRequest, dict]):
                 The request object. The request sent to the
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
@@ -905,7 +905,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         return response
 
     def delete_policy(self,
-            request: orgpolicy.DeletePolicyRequest = None,
+            request: Union[orgpolicy.DeletePolicyRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -919,7 +919,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         does not exist.
 
         Args:
-            request (google.cloud.orgpolicy_v2.types.DeletePolicyRequest):
+            request (Union[google.cloud.orgpolicy_v2.types.DeletePolicyRequest, dict]):
                 The request object. The request sent to the
                 [DeletePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.DeletePolicy]

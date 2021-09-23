@@ -342,7 +342,7 @@ class AdGroupAdLabelServiceClient(metaclass=AdGroupAdLabelServiceClientMeta):
               )
 
     def get_ad_group_ad_label(self,
-            request: ad_group_ad_label_service.GetAdGroupAdLabelRequest = None,
+            request: Union[ad_group_ad_label_service.GetAdGroupAdLabelRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -356,7 +356,7 @@ class AdGroupAdLabelServiceClient(metaclass=AdGroupAdLabelServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupAdLabelRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupAdLabelRequest, dict]):
                 The request object. Request message for
                 [AdGroupAdLabelService.GetAdGroupAdLabel][google.ads.googleads.v7.services.AdGroupAdLabelService.GetAdGroupAdLabel].
             resource_name (:class:`str`):
@@ -420,7 +420,7 @@ class AdGroupAdLabelServiceClient(metaclass=AdGroupAdLabelServiceClientMeta):
         return response
 
     def mutate_ad_group_ad_labels(self,
-            request: ad_group_ad_label_service.MutateAdGroupAdLabelsRequest = None,
+            request: Union[ad_group_ad_label_service.MutateAdGroupAdLabelsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_ad_label_service.AdGroupAdLabelOperation] = None,
@@ -438,7 +438,7 @@ class AdGroupAdLabelServiceClient(metaclass=AdGroupAdLabelServiceClientMeta):
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupAdLabelsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdGroupAdLabelsRequest, dict]):
                 The request object. Request message for
                 [AdGroupAdLabelService.MutateAdGroupAdLabels][google.ads.googleads.v7.services.AdGroupAdLabelService.MutateAdGroupAdLabels].
             customer_id (:class:`str`):

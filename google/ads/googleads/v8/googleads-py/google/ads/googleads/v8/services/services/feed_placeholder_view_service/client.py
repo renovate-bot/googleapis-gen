@@ -322,7 +322,7 @@ class FeedPlaceholderViewServiceClient(metaclass=FeedPlaceholderViewServiceClien
               )
 
     def get_feed_placeholder_view(self,
-            request: feed_placeholder_view_service.GetFeedPlaceholderViewRequest = None,
+            request: Union[feed_placeholder_view_service.GetFeedPlaceholderViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -336,7 +336,7 @@ class FeedPlaceholderViewServiceClient(metaclass=FeedPlaceholderViewServiceClien
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetFeedPlaceholderViewRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetFeedPlaceholderViewRequest, dict]):
                 The request object. Request message for
                 [FeedPlaceholderViewService.GetFeedPlaceholderView][google.ads.googleads.v8.services.FeedPlaceholderViewService.GetFeedPlaceholderView].
             resource_name (:class:`str`):

@@ -39,10 +39,10 @@ def partition(
 class storageCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'query_write_status': ('upload_id', 'common_object_request_params', 'common_request_params', ),
-          'read_object': ('bucket', 'object_', 'generation', 'read_offset', 'read_limit', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', 'read_mask', ),
-          'start_resumable_write': ('write_object_spec', 'common_object_request_params', 'common_request_params', ),
-          'write_object': ('write_offset', 'upload_id', 'write_object_spec', 'checksummed_data', 'object_checksums', 'finish_write', 'common_object_request_params', 'common_request_params', ),
+        'query_write_status': ('upload_id', 'common_object_request_params', 'common_request_params', ),
+        'read_object': ('bucket', 'object_', 'generation', 'read_offset', 'read_limit', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', 'read_mask', ),
+        'start_resumable_write': ('write_object_spec', 'common_object_request_params', 'common_request_params', ),
+        'write_object': ('write_offset', 'upload_id', 'write_object_spec', 'checksummed_data', 'object_checksums', 'finish_write', 'common_object_request_params', 'common_request_params', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -61,7 +61,7 @@ class storageCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

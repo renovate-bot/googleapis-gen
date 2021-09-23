@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -373,7 +373,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             )
 
     def list_instance_configs(self,
-            request: spanner_instance_admin.ListInstanceConfigsRequest = None,
+            request: Union[spanner_instance_admin.ListInstanceConfigsRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -384,7 +384,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         given project.
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.ListInstanceConfigsRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.ListInstanceConfigsRequest, dict]):
                 The request object. The request for
                 [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
             parent (str):
@@ -462,7 +462,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def get_instance_config(self,
-            request: spanner_instance_admin.GetInstanceConfigRequest = None,
+            request: Union[spanner_instance_admin.GetInstanceConfigRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -473,7 +473,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         configuration.
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.GetInstanceConfigRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.GetInstanceConfigRequest, dict]):
                 The request object. The request for
                 [GetInstanceConfigRequest][google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig].
             name (str):
@@ -541,7 +541,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def list_instances(self,
-            request: spanner_instance_admin.ListInstancesRequest = None,
+            request: Union[spanner_instance_admin.ListInstancesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -551,7 +551,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         r"""Lists all instances in the given project.
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.ListInstancesRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.ListInstancesRequest, dict]):
                 The request object. The request for
                 [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
             parent (str):
@@ -629,7 +629,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def get_instance(self,
-            request: spanner_instance_admin.GetInstanceRequest = None,
+            request: Union[spanner_instance_admin.GetInstanceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -639,7 +639,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         r"""Gets information about a particular instance.
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.GetInstanceRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.GetInstanceRequest, dict]):
                 The request object. The request for
                 [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
             name (str):
@@ -705,7 +705,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def create_instance(self,
-            request: spanner_instance_admin.CreateInstanceRequest = None,
+            request: Union[spanner_instance_admin.CreateInstanceRequest, dict] = None,
             *,
             parent: str = None,
             instance_id: str = None,
@@ -754,7 +754,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         successful.
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.CreateInstanceRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.CreateInstanceRequest, dict]):
                 The request object. The request for
                 [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
             parent (str):
@@ -851,7 +851,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def update_instance(self,
-            request: spanner_instance_admin.UpdateInstanceRequest = None,
+            request: Union[spanner_instance_admin.UpdateInstanceRequest, dict] = None,
             *,
             instance: spanner_instance_admin.Instance = None,
             field_mask: field_mask_pb2.FieldMask = None,
@@ -906,7 +906,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         [name][google.spanner.admin.instance.v1.Instance.name].
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.UpdateInstanceRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.UpdateInstanceRequest, dict]):
                 The request object. The request for
                 [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
             instance (google.cloud.spanner_admin_instance_v1.types.Instance):
@@ -1000,7 +1000,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def delete_instance(self,
-            request: spanner_instance_admin.DeleteInstanceRequest = None,
+            request: Union[spanner_instance_admin.DeleteInstanceRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1020,7 +1020,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
            is permanently deleted.
 
         Args:
-            request (google.cloud.spanner_admin_instance_v1.types.DeleteInstanceRequest):
+            request (Union[google.cloud.spanner_admin_instance_v1.types.DeleteInstanceRequest, dict]):
                 The request object. The request for
                 [DeleteInstance][google.spanner.admin.instance.v1.InstanceAdmin.DeleteInstance].
             name (str):
@@ -1077,7 +1077,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         )
 
     def set_iam_policy(self,
-            request: iam_policy_pb2.SetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.SetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1091,7 +1091,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         [resource][google.iam.v1.SetIamPolicyRequest.resource].
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.SetIamPolicyRequest, dict]):
                 The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
@@ -1210,7 +1210,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy_pb2.GetIamPolicyRequest = None,
+            request: Union[iam_policy_pb2.GetIamPolicyRequest, dict] = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1225,7 +1225,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         [resource][google.iam.v1.GetIamPolicyRequest.resource].
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.GetIamPolicyRequest, dict]):
                 The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
@@ -1344,7 +1344,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy_pb2.TestIamPermissionsRequest = None,
+            request: Union[iam_policy_pb2.TestIamPermissionsRequest, dict] = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
@@ -1361,7 +1361,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         Cloud Project. Otherwise returns an empty set of permissions.
 
         Args:
-            request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
+            request (Union[google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest, dict]):
                 The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):

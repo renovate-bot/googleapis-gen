@@ -336,7 +336,7 @@ class BiddingSeasonalityAdjustmentServiceClient(metaclass=BiddingSeasonalityAdju
               )
 
     def get_bidding_seasonality_adjustment(self,
-            request: bidding_seasonality_adjustment_service.GetBiddingSeasonalityAdjustmentRequest = None,
+            request: Union[bidding_seasonality_adjustment_service.GetBiddingSeasonalityAdjustmentRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -347,7 +347,7 @@ class BiddingSeasonalityAdjustmentServiceClient(metaclass=BiddingSeasonalityAdju
         detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetBiddingSeasonalityAdjustmentRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetBiddingSeasonalityAdjustmentRequest, dict]):
                 The request object. Request message for
                 [BiddingSeasonalityAdjustmentService.GetBiddingSeasonalityAdjustment][google.ads.googleads.v8.services.BiddingSeasonalityAdjustmentService.GetBiddingSeasonalityAdjustment].
             resource_name (:class:`str`):
@@ -414,7 +414,7 @@ class BiddingSeasonalityAdjustmentServiceClient(metaclass=BiddingSeasonalityAdju
         return response
 
     def mutate_bidding_seasonality_adjustments(self,
-            request: bidding_seasonality_adjustment_service.MutateBiddingSeasonalityAdjustmentsRequest = None,
+            request: Union[bidding_seasonality_adjustment_service.MutateBiddingSeasonalityAdjustmentsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[bidding_seasonality_adjustment_service.BiddingSeasonalityAdjustmentOperation] = None,
@@ -426,7 +426,7 @@ class BiddingSeasonalityAdjustmentServiceClient(metaclass=BiddingSeasonalityAdju
         Operation statuses are returned.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateBiddingSeasonalityAdjustmentsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateBiddingSeasonalityAdjustmentsRequest, dict]):
                 The request object. Request message for
                 [BiddingSeasonalityAdjustmentService.MutateBiddingSeasonalityAdjustments][google.ads.googleads.v8.services.BiddingSeasonalityAdjustmentService.MutateBiddingSeasonalityAdjustments].
             customer_id (:class:`str`):

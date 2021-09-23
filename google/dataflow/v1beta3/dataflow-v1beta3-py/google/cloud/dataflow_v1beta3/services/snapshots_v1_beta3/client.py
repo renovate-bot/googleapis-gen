@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -328,7 +328,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
             )
 
     def get_snapshot(self,
-            request: snapshots.GetSnapshotRequest = None,
+            request: Union[snapshots.GetSnapshotRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -337,7 +337,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
         r"""Gets information about a snapshot.
 
         Args:
-            request (google.cloud.dataflow_v1beta3.types.GetSnapshotRequest):
+            request (Union[google.cloud.dataflow_v1beta3.types.GetSnapshotRequest, dict]):
                 The request object. Request to get information about a
                 snapshot
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -374,7 +374,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
         return response
 
     def delete_snapshot(self,
-            request: snapshots.DeleteSnapshotRequest = None,
+            request: Union[snapshots.DeleteSnapshotRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -383,7 +383,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
         r"""Deletes a snapshot.
 
         Args:
-            request (google.cloud.dataflow_v1beta3.types.DeleteSnapshotRequest):
+            request (Union[google.cloud.dataflow_v1beta3.types.DeleteSnapshotRequest, dict]):
                 The request object. Request to delete a snapshot.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -419,7 +419,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
         return response
 
     def list_snapshots(self,
-            request: snapshots.ListSnapshotsRequest = None,
+            request: Union[snapshots.ListSnapshotsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -428,7 +428,7 @@ class SnapshotsV1Beta3Client(metaclass=SnapshotsV1Beta3ClientMeta):
         r"""Lists snapshots.
 
         Args:
-            request (google.cloud.dataflow_v1beta3.types.ListSnapshotsRequest):
+            request (Union[google.cloud.dataflow_v1beta3.types.ListSnapshotsRequest, dict]):
                 The request object. Request to list snapshots.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

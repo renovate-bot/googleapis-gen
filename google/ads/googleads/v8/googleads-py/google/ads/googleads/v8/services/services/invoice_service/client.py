@@ -324,7 +324,7 @@ class InvoiceServiceClient(metaclass=InvoiceServiceClientMeta):
               )
 
     def list_invoices(self,
-            request: invoice_service.ListInvoicesRequest = None,
+            request: Union[invoice_service.ListInvoicesRequest, dict] = None,
             *,
             customer_id: str = None,
             billing_setup: str = None,
@@ -343,7 +343,7 @@ class InvoiceServiceClient(metaclass=InvoiceServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListInvoicesRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListInvoicesRequest, dict]):
                 The request object. Request message for fetching the
                 invoices of a given billing setup that were issued
                 during a given month.

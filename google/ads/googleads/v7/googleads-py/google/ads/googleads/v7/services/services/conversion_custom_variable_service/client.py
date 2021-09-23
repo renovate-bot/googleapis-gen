@@ -333,7 +333,7 @@ class ConversionCustomVariableServiceClient(metaclass=ConversionCustomVariableSe
               )
 
     def get_conversion_custom_variable(self,
-            request: conversion_custom_variable_service.GetConversionCustomVariableRequest = None,
+            request: Union[conversion_custom_variable_service.GetConversionCustomVariableRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -347,7 +347,7 @@ class ConversionCustomVariableServiceClient(metaclass=ConversionCustomVariableSe
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetConversionCustomVariableRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetConversionCustomVariableRequest, dict]):
                 The request object. Request message for
                 [ConversionCustomVariableService.GetConversionCustomVariable][google.ads.googleads.v7.services.ConversionCustomVariableService.GetConversionCustomVariable].
             resource_name (:class:`str`):
@@ -414,7 +414,7 @@ class ConversionCustomVariableServiceClient(metaclass=ConversionCustomVariableSe
         return response
 
     def mutate_conversion_custom_variables(self,
-            request: conversion_custom_variable_service.MutateConversionCustomVariablesRequest = None,
+            request: Union[conversion_custom_variable_service.MutateConversionCustomVariablesRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[conversion_custom_variable_service.ConversionCustomVariableOperation] = None,
@@ -431,7 +431,7 @@ class ConversionCustomVariableServiceClient(metaclass=ConversionCustomVariableSe
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateConversionCustomVariablesRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateConversionCustomVariablesRequest, dict]):
                 The request object. Request message for
                 [ConversionCustomVariableService.MutateConversionCustomVariables][google.ads.googleads.v7.services.ConversionCustomVariableService.MutateConversionCustomVariables].
             customer_id (:class:`str`):

@@ -329,7 +329,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
               )
 
     def create_offline_user_data_job(self,
-            request: offline_user_data_job_service.CreateOfflineUserDataJobRequest = None,
+            request: Union[offline_user_data_job_service.CreateOfflineUserDataJobRequest, dict] = None,
             *,
             customer_id: str = None,
             job: offline_user_data_job.OfflineUserDataJob = None,
@@ -346,7 +346,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.CreateOfflineUserDataJobRequest`):
+            request (Union[google.ads.googleads.v8.services.types.CreateOfflineUserDataJobRequest, dict]):
                 The request object. Request message for
                 [OfflineUserDataJobService.CreateOfflineUserDataJob][google.ads.googleads.v8.services.OfflineUserDataJobService.CreateOfflineUserDataJob].
             customer_id (:class:`str`):
@@ -420,7 +420,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         return response
 
     def get_offline_user_data_job(self,
-            request: offline_user_data_job_service.GetOfflineUserDataJobRequest = None,
+            request: Union[offline_user_data_job_service.GetOfflineUserDataJobRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -434,7 +434,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetOfflineUserDataJobRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetOfflineUserDataJobRequest, dict]):
                 The request object. Request message for
                 [OfflineUserDataJobService.GetOfflineUserDataJob][google.ads.googleads.v8.services.OfflineUserDataJobService.GetOfflineUserDataJob].
             resource_name (:class:`str`):
@@ -503,7 +503,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         return response
 
     def add_offline_user_data_job_operations(self,
-            request: offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest = None,
+            request: Union[offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest, dict] = None,
             *,
             resource_name: str = None,
             operations: Sequence[offline_user_data_job_service.OfflineUserDataJobOperation] = None,
@@ -520,7 +520,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.AddOfflineUserDataJobOperationsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.AddOfflineUserDataJobOperationsRequest, dict]):
                 The request object. Request message for
                 [OfflineUserDataJobService.AddOfflineUserDataJobOperations][google.ads.googleads.v8.services.OfflineUserDataJobService.AddOfflineUserDataJobOperations].
             resource_name (:class:`str`):
@@ -593,7 +593,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         return response
 
     def run_offline_user_data_job(self,
-            request: offline_user_data_job_service.RunOfflineUserDataJobRequest = None,
+            request: Union[offline_user_data_job_service.RunOfflineUserDataJobRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -612,7 +612,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.RunOfflineUserDataJobRequest`):
+            request (Union[google.ads.googleads.v8.services.types.RunOfflineUserDataJobRequest, dict]):
                 The request object. Request message for
                 [OfflineUserDataJobService.RunOfflineUserDataJob][google.ads.googleads.v8.services.OfflineUserDataJobService.RunOfflineUserDataJob].
             resource_name (:class:`str`):

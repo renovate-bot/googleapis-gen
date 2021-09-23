@@ -329,7 +329,7 @@ class UserListServiceClient(metaclass=UserListServiceClientMeta):
               )
 
     def get_user_list(self,
-            request: user_list_service.GetUserListRequest = None,
+            request: Union[user_list_service.GetUserListRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -343,7 +343,7 @@ class UserListServiceClient(metaclass=UserListServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetUserListRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetUserListRequest, dict]):
                 The request object. Request message for
                 [UserListService.GetUserList][google.ads.googleads.v7.services.UserListService.GetUserList].
             resource_name (:class:`str`):
@@ -407,7 +407,7 @@ class UserListServiceClient(metaclass=UserListServiceClientMeta):
         return response
 
     def mutate_user_lists(self,
-            request: user_list_service.MutateUserListsRequest = None,
+            request: Union[user_list_service.MutateUserListsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[user_list_service.UserListOperation] = None,
@@ -428,7 +428,7 @@ class UserListServiceClient(metaclass=UserListServiceClientMeta):
         `StringLengthError <>`__ `UserListError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateUserListsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateUserListsRequest, dict]):
                 The request object. Request message for
                 [UserListService.MutateUserLists][google.ads.googleads.v7.services.UserListService.MutateUserLists].
             customer_id (:class:`str`):

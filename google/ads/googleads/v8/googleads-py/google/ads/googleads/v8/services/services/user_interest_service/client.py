@@ -323,7 +323,7 @@ class UserInterestServiceClient(metaclass=UserInterestServiceClientMeta):
               )
 
     def get_user_interest(self,
-            request: user_interest_service.GetUserInterestRequest = None,
+            request: Union[user_interest_service.GetUserInterestRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -337,7 +337,7 @@ class UserInterestServiceClient(metaclass=UserInterestServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetUserInterestRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetUserInterestRequest, dict]):
                 The request object. Request message for
                 [UserInterestService.GetUserInterest][google.ads.googleads.v8.services.UserInterestService.GetUserInterest].
             resource_name (:class:`str`):

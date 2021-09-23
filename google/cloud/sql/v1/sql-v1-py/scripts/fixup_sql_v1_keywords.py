@@ -39,33 +39,33 @@ def partition(
 class sqlCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'add_server_ca': ('instance', 'project', ),
-          'clone': ('instance', 'project', 'body', ),
-          'create_ephemeral': ('instance', 'project', 'body', ),
-          'delete': ('host', 'instance', 'name', 'project', ),
-          'demote_master': ('instance', 'project', 'body', ),
-          'export': ('instance', 'project', 'body', ),
-          'failover': ('instance', 'project', 'body', ),
-          'generate_ephemeral_cert': ('instance', 'project', 'public_key', 'access_token', 'read_time', ),
-          'get': ('instance', 'project', 'sha1_fingerprint', ),
-          'get_connect_settings': ('instance', 'project', 'read_time', ),
-          'import': ('instance', 'project', 'body', ),
-          'insert': ('instance', 'project', 'body', ),
-          'list': ('instance', 'project', ),
-          'list_server_cas': ('instance', 'project', ),
-          'patch': ('instance', 'project', 'body', ),
-          'promote_replica': ('instance', 'project', ),
-          'reschedule_maintenance': ('instance', 'project', 'body', ),
-          'reset_ssl_config': ('instance', 'project', ),
-          'restart': ('instance', 'project', ),
-          'restore_backup': ('instance', 'project', 'body', ),
-          'rotate_server_ca': ('instance', 'project', 'body', ),
-          'start_external_sync': ('instance', 'project', 'sync_mode', 'skip_verification', 'mysql_sync_config', ),
-          'start_replica': ('instance', 'project', ),
-          'stop_replica': ('instance', 'project', ),
-          'truncate_log': ('instance', 'project', 'body', ),
-          'update': ('host', 'instance', 'name', 'project', 'body', ),
-          'verify_external_sync_settings': ('instance', 'project', 'verify_connection_only', 'sync_mode', 'verify_replication_only', 'mysql_sync_config', ),
+        'add_server_ca': ('instance', 'project', ),
+        'clone': ('instance', 'project', 'body', ),
+        'create_ephemeral': ('instance', 'project', 'body', ),
+        'delete': ('host', 'instance', 'name', 'project', ),
+        'demote_master': ('instance', 'project', 'body', ),
+        'export': ('instance', 'project', 'body', ),
+        'failover': ('instance', 'project', 'body', ),
+        'generate_ephemeral_cert': ('instance', 'project', 'public_key', 'access_token', 'read_time', ),
+        'get': ('instance', 'project', 'sha1_fingerprint', ),
+        'get_connect_settings': ('instance', 'project', 'read_time', ),
+        'import': ('instance', 'project', 'body', ),
+        'insert': ('instance', 'project', 'body', ),
+        'list': ('instance', 'project', ),
+        'list_server_cas': ('instance', 'project', ),
+        'patch': ('instance', 'project', 'body', ),
+        'promote_replica': ('instance', 'project', ),
+        'reschedule_maintenance': ('instance', 'project', 'body', ),
+        'reset_ssl_config': ('instance', 'project', ),
+        'restart': ('instance', 'project', ),
+        'restore_backup': ('instance', 'project', 'body', ),
+        'rotate_server_ca': ('instance', 'project', 'body', ),
+        'start_external_sync': ('instance', 'project', 'sync_mode', 'skip_verification', 'mysql_sync_config', ),
+        'start_replica': ('instance', 'project', ),
+        'stop_replica': ('instance', 'project', ),
+        'truncate_log': ('instance', 'project', 'body', ),
+        'update': ('host', 'instance', 'name', 'project', 'body', ),
+        'verify_external_sync_settings': ('instance', 'project', 'verify_connection_only', 'sync_mode', 'verify_replication_only', 'mysql_sync_config', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -84,7 +84,7 @@ class sqlCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

@@ -321,7 +321,7 @@ class HotelGroupViewServiceClient(metaclass=HotelGroupViewServiceClientMeta):
               )
 
     def get_hotel_group_view(self,
-            request: hotel_group_view_service.GetHotelGroupViewRequest = None,
+            request: Union[hotel_group_view_service.GetHotelGroupViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class HotelGroupViewServiceClient(metaclass=HotelGroupViewServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetHotelGroupViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetHotelGroupViewRequest, dict]):
                 The request object. Request message for
                 [HotelGroupViewService.GetHotelGroupView][google.ads.googleads.v7.services.HotelGroupViewService.GetHotelGroupView].
             resource_name (:class:`str`):

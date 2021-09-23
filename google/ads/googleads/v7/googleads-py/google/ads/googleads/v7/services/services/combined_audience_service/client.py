@@ -326,7 +326,7 @@ class CombinedAudienceServiceClient(metaclass=CombinedAudienceServiceClientMeta)
               )
 
     def get_combined_audience(self,
-            request: combined_audience_service.GetCombinedAudienceRequest = None,
+            request: Union[combined_audience_service.GetCombinedAudienceRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -340,7 +340,7 @@ class CombinedAudienceServiceClient(metaclass=CombinedAudienceServiceClientMeta)
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCombinedAudienceRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCombinedAudienceRequest, dict]):
                 The request object. Request message for
                 [CombinedAudienceService.GetCombinedAudience][google.ads.googleads.v7.services.CombinedAudienceService.GetCombinedAudience].
             resource_name (:class:`str`):

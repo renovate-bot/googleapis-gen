@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -331,7 +331,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
             )
 
     def get_resource(self,
-            request: httpbody_pb2.HttpBody = None,
+            request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -341,7 +341,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         Kubernetes API Server.
 
         Args:
-            request (google.api.httpbody_pb2.HttpBody):
+            request (Union[google.api.httpbody_pb2.HttpBody, dict]):
                 The request object. Message that represents an arbitrary
                 HTTP body. It should only be used for payload formats
                 that can't be represented as JSON, such as raw binary or
@@ -464,7 +464,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         return response
 
     def post_resource(self,
-            request: httpbody_pb2.HttpBody = None,
+            request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -474,7 +474,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         API Server.
 
         Args:
-            request (google.api.httpbody_pb2.HttpBody):
+            request (Union[google.api.httpbody_pb2.HttpBody, dict]):
                 The request object. Message that represents an arbitrary
                 HTTP body. It should only be used for payload formats
                 that can't be represented as JSON, such as raw binary or
@@ -597,7 +597,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         return response
 
     def delete_resource(self,
-            request: httpbody_pb2.HttpBody = None,
+            request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -607,7 +607,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         Kubernetes API Server.
 
         Args:
-            request (google.api.httpbody_pb2.HttpBody):
+            request (Union[google.api.httpbody_pb2.HttpBody, dict]):
                 The request object. Message that represents an arbitrary
                 HTTP body. It should only be used for payload formats
                 that can't be represented as JSON, such as raw binary or
@@ -730,7 +730,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         return response
 
     def put_resource(self,
-            request: httpbody_pb2.HttpBody = None,
+            request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -740,7 +740,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         API Server.
 
         Args:
-            request (google.api.httpbody_pb2.HttpBody):
+            request (Union[google.api.httpbody_pb2.HttpBody, dict]):
                 The request object. Message that represents an arbitrary
                 HTTP body. It should only be used for payload formats
                 that can't be represented as JSON, such as raw binary or
@@ -863,7 +863,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         return response
 
     def patch_resource(self,
-            request: httpbody_pb2.HttpBody = None,
+            request: Union[httpbody_pb2.HttpBody, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -873,7 +873,7 @@ class GatewayServiceClient(metaclass=GatewayServiceClientMeta):
         Kubernetes API Server.
 
         Args:
-            request (google.api.httpbody_pb2.HttpBody):
+            request (Union[google.api.httpbody_pb2.HttpBody, dict]):
                 The request object. Message that represents an arbitrary
                 HTTP body. It should only be used for payload formats
                 that can't be represented as JSON, such as raw binary or

@@ -321,7 +321,7 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
               )
 
     def get_topic_constant(self,
-            request: topic_constant_service.GetTopicConstantRequest = None,
+            request: Union[topic_constant_service.GetTopicConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetTopicConstantRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetTopicConstantRequest, dict]):
                 The request object. Request message for
                 [TopicConstantService.GetTopicConstant][google.ads.googleads.v7.services.TopicConstantService.GetTopicConstant].
             resource_name (:class:`str`):

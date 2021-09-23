@@ -344,7 +344,7 @@ class AdGroupExtensionSettingServiceClient(metaclass=AdGroupExtensionSettingServ
               )
 
     def get_ad_group_extension_setting(self,
-            request: ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest = None,
+            request: Union[ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -358,7 +358,7 @@ class AdGroupExtensionSettingServiceClient(metaclass=AdGroupExtensionSettingServ
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetAdGroupExtensionSettingRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetAdGroupExtensionSettingRequest, dict]):
                 The request object. Request message for
                 [AdGroupExtensionSettingService.GetAdGroupExtensionSetting][google.ads.googleads.v7.services.AdGroupExtensionSettingService.GetAdGroupExtensionSetting].
             resource_name (:class:`str`):
@@ -420,7 +420,7 @@ class AdGroupExtensionSettingServiceClient(metaclass=AdGroupExtensionSettingServ
         return response
 
     def mutate_ad_group_extension_settings(self,
-            request: ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest = None,
+            request: Union[ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[ad_group_extension_setting_service.AdGroupExtensionSettingOperation] = None,
@@ -446,7 +446,7 @@ class AdGroupExtensionSettingServiceClient(metaclass=AdGroupExtensionSettingServ
         `UrlFieldError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupExtensionSettingsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateAdGroupExtensionSettingsRequest, dict]):
                 The request object. Request message for
                 [AdGroupExtensionSettingService.MutateAdGroupExtensionSettings][google.ads.googleads.v7.services.AdGroupExtensionSettingService.MutateAdGroupExtensionSettings].
             customer_id (:class:`str`):

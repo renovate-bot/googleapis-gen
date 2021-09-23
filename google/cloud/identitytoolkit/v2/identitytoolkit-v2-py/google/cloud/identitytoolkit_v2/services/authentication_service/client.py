@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -325,7 +325,7 @@ class AuthenticationServiceClient(metaclass=AuthenticationServiceClientMeta):
             )
 
     def finalize_mfa_sign_in(self,
-            request: authentication_service.FinalizeMfaSignInRequest = None,
+            request: Union[authentication_service.FinalizeMfaSignInRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -334,7 +334,7 @@ class AuthenticationServiceClient(metaclass=AuthenticationServiceClientMeta):
         r"""Verifies the MFA challenge and performs sign-in
 
         Args:
-            request (google.cloud.identitytoolkit_v2.types.FinalizeMfaSignInRequest):
+            request (Union[google.cloud.identitytoolkit_v2.types.FinalizeMfaSignInRequest, dict]):
                 The request object. Finalizes sign-in by verifying MFA
                 challenge.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -371,7 +371,7 @@ class AuthenticationServiceClient(metaclass=AuthenticationServiceClientMeta):
         return response
 
     def start_mfa_sign_in(self,
-            request: authentication_service.StartMfaSignInRequest = None,
+            request: Union[authentication_service.StartMfaSignInRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -380,7 +380,7 @@ class AuthenticationServiceClient(metaclass=AuthenticationServiceClientMeta):
         r"""Sends the MFA challenge
 
         Args:
-            request (google.cloud.identitytoolkit_v2.types.StartMfaSignInRequest):
+            request (Union[google.cloud.identitytoolkit_v2.types.StartMfaSignInRequest, dict]):
                 The request object. Starts multi-factor sign-in by
                 sending the multi-factor auth challenge.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

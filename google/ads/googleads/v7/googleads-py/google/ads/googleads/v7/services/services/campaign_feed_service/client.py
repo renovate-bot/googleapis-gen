@@ -345,7 +345,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
               )
 
     def get_campaign_feed(self,
-            request: campaign_feed_service.GetCampaignFeedRequest = None,
+            request: Union[campaign_feed_service.GetCampaignFeedRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -359,7 +359,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetCampaignFeedRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetCampaignFeedRequest, dict]):
                 The request object. Request message for
                 [CampaignFeedService.GetCampaignFeed][google.ads.googleads.v7.services.CampaignFeedService.GetCampaignFeed].
             resource_name (:class:`str`):
@@ -421,7 +421,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         return response
 
     def mutate_campaign_feeds(self,
-            request: campaign_feed_service.MutateCampaignFeedsRequest = None,
+            request: Union[campaign_feed_service.MutateCampaignFeedsRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[campaign_feed_service.CampaignFeedOperation] = None,
@@ -444,7 +444,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         `StringFormatError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.MutateCampaignFeedsRequest`):
+            request (Union[google.ads.googleads.v7.services.types.MutateCampaignFeedsRequest, dict]):
                 The request object. Request message for
                 [CampaignFeedService.MutateCampaignFeeds][google.ads.googleads.v7.services.CampaignFeedService.MutateCampaignFeeds].
             customer_id (:class:`str`):

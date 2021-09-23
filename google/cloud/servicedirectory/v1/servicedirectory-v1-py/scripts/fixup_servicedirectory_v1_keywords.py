@@ -39,25 +39,25 @@ def partition(
 class servicedirectoryCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_endpoint': ('parent', 'endpoint_id', 'endpoint', ),
-          'create_namespace': ('parent', 'namespace_id', 'namespace', ),
-          'create_service': ('parent', 'service_id', 'service', ),
-          'delete_endpoint': ('name', ),
-          'delete_namespace': ('name', ),
-          'delete_service': ('name', ),
-          'get_endpoint': ('name', ),
-          'get_iam_policy': ('resource', 'options', ),
-          'get_namespace': ('name', ),
-          'get_service': ('name', ),
-          'list_endpoints': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_namespaces': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_services': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'resolve_service': ('name', 'max_endpoints', 'endpoint_filter', ),
-          'set_iam_policy': ('resource', 'policy', ),
-          'test_iam_permissions': ('resource', 'permissions', ),
-          'update_endpoint': ('endpoint', 'update_mask', ),
-          'update_namespace': ('namespace', 'update_mask', ),
-          'update_service': ('service', 'update_mask', ),
+        'create_endpoint': ('parent', 'endpoint_id', 'endpoint', ),
+        'create_namespace': ('parent', 'namespace_id', 'namespace', ),
+        'create_service': ('parent', 'service_id', 'service', ),
+        'delete_endpoint': ('name', ),
+        'delete_namespace': ('name', ),
+        'delete_service': ('name', ),
+        'get_endpoint': ('name', ),
+        'get_iam_policy': ('resource', 'options', ),
+        'get_namespace': ('name', ),
+        'get_service': ('name', ),
+        'list_endpoints': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'list_namespaces': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'list_services': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+        'resolve_service': ('name', 'max_endpoints', 'endpoint_filter', ),
+        'set_iam_policy': ('resource', 'policy', ),
+        'test_iam_permissions': ('resource', 'permissions', ),
+        'update_endpoint': ('endpoint', 'update_mask', ),
+        'update_namespace': ('namespace', 'update_mask', ),
+        'update_service': ('service', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -76,7 +76,7 @@ class servicedirectoryCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

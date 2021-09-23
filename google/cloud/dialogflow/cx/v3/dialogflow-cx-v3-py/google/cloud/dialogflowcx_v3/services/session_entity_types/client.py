@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -341,7 +341,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
             )
 
     def list_session_entity_types(self,
-            request: session_entity_type.ListSessionEntityTypesRequest = None,
+            request: Union[session_entity_type.ListSessionEntityTypesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -352,7 +352,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         specified session.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.ListSessionEntityTypesRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.ListSessionEntityTypesRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.cx.v3.SessionEntityTypes.ListSessionEntityTypes].
             parent (str):
@@ -434,7 +434,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def get_session_entity_type(self,
-            request: session_entity_type.GetSessionEntityTypeRequest = None,
+            request: Union[session_entity_type.GetSessionEntityTypeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -444,7 +444,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         r"""Retrieves the specified session entity type.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.GetSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.GetSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.GetSessionEntityType].
             name (str):
@@ -527,7 +527,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def create_session_entity_type(self,
-            request: gcdc_session_entity_type.CreateSessionEntityTypeRequest = None,
+            request: Union[gcdc_session_entity_type.CreateSessionEntityTypeRequest, dict] = None,
             *,
             parent: str = None,
             session_entity_type: gcdc_session_entity_type.SessionEntityType = None,
@@ -538,7 +538,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         r"""Creates a session entity type.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.CreateSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.CreateSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.CreateSessionEntityType].
             parent (str):
@@ -631,7 +631,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def update_session_entity_type(self,
-            request: gcdc_session_entity_type.UpdateSessionEntityTypeRequest = None,
+            request: Union[gcdc_session_entity_type.UpdateSessionEntityTypeRequest, dict] = None,
             *,
             session_entity_type: gcdc_session_entity_type.SessionEntityType = None,
             update_mask: field_mask_pb2.FieldMask = None,
@@ -642,7 +642,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         r"""Updates the specified session entity type.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.UpdateSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.UpdateSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.UpdateSessionEntityType].
             session_entity_type (google.cloud.dialogflowcx_v3.types.SessionEntityType):
@@ -734,7 +734,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         return response
 
     def delete_session_entity_type(self,
-            request: session_entity_type.DeleteSessionEntityTypeRequest = None,
+            request: Union[session_entity_type.DeleteSessionEntityTypeRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -744,7 +744,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         r"""Deletes the specified session entity type.
 
         Args:
-            request (google.cloud.dialogflowcx_v3.types.DeleteSessionEntityTypeRequest):
+            request (Union[google.cloud.dialogflowcx_v3.types.DeleteSessionEntityTypeRequest, dict]):
                 The request object. The request message for
                 [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.cx.v3.SessionEntityTypes.DeleteSessionEntityType].
             name (str):

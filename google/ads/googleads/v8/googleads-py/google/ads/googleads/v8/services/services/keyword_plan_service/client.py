@@ -323,7 +323,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
               )
 
     def get_keyword_plan(self,
-            request: keyword_plan_service.GetKeywordPlanRequest = None,
+            request: Union[keyword_plan_service.GetKeywordPlanRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -337,7 +337,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetKeywordPlanRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetKeywordPlanRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanService.GetKeywordPlan][google.ads.googleads.v8.services.KeywordPlanService.GetKeywordPlan].
             resource_name (:class:`str`):
@@ -404,7 +404,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         return response
 
     def mutate_keyword_plans(self,
-            request: keyword_plan_service.MutateKeywordPlansRequest = None,
+            request: Union[keyword_plan_service.MutateKeywordPlansRequest, dict] = None,
             *,
             customer_id: str = None,
             operations: Sequence[keyword_plan_service.KeywordPlanOperation] = None,
@@ -423,7 +423,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         `ResourceCountLimitExceededError <>`__ `StringLengthError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.MutateKeywordPlansRequest`):
+            request (Union[google.ads.googleads.v8.services.types.MutateKeywordPlansRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanService.MutateKeywordPlans][google.ads.googleads.v8.services.KeywordPlanService.MutateKeywordPlans].
             customer_id (:class:`str`):
@@ -496,7 +496,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         return response
 
     def generate_forecast_curve(self,
-            request: keyword_plan_service.GenerateForecastCurveRequest = None,
+            request: Union[keyword_plan_service.GenerateForecastCurveRequest, dict] = None,
             *,
             keyword_plan: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -516,7 +516,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateForecastCurveRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateForecastCurveRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanService.GenerateForecastCurve][google.ads.googleads.v8.services.KeywordPlanService.GenerateForecastCurve].
             keyword_plan (:class:`str`):
@@ -580,7 +580,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         return response
 
     def generate_forecast_time_series(self,
-            request: keyword_plan_service.GenerateForecastTimeSeriesRequest = None,
+            request: Union[keyword_plan_service.GenerateForecastTimeSeriesRequest, dict] = None,
             *,
             keyword_plan: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -601,7 +601,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateForecastTimeSeriesRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateForecastTimeSeriesRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanService.GenerateForecastTimeSeries][google.ads.googleads.v8.services.KeywordPlanService.GenerateForecastTimeSeries].
             keyword_plan (:class:`str`):
@@ -665,7 +665,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         return response
 
     def generate_forecast_metrics(self,
-            request: keyword_plan_service.GenerateForecastMetricsRequest = None,
+            request: Union[keyword_plan_service.GenerateForecastMetricsRequest, dict] = None,
             *,
             keyword_plan: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -680,7 +680,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateForecastMetricsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateForecastMetricsRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanService.GenerateForecastMetrics][google.ads.googleads.v8.services.KeywordPlanService.GenerateForecastMetrics].
             keyword_plan (:class:`str`):
@@ -744,7 +744,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         return response
 
     def generate_historical_metrics(self,
-            request: keyword_plan_service.GenerateHistoricalMetricsRequest = None,
+            request: Union[keyword_plan_service.GenerateHistoricalMetricsRequest, dict] = None,
             *,
             keyword_plan: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -759,7 +759,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateHistoricalMetricsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateHistoricalMetricsRequest, dict]):
                 The request object. Request message for
                 [KeywordPlanService.GenerateHistoricalMetrics][google.ads.googleads.v8.services.KeywordPlanService.GenerateHistoricalMetrics].
             keyword_plan (:class:`str`):

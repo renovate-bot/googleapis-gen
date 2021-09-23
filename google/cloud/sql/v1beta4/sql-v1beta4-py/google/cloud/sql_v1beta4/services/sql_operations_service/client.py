@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -327,7 +327,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
             )
 
     def get(self,
-            request: cloud_sql.SqlOperationsGetRequest = None,
+            request: Union[cloud_sql.SqlOperationsGetRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -337,7 +337,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
         performed on an instance.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlOperationsGetRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlOperationsGetRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -378,7 +378,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
         return response
 
     def list(self,
-            request: cloud_sql.SqlOperationsListRequest = None,
+            request: Union[cloud_sql.SqlOperationsListRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -389,7 +389,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
         chronological order of the start time.
 
         Args:
-            request (google.cloud.sql_v1beta4.types.SqlOperationsListRequest):
+            request (Union[google.cloud.sql_v1beta4.types.SqlOperationsListRequest, dict]):
                 The request object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

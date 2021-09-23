@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -363,7 +363,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
             )
 
     def get_device(self,
-            request: smart_device_management_service.GetDeviceRequest = None,
+            request: Union[smart_device_management_service.GetDeviceRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -372,7 +372,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         r"""Gets a device managed by the enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.GetDeviceRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.GetDeviceRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.GetDevice
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -420,7 +420,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         return response
 
     def list_devices(self,
-            request: smart_device_management_service.ListDevicesRequest = None,
+            request: Union[smart_device_management_service.ListDevicesRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -429,7 +429,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         r"""Lists devices managed by the enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.ListDevicesRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.ListDevicesRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ListDevices
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -488,7 +488,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         return response
 
     def execute_device_command(self,
-            request: smart_device_management_service.ExecuteDeviceCommandRequest = None,
+            request: Union[smart_device_management_service.ExecuteDeviceCommandRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -498,7 +498,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ExecuteDeviceCommand
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -545,7 +545,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         return response
 
     def get_structure(self,
-            request: smart_device_management_service.GetStructureRequest = None,
+            request: Union[smart_device_management_service.GetStructureRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -554,7 +554,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         r"""Gets a structure managed by the enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.GetStructureRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.GetStructureRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.GetStructure
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -602,7 +602,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         return response
 
     def list_structures(self,
-            request: smart_device_management_service.ListStructuresRequest = None,
+            request: Union[smart_device_management_service.ListStructuresRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -611,7 +611,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         r"""Lists structures managed by the enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.ListStructuresRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.ListStructuresRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ListStructures
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -670,7 +670,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         return response
 
     def get_room(self,
-            request: smart_device_management_service.GetRoomRequest = None,
+            request: Union[smart_device_management_service.GetRoomRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -679,7 +679,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         r"""Gets a room managed by the enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.GetRoomRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.GetRoomRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.GetRoom
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -728,7 +728,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         return response
 
     def list_rooms(self,
-            request: smart_device_management_service.ListRoomsRequest = None,
+            request: Union[smart_device_management_service.ListRoomsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -737,7 +737,7 @@ class SmartDeviceManagementServiceClient(metaclass=SmartDeviceManagementServiceC
         r"""Lists rooms managed by the enterprise.
 
         Args:
-            request (google.home.enterprise.sdm_v1.types.ListRoomsRequest):
+            request (Union[google.home.enterprise.sdm_v1.types.ListRoomsRequest, dict]):
                 The request object. Request message for
                 SmartDeviceManagementService.ListRooms
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

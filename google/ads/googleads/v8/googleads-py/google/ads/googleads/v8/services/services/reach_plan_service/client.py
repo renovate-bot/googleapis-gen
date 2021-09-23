@@ -316,7 +316,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
               )
 
     def list_plannable_locations(self,
-            request: reach_plan_service.ListPlannableLocationsRequest = None,
+            request: Union[reach_plan_service.ListPlannableLocationsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -330,7 +330,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListPlannableLocationsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListPlannableLocationsRequest, dict]):
                 The request object. Request message for
                 [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -367,7 +367,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         return response
 
     def list_plannable_products(self,
-            request: reach_plan_service.ListPlannableProductsRequest = None,
+            request: Union[reach_plan_service.ListPlannableProductsRequest, dict] = None,
             *,
             plannable_location_id: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -382,7 +382,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.ListPlannableProductsRequest`):
+            request (Union[google.ads.googleads.v8.services.types.ListPlannableProductsRequest, dict]):
                 The request object. Request to list available products
                 in a given location.
             plannable_location_id (:class:`str`):
@@ -440,7 +440,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         return response
 
     def generate_product_mix_ideas(self,
-            request: reach_plan_service.GenerateProductMixIdeasRequest = None,
+            request: Union[reach_plan_service.GenerateProductMixIdeasRequest, dict] = None,
             *,
             customer_id: str = None,
             plannable_location_id: str = None,
@@ -460,7 +460,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateProductMixIdeasRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateProductMixIdeasRequest, dict]):
                 The request object. Request message for
                 [ReachPlanService.GenerateProductMixIdeas][google.ads.googleads.v8.services.ReachPlanService.GenerateProductMixIdeas].
             customer_id (:class:`str`):
@@ -549,7 +549,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         return response
 
     def generate_reach_forecast(self,
-            request: reach_plan_service.GenerateReachForecastRequest = None,
+            request: Union[reach_plan_service.GenerateReachForecastRequest, dict] = None,
             *,
             customer_id: str = None,
             campaign_duration: reach_plan_service.CampaignDuration = None,
@@ -566,7 +566,7 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
         `ReachPlanError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GenerateReachForecastRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GenerateReachForecastRequest, dict]):
                 The request object. Request message for
                 [ReachPlanService.GenerateReachForecast][google.ads.googleads.v8.services.ReachPlanService.GenerateReachForecast].
             customer_id (:class:`str`):

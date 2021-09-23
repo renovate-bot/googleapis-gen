@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -365,7 +365,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
             )
 
     def create_workflow_template(self,
-            request: workflow_templates.CreateWorkflowTemplateRequest = None,
+            request: Union[workflow_templates.CreateWorkflowTemplateRequest, dict] = None,
             *,
             parent: str = None,
             template: workflow_templates.WorkflowTemplate = None,
@@ -376,7 +376,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         r"""Creates new workflow template.
 
         Args:
-            request (google.cloud.dataproc_v1.types.CreateWorkflowTemplateRequest):
+            request (Union[google.cloud.dataproc_v1.types.CreateWorkflowTemplateRequest, dict]):
                 The request object. A request to create a workflow
                 template.
             parent (str):
@@ -460,7 +460,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         return response
 
     def get_workflow_template(self,
-            request: workflow_templates.GetWorkflowTemplateRequest = None,
+            request: Union[workflow_templates.GetWorkflowTemplateRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -472,7 +472,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         specifying optional version parameter.
 
         Args:
-            request (google.cloud.dataproc_v1.types.GetWorkflowTemplateRequest):
+            request (Union[google.cloud.dataproc_v1.types.GetWorkflowTemplateRequest, dict]):
                 The request object. A request to fetch a workflow
                 template.
             name (str):
@@ -548,7 +548,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         return response
 
     def instantiate_workflow_template(self,
-            request: workflow_templates.InstantiateWorkflowTemplateRequest = None,
+            request: Union[workflow_templates.InstantiateWorkflowTemplateRequest, dict] = None,
             *,
             name: str = None,
             parameters: Sequence[workflow_templates.InstantiateWorkflowTemplateRequest.ParametersEntry] = None,
@@ -579,7 +579,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         be [Empty][google.protobuf.Empty].
 
         Args:
-            request (google.cloud.dataproc_v1.types.InstantiateWorkflowTemplateRequest):
+            request (Union[google.cloud.dataproc_v1.types.InstantiateWorkflowTemplateRequest, dict]):
                 The request object. A request to instantiate a workflow
                 template.
             name (str):
@@ -689,7 +689,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         return response
 
     def instantiate_inline_workflow_template(self,
-            request: workflow_templates.InstantiateInlineWorkflowTemplateRequest = None,
+            request: Union[workflow_templates.InstantiateInlineWorkflowTemplateRequest, dict] = None,
             *,
             parent: str = None,
             template: workflow_templates.WorkflowTemplate = None,
@@ -725,7 +725,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         be [Empty][google.protobuf.Empty].
 
         Args:
-            request (google.cloud.dataproc_v1.types.InstantiateInlineWorkflowTemplateRequest):
+            request (Union[google.cloud.dataproc_v1.types.InstantiateInlineWorkflowTemplateRequest, dict]):
                 The request object. A request to instantiate an inline
                 workflow template.
             parent (str):
@@ -832,7 +832,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         return response
 
     def update_workflow_template(self,
-            request: workflow_templates.UpdateWorkflowTemplateRequest = None,
+            request: Union[workflow_templates.UpdateWorkflowTemplateRequest, dict] = None,
             *,
             template: workflow_templates.WorkflowTemplate = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -844,7 +844,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         server version.
 
         Args:
-            request (google.cloud.dataproc_v1.types.UpdateWorkflowTemplateRequest):
+            request (Union[google.cloud.dataproc_v1.types.UpdateWorkflowTemplateRequest, dict]):
                 The request object. A request to update a workflow
                 template.
             template (google.cloud.dataproc_v1.types.WorkflowTemplate):
@@ -911,7 +911,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         return response
 
     def list_workflow_templates(self,
-            request: workflow_templates.ListWorkflowTemplatesRequest = None,
+            request: Union[workflow_templates.ListWorkflowTemplatesRequest, dict] = None,
             *,
             parent: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -922,7 +922,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         the request.
 
         Args:
-            request (google.cloud.dataproc_v1.types.ListWorkflowTemplatesRequest):
+            request (Union[google.cloud.dataproc_v1.types.ListWorkflowTemplatesRequest, dict]):
                 The request object. A request to list workflow templates
                 in a project.
             parent (str):
@@ -1009,7 +1009,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         return response
 
     def delete_workflow_template(self,
-            request: workflow_templates.DeleteWorkflowTemplateRequest = None,
+            request: Union[workflow_templates.DeleteWorkflowTemplateRequest, dict] = None,
             *,
             name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -1020,7 +1020,7 @@ class WorkflowTemplateServiceClient(metaclass=WorkflowTemplateServiceClientMeta)
         rogress workflows.
 
         Args:
-            request (google.cloud.dataproc_v1.types.DeleteWorkflowTemplateRequest):
+            request (Union[google.cloud.dataproc_v1.types.DeleteWorkflowTemplateRequest, dict]):
                 The request object. A request to delete a workflow
                 template.
                 Currently started workflows will remain running.

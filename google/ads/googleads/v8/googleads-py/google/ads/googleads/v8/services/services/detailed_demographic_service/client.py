@@ -322,7 +322,7 @@ class DetailedDemographicServiceClient(metaclass=DetailedDemographicServiceClien
               )
 
     def get_detailed_demographic(self,
-            request: detailed_demographic_service.GetDetailedDemographicRequest = None,
+            request: Union[detailed_demographic_service.GetDetailedDemographicRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -333,7 +333,7 @@ class DetailedDemographicServiceClient(metaclass=DetailedDemographicServiceClien
         detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetDetailedDemographicRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetDetailedDemographicRequest, dict]):
                 The request object. Request message for
                 [DetailedDemographicService.GetDetailedDemographic][google.ads.googleads.v8.services.DetailedDemographicService.GetDetailedDemographic].
             resource_name (:class:`str`):

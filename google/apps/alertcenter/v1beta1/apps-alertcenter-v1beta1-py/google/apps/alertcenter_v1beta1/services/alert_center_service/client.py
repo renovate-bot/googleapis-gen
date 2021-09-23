@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -327,7 +327,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
             )
 
     def list_alerts(self,
-            request: alertcenter.ListAlertsRequest = None,
+            request: Union[alertcenter.ListAlertsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -336,7 +336,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         r"""Lists the alerts.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.ListAlertsRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.ListAlertsRequest, dict]):
                 The request object. An alert listing request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -386,7 +386,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def get_alert(self,
-            request: alertcenter.GetAlertRequest = None,
+            request: Union[alertcenter.GetAlertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -396,7 +396,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         returns ``NOT_FOUND`` error.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.GetAlertRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.GetAlertRequest, dict]):
                 The request object. Request for a specific alert.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -432,7 +432,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def delete_alert(self,
-            request: alertcenter.DeleteAlertRequest = None,
+            request: Union[alertcenter.DeleteAlertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -445,7 +445,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         nonexistent alert for deletion results in a ``NOT_FOUND`` error.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.DeleteAlertRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.DeleteAlertRequest, dict]):
                 The request object. A request to mark a specific alert
                 for deletion.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -475,7 +475,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         )
 
     def undelete_alert(self,
-            request: alertcenter.UndeleteAlertRequest = None,
+            request: Union[alertcenter.UndeleteAlertRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -489,7 +489,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         not been marked for deletion has no effect.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.UndeleteAlertRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.UndeleteAlertRequest, dict]):
                 The request object. A request to undelete a specific
                 alert that was marked for deletion.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -526,7 +526,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def create_alert_feedback(self,
-            request: alertcenter.CreateAlertFeedbackRequest = None,
+            request: Union[alertcenter.CreateAlertFeedbackRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -538,7 +538,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         deletion returns \`FAILED_PRECONDITION' error.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.CreateAlertFeedbackRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.CreateAlertFeedbackRequest, dict]):
                 The request object. A request to create a new alert
                 feedback.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -575,7 +575,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def list_alert_feedback(self,
-            request: alertcenter.ListAlertFeedbackRequest = None,
+            request: Union[alertcenter.ListAlertFeedbackRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -585,7 +585,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         feedbacks for a non-existent alert returns ``NOT_FOUND`` error.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.ListAlertFeedbackRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.ListAlertFeedbackRequest, dict]):
                 The request object. An alert feedback listing request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -623,7 +623,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def get_alert_metadata(self,
-            request: alertcenter.GetAlertMetadataRequest = None,
+            request: Union[alertcenter.GetAlertMetadataRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -633,7 +633,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         a non-existent alert returns ``NOT_FOUND`` error.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.GetAlertMetadataRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.GetAlertMetadataRequest, dict]):
                 The request object. Get the alert metadata.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -669,7 +669,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def get_settings(self,
-            request: alertcenter.GetSettingsRequest = None,
+            request: Union[alertcenter.GetSettingsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -678,7 +678,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         r"""Returns customer-level settings.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.GetSettingsRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.GetSettingsRequest, dict]):
                 The request object. Get the customer level settings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -714,7 +714,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def update_settings(self,
-            request: alertcenter.UpdateSettingsRequest = None,
+            request: Union[alertcenter.UpdateSettingsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -723,7 +723,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         r"""Updates the customer-level settings.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.UpdateSettingsRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.UpdateSettingsRequest, dict]):
                 The request object. Update the customer level settings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -759,7 +759,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def batch_delete_alerts(self,
-            request: alertcenter.BatchDeleteAlertsRequest = None,
+            request: Union[alertcenter.BatchDeleteAlertsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -768,7 +768,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         r"""Performs batch delete operation on alerts.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.BatchDeleteAlertsRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.BatchDeleteAlertsRequest, dict]):
                 The request object. A request to perform batch delete on
                 alerts.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -807,7 +807,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         return response
 
     def batch_undelete_alerts(self,
-            request: alertcenter.BatchUndeleteAlertsRequest = None,
+            request: Union[alertcenter.BatchUndeleteAlertsRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -816,7 +816,7 @@ class AlertCenterServiceClient(metaclass=AlertCenterServiceClientMeta):
         r"""Performs batch undelete operation on alerts.
 
         Args:
-            request (google.apps.alertcenter_v1beta1.types.BatchUndeleteAlertsRequest):
+            request (Union[google.apps.alertcenter_v1beta1.types.BatchUndeleteAlertsRequest, dict]):
                 The request object. A request to perform batch undelete
                 on alerts.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

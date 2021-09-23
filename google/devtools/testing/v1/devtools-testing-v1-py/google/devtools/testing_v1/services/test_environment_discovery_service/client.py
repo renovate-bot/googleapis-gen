@@ -17,7 +17,7 @@ from collections import OrderedDict
 from distutils import util
 import os
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
@@ -360,7 +360,7 @@ class TestEnvironmentDiscoveryServiceClient(metaclass=TestEnvironmentDiscoverySe
             )
 
     def get_test_environment_catalog(self,
-            request: test_environment_discovery.GetTestEnvironmentCatalogRequest = None,
+            request: Union[test_environment_discovery.GetTestEnvironmentCatalogRequest, dict] = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -375,7 +375,7 @@ class TestEnvironmentDiscoveryServiceClient(metaclass=TestEnvironmentDiscoverySe
         -  INTERNAL - if an internal error occurred
 
         Args:
-            request (google.devtools.testing_v1.types.GetTestEnvironmentCatalogRequest):
+            request (Union[google.devtools.testing_v1.types.GetTestEnvironmentCatalogRequest, dict]):
                 The request object. Request to list the currently
                 supported values for an environment type.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

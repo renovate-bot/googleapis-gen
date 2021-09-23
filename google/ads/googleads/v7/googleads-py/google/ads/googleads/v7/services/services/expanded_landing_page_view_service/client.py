@@ -321,7 +321,7 @@ class ExpandedLandingPageViewServiceClient(metaclass=ExpandedLandingPageViewServ
               )
 
     def get_expanded_landing_page_view(self,
-            request: expanded_landing_page_view_service.GetExpandedLandingPageViewRequest = None,
+            request: Union[expanded_landing_page_view_service.GetExpandedLandingPageViewRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class ExpandedLandingPageViewServiceClient(metaclass=ExpandedLandingPageViewServ
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v7.services.types.GetExpandedLandingPageViewRequest`):
+            request (Union[google.ads.googleads.v7.services.types.GetExpandedLandingPageViewRequest, dict]):
                 The request object. Request message for
                 [ExpandedLandingPageViewService.GetExpandedLandingPageView][google.ads.googleads.v7.services.ExpandedLandingPageViewService.GetExpandedLandingPageView].
             resource_name (:class:`str`):

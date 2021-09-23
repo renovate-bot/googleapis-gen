@@ -324,7 +324,7 @@ class AdGroupSimulationServiceClient(metaclass=AdGroupSimulationServiceClientMet
               )
 
     def get_ad_group_simulation(self,
-            request: ad_group_simulation_service.GetAdGroupSimulationRequest = None,
+            request: Union[ad_group_simulation_service.GetAdGroupSimulationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -338,7 +338,7 @@ class AdGroupSimulationServiceClient(metaclass=AdGroupSimulationServiceClientMet
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetAdGroupSimulationRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetAdGroupSimulationRequest, dict]):
                 The request object. Request message for
                 [AdGroupSimulationService.GetAdGroupSimulation][google.ads.googleads.v8.services.AdGroupSimulationService.GetAdGroupSimulation].
             resource_name (:class:`str`):

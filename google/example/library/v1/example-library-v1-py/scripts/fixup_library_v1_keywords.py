@@ -39,17 +39,17 @@ def partition(
 class libraryCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_book': ('parent', 'book', ),
-          'create_shelf': ('shelf', ),
-          'delete_book': ('name', ),
-          'delete_shelf': ('name', ),
-          'get_book': ('name', ),
-          'get_shelf': ('name', ),
-          'list_books': ('parent', 'page_size', 'page_token', ),
-          'list_shelves': ('page_size', 'page_token', ),
-          'merge_shelves': ('name', 'other_shelf', ),
-          'move_book': ('name', 'other_shelf_name', ),
-          'update_book': ('book', 'update_mask', ),
+        'create_book': ('parent', 'book', ),
+        'create_shelf': ('shelf', ),
+        'delete_book': ('name', ),
+        'delete_shelf': ('name', ),
+        'get_book': ('name', ),
+        'get_shelf': ('name', ),
+        'list_books': ('parent', 'page_size', 'page_token', ),
+        'list_shelves': ('page_size', 'page_token', ),
+        'merge_shelves': ('name', 'other_shelf', ),
+        'move_book': ('name', 'other_shelf_name', ),
+        'update_book': ('book', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -68,7 +68,7 @@ class libraryCallTransformer(cst.CSTTransformer):
             return updated
 
         kwargs, ctrl_kwargs = partition(
-            lambda a: not a.keyword.value in self.CTRL_PARAMS,
+            lambda a: a.keyword.value not in self.CTRL_PARAMS,
             kwargs
         )
 

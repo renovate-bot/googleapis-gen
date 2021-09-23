@@ -321,7 +321,7 @@ class MobileAppCategoryConstantServiceClient(metaclass=MobileAppCategoryConstant
               )
 
     def get_mobile_app_category_constant(self,
-            request: mobile_app_category_constant_service.GetMobileAppCategoryConstantRequest = None,
+            request: Union[mobile_app_category_constant_service.GetMobileAppCategoryConstantRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class MobileAppCategoryConstantServiceClient(metaclass=MobileAppCategoryConstant
         `InternalError <>`__ `QuotaError <>`__ `RequestError <>`__
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetMobileAppCategoryConstantRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetMobileAppCategoryConstantRequest, dict]):
                 The request object. Request message for
                 [MobileAppCategoryConstantService.GetMobileAppCategoryConstant][google.ads.googleads.v8.services.MobileAppCategoryConstantService.GetMobileAppCategoryConstant].
             resource_name (:class:`str`):

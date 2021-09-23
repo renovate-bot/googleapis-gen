@@ -324,7 +324,7 @@ class CampaignSimulationServiceClient(metaclass=CampaignSimulationServiceClientM
               )
 
     def get_campaign_simulation(self,
-            request: campaign_simulation_service.GetCampaignSimulationRequest = None,
+            request: Union[campaign_simulation_service.GetCampaignSimulationRequest, dict] = None,
             *,
             resource_name: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -335,7 +335,7 @@ class CampaignSimulationServiceClient(metaclass=CampaignSimulationServiceClientM
         detail.
 
         Args:
-            request (:class:`google.ads.googleads.v8.services.types.GetCampaignSimulationRequest`):
+            request (Union[google.ads.googleads.v8.services.types.GetCampaignSimulationRequest, dict]):
                 The request object. Request message for
                 [CampaignSimulationService.GetCampaignSimulation][google.ads.googleads.v8.services.CampaignSimulationService.GetCampaignSimulation].
             resource_name (:class:`str`):
