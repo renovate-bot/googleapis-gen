@@ -14,16 +14,16 @@
 # limitations under the License.
 #
 
-from google.devtools.artifactregistry_v1.services.artifact_registry.client import ArtifactRegistryClient
-from google.devtools.artifactregistry_v1.services.artifact_registry.async_client import ArtifactRegistryAsyncClient
+from google.cloud.artifactregistry_v1.services.artifact_registry.client import ArtifactRegistryClient
+from google.cloud.artifactregistry_v1.services.artifact_registry.async_client import ArtifactRegistryAsyncClient
 
-from google.devtools.artifactregistry_v1.types.artifact import DockerImage
-from google.devtools.artifactregistry_v1.types.artifact import ListDockerImagesRequest
-from google.devtools.artifactregistry_v1.types.artifact import ListDockerImagesResponse
-from google.devtools.artifactregistry_v1.types.repository import GetRepositoryRequest
-from google.devtools.artifactregistry_v1.types.repository import ListRepositoriesRequest
-from google.devtools.artifactregistry_v1.types.repository import ListRepositoriesResponse
-from google.devtools.artifactregistry_v1.types.repository import Repository
+from google.cloud.artifactregistry_v1.types.artifact import DockerImage
+from google.cloud.artifactregistry_v1.types.artifact import ListDockerImagesRequest
+from google.cloud.artifactregistry_v1.types.artifact import ListDockerImagesResponse
+from google.cloud.artifactregistry_v1.types.repository import GetRepositoryRequest
+from google.cloud.artifactregistry_v1.types.repository import ListRepositoriesRequest
+from google.cloud.artifactregistry_v1.types.repository import ListRepositoriesResponse
+from google.cloud.artifactregistry_v1.types.repository import Repository
 
 __all__ = ('ArtifactRegistryClient',
     'ArtifactRegistryAsyncClient',

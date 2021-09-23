@@ -140,7 +140,7 @@ class ListDockerImagesRequest(proto.Message):
 class ListDockerImagesResponse(proto.Message):
     r"""The response from listing docker images.
     Attributes:
-        docker_images (Sequence[google.devtools.artifactregistry_v1.types.DockerImage]):
+        docker_images (Sequence[google.cloud.artifactregistry_v1.types.DockerImage]):
             The docker images returned.
         next_page_token (str):
             The token to retrieve the next page of

@@ -26,9 +26,9 @@ from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
-from google.devtools.artifactregistry_v1.services.artifact_registry import pagers
-from google.devtools.artifactregistry_v1.types import artifact
-from google.devtools.artifactregistry_v1.types import repository
+from google.cloud.artifactregistry_v1.services.artifact_registry import pagers
+from google.cloud.artifactregistry_v1.types import artifact
+from google.cloud.artifactregistry_v1.types import repository
 from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ArtifactRegistryTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ArtifactRegistryGrpcAsyncIOTransport
@@ -172,7 +172,7 @@ class ArtifactRegistryAsyncClient:
         r"""Lists docker images.
 
         Args:
-            request (:class:`google.devtools.artifactregistry_v1.types.ListDockerImagesRequest`):
+            request (:class:`google.cloud.artifactregistry_v1.types.ListDockerImagesRequest`):
                 The request object. The request to list docker images.
             parent (:class:`str`):
                 Required. The name of the parent
@@ -189,7 +189,7 @@ class ArtifactRegistryAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.artifactregistry_v1.services.artifact_registry.pagers.ListDockerImagesAsyncPager:
+            google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListDockerImagesAsyncPager:
                 The response from listing docker
                 images.
                 Iterating over this object will yield
@@ -259,7 +259,7 @@ class ArtifactRegistryAsyncClient:
         r"""Lists repositories.
 
         Args:
-            request (:class:`google.devtools.artifactregistry_v1.types.ListRepositoriesRequest`):
+            request (:class:`google.cloud.artifactregistry_v1.types.ListRepositoriesRequest`):
                 The request object. The request to list repositories.
             parent (:class:`str`):
                 Required. The name of the parent
@@ -276,7 +276,7 @@ class ArtifactRegistryAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager:
+            google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesAsyncPager:
                 The response from listing
                 repositories.
                 Iterating over this object will yield
@@ -346,7 +346,7 @@ class ArtifactRegistryAsyncClient:
         r"""Gets a repository.
 
         Args:
-            request (:class:`google.devtools.artifactregistry_v1.types.GetRepositoryRequest`):
+            request (:class:`google.cloud.artifactregistry_v1.types.GetRepositoryRequest`):
                 The request object. The request to retrieve a
                 repository.
             name (:class:`str`):
@@ -363,7 +363,7 @@ class ArtifactRegistryAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.artifactregistry_v1.types.Repository:
+            google.cloud.artifactregistry_v1.types.Repository:
                 A Repository for storing artifacts
                 with a specific format.
 
@@ -417,7 +417,7 @@ class ArtifactRegistryAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-devtools-artifactregistry",
+            "google-cloud-artifact-registry",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

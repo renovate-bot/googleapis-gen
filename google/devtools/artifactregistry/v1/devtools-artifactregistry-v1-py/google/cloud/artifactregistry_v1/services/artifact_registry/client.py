@@ -30,9 +30,9 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.devtools.artifactregistry_v1.services.artifact_registry import pagers
-from google.devtools.artifactregistry_v1.types import artifact
-from google.devtools.artifactregistry_v1.types import repository
+from google.cloud.artifactregistry_v1.services.artifact_registry import pagers
+from google.cloud.artifactregistry_v1.types import artifact
+from google.cloud.artifactregistry_v1.types import repository
 from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ArtifactRegistryTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ArtifactRegistryGrpcTransport
@@ -372,7 +372,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists docker images.
 
         Args:
-            request (Union[google.devtools.artifactregistry_v1.types.ListDockerImagesRequest, dict]):
+            request (Union[google.cloud.artifactregistry_v1.types.ListDockerImagesRequest, dict]):
                 The request object. The request to list docker images.
             parent (str):
                 Required. The name of the parent
@@ -389,7 +389,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.artifactregistry_v1.services.artifact_registry.pagers.ListDockerImagesPager:
+            google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListDockerImagesPager:
                 The response from listing docker
                 images.
                 Iterating over this object will yield
@@ -459,7 +459,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Lists repositories.
 
         Args:
-            request (Union[google.devtools.artifactregistry_v1.types.ListRepositoriesRequest, dict]):
+            request (Union[google.cloud.artifactregistry_v1.types.ListRepositoriesRequest, dict]):
                 The request object. The request to list repositories.
             parent (str):
                 Required. The name of the parent
@@ -476,7 +476,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesPager:
+            google.cloud.artifactregistry_v1.services.artifact_registry.pagers.ListRepositoriesPager:
                 The response from listing
                 repositories.
                 Iterating over this object will yield
@@ -546,7 +546,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         r"""Gets a repository.
 
         Args:
-            request (Union[google.devtools.artifactregistry_v1.types.GetRepositoryRequest, dict]):
+            request (Union[google.cloud.artifactregistry_v1.types.GetRepositoryRequest, dict]):
                 The request object. The request to retrieve a
                 repository.
             name (str):
@@ -563,7 +563,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.devtools.artifactregistry_v1.types.Repository:
+            google.cloud.artifactregistry_v1.types.Repository:
                 A Repository for storing artifacts
                 with a specific format.
 
@@ -617,7 +617,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-devtools-artifactregistry",
+            "google-cloud-artifact-registry",
         ).version,
     )
 except pkg_resources.DistributionNotFound:

@@ -1,7 +1,7 @@
-Types for Google Devtools Artifactregistry v1 API
-=================================================
+Types for Google Cloud Artifactregistry v1 API
+==============================================
 
-.. automodule:: google.devtools.artifactregistry_v1.types
+.. automodule:: google.cloud.artifactregistry_v1.types
     :members:
     :undoc-members:
     :show-inheritance:

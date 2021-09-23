@@ -24,8 +24,8 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
-from google.devtools.artifactregistry_v1.types import artifact
-from google.devtools.artifactregistry_v1.types import repository
+from google.cloud.artifactregistry_v1.types import artifact
+from google.cloud.artifactregistry_v1.types import repository
 from .base import ArtifactRegistryTransport, DEFAULT_CLIENT_INFO
 
 

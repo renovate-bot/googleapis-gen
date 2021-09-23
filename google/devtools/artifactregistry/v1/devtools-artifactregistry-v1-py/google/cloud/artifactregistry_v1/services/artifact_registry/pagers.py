@@ -15,15 +15,15 @@
 #
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.devtools.artifactregistry_v1.types import artifact
-from google.devtools.artifactregistry_v1.types import repository
+from google.cloud.artifactregistry_v1.types import artifact
+from google.cloud.artifactregistry_v1.types import repository
 
 
 class ListDockerImagesPager:
     """A pager for iterating through ``list_docker_images`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.artifactregistry_v1.types.ListDockerImagesResponse` object, and
+    :class:`google.cloud.artifactregistry_v1.types.ListDockerImagesResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``docker_images`` field.
 
@@ -32,7 +32,7 @@ class ListDockerImagesPager:
     through the ``docker_images`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.artifactregistry_v1.types.ListDockerImagesResponse`
+    All the usual :class:`google.cloud.artifactregistry_v1.types.ListDockerImagesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -47,9 +47,9 @@ class ListDockerImagesPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.artifactregistry_v1.types.ListDockerImagesRequest):
+            request (google.cloud.artifactregistry_v1.types.ListDockerImagesRequest):
                 The initial request object.
-            response (google.devtools.artifactregistry_v1.types.ListDockerImagesResponse):
+            response (google.cloud.artifactregistry_v1.types.ListDockerImagesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -82,7 +82,7 @@ class ListDockerImagesAsyncPager:
     """A pager for iterating through ``list_docker_images`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.artifactregistry_v1.types.ListDockerImagesResponse` object, and
+    :class:`google.cloud.artifactregistry_v1.types.ListDockerImagesResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``docker_images`` field.
 
@@ -91,7 +91,7 @@ class ListDockerImagesAsyncPager:
     through the ``docker_images`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.artifactregistry_v1.types.ListDockerImagesResponse`
+    All the usual :class:`google.cloud.artifactregistry_v1.types.ListDockerImagesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -106,9 +106,9 @@ class ListDockerImagesAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.artifactregistry_v1.types.ListDockerImagesRequest):
+            request (google.cloud.artifactregistry_v1.types.ListDockerImagesRequest):
                 The initial request object.
-            response (google.devtools.artifactregistry_v1.types.ListDockerImagesResponse):
+            response (google.cloud.artifactregistry_v1.types.ListDockerImagesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -145,7 +145,7 @@ class ListRepositoriesPager:
     """A pager for iterating through ``list_repositories`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.artifactregistry_v1.types.ListRepositoriesResponse` object, and
+    :class:`google.cloud.artifactregistry_v1.types.ListRepositoriesResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``repositories`` field.
 
@@ -154,7 +154,7 @@ class ListRepositoriesPager:
     through the ``repositories`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.artifactregistry_v1.types.ListRepositoriesResponse`
+    All the usual :class:`google.cloud.artifactregistry_v1.types.ListRepositoriesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -169,9 +169,9 @@ class ListRepositoriesPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.artifactregistry_v1.types.ListRepositoriesRequest):
+            request (google.cloud.artifactregistry_v1.types.ListRepositoriesRequest):
                 The initial request object.
-            response (google.devtools.artifactregistry_v1.types.ListRepositoriesResponse):
+            response (google.cloud.artifactregistry_v1.types.ListRepositoriesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -204,7 +204,7 @@ class ListRepositoriesAsyncPager:
     """A pager for iterating through ``list_repositories`` requests.
 
     This class thinly wraps an initial
-    :class:`google.devtools.artifactregistry_v1.types.ListRepositoriesResponse` object, and
+    :class:`google.cloud.artifactregistry_v1.types.ListRepositoriesResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``repositories`` field.
 
@@ -213,7 +213,7 @@ class ListRepositoriesAsyncPager:
     through the ``repositories`` field on the
     corresponding responses.
 
-    All the usual :class:`google.devtools.artifactregistry_v1.types.ListRepositoriesResponse`
+    All the usual :class:`google.cloud.artifactregistry_v1.types.ListRepositoriesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -228,9 +228,9 @@ class ListRepositoriesAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.devtools.artifactregistry_v1.types.ListRepositoriesRequest):
+            request (google.cloud.artifactregistry_v1.types.ListRepositoriesRequest):
                 The initial request object.
-            response (google.devtools.artifactregistry_v1.types.ListRepositoriesResponse):
+            response (google.cloud.artifactregistry_v1.types.ListRepositoriesResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.

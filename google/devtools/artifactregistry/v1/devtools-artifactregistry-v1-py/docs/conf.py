@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-devtools-artifactregistry documentation build configuration file
+# google-cloud-artifact-registry documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-devtools-artifactregistry"
+project = u"google-cloud-artifact-registry"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -146,7 +146,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Devtools Client Libraries for Python",
+    "description": "Google Cloud Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-devtools-artifactregistry-doc"
+htmlhelp_basename = "google-cloud-artifact-registry-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-devtools-artifactregistry.tex",
-        u"google-devtools-artifactregistry Documentation",
+        "google-cloud-artifact-registry.tex",
+        u"google-cloud-artifact-registry Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-devtools-artifactregistry",
-        u"Google Devtools Artifactregistry Documentation",
+        "google-cloud-artifact-registry",
+        u"Google Cloud Artifactregistry Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-devtools-artifactregistry",
-        u"google-devtools-artifactregistry Documentation",
+        "google-cloud-artifact-registry",
+        u"google-cloud-artifact-registry Documentation",
         author,
-        "google-devtools-artifactregistry",
-        "GAPIC library for Google Devtools Artifactregistry API",
+        "google-cloud-artifact-registry",
+        "GAPIC library for Google Cloud Artifactregistry API",
         "APIs",
     )
 ]

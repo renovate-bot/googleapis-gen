@@ -36,13 +36,13 @@ class Repository(proto.Message):
             The name of the repository, for example:
             "projects/p1/locations/us-
             central1/repositories/repo1".
-        format_ (google.devtools.artifactregistry_v1.types.Repository.Format):
+        format_ (google.cloud.artifactregistry_v1.types.Repository.Format):
             The format of packages that are stored in the
             repository.
         description (str):
             The user-provided description of the
             repository.
-        labels (Sequence[google.devtools.artifactregistry_v1.types.Repository.LabelsEntry]):
+        labels (Sequence[google.cloud.artifactregistry_v1.types.Repository.LabelsEntry]):
             Labels with user-defined metadata.
             This field may contain up to 64 entries. Label
             keys and values may be no longer than 63
@@ -137,7 +137,7 @@ class ListRepositoriesRequest(proto.Message):
 class ListRepositoriesResponse(proto.Message):
     r"""The response from listing repositories.
     Attributes:
-        repositories (Sequence[google.devtools.artifactregistry_v1.types.Repository]):
+        repositories (Sequence[google.cloud.artifactregistry_v1.types.Repository]):
             The repositories returned.
         next_page_token (str):
             The token to retrieve the next page of

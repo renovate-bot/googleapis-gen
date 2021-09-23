@@ -1,5 +1,5 @@
-Services for Google Devtools Artifactregistry v1 API
-====================================================
+Services for Google Cloud Artifactregistry v1 API
+=================================================
 .. toctree::
     :maxdepth: 2
 

@@ -26,13 +26,13 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
-from google.devtools.artifactregistry_v1.types import artifact
-from google.devtools.artifactregistry_v1.types import repository
+from google.cloud.artifactregistry_v1.types import artifact
+from google.cloud.artifactregistry_v1.types import repository
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-devtools-artifactregistry',
+            'google-cloud-artifact-registry',
         ).version,
     )
 except pkg_resources.DistributionNotFound:
