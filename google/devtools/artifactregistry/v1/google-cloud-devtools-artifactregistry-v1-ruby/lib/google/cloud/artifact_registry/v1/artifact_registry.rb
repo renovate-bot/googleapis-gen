@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/devtools/artifactregistry/v1/version"
+require "google/cloud/artifact_registry/v1/version"
 
 require "google/cloud/artifact_registry/v1/artifact_registry/credentials"
 require "google/cloud/artifact_registry/v1/artifact_registry/paths"

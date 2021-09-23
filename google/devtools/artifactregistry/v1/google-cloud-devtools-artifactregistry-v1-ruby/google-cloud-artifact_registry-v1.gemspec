@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/devtools/artifactregistry/v1/version", __dir__)
+require File.expand_path("lib/google/cloud/artifact_registry/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-devtools-artifactregistry-v1"
-  gem.version       = Google::Cloud::Devtools::Artifactregistry::V1::VERSION
+  gem.name          = "google-cloud-artifact_registry-v1"
+  gem.version       = Google::Cloud::ArtifactRegistry::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-devtools-artifactregistry-v1 is the official client library for the Google Cloud Devtools Artifactregistry V1 API. Note that google-cloud-devtools-artifactregistry-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-devtools-artifactregistry instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Devtools Artifactregistry V1 API"
+  gem.description   = "Artifact Registry stores and manages build artifacts in a scalable and integrated service built on Google infrastructure. Note that google-cloud-artifact_registry-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-artifact_registry instead. See the readme for more details."
+  gem.summary       = "API Client library for the Artifact Registry V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

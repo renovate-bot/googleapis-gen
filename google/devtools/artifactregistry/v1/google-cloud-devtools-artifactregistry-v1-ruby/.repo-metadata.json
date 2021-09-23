@@ -1,10 +1,15 @@
 {
-    "client_documentation": "https://googleapis.dev/ruby/google-cloud-devtools-artifactregistry-v1/latest",
-    "distribution_name": "google-cloud-devtools-artifactregistry-v1",
+    "api_id": "artifactregistry.googleapis.com",
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-artifact_registry-v1/latest",
+    "distribution_name": "google-cloud-artifact_registry-v1",
     "language": "ruby",
-    "name_pretty": "Google Cloud Devtools Artifactregistry V1 API",
+    "name": "artifactregistry",
+    "name_pretty": "Artifact Registry V1 API",
+    "product_documentation": "https://cloud.google.com/artifact-registry/",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
-    "ruby-cloud-description": "google-cloud-devtools-artifactregistry-v1 is the official client library for the Google Cloud Devtools Artifactregistry V1 API. Note that google-cloud-devtools-artifactregistry-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-devtools-artifactregistry instead. See the readme for more details.",
+    "ruby-cloud-description": "Artifact Registry stores and manages build artifacts in a scalable and integrated service built on Google infrastructure. Note that google-cloud-artifact_registry-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-artifact_registry instead. See the readme for more details.",
+    "ruby-cloud-env-prefix": "ARTIFACT_REGISTRY",
+    "ruby-cloud-product-url": "https://cloud.google.com/artifact-registry/",
     "library_type": "GAPIC_AUTO"
 }

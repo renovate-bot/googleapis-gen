@@ -30,9 +30,13 @@ module Google
               "https://www.googleapis.com/auth/cloud-platform.read-only"
             ]
             self.env_vars = [
+              "ARTIFACT_REGISTRY_CREDENTIALS",
+              "ARTIFACT_REGISTRY_KEYFILE",
               "GOOGLE_CLOUD_CREDENTIALS",
               "GOOGLE_CLOUD_KEYFILE",
               "GCLOUD_KEYFILE",
+              "ARTIFACT_REGISTRY_CREDENTIALS_JSON",
+              "ARTIFACT_REGISTRY_KEYFILE_JSON",
               "GOOGLE_CLOUD_CREDENTIALS_JSON",
               "GOOGLE_CLOUD_KEYFILE_JSON",
               "GCLOUD_KEYFILE_JSON"

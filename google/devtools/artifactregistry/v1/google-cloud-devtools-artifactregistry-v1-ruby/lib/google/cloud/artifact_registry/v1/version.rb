@@ -19,11 +19,9 @@
 
 module Google
   module Cloud
-    module Devtools
-      module Artifactregistry
-        module V1
-          VERSION = "0.0.1"
-        end
+    module ArtifactRegistry
+      module V1
+        VERSION = "0.0.1"
       end
     end
   end
