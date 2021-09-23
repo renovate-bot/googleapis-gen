@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Bigquery\Migration\V2alpha\Gapic;
+namespace Google\Cloud\BigQuery\Migration\V2alpha\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -36,17 +36,17 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Bigquery\Migration\V2alpha\CreateMigrationWorkflowRequest;
-use Google\Cloud\Bigquery\Migration\V2alpha\DeleteMigrationWorkflowRequest;
-use Google\Cloud\Bigquery\Migration\V2alpha\GetMigrationSubtaskRequest;
-use Google\Cloud\Bigquery\Migration\V2alpha\GetMigrationWorkflowRequest;
-use Google\Cloud\Bigquery\Migration\V2alpha\ListMigrationSubtasksRequest;
-use Google\Cloud\Bigquery\Migration\V2alpha\ListMigrationSubtasksResponse;
-use Google\Cloud\Bigquery\Migration\V2alpha\ListMigrationWorkflowsRequest;
-use Google\Cloud\Bigquery\Migration\V2alpha\ListMigrationWorkflowsResponse;
-use Google\Cloud\Bigquery\Migration\V2alpha\MigrationSubtask;
-use Google\Cloud\Bigquery\Migration\V2alpha\MigrationWorkflow;
-use Google\Cloud\Bigquery\Migration\V2alpha\StartMigrationWorkflowRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\CreateMigrationWorkflowRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\DeleteMigrationWorkflowRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\GetMigrationSubtaskRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\GetMigrationWorkflowRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\ListMigrationSubtasksRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\ListMigrationSubtasksResponse;
+use Google\Cloud\BigQuery\Migration\V2alpha\ListMigrationWorkflowsRequest;
+use Google\Cloud\BigQuery\Migration\V2alpha\ListMigrationWorkflowsResponse;
+use Google\Cloud\BigQuery\Migration\V2alpha\MigrationSubtask;
+use Google\Cloud\BigQuery\Migration\V2alpha\MigrationWorkflow;
+use Google\Cloud\BigQuery\Migration\V2alpha\StartMigrationWorkflowRequest;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
@@ -370,7 +370,7 @@ class MigrationServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Bigquery\Migration\V2alpha\MigrationWorkflow
+     * @return \Google\Cloud\BigQuery\Migration\V2alpha\MigrationWorkflow
      *
      * @throws ApiException if the remote call fails
      *
@@ -457,7 +457,7 @@ class MigrationServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Bigquery\Migration\V2alpha\MigrationSubtask
+     * @return \Google\Cloud\BigQuery\Migration\V2alpha\MigrationSubtask
      *
      * @throws ApiException if the remote call fails
      *
@@ -506,7 +506,7 @@ class MigrationServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Bigquery\Migration\V2alpha\MigrationWorkflow
+     * @return \Google\Cloud\BigQuery\Migration\V2alpha\MigrationWorkflow
      *
      * @throws ApiException if the remote call fails
      *

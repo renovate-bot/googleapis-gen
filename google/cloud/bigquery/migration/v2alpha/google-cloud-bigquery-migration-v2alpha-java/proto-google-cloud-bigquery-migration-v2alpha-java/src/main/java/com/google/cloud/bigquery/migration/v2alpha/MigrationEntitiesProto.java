@@ -80,7 +80,7 @@ public final class MigrationEntitiesProto {
       ".Timestamp\"r\n\005State\022\025\n\021STATE_UNSPECIFIED" +
       "\020\000\022\013\n\007PENDING\020\001\022\021\n\rORCHESTRATING\020\002\022\013\n\007RU" +
       "NNING\020\003\022\n\n\006PAUSED\020\004\022\r\n\tSUCCEEDED\020\005\022\n\n\006FA" +
-      "ILED\020\006\"\337\005\n\020MigrationSubtask\022\024\n\004name\030\001 \001(" +
+      "ILED\020\006\"\353\005\n\020MigrationSubtask\022\024\n\004name\030\001 \001(" +
       "\tB\006\340A\003\340A\005\022\017\n\007task_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\t" +
       "\022S\n\005state\030\005 \001(\0162?.google.cloud.bigquery." +
       "migration.v2alpha.MigrationSubtask.State" +
@@ -93,16 +93,19 @@ public final class MigrationEntitiesProto {
       "\020last_update_time\030\010 \001(\0132\032.google.protobu" +
       "f.Timestamp\022D\n\007metrics\030\013 \003(\01323.google.cl" +
       "oud.bigquery.migration.v2alpha.TimeSerie" +
-      "s\"R\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACT" +
+      "s\"^\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACT" +
       "IVE\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAI" +
-      "LED\020\004:\210\001\352A\204\001\n1bigquerymigration.googleap" +
-      "is.com/MigrationSubtask\022Oprojects/{proje" +
-      "ct}/locations/{location}/workflows/{work" +
-      "flow}/subtasks/{subtask}B\231\001\n+com.google." +
-      "cloud.bigquery.migration.v2alphaB\026Migrat" +
-      "ionEntitiesProtoP\001ZPgoogle.golang.org/ge" +
-      "nproto/googleapis/cloud/bigquery/migrati" +
-      "on/v2alpha;migrationb\006proto3"
+      "LED\020\004\022\n\n\006PAUSED\020\005:\210\001\352A\204\001\n1bigquerymigrat" +
+      "ion.googleapis.com/MigrationSubtask\022Opro" +
+      "jects/{project}/locations/{location}/wor" +
+      "kflows/{workflow}/subtasks/{subtask}B\355\001\n" +
+      "+com.google.cloud.bigquery.migration.v2a" +
+      "lphaB\026MigrationEntitiesProtoP\001ZPgoogle.g" +
+      "olang.org/genproto/googleapis/cloud/bigq" +
+      "uery/migration/v2alpha;migration\252\002\'Googl" +
+      "e.Cloud.BigQuery.Migration.V2Alpha\312\002\'Goo" +
+      "gle\\Cloud\\BigQuery\\Migration\\V2alphab\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -63,6 +63,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :RUNNING, 2
       value :SUCCEEDED, 3
       value :FAILED, 4
+      value :PAUSED, 5
     end
   end
 end

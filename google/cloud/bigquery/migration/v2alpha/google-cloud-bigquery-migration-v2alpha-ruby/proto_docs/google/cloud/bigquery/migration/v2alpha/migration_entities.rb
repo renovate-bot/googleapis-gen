@@ -201,6 +201,10 @@ module Google
 
               # The subtask finished unsuccessfully.
               FAILED = 4
+
+              # The subtask is paused, i.e., it will not be scheduled. If it was already
+              # assigned,it might still finish but no new lease renewals will be granted.
+              PAUSED = 5
             end
           end
         end

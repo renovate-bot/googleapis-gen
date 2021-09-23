@@ -26,7 +26,7 @@ class MigrationService
         \GPBMetadata\Google\Rpc\ErrorDetails::initOnce();
         $pool->internalAddGeneratedFile(
             '
-À
+”
 ?google/cloud/bigquery/migration/v2alpha/migration_service.proto\'google.cloud.bigquery.migration.v2alphagoogle/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto@google/cloud/bigquery/migration/v2alpha/migration_entities.protoEgoogle/cloud/bigquery/migration/v2alpha/migration_error_details.proto?google/cloud/bigquery/migration/v2alpha/migration_metrics.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/rpc/error_details.proto"¸
 CreateMigrationWorkflowRequest9
 parent (	B)àAúA#
@@ -74,8 +74,8 @@ page_token (	BàA
 DeleteMigrationWorkflowG.google.cloud.bigquery.migration.v2alpha.DeleteMigrationWorkflowRequest.google.protobuf.Empty"A‚Óä“4*2/v2alpha/{name=projects/*/locations/*/workflows/*}ÚAnameÄ
 StartMigrationWorkflowF.google.cloud.bigquery.migration.v2alpha.StartMigrationWorkflowRequest.google.protobuf.Empty"J‚Óä“="8/v2alpha/{name=projects/*/locations/*/workflows/*}:start:*ÚAnameã
 GetMigrationSubtaskC.google.cloud.bigquery.migration.v2alpha.GetMigrationSubtaskRequest9.google.cloud.bigquery.migration.v2alpha.MigrationSubtask"L‚Óä“?=/v2alpha/{name=projects/*/locations/*/workflows/*/subtasks/*}ÚAnameö
-ListMigrationSubtasksE.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksRequestF.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksResponse"N‚Óä“?=/v2alpha/{parent=projects/*/locations/*/workflows/*}/subtasksÚAparentTÊA bigquerymigration.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB˜
-+com.google.cloud.bigquery.migration.v2alphaBMigrationServiceProtoPZPgoogle.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha;migrationbproto3'
+ListMigrationSubtasksE.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksRequestF.google.cloud.bigquery.migration.v2alpha.ListMigrationSubtasksResponse"N‚Óä“?=/v2alpha/{parent=projects/*/locations/*/workflows/*}/subtasksÚAparentTÊA bigquerymigration.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBì
++com.google.cloud.bigquery.migration.v2alphaBMigrationServiceProtoPZPgoogle.golang.org/genproto/googleapis/cloud/bigquery/migration/v2alpha;migrationª\'Google.Cloud.BigQuery.Migration.V2AlphaÊ\'Google\\Cloud\\BigQuery\\Migration\\V2alphabproto3'
         , true);
 
         static::$is_initialized = true;

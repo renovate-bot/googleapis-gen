@@ -3,7 +3,7 @@
     "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
     "language": "php",
     "protoPackage": "google.cloud.bigquery.migration.v2alpha",
-    "libraryPackage": "Google\\Cloud\\Bigquery\\Migration\\V2alpha",
+    "libraryPackage": "Google\\Cloud\\BigQuery\\Migration\\V2alpha",
     "services": {
         "MigrationService": {
             "clients": {

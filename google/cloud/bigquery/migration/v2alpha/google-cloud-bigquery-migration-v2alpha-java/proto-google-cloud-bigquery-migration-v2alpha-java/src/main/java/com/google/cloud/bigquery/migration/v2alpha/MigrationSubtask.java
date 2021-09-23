@@ -234,6 +234,15 @@ private static final long serialVersionUID = 0L;
      * <code>FAILED = 4;</code>
      */
     FAILED(4),
+    /**
+     * <pre>
+     * The subtask is paused, i.e., it will not be scheduled. If it was already
+     * assigned,it might still finish but no new lease renewals will be granted.
+     * </pre>
+     *
+     * <code>PAUSED = 5;</code>
+     */
+    PAUSED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -277,6 +286,15 @@ private static final long serialVersionUID = 0L;
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+    /**
+     * <pre>
+     * The subtask is paused, i.e., it will not be scheduled. If it was already
+     * assigned,it might still finish but no new lease renewals will be granted.
+     * </pre>
+     *
+     * <code>PAUSED = 5;</code>
+     */
+    public static final int PAUSED_VALUE = 5;
 
 
     public final int getNumber() {
@@ -308,6 +326,7 @@ private static final long serialVersionUID = 0L;
         case 2: return RUNNING;
         case 3: return SUCCEEDED;
         case 4: return FAILED;
+        case 5: return PAUSED;
         default: return null;
       }
     }

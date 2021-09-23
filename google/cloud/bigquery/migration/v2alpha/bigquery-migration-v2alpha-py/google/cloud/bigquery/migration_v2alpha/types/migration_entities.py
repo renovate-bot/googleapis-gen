@@ -222,6 +222,7 @@ class MigrationSubtask(proto.Message):
         RUNNING = 2
         SUCCEEDED = 3
         FAILED = 4
+        PAUSED = 5
 
     name = proto.Field(
         proto.STRING,

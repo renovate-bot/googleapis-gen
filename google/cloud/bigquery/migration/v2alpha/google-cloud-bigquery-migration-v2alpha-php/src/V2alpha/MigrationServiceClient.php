@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Cloud\Bigquery\Migration\V2alpha;
+namespace Google\Cloud\BigQuery\Migration\V2alpha;
 
-use Google\Cloud\Bigquery\Migration\V2alpha\Gapic\MigrationServiceGapicClient;
+use Google\Cloud\BigQuery\Migration\V2alpha\Gapic\MigrationServiceGapicClient;
 
 /** {@inheritdoc} */
 class MigrationServiceClient extends MigrationServiceGapicClient

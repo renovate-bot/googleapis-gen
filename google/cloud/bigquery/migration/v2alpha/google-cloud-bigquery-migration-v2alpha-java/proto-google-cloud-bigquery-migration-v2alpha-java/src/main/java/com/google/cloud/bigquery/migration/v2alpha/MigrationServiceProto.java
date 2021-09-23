@@ -159,11 +159,13 @@ public final class MigrationServiceProto {
       "ions/*/workflows/*}/subtasks\332A\006parent\032T\312" +
       "A bigquerymigration.googleapis.com\322A.htt" +
       "ps://www.googleapis.com/auth/cloud-platf" +
-      "ormB\230\001\n+com.google.cloud.bigquery.migrat" +
+      "ormB\354\001\n+com.google.cloud.bigquery.migrat" +
       "ion.v2alphaB\025MigrationServiceProtoP\001ZPgo" +
       "ogle.golang.org/genproto/googleapis/clou" +
-      "d/bigquery/migration/v2alpha;migrationb\006" +
-      "proto3"
+      "d/bigquery/migration/v2alpha;migration\252\002" +
+      "\'Google.Cloud.BigQuery.Migration.V2Alpha" +
+      "\312\002\'Google\\Cloud\\BigQuery\\Migration\\V2alp" +
+      "hab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

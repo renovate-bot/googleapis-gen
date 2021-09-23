@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Bigquery\Migration\Tests\Unit\V2alpha;
+namespace Google\Cloud\BigQuery\Migration\Tests\Unit\V2alpha;
 
 use Google\ApiCore\ApiException;
 
@@ -28,11 +28,11 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
-use Google\Cloud\Bigquery\Migration\V2alpha\ListMigrationSubtasksResponse;
-use Google\Cloud\Bigquery\Migration\V2alpha\ListMigrationWorkflowsResponse;
-use Google\Cloud\Bigquery\Migration\V2alpha\MigrationServiceClient;
-use Google\Cloud\Bigquery\Migration\V2alpha\MigrationSubtask;
-use Google\Cloud\Bigquery\Migration\V2alpha\MigrationWorkflow;
+use Google\Cloud\BigQuery\Migration\V2alpha\ListMigrationSubtasksResponse;
+use Google\Cloud\BigQuery\Migration\V2alpha\ListMigrationWorkflowsResponse;
+use Google\Cloud\BigQuery\Migration\V2alpha\MigrationServiceClient;
+use Google\Cloud\BigQuery\Migration\V2alpha\MigrationSubtask;
+use Google\Cloud\BigQuery\Migration\V2alpha\MigrationWorkflow;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;
