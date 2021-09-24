@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, agent) {
-  // [START cx_create_agent_sample]
+  // [START cx_v3_generated_Agents_CreateAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, agent) {
   }
 
   createAgent();
-  // [END cx_create_agent_sample]
+  // [END cx_v3_generated_Agents_CreateAgent_async]
 }
 
 process.on('unhandledRejection', err => {

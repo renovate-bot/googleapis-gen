@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, plannableLocationId, currencyCode, budgetMicros) {
-  // [START googleads_generate_product_mix_ideas_sample]
+  // [START googleads_v7_generated_ReachPlanService_GenerateProductMixIdeas_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(customerId, plannableLocationId, currencyCode, budgetMicros) {
   }
 
   generateProductMixIdeas();
-  // [END googleads_generate_product_mix_ideas_sample]
+  // [END googleads_v7_generated_ReachPlanService_GenerateProductMixIdeas_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(writeOffset) {
-  // [START storage_write_object_sample]
+  // [START storage_v2_generated_Storage_WriteObject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -92,7 +92,7 @@ function main(writeOffset) {
   }
 
   writeObject();
-  // [END storage_write_object_sample]
+  // [END storage_v2_generated_Storage_WriteObject_async]
 }
 
 process.on('unhandledRejection', err => {

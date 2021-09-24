@@ -340,10 +340,6 @@ export class BudgetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createBudget(request);
- *
- * @example <caption>include:samples/generated/v1/budget_service.create_budget.js</caption>
- * region_tag:budgets_create_budget_sample
- *
  */
   createBudget(
       request?: protos.google.cloud.billing.budgets.v1.ICreateBudgetRequest,
@@ -427,10 +423,6 @@ export class BudgetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBudget(request);
- *
- * @example <caption>include:samples/generated/v1/budget_service.update_budget.js</caption>
- * region_tag:budgets_update_budget_sample
- *
  */
   updateBudget(
       request?: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
@@ -508,10 +500,6 @@ export class BudgetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBudget(request);
- *
- * @example <caption>include:samples/generated/v1/budget_service.get_budget.js</caption>
- * region_tag:budgets_get_budget_sample
- *
  */
   getBudget(
       request?: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
@@ -584,10 +572,6 @@ export class BudgetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBudget(request);
- *
- * @example <caption>include:samples/generated/v1/budget_service.delete_budget.js</caption>
- * region_tag:budgets_delete_budget_sample
- *
  */
   deleteBudget(
       request?: protos.google.cloud.billing.budgets.v1.IDeleteBudgetRequest,
@@ -677,10 +661,6 @@ export class BudgetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/budget_service.list_budgets.js</caption>
- * region_tag:budgets_list_budgets_sample
- *
  */
   listBudgets(
       request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
@@ -743,10 +723,6 @@ export class BudgetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/budget_service.list_budgets.js</caption>
- * region_tag:budgets_list_budgets_sample
- *
  */
   listBudgetsStream(
       request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
@@ -802,10 +778,6 @@ export class BudgetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/budget_service.list_budgets.js</caption>
- * region_tag:budgets_list_budgets_sample
- *
  */
   listBudgetsAsync(
       request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,

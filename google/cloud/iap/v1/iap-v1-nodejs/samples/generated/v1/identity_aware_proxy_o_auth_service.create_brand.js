@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, brand) {
-  // [START iap_create_brand_sample]
+  // [START iap_v1_generated_IdentityAwareProxyOAuthService_CreateBrand_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, brand) {
   }
 
   createBrand();
-  // [END iap_create_brand_sample]
+  // [END iap_v1_generated_IdentityAwareProxyOAuthService_CreateBrand_async]
 }
 
 process.on('unhandledRejection', err => {

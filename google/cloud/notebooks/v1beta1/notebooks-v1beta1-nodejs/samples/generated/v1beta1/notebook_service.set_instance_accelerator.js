@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, type, coreCount) {
-  // [START notebooks_set_instance_accelerator_sample]
+  // [START notebooks_v1beta1_generated_NotebookService_SetInstanceAccelerator_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name, type, coreCount) {
   }
 
   setInstanceAccelerator();
-  // [END notebooks_set_instance_accelerator_sample]
+  // [END notebooks_v1beta1_generated_NotebookService_SetInstanceAccelerator_async]
 }
 
 process.on('unhandledRejection', err => {

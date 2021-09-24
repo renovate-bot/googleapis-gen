@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, viewId, view) {
-  // [START logging_create_view_sample]
+  // [START logging_v2_generated_ConfigServiceV2_CreateView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent, viewId, view) {
   }
 
   createView();
-  // [END logging_create_view_sample]
+  // [END logging_v2_generated_ConfigServiceV2_CreateView_async]
 }
 
 process.on('unhandledRejection', err => {

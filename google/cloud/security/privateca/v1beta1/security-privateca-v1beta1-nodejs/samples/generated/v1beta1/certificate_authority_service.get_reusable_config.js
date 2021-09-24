@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START privateca_get_reusable_config_sample]
+  // [START privateca_v1beta1_generated_CertificateAuthorityService_GetReusableConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getReusableConfig();
-  // [END privateca_get_reusable_config_sample]
+  // [END privateca_v1beta1_generated_CertificateAuthorityService_GetReusableConfig_async]
 }
 
 process.on('unhandledRejection', err => {

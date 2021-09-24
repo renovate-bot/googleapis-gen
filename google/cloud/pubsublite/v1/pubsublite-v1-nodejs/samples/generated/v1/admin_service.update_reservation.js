@@ -16,7 +16,7 @@
 'use strict';
 
 function main(reservation, updateMask) {
-  // [START pubsublite_update_reservation_sample]
+  // [START pubsublite_v1_generated_AdminService_UpdateReservation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(reservation, updateMask) {
   }
 
   updateReservation();
-  // [END pubsublite_update_reservation_sample]
+  // [END pubsublite_v1_generated_AdminService_UpdateReservation_async]
 }
 
 process.on('unhandledRejection', err => {

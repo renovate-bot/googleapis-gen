@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START pubsublite_assign_partitions_sample]
+  // [START pubsublite_v1_generated_PartitionAssignmentService_AssignPartitions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   assignPartitions();
-  // [END pubsublite_assign_partitions_sample]
+  // [END pubsublite_v1_generated_PartitionAssignmentService_AssignPartitions_async]
 }
 
 process.on('unhandledRejection', err => {

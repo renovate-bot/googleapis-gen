@@ -16,7 +16,7 @@
 'use strict';
 
 function main(destinationBucket, destinationObject, sourceBucket, sourceObject) {
-  // [START storage_rewrite_object_sample]
+  // [START storage_v1_generated_Storage_RewriteObject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -169,7 +169,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   }
 
   rewriteObject();
-  // [END storage_rewrite_object_sample]
+  // [END storage_v1_generated_Storage_RewriteObject_async]
 }
 
 process.on('unhandledRejection', err => {

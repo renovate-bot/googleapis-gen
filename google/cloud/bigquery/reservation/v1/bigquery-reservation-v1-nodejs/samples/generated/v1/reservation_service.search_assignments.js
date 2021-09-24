@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START reservation_search_assignments_sample]
+  // [START reservation_v1_generated_ReservationService_SearchAssignments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(parent) {
   }
 
   searchAssignments();
-  // [END reservation_search_assignments_sample]
+  // [END reservation_v1_generated_ReservationService_SearchAssignments_async]
 }
 
 process.on('unhandledRejection', err => {

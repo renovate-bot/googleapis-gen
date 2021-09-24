@@ -431,10 +431,6 @@ export class DatastoreAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIndex(request);
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.get_index.js</caption>
- * region_tag:admin_get_index_sample
- *
  */
   getIndex(
       request?: protos.google.datastore.admin.v1.IGetIndexRequest,
@@ -540,10 +536,6 @@ export class DatastoreAdminClient {
  * @example
  * const [operation] = await client.exportEntities(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.export_entities.js</caption>
- * region_tag:admin_export_entities_sample
- *
  */
   exportEntities(
       request?: protos.google.datastore.admin.v1.IExportEntitiesRequest,
@@ -593,10 +585,6 @@ export class DatastoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.export_entities.js</caption>
- * region_tag:admin_export_entities_sample
- *
  */
   async checkExportEntitiesProgress(name: string): Promise<LROperation<protos.google.datastore.admin.v1.ExportEntitiesResponse, protos.google.datastore.admin.v1.ExportEntitiesMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -668,10 +656,6 @@ export class DatastoreAdminClient {
  * @example
  * const [operation] = await client.importEntities(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.import_entities.js</caption>
- * region_tag:admin_import_entities_sample
- *
  */
   importEntities(
       request?: protos.google.datastore.admin.v1.IImportEntitiesRequest,
@@ -721,10 +705,6 @@ export class DatastoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.import_entities.js</caption>
- * region_tag:admin_import_entities_sample
- *
  */
   async checkImportEntitiesProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.datastore.admin.v1.ImportEntitiesMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -787,10 +767,6 @@ export class DatastoreAdminClient {
  * @example
  * const [operation] = await client.createIndex(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.create_index.js</caption>
- * region_tag:admin_create_index_sample
- *
  */
   createIndex(
       request?: protos.google.datastore.admin.v1.ICreateIndexRequest,
@@ -840,10 +816,6 @@ export class DatastoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.create_index.js</caption>
- * region_tag:admin_create_index_sample
- *
  */
   async checkCreateIndexProgress(name: string): Promise<LROperation<protos.google.datastore.admin.v1.Index, protos.google.datastore.admin.v1.IndexOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -901,10 +873,6 @@ export class DatastoreAdminClient {
  * @example
  * const [operation] = await client.deleteIndex(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.delete_index.js</caption>
- * region_tag:admin_delete_index_sample
- *
  */
   deleteIndex(
       request?: protos.google.datastore.admin.v1.IDeleteIndexRequest,
@@ -954,10 +922,6 @@ export class DatastoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.delete_index.js</caption>
- * region_tag:admin_delete_index_sample
- *
  */
   async checkDeleteIndexProgress(name: string): Promise<LROperation<protos.google.datastore.admin.v1.Index, protos.google.datastore.admin.v1.IndexOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1013,10 +977,6 @@ export class DatastoreAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.list_indexes.js</caption>
- * region_tag:admin_list_indexes_sample
- *
  */
   listIndexes(
       request?: protos.google.datastore.admin.v1.IListIndexesRequest,
@@ -1077,10 +1037,6 @@ export class DatastoreAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.list_indexes.js</caption>
- * region_tag:admin_list_indexes_sample
- *
  */
   listIndexesStream(
       request?: protos.google.datastore.admin.v1.IListIndexesRequest,
@@ -1134,10 +1090,6 @@ export class DatastoreAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/datastore_admin.list_indexes.js</caption>
- * region_tag:admin_list_indexes_sample
- *
  */
   listIndexesAsync(
       request?: protos.google.datastore.admin.v1.IListIndexesRequest,

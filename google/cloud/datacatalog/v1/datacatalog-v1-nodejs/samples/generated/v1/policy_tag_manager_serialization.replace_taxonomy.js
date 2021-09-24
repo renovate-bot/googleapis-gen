@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, serializedTaxonomy) {
-  // [START datacatalog_replace_taxonomy_sample]
+  // [START datacatalog_v1_generated_PolicyTagManagerSerialization_ReplaceTaxonomy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name, serializedTaxonomy) {
   }
 
   replaceTaxonomy();
-  // [END datacatalog_replace_taxonomy_sample]
+  // [END datacatalog_v1_generated_PolicyTagManagerSerialization_ReplaceTaxonomy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -314,10 +314,6 @@ export class PlayableLocationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.samplePlayableLocations(request);
- *
- * @example <caption>include:samples/generated/v3/playable_locations.sample_playable_locations.js</caption>
- * region_tag:playablelocations_sample_playable_locations_sample
- *
  */
   samplePlayableLocations(
       request?: protos.google.maps.playablelocations.v3.ISamplePlayableLocationsRequest,
@@ -397,10 +393,6 @@ export class PlayableLocationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.logPlayerReports(request);
- *
- * @example <caption>include:samples/generated/v3/playable_locations.log_player_reports.js</caption>
- * region_tag:playablelocations_log_player_reports_sample
- *
  */
   logPlayerReports(
       request?: protos.google.maps.playablelocations.v3.ILogPlayerReportsRequest,
@@ -481,10 +473,6 @@ export class PlayableLocationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.logImpressions(request);
- *
- * @example <caption>include:samples/generated/v3/playable_locations.log_impressions.js</caption>
- * region_tag:playablelocations_log_impressions_sample
- *
  */
   logImpressions(
       request?: protos.google.maps.playablelocations.v3.ILogImpressionsRequest,

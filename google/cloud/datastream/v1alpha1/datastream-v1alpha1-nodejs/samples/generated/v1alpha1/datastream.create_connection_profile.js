@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, connectionProfileId, connectionProfile) {
-  // [START datastream_create_connection_profile_sample]
+  // [START datastream_v1alpha1_generated_Datastream_CreateConnectionProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent, connectionProfileId, connectionProfile) {
   }
 
   createConnectionProfile();
-  // [END datastream_create_connection_profile_sample]
+  // [END datastream_v1alpha1_generated_Datastream_CreateConnectionProfile_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START secretmanager_disable_secret_version_sample]
+  // [START secretmanager_v1_generated_SecretManagerService_DisableSecretVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   disableSecretVersion();
-  // [END secretmanager_disable_secret_version_sample]
+  // [END secretmanager_v1_generated_SecretManagerService_DisableSecretVersion_async]
 }
 
 process.on('unhandledRejection', err => {

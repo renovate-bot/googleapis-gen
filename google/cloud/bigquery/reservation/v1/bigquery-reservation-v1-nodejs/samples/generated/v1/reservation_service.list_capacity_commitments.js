@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START reservation_list_capacity_commitments_sample]
+  // [START reservation_v1_generated_ReservationService_ListCapacityCommitments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent) {
   }
 
   listCapacityCommitments();
-  // [END reservation_list_capacity_commitments_sample]
+  // [END reservation_v1_generated_ReservationService_ListCapacityCommitments_async]
 }
 
 process.on('unhandledRejection', err => {

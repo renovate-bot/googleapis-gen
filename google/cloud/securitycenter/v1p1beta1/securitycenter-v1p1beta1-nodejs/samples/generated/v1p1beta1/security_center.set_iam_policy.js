@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START securitycenter_set_iam_policy_sample]
+  // [START securitycenter_v1p1beta1_generated_SecurityCenter_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END securitycenter_set_iam_policy_sample]
+  // [END securitycenter_v1p1beta1_generated_SecurityCenter_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

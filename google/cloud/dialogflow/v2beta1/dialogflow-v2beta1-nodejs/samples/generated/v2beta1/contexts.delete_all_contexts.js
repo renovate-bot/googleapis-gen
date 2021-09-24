@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_delete_all_contexts_sample]
+  // [START dialogflow_v2beta1_generated_Contexts_DeleteAllContexts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent) {
   }
 
   deleteAllContexts();
-  // [END dialogflow_delete_all_contexts_sample]
+  // [END dialogflow_v2beta1_generated_Contexts_DeleteAllContexts_async]
 }
 
 process.on('unhandledRejection', err => {

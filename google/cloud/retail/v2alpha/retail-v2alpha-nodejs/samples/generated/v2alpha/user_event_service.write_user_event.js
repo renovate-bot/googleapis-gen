@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, userEvent) {
-  // [START retail_write_user_event_sample]
+  // [START retail_v2alpha_generated_UserEventService_WriteUserEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, userEvent) {
   }
 
   writeUserEvent();
-  // [END retail_write_user_event_sample]
+  // [END retail_v2alpha_generated_UserEventService_WriteUserEvent_async]
 }
 
 process.on('unhandledRejection', err => {

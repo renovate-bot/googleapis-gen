@@ -16,7 +16,7 @@
 'use strict';
 
 function main(uri, threatTypes) {
-  // [START webrisk_search_uris_sample]
+  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_SearchUris_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(uri, threatTypes) {
   }
 
   searchUris();
-  // [END webrisk_search_uris_sample]
+  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_SearchUris_async]
 }
 
 process.on('unhandledRejection', err => {

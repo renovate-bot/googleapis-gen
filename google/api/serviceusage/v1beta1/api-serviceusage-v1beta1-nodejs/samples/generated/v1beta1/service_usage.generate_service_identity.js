@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_generate_service_identity_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_GenerateServiceIdentity_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main() {
   }
 
   generateServiceIdentity();
-  // [END serviceusage_generate_service_identity_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_GenerateServiceIdentity_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datafusion_upgrade_instance_sample]
+  // [START datafusion_v1beta1_generated_DataFusion_UpgradeInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   upgradeInstance();
-  // [END datafusion_upgrade_instance_sample]
+  // [END datafusion_v1beta1_generated_DataFusion_UpgradeInstance_async]
 }
 
 process.on('unhandledRejection', err => {

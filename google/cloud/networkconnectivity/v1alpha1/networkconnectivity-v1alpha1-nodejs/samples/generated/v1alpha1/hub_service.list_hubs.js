@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START networkconnectivity_list_hubs_sample]
+  // [START networkconnectivity_v1alpha1_generated_HubService_ListHubs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listHubs();
-  // [END networkconnectivity_list_hubs_sample]
+  // [END networkconnectivity_v1alpha1_generated_HubService_ListHubs_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START publish_batch_delete_photos_sample]
+  // [START publish_v1_generated_StreetViewPublishService_BatchDeletePhotos_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   batchDeletePhotos();
-  // [END publish_batch_delete_photos_sample]
+  // [END publish_v1_generated_StreetViewPublishService_BatchDeletePhotos_async]
 }
 
 process.on('unhandledRejection', err => {

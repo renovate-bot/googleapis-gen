@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket) {
-  // [START storage_insert_default_object_access_control_sample]
+  // [START storage_v1_generated_Storage_InsertDefaultObjectAccessControl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(bucket) {
   }
 
   insertDefaultObjectAccessControl();
-  // [END storage_insert_default_object_access_control_sample]
+  // [END storage_v1_generated_Storage_InsertDefaultObjectAccessControl_async]
 }
 
 process.on('unhandledRejection', err => {

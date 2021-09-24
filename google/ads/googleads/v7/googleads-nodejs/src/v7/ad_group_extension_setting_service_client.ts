@@ -690,10 +690,6 @@ export class AdGroupExtensionSettingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupExtensionSetting(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_extension_setting_service.get_ad_group_extension_setting.js</caption>
- * region_tag:googleads_get_ad_group_extension_setting_sample
- *
  */
   getAdGroupExtensionSetting(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupExtensionSettingRequest,
@@ -808,10 +804,6 @@ export class AdGroupExtensionSettingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupExtensionSettings(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_extension_setting_service.mutate_ad_group_extension_settings.js</caption>
- * region_tag:googleads_mutate_ad_group_extension_settings_sample
- *
  */
   mutateAdGroupExtensionSettings(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupExtensionSettingsRequest,

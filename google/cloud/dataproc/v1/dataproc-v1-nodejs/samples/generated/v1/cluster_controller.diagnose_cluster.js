@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, region, clusterName) {
-  // [START dataproc_diagnose_cluster_sample]
+  // [START dataproc_v1_generated_ClusterController_DiagnoseCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(projectId, region, clusterName) {
   }
 
   diagnoseCluster();
-  // [END dataproc_diagnose_cluster_sample]
+  // [END dataproc_v1_generated_ClusterController_DiagnoseCluster_async]
 }
 
 process.on('unhandledRejection', err => {

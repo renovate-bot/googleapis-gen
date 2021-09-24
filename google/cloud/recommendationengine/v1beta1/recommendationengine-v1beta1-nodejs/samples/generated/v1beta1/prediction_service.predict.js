@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, userEvent) {
-  // [START recommendationengine_predict_sample]
+  // [START recommendationengine_v1beta1_generated_PredictionService_Predict_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -133,7 +133,7 @@ function main(name, userEvent) {
   }
 
   predict();
-  // [END recommendationengine_predict_sample]
+  // [END recommendationengine_v1beta1_generated_PredictionService_Predict_async]
 }
 
 process.on('unhandledRejection', err => {

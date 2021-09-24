@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_ad_group_bid_modifier_sample]
+  // [START googleads_v8_generated_AdGroupBidModifierService_GetAdGroupBidModifier_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getAdGroupBidModifier();
-  // [END googleads_get_ad_group_bid_modifier_sample]
+  // [END googleads_v8_generated_AdGroupBidModifierService_GetAdGroupBidModifier_async]
 }
 
 process.on('unhandledRejection', err => {

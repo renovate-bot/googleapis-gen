@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_list_accessible_customers_sample]
+  // [START googleads_v7_generated_CustomerService_ListAccessibleCustomers_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -38,7 +38,7 @@ function main() {
   }
 
   listAccessibleCustomers();
-  // [END googleads_list_accessible_customers_sample]
+  // [END googleads_v7_generated_CustomerService_ListAccessibleCustomers_async]
 }
 
 process.on('unhandledRejection', err => {

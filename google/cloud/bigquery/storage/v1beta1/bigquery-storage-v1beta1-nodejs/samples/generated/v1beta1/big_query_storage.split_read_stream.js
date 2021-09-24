@@ -16,7 +16,7 @@
 'use strict';
 
 function main(originalStream) {
-  // [START storage_split_read_stream_sample]
+  // [START storage_v1beta1_generated_BigQueryStorage_SplitReadStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(originalStream) {
   }
 
   splitReadStream();
-  // [END storage_split_read_stream_sample]
+  // [END storage_v1beta1_generated_BigQueryStorage_SplitReadStream_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START networkconnectivity_get_spoke_sample]
+  // [START networkconnectivity_v1alpha1_generated_HubService_GetSpoke_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getSpoke();
-  // [END networkconnectivity_get_spoke_sample]
+  // [END networkconnectivity_v1alpha1_generated_HubService_GetSpoke_async]
 }
 
 process.on('unhandledRejection', err => {

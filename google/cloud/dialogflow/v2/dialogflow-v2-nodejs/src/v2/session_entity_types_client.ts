@@ -446,10 +446,6 @@ export class SessionEntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSessionEntityType(request);
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.get_session_entity_type.js</caption>
- * region_tag:dialogflow_get_session_entity_type_sample
- *
  */
   getSessionEntityType(
       request?: protos.google.cloud.dialogflow.v2.IGetSessionEntityTypeRequest,
@@ -535,10 +531,6 @@ export class SessionEntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSessionEntityType(request);
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.create_session_entity_type.js</caption>
- * region_tag:dialogflow_create_session_entity_type_sample
- *
  */
   createSessionEntityType(
       request?: protos.google.cloud.dialogflow.v2.ICreateSessionEntityTypeRequest,
@@ -616,10 +608,6 @@ export class SessionEntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSessionEntityType(request);
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.update_session_entity_type.js</caption>
- * region_tag:dialogflow_update_session_entity_type_sample
- *
  */
   updateSessionEntityType(
       request?: protos.google.cloud.dialogflow.v2.IUpdateSessionEntityTypeRequest,
@@ -701,10 +689,6 @@ export class SessionEntityTypesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSessionEntityType(request);
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.delete_session_entity_type.js</caption>
- * region_tag:dialogflow_delete_session_entity_type_sample
- *
  */
   deleteSessionEntityType(
       request?: protos.google.cloud.dialogflow.v2.IDeleteSessionEntityTypeRequest,
@@ -795,10 +779,6 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.list_session_entity_types.js</caption>
- * region_tag:dialogflow_list_session_entity_types_sample
- *
  */
   listSessionEntityTypes(
       request?: protos.google.cloud.dialogflow.v2.IListSessionEntityTypesRequest,
@@ -863,10 +843,6 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.list_session_entity_types.js</caption>
- * region_tag:dialogflow_list_session_entity_types_sample
- *
  */
   listSessionEntityTypesStream(
       request?: protos.google.cloud.dialogflow.v2.IListSessionEntityTypesRequest,
@@ -924,10 +900,6 @@ export class SessionEntityTypesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/session_entity_types.list_session_entity_types.js</caption>
- * region_tag:dialogflow_list_session_entity_types_sample
- *
  */
   listSessionEntityTypesAsync(
       request?: protos.google.cloud.dialogflow.v2.IListSessionEntityTypesRequest,

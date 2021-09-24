@@ -720,10 +720,6 @@ export class TopicViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTopicView(request);
- *
- * @example <caption>include:samples/generated/v8/topic_view_service.get_topic_view.js</caption>
- * region_tag:googleads_get_topic_view_sample
- *
  */
   getTopicView(
       request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,

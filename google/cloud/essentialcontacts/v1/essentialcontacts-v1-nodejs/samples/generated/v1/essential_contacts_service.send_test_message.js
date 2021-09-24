@@ -16,7 +16,7 @@
 'use strict';
 
 function main(contacts, resource, notificationCategory) {
-  // [START essentialcontacts_send_test_message_sample]
+  // [START essentialcontacts_v1_generated_EssentialContactsService_SendTestMessage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(contacts, resource, notificationCategory) {
   }
 
   sendTestMessage();
-  // [END essentialcontacts_send_test_message_sample]
+  // [END essentialcontacts_v1_generated_EssentialContactsService_SendTestMessage_async]
 }
 
 process.on('unhandledRejection', err => {

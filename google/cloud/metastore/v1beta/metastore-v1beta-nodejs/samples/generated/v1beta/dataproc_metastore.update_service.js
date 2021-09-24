@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, service) {
-  // [START metastore_update_service_sample]
+  // [START metastore_v1beta_generated_DataprocMetastore_UpdateService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(updateMask, service) {
   }
 
   updateService();
-  // [END metastore_update_service_sample]
+  // [END metastore_v1beta_generated_DataprocMetastore_UpdateService_async]
 }
 
 process.on('unhandledRejection', err => {

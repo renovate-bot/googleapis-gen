@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START reservation_split_capacity_commitment_sample]
+  // [START reservation_v1_generated_ReservationService_SplitCapacityCommitment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   splitCapacityCommitment();
-  // [END reservation_split_capacity_commitment_sample]
+  // [END reservation_v1_generated_ReservationService_SplitCapacityCommitment_async]
 }
 
 process.on('unhandledRejection', err => {

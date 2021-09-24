@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_switch_runtime_sample]
+  // [START notebooks_v1_generated_ManagedNotebookService_SwitchRuntime_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name) {
   }
 
   switchRuntime();
-  // [END notebooks_switch_runtime_sample]
+  // [END notebooks_v1_generated_ManagedNotebookService_SwitchRuntime_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_create_authorized_certificate_sample]
+  // [START appengine_v1_generated_AuthorizedCertificates_CreateAuthorizedCertificate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   createAuthorizedCertificate();
-  // [END appengine_create_authorized_certificate_sample]
+  // [END appengine_v1_generated_AuthorizedCertificates_CreateAuthorizedCertificate_async]
 }
 
 process.on('unhandledRejection', err => {

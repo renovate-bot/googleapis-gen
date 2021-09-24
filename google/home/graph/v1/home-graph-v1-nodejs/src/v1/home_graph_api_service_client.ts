@@ -336,10 +336,6 @@ export class HomeGraphApiServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.requestSyncDevices(request);
- *
- * @example <caption>include:samples/generated/v1/home_graph_api_service.request_sync_devices.js</caption>
- * region_tag:graph_request_sync_devices_sample
- *
  */
   requestSyncDevices(
       request?: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
@@ -432,10 +428,6 @@ export class HomeGraphApiServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportStateAndNotification(request);
- *
- * @example <caption>include:samples/generated/v1/home_graph_api_service.report_state_and_notification.js</caption>
- * region_tag:graph_report_state_and_notification_sample
- *
  */
   reportStateAndNotification(
       request?: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
@@ -513,10 +505,6 @@ export class HomeGraphApiServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAgentUser(request);
- *
- * @example <caption>include:samples/generated/v1/home_graph_api_service.delete_agent_user.js</caption>
- * region_tag:graph_delete_agent_user_sample
- *
  */
   deleteAgentUser(
       request?: protos.google.home.graph.v1.IDeleteAgentUserRequest,
@@ -599,10 +587,6 @@ export class HomeGraphApiServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.query(request);
- *
- * @example <caption>include:samples/generated/v1/home_graph_api_service.query.js</caption>
- * region_tag:graph_query_sample
- *
  */
   query(
       request?: protos.google.home.graph.v1.IQueryRequest,
@@ -674,10 +658,6 @@ export class HomeGraphApiServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.sync(request);
- *
- * @example <caption>include:samples/generated/v1/home_graph_api_service.sync.js</caption>
- * region_tag:graph_sync_sample
- *
  */
   sync(
       request?: protos.google.home.graph.v1.ISyncRequest,

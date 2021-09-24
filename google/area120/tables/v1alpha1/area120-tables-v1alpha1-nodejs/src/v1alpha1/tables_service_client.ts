@@ -357,10 +357,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTable(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.get_table.js</caption>
- * region_tag:tables_get_table_sample
- *
  */
   getTable(
       request?: protos.google.area120.tables.v1alpha1.IGetTableRequest,
@@ -433,10 +429,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getWorkspace(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.get_workspace.js</caption>
- * region_tag:tables_get_workspace_sample
- *
  */
   getWorkspace(
       request?: protos.google.area120.tables.v1alpha1.IGetWorkspaceRequest,
@@ -512,10 +504,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRow(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.get_row.js</caption>
- * region_tag:tables_get_row_sample
- *
  */
   getRow(
       request?: protos.google.area120.tables.v1alpha1.IGetRowRequest,
@@ -593,10 +581,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createRow(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.create_row.js</caption>
- * region_tag:tables_create_row_sample
- *
  */
   createRow(
       request?: protos.google.area120.tables.v1alpha1.ICreateRowRequest,
@@ -673,10 +657,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCreateRows(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.batch_create_rows.js</caption>
- * region_tag:tables_batch_create_rows_sample
- *
  */
   batchCreateRows(
       request?: protos.google.area120.tables.v1alpha1.IBatchCreateRowsRequest,
@@ -753,10 +733,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateRow(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.update_row.js</caption>
- * region_tag:tables_update_row_sample
- *
  */
   updateRow(
       request?: protos.google.area120.tables.v1alpha1.IUpdateRowRequest,
@@ -833,10 +809,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchUpdateRows(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.batch_update_rows.js</caption>
- * region_tag:tables_batch_update_rows_sample
- *
  */
   batchUpdateRows(
       request?: protos.google.area120.tables.v1alpha1.IBatchUpdateRowsRequest,
@@ -909,10 +881,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteRow(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.delete_row.js</caption>
- * region_tag:tables_delete_row_sample
- *
  */
   deleteRow(
       request?: protos.google.area120.tables.v1alpha1.IDeleteRowRequest,
@@ -990,10 +958,6 @@ export class TablesServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchDeleteRows(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.batch_delete_rows.js</caption>
- * region_tag:tables_batch_delete_rows_sample
- *
  */
   batchDeleteRows(
       request?: protos.google.area120.tables.v1alpha1.IBatchDeleteRowsRequest,
@@ -1080,10 +1044,6 @@ export class TablesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_tables.js</caption>
- * region_tag:tables_list_tables_sample
- *
  */
   listTables(
       request?: protos.google.area120.tables.v1alpha1.IListTablesRequest,
@@ -1141,10 +1101,6 @@ export class TablesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_tables.js</caption>
- * region_tag:tables_list_tables_sample
- *
  */
   listTablesStream(
       request?: protos.google.area120.tables.v1alpha1.IListTablesRequest,
@@ -1195,10 +1151,6 @@ export class TablesServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_tables.js</caption>
- * region_tag:tables_list_tables_sample
- *
  */
   listTablesAsync(
       request?: protos.google.area120.tables.v1alpha1.IListTablesRequest,
@@ -1266,10 +1218,6 @@ export class TablesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_workspaces.js</caption>
- * region_tag:tables_list_workspaces_sample
- *
  */
   listWorkspaces(
       request?: protos.google.area120.tables.v1alpha1.IListWorkspacesRequest,
@@ -1327,10 +1275,6 @@ export class TablesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_workspaces.js</caption>
- * region_tag:tables_list_workspaces_sample
- *
  */
   listWorkspacesStream(
       request?: protos.google.area120.tables.v1alpha1.IListWorkspacesRequest,
@@ -1381,10 +1325,6 @@ export class TablesServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_workspaces.js</caption>
- * region_tag:tables_list_workspaces_sample
- *
  */
   listWorkspacesAsync(
       request?: protos.google.area120.tables.v1alpha1.IListWorkspacesRequest,
@@ -1462,10 +1402,6 @@ export class TablesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_rows.js</caption>
- * region_tag:tables_list_rows_sample
- *
  */
   listRows(
       request?: protos.google.area120.tables.v1alpha1.IListRowsRequest,
@@ -1540,10 +1476,6 @@ export class TablesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_rows.js</caption>
- * region_tag:tables_list_rows_sample
- *
  */
   listRowsStream(
       request?: protos.google.area120.tables.v1alpha1.IListRowsRequest,
@@ -1611,10 +1543,6 @@ export class TablesServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/tables_service.list_rows.js</caption>
- * region_tag:tables_list_rows_sample
- *
  */
   listRowsAsync(
       request?: protos.google.area120.tables.v1alpha1.IListRowsRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, occurrence) {
-  // [START grafeas_update_occurrence_sample]
+  // [START grafeas_v1_generated_Grafeas_UpdateOccurrence_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name, occurrence) {
   }
 
   updateOccurrence();
-  // [END grafeas_update_occurrence_sample]
+  // [END grafeas_v1_generated_Grafeas_UpdateOccurrence_async]
 }
 
 process.on('unhandledRejection', err => {

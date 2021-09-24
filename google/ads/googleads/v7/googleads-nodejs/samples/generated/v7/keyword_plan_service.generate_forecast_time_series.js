@@ -16,7 +16,7 @@
 'use strict';
 
 function main(keywordPlan) {
-  // [START googleads_generate_forecast_time_series_sample]
+  // [START googleads_v7_generated_KeywordPlanService_GenerateForecastTimeSeries_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(keywordPlan) {
   }
 
   generateForecastTimeSeries();
-  // [END googleads_generate_forecast_time_series_sample]
+  // [END googleads_v7_generated_KeywordPlanService_GenerateForecastTimeSeries_async]
 }
 
 process.on('unhandledRejection', err => {

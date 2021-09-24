@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket, entity) {
-  // [START storage_update_bucket_access_control_sample]
+  // [START storage_v1_generated_Storage_UpdateBucketAccessControl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(bucket, entity) {
   }
 
   updateBucketAccessControl();
-  // [END storage_update_bucket_access_control_sample]
+  // [END storage_v1_generated_Storage_UpdateBucketAccessControl_async]
 }
 
 process.on('unhandledRejection', err => {

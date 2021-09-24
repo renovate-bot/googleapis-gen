@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dlp_list_dlp_jobs_sample]
+  // [START dlp_v2_generated_DlpService_ListDlpJobs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -111,7 +111,7 @@ function main(parent) {
   }
 
   listDlpJobs();
-  // [END dlp_list_dlp_jobs_sample]
+  // [END dlp_v2_generated_DlpService_ListDlpJobs_async]
 }
 
 process.on('unhandledRejection', err => {

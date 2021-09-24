@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START securitycenter_list_findings_sample]
+  // [START securitycenter_v1p1beta1_generated_SecurityCenter_ListFindings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -163,7 +163,7 @@ function main(parent) {
   }
 
   listFindings();
-  // [END securitycenter_list_findings_sample]
+  // [END securitycenter_v1p1beta1_generated_SecurityCenter_ListFindings_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_delete_entity_type_sample]
+  // [START dialogflow_v2_generated_EntityTypes_DeleteEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteEntityType();
-  // [END dialogflow_delete_entity_type_sample]
+  // [END dialogflow_v2_generated_EntityTypes_DeleteEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

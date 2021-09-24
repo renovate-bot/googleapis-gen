@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, domain) {
-  // [START channel_check_cloud_identity_accounts_exist_sample]
+  // [START channel_v1_generated_CloudChannelService_CheckCloudIdentityAccountsExist_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, domain) {
   }
 
   checkCloudIdentityAccountsExist();
-  // [END channel_check_cloud_identity_accounts_exist_sample]
+  // [END channel_v1_generated_CloudChannelService_CheckCloudIdentityAccountsExist_async]
 }
 
 process.on('unhandledRejection', err => {

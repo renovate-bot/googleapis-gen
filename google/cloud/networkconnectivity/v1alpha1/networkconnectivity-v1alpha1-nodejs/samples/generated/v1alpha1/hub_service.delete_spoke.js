@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START networkconnectivity_delete_spoke_sample]
+  // [START networkconnectivity_v1alpha1_generated_HubService_DeleteSpoke_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   deleteSpoke();
-  // [END networkconnectivity_delete_spoke_sample]
+  // [END networkconnectivity_v1alpha1_generated_HubService_DeleteSpoke_async]
 }
 
 process.on('unhandledRejection', err => {

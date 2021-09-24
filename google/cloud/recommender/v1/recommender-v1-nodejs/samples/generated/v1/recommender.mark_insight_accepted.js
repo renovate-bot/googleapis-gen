@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, etag) {
-  // [START recommender_mark_insight_accepted_sample]
+  // [START recommender_v1_generated_Recommender_MarkInsightAccepted_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name, etag) {
   }
 
   markInsightAccepted();
-  // [END recommender_mark_insight_accepted_sample]
+  // [END recommender_v1_generated_Recommender_MarkInsightAccepted_async]
 }
 
 process.on('unhandledRejection', err => {

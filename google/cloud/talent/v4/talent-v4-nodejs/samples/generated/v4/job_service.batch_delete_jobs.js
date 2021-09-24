@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START talent_batch_delete_jobs_sample]
+  // [START talent_v4_generated_JobService_BatchDeleteJobs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent) {
   }
 
   batchDeleteJobs();
-  // [END talent_batch_delete_jobs_sample]
+  // [END talent_v4_generated_JobService_BatchDeleteJobs_async]
 }
 
 process.on('unhandledRejection', err => {

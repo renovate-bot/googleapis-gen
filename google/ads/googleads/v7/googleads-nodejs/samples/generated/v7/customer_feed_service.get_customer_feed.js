@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_customer_feed_sample]
+  // [START googleads_v7_generated_CustomerFeedService_GetCustomerFeed_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getCustomerFeed();
-  // [END googleads_get_customer_feed_sample]
+  // [END googleads_v7_generated_CustomerFeedService_GetCustomerFeed_async]
 }
 
 process.on('unhandledRejection', err => {

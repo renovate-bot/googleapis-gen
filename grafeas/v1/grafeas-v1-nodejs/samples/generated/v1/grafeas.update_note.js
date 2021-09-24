@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, note) {
-  // [START grafeas_update_note_sample]
+  // [START grafeas_v1_generated_Grafeas_UpdateNote_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name, note) {
   }
 
   updateNote();
-  // [END grafeas_update_note_sample]
+  // [END grafeas_v1_generated_Grafeas_UpdateNote_async]
 }
 
 process.on('unhandledRejection', err => {

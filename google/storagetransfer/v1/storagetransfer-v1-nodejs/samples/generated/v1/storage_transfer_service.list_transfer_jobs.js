@@ -16,7 +16,7 @@
 'use strict';
 
 function main(filter) {
-  // [START storagetransfer_list_transfer_jobs_sample]
+  // [START storagetransfer_v1_generated_StorageTransferService_ListTransferJobs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(filter) {
   }
 
   listTransferJobs();
-  // [END storagetransfer_list_transfer_jobs_sample]
+  // [END storagetransfer_v1_generated_StorageTransferService_ListTransferJobs_async]
 }
 
 process.on('unhandledRejection', err => {

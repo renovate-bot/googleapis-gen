@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, clusterId, cluster) {
-  // [START aistreams_create_cluster_sample]
+  // [START aistreams_v1alpha1_generated_AIStreams_CreateCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent, clusterId, cluster) {
   }
 
   createCluster();
-  // [END aistreams_create_cluster_sample]
+  // [END aistreams_v1alpha1_generated_AIStreams_CreateCluster_async]
 }
 
 process.on('unhandledRejection', err => {

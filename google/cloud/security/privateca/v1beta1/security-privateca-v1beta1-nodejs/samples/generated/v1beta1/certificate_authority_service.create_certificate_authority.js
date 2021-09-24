@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, certificateAuthorityId, certificateAuthority) {
-  // [START privateca_create_certificate_authority_sample]
+  // [START privateca_v1beta1_generated_CertificateAuthorityService_CreateCertificateAuthority_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(parent, certificateAuthorityId, certificateAuthority) {
   }
 
   createCertificateAuthority();
-  // [END privateca_create_certificate_authority_sample]
+  // [END privateca_v1beta1_generated_CertificateAuthorityService_CreateCertificateAuthority_async]
 }
 
 process.on('unhandledRejection', err => {

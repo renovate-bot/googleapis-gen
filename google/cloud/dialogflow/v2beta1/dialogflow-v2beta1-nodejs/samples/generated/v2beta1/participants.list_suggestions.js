@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dialogflow_list_suggestions_sample]
+  // [START dialogflow_v2beta1_generated_Participants_ListSuggestions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main() {
   }
 
   listSuggestions();
-  // [END dialogflow_list_suggestions_sample]
+  // [END dialogflow_v2beta1_generated_Participants_ListSuggestions_async]
 }
 
 process.on('unhandledRejection', err => {

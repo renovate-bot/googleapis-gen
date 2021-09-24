@@ -342,10 +342,6 @@ export class ImageVersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/image_versions.list_image_versions.js</caption>
- * region_tag:service_list_image_versions_sample
- *
  */
   listImageVersions(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
@@ -407,10 +403,6 @@ export class ImageVersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/image_versions.list_image_versions.js</caption>
- * region_tag:service_list_image_versions_sample
- *
  */
   listImageVersionsStream(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
@@ -465,10 +457,6 @@ export class ImageVersionsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/image_versions.list_image_versions.js</caption>
- * region_tag:service_list_image_versions_sample
- *
  */
   listImageVersionsAsync(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,

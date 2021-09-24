@@ -16,7 +16,7 @@
 'use strict';
 
 function main(product, type, placeIds) {
-  // [START retail_add_fulfillment_places_sample]
+  // [START retail_v2alpha_generated_ProductService_AddFulfillmentPlaces_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -100,7 +100,7 @@ function main(product, type, placeIds) {
   }
 
   addFulfillmentPlaces();
-  // [END retail_add_fulfillment_places_sample]
+  // [END retail_v2alpha_generated_ProductService_AddFulfillmentPlaces_async]
 }
 
 process.on('unhandledRejection', err => {

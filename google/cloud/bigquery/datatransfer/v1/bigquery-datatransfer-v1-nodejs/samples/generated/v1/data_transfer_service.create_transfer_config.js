@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, transferConfig) {
-  // [START datatransfer_create_transfer_config_sample]
+  // [START datatransfer_v1_generated_DataTransferService_CreateTransferConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -85,7 +85,7 @@ function main(parent, transferConfig) {
   }
 
   createTransferConfig();
-  // [END datatransfer_create_transfer_config_sample]
+  // [END datatransfer_v1_generated_DataTransferService_CreateTransferConfig_async]
 }
 
 process.on('unhandledRejection', err => {

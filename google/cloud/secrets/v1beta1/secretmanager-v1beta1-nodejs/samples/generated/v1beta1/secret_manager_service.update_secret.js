@@ -16,7 +16,7 @@
 'use strict';
 
 function main(secret, updateMask) {
-  // [START secrets_update_secret_sample]
+  // [START secrets_v1beta1_generated_SecretManagerService_UpdateSecret_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(secret, updateMask) {
   }
 
   updateSecret();
-  // [END secrets_update_secret_sample]
+  // [END secrets_v1beta1_generated_SecretManagerService_UpdateSecret_async]
 }
 
 process.on('unhandledRejection', err => {

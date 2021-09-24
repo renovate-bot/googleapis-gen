@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vision_delete_reference_image_sample]
+  // [START vision_v1_generated_ProductSearch_DeleteReferenceImage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteReferenceImage();
-  // [END vision_delete_reference_image_sample]
+  // [END vision_v1_generated_ProductSearch_DeleteReferenceImage_async]
 }
 
 process.on('unhandledRejection', err => {

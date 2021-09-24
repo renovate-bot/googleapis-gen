@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_suggest_keyword_theme_constants_sample]
+  // [START googleads_v8_generated_KeywordThemeConstantService_SuggestKeywordThemeConstants_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   suggestKeywordThemeConstants();
-  // [END googleads_suggest_keyword_theme_constants_sample]
+  // [END googleads_v8_generated_KeywordThemeConstantService_SuggestKeywordThemeConstants_async]
 }
 
 process.on('unhandledRejection', err => {

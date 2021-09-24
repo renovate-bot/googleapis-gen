@@ -412,10 +412,6 @@ export class PagesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPage(request);
- *
- * @example <caption>include:samples/generated/v3beta1/pages.get_page.js</caption>
- * region_tag:cx_get_page_sample
- *
  */
   getPage(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetPageRequest,
@@ -512,10 +508,6 @@ export class PagesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPage(request);
- *
- * @example <caption>include:samples/generated/v3beta1/pages.create_page.js</caption>
- * region_tag:cx_create_page_sample
- *
  */
   createPage(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreatePageRequest,
@@ -611,10 +603,6 @@ export class PagesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updatePage(request);
- *
- * @example <caption>include:samples/generated/v3beta1/pages.update_page.js</caption>
- * region_tag:cx_update_page_sample
- *
  */
   updatePage(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdatePageRequest,
@@ -699,10 +687,6 @@ export class PagesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePage(request);
- *
- * @example <caption>include:samples/generated/v3beta1/pages.delete_page.js</caption>
- * region_tag:cx_delete_page_sample
- *
  */
   deletePage(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeletePageRequest,
@@ -808,10 +792,6 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3beta1/pages.list_pages.js</caption>
- * region_tag:cx_list_pages_sample
- *
  */
   listPages(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
@@ -895,10 +875,6 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3beta1/pages.list_pages.js</caption>
- * region_tag:cx_list_pages_sample
- *
  */
   listPagesStream(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,
@@ -975,10 +951,6 @@ export class PagesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3beta1/pages.list_pages.js</caption>
- * region_tag:cx_list_pages_sample
- *
  */
   listPagesAsync(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListPagesRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_get_inventory_sample]
+  // [START osconfig_v1_generated_OsConfigZonalService_GetInventory_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name) {
   }
 
   getInventory();
-  // [END osconfig_get_inventory_sample]
+  // [END osconfig_v1_generated_OsConfigZonalService_GetInventory_async]
 }
 
 process.on('unhandledRejection', err => {

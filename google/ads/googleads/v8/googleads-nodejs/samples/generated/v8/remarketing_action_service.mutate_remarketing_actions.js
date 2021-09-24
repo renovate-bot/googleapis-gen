@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_remarketing_actions_sample]
+  // [START googleads_v8_generated_RemarketingActionService_MutateRemarketingActions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(customerId, operations) {
   }
 
   mutateRemarketingActions();
-  // [END googleads_mutate_remarketing_actions_sample]
+  // [END googleads_v8_generated_RemarketingActionService_MutateRemarketingActions_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_delete_flow_sample]
+  // [START cx_v3beta1_generated_Flows_DeleteFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(name) {
   }
 
   deleteFlow();
-  // [END cx_delete_flow_sample]
+  // [END cx_v3beta1_generated_Flows_DeleteFlow_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, instanceId, instance) {
-  // [START notebooks_create_instance_sample]
+  // [START notebooks_v1_generated_NotebookService_CreateInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, instanceId, instance) {
   }
 
   createInstance();
-  // [END notebooks_create_instance_sample]
+  // [END notebooks_v1_generated_NotebookService_CreateInstance_async]
 }
 
 process.on('unhandledRejection', err => {

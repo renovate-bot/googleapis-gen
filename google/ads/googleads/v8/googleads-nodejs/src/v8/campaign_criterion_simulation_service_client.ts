@@ -720,10 +720,6 @@ export class CampaignCriterionSimulationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignCriterionSimulation(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_criterion_simulation_service.get_campaign_criterion_simulation.js</caption>
- * region_tag:googleads_get_campaign_criterion_simulation_sample
- *
  */
   getCampaignCriterionSimulation(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignCriterionSimulationRequest,

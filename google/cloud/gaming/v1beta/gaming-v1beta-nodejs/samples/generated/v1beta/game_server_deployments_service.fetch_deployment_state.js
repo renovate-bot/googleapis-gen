@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gaming_fetch_deployment_state_sample]
+  // [START gaming_v1beta_generated_GameServerDeploymentsService_FetchDeploymentState_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   fetchDeploymentState();
-  // [END gaming_fetch_deployment_state_sample]
+  // [END gaming_v1beta_generated_GameServerDeploymentsService_FetchDeploymentState_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -720,10 +720,6 @@ export class SmartCampaignSearchTermViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSmartCampaignSearchTermView(request);
- *
- * @example <caption>include:samples/generated/v8/smart_campaign_search_term_view_service.get_smart_campaign_search_term_view.js</caption>
- * region_tag:googleads_get_smart_campaign_search_term_view_sample
- *
  */
   getSmartCampaignSearchTermView(
       request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSearchTermViewRequest,

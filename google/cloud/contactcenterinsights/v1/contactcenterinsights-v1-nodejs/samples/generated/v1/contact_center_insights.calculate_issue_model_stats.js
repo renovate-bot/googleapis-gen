@@ -16,7 +16,7 @@
 'use strict';
 
 function main(issueModel) {
-  // [START contactcenterinsights_calculate_issue_model_stats_sample]
+  // [START contactcenterinsights_v1_generated_ContactCenterInsights_CalculateIssueModelStats_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(issueModel) {
   }
 
   calculateIssueModelStats();
-  // [END contactcenterinsights_calculate_issue_model_stats_sample]
+  // [END contactcenterinsights_v1_generated_ContactCenterInsights_CalculateIssueModelStats_async]
 }
 
 process.on('unhandledRejection', err => {

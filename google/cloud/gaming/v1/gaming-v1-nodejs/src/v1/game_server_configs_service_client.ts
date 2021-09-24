@@ -375,10 +375,6 @@ export class GameServerConfigsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGameServerConfig(request);
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.get_game_server_config.js</caption>
- * region_tag:gaming_get_game_server_config_sample
- *
  */
   getGameServerConfig(
       request?: protos.google.cloud.gaming.v1.IGetGameServerConfigRequest,
@@ -461,10 +457,6 @@ export class GameServerConfigsServiceClient {
  * @example
  * const [operation] = await client.createGameServerConfig(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.create_game_server_config.js</caption>
- * region_tag:gaming_create_game_server_config_sample
- *
  */
   createGameServerConfig(
       request?: protos.google.cloud.gaming.v1.ICreateGameServerConfigRequest,
@@ -514,10 +506,6 @@ export class GameServerConfigsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.create_game_server_config.js</caption>
- * region_tag:gaming_create_game_server_config_sample
- *
  */
   async checkCreateGameServerConfigProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1.GameServerConfig, protos.google.cloud.gaming.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -566,10 +554,6 @@ export class GameServerConfigsServiceClient {
  * @example
  * const [operation] = await client.deleteGameServerConfig(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.delete_game_server_config.js</caption>
- * region_tag:gaming_delete_game_server_config_sample
- *
  */
   deleteGameServerConfig(
       request?: protos.google.cloud.gaming.v1.IDeleteGameServerConfigRequest,
@@ -619,10 +603,6 @@ export class GameServerConfigsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.delete_game_server_config.js</caption>
- * region_tag:gaming_delete_game_server_config_sample
- *
  */
   async checkDeleteGameServerConfigProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gaming.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -685,10 +665,6 @@ export class GameServerConfigsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.list_game_server_configs.js</caption>
- * region_tag:gaming_list_game_server_configs_sample
- *
  */
   listGameServerConfigs(
       request?: protos.google.cloud.gaming.v1.IListGameServerConfigsRequest,
@@ -757,10 +733,6 @@ export class GameServerConfigsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.list_game_server_configs.js</caption>
- * region_tag:gaming_list_game_server_configs_sample
- *
  */
   listGameServerConfigsStream(
       request?: protos.google.cloud.gaming.v1.IListGameServerConfigsRequest,
@@ -822,10 +794,6 @@ export class GameServerConfigsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/game_server_configs_service.list_game_server_configs.js</caption>
- * region_tag:gaming_list_game_server_configs_sample
- *
  */
   listGameServerConfigsAsync(
       request?: protos.google.cloud.gaming.v1.IListGameServerConfigsRequest,

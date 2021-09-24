@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START firestore_partition_query_sample]
+  // [START firestore_v1beta1_generated_Firestore_PartitionQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -87,7 +87,7 @@ function main(parent) {
   }
 
   partitionQuery();
-  // [END firestore_partition_query_sample]
+  // [END firestore_v1beta1_generated_Firestore_PartitionQuery_async]
 }
 
 process.on('unhandledRejection', err => {

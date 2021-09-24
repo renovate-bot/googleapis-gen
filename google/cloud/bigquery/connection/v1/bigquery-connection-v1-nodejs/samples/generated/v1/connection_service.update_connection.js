@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, connection, updateMask) {
-  // [START connection_update_connection_sample]
+  // [START connection_v1_generated_ConnectionService_UpdateConnection_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(name, connection, updateMask) {
   }
 
   updateConnection();
-  // [END connection_update_connection_sample]
+  // [END connection_v1_generated_ConnectionService_UpdateConnection_async]
 }
 
 process.on('unhandledRejection', err => {

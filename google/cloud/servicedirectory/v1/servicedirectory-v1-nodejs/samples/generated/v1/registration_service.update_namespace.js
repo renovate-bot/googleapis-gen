@@ -16,7 +16,7 @@
 'use strict';
 
 function main(namespace, updateMask) {
-  // [START servicedirectory_update_namespace_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_UpdateNamespace_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(namespace, updateMask) {
   }
 
   updateNamespace();
-  // [END servicedirectory_update_namespace_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_UpdateNamespace_async]
 }
 
 process.on('unhandledRejection', err => {

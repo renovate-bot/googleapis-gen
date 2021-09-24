@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START securitycenter_test_iam_permissions_sample]
+  // [START securitycenter_v1beta1_generated_SecurityCenter_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END securitycenter_test_iam_permissions_sample]
+  // [END securitycenter_v1beta1_generated_SecurityCenter_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

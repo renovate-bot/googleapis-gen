@@ -690,10 +690,6 @@ export class HotelGroupViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getHotelGroupView(request);
- *
- * @example <caption>include:samples/generated/v7/hotel_group_view_service.get_hotel_group_view.js</caption>
- * region_tag:googleads_get_hotel_group_view_sample
- *
  */
   getHotelGroupView(
       request?: protos.google.ads.googleads.v7.services.IGetHotelGroupViewRequest,

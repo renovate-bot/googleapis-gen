@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START cloudbuild_receive_trigger_webhook_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_ReceiveTriggerWebhook_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main() {
   }
 
   receiveTriggerWebhook();
-  // [END cloudbuild_receive_trigger_webhook_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_ReceiveTriggerWebhook_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, parameters) {
-  // [START channel_change_parameters_sample]
+  // [START channel_v1_generated_CloudChannelService_ChangeParameters_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(name, parameters) {
   }
 
   changeParameters();
-  // [END channel_change_parameters_sample]
+  // [END channel_v1_generated_CloudChannelService_ChangeParameters_async]
 }
 
 process.on('unhandledRejection', err => {

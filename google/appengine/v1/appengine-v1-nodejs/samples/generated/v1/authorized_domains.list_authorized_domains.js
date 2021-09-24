@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_list_authorized_domains_sample]
+  // [START appengine_v1_generated_AuthorizedDomains_ListAuthorizedDomains_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   listAuthorizedDomains();
-  // [END appengine_list_authorized_domains_sample]
+  // [END appengine_v1_generated_AuthorizedDomains_ListAuthorizedDomains_async]
 }
 
 process.on('unhandledRejection', err => {

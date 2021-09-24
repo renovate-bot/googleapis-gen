@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START clouddms_restart_migration_job_sample]
+  // [START clouddms_v1_generated_DataMigrationService_RestartMigrationJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   restartMigrationJob();
-  // [END clouddms_restart_migration_job_sample]
+  // [END clouddms_v1_generated_DataMigrationService_RestartMigrationJob_async]
 }
 
 process.on('unhandledRejection', err => {

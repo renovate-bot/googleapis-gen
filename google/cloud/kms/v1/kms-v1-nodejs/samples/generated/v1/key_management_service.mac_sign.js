@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, data) {
-  // [START kms_mac_sign_sample]
+  // [START kms_v1_generated_KeyManagementService_MacSign_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(name, data) {
   }
 
   macSign();
-  // [END kms_mac_sign_sample]
+  // [END kms_v1_generated_KeyManagementService_MacSign_async]
 }
 
 process.on('unhandledRejection', err => {

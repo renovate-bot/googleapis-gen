@@ -712,10 +712,6 @@ export class BiddingStrategySimulationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBiddingStrategySimulation(request);
- *
- * @example <caption>include:samples/generated/v8/bidding_strategy_simulation_service.get_bidding_strategy_simulation.js</caption>
- * region_tag:googleads_get_bidding_strategy_simulation_sample
- *
  */
   getBiddingStrategySimulation(
       request?: protos.google.ads.googleads.v8.services.IGetBiddingStrategySimulationRequest,

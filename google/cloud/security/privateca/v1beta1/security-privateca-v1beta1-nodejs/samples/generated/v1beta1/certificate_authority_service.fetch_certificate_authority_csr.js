@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START privateca_fetch_certificate_authority_csr_sample]
+  // [START privateca_v1beta1_generated_CertificateAuthorityService_FetchCertificateAuthorityCsr_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   fetchCertificateAuthorityCsr();
-  // [END privateca_fetch_certificate_authority_csr_sample]
+  // [END privateca_v1beta1_generated_CertificateAuthorityService_FetchCertificateAuthorityCsr_async]
 }
 
 process.on('unhandledRejection', err => {

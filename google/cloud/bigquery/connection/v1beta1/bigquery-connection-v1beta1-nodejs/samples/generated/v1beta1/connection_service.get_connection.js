@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START connection_get_connection_sample]
+  // [START connection_v1beta1_generated_ConnectionService_GetConnection_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getConnection();
-  // [END connection_get_connection_sample]
+  // [END connection_v1beta1_generated_ConnectionService_GetConnection_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(registration, updateMask) {
-  // [START domains_configure_dns_settings_sample]
+  // [START domains_v1beta1_generated_Domains_ConfigureDnsSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(registration, updateMask) {
   }
 
   configureDnsSettings();
-  // [END domains_configure_dns_settings_sample]
+  // [END domains_v1beta1_generated_Domains_ConfigureDnsSettings_async]
 }
 
 process.on('unhandledRejection', err => {

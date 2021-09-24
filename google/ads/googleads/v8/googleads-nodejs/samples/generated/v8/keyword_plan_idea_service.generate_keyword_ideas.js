@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_generate_keyword_ideas_sample]
+  // [START googleads_v8_generated_KeywordPlanIdeaService_GenerateKeywordIdeas_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -109,7 +109,7 @@ function main() {
   }
 
   generateKeywordIdeas();
-  // [END googleads_generate_keyword_ideas_sample]
+  // [END googleads_v8_generated_KeywordPlanIdeaService_GenerateKeywordIdeas_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -414,10 +414,6 @@ export class AlertPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAlertPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.get_alert_policy.js</caption>
- * region_tag:monitoring_get_alert_policy_sample
- *
  */
   getAlertPolicy(
       request?: protos.google.monitoring.v3.IGetAlertPolicyRequest,
@@ -504,10 +500,6 @@ export class AlertPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAlertPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.create_alert_policy.js</caption>
- * region_tag:monitoring_create_alert_policy_sample
- *
  */
   createAlertPolicy(
       request?: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
@@ -583,10 +575,6 @@ export class AlertPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAlertPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.delete_alert_policy.js</caption>
- * region_tag:monitoring_delete_alert_policy_sample
- *
  */
   deleteAlertPolicy(
       request?: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
@@ -686,10 +674,6 @@ export class AlertPolicyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateAlertPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.update_alert_policy.js</caption>
- * region_tag:monitoring_update_alert_policy_sample
- *
  */
   updateAlertPolicy(
       request?: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
@@ -794,10 +778,6 @@ export class AlertPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.list_alert_policies.js</caption>
- * region_tag:monitoring_list_alert_policies_sample
- *
  */
   listAlertPolicies(
       request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
@@ -880,10 +860,6 @@ export class AlertPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.list_alert_policies.js</caption>
- * region_tag:monitoring_list_alert_policies_sample
- *
  */
   listAlertPoliciesStream(
       request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
@@ -959,10 +935,6 @@ export class AlertPolicyServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/alert_policy_service.list_alert_policies.js</caption>
- * region_tag:monitoring_list_alert_policies_sample
- *
  */
   listAlertPoliciesAsync(
       request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,

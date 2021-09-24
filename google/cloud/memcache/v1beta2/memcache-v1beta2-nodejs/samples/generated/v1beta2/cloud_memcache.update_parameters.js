@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, updateMask) {
-  // [START memcache_update_parameters_sample]
+  // [START memcache_v1beta2_generated_CloudMemcache_UpdateParameters_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(name, updateMask) {
   }
 
   updateParameters();
-  // [END memcache_update_parameters_sample]
+  // [END memcache_v1beta2_generated_CloudMemcache_UpdateParameters_async]
 }
 
 process.on('unhandledRejection', err => {

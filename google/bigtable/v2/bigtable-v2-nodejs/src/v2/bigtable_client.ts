@@ -345,10 +345,6 @@ export class BigtableClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateRow(request);
- *
- * @example <caption>include:samples/generated/v2/bigtable.mutate_row.js</caption>
- * region_tag:bigtable_mutate_row_sample
- *
  */
   mutateRow(
       request?: protos.google.bigtable.v2.IMutateRowRequest,
@@ -445,10 +441,6 @@ export class BigtableClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.checkAndMutateRow(request);
- *
- * @example <caption>include:samples/generated/v2/bigtable.check_and_mutate_row.js</caption>
- * region_tag:bigtable_check_and_mutate_row_sample
- *
  */
   checkAndMutateRow(
       request?: protos.google.bigtable.v2.ICheckAndMutateRowRequest,
@@ -536,10 +528,6 @@ export class BigtableClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.readModifyWriteRow(request);
- *
- * @example <caption>include:samples/generated/v2/bigtable.read_modify_write_row.js</caption>
- * region_tag:bigtable_read_modify_write_row_sample
- *
  */
   readModifyWriteRow(
       request?: protos.google.bigtable.v2.IReadModifyWriteRowRequest,

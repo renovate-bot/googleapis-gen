@@ -16,7 +16,7 @@
 'use strict';
 
 function main(keywordPlan) {
-  // [START googleads_generate_forecast_metrics_sample]
+  // [START googleads_v7_generated_KeywordPlanService_GenerateForecastMetrics_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(keywordPlan) {
   }
 
   generateForecastMetrics();
-  // [END googleads_generate_forecast_metrics_sample]
+  // [END googleads_v7_generated_KeywordPlanService_GenerateForecastMetrics_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -342,10 +342,6 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDevice(request);
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.get_device.js</caption>
- * region_tag:sdm_get_device_sample
- *
  */
   getDevice(
       request?: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
@@ -423,10 +419,6 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.executeDeviceCommand(request);
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.execute_device_command.js</caption>
- * region_tag:sdm_execute_device_command_sample
- *
  */
   executeDeviceCommand(
       request?: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
@@ -499,10 +491,6 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getStructure(request);
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.get_structure.js</caption>
- * region_tag:sdm_get_structure_sample
- *
  */
   getStructure(
       request?: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
@@ -575,10 +563,6 @@ export class SmartDeviceManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRoom(request);
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.get_room.js</caption>
- * region_tag:sdm_get_room_sample
- *
  */
   getRoom(
       request?: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
@@ -667,10 +651,6 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_devices.js</caption>
- * region_tag:sdm_list_devices_sample
- *
  */
   listDevices(
       request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
@@ -737,10 +717,6 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_devices.js</caption>
- * region_tag:sdm_list_devices_sample
- *
  */
   listDevicesStream(
       request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
@@ -800,10 +776,6 @@ export class SmartDeviceManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_devices.js</caption>
- * region_tag:sdm_list_devices_sample
- *
  */
   listDevicesAsync(
       request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
@@ -875,10 +847,6 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_structures.js</caption>
- * region_tag:sdm_list_structures_sample
- *
  */
   listStructures(
       request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
@@ -940,10 +908,6 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_structures.js</caption>
- * region_tag:sdm_list_structures_sample
- *
  */
   listStructuresStream(
       request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
@@ -998,10 +962,6 @@ export class SmartDeviceManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_structures.js</caption>
- * region_tag:sdm_list_structures_sample
- *
  */
   listStructuresAsync(
       request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
@@ -1072,10 +1032,6 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_rooms.js</caption>
- * region_tag:sdm_list_rooms_sample
- *
  */
   listRooms(
       request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
@@ -1136,10 +1092,6 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_rooms.js</caption>
- * region_tag:sdm_list_rooms_sample
- *
  */
   listRoomsStream(
       request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
@@ -1193,10 +1145,6 @@ export class SmartDeviceManagementServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/smart_device_management_service.list_rooms.js</caption>
- * region_tag:sdm_list_rooms_sample
- *
  */
   listRoomsAsync(
       request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, writeStreams) {
-  // [START storage_batch_commit_write_streams_sample]
+  // [START storage_v1_generated_BigQueryWrite_BatchCommitWriteStreams_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, writeStreams) {
   }
 
   batchCommitWriteStreams();
-  // [END storage_batch_commit_write_streams_sample]
+  // [END storage_v1_generated_BigQueryWrite_BatchCommitWriteStreams_async]
 }
 
 process.on('unhandledRejection', err => {

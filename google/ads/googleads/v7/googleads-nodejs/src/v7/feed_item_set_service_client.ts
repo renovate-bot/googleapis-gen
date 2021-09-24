@@ -690,10 +690,6 @@ export class FeedItemSetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeedItemSet(request);
- *
- * @example <caption>include:samples/generated/v7/feed_item_set_service.get_feed_item_set.js</caption>
- * region_tag:googleads_get_feed_item_set_sample
- *
  */
   getFeedItemSet(
       request?: protos.google.ads.googleads.v7.services.IGetFeedItemSetRequest,
@@ -785,10 +781,6 @@ export class FeedItemSetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateFeedItemSets(request);
- *
- * @example <caption>include:samples/generated/v7/feed_item_set_service.mutate_feed_item_sets.js</caption>
- * region_tag:googleads_mutate_feed_item_sets_sample
- *
  */
   mutateFeedItemSets(
       request?: protos.google.ads.googleads.v7.services.IMutateFeedItemSetsRequest,

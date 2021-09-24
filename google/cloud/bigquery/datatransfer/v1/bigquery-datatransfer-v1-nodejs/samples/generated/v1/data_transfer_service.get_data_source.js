@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datatransfer_get_data_source_sample]
+  // [START datatransfer_v1_generated_DataTransferService_GetDataSource_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getDataSource();
-  // [END datatransfer_get_data_source_sample]
+  // [END datatransfer_v1_generated_DataTransferService_GetDataSource_async]
 }
 
 process.on('unhandledRejection', err => {

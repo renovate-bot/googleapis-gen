@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datacatalog_get_policy_tag_sample]
+  // [START datacatalog_v1_generated_PolicyTagManager_GetPolicyTag_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getPolicyTag();
-  // [END datacatalog_get_policy_tag_sample]
+  // [END datacatalog_v1_generated_PolicyTagManager_GetPolicyTag_async]
 }
 
 process.on('unhandledRejection', err => {

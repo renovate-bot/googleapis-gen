@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, machineType) {
-  // [START notebooks_set_instance_machine_type_sample]
+  // [START notebooks_v1_generated_NotebookService_SetInstanceMachineType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name, machineType) {
   }
 
   setInstanceMachineType();
-  // [END notebooks_set_instance_machine_type_sample]
+  // [END notebooks_v1_generated_NotebookService_SetInstanceMachineType_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vision_delete_product_sample]
+  // [START vision_v1_generated_ProductSearch_DeleteProduct_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteProduct();
-  // [END vision_delete_product_sample]
+  // [END vision_v1_generated_ProductSearch_DeleteProduct_async]
 }
 
 process.on('unhandledRejection', err => {

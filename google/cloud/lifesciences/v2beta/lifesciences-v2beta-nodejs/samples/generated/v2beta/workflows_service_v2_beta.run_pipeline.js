@@ -16,7 +16,7 @@
 'use strict';
 
 function main(pipeline) {
-  // [START lifesciences_run_pipeline_sample]
+  // [START lifesciences_v2beta_generated_WorkflowsServiceV2Beta_RunPipeline_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(pipeline) {
   }
 
   runPipeline();
-  // [END lifesciences_run_pipeline_sample]
+  // [END lifesciences_v2beta_generated_WorkflowsServiceV2Beta_RunPipeline_async]
 }
 
 process.on('unhandledRejection', err => {

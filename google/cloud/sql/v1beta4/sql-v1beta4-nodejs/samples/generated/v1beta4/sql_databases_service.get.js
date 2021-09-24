@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_get_sample]
+  // [START sql_v1beta4_generated_SqlDatabasesService_Get_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   get();
-  // [END sql_get_sample]
+  // [END sql_v1beta4_generated_SqlDatabasesService_Get_async]
 }
 
 process.on('unhandledRejection', err => {

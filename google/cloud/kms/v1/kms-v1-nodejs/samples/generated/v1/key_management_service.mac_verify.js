@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, data, mac) {
-  // [START kms_mac_verify_sample]
+  // [START kms_v1_generated_KeyManagementService_MacVerify_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -86,7 +86,7 @@ function main(name, data, mac) {
   }
 
   macVerify();
-  // [END kms_mac_verify_sample]
+  // [END kms_v1_generated_KeyManagementService_MacVerify_async]
 }
 
 process.on('unhandledRejection', err => {

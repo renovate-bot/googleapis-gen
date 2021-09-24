@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_import_agent_sample]
+  // [START dialogflow_v2_generated_Agents_ImportAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent) {
   }
 
   importAgent();
-  // [END dialogflow_import_agent_sample]
+  // [END dialogflow_v2_generated_Agents_ImportAgent_async]
 }
 
 process.on('unhandledRejection', err => {

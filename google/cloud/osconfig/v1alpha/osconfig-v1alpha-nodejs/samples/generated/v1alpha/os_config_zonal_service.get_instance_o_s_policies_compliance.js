@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_get_instance_o_s_policies_compliance_sample]
+  // [START osconfig_v1alpha_generated_OsConfigZonalService_GetInstanceOSPoliciesCompliance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   getInstanceOSPoliciesCompliance();
-  // [END osconfig_get_instance_o_s_policies_compliance_sample]
+  // [END osconfig_v1alpha_generated_OsConfigZonalService_GetInstanceOSPoliciesCompliance_async]
 }
 
 process.on('unhandledRejection', err => {

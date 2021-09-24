@@ -16,7 +16,7 @@
 'use strict';
 
 function main(transitionRouteGroup) {
-  // [START cx_update_transition_route_group_sample]
+  // [START cx_v3_generated_TransitionRouteGroups_UpdateTransitionRouteGroup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(transitionRouteGroup) {
   }
 
   updateTransitionRouteGroup();
-  // [END cx_update_transition_route_group_sample]
+  // [END cx_v3_generated_TransitionRouteGroups_UpdateTransitionRouteGroup_async]
 }
 
 process.on('unhandledRejection', err => {

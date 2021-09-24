@@ -410,10 +410,6 @@ export class DocumentProcessorServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.processDocument(request);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.process_document.js</caption>
- * region_tag:documentai_process_document_sample
- *
  */
   processDocument(
       request?: protos.google.cloud.documentai.v1beta3.IProcessRequest,
@@ -486,10 +482,6 @@ export class DocumentProcessorServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.fetchProcessorTypes(request);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.fetch_processor_types.js</caption>
- * region_tag:documentai_fetch_processor_types_sample
- *
  */
   fetchProcessorTypes(
       request?: protos.google.cloud.documentai.v1beta3.IFetchProcessorTypesRequest,
@@ -566,10 +558,6 @@ export class DocumentProcessorServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createProcessor(request);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.create_processor.js</caption>
- * region_tag:documentai_create_processor_sample
- *
  */
   createProcessor(
       request?: protos.google.cloud.documentai.v1beta3.ICreateProcessorRequest,
@@ -657,10 +645,6 @@ export class DocumentProcessorServiceClient {
  * @example
  * const [operation] = await client.batchProcessDocuments(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.batch_process_documents.js</caption>
- * region_tag:documentai_batch_process_documents_sample
- *
  */
   batchProcessDocuments(
       request?: protos.google.cloud.documentai.v1beta3.IBatchProcessRequest,
@@ -710,10 +694,6 @@ export class DocumentProcessorServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.batch_process_documents.js</caption>
- * region_tag:documentai_batch_process_documents_sample
- *
  */
   async checkBatchProcessDocumentsProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta3.BatchProcessResponse, protos.google.cloud.documentai.v1beta3.BatchProcessMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -761,10 +741,6 @@ export class DocumentProcessorServiceClient {
  * @example
  * const [operation] = await client.deleteProcessor(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.delete_processor.js</caption>
- * region_tag:documentai_delete_processor_sample
- *
  */
   deleteProcessor(
       request?: protos.google.cloud.documentai.v1beta3.IDeleteProcessorRequest,
@@ -814,10 +790,6 @@ export class DocumentProcessorServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.delete_processor.js</caption>
- * region_tag:documentai_delete_processor_sample
- *
  */
   async checkDeleteProcessorProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.documentai.v1beta3.DeleteProcessorMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -864,10 +836,6 @@ export class DocumentProcessorServiceClient {
  * @example
  * const [operation] = await client.enableProcessor(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.enable_processor.js</caption>
- * region_tag:documentai_enable_processor_sample
- *
  */
   enableProcessor(
       request?: protos.google.cloud.documentai.v1beta3.IEnableProcessorRequest,
@@ -917,10 +885,6 @@ export class DocumentProcessorServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.enable_processor.js</caption>
- * region_tag:documentai_enable_processor_sample
- *
  */
   async checkEnableProcessorProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta3.EnableProcessorResponse, protos.google.cloud.documentai.v1beta3.EnableProcessorMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -967,10 +931,6 @@ export class DocumentProcessorServiceClient {
  * @example
  * const [operation] = await client.disableProcessor(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.disable_processor.js</caption>
- * region_tag:documentai_disable_processor_sample
- *
  */
   disableProcessor(
       request?: protos.google.cloud.documentai.v1beta3.IDisableProcessorRequest,
@@ -1020,10 +980,6 @@ export class DocumentProcessorServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.disable_processor.js</caption>
- * region_tag:documentai_disable_processor_sample
- *
  */
   async checkDisableProcessorProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta3.DisableProcessorResponse, protos.google.cloud.documentai.v1beta3.DisableProcessorMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1080,10 +1036,6 @@ export class DocumentProcessorServiceClient {
  * @example
  * const [operation] = await client.reviewDocument(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.review_document.js</caption>
- * region_tag:documentai_review_document_sample
- *
  */
   reviewDocument(
       request?: protos.google.cloud.documentai.v1beta3.IReviewDocumentRequest,
@@ -1133,10 +1085,6 @@ export class DocumentProcessorServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.review_document.js</caption>
- * region_tag:documentai_review_document_sample
- *
  */
   async checkReviewDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta3.ReviewDocumentResponse, protos.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1192,10 +1140,6 @@ export class DocumentProcessorServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.list_processors.js</caption>
- * region_tag:documentai_list_processors_sample
- *
  */
   listProcessors(
       request?: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,
@@ -1258,10 +1202,6 @@ export class DocumentProcessorServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.list_processors.js</caption>
- * region_tag:documentai_list_processors_sample
- *
  */
   listProcessorsStream(
       request?: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,
@@ -1317,10 +1257,6 @@ export class DocumentProcessorServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta3/document_processor_service.list_processors.js</caption>
- * region_tag:documentai_list_processors_sample
- *
  */
   listProcessorsAsync(
       request?: protos.google.cloud.documentai.v1beta3.IListProcessorsRequest,

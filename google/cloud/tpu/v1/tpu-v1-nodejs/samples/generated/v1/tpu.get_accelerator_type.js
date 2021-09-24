@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START tpu_get_accelerator_type_sample]
+  // [START tpu_v1_generated_Tpu_GetAcceleratorType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getAcceleratorType();
-  // [END tpu_get_accelerator_type_sample]
+  // [END tpu_v1_generated_Tpu_GetAcceleratorType_async]
 }
 
 process.on('unhandledRejection', err => {

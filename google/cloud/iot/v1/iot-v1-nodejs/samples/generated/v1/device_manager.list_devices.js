@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START iot_list_devices_sample]
+  // [START iot_v1_generated_DeviceManager_ListDevices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -80,7 +80,7 @@ function main(parent) {
   }
 
   listDevices();
-  // [END iot_list_devices_sample]
+  // [END iot_v1_generated_DeviceManager_ListDevices_async]
 }
 
 process.on('unhandledRejection', err => {

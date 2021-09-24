@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectName, groupId) {
-  // [START clouderrorreporting_list_events_sample]
+  // [START clouderrorreporting_v1beta1_generated_ErrorStatsService_ListEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(projectName, groupId) {
   }
 
   listEvents();
-  // [END clouderrorreporting_list_events_sample]
+  // [END clouderrorreporting_v1beta1_generated_ErrorStatsService_ListEvents_async]
 }
 
 process.on('unhandledRejection', err => {

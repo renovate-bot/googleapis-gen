@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START shell_add_public_key_sample]
+  // [START shell_v1_generated_CloudShellService_AddPublicKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   addPublicKey();
-  // [END shell_add_public_key_sample]
+  // [END shell_v1_generated_CloudShellService_AddPublicKey_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_get_flow_sample]
+  // [START cx_v3_generated_Flows_GetFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(name) {
   }
 
   getFlow();
-  // [END cx_get_flow_sample]
+  // [END cx_v3_generated_Flows_GetFlow_async]
 }
 
 process.on('unhandledRejection', err => {

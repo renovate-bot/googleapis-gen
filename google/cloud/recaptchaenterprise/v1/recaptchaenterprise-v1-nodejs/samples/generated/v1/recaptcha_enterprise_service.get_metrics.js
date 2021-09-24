@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START recaptchaenterprise_get_metrics_sample]
+  // [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_GetMetrics_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getMetrics();
-  // [END recaptchaenterprise_get_metrics_sample]
+  // [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_GetMetrics_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(buildEvent, projectId) {
-  // [START build_publish_lifecycle_event_sample]
+  // [START build_v1_generated_PublishBuildEvent_PublishLifecycleEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(buildEvent, projectId) {
   }
 
   publishLifecycleEvent();
-  // [END build_publish_lifecycle_event_sample]
+  // [END build_v1_generated_PublishBuildEvent_PublishLifecycleEvent_async]
 }
 
 process.on('unhandledRejection', err => {

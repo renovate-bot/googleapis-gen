@@ -16,7 +16,7 @@
 'use strict';
 
 function main(attestor, attestation, occurrenceNote, occurrenceResourceUri) {
-  // [START binaryauthorization_validate_attestation_occurrence_sample]
+  // [START binaryauthorization_v1_generated_ValidationHelperV1_ValidateAttestationOccurrence_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(attestor, attestation, occurrenceNote, occurrenceResourceUri) {
   }
 
   validateAttestationOccurrence();
-  // [END binaryauthorization_validate_attestation_occurrence_sample]
+  // [END binaryauthorization_v1_generated_ValidationHelperV1_ValidateAttestationOccurrence_async]
 }
 
 process.on('unhandledRejection', err => {

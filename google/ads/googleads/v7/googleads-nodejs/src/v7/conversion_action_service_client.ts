@@ -690,10 +690,6 @@ export class ConversionActionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConversionAction(request);
- *
- * @example <caption>include:samples/generated/v7/conversion_action_service.get_conversion_action.js</caption>
- * region_tag:googleads_get_conversion_action_sample
- *
  */
   getConversionAction(
       request?: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
@@ -797,10 +793,6 @@ export class ConversionActionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateConversionActions(request);
- *
- * @example <caption>include:samples/generated/v7/conversion_action_service.mutate_conversion_actions.js</caption>
- * region_tag:googleads_mutate_conversion_actions_sample
- *
  */
   mutateConversionActions(
       request?: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,

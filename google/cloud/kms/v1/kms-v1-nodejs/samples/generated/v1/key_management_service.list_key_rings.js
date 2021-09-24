@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START kms_list_key_rings_sample]
+  // [START kms_v1_generated_KeyManagementService_ListKeyRings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -72,7 +72,7 @@ function main(parent) {
   }
 
   listKeyRings();
-  // [END kms_list_key_rings_sample]
+  // [END kms_v1_generated_KeyManagementService_ListKeyRings_async]
 }
 
 process.on('unhandledRejection', err => {

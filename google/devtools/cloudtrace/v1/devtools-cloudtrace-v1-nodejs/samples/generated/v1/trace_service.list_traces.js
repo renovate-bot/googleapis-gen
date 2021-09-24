@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId) {
-  // [START cloudtrace_list_traces_sample]
+  // [START cloudtrace_v1_generated_TraceService_ListTraces_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -115,7 +115,7 @@ function main(projectId) {
   }
 
   listTraces();
-  // [END cloudtrace_list_traces_sample]
+  // [END cloudtrace_v1_generated_TraceService_ListTraces_async]
 }
 
 process.on('unhandledRejection', err => {

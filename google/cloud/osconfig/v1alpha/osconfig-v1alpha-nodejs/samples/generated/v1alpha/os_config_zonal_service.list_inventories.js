@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START osconfig_list_inventories_sample]
+  // [START osconfig_v1alpha_generated_OsConfigZonalService_ListInventories_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(parent) {
   }
 
   listInventories();
-  // [END osconfig_list_inventories_sample]
+  // [END osconfig_v1alpha_generated_OsConfigZonalService_ListInventories_async]
 }
 
 process.on('unhandledRejection', err => {

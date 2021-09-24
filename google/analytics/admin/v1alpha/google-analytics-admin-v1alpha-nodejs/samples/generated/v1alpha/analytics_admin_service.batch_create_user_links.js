@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, requests) {
-  // [START admin_batch_create_user_links_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_BatchCreateUserLinks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, requests) {
   }
 
   batchCreateUserLinks();
-  // [END admin_batch_create_user_links_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_BatchCreateUserLinks_async]
 }
 
 process.on('unhandledRejection', err => {

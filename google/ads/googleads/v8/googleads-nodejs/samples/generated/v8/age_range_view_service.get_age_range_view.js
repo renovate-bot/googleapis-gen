@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_age_range_view_sample]
+  // [START googleads_v8_generated_AgeRangeViewService_GetAgeRangeView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getAgeRangeView();
-  // [END googleads_get_age_range_view_sample]
+  // [END googleads_v8_generated_AgeRangeViewService_GetAgeRangeView_async]
 }
 
 process.on('unhandledRejection', err => {

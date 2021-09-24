@@ -720,10 +720,6 @@ export class ChangeStatusServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getChangeStatus(request);
- *
- * @example <caption>include:samples/generated/v8/change_status_service.get_change_status.js</caption>
- * region_tag:googleads_get_change_status_sample
- *
  */
   getChangeStatus(
       request?: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,

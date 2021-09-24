@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START alertcenter_update_settings_sample]
+  // [START alertcenter_v1beta1_generated_AlertCenterService_UpdateSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main() {
   }
 
   updateSettings();
-  // [END alertcenter_update_settings_sample]
+  // [END alertcenter_v1beta1_generated_AlertCenterService_UpdateSettings_async]
 }
 
 process.on('unhandledRejection', err => {

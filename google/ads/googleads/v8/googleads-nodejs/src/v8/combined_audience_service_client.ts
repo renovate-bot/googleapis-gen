@@ -722,10 +722,6 @@ export class CombinedAudienceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCombinedAudience(request);
- *
- * @example <caption>include:samples/generated/v8/combined_audience_service.get_combined_audience.js</caption>
- * region_tag:googleads_get_combined_audience_sample
- *
  */
   getCombinedAudience(
       request?: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,

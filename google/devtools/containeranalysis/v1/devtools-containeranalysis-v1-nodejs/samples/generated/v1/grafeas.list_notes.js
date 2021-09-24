@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START containeranalysis_list_notes_sample]
+  // [START containeranalysis_v1_generated_Grafeas_ListNotes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listNotes();
-  // [END containeranalysis_list_notes_sample]
+  // [END containeranalysis_v1_generated_Grafeas_ListNotes_async]
 }
 
 process.on('unhandledRejection', err => {

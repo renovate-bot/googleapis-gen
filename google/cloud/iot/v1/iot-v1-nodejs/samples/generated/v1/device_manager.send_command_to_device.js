@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, binaryData) {
-  // [START iot_send_command_to_device_sample]
+  // [START iot_v1_generated_DeviceManager_SendCommandToDevice_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name, binaryData) {
   }
 
   sendCommandToDevice();
-  // [END iot_send_command_to_device_sample]
+  // [END iot_v1_generated_DeviceManager_SendCommandToDevice_async]
 }
 
 process.on('unhandledRejection', err => {

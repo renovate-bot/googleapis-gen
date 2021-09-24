@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_delete_service_sample]
+  // [START appengine_v1_generated_Services_DeleteService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   deleteService();
-  // [END appengine_delete_service_sample]
+  // [END appengine_v1_generated_Services_DeleteService_async]
 }
 
 process.on('unhandledRejection', err => {

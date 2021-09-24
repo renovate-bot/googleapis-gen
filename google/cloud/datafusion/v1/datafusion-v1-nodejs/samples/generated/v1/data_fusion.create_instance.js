@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datafusion_create_instance_sample]
+  // [START datafusion_v1_generated_DataFusion_CreateInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   createInstance();
-  // [END datafusion_create_instance_sample]
+  // [END datafusion_v1_generated_DataFusion_CreateInstance_async]
 }
 
 process.on('unhandledRejection', err => {

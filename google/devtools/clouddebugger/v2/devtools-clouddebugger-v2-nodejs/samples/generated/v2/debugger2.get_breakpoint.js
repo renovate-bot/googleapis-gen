@@ -16,7 +16,7 @@
 'use strict';
 
 function main(debuggeeId, breakpointId, clientVersion) {
-  // [START clouddebugger_get_breakpoint_sample]
+  // [START clouddebugger_v2_generated_Debugger2_GetBreakpoint_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(debuggeeId, breakpointId, clientVersion) {
   }
 
   getBreakpoint();
-  // [END clouddebugger_get_breakpoint_sample]
+  // [END clouddebugger_v2_generated_Debugger2_GetBreakpoint_async]
 }
 
 process.on('unhandledRejection', err => {

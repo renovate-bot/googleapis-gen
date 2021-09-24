@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_delete_instance_sample]
+  // [START appengine_v1_generated_Instances_DeleteInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   deleteInstance();
-  // [END appengine_delete_instance_sample]
+  // [END appengine_v1_generated_Instances_DeleteInstance_async]
 }
 
 process.on('unhandledRejection', err => {

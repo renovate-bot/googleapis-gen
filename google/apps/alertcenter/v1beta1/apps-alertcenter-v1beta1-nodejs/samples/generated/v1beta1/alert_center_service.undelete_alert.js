@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START alertcenter_undelete_alert_sample]
+  // [START alertcenter_v1beta1_generated_AlertCenterService_UndeleteAlert_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main() {
   }
 
   undeleteAlert();
-  // [END alertcenter_undelete_alert_sample]
+  // [END alertcenter_v1beta1_generated_AlertCenterService_UndeleteAlert_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, workloadIdentityPool, workloadIdentityPoolId) {
-  // [START iam_create_workload_identity_pool_sample]
+  // [START iam_v1beta_generated_WorkloadIdentityPools_CreateWorkloadIdentityPool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, workloadIdentityPool, workloadIdentityPoolId) {
   }
 
   createWorkloadIdentityPool();
-  // [END iam_create_workload_identity_pool_sample]
+  // [END iam_v1beta_generated_WorkloadIdentityPools_CreateWorkloadIdentityPool_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, requests) {
-  // [START admin_batch_delete_user_links_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_BatchDeleteUserLinks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent, requests) {
   }
 
   batchDeleteUserLinks();
-  // [END admin_batch_delete_user_links_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_BatchDeleteUserLinks_async]
 }
 
 process.on('unhandledRejection', err => {

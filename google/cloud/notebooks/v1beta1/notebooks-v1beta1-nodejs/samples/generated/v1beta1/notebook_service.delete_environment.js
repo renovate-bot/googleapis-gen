@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_delete_environment_sample]
+  // [START notebooks_v1beta1_generated_NotebookService_DeleteEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteEnvironment();
-  // [END notebooks_delete_environment_sample]
+  // [END notebooks_v1beta1_generated_NotebookService_DeleteEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

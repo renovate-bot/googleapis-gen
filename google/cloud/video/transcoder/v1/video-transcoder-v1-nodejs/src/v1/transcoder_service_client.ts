@@ -346,10 +346,6 @@ export class TranscoderServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createJob(request);
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.create_job.js</caption>
- * region_tag:transcoder_create_job_sample
- *
  */
   createJob(
       request?: protos.google.cloud.video.transcoder.v1.ICreateJobRequest,
@@ -422,10 +418,6 @@ export class TranscoderServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJob(request);
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.get_job.js</caption>
- * region_tag:transcoder_get_job_sample
- *
  */
   getJob(
       request?: protos.google.cloud.video.transcoder.v1.IGetJobRequest,
@@ -498,10 +490,6 @@ export class TranscoderServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteJob(request);
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.delete_job.js</caption>
- * region_tag:transcoder_delete_job_sample
- *
  */
   deleteJob(
       request?: protos.google.cloud.video.transcoder.v1.IDeleteJobRequest,
@@ -582,10 +570,6 @@ export class TranscoderServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createJobTemplate(request);
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.create_job_template.js</caption>
- * region_tag:transcoder_create_job_template_sample
- *
  */
   createJobTemplate(
       request?: protos.google.cloud.video.transcoder.v1.ICreateJobTemplateRequest,
@@ -659,10 +643,6 @@ export class TranscoderServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJobTemplate(request);
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.get_job_template.js</caption>
- * region_tag:transcoder_get_job_template_sample
- *
  */
   getJobTemplate(
       request?: protos.google.cloud.video.transcoder.v1.IGetJobTemplateRequest,
@@ -735,10 +715,6 @@ export class TranscoderServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteJobTemplate(request);
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.delete_job_template.js</caption>
- * region_tag:transcoder_delete_job_template_sample
- *
  */
   deleteJobTemplate(
       request?: protos.google.cloud.video.transcoder.v1.IDeleteJobTemplateRequest,
@@ -826,10 +802,6 @@ export class TranscoderServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.list_jobs.js</caption>
- * region_tag:transcoder_list_jobs_sample
- *
  */
   listJobs(
       request?: protos.google.cloud.video.transcoder.v1.IListJobsRequest,
@@ -895,10 +867,6 @@ export class TranscoderServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.list_jobs.js</caption>
- * region_tag:transcoder_list_jobs_sample
- *
  */
   listJobsStream(
       request?: protos.google.cloud.video.transcoder.v1.IListJobsRequest,
@@ -957,10 +925,6 @@ export class TranscoderServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.list_jobs.js</caption>
- * region_tag:transcoder_list_jobs_sample
- *
  */
   listJobsAsync(
       request?: protos.google.cloud.video.transcoder.v1.IListJobsRequest,
@@ -1037,10 +1001,6 @@ export class TranscoderServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.list_job_templates.js</caption>
- * region_tag:transcoder_list_job_templates_sample
- *
  */
   listJobTemplates(
       request?: protos.google.cloud.video.transcoder.v1.IListJobTemplatesRequest,
@@ -1107,10 +1067,6 @@ export class TranscoderServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.list_job_templates.js</caption>
- * region_tag:transcoder_list_job_templates_sample
- *
  */
   listJobTemplatesStream(
       request?: protos.google.cloud.video.transcoder.v1.IListJobTemplatesRequest,
@@ -1170,10 +1126,6 @@ export class TranscoderServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/transcoder_service.list_job_templates.js</caption>
- * region_tag:transcoder_list_job_templates_sample
- *
  */
   listJobTemplatesAsync(
       request?: protos.google.cloud.video.transcoder.v1.IListJobTemplatesRequest,

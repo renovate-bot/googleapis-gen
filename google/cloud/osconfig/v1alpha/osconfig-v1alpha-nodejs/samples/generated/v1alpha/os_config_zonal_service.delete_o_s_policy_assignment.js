@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_delete_o_s_policy_assignment_sample]
+  // [START osconfig_v1alpha_generated_OsConfigZonalService_DeleteOSPolicyAssignment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteOSPolicyAssignment();
-  // [END osconfig_delete_o_s_policy_assignment_sample]
+  // [END osconfig_v1alpha_generated_OsConfigZonalService_DeleteOSPolicyAssignment_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, job) {
-  // [START talent_create_job_sample]
+  // [START talent_v4_generated_JobService_CreateJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, job) {
   }
 
   createJob();
-  // [END talent_create_job_sample]
+  // [END talent_v4_generated_JobService_CreateJob_async]
 }
 
 process.on('unhandledRejection', err => {

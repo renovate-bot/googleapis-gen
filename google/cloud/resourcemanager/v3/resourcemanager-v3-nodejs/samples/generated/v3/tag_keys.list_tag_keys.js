@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START resourcemanager_list_tag_keys_sample]
+  // [START resourcemanager_v3_generated_TagKeys_ListTagKeys_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listTagKeys();
-  // [END resourcemanager_list_tag_keys_sample]
+  // [END resourcemanager_v3_generated_TagKeys_ListTagKeys_async]
 }
 
 process.on('unhandledRejection', err => {

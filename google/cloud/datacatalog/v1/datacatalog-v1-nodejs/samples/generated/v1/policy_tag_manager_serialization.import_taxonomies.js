@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datacatalog_import_taxonomies_sample]
+  // [START datacatalog_v1_generated_PolicyTagManagerSerialization_ImportTaxonomies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent) {
   }
 
   importTaxonomies();
-  // [END datacatalog_import_taxonomies_sample]
+  // [END datacatalog_v1_generated_PolicyTagManagerSerialization_ImportTaxonomies_async]
 }
 
 process.on('unhandledRejection', err => {

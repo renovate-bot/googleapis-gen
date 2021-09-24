@@ -453,10 +453,6 @@ export class DataprocMetastoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getService(request);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.get_service.js</caption>
- * region_tag:metastore_get_service_sample
- *
  */
   getService(
       request?: protos.google.cloud.metastore.v1beta.IGetServiceRequest,
@@ -531,10 +527,6 @@ export class DataprocMetastoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMetadataImport(request);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.get_metadata_import.js</caption>
- * region_tag:metastore_get_metadata_import_sample
- *
  */
   getMetadataImport(
       request?: protos.google.cloud.metastore.v1beta.IGetMetadataImportRequest,
@@ -609,10 +601,6 @@ export class DataprocMetastoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBackup(request);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.get_backup.js</caption>
- * region_tag:metastore_get_backup_sample
- *
  */
   getBackup(
       request?: protos.google.cloud.metastore.v1beta.IGetBackupRequest,
@@ -715,10 +703,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.createService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.create_service.js</caption>
- * region_tag:metastore_create_service_sample
- *
  */
   createService(
       request?: protos.google.cloud.metastore.v1beta.ICreateServiceRequest,
@@ -768,10 +752,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.create_service.js</caption>
- * region_tag:metastore_create_service_sample
- *
  */
   async checkCreateServiceProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.Service, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -840,10 +820,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.updateService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.update_service.js</caption>
- * region_tag:metastore_update_service_sample
- *
  */
   updateService(
       request?: protos.google.cloud.metastore.v1beta.IUpdateServiceRequest,
@@ -893,10 +869,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.update_service.js</caption>
- * region_tag:metastore_update_service_sample
- *
  */
   async checkUpdateServiceProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.Service, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -959,10 +931,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.deleteService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.delete_service.js</caption>
- * region_tag:metastore_delete_service_sample
- *
  */
   deleteService(
       request?: protos.google.cloud.metastore.v1beta.IDeleteServiceRequest,
@@ -1012,10 +980,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.delete_service.js</caption>
- * region_tag:metastore_delete_service_sample
- *
  */
   async checkDeleteServiceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1089,10 +1053,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.createMetadataImport(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.create_metadata_import.js</caption>
- * region_tag:metastore_create_metadata_import_sample
- *
  */
   createMetadataImport(
       request?: protos.google.cloud.metastore.v1beta.ICreateMetadataImportRequest,
@@ -1142,10 +1102,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.create_metadata_import.js</caption>
- * region_tag:metastore_create_metadata_import_sample
- *
  */
   async checkCreateMetadataImportProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.MetadataImport, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1215,10 +1171,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.updateMetadataImport(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.update_metadata_import.js</caption>
- * region_tag:metastore_update_metadata_import_sample
- *
  */
   updateMetadataImport(
       request?: protos.google.cloud.metastore.v1beta.IUpdateMetadataImportRequest,
@@ -1268,10 +1220,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.update_metadata_import.js</caption>
- * region_tag:metastore_update_metadata_import_sample
- *
  */
   async checkUpdateMetadataImportProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.MetadataImport, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1341,10 +1289,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.exportMetadata(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.export_metadata.js</caption>
- * region_tag:metastore_export_metadata_sample
- *
  */
   exportMetadata(
       request?: protos.google.cloud.metastore.v1beta.IExportMetadataRequest,
@@ -1394,10 +1338,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.export_metadata.js</caption>
- * region_tag:metastore_export_metadata_sample
- *
  */
   async checkExportMetadataProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.MetadataExport, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1467,10 +1407,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.restoreService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.restore_service.js</caption>
- * region_tag:metastore_restore_service_sample
- *
  */
   restoreService(
       request?: protos.google.cloud.metastore.v1beta.IRestoreServiceRequest,
@@ -1520,10 +1456,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.restore_service.js</caption>
- * region_tag:metastore_restore_service_sample
- *
  */
   async checkRestoreServiceProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.Restore, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1596,10 +1528,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.createBackup(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.create_backup.js</caption>
- * region_tag:metastore_create_backup_sample
- *
  */
   createBackup(
       request?: protos.google.cloud.metastore.v1beta.ICreateBackupRequest,
@@ -1649,10 +1577,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.create_backup.js</caption>
- * region_tag:metastore_create_backup_sample
- *
  */
   async checkCreateBackupProgress(name: string): Promise<LROperation<protos.google.cloud.metastore.v1beta.Backup, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1715,10 +1639,6 @@ export class DataprocMetastoreClient {
  * @example
  * const [operation] = await client.deleteBackup(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.delete_backup.js</caption>
- * region_tag:metastore_delete_backup_sample
- *
  */
   deleteBackup(
       request?: protos.google.cloud.metastore.v1beta.IDeleteBackupRequest,
@@ -1768,10 +1688,6 @@ export class DataprocMetastoreClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.delete_backup.js</caption>
- * region_tag:metastore_delete_backup_sample
- *
  */
   async checkDeleteBackupProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.metastore.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1843,10 +1759,6 @@ export class DataprocMetastoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_services.js</caption>
- * region_tag:metastore_list_services_sample
- *
  */
   listServices(
       request?: protos.google.cloud.metastore.v1beta.IListServicesRequest,
@@ -1925,10 +1837,6 @@ export class DataprocMetastoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_services.js</caption>
- * region_tag:metastore_list_services_sample
- *
  */
   listServicesStream(
       request?: protos.google.cloud.metastore.v1beta.IListServicesRequest,
@@ -2000,10 +1908,6 @@ export class DataprocMetastoreClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_services.js</caption>
- * region_tag:metastore_list_services_sample
- *
  */
   listServicesAsync(
       request?: protos.google.cloud.metastore.v1beta.IListServicesRequest,
@@ -2091,10 +1995,6 @@ export class DataprocMetastoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_metadata_imports.js</caption>
- * region_tag:metastore_list_metadata_imports_sample
- *
  */
   listMetadataImports(
       request?: protos.google.cloud.metastore.v1beta.IListMetadataImportsRequest,
@@ -2172,10 +2072,6 @@ export class DataprocMetastoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_metadata_imports.js</caption>
- * region_tag:metastore_list_metadata_imports_sample
- *
  */
   listMetadataImportsStream(
       request?: protos.google.cloud.metastore.v1beta.IListMetadataImportsRequest,
@@ -2246,10 +2142,6 @@ export class DataprocMetastoreClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_metadata_imports.js</caption>
- * region_tag:metastore_list_metadata_imports_sample
- *
  */
   listMetadataImportsAsync(
       request?: protos.google.cloud.metastore.v1beta.IListMetadataImportsRequest,
@@ -2337,10 +2229,6 @@ export class DataprocMetastoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_backups.js</caption>
- * region_tag:metastore_list_backups_sample
- *
  */
   listBackups(
       request?: protos.google.cloud.metastore.v1beta.IListBackupsRequest,
@@ -2418,10 +2306,6 @@ export class DataprocMetastoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_backups.js</caption>
- * region_tag:metastore_list_backups_sample
- *
  */
   listBackupsStream(
       request?: protos.google.cloud.metastore.v1beta.IListBackupsRequest,
@@ -2492,10 +2376,6 @@ export class DataprocMetastoreClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/dataproc_metastore.list_backups.js</caption>
- * region_tag:metastore_list_backups_sample
- *
  */
   listBackupsAsync(
       request?: protos.google.cloud.metastore.v1beta.IListBackupsRequest,

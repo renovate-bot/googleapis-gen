@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, spoke) {
-  // [START networkconnectivity_create_spoke_sample]
+  // [START networkconnectivity_v1alpha1_generated_HubService_CreateSpoke_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent, spoke) {
   }
 
   createSpoke();
-  // [END networkconnectivity_create_spoke_sample]
+  // [END networkconnectivity_v1alpha1_generated_HubService_CreateSpoke_async]
 }
 
 process.on('unhandledRejection', err => {

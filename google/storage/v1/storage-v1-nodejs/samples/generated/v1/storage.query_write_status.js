@@ -16,7 +16,7 @@
 'use strict';
 
 function main(uploadId) {
-  // [START storage_query_write_status_sample]
+  // [START storage_v1_generated_Storage_QueryWriteStatus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(uploadId) {
   }
 
   queryWriteStatus();
-  // [END storage_query_write_status_sample]
+  // [END storage_v1_generated_Storage_QueryWriteStatus_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_campaign_bid_modifier_sample]
+  // [START googleads_v8_generated_CampaignBidModifierService_GetCampaignBidModifier_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getCampaignBidModifier();
-  // [END googleads_get_campaign_bid_modifier_sample]
+  // [END googleads_v8_generated_CampaignBidModifierService_GetCampaignBidModifier_async]
 }
 
 process.on('unhandledRejection', err => {

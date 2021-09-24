@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, topic, topicId) {
-  // [START pubsublite_create_topic_sample]
+  // [START pubsublite_v1_generated_AdminService_CreateTopic_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent, topic, topicId) {
   }
 
   createTopic();
-  // [END pubsublite_create_topic_sample]
+  // [END pubsublite_v1_generated_AdminService_CreateTopic_async]
 }
 
 process.on('unhandledRejection', err => {

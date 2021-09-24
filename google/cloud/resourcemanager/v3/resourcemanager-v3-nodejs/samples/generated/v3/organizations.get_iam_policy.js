@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START resourcemanager_get_iam_policy_sample]
+  // [START resourcemanager_v3_generated_Organizations_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END resourcemanager_get_iam_policy_sample]
+  // [END resourcemanager_v3_generated_Organizations_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

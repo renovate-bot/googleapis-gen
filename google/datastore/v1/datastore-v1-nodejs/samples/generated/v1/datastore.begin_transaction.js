@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId) {
-  // [START datastore_begin_transaction_sample]
+  // [START datastore_v1_generated_Datastore_BeginTransaction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(projectId) {
   }
 
   beginTransaction();
-  // [END datastore_begin_transaction_sample]
+  // [END datastore_v1_generated_Datastore_BeginTransaction_async]
 }
 
 process.on('unhandledRejection', err => {

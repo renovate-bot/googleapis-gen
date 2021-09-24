@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_list_web_data_streams_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_ListWebDataStreams_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent) {
   }
 
   listWebDataStreams();
-  // [END admin_list_web_data_streams_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_ListWebDataStreams_async]
 }
 
 process.on('unhandledRejection', err => {

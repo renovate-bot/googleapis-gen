@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dataflow_get_job_metrics_sample]
+  // [START dataflow_v1beta3_generated_MetricsV1Beta3_GetJobMetrics_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   getJobMetrics();
-  // [END dataflow_get_job_metrics_sample]
+  // [END dataflow_v1beta3_generated_MetricsV1Beta3_GetJobMetrics_async]
 }
 
 process.on('unhandledRejection', err => {

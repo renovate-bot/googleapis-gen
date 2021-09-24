@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_delete_knowledge_base_sample]
+  // [START dialogflow_v2beta1_generated_KnowledgeBases_DeleteKnowledgeBase_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   deleteKnowledgeBase();
-  // [END dialogflow_delete_knowledge_base_sample]
+  // [END dialogflow_v2beta1_generated_KnowledgeBases_DeleteKnowledgeBase_async]
 }
 
 process.on('unhandledRejection', err => {

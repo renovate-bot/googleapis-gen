@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, campaign, suggestionInfo) {
-  // [START googleads_suggest_smart_campaign_budget_options_sample]
+  // [START googleads_v8_generated_SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(customerId, campaign, suggestionInfo) {
   }
 
   suggestSmartCampaignBudgetOptions();
-  // [END googleads_suggest_smart_campaign_budget_options_sample]
+  // [END googleads_v8_generated_SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_async]
 }
 
 process.on('unhandledRejection', err => {

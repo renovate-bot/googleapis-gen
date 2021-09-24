@@ -720,10 +720,6 @@ export class DistanceViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDistanceView(request);
- *
- * @example <caption>include:samples/generated/v8/distance_view_service.get_distance_view.js</caption>
- * region_tag:googleads_get_distance_view_sample
- *
  */
   getDistanceView(
       request?: protos.google.ads.googleads.v8.services.IGetDistanceViewRequest,

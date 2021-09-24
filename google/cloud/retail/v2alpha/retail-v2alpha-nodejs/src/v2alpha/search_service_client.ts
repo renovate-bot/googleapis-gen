@@ -532,10 +532,6 @@ export class SearchServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2alpha/search_service.search.js</caption>
- * region_tag:retail_search_sample
- *
  */
   search(
       request?: protos.google.cloud.retail.v2alpha.ISearchRequest,
@@ -773,10 +769,6 @@ export class SearchServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2alpha/search_service.search.js</caption>
- * region_tag:retail_search_sample
- *
  */
   searchStream(
       request?: protos.google.cloud.retail.v2alpha.ISearchRequest,
@@ -1007,10 +999,6 @@ export class SearchServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2alpha/search_service.search.js</caption>
- * region_tag:retail_search_sample
- *
  */
   searchAsync(
       request?: protos.google.cloud.retail.v2alpha.ISearchRequest,

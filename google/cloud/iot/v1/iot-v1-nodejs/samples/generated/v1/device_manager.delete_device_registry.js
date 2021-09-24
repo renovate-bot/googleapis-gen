@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START iot_delete_device_registry_sample]
+  // [START iot_v1_generated_DeviceManager_DeleteDeviceRegistry_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteDeviceRegistry();
-  // [END iot_delete_device_registry_sample]
+  // [END iot_v1_generated_DeviceManager_DeleteDeviceRegistry_async]
 }
 
 process.on('unhandledRejection', err => {

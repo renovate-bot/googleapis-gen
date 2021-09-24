@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START domains_delete_registration_sample]
+  // [START domains_v1beta1_generated_Domains_DeleteRegistration_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteRegistration();
-  // [END domains_delete_registration_sample]
+  // [END domains_v1beta1_generated_Domains_DeleteRegistration_async]
 }
 
 process.on('unhandledRejection', err => {

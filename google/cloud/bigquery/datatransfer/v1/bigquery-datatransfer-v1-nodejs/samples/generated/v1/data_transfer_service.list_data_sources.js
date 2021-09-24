@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datatransfer_list_data_sources_sample]
+  // [START datatransfer_v1_generated_DataTransferService_ListDataSources_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listDataSources();
-  // [END datatransfer_list_data_sources_sample]
+  // [END datatransfer_v1_generated_DataTransferService_ListDataSources_async]
 }
 
 process.on('unhandledRejection', err => {

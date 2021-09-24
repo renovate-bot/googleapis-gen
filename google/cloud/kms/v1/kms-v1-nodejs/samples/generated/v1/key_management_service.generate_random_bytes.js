@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START kms_generate_random_bytes_sample]
+  // [START kms_v1_generated_KeyManagementService_GenerateRandomBytes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   generateRandomBytes();
-  // [END kms_generate_random_bytes_sample]
+  // [END kms_v1_generated_KeyManagementService_GenerateRandomBytes_async]
 }
 
 process.on('unhandledRejection', err => {

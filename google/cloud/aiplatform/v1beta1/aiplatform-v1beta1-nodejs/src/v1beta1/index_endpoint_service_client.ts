@@ -476,10 +476,6 @@ export class IndexEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIndexEndpoint(request);
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.get_index_endpoint.js</caption>
- * region_tag:aiplatform_get_index_endpoint_sample
- *
  */
   getIndexEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetIndexEndpointRequest,
@@ -553,10 +549,6 @@ export class IndexEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateIndexEndpoint(request);
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.update_index_endpoint.js</caption>
- * region_tag:aiplatform_update_index_endpoint_sample
- *
  */
   updateIndexEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateIndexEndpointRequest,
@@ -635,10 +627,6 @@ export class IndexEndpointServiceClient {
  * @example
  * const [operation] = await client.createIndexEndpoint(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.create_index_endpoint.js</caption>
- * region_tag:aiplatform_create_index_endpoint_sample
- *
  */
   createIndexEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateIndexEndpointRequest,
@@ -688,10 +676,6 @@ export class IndexEndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.create_index_endpoint.js</caption>
- * region_tag:aiplatform_create_index_endpoint_sample
- *
  */
   async checkCreateIndexEndpointProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.IndexEndpoint, protos.google.cloud.aiplatform.v1beta1.CreateIndexEndpointOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -740,10 +724,6 @@ export class IndexEndpointServiceClient {
  * @example
  * const [operation] = await client.deleteIndexEndpoint(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.delete_index_endpoint.js</caption>
- * region_tag:aiplatform_delete_index_endpoint_sample
- *
  */
   deleteIndexEndpoint(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteIndexEndpointRequest,
@@ -793,10 +773,6 @@ export class IndexEndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.delete_index_endpoint.js</caption>
- * region_tag:aiplatform_delete_index_endpoint_sample
- *
  */
   async checkDeleteIndexEndpointProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -849,10 +825,6 @@ export class IndexEndpointServiceClient {
  * @example
  * const [operation] = await client.deployIndex(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.deploy_index.js</caption>
- * region_tag:aiplatform_deploy_index_sample
- *
  */
   deployIndex(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeployIndexRequest,
@@ -902,10 +874,6 @@ export class IndexEndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.deploy_index.js</caption>
- * region_tag:aiplatform_deploy_index_sample
- *
  */
   async checkDeployIndexProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.DeployIndexResponse, protos.google.cloud.aiplatform.v1beta1.DeployIndexOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -957,10 +925,6 @@ export class IndexEndpointServiceClient {
  * @example
  * const [operation] = await client.undeployIndex(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.undeploy_index.js</caption>
- * region_tag:aiplatform_undeploy_index_sample
- *
  */
   undeployIndex(
       request?: protos.google.cloud.aiplatform.v1beta1.IUndeployIndexRequest,
@@ -1010,10 +974,6 @@ export class IndexEndpointServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.undeploy_index.js</caption>
- * region_tag:aiplatform_undeploy_index_sample
- *
  */
   async checkUndeployIndexProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.UndeployIndexResponse, protos.google.cloud.aiplatform.v1beta1.UndeployIndexOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1090,10 +1050,6 @@ export class IndexEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.list_index_endpoints.js</caption>
- * region_tag:aiplatform_list_index_endpoints_sample
- *
  */
   listIndexEndpoints(
       request?: protos.google.cloud.aiplatform.v1beta1.IListIndexEndpointsRequest,
@@ -1177,10 +1133,6 @@ export class IndexEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.list_index_endpoints.js</caption>
- * region_tag:aiplatform_list_index_endpoints_sample
- *
  */
   listIndexEndpointsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListIndexEndpointsRequest,
@@ -1257,10 +1209,6 @@ export class IndexEndpointServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/index_endpoint_service.list_index_endpoints.js</caption>
- * region_tag:aiplatform_list_index_endpoints_sample
- *
  */
   listIndexEndpointsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListIndexEndpointsRequest,

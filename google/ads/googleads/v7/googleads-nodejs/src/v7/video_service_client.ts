@@ -690,10 +690,6 @@ export class VideoServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVideo(request);
- *
- * @example <caption>include:samples/generated/v7/video_service.get_video.js</caption>
- * region_tag:googleads_get_video_sample
- *
  */
   getVideo(
       request?: protos.google.ads.googleads.v7.services.IGetVideoRequest,

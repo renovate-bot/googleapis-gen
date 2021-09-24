@@ -16,7 +16,7 @@
 'use strict';
 
 function main(action, update) {
-  // [START container_set_master_auth_sample]
+  // [START container_v1_generated_ClusterManager_SetMasterAuth_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(action, update) {
   }
 
   setMasterAuth();
-  // [END container_set_master_auth_sample]
+  // [END container_v1_generated_ClusterManager_SetMasterAuth_async]
 }
 
 process.on('unhandledRejection', err => {

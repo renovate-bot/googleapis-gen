@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START firestore_run_query_sample]
+  // [START firestore_v1_generated_Firestore_RunQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(parent) {
   }
 
   runQuery();
-  // [END firestore_run_query_sample]
+  // [END firestore_v1_generated_Firestore_RunQuery_async]
 }
 
 process.on('unhandledRejection', err => {

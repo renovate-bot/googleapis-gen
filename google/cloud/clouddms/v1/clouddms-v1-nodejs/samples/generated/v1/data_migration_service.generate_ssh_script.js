@@ -16,7 +16,7 @@
 'use strict';
 
 function main(vm) {
-  // [START clouddms_generate_ssh_script_sample]
+  // [START clouddms_v1_generated_DataMigrationService_GenerateSshScript_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(vm) {
   }
 
   generateSshScript();
-  // [END clouddms_generate_ssh_script_sample]
+  // [END clouddms_v1_generated_DataMigrationService_GenerateSshScript_async]
 }
 
 process.on('unhandledRejection', err => {

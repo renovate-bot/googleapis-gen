@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId) {
-  // [START storagetransfer_get_google_service_account_sample]
+  // [START storagetransfer_v1_generated_StorageTransferService_GetGoogleServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(projectId) {
   }
 
   getGoogleServiceAccount();
-  // [END storagetransfer_get_google_service_account_sample]
+  // [END storagetransfer_v1_generated_StorageTransferService_GetGoogleServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

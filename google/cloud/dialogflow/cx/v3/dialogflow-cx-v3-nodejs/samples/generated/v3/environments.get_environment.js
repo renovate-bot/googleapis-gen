@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_get_environment_sample]
+  // [START cx_v3_generated_Environments_GetEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getEnvironment();
-  // [END cx_get_environment_sample]
+  // [END cx_v3_generated_Environments_GetEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

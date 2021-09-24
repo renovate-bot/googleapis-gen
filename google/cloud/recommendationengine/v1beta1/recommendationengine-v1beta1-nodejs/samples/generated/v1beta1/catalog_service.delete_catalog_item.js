@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START recommendationengine_delete_catalog_item_sample]
+  // [START recommendationengine_v1beta1_generated_CatalogService_DeleteCatalogItem_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteCatalogItem();
-  // [END recommendationengine_delete_catalog_item_sample]
+  // [END recommendationengine_v1beta1_generated_CatalogService_DeleteCatalogItem_async]
 }
 
 process.on('unhandledRejection', err => {

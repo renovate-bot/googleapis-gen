@@ -721,10 +721,6 @@ export class AccountLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAccountLink(request);
- *
- * @example <caption>include:samples/generated/v8/account_link_service.get_account_link.js</caption>
- * region_tag:googleads_get_account_link_sample
- *
  */
   getAccountLink(
       request?: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
@@ -810,10 +806,6 @@ export class AccountLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAccountLink(request);
- *
- * @example <caption>include:samples/generated/v8/account_link_service.create_account_link.js</caption>
- * region_tag:googleads_create_account_link_sample
- *
  */
   createAccountLink(
       request?: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
@@ -909,10 +901,6 @@ export class AccountLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAccountLink(request);
- *
- * @example <caption>include:samples/generated/v8/account_link_service.mutate_account_link.js</caption>
- * region_tag:googleads_mutate_account_link_sample
- *
  */
   mutateAccountLink(
       request?: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,

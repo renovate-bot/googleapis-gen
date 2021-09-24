@@ -720,10 +720,6 @@ export class AdGroupBidModifierServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupBidModifier(request);
- *
- * @example <caption>include:samples/generated/v8/ad_group_bid_modifier_service.get_ad_group_bid_modifier.js</caption>
- * region_tag:googleads_get_ad_group_bid_modifier_sample
- *
  */
   getAdGroupBidModifier(
       request?: protos.google.ads.googleads.v8.services.IGetAdGroupBidModifierRequest,
@@ -834,10 +830,6 @@ export class AdGroupBidModifierServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupBidModifiers(request);
- *
- * @example <caption>include:samples/generated/v8/ad_group_bid_modifier_service.mutate_ad_group_bid_modifiers.js</caption>
- * region_tag:googleads_mutate_ad_group_bid_modifiers_sample
- *
  */
   mutateAdGroupBidModifiers(
       request?: protos.google.ads.googleads.v8.services.IMutateAdGroupBidModifiersRequest,

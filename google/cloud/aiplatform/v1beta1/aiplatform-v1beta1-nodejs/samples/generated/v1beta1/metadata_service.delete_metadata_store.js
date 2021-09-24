@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START aiplatform_delete_metadata_store_sample]
+  // [START aiplatform_v1beta1_generated_MetadataService_DeleteMetadataStore_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   deleteMetadataStore();
-  // [END aiplatform_delete_metadata_store_sample]
+  // [END aiplatform_v1beta1_generated_MetadataService_DeleteMetadataStore_async]
 }
 
 process.on('unhandledRejection', err => {

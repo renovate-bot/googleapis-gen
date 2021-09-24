@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_campaign_experiments_sample]
+  // [START googleads_v8_generated_CampaignExperimentService_MutateCampaignExperiments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateCampaignExperiments();
-  // [END googleads_mutate_campaign_experiments_sample]
+  // [END googleads_v8_generated_CampaignExperimentService_MutateCampaignExperiments_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(execution) {
-  // [START aiplatform_query_execution_inputs_and_outputs_sample]
+  // [START aiplatform_v1beta1_generated_MetadataService_QueryExecutionInputsAndOutputs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(execution) {
   }
 
   queryExecutionInputsAndOutputs();
-  // [END aiplatform_query_execution_inputs_and_outputs_sample]
+  // [END aiplatform_v1beta1_generated_MetadataService_QueryExecutionInputsAndOutputs_async]
 }
 
 process.on('unhandledRejection', err => {

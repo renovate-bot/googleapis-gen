@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, intendedMembership) {
-  // [START gkehub_validate_exclusivity_sample]
+  // [START gkehub_v1beta1_generated_GkeHubMembershipService_ValidateExclusivity_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, intendedMembership) {
   }
 
   validateExclusivity();
-  // [END gkehub_validate_exclusivity_sample]
+  // [END gkehub_v1beta1_generated_GkeHubMembershipService_ValidateExclusivity_async]
 }
 
 process.on('unhandledRejection', err => {

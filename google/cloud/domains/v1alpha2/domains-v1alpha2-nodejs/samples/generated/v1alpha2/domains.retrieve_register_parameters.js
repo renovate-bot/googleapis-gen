@@ -16,7 +16,7 @@
 'use strict';
 
 function main(domainName, location) {
-  // [START domains_retrieve_register_parameters_sample]
+  // [START domains_v1alpha2_generated_Domains_RetrieveRegisterParameters_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(domainName, location) {
   }
 
   retrieveRegisterParameters();
-  // [END domains_retrieve_register_parameters_sample]
+  // [END domains_v1alpha2_generated_Domains_RetrieveRegisterParameters_async]
 }
 
 process.on('unhandledRejection', err => {

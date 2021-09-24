@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START servicedirectory_get_endpoint_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_GetEndpoint_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getEndpoint();
-  // [END servicedirectory_get_endpoint_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_GetEndpoint_async]
 }
 
 process.on('unhandledRejection', err => {

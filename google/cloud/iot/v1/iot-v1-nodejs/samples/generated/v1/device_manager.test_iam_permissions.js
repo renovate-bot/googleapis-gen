@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START iot_test_iam_permissions_sample]
+  // [START iot_v1_generated_DeviceManager_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END iot_test_iam_permissions_sample]
+  // [END iot_v1_generated_DeviceManager_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, securitySettings) {
-  // [START cx_create_security_settings_sample]
+  // [START cx_v3_generated_SecuritySettingsService_CreateSecuritySettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, securitySettings) {
   }
 
   createSecuritySettings();
-  // [END cx_create_security_settings_sample]
+  // [END cx_v3_generated_SecuritySettingsService_CreateSecuritySettings_async]
 }
 
 process.on('unhandledRejection', err => {

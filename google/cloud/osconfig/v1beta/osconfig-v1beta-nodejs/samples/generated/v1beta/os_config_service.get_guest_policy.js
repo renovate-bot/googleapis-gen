@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_get_guest_policy_sample]
+  // [START osconfig_v1beta_generated_OsConfigService_GetGuestPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getGuestPolicy();
-  // [END osconfig_get_guest_policy_sample]
+  // [END osconfig_v1beta_generated_OsConfigService_GetGuestPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

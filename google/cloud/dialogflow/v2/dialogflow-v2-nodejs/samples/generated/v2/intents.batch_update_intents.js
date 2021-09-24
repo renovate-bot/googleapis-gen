@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_batch_update_intents_sample]
+  // [START dialogflow_v2_generated_Intents_BatchUpdateIntents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(parent) {
   }
 
   batchUpdateIntents();
-  // [END dialogflow_batch_update_intents_sample]
+  // [END dialogflow_v2_generated_Intents_BatchUpdateIntents_async]
 }
 
 process.on('unhandledRejection', err => {

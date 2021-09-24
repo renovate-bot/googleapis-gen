@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_enable_service_account_sample]
+  // [START admin_v1_generated_IAM_EnableServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   enableServiceAccount();
-  // [END admin_enable_service_account_sample]
+  // [END admin_v1_generated_IAM_EnableServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

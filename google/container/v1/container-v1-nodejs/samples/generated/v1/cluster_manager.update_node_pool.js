@@ -16,7 +16,7 @@
 'use strict';
 
 function main(nodeVersion, imageType) {
-  // [START container_update_node_pool_sample]
+  // [START container_v1_generated_ClusterManager_UpdateNodePool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -101,7 +101,7 @@ function main(nodeVersion, imageType) {
   }
 
   updateNodePool();
-  // [END container_update_node_pool_sample]
+  // [END container_v1_generated_ClusterManager_UpdateNodePool_async]
 }
 
 process.on('unhandledRejection', err => {

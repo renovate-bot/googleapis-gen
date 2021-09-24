@@ -826,10 +826,6 @@ export class GoogleAdsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutate(request);
- *
- * @example <caption>include:samples/generated/v7/google_ads_service.mutate.js</caption>
- * region_tag:googleads_mutate_sample
- *
  */
   mutate(
       request?: protos.google.ads.googleads.v7.services.IMutateGoogleAdsRequest,
@@ -993,10 +989,6 @@ export class GoogleAdsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/google_ads_service.search.js</caption>
- * region_tag:googleads_search_sample
- *
  */
   search(
       request?: protos.google.ads.googleads.v7.services.ISearchGoogleAdsRequest,
@@ -1072,10 +1064,6 @@ export class GoogleAdsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/google_ads_service.search.js</caption>
- * region_tag:googleads_search_sample
- *
  */
   searchStream1(
       request?: protos.google.ads.googleads.v7.services.ISearchGoogleAdsRequest,
@@ -1144,10 +1132,6 @@ export class GoogleAdsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v7/google_ads_service.search.js</caption>
- * region_tag:googleads_search_sample
- *
  */
   searchAsync(
       request?: protos.google.ads.googleads.v7.services.ISearchGoogleAdsRequest,

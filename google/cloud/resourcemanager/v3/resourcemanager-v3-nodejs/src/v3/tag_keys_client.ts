@@ -388,10 +388,6 @@ export class TagKeysClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTagKey(request);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.get_tag_key.js</caption>
- * region_tag:resourcemanager_get_tag_key_sample
- *
  */
   getTagKey(
       request?: protos.google.cloud.resourcemanager.v3.IGetTagKeyRequest,
@@ -472,10 +468,6 @@ export class TagKeysClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.get_iam_policy.js</caption>
- * region_tag:resourcemanager_get_iam_policy_sample
- *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -557,10 +549,6 @@ export class TagKeysClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.set_iam_policy.js</caption>
- * region_tag:resourcemanager_set_iam_policy_sample
- *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -642,10 +630,6 @@ export class TagKeysClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.test_iam_permissions.js</caption>
- * region_tag:resourcemanager_test_iam_permissions_sample
- *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -728,10 +712,6 @@ export class TagKeysClient {
  * @example
  * const [operation] = await client.createTagKey(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_keys.create_tag_key.js</caption>
- * region_tag:resourcemanager_create_tag_key_sample
- *
  */
   createTagKey(
       request?: protos.google.cloud.resourcemanager.v3.ICreateTagKeyRequest,
@@ -774,10 +754,6 @@ export class TagKeysClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.create_tag_key.js</caption>
- * region_tag:resourcemanager_create_tag_key_sample
- *
  */
   async checkCreateTagKeyProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagKey, protos.google.cloud.resourcemanager.v3.CreateTagKeyMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -834,10 +810,6 @@ export class TagKeysClient {
  * @example
  * const [operation] = await client.updateTagKey(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_keys.update_tag_key.js</caption>
- * region_tag:resourcemanager_update_tag_key_sample
- *
  */
   updateTagKey(
       request?: protos.google.cloud.resourcemanager.v3.IUpdateTagKeyRequest,
@@ -887,10 +859,6 @@ export class TagKeysClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.update_tag_key.js</caption>
- * region_tag:resourcemanager_update_tag_key_sample
- *
  */
   async checkUpdateTagKeyProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagKey, protos.google.cloud.resourcemanager.v3.UpdateTagKeyMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -946,10 +914,6 @@ export class TagKeysClient {
  * @example
  * const [operation] = await client.deleteTagKey(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_keys.delete_tag_key.js</caption>
- * region_tag:resourcemanager_delete_tag_key_sample
- *
  */
   deleteTagKey(
       request?: protos.google.cloud.resourcemanager.v3.IDeleteTagKeyRequest,
@@ -999,10 +963,6 @@ export class TagKeysClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_keys.delete_tag_key.js</caption>
- * region_tag:resourcemanager_delete_tag_key_sample
- *
  */
   async checkDeleteTagKeyProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagKey, protos.google.cloud.resourcemanager.v3.DeleteTagKeyMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1058,10 +1018,6 @@ export class TagKeysClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/tag_keys.list_tag_keys.js</caption>
- * region_tag:resourcemanager_list_tag_keys_sample
- *
  */
   listTagKeys(
       request?: protos.google.cloud.resourcemanager.v3.IListTagKeysRequest,
@@ -1117,10 +1073,6 @@ export class TagKeysClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/tag_keys.list_tag_keys.js</caption>
- * region_tag:resourcemanager_list_tag_keys_sample
- *
  */
   listTagKeysStream(
       request?: protos.google.cloud.resourcemanager.v3.IListTagKeysRequest,
@@ -1169,10 +1121,6 @@ export class TagKeysClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/tag_keys.list_tag_keys.js</caption>
- * region_tag:resourcemanager_list_tag_keys_sample
- *
  */
   listTagKeysAsync(
       request?: protos.google.cloud.resourcemanager.v3.IListTagKeysRequest,

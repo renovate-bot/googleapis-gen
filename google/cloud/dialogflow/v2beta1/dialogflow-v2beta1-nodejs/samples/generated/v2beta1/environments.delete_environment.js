@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_delete_environment_sample]
+  // [START dialogflow_v2beta1_generated_Environments_DeleteEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   deleteEnvironment();
-  // [END dialogflow_delete_environment_sample]
+  // [END dialogflow_v2beta1_generated_Environments_DeleteEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

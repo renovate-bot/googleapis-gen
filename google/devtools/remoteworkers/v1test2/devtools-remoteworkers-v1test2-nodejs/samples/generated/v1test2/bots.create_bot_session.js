@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, botSession) {
-  // [START remoteworkers_create_bot_session_sample]
+  // [START remoteworkers_v1test2_generated_Bots_CreateBotSession_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(parent, botSession) {
   }
 
   createBotSession();
-  // [END remoteworkers_create_bot_session_sample]
+  // [END remoteworkers_v1test2_generated_Bots_CreateBotSession_async]
 }
 
 process.on('unhandledRejection', err => {

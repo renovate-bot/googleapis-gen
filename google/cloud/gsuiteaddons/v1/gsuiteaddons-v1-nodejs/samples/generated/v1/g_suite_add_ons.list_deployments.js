@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START gsuiteaddons_list_deployments_sample]
+  // [START gsuiteaddons_v1_generated_GSuiteAddOns_ListDeployments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent) {
   }
 
   listDeployments();
-  // [END gsuiteaddons_list_deployments_sample]
+  // [END gsuiteaddons_v1_generated_GSuiteAddOns_ListDeployments_async]
 }
 
 process.on('unhandledRejection', err => {

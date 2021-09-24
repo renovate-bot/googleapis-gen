@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_list_ingress_rules_sample]
+  // [START appengine_v1_generated_Firewall_ListIngressRules_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main() {
   }
 
   listIngressRules();
-  // [END appengine_list_ingress_rules_sample]
+  // [END appengine_v1_generated_Firewall_ListIngressRules_async]
 }
 
 process.on('unhandledRejection', err => {

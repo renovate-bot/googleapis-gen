@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_batch_update_entity_types_sample]
+  // [START dialogflow_v2beta1_generated_EntityTypes_BatchUpdateEntityTypes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(parent) {
   }
 
   batchUpdateEntityTypes();
-  // [END dialogflow_batch_update_entity_types_sample]
+  // [END dialogflow_v2beta1_generated_EntityTypes_BatchUpdateEntityTypes_async]
 }
 
 process.on('unhandledRejection', err => {

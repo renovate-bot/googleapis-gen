@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START transcoder_get_job_template_sample]
+  // [START transcoder_v1_generated_TranscoderService_GetJobTemplate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getJobTemplate();
-  // [END transcoder_get_job_template_sample]
+  // [END transcoder_v1_generated_TranscoderService_GetJobTemplate_async]
 }
 
 process.on('unhandledRejection', err => {

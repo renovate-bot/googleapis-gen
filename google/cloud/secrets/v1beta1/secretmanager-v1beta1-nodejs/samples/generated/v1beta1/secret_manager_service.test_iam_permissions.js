@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START secrets_test_iam_permissions_sample]
+  // [START secrets_v1beta1_generated_SecretManagerService_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END secrets_test_iam_permissions_sample]
+  // [END secrets_v1beta1_generated_SecretManagerService_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

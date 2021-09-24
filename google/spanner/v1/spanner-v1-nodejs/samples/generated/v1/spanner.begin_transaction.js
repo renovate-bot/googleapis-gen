@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, options) {
-  // [START spanner_begin_transaction_sample]
+  // [START spanner_v1_generated_Spanner_BeginTransaction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(session, options) {
   }
 
   beginTransaction();
-  // [END spanner_begin_transaction_sample]
+  // [END spanner_v1_generated_Spanner_BeginTransaction_async]
 }
 
 process.on('unhandledRejection', err => {

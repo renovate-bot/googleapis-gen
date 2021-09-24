@@ -353,10 +353,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDocument(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.get_document.js</caption>
- * region_tag:firestore_get_document_sample
- *
  */
   getDocument(
       request?: protos.google.firestore.v1beta1.IGetDocumentRequest,
@@ -445,10 +441,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateDocument(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.update_document.js</caption>
- * region_tag:firestore_update_document_sample
- *
  */
   updateDocument(
       request?: protos.google.firestore.v1beta1.IUpdateDocumentRequest,
@@ -524,10 +516,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDocument(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.delete_document.js</caption>
- * region_tag:firestore_delete_document_sample
- *
  */
   deleteDocument(
       request?: protos.google.firestore.v1beta1.IDeleteDocumentRequest,
@@ -603,10 +591,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.beginTransaction(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.begin_transaction.js</caption>
- * region_tag:firestore_begin_transaction_sample
- *
  */
   beginTransaction(
       request?: protos.google.firestore.v1beta1.IBeginTransactionRequest,
@@ -685,10 +669,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.commit(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.commit.js</caption>
- * region_tag:firestore_commit_sample
- *
  */
   commit(
       request?: protos.google.firestore.v1beta1.ICommitRequest,
@@ -763,10 +743,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.rollback(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.rollback.js</caption>
- * region_tag:firestore_rollback_sample
- *
  */
   rollback(
       request?: protos.google.firestore.v1beta1.IRollbackRequest,
@@ -855,10 +831,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchWrite(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.batch_write.js</caption>
- * region_tag:firestore_batch_write_sample
- *
  */
   batchWrite(
       request?: protos.google.firestore.v1beta1.IBatchWriteRequest,
@@ -945,10 +917,6 @@ export class FirestoreClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createDocument(request);
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.create_document.js</caption>
- * region_tag:firestore_create_document_sample
- *
  */
   createDocument(
       request?: protos.google.firestore.v1beta1.ICreateDocumentRequest,
@@ -1116,10 +1084,6 @@ export class FirestoreClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.write.js</caption>
- * region_tag:firestore_write_sample
- *
  */
   write(
       options?: CallOptions):
@@ -1146,10 +1110,6 @@ export class FirestoreClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.listen.js</caption>
- * region_tag:firestore_listen_sample
- *
  */
   listen(
       options?: CallOptions):
@@ -1230,10 +1190,6 @@ export class FirestoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.list_documents.js</caption>
- * region_tag:firestore_list_documents_sample
- *
  */
   listDocuments(
       request?: protos.google.firestore.v1beta1.IListDocumentsRequest,
@@ -1320,10 +1276,6 @@ export class FirestoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.list_documents.js</caption>
- * region_tag:firestore_list_documents_sample
- *
  */
   listDocumentsStream(
       request?: protos.google.firestore.v1beta1.IListDocumentsRequest,
@@ -1403,10 +1355,6 @@ export class FirestoreClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.list_documents.js</caption>
- * region_tag:firestore_list_documents_sample
- *
  */
   listDocumentsAsync(
       request?: protos.google.firestore.v1beta1.IListDocumentsRequest,
@@ -1512,10 +1460,6 @@ export class FirestoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.partition_query.js</caption>
- * region_tag:firestore_partition_query_sample
- *
  */
   partitionQuery(
       request?: protos.google.firestore.v1beta1.IPartitionQueryRequest,
@@ -1609,10 +1553,6 @@ export class FirestoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.partition_query.js</caption>
- * region_tag:firestore_partition_query_sample
- *
  */
   partitionQueryStream(
       request?: protos.google.firestore.v1beta1.IPartitionQueryRequest,
@@ -1699,10 +1639,6 @@ export class FirestoreClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.partition_query.js</caption>
- * region_tag:firestore_partition_query_sample
- *
  */
   partitionQueryAsync(
       request?: protos.google.firestore.v1beta1.IPartitionQueryRequest,
@@ -1775,10 +1711,6 @@ export class FirestoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.list_collection_ids.js</caption>
- * region_tag:firestore_list_collection_ids_sample
- *
  */
   listCollectionIds(
       request?: protos.google.firestore.v1beta1.IListCollectionIdsRequest,
@@ -1841,10 +1773,6 @@ export class FirestoreClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.list_collection_ids.js</caption>
- * region_tag:firestore_list_collection_ids_sample
- *
  */
   listCollectionIdsStream(
       request?: protos.google.firestore.v1beta1.IListCollectionIdsRequest,
@@ -1900,10 +1828,6 @@ export class FirestoreClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/firestore.list_collection_ids.js</caption>
- * region_tag:firestore_list_collection_ids_sample
- *
  */
   listCollectionIdsAsync(
       request?: protos.google.firestore.v1beta1.IListCollectionIdsRequest,

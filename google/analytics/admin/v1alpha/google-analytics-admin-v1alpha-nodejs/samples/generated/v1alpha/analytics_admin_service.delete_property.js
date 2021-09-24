@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_property_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_DeleteProperty_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteProperty();
-  // [END admin_delete_property_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_DeleteProperty_async]
 }
 
 process.on('unhandledRejection', err => {

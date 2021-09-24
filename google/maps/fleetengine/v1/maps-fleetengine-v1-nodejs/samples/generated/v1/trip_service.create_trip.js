@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, tripId, trip) {
-  // [START fleetengine_create_trip_sample]
+  // [START fleetengine_v1_generated_TripService_CreateTrip_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -84,7 +84,7 @@ function main(parent, tripId, trip) {
   }
 
   createTrip();
-  // [END fleetengine_create_trip_sample]
+  // [END fleetengine_v1_generated_TripService_CreateTrip_async]
 }
 
 process.on('unhandledRejection', err => {

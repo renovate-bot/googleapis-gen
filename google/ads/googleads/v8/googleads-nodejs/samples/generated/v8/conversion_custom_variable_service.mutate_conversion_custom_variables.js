@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_conversion_custom_variables_sample]
+  // [START googleads_v8_generated_ConversionCustomVariableService_MutateConversionCustomVariables_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(customerId, operations) {
   }
 
   mutateConversionCustomVariables();
-  // [END googleads_mutate_conversion_custom_variables_sample]
+  // [END googleads_v8_generated_ConversionCustomVariableService_MutateConversionCustomVariables_async]
 }
 
 process.on('unhandledRejection', err => {

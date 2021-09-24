@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sdk_list_sample_projects_sample]
+  // [START sdk_v2_generated_ActionsSdk_ListSampleProjects_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   listSampleProjects();
-  // [END sdk_list_sample_projects_sample]
+  // [END sdk_v2_generated_ActionsSdk_ListSampleProjects_async]
 }
 
 process.on('unhandledRejection', err => {

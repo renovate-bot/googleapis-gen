@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START resourcemanager_test_iam_permissions_sample]
+  // [START resourcemanager_v3_generated_TagKeys_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END resourcemanager_test_iam_permissions_sample]
+  // [END resourcemanager_v3_generated_TagKeys_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

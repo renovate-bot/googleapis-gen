@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, job) {
-  // [START datalabeling_create_evaluation_job_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_CreateEvaluationJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, job) {
   }
 
   createEvaluationJob();
-  // [END datalabeling_create_evaluation_job_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_CreateEvaluationJob_async]
 }
 
 process.on('unhandledRejection', err => {

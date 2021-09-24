@@ -16,7 +16,7 @@
 'use strict';
 
 function main(appProfile, updateMask) {
-  // [START admin_update_app_profile_sample]
+  // [START admin_v2_generated_BigtableInstanceAdmin_UpdateAppProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(appProfile, updateMask) {
   }
 
   updateAppProfile();
-  // [END admin_update_app_profile_sample]
+  // [END admin_v2_generated_BigtableInstanceAdmin_UpdateAppProfile_async]
 }
 
 process.on('unhandledRejection', err => {

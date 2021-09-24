@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_list_messages_sample]
+  // [START dialogflow_v2_generated_Conversations_ListMessages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(parent) {
   }
 
   listMessages();
-  // [END dialogflow_list_messages_sample]
+  // [END dialogflow_v2_generated_Conversations_ListMessages_async]
 }
 
 process.on('unhandledRejection', err => {

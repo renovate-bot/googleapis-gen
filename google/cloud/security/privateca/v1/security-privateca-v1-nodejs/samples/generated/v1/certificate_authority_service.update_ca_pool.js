@@ -16,7 +16,7 @@
 'use strict';
 
 function main(caPool, updateMask) {
-  // [START privateca_update_ca_pool_sample]
+  // [START privateca_v1_generated_CertificateAuthorityService_UpdateCaPool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(caPool, updateMask) {
   }
 
   updateCaPool();
-  // [END privateca_update_ca_pool_sample]
+  // [END privateca_v1_generated_CertificateAuthorityService_UpdateCaPool_async]
 }
 
 process.on('unhandledRejection', err => {

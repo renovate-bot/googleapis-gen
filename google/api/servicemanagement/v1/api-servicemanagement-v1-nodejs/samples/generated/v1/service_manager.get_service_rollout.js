@@ -16,7 +16,7 @@
 'use strict';
 
 function main(serviceName, rolloutId) {
-  // [START servicemanagement_get_service_rollout_sample]
+  // [START servicemanagement_v1_generated_ServiceManager_GetServiceRollout_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(serviceName, rolloutId) {
   }
 
   getServiceRollout();
-  // [END servicemanagement_get_service_rollout_sample]
+  // [END servicemanagement_v1_generated_ServiceManager_GetServiceRollout_async]
 }
 
 process.on('unhandledRejection', err => {

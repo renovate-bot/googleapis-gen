@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket) {
-  // [START storage_list_objects_sample]
+  // [START storage_v1_generated_Storage_ListObjects_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -89,7 +89,7 @@ function main(bucket) {
   }
 
   listObjects();
-  // [END storage_list_objects_sample]
+  // [END storage_v1_generated_Storage_ListObjects_async]
 }
 
 process.on('unhandledRejection', err => {

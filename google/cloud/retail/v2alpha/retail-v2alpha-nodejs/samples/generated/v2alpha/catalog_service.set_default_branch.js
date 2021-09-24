@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START retail_set_default_branch_sample]
+  // [START retail_v2alpha_generated_CatalogService_SetDefaultBranch_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   setDefaultBranch();
-  // [END retail_set_default_branch_sample]
+  // [END retail_v2alpha_generated_CatalogService_SetDefaultBranch_async]
 }
 
 process.on('unhandledRejection', err => {

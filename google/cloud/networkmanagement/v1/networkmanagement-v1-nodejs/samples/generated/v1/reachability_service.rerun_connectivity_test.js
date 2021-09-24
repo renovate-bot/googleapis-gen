@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START networkmanagement_rerun_connectivity_test_sample]
+  // [START networkmanagement_v1_generated_ReachabilityService_RerunConnectivityTest_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   rerunConnectivityTest();
-  // [END networkmanagement_rerun_connectivity_test_sample]
+  // [END networkmanagement_v1_generated_ReachabilityService_RerunConnectivityTest_async]
 }
 
 process.on('unhandledRejection', err => {

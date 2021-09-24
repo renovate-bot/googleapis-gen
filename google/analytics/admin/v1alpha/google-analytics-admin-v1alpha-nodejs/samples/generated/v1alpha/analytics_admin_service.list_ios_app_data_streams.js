@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_list_ios_app_data_streams_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_ListIosAppDataStreams_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent) {
   }
 
   listIosAppDataStreams();
-  // [END admin_list_ios_app_data_streams_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_ListIosAppDataStreams_async]
 }
 
 process.on('unhandledRejection', err => {

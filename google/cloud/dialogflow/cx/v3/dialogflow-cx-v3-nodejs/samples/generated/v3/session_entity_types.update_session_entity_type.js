@@ -16,7 +16,7 @@
 'use strict';
 
 function main(sessionEntityType) {
-  // [START cx_update_session_entity_type_sample]
+  // [START cx_v3_generated_SessionEntityTypes_UpdateSessionEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(sessionEntityType) {
   }
 
   updateSessionEntityType();
-  // [END cx_update_session_entity_type_sample]
+  // [END cx_v3_generated_SessionEntityTypes_UpdateSessionEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START speech_get_phrase_set_sample]
+  // [START speech_v1p1beta1_generated_Adaptation_GetPhraseSet_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getPhraseSet();
-  // [END speech_get_phrase_set_sample]
+  // [END speech_v1p1beta1_generated_Adaptation_GetPhraseSet_async]
 }
 
 process.on('unhandledRejection', err => {

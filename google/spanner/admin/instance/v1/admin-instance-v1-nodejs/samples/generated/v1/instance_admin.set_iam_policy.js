@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START instance_set_iam_policy_sample]
+  // [START instance_v1_generated_InstanceAdmin_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END instance_set_iam_policy_sample]
+  // [END instance_v1_generated_InstanceAdmin_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

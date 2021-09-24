@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START iap_delete_identity_aware_proxy_client_sample]
+  // [START iap_v1_generated_IdentityAwareProxyOAuthService_DeleteIdentityAwareProxyClient_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteIdentityAwareProxyClient();
-  // [END iap_delete_identity_aware_proxy_client_sample]
+  // [END iap_v1_generated_IdentityAwareProxyOAuthService_DeleteIdentityAwareProxyClient_async]
 }
 
 process.on('unhandledRejection', err => {

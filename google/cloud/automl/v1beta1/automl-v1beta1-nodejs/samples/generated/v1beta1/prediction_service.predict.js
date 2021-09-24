@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, payload) {
-  // [START automl_predict_sample]
+  // [START automl_v1beta1_generated_PredictionService_Predict_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(name, payload) {
   }
 
   predict();
-  // [END automl_predict_sample]
+  // [END automl_v1beta1_generated_PredictionService_Predict_async]
 }
 
 process.on('unhandledRejection', err => {

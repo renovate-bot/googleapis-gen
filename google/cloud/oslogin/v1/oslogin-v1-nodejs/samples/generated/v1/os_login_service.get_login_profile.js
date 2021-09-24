@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START oslogin_get_login_profile_sample]
+  // [START oslogin_v1_generated_OsLoginService_GetLoginProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name) {
   }
 
   getLoginProfile();
-  // [END oslogin_get_login_profile_sample]
+  // [END oslogin_v1_generated_OsLoginService_GetLoginProfile_async]
 }
 
 process.on('unhandledRejection', err => {

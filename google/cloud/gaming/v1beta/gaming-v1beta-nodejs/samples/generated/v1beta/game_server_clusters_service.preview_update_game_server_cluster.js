@@ -16,7 +16,7 @@
 'use strict';
 
 function main(gameServerCluster, updateMask) {
-  // [START gaming_preview_update_game_server_cluster_sample]
+  // [START gaming_v1beta_generated_GameServerClustersService_PreviewUpdateGameServerCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(gameServerCluster, updateMask) {
   }
 
   previewUpdateGameServerCluster();
-  // [END gaming_preview_update_game_server_cluster_sample]
+  // [END gaming_v1beta_generated_GameServerClustersService_PreviewUpdateGameServerCluster_async]
 }
 
 process.on('unhandledRejection', err => {

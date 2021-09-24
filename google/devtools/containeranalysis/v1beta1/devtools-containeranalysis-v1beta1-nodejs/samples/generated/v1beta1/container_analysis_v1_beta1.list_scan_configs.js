@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, filter) {
-  // [START containeranalysis_list_scan_configs_sample]
+  // [START containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_ListScanConfigs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, filter) {
   }
 
   listScanConfigs();
-  // [END containeranalysis_list_scan_configs_sample]
+  // [END containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_ListScanConfigs_async]
 }
 
 process.on('unhandledRejection', err => {

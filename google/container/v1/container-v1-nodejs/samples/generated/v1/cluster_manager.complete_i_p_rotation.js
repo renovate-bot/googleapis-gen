@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START container_complete_i_p_rotation_sample]
+  // [START container_v1_generated_ClusterManager_CompleteIPRotation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main() {
   }
 
   completeIPRotation();
-  // [END container_complete_i_p_rotation_sample]
+  // [END container_v1_generated_ClusterManager_CompleteIPRotation_async]
 }
 
 process.on('unhandledRejection', err => {

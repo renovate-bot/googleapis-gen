@@ -358,10 +358,6 @@ export class ProfileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createProfile(request);
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.create_profile.js</caption>
- * region_tag:talent_create_profile_sample
- *
  */
   createProfile(
       request?: protos.google.cloud.talent.v4beta1.ICreateProfileRequest,
@@ -437,10 +433,6 @@ export class ProfileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getProfile(request);
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.get_profile.js</caption>
- * region_tag:talent_get_profile_sample
- *
  */
   getProfile(
       request?: protos.google.cloud.talent.v4beta1.IGetProfileRequest,
@@ -516,10 +508,6 @@ export class ProfileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateProfile(request);
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.update_profile.js</caption>
- * region_tag:talent_update_profile_sample
- *
  */
   updateProfile(
       request?: protos.google.cloud.talent.v4beta1.IUpdateProfileRequest,
@@ -597,10 +585,6 @@ export class ProfileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteProfile(request);
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.delete_profile.js</caption>
- * region_tag:talent_delete_profile_sample
- *
  */
   deleteProfile(
       request?: protos.google.cloud.talent.v4beta1.IDeleteProfileRequest,
@@ -847,10 +831,6 @@ export class ProfileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.searchProfiles(request);
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.search_profiles.js</caption>
- * region_tag:talent_search_profiles_sample
- *
  */
   searchProfiles(
       request?: protos.google.cloud.talent.v4beta1.ISearchProfilesRequest,
@@ -964,10 +944,6 @@ export class ProfileServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.list_profiles.js</caption>
- * region_tag:talent_list_profiles_sample
- *
  */
   listProfiles(
       request?: protos.google.cloud.talent.v4beta1.IListProfilesRequest,
@@ -1059,10 +1035,6 @@ export class ProfileServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.list_profiles.js</caption>
- * region_tag:talent_list_profiles_sample
- *
  */
   listProfilesStream(
       request?: protos.google.cloud.talent.v4beta1.IListProfilesRequest,
@@ -1147,10 +1119,6 @@ export class ProfileServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v4beta1/profile_service.list_profiles.js</caption>
- * region_tag:talent_list_profiles_sample
- *
  */
   listProfilesAsync(
       request?: protos.google.cloud.talent.v4beta1.IListProfilesRequest,

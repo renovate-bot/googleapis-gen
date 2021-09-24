@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, assessment) {
-  // [START recaptchaenterprise_create_assessment_sample]
+  // [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_CreateAssessment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, assessment) {
   }
 
   createAssessment();
-  // [END recaptchaenterprise_create_assessment_sample]
+  // [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_CreateAssessment_async]
 }
 
 process.on('unhandledRejection', err => {

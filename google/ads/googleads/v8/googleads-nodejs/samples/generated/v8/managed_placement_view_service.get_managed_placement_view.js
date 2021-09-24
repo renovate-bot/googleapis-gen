@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_managed_placement_view_sample]
+  // [START googleads_v8_generated_ManagedPlacementViewService_GetManagedPlacementView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getManagedPlacementView();
-  // [END googleads_get_managed_placement_view_sample]
+  // [END googleads_v8_generated_ManagedPlacementViewService_GetManagedPlacementView_async]
 }
 
 process.on('unhandledRejection', err => {

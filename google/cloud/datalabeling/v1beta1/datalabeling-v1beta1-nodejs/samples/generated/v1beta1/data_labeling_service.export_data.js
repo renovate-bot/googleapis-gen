@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, annotatedDataset, outputConfig) {
-  // [START datalabeling_export_data_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_ExportData_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(name, annotatedDataset, outputConfig) {
   }
 
   exportData();
-  // [END datalabeling_export_data_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_ExportData_async]
 }
 
 process.on('unhandledRejection', err => {

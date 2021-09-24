@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_list_transition_route_groups_sample]
+  // [START cx_v3beta1_generated_TransitionRouteGroups_ListTransitionRouteGroups_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(parent) {
   }
 
   listTransitionRouteGroups();
-  // [END cx_list_transition_route_groups_sample]
+  // [END cx_v3beta1_generated_TransitionRouteGroups_ListTransitionRouteGroups_async]
 }
 
 process.on('unhandledRejection', err => {

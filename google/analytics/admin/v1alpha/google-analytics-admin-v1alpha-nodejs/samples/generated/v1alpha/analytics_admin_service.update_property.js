@@ -16,7 +16,7 @@
 'use strict';
 
 function main(property, updateMask) {
-  // [START admin_update_property_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateProperty_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(property, updateMask) {
   }
 
   updateProperty();
-  // [END admin_update_property_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateProperty_async]
 }
 
 process.on('unhandledRejection', err => {

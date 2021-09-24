@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START containeranalysis_list_note_occurrences_sample]
+  // [START containeranalysis_v1beta1_generated_GrafeasV1Beta1_ListNoteOccurrences_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   listNoteOccurrences();
-  // [END containeranalysis_list_note_occurrences_sample]
+  // [END containeranalysis_v1beta1_generated_GrafeasV1Beta1_ListNoteOccurrences_async]
 }
 
 process.on('unhandledRejection', err => {

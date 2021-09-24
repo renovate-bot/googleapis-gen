@@ -16,7 +16,7 @@
 'use strict';
 
 function main(conversationProfile, updateMask) {
-  // [START dialogflow_update_conversation_profile_sample]
+  // [START dialogflow_v2beta1_generated_ConversationProfiles_UpdateConversationProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(conversationProfile, updateMask) {
   }
 
   updateConversationProfile();
-  // [END dialogflow_update_conversation_profile_sample]
+  // [END dialogflow_v2beta1_generated_ConversationProfiles_UpdateConversationProfile_async]
 }
 
 process.on('unhandledRejection', err => {

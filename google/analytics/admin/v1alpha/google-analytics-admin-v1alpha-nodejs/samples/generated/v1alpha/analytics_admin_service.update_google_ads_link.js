@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask) {
-  // [START admin_update_google_ads_link_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateGoogleAdsLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(updateMask) {
   }
 
   updateGoogleAdsLink();
-  // [END admin_update_google_ads_link_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateGoogleAdsLink_async]
 }
 
 process.on('unhandledRejection', err => {

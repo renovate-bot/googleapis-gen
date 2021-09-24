@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_get_entity_type_sample]
+  // [START dialogflow_v2_generated_EntityTypes_GetEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(name) {
   }
 
   getEntityType();
-  // [END dialogflow_get_entity_type_sample]
+  // [END dialogflow_v2_generated_EntityTypes_GetEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

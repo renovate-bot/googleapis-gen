@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START recaptchaenterprise_migrate_key_sample]
+  // [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_MigrateKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   migrateKey();
-  // [END recaptchaenterprise_migrate_key_sample]
+  // [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_MigrateKey_async]
 }
 
 process.on('unhandledRejection', err => {

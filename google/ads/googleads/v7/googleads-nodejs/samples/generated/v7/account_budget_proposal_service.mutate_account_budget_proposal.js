@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operation) {
-  // [START googleads_mutate_account_budget_proposal_sample]
+  // [START googleads_v7_generated_AccountBudgetProposalService_MutateAccountBudgetProposal_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(customerId, operation) {
   }
 
   mutateAccountBudgetProposal();
-  // [END googleads_mutate_account_budget_proposal_sample]
+  // [END googleads_v7_generated_AccountBudgetProposalService_MutateAccountBudgetProposal_async]
 }
 
 process.on('unhandledRejection', err => {

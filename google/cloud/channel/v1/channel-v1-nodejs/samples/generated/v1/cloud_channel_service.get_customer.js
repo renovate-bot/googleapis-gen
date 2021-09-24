@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START channel_get_customer_sample]
+  // [START channel_v1_generated_CloudChannelService_GetCustomer_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getCustomer();
-  // [END channel_get_customer_sample]
+  // [END channel_v1_generated_CloudChannelService_GetCustomer_async]
 }
 
 process.on('unhandledRejection', err => {

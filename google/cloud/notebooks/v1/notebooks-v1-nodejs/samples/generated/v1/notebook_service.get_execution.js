@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_get_execution_sample]
+  // [START notebooks_v1_generated_NotebookService_GetExecution_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getExecution();
-  // [END notebooks_get_execution_sample]
+  // [END notebooks_v1_generated_NotebookService_GetExecution_async]
 }
 
 process.on('unhandledRejection', err => {

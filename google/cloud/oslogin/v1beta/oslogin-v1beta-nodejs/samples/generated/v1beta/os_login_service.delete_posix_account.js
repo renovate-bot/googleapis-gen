@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START oslogin_delete_posix_account_sample]
+  // [START oslogin_v1beta_generated_OsLoginService_DeletePosixAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deletePosixAccount();
-  // [END oslogin_delete_posix_account_sample]
+  // [END oslogin_v1beta_generated_OsLoginService_DeletePosixAccount_async]
 }
 
 process.on('unhandledRejection', err => {

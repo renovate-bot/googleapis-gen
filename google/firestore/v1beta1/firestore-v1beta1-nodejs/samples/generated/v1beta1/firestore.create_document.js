@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, collectionId, document) {
-  // [START firestore_create_document_sample]
+  // [START firestore_v1beta1_generated_Firestore_CreateDocument_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(parent, collectionId, document) {
   }
 
   createDocument();
-  // [END firestore_create_document_sample]
+  // [END firestore_v1beta1_generated_Firestore_CreateDocument_async]
 }
 
 process.on('unhandledRejection', err => {

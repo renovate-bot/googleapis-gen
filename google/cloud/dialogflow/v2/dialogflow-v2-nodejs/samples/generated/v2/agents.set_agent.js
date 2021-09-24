@@ -16,7 +16,7 @@
 'use strict';
 
 function main(agent) {
-  // [START dialogflow_set_agent_sample]
+  // [START dialogflow_v2_generated_Agents_SetAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(agent) {
   }
 
   setAgent();
-  // [END dialogflow_set_agent_sample]
+  // [END dialogflow_v2_generated_Agents_SetAgent_async]
 }
 
 process.on('unhandledRejection', err => {

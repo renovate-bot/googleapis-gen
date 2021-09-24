@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, workerPool, workerPoolId) {
-  // [START cloudbuild_create_worker_pool_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_CreateWorkerPool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(parent, workerPool, workerPoolId) {
   }
 
   createWorkerPool();
-  // [END cloudbuild_create_worker_pool_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_CreateWorkerPool_async]
 }
 
 process.on('unhandledRejection', err => {

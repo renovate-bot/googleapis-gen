@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START automl_undeploy_model_sample]
+  // [START automl_v1beta1_generated_AutoMl_UndeployModel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   undeployModel();
-  // [END automl_undeploy_model_sample]
+  // [END automl_v1beta1_generated_AutoMl_UndeployModel_async]
 }
 
 process.on('unhandledRejection', err => {

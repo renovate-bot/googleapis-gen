@@ -348,10 +348,6 @@ export class ArtifactRegistryClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRepository(request);
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.get_repository.js</caption>
- * region_tag:artifactregistry_get_repository_sample
- *
  */
   getRepository(
       request?: protos.google.devtools.artifactregistry.v1.IGetRepositoryRequest,
@@ -432,10 +428,6 @@ export class ArtifactRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.list_docker_images.js</caption>
- * region_tag:artifactregistry_list_docker_images_sample
- *
  */
   listDockerImages(
       request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
@@ -494,10 +486,6 @@ export class ArtifactRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.list_docker_images.js</caption>
- * region_tag:artifactregistry_list_docker_images_sample
- *
  */
   listDockerImagesStream(
       request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
@@ -549,10 +537,6 @@ export class ArtifactRegistryClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.list_docker_images.js</caption>
- * region_tag:artifactregistry_list_docker_images_sample
- *
  */
   listDockerImagesAsync(
       request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
@@ -621,10 +605,6 @@ export class ArtifactRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.list_repositories.js</caption>
- * region_tag:artifactregistry_list_repositories_sample
- *
  */
   listRepositories(
       request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
@@ -683,10 +663,6 @@ export class ArtifactRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.list_repositories.js</caption>
- * region_tag:artifactregistry_list_repositories_sample
- *
  */
   listRepositoriesStream(
       request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
@@ -738,10 +714,6 @@ export class ArtifactRegistryClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/artifact_registry.list_repositories.js</caption>
- * region_tag:artifactregistry_list_repositories_sample
- *
  */
   listRepositoriesAsync(
       request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, offer) {
-  // [START channel_change_offer_sample]
+  // [START channel_v1_generated_CloudChannelService_ChangeOffer_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -72,7 +72,7 @@ function main(name, offer) {
   }
 
   changeOffer();
-  // [END channel_change_offer_sample]
+  // [END channel_v1_generated_CloudChannelService_ChangeOffer_async]
 }
 
 process.on('unhandledRejection', err => {

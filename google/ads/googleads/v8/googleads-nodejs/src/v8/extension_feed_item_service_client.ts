@@ -720,10 +720,6 @@ export class ExtensionFeedItemServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getExtensionFeedItem(request);
- *
- * @example <caption>include:samples/generated/v8/extension_feed_item_service.get_extension_feed_item.js</caption>
- * region_tag:googleads_get_extension_feed_item_sample
- *
  */
   getExtensionFeedItem(
       request?: protos.google.ads.googleads.v8.services.IGetExtensionFeedItemRequest,
@@ -835,10 +831,6 @@ export class ExtensionFeedItemServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateExtensionFeedItems(request);
- *
- * @example <caption>include:samples/generated/v8/extension_feed_item_service.mutate_extension_feed_items.js</caption>
- * region_tag:googleads_mutate_extension_feed_items_sample
- *
  */
   mutateExtensionFeedItems(
       request?: protos.google.ads.googleads.v8.services.IMutateExtensionFeedItemsRequest,

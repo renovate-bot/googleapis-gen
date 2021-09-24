@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START managedidentities_delete_domain_sample]
+  // [START managedidentities_v1_generated_ManagedIdentitiesService_DeleteDomain_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteDomain();
-  // [END managedidentities_delete_domain_sample]
+  // [END managedidentities_v1_generated_ManagedIdentitiesService_DeleteDomain_async]
 }
 
 process.on('unhandledRejection', err => {

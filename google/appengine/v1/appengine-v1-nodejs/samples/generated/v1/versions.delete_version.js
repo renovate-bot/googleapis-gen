@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_delete_version_sample]
+  // [START appengine_v1_generated_Versions_DeleteVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   deleteVersion();
-  // [END appengine_delete_version_sample]
+  // [END appengine_v1_generated_Versions_DeleteVersion_async]
 }
 
 process.on('unhandledRejection', err => {

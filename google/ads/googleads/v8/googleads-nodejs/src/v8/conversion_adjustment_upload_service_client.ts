@@ -734,10 +734,6 @@ export class ConversionAdjustmentUploadServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.uploadConversionAdjustments(request);
- *
- * @example <caption>include:samples/generated/v8/conversion_adjustment_upload_service.upload_conversion_adjustments.js</caption>
- * region_tag:googleads_upload_conversion_adjustments_sample
- *
  */
   uploadConversionAdjustments(
       request?: protos.google.ads.googleads.v8.services.IUploadConversionAdjustmentsRequest,

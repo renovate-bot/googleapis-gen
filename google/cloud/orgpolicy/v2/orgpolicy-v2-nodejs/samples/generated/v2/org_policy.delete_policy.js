@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START orgpolicy_delete_policy_sample]
+  // [START orgpolicy_v2_generated_OrgPolicy_DeletePolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deletePolicy();
-  // [END orgpolicy_delete_policy_sample]
+  // [END orgpolicy_v2_generated_OrgPolicy_DeletePolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START marketplace_get_sample]
+  // [START marketplace_v2_generated_CustomerLicenseService_Get_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   get();
-  // [END marketplace_get_sample]
+  // [END marketplace_v2_generated_CustomerLicenseService_Get_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(autoscaling) {
-  // [START container_set_node_pool_autoscaling_sample]
+  // [START container_v1_generated_ClusterManager_SetNodePoolAutoscaling_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -72,7 +72,7 @@ function main(autoscaling) {
   }
 
   setNodePoolAutoscaling();
-  // [END container_set_node_pool_autoscaling_sample]
+  // [END container_v1_generated_ClusterManager_SetNodePoolAutoscaling_async]
 }
 
 process.on('unhandledRejection', err => {

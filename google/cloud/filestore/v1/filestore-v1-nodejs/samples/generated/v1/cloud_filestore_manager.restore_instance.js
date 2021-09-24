@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, fileShare) {
-  // [START filestore_restore_instance_sample]
+  // [START filestore_v1_generated_CloudFilestoreManager_RestoreInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name, fileShare) {
   }
 
   restoreInstance();
-  // [END filestore_restore_instance_sample]
+  // [END filestore_v1_generated_CloudFilestoreManager_RestoreInstance_async]
 }
 
 process.on('unhandledRejection', err => {

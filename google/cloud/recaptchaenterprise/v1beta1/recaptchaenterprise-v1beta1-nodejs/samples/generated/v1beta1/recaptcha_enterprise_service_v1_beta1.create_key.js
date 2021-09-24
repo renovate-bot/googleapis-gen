@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, key) {
-  // [START recaptchaenterprise_create_key_sample]
+  // [START recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1_CreateKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, key) {
   }
 
   createKey();
-  // [END recaptchaenterprise_create_key_sample]
+  // [END recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1_CreateKey_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -329,10 +329,6 @@ export class SystemPolicyV1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSystemPolicy(request);
- *
- * @example <caption>include:samples/generated/v1/system_policy_v1.get_system_policy.js</caption>
- * region_tag:binaryauthorization_get_system_policy_sample
- *
  */
   getSystemPolicy(
       request?: protos.google.cloud.binaryauthorization.v1.IGetSystemPolicyRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(project) {
-  // [START storage_insert_bucket_sample]
+  // [START storage_v1_generated_Storage_InsertBucket_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(project) {
   }
 
   insertBucket();
-  // [END storage_insert_bucket_sample]
+  // [END storage_v1_generated_Storage_InsertBucket_async]
 }
 
 process.on('unhandledRejection', err => {

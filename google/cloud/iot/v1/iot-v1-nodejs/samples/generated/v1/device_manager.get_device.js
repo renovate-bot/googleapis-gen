@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START iot_get_device_sample]
+  // [START iot_v1_generated_DeviceManager_GetDevice_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name) {
   }
 
   getDevice();
-  // [END iot_get_device_sample]
+  // [END iot_v1_generated_DeviceManager_GetDevice_async]
 }
 
 process.on('unhandledRejection', err => {

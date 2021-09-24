@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START managedidentities_list_domains_sample]
+  // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_ListDomains_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main() {
   }
 
   listDomains();
-  // [END managedidentities_list_domains_sample]
+  // [END managedidentities_v1beta1_generated_ManagedIdentitiesService_ListDomains_async]
 }
 
 process.on('unhandledRejection', err => {

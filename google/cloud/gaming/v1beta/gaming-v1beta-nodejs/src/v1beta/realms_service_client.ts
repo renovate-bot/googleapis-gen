@@ -384,10 +384,6 @@ export class RealmsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRealm(request);
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.get_realm.js</caption>
- * region_tag:gaming_get_realm_sample
- *
  */
   getRealm(
       request?: protos.google.cloud.gaming.v1beta.IGetRealmRequest,
@@ -469,10 +465,6 @@ export class RealmsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.previewRealmUpdate(request);
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.preview_realm_update.js</caption>
- * region_tag:gaming_preview_realm_update_sample
- *
  */
   previewRealmUpdate(
       request?: protos.google.cloud.gaming.v1beta.IPreviewRealmUpdateRequest,
@@ -553,10 +545,6 @@ export class RealmsServiceClient {
  * @example
  * const [operation] = await client.createRealm(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.create_realm.js</caption>
- * region_tag:gaming_create_realm_sample
- *
  */
   createRealm(
       request?: protos.google.cloud.gaming.v1beta.ICreateRealmRequest,
@@ -606,10 +594,6 @@ export class RealmsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.create_realm.js</caption>
- * region_tag:gaming_create_realm_sample
- *
  */
   async checkCreateRealmProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1beta.Realm, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -657,10 +641,6 @@ export class RealmsServiceClient {
  * @example
  * const [operation] = await client.deleteRealm(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.delete_realm.js</caption>
- * region_tag:gaming_delete_realm_sample
- *
  */
   deleteRealm(
       request?: protos.google.cloud.gaming.v1beta.IDeleteRealmRequest,
@@ -710,10 +690,6 @@ export class RealmsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.delete_realm.js</caption>
- * region_tag:gaming_delete_realm_sample
- *
  */
   async checkDeleteRealmProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -768,10 +744,6 @@ export class RealmsServiceClient {
  * @example
  * const [operation] = await client.updateRealm(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.update_realm.js</caption>
- * region_tag:gaming_update_realm_sample
- *
  */
   updateRealm(
       request?: protos.google.cloud.gaming.v1beta.IUpdateRealmRequest,
@@ -821,10 +793,6 @@ export class RealmsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.update_realm.js</caption>
- * region_tag:gaming_update_realm_sample
- *
  */
   async checkUpdateRealmProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1beta.Realm, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -887,10 +855,6 @@ export class RealmsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.list_realms.js</caption>
- * region_tag:gaming_list_realms_sample
- *
  */
   listRealms(
       request?: protos.google.cloud.gaming.v1beta.IListRealmsRequest,
@@ -960,10 +924,6 @@ export class RealmsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.list_realms.js</caption>
- * region_tag:gaming_list_realms_sample
- *
  */
   listRealmsStream(
       request?: protos.google.cloud.gaming.v1beta.IListRealmsRequest,
@@ -1026,10 +986,6 @@ export class RealmsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/realms_service.list_realms.js</caption>
- * region_tag:gaming_list_realms_sample
- *
  */
   listRealmsAsync(
       request?: protos.google.cloud.gaming.v1beta.IListRealmsRequest,

@@ -413,10 +413,6 @@ export class CloudMemcacheClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstance(request);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.get_instance.js</caption>
- * region_tag:memcache_get_instance_sample
- *
  */
   getInstance(
       request?: protos.google.cloud.memcache.v1beta2.IGetInstanceRequest,
@@ -507,10 +503,6 @@ export class CloudMemcacheClient {
  * @example
  * const [operation] = await client.createInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.create_instance.js</caption>
- * region_tag:memcache_create_instance_sample
- *
  */
   createInstance(
       request?: protos.google.cloud.memcache.v1beta2.ICreateInstanceRequest,
@@ -560,10 +552,6 @@ export class CloudMemcacheClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.create_instance.js</caption>
- * region_tag:memcache_create_instance_sample
- *
  */
   async checkCreateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.memcache.v1beta2.Instance, protos.google.cloud.memcache.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -614,10 +602,6 @@ export class CloudMemcacheClient {
  * @example
  * const [operation] = await client.updateInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.update_instance.js</caption>
- * region_tag:memcache_update_instance_sample
- *
  */
   updateInstance(
       request?: protos.google.cloud.memcache.v1beta2.IUpdateInstanceRequest,
@@ -667,10 +651,6 @@ export class CloudMemcacheClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.update_instance.js</caption>
- * region_tag:memcache_update_instance_sample
- *
  */
   async checkUpdateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.memcache.v1beta2.Instance, protos.google.cloud.memcache.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -725,10 +705,6 @@ export class CloudMemcacheClient {
  * @example
  * const [operation] = await client.updateParameters(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.update_parameters.js</caption>
- * region_tag:memcache_update_parameters_sample
- *
  */
   updateParameters(
       request?: protos.google.cloud.memcache.v1beta2.IUpdateParametersRequest,
@@ -778,10 +754,6 @@ export class CloudMemcacheClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.update_parameters.js</caption>
- * region_tag:memcache_update_parameters_sample
- *
  */
   async checkUpdateParametersProgress(name: string): Promise<LROperation<protos.google.cloud.memcache.v1beta2.Instance, protos.google.cloud.memcache.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -830,10 +802,6 @@ export class CloudMemcacheClient {
  * @example
  * const [operation] = await client.deleteInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.delete_instance.js</caption>
- * region_tag:memcache_delete_instance_sample
- *
  */
   deleteInstance(
       request?: protos.google.cloud.memcache.v1beta2.IDeleteInstanceRequest,
@@ -883,10 +851,6 @@ export class CloudMemcacheClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.delete_instance.js</caption>
- * region_tag:memcache_delete_instance_sample
- *
  */
   async checkDeleteInstanceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.memcache.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -941,10 +905,6 @@ export class CloudMemcacheClient {
  * @example
  * const [operation] = await client.applyParameters(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.apply_parameters.js</caption>
- * region_tag:memcache_apply_parameters_sample
- *
  */
   applyParameters(
       request?: protos.google.cloud.memcache.v1beta2.IApplyParametersRequest,
@@ -994,10 +954,6 @@ export class CloudMemcacheClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.apply_parameters.js</caption>
- * region_tag:memcache_apply_parameters_sample
- *
  */
   async checkApplyParametersProgress(name: string): Promise<LROperation<protos.google.cloud.memcache.v1beta2.Instance, protos.google.cloud.memcache.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1052,10 +1008,6 @@ export class CloudMemcacheClient {
  * @example
  * const [operation] = await client.applySoftwareUpdate(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.apply_software_update.js</caption>
- * region_tag:memcache_apply_software_update_sample
- *
  */
   applySoftwareUpdate(
       request?: protos.google.cloud.memcache.v1beta2.IApplySoftwareUpdateRequest,
@@ -1105,10 +1057,6 @@ export class CloudMemcacheClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.apply_software_update.js</caption>
- * region_tag:memcache_apply_software_update_sample
- *
  */
   async checkApplySoftwareUpdateProgress(name: string): Promise<LROperation<protos.google.cloud.memcache.v1beta2.Instance, protos.google.cloud.memcache.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1173,10 +1121,6 @@ export class CloudMemcacheClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.list_instances.js</caption>
- * region_tag:memcache_list_instances_sample
- *
  */
   listInstances(
       request?: protos.google.cloud.memcache.v1beta2.IListInstancesRequest,
@@ -1248,10 +1192,6 @@ export class CloudMemcacheClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.list_instances.js</caption>
- * region_tag:memcache_list_instances_sample
- *
  */
   listInstancesStream(
       request?: protos.google.cloud.memcache.v1beta2.IListInstancesRequest,
@@ -1316,10 +1256,6 @@ export class CloudMemcacheClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta2/cloud_memcache.list_instances.js</caption>
- * region_tag:memcache_list_instances_sample
- *
  */
   listInstancesAsync(
       request?: protos.google.cloud.memcache.v1beta2.IListInstancesRequest,

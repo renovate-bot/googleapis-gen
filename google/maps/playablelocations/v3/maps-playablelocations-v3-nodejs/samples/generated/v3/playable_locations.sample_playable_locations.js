@@ -16,7 +16,7 @@
 'use strict';
 
 function main(areaFilter, criteria) {
-  // [START playablelocations_sample_playable_locations_sample]
+  // [START playablelocations_v3_generated_PlayableLocations_SamplePlayableLocations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(areaFilter, criteria) {
   }
 
   samplePlayableLocations();
-  // [END playablelocations_sample_playable_locations_sample]
+  // [END playablelocations_v3_generated_PlayableLocations_SamplePlayableLocations_async]
 }
 
 process.on('unhandledRejection', err => {

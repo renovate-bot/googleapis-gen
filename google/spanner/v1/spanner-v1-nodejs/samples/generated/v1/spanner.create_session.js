@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database) {
-  // [START spanner_create_session_sample]
+  // [START spanner_v1_generated_Spanner_CreateSession_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(database) {
   }
 
   createSession();
-  // [END spanner_create_session_sample]
+  // [END spanner_v1_generated_Spanner_CreateSession_async]
 }
 
 process.on('unhandledRejection', err => {

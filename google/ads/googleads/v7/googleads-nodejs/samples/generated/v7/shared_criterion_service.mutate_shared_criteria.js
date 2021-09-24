@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_shared_criteria_sample]
+  // [START googleads_v7_generated_SharedCriterionService_MutateSharedCriteria_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateSharedCriteria();
-  // [END googleads_mutate_shared_criteria_sample]
+  // [END googleads_v7_generated_SharedCriterionService_MutateSharedCriteria_async]
 }
 
 process.on('unhandledRejection', err => {

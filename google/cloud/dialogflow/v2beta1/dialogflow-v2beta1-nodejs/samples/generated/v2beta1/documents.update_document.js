@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document) {
-  // [START dialogflow_update_document_sample]
+  // [START dialogflow_v2beta1_generated_Documents_UpdateDocument_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(document) {
   }
 
   updateDocument();
-  // [END dialogflow_update_document_sample]
+  // [END dialogflow_v2beta1_generated_Documents_UpdateDocument_async]
 }
 
 process.on('unhandledRejection', err => {

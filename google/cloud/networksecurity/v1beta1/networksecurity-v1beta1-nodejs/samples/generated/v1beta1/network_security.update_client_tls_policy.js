@@ -16,7 +16,7 @@
 'use strict';
 
 function main(clientTlsPolicy) {
-  // [START networksecurity_update_client_tls_policy_sample]
+  // [START networksecurity_v1beta1_generated_NetworkSecurity_UpdateClientTlsPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(clientTlsPolicy) {
   }
 
   updateClientTlsPolicy();
-  // [END networksecurity_update_client_tls_policy_sample]
+  // [END networksecurity_v1beta1_generated_NetworkSecurity_UpdateClientTlsPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

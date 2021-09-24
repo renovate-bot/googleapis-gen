@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dataqna_get_user_feedback_sample]
+  // [START dataqna_v1alpha_generated_QuestionService_GetUserFeedback_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getUserFeedback();
-  // [END dataqna_get_user_feedback_sample]
+  // [END dataqna_v1alpha_generated_QuestionService_GetUserFeedback_async]
 }
 
 process.on('unhandledRejection', err => {

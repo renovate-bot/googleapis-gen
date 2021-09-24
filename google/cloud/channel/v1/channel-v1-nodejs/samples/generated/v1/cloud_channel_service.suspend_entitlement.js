@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START channel_suspend_entitlement_sample]
+  // [START channel_v1_generated_CloudChannelService_SuspendEntitlement_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   suspendEntitlement();
-  // [END channel_suspend_entitlement_sample]
+  // [END channel_v1_generated_CloudChannelService_SuspendEntitlement_async]
 }
 
 process.on('unhandledRejection', err => {

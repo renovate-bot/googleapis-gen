@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START secretmanager_list_secrets_sample]
+  // [START secretmanager_v1_generated_SecretManagerService_ListSecrets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(parent) {
   }
 
   listSecrets();
-  // [END secretmanager_list_secrets_sample]
+  // [END secretmanager_v1_generated_SecretManagerService_ListSecrets_async]
 }
 
 process.on('unhandledRejection', err => {

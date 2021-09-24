@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId) {
-  // [START datastore_run_query_sample]
+  // [START datastore_v1_generated_Datastore_RunQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(projectId) {
   }
 
   runQuery();
-  // [END datastore_run_query_sample]
+  // [END datastore_v1_generated_Datastore_RunQuery_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -342,10 +342,6 @@ export class ValidationHelperV1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.validateAttestationOccurrence(request);
- *
- * @example <caption>include:samples/generated/v1/validation_helper_v1.validate_attestation_occurrence.js</caption>
- * region_tag:binaryauthorization_validate_attestation_occurrence_sample
- *
  */
   validateAttestationOccurrence(
       request?: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,

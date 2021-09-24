@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START talent_get_profile_sample]
+  // [START talent_v4beta1_generated_ProfileService_GetProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   getProfile();
-  // [END talent_get_profile_sample]
+  // [END talent_v4beta1_generated_ProfileService_GetProfile_async]
 }
 
 process.on('unhandledRejection', err => {

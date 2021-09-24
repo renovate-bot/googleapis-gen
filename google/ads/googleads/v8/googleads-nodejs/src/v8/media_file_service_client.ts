@@ -720,10 +720,6 @@ export class MediaFileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMediaFile(request);
- *
- * @example <caption>include:samples/generated/v8/media_file_service.get_media_file.js</caption>
- * region_tag:googleads_get_media_file_sample
- *
  */
   getMediaFile(
       request?: protos.google.ads.googleads.v8.services.IGetMediaFileRequest,
@@ -831,10 +827,6 @@ export class MediaFileServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateMediaFiles(request);
- *
- * @example <caption>include:samples/generated/v8/media_file_service.mutate_media_files.js</caption>
- * region_tag:googleads_mutate_media_files_sample
- *
  */
   mutateMediaFiles(
       request?: protos.google.ads.googleads.v8.services.IMutateMediaFilesRequest,

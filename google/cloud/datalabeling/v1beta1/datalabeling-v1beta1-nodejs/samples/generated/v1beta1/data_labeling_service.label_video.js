@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, basicConfig, feature) {
-  // [START datalabeling_label_video_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_LabelVideo_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -79,7 +79,7 @@ function main(parent, basicConfig, feature) {
   }
 
   labelVideo();
-  // [END datalabeling_label_video_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_LabelVideo_async]
 }
 
 process.on('unhandledRejection', err => {

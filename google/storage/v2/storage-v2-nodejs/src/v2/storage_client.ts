@@ -343,10 +343,6 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startResumableWrite(request);
- *
- * @example <caption>include:samples/generated/v2/storage.start_resumable_write.js</caption>
- * region_tag:storage_start_resumable_write_sample
- *
  */
   startResumableWrite(
       request?: protos.google.storage.v2.IStartResumableWriteRequest,
@@ -428,10 +424,6 @@ export class StorageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.queryWriteStatus(request);
- *
- * @example <caption>include:samples/generated/v2/storage.query_write_status.js</caption>
- * region_tag:storage_query_write_status_sample
- *
  */
   queryWriteStatus(
       request?: protos.google.storage.v2.IQueryWriteStatusRequest,

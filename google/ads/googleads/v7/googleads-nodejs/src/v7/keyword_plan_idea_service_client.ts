@@ -747,10 +747,6 @@ export class KeywordPlanIdeaServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/keyword_plan_idea_service.generate_keyword_ideas.js</caption>
- * region_tag:googleads_generate_keyword_ideas_sample
- *
  */
   generateKeywordIdeas(
       request?: protos.google.ads.googleads.v7.services.IGenerateKeywordIdeasRequest,
@@ -844,10 +840,6 @@ export class KeywordPlanIdeaServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/keyword_plan_idea_service.generate_keyword_ideas.js</caption>
- * region_tag:googleads_generate_keyword_ideas_sample
- *
  */
   generateKeywordIdeasStream(
       request?: protos.google.ads.googleads.v7.services.IGenerateKeywordIdeasRequest,
@@ -934,10 +926,6 @@ export class KeywordPlanIdeaServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v7/keyword_plan_idea_service.generate_keyword_ideas.js</caption>
- * region_tag:googleads_generate_keyword_ideas_sample
- *
  */
   generateKeywordIdeasAsync(
       request?: protos.google.ads.googleads.v7.services.IGenerateKeywordIdeasRequest,

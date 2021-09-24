@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START aistreams_delete_cluster_sample]
+  // [START aistreams_v1alpha1_generated_AIStreams_DeleteCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   deleteCluster();
-  // [END aistreams_delete_cluster_sample]
+  // [END aistreams_v1alpha1_generated_AIStreams_DeleteCluster_async]
 }
 
 process.on('unhandledRejection', err => {

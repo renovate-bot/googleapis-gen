@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, document) {
-  // [START dialogflow_create_document_sample]
+  // [START dialogflow_v2_generated_Documents_CreateDocument_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent, document) {
   }
 
   createDocument();
-  // [END dialogflow_create_document_sample]
+  // [END dialogflow_v2_generated_Documents_CreateDocument_async]
 }
 
 process.on('unhandledRejection', err => {

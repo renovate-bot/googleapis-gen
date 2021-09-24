@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, vehicleId, vehicle) {
-  // [START fleetengine_create_vehicle_sample]
+  // [START fleetengine_v1_generated_VehicleService_CreateVehicle_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -79,7 +79,7 @@ function main(parent, vehicleId, vehicle) {
   }
 
   createVehicle();
-  // [END fleetengine_create_vehicle_sample]
+  // [END fleetengine_v1_generated_VehicleService_CreateVehicle_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket, object) {
-  // [START storage_delete_object_sample]
+  // [START storage_v1_generated_Storage_DeleteObject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -90,7 +90,7 @@ function main(bucket, object) {
   }
 
   deleteObject();
-  // [END storage_delete_object_sample]
+  // [END storage_v1_generated_Storage_DeleteObject_async]
 }
 
 process.on('unhandledRejection', err => {

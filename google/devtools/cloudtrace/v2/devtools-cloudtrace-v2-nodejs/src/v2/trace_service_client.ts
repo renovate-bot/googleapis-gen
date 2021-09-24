@@ -332,10 +332,6 @@ export class TraceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchWriteSpans(request);
- *
- * @example <caption>include:samples/generated/v2/trace_service.batch_write_spans.js</caption>
- * region_tag:cloudtrace_batch_write_spans_sample
- *
  */
   batchWriteSpans(
       request?: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
@@ -460,10 +456,6 @@ export class TraceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSpan(request);
- *
- * @example <caption>include:samples/generated/v2/trace_service.create_span.js</caption>
- * region_tag:cloudtrace_create_span_sample
- *
  */
   createSpan(
       request?: protos.google.devtools.cloudtrace.v2.ISpan,

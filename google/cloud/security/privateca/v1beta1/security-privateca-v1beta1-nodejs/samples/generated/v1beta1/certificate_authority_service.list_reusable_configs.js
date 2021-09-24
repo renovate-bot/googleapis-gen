@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START privateca_list_reusable_configs_sample]
+  // [START privateca_v1beta1_generated_CertificateAuthorityService_ListReusableConfigs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(parent) {
   }
 
   listReusableConfigs();
-  // [END privateca_list_reusable_configs_sample]
+  // [END privateca_v1beta1_generated_CertificateAuthorityService_ListReusableConfigs_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(conversionEvent, parent) {
-  // [START admin_create_conversion_event_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateConversionEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(conversionEvent, parent) {
   }
 
   createConversionEvent();
-  // [END admin_create_conversion_event_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateConversionEvent_async]
 }
 
 process.on('unhandledRejection', err => {

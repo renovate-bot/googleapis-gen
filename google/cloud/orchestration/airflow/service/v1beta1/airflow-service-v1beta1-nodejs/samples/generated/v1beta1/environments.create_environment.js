@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START service_create_environment_sample]
+  // [START service_v1beta1_generated_Environments_CreateEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main() {
   }
 
   createEnvironment();
-  // [END service_create_environment_sample]
+  // [END service_v1beta1_generated_Environments_CreateEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

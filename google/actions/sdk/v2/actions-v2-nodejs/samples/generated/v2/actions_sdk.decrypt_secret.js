@@ -16,7 +16,7 @@
 'use strict';
 
 function main(encryptedClientSecret) {
-  // [START sdk_decrypt_secret_sample]
+  // [START sdk_v2_generated_ActionsSdk_DecryptSecret_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(encryptedClientSecret) {
   }
 
   decryptSecret();
-  // [END sdk_decrypt_secret_sample]
+  // [END sdk_v2_generated_ActionsSdk_DecryptSecret_async]
 }
 
 process.on('unhandledRejection', err => {

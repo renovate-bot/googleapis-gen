@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_export_documents_sample]
+  // [START admin_v1_generated_FirestoreAdmin_ExportDocuments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(name) {
   }
 
   exportDocuments();
-  // [END admin_export_documents_sample]
+  // [END admin_v1_generated_FirestoreAdmin_ExportDocuments_async]
 }
 
 process.on('unhandledRejection', err => {

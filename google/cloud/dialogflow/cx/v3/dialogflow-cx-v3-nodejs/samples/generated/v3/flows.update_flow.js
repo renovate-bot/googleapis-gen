@@ -16,7 +16,7 @@
 'use strict';
 
 function main(flow) {
-  // [START cx_update_flow_sample]
+  // [START cx_v3_generated_Flows_UpdateFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(flow) {
   }
 
   updateFlow();
-  // [END cx_update_flow_sample]
+  // [END cx_v3_generated_Flows_UpdateFlow_async]
 }
 
 process.on('unhandledRejection', err => {

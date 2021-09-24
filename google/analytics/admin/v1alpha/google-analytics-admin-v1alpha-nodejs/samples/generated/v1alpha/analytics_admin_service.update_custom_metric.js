@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask) {
-  // [START admin_update_custom_metric_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateCustomMetric_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(updateMask) {
   }
 
   updateCustomMetric();
-  // [END admin_update_custom_metric_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateCustomMetric_async]
 }
 
 process.on('unhandledRejection', err => {

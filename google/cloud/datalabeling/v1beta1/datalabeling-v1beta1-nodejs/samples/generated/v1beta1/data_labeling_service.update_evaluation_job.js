@@ -16,7 +16,7 @@
 'use strict';
 
 function main(evaluationJob) {
-  // [START datalabeling_update_evaluation_job_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_UpdateEvaluationJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(evaluationJob) {
   }
 
   updateEvaluationJob();
-  // [END datalabeling_update_evaluation_job_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_UpdateEvaluationJob_async]
 }
 
 process.on('unhandledRejection', err => {

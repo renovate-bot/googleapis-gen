@@ -471,10 +471,6 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getModel(request);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.get_model.js</caption>
- * region_tag:aiplatform_get_model_sample
- *
  */
   getModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetModelRequest,
@@ -549,10 +545,6 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateModel(request);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.update_model.js</caption>
- * region_tag:aiplatform_update_model_sample
- *
  */
   updateModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateModelRequest,
@@ -626,10 +618,6 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getModelEvaluation(request);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.get_model_evaluation.js</caption>
- * region_tag:aiplatform_get_model_evaluation_sample
- *
  */
   getModelEvaluation(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetModelEvaluationRequest,
@@ -703,10 +691,6 @@ export class ModelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getModelEvaluationSlice(request);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.get_model_evaluation_slice.js</caption>
- * region_tag:aiplatform_get_model_evaluation_slice_sample
- *
  */
   getModelEvaluationSlice(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetModelEvaluationSliceRequest,
@@ -785,10 +769,6 @@ export class ModelServiceClient {
  * @example
  * const [operation] = await client.uploadModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.upload_model.js</caption>
- * region_tag:aiplatform_upload_model_sample
- *
  */
   uploadModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IUploadModelRequest,
@@ -838,10 +818,6 @@ export class ModelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.upload_model.js</caption>
- * region_tag:aiplatform_upload_model_sample
- *
  */
   async checkUploadModelProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.UploadModelResponse, protos.google.cloud.aiplatform.v1beta1.UploadModelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -891,10 +867,6 @@ export class ModelServiceClient {
  * @example
  * const [operation] = await client.deleteModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.delete_model.js</caption>
- * region_tag:aiplatform_delete_model_sample
- *
  */
   deleteModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteModelRequest,
@@ -944,10 +916,6 @@ export class ModelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.delete_model.js</caption>
- * region_tag:aiplatform_delete_model_sample
- *
  */
   async checkDeleteModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -999,10 +967,6 @@ export class ModelServiceClient {
  * @example
  * const [operation] = await client.exportModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.export_model.js</caption>
- * region_tag:aiplatform_export_model_sample
- *
  */
   exportModel(
       request?: protos.google.cloud.aiplatform.v1beta1.IExportModelRequest,
@@ -1052,10 +1016,6 @@ export class ModelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.export_model.js</caption>
- * region_tag:aiplatform_export_model_sample
- *
  */
   async checkExportModelProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ExportModelResponse, protos.google.cloud.aiplatform.v1beta1.ExportModelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1129,10 +1089,6 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_models.js</caption>
- * region_tag:aiplatform_list_models_sample
- *
  */
   listModels(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelsRequest,
@@ -1213,10 +1169,6 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_models.js</caption>
- * region_tag:aiplatform_list_models_sample
- *
  */
   listModelsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelsRequest,
@@ -1290,10 +1242,6 @@ export class ModelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_models.js</caption>
- * region_tag:aiplatform_list_models_sample
- *
  */
   listModelsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelsRequest,
@@ -1370,10 +1318,6 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_model_evaluations.js</caption>
- * region_tag:aiplatform_list_model_evaluations_sample
- *
  */
   listModelEvaluations(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelEvaluationsRequest,
@@ -1440,10 +1384,6 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_model_evaluations.js</caption>
- * region_tag:aiplatform_list_model_evaluations_sample
- *
  */
   listModelEvaluationsStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelEvaluationsRequest,
@@ -1503,10 +1443,6 @@ export class ModelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_model_evaluations.js</caption>
- * region_tag:aiplatform_list_model_evaluations_sample
- *
  */
   listModelEvaluationsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelEvaluationsRequest,
@@ -1586,10 +1522,6 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_model_evaluation_slices.js</caption>
- * region_tag:aiplatform_list_model_evaluation_slices_sample
- *
  */
   listModelEvaluationSlices(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelEvaluationSlicesRequest,
@@ -1659,10 +1591,6 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_model_evaluation_slices.js</caption>
- * region_tag:aiplatform_list_model_evaluation_slices_sample
- *
  */
   listModelEvaluationSlicesStream(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelEvaluationSlicesRequest,
@@ -1725,10 +1653,6 @@ export class ModelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/model_service.list_model_evaluation_slices.js</caption>
- * region_tag:aiplatform_list_model_evaluation_slices_sample
- *
  */
   listModelEvaluationSlicesAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListModelEvaluationSlicesRequest,

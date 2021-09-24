@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_keyword_view_sample]
+  // [START googleads_v7_generated_KeywordViewService_GetKeywordView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getKeywordView();
-  // [END googleads_get_keyword_view_sample]
+  // [END googleads_v7_generated_KeywordViewService_GetKeywordView_async]
 }
 
 process.on('unhandledRejection', err => {

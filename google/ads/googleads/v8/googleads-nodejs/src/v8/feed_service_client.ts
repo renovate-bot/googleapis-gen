@@ -720,10 +720,6 @@ export class FeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeed(request);
- *
- * @example <caption>include:samples/generated/v8/feed_service.get_feed.js</caption>
- * region_tag:googleads_get_feed_sample
- *
  */
   getFeed(
       request?: protos.google.ads.googleads.v8.services.IGetFeedRequest,
@@ -835,10 +831,6 @@ export class FeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateFeeds(request);
- *
- * @example <caption>include:samples/generated/v8/feed_service.mutate_feeds.js</caption>
- * region_tag:googleads_mutate_feeds_sample
- *
  */
   mutateFeeds(
       request?: protos.google.ads.googleads.v8.services.IMutateFeedsRequest,

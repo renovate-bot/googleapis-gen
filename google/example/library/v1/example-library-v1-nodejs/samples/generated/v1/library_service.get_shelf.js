@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START library_get_shelf_sample]
+  // [START library_v1_generated_LibraryService_GetShelf_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getShelf();
-  // [END library_get_shelf_sample]
+  // [END library_v1_generated_LibraryService_GetShelf_async]
 }
 
 process.on('unhandledRejection', err => {

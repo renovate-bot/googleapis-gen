@@ -341,10 +341,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createShelf(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.create_shelf.js</caption>
- * region_tag:library_create_shelf_sample
- *
  */
   createShelf(
       request?: protos.google.example.library.v1.ICreateShelfRequest,
@@ -409,10 +405,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getShelf(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.get_shelf.js</caption>
- * region_tag:library_get_shelf_sample
- *
  */
   getShelf(
       request?: protos.google.example.library.v1.IGetShelfRequest,
@@ -484,10 +476,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteShelf(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.delete_shelf.js</caption>
- * region_tag:library_delete_shelf_sample
- *
  */
   deleteShelf(
       request?: protos.google.example.library.v1.IDeleteShelfRequest,
@@ -567,10 +555,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mergeShelves(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.merge_shelves.js</caption>
- * region_tag:library_merge_shelves_sample
- *
  */
   mergeShelves(
       request?: protos.google.example.library.v1.IMergeShelvesRequest,
@@ -644,10 +628,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createBook(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.create_book.js</caption>
- * region_tag:library_create_book_sample
- *
  */
   createBook(
       request?: protos.google.example.library.v1.ICreateBookRequest,
@@ -719,10 +699,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBook(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.get_book.js</caption>
- * region_tag:library_get_book_sample
- *
  */
   getBook(
       request?: protos.google.example.library.v1.IGetBookRequest,
@@ -794,10 +770,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBook(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.delete_book.js</caption>
- * region_tag:library_delete_book_sample
- *
  */
   deleteBook(
       request?: protos.google.example.library.v1.IDeleteBookRequest,
@@ -872,10 +844,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateBook(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.update_book.js</caption>
- * region_tag:library_update_book_sample
- *
  */
   updateBook(
       request?: protos.google.example.library.v1.IUpdateBookRequest,
@@ -950,10 +918,6 @@ export class LibraryServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.moveBook(request);
- *
- * @example <caption>include:samples/generated/v1/library_service.move_book.js</caption>
- * region_tag:library_move_book_sample
- *
  */
   moveBook(
       request?: protos.google.example.library.v1.IMoveBookRequest,
@@ -1037,10 +1001,6 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/library_service.list_shelves.js</caption>
- * region_tag:library_list_shelves_sample
- *
  */
   listShelves(
       request?: protos.google.example.library.v1.IListShelvesRequest,
@@ -1094,10 +1054,6 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/library_service.list_shelves.js</caption>
- * region_tag:library_list_shelves_sample
- *
  */
   listShelvesStream(
       request?: protos.google.example.library.v1.IListShelvesRequest,
@@ -1144,10 +1100,6 @@ export class LibraryServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/library_service.list_shelves.js</caption>
- * region_tag:library_list_shelves_sample
- *
  */
   listShelvesAsync(
       request?: protos.google.example.library.v1.IListShelvesRequest,
@@ -1215,10 +1167,6 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/library_service.list_books.js</caption>
- * region_tag:library_list_books_sample
- *
  */
   listBooks(
       request?: protos.google.example.library.v1.IListBooksRequest,
@@ -1281,10 +1229,6 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/library_service.list_books.js</caption>
- * region_tag:library_list_books_sample
- *
  */
   listBooksStream(
       request?: protos.google.example.library.v1.IListBooksRequest,
@@ -1340,10 +1284,6 @@ export class LibraryServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/library_service.list_books.js</caption>
- * region_tag:library_list_books_sample
- *
  */
   listBooksAsync(
       request?: protos.google.example.library.v1.IListBooksRequest,

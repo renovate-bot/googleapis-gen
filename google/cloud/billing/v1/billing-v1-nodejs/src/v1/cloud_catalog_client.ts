@@ -346,10 +346,6 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_catalog.list_services.js</caption>
- * region_tag:billing_list_services_sample
- *
  */
   listServices(
       request?: protos.google.cloud.billing.v1.IListServicesRequest,
@@ -401,10 +397,6 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_catalog.list_services.js</caption>
- * region_tag:billing_list_services_sample
- *
  */
   listServicesStream(
       request?: protos.google.cloud.billing.v1.IListServicesRequest,
@@ -449,10 +441,6 @@ export class CloudCatalogClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_catalog.list_services.js</caption>
- * region_tag:billing_list_services_sample
- *
  */
   listServicesAsync(
       request?: protos.google.cloud.billing.v1.IListServicesRequest,
@@ -535,10 +523,6 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_catalog.list_skus.js</caption>
- * region_tag:billing_list_skus_sample
- *
  */
   listSkus(
       request?: protos.google.cloud.billing.v1.IListSkusRequest,
@@ -618,10 +602,6 @@ export class CloudCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_catalog.list_skus.js</caption>
- * region_tag:billing_list_skus_sample
- *
  */
   listSkusStream(
       request?: protos.google.cloud.billing.v1.IListSkusRequest,
@@ -694,10 +674,6 @@ export class CloudCatalogClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_catalog.list_skus.js</caption>
- * region_tag:billing_list_skus_sample
- *
  */
   listSkusAsync(
       request?: protos.google.cloud.billing.v1.IListSkusRequest,

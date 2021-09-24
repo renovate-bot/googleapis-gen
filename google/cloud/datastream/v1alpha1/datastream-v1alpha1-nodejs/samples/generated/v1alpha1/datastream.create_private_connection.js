@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, privateConnectionId, privateConnection) {
-  // [START datastream_create_private_connection_sample]
+  // [START datastream_v1alpha1_generated_Datastream_CreatePrivateConnection_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent, privateConnectionId, privateConnection) {
   }
 
   createPrivateConnection();
-  // [END datastream_create_private_connection_sample]
+  // [END datastream_v1alpha1_generated_Datastream_CreatePrivateConnection_async]
 }
 
 process.on('unhandledRejection', err => {

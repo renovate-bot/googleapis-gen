@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_delete_entity_type_sample]
+  // [START cx_v3beta1_generated_EntityTypes_DeleteEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(name) {
   }
 
   deleteEntityType();
-  // [END cx_delete_entity_type_sample]
+  // [END cx_v3beta1_generated_EntityTypes_DeleteEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

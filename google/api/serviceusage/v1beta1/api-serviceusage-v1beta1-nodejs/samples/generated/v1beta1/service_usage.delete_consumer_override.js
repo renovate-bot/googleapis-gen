@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_delete_consumer_override_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_DeleteConsumerOverride_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main() {
   }
 
   deleteConsumerOverride();
-  // [END serviceusage_delete_consumer_override_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_DeleteConsumerOverride_async]
 }
 
 process.on('unhandledRejection', err => {

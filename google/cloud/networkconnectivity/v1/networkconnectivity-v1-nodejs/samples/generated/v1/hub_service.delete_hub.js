@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START networkconnectivity_delete_hub_sample]
+  // [START networkconnectivity_v1_generated_HubService_DeleteHub_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(name) {
   }
 
   deleteHub();
-  // [END networkconnectivity_delete_hub_sample]
+  // [END networkconnectivity_v1_generated_HubService_DeleteHub_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(gateway) {
-  // [START apigateway_update_gateway_sample]
+  // [START apigateway_v1_generated_ApiGatewayService_UpdateGateway_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(gateway) {
   }
 
   updateGateway();
-  // [END apigateway_update_gateway_sample]
+  // [END apigateway_v1_generated_ApiGatewayService_UpdateGateway_async]
 }
 
 process.on('unhandledRejection', err => {

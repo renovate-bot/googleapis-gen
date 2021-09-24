@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START billing_get_project_billing_info_sample]
+  // [START billing_v1_generated_CloudBilling_GetProjectBillingInfo_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getProjectBillingInfo();
-  // [END billing_get_project_billing_info_sample]
+  // [END billing_v1_generated_CloudBilling_GetProjectBillingInfo_async]
 }
 
 process.on('unhandledRejection', err => {

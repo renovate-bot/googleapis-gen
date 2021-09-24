@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instanceIdToken, agentVersion, supportedCapabilities) {
-  // [START agentendpoint_register_agent_sample]
+  // [START agentendpoint_v1_generated_AgentEndpointService_RegisterAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -77,7 +77,7 @@ function main(instanceIdToken, agentVersion, supportedCapabilities) {
   }
 
   registerAgent();
-  // [END agentendpoint_register_agent_sample]
+  // [END agentendpoint_v1_generated_AgentEndpointService_RegisterAgent_async]
 }
 
 process.on('unhandledRejection', err => {

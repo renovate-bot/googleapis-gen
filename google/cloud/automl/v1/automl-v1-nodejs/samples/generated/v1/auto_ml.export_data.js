@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, outputConfig) {
-  // [START automl_export_data_sample]
+  // [START automl_v1_generated_AutoMl_ExportData_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name, outputConfig) {
   }
 
   exportData();
-  // [END automl_export_data_sample]
+  // [END automl_v1_generated_AutoMl_ExportData_async]
 }
 
 process.on('unhandledRejection', err => {

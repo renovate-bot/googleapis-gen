@@ -435,10 +435,6 @@ export class AnswerRecordsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateAnswerRecord(request);
- *
- * @example <caption>include:samples/generated/v2/answer_records.update_answer_record.js</caption>
- * region_tag:dialogflow_update_answer_record_sample
- *
  */
   updateAnswerRecord(
       request?: protos.google.cloud.dialogflow.v2.IUpdateAnswerRecordRequest,
@@ -534,10 +530,6 @@ export class AnswerRecordsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/answer_records.list_answer_records.js</caption>
- * region_tag:dialogflow_list_answer_records_sample
- *
  */
   listAnswerRecords(
       request?: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
@@ -610,10 +602,6 @@ export class AnswerRecordsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/answer_records.list_answer_records.js</caption>
- * region_tag:dialogflow_list_answer_records_sample
- *
  */
   listAnswerRecordsStream(
       request?: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,
@@ -679,10 +667,6 @@ export class AnswerRecordsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/answer_records.list_answer_records.js</caption>
- * region_tag:dialogflow_list_answer_records_sample
- *
  */
   listAnswerRecordsAsync(
       request?: protos.google.cloud.dialogflow.v2.IListAnswerRecordsRequest,

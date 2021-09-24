@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_get_environment_sample]
+  // [START dialogflow_v2_generated_Environments_GetEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   getEnvironment();
-  // [END dialogflow_get_environment_sample]
+  // [END dialogflow_v2_generated_Environments_GetEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

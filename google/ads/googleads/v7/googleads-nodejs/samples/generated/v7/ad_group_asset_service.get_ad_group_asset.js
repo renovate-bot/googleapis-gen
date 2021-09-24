@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_ad_group_asset_sample]
+  // [START googleads_v7_generated_AdGroupAssetService_GetAdGroupAsset_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getAdGroupAsset();
-  // [END googleads_get_ad_group_asset_sample]
+  // [END googleads_v7_generated_AdGroupAssetService_GetAdGroupAsset_async]
 }
 
 process.on('unhandledRejection', err => {

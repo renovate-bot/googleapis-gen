@@ -16,7 +16,7 @@
 'use strict';
 
 function main(policy, updateMask) {
-  // [START accesscontextmanager_update_access_policy_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_UpdateAccessPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(policy, updateMask) {
   }
 
   updateAccessPolicy();
-  // [END accesscontextmanager_update_access_policy_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_UpdateAccessPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

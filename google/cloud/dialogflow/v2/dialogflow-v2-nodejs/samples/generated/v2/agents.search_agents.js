@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_search_agents_sample]
+  // [START dialogflow_v2_generated_Agents_SearchAgents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent) {
   }
 
   searchAgents();
-  // [END dialogflow_search_agents_sample]
+  // [END dialogflow_v2_generated_Agents_SearchAgents_async]
 }
 
 process.on('unhandledRejection', err => {

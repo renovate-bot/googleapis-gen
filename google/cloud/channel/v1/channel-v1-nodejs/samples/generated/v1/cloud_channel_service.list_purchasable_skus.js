@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customer) {
-  // [START channel_list_purchasable_skus_sample]
+  // [START channel_v1_generated_CloudChannelService_ListPurchasableSkus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(customer) {
   }
 
   listPurchasableSkus();
-  // [END channel_list_purchasable_skus_sample]
+  // [END channel_v1_generated_CloudChannelService_ListPurchasableSkus_async]
 }
 
 process.on('unhandledRejection', err => {

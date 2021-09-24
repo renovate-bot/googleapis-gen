@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_delete_security_settings_sample]
+  // [START cx_v3_generated_SecuritySettingsService_DeleteSecuritySettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteSecuritySettings();
-  // [END cx_delete_security_settings_sample]
+  // [END cx_v3_generated_SecuritySettingsService_DeleteSecuritySettings_async]
 }
 
 process.on('unhandledRejection', err => {

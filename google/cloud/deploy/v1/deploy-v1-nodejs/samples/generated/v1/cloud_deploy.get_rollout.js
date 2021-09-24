@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START deploy_get_rollout_sample]
+  // [START deploy_v1_generated_CloudDeploy_GetRollout_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getRollout();
-  // [END deploy_get_rollout_sample]
+  // [END deploy_v1_generated_CloudDeploy_GetRollout_async]
 }
 
 process.on('unhandledRejection', err => {

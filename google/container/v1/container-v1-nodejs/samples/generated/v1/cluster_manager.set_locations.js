@@ -16,7 +16,7 @@
 'use strict';
 
 function main(locations) {
-  // [START container_set_locations_sample]
+  // [START container_v1_generated_ClusterManager_SetLocations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(locations) {
   }
 
   setLocations();
-  // [END container_set_locations_sample]
+  // [END container_v1_generated_ClusterManager_SetLocations_async]
 }
 
 process.on('unhandledRejection', err => {

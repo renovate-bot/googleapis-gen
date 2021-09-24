@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START servicedirectory_resolve_service_sample]
+  // [START servicedirectory_v1beta1_generated_LookupService_ResolveService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -80,7 +80,7 @@ function main(name) {
   }
 
   resolveService();
-  // [END servicedirectory_resolve_service_sample]
+  // [END servicedirectory_v1beta1_generated_LookupService_ResolveService_async]
 }
 
 process.on('unhandledRejection', err => {

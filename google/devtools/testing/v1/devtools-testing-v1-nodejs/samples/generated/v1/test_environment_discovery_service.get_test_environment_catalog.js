@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START testing_get_test_environment_catalog_sample]
+  // [START testing_v1_generated_TestEnvironmentDiscoveryService_GetTestEnvironmentCatalog_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   getTestEnvironmentCatalog();
-  // [END testing_get_test_environment_catalog_sample]
+  // [END testing_v1_generated_TestEnvironmentDiscoveryService_GetTestEnvironmentCatalog_async]
 }
 
 process.on('unhandledRejection', err => {

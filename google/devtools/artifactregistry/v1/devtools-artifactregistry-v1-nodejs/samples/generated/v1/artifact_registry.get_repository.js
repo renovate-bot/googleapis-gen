@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START artifactregistry_get_repository_sample]
+  // [START artifactregistry_v1_generated_ArtifactRegistry_GetRepository_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getRepository();
-  // [END artifactregistry_get_repository_sample]
+  // [END artifactregistry_v1_generated_ArtifactRegistry_GetRepository_async]
 }
 
 process.on('unhandledRejection', err => {

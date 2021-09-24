@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START speech_streaming_recognize_sample]
+  // [START speech_v1_generated_Speech_StreamingRecognize_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main() {
   }
 
   streamingRecognize();
-  // [END speech_streaming_recognize_sample]
+  // [END speech_v1_generated_Speech_StreamingRecognize_async]
 }
 
 process.on('unhandledRejection', err => {

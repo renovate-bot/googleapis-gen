@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, sql) {
-  // [START spanner_partition_query_sample]
+  // [START spanner_v1_generated_Spanner_PartitionQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -86,7 +86,7 @@ function main(session, sql) {
   }
 
   partitionQuery();
-  // [END spanner_partition_query_sample]
+  // [END spanner_v1_generated_Spanner_PartitionQuery_async]
 }
 
 process.on('unhandledRejection', err => {

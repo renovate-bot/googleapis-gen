@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, operationId) {
-  // [START container_cancel_operation_sample]
+  // [START container_v1beta1_generated_ClusterManager_CancelOperation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(projectId, zone, operationId) {
   }
 
   cancelOperation();
-  // [END container_cancel_operation_sample]
+  // [END container_v1beta1_generated_ClusterManager_CancelOperation_async]
 }
 
 process.on('unhandledRejection', err => {

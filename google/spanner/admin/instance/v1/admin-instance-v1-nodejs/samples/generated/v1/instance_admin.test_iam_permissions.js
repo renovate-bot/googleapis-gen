@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START instance_test_iam_permissions_sample]
+  // [START instance_v1_generated_InstanceAdmin_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END instance_test_iam_permissions_sample]
+  // [END instance_v1_generated_InstanceAdmin_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vision_get_reference_image_sample]
+  // [START vision_v1p3beta1_generated_ProductSearch_GetReferenceImage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getReferenceImage();
-  // [END vision_get_reference_image_sample]
+  // [END vision_v1p3beta1_generated_ProductSearch_GetReferenceImage_async]
 }
 
 process.on('unhandledRejection', err => {

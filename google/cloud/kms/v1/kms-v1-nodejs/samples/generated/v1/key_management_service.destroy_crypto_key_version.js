@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START kms_destroy_crypto_key_version_sample]
+  // [START kms_v1_generated_KeyManagementService_DestroyCryptoKeyVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   destroyCryptoKeyVersion();
-  // [END kms_destroy_crypto_key_version_sample]
+  // [END kms_v1_generated_KeyManagementService_DestroyCryptoKeyVersion_async]
 }
 
 process.on('unhandledRejection', err => {

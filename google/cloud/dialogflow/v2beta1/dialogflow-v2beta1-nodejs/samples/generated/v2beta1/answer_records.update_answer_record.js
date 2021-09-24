@@ -16,7 +16,7 @@
 'use strict';
 
 function main(answerRecord) {
-  // [START dialogflow_update_answer_record_sample]
+  // [START dialogflow_v2beta1_generated_AnswerRecords_UpdateAnswerRecord_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(answerRecord) {
   }
 
   updateAnswerRecord();
-  // [END dialogflow_update_answer_record_sample]
+  // [END dialogflow_v2beta1_generated_AnswerRecords_UpdateAnswerRecord_async]
 }
 
 process.on('unhandledRejection', err => {

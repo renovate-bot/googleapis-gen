@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, ignoreWarnings) {
-  // [START admin_delete_app_profile_sample]
+  // [START admin_v2_generated_BigtableInstanceAdmin_DeleteAppProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name, ignoreWarnings) {
   }
 
   deleteAppProfile();
-  // [END admin_delete_app_profile_sample]
+  // [END admin_v2_generated_BigtableInstanceAdmin_DeleteAppProfile_async]
 }
 
 process.on('unhandledRejection', err => {

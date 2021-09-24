@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START artifactregistry_list_docker_images_sample]
+  // [START artifactregistry_v1_generated_ArtifactRegistry_ListDockerImages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent) {
   }
 
   listDockerImages();
-  // [END artifactregistry_list_docker_images_sample]
+  // [END artifactregistry_v1_generated_ArtifactRegistry_ListDockerImages_async]
 }
 
 process.on('unhandledRejection', err => {

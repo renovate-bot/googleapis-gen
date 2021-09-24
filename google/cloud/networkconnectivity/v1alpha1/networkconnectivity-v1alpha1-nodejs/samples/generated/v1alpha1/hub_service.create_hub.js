@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, hub) {
-  // [START networkconnectivity_create_hub_sample]
+  // [START networkconnectivity_v1alpha1_generated_HubService_CreateHub_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent, hub) {
   }
 
   createHub();
-  // [END networkconnectivity_create_hub_sample]
+  // [END networkconnectivity_v1alpha1_generated_HubService_CreateHub_async]
 }
 
 process.on('unhandledRejection', err => {

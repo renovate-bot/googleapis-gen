@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, occurrences) {
-  // [START grafeas_batch_create_occurrences_sample]
+  // [START grafeas_v1_generated_Grafeas_BatchCreateOccurrences_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, occurrences) {
   }
 
   batchCreateOccurrences();
-  // [END grafeas_batch_create_occurrences_sample]
+  // [END grafeas_v1_generated_Grafeas_BatchCreateOccurrences_async]
 }
 
 process.on('unhandledRejection', err => {

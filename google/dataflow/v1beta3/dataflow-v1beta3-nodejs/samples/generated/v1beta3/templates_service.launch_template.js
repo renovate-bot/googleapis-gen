@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dataflow_launch_template_sample]
+  // [START dataflow_v1beta3_generated_TemplatesService_LaunchTemplate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main() {
   }
 
   launchTemplate();
-  // [END dataflow_launch_template_sample]
+  // [END dataflow_v1beta3_generated_TemplatesService_LaunchTemplate_async]
 }
 
 process.on('unhandledRejection', err => {

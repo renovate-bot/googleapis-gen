@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_get_snapshot_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_GetSnapshot_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getSnapshot();
-  // [END admin_get_snapshot_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_GetSnapshot_async]
 }
 
 process.on('unhandledRejection', err => {

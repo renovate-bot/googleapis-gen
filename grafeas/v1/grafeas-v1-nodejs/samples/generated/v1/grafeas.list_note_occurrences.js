@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START grafeas_list_note_occurrences_sample]
+  // [START grafeas_v1_generated_Grafeas_ListNoteOccurrences_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   listNoteOccurrences();
-  // [END grafeas_list_note_occurrences_sample]
+  // [END grafeas_v1_generated_Grafeas_ListNoteOccurrences_async]
 }
 
 process.on('unhandledRejection', err => {

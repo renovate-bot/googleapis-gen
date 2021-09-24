@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START library_list_books_sample]
+  // [START library_v1_generated_LibraryService_ListBooks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listBooks();
-  // [END library_list_books_sample]
+  // [END library_v1_generated_LibraryService_ListBooks_async]
 }
 
 process.on('unhandledRejection', err => {

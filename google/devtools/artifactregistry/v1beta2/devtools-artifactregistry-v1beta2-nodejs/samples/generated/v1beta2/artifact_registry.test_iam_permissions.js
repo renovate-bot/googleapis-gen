@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START artifactregistry_test_iam_permissions_sample]
+  // [START artifactregistry_v1beta2_generated_ArtifactRegistry_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END artifactregistry_test_iam_permissions_sample]
+  // [END artifactregistry_v1beta2_generated_ArtifactRegistry_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

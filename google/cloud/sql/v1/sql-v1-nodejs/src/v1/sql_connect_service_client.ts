@@ -314,10 +314,6 @@ export class SqlConnectServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConnectSettings(request);
- *
- * @example <caption>include:samples/generated/v1/sql_connect_service.get_connect_settings.js</caption>
- * region_tag:sql_get_connect_settings_sample
- *
  */
   getConnectSettings(
       request?: protos.google.cloud.sql.v1.IGetConnectSettingsRequest,
@@ -400,10 +396,6 @@ export class SqlConnectServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateEphemeralCert(request);
- *
- * @example <caption>include:samples/generated/v1/sql_connect_service.generate_ephemeral_cert.js</caption>
- * region_tag:sql_generate_ephemeral_cert_sample
- *
  */
   generateEphemeralCert(
       request?: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,

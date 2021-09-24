@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_update_domain_mapping_sample]
+  // [START appengine_v1_generated_DomainMappings_UpdateDomainMapping_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   updateDomainMapping();
-  // [END appengine_update_domain_mapping_sample]
+  // [END appengine_v1_generated_DomainMappings_UpdateDomainMapping_async]
 }
 
 process.on('unhandledRejection', err => {

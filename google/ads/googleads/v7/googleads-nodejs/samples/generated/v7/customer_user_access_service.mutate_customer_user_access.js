@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operation) {
-  // [START googleads_mutate_customer_user_access_sample]
+  // [START googleads_v7_generated_CustomerUserAccessService_MutateCustomerUserAccess_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(customerId, operation) {
   }
 
   mutateCustomerUserAccess();
-  // [END googleads_mutate_customer_user_access_sample]
+  // [END googleads_v7_generated_CustomerUserAccessService_MutateCustomerUserAccess_async]
 }
 
 process.on('unhandledRejection', err => {

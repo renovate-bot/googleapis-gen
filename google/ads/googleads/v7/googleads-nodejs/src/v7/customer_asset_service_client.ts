@@ -690,10 +690,6 @@ export class CustomerAssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerAsset(request);
- *
- * @example <caption>include:samples/generated/v7/customer_asset_service.get_customer_asset.js</caption>
- * region_tag:googleads_get_customer_asset_sample
- *
  */
   getCustomerAsset(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerAssetRequest,
@@ -787,10 +783,6 @@ export class CustomerAssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerAssets(request);
- *
- * @example <caption>include:samples/generated/v7/customer_asset_service.mutate_customer_assets.js</caption>
- * region_tag:googleads_mutate_customer_assets_sample
- *
  */
   mutateCustomerAssets(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerAssetsRequest,

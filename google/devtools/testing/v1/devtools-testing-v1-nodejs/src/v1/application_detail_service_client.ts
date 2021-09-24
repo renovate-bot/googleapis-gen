@@ -310,10 +310,6 @@ export class ApplicationDetailServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getApkDetails(request);
- *
- * @example <caption>include:samples/generated/v1/application_detail_service.get_apk_details.js</caption>
- * region_tag:testing_get_apk_details_sample
- *
  */
   getApkDetails(
       request?: protos.google.devtools.testing.v1.IGetApkDetailsRequest,

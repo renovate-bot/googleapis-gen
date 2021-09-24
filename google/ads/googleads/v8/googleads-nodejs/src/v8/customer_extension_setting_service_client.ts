@@ -720,10 +720,6 @@ export class CustomerExtensionSettingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerExtensionSetting(request);
- *
- * @example <caption>include:samples/generated/v8/customer_extension_setting_service.get_customer_extension_setting.js</caption>
- * region_tag:googleads_get_customer_extension_setting_sample
- *
  */
   getCustomerExtensionSetting(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
@@ -838,10 +834,6 @@ export class CustomerExtensionSettingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerExtensionSettings(request);
- *
- * @example <caption>include:samples/generated/v8/customer_extension_setting_service.mutate_customer_extension_settings.js</caption>
- * region_tag:googleads_mutate_customer_extension_settings_sample
- *
  */
   mutateCustomerExtensionSettings(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,

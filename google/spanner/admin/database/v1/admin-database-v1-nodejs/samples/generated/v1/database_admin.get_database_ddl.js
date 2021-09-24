@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database) {
-  // [START database_get_database_ddl_sample]
+  // [START database_v1_generated_DatabaseAdmin_GetDatabaseDdl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(database) {
   }
 
   getDatabaseDdl();
-  // [END database_get_database_ddl_sample]
+  // [END database_v1_generated_DatabaseAdmin_GetDatabaseDdl_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_get_participant_sample]
+  // [START dialogflow_v2_generated_Participants_GetParticipant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getParticipant();
-  // [END dialogflow_get_participant_sample]
+  // [END dialogflow_v2_generated_Participants_GetParticipant_async]
 }
 
 process.on('unhandledRejection', err => {

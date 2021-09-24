@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START resourcemanager_search_projects_sample]
+  // [START resourcemanager_v3_generated_Projects_SearchProjects_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -85,7 +85,7 @@ function main() {
   }
 
   searchProjects();
-  // [END resourcemanager_search_projects_sample]
+  // [END resourcemanager_v3_generated_Projects_SearchProjects_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, id) {
-  // [START cloudbuild_cancel_build_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_CancelBuild_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(projectId, id) {
   }
 
   cancelBuild();
-  // [END cloudbuild_cancel_build_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_CancelBuild_async]
 }
 
 process.on('unhandledRejection', err => {

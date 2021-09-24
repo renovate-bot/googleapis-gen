@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, inputConfig) {
-  // [START retail_import_user_events_sample]
+  // [START retail_v2_generated_UserEventService_ImportUserEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent, inputConfig) {
   }
 
   importUserEvents();
-  // [END retail_import_user_events_sample]
+  // [END retail_v2_generated_UserEventService_ImportUserEvents_async]
 }
 
 process.on('unhandledRejection', err => {

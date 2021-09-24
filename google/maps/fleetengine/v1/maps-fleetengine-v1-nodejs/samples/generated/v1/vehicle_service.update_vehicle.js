@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, vehicle, updateMask) {
-  // [START fleetengine_update_vehicle_sample]
+  // [START fleetengine_v1_generated_VehicleService_UpdateVehicle_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -72,7 +72,7 @@ function main(name, vehicle, updateMask) {
   }
 
   updateVehicle();
-  // [END fleetengine_update_vehicle_sample]
+  // [END fleetengine_v1_generated_VehicleService_UpdateVehicle_async]
 }
 
 process.on('unhandledRejection', err => {

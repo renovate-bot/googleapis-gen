@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, inputConfig, outputConfig) {
-  // [START automl_batch_predict_sample]
+  // [START automl_v1_generated_PredictionService_BatchPredict_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -123,7 +123,7 @@ function main(name, inputConfig, outputConfig) {
   }
 
   batchPredict();
-  // [END automl_batch_predict_sample]
+  // [END automl_v1_generated_PredictionService_BatchPredict_async]
 }
 
 process.on('unhandledRejection', err => {

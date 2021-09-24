@@ -16,7 +16,7 @@
 'use strict';
 
 function main(catalog, query) {
-  // [START retail_complete_query_sample]
+  // [START retail_v2_generated_CompletionService_CompleteQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -101,7 +101,7 @@ function main(catalog, query) {
   }
 
   completeQuery();
-  // [END retail_complete_query_sample]
+  // [END retail_v2_generated_CompletionService_CompleteQuery_async]
 }
 
 process.on('unhandledRejection', err => {

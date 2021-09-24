@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_account_budget_sample]
+  // [START googleads_v8_generated_AccountBudgetService_GetAccountBudget_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getAccountBudget();
-  // [END googleads_get_account_budget_sample]
+  // [END googleads_v8_generated_AccountBudgetService_GetAccountBudget_async]
 }
 
 process.on('unhandledRejection', err => {

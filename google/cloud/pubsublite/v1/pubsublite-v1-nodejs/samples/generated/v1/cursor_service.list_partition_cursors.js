@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START pubsublite_list_partition_cursors_sample]
+  // [START pubsublite_v1_generated_CursorService_ListPartitionCursors_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent) {
   }
 
   listPartitionCursors();
-  // [END pubsublite_list_partition_cursors_sample]
+  // [END pubsublite_v1_generated_CursorService_ListPartitionCursors_async]
 }
 
 process.on('unhandledRejection', err => {

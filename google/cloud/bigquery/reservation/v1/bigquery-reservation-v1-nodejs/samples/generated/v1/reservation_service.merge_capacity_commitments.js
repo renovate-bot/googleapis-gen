@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START reservation_merge_capacity_commitments_sample]
+  // [START reservation_v1_generated_ReservationService_MergeCapacityCommitments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main() {
   }
 
   mergeCapacityCommitments();
-  // [END reservation_merge_capacity_commitments_sample]
+  // [END reservation_v1_generated_ReservationService_MergeCapacityCommitments_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, scope) {
-  // [START credentials_generate_access_token_sample]
+  // [START credentials_v1_generated_IAMCredentials_GenerateAccessToken_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main(name, scope) {
   }
 
   generateAccessToken();
-  // [END credentials_generate_access_token_sample]
+  // [END credentials_v1_generated_IAMCredentials_GenerateAccessToken_async]
 }
 
 process.on('unhandledRejection', err => {

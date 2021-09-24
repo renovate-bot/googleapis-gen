@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datalabeling_search_example_comparisons_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_SearchExampleComparisons_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   searchExampleComparisons();
-  // [END datalabeling_search_example_comparisons_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_SearchExampleComparisons_async]
 }
 
 process.on('unhandledRejection', err => {

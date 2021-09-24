@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_validate_flow_sample]
+  // [START cx_v3beta1_generated_Flows_ValidateFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   validateFlow();
-  // [END cx_validate_flow_sample]
+  // [END cx_v3beta1_generated_Flows_ValidateFlow_async]
 }
 
 process.on('unhandledRejection', err => {

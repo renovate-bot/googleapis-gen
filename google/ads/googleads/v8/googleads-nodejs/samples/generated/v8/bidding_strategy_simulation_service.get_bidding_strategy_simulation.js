@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_bidding_strategy_simulation_sample]
+  // [START googleads_v8_generated_BiddingStrategySimulationService_GetBiddingStrategySimulation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getBiddingStrategySimulation();
-  // [END googleads_get_bidding_strategy_simulation_sample]
+  // [END googleads_v8_generated_BiddingStrategySimulationService_GetBiddingStrategySimulation_async]
 }
 
 process.on('unhandledRejection', err => {

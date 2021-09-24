@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_ad_group_label_sample]
+  // [START googleads_v8_generated_AdGroupLabelService_GetAdGroupLabel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getAdGroupLabel();
-  // [END googleads_get_ad_group_label_sample]
+  // [END googleads_v8_generated_AdGroupLabelService_GetAdGroupLabel_async]
 }
 
 process.on('unhandledRejection', err => {

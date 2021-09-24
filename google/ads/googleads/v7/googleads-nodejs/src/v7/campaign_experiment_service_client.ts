@@ -742,10 +742,6 @@ export class CampaignExperimentServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignExperiment(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.get_campaign_experiment.js</caption>
- * region_tag:googleads_get_campaign_experiment_sample
- *
  */
   getCampaignExperiment(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignExperimentRequest,
@@ -839,10 +835,6 @@ export class CampaignExperimentServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignExperiments(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.mutate_campaign_experiments.js</caption>
- * region_tag:googleads_mutate_campaign_experiments_sample
- *
  */
   mutateCampaignExperiments(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignExperimentsRequest,
@@ -931,10 +923,6 @@ export class CampaignExperimentServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.graduateCampaignExperiment(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.graduate_campaign_experiment.js</caption>
- * region_tag:googleads_graduate_campaign_experiment_sample
- *
  */
   graduateCampaignExperiment(
       request?: protos.google.ads.googleads.v7.services.IGraduateCampaignExperimentRequest,
@@ -1020,10 +1008,6 @@ export class CampaignExperimentServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.endCampaignExperiment(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.end_campaign_experiment.js</caption>
- * region_tag:googleads_end_campaign_experiment_sample
- *
  */
   endCampaignExperiment(
       request?: protos.google.ads.googleads.v7.services.IEndCampaignExperimentRequest,
@@ -1127,10 +1111,6 @@ export class CampaignExperimentServiceClient {
  * @example
  * const [operation] = await client.createCampaignExperiment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.create_campaign_experiment.js</caption>
- * region_tag:googleads_create_campaign_experiment_sample
- *
  */
   createCampaignExperiment(
       request?: protos.google.ads.googleads.v7.services.ICreateCampaignExperimentRequest,
@@ -1180,10 +1160,6 @@ export class CampaignExperimentServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.create_campaign_experiment.js</caption>
- * region_tag:googleads_create_campaign_experiment_sample
- *
  */
   async checkCreateCampaignExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v7.services.CreateCampaignExperimentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1246,10 +1222,6 @@ export class CampaignExperimentServiceClient {
  * @example
  * const [operation] = await client.promoteCampaignExperiment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.promote_campaign_experiment.js</caption>
- * region_tag:googleads_promote_campaign_experiment_sample
- *
  */
   promoteCampaignExperiment(
       request?: protos.google.ads.googleads.v7.services.IPromoteCampaignExperimentRequest,
@@ -1299,10 +1271,6 @@ export class CampaignExperimentServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.promote_campaign_experiment.js</caption>
- * region_tag:googleads_promote_campaign_experiment_sample
- *
  */
   async checkPromoteCampaignExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1370,10 +1338,6 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.list_campaign_experiment_async_errors.js</caption>
- * region_tag:googleads_list_campaign_experiment_async_errors_sample
- *
  */
   listCampaignExperimentAsyncErrors(
       request?: protos.google.ads.googleads.v7.services.IListCampaignExperimentAsyncErrorsRequest,
@@ -1438,10 +1402,6 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.list_campaign_experiment_async_errors.js</caption>
- * region_tag:googleads_list_campaign_experiment_async_errors_sample
- *
  */
   listCampaignExperimentAsyncErrorsStream(
       request?: protos.google.ads.googleads.v7.services.IListCampaignExperimentAsyncErrorsRequest,
@@ -1499,10 +1459,6 @@ export class CampaignExperimentServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v7/campaign_experiment_service.list_campaign_experiment_async_errors.js</caption>
- * region_tag:googleads_list_campaign_experiment_async_errors_sample
- *
  */
   listCampaignExperimentAsyncErrorsAsync(
       request?: protos.google.ads.googleads.v7.services.IListCampaignExperimentAsyncErrorsRequest,

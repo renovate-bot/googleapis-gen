@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datafusion_remove_iam_policy_sample]
+  // [START datafusion_v1beta1_generated_DataFusion_RemoveIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   removeIamPolicy();
-  // [END datafusion_remove_iam_policy_sample]
+  // [END datafusion_v1beta1_generated_DataFusion_RemoveIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

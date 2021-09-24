@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START accessapproval_update_access_approval_settings_sample]
+  // [START accessapproval_v1_generated_AccessApproval_UpdateAccessApprovalSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main() {
   }
 
   updateAccessApprovalSettings();
-  // [END accessapproval_update_access_approval_settings_sample]
+  // [END accessapproval_v1_generated_AccessApproval_UpdateAccessApprovalSettings_async]
 }
 
 process.on('unhandledRejection', err => {

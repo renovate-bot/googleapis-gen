@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, displayName) {
-  // [START admin_update_instance_sample]
+  // [START admin_v2_generated_BigtableInstanceAdmin_UpdateInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main(name, displayName) {
   }
 
   updateInstance();
-  // [END admin_update_instance_sample]
+  // [END admin_v2_generated_BigtableInstanceAdmin_UpdateInstance_async]
 }
 
 process.on('unhandledRejection', err => {

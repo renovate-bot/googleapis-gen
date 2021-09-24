@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database) {
-  // [START firestore_batch_get_documents_sample]
+  // [START firestore_v1beta1_generated_Firestore_BatchGetDocuments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(database) {
   }
 
   batchGetDocuments();
-  // [END firestore_batch_get_documents_sample]
+  // [END firestore_v1beta1_generated_Firestore_BatchGetDocuments_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(groupName) {
-  // [START clouderrorreporting_get_group_sample]
+  // [START clouderrorreporting_v1beta1_generated_ErrorGroupService_GetGroup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(groupName) {
   }
 
   getGroup();
-  // [END clouderrorreporting_get_group_sample]
+  // [END clouderrorreporting_v1beta1_generated_ErrorGroupService_GetGroup_async]
 }
 
 process.on('unhandledRejection', err => {

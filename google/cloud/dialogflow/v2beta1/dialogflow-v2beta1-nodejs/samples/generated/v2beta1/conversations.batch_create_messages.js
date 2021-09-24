@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, requests) {
-  // [START dialogflow_batch_create_messages_sample]
+  // [START dialogflow_v2beta1_generated_Conversations_BatchCreateMessages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent, requests) {
   }
 
   batchCreateMessages();
-  // [END dialogflow_batch_create_messages_sample]
+  // [END dialogflow_v2beta1_generated_Conversations_BatchCreateMessages_async]
 }
 
 process.on('unhandledRejection', err => {

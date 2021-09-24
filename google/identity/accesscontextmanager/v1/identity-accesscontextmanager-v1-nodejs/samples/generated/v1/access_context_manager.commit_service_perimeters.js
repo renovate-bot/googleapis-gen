@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START accesscontextmanager_commit_service_perimeters_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_CommitServicePerimeters_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   commitServicePerimeters();
-  // [END accesscontextmanager_commit_service_perimeters_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_CommitServicePerimeters_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_account_budget_proposal_sample]
+  // [START googleads_v7_generated_AccountBudgetProposalService_GetAccountBudgetProposal_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getAccountBudgetProposal();
-  // [END googleads_get_account_budget_proposal_sample]
+  // [END googleads_v7_generated_AccountBudgetProposalService_GetAccountBudgetProposal_async]
 }
 
 process.on('unhandledRejection', err => {

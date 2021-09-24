@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_dynamic_search_ads_search_term_view_sample]
+  // [START googleads_v8_generated_DynamicSearchAdsSearchTermViewService_GetDynamicSearchAdsSearchTermView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getDynamicSearchAdsSearchTermView();
-  // [END googleads_get_dynamic_search_ads_search_term_view_sample]
+  // [END googleads_v8_generated_DynamicSearchAdsSearchTermViewService_GetDynamicSearchAdsSearchTermView_async]
 }
 
 process.on('unhandledRejection', err => {

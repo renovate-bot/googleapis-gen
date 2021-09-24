@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_ad_group_bid_modifiers_sample]
+  // [START googleads_v7_generated_AdGroupBidModifierService_MutateAdGroupBidModifiers_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateAdGroupBidModifiers();
-  // [END googleads_mutate_ad_group_bid_modifiers_sample]
+  // [END googleads_v7_generated_AdGroupBidModifierService_MutateAdGroupBidModifiers_async]
 }
 
 process.on('unhandledRejection', err => {

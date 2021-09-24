@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START functions_generate_upload_url_sample]
+  // [START functions_v1_generated_CloudFunctionsService_GenerateUploadUrl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   generateUploadUrl();
-  // [END functions_generate_upload_url_sample]
+  // [END functions_v1_generated_CloudFunctionsService_GenerateUploadUrl_async]
 }
 
 process.on('unhandledRejection', err => {

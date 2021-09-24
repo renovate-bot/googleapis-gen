@@ -392,10 +392,6 @@ export class FirestoreAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIndex(request);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.get_index.js</caption>
- * region_tag:admin_get_index_sample
- *
  */
   getIndex(
       request?: protos.google.firestore.admin.v1.IGetIndexRequest,
@@ -468,10 +464,6 @@ export class FirestoreAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteIndex(request);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.delete_index.js</caption>
- * region_tag:admin_delete_index_sample
- *
  */
   deleteIndex(
       request?: protos.google.firestore.admin.v1.IDeleteIndexRequest,
@@ -544,10 +536,6 @@ export class FirestoreAdminClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getField(request);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.get_field.js</caption>
- * region_tag:admin_get_field_sample
- *
  */
   getField(
       request?: protos.google.firestore.admin.v1.IGetFieldRequest,
@@ -628,10 +616,6 @@ export class FirestoreAdminClient {
  * @example
  * const [operation] = await client.createIndex(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.create_index.js</caption>
- * region_tag:admin_create_index_sample
- *
  */
   createIndex(
       request?: protos.google.firestore.admin.v1.ICreateIndexRequest,
@@ -681,10 +665,6 @@ export class FirestoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.create_index.js</caption>
- * region_tag:admin_create_index_sample
- *
  */
   async checkCreateIndexProgress(name: string): Promise<LROperation<protos.google.firestore.admin.v1.Index, protos.google.firestore.admin.v1.IndexOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -746,10 +726,6 @@ export class FirestoreAdminClient {
  * @example
  * const [operation] = await client.updateField(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.update_field.js</caption>
- * region_tag:admin_update_field_sample
- *
  */
   updateField(
       request?: protos.google.firestore.admin.v1.IUpdateFieldRequest,
@@ -799,10 +775,6 @@ export class FirestoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.update_field.js</caption>
- * region_tag:admin_update_field_sample
- *
  */
   async checkUpdateFieldProgress(name: string): Promise<LROperation<protos.google.firestore.admin.v1.Field, protos.google.firestore.admin.v1.FieldOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -868,10 +840,6 @@ export class FirestoreAdminClient {
  * @example
  * const [operation] = await client.exportDocuments(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.export_documents.js</caption>
- * region_tag:admin_export_documents_sample
- *
  */
   exportDocuments(
       request?: protos.google.firestore.admin.v1.IExportDocumentsRequest,
@@ -921,10 +889,6 @@ export class FirestoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.export_documents.js</caption>
- * region_tag:admin_export_documents_sample
- *
  */
   async checkExportDocumentsProgress(name: string): Promise<LROperation<protos.google.firestore.admin.v1.ExportDocumentsResponse, protos.google.firestore.admin.v1.ExportDocumentsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -985,10 +949,6 @@ export class FirestoreAdminClient {
  * @example
  * const [operation] = await client.importDocuments(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.import_documents.js</caption>
- * region_tag:admin_import_documents_sample
- *
  */
   importDocuments(
       request?: protos.google.firestore.admin.v1.IImportDocumentsRequest,
@@ -1038,10 +998,6 @@ export class FirestoreAdminClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.import_documents.js</caption>
- * region_tag:admin_import_documents_sample
- *
  */
   async checkImportDocumentsProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.firestore.admin.v1.ImportDocumentsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1098,10 +1054,6 @@ export class FirestoreAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.list_indexes.js</caption>
- * region_tag:admin_list_indexes_sample
- *
  */
   listIndexes(
       request?: protos.google.firestore.admin.v1.IListIndexesRequest,
@@ -1165,10 +1117,6 @@ export class FirestoreAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.list_indexes.js</caption>
- * region_tag:admin_list_indexes_sample
- *
  */
   listIndexesStream(
       request?: protos.google.firestore.admin.v1.IListIndexesRequest,
@@ -1225,10 +1173,6 @@ export class FirestoreAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.list_indexes.js</caption>
- * region_tag:admin_list_indexes_sample
- *
  */
   listIndexesAsync(
       request?: protos.google.firestore.admin.v1.IListIndexesRequest,
@@ -1311,10 +1255,6 @@ export class FirestoreAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.list_fields.js</caption>
- * region_tag:admin_list_fields_sample
- *
  */
   listFields(
       request?: protos.google.firestore.admin.v1.IListFieldsRequest,
@@ -1382,10 +1322,6 @@ export class FirestoreAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.list_fields.js</caption>
- * region_tag:admin_list_fields_sample
- *
  */
   listFieldsStream(
       request?: protos.google.firestore.admin.v1.IListFieldsRequest,
@@ -1446,10 +1382,6 @@ export class FirestoreAdminClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/firestore_admin.list_fields.js</caption>
- * region_tag:admin_list_fields_sample
- *
  */
   listFieldsAsync(
       request?: protos.google.firestore.admin.v1.IListFieldsRequest,

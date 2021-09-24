@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, deploymentId, gameServerDeployment) {
-  // [START gaming_create_game_server_deployment_sample]
+  // [START gaming_v1_generated_GameServerDeploymentsService_CreateGameServerDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, deploymentId, gameServerDeployment) {
   }
 
   createGameServerDeployment();
-  // [END gaming_create_game_server_deployment_sample]
+  // [END gaming_v1_generated_GameServerDeploymentsService_CreateGameServerDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

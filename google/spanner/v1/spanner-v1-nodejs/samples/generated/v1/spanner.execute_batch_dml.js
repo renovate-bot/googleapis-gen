@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, transaction, statements, seqno) {
-  // [START spanner_execute_batch_dml_sample]
+  // [START spanner_v1_generated_Spanner_ExecuteBatchDml_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(session, transaction, statements, seqno) {
   }
 
   executeBatchDml();
-  // [END spanner_execute_batch_dml_sample]
+  // [END spanner_v1_generated_Spanner_ExecuteBatchDml_async]
 }
 
 process.on('unhandledRejection', err => {

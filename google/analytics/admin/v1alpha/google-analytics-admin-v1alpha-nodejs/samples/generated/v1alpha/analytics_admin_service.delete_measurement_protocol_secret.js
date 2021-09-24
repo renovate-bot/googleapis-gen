@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_measurement_protocol_secret_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_DeleteMeasurementProtocolSecret_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   deleteMeasurementProtocolSecret();
-  // [END admin_delete_measurement_protocol_secret_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_DeleteMeasurementProtocolSecret_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, queryInput) {
-  // [START dialogflow_detect_intent_sample]
+  // [START dialogflow_v2_generated_Sessions_DetectIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -90,7 +90,7 @@ function main(session, queryInput) {
   }
 
   detectIntent();
-  // [END dialogflow_detect_intent_sample]
+  // [END dialogflow_v2_generated_Sessions_DetectIntent_async]
 }
 
 process.on('unhandledRejection', err => {

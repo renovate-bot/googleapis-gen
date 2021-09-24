@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_get_session_entity_type_sample]
+  // [START cx_v3_generated_SessionEntityTypes_GetSessionEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   getSessionEntityType();
-  // [END cx_get_session_entity_type_sample]
+  // [END cx_v3_generated_SessionEntityTypes_GetSessionEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, basicConfig, feature) {
-  // [START datalabeling_label_image_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_LabelImage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -79,7 +79,7 @@ function main(parent, basicConfig, feature) {
   }
 
   labelImage();
-  // [END datalabeling_label_image_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_LabelImage_async]
 }
 
 process.on('unhandledRejection', err => {

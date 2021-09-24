@@ -720,10 +720,6 @@ export class LabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getLabel(request);
- *
- * @example <caption>include:samples/generated/v8/label_service.get_label.js</caption>
- * region_tag:googleads_get_label_sample
- *
  */
   getLabel(
       request?: protos.google.ads.googleads.v8.services.IGetLabelRequest,
@@ -833,10 +829,6 @@ export class LabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateLabels(request);
- *
- * @example <caption>include:samples/generated/v8/label_service.mutate_labels.js</caption>
- * region_tag:googleads_mutate_labels_sample
- *
  */
   mutateLabels(
       request?: protos.google.ads.googleads.v8.services.IMutateLabelsRequest,

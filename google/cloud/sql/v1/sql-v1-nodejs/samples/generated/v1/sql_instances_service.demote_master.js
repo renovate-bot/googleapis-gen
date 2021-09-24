@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_demote_master_sample]
+  // [START sql_v1_generated_SqlInstancesService_DemoteMaster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   demoteMaster();
-  // [END sql_demote_master_sample]
+  // [END sql_v1_generated_SqlInstancesService_DemoteMaster_async]
 }
 
 process.on('unhandledRejection', err => {

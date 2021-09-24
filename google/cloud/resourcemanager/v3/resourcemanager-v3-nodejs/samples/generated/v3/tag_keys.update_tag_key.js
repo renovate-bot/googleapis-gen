@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tagKey) {
-  // [START resourcemanager_update_tag_key_sample]
+  // [START resourcemanager_v3_generated_TagKeys_UpdateTagKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(tagKey) {
   }
 
   updateTagKey();
-  // [END resourcemanager_update_tag_key_sample]
+  // [END resourcemanager_v3_generated_TagKeys_UpdateTagKey_async]
 }
 
 process.on('unhandledRejection', err => {

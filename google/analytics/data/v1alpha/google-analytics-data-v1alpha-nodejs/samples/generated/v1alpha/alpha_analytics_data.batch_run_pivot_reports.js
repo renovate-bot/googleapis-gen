@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START data_batch_run_pivot_reports_sample]
+  // [START data_v1alpha_generated_AlphaAnalyticsData_BatchRunPivotReports_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   batchRunPivotReports();
-  // [END data_batch_run_pivot_reports_sample]
+  // [END data_v1alpha_generated_AlphaAnalyticsData_BatchRunPivotReports_async]
 }
 
 process.on('unhandledRejection', err => {

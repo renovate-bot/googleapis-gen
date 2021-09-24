@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, triggerId) {
-  // [START cloudbuild_run_build_trigger_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_RunBuildTrigger_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(projectId, triggerId) {
   }
 
   runBuildTrigger();
-  // [END cloudbuild_run_build_trigger_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_RunBuildTrigger_async]
 }
 
 process.on('unhandledRejection', err => {

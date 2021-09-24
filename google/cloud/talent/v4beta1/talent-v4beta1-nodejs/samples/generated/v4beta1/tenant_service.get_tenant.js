@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START talent_get_tenant_sample]
+  // [START talent_v4beta1_generated_TenantService_GetTenant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getTenant();
-  // [END talent_get_tenant_sample]
+  // [END talent_v4beta1_generated_TenantService_GetTenant_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(sshPublicKey) {
-  // [START oslogin_import_ssh_public_key_sample]
+  // [START oslogin_v1beta_generated_OsLoginService_ImportSshPublicKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(sshPublicKey) {
   }
 
   importSshPublicKey();
-  // [END oslogin_import_ssh_public_key_sample]
+  // [END oslogin_v1beta_generated_OsLoginService_ImportSshPublicKey_async]
 }
 
 process.on('unhandledRejection', err => {

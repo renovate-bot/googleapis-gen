@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datastream_delete_connection_profile_sample]
+  // [START datastream_v1alpha1_generated_Datastream_DeleteConnectionProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   deleteConnectionProfile();
-  // [END datastream_delete_connection_profile_sample]
+  // [END datastream_v1alpha1_generated_Datastream_DeleteConnectionProfile_async]
 }
 
 process.on('unhandledRejection', err => {

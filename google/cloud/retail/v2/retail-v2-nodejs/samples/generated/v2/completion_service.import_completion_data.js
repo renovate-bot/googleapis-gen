@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, inputConfig) {
-  // [START retail_import_completion_data_sample]
+  // [START retail_v2_generated_CompletionService_ImportCompletionData_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, inputConfig) {
   }
 
   importCompletionData();
-  // [END retail_import_completion_data_sample]
+  // [END retail_v2_generated_CompletionService_ImportCompletionData_async]
 }
 
 process.on('unhandledRejection', err => {

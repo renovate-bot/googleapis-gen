@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, releaseId, release) {
-  // [START deploy_create_release_sample]
+  // [START deploy_v1_generated_CloudDeploy_CreateRelease_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(parent, releaseId, release) {
   }
 
   createRelease();
-  // [END deploy_create_release_sample]
+  // [END deploy_v1_generated_CloudDeploy_CreateRelease_async]
 }
 
 process.on('unhandledRejection', err => {

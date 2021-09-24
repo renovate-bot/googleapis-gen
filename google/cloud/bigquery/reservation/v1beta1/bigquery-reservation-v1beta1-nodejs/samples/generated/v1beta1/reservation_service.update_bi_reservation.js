@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START reservation_update_bi_reservation_sample]
+  // [START reservation_v1beta1_generated_ReservationService_UpdateBiReservation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   updateBiReservation();
-  // [END reservation_update_bi_reservation_sample]
+  // [END reservation_v1beta1_generated_ReservationService_UpdateBiReservation_async]
 }
 
 process.on('unhandledRejection', err => {

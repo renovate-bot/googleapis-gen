@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START gkehub_list_memberships_sample]
+  // [START gkehub_v1beta1_generated_GkeHubMembershipService_ListMemberships_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -77,7 +77,7 @@ function main(parent) {
   }
 
   listMemberships();
-  // [END gkehub_list_memberships_sample]
+  // [END gkehub_v1beta1_generated_GkeHubMembershipService_ListMemberships_async]
 }
 
 process.on('unhandledRejection', err => {

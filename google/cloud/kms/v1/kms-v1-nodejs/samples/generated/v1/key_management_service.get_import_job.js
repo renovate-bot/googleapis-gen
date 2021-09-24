@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START kms_get_import_job_sample]
+  // [START kms_v1_generated_KeyManagementService_GetImportJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getImportJob();
-  // [END kms_get_import_job_sample]
+  // [END kms_v1_generated_KeyManagementService_GetImportJob_async]
 }
 
 process.on('unhandledRejection', err => {

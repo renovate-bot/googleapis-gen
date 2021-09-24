@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datastream_delete_route_sample]
+  // [START datastream_v1alpha1_generated_Datastream_DeleteRoute_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   deleteRoute();
-  // [END datastream_delete_route_sample]
+  // [END datastream_v1alpha1_generated_Datastream_DeleteRoute_async]
 }
 
 process.on('unhandledRejection', err => {

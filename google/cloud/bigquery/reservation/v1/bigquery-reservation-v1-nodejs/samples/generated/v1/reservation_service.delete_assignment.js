@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START reservation_delete_assignment_sample]
+  // [START reservation_v1_generated_ReservationService_DeleteAssignment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteAssignment();
-  // [END reservation_delete_assignment_sample]
+  // [END reservation_v1_generated_ReservationService_DeleteAssignment_async]
 }
 
 process.on('unhandledRejection', err => {

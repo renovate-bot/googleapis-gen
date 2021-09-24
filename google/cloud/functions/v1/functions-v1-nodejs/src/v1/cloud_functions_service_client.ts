@@ -373,10 +373,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFunction(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.get_function.js</caption>
- * region_tag:functions_get_function_sample
- *
  */
   getFunction(
       request?: protos.google.cloud.functions.v1.IGetFunctionRequest,
@@ -453,10 +449,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.callFunction(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.call_function.js</caption>
- * region_tag:functions_call_function_sample
- *
  */
   callFunction(
       request?: protos.google.cloud.functions.v1.ICallFunctionRequest,
@@ -553,10 +545,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateUploadUrl(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.generate_upload_url.js</caption>
- * region_tag:functions_generate_upload_url_sample
- *
  */
   generateUploadUrl(
       request?: protos.google.cloud.functions.v1.IGenerateUploadUrlRequest,
@@ -636,10 +624,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateDownloadUrl(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.generate_download_url.js</caption>
- * region_tag:functions_generate_download_url_sample
- *
  */
   generateDownloadUrl(
       request?: protos.google.cloud.functions.v1.IGenerateDownloadUrlRequest,
@@ -718,10 +702,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.set_iam_policy.js</caption>
- * region_tag:functions_set_iam_policy_sample
- *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -799,10 +779,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.get_iam_policy.js</caption>
- * region_tag:functions_get_iam_policy_sample
- *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -883,10 +859,6 @@ export class CloudFunctionsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.test_iam_permissions.js</caption>
- * region_tag:functions_test_iam_permissions_sample
- *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -967,10 +939,6 @@ export class CloudFunctionsServiceClient {
  * @example
  * const [operation] = await client.createFunction(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.create_function.js</caption>
- * region_tag:functions_create_function_sample
- *
  */
   createFunction(
       request?: protos.google.cloud.functions.v1.ICreateFunctionRequest,
@@ -1020,10 +988,6 @@ export class CloudFunctionsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.create_function.js</caption>
- * region_tag:functions_create_function_sample
- *
  */
   async checkCreateFunctionProgress(name: string): Promise<LROperation<protos.google.cloud.functions.v1.CloudFunction, protos.google.cloud.functions.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1072,10 +1036,6 @@ export class CloudFunctionsServiceClient {
  * @example
  * const [operation] = await client.updateFunction(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.update_function.js</caption>
- * region_tag:functions_update_function_sample
- *
  */
   updateFunction(
       request?: protos.google.cloud.functions.v1.IUpdateFunctionRequest,
@@ -1125,10 +1085,6 @@ export class CloudFunctionsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.update_function.js</caption>
- * region_tag:functions_update_function_sample
- *
  */
   async checkUpdateFunctionProgress(name: string): Promise<LROperation<protos.google.cloud.functions.v1.CloudFunction, protos.google.cloud.functions.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1177,10 +1133,6 @@ export class CloudFunctionsServiceClient {
  * @example
  * const [operation] = await client.deleteFunction(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.delete_function.js</caption>
- * region_tag:functions_delete_function_sample
- *
  */
   deleteFunction(
       request?: protos.google.cloud.functions.v1.IDeleteFunctionRequest,
@@ -1230,10 +1182,6 @@ export class CloudFunctionsServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.delete_function.js</caption>
- * region_tag:functions_delete_function_sample
- *
  */
   async checkDeleteFunctionProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.functions.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1293,10 +1241,6 @@ export class CloudFunctionsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.list_functions.js</caption>
- * region_tag:functions_list_functions_sample
- *
  */
   listFunctions(
       request?: protos.google.cloud.functions.v1.IListFunctionsRequest,
@@ -1363,10 +1307,6 @@ export class CloudFunctionsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.list_functions.js</caption>
- * region_tag:functions_list_functions_sample
- *
  */
   listFunctionsStream(
       request?: protos.google.cloud.functions.v1.IListFunctionsRequest,
@@ -1426,10 +1366,6 @@ export class CloudFunctionsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_functions_service.list_functions.js</caption>
- * region_tag:functions_list_functions_sample
- *
  */
   listFunctionsAsync(
       request?: protos.google.cloud.functions.v1.IListFunctionsRequest,

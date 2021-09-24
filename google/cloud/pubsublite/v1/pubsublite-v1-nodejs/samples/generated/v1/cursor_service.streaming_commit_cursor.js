@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START pubsublite_streaming_commit_cursor_sample]
+  // [START pubsublite_v1_generated_CursorService_StreamingCommitCursor_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   streamingCommitCursor();
-  // [END pubsublite_streaming_commit_cursor_sample]
+  // [END pubsublite_v1_generated_CursorService_StreamingCommitCursor_async]
 }
 
 process.on('unhandledRejection', err => {

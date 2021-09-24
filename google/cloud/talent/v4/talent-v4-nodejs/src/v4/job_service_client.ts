@@ -388,10 +388,6 @@ export class JobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createJob(request);
- *
- * @example <caption>include:samples/generated/v4/job_service.create_job.js</caption>
- * region_tag:talent_create_job_sample
- *
  */
   createJob(
       request?: protos.google.cloud.talent.v4.ICreateJobRequest,
@@ -468,10 +464,6 @@ export class JobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJob(request);
- *
- * @example <caption>include:samples/generated/v4/job_service.get_job.js</caption>
- * region_tag:talent_get_job_sample
- *
  */
   getJob(
       request?: protos.google.cloud.talent.v4.IGetJobRequest,
@@ -554,10 +546,6 @@ export class JobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateJob(request);
- *
- * @example <caption>include:samples/generated/v4/job_service.update_job.js</caption>
- * region_tag:talent_update_job_sample
- *
  */
   updateJob(
       request?: protos.google.cloud.talent.v4.IUpdateJobRequest,
@@ -636,10 +624,6 @@ export class JobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteJob(request);
- *
- * @example <caption>include:samples/generated/v4/job_service.delete_job.js</caption>
- * region_tag:talent_delete_job_sample
- *
  */
   deleteJob(
       request?: protos.google.cloud.talent.v4.IDeleteJobRequest,
@@ -949,10 +933,6 @@ export class JobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.searchJobs(request);
- *
- * @example <caption>include:samples/generated/v4/job_service.search_jobs.js</caption>
- * region_tag:talent_search_jobs_sample
- *
  */
   searchJobs(
       request?: protos.google.cloud.talent.v4.ISearchJobsRequest,
@@ -1267,10 +1247,6 @@ export class JobServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.searchJobsForAlert(request);
- *
- * @example <caption>include:samples/generated/v4/job_service.search_jobs_for_alert.js</caption>
- * region_tag:talent_search_jobs_for_alert_sample
- *
  */
   searchJobsForAlert(
       request?: protos.google.cloud.talent.v4.ISearchJobsRequest,
@@ -1352,10 +1328,6 @@ export class JobServiceClient {
  * @example
  * const [operation] = await client.batchCreateJobs(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v4/job_service.batch_create_jobs.js</caption>
- * region_tag:talent_batch_create_jobs_sample
- *
  */
   batchCreateJobs(
       request?: protos.google.cloud.talent.v4.IBatchCreateJobsRequest,
@@ -1405,10 +1377,6 @@ export class JobServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v4/job_service.batch_create_jobs.js</caption>
- * region_tag:talent_batch_create_jobs_sample
- *
  */
   async checkBatchCreateJobsProgress(name: string): Promise<LROperation<protos.google.cloud.talent.v4.BatchCreateJobsResponse, protos.google.cloud.talent.v4.BatchOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1476,10 +1444,6 @@ export class JobServiceClient {
  * @example
  * const [operation] = await client.batchUpdateJobs(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v4/job_service.batch_update_jobs.js</caption>
- * region_tag:talent_batch_update_jobs_sample
- *
  */
   batchUpdateJobs(
       request?: protos.google.cloud.talent.v4.IBatchUpdateJobsRequest,
@@ -1529,10 +1493,6 @@ export class JobServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v4/job_service.batch_update_jobs.js</caption>
- * region_tag:talent_batch_update_jobs_sample
- *
  */
   async checkBatchUpdateJobsProgress(name: string): Promise<LROperation<protos.google.cloud.talent.v4.BatchUpdateJobsResponse, protos.google.cloud.talent.v4.BatchOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1591,10 +1551,6 @@ export class JobServiceClient {
  * @example
  * const [operation] = await client.batchDeleteJobs(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v4/job_service.batch_delete_jobs.js</caption>
- * region_tag:talent_batch_delete_jobs_sample
- *
  */
   batchDeleteJobs(
       request?: protos.google.cloud.talent.v4.IBatchDeleteJobsRequest,
@@ -1644,10 +1600,6 @@ export class JobServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v4/job_service.batch_delete_jobs.js</caption>
- * region_tag:talent_batch_delete_jobs_sample
- *
  */
   async checkBatchDeleteJobsProgress(name: string): Promise<LROperation<protos.google.cloud.talent.v4.BatchDeleteJobsResponse, protos.google.cloud.talent.v4.BatchOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1735,10 +1687,6 @@ export class JobServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4/job_service.list_jobs.js</caption>
- * region_tag:talent_list_jobs_sample
- *
  */
   listJobs(
       request?: protos.google.cloud.talent.v4.IListJobsRequest,
@@ -1833,10 +1781,6 @@ export class JobServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4/job_service.list_jobs.js</caption>
- * region_tag:talent_list_jobs_sample
- *
  */
   listJobsStream(
       request?: protos.google.cloud.talent.v4.IListJobsRequest,
@@ -1924,10 +1868,6 @@ export class JobServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v4/job_service.list_jobs.js</caption>
- * region_tag:talent_list_jobs_sample
- *
  */
   listJobsAsync(
       request?: protos.google.cloud.talent.v4.IListJobsRequest,

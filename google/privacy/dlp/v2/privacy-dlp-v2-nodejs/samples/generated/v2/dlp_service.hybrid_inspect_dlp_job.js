@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dlp_hybrid_inspect_dlp_job_sample]
+  // [START dlp_v2_generated_DlpService_HybridInspectDlpJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   hybridInspectDlpJob();
-  // [END dlp_hybrid_inspect_dlp_job_sample]
+  // [END dlp_v2_generated_DlpService_HybridInspectDlpJob_async]
 }
 
 process.on('unhandledRejection', err => {

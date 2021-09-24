@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, currentLocation) {
-  // [START fleetengine_update_vehicle_location_sample]
+  // [START fleetengine_v1_generated_VehicleService_UpdateVehicleLocation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(name, currentLocation) {
   }
 
   updateVehicleLocation();
-  // [END fleetengine_update_vehicle_location_sample]
+  // [END fleetengine_v1_generated_VehicleService_UpdateVehicleLocation_async]
 }
 
 process.on('unhandledRejection', err => {

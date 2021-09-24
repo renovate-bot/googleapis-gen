@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START networkservices_list_endpoint_policies_sample]
+  // [START networkservices_v1beta1_generated_NetworkServices_ListEndpointPolicies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listEndpointPolicies();
-  // [END networkservices_list_endpoint_policies_sample]
+  // [END networkservices_v1beta1_generated_NetworkServices_ListEndpointPolicies_async]
 }
 
 process.on('unhandledRejection', err => {

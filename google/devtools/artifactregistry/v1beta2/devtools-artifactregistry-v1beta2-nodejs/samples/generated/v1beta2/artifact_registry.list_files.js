@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START artifactregistry_list_files_sample]
+  // [START artifactregistry_v1beta2_generated_ArtifactRegistry_ListFiles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main() {
   }
 
   listFiles();
-  // [END artifactregistry_list_files_sample]
+  // [END artifactregistry_v1beta2_generated_ArtifactRegistry_ListFiles_async]
 }
 
 process.on('unhandledRejection', err => {

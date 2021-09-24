@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START texttospeech_list_voices_sample]
+  // [START texttospeech_v1beta1_generated_TextToSpeech_ListVoices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   listVoices();
-  // [END texttospeech_list_voices_sample]
+  // [END texttospeech_v1beta1_generated_TextToSpeech_ListVoices_async]
 }
 
 process.on('unhandledRejection', err => {

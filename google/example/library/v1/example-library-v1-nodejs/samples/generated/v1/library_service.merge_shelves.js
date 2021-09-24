@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, otherShelf) {
-  // [START library_merge_shelves_sample]
+  // [START library_v1_generated_LibraryService_MergeShelves_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name, otherShelf) {
   }
 
   mergeShelves();
-  // [END library_merge_shelves_sample]
+  // [END library_v1_generated_LibraryService_MergeShelves_async]
 }
 
 process.on('unhandledRejection', err => {

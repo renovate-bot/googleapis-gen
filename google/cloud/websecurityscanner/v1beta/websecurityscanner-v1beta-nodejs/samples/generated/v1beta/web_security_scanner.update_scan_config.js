@@ -16,7 +16,7 @@
 'use strict';
 
 function main(scanConfig, updateMask) {
-  // [START websecurityscanner_update_scan_config_sample]
+  // [START websecurityscanner_v1beta_generated_WebSecurityScanner_UpdateScanConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(scanConfig, updateMask) {
   }
 
   updateScanConfig();
-  // [END websecurityscanner_update_scan_config_sample]
+  // [END websecurityscanner_v1beta_generated_WebSecurityScanner_UpdateScanConfig_async]
 }
 
 process.on('unhandledRejection', err => {

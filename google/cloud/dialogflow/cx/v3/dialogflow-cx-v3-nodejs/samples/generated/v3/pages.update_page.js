@@ -16,7 +16,7 @@
 'use strict';
 
 function main(page) {
-  // [START cx_update_page_sample]
+  // [START cx_v3_generated_Pages_UpdatePage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(page) {
   }
 
   updatePage();
-  // [END cx_update_page_sample]
+  // [END cx_v3_generated_Pages_UpdatePage_async]
 }
 
 process.on('unhandledRejection', err => {

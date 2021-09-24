@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, servicePerimeter) {
-  // [START accesscontextmanager_create_service_perimeter_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_CreateServicePerimeter_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, servicePerimeter) {
   }
 
   createServicePerimeter();
-  // [END accesscontextmanager_create_service_perimeter_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_CreateServicePerimeter_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, previousCustomerManagerLink, newManager) {
-  // [START googleads_move_manager_link_sample]
+  // [START googleads_v8_generated_CustomerManagerLinkService_MoveManagerLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(customerId, previousCustomerManagerLink, newManager) {
   }
 
   moveManagerLink();
-  // [END googleads_move_manager_link_sample]
+  // [END googleads_v8_generated_CustomerManagerLinkService_MoveManagerLink_async]
 }
 
 process.on('unhandledRejection', err => {

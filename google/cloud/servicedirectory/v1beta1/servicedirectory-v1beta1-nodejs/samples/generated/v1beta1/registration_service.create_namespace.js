@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, namespaceId, namespace) {
-  // [START servicedirectory_create_namespace_sample]
+  // [START servicedirectory_v1beta1_generated_RegistrationService_CreateNamespace_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent, namespaceId, namespace) {
   }
 
   createNamespace();
-  // [END servicedirectory_create_namespace_sample]
+  // [END servicedirectory_v1beta1_generated_RegistrationService_CreateNamespace_async]
 }
 
 process.on('unhandledRejection', err => {

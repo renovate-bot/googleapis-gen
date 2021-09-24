@@ -712,10 +712,6 @@ export class KeywordThemeConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKeywordThemeConstant(request);
- *
- * @example <caption>include:samples/generated/v8/keyword_theme_constant_service.get_keyword_theme_constant.js</caption>
- * region_tag:googleads_get_keyword_theme_constant_sample
- *
  */
   getKeywordThemeConstant(
       request?: protos.google.ads.googleads.v8.services.IGetKeywordThemeConstantRequest,
@@ -802,10 +798,6 @@ export class KeywordThemeConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestKeywordThemeConstants(request);
- *
- * @example <caption>include:samples/generated/v8/keyword_theme_constant_service.suggest_keyword_theme_constants.js</caption>
- * region_tag:googleads_suggest_keyword_theme_constants_sample
- *
  */
   suggestKeywordThemeConstants(
       request?: protos.google.ads.googleads.v8.services.ISuggestKeywordThemeConstantsRequest,

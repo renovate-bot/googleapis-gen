@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_get_object_media_sample]
+  // [START storage_v1_generated_Storage_GetObjectMedia_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -102,7 +102,7 @@ function main() {
   }
 
   getObjectMedia();
-  // [END storage_get_object_media_sample]
+  // [END storage_v1_generated_Storage_GetObjectMedia_async]
 }
 
 process.on('unhandledRejection', err => {

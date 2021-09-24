@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START essentialcontacts_get_contact_sample]
+  // [START essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   getContact();
-  // [END essentialcontacts_get_contact_sample]
+  // [END essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
 }
 
 process.on('unhandledRejection', err => {

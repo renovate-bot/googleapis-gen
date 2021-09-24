@@ -410,10 +410,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNotificationChannelDescriptor(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.get_notification_channel_descriptor.js</caption>
- * region_tag:monitoring_get_notification_channel_descriptor_sample
- *
  */
   getNotificationChannelDescriptor(
       request?: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
@@ -491,10 +487,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNotificationChannel(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.get_notification_channel.js</caption>
- * region_tag:monitoring_get_notification_channel_sample
- *
  */
   getNotificationChannel(
       request?: protos.google.monitoring.v3.IGetNotificationChannelRequest,
@@ -577,10 +569,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createNotificationChannel(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.create_notification_channel.js</caption>
- * region_tag:monitoring_create_notification_channel_sample
- *
  */
   createNotificationChannel(
       request?: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
@@ -658,10 +646,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateNotificationChannel(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.update_notification_channel.js</caption>
- * region_tag:monitoring_update_notification_channel_sample
- *
  */
   updateNotificationChannel(
       request?: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
@@ -740,10 +724,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteNotificationChannel(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.delete_notification_channel.js</caption>
- * region_tag:monitoring_delete_notification_channel_sample
- *
  */
   deleteNotificationChannel(
       request?: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
@@ -816,10 +796,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.sendNotificationChannelVerificationCode(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.send_notification_channel_verification_code.js</caption>
- * region_tag:monitoring_send_notification_channel_verification_code_sample
- *
  */
   sendNotificationChannelVerificationCode(
       request?: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
@@ -923,10 +899,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getNotificationChannelVerificationCode(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.get_notification_channel_verification_code.js</caption>
- * region_tag:monitoring_get_notification_channel_verification_code_sample
- *
  */
   getNotificationChannelVerificationCode(
       request?: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
@@ -1008,10 +980,6 @@ export class NotificationChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.verifyNotificationChannel(request);
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.verify_notification_channel.js</caption>
- * region_tag:monitoring_verify_notification_channel_sample
- *
  */
   verifyNotificationChannel(
       request?: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
@@ -1107,10 +1075,6 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channel_descriptors.js</caption>
- * region_tag:monitoring_list_notification_channel_descriptors_sample
- *
  */
   listNotificationChannelDescriptors(
       request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
@@ -1183,10 +1147,6 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channel_descriptors.js</caption>
- * region_tag:monitoring_list_notification_channel_descriptors_sample
- *
  */
   listNotificationChannelDescriptorsStream(
       request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
@@ -1252,10 +1212,6 @@ export class NotificationChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channel_descriptors.js</caption>
- * region_tag:monitoring_list_notification_channel_descriptors_sample
- *
  */
   listNotificationChannelDescriptorsAsync(
       request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
@@ -1351,10 +1307,6 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channels.js</caption>
- * region_tag:monitoring_list_notification_channels_sample
- *
  */
   listNotificationChannels(
       request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
@@ -1440,10 +1392,6 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channels.js</caption>
- * region_tag:monitoring_list_notification_channels_sample
- *
  */
   listNotificationChannelsStream(
       request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
@@ -1522,10 +1470,6 @@ export class NotificationChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channels.js</caption>
- * region_tag:monitoring_list_notification_channels_sample
- *
  */
   listNotificationChannelsAsync(
       request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,

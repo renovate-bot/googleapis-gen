@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_get_patch_deployment_sample]
+  // [START osconfig_v1beta_generated_OsConfigService_GetPatchDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getPatchDeployment();
-  // [END osconfig_get_patch_deployment_sample]
+  // [END osconfig_v1beta_generated_OsConfigService_GetPatchDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

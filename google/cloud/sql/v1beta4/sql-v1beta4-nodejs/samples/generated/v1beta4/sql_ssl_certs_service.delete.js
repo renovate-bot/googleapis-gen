@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_delete_sample]
+  // [START sql_v1beta4_generated_SqlSslCertsService_Delete_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   delete();
-  // [END sql_delete_sample]
+  // [END sql_v1beta4_generated_SqlSslCertsService_Delete_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(account) {
-  // [START admin_search_change_history_events_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_SearchChangeHistoryEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -86,7 +86,7 @@ function main(account) {
   }
 
   searchChangeHistoryEvents();
-  // [END admin_search_change_history_events_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_SearchChangeHistoryEvents_async]
 }
 
 process.on('unhandledRejection', err => {

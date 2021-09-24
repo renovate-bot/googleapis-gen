@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START aiplatform_delete_trial_sample]
+  // [START aiplatform_v1beta1_generated_VizierService_DeleteTrial_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteTrial();
-  // [END aiplatform_delete_trial_sample]
+  // [END aiplatform_v1beta1_generated_VizierService_DeleteTrial_async]
 }
 
 process.on('unhandledRejection', err => {

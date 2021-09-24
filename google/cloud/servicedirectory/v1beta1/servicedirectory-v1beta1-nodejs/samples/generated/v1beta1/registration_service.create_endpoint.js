@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, endpointId, endpoint) {
-  // [START servicedirectory_create_endpoint_sample]
+  // [START servicedirectory_v1beta1_generated_RegistrationService_CreateEndpoint_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, endpointId, endpoint) {
   }
 
   createEndpoint();
-  // [END servicedirectory_create_endpoint_sample]
+  // [END servicedirectory_v1beta1_generated_RegistrationService_CreateEndpoint_async]
 }
 
 process.on('unhandledRejection', err => {

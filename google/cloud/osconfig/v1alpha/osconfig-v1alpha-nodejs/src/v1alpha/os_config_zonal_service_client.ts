@@ -397,10 +397,6 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getOSPolicyAssignment(request);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_get_o_s_policy_assignment_sample
- *
  */
   getOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
@@ -481,10 +477,6 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstanceOSPoliciesCompliance(request);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_instance_o_s_policies_compliance.js</caption>
- * region_tag:osconfig_get_instance_o_s_policies_compliance_sample
- *
  */
   getInstanceOSPoliciesCompliance(
       request?: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
@@ -567,10 +559,6 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInventory(request);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_inventory.js</caption>
- * region_tag:osconfig_get_inventory_sample
- *
  */
   getInventory(
       request?: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
@@ -650,10 +638,6 @@ export class OsConfigZonalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVulnerabilityReport(request);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_vulnerability_report.js</caption>
- * region_tag:osconfig_get_vulnerability_report_sample
- *
  */
   getVulnerabilityReport(
       request?: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
@@ -749,10 +733,6 @@ export class OsConfigZonalServiceClient {
  * @example
  * const [operation] = await client.createOSPolicyAssignment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.create_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_create_o_s_policy_assignment_sample
- *
  */
   createOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
@@ -802,10 +782,6 @@ export class OsConfigZonalServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.create_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_create_o_s_policy_assignment_sample
- *
  */
   async checkCreateOSPolicyAssignmentProgress(name: string): Promise<LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -862,10 +838,6 @@ export class OsConfigZonalServiceClient {
  * @example
  * const [operation] = await client.updateOSPolicyAssignment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.update_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_update_o_s_policy_assignment_sample
- *
  */
   updateOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
@@ -915,10 +887,6 @@ export class OsConfigZonalServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.update_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_update_o_s_policy_assignment_sample
- *
  */
   async checkUpdateOSPolicyAssignmentProgress(name: string): Promise<LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -976,10 +944,6 @@ export class OsConfigZonalServiceClient {
  * @example
  * const [operation] = await client.deleteOSPolicyAssignment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.delete_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_delete_o_s_policy_assignment_sample
- *
  */
   deleteOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
@@ -1029,10 +993,6 @@ export class OsConfigZonalServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.delete_o_s_policy_assignment.js</caption>
- * region_tag:osconfig_delete_o_s_policy_assignment_sample
- *
  */
   async checkDeleteOSPolicyAssignmentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1088,10 +1048,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignments.js</caption>
- * region_tag:osconfig_list_o_s_policy_assignments_sample
- *
  */
   listOSPolicyAssignments(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
@@ -1152,10 +1108,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignments.js</caption>
- * region_tag:osconfig_list_o_s_policy_assignments_sample
- *
  */
   listOSPolicyAssignmentsStream(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
@@ -1209,10 +1161,6 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignments.js</caption>
- * region_tag:osconfig_list_o_s_policy_assignments_sample
- *
  */
   listOSPolicyAssignmentsAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
@@ -1283,10 +1231,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignment_revisions.js</caption>
- * region_tag:osconfig_list_o_s_policy_assignment_revisions_sample
- *
  */
   listOSPolicyAssignmentRevisions(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
@@ -1347,10 +1291,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignment_revisions.js</caption>
- * region_tag:osconfig_list_o_s_policy_assignment_revisions_sample
- *
  */
   listOSPolicyAssignmentRevisionsStream(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
@@ -1404,10 +1344,6 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignment_revisions.js</caption>
- * region_tag:osconfig_list_o_s_policy_assignment_revisions_sample
- *
  */
   listOSPolicyAssignmentRevisionsAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
@@ -1487,10 +1423,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_instance_o_s_policies_compliances.js</caption>
- * region_tag:osconfig_list_instance_o_s_policies_compliances_sample
- *
  */
   listInstanceOSPoliciesCompliances(
       request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
@@ -1559,10 +1491,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_instance_o_s_policies_compliances.js</caption>
- * region_tag:osconfig_list_instance_o_s_policies_compliances_sample
- *
  */
   listInstanceOSPoliciesCompliancesStream(
       request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
@@ -1624,10 +1552,6 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_instance_o_s_policies_compliances.js</caption>
- * region_tag:osconfig_list_instance_o_s_policies_compliances_sample
- *
  */
   listInstanceOSPoliciesCompliancesAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
@@ -1710,10 +1634,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_inventories.js</caption>
- * region_tag:osconfig_list_inventories_sample
- *
  */
   listInventories(
       request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
@@ -1786,10 +1706,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_inventories.js</caption>
- * region_tag:osconfig_list_inventories_sample
- *
  */
   listInventoriesStream(
       request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
@@ -1855,10 +1771,6 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_inventories.js</caption>
- * region_tag:osconfig_list_inventories_sample
- *
  */
   listInventoriesAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
@@ -1938,10 +1850,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_vulnerability_reports.js</caption>
- * region_tag:osconfig_list_vulnerability_reports_sample
- *
  */
   listVulnerabilityReports(
       request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
@@ -2011,10 +1919,6 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_vulnerability_reports.js</caption>
- * region_tag:osconfig_list_vulnerability_reports_sample
- *
  */
   listVulnerabilityReportsStream(
       request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
@@ -2077,10 +1981,6 @@ export class OsConfigZonalServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_vulnerability_reports.js</caption>
- * region_tag:osconfig_list_vulnerability_reports_sample
- *
  */
   listVulnerabilityReportsAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,

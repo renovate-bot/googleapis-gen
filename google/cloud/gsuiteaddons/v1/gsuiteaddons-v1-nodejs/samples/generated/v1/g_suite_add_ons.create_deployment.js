@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, deploymentId, deployment) {
-  // [START gsuiteaddons_create_deployment_sample]
+  // [START gsuiteaddons_v1_generated_GSuiteAddOns_CreateDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, deploymentId, deployment) {
   }
 
   createDeployment();
-  // [END gsuiteaddons_create_deployment_sample]
+  // [END gsuiteaddons_v1_generated_GSuiteAddOns_CreateDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

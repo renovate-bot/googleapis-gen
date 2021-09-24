@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, table, columns, keySet) {
-  // [START spanner_streaming_read_sample]
+  // [START spanner_v1_generated_Spanner_StreamingRead_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -107,7 +107,7 @@ function main(session, table, columns, keySet) {
   }
 
   streamingRead();
-  // [END spanner_streaming_read_sample]
+  // [END spanner_v1_generated_Spanner_StreamingRead_async]
 }
 
 process.on('unhandledRejection', err => {

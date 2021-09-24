@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_ad_group_labels_sample]
+  // [START googleads_v7_generated_AdGroupLabelService_MutateAdGroupLabels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(customerId, operations) {
   }
 
   mutateAdGroupLabels();
-  // [END googleads_mutate_ad_group_labels_sample]
+  // [END googleads_v7_generated_AdGroupLabelService_MutateAdGroupLabels_async]
 }
 
 process.on('unhandledRejection', err => {

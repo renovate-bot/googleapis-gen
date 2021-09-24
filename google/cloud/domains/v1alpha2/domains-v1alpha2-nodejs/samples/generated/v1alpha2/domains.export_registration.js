@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START domains_export_registration_sample]
+  // [START domains_v1alpha2_generated_Domains_ExportRegistration_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   exportRegistration();
-  // [END domains_export_registration_sample]
+  // [END domains_v1alpha2_generated_Domains_ExportRegistration_async]
 }
 
 process.on('unhandledRejection', err => {

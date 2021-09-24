@@ -357,10 +357,6 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1p1beta1/asset_service.search_all_resources.js</caption>
- * region_tag:asset_search_all_resources_sample
- *
  */
   searchAllResources(
       request?: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
@@ -440,10 +436,6 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1p1beta1/asset_service.search_all_resources.js</caption>
- * region_tag:asset_search_all_resources_sample
- *
  */
   searchAllResourcesStream(
       request?: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
@@ -516,10 +508,6 @@ export class AssetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1p1beta1/asset_service.search_all_resources.js</caption>
- * region_tag:asset_search_all_resources_sample
- *
  */
   searchAllResourcesAsync(
       request?: protos.google.cloud.asset.v1p1beta1.ISearchAllResourcesRequest,
@@ -609,10 +597,6 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1p1beta1/asset_service.search_all_iam_policies.js</caption>
- * region_tag:asset_search_all_iam_policies_sample
- *
  */
   searchAllIamPolicies(
       request?: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
@@ -687,10 +671,6 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1p1beta1/asset_service.search_all_iam_policies.js</caption>
- * region_tag:asset_search_all_iam_policies_sample
- *
  */
   searchAllIamPoliciesStream(
       request?: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,
@@ -758,10 +738,6 @@ export class AssetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1p1beta1/asset_service.search_all_iam_policies.js</caption>
- * region_tag:asset_search_all_iam_policies_sample
- *
  */
   searchAllIamPoliciesAsync(
       request?: protos.google.cloud.asset.v1p1beta1.ISearchAllIamPoliciesRequest,

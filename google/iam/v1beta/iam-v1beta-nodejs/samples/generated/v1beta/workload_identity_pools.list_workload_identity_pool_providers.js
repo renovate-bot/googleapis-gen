@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START iam_list_workload_identity_pool_providers_sample]
+  // [START iam_v1beta_generated_WorkloadIdentityPools_ListWorkloadIdentityPoolProviders_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listWorkloadIdentityPoolProviders();
-  // [END iam_list_workload_identity_pool_providers_sample]
+  // [END iam_v1beta_generated_WorkloadIdentityPools_ListWorkloadIdentityPoolProviders_async]
 }
 
 process.on('unhandledRejection', err => {

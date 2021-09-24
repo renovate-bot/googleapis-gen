@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START automl_list_table_specs_sample]
+  // [START automl_v1beta1_generated_AutoMl_ListTableSpecs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(parent) {
   }
 
   listTableSpecs();
-  // [END automl_list_table_specs_sample]
+  // [END automl_v1beta1_generated_AutoMl_ListTableSpecs_async]
 }
 
 process.on('unhandledRejection', err => {

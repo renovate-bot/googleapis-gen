@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_create_ephemeral_sample]
+  // [START sql_v1beta4_generated_SqlInstancesService_CreateEphemeral_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   createEphemeral();
-  // [END sql_create_ephemeral_sample]
+  // [END sql_v1beta4_generated_SqlInstancesService_CreateEphemeral_async]
 }
 
 process.on('unhandledRejection', err => {

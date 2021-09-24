@@ -316,10 +316,6 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startNextTask(request);
- *
- * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.start_next_task.js</caption>
- * region_tag:agentendpoint_start_next_task_sample
- *
  */
   startNextTask(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
@@ -399,10 +395,6 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportTaskProgress(request);
- *
- * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.report_task_progress.js</caption>
- * region_tag:agentendpoint_report_task_progress_sample
- *
  */
   reportTaskProgress(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
@@ -485,10 +477,6 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportTaskComplete(request);
- *
- * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.report_task_complete.js</caption>
- * region_tag:agentendpoint_report_task_complete_sample
- *
  */
   reportTaskComplete(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
@@ -568,10 +556,6 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.lookupEffectiveGuestPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.lookup_effective_guest_policy.js</caption>
- * region_tag:agentendpoint_lookup_effective_guest_policy_sample
- *
  */
   lookupEffectiveGuestPolicy(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
@@ -644,10 +628,6 @@ export class AgentEndpointServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.registerAgent(request);
- *
- * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.register_agent.js</caption>
- * region_tag:agentendpoint_register_agent_sample
- *
  */
   registerAgent(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,

@@ -358,10 +358,6 @@ export class CompanyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCompany(request);
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.create_company.js</caption>
- * region_tag:talent_create_company_sample
- *
  */
   createCompany(
       request?: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
@@ -440,10 +436,6 @@ export class CompanyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCompany(request);
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.get_company.js</caption>
- * region_tag:talent_get_company_sample
- *
  */
   getCompany(
       request?: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
@@ -523,10 +515,6 @@ export class CompanyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCompany(request);
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.update_company.js</caption>
- * region_tag:talent_update_company_sample
- *
  */
   updateCompany(
       request?: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
@@ -606,10 +594,6 @@ export class CompanyServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCompany(request);
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.delete_company.js</caption>
- * region_tag:talent_delete_company_sample
- *
  */
   deleteCompany(
       request?: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
@@ -704,10 +688,6 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.list_companies.js</caption>
- * region_tag:talent_list_companies_sample
- *
  */
   listCompanies(
       request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
@@ -780,10 +760,6 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.list_companies.js</caption>
- * region_tag:talent_list_companies_sample
- *
  */
   listCompaniesStream(
       request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
@@ -849,10 +825,6 @@ export class CompanyServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v4beta1/company_service.list_companies.js</caption>
- * region_tag:talent_list_companies_sample
- *
  */
   listCompaniesAsync(
       request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,

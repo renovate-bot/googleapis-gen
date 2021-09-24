@@ -720,10 +720,6 @@ export class SharedSetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSharedSet(request);
- *
- * @example <caption>include:samples/generated/v8/shared_set_service.get_shared_set.js</caption>
- * region_tag:googleads_get_shared_set_sample
- *
  */
   getSharedSet(
       request?: protos.google.ads.googleads.v8.services.IGetSharedSetRequest,
@@ -833,10 +829,6 @@ export class SharedSetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateSharedSets(request);
- *
- * @example <caption>include:samples/generated/v8/shared_set_service.mutate_shared_sets.js</caption>
- * region_tag:googleads_mutate_shared_sets_sample
- *
  */
   mutateSharedSets(
       request?: protos.google.ads.googleads.v8.services.IMutateSharedSetsRequest,

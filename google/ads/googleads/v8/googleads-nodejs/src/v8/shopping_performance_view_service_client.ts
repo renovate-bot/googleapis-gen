@@ -720,10 +720,6 @@ export class ShoppingPerformanceViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getShoppingPerformanceView(request);
- *
- * @example <caption>include:samples/generated/v8/shopping_performance_view_service.get_shopping_performance_view.js</caption>
- * region_tag:googleads_get_shopping_performance_view_sample
- *
  */
   getShoppingPerformanceView(
       request?: protos.google.ads.googleads.v8.services.IGetShoppingPerformanceViewRequest,

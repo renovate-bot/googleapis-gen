@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gaming_delete_game_server_deployment_sample]
+  // [START gaming_v1_generated_GameServerDeploymentsService_DeleteGameServerDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteGameServerDeployment();
-  // [END gaming_delete_game_server_deployment_sample]
+  // [END gaming_v1_generated_GameServerDeploymentsService_DeleteGameServerDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

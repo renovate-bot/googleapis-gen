@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_list_app_profiles_sample]
+  // [START admin_v2_generated_BigtableInstanceAdmin_ListAppProfiles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(parent) {
   }
 
   listAppProfiles();
-  // [END admin_list_app_profiles_sample]
+  // [END admin_v2_generated_BigtableInstanceAdmin_ListAppProfiles_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START gkehub_list_features_sample]
+  // [START gkehub_v1_generated_GkeHub_ListFeatures_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main() {
   }
 
   listFeatures();
-  // [END gkehub_list_features_sample]
+  // [END gkehub_v1_generated_GkeHub_ListFeatures_async]
 }
 
 process.on('unhandledRejection', err => {

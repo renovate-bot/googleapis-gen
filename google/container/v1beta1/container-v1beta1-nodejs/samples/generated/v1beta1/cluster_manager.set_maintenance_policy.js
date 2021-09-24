@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, maintenancePolicy) {
-  // [START container_set_maintenance_policy_sample]
+  // [START container_v1beta1_generated_ClusterManager_SetMaintenancePolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(projectId, zone, clusterId, maintenancePolicy) {
   }
 
   setMaintenancePolicy();
-  // [END container_set_maintenance_policy_sample]
+  // [END container_v1beta1_generated_ClusterManager_SetMaintenancePolicy_async]
 }
 
 process.on('unhandledRejection', err => {

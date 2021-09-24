@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START sdk_read_version_sample]
+  // [START sdk_v2_generated_ActionsSdk_ReadVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(name) {
   }
 
   readVersion();
-  // [END sdk_read_version_sample]
+  // [END sdk_v2_generated_ActionsSdk_ReadVersion_async]
 }
 
 process.on('unhandledRejection', err => {

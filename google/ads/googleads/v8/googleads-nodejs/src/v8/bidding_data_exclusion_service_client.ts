@@ -712,10 +712,6 @@ export class BiddingDataExclusionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBiddingDataExclusion(request);
- *
- * @example <caption>include:samples/generated/v8/bidding_data_exclusion_service.get_bidding_data_exclusion.js</caption>
- * region_tag:googleads_get_bidding_data_exclusion_sample
- *
  */
   getBiddingDataExclusion(
       request?: protos.google.ads.googleads.v8.services.IGetBiddingDataExclusionRequest,
@@ -801,10 +797,6 @@ export class BiddingDataExclusionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateBiddingDataExclusions(request);
- *
- * @example <caption>include:samples/generated/v8/bidding_data_exclusion_service.mutate_bidding_data_exclusions.js</caption>
- * region_tag:googleads_mutate_bidding_data_exclusions_sample
- *
  */
   mutateBiddingDataExclusions(
       request?: protos.google.ads.googleads.v8.services.IMutateBiddingDataExclusionsRequest,

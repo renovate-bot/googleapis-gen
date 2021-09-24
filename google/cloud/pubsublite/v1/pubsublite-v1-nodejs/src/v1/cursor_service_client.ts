@@ -350,10 +350,6 @@ export class CursorServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.commitCursor(request);
- *
- * @example <caption>include:samples/generated/v1/cursor_service.commit_cursor.js</caption>
- * region_tag:pubsublite_commit_cursor_sample
- *
  */
   commitCursor(
       request?: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
@@ -408,10 +404,6 @@ export class CursorServiceClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
- *
- * @example <caption>include:samples/generated/v1/cursor_service.streaming_commit_cursor.js</caption>
- * region_tag:pubsublite_streaming_commit_cursor_sample
- *
  */
   streamingCommitCursor(
       options?: CallOptions):
@@ -472,10 +464,6 @@ export class CursorServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cursor_service.list_partition_cursors.js</caption>
- * region_tag:pubsublite_list_partition_cursors_sample
- *
  */
   listPartitionCursors(
       request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
@@ -542,10 +530,6 @@ export class CursorServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cursor_service.list_partition_cursors.js</caption>
- * region_tag:pubsublite_list_partition_cursors_sample
- *
  */
   listPartitionCursorsStream(
       request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
@@ -605,10 +589,6 @@ export class CursorServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cursor_service.list_partition_cursors.js</caption>
- * region_tag:pubsublite_list_partition_cursors_sample
- *
  */
   listPartitionCursorsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,

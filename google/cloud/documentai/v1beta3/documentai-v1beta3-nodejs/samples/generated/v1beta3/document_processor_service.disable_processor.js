@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START documentai_disable_processor_sample]
+  // [START documentai_v1beta3_generated_DocumentProcessorService_DisableProcessor_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   disableProcessor();
-  // [END documentai_disable_processor_sample]
+  // [END documentai_v1beta3_generated_DocumentProcessorService_DisableProcessor_async]
 }
 
 process.on('unhandledRejection', err => {

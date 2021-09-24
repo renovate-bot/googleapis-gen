@@ -422,10 +422,6 @@ export class FulfillmentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFulfillment(request);
- *
- * @example <caption>include:samples/generated/v2beta1/fulfillments.get_fulfillment.js</caption>
- * region_tag:dialogflow_get_fulfillment_sample
- *
  */
   getFulfillment(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetFulfillmentRequest,
@@ -500,10 +496,6 @@ export class FulfillmentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateFulfillment(request);
- *
- * @example <caption>include:samples/generated/v2beta1/fulfillments.update_fulfillment.js</caption>
- * region_tag:dialogflow_update_fulfillment_sample
- *
  */
   updateFulfillment(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateFulfillmentRequest,

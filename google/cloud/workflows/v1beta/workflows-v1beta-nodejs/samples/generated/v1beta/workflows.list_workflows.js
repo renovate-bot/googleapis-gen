@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START workflows_list_workflows_sample]
+  // [START workflows_v1beta_generated_Workflows_ListWorkflows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(parent) {
   }
 
   listWorkflows();
-  // [END workflows_list_workflows_sample]
+  // [END workflows_v1beta_generated_Workflows_ListWorkflows_async]
 }
 
 process.on('unhandledRejection', err => {

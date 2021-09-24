@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START contactcenterinsights_list_phrase_matchers_sample]
+  // [START contactcenterinsights_v1_generated_ContactCenterInsights_ListPhraseMatchers_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(parent) {
   }
 
   listPhraseMatchers();
-  // [END contactcenterinsights_list_phrase_matchers_sample]
+  // [END contactcenterinsights_v1_generated_ContactCenterInsights_ListPhraseMatchers_async]
 }
 
 process.on('unhandledRejection', err => {

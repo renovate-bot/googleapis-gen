@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START servicedirectory_list_namespaces_sample]
+  // [START servicedirectory_v1beta1_generated_RegistrationService_ListNamespaces_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -89,7 +89,7 @@ function main(parent) {
   }
 
   listNamespaces();
-  // [END servicedirectory_list_namespaces_sample]
+  // [END servicedirectory_v1beta1_generated_RegistrationService_ListNamespaces_async]
 }
 
 process.on('unhandledRejection', err => {

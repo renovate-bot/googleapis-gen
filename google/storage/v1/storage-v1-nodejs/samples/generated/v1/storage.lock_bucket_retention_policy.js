@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket) {
-  // [START storage_lock_bucket_retention_policy_sample]
+  // [START storage_v1_generated_Storage_LockBucketRetentionPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(bucket) {
   }
 
   lockBucketRetentionPolicy();
-  // [END storage_lock_bucket_retention_policy_sample]
+  // [END storage_v1_generated_Storage_LockBucketRetentionPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

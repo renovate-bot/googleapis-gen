@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admob_list_publisher_accounts_sample]
+  // [START admob_v1_generated_AdMobApi_ListPublisherAccounts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   listPublisherAccounts();
-  // [END admob_list_publisher_accounts_sample]
+  // [END admob_v1_generated_AdMobApi_ListPublisherAccounts_async]
 }
 
 process.on('unhandledRejection', err => {

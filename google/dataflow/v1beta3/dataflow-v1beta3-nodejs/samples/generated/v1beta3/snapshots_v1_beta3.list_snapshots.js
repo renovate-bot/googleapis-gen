@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dataflow_list_snapshots_sample]
+  // [START dataflow_v1beta3_generated_SnapshotsV1Beta3_ListSnapshots_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   listSnapshots();
-  // [END dataflow_list_snapshots_sample]
+  // [END dataflow_v1beta3_generated_SnapshotsV1Beta3_ListSnapshots_async]
 }
 
 process.on('unhandledRejection', err => {

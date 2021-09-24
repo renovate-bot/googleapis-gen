@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, trust) {
-  // [START managedidentities_detach_trust_sample]
+  // [START managedidentities_v1_generated_ManagedIdentitiesService_DetachTrust_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name, trust) {
   }
 
   detachTrust();
-  // [END managedidentities_detach_trust_sample]
+  // [END managedidentities_v1_generated_ManagedIdentitiesService_DetachTrust_async]
 }
 
 process.on('unhandledRejection', err => {

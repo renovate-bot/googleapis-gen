@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START gkehub_delete_feature_sample]
+  // [START gkehub_v1beta_generated_GkeHub_DeleteFeature_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main() {
   }
 
   deleteFeature();
-  // [END gkehub_delete_feature_sample]
+  // [END gkehub_v1beta_generated_GkeHub_DeleteFeature_async]
 }
 
 process.on('unhandledRejection', err => {

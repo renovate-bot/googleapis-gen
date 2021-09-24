@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START documentai_list_processors_sample]
+  // [START documentai_v1beta3_generated_DocumentProcessorService_ListProcessors_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listProcessors();
-  // [END documentai_list_processors_sample]
+  // [END documentai_v1beta3_generated_DocumentProcessorService_ListProcessors_async]
 }
 
 process.on('unhandledRejection', err => {

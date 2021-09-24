@@ -16,7 +16,7 @@
 'use strict';
 
 function main(stream) {
-  // [START storage_finalize_stream_sample]
+  // [START storage_v1beta1_generated_BigQueryStorage_FinalizeStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(stream) {
   }
 
   finalizeStream();
-  // [END storage_finalize_stream_sample]
+  // [END storage_v1beta1_generated_BigQueryStorage_FinalizeStream_async]
 }
 
 process.on('unhandledRejection', err => {

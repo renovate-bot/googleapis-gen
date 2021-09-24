@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_mobile_app_category_constant_sample]
+  // [START googleads_v8_generated_MobileAppCategoryConstantService_GetMobileAppCategoryConstant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getMobileAppCategoryConstant();
-  // [END googleads_get_mobile_app_category_constant_sample]
+  // [END googleads_v8_generated_MobileAppCategoryConstantService_GetMobileAppCategoryConstant_async]
 }
 
 process.on('unhandledRejection', err => {

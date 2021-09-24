@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START recommendationengine_list_user_events_sample]
+  // [START recommendationengine_v1beta1_generated_UserEventService_ListUserEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -84,7 +84,7 @@ function main(parent) {
   }
 
   listUserEvents();
-  // [END recommendationengine_list_user_events_sample]
+  // [END recommendationengine_v1beta1_generated_UserEventService_ListUserEvents_async]
 }
 
 process.on('unhandledRejection', err => {

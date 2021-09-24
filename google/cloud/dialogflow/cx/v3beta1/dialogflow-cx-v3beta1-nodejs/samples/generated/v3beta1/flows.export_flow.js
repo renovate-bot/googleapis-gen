@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_export_flow_sample]
+  // [START cx_v3beta1_generated_Flows_ExportFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(name) {
   }
 
   exportFlow();
-  // [END cx_export_flow_sample]
+  // [END cx_v3beta1_generated_Flows_ExportFlow_async]
 }
 
 process.on('unhandledRejection', err => {

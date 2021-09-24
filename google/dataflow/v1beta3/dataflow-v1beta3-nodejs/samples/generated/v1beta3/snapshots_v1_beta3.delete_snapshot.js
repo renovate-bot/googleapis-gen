@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dataflow_delete_snapshot_sample]
+  // [START dataflow_v1beta3_generated_SnapshotsV1Beta3_DeleteSnapshot_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   deleteSnapshot();
-  // [END dataflow_delete_snapshot_sample]
+  // [END dataflow_v1beta3_generated_SnapshotsV1Beta3_DeleteSnapshot_async]
 }
 
 process.on('unhandledRejection', err => {

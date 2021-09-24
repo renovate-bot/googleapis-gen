@@ -16,7 +16,7 @@
 'use strict';
 
 function main(gcpUserAccessBinding, updateMask) {
-  // [START accesscontextmanager_update_gcp_user_access_binding_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_UpdateGcpUserAccessBinding_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(gcpUserAccessBinding, updateMask) {
   }
 
   updateGcpUserAccessBinding();
-  // [END accesscontextmanager_update_gcp_user_access_binding_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_UpdateGcpUserAccessBinding_async]
 }
 
 process.on('unhandledRejection', err => {

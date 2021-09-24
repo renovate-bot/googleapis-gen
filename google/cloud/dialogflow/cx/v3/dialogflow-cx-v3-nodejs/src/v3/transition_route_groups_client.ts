@@ -403,10 +403,6 @@ export class TransitionRouteGroupsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTransitionRouteGroup(request);
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.get_transition_route_group.js</caption>
- * region_tag:cx_get_transition_route_group_sample
- *
  */
   getTransitionRouteGroup(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetTransitionRouteGroupRequest,
@@ -498,10 +494,6 @@ export class TransitionRouteGroupsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTransitionRouteGroup(request);
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.create_transition_route_group.js</caption>
- * region_tag:cx_create_transition_route_group_sample
- *
  */
   createTransitionRouteGroup(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateTransitionRouteGroupRequest,
@@ -591,10 +583,6 @@ export class TransitionRouteGroupsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateTransitionRouteGroup(request);
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.update_transition_route_group.js</caption>
- * region_tag:cx_update_transition_route_group_sample
- *
  */
   updateTransitionRouteGroup(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateTransitionRouteGroupRequest,
@@ -680,10 +668,6 @@ export class TransitionRouteGroupsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteTransitionRouteGroup(request);
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.delete_transition_route_group.js</caption>
- * region_tag:cx_delete_transition_route_group_sample
- *
  */
   deleteTransitionRouteGroup(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteTransitionRouteGroupRequest,
@@ -781,10 +765,6 @@ export class TransitionRouteGroupsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.list_transition_route_groups.js</caption>
- * region_tag:cx_list_transition_route_groups_sample
- *
  */
   listTransitionRouteGroups(
       request?: protos.google.cloud.dialogflow.cx.v3.IListTransitionRouteGroupsRequest,
@@ -860,10 +840,6 @@ export class TransitionRouteGroupsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.list_transition_route_groups.js</caption>
- * region_tag:cx_list_transition_route_groups_sample
- *
  */
   listTransitionRouteGroupsStream(
       request?: protos.google.cloud.dialogflow.cx.v3.IListTransitionRouteGroupsRequest,
@@ -932,10 +908,6 @@ export class TransitionRouteGroupsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/transition_route_groups.list_transition_route_groups.js</caption>
- * region_tag:cx_list_transition_route_groups_sample
- *
  */
   listTransitionRouteGroupsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListTransitionRouteGroupsRequest,

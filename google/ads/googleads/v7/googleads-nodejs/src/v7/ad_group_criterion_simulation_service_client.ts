@@ -690,10 +690,6 @@ export class AdGroupCriterionSimulationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupCriterionSimulation(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_criterion_simulation_service.get_ad_group_criterion_simulation.js</caption>
- * region_tag:googleads_get_ad_group_criterion_simulation_sample
- *
  */
   getAdGroupCriterionSimulation(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,

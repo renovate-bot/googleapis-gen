@@ -16,7 +16,7 @@
 'use strict';
 
 function main(registration) {
-  // [START domains_reset_authorization_code_sample]
+  // [START domains_v1beta1_generated_Domains_ResetAuthorizationCode_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(registration) {
   }
 
   resetAuthorizationCode();
-  // [END domains_reset_authorization_code_sample]
+  // [END domains_v1beta1_generated_Domains_ResetAuthorizationCode_async]
 }
 
 process.on('unhandledRejection', err => {

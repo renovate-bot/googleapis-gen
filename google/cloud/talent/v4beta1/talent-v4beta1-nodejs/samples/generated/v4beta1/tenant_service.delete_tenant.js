@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START talent_delete_tenant_sample]
+  // [START talent_v4beta1_generated_TenantService_DeleteTenant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteTenant();
-  // [END talent_delete_tenant_sample]
+  // [END talent_v4beta1_generated_TenantService_DeleteTenant_async]
 }
 
 process.on('unhandledRejection', err => {

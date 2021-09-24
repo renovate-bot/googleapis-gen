@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_bidding_data_exclusion_sample]
+  // [START googleads_v8_generated_BiddingDataExclusionService_GetBiddingDataExclusion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getBiddingDataExclusion();
-  // [END googleads_get_bidding_data_exclusion_sample]
+  // [END googleads_v8_generated_BiddingDataExclusionService_GetBiddingDataExclusion_async]
 }
 
 process.on('unhandledRejection', err => {

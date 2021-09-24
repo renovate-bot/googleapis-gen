@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dataflow_create_job_sample]
+  // [START dataflow_v1beta3_generated_JobsV1Beta3_CreateJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main() {
   }
 
   createJob();
-  // [END dataflow_create_job_sample]
+  // [END dataflow_v1beta3_generated_JobsV1Beta3_CreateJob_async]
 }
 
 process.on('unhandledRejection', err => {

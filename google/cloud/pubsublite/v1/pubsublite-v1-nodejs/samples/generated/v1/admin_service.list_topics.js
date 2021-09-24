@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START pubsublite_list_topics_sample]
+  // [START pubsublite_v1_generated_AdminService_ListTopics_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listTopics();
-  // [END pubsublite_list_topics_sample]
+  // [END pubsublite_v1_generated_AdminService_ListTopics_async]
 }
 
 process.on('unhandledRejection', err => {

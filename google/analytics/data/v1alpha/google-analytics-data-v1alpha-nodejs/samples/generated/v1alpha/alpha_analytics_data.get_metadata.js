@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START data_get_metadata_sample]
+  // [START data_v1alpha_generated_AlphaAnalyticsData_GetMetadata_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name) {
   }
 
   getMetadata();
-  // [END data_get_metadata_sample]
+  // [END data_v1alpha_generated_AlphaAnalyticsData_GetMetadata_async]
 }
 
 process.on('unhandledRejection', err => {

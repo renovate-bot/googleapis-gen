@@ -457,10 +457,6 @@ export class DatastreamClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConnectionProfile(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.get_connection_profile.js</caption>
- * region_tag:datastream_get_connection_profile_sample
- *
  */
   getConnectionProfile(
       request?: protos.google.cloud.datastream.v1alpha1.IGetConnectionProfileRequest,
@@ -549,10 +545,6 @@ export class DatastreamClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.discoverConnectionProfile(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.discover_connection_profile.js</caption>
- * region_tag:datastream_discover_connection_profile_sample
- *
  */
   discoverConnectionProfile(
       request?: protos.google.cloud.datastream.v1alpha1.IDiscoverConnectionProfileRequest,
@@ -624,10 +616,6 @@ export class DatastreamClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getStream(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.get_stream.js</caption>
- * region_tag:datastream_get_stream_sample
- *
  */
   getStream(
       request?: protos.google.cloud.datastream.v1alpha1.IGetStreamRequest,
@@ -699,10 +687,6 @@ export class DatastreamClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPrivateConnection(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.get_private_connection.js</caption>
- * region_tag:datastream_get_private_connection_sample
- *
  */
   getPrivateConnection(
       request?: protos.google.cloud.datastream.v1alpha1.IGetPrivateConnectionRequest,
@@ -774,10 +758,6 @@ export class DatastreamClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRoute(request);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.get_route.js</caption>
- * region_tag:datastream_get_route_sample
- *
  */
   getRoute(
       request?: protos.google.cloud.datastream.v1alpha1.IGetRouteRequest,
@@ -871,10 +851,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.createConnectionProfile(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_connection_profile.js</caption>
- * region_tag:datastream_create_connection_profile_sample
- *
  */
   createConnectionProfile(
       request?: protos.google.cloud.datastream.v1alpha1.ICreateConnectionProfileRequest,
@@ -924,10 +900,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_connection_profile.js</caption>
- * region_tag:datastream_create_connection_profile_sample
- *
  */
   async checkCreateConnectionProfileProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.ConnectionProfile, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -994,10 +966,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.updateConnectionProfile(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.update_connection_profile.js</caption>
- * region_tag:datastream_update_connection_profile_sample
- *
  */
   updateConnectionProfile(
       request?: protos.google.cloud.datastream.v1alpha1.IUpdateConnectionProfileRequest,
@@ -1047,10 +1015,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.update_connection_profile.js</caption>
- * region_tag:datastream_update_connection_profile_sample
- *
  */
   async checkUpdateConnectionProfileProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.ConnectionProfile, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1111,10 +1075,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.deleteConnectionProfile(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_connection_profile.js</caption>
- * region_tag:datastream_delete_connection_profile_sample
- *
  */
   deleteConnectionProfile(
       request?: protos.google.cloud.datastream.v1alpha1.IDeleteConnectionProfileRequest,
@@ -1164,10 +1124,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_connection_profile.js</caption>
- * region_tag:datastream_delete_connection_profile_sample
- *
  */
   async checkDeleteConnectionProfileProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1237,10 +1193,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.createStream(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_stream.js</caption>
- * region_tag:datastream_create_stream_sample
- *
  */
   createStream(
       request?: protos.google.cloud.datastream.v1alpha1.ICreateStreamRequest,
@@ -1290,10 +1242,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_stream.js</caption>
- * region_tag:datastream_create_stream_sample
- *
  */
   async checkCreateStreamProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.Stream, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1365,10 +1313,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.updateStream(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.update_stream.js</caption>
- * region_tag:datastream_update_stream_sample
- *
  */
   updateStream(
       request?: protos.google.cloud.datastream.v1alpha1.IUpdateStreamRequest,
@@ -1418,10 +1362,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.update_stream.js</caption>
- * region_tag:datastream_update_stream_sample
- *
  */
   async checkUpdateStreamProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.Stream, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1482,10 +1422,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.deleteStream(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_stream.js</caption>
- * region_tag:datastream_delete_stream_sample
- *
  */
   deleteStream(
       request?: protos.google.cloud.datastream.v1alpha1.IDeleteStreamRequest,
@@ -1535,10 +1471,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_stream.js</caption>
- * region_tag:datastream_delete_stream_sample
- *
  */
   async checkDeleteStreamProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1585,10 +1517,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.fetchErrors(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.fetch_errors.js</caption>
- * region_tag:datastream_fetch_errors_sample
- *
  */
   fetchErrors(
       request?: protos.google.cloud.datastream.v1alpha1.IFetchErrorsRequest,
@@ -1638,10 +1566,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.fetch_errors.js</caption>
- * region_tag:datastream_fetch_errors_sample
- *
  */
   async checkFetchErrorsProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.FetchErrorsResponse, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1706,10 +1630,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.createPrivateConnection(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_private_connection.js</caption>
- * region_tag:datastream_create_private_connection_sample
- *
  */
   createPrivateConnection(
       request?: protos.google.cloud.datastream.v1alpha1.ICreatePrivateConnectionRequest,
@@ -1759,10 +1679,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_private_connection.js</caption>
- * region_tag:datastream_create_private_connection_sample
- *
  */
   async checkCreatePrivateConnectionProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.PrivateConnection, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1826,10 +1742,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.deletePrivateConnection(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_private_connection.js</caption>
- * region_tag:datastream_delete_private_connection_sample
- *
  */
   deletePrivateConnection(
       request?: protos.google.cloud.datastream.v1alpha1.IDeletePrivateConnectionRequest,
@@ -1879,10 +1791,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_private_connection.js</caption>
- * region_tag:datastream_delete_private_connection_sample
- *
  */
   async checkDeletePrivateConnectionProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1948,10 +1856,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.createRoute(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_route.js</caption>
- * region_tag:datastream_create_route_sample
- *
  */
   createRoute(
       request?: protos.google.cloud.datastream.v1alpha1.ICreateRouteRequest,
@@ -2001,10 +1905,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.create_route.js</caption>
- * region_tag:datastream_create_route_sample
- *
  */
   async checkCreateRouteProgress(name: string): Promise<LROperation<protos.google.cloud.datastream.v1alpha1.Route, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2065,10 +1965,6 @@ export class DatastreamClient {
  * @example
  * const [operation] = await client.deleteRoute(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_route.js</caption>
- * region_tag:datastream_delete_route_sample
- *
  */
   deleteRoute(
       request?: protos.google.cloud.datastream.v1alpha1.IDeleteRouteRequest,
@@ -2118,10 +2014,6 @@ export class DatastreamClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.delete_route.js</caption>
- * region_tag:datastream_delete_route_sample
- *
  */
   async checkDeleteRouteProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.datastream.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2184,10 +2076,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_connection_profiles.js</caption>
- * region_tag:datastream_list_connection_profiles_sample
- *
  */
   listConnectionProfiles(
       request?: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
@@ -2256,10 +2144,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_connection_profiles.js</caption>
- * region_tag:datastream_list_connection_profiles_sample
- *
  */
   listConnectionProfilesStream(
       request?: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
@@ -2321,10 +2205,6 @@ export class DatastreamClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_connection_profiles.js</caption>
- * region_tag:datastream_list_connection_profiles_sample
- *
  */
   listConnectionProfilesAsync(
       request?: protos.google.cloud.datastream.v1alpha1.IListConnectionProfilesRequest,
@@ -2403,10 +2283,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_streams.js</caption>
- * region_tag:datastream_list_streams_sample
- *
  */
   listStreams(
       request?: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
@@ -2475,10 +2351,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_streams.js</caption>
- * region_tag:datastream_list_streams_sample
- *
  */
   listStreamsStream(
       request?: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
@@ -2540,10 +2412,6 @@ export class DatastreamClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_streams.js</caption>
- * region_tag:datastream_list_streams_sample
- *
  */
   listStreamsAsync(
       request?: protos.google.cloud.datastream.v1alpha1.IListStreamsRequest,
@@ -2616,10 +2484,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.fetch_static_ips.js</caption>
- * region_tag:datastream_fetch_static_ips_sample
- *
  */
   fetchStaticIps(
       request?: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
@@ -2680,10 +2544,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.fetch_static_ips.js</caption>
- * region_tag:datastream_fetch_static_ips_sample
- *
  */
   fetchStaticIpsStream(
       request?: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
@@ -2737,10 +2597,6 @@ export class DatastreamClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.fetch_static_ips.js</caption>
- * region_tag:datastream_fetch_static_ips_sample
- *
  */
   fetchStaticIpsAsync(
       request?: protos.google.cloud.datastream.v1alpha1.IFetchStaticIpsRequest,
@@ -2822,10 +2678,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_private_connections.js</caption>
- * region_tag:datastream_list_private_connections_sample
- *
  */
   listPrivateConnections(
       request?: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
@@ -2896,10 +2748,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_private_connections.js</caption>
- * region_tag:datastream_list_private_connections_sample
- *
  */
   listPrivateConnectionsStream(
       request?: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
@@ -2963,10 +2811,6 @@ export class DatastreamClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_private_connections.js</caption>
- * region_tag:datastream_list_private_connections_sample
- *
  */
   listPrivateConnectionsAsync(
       request?: protos.google.cloud.datastream.v1alpha1.IListPrivateConnectionsRequest,
@@ -3048,10 +2892,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_routes.js</caption>
- * region_tag:datastream_list_routes_sample
- *
  */
   listRoutes(
       request?: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
@@ -3122,10 +2962,6 @@ export class DatastreamClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_routes.js</caption>
- * region_tag:datastream_list_routes_sample
- *
  */
   listRoutesStream(
       request?: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,
@@ -3189,10 +3025,6 @@ export class DatastreamClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha1/datastream.list_routes.js</caption>
- * region_tag:datastream_list_routes_sample
- *
  */
   listRoutesAsync(
       request?: protos.google.cloud.datastream.v1alpha1.IListRoutesRequest,

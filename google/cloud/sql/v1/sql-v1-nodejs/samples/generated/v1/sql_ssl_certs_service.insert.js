@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_insert_sample]
+  // [START sql_v1_generated_SqlSslCertsService_Insert_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   insert();
-  // [END sql_insert_sample]
+  // [END sql_v1_generated_SqlSslCertsService_Insert_async]
 }
 
 process.on('unhandledRejection', err => {

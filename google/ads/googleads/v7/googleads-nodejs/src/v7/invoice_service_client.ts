@@ -701,10 +701,6 @@ export class InvoiceServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listInvoices(request);
- *
- * @example <caption>include:samples/generated/v7/invoice_service.list_invoices.js</caption>
- * region_tag:googleads_list_invoices_sample
- *
  */
   listInvoices(
       request?: protos.google.ads.googleads.v7.services.IListInvoicesRequest,

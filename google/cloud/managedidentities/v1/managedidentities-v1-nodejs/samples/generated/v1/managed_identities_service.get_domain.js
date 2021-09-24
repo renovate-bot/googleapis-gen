@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START managedidentities_get_domain_sample]
+  // [START managedidentities_v1_generated_ManagedIdentitiesService_GetDomain_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getDomain();
-  // [END managedidentities_get_domain_sample]
+  // [END managedidentities_v1_generated_ManagedIdentitiesService_GetDomain_async]
 }
 
 process.on('unhandledRejection', err => {

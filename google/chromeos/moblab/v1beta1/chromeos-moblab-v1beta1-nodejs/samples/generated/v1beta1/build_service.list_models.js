@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START moblab_list_models_sample]
+  // [START moblab_v1beta1_generated_BuildService_ListModels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent) {
   }
 
   listModels();
-  // [END moblab_list_models_sample]
+  // [END moblab_v1beta1_generated_BuildService_ListModels_async]
 }
 
 process.on('unhandledRejection', err => {

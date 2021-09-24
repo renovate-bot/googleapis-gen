@@ -16,7 +16,7 @@
 'use strict';
 
 function main(project) {
-  // [START gkehub_initialize_hub_sample]
+  // [START gkehub_v1alpha2_generated_GkeHub_InitializeHub_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(project) {
   }
 
   initializeHub();
-  // [END gkehub_initialize_hub_sample]
+  // [END gkehub_v1alpha2_generated_GkeHub_InitializeHub_async]
 }
 
 process.on('unhandledRejection', err => {

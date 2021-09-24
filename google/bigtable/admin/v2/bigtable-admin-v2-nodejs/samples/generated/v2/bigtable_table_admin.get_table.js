@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_get_table_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_GetTable_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   getTable();
-  // [END admin_get_table_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_GetTable_async]
 }
 
 process.on('unhandledRejection', err => {

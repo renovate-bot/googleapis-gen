@@ -386,10 +386,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createVehicle(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.create_vehicle.js</caption>
- * region_tag:fleetengine_create_vehicle_sample
- *
  */
   createVehicle(
       request?: protos.maps.fleetengine.v1.ICreateVehicleRequest,
@@ -478,10 +474,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVehicle(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.get_vehicle.js</caption>
- * region_tag:fleetengine_get_vehicle_sample
- *
  */
   getVehicle(
       request?: protos.maps.fleetengine.v1.IGetVehicleRequest,
@@ -588,10 +580,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateVehicle(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.update_vehicle.js</caption>
- * region_tag:fleetengine_update_vehicle_sample
- *
  */
   updateVehicle(
       request?: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
@@ -676,10 +664,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateVehicleLocation(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.update_vehicle_location.js</caption>
- * region_tag:fleetengine_update_vehicle_location_sample
- *
  * @deprecated UpdateVehicleLocation is deprecated and may be removed in a future version.
  */
   updateVehicleLocation(
@@ -768,10 +752,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateVehicleAttributes(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.update_vehicle_attributes.js</caption>
- * region_tag:fleetengine_update_vehicle_attributes_sample
- *
  */
   updateVehicleAttributes(
       request?: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
@@ -919,10 +899,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.searchVehicles(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.search_vehicles.js</caption>
- * region_tag:fleetengine_search_vehicles_sample
- *
  */
   searchVehicles(
       request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
@@ -1075,10 +1051,6 @@ export class VehicleServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.searchFuzzedVehicles(request);
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.search_fuzzed_vehicles.js</caption>
- * region_tag:fleetengine_search_fuzzed_vehicles_sample
- *
  */
   searchFuzzedVehicles(
       request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
@@ -1219,10 +1191,6 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.list_vehicles.js</caption>
- * region_tag:fleetengine_list_vehicles_sample
- *
  */
   listVehicles(
       request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
@@ -1340,10 +1308,6 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.list_vehicles.js</caption>
- * region_tag:fleetengine_list_vehicles_sample
- *
  */
   listVehiclesStream(
       request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
@@ -1454,10 +1418,6 @@ export class VehicleServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/vehicle_service.list_vehicles.js</caption>
- * region_tag:fleetengine_list_vehicles_sample
- *
  */
   listVehiclesAsync(
       request?: protos.maps.fleetengine.v1.IListVehiclesRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, datasetId, modelId) {
-  // [START bigquery_get_model_sample]
+  // [START bigquery_v2_generated_ModelService_GetModel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(projectId, datasetId, modelId) {
   }
 
   getModel();
-  // [END bigquery_get_model_sample]
+  // [END bigquery_v2_generated_ModelService_GetModel_async]
 }
 
 process.on('unhandledRejection', err => {

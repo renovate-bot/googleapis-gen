@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_combined_audience_sample]
+  // [START googleads_v7_generated_CombinedAudienceService_GetCombinedAudience_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getCombinedAudience();
-  // [END googleads_get_combined_audience_sample]
+  // [END googleads_v7_generated_CombinedAudienceService_GetCombinedAudience_async]
 }
 
 process.on('unhandledRejection', err => {

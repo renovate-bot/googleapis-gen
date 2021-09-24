@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_list_backups_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_ListBackups_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -111,7 +111,7 @@ function main(parent) {
   }
 
   listBackups();
-  // [END admin_list_backups_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_ListBackups_async]
 }
 
 process.on('unhandledRejection', err => {

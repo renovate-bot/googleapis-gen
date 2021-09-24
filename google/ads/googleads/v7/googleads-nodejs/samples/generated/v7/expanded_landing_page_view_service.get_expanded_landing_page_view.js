@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_expanded_landing_page_view_sample]
+  // [START googleads_v7_generated_ExpandedLandingPageViewService_GetExpandedLandingPageView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getExpandedLandingPageView();
-  // [END googleads_get_expanded_landing_page_view_sample]
+  // [END googleads_v7_generated_ExpandedLandingPageViewService_GetExpandedLandingPageView_async]
 }
 
 process.on('unhandledRejection', err => {

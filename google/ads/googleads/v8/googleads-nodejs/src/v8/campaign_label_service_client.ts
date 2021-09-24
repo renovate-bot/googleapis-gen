@@ -720,10 +720,6 @@ export class CampaignLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignLabel(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_label_service.get_campaign_label.js</caption>
- * region_tag:googleads_get_campaign_label_sample
- *
  */
   getCampaignLabel(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignLabelRequest,
@@ -819,10 +815,6 @@ export class CampaignLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignLabels(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_label_service.mutate_campaign_labels.js</caption>
- * region_tag:googleads_mutate_campaign_labels_sample
- *
  */
   mutateCampaignLabels(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignLabelsRequest,

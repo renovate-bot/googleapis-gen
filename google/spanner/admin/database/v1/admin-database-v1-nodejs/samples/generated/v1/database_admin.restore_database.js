@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, databaseId) {
-  // [START database_restore_database_sample]
+  // [START database_v1_generated_DatabaseAdmin_RestoreDatabase_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(parent, databaseId) {
   }
 
   restoreDatabase();
-  // [END database_restore_database_sample]
+  // [END database_v1_generated_DatabaseAdmin_RestoreDatabase_async]
 }
 
 process.on('unhandledRejection', err => {

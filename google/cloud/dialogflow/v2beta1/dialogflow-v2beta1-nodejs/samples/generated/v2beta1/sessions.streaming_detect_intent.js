@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, queryInput) {
-  // [START dialogflow_streaming_detect_intent_sample]
+  // [START dialogflow_v2beta1_generated_Sessions_StreamingDetectIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -112,7 +112,7 @@ function main(session, queryInput) {
   }
 
   streamingDetectIntent();
-  // [END dialogflow_streaming_detect_intent_sample]
+  // [END dialogflow_v2beta1_generated_Sessions_StreamingDetectIntent_async]
 }
 
 process.on('unhandledRejection', err => {

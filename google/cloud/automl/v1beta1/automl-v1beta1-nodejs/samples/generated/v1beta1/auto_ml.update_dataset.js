@@ -16,7 +16,7 @@
 'use strict';
 
 function main(dataset) {
-  // [START automl_update_dataset_sample]
+  // [START automl_v1beta1_generated_AutoMl_UpdateDataset_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(dataset) {
   }
 
   updateDataset();
-  // [END automl_update_dataset_sample]
+  // [END automl_v1beta1_generated_AutoMl_UpdateDataset_async]
 }
 
 process.on('unhandledRejection', err => {

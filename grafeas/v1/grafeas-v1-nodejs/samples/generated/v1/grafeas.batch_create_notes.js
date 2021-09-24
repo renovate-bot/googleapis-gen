@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, notes) {
-  // [START grafeas_batch_create_notes_sample]
+  // [START grafeas_v1_generated_Grafeas_BatchCreateNotes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, notes) {
   }
 
   batchCreateNotes();
-  // [END grafeas_batch_create_notes_sample]
+  // [END grafeas_v1_generated_Grafeas_BatchCreateNotes_async]
 }
 
 process.on('unhandledRejection', err => {

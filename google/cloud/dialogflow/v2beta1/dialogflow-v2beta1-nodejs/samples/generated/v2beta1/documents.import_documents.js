@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, documentTemplate) {
-  // [START dialogflow_import_documents_sample]
+  // [START dialogflow_v2beta1_generated_Documents_ImportDocuments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent, documentTemplate) {
   }
 
   importDocuments();
-  // [END dialogflow_import_documents_sample]
+  // [END dialogflow_v2beta1_generated_Documents_ImportDocuments_async]
 }
 
 process.on('unhandledRejection', err => {

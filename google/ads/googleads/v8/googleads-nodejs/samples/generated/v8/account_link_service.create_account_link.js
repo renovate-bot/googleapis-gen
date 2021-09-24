@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, accountLink) {
-  // [START googleads_create_account_link_sample]
+  // [START googleads_v8_generated_AccountLinkService_CreateAccountLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(customerId, accountLink) {
   }
 
   createAccountLink();
-  // [END googleads_create_account_link_sample]
+  // [END googleads_v8_generated_AccountLinkService_CreateAccountLink_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_keyword_plan_ad_groups_sample]
+  // [START googleads_v8_generated_KeywordPlanAdGroupService_MutateKeywordPlanAdGroups_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(customerId, operations) {
   }
 
   mutateKeywordPlanAdGroups();
-  // [END googleads_mutate_keyword_plan_ad_groups_sample]
+  // [END googleads_v8_generated_KeywordPlanAdGroupService_MutateKeywordPlanAdGroups_async]
 }
 
 process.on('unhandledRejection', err => {

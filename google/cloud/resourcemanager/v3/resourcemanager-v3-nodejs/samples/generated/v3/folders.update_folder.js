@@ -16,7 +16,7 @@
 'use strict';
 
 function main(folder, updateMask) {
-  // [START resourcemanager_update_folder_sample]
+  // [START resourcemanager_v3_generated_Folders_UpdateFolder_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(folder, updateMask) {
   }
 
   updateFolder();
-  // [END resourcemanager_update_folder_sample]
+  // [END resourcemanager_v3_generated_Folders_UpdateFolder_async]
 }
 
 process.on('unhandledRejection', err => {

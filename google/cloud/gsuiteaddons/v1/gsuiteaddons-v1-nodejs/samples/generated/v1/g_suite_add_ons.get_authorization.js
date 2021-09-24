@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gsuiteaddons_get_authorization_sample]
+  // [START gsuiteaddons_v1_generated_GSuiteAddOns_GetAuthorization_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getAuthorization();
-  // [END gsuiteaddons_get_authorization_sample]
+  // [END gsuiteaddons_v1_generated_GSuiteAddOns_GetAuthorization_async]
 }
 
 process.on('unhandledRejection', err => {

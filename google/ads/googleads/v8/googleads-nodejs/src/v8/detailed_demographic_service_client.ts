@@ -712,10 +712,6 @@ export class DetailedDemographicServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDetailedDemographic(request);
- *
- * @example <caption>include:samples/generated/v8/detailed_demographic_service.get_detailed_demographic.js</caption>
- * region_tag:googleads_get_detailed_demographic_sample
- *
  */
   getDetailedDemographic(
       request?: protos.google.ads.googleads.v8.services.IGetDetailedDemographicRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dataproc_delete_autoscaling_policy_sample]
+  // [START dataproc_v1_generated_AutoscalingPolicyService_DeleteAutoscalingPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   deleteAutoscalingPolicy();
-  // [END dataproc_delete_autoscaling_policy_sample]
+  // [END dataproc_v1_generated_AutoscalingPolicyService_DeleteAutoscalingPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

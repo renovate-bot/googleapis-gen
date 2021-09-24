@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START reservation_delete_capacity_commitment_sample]
+  // [START reservation_v1_generated_ReservationService_DeleteCapacityCommitment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   deleteCapacityCommitment();
-  // [END reservation_delete_capacity_commitment_sample]
+  // [END reservation_v1_generated_ReservationService_DeleteCapacityCommitment_async]
 }
 
 process.on('unhandledRejection', err => {

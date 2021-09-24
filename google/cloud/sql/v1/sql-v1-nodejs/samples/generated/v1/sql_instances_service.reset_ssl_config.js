@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_reset_ssl_config_sample]
+  // [START sql_v1_generated_SqlInstancesService_ResetSslConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   resetSslConfig();
-  // [END sql_reset_ssl_config_sample]
+  // [END sql_v1_generated_SqlInstancesService_ResetSslConfig_async]
 }
 
 process.on('unhandledRejection', err => {

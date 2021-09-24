@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START tpu_stop_node_sample]
+  // [START tpu_v1_generated_Tpu_StopNode_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   stopNode();
-  // [END tpu_stop_node_sample]
+  // [END tpu_v1_generated_Tpu_StopNode_async]
 }
 
 process.on('unhandledRejection', err => {

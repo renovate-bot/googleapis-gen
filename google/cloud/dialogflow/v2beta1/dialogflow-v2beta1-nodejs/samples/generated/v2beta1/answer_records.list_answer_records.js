@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dialogflow_list_answer_records_sample]
+  // [START dialogflow_v2beta1_generated_AnswerRecords_ListAnswerRecords_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main() {
   }
 
   listAnswerRecords();
-  // [END dialogflow_list_answer_records_sample]
+  // [END dialogflow_v2beta1_generated_AnswerRecords_ListAnswerRecords_async]
 }
 
 process.on('unhandledRejection', err => {

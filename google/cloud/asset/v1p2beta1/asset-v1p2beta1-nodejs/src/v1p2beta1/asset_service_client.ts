@@ -339,10 +339,6 @@ export class AssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createFeed(request);
- *
- * @example <caption>include:samples/generated/v1p2beta1/asset_service.create_feed.js</caption>
- * region_tag:asset_create_feed_sample
- *
  */
   createFeed(
       request?: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
@@ -417,10 +413,6 @@ export class AssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeed(request);
- *
- * @example <caption>include:samples/generated/v1p2beta1/asset_service.get_feed.js</caption>
- * region_tag:asset_get_feed_sample
- *
  */
   getFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IGetFeedRequest,
@@ -494,10 +486,6 @@ export class AssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listFeeds(request);
- *
- * @example <caption>include:samples/generated/v1p2beta1/asset_service.list_feeds.js</caption>
- * region_tag:asset_list_feeds_sample
- *
  */
   listFeeds(
       request?: protos.google.cloud.asset.v1p2beta1.IListFeedsRequest,
@@ -577,10 +565,6 @@ export class AssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateFeed(request);
- *
- * @example <caption>include:samples/generated/v1p2beta1/asset_service.update_feed.js</caption>
- * region_tag:asset_update_feed_sample
- *
  */
   updateFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
@@ -655,10 +639,6 @@ export class AssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteFeed(request);
- *
- * @example <caption>include:samples/generated/v1p2beta1/asset_service.delete_feed.js</caption>
- * region_tag:asset_delete_feed_sample
- *
  */
   deleteFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IDeleteFeedRequest,

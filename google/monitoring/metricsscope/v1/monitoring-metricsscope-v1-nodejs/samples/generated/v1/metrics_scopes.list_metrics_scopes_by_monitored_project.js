@@ -16,7 +16,7 @@
 'use strict';
 
 function main(monitoredResourceContainer) {
-  // [START metricsscope_list_metrics_scopes_by_monitored_project_sample]
+  // [START metricsscope_v1_generated_MetricsScopes_ListMetricsScopesByMonitoredProject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(monitoredResourceContainer) {
   }
 
   listMetricsScopesByMonitoredProject();
-  // [END metricsscope_list_metrics_scopes_by_monitored_project_sample]
+  // [END metricsscope_v1_generated_MetricsScopes_ListMetricsScopesByMonitoredProject_async]
 }
 
 process.on('unhandledRejection', err => {

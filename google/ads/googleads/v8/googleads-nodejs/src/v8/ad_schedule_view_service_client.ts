@@ -720,10 +720,6 @@ export class AdScheduleViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdScheduleView(request);
- *
- * @example <caption>include:samples/generated/v8/ad_schedule_view_service.get_ad_schedule_view.js</caption>
- * region_tag:googleads_get_ad_schedule_view_sample
- *
  */
   getAdScheduleView(
       request?: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,

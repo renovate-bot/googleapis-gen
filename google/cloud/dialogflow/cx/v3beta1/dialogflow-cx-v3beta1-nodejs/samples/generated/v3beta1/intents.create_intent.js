@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, intent) {
-  // [START cx_create_intent_sample]
+  // [START cx_v3beta1_generated_Intents_CreateIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, intent) {
   }
 
   createIntent();
-  // [END cx_create_intent_sample]
+  // [END cx_v3beta1_generated_Intents_CreateIntent_async]
 }
 
 process.on('unhandledRejection', err => {

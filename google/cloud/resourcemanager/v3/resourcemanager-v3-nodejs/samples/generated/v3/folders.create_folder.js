@@ -16,7 +16,7 @@
 'use strict';
 
 function main(folder) {
-  // [START resourcemanager_create_folder_sample]
+  // [START resourcemanager_v3_generated_Folders_CreateFolder_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(folder) {
   }
 
   createFolder();
-  // [END resourcemanager_create_folder_sample]
+  // [END resourcemanager_v3_generated_Folders_CreateFolder_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START secretmanager_delete_secret_sample]
+  // [START secretmanager_v1_generated_SecretManagerService_DeleteSecret_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   deleteSecret();
-  // [END secretmanager_delete_secret_sample]
+  // [END secretmanager_v1_generated_SecretManagerService_DeleteSecret_async]
 }
 
 process.on('unhandledRejection', err => {

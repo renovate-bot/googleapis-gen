@@ -16,7 +16,7 @@
 'use strict';
 
 function main(inputConfig) {
-  // [START documentai_process_document_sample]
+  // [START documentai_v1beta2_generated_DocumentUnderstandingService_ProcessDocument_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -86,7 +86,7 @@ function main(inputConfig) {
   }
 
   processDocument();
-  // [END documentai_process_document_sample]
+  // [END documentai_v1beta2_generated_DocumentUnderstandingService_ProcessDocument_async]
 }
 
 process.on('unhandledRejection', err => {

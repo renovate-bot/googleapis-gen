@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gaming_delete_realm_sample]
+  // [START gaming_v1_generated_RealmsService_DeleteRealm_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteRealm();
-  // [END gaming_delete_realm_sample]
+  // [END gaming_v1_generated_RealmsService_DeleteRealm_async]
 }
 
 process.on('unhandledRejection', err => {

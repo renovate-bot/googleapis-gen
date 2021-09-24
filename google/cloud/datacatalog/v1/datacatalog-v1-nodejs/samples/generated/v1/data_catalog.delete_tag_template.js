@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, force) {
-  // [START datacatalog_delete_tag_template_sample]
+  // [START datacatalog_v1_generated_DataCatalog_DeleteTagTemplate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name, force) {
   }
 
   deleteTagTemplate();
-  // [END datacatalog_delete_tag_template_sample]
+  // [END datacatalog_v1_generated_DataCatalog_DeleteTagTemplate_async]
 }
 
 process.on('unhandledRejection', err => {

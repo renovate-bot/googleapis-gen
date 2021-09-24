@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START recaptchaenterprise_list_keys_sample]
+  // [START recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1_ListKeys_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent) {
   }
 
   listKeys();
-  // [END recaptchaenterprise_list_keys_sample]
+  // [END recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1_ListKeys_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_list_sample]
+  // [START sql_v1_generated_SqlFlagsService_List_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   list();
-  // [END sql_list_sample]
+  // [END sql_v1_generated_SqlFlagsService_List_async]
 }
 
 process.on('unhandledRejection', err => {

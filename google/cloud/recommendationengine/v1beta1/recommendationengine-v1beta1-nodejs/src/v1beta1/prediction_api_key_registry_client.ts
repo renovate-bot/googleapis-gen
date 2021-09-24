@@ -340,10 +340,6 @@ export class PredictionApiKeyRegistryClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPredictionApiKeyRegistration(request);
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.create_prediction_api_key_registration.js</caption>
- * region_tag:recommendationengine_create_prediction_api_key_registration_sample
- *
  */
   createPredictionApiKeyRegistration(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
@@ -416,10 +412,6 @@ export class PredictionApiKeyRegistryClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePredictionApiKeyRegistration(request);
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.delete_prediction_api_key_registration.js</caption>
- * region_tag:recommendationengine_delete_prediction_api_key_registration_sample
- *
  */
   deletePredictionApiKeyRegistration(
       request?: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
@@ -502,10 +494,6 @@ export class PredictionApiKeyRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.list_prediction_api_key_registrations.js</caption>
- * region_tag:recommendationengine_list_prediction_api_key_registrations_sample
- *
  */
   listPredictionApiKeyRegistrations(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
@@ -566,10 +554,6 @@ export class PredictionApiKeyRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.list_prediction_api_key_registrations.js</caption>
- * region_tag:recommendationengine_list_prediction_api_key_registrations_sample
- *
  */
   listPredictionApiKeyRegistrationsStream(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
@@ -623,10 +607,6 @@ export class PredictionApiKeyRegistryClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.list_prediction_api_key_registrations.js</caption>
- * region_tag:recommendationengine_list_prediction_api_key_registrations_sample
- *
  */
   listPredictionApiKeyRegistrationsAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,

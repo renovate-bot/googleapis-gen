@@ -16,7 +16,7 @@
 'use strict';
 
 function main(idToken, mfaEnrollmentId) {
-  // [START identitytoolkit_withdraw_mfa_sample]
+  // [START identitytoolkit_v2_generated_AccountManagementService_WithdrawMfa_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(idToken, mfaEnrollmentId) {
   }
 
   withdrawMfa();
-  // [END identitytoolkit_withdraw_mfa_sample]
+  // [END identitytoolkit_v2_generated_AccountManagementService_WithdrawMfa_async]
 }
 
 process.on('unhandledRejection', err => {

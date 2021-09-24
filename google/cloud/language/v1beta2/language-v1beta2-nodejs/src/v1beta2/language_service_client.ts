@@ -314,10 +314,6 @@ export class LanguageServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeSentiment(request);
- *
- * @example <caption>include:samples/generated/v1beta2/language_service.analyze_sentiment.js</caption>
- * region_tag:language_analyze_sentiment_sample
- *
  */
   analyzeSentiment(
       request?: protos.google.cloud.language.v1beta2.IAnalyzeSentimentRequest,
@@ -386,10 +382,6 @@ export class LanguageServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeEntities(request);
- *
- * @example <caption>include:samples/generated/v1beta2/language_service.analyze_entities.js</caption>
- * region_tag:language_analyze_entities_sample
- *
  */
   analyzeEntities(
       request?: protos.google.cloud.language.v1beta2.IAnalyzeEntitiesRequest,
@@ -457,10 +449,6 @@ export class LanguageServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeEntitySentiment(request);
- *
- * @example <caption>include:samples/generated/v1beta2/language_service.analyze_entity_sentiment.js</caption>
- * region_tag:language_analyze_entity_sentiment_sample
- *
  */
   analyzeEntitySentiment(
       request?: protos.google.cloud.language.v1beta2.IAnalyzeEntitySentimentRequest,
@@ -529,10 +517,6 @@ export class LanguageServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeSyntax(request);
- *
- * @example <caption>include:samples/generated/v1beta2/language_service.analyze_syntax.js</caption>
- * region_tag:language_analyze_syntax_sample
- *
  */
   analyzeSyntax(
       request?: protos.google.cloud.language.v1beta2.IAnalyzeSyntaxRequest,
@@ -597,10 +581,6 @@ export class LanguageServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.classifyText(request);
- *
- * @example <caption>include:samples/generated/v1beta2/language_service.classify_text.js</caption>
- * region_tag:language_classify_text_sample
- *
  */
   classifyText(
       request?: protos.google.cloud.language.v1beta2.IClassifyTextRequest,
@@ -670,10 +650,6 @@ export class LanguageServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.annotateText(request);
- *
- * @example <caption>include:samples/generated/v1beta2/language_service.annotate_text.js</caption>
- * region_tag:language_annotate_text_sample
- *
  */
   annotateText(
       request?: protos.google.cloud.language.v1beta2.IAnnotateTextRequest,

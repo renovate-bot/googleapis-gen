@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, uri) {
-  // [START phishingprotection_report_phishing_sample]
+  // [START phishingprotection_v1beta1_generated_PhishingProtectionServiceV1Beta1_ReportPhishing_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, uri) {
   }
 
   reportPhishing();
-  // [END phishingprotection_report_phishing_sample]
+  // [END phishingprotection_v1beta1_generated_PhishingProtectionServiceV1Beta1_ReportPhishing_async]
 }
 
 process.on('unhandledRejection', err => {

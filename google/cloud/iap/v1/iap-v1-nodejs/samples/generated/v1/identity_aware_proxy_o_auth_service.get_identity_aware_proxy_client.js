@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START iap_get_identity_aware_proxy_client_sample]
+  // [START iap_v1_generated_IdentityAwareProxyOAuthService_GetIdentityAwareProxyClient_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getIdentityAwareProxyClient();
-  // [END iap_get_identity_aware_proxy_client_sample]
+  // [END iap_v1_generated_IdentityAwareProxyOAuthService_GetIdentityAwareProxyClient_async]
 }
 
 process.on('unhandledRejection', err => {

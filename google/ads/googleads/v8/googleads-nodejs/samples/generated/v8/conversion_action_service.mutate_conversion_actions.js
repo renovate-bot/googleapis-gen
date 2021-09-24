@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_conversion_actions_sample]
+  // [START googleads_v8_generated_ConversionActionService_MutateConversionActions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateConversionActions();
-  // [END googleads_mutate_conversion_actions_sample]
+  // [END googleads_v8_generated_ConversionActionService_MutateConversionActions_async]
 }
 
 process.on('unhandledRejection', err => {

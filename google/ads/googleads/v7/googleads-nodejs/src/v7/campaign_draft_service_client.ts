@@ -725,10 +725,6 @@ export class CampaignDraftServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignDraft(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.get_campaign_draft.js</caption>
- * region_tag:googleads_get_campaign_draft_sample
- *
  */
   getCampaignDraft(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignDraftRequest,
@@ -826,10 +822,6 @@ export class CampaignDraftServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignDrafts(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.mutate_campaign_drafts.js</caption>
- * region_tag:googleads_mutate_campaign_drafts_sample
- *
  */
   mutateCampaignDrafts(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignDraftsRequest,
@@ -925,10 +917,6 @@ export class CampaignDraftServiceClient {
  * @example
  * const [operation] = await client.promoteCampaignDraft(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.promote_campaign_draft.js</caption>
- * region_tag:googleads_promote_campaign_draft_sample
- *
  */
   promoteCampaignDraft(
       request?: protos.google.ads.googleads.v7.services.IPromoteCampaignDraftRequest,
@@ -978,10 +966,6 @@ export class CampaignDraftServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.promote_campaign_draft.js</caption>
- * region_tag:googleads_promote_campaign_draft_sample
- *
  */
   async checkPromoteCampaignDraftProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1048,10 +1032,6 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.list_campaign_draft_async_errors.js</caption>
- * region_tag:googleads_list_campaign_draft_async_errors_sample
- *
  */
   listCampaignDraftAsyncErrors(
       request?: protos.google.ads.googleads.v7.services.IListCampaignDraftAsyncErrorsRequest,
@@ -1115,10 +1095,6 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.list_campaign_draft_async_errors.js</caption>
- * region_tag:googleads_list_campaign_draft_async_errors_sample
- *
  */
   listCampaignDraftAsyncErrorsStream(
       request?: protos.google.ads.googleads.v7.services.IListCampaignDraftAsyncErrorsRequest,
@@ -1175,10 +1151,6 @@ export class CampaignDraftServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v7/campaign_draft_service.list_campaign_draft_async_errors.js</caption>
- * region_tag:googleads_list_campaign_draft_async_errors_sample
- *
  */
   listCampaignDraftAsyncErrorsAsync(
       request?: protos.google.ads.googleads.v7.services.IListCampaignDraftAsyncErrorsRequest,

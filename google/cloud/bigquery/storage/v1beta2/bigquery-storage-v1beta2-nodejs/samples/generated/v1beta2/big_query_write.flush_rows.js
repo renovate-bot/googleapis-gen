@@ -16,7 +16,7 @@
 'use strict';
 
 function main(writeStream) {
-  // [START storage_flush_rows_sample]
+  // [START storage_v1beta2_generated_BigQueryWrite_FlushRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(writeStream) {
   }
 
   flushRows();
-  // [END storage_flush_rows_sample]
+  // [END storage_v1beta2_generated_BigQueryWrite_FlushRows_async]
 }
 
 process.on('unhandledRejection', err => {

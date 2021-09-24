@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, requestMetadata) {
-  // [START talent_search_jobs_for_alert_sample]
+  // [START talent_v4_generated_JobService_SearchJobsForAlert_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -280,7 +280,7 @@ function main(parent, requestMetadata) {
   }
 
   searchJobsForAlert();
-  // [END talent_search_jobs_for_alert_sample]
+  // [END talent_v4_generated_JobService_SearchJobsForAlert_async]
 }
 
 process.on('unhandledRejection', err => {

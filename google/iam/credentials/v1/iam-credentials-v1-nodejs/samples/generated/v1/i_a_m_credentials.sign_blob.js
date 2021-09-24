@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, payload) {
-  // [START credentials_sign_blob_sample]
+  // [START credentials_v1_generated_IAMCredentials_SignBlob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(name, payload) {
   }
 
   signBlob();
-  // [END credentials_sign_blob_sample]
+  // [END credentials_v1_generated_IAMCredentials_SignBlob_async]
 }
 
 process.on('unhandledRejection', err => {

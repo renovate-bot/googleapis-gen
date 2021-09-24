@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, trip, updateMask) {
-  // [START fleetengine_update_trip_sample]
+  // [START fleetengine_v1_generated_TripService_UpdateTrip_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -90,7 +90,7 @@ function main(name, trip, updateMask) {
   }
 
   updateTrip();
-  // [END fleetengine_update_trip_sample]
+  // [END fleetengine_v1_generated_TripService_UpdateTrip_async]
 }
 
 process.on('unhandledRejection', err => {

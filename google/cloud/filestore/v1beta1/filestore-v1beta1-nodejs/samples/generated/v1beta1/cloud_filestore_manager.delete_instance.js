@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START filestore_delete_instance_sample]
+  // [START filestore_v1beta1_generated_CloudFilestoreManager_DeleteInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteInstance();
-  // [END filestore_delete_instance_sample]
+  // [END filestore_v1beta1_generated_CloudFilestoreManager_DeleteInstance_async]
 }
 
 process.on('unhandledRejection', err => {

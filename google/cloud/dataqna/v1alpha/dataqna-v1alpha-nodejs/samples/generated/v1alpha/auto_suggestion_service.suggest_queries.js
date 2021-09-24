@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dataqna_suggest_queries_sample]
+  // [START dataqna_v1alpha_generated_AutoSuggestionService_SuggestQueries_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(parent) {
   }
 
   suggestQueries();
-  // [END dataqna_suggest_queries_sample]
+  // [END dataqna_v1alpha_generated_AutoSuggestionService_SuggestQueries_async]
 }
 
 process.on('unhandledRejection', err => {

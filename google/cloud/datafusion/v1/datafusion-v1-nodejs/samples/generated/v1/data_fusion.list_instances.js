@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datafusion_list_instances_sample]
+  // [START datafusion_v1_generated_DataFusion_ListInstances_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main() {
   }
 
   listInstances();
-  // [END datafusion_list_instances_sample]
+  // [END datafusion_v1_generated_DataFusion_ListInstances_async]
 }
 
 process.on('unhandledRejection', err => {

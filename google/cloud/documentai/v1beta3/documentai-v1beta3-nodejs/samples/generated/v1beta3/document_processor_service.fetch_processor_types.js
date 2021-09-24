@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START documentai_fetch_processor_types_sample]
+  // [START documentai_v1beta3_generated_DocumentProcessorService_FetchProcessorTypes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(parent) {
   }
 
   fetchProcessorTypes();
-  // [END documentai_fetch_processor_types_sample]
+  // [END documentai_v1beta3_generated_DocumentProcessorService_FetchProcessorTypes_async]
 }
 
 process.on('unhandledRejection', err => {

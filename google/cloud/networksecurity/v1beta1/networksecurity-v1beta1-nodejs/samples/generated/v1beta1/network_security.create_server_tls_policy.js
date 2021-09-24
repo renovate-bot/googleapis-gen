@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, serverTlsPolicyId, serverTlsPolicy) {
-  // [START networksecurity_create_server_tls_policy_sample]
+  // [START networksecurity_v1beta1_generated_NetworkSecurity_CreateServerTlsPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, serverTlsPolicyId, serverTlsPolicy) {
   }
 
   createServerTlsPolicy();
-  // [END networksecurity_create_server_tls_policy_sample]
+  // [END networksecurity_v1beta1_generated_NetworkSecurity_CreateServerTlsPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

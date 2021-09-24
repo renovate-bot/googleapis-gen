@@ -720,10 +720,6 @@ export class GeographicViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGeographicView(request);
- *
- * @example <caption>include:samples/generated/v8/geographic_view_service.get_geographic_view.js</caption>
- * region_tag:googleads_get_geographic_view_sample
- *
  */
   getGeographicView(
       request?: protos.google.ads.googleads.v8.services.IGetGeographicViewRequest,

@@ -350,10 +350,6 @@ export class ContainerAnalysisClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1/container_analysis.set_iam_policy.js</caption>
- * region_tag:containeranalysis_set_iam_policy_sample
- *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -436,10 +432,6 @@ export class ContainerAnalysisClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1/container_analysis.get_iam_policy.js</caption>
- * region_tag:containeranalysis_get_iam_policy_sample
- *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -523,10 +515,6 @@ export class ContainerAnalysisClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
- *
- * @example <caption>include:samples/generated/v1/container_analysis.test_iam_permissions.js</caption>
- * region_tag:containeranalysis_test_iam_permissions_sample
- *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -601,10 +589,6 @@ export class ContainerAnalysisClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVulnerabilityOccurrencesSummary(request);
- *
- * @example <caption>include:samples/generated/v1/container_analysis.get_vulnerability_occurrences_summary.js</caption>
- * region_tag:containeranalysis_get_vulnerability_occurrences_summary_sample
- *
  */
   getVulnerabilityOccurrencesSummary(
       request?: protos.google.devtools.containeranalysis.v1.IGetVulnerabilityOccurrencesSummaryRequest,

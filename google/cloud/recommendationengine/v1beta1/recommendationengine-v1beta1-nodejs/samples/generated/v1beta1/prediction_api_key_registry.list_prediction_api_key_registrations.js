@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START recommendationengine_list_prediction_api_key_registrations_sample]
+  // [START recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_ListPredictionApiKeyRegistrations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent) {
   }
 
   listPredictionApiKeyRegistrations();
-  // [END recommendationengine_list_prediction_api_key_registrations_sample]
+  // [END recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_ListPredictionApiKeyRegistrations_async]
 }
 
 process.on('unhandledRejection', err => {

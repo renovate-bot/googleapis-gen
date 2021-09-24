@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, gcpUserAccessBinding) {
-  // [START accesscontextmanager_create_gcp_user_access_binding_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_CreateGcpUserAccessBinding_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, gcpUserAccessBinding) {
   }
 
   createGcpUserAccessBinding();
-  // [END accesscontextmanager_create_gcp_user_access_binding_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_CreateGcpUserAccessBinding_async]
 }
 
 process.on('unhandledRejection', err => {

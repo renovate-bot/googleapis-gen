@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_change_status_sample]
+  // [START googleads_v7_generated_ChangeStatusService_GetChangeStatus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getChangeStatus();
-  // [END googleads_get_change_status_sample]
+  // [END googleads_v7_generated_ChangeStatusService_GetChangeStatus_async]
 }
 
 process.on('unhandledRejection', err => {

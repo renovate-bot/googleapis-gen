@@ -716,10 +716,6 @@ export class SmartCampaignSuggestServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestSmartCampaignBudgetOptions(request);
- *
- * @example <caption>include:samples/generated/v8/smart_campaign_suggest_service.suggest_smart_campaign_budget_options.js</caption>
- * region_tag:googleads_suggest_smart_campaign_budget_options_sample
- *
  */
   suggestSmartCampaignBudgetOptions(
       request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
@@ -797,10 +793,6 @@ export class SmartCampaignSuggestServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestSmartCampaignAd(request);
- *
- * @example <caption>include:samples/generated/v8/smart_campaign_suggest_service.suggest_smart_campaign_ad.js</caption>
- * region_tag:googleads_suggest_smart_campaign_ad_sample
- *
  */
   suggestSmartCampaignAd(
       request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,

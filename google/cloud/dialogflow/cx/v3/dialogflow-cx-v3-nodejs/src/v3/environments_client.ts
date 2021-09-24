@@ -434,10 +434,6 @@ export class EnvironmentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEnvironment(request);
- *
- * @example <caption>include:samples/generated/v3/environments.get_environment.js</caption>
- * region_tag:cx_get_environment_sample
- *
  */
   getEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetEnvironmentRequest,
@@ -511,10 +507,6 @@ export class EnvironmentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteEnvironment(request);
- *
- * @example <caption>include:samples/generated/v3/environments.delete_environment.js</caption>
- * region_tag:cx_delete_environment_sample
- *
  */
   deleteEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteEnvironmentRequest,
@@ -593,10 +585,6 @@ export class EnvironmentsClient {
  * @example
  * const [operation] = await client.createEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/environments.create_environment.js</caption>
- * region_tag:cx_create_environment_sample
- *
  */
   createEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
@@ -646,10 +634,6 @@ export class EnvironmentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/environments.create_environment.js</caption>
- * region_tag:cx_create_environment_sample
- *
  */
   async checkCreateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.Environment, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -698,10 +682,6 @@ export class EnvironmentsClient {
  * @example
  * const [operation] = await client.updateEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/environments.update_environment.js</caption>
- * region_tag:cx_update_environment_sample
- *
  */
   updateEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
@@ -751,10 +731,6 @@ export class EnvironmentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/environments.update_environment.js</caption>
- * region_tag:cx_update_environment_sample
- *
  */
   async checkUpdateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.Environment, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -802,10 +778,6 @@ export class EnvironmentsClient {
  * @example
  * const [operation] = await client.runContinuousTest(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/environments.run_continuous_test.js</caption>
- * region_tag:cx_run_continuous_test_sample
- *
  */
   runContinuousTest(
       request?: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
@@ -855,10 +827,6 @@ export class EnvironmentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/environments.run_continuous_test.js</caption>
- * region_tag:cx_run_continuous_test_sample
- *
  */
   async checkRunContinuousTestProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.RunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -912,10 +880,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/environments.list_environments.js</caption>
- * region_tag:cx_list_environments_sample
- *
  */
   listEnvironments(
       request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
@@ -976,10 +940,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/environments.list_environments.js</caption>
- * region_tag:cx_list_environments_sample
- *
  */
   listEnvironmentsStream(
       request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
@@ -1033,10 +993,6 @@ export class EnvironmentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/environments.list_environments.js</caption>
- * region_tag:cx_list_environments_sample
- *
  */
   listEnvironmentsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
@@ -1108,10 +1064,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/environments.lookup_environment_history.js</caption>
- * region_tag:cx_lookup_environment_history_sample
- *
  */
   lookupEnvironmentHistory(
       request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
@@ -1173,10 +1125,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/environments.lookup_environment_history.js</caption>
- * region_tag:cx_lookup_environment_history_sample
- *
  */
   lookupEnvironmentHistoryStream(
       request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
@@ -1231,10 +1179,6 @@ export class EnvironmentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/environments.lookup_environment_history.js</caption>
- * region_tag:cx_lookup_environment_history_sample
- *
  */
   lookupEnvironmentHistoryAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
@@ -1306,10 +1250,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/environments.list_continuous_test_results.js</caption>
- * region_tag:cx_list_continuous_test_results_sample
- *
  */
   listContinuousTestResults(
       request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
@@ -1371,10 +1311,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/environments.list_continuous_test_results.js</caption>
- * region_tag:cx_list_continuous_test_results_sample
- *
  */
   listContinuousTestResultsStream(
       request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
@@ -1429,10 +1365,6 @@ export class EnvironmentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/environments.list_continuous_test_results.js</caption>
- * region_tag:cx_list_continuous_test_results_sample
- *
  */
   listContinuousTestResultsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,

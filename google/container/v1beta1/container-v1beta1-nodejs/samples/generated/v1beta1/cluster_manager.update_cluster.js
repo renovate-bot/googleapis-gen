@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, update) {
-  // [START container_update_cluster_sample]
+  // [START container_v1beta1_generated_ClusterManager_UpdateCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(projectId, zone, clusterId, update) {
   }
 
   updateCluster();
-  // [END container_update_cluster_sample]
+  // [END container_v1beta1_generated_ClusterManager_UpdateCluster_async]
 }
 
 process.on('unhandledRejection', err => {

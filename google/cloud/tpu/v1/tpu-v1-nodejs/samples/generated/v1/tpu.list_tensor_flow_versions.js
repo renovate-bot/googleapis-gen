@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START tpu_list_tensor_flow_versions_sample]
+  // [START tpu_v1_generated_Tpu_ListTensorFlowVersions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listTensorFlowVersions();
-  // [END tpu_list_tensor_flow_versions_sample]
+  // [END tpu_v1_generated_Tpu_ListTensorFlowVersions_async]
 }
 
 process.on('unhandledRejection', err => {

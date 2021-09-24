@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START reservation_list_reservations_sample]
+  // [START reservation_v1beta1_generated_ReservationService_ListReservations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(parent) {
   }
 
   listReservations();
-  // [END reservation_list_reservations_sample]
+  // [END reservation_v1beta1_generated_ReservationService_ListReservations_async]
 }
 
 process.on('unhandledRejection', err => {

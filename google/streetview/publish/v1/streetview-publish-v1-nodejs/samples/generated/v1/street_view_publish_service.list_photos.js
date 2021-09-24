@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START publish_list_photos_sample]
+  // [START publish_v1_generated_StreetViewPublishService_ListPhotos_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main() {
   }
 
   listPhotos();
-  // [END publish_list_photos_sample]
+  // [END publish_v1_generated_StreetViewPublishService_ListPhotos_async]
 }
 
 process.on('unhandledRejection', err => {

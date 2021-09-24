@@ -733,10 +733,6 @@ export class AccountBudgetProposalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAccountBudgetProposal(request);
- *
- * @example <caption>include:samples/generated/v8/account_budget_proposal_service.get_account_budget_proposal.js</caption>
- * region_tag:googleads_get_account_budget_proposal_sample
- *
  */
   getAccountBudgetProposal(
       request?: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
@@ -829,10 +825,6 @@ export class AccountBudgetProposalServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAccountBudgetProposal(request);
- *
- * @example <caption>include:samples/generated/v8/account_budget_proposal_service.mutate_account_budget_proposal.js</caption>
- * region_tag:googleads_mutate_account_budget_proposal_sample
- *
  */
   mutateAccountBudgetProposal(
       request?: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,

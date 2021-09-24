@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START settings_reset_component_settings_sample]
+  // [START settings_v1beta1_generated_SecurityCenterSettingsService_ResetComponentSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(name) {
   }
 
   resetComponentSettings();
-  // [END settings_reset_component_settings_sample]
+  // [END settings_v1beta1_generated_SecurityCenterSettingsService_ResetComponentSettings_async]
 }
 
 process.on('unhandledRejection', err => {

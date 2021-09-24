@@ -731,10 +731,6 @@ export class GoogleAdsFieldServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGoogleAdsField(request);
- *
- * @example <caption>include:samples/generated/v8/google_ads_field_service.get_google_ads_field.js</caption>
- * region_tag:googleads_get_google_ads_field_sample
- *
  */
   getGoogleAdsField(
       request?: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
@@ -828,10 +824,6 @@ export class GoogleAdsFieldServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v8/google_ads_field_service.search_google_ads_fields.js</caption>
- * region_tag:googleads_search_google_ads_fields_sample
- *
  */
   searchGoogleAdsFields(
       request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
@@ -887,10 +879,6 @@ export class GoogleAdsFieldServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v8/google_ads_field_service.search_google_ads_fields.js</caption>
- * region_tag:googleads_search_google_ads_fields_sample
- *
  */
   searchGoogleAdsFieldsStream(
       request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
@@ -939,10 +927,6 @@ export class GoogleAdsFieldServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v8/google_ads_field_service.search_google_ads_fields.js</caption>
- * region_tag:googleads_search_google_ads_fields_sample
- *
  */
   searchGoogleAdsFieldsAsync(
       request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,

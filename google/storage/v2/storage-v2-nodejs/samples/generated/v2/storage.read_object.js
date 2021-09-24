@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_read_object_sample]
+  // [START storage_v2_generated_Storage_ReadObject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -112,7 +112,7 @@ function main() {
   }
 
   readObject();
-  // [END storage_read_object_sample]
+  // [END storage_v2_generated_Storage_ReadObject_async]
 }
 
 process.on('unhandledRejection', err => {

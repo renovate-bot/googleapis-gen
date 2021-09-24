@@ -16,7 +16,7 @@
 'use strict';
 
 function main(connectionProfile) {
-  // [START datastream_update_connection_profile_sample]
+  // [START datastream_v1alpha1_generated_Datastream_UpdateConnectionProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(connectionProfile) {
   }
 
   updateConnectionProfile();
-  // [END datastream_update_connection_profile_sample]
+  // [END datastream_v1alpha1_generated_Datastream_UpdateConnectionProfile_async]
 }
 
 process.on('unhandledRejection', err => {

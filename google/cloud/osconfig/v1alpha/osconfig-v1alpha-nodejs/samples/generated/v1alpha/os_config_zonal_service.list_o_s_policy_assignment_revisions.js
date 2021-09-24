@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_list_o_s_policy_assignment_revisions_sample]
+  // [START osconfig_v1alpha_generated_OsConfigZonalService_ListOSPolicyAssignmentRevisions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(name) {
   }
 
   listOSPolicyAssignmentRevisions();
-  // [END osconfig_list_o_s_policy_assignment_revisions_sample]
+  // [END osconfig_v1alpha_generated_OsConfigZonalService_ListOSPolicyAssignmentRevisions_async]
 }
 
 process.on('unhandledRejection', err => {

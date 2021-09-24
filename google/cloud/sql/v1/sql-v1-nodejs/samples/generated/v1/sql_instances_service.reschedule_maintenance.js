@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_reschedule_maintenance_sample]
+  // [START sql_v1_generated_SqlInstancesService_RescheduleMaintenance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   rescheduleMaintenance();
-  // [END sql_reschedule_maintenance_sample]
+  // [END sql_v1_generated_SqlInstancesService_RescheduleMaintenance_async]
 }
 
 process.on('unhandledRejection', err => {

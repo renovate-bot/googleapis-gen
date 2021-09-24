@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START aistreams_delete_stream_sample]
+  // [START aistreams_v1alpha1_generated_AIStreams_DeleteStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   deleteStream();
-  // [END aistreams_delete_stream_sample]
+  // [END aistreams_v1alpha1_generated_AIStreams_DeleteStream_async]
 }
 
 process.on('unhandledRejection', err => {

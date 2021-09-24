@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_lookup_environment_history_sample]
+  // [START cx_v3_generated_Environments_LookupEnvironmentHistory_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name) {
   }
 
   lookupEnvironmentHistory();
-  // [END cx_lookup_environment_history_sample]
+  // [END cx_v3_generated_Environments_LookupEnvironmentHistory_async]
 }
 
 process.on('unhandledRejection', err => {

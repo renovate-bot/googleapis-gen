@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, networkPolicy) {
-  // [START container_set_network_policy_sample]
+  // [START container_v1beta1_generated_ClusterManager_SetNetworkPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(projectId, zone, clusterId, networkPolicy) {
   }
 
   setNetworkPolicy();
-  // [END container_set_network_policy_sample]
+  // [END container_v1beta1_generated_ClusterManager_SetNetworkPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

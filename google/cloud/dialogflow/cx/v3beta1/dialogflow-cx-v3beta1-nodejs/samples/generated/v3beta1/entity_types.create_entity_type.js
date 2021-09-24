@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, entityType) {
-  // [START cx_create_entity_type_sample]
+  // [START cx_v3beta1_generated_EntityTypes_CreateEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent, entityType) {
   }
 
   createEntityType();
-  // [END cx_create_entity_type_sample]
+  // [END cx_v3beta1_generated_EntityTypes_CreateEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

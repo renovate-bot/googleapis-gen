@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START deploy_delete_delivery_pipeline_sample]
+  // [START deploy_v1_generated_CloudDeploy_DeleteDeliveryPipeline_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -81,7 +81,7 @@ function main(name) {
   }
 
   deleteDeliveryPipeline();
-  // [END deploy_delete_delivery_pipeline_sample]
+  // [END deploy_v1_generated_CloudDeploy_DeleteDeliveryPipeline_async]
 }
 
 process.on('unhandledRejection', err => {

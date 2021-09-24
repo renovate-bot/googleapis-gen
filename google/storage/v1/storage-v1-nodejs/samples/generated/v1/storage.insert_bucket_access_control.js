@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket) {
-  // [START storage_insert_bucket_access_control_sample]
+  // [START storage_v1_generated_Storage_InsertBucketAccessControl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(bucket) {
   }
 
   insertBucketAccessControl();
-  // [END storage_insert_bucket_access_control_sample]
+  // [END storage_v1_generated_Storage_InsertBucketAccessControl_async]
 }
 
 process.on('unhandledRejection', err => {

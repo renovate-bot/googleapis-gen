@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, vmId, event) {
-  // [START notebooks_report_runtime_event_sample]
+  // [START notebooks_v1_generated_ManagedNotebookService_ReportRuntimeEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name, vmId, event) {
   }
 
   reportRuntimeEvent();
-  // [END notebooks_report_runtime_event_sample]
+  // [END notebooks_v1_generated_ManagedNotebookService_ReportRuntimeEvent_async]
 }
 
 process.on('unhandledRejection', err => {

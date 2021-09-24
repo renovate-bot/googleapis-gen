@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operation) {
-  // [START googleads_mutate_billing_setup_sample]
+  // [START googleads_v8_generated_BillingSetupService_MutateBillingSetup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(customerId, operation) {
   }
 
   mutateBillingSetup();
-  // [END googleads_mutate_billing_setup_sample]
+  // [END googleads_v8_generated_BillingSetupService_MutateBillingSetup_async]
 }
 
 process.on('unhandledRejection', err => {

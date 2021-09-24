@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_get_object_iam_policy_sample]
+  // [START storage_v1_generated_Storage_GetObjectIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   getObjectIamPolicy();
-  // [END storage_get_object_iam_policy_sample]
+  // [END storage_v1_generated_Storage_GetObjectIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

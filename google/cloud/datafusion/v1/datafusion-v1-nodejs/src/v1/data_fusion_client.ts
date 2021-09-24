@@ -383,10 +383,6 @@ export class DataFusionClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstance(request);
- *
- * @example <caption>include:samples/generated/v1/data_fusion.get_instance.js</caption>
- * region_tag:datafusion_get_instance_sample
- *
  */
   getInstance(
       request?: protos.google.cloud.datafusion.v1.IGetInstanceRequest,
@@ -467,10 +463,6 @@ export class DataFusionClient {
  * @example
  * const [operation] = await client.createInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/data_fusion.create_instance.js</caption>
- * region_tag:datafusion_create_instance_sample
- *
  */
   createInstance(
       request?: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
@@ -520,10 +512,6 @@ export class DataFusionClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/data_fusion.create_instance.js</caption>
- * region_tag:datafusion_create_instance_sample
- *
  */
   async checkCreateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -571,10 +559,6 @@ export class DataFusionClient {
  * @example
  * const [operation] = await client.deleteInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/data_fusion.delete_instance.js</caption>
- * region_tag:datafusion_delete_instance_sample
- *
  */
   deleteInstance(
       request?: protos.google.cloud.datafusion.v1.IDeleteInstanceRequest,
@@ -624,10 +608,6 @@ export class DataFusionClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/data_fusion.delete_instance.js</caption>
- * region_tag:datafusion_delete_instance_sample
- *
  */
   async checkDeleteInstanceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -683,10 +663,6 @@ export class DataFusionClient {
  * @example
  * const [operation] = await client.updateInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/data_fusion.update_instance.js</caption>
- * region_tag:datafusion_update_instance_sample
- *
  */
   updateInstance(
       request?: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
@@ -736,10 +712,6 @@ export class DataFusionClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/data_fusion.update_instance.js</caption>
- * region_tag:datafusion_update_instance_sample
- *
  */
   async checkUpdateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -788,10 +760,6 @@ export class DataFusionClient {
  * @example
  * const [operation] = await client.restartInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/data_fusion.restart_instance.js</caption>
- * region_tag:datafusion_restart_instance_sample
- *
  */
   restartInstance(
       request?: protos.google.cloud.datafusion.v1.IRestartInstanceRequest,
@@ -841,10 +809,6 @@ export class DataFusionClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/data_fusion.restart_instance.js</caption>
- * region_tag:datafusion_restart_instance_sample
- *
  */
   async checkRestartInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -903,10 +867,6 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/data_fusion.list_available_versions.js</caption>
- * region_tag:datafusion_list_available_versions_sample
- *
  */
   listAvailableVersions(
       request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
@@ -971,10 +931,6 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/data_fusion.list_available_versions.js</caption>
- * region_tag:datafusion_list_available_versions_sample
- *
  */
   listAvailableVersionsStream(
       request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
@@ -1032,10 +988,6 @@ export class DataFusionClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/data_fusion.list_available_versions.js</caption>
- * region_tag:datafusion_list_available_versions_sample
- *
  */
   listAvailableVersionsAsync(
       request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
@@ -1112,10 +1064,6 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/data_fusion.list_instances.js</caption>
- * region_tag:datafusion_list_instances_sample
- *
  */
   listInstances(
       request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,
@@ -1182,10 +1130,6 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/data_fusion.list_instances.js</caption>
- * region_tag:datafusion_list_instances_sample
- *
  */
   listInstancesStream(
       request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,
@@ -1245,10 +1189,6 @@ export class DataFusionClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/data_fusion.list_instances.js</caption>
- * region_tag:datafusion_list_instances_sample
- *
  */
   listInstancesAsync(
       request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,

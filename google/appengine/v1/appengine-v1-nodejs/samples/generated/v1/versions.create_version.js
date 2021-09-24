@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_create_version_sample]
+  // [START appengine_v1_generated_Versions_CreateVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main() {
   }
 
   createVersion();
-  // [END appengine_create_version_sample]
+  // [END appengine_v1_generated_Versions_CreateVersion_async]
 }
 
 process.on('unhandledRejection', err => {

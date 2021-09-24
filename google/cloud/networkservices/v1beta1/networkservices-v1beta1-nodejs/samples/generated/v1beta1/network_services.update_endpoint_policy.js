@@ -16,7 +16,7 @@
 'use strict';
 
 function main(endpointPolicy) {
-  // [START networkservices_update_endpoint_policy_sample]
+  // [START networkservices_v1beta1_generated_NetworkServices_UpdateEndpointPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(endpointPolicy) {
   }
 
   updateEndpointPolicy();
-  // [END networkservices_update_endpoint_policy_sample]
+  // [END networkservices_v1beta1_generated_NetworkServices_UpdateEndpointPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

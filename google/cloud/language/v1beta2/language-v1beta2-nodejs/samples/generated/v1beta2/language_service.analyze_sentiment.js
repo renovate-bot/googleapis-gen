@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document) {
-  // [START language_analyze_sentiment_sample]
+  // [START language_v1beta2_generated_LanguageService_AnalyzeSentiment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(document) {
   }
 
   analyzeSentiment();
-  // [END language_analyze_sentiment_sample]
+  // [END language_v1beta2_generated_LanguageService_AnalyzeSentiment_async]
 }
 
 process.on('unhandledRejection', err => {

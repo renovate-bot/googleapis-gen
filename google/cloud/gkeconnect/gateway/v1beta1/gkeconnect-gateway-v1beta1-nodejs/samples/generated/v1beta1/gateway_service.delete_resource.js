@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START gateway_delete_resource_sample]
+  // [START gateway_v1beta1_generated_GatewayService_DeleteResource_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main() {
   }
 
   deleteResource();
-  // [END gateway_delete_resource_sample]
+  // [END gateway_v1beta1_generated_GatewayService_DeleteResource_async]
 }
 
 process.on('unhandledRejection', err => {

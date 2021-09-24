@@ -425,10 +425,6 @@ export class PredictionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_service.predict.js</caption>
- * region_tag:recommendationengine_predict_sample
- *
  */
   predict(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
@@ -570,10 +566,6 @@ export class PredictionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_service.predict.js</caption>
- * region_tag:recommendationengine_predict_sample
- *
  */
   predictStream(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
@@ -708,10 +700,6 @@ export class PredictionServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/prediction_service.predict.js</caption>
- * region_tag:recommendationengine_predict_sample
- *
  */
   predictAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,

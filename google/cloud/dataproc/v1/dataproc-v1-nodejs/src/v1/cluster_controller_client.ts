@@ -412,10 +412,6 @@ export class ClusterControllerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCluster(request);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.get_cluster.js</caption>
- * region_tag:dataproc_get_cluster_sample
- *
  */
   getCluster(
       request?: protos.google.cloud.dataproc.v1.IGetClusterRequest,
@@ -510,10 +506,6 @@ export class ClusterControllerClient {
  * @example
  * const [operation] = await client.createCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.create_cluster.js</caption>
- * region_tag:dataproc_create_cluster_sample
- *
  */
   createCluster(
       request?: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
@@ -563,10 +555,6 @@ export class ClusterControllerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.create_cluster.js</caption>
- * region_tag:dataproc_create_cluster_sample
- *
  */
   async checkCreateClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -697,10 +685,6 @@ export class ClusterControllerClient {
  * @example
  * const [operation] = await client.updateCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.update_cluster.js</caption>
- * region_tag:dataproc_update_cluster_sample
- *
  */
   updateCluster(
       request?: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
@@ -750,10 +734,6 @@ export class ClusterControllerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.update_cluster.js</caption>
- * region_tag:dataproc_update_cluster_sample
- *
  */
   async checkUpdateClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -821,10 +801,6 @@ export class ClusterControllerClient {
  * @example
  * const [operation] = await client.stopCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.stop_cluster.js</caption>
- * region_tag:dataproc_stop_cluster_sample
- *
  */
   stopCluster(
       request?: protos.google.cloud.dataproc.v1.IStopClusterRequest,
@@ -874,10 +850,6 @@ export class ClusterControllerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.stop_cluster.js</caption>
- * region_tag:dataproc_stop_cluster_sample
- *
  */
   async checkStopClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -945,10 +917,6 @@ export class ClusterControllerClient {
  * @example
  * const [operation] = await client.startCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.start_cluster.js</caption>
- * region_tag:dataproc_start_cluster_sample
- *
  */
   startCluster(
       request?: protos.google.cloud.dataproc.v1.IStartClusterRequest,
@@ -998,10 +966,6 @@ export class ClusterControllerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.start_cluster.js</caption>
- * region_tag:dataproc_start_cluster_sample
- *
  */
   async checkStartClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1071,10 +1035,6 @@ export class ClusterControllerClient {
  * @example
  * const [operation] = await client.deleteCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.delete_cluster.js</caption>
- * region_tag:dataproc_delete_cluster_sample
- *
  */
   deleteCluster(
       request?: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
@@ -1124,10 +1084,6 @@ export class ClusterControllerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.delete_cluster.js</caption>
- * region_tag:dataproc_delete_cluster_sample
- *
  */
   async checkDeleteClusterProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1185,10 +1141,6 @@ export class ClusterControllerClient {
  * @example
  * const [operation] = await client.diagnoseCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.diagnose_cluster.js</caption>
- * region_tag:dataproc_diagnose_cluster_sample
- *
  */
   diagnoseCluster(
       request?: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
@@ -1238,10 +1190,6 @@ export class ClusterControllerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.diagnose_cluster.js</caption>
- * region_tag:dataproc_diagnose_cluster_sample
- *
  */
   async checkDiagnoseClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.DiagnoseClusterResults, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1316,10 +1264,6 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.list_clusters.js</caption>
- * region_tag:dataproc_list_clusters_sample
- *
  */
   listClusters(
       request?: protos.google.cloud.dataproc.v1.IListClustersRequest,
@@ -1401,10 +1345,6 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.list_clusters.js</caption>
- * region_tag:dataproc_list_clusters_sample
- *
  */
   listClustersStream(
       request?: protos.google.cloud.dataproc.v1.IListClustersRequest,
@@ -1479,10 +1419,6 @@ export class ClusterControllerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cluster_controller.list_clusters.js</caption>
- * region_tag:dataproc_list_clusters_sample
- *
  */
   listClustersAsync(
       request?: protos.google.cloud.dataproc.v1.IListClustersRequest,

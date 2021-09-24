@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gkehub_get_membership_sample]
+  // [START gkehub_v1alpha2_generated_GkeHub_GetMembership_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getMembership();
-  // [END gkehub_get_membership_sample]
+  // [END gkehub_v1alpha2_generated_GkeHub_GetMembership_async]
 }
 
 process.on('unhandledRejection', err => {

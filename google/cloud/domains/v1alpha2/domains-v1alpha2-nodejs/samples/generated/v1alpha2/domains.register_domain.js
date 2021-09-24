@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, registration, yearlyPrice) {
-  // [START domains_register_domain_sample]
+  // [START domains_v1alpha2_generated_Domains_RegisterDomain_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(parent, registration, yearlyPrice) {
   }
 
   registerDomain();
-  // [END domains_register_domain_sample]
+  // [END domains_v1alpha2_generated_Domains_RegisterDomain_async]
 }
 
 process.on('unhandledRejection', err => {

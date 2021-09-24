@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START kms_get_public_key_sample]
+  // [START kms_v1_generated_KeyManagementService_GetPublicKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getPublicKey();
-  // [END kms_get_public_key_sample]
+  // [END kms_v1_generated_KeyManagementService_GetPublicKey_async]
 }
 
 process.on('unhandledRejection', err => {

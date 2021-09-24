@@ -16,7 +16,7 @@
 'use strict';
 
 function main(account, updateMask) {
-  // [START admin_update_account_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(account, updateMask) {
   }
 
   updateAccount();
-  // [END admin_update_account_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateAccount_async]
 }
 
 process.on('unhandledRejection', err => {

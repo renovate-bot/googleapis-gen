@@ -16,7 +16,7 @@
 'use strict';
 
 function main(accessId, projectId) {
-  // [START storage_delete_hmac_key_sample]
+  // [START storage_v1_generated_Storage_DeleteHmacKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(accessId, projectId) {
   }
 
   deleteHmacKey();
-  // [END storage_delete_hmac_key_sample]
+  // [END storage_v1_generated_Storage_DeleteHmacKey_async]
 }
 
 process.on('unhandledRejection', err => {

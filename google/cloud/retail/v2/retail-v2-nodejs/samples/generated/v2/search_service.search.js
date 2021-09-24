@@ -16,7 +16,7 @@
 'use strict';
 
 function main(placement, visitorId) {
-  // [START retail_search_sample]
+  // [START retail_v2_generated_SearchService_Search_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -223,7 +223,7 @@ function main(placement, visitorId) {
   }
 
   search();
-  // [END retail_search_sample]
+  // [END retail_v2_generated_SearchService_Search_async]
 }
 
 process.on('unhandledRejection', err => {

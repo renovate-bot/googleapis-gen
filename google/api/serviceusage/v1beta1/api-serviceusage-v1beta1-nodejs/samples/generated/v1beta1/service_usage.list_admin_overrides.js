@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_list_admin_overrides_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_ListAdminOverrides_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main() {
   }
 
   listAdminOverrides();
-  // [END serviceusage_list_admin_overrides_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_ListAdminOverrides_async]
 }
 
 process.on('unhandledRejection', err => {

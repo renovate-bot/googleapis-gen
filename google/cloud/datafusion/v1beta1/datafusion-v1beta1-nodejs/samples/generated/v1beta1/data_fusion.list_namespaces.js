@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datafusion_list_namespaces_sample]
+  // [START datafusion_v1beta1_generated_DataFusion_ListNamespaces_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listNamespaces();
-  // [END datafusion_list_namespaces_sample]
+  // [END datafusion_v1beta1_generated_DataFusion_ListNamespaces_async]
 }
 
 process.on('unhandledRejection', err => {

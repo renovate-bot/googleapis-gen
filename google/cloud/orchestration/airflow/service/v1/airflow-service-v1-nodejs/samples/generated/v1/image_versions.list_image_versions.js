@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START service_list_image_versions_sample]
+  // [START service_v1_generated_ImageVersions_ListImageVersions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   listImageVersions();
-  // [END service_list_image_versions_sample]
+  // [END service_v1_generated_ImageVersions_ListImageVersions_async]
 }
 
 process.on('unhandledRejection', err => {

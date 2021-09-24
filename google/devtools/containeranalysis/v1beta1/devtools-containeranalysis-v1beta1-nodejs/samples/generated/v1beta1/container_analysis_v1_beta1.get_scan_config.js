@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START containeranalysis_get_scan_config_sample]
+  // [START containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_GetScanConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getScanConfig();
-  // [END containeranalysis_get_scan_config_sample]
+  // [END containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_GetScanConfig_async]
 }
 
 process.on('unhandledRejection', err => {

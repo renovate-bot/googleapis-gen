@@ -16,7 +16,7 @@
 'use strict';
 
 function main(topic, updateMask) {
-  // [START pubsublite_update_topic_sample]
+  // [START pubsublite_v1_generated_AdminService_UpdateTopic_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(topic, updateMask) {
   }
 
   updateTopic();
-  // [END pubsublite_update_topic_sample]
+  // [END pubsublite_v1_generated_AdminService_UpdateTopic_async]
 }
 
 process.on('unhandledRejection', err => {

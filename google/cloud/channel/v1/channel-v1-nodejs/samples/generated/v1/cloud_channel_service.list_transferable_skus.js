@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START channel_list_transferable_skus_sample]
+  // [START channel_v1_generated_CloudChannelService_ListTransferableSkus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -86,7 +86,7 @@ function main(parent) {
   }
 
   listTransferableSkus();
-  // [END channel_list_transferable_skus_sample]
+  // [END channel_v1_generated_CloudChannelService_ListTransferableSkus_async]
 }
 
 process.on('unhandledRejection', err => {

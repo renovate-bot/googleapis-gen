@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId) {
-  // [START googleads_list_payments_accounts_sample]
+  // [START googleads_v8_generated_PaymentsAccountService_ListPaymentsAccounts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(customerId) {
   }
 
   listPaymentsAccounts();
-  // [END googleads_list_payments_accounts_sample]
+  // [END googleads_v8_generated_PaymentsAccountService_ListPaymentsAccounts_async]
 }
 
 process.on('unhandledRejection', err => {

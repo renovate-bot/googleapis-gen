@@ -720,10 +720,6 @@ export class UserListServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getUserList(request);
- *
- * @example <caption>include:samples/generated/v8/user_list_service.get_user_list.js</caption>
- * region_tag:googleads_get_user_list_sample
- *
  */
   getUserList(
       request?: protos.google.ads.googleads.v8.services.IGetUserListRequest,
@@ -827,10 +823,6 @@ export class UserListServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateUserLists(request);
- *
- * @example <caption>include:samples/generated/v8/user_list_service.mutate_user_lists.js</caption>
- * region_tag:googleads_mutate_user_lists_sample
- *
  */
   mutateUserLists(
       request?: protos.google.ads.googleads.v8.services.IMutateUserListsRequest,

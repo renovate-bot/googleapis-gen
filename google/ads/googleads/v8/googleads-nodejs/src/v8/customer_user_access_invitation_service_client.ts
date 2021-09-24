@@ -721,10 +721,6 @@ export class CustomerUserAccessInvitationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerUserAccessInvitation(request);
- *
- * @example <caption>include:samples/generated/v8/customer_user_access_invitation_service.get_customer_user_access_invitation.js</caption>
- * region_tag:googleads_get_customer_user_access_invitation_sample
- *
  */
   getCustomerUserAccessInvitation(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessInvitationRequest,
@@ -807,10 +803,6 @@ export class CustomerUserAccessInvitationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerUserAccessInvitation(request);
- *
- * @example <caption>include:samples/generated/v8/customer_user_access_invitation_service.mutate_customer_user_access_invitation.js</caption>
- * region_tag:googleads_mutate_customer_user_access_invitation_sample
- *
  */
   mutateCustomerUserAccessInvitation(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessInvitationRequest,

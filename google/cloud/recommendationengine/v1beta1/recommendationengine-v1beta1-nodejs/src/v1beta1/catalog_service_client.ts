@@ -360,10 +360,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCatalogItem(request);
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.create_catalog_item.js</caption>
- * region_tag:recommendationengine_create_catalog_item_sample
- *
  */
   createCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
@@ -436,10 +432,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCatalogItem(request);
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.get_catalog_item.js</caption>
- * region_tag:recommendationengine_get_catalog_item_sample
- *
  */
   getCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
@@ -519,10 +511,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCatalogItem(request);
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.update_catalog_item.js</caption>
- * region_tag:recommendationengine_update_catalog_item_sample
- *
  */
   updateCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
@@ -595,10 +583,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCatalogItem(request);
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.delete_catalog_item.js</caption>
- * region_tag:recommendationengine_delete_catalog_item_sample
- *
  */
   deleteCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
@@ -688,10 +672,6 @@ export class CatalogServiceClient {
  * @example
  * const [operation] = await client.importCatalogItems(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.import_catalog_items.js</caption>
- * region_tag:recommendationengine_import_catalog_items_sample
- *
  */
   importCatalogItems(
       request?: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
@@ -741,10 +721,6 @@ export class CatalogServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.import_catalog_items.js</caption>
- * region_tag:recommendationengine_import_catalog_items_sample
- *
  */
   async checkImportCatalogItemsProgress(name: string): Promise<LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -800,10 +776,6 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.list_catalog_items.js</caption>
- * region_tag:recommendationengine_list_catalog_items_sample
- *
  */
   listCatalogItems(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
@@ -866,10 +838,6 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.list_catalog_items.js</caption>
- * region_tag:recommendationengine_list_catalog_items_sample
- *
  */
   listCatalogItemsStream(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
@@ -925,10 +893,6 @@ export class CatalogServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/catalog_service.list_catalog_items.js</caption>
- * region_tag:recommendationengine_list_catalog_items_sample
- *
  */
   listCatalogItemsAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,

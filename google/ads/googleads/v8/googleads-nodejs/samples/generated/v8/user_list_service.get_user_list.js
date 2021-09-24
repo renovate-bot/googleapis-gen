@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_user_list_sample]
+  // [START googleads_v8_generated_UserListService_GetUserList_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getUserList();
-  // [END googleads_get_user_list_sample]
+  // [END googleads_v8_generated_UserListService_GetUserList_async]
 }
 
 process.on('unhandledRejection', err => {

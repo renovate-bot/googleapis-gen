@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START gkehub_update_feature_sample]
+  // [START gkehub_v1beta_generated_GkeHub_UpdateFeature_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main() {
   }
 
   updateFeature();
-  // [END gkehub_update_feature_sample]
+  // [END gkehub_v1beta_generated_GkeHub_UpdateFeature_async]
 }
 
 process.on('unhandledRejection', err => {

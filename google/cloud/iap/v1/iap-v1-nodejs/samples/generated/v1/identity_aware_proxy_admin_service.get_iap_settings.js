@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START iap_get_iap_settings_sample]
+  // [START iap_v1_generated_IdentityAwareProxyAdminService_GetIapSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getIapSettings();
-  // [END iap_get_iap_settings_sample]
+  // [END iap_v1_generated_IdentityAwareProxyAdminService_GetIapSettings_async]
 }
 
 process.on('unhandledRejection', err => {

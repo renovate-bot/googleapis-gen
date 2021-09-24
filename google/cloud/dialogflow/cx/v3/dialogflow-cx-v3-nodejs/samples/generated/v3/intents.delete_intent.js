@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_delete_intent_sample]
+  // [START cx_v3_generated_Intents_DeleteIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteIntent();
-  // [END cx_delete_intent_sample]
+  // [END cx_v3_generated_Intents_DeleteIntent_async]
 }
 
 process.on('unhandledRejection', err => {

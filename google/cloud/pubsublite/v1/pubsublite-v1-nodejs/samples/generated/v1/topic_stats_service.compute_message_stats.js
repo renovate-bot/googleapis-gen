@@ -16,7 +16,7 @@
 'use strict';
 
 function main(topic, partition) {
-  // [START pubsublite_compute_message_stats_sample]
+  // [START pubsublite_v1_generated_TopicStatsService_ComputeMessageStats_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(topic, partition) {
   }
 
   computeMessageStats();
-  // [END pubsublite_compute_message_stats_sample]
+  // [END pubsublite_v1_generated_TopicStatsService_ComputeMessageStats_async]
 }
 
 process.on('unhandledRejection', err => {

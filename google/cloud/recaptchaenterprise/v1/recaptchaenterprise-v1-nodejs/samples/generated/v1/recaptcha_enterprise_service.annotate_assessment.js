@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START recaptchaenterprise_annotate_assessment_sample]
+  // [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_AnnotateAssessment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(name) {
   }
 
   annotateAssessment();
-  // [END recaptchaenterprise_annotate_assessment_sample]
+  // [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_AnnotateAssessment_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START resourcesettings_get_setting_sample]
+  // [START resourcesettings_v1_generated_ResourceSettingsService_GetSetting_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   getSetting();
-  // [END resourcesettings_get_setting_sample]
+  // [END resourcesettings_v1_generated_ResourceSettingsService_GetSetting_async]
 }
 
 process.on('unhandledRejection', err => {

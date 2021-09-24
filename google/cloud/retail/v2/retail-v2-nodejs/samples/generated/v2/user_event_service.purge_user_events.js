@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, filter) {
-  // [START retail_purge_user_events_sample]
+  // [START retail_v2_generated_UserEventService_PurgeUserEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(parent, filter) {
   }
 
   purgeUserEvents();
-  // [END retail_purge_user_events_sample]
+  // [END retail_v2_generated_UserEventService_PurgeUserEvents_async]
 }
 
 process.on('unhandledRejection', err => {

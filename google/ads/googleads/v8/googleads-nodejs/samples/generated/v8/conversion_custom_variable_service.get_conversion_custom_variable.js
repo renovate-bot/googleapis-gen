@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_conversion_custom_variable_sample]
+  // [START googleads_v8_generated_ConversionCustomVariableService_GetConversionCustomVariable_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getConversionCustomVariable();
-  // [END googleads_get_conversion_custom_variable_sample]
+  // [END googleads_v8_generated_ConversionCustomVariableService_GetConversionCustomVariable_async]
 }
 
 process.on('unhandledRejection', err => {

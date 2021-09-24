@@ -421,10 +421,6 @@ export class QueryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/query_service.query_time_series.js</caption>
- * region_tag:monitoring_query_time_series_sample
- *
  */
   queryTimeSeries(
       request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
@@ -492,10 +488,6 @@ export class QueryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/query_service.query_time_series.js</caption>
- * region_tag:monitoring_query_time_series_sample
- *
  */
   queryTimeSeriesStream(
       request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
@@ -556,10 +548,6 @@ export class QueryServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/query_service.query_time_series.js</caption>
- * region_tag:monitoring_query_time_series_sample
- *
  */
   queryTimeSeriesAsync(
       request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,

@@ -345,10 +345,6 @@ export class TenantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTenant(request);
- *
- * @example <caption>include:samples/generated/v4/tenant_service.create_tenant.js</caption>
- * region_tag:talent_create_tenant_sample
- *
  */
   createTenant(
       request?: protos.google.cloud.talent.v4.ICreateTenantRequest,
@@ -423,10 +419,6 @@ export class TenantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTenant(request);
- *
- * @example <caption>include:samples/generated/v4/tenant_service.get_tenant.js</caption>
- * region_tag:talent_get_tenant_sample
- *
  */
   getTenant(
       request?: protos.google.cloud.talent.v4.IGetTenantRequest,
@@ -506,10 +498,6 @@ export class TenantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateTenant(request);
- *
- * @example <caption>include:samples/generated/v4/tenant_service.update_tenant.js</caption>
- * region_tag:talent_update_tenant_sample
- *
  */
   updateTenant(
       request?: protos.google.cloud.talent.v4.IUpdateTenantRequest,
@@ -584,10 +572,6 @@ export class TenantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteTenant(request);
- *
- * @example <caption>include:samples/generated/v4/tenant_service.delete_tenant.js</caption>
- * region_tag:talent_delete_tenant_sample
- *
  */
   deleteTenant(
       request?: protos.google.cloud.talent.v4.IDeleteTenantRequest,
@@ -672,10 +656,6 @@ export class TenantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4/tenant_service.list_tenants.js</caption>
- * region_tag:talent_list_tenants_sample
- *
  */
   listTenants(
       request?: protos.google.cloud.talent.v4.IListTenantsRequest,
@@ -738,10 +718,6 @@ export class TenantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v4/tenant_service.list_tenants.js</caption>
- * region_tag:talent_list_tenants_sample
- *
  */
   listTenantsStream(
       request?: protos.google.cloud.talent.v4.IListTenantsRequest,
@@ -797,10 +773,6 @@ export class TenantServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v4/tenant_service.list_tenants.js</caption>
- * region_tag:talent_list_tenants_sample
- *
  */
   listTenantsAsync(
       request?: protos.google.cloud.talent.v4.IListTenantsRequest,

@@ -720,10 +720,6 @@ export class CampaignFeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignFeed(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_feed_service.get_campaign_feed.js</caption>
- * region_tag:googleads_get_campaign_feed_sample
- *
  */
   getCampaignFeed(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignFeedRequest,
@@ -834,10 +830,6 @@ export class CampaignFeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignFeeds(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_feed_service.mutate_campaign_feeds.js</caption>
- * region_tag:googleads_mutate_campaign_feeds_sample
- *
  */
   mutateCampaignFeeds(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignFeedsRequest,

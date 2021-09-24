@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, intents) {
-  // [START dialogflow_batch_delete_intents_sample]
+  // [START dialogflow_v2_generated_Intents_BatchDeleteIntents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent, intents) {
   }
 
   batchDeleteIntents();
-  // [END dialogflow_batch_delete_intents_sample]
+  // [END dialogflow_v2_generated_Intents_BatchDeleteIntents_async]
 }
 
 process.on('unhandledRejection', err => {

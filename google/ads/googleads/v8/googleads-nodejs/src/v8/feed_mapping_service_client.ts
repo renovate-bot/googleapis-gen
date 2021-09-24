@@ -720,10 +720,6 @@ export class FeedMappingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeedMapping(request);
- *
- * @example <caption>include:samples/generated/v8/feed_mapping_service.get_feed_mapping.js</caption>
- * region_tag:googleads_get_feed_mapping_sample
- *
  */
   getFeedMapping(
       request?: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
@@ -830,10 +826,6 @@ export class FeedMappingServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateFeedMappings(request);
- *
- * @example <caption>include:samples/generated/v8/feed_mapping_service.mutate_feed_mappings.js</caption>
- * region_tag:googleads_mutate_feed_mappings_sample
- *
  */
   mutateFeedMappings(
       request?: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,

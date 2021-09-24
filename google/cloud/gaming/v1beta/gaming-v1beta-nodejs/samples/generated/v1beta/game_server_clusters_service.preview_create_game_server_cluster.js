@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, gameServerClusterId, gameServerCluster) {
-  // [START gaming_preview_create_game_server_cluster_sample]
+  // [START gaming_v1beta_generated_GameServerClustersService_PreviewCreateGameServerCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, gameServerClusterId, gameServerCluster) {
   }
 
   previewCreateGameServerCluster();
-  // [END gaming_preview_create_game_server_cluster_sample]
+  // [END gaming_v1beta_generated_GameServerClustersService_PreviewCreateGameServerCluster_async]
 }
 
 process.on('unhandledRejection', err => {

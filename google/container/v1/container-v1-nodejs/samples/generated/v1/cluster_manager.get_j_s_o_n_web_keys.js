@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START container_get_j_s_o_n_web_keys_sample]
+  // [START container_v1_generated_ClusterManager_GetJSONWebKeys_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   getJSONWebKeys();
-  // [END container_get_j_s_o_n_web_keys_sample]
+  // [END container_v1_generated_ClusterManager_GetJSONWebKeys_async]
 }
 
 process.on('unhandledRejection', err => {

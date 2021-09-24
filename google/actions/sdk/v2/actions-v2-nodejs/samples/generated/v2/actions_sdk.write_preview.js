@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, previewSettings) {
-  // [START sdk_write_preview_sample]
+  // [START sdk_v2_generated_ActionsSdk_WritePreview_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent, previewSettings) {
   }
 
   writePreview();
-  // [END sdk_write_preview_sample]
+  // [END sdk_v2_generated_ActionsSdk_WritePreview_async]
 }
 
 process.on('unhandledRejection', err => {

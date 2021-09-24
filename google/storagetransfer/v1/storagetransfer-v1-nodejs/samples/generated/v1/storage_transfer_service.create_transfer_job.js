@@ -16,7 +16,7 @@
 'use strict';
 
 function main(transferJob) {
-  // [START storagetransfer_create_transfer_job_sample]
+  // [START storagetransfer_v1_generated_StorageTransferService_CreateTransferJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(transferJob) {
   }
 
   createTransferJob();
-  // [END storagetransfer_create_transfer_job_sample]
+  // [END storagetransfer_v1_generated_StorageTransferService_CreateTransferJob_async]
 }
 
 process.on('unhandledRejection', err => {

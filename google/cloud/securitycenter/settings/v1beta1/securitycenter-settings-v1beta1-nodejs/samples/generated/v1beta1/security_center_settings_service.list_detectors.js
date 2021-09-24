@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START settings_list_detectors_sample]
+  // [START settings_v1beta1_generated_SecurityCenterSettingsService_ListDetectors_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -72,7 +72,7 @@ function main(parent) {
   }
 
   listDetectors();
-  // [END settings_list_detectors_sample]
+  // [END settings_v1beta1_generated_SecurityCenterSettingsService_ListDetectors_async]
 }
 
 process.on('unhandledRejection', err => {

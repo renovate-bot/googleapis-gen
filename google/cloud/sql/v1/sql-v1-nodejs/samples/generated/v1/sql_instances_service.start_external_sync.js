@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_start_external_sync_sample]
+  // [START sql_v1_generated_SqlInstancesService_StartExternalSync_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main() {
   }
 
   startExternalSync();
-  // [END sql_start_external_sync_sample]
+  // [END sql_v1_generated_SqlInstancesService_StartExternalSync_async]
 }
 
 process.on('unhandledRejection', err => {

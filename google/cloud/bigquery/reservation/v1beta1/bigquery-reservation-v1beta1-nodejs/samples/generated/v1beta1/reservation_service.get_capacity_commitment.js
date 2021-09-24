@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START reservation_get_capacity_commitment_sample]
+  // [START reservation_v1beta1_generated_ReservationService_GetCapacityCommitment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getCapacityCommitment();
-  // [END reservation_get_capacity_commitment_sample]
+  // [END reservation_v1beta1_generated_ReservationService_GetCapacityCommitment_async]
 }
 
 process.on('unhandledRejection', err => {

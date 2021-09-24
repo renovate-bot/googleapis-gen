@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START orgpolicy_list_constraints_sample]
+  // [START orgpolicy_v2_generated_OrgPolicy_ListConstraints_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listConstraints();
-  // [END orgpolicy_list_constraints_sample]
+  // [END orgpolicy_v2_generated_OrgPolicy_ListConstraints_async]
 }
 
 process.on('unhandledRejection', err => {

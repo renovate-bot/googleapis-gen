@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START translation_get_supported_languages_sample]
+  // [START translation_v3_generated_TranslationService_GetSupportedLanguages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent) {
   }
 
   getSupportedLanguages();
-  // [END translation_get_supported_languages_sample]
+  // [END translation_v3_generated_TranslationService_GetSupportedLanguages_async]
 }
 
 process.on('unhandledRejection', err => {

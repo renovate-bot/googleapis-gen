@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START policytroubleshooter_troubleshoot_iam_policy_sample]
+  // [START policytroubleshooter_v1_generated_IamChecker_TroubleshootIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   troubleshootIamPolicy();
-  // [END policytroubleshooter_troubleshoot_iam_policy_sample]
+  // [END policytroubleshooter_v1_generated_IamChecker_TroubleshootIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

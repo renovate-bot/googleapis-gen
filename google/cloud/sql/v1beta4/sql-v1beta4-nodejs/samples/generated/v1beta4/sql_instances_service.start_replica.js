@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_start_replica_sample]
+  // [START sql_v1beta4_generated_SqlInstancesService_StartReplica_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   startReplica();
-  // [END sql_start_replica_sample]
+  // [END sql_v1beta4_generated_SqlInstancesService_StartReplica_async]
 }
 
 process.on('unhandledRejection', err => {

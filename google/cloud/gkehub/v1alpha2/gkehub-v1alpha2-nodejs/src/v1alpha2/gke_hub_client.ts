@@ -384,10 +384,6 @@ export class GkeHubClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMembership(request);
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.get_membership.js</caption>
- * region_tag:gkehub_get_membership_sample
- *
  */
   getMembership(
       request?: protos.google.cloud.gkehub.v1alpha2.IGetMembershipRequest,
@@ -485,10 +481,6 @@ export class GkeHubClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.generateConnectManifest(request);
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.generate_connect_manifest.js</caption>
- * region_tag:gkehub_generate_connect_manifest_sample
- *
  */
   generateConnectManifest(
       request?: protos.google.cloud.gkehub.v1alpha2.IGenerateConnectManifestRequest,
@@ -568,10 +560,6 @@ export class GkeHubClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.initializeHub(request);
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.initialize_hub.js</caption>
- * region_tag:gkehub_initialize_hub_sample
- *
  */
   initializeHub(
       request?: protos.google.cloud.gkehub.v1alpha2.IInitializeHubRequest,
@@ -664,10 +652,6 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.createMembership(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.create_membership.js</caption>
- * region_tag:gkehub_create_membership_sample
- *
  */
   createMembership(
       request?: protos.google.cloud.gkehub.v1alpha2.ICreateMembershipRequest,
@@ -717,10 +701,6 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.create_membership.js</caption>
- * region_tag:gkehub_create_membership_sample
- *
  */
   async checkCreateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1alpha2.Membership, protos.google.cloud.gkehub.v1alpha2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -772,10 +752,6 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.deleteMembership(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.delete_membership.js</caption>
- * region_tag:gkehub_delete_membership_sample
- *
  */
   deleteMembership(
       request?: protos.google.cloud.gkehub.v1alpha2.IDeleteMembershipRequest,
@@ -825,10 +801,6 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.delete_membership.js</caption>
- * region_tag:gkehub_delete_membership_sample
- *
  */
   async checkDeleteMembershipProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1alpha2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -887,10 +859,6 @@ export class GkeHubClient {
  * @example
  * const [operation] = await client.updateMembership(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.update_membership.js</caption>
- * region_tag:gkehub_update_membership_sample
- *
  */
   updateMembership(
       request?: protos.google.cloud.gkehub.v1alpha2.IUpdateMembershipRequest,
@@ -940,10 +908,6 @@ export class GkeHubClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.update_membership.js</caption>
- * region_tag:gkehub_update_membership_sample
- *
  */
   async checkUpdateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1alpha2.Membership, protos.google.cloud.gkehub.v1alpha2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1024,10 +988,6 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.list_memberships.js</caption>
- * region_tag:gkehub_list_memberships_sample
- *
  */
   listMemberships(
       request?: protos.google.cloud.gkehub.v1alpha2.IListMembershipsRequest,
@@ -1115,10 +1075,6 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.list_memberships.js</caption>
- * region_tag:gkehub_list_memberships_sample
- *
  */
   listMembershipsStream(
       request?: protos.google.cloud.gkehub.v1alpha2.IListMembershipsRequest,
@@ -1199,10 +1155,6 @@ export class GkeHubClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1alpha2/gke_hub.list_memberships.js</caption>
- * region_tag:gkehub_list_memberships_sample
- *
  */
   listMembershipsAsync(
       request?: protos.google.cloud.gkehub.v1alpha2.IListMembershipsRequest,

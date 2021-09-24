@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, transaction) {
-  // [START datastore_rollback_sample]
+  // [START datastore_v1_generated_Datastore_Rollback_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(projectId, transaction) {
   }
 
   rollback();
-  // [END datastore_rollback_sample]
+  // [END datastore_v1_generated_Datastore_Rollback_async]
 }
 
 process.on('unhandledRejection', err => {

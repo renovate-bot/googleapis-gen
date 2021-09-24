@@ -16,7 +16,7 @@
 'use strict';
 
 function main(idToken) {
-  // [START identitytoolkit_start_mfa_enrollment_sample]
+  // [START identitytoolkit_v2_generated_AccountManagementService_StartMfaEnrollment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(idToken) {
   }
 
   startMfaEnrollment();
-  // [END identitytoolkit_start_mfa_enrollment_sample]
+  // [END identitytoolkit_v2_generated_AccountManagementService_StartMfaEnrollment_async]
 }
 
 process.on('unhandledRejection', err => {

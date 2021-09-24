@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START pubsublite_get_topic_partitions_sample]
+  // [START pubsublite_v1_generated_AdminService_GetTopicPartitions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getTopicPartitions();
-  // [END pubsublite_get_topic_partitions_sample]
+  // [END pubsublite_v1_generated_AdminService_GetTopicPartitions_async]
 }
 
 process.on('unhandledRejection', err => {

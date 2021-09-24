@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, countryCode) {
-  // [START fleetengine_report_billable_trip_sample]
+  // [START fleetengine_v1_generated_TripService_ReportBillableTrip_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(name, countryCode) {
   }
 
   reportBillableTrip();
-  // [END fleetengine_report_billable_trip_sample]
+  // [END fleetengine_v1_generated_TripService_ReportBillableTrip_async]
 }
 
 process.on('unhandledRejection', err => {

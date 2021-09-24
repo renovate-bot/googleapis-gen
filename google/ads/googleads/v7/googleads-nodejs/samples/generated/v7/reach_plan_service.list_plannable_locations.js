@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_list_plannable_locations_sample]
+  // [START googleads_v7_generated_ReachPlanService_ListPlannableLocations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -38,7 +38,7 @@ function main() {
   }
 
   listPlannableLocations();
-  // [END googleads_list_plannable_locations_sample]
+  // [END googleads_v7_generated_ReachPlanService_ListPlannableLocations_async]
 }
 
 process.on('unhandledRejection', err => {

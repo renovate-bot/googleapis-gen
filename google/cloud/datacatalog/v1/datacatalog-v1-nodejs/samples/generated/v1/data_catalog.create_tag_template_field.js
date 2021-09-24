@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, tagTemplateFieldId, tagTemplateField) {
-  // [START datacatalog_create_tag_template_field_sample]
+  // [START datacatalog_v1_generated_DataCatalog_CreateTagTemplateField_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, tagTemplateFieldId, tagTemplateField) {
   }
 
   createTagTemplateField();
-  // [END datacatalog_create_tag_template_field_sample]
+  // [END datacatalog_v1_generated_DataCatalog_CreateTagTemplateField_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(zone) {
-  // [START datafusion_remove_dns_peering_sample]
+  // [START datafusion_v1beta1_generated_DataFusion_RemoveDnsPeering_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(zone) {
   }
 
   removeDnsPeering();
-  // [END datafusion_remove_dns_peering_sample]
+  // [END datafusion_v1beta1_generated_DataFusion_RemoveDnsPeering_async]
 }
 
 process.on('unhandledRejection', err => {

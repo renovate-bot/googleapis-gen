@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, query) {
-  // [START monitoring_query_time_series_sample]
+  // [START monitoring_v3_generated_QueryService_QueryTimeSeries_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(name, query) {
   }
 
   queryTimeSeries();
-  // [END monitoring_query_time_series_sample]
+  // [END monitoring_v3_generated_QueryService_QueryTimeSeries_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, requestMetadata) {
-  // [START talent_search_profiles_sample]
+  // [START talent_v4beta1_generated_ProfileService_SearchProfiles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -212,7 +212,7 @@ function main(parent, requestMetadata) {
   }
 
   searchProfiles();
-  // [END talent_search_profiles_sample]
+  // [END talent_v4beta1_generated_ProfileService_SearchProfiles_async]
 }
 
 process.on('unhandledRejection', err => {

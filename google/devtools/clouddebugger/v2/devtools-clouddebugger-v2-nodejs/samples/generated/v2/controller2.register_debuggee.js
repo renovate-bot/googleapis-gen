@@ -16,7 +16,7 @@
 'use strict';
 
 function main(debuggee) {
-  // [START clouddebugger_register_debuggee_sample]
+  // [START clouddebugger_v2_generated_Controller2_RegisterDebuggee_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(debuggee) {
   }
 
   registerDebuggee();
-  // [END clouddebugger_register_debuggee_sample]
+  // [END clouddebugger_v2_generated_Controller2_RegisterDebuggee_async]
 }
 
 process.on('unhandledRejection', err => {

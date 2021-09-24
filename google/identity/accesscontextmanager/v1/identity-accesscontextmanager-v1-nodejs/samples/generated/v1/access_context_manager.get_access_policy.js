@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START accesscontextmanager_get_access_policy_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_GetAccessPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getAccessPolicy();
-  // [END accesscontextmanager_get_access_policy_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_GetAccessPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

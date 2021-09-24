@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START binaryauthorization_get_policy_sample]
+  // [START binaryauthorization_v1_generated_BinauthzManagementServiceV1_GetPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getPolicy();
-  // [END binaryauthorization_get_policy_sample]
+  // [END binaryauthorization_v1_generated_BinauthzManagementServiceV1_GetPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(product) {
-  // [START retail_update_product_sample]
+  // [START retail_v2alpha_generated_ProductService_UpdateProduct_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(product) {
   }
 
   updateProduct();
-  // [END retail_update_product_sample]
+  // [END retail_v2alpha_generated_ProductService_UpdateProduct_async]
 }
 
 process.on('unhandledRejection', err => {

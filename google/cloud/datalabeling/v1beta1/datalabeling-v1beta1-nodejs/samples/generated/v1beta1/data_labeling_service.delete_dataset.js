@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datalabeling_delete_dataset_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_DeleteDataset_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteDataset();
-  // [END datalabeling_delete_dataset_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_DeleteDataset_async]
 }
 
 process.on('unhandledRejection', err => {

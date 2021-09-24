@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gaming_get_realm_sample]
+  // [START gaming_v1beta_generated_RealmsService_GetRealm_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getRealm();
-  // [END gaming_get_realm_sample]
+  // [END gaming_v1beta_generated_RealmsService_GetRealm_async]
 }
 
 process.on('unhandledRejection', err => {

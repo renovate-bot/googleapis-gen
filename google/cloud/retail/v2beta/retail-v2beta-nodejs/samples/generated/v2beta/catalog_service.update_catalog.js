@@ -16,7 +16,7 @@
 'use strict';
 
 function main(catalog) {
-  // [START retail_update_catalog_sample]
+  // [START retail_v2beta_generated_CatalogService_UpdateCatalog_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(catalog) {
   }
 
   updateCatalog();
-  // [END retail_update_catalog_sample]
+  // [END retail_v2beta_generated_CatalogService_UpdateCatalog_async]
 }
 
 process.on('unhandledRejection', err => {

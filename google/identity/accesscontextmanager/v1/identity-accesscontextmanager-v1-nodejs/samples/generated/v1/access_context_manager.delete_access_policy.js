@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START accesscontextmanager_delete_access_policy_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_DeleteAccessPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteAccessPolicy();
-  // [END accesscontextmanager_delete_access_policy_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_DeleteAccessPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START gaming_list_game_server_clusters_sample]
+  // [START gaming_v1beta_generated_GameServerClustersService_ListGameServerClusters_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent) {
   }
 
   listGameServerClusters();
-  // [END gaming_list_game_server_clusters_sample]
+  // [END gaming_v1beta_generated_GameServerClustersService_ListGameServerClusters_async]
 }
 
 process.on('unhandledRejection', err => {

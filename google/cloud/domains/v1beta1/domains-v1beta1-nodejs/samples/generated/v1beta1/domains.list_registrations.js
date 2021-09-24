@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START domains_list_registrations_sample]
+  // [START domains_v1beta1_generated_Domains_ListRegistrations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(parent) {
   }
 
   listRegistrations();
-  // [END domains_list_registrations_sample]
+  // [END domains_v1beta1_generated_Domains_ListRegistrations_async]
 }
 
 process.on('unhandledRejection', err => {

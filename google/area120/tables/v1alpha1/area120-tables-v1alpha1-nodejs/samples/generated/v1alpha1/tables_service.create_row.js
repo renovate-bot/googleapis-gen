@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, row) {
-  // [START tables_create_row_sample]
+  // [START tables_v1alpha1_generated_TablesService_CreateRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent, row) {
   }
 
   createRow();
-  // [END tables_create_row_sample]
+  // [END tables_v1alpha1_generated_TablesService_CreateRow_async]
 }
 
 process.on('unhandledRejection', err => {

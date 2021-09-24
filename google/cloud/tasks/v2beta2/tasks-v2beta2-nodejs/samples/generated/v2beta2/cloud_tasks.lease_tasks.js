@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, leaseDuration) {
-  // [START tasks_lease_tasks_sample]
+  // [START tasks_v2beta2_generated_CloudTasks_LeaseTasks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -110,7 +110,7 @@ function main(parent, leaseDuration) {
   }
 
   leaseTasks();
-  // [END tasks_lease_tasks_sample]
+  // [END tasks_v2beta2_generated_CloudTasks_LeaseTasks_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START tpu_delete_node_sample]
+  // [START tpu_v1_generated_Tpu_DeleteNode_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteNode();
-  // [END tpu_delete_node_sample]
+  // [END tpu_v1_generated_Tpu_DeleteNode_async]
 }
 
 process.on('unhandledRejection', err => {

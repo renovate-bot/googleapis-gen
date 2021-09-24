@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceNames) {
-  // [START logging_tail_log_entries_sample]
+  // [START logging_v2_generated_LoggingServiceV2_TailLogEntries_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main(resourceNames) {
   }
 
   tailLogEntries();
-  // [END logging_tail_log_entries_sample]
+  // [END logging_v2_generated_LoggingServiceV2_TailLogEntries_async]
 }
 
 process.on('unhandledRejection', err => {

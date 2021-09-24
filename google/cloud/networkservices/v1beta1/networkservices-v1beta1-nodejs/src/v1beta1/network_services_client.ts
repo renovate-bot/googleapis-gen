@@ -370,10 +370,6 @@ export class NetworkServicesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEndpointPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.get_endpoint_policy.js</caption>
- * region_tag:networkservices_get_endpoint_policy_sample
- *
  */
   getEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IGetEndpointPolicyRequest,
@@ -455,10 +451,6 @@ export class NetworkServicesClient {
  * @example
  * const [operation] = await client.createEndpointPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.create_endpoint_policy.js</caption>
- * region_tag:networkservices_create_endpoint_policy_sample
- *
  */
   createEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
@@ -508,10 +500,6 @@ export class NetworkServicesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.create_endpoint_policy.js</caption>
- * region_tag:networkservices_create_endpoint_policy_sample
- *
  */
   async checkCreateEndpointPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networkservices.v1beta1.EndpointPolicy, protos.google.cloud.networkservices.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -564,10 +552,6 @@ export class NetworkServicesClient {
  * @example
  * const [operation] = await client.updateEndpointPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.update_endpoint_policy.js</caption>
- * region_tag:networkservices_update_endpoint_policy_sample
- *
  */
   updateEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
@@ -617,10 +601,6 @@ export class NetworkServicesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.update_endpoint_policy.js</caption>
- * region_tag:networkservices_update_endpoint_policy_sample
- *
  */
   async checkUpdateEndpointPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networkservices.v1beta1.EndpointPolicy, protos.google.cloud.networkservices.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -668,10 +648,6 @@ export class NetworkServicesClient {
  * @example
  * const [operation] = await client.deleteEndpointPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.delete_endpoint_policy.js</caption>
- * region_tag:networkservices_delete_endpoint_policy_sample
- *
  */
   deleteEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IDeleteEndpointPolicyRequest,
@@ -721,10 +697,6 @@ export class NetworkServicesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.delete_endpoint_policy.js</caption>
- * region_tag:networkservices_delete_endpoint_policy_sample
- *
  */
   async checkDeleteEndpointPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkservices.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -780,10 +752,6 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.list_endpoint_policies.js</caption>
- * region_tag:networkservices_list_endpoint_policies_sample
- *
  */
   listEndpointPolicies(
       request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
@@ -846,10 +814,6 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.list_endpoint_policies.js</caption>
- * region_tag:networkservices_list_endpoint_policies_sample
- *
  */
   listEndpointPoliciesStream(
       request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
@@ -905,10 +869,6 @@ export class NetworkServicesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/network_services.list_endpoint_policies.js</caption>
- * region_tag:networkservices_list_endpoint_policies_sample
- *
  */
   listEndpointPoliciesAsync(
       request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,

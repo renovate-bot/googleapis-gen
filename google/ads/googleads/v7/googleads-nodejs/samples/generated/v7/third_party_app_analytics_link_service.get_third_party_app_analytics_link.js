@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_get_third_party_app_analytics_link_sample]
+  // [START googleads_v7_generated_ThirdPartyAppAnalyticsLinkService_GetThirdPartyAppAnalyticsLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   getThirdPartyAppAnalyticsLink();
-  // [END googleads_get_third_party_app_analytics_link_sample]
+  // [END googleads_v7_generated_ThirdPartyAppAnalyticsLinkService_GetThirdPartyAppAnalyticsLink_async]
 }
 
 process.on('unhandledRejection', err => {

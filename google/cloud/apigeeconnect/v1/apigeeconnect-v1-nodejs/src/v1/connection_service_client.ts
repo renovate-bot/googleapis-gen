@@ -347,10 +347,6 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/connection_service.list_connections.js</caption>
- * region_tag:apigeeconnect_list_connections_sample
- *
  */
   listConnections(
       request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
@@ -416,10 +412,6 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/connection_service.list_connections.js</caption>
- * region_tag:apigeeconnect_list_connections_sample
- *
  */
   listConnectionsStream(
       request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
@@ -478,10 +470,6 @@ export class ConnectionServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/connection_service.list_connections.js</caption>
- * region_tag:apigeeconnect_list_connections_sample
- *
  */
   listConnectionsAsync(
       request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,

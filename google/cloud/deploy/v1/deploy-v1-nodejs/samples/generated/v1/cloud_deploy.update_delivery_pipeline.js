@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, deliveryPipeline) {
-  // [START deploy_update_delivery_pipeline_sample]
+  // [START deploy_v1_generated_CloudDeploy_UpdateDeliveryPipeline_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -77,7 +77,7 @@ function main(updateMask, deliveryPipeline) {
   }
 
   updateDeliveryPipeline();
-  // [END deploy_update_delivery_pipeline_sample]
+  // [END deploy_v1_generated_CloudDeploy_UpdateDeliveryPipeline_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, backupId, backup) {
-  // [START metastore_create_backup_sample]
+  // [START metastore_v1_generated_DataprocMetastore_CreateBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(parent, backupId, backup) {
   }
 
   createBackup();
-  // [END metastore_create_backup_sample]
+  // [END metastore_v1_generated_DataprocMetastore_CreateBackup_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_update_consumer_override_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_UpdateConsumerOverride_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main() {
   }
 
   updateConsumerOverride();
-  // [END serviceusage_update_consumer_override_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_UpdateConsumerOverride_async]
 }
 
 process.on('unhandledRejection', err => {

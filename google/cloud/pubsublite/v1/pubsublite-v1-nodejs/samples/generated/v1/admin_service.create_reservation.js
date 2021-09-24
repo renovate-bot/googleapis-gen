@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, reservation, reservationId) {
-  // [START pubsublite_create_reservation_sample]
+  // [START pubsublite_v1_generated_AdminService_CreateReservation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent, reservation, reservationId) {
   }
 
   createReservation();
-  // [END pubsublite_create_reservation_sample]
+  // [END pubsublite_v1_generated_AdminService_CreateReservation_async]
 }
 
 process.on('unhandledRejection', err => {

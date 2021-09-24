@@ -720,10 +720,6 @@ export class ClickViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getClickView(request);
- *
- * @example <caption>include:samples/generated/v8/click_view_service.get_click_view.js</caption>
- * region_tag:googleads_get_click_view_sample
- *
  */
   getClickView(
       request?: protos.google.ads.googleads.v8.services.IGetClickViewRequest,

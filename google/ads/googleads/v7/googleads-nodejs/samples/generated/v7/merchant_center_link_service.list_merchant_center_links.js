@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId) {
-  // [START googleads_list_merchant_center_links_sample]
+  // [START googleads_v7_generated_MerchantCenterLinkService_ListMerchantCenterLinks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(customerId) {
   }
 
   listMerchantCenterLinks();
-  // [END googleads_list_merchant_center_links_sample]
+  // [END googleads_v7_generated_MerchantCenterLinkService_ListMerchantCenterLinks_async]
 }
 
 process.on('unhandledRejection', err => {

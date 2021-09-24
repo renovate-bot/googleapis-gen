@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START accesscontextmanager_list_gcp_user_access_bindings_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_ListGcpUserAccessBindings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listGcpUserAccessBindings();
-  // [END accesscontextmanager_list_gcp_user_access_bindings_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_ListGcpUserAccessBindings_async]
 }
 
 process.on('unhandledRejection', err => {

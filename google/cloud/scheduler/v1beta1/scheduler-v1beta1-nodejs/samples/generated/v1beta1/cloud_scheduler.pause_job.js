@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START scheduler_pause_job_sample]
+  // [START scheduler_v1beta1_generated_CloudScheduler_PauseJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   pauseJob();
-  // [END scheduler_pause_job_sample]
+  // [END scheduler_v1beta1_generated_CloudScheduler_PauseJob_async]
 }
 
 process.on('unhandledRejection', err => {

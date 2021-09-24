@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START orgpolicy_get_effective_policy_sample]
+  // [START orgpolicy_v2_generated_OrgPolicy_GetEffectivePolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getEffectivePolicy();
-  // [END orgpolicy_get_effective_policy_sample]
+  // [END orgpolicy_v2_generated_OrgPolicy_GetEffectivePolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, clusterId, cluster) {
-  // [START admin_create_cluster_sample]
+  // [START admin_v2_generated_BigtableInstanceAdmin_CreateCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, clusterId, cluster) {
   }
 
   createCluster();
-  // [END admin_create_cluster_sample]
+  // [END admin_v2_generated_BigtableInstanceAdmin_CreateCluster_async]
 }
 
 process.on('unhandledRejection', err => {

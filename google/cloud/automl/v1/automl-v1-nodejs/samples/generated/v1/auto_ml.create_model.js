@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, model) {
-  // [START automl_create_model_sample]
+  // [START automl_v1_generated_AutoMl_CreateModel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, model) {
   }
 
   createModel();
-  // [END automl_create_model_sample]
+  // [END automl_v1_generated_AutoMl_CreateModel_async]
 }
 
 process.on('unhandledRejection', err => {

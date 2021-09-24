@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START networksecurity_delete_client_tls_policy_sample]
+  // [START networksecurity_v1beta1_generated_NetworkSecurity_DeleteClientTlsPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteClientTlsPolicy();
-  // [END networksecurity_delete_client_tls_policy_sample]
+  // [END networksecurity_v1beta1_generated_NetworkSecurity_DeleteClientTlsPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

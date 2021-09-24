@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, newTagTemplateFieldId) {
-  // [START datacatalog_rename_tag_template_field_sample]
+  // [START datacatalog_v1beta1_generated_DataCatalog_RenameTagTemplateField_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name, newTagTemplateFieldId) {
   }
 
   renameTagTemplateField();
-  // [END datacatalog_rename_tag_template_field_sample]
+  // [END datacatalog_v1beta1_generated_DataCatalog_RenameTagTemplateField_async]
 }
 
 process.on('unhandledRejection', err => {

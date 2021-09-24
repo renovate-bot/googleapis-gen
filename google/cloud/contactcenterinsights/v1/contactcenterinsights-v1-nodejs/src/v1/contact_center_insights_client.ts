@@ -425,10 +425,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createConversation(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.create_conversation.js</caption>
- * region_tag:contactcenterinsights_create_conversation_sample
- *
  */
   createConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
@@ -502,10 +498,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateConversation(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.update_conversation.js</caption>
- * region_tag:contactcenterinsights_update_conversation_sample
- *
  */
   updateConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
@@ -579,10 +571,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConversation(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.get_conversation.js</caption>
- * region_tag:contactcenterinsights_get_conversation_sample
- *
  */
   getConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
@@ -658,10 +646,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteConversation(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.delete_conversation.js</caption>
- * region_tag:contactcenterinsights_delete_conversation_sample
- *
  */
   deleteConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
@@ -733,10 +717,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAnalysis(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.get_analysis.js</caption>
- * region_tag:contactcenterinsights_get_analysis_sample
- *
  */
   getAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
@@ -808,10 +788,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAnalysis(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.delete_analysis.js</caption>
- * region_tag:contactcenterinsights_delete_analysis_sample
- *
  */
   deleteAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
@@ -885,10 +861,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateIssueModel(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.update_issue_model.js</caption>
- * region_tag:contactcenterinsights_update_issue_model_sample
- *
  */
   updateIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateIssueModelRequest,
@@ -960,10 +932,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIssueModel(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.get_issue_model.js</caption>
- * region_tag:contactcenterinsights_get_issue_model_sample
- *
  */
   getIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
@@ -1035,10 +1003,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listIssueModels(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_issue_models.js</caption>
- * region_tag:contactcenterinsights_list_issue_models_sample
- *
  */
   listIssueModels(
       request?: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
@@ -1110,10 +1074,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIssue(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.get_issue.js</caption>
- * region_tag:contactcenterinsights_get_issue_sample
- *
  */
   getIssue(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
@@ -1185,10 +1145,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listIssues(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_issues.js</caption>
- * region_tag:contactcenterinsights_list_issues_sample
- *
  */
   listIssues(
       request?: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
@@ -1262,10 +1218,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateIssue(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.update_issue.js</caption>
- * region_tag:contactcenterinsights_update_issue_sample
- *
  */
   updateIssue(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateIssueRequest,
@@ -1337,10 +1289,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.calculateIssueModelStats(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.calculate_issue_model_stats.js</caption>
- * region_tag:contactcenterinsights_calculate_issue_model_stats_sample
- *
  */
   calculateIssueModelStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
@@ -1417,10 +1365,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPhraseMatcher(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.create_phrase_matcher.js</caption>
- * region_tag:contactcenterinsights_create_phrase_matcher_sample
- *
  */
   createPhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
@@ -1492,10 +1436,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPhraseMatcher(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.get_phrase_matcher.js</caption>
- * region_tag:contactcenterinsights_get_phrase_matcher_sample
- *
  */
   getPhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
@@ -1567,10 +1507,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePhraseMatcher(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.delete_phrase_matcher.js</caption>
- * region_tag:contactcenterinsights_delete_phrase_matcher_sample
- *
  */
   deletePhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
@@ -1645,10 +1581,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.calculateStats(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.calculate_stats.js</caption>
- * region_tag:contactcenterinsights_calculate_stats_sample
- *
  */
   calculateStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
@@ -1720,10 +1652,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSettings(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.get_settings.js</caption>
- * region_tag:contactcenterinsights_get_settings_sample
- *
  */
   getSettings(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
@@ -1797,10 +1725,6 @@ export class ContactCenterInsightsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSettings(request);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.update_settings.js</caption>
- * region_tag:contactcenterinsights_update_settings_sample
- *
  */
   updateSettings(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
@@ -1879,10 +1803,6 @@ export class ContactCenterInsightsClient {
  * @example
  * const [operation] = await client.createAnalysis(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.create_analysis.js</caption>
- * region_tag:contactcenterinsights_create_analysis_sample
- *
  */
   createAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
@@ -1932,10 +1852,6 @@ export class ContactCenterInsightsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.create_analysis.js</caption>
- * region_tag:contactcenterinsights_create_analysis_sample
- *
  */
   async checkCreateAnalysisProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.Analysis, protos.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1991,10 +1907,6 @@ export class ContactCenterInsightsClient {
  * @example
  * const [operation] = await client.exportInsightsData(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.export_insights_data.js</caption>
- * region_tag:contactcenterinsights_export_insights_data_sample
- *
  */
   exportInsightsData(
       request?: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
@@ -2044,10 +1956,6 @@ export class ContactCenterInsightsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.export_insights_data.js</caption>
- * region_tag:contactcenterinsights_export_insights_data_sample
- *
  */
   async checkExportInsightsDataProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2096,10 +2004,6 @@ export class ContactCenterInsightsClient {
  * @example
  * const [operation] = await client.createIssueModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.create_issue_model.js</caption>
- * region_tag:contactcenterinsights_create_issue_model_sample
- *
  */
   createIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateIssueModelRequest,
@@ -2149,10 +2053,6 @@ export class ContactCenterInsightsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.create_issue_model.js</caption>
- * region_tag:contactcenterinsights_create_issue_model_sample
- *
  */
   async checkCreateIssueModelProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.IssueModel, protos.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2199,10 +2099,6 @@ export class ContactCenterInsightsClient {
  * @example
  * const [operation] = await client.deleteIssueModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.delete_issue_model.js</caption>
- * region_tag:contactcenterinsights_delete_issue_model_sample
- *
  */
   deleteIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteIssueModelRequest,
@@ -2252,10 +2148,6 @@ export class ContactCenterInsightsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.delete_issue_model.js</caption>
- * region_tag:contactcenterinsights_delete_issue_model_sample
- *
  */
   async checkDeleteIssueModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2303,10 +2195,6 @@ export class ContactCenterInsightsClient {
  * @example
  * const [operation] = await client.deployIssueModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.deploy_issue_model.js</caption>
- * region_tag:contactcenterinsights_deploy_issue_model_sample
- *
  */
   deployIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeployIssueModelRequest,
@@ -2356,10 +2244,6 @@ export class ContactCenterInsightsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.deploy_issue_model.js</caption>
- * region_tag:contactcenterinsights_deploy_issue_model_sample
- *
  */
   async checkDeployIssueModelProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2407,10 +2291,6 @@ export class ContactCenterInsightsClient {
  * @example
  * const [operation] = await client.undeployIssueModel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.undeploy_issue_model.js</caption>
- * region_tag:contactcenterinsights_undeploy_issue_model_sample
- *
  */
   undeployIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IUndeployIssueModelRequest,
@@ -2460,10 +2340,6 @@ export class ContactCenterInsightsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.undeploy_issue_model.js</caption>
- * region_tag:contactcenterinsights_undeploy_issue_model_sample
- *
  */
   async checkUndeployIssueModelProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2525,10 +2401,6 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_conversations.js</caption>
- * region_tag:contactcenterinsights_list_conversations_sample
- *
  */
   listConversations(
       request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
@@ -2597,10 +2469,6 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_conversations.js</caption>
- * region_tag:contactcenterinsights_list_conversations_sample
- *
  */
   listConversationsStream(
       request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
@@ -2662,10 +2530,6 @@ export class ContactCenterInsightsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_conversations.js</caption>
- * region_tag:contactcenterinsights_list_conversations_sample
- *
  */
   listConversationsAsync(
       request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
@@ -2742,10 +2606,6 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_analyses.js</caption>
- * region_tag:contactcenterinsights_list_analyses_sample
- *
  */
   listAnalyses(
       request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
@@ -2812,10 +2672,6 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_analyses.js</caption>
- * region_tag:contactcenterinsights_list_analyses_sample
- *
  */
   listAnalysesStream(
       request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
@@ -2875,10 +2731,6 @@ export class ContactCenterInsightsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_analyses.js</caption>
- * region_tag:contactcenterinsights_list_analyses_sample
- *
  */
   listAnalysesAsync(
       request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
@@ -2955,10 +2807,6 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_phrase_matchers.js</caption>
- * region_tag:contactcenterinsights_list_phrase_matchers_sample
- *
  */
   listPhraseMatchers(
       request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
@@ -3025,10 +2873,6 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_phrase_matchers.js</caption>
- * region_tag:contactcenterinsights_list_phrase_matchers_sample
- *
  */
   listPhraseMatchersStream(
       request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
@@ -3088,10 +2932,6 @@ export class ContactCenterInsightsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/contact_center_insights.list_phrase_matchers.js</caption>
- * region_tag:contactcenterinsights_list_phrase_matchers_sample
- *
  */
   listPhraseMatchersAsync(
       request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,

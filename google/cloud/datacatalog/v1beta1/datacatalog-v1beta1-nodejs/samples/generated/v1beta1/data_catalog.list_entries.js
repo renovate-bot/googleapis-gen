@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datacatalog_list_entries_sample]
+  // [START datacatalog_v1beta1_generated_DataCatalog_ListEntries_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   listEntries();
-  // [END datacatalog_list_entries_sample]
+  // [END datacatalog_v1beta1_generated_DataCatalog_ListEntries_async]
 }
 
 process.on('unhandledRejection', err => {

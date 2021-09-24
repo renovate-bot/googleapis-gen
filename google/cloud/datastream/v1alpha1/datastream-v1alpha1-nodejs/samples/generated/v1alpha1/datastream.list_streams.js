@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datastream_list_streams_sample]
+  // [START datastream_v1alpha1_generated_Datastream_ListStreams_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(parent) {
   }
 
   listStreams();
-  // [END datastream_list_streams_sample]
+  // [END datastream_v1alpha1_generated_Datastream_ListStreams_async]
 }
 
 process.on('unhandledRejection', err => {

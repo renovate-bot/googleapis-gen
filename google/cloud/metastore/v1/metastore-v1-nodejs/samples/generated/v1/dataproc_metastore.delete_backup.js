@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START metastore_delete_backup_sample]
+  // [START metastore_v1_generated_DataprocMetastore_DeleteBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(name) {
   }
 
   deleteBackup();
-  // [END metastore_delete_backup_sample]
+  // [END metastore_v1_generated_DataprocMetastore_DeleteBackup_async]
 }
 
 process.on('unhandledRejection', err => {

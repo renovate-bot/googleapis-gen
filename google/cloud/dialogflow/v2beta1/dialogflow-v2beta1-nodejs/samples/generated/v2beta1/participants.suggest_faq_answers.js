@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_suggest_faq_answers_sample]
+  // [START dialogflow_v2beta1_generated_Participants_SuggestFaqAnswers_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent) {
   }
 
   suggestFaqAnswers();
-  // [END dialogflow_suggest_faq_answers_sample]
+  // [END dialogflow_v2beta1_generated_Participants_SuggestFaqAnswers_async]
 }
 
 process.on('unhandledRejection', err => {

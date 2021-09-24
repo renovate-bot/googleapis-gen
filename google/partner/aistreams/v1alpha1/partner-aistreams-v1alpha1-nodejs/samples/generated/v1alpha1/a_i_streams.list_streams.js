@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START aistreams_list_streams_sample]
+  // [START aistreams_v1alpha1_generated_AIStreams_ListStreams_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   listStreams();
-  // [END aistreams_list_streams_sample]
+  // [END aistreams_v1alpha1_generated_AIStreams_ListStreams_async]
 }
 
 process.on('unhandledRejection', err => {

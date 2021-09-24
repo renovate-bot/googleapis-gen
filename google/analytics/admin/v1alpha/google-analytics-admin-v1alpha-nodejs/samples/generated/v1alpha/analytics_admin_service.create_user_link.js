@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, userLink) {
-  // [START admin_create_user_link_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateUserLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent, userLink) {
   }
 
   createUserLink();
-  // [END admin_create_user_link_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateUserLink_async]
 }
 
 process.on('unhandledRejection', err => {

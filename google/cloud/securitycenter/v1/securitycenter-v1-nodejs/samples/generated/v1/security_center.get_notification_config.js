@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START securitycenter_get_notification_config_sample]
+  // [START securitycenter_v1_generated_SecurityCenter_GetNotificationConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getNotificationConfig();
-  // [END securitycenter_get_notification_config_sample]
+  // [END securitycenter_v1_generated_SecurityCenter_GetNotificationConfig_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -316,10 +316,6 @@ export class RoadsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.snapToRoads(request);
- *
- * @example <caption>include:samples/generated/v1op/roads_service.snap_to_roads.js</caption>
- * region_tag:roads_snap_to_roads_sample
- *
  */
   snapToRoads(
       request?: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
@@ -388,10 +384,6 @@ export class RoadsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listNearestRoads(request);
- *
- * @example <caption>include:samples/generated/v1op/roads_service.list_nearest_roads.js</caption>
- * region_tag:roads_list_nearest_roads_sample
- *
  */
   listNearestRoads(
       request?: protos.google.maps.roads.v1op.IListNearestRoadsRequest,

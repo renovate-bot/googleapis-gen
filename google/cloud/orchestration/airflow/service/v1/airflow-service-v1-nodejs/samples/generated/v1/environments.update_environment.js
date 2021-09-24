@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START service_update_environment_sample]
+  // [START service_v1_generated_Environments_UpdateEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -156,7 +156,7 @@ function main() {
   }
 
   updateEnvironment();
-  // [END service_update_environment_sample]
+  // [END service_v1_generated_Environments_UpdateEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

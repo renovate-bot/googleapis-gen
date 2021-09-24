@@ -371,10 +371,6 @@ export class EnvironmentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEnvironment(request);
- *
- * @example <caption>include:samples/generated/v1/environments.get_environment.js</caption>
- * region_tag:service_get_environment_sample
- *
  */
   getEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IGetEnvironmentRequest,
@@ -453,10 +449,6 @@ export class EnvironmentsClient {
  * @example
  * const [operation] = await client.createEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/environments.create_environment.js</caption>
- * region_tag:service_create_environment_sample
- *
  */
   createEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1.ICreateEnvironmentRequest,
@@ -506,10 +498,6 @@ export class EnvironmentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/environments.create_environment.js</caption>
- * region_tag:service_create_environment_sample
- *
  */
   async checkCreateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.orchestration.airflow.service.v1.Environment, protos.google.cloud.orchestration.airflow.service.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -674,10 +662,6 @@ export class EnvironmentsClient {
  * @example
  * const [operation] = await client.updateEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/environments.update_environment.js</caption>
- * region_tag:service_update_environment_sample
- *
  */
   updateEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IUpdateEnvironmentRequest,
@@ -727,10 +711,6 @@ export class EnvironmentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/environments.update_environment.js</caption>
- * region_tag:service_update_environment_sample
- *
  */
   async checkUpdateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.orchestration.airflow.service.v1.Environment, protos.google.cloud.orchestration.airflow.service.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -778,10 +758,6 @@ export class EnvironmentsClient {
  * @example
  * const [operation] = await client.deleteEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/environments.delete_environment.js</caption>
- * region_tag:service_delete_environment_sample
- *
  */
   deleteEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IDeleteEnvironmentRequest,
@@ -831,10 +807,6 @@ export class EnvironmentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/environments.delete_environment.js</caption>
- * region_tag:service_delete_environment_sample
- *
  */
   async checkDeleteEnvironmentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.orchestration.airflow.service.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -887,10 +859,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/environments.list_environments.js</caption>
- * region_tag:service_list_environments_sample
- *
  */
   listEnvironments(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListEnvironmentsRequest,
@@ -950,10 +918,6 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/environments.list_environments.js</caption>
- * region_tag:service_list_environments_sample
- *
  */
   listEnvironmentsStream(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListEnvironmentsRequest,
@@ -1006,10 +970,6 @@ export class EnvironmentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/environments.list_environments.js</caption>
- * region_tag:service_list_environments_sample
- *
  */
   listEnvironmentsAsync(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListEnvironmentsRequest,

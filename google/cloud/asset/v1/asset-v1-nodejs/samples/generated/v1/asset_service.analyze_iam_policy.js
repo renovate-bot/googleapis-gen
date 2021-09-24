@@ -16,7 +16,7 @@
 'use strict';
 
 function main(analysisQuery) {
-  // [START asset_analyze_iam_policy_sample]
+  // [START asset_v1_generated_AssetService_AnalyzeIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(analysisQuery) {
   }
 
   analyzeIamPolicy();
-  // [END asset_analyze_iam_policy_sample]
+  // [END asset_v1_generated_AssetService_AnalyzeIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START deploy_list_delivery_pipelines_sample]
+  // [START deploy_v1_generated_CloudDeploy_ListDeliveryPipelines_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(parent) {
   }
 
   listDeliveryPipelines();
-  // [END deploy_list_delivery_pipelines_sample]
+  // [END deploy_v1_generated_CloudDeploy_ListDeliveryPipelines_async]
 }
 
 process.on('unhandledRejection', err => {

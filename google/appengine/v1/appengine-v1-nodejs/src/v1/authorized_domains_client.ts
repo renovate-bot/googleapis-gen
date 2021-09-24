@@ -343,10 +343,6 @@ export class AuthorizedDomainsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
- * region_tag:appengine_list_authorized_domains_sample
- *
  */
   listAuthorizedDomains(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
@@ -405,10 +401,6 @@ export class AuthorizedDomainsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
- * region_tag:appengine_list_authorized_domains_sample
- *
  */
   listAuthorizedDomainsStream(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
@@ -460,10 +452,6 @@ export class AuthorizedDomainsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
- * region_tag:appengine_list_authorized_domains_sample
- *
  */
   listAuthorizedDomainsAsync(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,

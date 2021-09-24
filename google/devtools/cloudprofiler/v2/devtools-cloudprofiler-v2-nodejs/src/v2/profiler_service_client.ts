@@ -332,10 +332,6 @@ export class ProfilerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createProfile(request);
- *
- * @example <caption>include:samples/generated/v2/profiler_service.create_profile.js</caption>
- * region_tag:cloudprofiler_create_profile_sample
- *
  */
   createProfile(
       request?: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
@@ -411,10 +407,6 @@ export class ProfilerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createOfflineProfile(request);
- *
- * @example <caption>include:samples/generated/v2/profiler_service.create_offline_profile.js</caption>
- * region_tag:cloudprofiler_create_offline_profile_sample
- *
  */
   createOfflineProfile(
       request?: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
@@ -494,10 +486,6 @@ export class ProfilerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateProfile(request);
- *
- * @example <caption>include:samples/generated/v2/profiler_service.update_profile.js</caption>
- * region_tag:cloudprofiler_update_profile_sample
- *
  */
   updateProfile(
       request?: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,

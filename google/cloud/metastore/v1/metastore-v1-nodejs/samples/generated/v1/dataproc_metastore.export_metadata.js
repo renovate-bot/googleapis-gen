@@ -16,7 +16,7 @@
 'use strict';
 
 function main(service) {
-  // [START metastore_export_metadata_sample]
+  // [START metastore_v1_generated_DataprocMetastore_ExportMetadata_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(service) {
   }
 
   exportMetadata();
-  // [END metastore_export_metadata_sample]
+  // [END metastore_v1_generated_DataprocMetastore_ExportMetadata_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operation) {
-  // [START googleads_mutate_batch_job_sample]
+  // [START googleads_v8_generated_BatchJobService_MutateBatchJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(customerId, operation) {
   }
 
   mutateBatchJob();
-  // [END googleads_mutate_batch_job_sample]
+  // [END googleads_v8_generated_BatchJobService_MutateBatchJob_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -690,10 +690,6 @@ export class IncomeRangeViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIncomeRangeView(request);
- *
- * @example <caption>include:samples/generated/v7/income_range_view_service.get_income_range_view.js</caption>
- * region_tag:googleads_get_income_range_view_sample
- *
  */
   getIncomeRangeView(
       request?: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,

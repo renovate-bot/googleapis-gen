@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, guestPolicyId, guestPolicy) {
-  // [START osconfig_create_guest_policy_sample]
+  // [START osconfig_v1beta_generated_OsConfigService_CreateGuestPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent, guestPolicyId, guestPolicy) {
   }
 
   createGuestPolicy();
-  // [END osconfig_create_guest_policy_sample]
+  // [END osconfig_v1beta_generated_OsConfigService_CreateGuestPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

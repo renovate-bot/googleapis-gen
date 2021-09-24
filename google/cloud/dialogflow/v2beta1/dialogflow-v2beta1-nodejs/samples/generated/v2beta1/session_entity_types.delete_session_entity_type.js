@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_delete_session_entity_type_sample]
+  // [START dialogflow_v2beta1_generated_SessionEntityTypes_DeleteSessionEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name) {
   }
 
   deleteSessionEntityType();
-  // [END dialogflow_delete_session_entity_type_sample]
+  // [END dialogflow_v2beta1_generated_SessionEntityTypes_DeleteSessionEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, customClassId, customClass) {
-  // [START speech_create_custom_class_sample]
+  // [START speech_v1p1beta1_generated_Adaptation_CreateCustomClass_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, customClassId, customClass) {
   }
 
   createCustomClass();
-  // [END speech_create_custom_class_sample]
+  // [END speech_v1p1beta1_generated_Adaptation_CreateCustomClass_async]
 }
 
 process.on('unhandledRejection', err => {

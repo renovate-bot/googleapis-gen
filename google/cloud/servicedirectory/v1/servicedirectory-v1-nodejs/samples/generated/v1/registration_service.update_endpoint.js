@@ -16,7 +16,7 @@
 'use strict';
 
 function main(endpoint, updateMask) {
-  // [START servicedirectory_update_endpoint_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_UpdateEndpoint_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(endpoint, updateMask) {
   }
 
   updateEndpoint();
-  // [END servicedirectory_update_endpoint_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_UpdateEndpoint_async]
 }
 
 process.on('unhandledRejection', err => {

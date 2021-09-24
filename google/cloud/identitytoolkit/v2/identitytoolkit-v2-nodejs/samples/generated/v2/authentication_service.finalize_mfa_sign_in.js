@@ -16,7 +16,7 @@
 'use strict';
 
 function main(mfaPendingCredential) {
-  // [START identitytoolkit_finalize_mfa_sign_in_sample]
+  // [START identitytoolkit_v2_generated_AuthenticationService_FinalizeMfaSignIn_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(mfaPendingCredential) {
   }
 
   finalizeMfaSignIn();
-  // [END identitytoolkit_finalize_mfa_sign_in_sample]
+  // [END identitytoolkit_v2_generated_AuthenticationService_FinalizeMfaSignIn_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(issue) {
-  // [START contactcenterinsights_update_issue_sample]
+  // [START contactcenterinsights_v1_generated_ContactCenterInsights_UpdateIssue_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(issue) {
   }
 
   updateIssue();
-  // [END contactcenterinsights_update_issue_sample]
+  // [END contactcenterinsights_v1_generated_ContactCenterInsights_UpdateIssue_async]
 }
 
 process.on('unhandledRejection', err => {

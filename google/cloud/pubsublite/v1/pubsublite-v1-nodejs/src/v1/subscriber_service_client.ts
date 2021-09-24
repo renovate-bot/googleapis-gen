@@ -316,10 +316,6 @@ export class SubscriberServiceClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
- *
- * @example <caption>include:samples/generated/v1/subscriber_service.subscribe.js</caption>
- * region_tag:pubsublite_subscribe_sample
- *
  */
   subscribe(
       options?: CallOptions):

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tableName, entries) {
-  // [START bigtable_mutate_rows_sample]
+  // [START bigtable_v2_generated_Bigtable_MutateRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(tableName, entries) {
   }
 
   mutateRows();
-  // [END bigtable_mutate_rows_sample]
+  // [END bigtable_v2_generated_Bigtable_MutateRows_async]
 }
 
 process.on('unhandledRejection', err => {

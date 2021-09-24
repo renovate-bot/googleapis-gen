@@ -16,7 +16,7 @@
 'use strict';
 
 function main(debuggeeId, breakpoint) {
-  // [START clouddebugger_update_active_breakpoint_sample]
+  // [START clouddebugger_v2_generated_Controller2_UpdateActiveBreakpoint_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(debuggeeId, breakpoint) {
   }
 
   updateActiveBreakpoint();
-  // [END clouddebugger_update_active_breakpoint_sample]
+  // [END clouddebugger_v2_generated_Controller2_UpdateActiveBreakpoint_async]
 }
 
 process.on('unhandledRejection', err => {

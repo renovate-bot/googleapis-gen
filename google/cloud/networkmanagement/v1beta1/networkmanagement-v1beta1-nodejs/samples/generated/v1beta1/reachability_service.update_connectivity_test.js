@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, resource) {
-  // [START networkmanagement_update_connectivity_test_sample]
+  // [START networkmanagement_v1beta1_generated_ReachabilityService_UpdateConnectivityTest_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(updateMask, resource) {
   }
 
   updateConnectivityTest();
-  // [END networkmanagement_update_connectivity_test_sample]
+  // [END networkmanagement_v1beta1_generated_ReachabilityService_UpdateConnectivityTest_async]
 }
 
 process.on('unhandledRejection', err => {

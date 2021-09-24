@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dlp_finish_dlp_job_sample]
+  // [START dlp_v2_generated_DlpService_FinishDlpJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   finishDlpJob();
-  // [END dlp_finish_dlp_job_sample]
+  // [END dlp_v2_generated_DlpService_FinishDlpJob_async]
 }
 
 process.on('unhandledRejection', err => {

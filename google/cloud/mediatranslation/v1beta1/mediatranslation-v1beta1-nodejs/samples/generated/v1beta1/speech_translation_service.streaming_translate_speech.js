@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START mediatranslation_streaming_translate_speech_sample]
+  // [START mediatranslation_v1beta1_generated_SpeechTranslationService_StreamingTranslateSpeech_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main() {
   }
 
   streamingTranslateSpeech();
-  // [END mediatranslation_streaming_translate_speech_sample]
+  // [END mediatranslation_v1beta1_generated_SpeechTranslationService_StreamingTranslateSpeech_async]
 }
 
 process.on('unhandledRejection', err => {

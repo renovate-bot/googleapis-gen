@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket, notification) {
-  // [START storage_delete_notification_sample]
+  // [START storage_v1_generated_Storage_DeleteNotification_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(bucket, notification) {
   }
 
   deleteNotification();
-  // [END storage_delete_notification_sample]
+  // [END storage_v1_generated_Storage_DeleteNotification_async]
 }
 
 process.on('unhandledRejection', err => {

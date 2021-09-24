@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, suggestionInfo) {
-  // [START googleads_suggest_smart_campaign_ad_sample]
+  // [START googleads_v8_generated_SmartCampaignSuggestService_SuggestSmartCampaignAd_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(customerId, suggestionInfo) {
   }
 
   suggestSmartCampaignAd();
-  // [END googleads_suggest_smart_campaign_ad_sample]
+  // [END googleads_v8_generated_SmartCampaignSuggestService_SuggestSmartCampaignAd_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -690,10 +690,6 @@ export class CurrencyConstantServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCurrencyConstant(request);
- *
- * @example <caption>include:samples/generated/v7/currency_constant_service.get_currency_constant.js</caption>
- * region_tag:googleads_get_currency_constant_sample
- *
  */
   getCurrencyConstant(
       request?: protos.google.ads.googleads.v7.services.IGetCurrencyConstantRequest,

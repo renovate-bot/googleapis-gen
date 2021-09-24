@@ -16,7 +16,7 @@
 'use strict';
 
 function main(execution, updateMask) {
-  // [START aiplatform_update_execution_sample]
+  // [START aiplatform_v1beta1_generated_MetadataService_UpdateExecution_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(execution, updateMask) {
   }
 
   updateExecution();
-  // [END aiplatform_update_execution_sample]
+  // [END aiplatform_v1beta1_generated_MetadataService_UpdateExecution_async]
 }
 
 process.on('unhandledRejection', err => {

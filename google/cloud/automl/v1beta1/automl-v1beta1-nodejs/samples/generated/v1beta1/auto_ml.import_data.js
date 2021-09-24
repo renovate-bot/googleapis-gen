@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, inputConfig) {
-  // [START automl_import_data_sample]
+  // [START automl_v1beta1_generated_AutoMl_ImportData_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name, inputConfig) {
   }
 
   importData();
-  // [END automl_import_data_sample]
+  // [END automl_v1beta1_generated_AutoMl_ImportData_async]
 }
 
 process.on('unhandledRejection', err => {

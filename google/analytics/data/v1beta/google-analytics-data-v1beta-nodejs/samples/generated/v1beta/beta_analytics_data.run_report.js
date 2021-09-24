@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START data_run_report_sample]
+  // [START data_v1beta_generated_BetaAnalyticsData_RunReport_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -129,7 +129,7 @@ function main() {
   }
 
   runReport();
-  // [END data_run_report_sample]
+  // [END data_v1beta_generated_BetaAnalyticsData_RunReport_async]
 }
 
 process.on('unhandledRejection', err => {

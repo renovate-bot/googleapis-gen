@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, inputConfig) {
-  // [START retail_import_products_sample]
+  // [START retail_v2beta_generated_ProductService_ImportProducts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -89,7 +89,7 @@ function main(parent, inputConfig) {
   }
 
   importProducts();
-  // [END retail_import_products_sample]
+  // [END retail_v2beta_generated_ProductService_ImportProducts_async]
 }
 
 process.on('unhandledRejection', err => {

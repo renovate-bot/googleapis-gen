@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START websecurityscanner_list_crawled_urls_sample]
+  // [START websecurityscanner_v1alpha_generated_WebSecurityScanner_ListCrawledUrls_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listCrawledUrls();
-  // [END websecurityscanner_list_crawled_urls_sample]
+  // [END websecurityscanner_v1alpha_generated_WebSecurityScanner_ListCrawledUrls_async]
 }
 
 process.on('unhandledRejection', err => {

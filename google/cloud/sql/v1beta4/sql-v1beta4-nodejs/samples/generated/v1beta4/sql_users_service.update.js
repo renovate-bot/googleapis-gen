@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_update_sample]
+  // [START sql_v1beta4_generated_SqlUsersService_Update_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   update();
-  // [END sql_update_sample]
+  // [END sql_v1beta4_generated_SqlUsersService_Update_async]
 }
 
 process.on('unhandledRejection', err => {

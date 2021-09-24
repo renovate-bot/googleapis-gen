@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START vision_batch_annotate_images_sample]
+  // [START vision_v1p3beta1_generated_ImageAnnotator_BatchAnnotateImages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   batchAnnotateImages();
-  // [END vision_batch_annotate_images_sample]
+  // [END vision_v1p3beta1_generated_ImageAnnotator_BatchAnnotateImages_async]
 }
 
 process.on('unhandledRejection', err => {

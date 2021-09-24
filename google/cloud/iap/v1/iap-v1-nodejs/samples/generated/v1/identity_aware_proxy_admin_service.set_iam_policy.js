@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START iap_set_iam_policy_sample]
+  // [START iap_v1_generated_IdentityAwareProxyAdminService_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END iap_set_iam_policy_sample]
+  // [END iap_v1_generated_IdentityAwareProxyAdminService_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

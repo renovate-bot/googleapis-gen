@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START securitycenter_run_asset_discovery_sample]
+  // [START securitycenter_v1_generated_SecurityCenter_RunAssetDiscovery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(parent) {
   }
 
   runAssetDiscovery();
-  // [END securitycenter_run_asset_discovery_sample]
+  // [END securitycenter_v1_generated_SecurityCenter_RunAssetDiscovery_async]
 }
 
 process.on('unhandledRejection', err => {

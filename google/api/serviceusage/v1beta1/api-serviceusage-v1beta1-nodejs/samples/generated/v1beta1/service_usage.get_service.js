@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_get_service_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_GetService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main() {
   }
 
   getService();
-  // [END serviceusage_get_service_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_GetService_async]
 }
 
 process.on('unhandledRejection', err => {

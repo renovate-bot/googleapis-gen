@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_list_agents_sample]
+  // [START cx_v3_generated_Agents_ListAgents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent) {
   }
 
   listAgents();
-  // [END cx_list_agents_sample]
+  // [END cx_v3_generated_Agents_ListAgents_async]
 }
 
 process.on('unhandledRejection', err => {

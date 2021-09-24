@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START alertcenter_create_alert_feedback_sample]
+  // [START alertcenter_v1beta1_generated_AlertCenterService_CreateAlertFeedback_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   createAlertFeedback();
-  // [END alertcenter_create_alert_feedback_sample]
+  // [END alertcenter_v1beta1_generated_AlertCenterService_CreateAlertFeedback_async]
 }
 
 process.on('unhandledRejection', err => {

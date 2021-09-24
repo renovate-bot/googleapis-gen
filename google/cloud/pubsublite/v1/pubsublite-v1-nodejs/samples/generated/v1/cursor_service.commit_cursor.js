@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START pubsublite_commit_cursor_sample]
+  // [START pubsublite_v1_generated_CursorService_CommitCursor_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main() {
   }
 
   commitCursor();
-  // [END pubsublite_commit_cursor_sample]
+  // [END pubsublite_v1_generated_CursorService_CommitCursor_async]
 }
 
 process.on('unhandledRejection', err => {

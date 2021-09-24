@@ -16,7 +16,7 @@
 'use strict';
 
 function main(authorizationPolicy) {
-  // [START networksecurity_update_authorization_policy_sample]
+  // [START networksecurity_v1beta1_generated_NetworkSecurity_UpdateAuthorizationPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(authorizationPolicy) {
   }
 
   updateAuthorizationPolicy();
-  // [END networksecurity_update_authorization_policy_sample]
+  // [END networksecurity_v1beta1_generated_NetworkSecurity_UpdateAuthorizationPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

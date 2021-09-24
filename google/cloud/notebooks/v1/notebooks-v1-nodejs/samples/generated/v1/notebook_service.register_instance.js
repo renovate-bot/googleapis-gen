@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, instanceId) {
-  // [START notebooks_register_instance_sample]
+  // [START notebooks_v1_generated_NotebookService_RegisterInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent, instanceId) {
   }
 
   registerInstance();
-  // [END notebooks_register_instance_sample]
+  // [END notebooks_v1_generated_NotebookService_RegisterInstance_async]
 }
 
 process.on('unhandledRejection', err => {

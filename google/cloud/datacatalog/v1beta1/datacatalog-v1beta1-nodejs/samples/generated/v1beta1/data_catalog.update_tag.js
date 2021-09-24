@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tag) {
-  // [START datacatalog_update_tag_sample]
+  // [START datacatalog_v1beta1_generated_DataCatalog_UpdateTag_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(tag) {
   }
 
   updateTag();
-  // [END datacatalog_update_tag_sample]
+  // [END datacatalog_v1beta1_generated_DataCatalog_UpdateTag_async]
 }
 
 process.on('unhandledRejection', err => {

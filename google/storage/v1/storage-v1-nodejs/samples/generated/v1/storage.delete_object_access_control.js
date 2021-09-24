@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket, entity, object) {
-  // [START storage_delete_object_access_control_sample]
+  // [START storage_v1_generated_Storage_DeleteObjectAccessControl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(bucket, entity, object) {
   }
 
   deleteObjectAccessControl();
-  // [END storage_delete_object_access_control_sample]
+  // [END storage_v1_generated_Storage_DeleteObjectAccessControl_async]
 }
 
 process.on('unhandledRejection', err => {

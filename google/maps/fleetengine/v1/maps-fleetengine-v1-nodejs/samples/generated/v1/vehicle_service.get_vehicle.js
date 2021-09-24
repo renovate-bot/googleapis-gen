@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START fleetengine_get_vehicle_sample]
+  // [START fleetengine_v1_generated_VehicleService_GetVehicle_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(name) {
   }
 
   getVehicle();
-  // [END fleetengine_get_vehicle_sample]
+  // [END fleetengine_v1_generated_VehicleService_GetVehicle_async]
 }
 
 process.on('unhandledRejection', err => {

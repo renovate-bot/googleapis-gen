@@ -16,7 +16,7 @@
 'use strict';
 
 function main(columnSpec) {
-  // [START automl_update_column_spec_sample]
+  // [START automl_v1beta1_generated_AutoMl_UpdateColumnSpec_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(columnSpec) {
   }
 
   updateColumnSpec();
-  // [END automl_update_column_spec_sample]
+  // [END automl_v1beta1_generated_AutoMl_UpdateColumnSpec_async]
 }
 
 process.on('unhandledRejection', err => {

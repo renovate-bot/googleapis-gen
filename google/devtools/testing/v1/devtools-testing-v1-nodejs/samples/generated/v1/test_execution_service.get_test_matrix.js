@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START testing_get_test_matrix_sample]
+  // [START testing_v1_generated_TestExecutionService_GetTestMatrix_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   getTestMatrix();
-  // [END testing_get_test_matrix_sample]
+  // [END testing_v1_generated_TestExecutionService_GetTestMatrix_async]
 }
 
 process.on('unhandledRejection', err => {

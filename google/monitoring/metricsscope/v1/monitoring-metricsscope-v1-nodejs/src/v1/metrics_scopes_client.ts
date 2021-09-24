@@ -360,10 +360,6 @@ export class MetricsScopesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMetricsScope(request);
- *
- * @example <caption>include:samples/generated/v1/metrics_scopes.get_metrics_scope.js</caption>
- * region_tag:metricsscope_get_metrics_scope_sample
- *
  */
   getMetricsScope(
       request?: protos.google.monitoring.metricsscope.v1.IGetMetricsScopeRequest,
@@ -439,10 +435,6 @@ export class MetricsScopesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listMetricsScopesByMonitoredProject(request);
- *
- * @example <caption>include:samples/generated/v1/metrics_scopes.list_metrics_scopes_by_monitored_project.js</caption>
- * region_tag:metricsscope_list_metrics_scopes_by_monitored_project_sample
- *
  */
   listMetricsScopesByMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.IListMetricsScopesByMonitoredProjectRequest,
@@ -520,10 +512,6 @@ export class MetricsScopesClient {
  * @example
  * const [operation] = await client.createMonitoredProject(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/metrics_scopes.create_monitored_project.js</caption>
- * region_tag:metricsscope_create_monitored_project_sample
- *
  */
   createMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
@@ -573,10 +561,6 @@ export class MetricsScopesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/metrics_scopes.create_monitored_project.js</caption>
- * region_tag:metricsscope_create_monitored_project_sample
- *
  */
   async checkCreateMonitoredProjectProgress(name: string): Promise<LROperation<protos.google.monitoring.metricsscope.v1.MonitoredProject, protos.google.monitoring.metricsscope.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -629,10 +613,6 @@ export class MetricsScopesClient {
  * @example
  * const [operation] = await client.deleteMonitoredProject(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/metrics_scopes.delete_monitored_project.js</caption>
- * region_tag:metricsscope_delete_monitored_project_sample
- *
  */
   deleteMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
@@ -682,10 +662,6 @@ export class MetricsScopesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/metrics_scopes.delete_monitored_project.js</caption>
- * region_tag:metricsscope_delete_monitored_project_sample
- *
  */
   async checkDeleteMonitoredProjectProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.monitoring.metricsscope.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

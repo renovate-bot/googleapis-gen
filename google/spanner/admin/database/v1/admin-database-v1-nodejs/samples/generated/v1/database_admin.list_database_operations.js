@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START database_list_database_operations_sample]
+  // [START database_v1_generated_DatabaseAdmin_ListDatabaseOperations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -95,7 +95,7 @@ function main(parent) {
   }
 
   listDatabaseOperations();
-  // [END database_list_database_operations_sample]
+  // [END database_v1_generated_DatabaseAdmin_ListDatabaseOperations_async]
 }
 
 process.on('unhandledRejection', err => {

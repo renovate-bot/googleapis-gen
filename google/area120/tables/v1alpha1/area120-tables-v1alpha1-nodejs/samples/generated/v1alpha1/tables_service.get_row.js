@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START tables_get_row_sample]
+  // [START tables_v1alpha1_generated_TablesService_GetRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   getRow();
-  // [END tables_get_row_sample]
+  // [END tables_v1alpha1_generated_TablesService_GetRow_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -453,10 +453,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCertificate(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.create_certificate.js</caption>
- * region_tag:privateca_create_certificate_sample
- *
  */
   createCertificate(
       request?: protos.google.cloud.security.privateca.v1beta1.ICreateCertificateRequest,
@@ -528,10 +524,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCertificate(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.get_certificate.js</caption>
- * region_tag:privateca_get_certificate_sample
- *
  */
   getCertificate(
       request?: protos.google.cloud.security.privateca.v1beta1.IGetCertificateRequest,
@@ -620,10 +612,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.revokeCertificate(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.revoke_certificate.js</caption>
- * region_tag:privateca_revoke_certificate_sample
- *
  */
   revokeCertificate(
       request?: protos.google.cloud.security.privateca.v1beta1.IRevokeCertificateRequest,
@@ -712,10 +700,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCertificate(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.update_certificate.js</caption>
- * region_tag:privateca_update_certificate_sample
- *
  */
   updateCertificate(
       request?: protos.google.cloud.security.privateca.v1beta1.IUpdateCertificateRequest,
@@ -794,10 +778,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.fetchCertificateAuthorityCsr(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.fetch_certificate_authority_csr.js</caption>
- * region_tag:privateca_fetch_certificate_authority_csr_sample
- *
  */
   fetchCertificateAuthorityCsr(
       request?: protos.google.cloud.security.privateca.v1beta1.IFetchCertificateAuthorityCsrRequest,
@@ -870,10 +850,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCertificateAuthority(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.get_certificate_authority.js</caption>
- * region_tag:privateca_get_certificate_authority_sample
- *
  */
   getCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IGetCertificateAuthorityRequest,
@@ -946,10 +922,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCertificateRevocationList(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.get_certificate_revocation_list.js</caption>
- * region_tag:privateca_get_certificate_revocation_list_sample
- *
  */
   getCertificateRevocationList(
       request?: protos.google.cloud.security.privateca.v1beta1.IGetCertificateRevocationListRequest,
@@ -1021,10 +993,6 @@ export class CertificateAuthorityServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getReusableConfig(request);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.get_reusable_config.js</caption>
- * region_tag:privateca_get_reusable_config_sample
- *
  */
   getReusableConfig(
       request?: protos.google.cloud.security.privateca.v1beta1.IGetReusableConfigRequest,
@@ -1126,10 +1094,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.activateCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.activate_certificate_authority.js</caption>
- * region_tag:privateca_activate_certificate_authority_sample
- *
  */
   activateCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IActivateCertificateAuthorityRequest,
@@ -1179,10 +1143,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.activate_certificate_authority.js</caption>
- * region_tag:privateca_activate_certificate_authority_sample
- *
  */
   async checkActivateCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1250,10 +1210,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.createCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.create_certificate_authority.js</caption>
- * region_tag:privateca_create_certificate_authority_sample
- *
  */
   createCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.ICreateCertificateAuthorityRequest,
@@ -1303,10 +1259,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.create_certificate_authority.js</caption>
- * region_tag:privateca_create_certificate_authority_sample
- *
  */
   async checkCreateCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1368,10 +1320,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.disableCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.disable_certificate_authority.js</caption>
- * region_tag:privateca_disable_certificate_authority_sample
- *
  */
   disableCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IDisableCertificateAuthorityRequest,
@@ -1421,10 +1369,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.disable_certificate_authority.js</caption>
- * region_tag:privateca_disable_certificate_authority_sample
- *
  */
   async checkDisableCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1486,10 +1430,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.enableCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.enable_certificate_authority.js</caption>
- * region_tag:privateca_enable_certificate_authority_sample
- *
  */
   enableCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IEnableCertificateAuthorityRequest,
@@ -1539,10 +1479,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.enable_certificate_authority.js</caption>
- * region_tag:privateca_enable_certificate_authority_sample
- *
  */
   async checkEnableCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1604,10 +1540,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.restoreCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.restore_certificate_authority.js</caption>
- * region_tag:privateca_restore_certificate_authority_sample
- *
  */
   restoreCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IRestoreCertificateAuthorityRequest,
@@ -1657,10 +1589,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.restore_certificate_authority.js</caption>
- * region_tag:privateca_restore_certificate_authority_sample
- *
  */
   async checkRestoreCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1722,10 +1650,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.scheduleDeleteCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.schedule_delete_certificate_authority.js</caption>
- * region_tag:privateca_schedule_delete_certificate_authority_sample
- *
  */
   scheduleDeleteCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IScheduleDeleteCertificateAuthorityRequest,
@@ -1775,10 +1699,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.schedule_delete_certificate_authority.js</caption>
- * region_tag:privateca_schedule_delete_certificate_authority_sample
- *
  */
   async checkScheduleDeleteCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1841,10 +1761,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.updateCertificateAuthority(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.update_certificate_authority.js</caption>
- * region_tag:privateca_update_certificate_authority_sample
- *
  */
   updateCertificateAuthority(
       request?: protos.google.cloud.security.privateca.v1beta1.IUpdateCertificateAuthorityRequest,
@@ -1894,10 +1810,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.update_certificate_authority.js</caption>
- * region_tag:privateca_update_certificate_authority_sample
- *
  */
   async checkUpdateCertificateAuthorityProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateAuthority, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1960,10 +1872,6 @@ export class CertificateAuthorityServiceClient {
  * @example
  * const [operation] = await client.updateCertificateRevocationList(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.update_certificate_revocation_list.js</caption>
- * region_tag:privateca_update_certificate_revocation_list_sample
- *
  */
   updateCertificateRevocationList(
       request?: protos.google.cloud.security.privateca.v1beta1.IUpdateCertificateRevocationListRequest,
@@ -2013,10 +1921,6 @@ export class CertificateAuthorityServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.update_certificate_revocation_list.js</caption>
- * region_tag:privateca_update_certificate_revocation_list_sample
- *
  */
   async checkUpdateCertificateRevocationListProgress(name: string): Promise<LROperation<protos.google.cloud.security.privateca.v1beta1.CertificateRevocationList, protos.google.cloud.security.privateca.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2084,10 +1988,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificates.js</caption>
- * region_tag:privateca_list_certificates_sample
- *
  */
   listCertificates(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificatesRequest,
@@ -2162,10 +2062,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificates.js</caption>
- * region_tag:privateca_list_certificates_sample
- *
  */
   listCertificatesStream(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificatesRequest,
@@ -2233,10 +2129,6 @@ export class CertificateAuthorityServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificates.js</caption>
- * region_tag:privateca_list_certificates_sample
- *
  */
   listCertificatesAsync(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificatesRequest,
@@ -2317,10 +2209,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificate_authorities.js</caption>
- * region_tag:privateca_list_certificate_authorities_sample
- *
  */
   listCertificateAuthorities(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificateAuthoritiesRequest,
@@ -2391,10 +2279,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificate_authorities.js</caption>
- * region_tag:privateca_list_certificate_authorities_sample
- *
  */
   listCertificateAuthoritiesStream(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificateAuthoritiesRequest,
@@ -2458,10 +2342,6 @@ export class CertificateAuthorityServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificate_authorities.js</caption>
- * region_tag:privateca_list_certificate_authorities_sample
- *
  */
   listCertificateAuthoritiesAsync(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificateAuthoritiesRequest,
@@ -2542,10 +2422,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificate_revocation_lists.js</caption>
- * region_tag:privateca_list_certificate_revocation_lists_sample
- *
  */
   listCertificateRevocationLists(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificateRevocationListsRequest,
@@ -2616,10 +2492,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificate_revocation_lists.js</caption>
- * region_tag:privateca_list_certificate_revocation_lists_sample
- *
  */
   listCertificateRevocationListsStream(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificateRevocationListsRequest,
@@ -2683,10 +2555,6 @@ export class CertificateAuthorityServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_certificate_revocation_lists.js</caption>
- * region_tag:privateca_list_certificate_revocation_lists_sample
- *
  */
   listCertificateRevocationListsAsync(
       request?: protos.google.cloud.security.privateca.v1beta1.IListCertificateRevocationListsRequest,
@@ -2767,10 +2635,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_reusable_configs.js</caption>
- * region_tag:privateca_list_reusable_configs_sample
- *
  */
   listReusableConfigs(
       request?: protos.google.cloud.security.privateca.v1beta1.IListReusableConfigsRequest,
@@ -2841,10 +2705,6 @@ export class CertificateAuthorityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_reusable_configs.js</caption>
- * region_tag:privateca_list_reusable_configs_sample
- *
  */
   listReusableConfigsStream(
       request?: protos.google.cloud.security.privateca.v1beta1.IListReusableConfigsRequest,
@@ -2908,10 +2768,6 @@ export class CertificateAuthorityServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/certificate_authority_service.list_reusable_configs.js</caption>
- * region_tag:privateca_list_reusable_configs_sample
- *
  */
   listReusableConfigsAsync(
       request?: protos.google.cloud.security.privateca.v1beta1.IListReusableConfigsRequest,

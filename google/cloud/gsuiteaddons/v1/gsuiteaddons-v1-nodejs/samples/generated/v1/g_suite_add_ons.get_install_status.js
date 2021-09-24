@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gsuiteaddons_get_install_status_sample]
+  // [START gsuiteaddons_v1_generated_GSuiteAddOns_GetInstallStatus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getInstallStatus();
-  // [END gsuiteaddons_get_install_status_sample]
+  // [END gsuiteaddons_v1_generated_GSuiteAddOns_GetInstallStatus_async]
 }
 
 process.on('unhandledRejection', err => {

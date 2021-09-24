@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, osPolicyAssignment, osPolicyAssignmentId) {
-  // [START osconfig_create_o_s_policy_assignment_sample]
+  // [START osconfig_v1alpha_generated_OsConfigZonalService_CreateOSPolicyAssignment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent, osPolicyAssignment, osPolicyAssignmentId) {
   }
 
   createOSPolicyAssignment();
-  // [END osconfig_create_o_s_policy_assignment_sample]
+  // [END osconfig_v1alpha_generated_OsConfigZonalService_CreateOSPolicyAssignment_async]
 }
 
 process.on('unhandledRejection', err => {

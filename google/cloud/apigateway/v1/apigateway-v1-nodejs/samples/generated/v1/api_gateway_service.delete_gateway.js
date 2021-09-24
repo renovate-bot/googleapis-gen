@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START apigateway_delete_gateway_sample]
+  // [START apigateway_v1_generated_ApiGatewayService_DeleteGateway_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteGateway();
-  // [END apigateway_delete_gateway_sample]
+  // [END apigateway_v1_generated_ApiGatewayService_DeleteGateway_async]
 }
 
 process.on('unhandledRejection', err => {

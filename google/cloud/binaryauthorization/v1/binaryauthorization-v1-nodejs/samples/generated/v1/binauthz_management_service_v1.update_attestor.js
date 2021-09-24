@@ -16,7 +16,7 @@
 'use strict';
 
 function main(attestor) {
-  // [START binaryauthorization_update_attestor_sample]
+  // [START binaryauthorization_v1_generated_BinauthzManagementServiceV1_UpdateAttestor_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(attestor) {
   }
 
   updateAttestor();
-  // [END binaryauthorization_update_attestor_sample]
+  // [END binaryauthorization_v1_generated_BinauthzManagementServiceV1_UpdateAttestor_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, conversions, partialFailure) {
-  // [START googleads_upload_call_conversions_sample]
+  // [START googleads_v7_generated_ConversionUploadService_UploadCallConversions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(customerId, conversions, partialFailure) {
   }
 
   uploadCallConversions();
-  // [END googleads_upload_call_conversions_sample]
+  // [END googleads_v7_generated_ConversionUploadService_UploadCallConversions_async]
 }
 
 process.on('unhandledRejection', err => {

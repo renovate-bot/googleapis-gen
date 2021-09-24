@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_custom_interests_sample]
+  // [START googleads_v8_generated_CustomInterestService_MutateCustomInterests_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(customerId, operations) {
   }
 
   mutateCustomInterests();
-  // [END googleads_mutate_custom_interests_sample]
+  // [END googleads_v8_generated_CustomInterestService_MutateCustomInterests_async]
 }
 
 process.on('unhandledRejection', err => {

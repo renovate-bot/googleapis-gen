@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START testing_get_apk_details_sample]
+  // [START testing_v1_generated_ApplicationDetailService_GetApkDetails_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   getApkDetails();
-  // [END testing_get_apk_details_sample]
+  // [END testing_v1_generated_ApplicationDetailService_GetApkDetails_async]
 }
 
 process.on('unhandledRejection', err => {

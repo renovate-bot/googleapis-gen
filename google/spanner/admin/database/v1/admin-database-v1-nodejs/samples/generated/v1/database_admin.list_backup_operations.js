@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START database_list_backup_operations_sample]
+  // [START database_v1_generated_DatabaseAdmin_ListBackupOperations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -93,7 +93,7 @@ function main(parent) {
   }
 
   listBackupOperations();
-  // [END database_list_backup_operations_sample]
+  // [END database_v1_generated_DatabaseAdmin_ListBackupOperations_async]
 }
 
 process.on('unhandledRejection', err => {

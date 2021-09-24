@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_start_resumable_write_sample]
+  // [START storage_v1_generated_Storage_StartResumableWrite_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   startResumableWrite();
-  // [END storage_start_resumable_write_sample]
+  // [END storage_v1_generated_Storage_StartResumableWrite_async]
 }
 
 process.on('unhandledRejection', err => {

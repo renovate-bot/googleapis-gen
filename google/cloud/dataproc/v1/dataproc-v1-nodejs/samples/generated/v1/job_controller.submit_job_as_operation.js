@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, region, job) {
-  // [START dataproc_submit_job_as_operation_sample]
+  // [START dataproc_v1_generated_JobController_SubmitJobAsOperation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(projectId, region, job) {
   }
 
   submitJobAsOperation();
-  // [END dataproc_submit_job_as_operation_sample]
+  // [END dataproc_v1_generated_JobController_SubmitJobAsOperation_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_list_versions_sample]
+  // [START cx_v3_generated_Versions_ListVersions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent) {
   }
 
   listVersions();
-  // [END cx_list_versions_sample]
+  // [END cx_v3_generated_Versions_ListVersions_async]
 }
 
 process.on('unhandledRejection', err => {

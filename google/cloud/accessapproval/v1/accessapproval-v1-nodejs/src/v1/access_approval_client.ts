@@ -352,10 +352,6 @@ export class AccessApprovalClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getApprovalRequest(request);
- *
- * @example <caption>include:samples/generated/v1/access_approval.get_approval_request.js</caption>
- * region_tag:accessapproval_get_approval_request_sample
- *
  */
   getApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IGetApprovalRequestMessage,
@@ -432,10 +428,6 @@ export class AccessApprovalClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.approveApprovalRequest(request);
- *
- * @example <caption>include:samples/generated/v1/access_approval.approve_approval_request.js</caption>
- * region_tag:accessapproval_approve_approval_request_sample
- *
  */
   approveApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IApproveApprovalRequestMessage,
@@ -516,10 +508,6 @@ export class AccessApprovalClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.dismissApprovalRequest(request);
- *
- * @example <caption>include:samples/generated/v1/access_approval.dismiss_approval_request.js</caption>
- * region_tag:accessapproval_dismiss_approval_request_sample
- *
  */
   dismissApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
@@ -591,10 +579,6 @@ export class AccessApprovalClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAccessApprovalSettings(request);
- *
- * @example <caption>include:samples/generated/v1/access_approval.get_access_approval_settings.js</caption>
- * region_tag:accessapproval_get_access_approval_settings_sample
- *
  */
   getAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IGetAccessApprovalSettingsMessage,
@@ -678,10 +662,6 @@ export class AccessApprovalClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateAccessApprovalSettings(request);
- *
- * @example <caption>include:samples/generated/v1/access_approval.update_access_approval_settings.js</caption>
- * region_tag:accessapproval_update_access_approval_settings_sample
- *
  */
   updateAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
@@ -758,10 +738,6 @@ export class AccessApprovalClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAccessApprovalSettings(request);
- *
- * @example <caption>include:samples/generated/v1/access_approval.delete_access_approval_settings.js</caption>
- * region_tag:accessapproval_delete_access_approval_settings_sample
- *
  */
   deleteAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IDeleteAccessApprovalSettingsMessage,
@@ -855,10 +831,6 @@ export class AccessApprovalClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_approval.list_approval_requests.js</caption>
- * region_tag:accessapproval_list_approval_requests_sample
- *
  */
   listApprovalRequests(
       request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
@@ -928,10 +900,6 @@ export class AccessApprovalClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_approval.list_approval_requests.js</caption>
- * region_tag:accessapproval_list_approval_requests_sample
- *
  */
   listApprovalRequestsStream(
       request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
@@ -994,10 +962,6 @@ export class AccessApprovalClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/access_approval.list_approval_requests.js</caption>
- * region_tag:accessapproval_list_approval_requests_sample
- *
  */
   listApprovalRequestsAsync(
       request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,

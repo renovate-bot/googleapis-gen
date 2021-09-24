@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START servicedirectory_list_endpoints_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_ListEndpoints_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -85,7 +85,7 @@ function main(parent) {
   }
 
   listEndpoints();
-  // [END servicedirectory_list_endpoints_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_ListEndpoints_async]
 }
 
 process.on('unhandledRejection', err => {

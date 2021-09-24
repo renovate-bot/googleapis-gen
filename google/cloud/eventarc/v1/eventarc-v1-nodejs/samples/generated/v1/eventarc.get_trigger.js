@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START eventarc_get_trigger_sample]
+  // [START eventarc_v1_generated_Eventarc_GetTrigger_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getTrigger();
-  // [END eventarc_get_trigger_sample]
+  // [END eventarc_v1_generated_Eventarc_GetTrigger_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(deployment) {
-  // [START gsuiteaddons_replace_deployment_sample]
+  // [START gsuiteaddons_v1_generated_GSuiteAddOns_ReplaceDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(deployment) {
   }
 
   replaceDeployment();
-  // [END gsuiteaddons_replace_deployment_sample]
+  // [END gsuiteaddons_v1_generated_GSuiteAddOns_ReplaceDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

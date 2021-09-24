@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START migration_list_migration_subtasks_sample]
+  // [START migration_v2alpha_generated_MigrationService_ListMigrationSubtasks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent) {
   }
 
   listMigrationSubtasks();
-  // [END migration_list_migration_subtasks_sample]
+  // [END migration_v2alpha_generated_MigrationService_ListMigrationSubtasks_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(serviceName) {
-  // [START servicemanagement_delete_service_sample]
+  // [START servicemanagement_v1_generated_ServiceManager_DeleteService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(serviceName) {
   }
 
   deleteService();
-  // [END servicemanagement_delete_service_sample]
+  // [END servicemanagement_v1_generated_ServiceManager_DeleteService_async]
 }
 
 process.on('unhandledRejection', err => {

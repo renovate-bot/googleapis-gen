@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_delete_authorized_certificate_sample]
+  // [START appengine_v1_generated_AuthorizedCertificates_DeleteAuthorizedCertificate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   deleteAuthorizedCertificate();
-  // [END appengine_delete_authorized_certificate_sample]
+  // [END appengine_v1_generated_AuthorizedCertificates_DeleteAuthorizedCertificate_async]
 }
 
 process.on('unhandledRejection', err => {

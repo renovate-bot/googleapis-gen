@@ -16,7 +16,7 @@
 'use strict';
 
 function main(query) {
-  // [START googleads_search_google_ads_fields_sample]
+  // [START googleads_v8_generated_GoogleAdsFieldService_SearchGoogleAdsFields_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(query) {
   }
 
   searchGoogleAdsFields();
-  // [END googleads_search_google_ads_fields_sample]
+  // [END googleads_v8_generated_GoogleAdsFieldService_SearchGoogleAdsFields_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START managedidentities_create_microsoft_ad_domain_sample]
+  // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_CreateMicrosoftAdDomain_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main() {
   }
 
   createMicrosoftAdDomain();
-  // [END managedidentities_create_microsoft_ad_domain_sample]
+  // [END managedidentities_v1beta1_generated_ManagedIdentitiesService_CreateMicrosoftAdDomain_async]
 }
 
 process.on('unhandledRejection', err => {

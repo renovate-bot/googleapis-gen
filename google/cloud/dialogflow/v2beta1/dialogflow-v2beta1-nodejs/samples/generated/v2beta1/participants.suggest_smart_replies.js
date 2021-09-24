@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_suggest_smart_replies_sample]
+  // [START dialogflow_v2beta1_generated_Participants_SuggestSmartReplies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   suggestSmartReplies();
-  // [END dialogflow_suggest_smart_replies_sample]
+  // [END dialogflow_v2beta1_generated_Participants_SuggestSmartReplies_async]
 }
 
 process.on('unhandledRejection', err => {

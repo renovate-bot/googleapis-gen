@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_undelete_role_sample]
+  // [START admin_v1_generated_IAM_UndeleteRole_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main() {
   }
 
   undeleteRole();
-  // [END admin_undelete_role_sample]
+  // [END admin_v1_generated_IAM_UndeleteRole_async]
 }
 
 process.on('unhandledRejection', err => {

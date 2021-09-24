@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_get_patch_job_sample]
+  // [START osconfig_v1beta_generated_OsConfigService_GetPatchJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getPatchJob();
-  // [END osconfig_get_patch_job_sample]
+  // [END osconfig_v1beta_generated_OsConfigService_GetPatchJob_async]
 }
 
 process.on('unhandledRejection', err => {

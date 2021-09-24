@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database) {
-  // [START firestore_listen_sample]
+  // [START firestore_v1_generated_Firestore_Listen_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(database) {
   }
 
   listen();
-  // [END firestore_listen_sample]
+  // [END firestore_v1_generated_Firestore_Listen_async]
 }
 
 process.on('unhandledRejection', err => {

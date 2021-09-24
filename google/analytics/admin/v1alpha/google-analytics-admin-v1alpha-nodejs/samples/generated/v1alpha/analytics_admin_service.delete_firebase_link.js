@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_firebase_link_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_DeleteFirebaseLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteFirebaseLink();
-  // [END admin_delete_firebase_link_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_DeleteFirebaseLink_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, realmId, realm) {
-  // [START gaming_create_realm_sample]
+  // [START gaming_v1beta_generated_RealmsService_CreateRealm_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, realmId, realm) {
   }
 
   createRealm();
-  // [END gaming_create_realm_sample]
+  // [END gaming_v1beta_generated_RealmsService_CreateRealm_async]
 }
 
 process.on('unhandledRejection', err => {

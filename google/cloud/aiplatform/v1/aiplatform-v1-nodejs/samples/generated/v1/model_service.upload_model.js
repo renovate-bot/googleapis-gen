@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, model) {
-  // [START aiplatform_upload_model_sample]
+  // [START aiplatform_v1_generated_ModelService_UploadModel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, model) {
   }
 
   uploadModel();
-  // [END aiplatform_upload_model_sample]
+  // [END aiplatform_v1_generated_ModelService_UploadModel_async]
 }
 
 process.on('unhandledRejection', err => {

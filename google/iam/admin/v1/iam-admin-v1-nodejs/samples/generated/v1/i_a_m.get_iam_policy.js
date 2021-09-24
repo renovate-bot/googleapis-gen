@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START admin_get_iam_policy_sample]
+  // [START admin_v1_generated_IAM_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END admin_get_iam_policy_sample]
+  // [END admin_v1_generated_IAM_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

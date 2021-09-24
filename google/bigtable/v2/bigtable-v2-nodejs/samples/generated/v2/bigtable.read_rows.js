@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tableName) {
-  // [START bigtable_read_rows_sample]
+  // [START bigtable_v2_generated_Bigtable_ReadRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(tableName) {
   }
 
   readRows();
-  // [END bigtable_read_rows_sample]
+  // [END bigtable_v2_generated_Bigtable_ReadRows_async]
 }
 
 process.on('unhandledRejection', err => {

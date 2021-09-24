@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START migration_get_migration_workflow_sample]
+  // [START migration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   getMigrationWorkflow();
-  // [END migration_get_migration_workflow_sample]
+  // [END migration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
 }
 
 process.on('unhandledRejection', err => {

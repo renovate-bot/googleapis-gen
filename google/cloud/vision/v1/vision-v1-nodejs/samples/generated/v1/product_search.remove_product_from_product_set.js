@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, product) {
-  // [START vision_remove_product_from_product_set_sample]
+  // [START vision_v1_generated_ProductSearch_RemoveProductFromProductSet_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(name, product) {
   }
 
   removeProductFromProductSet();
-  // [END vision_remove_product_from_product_set_sample]
+  // [END vision_v1_generated_ProductSearch_RemoveProductFromProductSet_async]
 }
 
 process.on('unhandledRejection', err => {

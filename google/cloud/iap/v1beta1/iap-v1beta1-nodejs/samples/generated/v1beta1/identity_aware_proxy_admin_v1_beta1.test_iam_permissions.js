@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START iap_test_iam_permissions_sample]
+  // [START iap_v1beta1_generated_IdentityAwareProxyAdminV1Beta1_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END iap_test_iam_permissions_sample]
+  // [END iap_v1beta1_generated_IdentityAwareProxyAdminV1Beta1_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

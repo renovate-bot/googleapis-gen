@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START executions_get_execution_sample]
+  // [START executions_v1_generated_Executions_GetExecution_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   getExecution();
-  // [END executions_get_execution_sample]
+  // [END executions_v1_generated_Executions_GetExecution_async]
 }
 
 process.on('unhandledRejection', err => {

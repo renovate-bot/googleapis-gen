@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, migrationJob) {
-  // [START clouddms_update_migration_job_sample]
+  // [START clouddms_v1_generated_DataMigrationService_UpdateMigrationJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(updateMask, migrationJob) {
   }
 
   updateMigrationJob();
-  // [END clouddms_update_migration_job_sample]
+  // [END clouddms_v1_generated_DataMigrationService_UpdateMigrationJob_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, groupBy) {
-  // [START securitycenter_group_assets_sample]
+  // [START securitycenter_v1beta1_generated_SecurityCenter_GroupAssets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -121,7 +121,7 @@ function main(parent, groupBy) {
   }
 
   groupAssets();
-  // [END securitycenter_group_assets_sample]
+  // [END securitycenter_v1beta1_generated_SecurityCenter_GroupAssets_async]
 }
 
 process.on('unhandledRejection', err => {

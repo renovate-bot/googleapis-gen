@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask) {
-  // [START admin_update_custom_dimension_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateCustomDimension_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(updateMask) {
   }
 
   updateCustomDimension();
-  // [END admin_update_custom_dimension_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateCustomDimension_async]
 }
 
 process.on('unhandledRejection', err => {

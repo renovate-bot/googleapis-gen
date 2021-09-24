@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, environmentId, environment) {
-  // [START notebooks_create_environment_sample]
+  // [START notebooks_v1_generated_NotebookService_CreateEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, environmentId, environment) {
   }
 
   createEnvironment();
-  // [END notebooks_create_environment_sample]
+  // [END notebooks_v1_generated_NotebookService_CreateEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

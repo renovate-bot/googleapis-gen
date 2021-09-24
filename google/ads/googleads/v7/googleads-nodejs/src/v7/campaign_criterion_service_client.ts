@@ -690,10 +690,6 @@ export class CampaignCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignCriterion(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_criterion_service.get_campaign_criterion.js</caption>
- * region_tag:googleads_get_campaign_criterion_sample
- *
  */
   getCampaignCriterion(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignCriterionRequest,
@@ -809,10 +805,6 @@ export class CampaignCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignCriteria(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_criterion_service.mutate_campaign_criteria.js</caption>
- * region_tag:googleads_mutate_campaign_criteria_sample
- *
  */
   mutateCampaignCriteria(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignCriteriaRequest,

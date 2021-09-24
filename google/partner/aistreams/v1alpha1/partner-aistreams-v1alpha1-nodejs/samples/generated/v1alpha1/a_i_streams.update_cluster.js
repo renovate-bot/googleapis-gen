@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, cluster) {
-  // [START aistreams_update_cluster_sample]
+  // [START aistreams_v1alpha1_generated_AIStreams_UpdateCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(updateMask, cluster) {
   }
 
   updateCluster();
-  // [END aistreams_update_cluster_sample]
+  // [END aistreams_v1alpha1_generated_AIStreams_UpdateCluster_async]
 }
 
 process.on('unhandledRejection', err => {

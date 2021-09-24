@@ -342,10 +342,6 @@ export class JobsV1Beta3Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.createJob(request);
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.create_job.js</caption>
- * region_tag:dataflow_create_job_sample
- *
  */
   createJob(
       request?: protos.google.dataflow.v1beta3.ICreateJobRequest,
@@ -424,10 +420,6 @@ export class JobsV1Beta3Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJob(request);
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.get_job.js</caption>
- * region_tag:dataflow_get_job_sample
- *
  */
   getJob(
       request?: protos.google.dataflow.v1beta3.IGetJobRequest,
@@ -507,10 +499,6 @@ export class JobsV1Beta3Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateJob(request);
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.update_job.js</caption>
- * region_tag:dataflow_update_job_sample
- *
  */
   updateJob(
       request?: protos.google.dataflow.v1beta3.IUpdateJobRequest,
@@ -575,10 +563,6 @@ export class JobsV1Beta3Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.checkActiveJobs(request);
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.check_active_jobs.js</caption>
- * region_tag:dataflow_check_active_jobs_sample
- *
  */
   checkActiveJobs(
       request?: protos.google.dataflow.v1beta3.ICheckActiveJobsRequest,
@@ -653,10 +637,6 @@ export class JobsV1Beta3Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.snapshotJob(request);
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.snapshot_job.js</caption>
- * region_tag:dataflow_snapshot_job_sample
- *
  */
   snapshotJob(
       request?: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
@@ -749,10 +729,6 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.list_jobs.js</caption>
- * region_tag:dataflow_list_jobs_sample
- *
  */
   listJobs(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -816,10 +792,6 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.list_jobs.js</caption>
- * region_tag:dataflow_list_jobs_sample
- *
  */
   listJobsStream(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -876,10 +848,6 @@ export class JobsV1Beta3Client {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.list_jobs.js</caption>
- * region_tag:dataflow_list_jobs_sample
- *
  */
   listJobsAsync(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -953,10 +921,6 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.aggregated_list_jobs.js</caption>
- * region_tag:dataflow_aggregated_list_jobs_sample
- *
  */
   aggregatedListJobs(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -1020,10 +984,6 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.aggregated_list_jobs.js</caption>
- * region_tag:dataflow_aggregated_list_jobs_sample
- *
  */
   aggregatedListJobsStream(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -1080,10 +1040,6 @@ export class JobsV1Beta3Client {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.aggregated_list_jobs.js</caption>
- * region_tag:dataflow_aggregated_list_jobs_sample
- *
  */
   aggregatedListJobsAsync(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,

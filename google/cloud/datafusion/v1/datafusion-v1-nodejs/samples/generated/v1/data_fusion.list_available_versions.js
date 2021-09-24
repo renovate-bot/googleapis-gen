@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datafusion_list_available_versions_sample]
+  // [START datafusion_v1_generated_DataFusion_ListAvailableVersions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listAvailableVersions();
-  // [END datafusion_list_available_versions_sample]
+  // [END datafusion_v1_generated_DataFusion_ListAvailableVersions_async]
 }
 
 process.on('unhandledRejection', err => {

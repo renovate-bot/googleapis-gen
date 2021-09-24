@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_trigger_schedule_sample]
+  // [START notebooks_v1_generated_NotebookService_TriggerSchedule_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   triggerSchedule();
-  // [END notebooks_trigger_schedule_sample]
+  // [END notebooks_v1_generated_NotebookService_TriggerSchedule_async]
 }
 
 process.on('unhandledRejection', err => {

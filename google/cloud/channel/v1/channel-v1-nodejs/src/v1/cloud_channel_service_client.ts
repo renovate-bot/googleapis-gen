@@ -496,10 +496,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomer(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.get_customer.js</caption>
- * region_tag:channel_get_customer_sample
- *
  */
   getCustomer(
       request?: protos.google.cloud.channel.v1.IGetCustomerRequest,
@@ -589,10 +585,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.checkCloudIdentityAccountsExist(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.check_cloud_identity_accounts_exist.js</caption>
- * region_tag:channel_check_cloud_identity_accounts_exist_sample
- *
  */
   checkCloudIdentityAccountsExist(
       request?: protos.google.cloud.channel.v1.ICheckCloudIdentityAccountsExistRequest,
@@ -679,10 +671,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCustomer(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.create_customer.js</caption>
- * region_tag:channel_create_customer_sample
- *
  */
   createCustomer(
       request?: protos.google.cloud.channel.v1.ICreateCustomerRequest,
@@ -768,10 +756,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCustomer(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.update_customer.js</caption>
- * region_tag:channel_update_customer_sample
- *
  */
   updateCustomer(
       request?: protos.google.cloud.channel.v1.IUpdateCustomerRequest,
@@ -851,10 +835,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteCustomer(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.delete_customer.js</caption>
- * region_tag:channel_delete_customer_sample
- *
  */
   deleteCustomer(
       request?: protos.google.cloud.channel.v1.IDeleteCustomerRequest,
@@ -965,10 +945,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.importCustomer(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.import_customer.js</caption>
- * region_tag:channel_import_customer_sample
- *
  */
   importCustomer(
       request?: protos.google.cloud.channel.v1.IImportCustomerRequest,
@@ -1051,10 +1027,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEntitlement(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.get_entitlement.js</caption>
- * region_tag:channel_get_entitlement_sample
- *
  */
   getEntitlement(
       request?: protos.google.cloud.channel.v1.IGetEntitlementRequest,
@@ -1142,10 +1114,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getChannelPartnerLink(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.get_channel_partner_link.js</caption>
- * region_tag:channel_get_channel_partner_link_sample
- *
  */
   getChannelPartnerLink(
       request?: protos.google.cloud.channel.v1.IGetChannelPartnerLinkRequest,
@@ -1244,10 +1212,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createChannelPartnerLink(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.create_channel_partner_link.js</caption>
- * region_tag:channel_create_channel_partner_link_sample
- *
  */
   createChannelPartnerLink(
       request?: protos.google.cloud.channel.v1.ICreateChannelPartnerLinkRequest,
@@ -1348,10 +1312,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateChannelPartnerLink(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.update_channel_partner_link.js</caption>
- * region_tag:channel_update_channel_partner_link_sample
- *
  */
   updateChannelPartnerLink(
       request?: protos.google.cloud.channel.v1.IUpdateChannelPartnerLinkRequest,
@@ -1434,10 +1394,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.lookupOffer(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.lookup_offer.js</caption>
- * region_tag:channel_lookup_offer_sample
- *
  */
   lookupOffer(
       request?: protos.google.cloud.channel.v1.ILookupOfferRequest,
@@ -1527,10 +1483,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.registerSubscriber(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.register_subscriber.js</caption>
- * region_tag:channel_register_subscriber_sample
- *
  */
   registerSubscriber(
       request?: protos.google.cloud.channel.v1.IRegisterSubscriberRequest,
@@ -1624,10 +1576,6 @@ export class CloudChannelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.unregisterSubscriber(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.unregister_subscriber.js</caption>
- * region_tag:channel_unregister_subscriber_sample
- *
  */
   unregisterSubscriber(
       request?: protos.google.cloud.channel.v1.IUnregisterSubscriberRequest,
@@ -1730,10 +1678,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.provisionCloudIdentity(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.provision_cloud_identity.js</caption>
- * region_tag:channel_provision_cloud_identity_sample
- *
  */
   provisionCloudIdentity(
       request?: protos.google.cloud.channel.v1.IProvisionCloudIdentityRequest,
@@ -1783,10 +1727,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.provision_cloud_identity.js</caption>
- * region_tag:channel_provision_cloud_identity_sample
- *
  */
   async checkProvisionCloudIdentityProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Customer, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1884,10 +1824,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.createEntitlement(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.create_entitlement.js</caption>
- * region_tag:channel_create_entitlement_sample
- *
  */
   createEntitlement(
       request?: protos.google.cloud.channel.v1.ICreateEntitlementRequest,
@@ -1937,10 +1873,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.create_entitlement.js</caption>
- * region_tag:channel_create_entitlement_sample
- *
  */
   async checkCreateEntitlementProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2027,10 +1959,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.changeParameters(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.change_parameters.js</caption>
- * region_tag:channel_change_parameters_sample
- *
  */
   changeParameters(
       request?: protos.google.cloud.channel.v1.IChangeParametersRequest,
@@ -2080,10 +2008,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.change_parameters.js</caption>
- * region_tag:channel_change_parameters_sample
- *
  */
   async checkChangeParametersProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2168,10 +2092,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.changeRenewalSettings(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.change_renewal_settings.js</caption>
- * region_tag:channel_change_renewal_settings_sample
- *
  */
   changeRenewalSettings(
       request?: protos.google.cloud.channel.v1.IChangeRenewalSettingsRequest,
@@ -2221,10 +2141,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.change_renewal_settings.js</caption>
- * region_tag:channel_change_renewal_settings_sample
- *
  */
   async checkChangeRenewalSettingsProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2312,10 +2228,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.changeOffer(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.change_offer.js</caption>
- * region_tag:channel_change_offer_sample
- *
  */
   changeOffer(
       request?: protos.google.cloud.channel.v1.IChangeOfferRequest,
@@ -2365,10 +2277,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.change_offer.js</caption>
- * region_tag:channel_change_offer_sample
- *
  */
   async checkChangeOfferProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2452,10 +2360,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.startPaidService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.start_paid_service.js</caption>
- * region_tag:channel_start_paid_service_sample
- *
  */
   startPaidService(
       request?: protos.google.cloud.channel.v1.IStartPaidServiceRequest,
@@ -2505,10 +2409,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.start_paid_service.js</caption>
- * region_tag:channel_start_paid_service_sample
- *
  */
   async checkStartPaidServiceProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2589,10 +2489,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.suspendEntitlement(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.suspend_entitlement.js</caption>
- * region_tag:channel_suspend_entitlement_sample
- *
  */
   suspendEntitlement(
       request?: protos.google.cloud.channel.v1.ISuspendEntitlementRequest,
@@ -2642,10 +2538,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.suspend_entitlement.js</caption>
- * region_tag:channel_suspend_entitlement_sample
- *
  */
   async checkSuspendEntitlementProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2731,10 +2623,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.cancelEntitlement(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.cancel_entitlement.js</caption>
- * region_tag:channel_cancel_entitlement_sample
- *
  */
   cancelEntitlement(
       request?: protos.google.cloud.channel.v1.ICancelEntitlementRequest,
@@ -2784,10 +2672,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.cancel_entitlement.js</caption>
- * region_tag:channel_cancel_entitlement_sample
- *
  */
   async checkCancelEntitlementProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2874,10 +2758,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.activateEntitlement(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.activate_entitlement.js</caption>
- * region_tag:channel_activate_entitlement_sample
- *
  */
   activateEntitlement(
       request?: protos.google.cloud.channel.v1.IActivateEntitlementRequest,
@@ -2927,10 +2807,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.activate_entitlement.js</caption>
- * region_tag:channel_activate_entitlement_sample
- *
  */
   async checkActivateEntitlementProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.Entitlement, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -3026,10 +2902,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.transferEntitlements(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.transfer_entitlements.js</caption>
- * region_tag:channel_transfer_entitlements_sample
- *
  */
   transferEntitlements(
       request?: protos.google.cloud.channel.v1.ITransferEntitlementsRequest,
@@ -3079,10 +2951,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.transfer_entitlements.js</caption>
- * region_tag:channel_transfer_entitlements_sample
- *
  */
   async checkTransferEntitlementsProgress(name: string): Promise<LROperation<protos.google.cloud.channel.v1.TransferEntitlementsResponse, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -3173,10 +3041,6 @@ export class CloudChannelServiceClient {
  * @example
  * const [operation] = await client.transferEntitlementsToGoogle(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.transfer_entitlements_to_google.js</caption>
- * region_tag:channel_transfer_entitlements_to_google_sample
- *
  */
   transferEntitlementsToGoogle(
       request?: protos.google.cloud.channel.v1.ITransferEntitlementsToGoogleRequest,
@@ -3226,10 +3090,6 @@ export class CloudChannelServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.transfer_entitlements_to_google.js</caption>
- * region_tag:channel_transfer_entitlements_to_google_sample
- *
  */
   async checkTransferEntitlementsToGoogleProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.channel.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -3296,10 +3156,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_customers.js</caption>
- * region_tag:channel_list_customers_sample
- *
  */
   listCustomers(
       request?: protos.google.cloud.channel.v1.IListCustomersRequest,
@@ -3364,10 +3220,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_customers.js</caption>
- * region_tag:channel_list_customers_sample
- *
  */
   listCustomersStream(
       request?: protos.google.cloud.channel.v1.IListCustomersRequest,
@@ -3425,10 +3277,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_customers.js</caption>
- * region_tag:channel_list_customers_sample
- *
  */
   listCustomersAsync(
       request?: protos.google.cloud.channel.v1.IListCustomersRequest,
@@ -3512,10 +3360,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_entitlements.js</caption>
- * region_tag:channel_list_entitlements_sample
- *
  */
   listEntitlements(
       request?: protos.google.cloud.channel.v1.IListEntitlementsRequest,
@@ -3581,10 +3425,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_entitlements.js</caption>
- * region_tag:channel_list_entitlements_sample
- *
  */
   listEntitlementsStream(
       request?: protos.google.cloud.channel.v1.IListEntitlementsRequest,
@@ -3643,10 +3483,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_entitlements.js</caption>
- * region_tag:channel_list_entitlements_sample
- *
  */
   listEntitlementsAsync(
       request?: protos.google.cloud.channel.v1.IListEntitlementsRequest,
@@ -3757,10 +3593,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_transferable_skus.js</caption>
- * region_tag:channel_list_transferable_skus_sample
- *
  */
   listTransferableSkus(
       request?: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
@@ -3844,10 +3676,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_transferable_skus.js</caption>
- * region_tag:channel_list_transferable_skus_sample
- *
  */
   listTransferableSkusStream(
       request?: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
@@ -3924,10 +3752,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_transferable_skus.js</caption>
- * region_tag:channel_list_transferable_skus_sample
- *
  */
   listTransferableSkusAsync(
       request?: protos.google.cloud.channel.v1.IListTransferableSkusRequest,
@@ -4029,10 +3853,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_transferable_offers.js</caption>
- * region_tag:channel_list_transferable_offers_sample
- *
  */
   listTransferableOffers(
       request?: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
@@ -4107,10 +3927,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_transferable_offers.js</caption>
- * region_tag:channel_list_transferable_offers_sample
- *
  */
   listTransferableOffersStream(
       request?: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
@@ -4178,10 +3994,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_transferable_offers.js</caption>
- * region_tag:channel_list_transferable_offers_sample
- *
  */
   listTransferableOffersAsync(
       request?: protos.google.cloud.channel.v1.IListTransferableOffersRequest,
@@ -4269,10 +4081,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_channel_partner_links.js</caption>
- * region_tag:channel_list_channel_partner_links_sample
- *
  */
   listChannelPartnerLinks(
       request?: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
@@ -4340,10 +4148,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_channel_partner_links.js</caption>
- * region_tag:channel_list_channel_partner_links_sample
- *
  */
   listChannelPartnerLinksStream(
       request?: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
@@ -4404,10 +4208,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_channel_partner_links.js</caption>
- * region_tag:channel_list_channel_partner_links_sample
- *
  */
   listChannelPartnerLinksAsync(
       request?: protos.google.cloud.channel.v1.IListChannelPartnerLinksRequest,
@@ -4487,10 +4287,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_products.js</caption>
- * region_tag:channel_list_products_sample
- *
  */
   listProducts(
       request?: protos.google.cloud.channel.v1.IListProductsRequest,
@@ -4549,10 +4345,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_products.js</caption>
- * region_tag:channel_list_products_sample
- *
  */
   listProductsStream(
       request?: protos.google.cloud.channel.v1.IListProductsRequest,
@@ -4604,10 +4396,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_products.js</caption>
- * region_tag:channel_list_products_sample
- *
  */
   listProductsAsync(
       request?: protos.google.cloud.channel.v1.IListProductsRequest,
@@ -4685,10 +4473,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_skus.js</caption>
- * region_tag:channel_list_skus_sample
- *
  */
   listSkus(
       request?: protos.google.cloud.channel.v1.IListSkusRequest,
@@ -4759,10 +4543,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_skus.js</caption>
- * region_tag:channel_list_skus_sample
- *
  */
   listSkusStream(
       request?: protos.google.cloud.channel.v1.IListSkusRequest,
@@ -4826,10 +4606,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_skus.js</caption>
- * region_tag:channel_list_skus_sample
- *
  */
   listSkusAsync(
       request?: protos.google.cloud.channel.v1.IListSkusRequest,
@@ -4915,10 +4691,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_offers.js</caption>
- * region_tag:channel_list_offers_sample
- *
  */
   listOffers(
       request?: protos.google.cloud.channel.v1.IListOffersRequest,
@@ -4990,10 +4762,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_offers.js</caption>
- * region_tag:channel_list_offers_sample
- *
  */
   listOffersStream(
       request?: protos.google.cloud.channel.v1.IListOffersRequest,
@@ -5058,10 +4826,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_offers.js</caption>
- * region_tag:channel_list_offers_sample
- *
  */
   listOffersAsync(
       request?: protos.google.cloud.channel.v1.IListOffersRequest,
@@ -5149,10 +4913,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_purchasable_skus.js</caption>
- * region_tag:channel_list_purchasable_skus_sample
- *
  */
   listPurchasableSkus(
       request?: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
@@ -5222,10 +4982,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_purchasable_skus.js</caption>
- * region_tag:channel_list_purchasable_skus_sample
- *
  */
   listPurchasableSkusStream(
       request?: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
@@ -5288,10 +5044,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_purchasable_skus.js</caption>
- * region_tag:channel_list_purchasable_skus_sample
- *
  */
   listPurchasableSkusAsync(
       request?: protos.google.cloud.channel.v1.IListPurchasableSkusRequest,
@@ -5379,10 +5131,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_purchasable_offers.js</caption>
- * region_tag:channel_list_purchasable_offers_sample
- *
  */
   listPurchasableOffers(
       request?: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
@@ -5452,10 +5200,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_purchasable_offers.js</caption>
- * region_tag:channel_list_purchasable_offers_sample
- *
  */
   listPurchasableOffersStream(
       request?: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
@@ -5518,10 +5262,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_purchasable_offers.js</caption>
- * region_tag:channel_list_purchasable_offers_sample
- *
  */
   listPurchasableOffersAsync(
       request?: protos.google.cloud.channel.v1.IListPurchasableOffersRequest,
@@ -5613,10 +5353,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_subscribers.js</caption>
- * region_tag:channel_list_subscribers_sample
- *
  */
   listSubscribers(
       request?: protos.google.cloud.channel.v1.IListSubscribersRequest,
@@ -5682,10 +5418,6 @@ export class CloudChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_subscribers.js</caption>
- * region_tag:channel_list_subscribers_sample
- *
  */
   listSubscribersStream(
       request?: protos.google.cloud.channel.v1.IListSubscribersRequest,
@@ -5744,10 +5476,6 @@ export class CloudChannelServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_channel_service.list_subscribers.js</caption>
- * region_tag:channel_list_subscribers_sample
- *
  */
   listSubscribersAsync(
       request?: protos.google.cloud.channel.v1.IListSubscribersRequest,

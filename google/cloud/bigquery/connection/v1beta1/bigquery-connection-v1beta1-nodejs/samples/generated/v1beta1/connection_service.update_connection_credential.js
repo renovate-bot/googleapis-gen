@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, credential) {
-  // [START connection_update_connection_credential_sample]
+  // [START connection_v1beta1_generated_ConnectionService_UpdateConnectionCredential_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name, credential) {
   }
 
   updateConnectionCredential();
-  // [END connection_update_connection_credential_sample]
+  // [END connection_v1beta1_generated_ConnectionService_UpdateConnectionCredential_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START gateway_post_resource_sample]
+  // [START gateway_v1beta1_generated_GatewayService_PostResource_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main() {
   }
 
   postResource();
-  // [END gateway_post_resource_sample]
+  // [END gateway_v1beta1_generated_GatewayService_PostResource_async]
 }
 
 process.on('unhandledRejection', err => {

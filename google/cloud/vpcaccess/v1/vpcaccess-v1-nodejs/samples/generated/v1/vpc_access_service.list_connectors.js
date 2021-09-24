@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START vpcaccess_list_connectors_sample]
+  // [START vpcaccess_v1_generated_VpcAccessService_ListConnectors_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent) {
   }
 
   listConnectors();
-  // [END vpcaccess_list_connectors_sample]
+  // [END vpcaccess_v1_generated_VpcAccessService_ListConnectors_async]
 }
 
 process.on('unhandledRejection', err => {

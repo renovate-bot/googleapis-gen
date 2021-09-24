@@ -16,7 +16,7 @@
 'use strict';
 
 function main(config, audio) {
-  // [START speech_long_running_recognize_sample]
+  // [START speech_v1_generated_Speech_LongRunningRecognize_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(config, audio) {
   }
 
   longRunningRecognize();
-  // [END speech_long_running_recognize_sample]
+  // [END speech_v1_generated_Speech_LongRunningRecognize_async]
 }
 
 process.on('unhandledRejection', err => {

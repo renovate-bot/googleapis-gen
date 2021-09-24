@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_watch_all_objects_sample]
+  // [START storage_v1_generated_Storage_WatchAllObjects_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -92,7 +92,7 @@ function main() {
   }
 
   watchAllObjects();
-  // [END storage_watch_all_objects_sample]
+  // [END storage_v1_generated_Storage_WatchAllObjects_async]
 }
 
 process.on('unhandledRejection', err => {

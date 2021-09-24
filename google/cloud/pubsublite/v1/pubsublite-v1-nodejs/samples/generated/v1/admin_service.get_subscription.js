@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START pubsublite_get_subscription_sample]
+  // [START pubsublite_v1_generated_AdminService_GetSubscription_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getSubscription();
-  // [END pubsublite_get_subscription_sample]
+  // [END pubsublite_v1_generated_AdminService_GetSubscription_async]
 }
 
 process.on('unhandledRejection', err => {

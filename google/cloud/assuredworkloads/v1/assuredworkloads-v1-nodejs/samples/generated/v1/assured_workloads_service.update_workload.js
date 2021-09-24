@@ -16,7 +16,7 @@
 'use strict';
 
 function main(workload, updateMask) {
-  // [START assuredworkloads_update_workload_sample]
+  // [START assuredworkloads_v1_generated_AssuredWorkloadsService_UpdateWorkload_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(workload, updateMask) {
   }
 
   updateWorkload();
-  // [END assuredworkloads_update_workload_sample]
+  // [END assuredworkloads_v1_generated_AssuredWorkloadsService_UpdateWorkload_async]
 }
 
 process.on('unhandledRejection', err => {

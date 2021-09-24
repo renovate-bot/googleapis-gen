@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, submission) {
-  // [START webrisk_create_submission_sample]
+  // [START webrisk_v1_generated_WebRiskService_CreateSubmission_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, submission) {
   }
 
   createSubmission();
-  // [END webrisk_create_submission_sample]
+  // [END webrisk_v1_generated_WebRiskService_CreateSubmission_async]
 }
 
 process.on('unhandledRejection', err => {

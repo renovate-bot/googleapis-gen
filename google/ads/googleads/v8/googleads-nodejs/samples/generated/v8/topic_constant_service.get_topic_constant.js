@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_topic_constant_sample]
+  // [START googleads_v8_generated_TopicConstantService_GetTopicConstant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getTopicConstant();
-  // [END googleads_get_topic_constant_sample]
+  // [END googleads_v8_generated_TopicConstantService_GetTopicConstant_async]
 }
 
 process.on('unhandledRejection', err => {

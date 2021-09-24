@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instanceIdToken, inventoryChecksum) {
-  // [START agentendpoint_report_inventory_sample]
+  // [START agentendpoint_v1_generated_AgentEndpointService_ReportInventory_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(instanceIdToken, inventoryChecksum) {
   }
 
   reportInventory();
-  // [END agentendpoint_report_inventory_sample]
+  // [END agentendpoint_v1_generated_AgentEndpointService_ReportInventory_async]
 }
 
 process.on('unhandledRejection', err => {

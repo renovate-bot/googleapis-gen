@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START networkservices_delete_endpoint_policy_sample]
+  // [START networkservices_v1beta1_generated_NetworkServices_DeleteEndpointPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteEndpointPolicy();
-  // [END networkservices_delete_endpoint_policy_sample]
+  // [END networkservices_v1beta1_generated_NetworkServices_DeleteEndpointPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

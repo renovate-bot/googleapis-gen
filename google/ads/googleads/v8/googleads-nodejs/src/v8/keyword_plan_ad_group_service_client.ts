@@ -720,10 +720,6 @@ export class KeywordPlanAdGroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getKeywordPlanAdGroup(request);
- *
- * @example <caption>include:samples/generated/v8/keyword_plan_ad_group_service.get_keyword_plan_ad_group.js</caption>
- * region_tag:googleads_get_keyword_plan_ad_group_sample
- *
  */
   getKeywordPlanAdGroup(
       request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
@@ -822,10 +818,6 @@ export class KeywordPlanAdGroupServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateKeywordPlanAdGroups(request);
- *
- * @example <caption>include:samples/generated/v8/keyword_plan_ad_group_service.mutate_keyword_plan_ad_groups.js</caption>
- * region_tag:googleads_mutate_keyword_plan_ad_groups_sample
- *
  */
   mutateKeywordPlanAdGroups(
       request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,

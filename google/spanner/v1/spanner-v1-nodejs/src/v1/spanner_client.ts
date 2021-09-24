@@ -365,10 +365,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createSession(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.create_session.js</caption>
- * region_tag:spanner_create_session_sample
- *
  */
   createSession(
       request?: protos.google.spanner.v1.ICreateSessionRequest,
@@ -451,10 +447,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCreateSessions(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.batch_create_sessions.js</caption>
- * region_tag:spanner_batch_create_sessions_sample
- *
  */
   batchCreateSessions(
       request?: protos.google.spanner.v1.IBatchCreateSessionsRequest,
@@ -528,10 +520,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSession(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.get_session.js</caption>
- * region_tag:spanner_get_session_sample
- *
  */
   getSession(
       request?: protos.google.spanner.v1.IGetSessionRequest,
@@ -605,10 +593,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteSession(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.delete_session.js</caption>
- * region_tag:spanner_delete_session_sample
- *
  */
   deleteSession(
       request?: protos.google.spanner.v1.IDeleteSessionRequest,
@@ -757,10 +741,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.executeSql(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.execute_sql.js</caption>
- * region_tag:spanner_execute_sql_sample
- *
  */
   executeSql(
       request?: protos.google.spanner.v1.IExecuteSqlRequest,
@@ -866,10 +846,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.executeBatchDml(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.execute_batch_dml.js</caption>
- * region_tag:spanner_execute_batch_dml_sample
- *
  */
   executeBatchDml(
       request?: protos.google.spanner.v1.IExecuteBatchDmlRequest,
@@ -996,10 +972,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.read(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.read.js</caption>
- * region_tag:spanner_read_sample
- *
  */
   read(
       request?: protos.google.spanner.v1.IReadRequest,
@@ -1082,10 +1054,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.beginTransaction(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.begin_transaction.js</caption>
- * region_tag:spanner_begin_transaction_sample
- *
  */
   beginTransaction(
       request?: protos.google.spanner.v1.IBeginTransactionRequest,
@@ -1192,10 +1160,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.commit(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.commit.js</caption>
- * region_tag:spanner_commit_sample
- *
  */
   commit(
       request?: protos.google.spanner.v1.ICommitRequest,
@@ -1276,10 +1240,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.rollback(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.rollback.js</caption>
- * region_tag:spanner_rollback_sample
- *
  */
   rollback(
       request?: protos.google.spanner.v1.IRollbackRequest,
@@ -1399,10 +1359,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.partitionQuery(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.partition_query.js</caption>
- * region_tag:spanner_partition_query_sample
- *
  */
   partitionQuery(
       request?: protos.google.spanner.v1.IPartitionQueryRequest,
@@ -1508,10 +1464,6 @@ export class SpannerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.partitionRead(request);
- *
- * @example <caption>include:samples/generated/v1/spanner.partition_read.js</caption>
- * region_tag:spanner_partition_read_sample
- *
  */
   partitionRead(
       request?: protos.google.spanner.v1.IPartitionReadRequest,
@@ -1796,10 +1748,6 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/spanner.list_sessions.js</caption>
- * region_tag:spanner_list_sessions_sample
- *
  */
   listSessions(
       request?: protos.google.spanner.v1.IListSessionsRequest,
@@ -1872,10 +1820,6 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/spanner.list_sessions.js</caption>
- * region_tag:spanner_list_sessions_sample
- *
  */
   listSessionsStream(
       request?: protos.google.spanner.v1.IListSessionsRequest,
@@ -1941,10 +1885,6 @@ export class SpannerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/spanner.list_sessions.js</caption>
- * region_tag:spanner_list_sessions_sample
- *
  */
   listSessionsAsync(
       request?: protos.google.spanner.v1.IListSessionsRequest,

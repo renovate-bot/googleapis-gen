@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document) {
-  // [START firestore_update_document_sample]
+  // [START firestore_v1_generated_Firestore_UpdateDocument_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(document) {
   }
 
   updateDocument();
-  // [END firestore_update_document_sample]
+  // [END firestore_v1_generated_Firestore_UpdateDocument_async]
 }
 
 process.on('unhandledRejection', err => {

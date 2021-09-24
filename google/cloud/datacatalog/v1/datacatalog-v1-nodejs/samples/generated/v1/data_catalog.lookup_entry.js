@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datacatalog_lookup_entry_sample]
+  // [START datacatalog_v1_generated_DataCatalog_LookupEntry_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main() {
   }
 
   lookupEntry();
-  // [END datacatalog_lookup_entry_sample]
+  // [END datacatalog_v1_generated_DataCatalog_LookupEntry_async]
 }
 
 process.on('unhandledRejection', err => {

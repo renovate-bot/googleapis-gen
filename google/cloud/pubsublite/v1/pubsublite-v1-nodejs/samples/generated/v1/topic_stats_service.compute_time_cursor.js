@@ -16,7 +16,7 @@
 'use strict';
 
 function main(topic, partition, target) {
-  // [START pubsublite_compute_time_cursor_sample]
+  // [START pubsublite_v1_generated_TopicStatsService_ComputeTimeCursor_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(topic, partition, target) {
   }
 
   computeTimeCursor();
-  // [END pubsublite_compute_time_cursor_sample]
+  // [END pubsublite_v1_generated_TopicStatsService_ComputeTimeCursor_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -690,10 +690,6 @@ export class AdGroupLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupLabel(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_label_service.get_ad_group_label.js</caption>
- * region_tag:googleads_get_ad_group_label_sample
- *
  */
   getAdGroupLabel(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
@@ -789,10 +785,6 @@ export class AdGroupLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupLabels(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_label_service.mutate_ad_group_labels.js</caption>
- * region_tag:googleads_mutate_ad_group_labels_sample
- *
  */
   mutateAdGroupLabels(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,

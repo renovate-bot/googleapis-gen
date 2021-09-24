@@ -720,10 +720,6 @@ export class GroupPlacementViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGroupPlacementView(request);
- *
- * @example <caption>include:samples/generated/v8/group_placement_view_service.get_group_placement_view.js</caption>
- * region_tag:googleads_get_group_placement_view_sample
- *
  */
   getGroupPlacementView(
       request?: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,

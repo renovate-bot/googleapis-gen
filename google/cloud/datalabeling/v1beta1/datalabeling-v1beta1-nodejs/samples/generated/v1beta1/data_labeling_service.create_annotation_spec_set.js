@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, annotationSpecSet) {
-  // [START datalabeling_create_annotation_spec_set_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_CreateAnnotationSpecSet_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent, annotationSpecSet) {
   }
 
   createAnnotationSpecSet();
-  // [END datalabeling_create_annotation_spec_set_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_CreateAnnotationSpecSet_async]
 }
 
 process.on('unhandledRejection', err => {

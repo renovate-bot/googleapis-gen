@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START cloudprofiler_create_offline_profile_sample]
+  // [START cloudprofiler_v2_generated_ProfilerService_CreateOfflineProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   createOfflineProfile();
-  // [END cloudprofiler_create_offline_profile_sample]
+  // [END cloudprofiler_v2_generated_ProfilerService_CreateOfflineProfile_async]
 }
 
 process.on('unhandledRejection', err => {

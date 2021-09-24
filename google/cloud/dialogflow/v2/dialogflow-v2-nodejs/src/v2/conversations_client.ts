@@ -466,10 +466,6 @@ export class ConversationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createConversation(request);
- *
- * @example <caption>include:samples/generated/v2/conversations.create_conversation.js</caption>
- * region_tag:dialogflow_create_conversation_sample
- *
  */
   createConversation(
       request?: protos.google.cloud.dialogflow.v2.ICreateConversationRequest,
@@ -543,10 +539,6 @@ export class ConversationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConversation(request);
- *
- * @example <caption>include:samples/generated/v2/conversations.get_conversation.js</caption>
- * region_tag:dialogflow_get_conversation_sample
- *
  */
   getConversation(
       request?: protos.google.cloud.dialogflow.v2.IGetConversationRequest,
@@ -621,10 +613,6 @@ export class ConversationsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.completeConversation(request);
- *
- * @example <caption>include:samples/generated/v2/conversations.complete_conversation.js</caption>
- * region_tag:dialogflow_complete_conversation_sample
- *
  */
   completeConversation(
       request?: protos.google.cloud.dialogflow.v2.ICompleteConversationRequest,
@@ -725,10 +713,6 @@ export class ConversationsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/conversations.list_conversations.js</caption>
- * region_tag:dialogflow_list_conversations_sample
- *
  */
   listConversations(
       request?: protos.google.cloud.dialogflow.v2.IListConversationsRequest,
@@ -807,10 +791,6 @@ export class ConversationsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/conversations.list_conversations.js</caption>
- * region_tag:dialogflow_list_conversations_sample
- *
  */
   listConversationsStream(
       request?: protos.google.cloud.dialogflow.v2.IListConversationsRequest,
@@ -882,10 +862,6 @@ export class ConversationsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/conversations.list_conversations.js</caption>
- * region_tag:dialogflow_list_conversations_sample
- *
  */
   listConversationsAsync(
       request?: protos.google.cloud.dialogflow.v2.IListConversationsRequest,
@@ -970,10 +946,6 @@ export class ConversationsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/conversations.list_messages.js</caption>
- * region_tag:dialogflow_list_messages_sample
- *
  */
   listMessages(
       request?: protos.google.cloud.dialogflow.v2.IListMessagesRequest,
@@ -1044,10 +1016,6 @@ export class ConversationsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/conversations.list_messages.js</caption>
- * region_tag:dialogflow_list_messages_sample
- *
  */
   listMessagesStream(
       request?: protos.google.cloud.dialogflow.v2.IListMessagesRequest,
@@ -1111,10 +1079,6 @@ export class ConversationsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/conversations.list_messages.js</caption>
- * region_tag:dialogflow_list_messages_sample
- *
  */
   listMessagesAsync(
       request?: protos.google.cloud.dialogflow.v2.IListMessagesRequest,

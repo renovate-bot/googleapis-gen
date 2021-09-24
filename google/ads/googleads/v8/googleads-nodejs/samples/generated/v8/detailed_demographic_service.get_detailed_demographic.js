@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_detailed_demographic_sample]
+  // [START googleads_v8_generated_DetailedDemographicService_GetDetailedDemographic_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getDetailedDemographic();
-  // [END googleads_get_detailed_demographic_sample]
+  // [END googleads_v8_generated_DetailedDemographicService_GetDetailedDemographic_async]
 }
 
 process.on('unhandledRejection', err => {

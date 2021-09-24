@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, keys) {
-  // [START datastore_reserve_ids_sample]
+  // [START datastore_v1_generated_Datastore_ReserveIds_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(projectId, keys) {
   }
 
   reserveIds();
-  // [END datastore_reserve_ids_sample]
+  // [END datastore_v1_generated_Datastore_ReserveIds_async]
 }
 
 process.on('unhandledRejection', err => {

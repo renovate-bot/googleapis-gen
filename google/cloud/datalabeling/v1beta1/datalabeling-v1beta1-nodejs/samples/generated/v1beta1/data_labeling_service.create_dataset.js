@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, dataset) {
-  // [START datalabeling_create_dataset_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_CreateDataset_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, dataset) {
   }
 
   createDataset();
-  // [END datalabeling_create_dataset_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_CreateDataset_async]
 }
 
 process.on('unhandledRejection', err => {

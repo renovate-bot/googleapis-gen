@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instanceIdToken) {
-  // [START agentendpoint_lookup_effective_guest_policy_sample]
+  // [START agentendpoint_v1beta_generated_AgentEndpointService_LookupEffectiveGuestPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(instanceIdToken) {
   }
 
   lookupEffectiveGuestPolicy();
-  // [END agentendpoint_lookup_effective_guest_policy_sample]
+  // [END agentendpoint_v1beta_generated_AgentEndpointService_LookupEffectiveGuestPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

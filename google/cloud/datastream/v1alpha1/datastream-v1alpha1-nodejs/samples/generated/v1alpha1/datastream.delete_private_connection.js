@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datastream_delete_private_connection_sample]
+  // [START datastream_v1alpha1_generated_Datastream_DeletePrivateConnection_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(name) {
   }
 
   deletePrivateConnection();
-  // [END datastream_delete_private_connection_sample]
+  // [END datastream_v1alpha1_generated_Datastream_DeletePrivateConnection_async]
 }
 
 process.on('unhandledRejection', err => {

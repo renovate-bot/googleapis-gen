@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, sql) {
-  // [START spanner_execute_streaming_sql_sample]
+  // [START spanner_v1_generated_Spanner_ExecuteStreamingSql_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -123,7 +123,7 @@ function main(session, sql) {
   }
 
   executeStreamingSql();
-  // [END spanner_execute_streaming_sql_sample]
+  // [END spanner_v1_generated_Spanner_ExecuteStreamingSql_async]
 }
 
 process.on('unhandledRejection', err => {

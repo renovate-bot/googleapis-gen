@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START aiplatform_list_model_evaluation_slices_sample]
+  // [START aiplatform_v1_generated_ModelService_ListModelEvaluationSlices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent) {
   }
 
   listModelEvaluationSlices();
-  // [END aiplatform_list_model_evaluation_slices_sample]
+  // [END aiplatform_v1_generated_ModelService_ListModelEvaluationSlices_async]
 }
 
 process.on('unhandledRejection', err => {

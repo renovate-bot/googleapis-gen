@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START library_delete_shelf_sample]
+  // [START library_v1_generated_LibraryService_DeleteShelf_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   deleteShelf();
-  // [END library_delete_shelf_sample]
+  // [END library_v1_generated_LibraryService_DeleteShelf_async]
 }
 
 process.on('unhandledRejection', err => {

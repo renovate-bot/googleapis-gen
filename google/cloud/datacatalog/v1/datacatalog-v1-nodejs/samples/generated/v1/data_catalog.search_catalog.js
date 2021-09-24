@@ -16,7 +16,7 @@
 'use strict';
 
 function main(scope) {
-  // [START datacatalog_search_catalog_sample]
+  // [START datacatalog_v1_generated_DataCatalog_SearchCatalog_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -84,7 +84,7 @@ function main(scope) {
   }
 
   searchCatalog();
-  // [END datacatalog_search_catalog_sample]
+  // [END datacatalog_v1_generated_DataCatalog_SearchCatalog_async]
 }
 
 process.on('unhandledRejection', err => {

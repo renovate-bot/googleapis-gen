@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START privateca_delete_ca_pool_sample]
+  // [START privateca_v1_generated_CertificateAuthorityService_DeleteCaPool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(name) {
   }
 
   deleteCaPool();
-  // [END privateca_delete_ca_pool_sample]
+  // [END privateca_v1_generated_CertificateAuthorityService_DeleteCaPool_async]
 }
 
 process.on('unhandledRejection', err => {

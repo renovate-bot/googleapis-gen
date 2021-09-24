@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START publish_delete_photo_sample]
+  // [START publish_v1_generated_StreetViewPublishService_DeletePhoto_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   deletePhoto();
-  // [END publish_delete_photo_sample]
+  // [END publish_v1_generated_StreetViewPublishService_DeletePhoto_async]
 }
 
 process.on('unhandledRejection', err => {

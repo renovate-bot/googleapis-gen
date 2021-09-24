@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START instance_delete_instance_sample]
+  // [START instance_v1_generated_InstanceAdmin_DeleteInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteInstance();
-  // [END instance_delete_instance_sample]
+  // [END instance_v1_generated_InstanceAdmin_DeleteInstance_async]
 }
 
 process.on('unhandledRejection', err => {

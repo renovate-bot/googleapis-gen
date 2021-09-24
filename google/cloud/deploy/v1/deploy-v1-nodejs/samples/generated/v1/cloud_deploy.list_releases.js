@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START deploy_list_releases_sample]
+  // [START deploy_v1_generated_CloudDeploy_ListReleases_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent) {
   }
 
   listReleases();
-  // [END deploy_list_releases_sample]
+  // [END deploy_v1_generated_CloudDeploy_ListReleases_async]
 }
 
 process.on('unhandledRejection', err => {

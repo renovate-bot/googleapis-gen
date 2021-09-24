@@ -388,10 +388,6 @@ export class TagValuesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTagValue(request);
- *
- * @example <caption>include:samples/generated/v3/tag_values.get_tag_value.js</caption>
- * region_tag:resourcemanager_get_tag_value_sample
- *
  */
   getTagValue(
       request?: protos.google.cloud.resourcemanager.v3.IGetTagValueRequest,
@@ -472,10 +468,6 @@ export class TagValuesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/tag_values.get_iam_policy.js</caption>
- * region_tag:resourcemanager_get_iam_policy_sample
- *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -557,10 +549,6 @@ export class TagValuesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v3/tag_values.set_iam_policy.js</caption>
- * region_tag:resourcemanager_set_iam_policy_sample
- *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -642,10 +630,6 @@ export class TagValuesClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
- *
- * @example <caption>include:samples/generated/v3/tag_values.test_iam_permissions.js</caption>
- * region_tag:resourcemanager_test_iam_permissions_sample
- *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -728,10 +712,6 @@ export class TagValuesClient {
  * @example
  * const [operation] = await client.createTagValue(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_values.create_tag_value.js</caption>
- * region_tag:resourcemanager_create_tag_value_sample
- *
  */
   createTagValue(
       request?: protos.google.cloud.resourcemanager.v3.ICreateTagValueRequest,
@@ -774,10 +754,6 @@ export class TagValuesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_values.create_tag_value.js</caption>
- * region_tag:resourcemanager_create_tag_value_sample
- *
  */
   async checkCreateTagValueProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagValue, protos.google.cloud.resourcemanager.v3.CreateTagValueMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -832,10 +808,6 @@ export class TagValuesClient {
  * @example
  * const [operation] = await client.updateTagValue(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_values.update_tag_value.js</caption>
- * region_tag:resourcemanager_update_tag_value_sample
- *
  */
   updateTagValue(
       request?: protos.google.cloud.resourcemanager.v3.IUpdateTagValueRequest,
@@ -885,10 +857,6 @@ export class TagValuesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_values.update_tag_value.js</caption>
- * region_tag:resourcemanager_update_tag_value_sample
- *
  */
   async checkUpdateTagValueProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagValue, protos.google.cloud.resourcemanager.v3.UpdateTagValueMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -942,10 +910,6 @@ export class TagValuesClient {
  * @example
  * const [operation] = await client.deleteTagValue(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_values.delete_tag_value.js</caption>
- * region_tag:resourcemanager_delete_tag_value_sample
- *
  */
   deleteTagValue(
       request?: protos.google.cloud.resourcemanager.v3.IDeleteTagValueRequest,
@@ -995,10 +959,6 @@ export class TagValuesClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_values.delete_tag_value.js</caption>
- * region_tag:resourcemanager_delete_tag_value_sample
- *
  */
   async checkDeleteTagValueProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagValue, protos.google.cloud.resourcemanager.v3.DeleteTagValueMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1054,10 +1014,6 @@ export class TagValuesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/tag_values.list_tag_values.js</caption>
- * region_tag:resourcemanager_list_tag_values_sample
- *
  */
   listTagValues(
       request?: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
@@ -1113,10 +1069,6 @@ export class TagValuesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/tag_values.list_tag_values.js</caption>
- * region_tag:resourcemanager_list_tag_values_sample
- *
  */
   listTagValuesStream(
       request?: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,
@@ -1165,10 +1117,6 @@ export class TagValuesClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/tag_values.list_tag_values.js</caption>
- * region_tag:resourcemanager_list_tag_values_sample
- *
  */
   listTagValuesAsync(
       request?: protos.google.cloud.resourcemanager.v3.IListTagValuesRequest,

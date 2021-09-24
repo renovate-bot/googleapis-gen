@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START scheduler_list_jobs_sample]
+  // [START scheduler_v1_generated_CloudScheduler_ListJobs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   listJobs();
-  // [END scheduler_list_jobs_sample]
+  // [END scheduler_v1_generated_CloudScheduler_ListJobs_async]
 }
 
 process.on('unhandledRejection', err => {

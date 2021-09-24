@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START memcache_list_instances_sample]
+  // [START memcache_v1_generated_CloudMemcache_ListInstances_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(parent) {
   }
 
   listInstances();
-  // [END memcache_list_instances_sample]
+  // [END memcache_v1_generated_CloudMemcache_ListInstances_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, executionId, execution) {
-  // [START notebooks_create_execution_sample]
+  // [START notebooks_v1_generated_NotebookService_CreateExecution_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, executionId, execution) {
   }
 
   createExecution();
-  // [END notebooks_create_execution_sample]
+  // [END notebooks_v1_generated_NotebookService_CreateExecution_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, template) {
-  // [START dataproc_create_workflow_template_sample]
+  // [START dataproc_v1_generated_WorkflowTemplateService_CreateWorkflowTemplate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, template) {
   }
 
   createWorkflowTemplate();
-  // [END dataproc_create_workflow_template_sample]
+  // [END dataproc_v1_generated_WorkflowTemplateService_CreateWorkflowTemplate_async]
 }
 
 process.on('unhandledRejection', err => {

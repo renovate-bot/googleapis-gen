@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, targetSnapshot) {
-  // [START notebooks_rollback_instance_sample]
+  // [START notebooks_v1_generated_NotebookService_RollbackInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name, targetSnapshot) {
   }
 
   rollbackInstance();
-  // [END notebooks_rollback_instance_sample]
+  // [END notebooks_v1_generated_NotebookService_RollbackInstance_async]
 }
 
 process.on('unhandledRejection', err => {

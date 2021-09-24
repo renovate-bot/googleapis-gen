@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, otherShelfName) {
-  // [START library_move_book_sample]
+  // [START library_v1_generated_LibraryService_MoveBook_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name, otherShelfName) {
   }
 
   moveBook();
-  // [END library_move_book_sample]
+  // [END library_v1_generated_LibraryService_MoveBook_async]
 }
 
 process.on('unhandledRejection', err => {

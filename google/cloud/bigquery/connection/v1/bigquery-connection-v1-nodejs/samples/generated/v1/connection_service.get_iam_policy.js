@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START connection_get_iam_policy_sample]
+  // [START connection_v1_generated_ConnectionService_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END connection_get_iam_policy_sample]
+  // [END connection_v1_generated_ConnectionService_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

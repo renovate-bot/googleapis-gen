@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_query_testable_permissions_sample]
+  // [START admin_v1_generated_IAM_QueryTestablePermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main() {
   }
 
   queryTestablePermissions();
-  // [END admin_query_testable_permissions_sample]
+  // [END admin_v1_generated_IAM_QueryTestablePermissions_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, metadataImport) {
-  // [START metastore_update_metadata_import_sample]
+  // [START metastore_v1beta_generated_DataprocMetastore_UpdateMetadataImport_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(updateMask, metadataImport) {
   }
 
   updateMetadataImport();
-  // [END metastore_update_metadata_import_sample]
+  // [END metastore_v1beta_generated_DataprocMetastore_UpdateMetadataImport_async]
 }
 
 process.on('unhandledRejection', err => {

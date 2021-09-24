@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START containeranalysis_delete_note_sample]
+  // [START containeranalysis_v1_generated_Grafeas_DeleteNote_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteNote();
-  // [END containeranalysis_delete_note_sample]
+  // [END containeranalysis_v1_generated_Grafeas_DeleteNote_async]
 }
 
 process.on('unhandledRejection', err => {

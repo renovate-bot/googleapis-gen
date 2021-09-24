@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START channel_start_paid_service_sample]
+  // [START channel_v1_generated_CloudChannelService_StartPaidService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   startPaidService();
-  // [END channel_start_paid_service_sample]
+  // [END channel_v1_generated_CloudChannelService_StartPaidService_async]
 }
 
 process.on('unhandledRejection', err => {

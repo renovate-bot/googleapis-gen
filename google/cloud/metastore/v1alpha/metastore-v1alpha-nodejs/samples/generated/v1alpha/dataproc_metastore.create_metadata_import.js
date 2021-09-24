@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, metadataImportId, metadataImport) {
-  // [START metastore_create_metadata_import_sample]
+  // [START metastore_v1alpha_generated_DataprocMetastore_CreateMetadataImport_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(parent, metadataImportId, metadataImport) {
   }
 
   createMetadataImport();
-  // [END metastore_create_metadata_import_sample]
+  // [END metastore_v1alpha_generated_DataprocMetastore_CreateMetadataImport_async]
 }
 
 process.on('unhandledRejection', err => {

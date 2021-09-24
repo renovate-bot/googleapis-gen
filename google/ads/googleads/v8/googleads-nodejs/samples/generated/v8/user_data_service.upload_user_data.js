@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_upload_user_data_sample]
+  // [START googleads_v8_generated_UserDataService_UploadUserData_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(customerId, operations) {
   }
 
   uploadUserData();
-  // [END googleads_upload_user_data_sample]
+  // [END googleads_v8_generated_UserDataService_UploadUserData_async]
 }
 
 process.on('unhandledRejection', err => {

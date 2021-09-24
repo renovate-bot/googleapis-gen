@@ -16,7 +16,7 @@
 'use strict';
 
 function main(impressions, requestId, clientInfo) {
-  // [START playablelocations_log_impressions_sample]
+  // [START playablelocations_v3_generated_PlayableLocations_LogImpressions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(impressions, requestId, clientInfo) {
   }
 
   logImpressions();
-  // [END playablelocations_log_impressions_sample]
+  // [END playablelocations_v3_generated_PlayableLocations_LogImpressions_async]
 }
 
 process.on('unhandledRejection', err => {

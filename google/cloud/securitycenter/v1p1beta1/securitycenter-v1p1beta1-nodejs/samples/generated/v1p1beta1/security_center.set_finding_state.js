@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, state, startTime) {
-  // [START securitycenter_set_finding_state_sample]
+  // [START securitycenter_v1p1beta1_generated_SecurityCenter_SetFindingState_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name, state, startTime) {
   }
 
   setFindingState();
-  // [END securitycenter_set_finding_state_sample]
+  // [END securitycenter_v1p1beta1_generated_SecurityCenter_SetFindingState_async]
 }
 
 process.on('unhandledRejection', err => {

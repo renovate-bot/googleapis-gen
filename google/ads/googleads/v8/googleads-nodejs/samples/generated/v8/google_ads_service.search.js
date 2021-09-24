@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, query) {
-  // [START googleads_search_sample]
+  // [START googleads_v8_generated_GoogleAdsService_Search_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -79,7 +79,7 @@ function main(customerId, query) {
   }
 
   search();
-  // [END googleads_search_sample]
+  // [END googleads_v8_generated_GoogleAdsService_Search_async]
 }
 
 process.on('unhandledRejection', err => {

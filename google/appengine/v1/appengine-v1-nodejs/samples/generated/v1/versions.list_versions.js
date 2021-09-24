@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_list_versions_sample]
+  // [START appengine_v1_generated_Versions_ListVersions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   listVersions();
-  // [END appengine_list_versions_sample]
+  // [END appengine_v1_generated_Versions_ListVersions_async]
 }
 
 process.on('unhandledRejection', err => {

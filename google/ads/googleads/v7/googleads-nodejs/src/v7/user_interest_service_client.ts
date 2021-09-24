@@ -690,10 +690,6 @@ export class UserInterestServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getUserInterest(request);
- *
- * @example <caption>include:samples/generated/v7/user_interest_service.get_user_interest.js</caption>
- * region_tag:googleads_get_user_interest_sample
- *
  */
   getUserInterest(
       request?: protos.google.ads.googleads.v7.services.IGetUserInterestRequest,

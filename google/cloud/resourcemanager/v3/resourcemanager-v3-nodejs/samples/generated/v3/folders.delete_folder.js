@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START resourcemanager_delete_folder_sample]
+  // [START resourcemanager_v3_generated_Folders_DeleteFolder_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteFolder();
-  // [END resourcemanager_delete_folder_sample]
+  // [END resourcemanager_v3_generated_Folders_DeleteFolder_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START fleetengine_search_trips_sample]
+  // [START fleetengine_v1_generated_TripService_SearchTrips_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -81,7 +81,7 @@ function main(parent) {
   }
 
   searchTrips();
-  // [END fleetengine_search_trips_sample]
+  // [END fleetengine_v1_generated_TripService_SearchTrips_async]
 }
 
 process.on('unhandledRejection', err => {

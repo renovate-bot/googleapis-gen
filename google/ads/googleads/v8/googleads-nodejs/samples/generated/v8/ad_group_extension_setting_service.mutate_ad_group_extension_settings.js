@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_ad_group_extension_settings_sample]
+  // [START googleads_v8_generated_AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(customerId, operations) {
   }
 
   mutateAdGroupExtensionSettings();
-  // [END googleads_mutate_ad_group_extension_settings_sample]
+  // [END googleads_v8_generated_AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_async]
 }
 
 process.on('unhandledRejection', err => {

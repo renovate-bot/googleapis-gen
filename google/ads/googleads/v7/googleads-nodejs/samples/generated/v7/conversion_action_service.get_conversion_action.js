@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_conversion_action_sample]
+  // [START googleads_v7_generated_ConversionActionService_GetConversionAction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getConversionAction();
-  // [END googleads_get_conversion_action_sample]
+  // [END googleads_v7_generated_ConversionActionService_GetConversionAction_async]
 }
 
 process.on('unhandledRejection', err => {

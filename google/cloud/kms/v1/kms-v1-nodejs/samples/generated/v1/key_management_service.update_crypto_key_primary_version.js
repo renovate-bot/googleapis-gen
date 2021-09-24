@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, cryptoKeyVersionId) {
-  // [START kms_update_crypto_key_primary_version_sample]
+  // [START kms_v1_generated_KeyManagementService_UpdateCryptoKeyPrimaryVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name, cryptoKeyVersionId) {
   }
 
   updateCryptoKeyPrimaryVersion();
-  // [END kms_update_crypto_key_primary_version_sample]
+  // [END kms_v1_generated_KeyManagementService_UpdateCryptoKeyPrimaryVersion_async]
 }
 
 process.on('unhandledRejection', err => {

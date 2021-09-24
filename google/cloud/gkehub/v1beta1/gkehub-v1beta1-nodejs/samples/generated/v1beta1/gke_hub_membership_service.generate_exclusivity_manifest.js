@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gkehub_generate_exclusivity_manifest_sample]
+  // [START gkehub_v1beta1_generated_GkeHubMembershipService_GenerateExclusivityManifest_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name) {
   }
 
   generateExclusivityManifest();
-  // [END gkehub_generate_exclusivity_manifest_sample]
+  // [END gkehub_v1beta1_generated_GkeHubMembershipService_GenerateExclusivityManifest_async]
 }
 
 process.on('unhandledRejection', err => {

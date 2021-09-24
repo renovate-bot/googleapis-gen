@@ -417,10 +417,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createService(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.create_service.js</caption>
- * region_tag:monitoring_create_service_sample
- *
  */
   createService(
       request?: protos.google.monitoring.v3.ICreateServiceRequest,
@@ -494,10 +490,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getService(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.get_service.js</caption>
- * region_tag:monitoring_get_service_sample
- *
  */
   getService(
       request?: protos.google.monitoring.v3.IGetServiceRequest,
@@ -572,10 +564,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateService(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.update_service.js</caption>
- * region_tag:monitoring_update_service_sample
- *
  */
   updateService(
       request?: protos.google.monitoring.v3.IUpdateServiceRequest,
@@ -649,10 +637,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteService(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.delete_service.js</caption>
- * region_tag:monitoring_delete_service_sample
- *
  */
   deleteService(
       request?: protos.google.monitoring.v3.IDeleteServiceRequest,
@@ -734,10 +718,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createServiceLevelObjective(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.create_service_level_objective.js</caption>
- * region_tag:monitoring_create_service_level_objective_sample
- *
  */
   createServiceLevelObjective(
       request?: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
@@ -816,10 +796,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServiceLevelObjective(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.get_service_level_objective.js</caption>
- * region_tag:monitoring_get_service_level_objective_sample
- *
  */
   getServiceLevelObjective(
       request?: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
@@ -894,10 +870,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateServiceLevelObjective(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.update_service_level_objective.js</caption>
- * region_tag:monitoring_update_service_level_objective_sample
- *
  */
   updateServiceLevelObjective(
       request?: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
@@ -971,10 +943,6 @@ export class ServiceMonitoringServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteServiceLevelObjective(request);
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.delete_service_level_objective.js</caption>
- * region_tag:monitoring_delete_service_level_objective_sample
- *
  */
   deleteServiceLevelObjective(
       request?: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
@@ -1083,10 +1051,6 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.list_services.js</caption>
- * region_tag:monitoring_list_services_sample
- *
  */
   listServices(
       request?: protos.google.monitoring.v3.IListServicesRequest,
@@ -1173,10 +1137,6 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.list_services.js</caption>
- * region_tag:monitoring_list_services_sample
- *
  */
   listServicesStream(
       request?: protos.google.monitoring.v3.IListServicesRequest,
@@ -1256,10 +1216,6 @@ export class ServiceMonitoringServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.list_services.js</caption>
- * region_tag:monitoring_list_services_sample
- *
  */
   listServicesAsync(
       request?: protos.google.monitoring.v3.IListServicesRequest,
@@ -1342,10 +1298,6 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.list_service_level_objectives.js</caption>
- * region_tag:monitoring_list_service_level_objectives_sample
- *
  */
   listServiceLevelObjectives(
       request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
@@ -1418,10 +1370,6 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.list_service_level_objectives.js</caption>
- * region_tag:monitoring_list_service_level_objectives_sample
- *
  */
   listServiceLevelObjectivesStream(
       request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
@@ -1487,10 +1435,6 @@ export class ServiceMonitoringServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/service_monitoring_service.list_service_level_objectives.js</caption>
- * region_tag:monitoring_list_service_level_objectives_sample
- *
  */
   listServiceLevelObjectivesAsync(
       request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,

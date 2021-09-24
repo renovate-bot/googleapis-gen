@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datafusion_restart_instance_sample]
+  // [START datafusion_v1beta1_generated_DataFusion_RestartInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   restartInstance();
-  // [END datafusion_restart_instance_sample]
+  // [END datafusion_v1beta1_generated_DataFusion_RestartInstance_async]
 }
 
 process.on('unhandledRejection', err => {

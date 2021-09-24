@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, inputConfig) {
-  // [START recommendationengine_import_catalog_items_sample]
+  // [START recommendationengine_v1beta1_generated_CatalogService_ImportCatalogItems_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent, inputConfig) {
   }
 
   importCatalogItems();
-  // [END recommendationengine_import_catalog_items_sample]
+  // [END recommendationengine_v1beta1_generated_CatalogService_ImportCatalogItems_async]
 }
 
 process.on('unhandledRejection', err => {

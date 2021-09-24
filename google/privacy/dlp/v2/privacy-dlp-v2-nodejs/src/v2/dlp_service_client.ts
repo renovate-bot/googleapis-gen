@@ -439,10 +439,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.inspectContent(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.inspect_content.js</caption>
- * region_tag:dlp_inspect_content_sample
- *
  */
   inspectContent(
       request?: protos.google.privacy.dlp.v2.IInspectContentRequest,
@@ -547,10 +543,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.redactImage(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.redact_image.js</caption>
- * region_tag:dlp_redact_image_sample
- *
  */
   redactImage(
       request?: protos.google.privacy.dlp.v2.IRedactImageRequest,
@@ -668,10 +660,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deidentifyContent(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.deidentify_content.js</caption>
- * region_tag:dlp_deidentify_content_sample
- *
  */
   deidentifyContent(
       request?: protos.google.privacy.dlp.v2.IDeidentifyContentRequest,
@@ -792,10 +780,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reidentifyContent(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.reidentify_content.js</caption>
- * region_tag:dlp_reidentify_content_sample
- *
  */
   reidentifyContent(
       request?: protos.google.privacy.dlp.v2.IReidentifyContentRequest,
@@ -882,10 +866,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listInfoTypes(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_info_types.js</caption>
- * region_tag:dlp_list_info_types_sample
- *
  */
   listInfoTypes(
       request?: protos.google.privacy.dlp.v2.IListInfoTypesRequest,
@@ -987,10 +967,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createInspectTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.create_inspect_template.js</caption>
- * region_tag:dlp_create_inspect_template_sample
- *
  */
   createInspectTemplate(
       request?: protos.google.privacy.dlp.v2.ICreateInspectTemplateRequest,
@@ -1069,10 +1045,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateInspectTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.update_inspect_template.js</caption>
- * region_tag:dlp_update_inspect_template_sample
- *
  */
   updateInspectTemplate(
       request?: protos.google.privacy.dlp.v2.IUpdateInspectTemplateRequest,
@@ -1147,10 +1119,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInspectTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.get_inspect_template.js</caption>
- * region_tag:dlp_get_inspect_template_sample
- *
  */
   getInspectTemplate(
       request?: protos.google.privacy.dlp.v2.IGetInspectTemplateRequest,
@@ -1225,10 +1193,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteInspectTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.delete_inspect_template.js</caption>
- * region_tag:dlp_delete_inspect_template_sample
- *
  */
   deleteInspectTemplate(
       request?: protos.google.privacy.dlp.v2.IDeleteInspectTemplateRequest,
@@ -1331,10 +1295,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createDeidentifyTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.create_deidentify_template.js</caption>
- * region_tag:dlp_create_deidentify_template_sample
- *
  */
   createDeidentifyTemplate(
       request?: protos.google.privacy.dlp.v2.ICreateDeidentifyTemplateRequest,
@@ -1414,10 +1374,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateDeidentifyTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.update_deidentify_template.js</caption>
- * region_tag:dlp_update_deidentify_template_sample
- *
  */
   updateDeidentifyTemplate(
       request?: protos.google.privacy.dlp.v2.IUpdateDeidentifyTemplateRequest,
@@ -1493,10 +1449,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDeidentifyTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.get_deidentify_template.js</caption>
- * region_tag:dlp_get_deidentify_template_sample
- *
  */
   getDeidentifyTemplate(
       request?: protos.google.privacy.dlp.v2.IGetDeidentifyTemplateRequest,
@@ -1572,10 +1524,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDeidentifyTemplate(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.delete_deidentify_template.js</caption>
- * region_tag:dlp_delete_deidentify_template_sample
- *
  */
   deleteDeidentifyTemplate(
       request?: protos.google.privacy.dlp.v2.IDeleteDeidentifyTemplateRequest,
@@ -1673,10 +1621,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createJobTrigger(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.create_job_trigger.js</caption>
- * region_tag:dlp_create_job_trigger_sample
- *
  */
   createJobTrigger(
       request?: protos.google.privacy.dlp.v2.ICreateJobTriggerRequest,
@@ -1754,10 +1698,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateJobTrigger(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.update_job_trigger.js</caption>
- * region_tag:dlp_update_job_trigger_sample
- *
  */
   updateJobTrigger(
       request?: protos.google.privacy.dlp.v2.IUpdateJobTriggerRequest,
@@ -1837,10 +1777,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.hybridInspectJobTrigger(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.hybrid_inspect_job_trigger.js</caption>
- * region_tag:dlp_hybrid_inspect_job_trigger_sample
- *
  */
   hybridInspectJobTrigger(
       request?: protos.google.privacy.dlp.v2.IHybridInspectJobTriggerRequest,
@@ -1914,10 +1850,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getJobTrigger(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.get_job_trigger.js</caption>
- * region_tag:dlp_get_job_trigger_sample
- *
  */
   getJobTrigger(
       request?: protos.google.privacy.dlp.v2.IGetJobTriggerRequest,
@@ -1991,10 +1923,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteJobTrigger(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.delete_job_trigger.js</caption>
- * region_tag:dlp_delete_job_trigger_sample
- *
  */
   deleteJobTrigger(
       request?: protos.google.privacy.dlp.v2.IDeleteJobTriggerRequest,
@@ -2068,10 +1996,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.activateJobTrigger(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.activate_job_trigger.js</caption>
- * region_tag:dlp_activate_job_trigger_sample
- *
  */
   activateJobTrigger(
       request?: protos.google.privacy.dlp.v2.IActivateJobTriggerRequest,
@@ -2175,10 +2099,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createDlpJob(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.create_dlp_job.js</caption>
- * region_tag:dlp_create_dlp_job_sample
- *
  */
   createDlpJob(
       request?: protos.google.privacy.dlp.v2.ICreateDlpJobRequest,
@@ -2252,10 +2172,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDlpJob(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.get_dlp_job.js</caption>
- * region_tag:dlp_get_dlp_job_sample
- *
  */
   getDlpJob(
       request?: protos.google.privacy.dlp.v2.IGetDlpJobRequest,
@@ -2331,10 +2247,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteDlpJob(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.delete_dlp_job.js</caption>
- * region_tag:dlp_delete_dlp_job_sample
- *
  */
   deleteDlpJob(
       request?: protos.google.privacy.dlp.v2.IDeleteDlpJobRequest,
@@ -2410,10 +2322,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.cancelDlpJob(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.cancel_dlp_job.js</caption>
- * region_tag:dlp_cancel_dlp_job_sample
- *
  */
   cancelDlpJob(
       request?: protos.google.privacy.dlp.v2.ICancelDlpJobRequest,
@@ -2515,10 +2423,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createStoredInfoType(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.create_stored_info_type.js</caption>
- * region_tag:dlp_create_stored_info_type_sample
- *
  */
   createStoredInfoType(
       request?: protos.google.privacy.dlp.v2.ICreateStoredInfoTypeRequest,
@@ -2601,10 +2505,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateStoredInfoType(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.update_stored_info_type.js</caption>
- * region_tag:dlp_update_stored_info_type_sample
- *
  */
   updateStoredInfoType(
       request?: protos.google.privacy.dlp.v2.IUpdateStoredInfoTypeRequest,
@@ -2680,10 +2580,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getStoredInfoType(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.get_stored_info_type.js</caption>
- * region_tag:dlp_get_stored_info_type_sample
- *
  */
   getStoredInfoType(
       request?: protos.google.privacy.dlp.v2.IGetStoredInfoTypeRequest,
@@ -2759,10 +2655,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteStoredInfoType(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.delete_stored_info_type.js</caption>
- * region_tag:dlp_delete_stored_info_type_sample
- *
  */
   deleteStoredInfoType(
       request?: protos.google.privacy.dlp.v2.IDeleteStoredInfoTypeRequest,
@@ -2842,10 +2734,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.hybridInspectDlpJob(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.hybrid_inspect_dlp_job.js</caption>
- * region_tag:dlp_hybrid_inspect_dlp_job_sample
- *
  */
   hybridInspectDlpJob(
       request?: protos.google.privacy.dlp.v2.IHybridInspectDlpJobRequest,
@@ -2921,10 +2809,6 @@ export class DlpServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.finishDlpJob(request);
- *
- * @example <caption>include:samples/generated/v2/dlp_service.finish_dlp_job.js</caption>
- * region_tag:dlp_finish_dlp_job_sample
- *
  */
   finishDlpJob(
       request?: protos.google.privacy.dlp.v2.IFinishDlpJobRequest,
@@ -3043,10 +2927,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_inspect_templates.js</caption>
- * region_tag:dlp_list_inspect_templates_sample
- *
  */
   listInspectTemplates(
       request?: protos.google.privacy.dlp.v2.IListInspectTemplatesRequest,
@@ -3142,10 +3022,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_inspect_templates.js</caption>
- * region_tag:dlp_list_inspect_templates_sample
- *
  */
   listInspectTemplatesStream(
       request?: protos.google.privacy.dlp.v2.IListInspectTemplatesRequest,
@@ -3234,10 +3110,6 @@ export class DlpServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_inspect_templates.js</caption>
- * region_tag:dlp_list_inspect_templates_sample
- *
  */
   listInspectTemplatesAsync(
       request?: protos.google.privacy.dlp.v2.IListInspectTemplatesRequest,
@@ -3345,10 +3217,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_deidentify_templates.js</caption>
- * region_tag:dlp_list_deidentify_templates_sample
- *
  */
   listDeidentifyTemplates(
       request?: protos.google.privacy.dlp.v2.IListDeidentifyTemplatesRequest,
@@ -3444,10 +3312,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_deidentify_templates.js</caption>
- * region_tag:dlp_list_deidentify_templates_sample
- *
  */
   listDeidentifyTemplatesStream(
       request?: protos.google.privacy.dlp.v2.IListDeidentifyTemplatesRequest,
@@ -3536,10 +3400,6 @@ export class DlpServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_deidentify_templates.js</caption>
- * region_tag:dlp_list_deidentify_templates_sample
- *
  */
   listDeidentifyTemplatesAsync(
       request?: protos.google.privacy.dlp.v2.IListDeidentifyTemplatesRequest,
@@ -3669,10 +3529,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_job_triggers.js</caption>
- * region_tag:dlp_list_job_triggers_sample
- *
  */
   listJobTriggers(
       request?: protos.google.privacy.dlp.v2.IListJobTriggersRequest,
@@ -3791,10 +3647,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_job_triggers.js</caption>
- * region_tag:dlp_list_job_triggers_sample
- *
  */
   listJobTriggersStream(
       request?: protos.google.privacy.dlp.v2.IListJobTriggersRequest,
@@ -3906,10 +3758,6 @@ export class DlpServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_job_triggers.js</caption>
- * region_tag:dlp_list_job_triggers_sample
- *
  */
   listJobTriggersAsync(
       request?: protos.google.privacy.dlp.v2.IListJobTriggersRequest,
@@ -4042,10 +3890,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_dlp_jobs.js</caption>
- * region_tag:dlp_list_dlp_jobs_sample
- *
  */
   listDlpJobs(
       request?: protos.google.privacy.dlp.v2.IListDlpJobsRequest,
@@ -4166,10 +4010,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_dlp_jobs.js</caption>
- * region_tag:dlp_list_dlp_jobs_sample
- *
  */
   listDlpJobsStream(
       request?: protos.google.privacy.dlp.v2.IListDlpJobsRequest,
@@ -4283,10 +4123,6 @@ export class DlpServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_dlp_jobs.js</caption>
- * region_tag:dlp_list_dlp_jobs_sample
- *
  */
   listDlpJobsAsync(
       request?: protos.google.privacy.dlp.v2.IListDlpJobsRequest,
@@ -4395,10 +4231,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_stored_info_types.js</caption>
- * region_tag:dlp_list_stored_info_types_sample
- *
  */
   listStoredInfoTypes(
       request?: protos.google.privacy.dlp.v2.IListStoredInfoTypesRequest,
@@ -4495,10 +4327,6 @@ export class DlpServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_stored_info_types.js</caption>
- * region_tag:dlp_list_stored_info_types_sample
- *
  */
   listStoredInfoTypesStream(
       request?: protos.google.privacy.dlp.v2.IListStoredInfoTypesRequest,
@@ -4588,10 +4416,6 @@ export class DlpServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/dlp_service.list_stored_info_types.js</caption>
- * region_tag:dlp_list_stored_info_types_sample
- *
  */
   listStoredInfoTypesAsync(
       request?: protos.google.privacy.dlp.v2.IListStoredInfoTypesRequest,

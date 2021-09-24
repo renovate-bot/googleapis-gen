@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datacatalog_delete_taxonomy_sample]
+  // [START datacatalog_v1_generated_PolicyTagManager_DeleteTaxonomy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteTaxonomy();
-  // [END datacatalog_delete_taxonomy_sample]
+  // [END datacatalog_v1_generated_PolicyTagManager_DeleteTaxonomy_async]
 }
 
 process.on('unhandledRejection', err => {

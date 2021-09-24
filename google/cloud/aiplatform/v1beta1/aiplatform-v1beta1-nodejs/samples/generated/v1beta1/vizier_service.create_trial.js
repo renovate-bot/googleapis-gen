@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, trial) {
-  // [START aiplatform_create_trial_sample]
+  // [START aiplatform_v1beta1_generated_VizierService_CreateTrial_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, trial) {
   }
 
   createTrial();
-  // [END aiplatform_create_trial_sample]
+  // [END aiplatform_v1beta1_generated_VizierService_CreateTrial_async]
 }
 
 process.on('unhandledRejection', err => {

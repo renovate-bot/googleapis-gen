@@ -16,7 +16,7 @@
 'use strict';
 
 function main(inventory) {
-  // [START retail_set_inventory_sample]
+  // [START retail_v2alpha_generated_ProductService_SetInventory_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -95,7 +95,7 @@ function main(inventory) {
   }
 
   setInventory();
-  // [END retail_set_inventory_sample]
+  // [END retail_v2alpha_generated_ProductService_SetInventory_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_list_services_sample]
+  // [START appengine_v1_generated_Services_ListServices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   listServices();
-  // [END appengine_list_services_sample]
+  // [END appengine_v1_generated_Services_ListServices_async]
 }
 
 process.on('unhandledRejection', err => {

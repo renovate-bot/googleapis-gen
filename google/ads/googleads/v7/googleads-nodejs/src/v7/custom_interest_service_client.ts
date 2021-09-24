@@ -690,10 +690,6 @@ export class CustomInterestServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomInterest(request);
- *
- * @example <caption>include:samples/generated/v7/custom_interest_service.get_custom_interest.js</caption>
- * region_tag:googleads_get_custom_interest_sample
- *
  */
   getCustomInterest(
       request?: protos.google.ads.googleads.v7.services.IGetCustomInterestRequest,
@@ -783,10 +779,6 @@ export class CustomInterestServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomInterests(request);
- *
- * @example <caption>include:samples/generated/v7/custom_interest_service.mutate_custom_interests.js</caption>
- * region_tag:googleads_mutate_custom_interests_sample
- *
  */
   mutateCustomInterests(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomInterestsRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectName) {
-  // [START clouderrorreporting_delete_events_sample]
+  // [START clouderrorreporting_v1beta1_generated_ErrorStatsService_DeleteEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(projectName) {
   }
 
   deleteEvents();
-  // [END clouderrorreporting_delete_events_sample]
+  // [END clouderrorreporting_v1beta1_generated_ErrorStatsService_DeleteEvents_async]
 }
 
 process.on('unhandledRejection', err => {

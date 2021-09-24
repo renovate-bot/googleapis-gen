@@ -367,10 +367,6 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1p5beta1/asset_service.list_assets.js</caption>
- * region_tag:asset_list_assets_sample
- *
  */
   listAssets(
       request?: protos.google.cloud.asset.v1p5beta1.IListAssetsRequest,
@@ -450,10 +446,6 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1p5beta1/asset_service.list_assets.js</caption>
- * region_tag:asset_list_assets_sample
- *
  */
   listAssetsStream(
       request?: protos.google.cloud.asset.v1p5beta1.IListAssetsRequest,
@@ -526,10 +518,6 @@ export class AssetServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1p5beta1/asset_service.list_assets.js</caption>
- * region_tag:asset_list_assets_sample
- *
  */
   listAssetsAsync(
       request?: protos.google.cloud.asset.v1p5beta1.IListAssetsRequest,

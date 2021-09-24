@@ -497,10 +497,6 @@ export class AccessContextManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAccessPolicy(request);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.get_access_policy.js</caption>
- * region_tag:accesscontextmanager_get_access_policy_sample
- *
  */
   getAccessPolicy(
       request?: protos.google.identity.accesscontextmanager.v1.IGetAccessPolicyRequest,
@@ -587,10 +583,6 @@ export class AccessContextManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAccessLevel(request);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.get_access_level.js</caption>
- * region_tag:accesscontextmanager_get_access_level_sample
- *
  */
   getAccessLevel(
       request?: protos.google.identity.accesscontextmanager.v1.IGetAccessLevelRequest,
@@ -668,10 +660,6 @@ export class AccessContextManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServicePerimeter(request);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.get_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_get_service_perimeter_sample
- *
  */
   getServicePerimeter(
       request?: protos.google.identity.accesscontextmanager.v1.IGetServicePerimeterRequest,
@@ -745,10 +733,6 @@ export class AccessContextManagerClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGcpUserAccessBinding(request);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.get_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_get_gcp_user_access_binding_sample
- *
  */
   getGcpUserAccessBinding(
       request?: protos.google.identity.accesscontextmanager.v1.IGetGcpUserAccessBindingRequest,
@@ -844,10 +828,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.createAccessPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_access_policy.js</caption>
- * region_tag:accesscontextmanager_create_access_policy_sample
- *
  */
   createAccessPolicy(
       request?: protos.google.identity.accesscontextmanager.v1.IAccessPolicy,
@@ -890,10 +870,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_access_policy.js</caption>
- * region_tag:accesscontextmanager_create_access_policy_sample
- *
  */
   async checkCreateAccessPolicyProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.AccessPolicy, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -948,10 +924,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.updateAccessPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_access_policy.js</caption>
- * region_tag:accesscontextmanager_update_access_policy_sample
- *
  */
   updateAccessPolicy(
       request?: protos.google.identity.accesscontextmanager.v1.IUpdateAccessPolicyRequest,
@@ -1001,10 +973,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_access_policy.js</caption>
- * region_tag:accesscontextmanager_update_access_policy_sample
- *
  */
   async checkUpdateAccessPolicyProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.AccessPolicy, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1057,10 +1025,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.deleteAccessPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_access_policy.js</caption>
- * region_tag:accesscontextmanager_delete_access_policy_sample
- *
  */
   deleteAccessPolicy(
       request?: protos.google.identity.accesscontextmanager.v1.IDeleteAccessPolicyRequest,
@@ -1110,10 +1074,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_access_policy.js</caption>
- * region_tag:accesscontextmanager_delete_access_policy_sample
- *
  */
   async checkDeleteAccessPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1175,10 +1135,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.createAccessLevel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_access_level.js</caption>
- * region_tag:accesscontextmanager_create_access_level_sample
- *
  */
   createAccessLevel(
       request?: protos.google.identity.accesscontextmanager.v1.ICreateAccessLevelRequest,
@@ -1228,10 +1184,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_access_level.js</caption>
- * region_tag:accesscontextmanager_create_access_level_sample
- *
  */
   async checkCreateAccessLevelProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.AccessLevel, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1291,10 +1243,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.updateAccessLevel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_access_level.js</caption>
- * region_tag:accesscontextmanager_update_access_level_sample
- *
  */
   updateAccessLevel(
       request?: protos.google.identity.accesscontextmanager.v1.IUpdateAccessLevelRequest,
@@ -1344,10 +1292,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_access_level.js</caption>
- * region_tag:accesscontextmanager_update_access_level_sample
- *
  */
   async checkUpdateAccessLevelProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.AccessLevel, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1403,10 +1347,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.deleteAccessLevel(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_access_level.js</caption>
- * region_tag:accesscontextmanager_delete_access_level_sample
- *
  */
   deleteAccessLevel(
       request?: protos.google.identity.accesscontextmanager.v1.IDeleteAccessLevelRequest,
@@ -1456,10 +1396,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_access_level.js</caption>
- * region_tag:accesscontextmanager_delete_access_level_sample
- *
  */
   async checkDeleteAccessLevelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1541,10 +1477,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.replaceAccessLevels(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.replace_access_levels.js</caption>
- * region_tag:accesscontextmanager_replace_access_levels_sample
- *
  */
   replaceAccessLevels(
       request?: protos.google.identity.accesscontextmanager.v1.IReplaceAccessLevelsRequest,
@@ -1594,10 +1526,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.replace_access_levels.js</caption>
- * region_tag:accesscontextmanager_replace_access_levels_sample
- *
  */
   async checkReplaceAccessLevelsProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1660,10 +1588,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.createServicePerimeter(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_create_service_perimeter_sample
- *
  */
   createServicePerimeter(
       request?: protos.google.identity.accesscontextmanager.v1.ICreateServicePerimeterRequest,
@@ -1713,10 +1637,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_create_service_perimeter_sample
- *
  */
   async checkCreateServicePerimeterProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.ServicePerimeter, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1773,10 +1693,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.updateServicePerimeter(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_update_service_perimeter_sample
- *
  */
   updateServicePerimeter(
       request?: protos.google.identity.accesscontextmanager.v1.IUpdateServicePerimeterRequest,
@@ -1826,10 +1742,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_update_service_perimeter_sample
- *
  */
   async checkUpdateServicePerimeterProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.ServicePerimeter, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1885,10 +1797,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.deleteServicePerimeter(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_delete_service_perimeter_sample
- *
  */
   deleteServicePerimeter(
       request?: protos.google.identity.accesscontextmanager.v1.IDeleteServicePerimeterRequest,
@@ -1938,10 +1846,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_service_perimeter.js</caption>
- * region_tag:accesscontextmanager_delete_service_perimeter_sample
- *
  */
   async checkDeleteServicePerimeterProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2019,10 +1923,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.replaceServicePerimeters(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.replace_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_replace_service_perimeters_sample
- *
  */
   replaceServicePerimeters(
       request?: protos.google.identity.accesscontextmanager.v1.IReplaceServicePerimetersRequest,
@@ -2072,10 +1972,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.replace_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_replace_service_perimeters_sample
- *
  */
   async checkReplaceServicePerimetersProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2150,10 +2046,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.commitServicePerimeters(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.commit_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_commit_service_perimeters_sample
- *
  */
   commitServicePerimeters(
       request?: protos.google.identity.accesscontextmanager.v1.ICommitServicePerimetersRequest,
@@ -2203,10 +2095,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.commit_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_commit_service_perimeters_sample
- *
  */
   async checkCommitServicePerimetersProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.CommitServicePerimetersResponse, protos.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2265,10 +2153,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.createGcpUserAccessBinding(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_create_gcp_user_access_binding_sample
- *
  */
   createGcpUserAccessBinding(
       request?: protos.google.identity.accesscontextmanager.v1.ICreateGcpUserAccessBindingRequest,
@@ -2318,10 +2202,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.create_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_create_gcp_user_access_binding_sample
- *
  */
   async checkCreateGcpUserAccessBindingProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.GcpUserAccessBinding, protos.google.identity.accesscontextmanager.v1.GcpUserAccessBindingOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2380,10 +2260,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.updateGcpUserAccessBinding(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_update_gcp_user_access_binding_sample
- *
  */
   updateGcpUserAccessBinding(
       request?: protos.google.identity.accesscontextmanager.v1.IUpdateGcpUserAccessBindingRequest,
@@ -2433,10 +2309,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.update_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_update_gcp_user_access_binding_sample
- *
  */
   async checkUpdateGcpUserAccessBindingProgress(name: string): Promise<LROperation<protos.google.identity.accesscontextmanager.v1.GcpUserAccessBinding, protos.google.identity.accesscontextmanager.v1.GcpUserAccessBindingOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2487,10 +2359,6 @@ export class AccessContextManagerClient {
  * @example
  * const [operation] = await client.deleteGcpUserAccessBinding(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_delete_gcp_user_access_binding_sample
- *
  */
   deleteGcpUserAccessBinding(
       request?: protos.google.identity.accesscontextmanager.v1.IDeleteGcpUserAccessBindingRequest,
@@ -2540,10 +2408,6 @@ export class AccessContextManagerClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.delete_gcp_user_access_binding.js</caption>
- * region_tag:accesscontextmanager_delete_gcp_user_access_binding_sample
- *
  */
   async checkDeleteGcpUserAccessBindingProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.identity.accesscontextmanager.v1.GcpUserAccessBindingOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2602,10 +2466,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_access_policies.js</caption>
- * region_tag:accesscontextmanager_list_access_policies_sample
- *
  */
   listAccessPolicies(
       request?: protos.google.identity.accesscontextmanager.v1.IListAccessPoliciesRequest,
@@ -2662,10 +2522,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_access_policies.js</caption>
- * region_tag:accesscontextmanager_list_access_policies_sample
- *
  */
   listAccessPoliciesStream(
       request?: protos.google.identity.accesscontextmanager.v1.IListAccessPoliciesRequest,
@@ -2715,10 +2571,6 @@ export class AccessContextManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_access_policies.js</caption>
- * region_tag:accesscontextmanager_list_access_policies_sample
- *
  */
   listAccessPoliciesAsync(
       request?: protos.google.identity.accesscontextmanager.v1.IListAccessPoliciesRequest,
@@ -2794,10 +2646,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_access_levels.js</caption>
- * region_tag:accesscontextmanager_list_access_levels_sample
- *
  */
   listAccessLevels(
       request?: protos.google.identity.accesscontextmanager.v1.IListAccessLevelsRequest,
@@ -2868,10 +2716,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_access_levels.js</caption>
- * region_tag:accesscontextmanager_list_access_levels_sample
- *
  */
   listAccessLevelsStream(
       request?: protos.google.identity.accesscontextmanager.v1.IListAccessLevelsRequest,
@@ -2935,10 +2779,6 @@ export class AccessContextManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_access_levels.js</caption>
- * region_tag:accesscontextmanager_list_access_levels_sample
- *
  */
   listAccessLevelsAsync(
       request?: protos.google.identity.accesscontextmanager.v1.IListAccessLevelsRequest,
@@ -3017,10 +2857,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_list_service_perimeters_sample
- *
  */
   listServicePerimeters(
       request?: protos.google.identity.accesscontextmanager.v1.IListServicePerimetersRequest,
@@ -3087,10 +2923,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_list_service_perimeters_sample
- *
  */
   listServicePerimetersStream(
       request?: protos.google.identity.accesscontextmanager.v1.IListServicePerimetersRequest,
@@ -3150,10 +2982,6 @@ export class AccessContextManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_service_perimeters.js</caption>
- * region_tag:accesscontextmanager_list_service_perimeters_sample
- *
  */
   listServicePerimetersAsync(
       request?: protos.google.identity.accesscontextmanager.v1.IListServicePerimetersRequest,
@@ -3228,10 +3056,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_gcp_user_access_bindings.js</caption>
- * region_tag:accesscontextmanager_list_gcp_user_access_bindings_sample
- *
  */
   listGcpUserAccessBindings(
       request?: protos.google.identity.accesscontextmanager.v1.IListGcpUserAccessBindingsRequest,
@@ -3294,10 +3118,6 @@ export class AccessContextManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_gcp_user_access_bindings.js</caption>
- * region_tag:accesscontextmanager_list_gcp_user_access_bindings_sample
- *
  */
   listGcpUserAccessBindingsStream(
       request?: protos.google.identity.accesscontextmanager.v1.IListGcpUserAccessBindingsRequest,
@@ -3353,10 +3173,6 @@ export class AccessContextManagerClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/access_context_manager.list_gcp_user_access_bindings.js</caption>
- * region_tag:accesscontextmanager_list_gcp_user_access_bindings_sample
- *
  */
   listGcpUserAccessBindingsAsync(
       request?: protos.google.identity.accesscontextmanager.v1.IListGcpUserAccessBindingsRequest,

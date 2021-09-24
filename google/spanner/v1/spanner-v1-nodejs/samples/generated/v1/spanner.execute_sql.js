@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, sql) {
-  // [START spanner_execute_sql_sample]
+  // [START spanner_v1_generated_Spanner_ExecuteSql_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -121,7 +121,7 @@ function main(session, sql) {
   }
 
   executeSql();
-  // [END spanner_execute_sql_sample]
+  // [END spanner_v1_generated_Spanner_ExecuteSql_async]
 }
 
 process.on('unhandledRejection', err => {

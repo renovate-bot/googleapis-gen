@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, action, update) {
-  // [START container_set_master_auth_sample]
+  // [START container_v1beta1_generated_ClusterManager_SetMasterAuth_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(projectId, zone, clusterId, action, update) {
   }
 
   setMasterAuth();
-  // [END container_set_master_auth_sample]
+  // [END container_v1beta1_generated_ClusterManager_SetMasterAuth_async]
 }
 
 process.on('unhandledRejection', err => {

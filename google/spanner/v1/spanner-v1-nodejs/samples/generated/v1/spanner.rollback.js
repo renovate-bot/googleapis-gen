@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, transactionId) {
-  // [START spanner_rollback_sample]
+  // [START spanner_v1_generated_Spanner_Rollback_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(session, transactionId) {
   }
 
   rollback();
-  // [END spanner_rollback_sample]
+  // [END spanner_v1_generated_Spanner_Rollback_async]
 }
 
 process.on('unhandledRejection', err => {

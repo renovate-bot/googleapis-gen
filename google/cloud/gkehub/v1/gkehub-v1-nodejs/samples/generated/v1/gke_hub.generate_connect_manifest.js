@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gkehub_generate_connect_manifest_sample]
+  // [START gkehub_v1_generated_GkeHub_GenerateConnectManifest_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -77,7 +77,7 @@ function main(name) {
   }
 
   generateConnectManifest();
-  // [END gkehub_generate_connect_manifest_sample]
+  // [END gkehub_v1_generated_GkeHub_GenerateConnectManifest_async]
 }
 
 process.on('unhandledRejection', err => {

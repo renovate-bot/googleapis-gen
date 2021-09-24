@@ -16,7 +16,7 @@
 'use strict';
 
 function main(budget) {
-  // [START budgets_update_budget_sample]
+  // [START budgets_v1beta1_generated_BudgetService_UpdateBudget_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(budget) {
   }
 
   updateBudget();
-  // [END budgets_update_budget_sample]
+  // [END budgets_v1beta1_generated_BudgetService_UpdateBudget_async]
 }
 
 process.on('unhandledRejection', err => {

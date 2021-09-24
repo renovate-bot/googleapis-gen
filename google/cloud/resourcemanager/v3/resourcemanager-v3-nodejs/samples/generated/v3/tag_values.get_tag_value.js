@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START resourcemanager_get_tag_value_sample]
+  // [START resourcemanager_v3_generated_TagValues_GetTagValue_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getTagValue();
-  // [END resourcemanager_get_tag_value_sample]
+  // [END resourcemanager_v3_generated_TagValues_GetTagValue_async]
 }
 
 process.on('unhandledRejection', err => {

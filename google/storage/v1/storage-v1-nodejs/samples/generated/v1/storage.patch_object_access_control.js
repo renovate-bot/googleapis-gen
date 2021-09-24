@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket, entity, object) {
-  // [START storage_patch_object_access_control_sample]
+  // [START storage_v1_generated_Storage_PatchObjectAccessControl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -84,7 +84,7 @@ function main(bucket, entity, object) {
   }
 
   patchObjectAccessControl();
-  // [END storage_patch_object_access_control_sample]
+  // [END storage_v1_generated_Storage_PatchObjectAccessControl_async]
 }
 
 process.on('unhandledRejection', err => {

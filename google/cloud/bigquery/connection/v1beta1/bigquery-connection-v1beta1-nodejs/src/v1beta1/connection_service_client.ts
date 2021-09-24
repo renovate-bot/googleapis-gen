@@ -328,10 +328,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createConnection(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.create_connection.js</caption>
- * region_tag:connection_create_connection_sample
- *
  */
   createConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.ICreateConnectionRequest,
@@ -404,10 +400,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConnection(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.get_connection.js</caption>
- * region_tag:connection_get_connection_sample
- *
  */
   getConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IGetConnectionRequest,
@@ -484,10 +476,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listConnections(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.list_connections.js</caption>
- * region_tag:connection_list_connections_sample
- *
  */
   listConnections(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IListConnectionsRequest,
@@ -565,10 +553,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateConnection(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.update_connection.js</caption>
- * region_tag:connection_update_connection_sample
- *
  */
   updateConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
@@ -643,10 +627,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateConnectionCredential(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.update_connection_credential.js</caption>
- * region_tag:connection_update_connection_credential_sample
- *
  */
   updateConnectionCredential(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionCredentialRequest,
@@ -719,10 +699,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteConnection(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.delete_connection.js</caption>
- * region_tag:connection_delete_connection_sample
- *
  */
   deleteConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IDeleteConnectionRequest,
@@ -800,10 +776,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.get_iam_policy.js</caption>
- * region_tag:connection_get_iam_policy_sample
- *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -884,10 +856,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.set_iam_policy.js</caption>
- * region_tag:connection_set_iam_policy_sample
- *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -971,10 +939,6 @@ export class ConnectionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
- *
- * @example <caption>include:samples/generated/v1beta1/connection_service.test_iam_permissions.js</caption>
- * region_tag:connection_test_iam_permissions_sample
- *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,

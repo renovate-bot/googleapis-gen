@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vision_get_product_sample]
+  // [START vision_v1p4beta1_generated_ProductSearch_GetProduct_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getProduct();
-  // [END vision_get_product_sample]
+  // [END vision_v1p4beta1_generated_ProductSearch_GetProduct_async]
 }
 
 process.on('unhandledRejection', err => {

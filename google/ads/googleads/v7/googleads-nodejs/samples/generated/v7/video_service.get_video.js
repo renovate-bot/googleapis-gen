@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_video_sample]
+  // [START googleads_v7_generated_VideoService_GetVideo_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getVideo();
-  // [END googleads_get_video_sample]
+  // [END googleads_v7_generated_VideoService_GetVideo_async]
 }
 
 process.on('unhandledRejection', err => {

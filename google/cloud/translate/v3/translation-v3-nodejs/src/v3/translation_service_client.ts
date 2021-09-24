@@ -443,10 +443,6 @@ export class TranslationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.translateText(request);
- *
- * @example <caption>include:samples/generated/v3/translation_service.translate_text.js</caption>
- * region_tag:translation_translate_text_sample
- *
  */
   translateText(
       request?: protos.google.cloud.translation.v3.ITranslateTextRequest,
@@ -553,10 +549,6 @@ export class TranslationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.detectLanguage(request);
- *
- * @example <caption>include:samples/generated/v3/translation_service.detect_language.js</caption>
- * region_tag:translation_detect_language_sample
- *
  */
   detectLanguage(
       request?: protos.google.cloud.translation.v3.IDetectLanguageRequest,
@@ -658,10 +650,6 @@ export class TranslationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSupportedLanguages(request);
- *
- * @example <caption>include:samples/generated/v3/translation_service.get_supported_languages.js</caption>
- * region_tag:translation_get_supported_languages_sample
- *
  */
   getSupportedLanguages(
       request?: protos.google.cloud.translation.v3.IGetSupportedLanguagesRequest,
@@ -790,10 +778,6 @@ export class TranslationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.translateDocument(request);
- *
- * @example <caption>include:samples/generated/v3/translation_service.translate_document.js</caption>
- * region_tag:translation_translate_document_sample
- *
  */
   translateDocument(
       request?: protos.google.cloud.translation.v3.ITranslateDocumentRequest,
@@ -866,10 +850,6 @@ export class TranslationServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGlossary(request);
- *
- * @example <caption>include:samples/generated/v3/translation_service.get_glossary.js</caption>
- * region_tag:translation_get_glossary_sample
- *
  */
   getGlossary(
       request?: protos.google.cloud.translation.v3.IGetGlossaryRequest,
@@ -1001,10 +981,6 @@ export class TranslationServiceClient {
  * @example
  * const [operation] = await client.batchTranslateText(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/translation_service.batch_translate_text.js</caption>
- * region_tag:translation_batch_translate_text_sample
- *
  */
   batchTranslateText(
       request?: protos.google.cloud.translation.v3.IBatchTranslateTextRequest,
@@ -1054,10 +1030,6 @@ export class TranslationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/translation_service.batch_translate_text.js</caption>
- * region_tag:translation_batch_translate_text_sample
- *
  */
   async checkBatchTranslateTextProgress(name: string): Promise<LROperation<protos.google.cloud.translation.v3.BatchTranslateResponse, protos.google.cloud.translation.v3.BatchTranslateMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1163,10 +1135,6 @@ export class TranslationServiceClient {
  * @example
  * const [operation] = await client.batchTranslateDocument(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/translation_service.batch_translate_document.js</caption>
- * region_tag:translation_batch_translate_document_sample
- *
  */
   batchTranslateDocument(
       request?: protos.google.cloud.translation.v3.IBatchTranslateDocumentRequest,
@@ -1216,10 +1184,6 @@ export class TranslationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/translation_service.batch_translate_document.js</caption>
- * region_tag:translation_batch_translate_document_sample
- *
  */
   async checkBatchTranslateDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.translation.v3.BatchTranslateDocumentResponse, protos.google.cloud.translation.v3.BatchTranslateDocumentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1269,10 +1233,6 @@ export class TranslationServiceClient {
  * @example
  * const [operation] = await client.createGlossary(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/translation_service.create_glossary.js</caption>
- * region_tag:translation_create_glossary_sample
- *
  */
   createGlossary(
       request?: protos.google.cloud.translation.v3.ICreateGlossaryRequest,
@@ -1322,10 +1282,6 @@ export class TranslationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/translation_service.create_glossary.js</caption>
- * region_tag:translation_create_glossary_sample
- *
  */
   async checkCreateGlossaryProgress(name: string): Promise<LROperation<protos.google.cloud.translation.v3.Glossary, protos.google.cloud.translation.v3.CreateGlossaryMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1374,10 +1330,6 @@ export class TranslationServiceClient {
  * @example
  * const [operation] = await client.deleteGlossary(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/translation_service.delete_glossary.js</caption>
- * region_tag:translation_delete_glossary_sample
- *
  */
   deleteGlossary(
       request?: protos.google.cloud.translation.v3.IDeleteGlossaryRequest,
@@ -1427,10 +1379,6 @@ export class TranslationServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/translation_service.delete_glossary.js</caption>
- * region_tag:translation_delete_glossary_sample
- *
  */
   async checkDeleteGlossaryProgress(name: string): Promise<LROperation<protos.google.cloud.translation.v3.DeleteGlossaryResponse, protos.google.cloud.translation.v3.DeleteGlossaryMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1504,10 +1452,6 @@ export class TranslationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/translation_service.list_glossaries.js</caption>
- * region_tag:translation_list_glossaries_sample
- *
  */
   listGlossaries(
       request?: protos.google.cloud.translation.v3.IListGlossariesRequest,
@@ -1587,10 +1531,6 @@ export class TranslationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/translation_service.list_glossaries.js</caption>
- * region_tag:translation_list_glossaries_sample
- *
  */
   listGlossariesStream(
       request?: protos.google.cloud.translation.v3.IListGlossariesRequest,
@@ -1663,10 +1603,6 @@ export class TranslationServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/translation_service.list_glossaries.js</caption>
- * region_tag:translation_list_glossaries_sample
- *
  */
   listGlossariesAsync(
       request?: protos.google.cloud.translation.v3.IListGlossariesRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START servicecontrol_allocate_quota_sample]
+  // [START servicecontrol_v1_generated_QuotaController_AllocateQuota_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main() {
   }
 
   allocateQuota();
-  // [END servicecontrol_allocate_quota_sample]
+  // [END servicecontrol_v1_generated_QuotaController_AllocateQuota_async]
 }
 
 process.on('unhandledRejection', err => {

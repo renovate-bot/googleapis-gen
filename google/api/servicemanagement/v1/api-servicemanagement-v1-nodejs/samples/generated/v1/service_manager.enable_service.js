@@ -16,7 +16,7 @@
 'use strict';
 
 function main(serviceName, consumerId) {
-  // [START servicemanagement_enable_service_sample]
+  // [START servicemanagement_v1_generated_ServiceManager_EnableService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(serviceName, consumerId) {
   }
 
   enableService();
-  // [END servicemanagement_enable_service_sample]
+  // [END servicemanagement_v1_generated_ServiceManager_EnableService_async]
 }
 
 process.on('unhandledRejection', err => {

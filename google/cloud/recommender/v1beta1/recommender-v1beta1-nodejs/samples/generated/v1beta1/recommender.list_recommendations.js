@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START recommender_list_recommendations_sample]
+  // [START recommender_v1beta1_generated_Recommender_ListRecommendations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(parent) {
   }
 
   listRecommendations();
-  // [END recommender_list_recommendations_sample]
+  // [END recommender_v1beta1_generated_Recommender_ListRecommendations_async]
 }
 
 process.on('unhandledRejection', err => {

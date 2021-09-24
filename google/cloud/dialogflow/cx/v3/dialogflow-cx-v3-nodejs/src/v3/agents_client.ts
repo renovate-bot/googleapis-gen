@@ -421,10 +421,6 @@ export class AgentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAgent(request);
- *
- * @example <caption>include:samples/generated/v3/agents.get_agent.js</caption>
- * region_tag:cx_get_agent_sample
- *
  */
   getAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetAgentRequest,
@@ -503,10 +499,6 @@ export class AgentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createAgent(request);
- *
- * @example <caption>include:samples/generated/v3/agents.create_agent.js</caption>
- * region_tag:cx_create_agent_sample
- *
  */
   createAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateAgentRequest,
@@ -585,10 +577,6 @@ export class AgentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateAgent(request);
- *
- * @example <caption>include:samples/generated/v3/agents.update_agent.js</caption>
- * region_tag:cx_update_agent_sample
- *
  */
   updateAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateAgentRequest,
@@ -661,10 +649,6 @@ export class AgentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteAgent(request);
- *
- * @example <caption>include:samples/generated/v3/agents.delete_agent.js</caption>
- * region_tag:cx_delete_agent_sample
- *
  */
   deleteAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteAgentRequest,
@@ -741,10 +725,6 @@ export class AgentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.validateAgent(request);
- *
- * @example <caption>include:samples/generated/v3/agents.validate_agent.js</caption>
- * region_tag:cx_validate_agent_sample
- *
  */
   validateAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.IValidateAgentRequest,
@@ -821,10 +801,6 @@ export class AgentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAgentValidationResult(request);
- *
- * @example <caption>include:samples/generated/v3/agents.get_agent_validation_result.js</caption>
- * region_tag:cx_get_agent_validation_result_sample
- *
  */
   getAgentValidationResult(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetAgentValidationResultRequest,
@@ -917,10 +893,6 @@ export class AgentsClient {
  * @example
  * const [operation] = await client.exportAgent(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/agents.export_agent.js</caption>
- * region_tag:cx_export_agent_sample
- *
  */
   exportAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.IExportAgentRequest,
@@ -970,10 +942,6 @@ export class AgentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/agents.export_agent.js</caption>
- * region_tag:cx_export_agent_sample
- *
  */
   async checkExportAgentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.ExportAgentResponse, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1037,10 +1005,6 @@ export class AgentsClient {
  * @example
  * const [operation] = await client.restoreAgent(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/agents.restore_agent.js</caption>
- * region_tag:cx_restore_agent_sample
- *
  */
   restoreAgent(
       request?: protos.google.cloud.dialogflow.cx.v3.IRestoreAgentRequest,
@@ -1090,10 +1054,6 @@ export class AgentsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/agents.restore_agent.js</caption>
- * region_tag:cx_restore_agent_sample
- *
  */
   async checkRestoreAgentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1147,10 +1107,6 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/agents.list_agents.js</caption>
- * region_tag:cx_list_agents_sample
- *
  */
   listAgents(
       request?: protos.google.cloud.dialogflow.cx.v3.IListAgentsRequest,
@@ -1211,10 +1167,6 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/agents.list_agents.js</caption>
- * region_tag:cx_list_agents_sample
- *
  */
   listAgentsStream(
       request?: protos.google.cloud.dialogflow.cx.v3.IListAgentsRequest,
@@ -1268,10 +1220,6 @@ export class AgentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/agents.list_agents.js</caption>
- * region_tag:cx_list_agents_sample
- *
  */
   listAgentsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListAgentsRequest,

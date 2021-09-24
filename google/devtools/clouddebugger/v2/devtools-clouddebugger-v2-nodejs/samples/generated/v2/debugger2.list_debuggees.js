@@ -16,7 +16,7 @@
 'use strict';
 
 function main(project, clientVersion) {
-  // [START clouddebugger_list_debuggees_sample]
+  // [START clouddebugger_v2_generated_Debugger2_ListDebuggees_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(project, clientVersion) {
   }
 
   listDebuggees();
-  // [END clouddebugger_list_debuggees_sample]
+  // [END clouddebugger_v2_generated_Debugger2_ListDebuggees_async]
 }
 
 process.on('unhandledRejection', err => {

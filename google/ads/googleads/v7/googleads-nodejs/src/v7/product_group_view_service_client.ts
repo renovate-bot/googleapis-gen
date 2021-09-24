@@ -690,10 +690,6 @@ export class ProductGroupViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getProductGroupView(request);
- *
- * @example <caption>include:samples/generated/v7/product_group_view_service.get_product_group_view.js</caption>
- * region_tag:googleads_get_product_group_view_sample
- *
  */
   getProductGroupView(
       request?: protos.google.ads.googleads.v7.services.IGetProductGroupViewRequest,

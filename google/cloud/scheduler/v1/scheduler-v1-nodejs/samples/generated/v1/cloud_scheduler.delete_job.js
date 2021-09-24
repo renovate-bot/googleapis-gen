@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START scheduler_delete_job_sample]
+  // [START scheduler_v1_generated_CloudScheduler_DeleteJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteJob();
-  // [END scheduler_delete_job_sample]
+  // [END scheduler_v1_generated_CloudScheduler_DeleteJob_async]
 }
 
 process.on('unhandledRejection', err => {

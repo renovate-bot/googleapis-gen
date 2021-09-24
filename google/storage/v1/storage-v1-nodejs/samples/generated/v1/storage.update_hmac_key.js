@@ -16,7 +16,7 @@
 'use strict';
 
 function main(accessId, projectId, metadata) {
-  // [START storage_update_hmac_key_sample]
+  // [START storage_v1_generated_Storage_UpdateHmacKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(accessId, projectId, metadata) {
   }
 
   updateHmacKey();
-  // [END storage_update_hmac_key_sample]
+  // [END storage_v1_generated_Storage_UpdateHmacKey_async]
 }
 
 process.on('unhandledRejection', err => {

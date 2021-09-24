@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, testCases) {
-  // [START cx_batch_run_test_cases_sample]
+  // [START cx_v3beta1_generated_TestCases_BatchRunTestCases_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, testCases) {
   }
 
   batchRunTestCases();
-  // [END cx_batch_run_test_cases_sample]
+  // [END cx_v3beta1_generated_TestCases_BatchRunTestCases_async]
 }
 
 process.on('unhandledRejection', err => {

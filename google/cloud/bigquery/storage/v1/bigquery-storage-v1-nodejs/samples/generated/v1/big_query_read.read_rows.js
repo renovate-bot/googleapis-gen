@@ -16,7 +16,7 @@
 'use strict';
 
 function main(readStream) {
-  // [START storage_read_rows_sample]
+  // [START storage_v1_generated_BigQueryRead_ReadRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(readStream) {
   }
 
   readRows();
-  // [END storage_read_rows_sample]
+  // [END storage_v1_generated_BigQueryRead_ReadRows_async]
 }
 
 process.on('unhandledRejection', err => {

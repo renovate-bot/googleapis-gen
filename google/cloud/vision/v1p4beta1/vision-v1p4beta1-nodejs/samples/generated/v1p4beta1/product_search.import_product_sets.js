@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, inputConfig) {
-  // [START vision_import_product_sets_sample]
+  // [START vision_v1p4beta1_generated_ProductSearch_ImportProductSets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, inputConfig) {
   }
 
   importProductSets();
-  // [END vision_import_product_sets_sample]
+  // [END vision_v1p4beta1_generated_ProductSearch_ImportProductSets_async]
 }
 
 process.on('unhandledRejection', err => {

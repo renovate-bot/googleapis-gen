@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_delete_domain_mapping_sample]
+  // [START appengine_v1_generated_DomainMappings_DeleteDomainMapping_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   deleteDomainMapping();
-  // [END appengine_delete_domain_mapping_sample]
+  // [END appengine_v1_generated_DomainMappings_DeleteDomainMapping_async]
 }
 
 process.on('unhandledRejection', err => {

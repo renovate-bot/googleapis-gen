@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document) {
-  // [START language_classify_text_sample]
+  // [START language_v1_generated_LanguageService_ClassifyText_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(document) {
   }
 
   classifyText();
-  // [END language_classify_text_sample]
+  // [END language_v1_generated_LanguageService_ClassifyText_async]
 }
 
 process.on('unhandledRejection', err => {

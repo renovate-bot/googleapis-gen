@@ -16,7 +16,7 @@
 'use strict';
 
 function main(service, backup) {
-  // [START metastore_restore_service_sample]
+  // [START metastore_v1_generated_DataprocMetastore_RestoreService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(service, backup) {
   }
 
   restoreService();
-  // [END metastore_restore_service_sample]
+  // [END metastore_v1_generated_DataprocMetastore_RestoreService_async]
 }
 
 process.on('unhandledRejection', err => {

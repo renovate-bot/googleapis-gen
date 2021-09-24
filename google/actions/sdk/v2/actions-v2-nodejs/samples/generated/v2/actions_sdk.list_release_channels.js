@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START sdk_list_release_channels_sample]
+  // [START sdk_v2_generated_ActionsSdk_ListReleaseChannels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listReleaseChannels();
-  // [END sdk_list_release_channels_sample]
+  // [END sdk_v2_generated_ActionsSdk_ListReleaseChannels_async]
 }
 
 process.on('unhandledRejection', err => {

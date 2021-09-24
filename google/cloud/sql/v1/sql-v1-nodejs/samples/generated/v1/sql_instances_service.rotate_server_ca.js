@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_rotate_server_ca_sample]
+  // [START sql_v1_generated_SqlInstancesService_RotateServerCa_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   rotateServerCa();
-  // [END sql_rotate_server_ca_sample]
+  // [END sql_v1_generated_SqlInstancesService_RotateServerCa_async]
 }
 
 process.on('unhandledRejection', err => {

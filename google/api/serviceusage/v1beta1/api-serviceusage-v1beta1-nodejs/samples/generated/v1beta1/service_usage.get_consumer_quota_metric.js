@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_get_consumer_quota_metric_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_GetConsumerQuotaMetric_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main() {
   }
 
   getConsumerQuotaMetric();
-  // [END serviceusage_get_consumer_quota_metric_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_GetConsumerQuotaMetric_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, resourceLabels, labelFingerprint) {
-  // [START container_set_labels_sample]
+  // [START container_v1beta1_generated_ClusterManager_SetLabels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -79,7 +79,7 @@ function main(projectId, zone, clusterId, resourceLabels, labelFingerprint) {
   }
 
   setLabels();
-  // [END container_set_labels_sample]
+  // [END container_v1beta1_generated_ClusterManager_SetLabels_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, stream) {
-  // [START aistreams_update_stream_sample]
+  // [START aistreams_v1alpha1_generated_AIStreams_UpdateStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(updateMask, stream) {
   }
 
   updateStream();
-  // [END aistreams_update_stream_sample]
+  // [END aistreams_v1alpha1_generated_AIStreams_UpdateStream_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, instruction) {
-  // [START datalabeling_create_instruction_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_CreateInstruction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, instruction) {
   }
 
   createInstruction();
-  // [END datalabeling_create_instruction_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_CreateInstruction_async]
 }
 
 process.on('unhandledRejection', err => {

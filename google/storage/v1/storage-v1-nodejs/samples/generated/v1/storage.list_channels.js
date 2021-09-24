@@ -16,7 +16,7 @@
 'use strict';
 
 function main(bucket) {
-  // [START storage_list_channels_sample]
+  // [START storage_v1_generated_Storage_ListChannels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(bucket) {
   }
 
   listChannels();
-  // [END storage_list_channels_sample]
+  // [END storage_v1_generated_Storage_ListChannels_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, inputUrl) {
-  // [START admin_import_entities_sample]
+  // [START admin_v1_generated_DatastoreAdmin_ImportEntities_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(projectId, inputUrl) {
   }
 
   importEntities();
-  // [END admin_import_entities_sample]
+  // [END admin_v1_generated_DatastoreAdmin_ImportEntities_async]
 }
 
 process.on('unhandledRejection', err => {

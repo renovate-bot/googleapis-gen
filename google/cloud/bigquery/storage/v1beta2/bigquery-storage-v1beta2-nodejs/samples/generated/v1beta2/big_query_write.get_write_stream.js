@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START storage_get_write_stream_sample]
+  // [START storage_v1beta2_generated_BigQueryWrite_GetWriteStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getWriteStream();
-  // [END storage_get_write_stream_sample]
+  // [END storage_v1beta2_generated_BigQueryWrite_GetWriteStream_async]
 }
 
 process.on('unhandledRejection', err => {

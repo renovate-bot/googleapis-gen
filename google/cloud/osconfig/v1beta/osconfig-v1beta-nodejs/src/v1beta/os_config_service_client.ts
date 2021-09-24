@@ -356,10 +356,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.executePatchJob(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.execute_patch_job.js</caption>
- * region_tag:osconfig_execute_patch_job_sample
- *
  */
   executePatchJob(
       request?: protos.google.cloud.osconfig.v1beta.IExecutePatchJobRequest,
@@ -432,10 +428,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPatchJob(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.get_patch_job.js</caption>
- * region_tag:osconfig_get_patch_job_sample
- *
  */
   getPatchJob(
       request?: protos.google.cloud.osconfig.v1beta.IGetPatchJobRequest,
@@ -508,10 +500,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.cancelPatchJob(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.cancel_patch_job.js</caption>
- * region_tag:osconfig_cancel_patch_job_sample
- *
  */
   cancelPatchJob(
       request?: protos.google.cloud.osconfig.v1beta.ICancelPatchJobRequest,
@@ -593,10 +581,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPatchDeployment(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.create_patch_deployment.js</caption>
- * region_tag:osconfig_create_patch_deployment_sample
- *
  */
   createPatchDeployment(
       request?: protos.google.cloud.osconfig.v1beta.ICreatePatchDeploymentRequest,
@@ -669,10 +653,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPatchDeployment(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.get_patch_deployment.js</caption>
- * region_tag:osconfig_get_patch_deployment_sample
- *
  */
   getPatchDeployment(
       request?: protos.google.cloud.osconfig.v1beta.IGetPatchDeploymentRequest,
@@ -745,10 +725,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePatchDeployment(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.delete_patch_deployment.js</caption>
- * region_tag:osconfig_delete_patch_deployment_sample
- *
  */
   deletePatchDeployment(
       request?: protos.google.cloud.osconfig.v1beta.IDeletePatchDeploymentRequest,
@@ -832,10 +808,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createGuestPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.create_guest_policy.js</caption>
- * region_tag:osconfig_create_guest_policy_sample
- *
  */
   createGuestPolicy(
       request?: protos.google.cloud.osconfig.v1beta.ICreateGuestPolicyRequest,
@@ -908,10 +880,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGuestPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.get_guest_policy.js</caption>
- * region_tag:osconfig_get_guest_policy_sample
- *
  */
   getGuestPolicy(
       request?: protos.google.cloud.osconfig.v1beta.IGetGuestPolicyRequest,
@@ -986,10 +954,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateGuestPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.update_guest_policy.js</caption>
- * region_tag:osconfig_update_guest_policy_sample
- *
  */
   updateGuestPolicy(
       request?: protos.google.cloud.osconfig.v1beta.IUpdateGuestPolicyRequest,
@@ -1062,10 +1026,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteGuestPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.delete_guest_policy.js</caption>
- * region_tag:osconfig_delete_guest_policy_sample
- *
  */
   deleteGuestPolicy(
       request?: protos.google.cloud.osconfig.v1beta.IDeleteGuestPolicyRequest,
@@ -1150,10 +1110,6 @@ export class OsConfigServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.lookupEffectiveGuestPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.lookup_effective_guest_policy.js</caption>
- * region_tag:osconfig_lookup_effective_guest_policy_sample
- *
  */
   lookupEffectiveGuestPolicy(
       request?: protos.google.cloud.osconfig.v1beta.ILookupEffectiveGuestPolicyRequest,
@@ -1239,10 +1195,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_jobs.js</caption>
- * region_tag:osconfig_list_patch_jobs_sample
- *
  */
   listPatchJobs(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
@@ -1306,10 +1258,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_jobs.js</caption>
- * region_tag:osconfig_list_patch_jobs_sample
- *
  */
   listPatchJobsStream(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
@@ -1366,10 +1314,6 @@ export class OsConfigServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_jobs.js</caption>
- * region_tag:osconfig_list_patch_jobs_sample
- *
  */
   listPatchJobsAsync(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchJobsRequest,
@@ -1443,10 +1387,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_job_instance_details.js</caption>
- * region_tag:osconfig_list_patch_job_instance_details_sample
- *
  */
   listPatchJobInstanceDetails(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
@@ -1510,10 +1450,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_job_instance_details.js</caption>
- * region_tag:osconfig_list_patch_job_instance_details_sample
- *
  */
   listPatchJobInstanceDetailsStream(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
@@ -1570,10 +1506,6 @@ export class OsConfigServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_job_instance_details.js</caption>
- * region_tag:osconfig_list_patch_job_instance_details_sample
- *
  */
   listPatchJobInstanceDetailsAsync(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchJobInstanceDetailsRequest,
@@ -1643,10 +1575,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_deployments.js</caption>
- * region_tag:osconfig_list_patch_deployments_sample
- *
  */
   listPatchDeployments(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
@@ -1706,10 +1634,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_deployments.js</caption>
- * region_tag:osconfig_list_patch_deployments_sample
- *
  */
   listPatchDeploymentsStream(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
@@ -1762,10 +1686,6 @@ export class OsConfigServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_patch_deployments.js</caption>
- * region_tag:osconfig_list_patch_deployments_sample
- *
  */
   listPatchDeploymentsAsync(
       request?: protos.google.cloud.osconfig.v1beta.IListPatchDeploymentsRequest,
@@ -1836,10 +1756,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_guest_policies.js</caption>
- * region_tag:osconfig_list_guest_policies_sample
- *
  */
   listGuestPolicies(
       request?: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
@@ -1900,10 +1816,6 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_guest_policies.js</caption>
- * region_tag:osconfig_list_guest_policies_sample
- *
  */
   listGuestPoliciesStream(
       request?: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,
@@ -1957,10 +1869,6 @@ export class OsConfigServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/os_config_service.list_guest_policies.js</caption>
- * region_tag:osconfig_list_guest_policies_sample
- *
  */
   listGuestPoliciesAsync(
       request?: protos.google.cloud.osconfig.v1beta.IListGuestPoliciesRequest,

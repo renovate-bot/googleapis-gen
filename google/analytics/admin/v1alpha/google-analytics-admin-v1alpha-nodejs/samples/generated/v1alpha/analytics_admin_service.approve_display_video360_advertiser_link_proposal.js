@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_approve_display_video360_advertiser_link_proposal_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_ApproveDisplayVideo360AdvertiserLinkProposal_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   approveDisplayVideo360AdvertiserLinkProposal();
-  // [END admin_approve_display_video360_advertiser_link_proposal_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_ApproveDisplayVideo360AdvertiserLinkProposal_async]
 }
 
 process.on('unhandledRejection', err => {

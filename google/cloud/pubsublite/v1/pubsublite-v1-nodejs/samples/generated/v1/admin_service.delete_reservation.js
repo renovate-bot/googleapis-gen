@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START pubsublite_delete_reservation_sample]
+  // [START pubsublite_v1_generated_AdminService_DeleteReservation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteReservation();
-  // [END pubsublite_delete_reservation_sample]
+  // [END pubsublite_v1_generated_AdminService_DeleteReservation_async]
 }
 
 process.on('unhandledRejection', err => {

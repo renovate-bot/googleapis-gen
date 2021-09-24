@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gsuiteaddons_uninstall_deployment_sample]
+  // [START gsuiteaddons_v1_generated_GSuiteAddOns_UninstallDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   uninstallDeployment();
-  // [END gsuiteaddons_uninstall_deployment_sample]
+  // [END gsuiteaddons_v1_generated_GSuiteAddOns_UninstallDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

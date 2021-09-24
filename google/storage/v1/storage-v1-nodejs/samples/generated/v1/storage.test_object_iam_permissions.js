@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_test_object_iam_permissions_sample]
+  // [START storage_v1_generated_Storage_TestObjectIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   testObjectIamPermissions();
-  // [END storage_test_object_iam_permissions_sample]
+  // [END storage_v1_generated_Storage_TestObjectIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -334,10 +334,6 @@ export class TopicStatsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.computeMessageStats(request);
- *
- * @example <caption>include:samples/generated/v1/topic_stats_service.compute_message_stats.js</caption>
- * region_tag:pubsublite_compute_message_stats_sample
- *
  */
   computeMessageStats(
       request?: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
@@ -416,10 +412,6 @@ export class TopicStatsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.computeHeadCursor(request);
- *
- * @example <caption>include:samples/generated/v1/topic_stats_service.compute_head_cursor.js</caption>
- * region_tag:pubsublite_compute_head_cursor_sample
- *
  */
   computeHeadCursor(
       request?: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
@@ -497,10 +489,6 @@ export class TopicStatsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.computeTimeCursor(request);
- *
- * @example <caption>include:samples/generated/v1/topic_stats_service.compute_time_cursor.js</caption>
- * region_tag:pubsublite_compute_time_cursor_sample
- *
  */
   computeTimeCursor(
       request?: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,

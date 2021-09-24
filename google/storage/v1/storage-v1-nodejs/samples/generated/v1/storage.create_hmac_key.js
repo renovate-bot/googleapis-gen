@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, serviceAccountEmail) {
-  // [START storage_create_hmac_key_sample]
+  // [START storage_v1_generated_Storage_CreateHmacKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(projectId, serviceAccountEmail) {
   }
 
   createHmacKey();
-  // [END storage_create_hmac_key_sample]
+  // [END storage_v1_generated_Storage_CreateHmacKey_async]
 }
 
 process.on('unhandledRejection', err => {

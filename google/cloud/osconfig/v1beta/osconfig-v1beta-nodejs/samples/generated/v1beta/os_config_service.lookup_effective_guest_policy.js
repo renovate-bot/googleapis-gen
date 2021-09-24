@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instance) {
-  // [START osconfig_lookup_effective_guest_policy_sample]
+  // [START osconfig_v1beta_generated_OsConfigService_LookupEffectiveGuestPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(instance) {
   }
 
   lookupEffectiveGuestPolicy();
-  // [END osconfig_lookup_effective_guest_policy_sample]
+  // [END osconfig_v1beta_generated_OsConfigService_LookupEffectiveGuestPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

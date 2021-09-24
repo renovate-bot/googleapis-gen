@@ -16,7 +16,7 @@
 'use strict';
 
 function main(product, type, placeIds) {
-  // [START retail_remove_fulfillment_places_sample]
+  // [START retail_v2_generated_ProductService_RemoveFulfillmentPlaces_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -96,7 +96,7 @@ function main(product, type, placeIds) {
   }
 
   removeFulfillmentPlaces();
-  // [END retail_remove_fulfillment_places_sample]
+  // [END retail_v2_generated_ProductService_RemoveFulfillmentPlaces_async]
 }
 
 process.on('unhandledRejection', err => {

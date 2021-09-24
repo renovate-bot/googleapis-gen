@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId) {
-  // [START storage_get_service_account_sample]
+  // [START storage_v1_generated_Storage_GetServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(projectId) {
   }
 
   getServiceAccount();
-  // [END storage_get_service_account_sample]
+  // [END storage_v1_generated_Storage_GetServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START asset_batch_get_assets_history_sample]
+  // [START asset_v1_generated_AssetService_BatchGetAssetsHistory_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -86,7 +86,7 @@ function main(parent) {
   }
 
   batchGetAssetsHistory();
-  // [END asset_batch_get_assets_history_sample]
+  // [END asset_v1_generated_AssetService_BatchGetAssetsHistory_async]
 }
 
 process.on('unhandledRejection', err => {

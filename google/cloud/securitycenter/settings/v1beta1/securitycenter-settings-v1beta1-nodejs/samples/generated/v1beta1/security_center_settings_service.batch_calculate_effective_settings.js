@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START settings_batch_calculate_effective_settings_sample]
+  // [START settings_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent) {
   }
 
   batchCalculateEffectiveSettings();
-  // [END settings_batch_calculate_effective_settings_sample]
+  // [END settings_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async]
 }
 
 process.on('unhandledRejection', err => {

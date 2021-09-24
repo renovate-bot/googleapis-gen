@@ -16,7 +16,7 @@
 'use strict';
 
 function main(certificateTemplate, updateMask) {
-  // [START privateca_update_certificate_template_sample]
+  // [START privateca_v1_generated_CertificateAuthorityService_UpdateCertificateTemplate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(certificateTemplate, updateMask) {
   }
 
   updateCertificateTemplate();
-  // [END privateca_update_certificate_template_sample]
+  // [END privateca_v1_generated_CertificateAuthorityService_UpdateCertificateTemplate_async]
 }
 
 process.on('unhandledRejection', err => {

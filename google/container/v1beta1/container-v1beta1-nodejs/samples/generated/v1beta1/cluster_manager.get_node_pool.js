@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, nodePoolId) {
-  // [START container_get_node_pool_sample]
+  // [START container_v1beta1_generated_ClusterManager_GetNodePool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(projectId, zone, clusterId, nodePoolId) {
   }
 
   getNodePool();
-  // [END container_get_node_pool_sample]
+  // [END container_v1beta1_generated_ClusterManager_GetNodePool_async]
 }
 
 process.on('unhandledRejection', err => {

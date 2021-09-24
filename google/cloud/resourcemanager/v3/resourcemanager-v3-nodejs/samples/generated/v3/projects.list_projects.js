@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START resourcemanager_list_projects_sample]
+  // [START resourcemanager_v3_generated_Projects_ListProjects_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   listProjects();
-  // [END resourcemanager_list_projects_sample]
+  // [END resourcemanager_v3_generated_Projects_ListProjects_async]
 }
 
 process.on('unhandledRejection', err => {

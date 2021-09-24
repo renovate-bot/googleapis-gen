@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START apigateway_list_api_configs_sample]
+  // [START apigateway_v1_generated_ApiGatewayService_ListApiConfigs_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(parent) {
   }
 
   listApiConfigs();
-  // [END apigateway_list_api_configs_sample]
+  // [END apigateway_v1_generated_ApiGatewayService_ListApiConfigs_async]
 }
 
 process.on('unhandledRejection', err => {

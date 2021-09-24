@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_customer_negative_criteria_sample]
+  // [START googleads_v8_generated_CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateCustomerNegativeCriteria();
-  // [END googleads_mutate_customer_negative_criteria_sample]
+  // [END googleads_v8_generated_CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_async]
 }
 
 process.on('unhandledRejection', err => {

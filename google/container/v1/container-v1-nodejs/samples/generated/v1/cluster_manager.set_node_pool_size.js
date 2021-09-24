@@ -16,7 +16,7 @@
 'use strict';
 
 function main(nodeCount) {
-  // [START container_set_node_pool_size_sample]
+  // [START container_v1_generated_ClusterManager_SetNodePoolSize_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -72,7 +72,7 @@ function main(nodeCount) {
   }
 
   setNodePoolSize();
-  // [END container_set_node_pool_size_sample]
+  // [END container_v1_generated_ClusterManager_SetNodePoolSize_async]
 }
 
 process.on('unhandledRejection', err => {

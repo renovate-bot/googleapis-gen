@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, keys) {
-  // [START datastore_lookup_sample]
+  // [START datastore_v1_generated_Datastore_Lookup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(projectId, keys) {
   }
 
   lookup();
-  // [END datastore_lookup_sample]
+  // [END datastore_v1_generated_Datastore_Lookup_async]
 }
 
 process.on('unhandledRejection', err => {

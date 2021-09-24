@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, configId, notificationConfig) {
-  // [START securitycenter_create_notification_config_sample]
+  // [START securitycenter_v1p1beta1_generated_SecurityCenter_CreateNotificationConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, configId, notificationConfig) {
   }
 
   createNotificationConfig();
-  // [END securitycenter_create_notification_config_sample]
+  // [END securitycenter_v1p1beta1_generated_SecurityCenter_CreateNotificationConfig_async]
 }
 
 process.on('unhandledRejection', err => {

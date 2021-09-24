@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START containeranalysis_set_iam_policy_sample]
+  // [START containeranalysis_v1_generated_ContainerAnalysis_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END containeranalysis_set_iam_policy_sample]
+  // [END containeranalysis_v1_generated_ContainerAnalysis_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START automl_get_annotation_spec_sample]
+  // [START automl_v1_generated_AutoMl_GetAnnotationSpec_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getAnnotationSpec();
-  // [END automl_get_annotation_spec_sample]
+  // [END automl_v1_generated_AutoMl_GetAnnotationSpec_async]
 }
 
 process.on('unhandledRejection', err => {

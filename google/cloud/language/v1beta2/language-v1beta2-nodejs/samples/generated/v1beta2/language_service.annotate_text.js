@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document, features) {
-  // [START language_annotate_text_sample]
+  // [START language_v1beta2_generated_LanguageService_AnnotateText_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(document, features) {
   }
 
   annotateText();
-  // [END language_annotate_text_sample]
+  // [END language_v1beta2_generated_LanguageService_AnnotateText_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instanceIdToken, taskId, taskType) {
-  // [START agentendpoint_report_task_progress_sample]
+  // [START agentendpoint_v1beta_generated_AgentEndpointService_ReportTaskProgress_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(instanceIdToken, taskId, taskType) {
   }
 
   reportTaskProgress();
-  // [END agentendpoint_report_task_progress_sample]
+  // [END agentendpoint_v1beta_generated_AgentEndpointService_ReportTaskProgress_async]
 }
 
 process.on('unhandledRejection', err => {

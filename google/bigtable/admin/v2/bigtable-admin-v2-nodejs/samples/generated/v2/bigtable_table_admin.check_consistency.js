@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, consistencyToken) {
-  // [START admin_check_consistency_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_CheckConsistency_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name, consistencyToken) {
   }
 
   checkConsistency();
-  // [END admin_check_consistency_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_CheckConsistency_async]
 }
 
 process.on('unhandledRejection', err => {

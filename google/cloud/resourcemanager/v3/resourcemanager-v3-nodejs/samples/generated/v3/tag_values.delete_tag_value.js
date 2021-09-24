@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START resourcemanager_delete_tag_value_sample]
+  // [START resourcemanager_v3_generated_TagValues_DeleteTagValue_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(name) {
   }
 
   deleteTagValue();
-  // [END resourcemanager_delete_tag_value_sample]
+  // [END resourcemanager_v3_generated_TagValues_DeleteTagValue_async]
 }
 
 process.on('unhandledRejection', err => {

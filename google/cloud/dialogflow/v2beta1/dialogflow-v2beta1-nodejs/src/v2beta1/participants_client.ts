@@ -439,10 +439,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createParticipant(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.create_participant.js</caption>
- * region_tag:dialogflow_create_participant_sample
- *
  */
   createParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
@@ -516,10 +512,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getParticipant(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.get_participant.js</caption>
- * region_tag:dialogflow_get_participant_sample
- *
  */
   getParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
@@ -593,10 +585,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateParticipant(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.update_participant.js</caption>
- * region_tag:dialogflow_update_participant_sample
- *
  */
   updateParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
@@ -706,10 +694,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeContent(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.analyze_content.js</caption>
- * region_tag:dialogflow_analyze_content_sample
- *
  */
   analyzeContent(
       request?: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
@@ -798,10 +782,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestArticles(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.suggest_articles.js</caption>
- * region_tag:dialogflow_suggest_articles_sample
- *
  */
   suggestArticles(
       request?: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
@@ -886,10 +866,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestFaqAnswers(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.suggest_faq_answers.js</caption>
- * region_tag:dialogflow_suggest_faq_answers_sample
- *
  */
   suggestFaqAnswers(
       request?: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
@@ -978,10 +954,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestSmartReplies(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.suggest_smart_replies.js</caption>
- * region_tag:dialogflow_suggest_smart_replies_sample
- *
  */
   suggestSmartReplies(
       request?: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
@@ -1072,10 +1044,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.compileSuggestion(request);
- *
- * @example <caption>include:samples/generated/v2beta1/participants.compile_suggestion.js</caption>
- * region_tag:dialogflow_compile_suggestion_sample
- *
  * @deprecated CompileSuggestion is deprecated and may be removed in a future version.
  */
   compileSuggestion(
@@ -1161,10 +1129,6 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta1/participants.list_participants.js</caption>
- * region_tag:dialogflow_list_participants_sample
- *
  */
   listParticipants(
       request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
@@ -1226,10 +1190,6 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta1/participants.list_participants.js</caption>
- * region_tag:dialogflow_list_participants_sample
- *
  */
   listParticipantsStream(
       request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
@@ -1284,10 +1244,6 @@ export class ParticipantsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2beta1/participants.list_participants.js</caption>
- * region_tag:dialogflow_list_participants_sample
- *
  */
   listParticipantsAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
@@ -1387,10 +1343,6 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta1/participants.list_suggestions.js</caption>
- * region_tag:dialogflow_list_suggestions_sample
- *
  * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestions(
@@ -1463,10 +1415,6 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta1/participants.list_suggestions.js</caption>
- * region_tag:dialogflow_list_suggestions_sample
- *
  * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestionsStream(
@@ -1532,10 +1480,6 @@ export class ParticipantsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2beta1/participants.list_suggestions.js</caption>
- * region_tag:dialogflow_list_suggestions_sample
- *
  * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestionsAsync(

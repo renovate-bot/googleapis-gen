@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START artifactregistry_get_iam_policy_sample]
+  // [START artifactregistry_v1beta2_generated_ArtifactRegistry_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END artifactregistry_get_iam_policy_sample]
+  // [END artifactregistry_v1beta2_generated_ArtifactRegistry_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START networkconnectivity_list_spokes_sample]
+  // [START networkconnectivity_v1_generated_HubService_ListSpokes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listSpokes();
-  // [END networkconnectivity_list_spokes_sample]
+  // [END networkconnectivity_v1_generated_HubService_ListSpokes_async]
 }
 
 process.on('unhandledRejection', err => {

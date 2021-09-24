@@ -372,10 +372,6 @@ export class BigQueryReadClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createReadSession(request);
- *
- * @example <caption>include:samples/generated/v1/big_query_read.create_read_session.js</caption>
- * region_tag:storage_create_read_session_sample
- *
  */
   createReadSession(
       request?: protos.google.cloud.bigquery.storage.v1.ICreateReadSessionRequest,
@@ -466,10 +462,6 @@ export class BigQueryReadClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.splitReadStream(request);
- *
- * @example <caption>include:samples/generated/v1/big_query_read.split_read_stream.js</caption>
- * region_tag:storage_split_read_stream_sample
- *
  */
   splitReadStream(
       request?: protos.google.cloud.bigquery.storage.v1.ISplitReadStreamRequest,

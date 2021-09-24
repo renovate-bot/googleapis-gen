@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, spanId, displayName, startTime, endTime) {
-  // [START cloudtrace_create_span_sample]
+  // [START cloudtrace_v2_generated_TraceService_CreateSpan_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -123,7 +123,7 @@ function main(name, spanId, displayName, startTime, endTime) {
   }
 
   createSpan();
-  // [END cloudtrace_create_span_sample]
+  // [END cloudtrace_v2_generated_TraceService_CreateSpan_async]
 }
 
 process.on('unhandledRejection', err => {

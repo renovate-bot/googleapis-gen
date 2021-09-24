@@ -358,10 +358,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.setIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.set_iam_policy.js</caption>
- * region_tag:containeranalysis_set_iam_policy_sample
- *
  */
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
@@ -444,10 +440,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getIamPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.get_iam_policy.js</caption>
- * region_tag:containeranalysis_get_iam_policy_sample
- *
  */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
@@ -531,10 +523,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.testIamPermissions(request);
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.test_iam_permissions.js</caption>
- * region_tag:containeranalysis_test_iam_permissions_sample
- *
  */
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
@@ -607,10 +595,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getScanConfig(request);
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.get_scan_config.js</caption>
- * region_tag:containeranalysis_get_scan_config_sample
- *
  */
   getScanConfig(
       request?: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
@@ -685,10 +669,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateScanConfig(request);
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.update_scan_config.js</caption>
- * region_tag:containeranalysis_update_scan_config_sample
- *
  */
   updateScanConfig(
       request?: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
@@ -772,10 +752,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.list_scan_configs.js</caption>
- * region_tag:containeranalysis_list_scan_configs_sample
- *
  */
   listScanConfigs(
       request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
@@ -837,10 +813,6 @@ export class ContainerAnalysisV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.list_scan_configs.js</caption>
- * region_tag:containeranalysis_list_scan_configs_sample
- *
  */
   listScanConfigsStream(
       request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
@@ -895,10 +867,6 @@ export class ContainerAnalysisV1Beta1Client {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.list_scan_configs.js</caption>
- * region_tag:containeranalysis_list_scan_configs_sample
- *
  */
   listScanConfigsAsync(
       request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,

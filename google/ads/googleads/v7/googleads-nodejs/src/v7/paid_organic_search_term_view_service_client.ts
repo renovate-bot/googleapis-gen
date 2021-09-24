@@ -690,10 +690,6 @@ export class PaidOrganicSearchTermViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPaidOrganicSearchTermView(request);
- *
- * @example <caption>include:samples/generated/v7/paid_organic_search_term_view_service.get_paid_organic_search_term_view.js</caption>
- * region_tag:googleads_get_paid_organic_search_term_view_sample
- *
  */
   getPaidOrganicSearchTermView(
       request?: protos.google.ads.googleads.v7.services.IGetPaidOrganicSearchTermViewRequest,

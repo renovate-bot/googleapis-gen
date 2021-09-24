@@ -360,10 +360,6 @@ export class PolicyTagManagerSerializationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.replaceTaxonomy(request);
- *
- * @example <caption>include:samples/generated/v1/policy_tag_manager_serialization.replace_taxonomy.js</caption>
- * region_tag:datacatalog_replace_taxonomy_sample
- *
  */
   replaceTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
@@ -446,10 +442,6 @@ export class PolicyTagManagerSerializationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.importTaxonomies(request);
- *
- * @example <caption>include:samples/generated/v1/policy_tag_manager_serialization.import_taxonomies.js</caption>
- * region_tag:datacatalog_import_taxonomies_sample
- *
  */
   importTaxonomies(
       request?: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
@@ -531,10 +523,6 @@ export class PolicyTagManagerSerializationClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.exportTaxonomies(request);
- *
- * @example <caption>include:samples/generated/v1/policy_tag_manager_serialization.export_taxonomies.js</caption>
- * region_tag:datacatalog_export_taxonomies_sample
- *
  */
   exportTaxonomies(
       request?: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,

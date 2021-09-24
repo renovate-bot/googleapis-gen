@@ -16,7 +16,7 @@
 'use strict';
 
 function main(keywordPlan) {
-  // [START googleads_generate_historical_metrics_sample]
+  // [START googleads_v8_generated_KeywordPlanService_GenerateHistoricalMetrics_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(keywordPlan) {
   }
 
   generateHistoricalMetrics();
-  // [END googleads_generate_historical_metrics_sample]
+  // [END googleads_v8_generated_KeywordPlanService_GenerateHistoricalMetrics_async]
 }
 
 process.on('unhandledRejection', err => {

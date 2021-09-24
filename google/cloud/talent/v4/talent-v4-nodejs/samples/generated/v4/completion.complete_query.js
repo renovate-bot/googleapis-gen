@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tenant, query, pageSize) {
-  // [START talent_complete_query_sample]
+  // [START talent_v4_generated_Completion_CompleteQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -80,7 +80,7 @@ function main(tenant, query, pageSize) {
   }
 
   completeQuery();
-  // [END talent_complete_query_sample]
+  // [END talent_v4_generated_Completion_CompleteQuery_async]
 }
 
 process.on('unhandledRejection', err => {

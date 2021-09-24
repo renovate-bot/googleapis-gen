@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_keyword_plan_ad_group_keyword_sample]
+  // [START googleads_v8_generated_KeywordPlanAdGroupKeywordService_GetKeywordPlanAdGroupKeyword_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getKeywordPlanAdGroupKeyword();
-  // [END googleads_get_keyword_plan_ad_group_keyword_sample]
+  // [END googleads_v8_generated_KeywordPlanAdGroupKeywordService_GetKeywordPlanAdGroupKeyword_async]
 }
 
 process.on('unhandledRejection', err => {

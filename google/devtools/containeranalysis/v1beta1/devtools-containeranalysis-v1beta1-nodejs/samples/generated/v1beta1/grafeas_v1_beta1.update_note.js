@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START containeranalysis_update_note_sample]
+  // [START containeranalysis_v1beta1_generated_GrafeasV1Beta1_UpdateNote_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main() {
   }
 
   updateNote();
-  // [END containeranalysis_update_note_sample]
+  // [END containeranalysis_v1beta1_generated_GrafeasV1Beta1_UpdateNote_async]
 }
 
 process.on('unhandledRejection', err => {

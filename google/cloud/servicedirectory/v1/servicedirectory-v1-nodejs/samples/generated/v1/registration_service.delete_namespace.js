@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START servicedirectory_delete_namespace_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_DeleteNamespace_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   deleteNamespace();
-  // [END servicedirectory_delete_namespace_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_DeleteNamespace_async]
 }
 
 process.on('unhandledRejection', err => {

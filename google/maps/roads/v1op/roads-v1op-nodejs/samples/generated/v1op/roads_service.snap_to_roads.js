@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START roads_snap_to_roads_sample]
+  // [START roads_v1op_generated_RoadsService_SnapToRoads_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main() {
   }
 
   snapToRoads();
-  // [END roads_snap_to_roads_sample]
+  // [END roads_v1op_generated_RoadsService_SnapToRoads_async]
 }
 
 process.on('unhandledRejection', err => {

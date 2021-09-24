@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START essentialcontacts_delete_contact_sample]
+  // [START essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   deleteContact();
-  // [END essentialcontacts_delete_contact_sample]
+  // [END essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
 }
 
 process.on('unhandledRejection', err => {

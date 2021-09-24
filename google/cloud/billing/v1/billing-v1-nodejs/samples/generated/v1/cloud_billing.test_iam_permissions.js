@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START billing_test_iam_permissions_sample]
+  // [START billing_v1_generated_CloudBilling_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END billing_test_iam_permissions_sample]
+  // [END billing_v1_generated_CloudBilling_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

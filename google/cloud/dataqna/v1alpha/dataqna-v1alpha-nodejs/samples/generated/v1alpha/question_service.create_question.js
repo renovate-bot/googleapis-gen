@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, question) {
-  // [START dataqna_create_question_sample]
+  // [START dataqna_v1alpha_generated_QuestionService_CreateQuestion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, question) {
   }
 
   createQuestion();
-  // [END dataqna_create_question_sample]
+  // [END dataqna_v1alpha_generated_QuestionService_CreateQuestion_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vision_delete_product_set_sample]
+  // [START vision_v1p4beta1_generated_ProductSearch_DeleteProductSet_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteProductSet();
-  // [END vision_delete_product_set_sample]
+  // [END vision_v1p4beta1_generated_ProductSearch_DeleteProductSet_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(monitoringService) {
-  // [START container_set_monitoring_service_sample]
+  // [START container_v1_generated_ClusterManager_SetMonitoringService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(monitoringService) {
   }
 
   setMonitoringService();
-  // [END container_set_monitoring_service_sample]
+  // [END container_v1_generated_ClusterManager_SetMonitoringService_async]
 }
 
 process.on('unhandledRejection', err => {

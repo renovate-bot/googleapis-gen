@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, apiId, api) {
-  // [START apigateway_create_api_sample]
+  // [START apigateway_v1_generated_ApiGatewayService_CreateApi_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent, apiId, api) {
   }
 
   createApi();
-  // [END apigateway_create_api_sample]
+  // [END apigateway_v1_generated_ApiGatewayService_CreateApi_async]
 }
 
 process.on('unhandledRejection', err => {

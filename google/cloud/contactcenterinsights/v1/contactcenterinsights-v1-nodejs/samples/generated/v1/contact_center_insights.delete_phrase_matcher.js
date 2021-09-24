@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START contactcenterinsights_delete_phrase_matcher_sample]
+  // [START contactcenterinsights_v1_generated_ContactCenterInsights_DeletePhraseMatcher_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   deletePhraseMatcher();
-  // [END contactcenterinsights_delete_phrase_matcher_sample]
+  // [END contactcenterinsights_v1_generated_ContactCenterInsights_DeletePhraseMatcher_async]
 }
 
 process.on('unhandledRejection', err => {

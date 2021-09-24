@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, findingId, finding) {
-  // [START securitycenter_create_finding_sample]
+  // [START securitycenter_v1beta1_generated_SecurityCenter_CreateFinding_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, findingId, finding) {
   }
 
   createFinding();
-  // [END securitycenter_create_finding_sample]
+  // [END securitycenter_v1beta1_generated_SecurityCenter_CreateFinding_async]
 }
 
 process.on('unhandledRejection', err => {

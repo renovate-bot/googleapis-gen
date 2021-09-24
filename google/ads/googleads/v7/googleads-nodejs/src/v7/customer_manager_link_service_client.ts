@@ -690,10 +690,6 @@ export class CustomerManagerLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomerManagerLink(request);
- *
- * @example <caption>include:samples/generated/v7/customer_manager_link_service.get_customer_manager_link.js</caption>
- * region_tag:googleads_get_customer_manager_link_sample
- *
  */
   getCustomerManagerLink(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
@@ -783,10 +779,6 @@ export class CustomerManagerLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomerManagerLink(request);
- *
- * @example <caption>include:samples/generated/v7/customer_manager_link_service.mutate_customer_manager_link.js</caption>
- * region_tag:googleads_mutate_customer_manager_link_sample
- *
  */
   mutateCustomerManagerLink(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
@@ -883,10 +875,6 @@ export class CustomerManagerLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.moveManagerLink(request);
- *
- * @example <caption>include:samples/generated/v7/customer_manager_link_service.move_manager_link.js</caption>
- * region_tag:googleads_move_manager_link_sample
- *
  */
   moveManagerLink(
       request?: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START channel_delete_customer_sample]
+  // [START channel_v1_generated_CloudChannelService_DeleteCustomer_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   deleteCustomer();
-  // [END channel_delete_customer_sample]
+  // [END channel_v1_generated_CloudChannelService_DeleteCustomer_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START channel_list_channel_partner_links_sample]
+  // [START channel_v1_generated_CloudChannelService_ListChannelPartnerLinks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   listChannelPartnerLinks();
-  // [END channel_list_channel_partner_links_sample]
+  // [END channel_v1_generated_CloudChannelService_ListChannelPartnerLinks_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START websecurityscanner_delete_scan_config_sample]
+  // [START websecurityscanner_v1_generated_WebSecurityScanner_DeleteScanConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   deleteScanConfig();
-  // [END websecurityscanner_delete_scan_config_sample]
+  // [END websecurityscanner_v1_generated_WebSecurityScanner_DeleteScanConfig_async]
 }
 
 process.on('unhandledRejection', err => {

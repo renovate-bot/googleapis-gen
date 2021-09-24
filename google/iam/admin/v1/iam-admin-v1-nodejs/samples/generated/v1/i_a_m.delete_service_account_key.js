@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_service_account_key_sample]
+  // [START admin_v1_generated_IAM_DeleteServiceAccountKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   deleteServiceAccountKey();
-  // [END admin_delete_service_account_key_sample]
+  // [END admin_v1_generated_IAM_DeleteServiceAccountKey_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_suggest_geo_target_constants_sample]
+  // [START googleads_v7_generated_GeoTargetConstantService_SuggestGeoTargetConstants_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main() {
   }
 
   suggestGeoTargetConstants();
-  // [END googleads_suggest_geo_target_constants_sample]
+  // [END googleads_v7_generated_GeoTargetConstantService_SuggestGeoTargetConstants_async]
 }
 
 process.on('unhandledRejection', err => {

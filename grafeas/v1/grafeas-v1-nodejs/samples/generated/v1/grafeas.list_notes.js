@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START grafeas_list_notes_sample]
+  // [START grafeas_v1_generated_Grafeas_ListNotes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listNotes();
-  // [END grafeas_list_notes_sample]
+  // [END grafeas_v1_generated_Grafeas_ListNotes_async]
 }
 
 process.on('unhandledRejection', err => {

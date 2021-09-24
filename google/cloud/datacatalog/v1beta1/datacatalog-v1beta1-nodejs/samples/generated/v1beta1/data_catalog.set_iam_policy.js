@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START datacatalog_set_iam_policy_sample]
+  // [START datacatalog_v1beta1_generated_DataCatalog_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END datacatalog_set_iam_policy_sample]
+  // [END datacatalog_v1beta1_generated_DataCatalog_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

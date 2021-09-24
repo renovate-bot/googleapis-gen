@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START assuredworkloads_get_workload_sample]
+  // [START assuredworkloads_v1_generated_AssuredWorkloadsService_GetWorkload_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   getWorkload();
-  // [END assuredworkloads_get_workload_sample]
+  // [END assuredworkloads_v1_generated_AssuredWorkloadsService_GetWorkload_async]
 }
 
 process.on('unhandledRejection', err => {

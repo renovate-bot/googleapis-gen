@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START memcache_delete_instance_sample]
+  // [START memcache_v1_generated_CloudMemcache_DeleteInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   deleteInstance();
-  // [END memcache_delete_instance_sample]
+  // [END memcache_v1_generated_CloudMemcache_DeleteInstance_async]
 }
 
 process.on('unhandledRejection', err => {

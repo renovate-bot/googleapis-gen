@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cloudbuild_approve_build_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_ApproveBuild_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   approveBuild();
-  // [END cloudbuild_approve_build_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_ApproveBuild_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -722,10 +722,6 @@ export class MerchantCenterLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listMerchantCenterLinks(request);
- *
- * @example <caption>include:samples/generated/v8/merchant_center_link_service.list_merchant_center_links.js</caption>
- * region_tag:googleads_list_merchant_center_links_sample
- *
  */
   listMerchantCenterLinks(
       request?: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
@@ -805,10 +801,6 @@ export class MerchantCenterLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMerchantCenterLink(request);
- *
- * @example <caption>include:samples/generated/v8/merchant_center_link_service.get_merchant_center_link.js</caption>
- * region_tag:googleads_get_merchant_center_link_sample
- *
  */
   getMerchantCenterLink(
       request?: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
@@ -894,10 +886,6 @@ export class MerchantCenterLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateMerchantCenterLink(request);
- *
- * @example <caption>include:samples/generated/v8/merchant_center_link_service.mutate_merchant_center_link.js</caption>
- * region_tag:googleads_mutate_merchant_center_link_sample
- *
  */
   mutateMerchantCenterLink(
       request?: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,

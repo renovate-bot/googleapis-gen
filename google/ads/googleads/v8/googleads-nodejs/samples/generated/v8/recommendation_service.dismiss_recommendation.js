@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_dismiss_recommendation_sample]
+  // [START googleads_v8_generated_RecommendationService_DismissRecommendation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(customerId, operations) {
   }
 
   dismissRecommendation();
-  // [END googleads_dismiss_recommendation_sample]
+  // [END googleads_v8_generated_RecommendationService_DismissRecommendation_async]
 }
 
 process.on('unhandledRejection', err => {

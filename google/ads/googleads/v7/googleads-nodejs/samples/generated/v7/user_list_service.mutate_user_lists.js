@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_user_lists_sample]
+  // [START googleads_v7_generated_UserListService_MutateUserLists_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(customerId, operations) {
   }
 
   mutateUserLists();
-  // [END googleads_mutate_user_lists_sample]
+  // [END googleads_v7_generated_UserListService_MutateUserLists_async]
 }
 
 process.on('unhandledRejection', err => {

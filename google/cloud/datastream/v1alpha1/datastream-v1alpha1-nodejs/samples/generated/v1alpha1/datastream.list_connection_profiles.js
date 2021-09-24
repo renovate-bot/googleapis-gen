@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datastream_list_connection_profiles_sample]
+  // [START datastream_v1alpha1_generated_Datastream_ListConnectionProfiles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(parent) {
   }
 
   listConnectionProfiles();
-  // [END datastream_list_connection_profiles_sample]
+  // [END datastream_v1alpha1_generated_Datastream_ListConnectionProfiles_async]
 }
 
 process.on('unhandledRejection', err => {

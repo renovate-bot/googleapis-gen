@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, datasetId, modelId, model) {
-  // [START bigquery_patch_model_sample]
+  // [START bigquery_v2_generated_ModelService_PatchModel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(projectId, datasetId, modelId, model) {
   }
 
   patchModel();
-  // [END bigquery_patch_model_sample]
+  // [END bigquery_v2_generated_ModelService_PatchModel_async]
 }
 
 process.on('unhandledRejection', err => {

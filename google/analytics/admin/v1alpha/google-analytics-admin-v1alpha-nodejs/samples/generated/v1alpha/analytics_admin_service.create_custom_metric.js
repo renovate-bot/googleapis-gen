@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, customMetric) {
-  // [START admin_create_custom_metric_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateCustomMetric_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(parent, customMetric) {
   }
 
   createCustomMetric();
-  // [END admin_create_custom_metric_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateCustomMetric_async]
 }
 
 process.on('unhandledRejection', err => {

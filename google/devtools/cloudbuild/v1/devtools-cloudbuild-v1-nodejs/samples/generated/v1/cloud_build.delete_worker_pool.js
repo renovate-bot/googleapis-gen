@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cloudbuild_delete_worker_pool_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_DeleteWorkerPool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(name) {
   }
 
   deleteWorkerPool();
-  // [END cloudbuild_delete_worker_pool_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_DeleteWorkerPool_async]
 }
 
 process.on('unhandledRejection', err => {

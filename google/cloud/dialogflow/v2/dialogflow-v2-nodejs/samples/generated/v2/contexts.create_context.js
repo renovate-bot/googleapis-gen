@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, context) {
-  // [START dialogflow_create_context_sample]
+  // [START dialogflow_v2_generated_Contexts_CreateContext_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent, context) {
   }
 
   createContext();
-  // [END dialogflow_create_context_sample]
+  // [END dialogflow_v2_generated_Contexts_CreateContext_async]
 }
 
 process.on('unhandledRejection', err => {

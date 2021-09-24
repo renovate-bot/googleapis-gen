@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_run_offline_user_data_job_sample]
+  // [START googleads_v8_generated_OfflineUserDataJobService_RunOfflineUserDataJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resourceName) {
   }
 
   runOfflineUserDataJob();
-  // [END googleads_run_offline_user_data_job_sample]
+  // [END googleads_v8_generated_OfflineUserDataJobService_RunOfflineUserDataJob_async]
 }
 
 process.on('unhandledRejection', err => {

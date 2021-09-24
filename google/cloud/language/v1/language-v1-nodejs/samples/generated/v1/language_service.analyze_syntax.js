@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document) {
-  // [START language_analyze_syntax_sample]
+  // [START language_v1_generated_LanguageService_AnalyzeSyntax_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(document) {
   }
 
   analyzeSyntax();
-  // [END language_analyze_syntax_sample]
+  // [END language_v1_generated_LanguageService_AnalyzeSyntax_async]
 }
 
 process.on('unhandledRejection', err => {

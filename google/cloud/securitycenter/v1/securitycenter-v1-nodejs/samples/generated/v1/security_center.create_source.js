@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, source) {
-  // [START securitycenter_create_source_sample]
+  // [START securitycenter_v1_generated_SecurityCenter_CreateSource_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, source) {
   }
 
   createSource();
-  // [END securitycenter_create_source_sample]
+  // [END securitycenter_v1_generated_SecurityCenter_CreateSource_async]
 }
 
 process.on('unhandledRejection', err => {

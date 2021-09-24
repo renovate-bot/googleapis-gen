@@ -16,7 +16,7 @@
 'use strict';
 
 function main(buildTarget) {
-  // [START moblab_find_most_stable_build_sample]
+  // [START moblab_v1beta1_generated_BuildService_FindMostStableBuild_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(buildTarget) {
   }
 
   findMostStableBuild();
-  // [END moblab_find_most_stable_build_sample]
+  // [END moblab_v1beta1_generated_BuildService_FindMostStableBuild_async]
 }
 
 process.on('unhandledRejection', err => {

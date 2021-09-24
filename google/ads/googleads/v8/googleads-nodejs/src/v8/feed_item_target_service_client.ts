@@ -720,10 +720,6 @@ export class FeedItemTargetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getFeedItemTarget(request);
- *
- * @example <caption>include:samples/generated/v8/feed_item_target_service.get_feed_item_target.js</caption>
- * region_tag:googleads_get_feed_item_target_sample
- *
  */
   getFeedItemTarget(
       request?: protos.google.ads.googleads.v8.services.IGetFeedItemTargetRequest,
@@ -829,10 +825,6 @@ export class FeedItemTargetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateFeedItemTargets(request);
- *
- * @example <caption>include:samples/generated/v8/feed_item_target_service.mutate_feed_item_targets.js</caption>
- * region_tag:googleads_mutate_feed_item_targets_sample
- *
  */
   mutateFeedItemTargets(
       request?: protos.google.ads.googleads.v8.services.IMutateFeedItemTargetsRequest,

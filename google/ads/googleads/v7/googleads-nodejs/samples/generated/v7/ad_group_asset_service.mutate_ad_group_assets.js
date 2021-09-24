@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_ad_group_assets_sample]
+  // [START googleads_v7_generated_AdGroupAssetService_MutateAdGroupAssets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(customerId, operations) {
   }
 
   mutateAdGroupAssets();
-  // [END googleads_mutate_ad_group_assets_sample]
+  // [END googleads_v7_generated_AdGroupAssetService_MutateAdGroupAssets_async]
 }
 
 process.on('unhandledRejection', err => {

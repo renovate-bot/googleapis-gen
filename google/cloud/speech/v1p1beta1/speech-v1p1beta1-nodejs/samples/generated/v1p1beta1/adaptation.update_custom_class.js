@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customClass) {
-  // [START speech_update_custom_class_sample]
+  // [START speech_v1p1beta1_generated_Adaptation_UpdateCustomClass_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(customClass) {
   }
 
   updateCustomClass();
-  // [END speech_update_custom_class_sample]
+  // [END speech_v1p1beta1_generated_Adaptation_UpdateCustomClass_async]
 }
 
 process.on('unhandledRejection', err => {

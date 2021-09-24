@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START functions_set_iam_policy_sample]
+  // [START functions_v1_generated_CloudFunctionsService_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END functions_set_iam_policy_sample]
+  // [END functions_v1_generated_CloudFunctionsService_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

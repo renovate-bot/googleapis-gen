@@ -720,10 +720,6 @@ export class CampaignServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaign(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_service.get_campaign.js</caption>
- * region_tag:googleads_get_campaign_sample
- *
  */
   getCampaign(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignRequest,
@@ -845,10 +841,6 @@ export class CampaignServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaigns(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_service.mutate_campaigns.js</caption>
- * region_tag:googleads_mutate_campaigns_sample
- *
  */
   mutateCampaigns(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignsRequest,

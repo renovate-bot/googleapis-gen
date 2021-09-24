@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datafusion_delete_instance_sample]
+  // [START datafusion_v1_generated_DataFusion_DeleteInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   deleteInstance();
-  // [END datafusion_delete_instance_sample]
+  // [END datafusion_v1_generated_DataFusion_DeleteInstance_async]
 }
 
 process.on('unhandledRejection', err => {

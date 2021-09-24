@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, vmId) {
-  // [START notebooks_upgrade_instance_internal_sample]
+  // [START notebooks_v1beta1_generated_NotebookService_UpgradeInstanceInternal_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name, vmId) {
   }
 
   upgradeInstanceInternal();
-  // [END notebooks_upgrade_instance_internal_sample]
+  // [END notebooks_v1beta1_generated_NotebookService_UpgradeInstanceInternal_async]
 }
 
 process.on('unhandledRejection', err => {

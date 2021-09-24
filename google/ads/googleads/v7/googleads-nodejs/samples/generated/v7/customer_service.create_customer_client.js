@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, customerClient) {
-  // [START googleads_create_customer_client_sample]
+  // [START googleads_v7_generated_CustomerService_CreateCustomerClient_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(customerId, customerClient) {
   }
 
   createCustomerClient();
-  // [END googleads_create_customer_client_sample]
+  // [END googleads_v7_generated_CustomerService_CreateCustomerClient_async]
 }
 
 process.on('unhandledRejection', err => {

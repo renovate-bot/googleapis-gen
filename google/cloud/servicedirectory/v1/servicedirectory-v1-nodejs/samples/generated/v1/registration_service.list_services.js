@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START servicedirectory_list_services_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_ListServices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -83,7 +83,7 @@ function main(parent) {
   }
 
   listServices();
-  // [END servicedirectory_list_services_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_ListServices_async]
 }
 
 process.on('unhandledRejection', err => {

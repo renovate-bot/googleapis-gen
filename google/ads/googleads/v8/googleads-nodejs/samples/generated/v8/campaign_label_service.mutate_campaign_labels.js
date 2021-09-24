@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_campaign_labels_sample]
+  // [START googleads_v8_generated_CampaignLabelService_MutateCampaignLabels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(customerId, operations) {
   }
 
   mutateCampaignLabels();
-  // [END googleads_mutate_campaign_labels_sample]
+  // [END googleads_v8_generated_CampaignLabelService_MutateCampaignLabels_async]
 }
 
 process.on('unhandledRejection', err => {

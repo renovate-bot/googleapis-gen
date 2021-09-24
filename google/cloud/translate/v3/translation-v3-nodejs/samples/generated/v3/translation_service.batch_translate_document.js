@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, sourceLanguageCode, targetLanguageCodes, inputConfigs, outputConfig) {
-  // [START translation_batch_translate_document_sample]
+  // [START translation_v3_generated_TranslationService_BatchTranslateDocument_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -105,7 +105,7 @@ function main(parent, sourceLanguageCode, targetLanguageCodes, inputConfigs, out
   }
 
   batchTranslateDocument();
-  // [END translation_batch_translate_document_sample]
+  // [END translation_v3_generated_TranslationService_BatchTranslateDocument_async]
 }
 
 process.on('unhandledRejection', err => {

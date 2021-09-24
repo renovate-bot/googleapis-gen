@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START websecurityscanner_get_scan_config_sample]
+  // [START websecurityscanner_v1alpha_generated_WebSecurityScanner_GetScanConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getScanConfig();
-  // [END websecurityscanner_get_scan_config_sample]
+  // [END websecurityscanner_v1alpha_generated_WebSecurityScanner_GetScanConfig_async]
 }
 
 process.on('unhandledRejection', err => {

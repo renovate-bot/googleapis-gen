@@ -370,10 +370,6 @@ export class ServiceUsageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getService(request);
- *
- * @example <caption>include:samples/generated/v1/service_usage.get_service.js</caption>
- * region_tag:serviceusage_get_service_sample
- *
  */
   getService(
       request?: protos.google.api.serviceusage.v1.IGetServiceRequest,
@@ -457,10 +453,6 @@ export class ServiceUsageClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchGetServices(request);
- *
- * @example <caption>include:samples/generated/v1/service_usage.batch_get_services.js</caption>
- * region_tag:serviceusage_batch_get_services_sample
- *
  */
   batchGetServices(
       request?: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
@@ -546,10 +538,6 @@ export class ServiceUsageClient {
  * @example
  * const [operation] = await client.enableService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/service_usage.enable_service.js</caption>
- * region_tag:serviceusage_enable_service_sample
- *
  */
   enableService(
       request?: protos.google.api.serviceusage.v1.IEnableServiceRequest,
@@ -599,10 +587,6 @@ export class ServiceUsageClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/service_usage.enable_service.js</caption>
- * region_tag:serviceusage_enable_service_sample
- *
  */
   async checkEnableServiceProgress(name: string): Promise<LROperation<protos.google.api.serviceusage.v1.EnableServiceResponse, protos.google.api.serviceusage.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -669,10 +653,6 @@ export class ServiceUsageClient {
  * @example
  * const [operation] = await client.disableService(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/service_usage.disable_service.js</caption>
- * region_tag:serviceusage_disable_service_sample
- *
  */
   disableService(
       request?: protos.google.api.serviceusage.v1.IDisableServiceRequest,
@@ -722,10 +702,6 @@ export class ServiceUsageClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/service_usage.disable_service.js</caption>
- * region_tag:serviceusage_disable_service_sample
- *
  */
   async checkDisableServiceProgress(name: string): Promise<LROperation<protos.google.api.serviceusage.v1.DisableServiceResponse, protos.google.api.serviceusage.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -791,10 +767,6 @@ export class ServiceUsageClient {
  * @example
  * const [operation] = await client.batchEnableServices(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/service_usage.batch_enable_services.js</caption>
- * region_tag:serviceusage_batch_enable_services_sample
- *
  */
   batchEnableServices(
       request?: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
@@ -844,10 +816,6 @@ export class ServiceUsageClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/service_usage.batch_enable_services.js</caption>
- * region_tag:serviceusage_batch_enable_services_sample
- *
  */
   async checkBatchEnableServicesProgress(name: string): Promise<LROperation<protos.google.api.serviceusage.v1.BatchEnableServicesResponse, protos.google.api.serviceusage.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -920,10 +888,6 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/service_usage.list_services.js</caption>
- * region_tag:serviceusage_list_services_sample
- *
  */
   listServices(
       request?: protos.google.api.serviceusage.v1.IListServicesRequest,
@@ -991,10 +955,6 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/service_usage.list_services.js</caption>
- * region_tag:serviceusage_list_services_sample
- *
  */
   listServicesStream(
       request?: protos.google.api.serviceusage.v1.IListServicesRequest,
@@ -1055,10 +1015,6 @@ export class ServiceUsageClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/service_usage.list_services.js</caption>
- * region_tag:serviceusage_list_services_sample
- *
  */
   listServicesAsync(
       request?: protos.google.api.serviceusage.v1.IListServicesRequest,

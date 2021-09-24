@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_delete_conversation_profile_sample]
+  // [START dialogflow_v2_generated_ConversationProfiles_DeleteConversationProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteConversationProfile();
-  // [END dialogflow_delete_conversation_profile_sample]
+  // [END dialogflow_v2_generated_ConversationProfiles_DeleteConversationProfile_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_patch_service_account_sample]
+  // [START admin_v1_generated_IAM_PatchServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   patchServiceAccount();
-  // [END admin_patch_service_account_sample]
+  // [END admin_v1_generated_IAM_PatchServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

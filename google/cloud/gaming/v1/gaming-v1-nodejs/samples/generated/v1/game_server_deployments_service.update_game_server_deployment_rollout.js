@@ -16,7 +16,7 @@
 'use strict';
 
 function main(rollout, updateMask) {
-  // [START gaming_update_game_server_deployment_rollout_sample]
+  // [START gaming_v1_generated_GameServerDeploymentsService_UpdateGameServerDeploymentRollout_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(rollout, updateMask) {
   }
 
   updateGameServerDeploymentRollout();
-  // [END gaming_update_game_server_deployment_rollout_sample]
+  // [END gaming_v1_generated_GameServerDeploymentsService_UpdateGameServerDeploymentRollout_async]
 }
 
 process.on('unhandledRejection', err => {

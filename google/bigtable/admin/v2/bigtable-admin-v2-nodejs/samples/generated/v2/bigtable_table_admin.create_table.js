@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, tableId, table) {
-  // [START admin_create_table_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_CreateTable_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main(parent, tableId, table) {
   }
 
   createTable();
-  // [END admin_create_table_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_CreateTable_async]
 }
 
 process.on('unhandledRejection', err => {

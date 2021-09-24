@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, ciphertext) {
-  // [START kms_decrypt_sample]
+  // [START kms_v1_generated_KeyManagementService_Decrypt_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -88,7 +88,7 @@ function main(name, ciphertext) {
   }
 
   decrypt();
-  // [END kms_decrypt_sample]
+  // [END kms_v1_generated_KeyManagementService_Decrypt_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_truncate_log_sample]
+  // [START sql_v1beta4_generated_SqlInstancesService_TruncateLog_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   truncateLog();
-  // [END sql_truncate_log_sample]
+  // [END sql_v1beta4_generated_SqlInstancesService_TruncateLog_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -341,10 +341,6 @@ export class ErrorStatsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteEvents(request);
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.delete_events.js</caption>
- * region_tag:clouderrorreporting_delete_events_sample
- *
  */
   deleteEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
@@ -460,10 +456,6 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
- * region_tag:clouderrorreporting_list_group_stats_sample
- *
  */
   listGroupStats(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -557,10 +549,6 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
- * region_tag:clouderrorreporting_list_group_stats_sample
- *
  */
   listGroupStatsStream(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -647,10 +635,6 @@ export class ErrorStatsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
- * region_tag:clouderrorreporting_list_group_stats_sample
- *
  */
   listGroupStatsAsync(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -734,10 +718,6 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
- * region_tag:clouderrorreporting_list_events_sample
- *
  */
   listEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
@@ -811,10 +791,6 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
- * region_tag:clouderrorreporting_list_events_sample
- *
  */
   listEventsStream(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
@@ -881,10 +857,6 @@ export class ErrorStatsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
- * region_tag:clouderrorreporting_list_events_sample
- *
  */
   listEventsAsync(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,

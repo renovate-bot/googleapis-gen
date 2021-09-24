@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_get_test_case_sample]
+  // [START cx_v3_generated_TestCases_GetTestCase_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getTestCase();
-  // [END cx_get_test_case_sample]
+  // [END cx_v3_generated_TestCases_GetTestCase_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, referenceImage) {
-  // [START vision_create_reference_image_sample]
+  // [START vision_v1p4beta1_generated_ProductSearch_CreateReferenceImage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, referenceImage) {
   }
 
   createReferenceImage();
-  // [END vision_create_reference_image_sample]
+  // [END vision_v1p4beta1_generated_ProductSearch_CreateReferenceImage_async]
 }
 
 process.on('unhandledRejection', err => {

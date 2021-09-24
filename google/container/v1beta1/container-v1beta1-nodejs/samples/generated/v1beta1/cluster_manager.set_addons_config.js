@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, zone, clusterId, addonsConfig) {
-  // [START container_set_addons_config_sample]
+  // [START container_v1beta1_generated_ClusterManager_SetAddonsConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(projectId, zone, clusterId, addonsConfig) {
   }
 
   setAddonsConfig();
-  // [END container_set_addons_config_sample]
+  // [END container_v1beta1_generated_ClusterManager_SetAddonsConfig_async]
 }
 
 process.on('unhandledRejection', err => {

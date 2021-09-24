@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START managedidentities_reset_admin_password_sample]
+  // [START managedidentities_v1_generated_ManagedIdentitiesService_ResetAdminPassword_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   resetAdminPassword();
-  // [END managedidentities_reset_admin_password_sample]
+  // [END managedidentities_v1_generated_ManagedIdentitiesService_ResetAdminPassword_async]
 }
 
 process.on('unhandledRejection', err => {

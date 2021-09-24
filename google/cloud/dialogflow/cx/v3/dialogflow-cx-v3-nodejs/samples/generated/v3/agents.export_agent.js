@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_export_agent_sample]
+  // [START cx_v3_generated_Agents_ExportAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   exportAgent();
-  // [END cx_export_agent_sample]
+  // [END cx_v3_generated_Agents_ExportAgent_async]
 }
 
 process.on('unhandledRejection', err => {

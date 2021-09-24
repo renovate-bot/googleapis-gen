@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, newEnumValueDisplayName) {
-  // [START datacatalog_rename_tag_template_field_enum_value_sample]
+  // [START datacatalog_v1_generated_DataCatalog_RenameTagTemplateFieldEnumValue_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name, newEnumValueDisplayName) {
   }
 
   renameTagTemplateFieldEnumValue();
-  // [END datacatalog_rename_tag_template_field_enum_value_sample]
+  // [END datacatalog_v1_generated_DataCatalog_RenameTagTemplateFieldEnumValue_async]
 }
 
 process.on('unhandledRejection', err => {

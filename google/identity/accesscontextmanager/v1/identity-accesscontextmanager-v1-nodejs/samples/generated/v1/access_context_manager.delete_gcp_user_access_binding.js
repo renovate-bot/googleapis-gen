@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START accesscontextmanager_delete_gcp_user_access_binding_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_DeleteGcpUserAccessBinding_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteGcpUserAccessBinding();
-  // [END accesscontextmanager_delete_gcp_user_access_binding_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_DeleteGcpUserAccessBinding_async]
 }
 
 process.on('unhandledRejection', err => {

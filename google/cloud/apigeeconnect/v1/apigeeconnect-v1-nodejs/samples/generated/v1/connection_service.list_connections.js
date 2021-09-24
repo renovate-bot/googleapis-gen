@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START apigeeconnect_list_connections_sample]
+  // [START apigeeconnect_v1_generated_ConnectionService_ListConnections_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listConnections();
-  // [END apigeeconnect_list_connections_sample]
+  // [END apigeeconnect_v1_generated_ConnectionService_ListConnections_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START recommender_get_insight_sample]
+  // [START recommender_v1_generated_Recommender_GetInsight_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getInsight();
-  // [END recommender_get_insight_sample]
+  // [END recommender_v1_generated_Recommender_GetInsight_async]
 }
 
 process.on('unhandledRejection', err => {

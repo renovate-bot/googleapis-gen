@@ -392,10 +392,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.runReport(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.run_report.js</caption>
- * region_tag:data_run_report_sample
- *
  */
   runReport(
       request?: protos.google.analytics.data.v1beta.IRunReportRequest,
@@ -516,10 +512,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.runPivotReport(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.run_pivot_report.js</caption>
- * region_tag:data_run_pivot_report_sample
- *
  */
   runPivotReport(
       request?: protos.google.analytics.data.v1beta.IRunPivotReportRequest,
@@ -603,10 +595,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchRunReports(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.batch_run_reports.js</caption>
- * region_tag:data_batch_run_reports_sample
- *
  */
   batchRunReports(
       request?: protos.google.analytics.data.v1beta.IBatchRunReportsRequest,
@@ -690,10 +678,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchRunPivotReports(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.batch_run_pivot_reports.js</caption>
- * region_tag:data_batch_run_pivot_reports_sample
- *
  */
   batchRunPivotReports(
       request?: protos.google.analytics.data.v1beta.IBatchRunPivotReportsRequest,
@@ -784,10 +768,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getMetadata(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.get_metadata.js</caption>
- * region_tag:data_get_metadata_sample
- *
  */
   getMetadata(
       request?: protos.google.analytics.data.v1beta.IGetMetadataRequest,
@@ -901,10 +881,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.runRealtimeReport(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.run_realtime_report.js</caption>
- * region_tag:data_run_realtime_report_sample
- *
  */
   runRealtimeReport(
       request?: protos.google.analytics.data.v1beta.IRunRealtimeReportRequest,
@@ -1010,10 +986,6 @@ export class BetaAnalyticsDataClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.checkCompatibility(request);
- *
- * @example <caption>include:samples/generated/v1beta/beta_analytics_data.check_compatibility.js</caption>
- * region_tag:data_check_compatibility_sample
- *
  */
   checkCompatibility(
       request?: protos.google.analytics.data.v1beta.ICheckCompatibilityRequest,

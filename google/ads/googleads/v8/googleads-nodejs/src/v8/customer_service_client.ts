@@ -720,10 +720,6 @@ export class CustomerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCustomer(request);
- *
- * @example <caption>include:samples/generated/v8/customer_service.get_customer.js</caption>
- * region_tag:googleads_get_customer_sample
- *
  */
   getCustomer(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerRequest,
@@ -814,10 +810,6 @@ export class CustomerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCustomer(request);
- *
- * @example <caption>include:samples/generated/v8/customer_service.mutate_customer.js</caption>
- * region_tag:googleads_mutate_customer_sample
- *
  */
   mutateCustomer(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerRequest,
@@ -896,10 +888,6 @@ export class CustomerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.listAccessibleCustomers(request);
- *
- * @example <caption>include:samples/generated/v8/customer_service.list_accessible_customers.js</caption>
- * region_tag:googleads_list_accessible_customers_sample
- *
  */
   listAccessibleCustomers(
       request?: protos.google.ads.googleads.v8.services.IListAccessibleCustomersRequest,
@@ -989,10 +977,6 @@ export class CustomerServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createCustomerClient(request);
- *
- * @example <caption>include:samples/generated/v8/customer_service.create_customer_client.js</caption>
- * region_tag:googleads_create_customer_client_sample
- *
  */
   createCustomerClient(
       request?: protos.google.ads.googleads.v8.services.ICreateCustomerClientRequest,

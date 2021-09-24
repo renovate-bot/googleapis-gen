@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, catalogItem) {
-  // [START recommendationengine_create_catalog_item_sample]
+  // [START recommendationengine_v1beta1_generated_CatalogService_CreateCatalogItem_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, catalogItem) {
   }
 
   createCatalogItem();
-  // [END recommendationengine_create_catalog_item_sample]
+  // [END recommendationengine_v1beta1_generated_CatalogService_CreateCatalogItem_async]
 }
 
 process.on('unhandledRejection', err => {

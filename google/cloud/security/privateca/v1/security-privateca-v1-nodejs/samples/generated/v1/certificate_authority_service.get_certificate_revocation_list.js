@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START privateca_get_certificate_revocation_list_sample]
+  // [START privateca_v1_generated_CertificateAuthorityService_GetCertificateRevocationList_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getCertificateRevocationList();
-  // [END privateca_get_certificate_revocation_list_sample]
+  // [END privateca_v1_generated_CertificateAuthorityService_GetCertificateRevocationList_async]
 }
 
 process.on('unhandledRejection', err => {

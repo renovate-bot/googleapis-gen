@@ -16,7 +16,7 @@
 'use strict';
 
 function main(location) {
-  // [START contactcenterinsights_calculate_stats_sample]
+  // [START contactcenterinsights_v1_generated_ContactCenterInsights_CalculateStats_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(location) {
   }
 
   calculateStats();
-  // [END contactcenterinsights_calculate_stats_sample]
+  // [END contactcenterinsights_v1_generated_ContactCenterInsights_CalculateStats_async]
 }
 
 process.on('unhandledRejection', err => {

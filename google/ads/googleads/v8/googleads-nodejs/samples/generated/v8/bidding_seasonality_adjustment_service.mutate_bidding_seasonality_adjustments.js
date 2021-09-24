@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_bidding_seasonality_adjustments_sample]
+  // [START googleads_v8_generated_BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateBiddingSeasonalityAdjustments();
-  // [END googleads_mutate_bidding_seasonality_adjustments_sample]
+  // [END googleads_v8_generated_BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_async]
 }
 
 process.on('unhandledRejection', err => {

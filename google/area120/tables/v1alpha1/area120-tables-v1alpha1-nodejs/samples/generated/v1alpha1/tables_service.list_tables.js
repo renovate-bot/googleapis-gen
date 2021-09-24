@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START tables_list_tables_sample]
+  // [START tables_v1alpha1_generated_TablesService_ListTables_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main() {
   }
 
   listTables();
-  // [END tables_list_tables_sample]
+  // [END tables_v1alpha1_generated_TablesService_ListTables_async]
 }
 
 process.on('unhandledRejection', err => {

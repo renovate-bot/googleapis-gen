@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START serviceusage_import_consumer_overrides_sample]
+  // [START serviceusage_v1beta1_generated_ServiceUsage_ImportConsumerOverrides_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main() {
   }
 
   importConsumerOverrides();
-  // [END serviceusage_import_consumer_overrides_sample]
+  // [END serviceusage_v1beta1_generated_ServiceUsage_ImportConsumerOverrides_async]
 }
 
 process.on('unhandledRejection', err => {

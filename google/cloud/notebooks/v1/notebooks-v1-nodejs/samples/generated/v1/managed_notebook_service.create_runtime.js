@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, runtimeId, runtime) {
-  // [START notebooks_create_runtime_sample]
+  // [START notebooks_v1_generated_ManagedNotebookService_CreateRuntime_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, runtimeId, runtime) {
   }
 
   createRuntime();
-  // [END notebooks_create_runtime_sample]
+  // [END notebooks_v1_generated_ManagedNotebookService_CreateRuntime_async]
 }
 
 process.on('unhandledRejection', err => {

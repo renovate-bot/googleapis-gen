@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START cloudprofiler_create_profile_sample]
+  // [START cloudprofiler_v2_generated_ProfilerService_CreateProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   createProfile();
-  // [END cloudprofiler_create_profile_sample]
+  // [END cloudprofiler_v2_generated_ProfilerService_CreateProfile_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(model, updateMask) {
-  // [START automl_update_model_sample]
+  // [START automl_v1_generated_AutoMl_UpdateModel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(model, updateMask) {
   }
 
   updateModel();
-  // [END automl_update_model_sample]
+  // [END automl_v1_generated_AutoMl_UpdateModel_async]
 }
 
 process.on('unhandledRejection', err => {

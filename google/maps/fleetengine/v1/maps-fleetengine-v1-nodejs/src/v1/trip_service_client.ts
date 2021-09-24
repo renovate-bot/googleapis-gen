@@ -373,10 +373,6 @@ export class TripServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createTrip(request);
- *
- * @example <caption>include:samples/generated/v1/trip_service.create_trip.js</caption>
- * region_tag:fleetengine_create_trip_sample
- *
  */
   createTrip(
       request?: protos.maps.fleetengine.v1.ICreateTripRequest,
@@ -469,10 +465,6 @@ export class TripServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTrip(request);
- *
- * @example <caption>include:samples/generated/v1/trip_service.get_trip.js</caption>
- * region_tag:fleetengine_get_trip_sample
- *
  */
   getTrip(
       request?: protos.maps.fleetengine.v1.IGetTripRequest,
@@ -561,10 +553,6 @@ export class TripServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.reportBillableTrip(request);
- *
- * @example <caption>include:samples/generated/v1/trip_service.report_billable_trip.js</caption>
- * region_tag:fleetengine_report_billable_trip_sample
- *
  */
   reportBillableTrip(
       request?: protos.maps.fleetengine.v1.IReportBillableTripRequest,
@@ -680,10 +668,6 @@ export class TripServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateTrip(request);
- *
- * @example <caption>include:samples/generated/v1/trip_service.update_trip.js</caption>
- * region_tag:fleetengine_update_trip_sample
- *
  */
   updateTrip(
       request?: protos.maps.fleetengine.v1.IUpdateTripRequest,
@@ -785,10 +769,6 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/trip_service.search_trips.js</caption>
- * region_tag:fleetengine_search_trips_sample
- *
  */
   searchTrips(
       request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
@@ -868,10 +848,6 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/trip_service.search_trips.js</caption>
- * region_tag:fleetengine_search_trips_sample
- *
  */
   searchTripsStream(
       request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
@@ -944,10 +920,6 @@ export class TripServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/trip_service.search_trips.js</caption>
- * region_tag:fleetengine_search_trips_sample
- *
  */
   searchTripsAsync(
       request?: protos.maps.fleetengine.v1.ISearchTripsRequest,

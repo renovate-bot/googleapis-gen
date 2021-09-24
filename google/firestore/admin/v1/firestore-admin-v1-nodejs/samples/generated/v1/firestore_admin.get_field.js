@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_get_field_sample]
+  // [START admin_v1_generated_FirestoreAdmin_GetField_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getField();
-  // [END admin_get_field_sample]
+  // [END admin_v1_generated_FirestoreAdmin_GetField_async]
 }
 
 process.on('unhandledRejection', err => {

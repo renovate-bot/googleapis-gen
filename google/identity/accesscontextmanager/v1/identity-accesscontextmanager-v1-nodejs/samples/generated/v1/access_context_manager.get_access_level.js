@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START accesscontextmanager_get_access_level_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_GetAccessLevel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(name) {
   }
 
   getAccessLevel();
-  // [END accesscontextmanager_get_access_level_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_GetAccessLevel_async]
 }
 
 process.on('unhandledRejection', err => {

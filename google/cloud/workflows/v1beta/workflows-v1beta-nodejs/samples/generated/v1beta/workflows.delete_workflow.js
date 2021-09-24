@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START workflows_delete_workflow_sample]
+  // [START workflows_v1beta_generated_Workflows_DeleteWorkflow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteWorkflow();
-  // [END workflows_delete_workflow_sample]
+  // [END workflows_v1beta_generated_Workflows_DeleteWorkflow_async]
 }
 
 process.on('unhandledRejection', err => {

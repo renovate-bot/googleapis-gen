@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, flow) {
-  // [START cx_create_flow_sample]
+  // [START cx_v3beta1_generated_Flows_CreateFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(parent, flow) {
   }
 
   createFlow();
-  // [END cx_create_flow_sample]
+  // [END cx_v3beta1_generated_Flows_CreateFlow_async]
 }
 
 process.on('unhandledRejection', err => {

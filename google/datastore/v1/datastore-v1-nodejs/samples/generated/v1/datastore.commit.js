@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId) {
-  // [START datastore_commit_sample]
+  // [START datastore_v1_generated_Datastore_Commit_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(projectId) {
   }
 
   commit();
-  // [END datastore_commit_sample]
+  // [END datastore_v1_generated_Datastore_Commit_async]
 }
 
 process.on('unhandledRejection', err => {

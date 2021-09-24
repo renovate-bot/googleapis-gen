@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, routeId, route) {
-  // [START datastream_create_route_sample]
+  // [START datastream_v1alpha1_generated_Datastream_CreateRoute_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent, routeId, route) {
   }
 
   createRoute();
-  // [END datastream_create_route_sample]
+  // [END datastream_v1alpha1_generated_Datastream_CreateRoute_async]
 }
 
 process.on('unhandledRejection', err => {

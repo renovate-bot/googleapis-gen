@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, conversation) {
-  // [START dialogflow_create_conversation_sample]
+  // [START dialogflow_v2_generated_Conversations_CreateConversation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent, conversation) {
   }
 
   createConversation();
-  // [END dialogflow_create_conversation_sample]
+  // [END dialogflow_v2_generated_Conversations_CreateConversation_async]
 }
 
 process.on('unhandledRejection', err => {

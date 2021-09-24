@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START moblab_list_build_targets_sample]
+  // [START moblab_v1beta1_generated_BuildService_ListBuildTargets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   listBuildTargets();
-  // [END moblab_list_build_targets_sample]
+  // [END moblab_v1beta1_generated_BuildService_ListBuildTargets_async]
 }
 
 process.on('unhandledRejection', err => {

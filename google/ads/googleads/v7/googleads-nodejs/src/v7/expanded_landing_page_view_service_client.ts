@@ -690,10 +690,6 @@ export class ExpandedLandingPageViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getExpandedLandingPageView(request);
- *
- * @example <caption>include:samples/generated/v7/expanded_landing_page_view_service.get_expanded_landing_page_view.js</caption>
- * region_tag:googleads_get_expanded_landing_page_view_sample
- *
  */
   getExpandedLandingPageView(
       request?: protos.google.ads.googleads.v7.services.IGetExpandedLandingPageViewRequest,

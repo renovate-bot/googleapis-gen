@@ -720,10 +720,6 @@ export class DisplayKeywordViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDisplayKeywordView(request);
- *
- * @example <caption>include:samples/generated/v8/display_keyword_view_service.get_display_keyword_view.js</caption>
- * region_tag:googleads_get_display_keyword_view_sample
- *
  */
   getDisplayKeywordView(
       request?: protos.google.ads.googleads.v8.services.IGetDisplayKeywordViewRequest,

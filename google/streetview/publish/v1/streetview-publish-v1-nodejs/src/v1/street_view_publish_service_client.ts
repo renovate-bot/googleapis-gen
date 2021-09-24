@@ -337,10 +337,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startUpload(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.start_upload.js</caption>
- * region_tag:publish_start_upload_sample
- *
  */
   startUpload(
       request?: protos.google.protobuf.IEmpty,
@@ -424,10 +420,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createPhoto(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.create_photo.js</caption>
- * region_tag:publish_create_photo_sample
- *
  */
   createPhoto(
       request?: protos.google.streetview.publish.v1.ICreatePhotoRequest,
@@ -513,10 +505,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getPhoto(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.get_photo.js</caption>
- * region_tag:publish_get_photo_sample
- *
  */
   getPhoto(
       request?: protos.google.streetview.publish.v1.IGetPhotoRequest,
@@ -614,10 +602,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchGetPhotos(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.batch_get_photos.js</caption>
- * region_tag:publish_batch_get_photos_sample
- *
  */
   batchGetPhotos(
       request?: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
@@ -729,10 +713,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updatePhoto(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.update_photo.js</caption>
- * region_tag:publish_update_photo_sample
- *
  */
   updatePhoto(
       request?: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
@@ -837,10 +817,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchUpdatePhotos(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.batch_update_photos.js</caption>
- * region_tag:publish_batch_update_photos_sample
- *
  */
   batchUpdatePhotos(
       request?: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
@@ -912,10 +888,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deletePhoto(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.delete_photo.js</caption>
- * region_tag:publish_delete_photo_sample
- *
  */
   deletePhoto(
       request?: protos.google.streetview.publish.v1.IDeletePhotoRequest,
@@ -1004,10 +976,6 @@ export class StreetViewPublishServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchDeletePhotos(request);
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.batch_delete_photos.js</caption>
- * region_tag:publish_batch_delete_photos_sample
- *
  */
   batchDeletePhotos(
       request?: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
@@ -1104,10 +1072,6 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.list_photos.js</caption>
- * region_tag:publish_list_photos_sample
- *
  */
   listPhotos(
       request?: protos.google.streetview.publish.v1.IListPhotosRequest,
@@ -1178,10 +1142,6 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.list_photos.js</caption>
- * region_tag:publish_list_photos_sample
- *
  */
   listPhotosStream(
       request?: protos.google.streetview.publish.v1.IListPhotosRequest,
@@ -1245,10 +1205,6 @@ export class StreetViewPublishServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/street_view_publish_service.list_photos.js</caption>
- * region_tag:publish_list_photos_sample
- *
  */
   listPhotosAsync(
       request?: protos.google.streetview.publish.v1.IListPhotosRequest,

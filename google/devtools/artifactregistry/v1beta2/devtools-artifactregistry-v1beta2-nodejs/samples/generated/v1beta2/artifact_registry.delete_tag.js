@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START artifactregistry_delete_tag_sample]
+  // [START artifactregistry_v1beta2_generated_ArtifactRegistry_DeleteTag_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   deleteTag();
-  // [END artifactregistry_delete_tag_sample]
+  // [END artifactregistry_v1beta2_generated_ArtifactRegistry_DeleteTag_async]
 }
 
 process.on('unhandledRejection', err => {

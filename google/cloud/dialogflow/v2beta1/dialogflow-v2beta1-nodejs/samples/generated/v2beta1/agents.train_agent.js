@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_train_agent_sample]
+  // [START dialogflow_v2beta1_generated_Agents_TrainAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(parent) {
   }
 
   trainAgent();
-  // [END dialogflow_train_agent_sample]
+  // [END dialogflow_v2beta1_generated_Agents_TrainAgent_async]
 }
 
 process.on('unhandledRejection', err => {

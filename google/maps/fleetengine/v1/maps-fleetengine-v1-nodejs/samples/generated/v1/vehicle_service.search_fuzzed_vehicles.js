@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, tripTypes, vehicleTypes, orderBy) {
-  // [START fleetengine_search_fuzzed_vehicles_sample]
+  // [START fleetengine_v1_generated_VehicleService_SearchFuzzedVehicles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -153,7 +153,7 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
   }
 
   searchFuzzedVehicles();
-  // [END fleetengine_search_fuzzed_vehicles_sample]
+  // [END fleetengine_v1_generated_VehicleService_SearchFuzzedVehicles_async]
 }
 
 process.on('unhandledRejection', err => {

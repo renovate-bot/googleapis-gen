@@ -327,10 +327,6 @@ export class Debugger2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.setBreakpoint(request);
- *
- * @example <caption>include:samples/generated/v2/debugger2.set_breakpoint.js</caption>
- * region_tag:clouddebugger_set_breakpoint_sample
- *
  */
   setBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
@@ -407,10 +403,6 @@ export class Debugger2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.getBreakpoint(request);
- *
- * @example <caption>include:samples/generated/v2/debugger2.get_breakpoint.js</caption>
- * region_tag:clouddebugger_get_breakpoint_sample
- *
  */
   getBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
@@ -487,10 +479,6 @@ export class Debugger2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteBreakpoint(request);
- *
- * @example <caption>include:samples/generated/v2/debugger2.delete_breakpoint.js</caption>
- * region_tag:clouddebugger_delete_breakpoint_sample
- *
  */
   deleteBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
@@ -582,10 +570,6 @@ export class Debugger2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.listBreakpoints(request);
- *
- * @example <caption>include:samples/generated/v2/debugger2.list_breakpoints.js</caption>
- * region_tag:clouddebugger_list_breakpoints_sample
- *
  */
   listBreakpoints(
       request?: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
@@ -663,10 +647,6 @@ export class Debugger2Client {
  *   for more details and examples.
  * @example
  * const [response] = await client.listDebuggees(request);
- *
- * @example <caption>include:samples/generated/v2/debugger2.list_debuggees.js</caption>
- * region_tag:clouddebugger_list_debuggees_sample
- *
  */
   listDebuggees(
       request?: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,

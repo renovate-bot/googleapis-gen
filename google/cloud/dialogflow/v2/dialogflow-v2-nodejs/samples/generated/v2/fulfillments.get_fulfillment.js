@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dialogflow_get_fulfillment_sample]
+  // [START dialogflow_v2_generated_Fulfillments_GetFulfillment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getFulfillment();
-  // [END dialogflow_get_fulfillment_sample]
+  // [END dialogflow_v2_generated_Fulfillments_GetFulfillment_async]
 }
 
 process.on('unhandledRejection', err => {

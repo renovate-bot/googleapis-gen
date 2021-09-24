@@ -720,10 +720,6 @@ export class AdGroupCriterionLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupCriterionLabel(request);
- *
- * @example <caption>include:samples/generated/v8/ad_group_criterion_label_service.get_ad_group_criterion_label.js</caption>
- * region_tag:googleads_get_ad_group_criterion_label_sample
- *
  */
   getAdGroupCriterionLabel(
       request?: protos.google.ads.googleads.v8.services.IGetAdGroupCriterionLabelRequest,
@@ -816,10 +812,6 @@ export class AdGroupCriterionLabelServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupCriterionLabels(request);
- *
- * @example <caption>include:samples/generated/v8/ad_group_criterion_label_service.mutate_ad_group_criterion_labels.js</caption>
- * region_tag:googleads_mutate_ad_group_criterion_labels_sample
- *
  */
   mutateAdGroupCriterionLabels(
       request?: protos.google.ads.googleads.v8.services.IMutateAdGroupCriterionLabelsRequest,

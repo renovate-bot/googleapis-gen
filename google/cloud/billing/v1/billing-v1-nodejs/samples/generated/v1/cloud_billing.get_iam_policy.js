@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START billing_get_iam_policy_sample]
+  // [START billing_v1_generated_CloudBilling_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END billing_get_iam_policy_sample]
+  // [END billing_v1_generated_CloudBilling_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

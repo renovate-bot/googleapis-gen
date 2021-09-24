@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START pubsublite_publish_sample]
+  // [START pubsublite_v1_generated_PublisherService_Publish_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   publish();
-  // [END pubsublite_publish_sample]
+  // [END pubsublite_v1_generated_PublisherService_Publish_async]
 }
 
 process.on('unhandledRejection', err => {

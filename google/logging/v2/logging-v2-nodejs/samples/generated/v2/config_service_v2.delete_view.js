@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START logging_delete_view_sample]
+  // [START logging_v2_generated_ConfigServiceV2_DeleteView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   deleteView();
-  // [END logging_delete_view_sample]
+  // [END logging_v2_generated_ConfigServiceV2_DeleteView_async]
 }
 
 process.on('unhandledRejection', err => {

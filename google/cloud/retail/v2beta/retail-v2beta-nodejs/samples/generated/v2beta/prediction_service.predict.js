@@ -16,7 +16,7 @@
 'use strict';
 
 function main(placement, userEvent) {
-  // [START retail_predict_sample]
+  // [START retail_v2beta_generated_PredictionService_Predict_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -143,7 +143,7 @@ function main(placement, userEvent) {
   }
 
   predict();
-  // [END retail_predict_sample]
+  // [END retail_v2beta_generated_PredictionService_Predict_async]
 }
 
 process.on('unhandledRejection', err => {

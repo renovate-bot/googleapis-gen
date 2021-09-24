@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START essentialcontacts_compute_contacts_sample]
+  // [START essentialcontacts_v1_generated_EssentialContactsService_ComputeContacts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent) {
   }
 
   computeContacts();
-  // [END essentialcontacts_compute_contacts_sample]
+  // [END essentialcontacts_v1_generated_EssentialContactsService_ComputeContacts_async]
 }
 
 process.on('unhandledRejection', err => {

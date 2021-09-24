@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START binaryauthorization_list_attestors_sample]
+  // [START binaryauthorization_v1beta1_generated_BinauthzManagementServiceV1Beta1_ListAttestors_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listAttestors();
-  // [END binaryauthorization_list_attestors_sample]
+  // [END binaryauthorization_v1beta1_generated_BinauthzManagementServiceV1Beta1_ListAttestors_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sdk_set_web_and_app_activity_control_sample]
+  // [START sdk_v2_generated_ActionsTesting_SetWebAndAppActivityControl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   setWebAndAppActivityControl();
-  // [END sdk_set_web_and_app_activity_control_sample]
+  // [END sdk_v2_generated_ActionsTesting_SetWebAndAppActivityControl_async]
 }
 
 process.on('unhandledRejection', err => {

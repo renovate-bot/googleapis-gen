@@ -445,10 +445,6 @@ export class CloudDeployClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDeliveryPipeline(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.get_delivery_pipeline.js</caption>
- * region_tag:deploy_get_delivery_pipeline_sample
- *
  */
   getDeliveryPipeline(
       request?: protos.google.cloud.deploy.v1.IGetDeliveryPipelineRequest,
@@ -521,10 +517,6 @@ export class CloudDeployClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getTarget(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.get_target.js</caption>
- * region_tag:deploy_get_target_sample
- *
  */
   getTarget(
       request?: protos.google.cloud.deploy.v1.IGetTargetRequest,
@@ -597,10 +589,6 @@ export class CloudDeployClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRelease(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.get_release.js</caption>
- * region_tag:deploy_get_release_sample
- *
  */
   getRelease(
       request?: protos.google.cloud.deploy.v1.IGetReleaseRequest,
@@ -676,10 +664,6 @@ export class CloudDeployClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.approveRollout(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.approve_rollout.js</caption>
- * region_tag:deploy_approve_rollout_sample
- *
  */
   approveRollout(
       request?: protos.google.cloud.deploy.v1.IApproveRolloutRequest,
@@ -752,10 +736,6 @@ export class CloudDeployClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getRollout(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.get_rollout.js</caption>
- * region_tag:deploy_get_rollout_sample
- *
  */
   getRollout(
       request?: protos.google.cloud.deploy.v1.IGetRolloutRequest,
@@ -827,10 +807,6 @@ export class CloudDeployClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getConfig(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.get_config.js</caption>
- * region_tag:deploy_get_config_sample
- *
  */
   getConfig(
       request?: protos.google.cloud.deploy.v1.IGetConfigRequest,
@@ -928,10 +904,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.createDeliveryPipeline(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_delivery_pipeline.js</caption>
- * region_tag:deploy_create_delivery_pipeline_sample
- *
  */
   createDeliveryPipeline(
       request?: protos.google.cloud.deploy.v1.ICreateDeliveryPipelineRequest,
@@ -981,10 +953,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_delivery_pipeline.js</caption>
- * region_tag:deploy_create_delivery_pipeline_sample
- *
  */
   async checkCreateDeliveryPipelineProgress(name: string): Promise<LROperation<protos.google.cloud.deploy.v1.DeliveryPipeline, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1057,10 +1025,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.updateDeliveryPipeline(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.update_delivery_pipeline.js</caption>
- * region_tag:deploy_update_delivery_pipeline_sample
- *
  */
   updateDeliveryPipeline(
       request?: protos.google.cloud.deploy.v1.IUpdateDeliveryPipelineRequest,
@@ -1110,10 +1074,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.update_delivery_pipeline.js</caption>
- * region_tag:deploy_update_delivery_pipeline_sample
- *
  */
   async checkUpdateDeliveryPipelineProgress(name: string): Promise<LROperation<protos.google.cloud.deploy.v1.DeliveryPipeline, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1189,10 +1149,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.deleteDeliveryPipeline(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.delete_delivery_pipeline.js</caption>
- * region_tag:deploy_delete_delivery_pipeline_sample
- *
  */
   deleteDeliveryPipeline(
       request?: protos.google.cloud.deploy.v1.IDeleteDeliveryPipelineRequest,
@@ -1242,10 +1198,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.delete_delivery_pipeline.js</caption>
- * region_tag:deploy_delete_delivery_pipeline_sample
- *
  */
   async checkDeleteDeliveryPipelineProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1315,10 +1267,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.createTarget(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_target.js</caption>
- * region_tag:deploy_create_target_sample
- *
  */
   createTarget(
       request?: protos.google.cloud.deploy.v1.ICreateTargetRequest,
@@ -1368,10 +1316,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_target.js</caption>
- * region_tag:deploy_create_target_sample
- *
  */
   async checkCreateTargetProgress(name: string): Promise<LROperation<protos.google.cloud.deploy.v1.Target, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1444,10 +1388,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.updateTarget(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.update_target.js</caption>
- * region_tag:deploy_update_target_sample
- *
  */
   updateTarget(
       request?: protos.google.cloud.deploy.v1.IUpdateTargetRequest,
@@ -1497,10 +1437,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.update_target.js</caption>
- * region_tag:deploy_update_target_sample
- *
  */
   async checkUpdateTargetProgress(name: string): Promise<LROperation<protos.google.cloud.deploy.v1.Target, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1572,10 +1508,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.deleteTarget(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.delete_target.js</caption>
- * region_tag:deploy_delete_target_sample
- *
  */
   deleteTarget(
       request?: protos.google.cloud.deploy.v1.IDeleteTargetRequest,
@@ -1625,10 +1557,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.delete_target.js</caption>
- * region_tag:deploy_delete_target_sample
- *
  */
   async checkDeleteTargetProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1698,10 +1626,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.createRelease(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_release.js</caption>
- * region_tag:deploy_create_release_sample
- *
  */
   createRelease(
       request?: protos.google.cloud.deploy.v1.ICreateReleaseRequest,
@@ -1751,10 +1675,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_release.js</caption>
- * region_tag:deploy_create_release_sample
- *
  */
   async checkCreateReleaseProgress(name: string): Promise<LROperation<protos.google.cloud.deploy.v1.Release, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1824,10 +1744,6 @@ export class CloudDeployClient {
  * @example
  * const [operation] = await client.createRollout(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_rollout.js</caption>
- * region_tag:deploy_create_rollout_sample
- *
  */
   createRollout(
       request?: protos.google.cloud.deploy.v1.ICreateRolloutRequest,
@@ -1877,10 +1793,6 @@ export class CloudDeployClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.create_rollout.js</caption>
- * region_tag:deploy_create_rollout_sample
- *
  */
   async checkCreateRolloutProgress(name: string): Promise<LROperation<protos.google.cloud.deploy.v1.Rollout, protos.google.cloud.deploy.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1945,10 +1857,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_delivery_pipelines.js</caption>
- * region_tag:deploy_list_delivery_pipelines_sample
- *
  */
   listDeliveryPipelines(
       request?: protos.google.cloud.deploy.v1.IListDeliveryPipelinesRequest,
@@ -2020,10 +1928,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_delivery_pipelines.js</caption>
- * region_tag:deploy_list_delivery_pipelines_sample
- *
  */
   listDeliveryPipelinesStream(
       request?: protos.google.cloud.deploy.v1.IListDeliveryPipelinesRequest,
@@ -2088,10 +1992,6 @@ export class CloudDeployClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_delivery_pipelines.js</caption>
- * region_tag:deploy_list_delivery_pipelines_sample
- *
  */
   listDeliveryPipelinesAsync(
       request?: protos.google.cloud.deploy.v1.IListDeliveryPipelinesRequest,
@@ -2172,10 +2072,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_targets.js</caption>
- * region_tag:deploy_list_targets_sample
- *
  */
   listTargets(
       request?: protos.google.cloud.deploy.v1.IListTargetsRequest,
@@ -2246,10 +2142,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_targets.js</caption>
- * region_tag:deploy_list_targets_sample
- *
  */
   listTargetsStream(
       request?: protos.google.cloud.deploy.v1.IListTargetsRequest,
@@ -2313,10 +2205,6 @@ export class CloudDeployClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_targets.js</caption>
- * region_tag:deploy_list_targets_sample
- *
  */
   listTargetsAsync(
       request?: protos.google.cloud.deploy.v1.IListTargetsRequest,
@@ -2396,10 +2284,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_releases.js</caption>
- * region_tag:deploy_list_releases_sample
- *
  */
   listReleases(
       request?: protos.google.cloud.deploy.v1.IListReleasesRequest,
@@ -2469,10 +2353,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_releases.js</caption>
- * region_tag:deploy_list_releases_sample
- *
  */
   listReleasesStream(
       request?: protos.google.cloud.deploy.v1.IListReleasesRequest,
@@ -2535,10 +2415,6 @@ export class CloudDeployClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_releases.js</caption>
- * region_tag:deploy_list_releases_sample
- *
  */
   listReleasesAsync(
       request?: protos.google.cloud.deploy.v1.IListReleasesRequest,
@@ -2618,10 +2494,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_rollouts.js</caption>
- * region_tag:deploy_list_rollouts_sample
- *
  */
   listRollouts(
       request?: protos.google.cloud.deploy.v1.IListRolloutsRequest,
@@ -2691,10 +2563,6 @@ export class CloudDeployClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_rollouts.js</caption>
- * region_tag:deploy_list_rollouts_sample
- *
  */
   listRolloutsStream(
       request?: protos.google.cloud.deploy.v1.IListRolloutsRequest,
@@ -2757,10 +2625,6 @@ export class CloudDeployClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1/cloud_deploy.list_rollouts.js</caption>
- * region_tag:deploy_list_rollouts_sample
- *
  */
   listRolloutsAsync(
       request?: protos.google.cloud.deploy.v1.IListRolloutsRequest,

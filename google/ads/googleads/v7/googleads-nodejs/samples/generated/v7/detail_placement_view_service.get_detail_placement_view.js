@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_detail_placement_view_sample]
+  // [START googleads_v7_generated_DetailPlacementViewService_GetDetailPlacementView_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getDetailPlacementView();
-  // [END googleads_get_detail_placement_view_sample]
+  // [END googleads_v7_generated_DetailPlacementViewService_GetDetailPlacementView_async]
 }
 
 process.on('unhandledRejection', err => {

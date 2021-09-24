@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_archive_custom_metric_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_ArchiveCustomMetric_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   archiveCustomMetric();
-  // [END admin_archive_custom_metric_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_ArchiveCustomMetric_async]
 }
 
 process.on('unhandledRejection', err => {

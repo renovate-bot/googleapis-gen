@@ -490,10 +490,6 @@ export class SessionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.detectIntent(request);
- *
- * @example <caption>include:samples/generated/v2/sessions.detect_intent.js</caption>
- * region_tag:dialogflow_detect_intent_sample
- *
  */
   detectIntent(
       request?: protos.google.cloud.dialogflow.v2.IDetectIntentRequest,
@@ -554,10 +550,6 @@ export class SessionsClient {
  * stream.on('end', () => { ... });
  * stream.write(request);
  * stream.end();
- *
- * @example <caption>include:samples/generated/v2/sessions.streaming_detect_intent.js</caption>
- * region_tag:dialogflow_streaming_detect_intent_sample
- *
  */
   streamingDetectIntent(
       options?: CallOptions):

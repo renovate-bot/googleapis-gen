@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START resourcemanager_delete_tag_binding_sample]
+  // [START resourcemanager_v3_generated_TagBindings_DeleteTagBinding_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   deleteTagBinding();
-  // [END resourcemanager_delete_tag_binding_sample]
+  // [END resourcemanager_v3_generated_TagBindings_DeleteTagBinding_async]
 }
 
 process.on('unhandledRejection', err => {

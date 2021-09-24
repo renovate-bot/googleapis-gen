@@ -16,7 +16,7 @@
 'use strict';
 
 function main(account) {
-  // [START channel_list_subscribers_sample]
+  // [START channel_v1_generated_CloudChannelService_ListSubscribers_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(account) {
   }
 
   listSubscribers();
-  // [END channel_list_subscribers_sample]
+  // [END channel_v1_generated_CloudChannelService_ListSubscribers_async]
 }
 
 process.on('unhandledRejection', err => {

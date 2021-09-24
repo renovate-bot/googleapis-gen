@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database, transaction) {
-  // [START firestore_rollback_sample]
+  // [START firestore_v1_generated_Firestore_Rollback_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(database, transaction) {
   }
 
   rollback();
-  // [END firestore_rollback_sample]
+  // [END firestore_v1_generated_Firestore_Rollback_async]
 }
 
 process.on('unhandledRejection', err => {

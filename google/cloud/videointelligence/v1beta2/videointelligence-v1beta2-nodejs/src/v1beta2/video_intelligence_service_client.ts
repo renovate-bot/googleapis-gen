@@ -370,10 +370,6 @@ export class VideoIntelligenceServiceClient {
  * @example
  * const [operation] = await client.annotateVideo(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta2/video_intelligence_service.annotate_video.js</caption>
- * region_tag:videointelligence_annotate_video_sample
- *
  */
   annotateVideo(
       request?: protos.google.cloud.videointelligence.v1beta2.IAnnotateVideoRequest,
@@ -416,10 +412,6 @@ export class VideoIntelligenceServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta2/video_intelligence_service.annotate_video.js</caption>
- * region_tag:videointelligence_annotate_video_sample
- *
  */
   async checkAnnotateVideoProgress(name: string): Promise<LROperation<protos.google.cloud.videointelligence.v1beta2.AnnotateVideoResponse, protos.google.cloud.videointelligence.v1beta2.AnnotateVideoProgress>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

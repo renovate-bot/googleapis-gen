@@ -16,7 +16,7 @@
 'use strict';
 
 function main(enabled) {
-  // [START container_set_legacy_abac_sample]
+  // [START container_v1_generated_ClusterManager_SetLegacyAbac_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(enabled) {
   }
 
   setLegacyAbac();
-  // [END container_set_legacy_abac_sample]
+  // [END container_v1_generated_ClusterManager_SetLegacyAbac_async]
 }
 
 process.on('unhandledRejection', err => {

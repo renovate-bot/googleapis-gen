@@ -374,10 +374,6 @@ export class CloudShellServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEnvironment(request);
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.get_environment.js</caption>
- * region_tag:shell_get_environment_sample
- *
  */
   getEnvironment(
       request?: protos.google.cloud.shell.v1.IGetEnvironmentRequest,
@@ -467,10 +463,6 @@ export class CloudShellServiceClient {
  * @example
  * const [operation] = await client.startEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.start_environment.js</caption>
- * region_tag:shell_start_environment_sample
- *
  */
   startEnvironment(
       request?: protos.google.cloud.shell.v1.IStartEnvironmentRequest,
@@ -520,10 +512,6 @@ export class CloudShellServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.start_environment.js</caption>
- * region_tag:shell_start_environment_sample
- *
  */
   async checkStartEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.shell.v1.StartEnvironmentResponse, protos.google.cloud.shell.v1.StartEnvironmentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -582,10 +570,6 @@ export class CloudShellServiceClient {
  * @example
  * const [operation] = await client.authorizeEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.authorize_environment.js</caption>
- * region_tag:shell_authorize_environment_sample
- *
  */
   authorizeEnvironment(
       request?: protos.google.cloud.shell.v1.IAuthorizeEnvironmentRequest,
@@ -635,10 +619,6 @@ export class CloudShellServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.authorize_environment.js</caption>
- * region_tag:shell_authorize_environment_sample
- *
  */
   async checkAuthorizeEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.shell.v1.AuthorizeEnvironmentResponse, protos.google.cloud.shell.v1.AuthorizeEnvironmentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -695,10 +675,6 @@ export class CloudShellServiceClient {
  * @example
  * const [operation] = await client.addPublicKey(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.add_public_key.js</caption>
- * region_tag:shell_add_public_key_sample
- *
  */
   addPublicKey(
       request?: protos.google.cloud.shell.v1.IAddPublicKeyRequest,
@@ -748,10 +724,6 @@ export class CloudShellServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.add_public_key.js</caption>
- * region_tag:shell_add_public_key_sample
- *
  */
   async checkAddPublicKeyProgress(name: string): Promise<LROperation<protos.google.cloud.shell.v1.AddPublicKeyResponse, protos.google.cloud.shell.v1.AddPublicKeyMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -804,10 +776,6 @@ export class CloudShellServiceClient {
  * @example
  * const [operation] = await client.removePublicKey(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.remove_public_key.js</caption>
- * region_tag:shell_remove_public_key_sample
- *
  */
   removePublicKey(
       request?: protos.google.cloud.shell.v1.IRemovePublicKeyRequest,
@@ -857,10 +825,6 @@ export class CloudShellServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1/cloud_shell_service.remove_public_key.js</caption>
- * region_tag:shell_remove_public_key_sample
- *
  */
   async checkRemovePublicKeyProgress(name: string): Promise<LROperation<protos.google.cloud.shell.v1.RemovePublicKeyResponse, protos.google.cloud.shell.v1.RemovePublicKeyMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

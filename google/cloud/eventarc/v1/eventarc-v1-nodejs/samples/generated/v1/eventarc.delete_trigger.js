@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, validateOnly) {
-  // [START eventarc_delete_trigger_sample]
+  // [START eventarc_v1_generated_Eventarc_DeleteTrigger_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(name, validateOnly) {
   }
 
   deleteTrigger();
-  // [END eventarc_delete_trigger_sample]
+  // [END eventarc_v1_generated_Eventarc_DeleteTrigger_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START assuredworkloads_delete_workload_sample]
+  // [START assuredworkloads_v1_generated_AssuredWorkloadsService_DeleteWorkload_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   deleteWorkload();
-  // [END assuredworkloads_delete_workload_sample]
+  // [END assuredworkloads_v1_generated_AssuredWorkloadsService_DeleteWorkload_async]
 }
 
 process.on('unhandledRejection', err => {

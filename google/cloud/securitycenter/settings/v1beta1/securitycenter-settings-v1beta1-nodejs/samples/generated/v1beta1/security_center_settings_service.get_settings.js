@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START settings_get_settings_sample]
+  // [START settings_v1beta1_generated_SecurityCenterSettingsService_GetSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   getSettings();
-  // [END settings_get_settings_sample]
+  // [END settings_v1beta1_generated_SecurityCenterSettingsService_GetSettings_async]
 }
 
 process.on('unhandledRejection', err => {

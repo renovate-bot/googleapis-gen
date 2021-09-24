@@ -690,10 +690,6 @@ export class AdGroupAudienceViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupAudienceView(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_audience_view_service.get_ad_group_audience_view.js</caption>
- * region_tag:googleads_get_ad_group_audience_view_sample
- *
  */
   getAdGroupAudienceView(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupAudienceViewRequest,

@@ -720,10 +720,6 @@ export class UserLocationViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getUserLocationView(request);
- *
- * @example <caption>include:samples/generated/v8/user_location_view_service.get_user_location_view.js</caption>
- * region_tag:googleads_get_user_location_view_sample
- *
  */
   getUserLocationView(
       request?: protos.google.ads.googleads.v8.services.IGetUserLocationViewRequest,

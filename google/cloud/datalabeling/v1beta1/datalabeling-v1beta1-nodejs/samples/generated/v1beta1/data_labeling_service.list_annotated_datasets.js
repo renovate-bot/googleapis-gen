@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datalabeling_list_annotated_datasets_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_ListAnnotatedDatasets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(parent) {
   }
 
   listAnnotatedDatasets();
-  // [END datalabeling_list_annotated_datasets_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_ListAnnotatedDatasets_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START container_list_node_pools_sample]
+  // [START container_v1_generated_ClusterManager_ListNodePools_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main() {
   }
 
   listNodePools();
-  // [END container_list_node_pools_sample]
+  // [END container_v1_generated_ClusterManager_ListNodePools_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START binaryauthorization_delete_attestor_sample]
+  // [START binaryauthorization_v1_generated_BinauthzManagementServiceV1_DeleteAttestor_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteAttestor();
-  // [END binaryauthorization_delete_attestor_sample]
+  // [END binaryauthorization_v1_generated_BinauthzManagementServiceV1_DeleteAttestor_async]
 }
 
 process.on('unhandledRejection', err => {

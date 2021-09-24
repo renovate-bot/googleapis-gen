@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectName, event) {
-  // [START clouderrorreporting_report_error_event_sample]
+  // [START clouderrorreporting_v1beta1_generated_ReportErrorsService_ReportErrorEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(projectName, event) {
   }
 
   reportErrorEvent();
-  // [END clouderrorreporting_report_error_event_sample]
+  // [END clouderrorreporting_v1beta1_generated_ReportErrorsService_ReportErrorEvent_async]
 }
 
 process.on('unhandledRejection', err => {

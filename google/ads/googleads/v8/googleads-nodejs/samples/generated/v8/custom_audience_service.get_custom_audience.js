@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_custom_audience_sample]
+  // [START googleads_v8_generated_CustomAudienceService_GetCustomAudience_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getCustomAudience();
-  // [END googleads_get_custom_audience_sample]
+  // [END googleads_v8_generated_CustomAudienceService_GetCustomAudience_async]
 }
 
 process.on('unhandledRejection', err => {

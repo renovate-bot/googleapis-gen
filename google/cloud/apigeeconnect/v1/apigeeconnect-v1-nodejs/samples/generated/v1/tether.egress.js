@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START apigeeconnect_egress_sample]
+  // [START apigeeconnect_v1_generated_Tether_Egress_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main() {
   }
 
   egress();
-  // [END apigeeconnect_egress_sample]
+  // [END apigeeconnect_v1_generated_Tether_Egress_async]
 }
 
 process.on('unhandledRejection', err => {

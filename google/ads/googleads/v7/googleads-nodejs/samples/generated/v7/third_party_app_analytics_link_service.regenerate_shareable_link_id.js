@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START googleads_regenerate_shareable_link_id_sample]
+  // [START googleads_v7_generated_ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -42,7 +42,7 @@ function main() {
   }
 
   regenerateShareableLinkId();
-  // [END googleads_regenerate_shareable_link_id_sample]
+  // [END googleads_v7_generated_ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_async]
 }
 
 process.on('unhandledRejection', err => {

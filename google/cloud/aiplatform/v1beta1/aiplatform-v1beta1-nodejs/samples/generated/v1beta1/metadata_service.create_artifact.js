@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, artifact) {
-  // [START aiplatform_create_artifact_sample]
+  // [START aiplatform_v1beta1_generated_MetadataService_CreateArtifact_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent, artifact) {
   }
 
   createArtifact();
-  // [END aiplatform_create_artifact_sample]
+  // [END aiplatform_v1beta1_generated_MetadataService_CreateArtifact_async]
 }
 
 process.on('unhandledRejection', err => {

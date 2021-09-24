@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, migrationJobId, migrationJob) {
-  // [START clouddms_create_migration_job_sample]
+  // [START clouddms_v1_generated_DataMigrationService_CreateMigrationJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent, migrationJobId, migrationJob) {
   }
 
   createMigrationJob();
-  // [END clouddms_create_migration_job_sample]
+  // [END clouddms_v1_generated_DataMigrationService_CreateMigrationJob_async]
 }
 
 process.on('unhandledRejection', err => {

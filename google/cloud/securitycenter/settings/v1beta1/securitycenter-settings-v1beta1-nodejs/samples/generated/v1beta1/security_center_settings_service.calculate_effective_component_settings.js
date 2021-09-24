@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START settings_calculate_effective_component_settings_sample]
+  // [START settings_v1beta1_generated_SecurityCenterSettingsService_CalculateEffectiveComponentSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   calculateEffectiveComponentSettings();
-  // [END settings_calculate_effective_component_settings_sample]
+  // [END settings_v1beta1_generated_SecurityCenterSettingsService_CalculateEffectiveComponentSettings_async]
 }
 
 process.on('unhandledRejection', err => {

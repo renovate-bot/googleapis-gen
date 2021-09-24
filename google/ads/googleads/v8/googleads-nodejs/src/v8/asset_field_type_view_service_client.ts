@@ -712,10 +712,6 @@ export class AssetFieldTypeViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAssetFieldTypeView(request);
- *
- * @example <caption>include:samples/generated/v8/asset_field_type_view_service.get_asset_field_type_view.js</caption>
- * region_tag:googleads_get_asset_field_type_view_sample
- *
  */
   getAssetFieldTypeView(
       request?: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,

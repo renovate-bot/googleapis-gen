@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START moblab_check_build_stage_status_sample]
+  // [START moblab_v1beta1_generated_BuildService_CheckBuildStageStatus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name) {
   }
 
   checkBuildStageStatus();
-  // [END moblab_check_build_stage_status_sample]
+  // [END moblab_v1beta1_generated_BuildService_CheckBuildStageStatus_async]
 }
 
 process.on('unhandledRejection', err => {

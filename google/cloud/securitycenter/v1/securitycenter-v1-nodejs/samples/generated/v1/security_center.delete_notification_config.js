@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START securitycenter_delete_notification_config_sample]
+  // [START securitycenter_v1_generated_SecurityCenter_DeleteNotificationConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteNotificationConfig();
-  // [END securitycenter_delete_notification_config_sample]
+  // [END securitycenter_v1_generated_SecurityCenter_DeleteNotificationConfig_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START aiplatform_list_metadata_schemas_sample]
+  // [START aiplatform_v1beta1_generated_MetadataService_ListMetadataSchemas_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(parent) {
   }
 
   listMetadataSchemas();
-  // [END aiplatform_list_metadata_schemas_sample]
+  // [END aiplatform_v1beta1_generated_MetadataService_ListMetadataSchemas_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(writeOffset) {
-  // [START storage_insert_object_sample]
+  // [START storage_v1_generated_Storage_InsertObject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -107,7 +107,7 @@ function main(writeOffset) {
   }
 
   insertObject();
-  // [END storage_insert_object_sample]
+  // [END storage_v1_generated_Storage_InsertObject_async]
 }
 
 process.on('unhandledRejection', err => {

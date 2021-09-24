@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datacatalog_update_taxonomy_sample]
+  // [START datacatalog_v1_generated_PolicyTagManager_UpdateTaxonomy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   updateTaxonomy();
-  // [END datacatalog_update_taxonomy_sample]
+  // [END datacatalog_v1_generated_PolicyTagManager_UpdateTaxonomy_async]
 }
 
 process.on('unhandledRejection', err => {

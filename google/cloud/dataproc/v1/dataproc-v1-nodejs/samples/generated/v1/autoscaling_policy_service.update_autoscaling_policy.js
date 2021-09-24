@@ -16,7 +16,7 @@
 'use strict';
 
 function main(policy) {
-  // [START dataproc_update_autoscaling_policy_sample]
+  // [START dataproc_v1_generated_AutoscalingPolicyService_UpdateAutoscalingPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(policy) {
   }
 
   updateAutoscalingPolicy();
-  // [END dataproc_update_autoscaling_policy_sample]
+  // [END dataproc_v1_generated_AutoscalingPolicyService_UpdateAutoscalingPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

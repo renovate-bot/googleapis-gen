@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask) {
-  // [START domains_update_registration_sample]
+  // [START domains_v1alpha2_generated_Domains_UpdateRegistration_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(updateMask) {
   }
 
   updateRegistration();
-  // [END domains_update_registration_sample]
+  // [END domains_v1alpha2_generated_Domains_UpdateRegistration_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START roads_list_nearest_roads_sample]
+  // [START roads_v1op_generated_RoadsService_ListNearestRoads_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main() {
   }
 
   listNearestRoads();
-  // [END roads_list_nearest_roads_sample]
+  // [END roads_v1op_generated_RoadsService_ListNearestRoads_async]
 }
 
 process.on('unhandledRejection', err => {

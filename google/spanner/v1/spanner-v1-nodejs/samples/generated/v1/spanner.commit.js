@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session) {
-  // [START spanner_commit_sample]
+  // [START spanner_v1_generated_Spanner_Commit_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(session) {
   }
 
   commit();
-  // [END spanner_commit_sample]
+  // [END spanner_v1_generated_Spanner_Commit_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -428,10 +428,6 @@ export class NetworkSecurityClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAuthorizationPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.get_authorization_policy.js</caption>
- * region_tag:networksecurity_get_authorization_policy_sample
- *
  */
   getAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetAuthorizationPolicyRequest,
@@ -504,10 +500,6 @@ export class NetworkSecurityClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServerTlsPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.get_server_tls_policy.js</caption>
- * region_tag:networksecurity_get_server_tls_policy_sample
- *
  */
   getServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetServerTlsPolicyRequest,
@@ -580,10 +572,6 @@ export class NetworkSecurityClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getClientTlsPolicy(request);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.get_client_tls_policy.js</caption>
- * region_tag:networksecurity_get_client_tls_policy_sample
- *
  */
   getClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetClientTlsPolicyRequest,
@@ -667,10 +655,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.createAuthorizationPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.create_authorization_policy.js</caption>
- * region_tag:networksecurity_create_authorization_policy_sample
- *
  */
   createAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
@@ -720,10 +704,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.create_authorization_policy.js</caption>
- * region_tag:networksecurity_create_authorization_policy_sample
- *
  */
   async checkCreateAuthorizationPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.AuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -776,10 +756,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.updateAuthorizationPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.update_authorization_policy.js</caption>
- * region_tag:networksecurity_update_authorization_policy_sample
- *
  */
   updateAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
@@ -829,10 +805,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.update_authorization_policy.js</caption>
- * region_tag:networksecurity_update_authorization_policy_sample
- *
  */
   async checkUpdateAuthorizationPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.AuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -880,10 +852,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.deleteAuthorizationPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.delete_authorization_policy.js</caption>
- * region_tag:networksecurity_delete_authorization_policy_sample
- *
  */
   deleteAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteAuthorizationPolicyRequest,
@@ -933,10 +901,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.delete_authorization_policy.js</caption>
- * region_tag:networksecurity_delete_authorization_policy_sample
- *
  */
   async checkDeleteAuthorizationPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -990,10 +954,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.createServerTlsPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.create_server_tls_policy.js</caption>
- * region_tag:networksecurity_create_server_tls_policy_sample
- *
  */
   createServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
@@ -1043,10 +1003,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.create_server_tls_policy.js</caption>
- * region_tag:networksecurity_create_server_tls_policy_sample
- *
  */
   async checkCreateServerTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1100,10 +1056,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.updateServerTlsPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.update_server_tls_policy.js</caption>
- * region_tag:networksecurity_update_server_tls_policy_sample
- *
  */
   updateServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
@@ -1153,10 +1105,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.update_server_tls_policy.js</caption>
- * region_tag:networksecurity_update_server_tls_policy_sample
- *
  */
   async checkUpdateServerTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1204,10 +1152,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.deleteServerTlsPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.delete_server_tls_policy.js</caption>
- * region_tag:networksecurity_delete_server_tls_policy_sample
- *
  */
   deleteServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteServerTlsPolicyRequest,
@@ -1257,10 +1201,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.delete_server_tls_policy.js</caption>
- * region_tag:networksecurity_delete_server_tls_policy_sample
- *
  */
   async checkDeleteServerTlsPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1314,10 +1254,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.createClientTlsPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.create_client_tls_policy.js</caption>
- * region_tag:networksecurity_create_client_tls_policy_sample
- *
  */
   createClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
@@ -1367,10 +1303,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.create_client_tls_policy.js</caption>
- * region_tag:networksecurity_create_client_tls_policy_sample
- *
  */
   async checkCreateClientTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1424,10 +1356,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.updateClientTlsPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.update_client_tls_policy.js</caption>
- * region_tag:networksecurity_update_client_tls_policy_sample
- *
  */
   updateClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
@@ -1477,10 +1405,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.update_client_tls_policy.js</caption>
- * region_tag:networksecurity_update_client_tls_policy_sample
- *
  */
   async checkUpdateClientTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1528,10 +1452,6 @@ export class NetworkSecurityClient {
  * @example
  * const [operation] = await client.deleteClientTlsPolicy(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.delete_client_tls_policy.js</caption>
- * region_tag:networksecurity_delete_client_tls_policy_sample
- *
  */
   deleteClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteClientTlsPolicyRequest,
@@ -1581,10 +1501,6 @@ export class NetworkSecurityClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.delete_client_tls_policy.js</caption>
- * region_tag:networksecurity_delete_client_tls_policy_sample
- *
  */
   async checkDeleteClientTlsPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1641,10 +1557,6 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_authorization_policies.js</caption>
- * region_tag:networksecurity_list_authorization_policies_sample
- *
  */
   listAuthorizationPolicies(
       request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
@@ -1708,10 +1620,6 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_authorization_policies.js</caption>
- * region_tag:networksecurity_list_authorization_policies_sample
- *
  */
   listAuthorizationPoliciesStream(
       request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
@@ -1768,10 +1676,6 @@ export class NetworkSecurityClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_authorization_policies.js</caption>
- * region_tag:networksecurity_list_authorization_policies_sample
- *
  */
   listAuthorizationPoliciesAsync(
       request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
@@ -1844,10 +1748,6 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_server_tls_policies.js</caption>
- * region_tag:networksecurity_list_server_tls_policies_sample
- *
  */
   listServerTlsPolicies(
       request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
@@ -1910,10 +1810,6 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_server_tls_policies.js</caption>
- * region_tag:networksecurity_list_server_tls_policies_sample
- *
  */
   listServerTlsPoliciesStream(
       request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
@@ -1969,10 +1865,6 @@ export class NetworkSecurityClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_server_tls_policies.js</caption>
- * region_tag:networksecurity_list_server_tls_policies_sample
- *
  */
   listServerTlsPoliciesAsync(
       request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
@@ -2045,10 +1937,6 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_client_tls_policies.js</caption>
- * region_tag:networksecurity_list_client_tls_policies_sample
- *
  */
   listClientTlsPolicies(
       request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
@@ -2111,10 +1999,6 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_client_tls_policies.js</caption>
- * region_tag:networksecurity_list_client_tls_policies_sample
- *
  */
   listClientTlsPoliciesStream(
       request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
@@ -2170,10 +2054,6 @@ export class NetworkSecurityClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/network_security.list_client_tls_policies.js</caption>
- * region_tag:networksecurity_list_client_tls_policies_sample
- *
  */
   listClientTlsPoliciesAsync(
       request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,

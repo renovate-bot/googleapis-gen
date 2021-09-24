@@ -16,7 +16,7 @@
 'use strict';
 
 function main(environment, updateMask) {
-  // [START dialogflow_update_environment_sample]
+  // [START dialogflow_v2beta1_generated_Environments_UpdateEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(environment, updateMask) {
   }
 
   updateEnvironment();
-  // [END dialogflow_update_environment_sample]
+  // [END dialogflow_v2beta1_generated_Environments_UpdateEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

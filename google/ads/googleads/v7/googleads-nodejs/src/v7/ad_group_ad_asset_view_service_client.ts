@@ -690,10 +690,6 @@ export class AdGroupAdAssetViewServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupAdAssetView(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_ad_asset_view_service.get_ad_group_ad_asset_view.js</caption>
- * region_tag:googleads_get_ad_group_ad_asset_view_sample
- *
  */
   getAdGroupAdAssetView(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupAdAssetViewRequest,

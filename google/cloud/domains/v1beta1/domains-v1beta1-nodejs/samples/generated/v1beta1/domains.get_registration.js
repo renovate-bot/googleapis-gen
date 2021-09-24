@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START domains_get_registration_sample]
+  // [START domains_v1beta1_generated_Domains_GetRegistration_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getRegistration();
-  // [END domains_get_registration_sample]
+  // [END domains_v1beta1_generated_Domains_GetRegistration_async]
 }
 
 process.on('unhandledRejection', err => {

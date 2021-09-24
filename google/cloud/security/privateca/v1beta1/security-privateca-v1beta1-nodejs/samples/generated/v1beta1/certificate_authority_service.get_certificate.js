@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START privateca_get_certificate_sample]
+  // [START privateca_v1beta1_generated_CertificateAuthorityService_GetCertificate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getCertificate();
-  // [END privateca_get_certificate_sample]
+  // [END privateca_v1beta1_generated_CertificateAuthorityService_GetCertificate_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_get_custom_dimension_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_GetCustomDimension_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getCustomDimension();
-  // [END admin_get_custom_dimension_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_GetCustomDimension_async]
 }
 
 process.on('unhandledRejection', err => {

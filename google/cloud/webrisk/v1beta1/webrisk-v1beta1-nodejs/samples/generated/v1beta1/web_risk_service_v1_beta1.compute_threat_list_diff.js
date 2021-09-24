@@ -16,7 +16,7 @@
 'use strict';
 
 function main(threatType, constraints) {
-  // [START webrisk_compute_threat_list_diff_sample]
+  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(threatType, constraints) {
   }
 
   computeThreatListDiff();
-  // [END webrisk_compute_threat_list_diff_sample]
+  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
 }
 
 process.on('unhandledRejection', err => {

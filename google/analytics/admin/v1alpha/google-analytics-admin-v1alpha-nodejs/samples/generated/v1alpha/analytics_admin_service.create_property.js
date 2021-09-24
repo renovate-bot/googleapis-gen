@@ -16,7 +16,7 @@
 'use strict';
 
 function main(property) {
-  // [START admin_create_property_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateProperty_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(property) {
   }
 
   createProperty();
-  // [END admin_create_property_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateProperty_async]
 }
 
 process.on('unhandledRejection', err => {

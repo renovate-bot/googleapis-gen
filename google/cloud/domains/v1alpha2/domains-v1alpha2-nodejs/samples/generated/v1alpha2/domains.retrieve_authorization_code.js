@@ -16,7 +16,7 @@
 'use strict';
 
 function main(registration) {
-  // [START domains_retrieve_authorization_code_sample]
+  // [START domains_v1alpha2_generated_Domains_RetrieveAuthorizationCode_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(registration) {
   }
 
   retrieveAuthorizationCode();
-  // [END domains_retrieve_authorization_code_sample]
+  // [END domains_v1alpha2_generated_Domains_RetrieveAuthorizationCode_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START websecurityscanner_list_finding_type_stats_sample]
+  // [START websecurityscanner_v1_generated_WebSecurityScanner_ListFindingTypeStats_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main() {
   }
 
   listFindingTypeStats();
-  // [END websecurityscanner_list_finding_type_stats_sample]
+  // [END websecurityscanner_v1_generated_WebSecurityScanner_ListFindingTypeStats_async]
 }
 
 process.on('unhandledRejection', err => {

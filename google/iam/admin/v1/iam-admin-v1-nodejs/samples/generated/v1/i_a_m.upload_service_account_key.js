@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_upload_service_account_key_sample]
+  // [START admin_v1_generated_IAM_UploadServiceAccountKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   uploadServiceAccountKey();
-  // [END admin_upload_service_account_key_sample]
+  // [END admin_v1_generated_IAM_UploadServiceAccountKey_async]
 }
 
 process.on('unhandledRejection', err => {

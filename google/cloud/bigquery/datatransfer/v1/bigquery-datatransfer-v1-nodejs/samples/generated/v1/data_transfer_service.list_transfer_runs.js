@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datatransfer_list_transfer_runs_sample]
+  // [START datatransfer_v1_generated_DataTransferService_ListTransferRuns_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent) {
   }
 
   listTransferRuns();
-  // [END datatransfer_list_transfer_runs_sample]
+  // [END datatransfer_v1_generated_DataTransferService_ListTransferRuns_async]
 }
 
 process.on('unhandledRejection', err => {

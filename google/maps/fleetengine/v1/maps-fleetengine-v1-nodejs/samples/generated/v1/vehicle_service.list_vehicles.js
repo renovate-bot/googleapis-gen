@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, vehicleTypeCategories) {
-  // [START fleetengine_list_vehicles_sample]
+  // [START fleetengine_v1_generated_VehicleService_ListVehicles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -130,7 +130,7 @@ function main(parent, vehicleTypeCategories) {
   }
 
   listVehicles();
-  // [END fleetengine_list_vehicles_sample]
+  // [END fleetengine_v1_generated_VehicleService_ListVehicles_async]
 }
 
 process.on('unhandledRejection', err => {

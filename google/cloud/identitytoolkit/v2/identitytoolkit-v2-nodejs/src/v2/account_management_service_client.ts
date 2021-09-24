@@ -317,10 +317,6 @@ export class AccountManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.finalizeMfaEnrollment(request);
- *
- * @example <caption>include:samples/generated/v2/account_management_service.finalize_mfa_enrollment.js</caption>
- * region_tag:identitytoolkit_finalize_mfa_enrollment_sample
- *
  */
   finalizeMfaEnrollment(
       request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
@@ -391,10 +387,6 @@ export class AccountManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startMfaEnrollment(request);
- *
- * @example <caption>include:samples/generated/v2/account_management_service.start_mfa_enrollment.js</caption>
- * region_tag:identitytoolkit_start_mfa_enrollment_sample
- *
  */
   startMfaEnrollment(
       request?: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
@@ -465,10 +457,6 @@ export class AccountManagementServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.withdrawMfa(request);
- *
- * @example <caption>include:samples/generated/v2/account_management_service.withdraw_mfa.js</caption>
- * region_tag:identitytoolkit_withdraw_mfa_sample
- *
  */
   withdrawMfa(
       request?: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,

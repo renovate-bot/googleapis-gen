@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START dataflow_list_job_messages_sample]
+  // [START dataflow_v1beta3_generated_MessagesV1Beta3_ListJobMessages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -80,7 +80,7 @@ function main() {
   }
 
   listJobMessages();
-  // [END dataflow_list_job_messages_sample]
+  // [END dataflow_v1beta3_generated_MessagesV1Beta3_ListJobMessages_async]
 }
 
 process.on('unhandledRejection', err => {

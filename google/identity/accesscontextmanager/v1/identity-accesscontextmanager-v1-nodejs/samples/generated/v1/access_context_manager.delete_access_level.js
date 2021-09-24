@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START accesscontextmanager_delete_access_level_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_DeleteAccessLevel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   deleteAccessLevel();
-  // [END accesscontextmanager_delete_access_level_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_DeleteAccessLevel_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, deviceRegistry) {
-  // [START iot_create_device_registry_sample]
+  // [START iot_v1_generated_DeviceManager_CreateDeviceRegistry_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent, deviceRegistry) {
   }
 
   createDeviceRegistry();
-  // [END iot_create_device_registry_sample]
+  // [END iot_v1_generated_DeviceManager_CreateDeviceRegistry_async]
 }
 
 process.on('unhandledRejection', err => {

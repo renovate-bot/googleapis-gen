@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START documentai_batch_process_documents_sample]
+  // [START documentai_v1beta3_generated_DocumentProcessorService_BatchProcessDocuments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(name) {
   }
 
   batchProcessDocuments();
-  // [END documentai_batch_process_documents_sample]
+  // [END documentai_v1beta3_generated_DocumentProcessorService_BatchProcessDocuments_async]
 }
 
 process.on('unhandledRejection', err => {

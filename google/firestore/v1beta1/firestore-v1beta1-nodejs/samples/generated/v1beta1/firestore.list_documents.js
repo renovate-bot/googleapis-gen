@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, collectionId) {
-  // [START firestore_list_documents_sample]
+  // [START firestore_v1beta1_generated_Firestore_ListDocuments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -92,7 +92,7 @@ function main(parent, collectionId) {
   }
 
   listDocuments();
-  // [END firestore_list_documents_sample]
+  // [END firestore_v1beta1_generated_Firestore_ListDocuments_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START admin_set_iam_policy_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END admin_set_iam_policy_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

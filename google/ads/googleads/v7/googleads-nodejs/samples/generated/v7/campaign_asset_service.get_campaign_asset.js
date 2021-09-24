@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_campaign_asset_sample]
+  // [START googleads_v7_generated_CampaignAssetService_GetCampaignAsset_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getCampaignAsset();
-  // [END googleads_get_campaign_asset_sample]
+  // [END googleads_v7_generated_CampaignAssetService_GetCampaignAsset_async]
 }
 
 process.on('unhandledRejection', err => {

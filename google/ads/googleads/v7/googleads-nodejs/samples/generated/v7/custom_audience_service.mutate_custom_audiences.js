@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_custom_audiences_sample]
+  // [START googleads_v7_generated_CustomAudienceService_MutateCustomAudiences_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(customerId, operations) {
   }
 
   mutateCustomAudiences();
-  // [END googleads_mutate_custom_audiences_sample]
+  // [END googleads_v7_generated_CustomAudienceService_MutateCustomAudiences_async]
 }
 
 process.on('unhandledRejection', err => {

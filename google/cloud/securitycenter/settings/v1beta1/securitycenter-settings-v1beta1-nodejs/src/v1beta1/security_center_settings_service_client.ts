@@ -387,10 +387,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getServiceAccount(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.get_service_account.js</caption>
- * region_tag:settings_get_service_account_sample
- *
  */
   getServiceAccount(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
@@ -469,10 +465,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.get_settings.js</caption>
- * region_tag:settings_get_settings_sample
- *
  */
   getSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
@@ -555,10 +547,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.update_settings.js</caption>
- * region_tag:settings_update_settings_sample
- *
  */
   updateSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
@@ -649,10 +637,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.resetSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.reset_settings.js</caption>
- * region_tag:settings_reset_settings_sample
- *
  */
   resetSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
@@ -737,10 +721,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchGetSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.batch_get_settings.js</caption>
- * region_tag:settings_batch_get_settings_sample
- *
  */
   batchGetSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
@@ -829,10 +809,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.calculateEffectiveSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.calculate_effective_settings.js</caption>
- * region_tag:settings_calculate_effective_settings_sample
- *
  */
   calculateEffectiveSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
@@ -910,10 +886,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.batchCalculateEffectiveSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.batch_calculate_effective_settings.js</caption>
- * region_tag:settings_batch_calculate_effective_settings_sample
- *
  */
   batchCalculateEffectiveSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
@@ -993,10 +965,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getComponentSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.get_component_settings.js</caption>
- * region_tag:settings_get_component_settings_sample
- *
  */
   getComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
@@ -1079,10 +1047,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateComponentSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.update_component_settings.js</caption>
- * region_tag:settings_update_component_settings_sample
- *
  */
   updateComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
@@ -1169,10 +1133,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.resetComponentSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.reset_component_settings.js</caption>
- * region_tag:settings_reset_component_settings_sample
- *
  */
   resetComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
@@ -1252,10 +1212,6 @@ export class SecurityCenterSettingsServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.calculateEffectiveComponentSettings(request);
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.calculate_effective_component_settings.js</caption>
- * region_tag:settings_calculate_effective_component_settings_sample
- *
  */
   calculateEffectiveComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
@@ -1356,10 +1312,6 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_detectors.js</caption>
- * region_tag:settings_list_detectors_sample
- *
  */
   listDetectors(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
@@ -1438,10 +1390,6 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_detectors.js</caption>
- * region_tag:settings_list_detectors_sample
- *
  */
   listDetectorsStream(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
@@ -1513,10 +1461,6 @@ export class SecurityCenterSettingsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_detectors.js</caption>
- * region_tag:settings_list_detectors_sample
- *
  */
   listDetectorsAsync(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
@@ -1593,10 +1537,6 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_components.js</caption>
- * region_tag:settings_list_components_sample
- *
  */
   listComponents(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
@@ -1663,10 +1603,6 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_components.js</caption>
- * region_tag:settings_list_components_sample
- *
  */
   listComponentsStream(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
@@ -1726,10 +1662,6 @@ export class SecurityCenterSettingsServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_components.js</caption>
- * region_tag:settings_list_components_sample
- *
  */
   listComponentsAsync(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,

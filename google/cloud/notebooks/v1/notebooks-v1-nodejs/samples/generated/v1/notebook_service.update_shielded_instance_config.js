@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_update_shielded_instance_config_sample]
+  // [START notebooks_v1_generated_NotebookService_UpdateShieldedInstanceConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   updateShieldedInstanceConfig();
-  // [END notebooks_update_shielded_instance_config_sample]
+  // [END notebooks_v1_generated_NotebookService_UpdateShieldedInstanceConfig_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(masterVersion) {
-  // [START container_update_master_sample]
+  // [START container_v1_generated_ClusterManager_UpdateMaster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main(masterVersion) {
   }
 
   updateMaster();
-  // [END container_update_master_sample]
+  // [END container_v1_generated_ClusterManager_UpdateMaster_async]
 }
 
 process.on('unhandledRejection', err => {

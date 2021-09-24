@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, taxonomies) {
-  // [START datacatalog_export_taxonomies_sample]
+  // [START datacatalog_v1beta1_generated_PolicyTagManagerSerialization_ExportTaxonomies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent, taxonomies) {
   }
 
   exportTaxonomies();
-  // [END datacatalog_export_taxonomies_sample]
+  // [END datacatalog_v1beta1_generated_PolicyTagManagerSerialization_ExportTaxonomies_async]
 }
 
 process.on('unhandledRejection', err => {

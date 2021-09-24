@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, version) {
-  // [START dialogflow_create_version_sample]
+  // [START dialogflow_v2beta1_generated_Versions_CreateVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent, version) {
   }
 
   createVersion();
-  // [END dialogflow_create_version_sample]
+  // [END dialogflow_v2beta1_generated_Versions_CreateVersion_async]
 }
 
 process.on('unhandledRejection', err => {

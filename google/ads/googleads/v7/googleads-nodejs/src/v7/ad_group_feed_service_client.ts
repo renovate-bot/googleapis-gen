@@ -690,10 +690,6 @@ export class AdGroupFeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupFeed(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_feed_service.get_ad_group_feed.js</caption>
- * region_tag:googleads_get_ad_group_feed_sample
- *
  */
   getAdGroupFeed(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
@@ -803,10 +799,6 @@ export class AdGroupFeedServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupFeeds(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_feed_service.mutate_ad_group_feeds.js</caption>
- * region_tag:googleads_mutate_ad_group_feeds_sample
- *
  */
   mutateAdGroupFeeds(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,

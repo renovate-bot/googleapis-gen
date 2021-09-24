@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START storage_stop_channel_sample]
+  // [START storage_v1_generated_Storage_StopChannel_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   stopChannel();
-  // [END storage_stop_channel_sample]
+  // [END storage_v1_generated_Storage_StopChannel_async]
 }
 
 process.on('unhandledRejection', err => {

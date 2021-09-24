@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START containeranalysis_delete_occurrence_sample]
+  // [START containeranalysis_v1_generated_Grafeas_DeleteOccurrence_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteOccurrence();
-  // [END containeranalysis_delete_occurrence_sample]
+  // [END containeranalysis_v1_generated_Grafeas_DeleteOccurrence_async]
 }
 
 process.on('unhandledRejection', err => {

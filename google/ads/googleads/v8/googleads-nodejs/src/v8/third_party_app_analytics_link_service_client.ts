@@ -721,10 +721,6 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getThirdPartyAppAnalyticsLink(request);
- *
- * @example <caption>include:samples/generated/v8/third_party_app_analytics_link_service.get_third_party_app_analytics_link.js</caption>
- * region_tag:googleads_get_third_party_app_analytics_link_sample
- *
  */
   getThirdPartyAppAnalyticsLink(
       request?: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
@@ -805,10 +801,6 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.regenerateShareableLinkId(request);
- *
- * @example <caption>include:samples/generated/v8/third_party_app_analytics_link_service.regenerate_shareable_link_id.js</caption>
- * region_tag:googleads_regenerate_shareable_link_id_sample
- *
  */
   regenerateShareableLinkId(
       request?: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,

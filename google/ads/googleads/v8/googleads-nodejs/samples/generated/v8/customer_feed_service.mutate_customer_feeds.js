@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_customer_feeds_sample]
+  // [START googleads_v8_generated_CustomerFeedService_MutateCustomerFeeds_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateCustomerFeeds();
-  // [END googleads_mutate_customer_feeds_sample]
+  // [END googleads_v8_generated_CustomerFeedService_MutateCustomerFeeds_async]
 }
 
 process.on('unhandledRejection', err => {

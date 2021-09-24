@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, id) {
-  // [START cloudbuild_retry_build_sample]
+  // [START cloudbuild_v1_generated_CloudBuild_RetryBuild_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(projectId, id) {
   }
 
   retryBuild();
-  // [END cloudbuild_retry_build_sample]
+  // [END cloudbuild_v1_generated_CloudBuild_RetryBuild_async]
 }
 
 process.on('unhandledRejection', err => {

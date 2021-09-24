@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, dataset) {
-  // [START automl_create_dataset_sample]
+  // [START automl_v1_generated_AutoMl_CreateDataset_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, dataset) {
   }
 
   createDataset();
-  // [END automl_create_dataset_sample]
+  // [END automl_v1_generated_AutoMl_CreateDataset_async]
 }
 
 process.on('unhandledRejection', err => {

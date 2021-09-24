@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vpcaccess_delete_connector_sample]
+  // [START vpcaccess_v1_generated_VpcAccessService_DeleteConnector_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteConnector();
-  // [END vpcaccess_delete_connector_sample]
+  // [END vpcaccess_v1_generated_VpcAccessService_DeleteConnector_async]
 }
 
 process.on('unhandledRejection', err => {

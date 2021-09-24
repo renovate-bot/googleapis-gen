@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, spans) {
-  // [START cloudtrace_batch_write_spans_sample]
+  // [START cloudtrace_v2_generated_TraceService_BatchWriteSpans_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name, spans) {
   }
 
   batchWriteSpans();
-  // [END cloudtrace_batch_write_spans_sample]
+  // [END cloudtrace_v2_generated_TraceService_BatchWriteSpans_async]
 }
 
 process.on('unhandledRejection', err => {

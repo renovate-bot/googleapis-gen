@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database, statements) {
-  // [START database_update_database_ddl_sample]
+  // [START database_v1_generated_DatabaseAdmin_UpdateDatabaseDdl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(database, statements) {
   }
 
   updateDatabaseDdl();
-  // [END database_update_database_ddl_sample]
+  // [END database_v1_generated_DatabaseAdmin_UpdateDatabaseDdl_async]
 }
 
 process.on('unhandledRejection', err => {

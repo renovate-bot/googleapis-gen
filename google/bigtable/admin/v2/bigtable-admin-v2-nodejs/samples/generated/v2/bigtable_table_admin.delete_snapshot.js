@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_snapshot_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_DeleteSnapshot_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteSnapshot();
-  // [END admin_delete_snapshot_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_DeleteSnapshot_async]
 }
 
 process.on('unhandledRejection', err => {

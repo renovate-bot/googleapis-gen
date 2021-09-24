@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, customJob) {
-  // [START aiplatform_create_custom_job_sample]
+  // [START aiplatform_v1_generated_JobService_CreateCustomJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, customJob) {
   }
 
   createCustomJob();
-  // [END aiplatform_create_custom_job_sample]
+  // [END aiplatform_v1_generated_JobService_CreateCustomJob_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -387,10 +387,6 @@ export class TagBindingsClient {
  * @example
  * const [operation] = await client.createTagBinding(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.create_tag_binding.js</caption>
- * region_tag:resourcemanager_create_tag_binding_sample
- *
  */
   createTagBinding(
       request?: protos.google.cloud.resourcemanager.v3.ICreateTagBindingRequest,
@@ -433,10 +429,6 @@ export class TagBindingsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.create_tag_binding.js</caption>
- * region_tag:resourcemanager_create_tag_binding_sample
- *
  */
   async checkCreateTagBindingProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.TagBinding, protos.google.cloud.resourcemanager.v3.CreateTagBindingMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -485,10 +477,6 @@ export class TagBindingsClient {
  * @example
  * const [operation] = await client.deleteTagBinding(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.delete_tag_binding.js</caption>
- * region_tag:resourcemanager_delete_tag_binding_sample
- *
  */
   deleteTagBinding(
       request?: protos.google.cloud.resourcemanager.v3.IDeleteTagBindingRequest,
@@ -538,10 +526,6 @@ export class TagBindingsClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.delete_tag_binding.js</caption>
- * region_tag:resourcemanager_delete_tag_binding_sample
- *
  */
   async checkDeleteTagBindingProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -602,10 +586,6 @@ export class TagBindingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.list_tag_bindings.js</caption>
- * region_tag:resourcemanager_list_tag_bindings_sample
- *
  */
   listTagBindings(
       request?: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
@@ -662,10 +642,6 @@ export class TagBindingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.list_tag_bindings.js</caption>
- * region_tag:resourcemanager_list_tag_bindings_sample
- *
  */
   listTagBindingsStream(
       request?: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,
@@ -715,10 +691,6 @@ export class TagBindingsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/tag_bindings.list_tag_bindings.js</caption>
- * region_tag:resourcemanager_list_tag_bindings_sample
- *
  */
   listTagBindingsAsync(
       request?: protos.google.cloud.resourcemanager.v3.IListTagBindingsRequest,

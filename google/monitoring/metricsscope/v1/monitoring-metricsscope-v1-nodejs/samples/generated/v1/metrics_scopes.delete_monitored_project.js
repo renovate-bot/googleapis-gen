@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START metricsscope_delete_monitored_project_sample]
+  // [START metricsscope_v1_generated_MetricsScopes_DeleteMonitoredProject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   deleteMonitoredProject();
-  // [END metricsscope_delete_monitored_project_sample]
+  // [END metricsscope_v1_generated_MetricsScopes_DeleteMonitoredProject_async]
 }
 
 process.on('unhandledRejection', err => {

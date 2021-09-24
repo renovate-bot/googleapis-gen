@@ -390,10 +390,6 @@ export class ExperimentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getExperiment(request);
- *
- * @example <caption>include:samples/generated/v3/experiments.get_experiment.js</caption>
- * region_tag:cx_get_experiment_sample
- *
  */
   getExperiment(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetExperimentRequest,
@@ -469,10 +465,6 @@ export class ExperimentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createExperiment(request);
- *
- * @example <caption>include:samples/generated/v3/experiments.create_experiment.js</caption>
- * region_tag:cx_create_experiment_sample
- *
  */
   createExperiment(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateExperimentRequest,
@@ -546,10 +538,6 @@ export class ExperimentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateExperiment(request);
- *
- * @example <caption>include:samples/generated/v3/experiments.update_experiment.js</caption>
- * region_tag:cx_update_experiment_sample
- *
  */
   updateExperiment(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateExperimentRequest,
@@ -623,10 +611,6 @@ export class ExperimentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteExperiment(request);
- *
- * @example <caption>include:samples/generated/v3/experiments.delete_experiment.js</caption>
- * region_tag:cx_delete_experiment_sample
- *
  */
   deleteExperiment(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteExperimentRequest,
@@ -701,10 +685,6 @@ export class ExperimentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.startExperiment(request);
- *
- * @example <caption>include:samples/generated/v3/experiments.start_experiment.js</caption>
- * region_tag:cx_start_experiment_sample
- *
  */
   startExperiment(
       request?: protos.google.cloud.dialogflow.cx.v3.IStartExperimentRequest,
@@ -779,10 +759,6 @@ export class ExperimentsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.stopExperiment(request);
- *
- * @example <caption>include:samples/generated/v3/experiments.stop_experiment.js</caption>
- * region_tag:cx_stop_experiment_sample
- *
  */
   stopExperiment(
       request?: protos.google.cloud.dialogflow.cx.v3.IStopExperimentRequest,
@@ -866,10 +842,6 @@ export class ExperimentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/experiments.list_experiments.js</caption>
- * region_tag:cx_list_experiments_sample
- *
  */
   listExperiments(
       request?: protos.google.cloud.dialogflow.cx.v3.IListExperimentsRequest,
@@ -931,10 +903,6 @@ export class ExperimentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v3/experiments.list_experiments.js</caption>
- * region_tag:cx_list_experiments_sample
- *
  */
   listExperimentsStream(
       request?: protos.google.cloud.dialogflow.cx.v3.IListExperimentsRequest,
@@ -989,10 +957,6 @@ export class ExperimentsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v3/experiments.list_experiments.js</caption>
- * region_tag:cx_list_experiments_sample
- *
  */
   listExperimentsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListExperimentsRequest,

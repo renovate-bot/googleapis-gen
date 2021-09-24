@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START oslogin_delete_ssh_public_key_sample]
+  // [START oslogin_v1_generated_OsLoginService_DeleteSshPublicKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteSshPublicKey();
-  // [END oslogin_delete_ssh_public_key_sample]
+  // [END oslogin_v1_generated_OsLoginService_DeleteSshPublicKey_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_conversion_event_sample]
+  // [START admin_v1alpha_generated_AnalyticsAdminService_DeleteConversionEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteConversionEvent();
-  // [END admin_delete_conversion_event_sample]
+  // [END admin_v1alpha_generated_AnalyticsAdminService_DeleteConversionEvent_async]
 }
 
 process.on('unhandledRejection', err => {

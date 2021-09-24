@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, table, keySet) {
-  // [START spanner_partition_read_sample]
+  // [START spanner_v1_generated_Spanner_PartitionRead_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -78,7 +78,7 @@ function main(session, table, keySet) {
   }
 
   partitionRead();
-  // [END spanner_partition_read_sample]
+  // [END spanner_v1_generated_Spanner_PartitionRead_async]
 }
 
 process.on('unhandledRejection', err => {

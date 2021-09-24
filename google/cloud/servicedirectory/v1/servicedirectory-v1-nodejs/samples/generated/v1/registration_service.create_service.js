@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, serviceId, service) {
-  // [START servicedirectory_create_service_sample]
+  // [START servicedirectory_v1_generated_RegistrationService_CreateService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, serviceId, service) {
   }
 
   createService();
-  // [END servicedirectory_create_service_sample]
+  // [END servicedirectory_v1_generated_RegistrationService_CreateService_async]
 }
 
 process.on('unhandledRejection', err => {

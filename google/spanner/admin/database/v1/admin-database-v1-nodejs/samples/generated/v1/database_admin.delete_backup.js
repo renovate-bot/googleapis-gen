@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START database_delete_backup_sample]
+  // [START database_v1_generated_DatabaseAdmin_DeleteBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteBackup();
-  // [END database_delete_backup_sample]
+  // [END database_v1_generated_DatabaseAdmin_DeleteBackup_async]
 }
 
 process.on('unhandledRejection', err => {

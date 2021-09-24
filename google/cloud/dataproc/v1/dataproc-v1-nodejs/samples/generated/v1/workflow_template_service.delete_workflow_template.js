@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dataproc_delete_workflow_template_sample]
+  // [START dataproc_v1_generated_WorkflowTemplateService_DeleteWorkflowTemplate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name) {
   }
 
   deleteWorkflowTemplate();
-  // [END dataproc_delete_workflow_template_sample]
+  // [END dataproc_v1_generated_WorkflowTemplateService_DeleteWorkflowTemplate_async]
 }
 
 process.on('unhandledRejection', err => {

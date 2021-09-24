@@ -720,10 +720,6 @@ export class CampaignBidModifierServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignBidModifier(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_bid_modifier_service.get_campaign_bid_modifier.js</caption>
- * region_tag:googleads_get_campaign_bid_modifier_sample
- *
  */
   getCampaignBidModifier(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignBidModifierRequest,
@@ -833,10 +829,6 @@ export class CampaignBidModifierServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignBidModifiers(request);
- *
- * @example <caption>include:samples/generated/v8/campaign_bid_modifier_service.mutate_campaign_bid_modifiers.js</caption>
- * region_tag:googleads_mutate_campaign_bid_modifiers_sample
- *
  */
   mutateCampaignBidModifiers(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignBidModifiersRequest,

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, participant) {
-  // [START dialogflow_create_participant_sample]
+  // [START dialogflow_v2_generated_Participants_CreateParticipant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, participant) {
   }
 
   createParticipant();
-  // [END dialogflow_create_participant_sample]
+  // [END dialogflow_v2_generated_Participants_CreateParticipant_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sdm_list_devices_sample]
+  // [START sdm_v1_generated_SmartDeviceManagementService_ListDevices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main() {
   }
 
   listDevices();
-  // [END sdm_list_devices_sample]
+  // [END sdm_v1_generated_SmartDeviceManagementService_ListDevices_async]
 }
 
 process.on('unhandledRejection', err => {

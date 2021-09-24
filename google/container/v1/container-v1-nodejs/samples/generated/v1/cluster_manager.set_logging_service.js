@@ -16,7 +16,7 @@
 'use strict';
 
 function main(loggingService) {
-  // [START container_set_logging_service_sample]
+  // [START container_v1_generated_ClusterManager_SetLoggingService_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(loggingService) {
   }
 
   setLoggingService();
-  // [END container_set_logging_service_sample]
+  // [END container_v1_generated_ClusterManager_SetLoggingService_async]
 }
 
 process.on('unhandledRejection', err => {

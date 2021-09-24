@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, modifications) {
-  // [START admin_modify_column_families_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_ModifyColumnFamilies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name, modifications) {
   }
 
   modifyColumnFamilies();
-  // [END admin_modify_column_families_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_ModifyColumnFamilies_async]
 }
 
 process.on('unhandledRejection', err => {

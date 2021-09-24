@@ -338,10 +338,6 @@ export class ExecutionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createExecution(request);
- *
- * @example <caption>include:samples/generated/v1beta/executions.create_execution.js</caption>
- * region_tag:executions_create_execution_sample
- *
  */
   createExecution(
       request?: protos.google.cloud.workflows.executions.v1beta.ICreateExecutionRequest,
@@ -418,10 +414,6 @@ export class ExecutionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getExecution(request);
- *
- * @example <caption>include:samples/generated/v1beta/executions.get_execution.js</caption>
- * region_tag:executions_get_execution_sample
- *
  */
   getExecution(
       request?: protos.google.cloud.workflows.executions.v1beta.IGetExecutionRequest,
@@ -495,10 +487,6 @@ export class ExecutionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.cancelExecution(request);
- *
- * @example <caption>include:samples/generated/v1beta/executions.cancel_execution.js</caption>
- * region_tag:executions_cancel_execution_sample
- *
  */
   cancelExecution(
       request?: protos.google.cloud.workflows.executions.v1beta.ICancelExecutionRequest,
@@ -594,10 +582,6 @@ export class ExecutionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/executions.list_executions.js</caption>
- * region_tag:executions_list_executions_sample
- *
  */
   listExecutions(
       request?: protos.google.cloud.workflows.executions.v1beta.IListExecutionsRequest,
@@ -668,10 +652,6 @@ export class ExecutionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/executions.list_executions.js</caption>
- * region_tag:executions_list_executions_sample
- *
  */
   listExecutionsStream(
       request?: protos.google.cloud.workflows.executions.v1beta.IListExecutionsRequest,
@@ -735,10 +715,6 @@ export class ExecutionsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/executions.list_executions.js</caption>
- * region_tag:executions_list_executions_sample
- *
  */
   listExecutionsAsync(
       request?: protos.google.cloud.workflows.executions.v1beta.IListExecutionsRequest,

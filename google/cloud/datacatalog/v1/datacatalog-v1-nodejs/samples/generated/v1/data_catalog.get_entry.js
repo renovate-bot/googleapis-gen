@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datacatalog_get_entry_sample]
+  // [START datacatalog_v1_generated_DataCatalog_GetEntry_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getEntry();
-  // [END datacatalog_get_entry_sample]
+  // [END datacatalog_v1_generated_DataCatalog_GetEntry_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_delete_index_sample]
+  // [START admin_v1_generated_DatastoreAdmin_DeleteIndex_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main() {
   }
 
   deleteIndex();
-  // [END admin_delete_index_sample]
+  // [END admin_v1_generated_DatastoreAdmin_DeleteIndex_async]
 }
 
 process.on('unhandledRejection', err => {

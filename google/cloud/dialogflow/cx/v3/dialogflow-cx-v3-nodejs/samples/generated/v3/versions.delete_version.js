@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_delete_version_sample]
+  // [START cx_v3_generated_Versions_DeleteVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteVersion();
-  // [END cx_delete_version_sample]
+  // [END cx_v3_generated_Versions_DeleteVersion_async]
 }
 
 process.on('unhandledRejection', err => {

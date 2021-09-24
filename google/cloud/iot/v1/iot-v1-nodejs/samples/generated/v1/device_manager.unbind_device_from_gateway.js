@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, gatewayId, deviceId) {
-  // [START iot_unbind_device_from_gateway_sample]
+  // [START iot_v1_generated_DeviceManager_UnbindDeviceFromGateway_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, gatewayId, deviceId) {
   }
 
   unbindDeviceFromGateway();
-  // [END iot_unbind_device_from_gateway_sample]
+  // [END iot_v1_generated_DeviceManager_UnbindDeviceFromGateway_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datastream_list_routes_sample]
+  // [START datastream_v1alpha1_generated_Datastream_ListRoutes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent) {
   }
 
   listRoutes();
-  // [END datastream_list_routes_sample]
+  // [END datastream_v1alpha1_generated_Datastream_ListRoutes_async]
 }
 
 process.on('unhandledRejection', err => {

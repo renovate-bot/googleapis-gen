@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, predictionApiKeyRegistration) {
-  // [START recommendationengine_create_prediction_api_key_registration_sample]
+  // [START recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_CreatePredictionApiKeyRegistration_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, predictionApiKeyRegistration) {
   }
 
   createPredictionApiKeyRegistration();
-  // [END recommendationengine_create_prediction_api_key_registration_sample]
+  // [END recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_CreatePredictionApiKeyRegistration_async]
 }
 
 process.on('unhandledRejection', err => {

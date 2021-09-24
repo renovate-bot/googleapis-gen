@@ -16,7 +16,7 @@
 'use strict';
 
 function main(threatTypes) {
-  // [START webrisk_search_hashes_sample]
+  // [START webrisk_v1_generated_WebRiskService_SearchHashes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(threatTypes) {
   }
 
   searchHashes();
-  // [END webrisk_search_hashes_sample]
+  // [END webrisk_v1_generated_WebRiskService_SearchHashes_async]
 }
 
 process.on('unhandledRejection', err => {

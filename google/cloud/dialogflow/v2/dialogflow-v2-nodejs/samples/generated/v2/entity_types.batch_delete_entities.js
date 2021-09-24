@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, entityValues) {
-  // [START dialogflow_batch_delete_entities_sample]
+  // [START dialogflow_v2_generated_EntityTypes_BatchDeleteEntities_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent, entityValues) {
   }
 
   batchDeleteEntities();
-  // [END dialogflow_batch_delete_entities_sample]
+  // [END dialogflow_v2_generated_EntityTypes_BatchDeleteEntities_async]
 }
 
 process.on('unhandledRejection', err => {

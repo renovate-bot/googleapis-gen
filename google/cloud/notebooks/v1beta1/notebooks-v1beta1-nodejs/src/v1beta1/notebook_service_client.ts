@@ -464,10 +464,6 @@ export class NotebookServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getInstance(request);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.get_instance.js</caption>
- * region_tag:notebooks_get_instance_sample
- *
  */
   getInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IGetInstanceRequest,
@@ -540,10 +536,6 @@ export class NotebookServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.isInstanceUpgradeable(request);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.is_instance_upgradeable.js</caption>
- * region_tag:notebooks_is_instance_upgradeable_sample
- *
  */
   isInstanceUpgradeable(
       request?: protos.google.cloud.notebooks.v1beta1.IIsInstanceUpgradeableRequest,
@@ -616,10 +608,6 @@ export class NotebookServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getEnvironment(request);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.get_environment.js</caption>
- * region_tag:notebooks_get_environment_sample
- *
  */
   getEnvironment(
       request?: protos.google.cloud.notebooks.v1beta1.IGetEnvironmentRequest,
@@ -700,10 +688,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.createInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.create_instance.js</caption>
- * region_tag:notebooks_create_instance_sample
- *
  */
   createInstance(
       request?: protos.google.cloud.notebooks.v1beta1.ICreateInstanceRequest,
@@ -753,10 +737,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.create_instance.js</caption>
- * region_tag:notebooks_create_instance_sample
- *
  */
   async checkCreateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -812,10 +792,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.registerInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.register_instance.js</caption>
- * region_tag:notebooks_register_instance_sample
- *
  */
   registerInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IRegisterInstanceRequest,
@@ -865,10 +841,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.register_instance.js</caption>
- * region_tag:notebooks_register_instance_sample
- *
  */
   async checkRegisterInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -923,10 +895,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.setInstanceAccelerator(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.set_instance_accelerator.js</caption>
- * region_tag:notebooks_set_instance_accelerator_sample
- *
  */
   setInstanceAccelerator(
       request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceAcceleratorRequest,
@@ -976,10 +944,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.set_instance_accelerator.js</caption>
- * region_tag:notebooks_set_instance_accelerator_sample
- *
  */
   async checkSetInstanceAcceleratorProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1030,10 +994,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.setInstanceMachineType(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.set_instance_machine_type.js</caption>
- * region_tag:notebooks_set_instance_machine_type_sample
- *
  */
   setInstanceMachineType(
       request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceMachineTypeRequest,
@@ -1083,10 +1043,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.set_instance_machine_type.js</caption>
- * region_tag:notebooks_set_instance_machine_type_sample
- *
  */
   async checkSetInstanceMachineTypeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1137,10 +1093,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.setInstanceLabels(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.set_instance_labels.js</caption>
- * region_tag:notebooks_set_instance_labels_sample
- *
  */
   setInstanceLabels(
       request?: protos.google.cloud.notebooks.v1beta1.ISetInstanceLabelsRequest,
@@ -1190,10 +1142,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.set_instance_labels.js</caption>
- * region_tag:notebooks_set_instance_labels_sample
- *
  */
   async checkSetInstanceLabelsProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1241,10 +1189,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.deleteInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.delete_instance.js</caption>
- * region_tag:notebooks_delete_instance_sample
- *
  */
   deleteInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IDeleteInstanceRequest,
@@ -1294,10 +1238,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.delete_instance.js</caption>
- * region_tag:notebooks_delete_instance_sample
- *
  */
   async checkDeleteInstanceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1345,10 +1285,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.startInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.start_instance.js</caption>
- * region_tag:notebooks_start_instance_sample
- *
  */
   startInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IStartInstanceRequest,
@@ -1398,10 +1334,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.start_instance.js</caption>
- * region_tag:notebooks_start_instance_sample
- *
  */
   async checkStartInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1449,10 +1381,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.stopInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.stop_instance.js</caption>
- * region_tag:notebooks_stop_instance_sample
- *
  */
   stopInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IStopInstanceRequest,
@@ -1502,10 +1430,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.stop_instance.js</caption>
- * region_tag:notebooks_stop_instance_sample
- *
  */
   async checkStopInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1553,10 +1477,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.resetInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.reset_instance.js</caption>
- * region_tag:notebooks_reset_instance_sample
- *
  */
   resetInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IResetInstanceRequest,
@@ -1606,10 +1526,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.reset_instance.js</caption>
- * region_tag:notebooks_reset_instance_sample
- *
  */
   async checkResetInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1666,10 +1582,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.reportInstanceInfo(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.report_instance_info.js</caption>
- * region_tag:notebooks_report_instance_info_sample
- *
  */
   reportInstanceInfo(
       request?: protos.google.cloud.notebooks.v1beta1.IReportInstanceInfoRequest,
@@ -1719,10 +1631,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.report_instance_info.js</caption>
- * region_tag:notebooks_report_instance_info_sample
- *
  */
   async checkReportInstanceInfoProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1770,10 +1678,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.upgradeInstance(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.upgrade_instance.js</caption>
- * region_tag:notebooks_upgrade_instance_sample
- *
  */
   upgradeInstance(
       request?: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceRequest,
@@ -1823,10 +1727,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.upgrade_instance.js</caption>
- * region_tag:notebooks_upgrade_instance_sample
- *
  */
   async checkUpgradeInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1878,10 +1778,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.upgradeInstanceInternal(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.upgrade_instance_internal.js</caption>
- * region_tag:notebooks_upgrade_instance_internal_sample
- *
  */
   upgradeInstanceInternal(
       request?: protos.google.cloud.notebooks.v1beta1.IUpgradeInstanceInternalRequest,
@@ -1931,10 +1827,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.upgrade_instance_internal.js</caption>
- * region_tag:notebooks_upgrade_instance_internal_sample
- *
  */
   async checkUpgradeInstanceInternalProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Instance, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1988,10 +1880,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.createEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.create_environment.js</caption>
- * region_tag:notebooks_create_environment_sample
- *
  */
   createEnvironment(
       request?: protos.google.cloud.notebooks.v1beta1.ICreateEnvironmentRequest,
@@ -2041,10 +1929,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.create_environment.js</caption>
- * region_tag:notebooks_create_environment_sample
- *
  */
   async checkCreateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1beta1.Environment, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2092,10 +1976,6 @@ export class NotebookServiceClient {
  * @example
  * const [operation] = await client.deleteEnvironment(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.delete_environment.js</caption>
- * region_tag:notebooks_delete_environment_sample
- *
  */
   deleteEnvironment(
       request?: protos.google.cloud.notebooks.v1beta1.IDeleteEnvironmentRequest,
@@ -2145,10 +2025,6 @@ export class NotebookServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.delete_environment.js</caption>
- * region_tag:notebooks_delete_environment_sample
- *
  */
   async checkDeleteEnvironmentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2202,10 +2078,6 @@ export class NotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.list_instances.js</caption>
- * region_tag:notebooks_list_instances_sample
- *
  */
   listInstances(
       request?: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
@@ -2266,10 +2138,6 @@ export class NotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.list_instances.js</caption>
- * region_tag:notebooks_list_instances_sample
- *
  */
   listInstancesStream(
       request?: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
@@ -2323,10 +2191,6 @@ export class NotebookServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.list_instances.js</caption>
- * region_tag:notebooks_list_instances_sample
- *
  */
   listInstancesAsync(
       request?: protos.google.cloud.notebooks.v1beta1.IListInstancesRequest,
@@ -2396,10 +2260,6 @@ export class NotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.list_environments.js</caption>
- * region_tag:notebooks_list_environments_sample
- *
  */
   listEnvironments(
       request?: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
@@ -2459,10 +2319,6 @@ export class NotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.list_environments.js</caption>
- * region_tag:notebooks_list_environments_sample
- *
  */
   listEnvironmentsStream(
       request?: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,
@@ -2515,10 +2371,6 @@ export class NotebookServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta1/notebook_service.list_environments.js</caption>
- * region_tag:notebooks_list_environments_sample
- *
  */
   listEnvironmentsAsync(
       request?: protos.google.cloud.notebooks.v1beta1.IListEnvironmentsRequest,

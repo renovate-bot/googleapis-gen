@@ -16,7 +16,7 @@
 'use strict';
 
 function main(config, audio) {
-  // [START speech_recognize_sample]
+  // [START speech_v1_generated_Speech_Recognize_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(config, audio) {
   }
 
   recognize();
-  // [END speech_recognize_sample]
+  // [END speech_v1_generated_Speech_Recognize_async]
 }
 
 process.on('unhandledRejection', err => {

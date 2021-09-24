@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START vision_list_products_in_product_set_sample]
+  // [START vision_v1p3beta1_generated_ProductSearch_ListProductsInProductSet_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(name) {
   }
 
   listProductsInProductSet();
-  // [END vision_list_products_in_product_set_sample]
+  // [END vision_v1p3beta1_generated_ProductSearch_ListProductsInProductSet_async]
 }
 
 process.on('unhandledRejection', err => {

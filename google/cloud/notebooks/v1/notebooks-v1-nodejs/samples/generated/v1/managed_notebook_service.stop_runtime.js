@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_stop_runtime_sample]
+  // [START notebooks_v1_generated_ManagedNotebookService_StopRuntime_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   stopRuntime();
-  // [END notebooks_stop_runtime_sample]
+  // [END notebooks_v1_generated_ManagedNotebookService_StopRuntime_async]
 }
 
 process.on('unhandledRejection', err => {

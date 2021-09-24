@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START retail_rejoin_user_events_sample]
+  // [START retail_v2alpha_generated_UserEventService_RejoinUserEvents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent) {
   }
 
   rejoinUserEvents();
-  // [END retail_rejoin_user_events_sample]
+  // [END retail_v2alpha_generated_UserEventService_RejoinUserEvents_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -357,10 +357,6 @@ export class MessagesV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/messages_v1_beta3.list_job_messages.js</caption>
- * region_tag:dataflow_list_job_messages_sample
- *
  */
   listJobMessages(
       request?: protos.google.dataflow.v1beta3.IListJobMessagesRequest,
@@ -430,10 +426,6 @@ export class MessagesV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta3/messages_v1_beta3.list_job_messages.js</caption>
- * region_tag:dataflow_list_job_messages_sample
- *
  */
   listJobMessagesStream(
       request?: protos.google.dataflow.v1beta3.IListJobMessagesRequest,
@@ -496,10 +488,6 @@ export class MessagesV1Beta3Client {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta3/messages_v1_beta3.list_job_messages.js</caption>
- * region_tag:dataflow_list_job_messages_sample
- *
  */
   listJobMessagesAsync(
       request?: protos.google.dataflow.v1beta3.IListJobMessagesRequest,

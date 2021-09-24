@@ -385,10 +385,6 @@ export class GameServerClustersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getGameServerCluster(request);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.get_game_server_cluster.js</caption>
- * region_tag:gaming_get_game_server_cluster_sample
- *
  */
   getGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IGetGameServerClusterRequest,
@@ -468,10 +464,6 @@ export class GameServerClustersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.previewCreateGameServerCluster(request);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.preview_create_game_server_cluster.js</caption>
- * region_tag:gaming_preview_create_game_server_cluster_sample
- *
  */
   previewCreateGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
@@ -546,10 +538,6 @@ export class GameServerClustersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.previewDeleteGameServerCluster(request);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.preview_delete_game_server_cluster.js</caption>
- * region_tag:gaming_preview_delete_game_server_cluster_sample
- *
  */
   previewDeleteGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewDeleteGameServerClusterRequest,
@@ -631,10 +619,6 @@ export class GameServerClustersServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.previewUpdateGameServerCluster(request);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.preview_update_game_server_cluster.js</caption>
- * region_tag:gaming_preview_update_game_server_cluster_sample
- *
  */
   previewUpdateGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
@@ -715,10 +699,6 @@ export class GameServerClustersServiceClient {
  * @example
  * const [operation] = await client.createGameServerCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.create_game_server_cluster.js</caption>
- * region_tag:gaming_create_game_server_cluster_sample
- *
  */
   createGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
@@ -768,10 +748,6 @@ export class GameServerClustersServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.create_game_server_cluster.js</caption>
- * region_tag:gaming_create_game_server_cluster_sample
- *
  */
   async checkCreateGameServerClusterProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1beta.GameServerCluster, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -819,10 +795,6 @@ export class GameServerClustersServiceClient {
  * @example
  * const [operation] = await client.deleteGameServerCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.delete_game_server_cluster.js</caption>
- * region_tag:gaming_delete_game_server_cluster_sample
- *
  */
   deleteGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IDeleteGameServerClusterRequest,
@@ -872,10 +844,6 @@ export class GameServerClustersServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.delete_game_server_cluster.js</caption>
- * region_tag:gaming_delete_game_server_cluster_sample
- *
  */
   async checkDeleteGameServerClusterProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -930,10 +898,6 @@ export class GameServerClustersServiceClient {
  * @example
  * const [operation] = await client.updateGameServerCluster(request);
  * const [response] = await operation.promise();
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.update_game_server_cluster.js</caption>
- * region_tag:gaming_update_game_server_cluster_sample
- *
  */
   updateGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
@@ -983,10 +947,6 @@ export class GameServerClustersServiceClient {
  * console.log(decodedOperation.result);
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.update_game_server_cluster.js</caption>
- * region_tag:gaming_update_game_server_cluster_sample
- *
  */
   async checkUpdateGameServerClusterProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1beta.GameServerCluster, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1049,10 +1009,6 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.list_game_server_clusters.js</caption>
- * region_tag:gaming_list_game_server_clusters_sample
- *
  */
   listGameServerClusters(
       request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
@@ -1122,10 +1078,6 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.list_game_server_clusters.js</caption>
- * region_tag:gaming_list_game_server_clusters_sample
- *
  */
   listGameServerClustersStream(
       request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
@@ -1188,10 +1140,6 @@ export class GameServerClustersServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.list_game_server_clusters.js</caption>
- * region_tag:gaming_list_game_server_clusters_sample
- *
  */
   listGameServerClustersAsync(
       request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,

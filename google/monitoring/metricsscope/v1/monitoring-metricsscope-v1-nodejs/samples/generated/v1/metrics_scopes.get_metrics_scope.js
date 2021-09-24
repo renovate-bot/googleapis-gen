@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START metricsscope_get_metrics_scope_sample]
+  // [START metricsscope_v1_generated_MetricsScopes_GetMetricsScope_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getMetricsScope();
-  // [END metricsscope_get_metrics_scope_sample]
+  // [END metricsscope_v1_generated_MetricsScopes_GetMetricsScope_async]
 }
 
 process.on('unhandledRejection', err => {

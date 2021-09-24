@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datafusion_list_dns_peerings_sample]
+  // [START datafusion_v1beta1_generated_DataFusion_ListDnsPeerings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(parent) {
   }
 
   listDnsPeerings();
-  // [END datafusion_list_dns_peerings_sample]
+  // [END datafusion_v1beta1_generated_DataFusion_ListDnsPeerings_async]
 }
 
 process.on('unhandledRejection', err => {

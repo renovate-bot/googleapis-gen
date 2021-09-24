@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START shell_authorize_environment_sample]
+  // [START shell_v1_generated_CloudShellService_AuthorizeEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main() {
   }
 
   authorizeEnvironment();
-  // [END shell_authorize_environment_sample]
+  // [END shell_v1_generated_CloudShellService_AuthorizeEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

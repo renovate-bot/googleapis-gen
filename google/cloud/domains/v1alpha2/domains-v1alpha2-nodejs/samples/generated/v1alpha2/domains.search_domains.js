@@ -16,7 +16,7 @@
 'use strict';
 
 function main(query, location) {
-  // [START domains_search_domains_sample]
+  // [START domains_v1alpha2_generated_Domains_SearchDomains_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(query, location) {
   }
 
   searchDomains();
-  // [END domains_search_domains_sample]
+  // [END domains_v1alpha2_generated_Domains_SearchDomains_async]
 }
 
 process.on('unhandledRejection', err => {

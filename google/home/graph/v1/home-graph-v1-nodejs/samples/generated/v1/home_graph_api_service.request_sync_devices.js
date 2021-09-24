@@ -16,7 +16,7 @@
 'use strict';
 
 function main(agentUserId) {
-  // [START graph_request_sync_devices_sample]
+  // [START graph_v1_generated_HomeGraphApiService_RequestSyncDevices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(agentUserId) {
   }
 
   requestSyncDevices();
-  // [END graph_request_sync_devices_sample]
+  // [END graph_v1_generated_HomeGraphApiService_RequestSyncDevices_async]
 }
 
 process.on('unhandledRejection', err => {

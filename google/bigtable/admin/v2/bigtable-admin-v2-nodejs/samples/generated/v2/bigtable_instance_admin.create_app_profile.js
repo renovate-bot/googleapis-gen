@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, appProfileId, appProfile) {
-  // [START admin_create_app_profile_sample]
+  // [START admin_v2_generated_BigtableInstanceAdmin_CreateAppProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(parent, appProfileId, appProfile) {
   }
 
   createAppProfile();
-  // [END admin_create_app_profile_sample]
+  // [END admin_v2_generated_BigtableInstanceAdmin_CreateAppProfile_async]
 }
 
 process.on('unhandledRejection', err => {

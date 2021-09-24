@@ -16,7 +16,7 @@
 'use strict';
 
 function main(notebookInstance) {
-  // [START notebooks_is_instance_upgradeable_sample]
+  // [START notebooks_v1beta1_generated_NotebookService_IsInstanceUpgradeable_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(notebookInstance) {
   }
 
   isInstanceUpgradeable();
-  // [END notebooks_is_instance_upgradeable_sample]
+  // [END notebooks_v1beta1_generated_NotebookService_IsInstanceUpgradeable_async]
 }
 
 process.on('unhandledRejection', err => {

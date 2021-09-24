@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START database_test_iam_permissions_sample]
+  // [START database_v1_generated_DatabaseAdmin_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END database_test_iam_permissions_sample]
+  // [END database_v1_generated_DatabaseAdmin_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START artifactregistry_create_tag_sample]
+  // [START artifactregistry_v1beta2_generated_ArtifactRegistry_CreateTag_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   createTag();
-  // [END artifactregistry_create_tag_sample]
+  // [END artifactregistry_v1beta2_generated_ArtifactRegistry_CreateTag_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START container_delete_cluster_sample]
+  // [START container_v1_generated_ClusterManager_DeleteCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main() {
   }
 
   deleteCluster();
-  // [END container_delete_cluster_sample]
+  // [END container_v1_generated_ClusterManager_DeleteCluster_async]
 }
 
 process.on('unhandledRejection', err => {

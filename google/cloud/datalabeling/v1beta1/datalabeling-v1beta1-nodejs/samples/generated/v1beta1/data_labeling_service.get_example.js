@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datalabeling_get_example_sample]
+  // [START datalabeling_v1beta1_generated_DataLabelingService_GetExample_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(name) {
   }
 
   getExample();
-  // [END datalabeling_get_example_sample]
+  // [END datalabeling_v1beta1_generated_DataLabelingService_GetExample_async]
 }
 
 process.on('unhandledRejection', err => {

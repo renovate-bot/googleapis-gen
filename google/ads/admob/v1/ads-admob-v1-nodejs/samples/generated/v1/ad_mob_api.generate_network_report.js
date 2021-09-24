@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admob_generate_network_report_sample]
+  // [START admob_v1_generated_AdMobApi_GenerateNetworkReport_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   generateNetworkReport();
-  // [END admob_generate_network_report_sample]
+  // [END admob_v1_generated_AdMobApi_GenerateNetworkReport_async]
 }
 
 process.on('unhandledRejection', err => {

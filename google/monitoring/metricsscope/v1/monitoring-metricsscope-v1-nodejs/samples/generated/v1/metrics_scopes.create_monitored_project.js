@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, monitoredProject) {
-  // [START metricsscope_create_monitored_project_sample]
+  // [START metricsscope_v1_generated_MetricsScopes_CreateMonitoredProject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, monitoredProject) {
   }
 
   createMonitoredProject();
-  // [END metricsscope_create_monitored_project_sample]
+  // [END metricsscope_v1_generated_MetricsScopes_CreateMonitoredProject_async]
 }
 
 process.on('unhandledRejection', err => {

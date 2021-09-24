@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START accesscontextmanager_delete_service_perimeter_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_DeleteServicePerimeter_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   deleteServicePerimeter();
-  // [END accesscontextmanager_delete_service_perimeter_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_DeleteServicePerimeter_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_lint_policy_sample]
+  // [START admin_v1_generated_IAM_LintPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   lintPolicy();
-  // [END admin_lint_policy_sample]
+  // [END admin_v1_generated_IAM_LintPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

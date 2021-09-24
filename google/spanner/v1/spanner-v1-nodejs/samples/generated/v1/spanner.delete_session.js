@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START spanner_delete_session_sample]
+  // [START spanner_v1_generated_Spanner_DeleteSession_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   deleteSession();
-  // [END spanner_delete_session_sample]
+  // [END spanner_v1_generated_Spanner_DeleteSession_async]
 }
 
 process.on('unhandledRejection', err => {

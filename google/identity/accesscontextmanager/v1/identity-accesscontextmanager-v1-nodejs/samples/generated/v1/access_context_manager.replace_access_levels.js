@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, accessLevels) {
-  // [START accesscontextmanager_replace_access_levels_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_ReplaceAccessLevels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent, accessLevels) {
   }
 
   replaceAccessLevels();
-  // [END accesscontextmanager_replace_access_levels_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_ReplaceAccessLevels_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_get_connect_settings_sample]
+  // [START sql_v1_generated_SqlConnectService_GetConnectSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   getConnectSettings();
-  // [END sql_get_connect_settings_sample]
+  // [END sql_v1_generated_SqlConnectService_GetConnectSettings_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START servicecontrol_check_sample]
+  // [START servicecontrol_v1_generated_ServiceController_Check_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main() {
   }
 
   check();
-  // [END servicecontrol_check_sample]
+  // [END servicecontrol_v1_generated_ServiceController_Check_async]
 }
 
 process.on('unhandledRejection', err => {

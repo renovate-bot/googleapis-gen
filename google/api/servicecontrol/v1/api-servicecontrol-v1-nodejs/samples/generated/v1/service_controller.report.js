@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START servicecontrol_report_sample]
+  // [START servicecontrol_v1_generated_ServiceController_Report_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main() {
   }
 
   report();
-  // [END servicecontrol_report_sample]
+  // [END servicecontrol_v1_generated_ServiceController_Report_async]
 }
 
 process.on('unhandledRejection', err => {

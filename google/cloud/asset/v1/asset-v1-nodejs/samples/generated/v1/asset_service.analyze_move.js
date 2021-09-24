@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, destinationParent) {
-  // [START asset_analyze_move_sample]
+  // [START asset_v1_generated_AssetService_AnalyzeMove_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(resource, destinationParent) {
   }
 
   analyzeMove();
-  // [END asset_analyze_move_sample]
+  // [END asset_v1_generated_AssetService_AnalyzeMove_async]
 }
 
 process.on('unhandledRejection', err => {

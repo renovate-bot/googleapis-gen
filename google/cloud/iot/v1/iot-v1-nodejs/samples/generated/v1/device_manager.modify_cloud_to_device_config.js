@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, binaryData) {
-  // [START iot_modify_cloud_to_device_config_sample]
+  // [START iot_v1_generated_DeviceManager_ModifyCloudToDeviceConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name, binaryData) {
   }
 
   modifyCloudToDeviceConfig();
-  // [END iot_modify_cloud_to_device_config_sample]
+  // [END iot_v1_generated_DeviceManager_ModifyCloudToDeviceConfig_async]
 }
 
 process.on('unhandledRejection', err => {

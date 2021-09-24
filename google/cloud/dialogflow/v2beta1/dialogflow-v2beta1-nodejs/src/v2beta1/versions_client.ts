@@ -437,10 +437,6 @@ export class VersionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getVersion(request);
- *
- * @example <caption>include:samples/generated/v2beta1/versions.get_version.js</caption>
- * region_tag:dialogflow_get_version_sample
- *
  */
   getVersion(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetVersionRequest,
@@ -519,10 +515,6 @@ export class VersionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createVersion(request);
- *
- * @example <caption>include:samples/generated/v2beta1/versions.create_version.js</caption>
- * region_tag:dialogflow_create_version_sample
- *
  */
   createVersion(
       request?: protos.google.cloud.dialogflow.v2beta1.ICreateVersionRequest,
@@ -604,10 +596,6 @@ export class VersionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateVersion(request);
- *
- * @example <caption>include:samples/generated/v2beta1/versions.update_version.js</caption>
- * region_tag:dialogflow_update_version_sample
- *
  */
   updateVersion(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateVersionRequest,
@@ -683,10 +671,6 @@ export class VersionsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.deleteVersion(request);
- *
- * @example <caption>include:samples/generated/v2beta1/versions.delete_version.js</caption>
- * region_tag:dialogflow_delete_version_sample
- *
  */
   deleteVersion(
       request?: protos.google.cloud.dialogflow.v2beta1.IDeleteVersionRequest,
@@ -771,10 +755,6 @@ export class VersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta1/versions.list_versions.js</caption>
- * region_tag:dialogflow_list_versions_sample
- *
  */
   listVersions(
       request?: protos.google.cloud.dialogflow.v2beta1.IListVersionsRequest,
@@ -837,10 +817,6 @@ export class VersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta1/versions.list_versions.js</caption>
- * region_tag:dialogflow_list_versions_sample
- *
  */
   listVersionsStream(
       request?: protos.google.cloud.dialogflow.v2beta1.IListVersionsRequest,
@@ -896,10 +872,6 @@ export class VersionsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2beta1/versions.list_versions.js</caption>
- * region_tag:dialogflow_list_versions_sample
- *
  */
   listVersionsAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListVersionsRequest,

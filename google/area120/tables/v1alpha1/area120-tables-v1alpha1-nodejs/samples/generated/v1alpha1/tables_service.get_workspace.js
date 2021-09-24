@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START tables_get_workspace_sample]
+  // [START tables_v1alpha1_generated_TablesService_GetWorkspace_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getWorkspace();
-  // [END tables_get_workspace_sample]
+  // [END tables_v1alpha1_generated_TablesService_GetWorkspace_async]
 }
 
 process.on('unhandledRejection', err => {

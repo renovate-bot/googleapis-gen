@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START container_rollback_node_pool_upgrade_sample]
+  // [START container_v1_generated_ClusterManager_RollbackNodePoolUpgrade_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main() {
   }
 
   rollbackNodePoolUpgrade();
-  // [END container_rollback_node_pool_upgrade_sample]
+  // [END container_v1_generated_ClusterManager_RollbackNodePoolUpgrade_async]
 }
 
 process.on('unhandledRejection', err => {

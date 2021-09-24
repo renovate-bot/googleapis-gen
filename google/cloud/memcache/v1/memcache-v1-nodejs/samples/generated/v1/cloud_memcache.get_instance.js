@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START memcache_get_instance_sample]
+  // [START memcache_v1_generated_CloudMemcache_GetInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getInstance();
-  // [END memcache_get_instance_sample]
+  // [END memcache_v1_generated_CloudMemcache_GetInstance_async]
 }
 
 process.on('unhandledRejection', err => {

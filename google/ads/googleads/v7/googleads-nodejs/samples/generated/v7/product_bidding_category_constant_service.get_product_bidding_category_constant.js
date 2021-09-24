@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_product_bidding_category_constant_sample]
+  // [START googleads_v7_generated_ProductBiddingCategoryConstantService_GetProductBiddingCategoryConstant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getProductBiddingCategoryConstant();
-  // [END googleads_get_product_bidding_category_constant_sample]
+  // [END googleads_v7_generated_ProductBiddingCategoryConstantService_GetProductBiddingCategoryConstant_async]
 }
 
 process.on('unhandledRejection', err => {

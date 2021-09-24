@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, region, clusterName) {
-  // [START dataproc_stop_cluster_sample]
+  // [START dataproc_v1_generated_ClusterController_StopCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -73,7 +73,7 @@ function main(projectId, region, clusterName) {
   }
 
   stopCluster();
-  // [END dataproc_stop_cluster_sample]
+  // [END dataproc_v1_generated_ClusterController_StopCluster_async]
 }
 
 process.on('unhandledRejection', err => {

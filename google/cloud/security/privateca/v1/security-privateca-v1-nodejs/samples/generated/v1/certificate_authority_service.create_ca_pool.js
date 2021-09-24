@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, caPoolId, caPool) {
-  // [START privateca_create_ca_pool_sample]
+  // [START privateca_v1_generated_CertificateAuthorityService_CreateCaPool_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(parent, caPoolId, caPool) {
   }
 
   createCaPool();
-  // [END privateca_create_ca_pool_sample]
+  // [END privateca_v1_generated_CertificateAuthorityService_CreateCaPool_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START osconfig_delete_patch_deployment_sample]
+  // [START osconfig_v1_generated_OsConfigService_DeletePatchDeployment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deletePatchDeployment();
-  // [END osconfig_delete_patch_deployment_sample]
+  // [END osconfig_v1_generated_OsConfigService_DeletePatchDeployment_async]
 }
 
 process.on('unhandledRejection', err => {

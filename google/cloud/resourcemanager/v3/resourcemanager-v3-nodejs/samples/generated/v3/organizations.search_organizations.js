@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START resourcemanager_search_organizations_sample]
+  // [START resourcemanager_v3_generated_Organizations_SearchOrganizations_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main() {
   }
 
   searchOrganizations();
-  // [END resourcemanager_search_organizations_sample]
+  // [END resourcemanager_v3_generated_Organizations_SearchOrganizations_async]
 }
 
 process.on('unhandledRejection', err => {

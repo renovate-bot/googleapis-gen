@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, pemCaCertificate, subordinateConfig) {
-  // [START privateca_activate_certificate_authority_sample]
+  // [START privateca_v1beta1_generated_CertificateAuthorityService_ActivateCertificateAuthority_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(name, pemCaCertificate, subordinateConfig) {
   }
 
   activateCertificateAuthority();
-  // [END privateca_activate_certificate_authority_sample]
+  // [END privateca_v1beta1_generated_CertificateAuthorityService_ActivateCertificateAuthority_async]
 }
 
 process.on('unhandledRejection', err => {

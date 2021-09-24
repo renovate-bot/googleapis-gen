@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, webhook) {
-  // [START cx_create_webhook_sample]
+  // [START cx_v3beta1_generated_Webhooks_CreateWebhook_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, webhook) {
   }
 
   createWebhook();
-  // [END cx_create_webhook_sample]
+  // [END cx_v3beta1_generated_Webhooks_CreateWebhook_async]
 }
 
 process.on('unhandledRejection', err => {

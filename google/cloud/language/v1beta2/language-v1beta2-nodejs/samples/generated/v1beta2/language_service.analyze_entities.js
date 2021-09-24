@@ -16,7 +16,7 @@
 'use strict';
 
 function main(document) {
-  // [START language_analyze_entities_sample]
+  // [START language_v1beta2_generated_LanguageService_AnalyzeEntities_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(document) {
   }
 
   analyzeEntities();
-  // [END language_analyze_entities_sample]
+  // [END language_v1beta2_generated_LanguageService_AnalyzeEntities_async]
 }
 
 process.on('unhandledRejection', err => {

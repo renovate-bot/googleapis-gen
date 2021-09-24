@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START accesscontextmanager_list_access_policies_sample]
+  // [START accesscontextmanager_v1_generated_AccessContextManager_ListAccessPolicies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listAccessPolicies();
-  // [END accesscontextmanager_list_access_policies_sample]
+  // [END accesscontextmanager_v1_generated_AccessContextManager_ListAccessPolicies_async]
 }
 
 process.on('unhandledRejection', err => {

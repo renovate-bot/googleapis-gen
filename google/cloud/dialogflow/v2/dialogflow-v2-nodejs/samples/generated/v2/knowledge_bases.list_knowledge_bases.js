@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START dialogflow_list_knowledge_bases_sample]
+  // [START dialogflow_v2_generated_KnowledgeBases_ListKnowledgeBases_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent) {
   }
 
   listKnowledgeBases();
-  // [END dialogflow_list_knowledge_bases_sample]
+  // [END dialogflow_v2_generated_KnowledgeBases_ListKnowledgeBases_async]
 }
 
 process.on('unhandledRejection', err => {

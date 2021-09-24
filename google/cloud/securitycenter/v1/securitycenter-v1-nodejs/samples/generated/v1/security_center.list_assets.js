@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START securitycenter_list_assets_sample]
+  // [START securitycenter_v1_generated_SecurityCenter_ListAssets_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -167,7 +167,7 @@ function main(parent) {
   }
 
   listAssets();
-  // [END securitycenter_list_assets_sample]
+  // [END securitycenter_v1_generated_SecurityCenter_ListAssets_async]
 }
 
 process.on('unhandledRejection', err => {

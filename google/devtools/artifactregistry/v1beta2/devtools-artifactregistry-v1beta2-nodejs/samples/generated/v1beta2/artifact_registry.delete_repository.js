@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START artifactregistry_delete_repository_sample]
+  // [START artifactregistry_v1beta2_generated_ArtifactRegistry_DeleteRepository_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   deleteRepository();
-  // [END artifactregistry_delete_repository_sample]
+  // [END artifactregistry_v1beta2_generated_ArtifactRegistry_DeleteRepository_async]
 }
 
 process.on('unhandledRejection', err => {

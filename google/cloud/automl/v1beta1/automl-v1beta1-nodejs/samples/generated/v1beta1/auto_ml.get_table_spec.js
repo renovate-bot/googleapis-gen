@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START automl_get_table_spec_sample]
+  // [START automl_v1beta1_generated_AutoMl_GetTableSpec_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(name) {
   }
 
   getTableSpec();
-  // [END automl_get_table_spec_sample]
+  // [END automl_v1beta1_generated_AutoMl_GetTableSpec_async]
 }
 
 process.on('unhandledRejection', err => {

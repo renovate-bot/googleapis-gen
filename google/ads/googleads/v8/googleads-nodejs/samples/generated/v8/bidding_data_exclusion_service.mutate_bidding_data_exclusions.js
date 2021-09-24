@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customerId, operations) {
-  // [START googleads_mutate_bidding_data_exclusions_sample]
+  // [START googleads_v8_generated_BiddingDataExclusionService_MutateBiddingDataExclusions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(customerId, operations) {
   }
 
   mutateBiddingDataExclusions();
-  // [END googleads_mutate_bidding_data_exclusions_sample]
+  // [END googleads_v8_generated_BiddingDataExclusionService_MutateBiddingDataExclusions_async]
 }
 
 process.on('unhandledRejection', err => {

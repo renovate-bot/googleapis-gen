@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tableName, rowKey, rules) {
-  // [START bigtable_read_modify_write_row_sample]
+  // [START bigtable_v2_generated_Bigtable_ReadModifyWriteRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(tableName, rowKey, rules) {
   }
 
   readModifyWriteRow();
-  // [END bigtable_read_modify_write_row_sample]
+  // [END bigtable_v2_generated_Bigtable_ReadModifyWriteRow_async]
 }
 
 process.on('unhandledRejection', err => {

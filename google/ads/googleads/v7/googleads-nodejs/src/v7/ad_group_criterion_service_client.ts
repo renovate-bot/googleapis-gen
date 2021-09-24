@@ -690,10 +690,6 @@ export class AdGroupCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getAdGroupCriterion(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_criterion_service.get_ad_group_criterion.js</caption>
- * region_tag:googleads_get_ad_group_criterion_sample
- *
  */
   getAdGroupCriterion(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionRequest,
@@ -813,10 +809,6 @@ export class AdGroupCriterionServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateAdGroupCriteria(request);
- *
- * @example <caption>include:samples/generated/v7/ad_group_criterion_service.mutate_ad_group_criteria.js</caption>
- * region_tag:googleads_mutate_ad_group_criteria_sample
- *
  */
   mutateAdGroupCriteria(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupCriteriaRequest,

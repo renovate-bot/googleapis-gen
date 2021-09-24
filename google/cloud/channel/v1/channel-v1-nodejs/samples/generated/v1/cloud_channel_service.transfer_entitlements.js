@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, entitlements) {
-  // [START channel_transfer_entitlements_sample]
+  // [START channel_v1_generated_CloudChannelService_TransferEntitlements_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(parent, entitlements) {
   }
 
   transferEntitlements();
-  // [END channel_transfer_entitlements_sample]
+  // [END channel_v1_generated_CloudChannelService_TransferEntitlements_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_media_file_sample]
+  // [START googleads_v7_generated_MediaFileService_GetMediaFile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getMediaFile();
-  // [END googleads_get_media_file_sample]
+  // [END googleads_v7_generated_MediaFileService_GetMediaFile_async]
 }
 
 process.on('unhandledRejection', err => {

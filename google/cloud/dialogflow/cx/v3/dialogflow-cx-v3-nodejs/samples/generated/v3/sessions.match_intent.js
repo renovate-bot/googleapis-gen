@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, queryInput) {
-  // [START cx_match_intent_sample]
+  // [START cx_v3_generated_Sessions_MatchIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(session, queryInput) {
   }
 
   matchIntent();
-  // [END cx_match_intent_sample]
+  // [END cx_v3_generated_Sessions_MatchIntent_async]
 }
 
 process.on('unhandledRejection', err => {

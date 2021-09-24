@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START logging_list_views_sample]
+  // [START logging_v2_generated_ConfigServiceV2_ListViews_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listViews();
-  // [END logging_list_views_sample]
+  // [END logging_v2_generated_ConfigServiceV2_ListViews_async]
 }
 
 process.on('unhandledRejection', err => {

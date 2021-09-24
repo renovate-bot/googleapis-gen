@@ -437,10 +437,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.createParticipant(request);
- *
- * @example <caption>include:samples/generated/v2/participants.create_participant.js</caption>
- * region_tag:dialogflow_create_participant_sample
- *
  */
   createParticipant(
       request?: protos.google.cloud.dialogflow.v2.ICreateParticipantRequest,
@@ -514,10 +510,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getParticipant(request);
- *
- * @example <caption>include:samples/generated/v2/participants.get_participant.js</caption>
- * region_tag:dialogflow_get_participant_sample
- *
  */
   getParticipant(
       request?: protos.google.cloud.dialogflow.v2.IGetParticipantRequest,
@@ -591,10 +583,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateParticipant(request);
- *
- * @example <caption>include:samples/generated/v2/participants.update_participant.js</caption>
- * region_tag:dialogflow_update_participant_sample
- *
  */
   updateParticipant(
       request?: protos.google.cloud.dialogflow.v2.IUpdateParticipantRequest,
@@ -689,10 +677,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.analyzeContent(request);
- *
- * @example <caption>include:samples/generated/v2/participants.analyze_content.js</caption>
- * region_tag:dialogflow_analyze_content_sample
- *
  */
   analyzeContent(
       request?: protos.google.cloud.dialogflow.v2.IAnalyzeContentRequest,
@@ -777,10 +761,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestArticles(request);
- *
- * @example <caption>include:samples/generated/v2/participants.suggest_articles.js</caption>
- * region_tag:dialogflow_suggest_articles_sample
- *
  */
   suggestArticles(
       request?: protos.google.cloud.dialogflow.v2.ISuggestArticlesRequest,
@@ -865,10 +845,6 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.suggestFaqAnswers(request);
- *
- * @example <caption>include:samples/generated/v2/participants.suggest_faq_answers.js</caption>
- * region_tag:dialogflow_suggest_faq_answers_sample
- *
  */
   suggestFaqAnswers(
       request?: protos.google.cloud.dialogflow.v2.ISuggestFaqAnswersRequest,
@@ -952,10 +928,6 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/participants.list_participants.js</caption>
- * region_tag:dialogflow_list_participants_sample
- *
  */
   listParticipants(
       request?: protos.google.cloud.dialogflow.v2.IListParticipantsRequest,
@@ -1017,10 +989,6 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2/participants.list_participants.js</caption>
- * region_tag:dialogflow_list_participants_sample
- *
  */
   listParticipantsStream(
       request?: protos.google.cloud.dialogflow.v2.IListParticipantsRequest,
@@ -1075,10 +1043,6 @@ export class ParticipantsClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2/participants.list_participants.js</caption>
- * region_tag:dialogflow_list_participants_sample
- *
  */
   listParticipantsAsync(
       request?: protos.google.cloud.dialogflow.v2.IListParticipantsRequest,

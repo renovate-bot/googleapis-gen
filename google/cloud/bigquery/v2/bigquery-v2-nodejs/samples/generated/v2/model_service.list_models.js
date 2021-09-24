@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, datasetId) {
-  // [START bigquery_list_models_sample]
+  // [START bigquery_v2_generated_ModelService_ListModels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(projectId, datasetId) {
   }
 
   listModels();
-  // [END bigquery_list_models_sample]
+  // [END bigquery_v2_generated_ModelService_ListModels_async]
 }
 
 process.on('unhandledRejection', err => {

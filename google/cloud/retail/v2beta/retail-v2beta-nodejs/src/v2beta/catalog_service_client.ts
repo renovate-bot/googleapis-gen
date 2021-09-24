@@ -352,10 +352,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.updateCatalog(request);
- *
- * @example <caption>include:samples/generated/v2beta/catalog_service.update_catalog.js</caption>
- * region_tag:retail_update_catalog_sample
- *
  */
   updateCatalog(
       request?: protos.google.cloud.retail.v2beta.IUpdateCatalogRequest,
@@ -476,10 +472,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.setDefaultBranch(request);
- *
- * @example <caption>include:samples/generated/v2beta/catalog_service.set_default_branch.js</caption>
- * region_tag:retail_set_default_branch_sample
- *
  */
   setDefaultBranch(
       request?: protos.google.cloud.retail.v2beta.ISetDefaultBranchRequest,
@@ -558,10 +550,6 @@ export class CatalogServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getDefaultBranch(request);
- *
- * @example <caption>include:samples/generated/v2beta/catalog_service.get_default_branch.js</caption>
- * region_tag:retail_get_default_branch_sample
- *
  */
   getDefaultBranch(
       request?: protos.google.cloud.retail.v2beta.IGetDefaultBranchRequest,
@@ -661,10 +649,6 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta/catalog_service.list_catalogs.js</caption>
- * region_tag:retail_list_catalogs_sample
- *
  */
   listCatalogs(
       request?: protos.google.cloud.retail.v2beta.IListCatalogsRequest,
@@ -741,10 +725,6 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- *
- * @example <caption>include:samples/generated/v2beta/catalog_service.list_catalogs.js</caption>
- * region_tag:retail_list_catalogs_sample
- *
  */
   listCatalogsStream(
       request?: protos.google.cloud.retail.v2beta.IListCatalogsRequest,
@@ -814,10 +794,6 @@ export class CatalogServiceClient {
  * for await (const response of iterable) {
  *   // process response
  * }
- *
- * @example <caption>include:samples/generated/v2beta/catalog_service.list_catalogs.js</caption>
- * region_tag:retail_list_catalogs_sample
- *
  */
   listCatalogsAsync(
       request?: protos.google.cloud.retail.v2beta.IListCatalogsRequest,

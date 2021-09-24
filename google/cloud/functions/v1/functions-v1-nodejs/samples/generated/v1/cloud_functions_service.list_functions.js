@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START functions_list_functions_sample]
+  // [START functions_v1_generated_CloudFunctionsService_ListFunctions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main() {
   }
 
   listFunctions();
-  // [END functions_list_functions_sample]
+  // [END functions_v1_generated_CloudFunctionsService_ListFunctions_async]
 }
 
 process.on('unhandledRejection', err => {

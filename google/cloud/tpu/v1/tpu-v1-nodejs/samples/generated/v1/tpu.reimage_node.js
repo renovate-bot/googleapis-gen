@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START tpu_reimage_node_sample]
+  // [START tpu_v1_generated_Tpu_ReimageNode_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main() {
   }
 
   reimageNode();
-  // [END tpu_reimage_node_sample]
+  // [END tpu_v1_generated_Tpu_ReimageNode_async]
 }
 
 process.on('unhandledRejection', err => {

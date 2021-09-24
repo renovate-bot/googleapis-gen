@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, etag) {
-  // [START recommender_mark_recommendation_failed_sample]
+  // [START recommender_v1beta1_generated_Recommender_MarkRecommendationFailed_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(name, etag) {
   }
 
   markRecommendationFailed();
-  // [END recommender_mark_recommendation_failed_sample]
+  // [END recommender_v1beta1_generated_Recommender_MarkRecommendationFailed_async]
 }
 
 process.on('unhandledRejection', err => {

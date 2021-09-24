@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resourceName) {
-  // [START googleads_get_remarketing_action_sample]
+  // [START googleads_v7_generated_RemarketingActionService_GetRemarketingAction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(resourceName) {
   }
 
   getRemarketingAction();
-  // [END googleads_get_remarketing_action_sample]
+  // [END googleads_v7_generated_RemarketingActionService_GetRemarketingAction_async]
 }
 
 process.on('unhandledRejection', err => {

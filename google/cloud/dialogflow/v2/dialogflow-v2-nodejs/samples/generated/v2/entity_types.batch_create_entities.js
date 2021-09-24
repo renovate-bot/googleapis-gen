@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, entities) {
-  // [START dialogflow_batch_create_entities_sample]
+  // [START dialogflow_v2_generated_EntityTypes_BatchCreateEntities_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, entities) {
   }
 
   batchCreateEntities();
-  // [END dialogflow_batch_create_entities_sample]
+  // [END dialogflow_v2_generated_EntityTypes_BatchCreateEntities_async]
 }
 
 process.on('unhandledRejection', err => {

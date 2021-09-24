@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START notebooks_set_instance_labels_sample]
+  // [START notebooks_v1_generated_NotebookService_SetInstanceLabels_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   setInstanceLabels();
-  // [END notebooks_set_instance_labels_sample]
+  // [END notebooks_v1_generated_NotebookService_SetInstanceLabels_async]
 }
 
 process.on('unhandledRejection', err => {

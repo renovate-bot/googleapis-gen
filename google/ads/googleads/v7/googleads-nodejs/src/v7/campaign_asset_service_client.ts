@@ -690,10 +690,6 @@ export class CampaignAssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.getCampaignAsset(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_asset_service.get_campaign_asset.js</caption>
- * region_tag:googleads_get_campaign_asset_sample
- *
  */
   getCampaignAsset(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignAssetRequest,
@@ -790,10 +786,6 @@ export class CampaignAssetServiceClient {
  *   for more details and examples.
  * @example
  * const [response] = await client.mutateCampaignAssets(request);
- *
- * @example <caption>include:samples/generated/v7/campaign_asset_service.mutate_campaign_assets.js</caption>
- * region_tag:googleads_mutate_campaign_assets_sample
- *
  */
   mutateCampaignAssets(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignAssetsRequest,

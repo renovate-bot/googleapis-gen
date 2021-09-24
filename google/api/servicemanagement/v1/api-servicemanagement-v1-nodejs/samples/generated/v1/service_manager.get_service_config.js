@@ -16,7 +16,7 @@
 'use strict';
 
 function main(serviceName, configId) {
-  // [START servicemanagement_get_service_config_sample]
+  // [START servicemanagement_v1_generated_ServiceManager_GetServiceConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(serviceName, configId) {
   }
 
   getServiceConfig();
-  // [END servicemanagement_get_service_config_sample]
+  // [END servicemanagement_v1_generated_ServiceManager_GetServiceConfig_async]
 }
 
 process.on('unhandledRejection', err => {

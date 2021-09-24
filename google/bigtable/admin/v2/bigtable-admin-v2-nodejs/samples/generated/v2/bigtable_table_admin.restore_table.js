@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, tableId) {
-  // [START admin_restore_table_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_RestoreTable_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, tableId) {
   }
 
   restoreTable();
-  // [END admin_restore_table_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_RestoreTable_async]
 }
 
 process.on('unhandledRejection', err => {

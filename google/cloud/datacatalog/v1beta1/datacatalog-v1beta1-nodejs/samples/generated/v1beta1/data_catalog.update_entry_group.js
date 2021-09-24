@@ -16,7 +16,7 @@
 'use strict';
 
 function main(entryGroup) {
-  // [START datacatalog_update_entry_group_sample]
+  // [START datacatalog_v1beta1_generated_DataCatalog_UpdateEntryGroup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(entryGroup) {
   }
 
   updateEntryGroup();
-  // [END datacatalog_update_entry_group_sample]
+  // [END datacatalog_v1beta1_generated_DataCatalog_UpdateEntryGroup_async]
 }
 
 process.on('unhandledRejection', err => {

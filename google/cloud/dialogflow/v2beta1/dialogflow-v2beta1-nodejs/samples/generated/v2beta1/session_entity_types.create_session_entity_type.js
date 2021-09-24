@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, sessionEntityType) {
-  // [START dialogflow_create_session_entity_type_sample]
+  // [START dialogflow_v2beta1_generated_SessionEntityTypes_CreateSessionEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent, sessionEntityType) {
   }
 
   createSessionEntityType();
-  // [END dialogflow_create_session_entity_type_sample]
+  // [END dialogflow_v2beta1_generated_SessionEntityTypes_CreateSessionEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

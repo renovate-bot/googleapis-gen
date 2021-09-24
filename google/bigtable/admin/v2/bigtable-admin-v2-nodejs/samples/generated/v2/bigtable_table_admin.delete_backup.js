@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_delete_backup_sample]
+  // [START admin_v2_generated_BigtableTableAdmin_DeleteBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteBackup();
-  // [END admin_delete_backup_sample]
+  // [END admin_v2_generated_BigtableTableAdmin_DeleteBackup_async]
 }
 
 process.on('unhandledRejection', err => {

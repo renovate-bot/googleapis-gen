@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, connectorId, connector) {
-  // [START vpcaccess_create_connector_sample]
+  // [START vpcaccess_v1_generated_VpcAccessService_CreateConnector_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, connectorId, connector) {
   }
 
   createConnector();
-  // [END vpcaccess_create_connector_sample]
+  // [END vpcaccess_v1_generated_VpcAccessService_CreateConnector_async]
 }
 
 process.on('unhandledRejection', err => {

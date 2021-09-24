@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, secretId, secret) {
-  // [START secretmanager_create_secret_sample]
+  // [START secretmanager_v1_generated_SecretManagerService_CreateSecret_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent, secretId, secret) {
   }
 
   createSecret();
-  // [END secretmanager_create_secret_sample]
+  // [END secretmanager_v1_generated_SecretManagerService_CreateSecret_async]
 }
 
 process.on('unhandledRejection', err => {

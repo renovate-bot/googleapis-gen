@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, updateMask, resource) {
-  // [START gkehub_update_membership_sample]
+  // [START gkehub_v1_generated_GkeHub_UpdateMembership_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -76,7 +76,7 @@ function main(name, updateMask, resource) {
   }
 
   updateMembership();
-  // [END gkehub_update_membership_sample]
+  // [END gkehub_v1_generated_GkeHub_UpdateMembership_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START appengine_delete_ingress_rule_sample]
+  // [START appengine_v1_generated_Firewall_DeleteIngressRule_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   deleteIngressRule();
-  // [END appengine_delete_ingress_rule_sample]
+  // [END appengine_v1_generated_Firewall_DeleteIngressRule_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(securityMarks) {
-  // [START securitycenter_update_security_marks_sample]
+  // [START securitycenter_v1_generated_SecurityCenter_UpdateSecurityMarks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(securityMarks) {
   }
 
   updateSecurityMarks();
-  // [END securitycenter_update_security_marks_sample]
+  // [END securitycenter_v1_generated_SecurityCenter_UpdateSecurityMarks_async]
 }
 
 process.on('unhandledRejection', err => {
