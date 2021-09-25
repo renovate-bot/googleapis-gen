@@ -34,7 +34,7 @@ function main(parent) {
   // const pageToken = 'abc123'
 
   // Imports the Artifactregistry library
-  const {ArtifactRegistryClient} = require('@google-cloud/artifactregistry').v1;
+  const {ArtifactRegistryClient} = require('@google-cloud/artifact-registry').v1;
 
   // Instantiates a client
   const artifactregistryClient = new ArtifactRegistryClient();
