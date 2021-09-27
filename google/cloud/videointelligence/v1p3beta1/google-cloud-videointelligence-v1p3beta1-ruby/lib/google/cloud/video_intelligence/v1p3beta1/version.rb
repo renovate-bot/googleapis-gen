@@ -19,11 +19,9 @@
 
 module Google
   module Cloud
-    module Airflow
-      module Service
-        module V1beta1
-          VERSION = "0.0.1"
-        end
+    module VideoIntelligence
+      module V1p3beta1
+        VERSION = "0.0.1"
       end
     end
   end

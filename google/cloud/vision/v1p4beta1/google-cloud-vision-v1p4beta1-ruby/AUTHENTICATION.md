@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
+export VISION_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,6 +66,8 @@ The environment variables that google-cloud-vision-v1p4beta1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Vision::V1p4beta1::ProductSearch::Credentials}):
 
+* `VISION_CREDENTIALS` - Path to JSON file, or JSON contents
+* `VISION_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -73,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/vision/v1p4beta1"
 
-ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["VISION_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Vision::V1p4beta1::ProductSearch::Client.new
 ```

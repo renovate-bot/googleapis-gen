@@ -62,6 +62,11 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
+                default_config.rpcs.streaming_annotate_video.timeout = 10_800.0
+                default_config.rpcs.streaming_annotate_video.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                }
+
                 default_config
               end
               yield @configure if block_given?
@@ -179,7 +184,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Videointelligence::V1p3beta1::VERSION
+                gapic_version: ::Google::Cloud::VideoIntelligence::V1p3beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               options.apply_defaults timeout:      @config.rpcs.streaming_annotate_video.timeout,

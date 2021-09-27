@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/executions/v1/version"
+require "google/cloud/workflows/executions/v1/version"
 
 require "google/cloud/workflows/executions/v1/executions/credentials"
 require "google/cloud/workflows/executions/v1/executions/paths"

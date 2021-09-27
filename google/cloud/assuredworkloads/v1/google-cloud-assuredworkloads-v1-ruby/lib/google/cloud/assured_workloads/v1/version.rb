@@ -19,8 +19,8 @@
 
 module Google
   module Cloud
-    module Videointelligence
-      module V1p3beta1
+    module AssuredWorkloads
+      module V1
         VERSION = "0.0.1"
       end
     end

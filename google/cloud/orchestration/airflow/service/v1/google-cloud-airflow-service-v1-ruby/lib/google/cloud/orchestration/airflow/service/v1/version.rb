@@ -19,10 +19,12 @@
 
 module Google
   module Cloud
-    module Airflow
-      module Service
-        module V1
-          VERSION = "0.0.1"
+    module Orchestration
+      module Airflow
+        module Service
+          module V1
+            VERSION = "0.0.1"
+          end
         end
       end
     end

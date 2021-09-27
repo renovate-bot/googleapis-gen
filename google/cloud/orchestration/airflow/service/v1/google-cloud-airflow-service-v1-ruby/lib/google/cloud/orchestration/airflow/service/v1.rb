@@ -18,7 +18,7 @@
 
 require "google/cloud/orchestration/airflow/service/v1/environments"
 require "google/cloud/orchestration/airflow/service/v1/image_versions"
-require "google/cloud/airflow/service/v1/version"
+require "google/cloud/orchestration/airflow/service/v1/version"
 
 module Google
   module Cloud

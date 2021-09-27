@@ -18,7 +18,7 @@
 
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_service"
 require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service"
-require "google/cloud/videointelligence/v1p3beta1/version"
+require "google/cloud/video_intelligence/v1p3beta1/version"
 
 module Google
   module Cloud

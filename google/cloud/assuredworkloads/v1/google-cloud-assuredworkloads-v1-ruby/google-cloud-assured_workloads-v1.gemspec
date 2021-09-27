@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/assuredworkloads/v1/version", __dir__)
+require File.expand_path("lib/google/cloud/assured_workloads/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-assuredworkloads-v1"
-  gem.version       = Google::Cloud::Assuredworkloads::V1::VERSION
+  gem.name          = "google-cloud-assured_workloads-v1"
+  gem.version       = Google::Cloud::AssuredWorkloads::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-assuredworkloads-v1 is the official client library for the Google Cloud Assuredworkloads V1 API. Note that google-cloud-assuredworkloads-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-assuredworkloads instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Assuredworkloads V1 API"
+  gem.description   = "Assured Workloads for Government secures government workloads and accelerates the path to running compliant workloads on Google Cloud. Note that google-cloud-assured_workloads-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-assured_workloads instead. See the readme for more details."
+  gem.summary       = "API Client library for the Assured Workloads for Government V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

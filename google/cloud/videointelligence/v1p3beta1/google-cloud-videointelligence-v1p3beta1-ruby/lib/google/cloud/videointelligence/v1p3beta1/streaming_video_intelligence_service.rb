@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/videointelligence/v1p3beta1/version"
+require "google/cloud/video_intelligence/v1p3beta1/version"
 
 require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service/credentials"
 require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service/client"

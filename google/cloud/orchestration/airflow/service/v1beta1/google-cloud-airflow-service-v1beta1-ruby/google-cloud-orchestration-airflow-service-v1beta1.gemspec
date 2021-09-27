@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/videointelligence/v1p3beta1/version", __dir__)
+require File.expand_path("lib/google/cloud/orchestration/airflow/service/v1beta1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-videointelligence-v1p3beta1"
-  gem.version       = Google::Cloud::Videointelligence::V1p3beta1::VERSION
+  gem.name          = "google-cloud-orchestration-airflow-service-v1beta1"
+  gem.version       = Google::Cloud::Orchestration::Airflow::Service::V1beta1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-videointelligence-v1p3beta1 is the official client library for the Google Cloud Videointelligence V1p3beta1 API. Note that google-cloud-videointelligence-v1p3beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-videointelligence instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Videointelligence V1p3beta1 API"
+  gem.description   = "The client library for the Cloud Composer API, built on the popular Apache Airflow open source project. Cloud Composer is a fully managed workflow orchestration service, enabling you to create, schedule, monitor, and manage workflows that span across clouds and on-premises data centers. Note that google-cloud-orchestration-airflow-service-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-orchestration-airflow-service instead. See the readme for more details."
+  gem.summary       = "API Client library for the Cloud Composer V1beta1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

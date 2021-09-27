@@ -19,9 +19,11 @@
 
 module Google
   module Cloud
-    module Executions
-      module V1
-        VERSION = "0.0.1"
+    module Workflows
+      module Executions
+        module V1
+          VERSION = "0.0.1"
+        end
       end
     end
   end

@@ -28,9 +28,13 @@ module Google
             "https://www.googleapis.com/auth/cloud-platform"
           ]
           self.env_vars = [
+            "NOTEBOOKS_CREDENTIALS",
+            "NOTEBOOKS_KEYFILE",
             "GOOGLE_CLOUD_CREDENTIALS",
             "GOOGLE_CLOUD_KEYFILE",
             "GCLOUD_KEYFILE",
+            "NOTEBOOKS_CREDENTIALS_JSON",
+            "NOTEBOOKS_KEYFILE_JSON",
             "GOOGLE_CLOUD_CREDENTIALS_JSON",
             "GOOGLE_CLOUD_KEYFILE_JSON",
             "GCLOUD_KEYFILE_JSON"

@@ -1,10 +1,14 @@
 {
-    "client_documentation": "https://googleapis.dev/ruby/google-cloud-airflow-service-v1beta1/latest",
-    "distribution_name": "google-cloud-airflow-service-v1beta1",
+    "api_id": "composer.googleapis.com",
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-orchestration-airflow-service-v1beta1/latest",
+    "distribution_name": "google-cloud-orchestration-airflow-service-v1beta1",
     "language": "ruby",
-    "name_pretty": "Google Cloud Airflow Service V1beta1 API",
+    "name": "composer",
+    "name_pretty": "Cloud Composer V1beta1 API",
+    "product_documentation": "https://cloud.google.com/composer",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
-    "ruby-cloud-description": "google-cloud-airflow-service-v1beta1 is the official client library for the Google Cloud Airflow Service V1beta1 API. Note that google-cloud-airflow-service-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-airflow-service instead. See the readme for more details.",
+    "ruby-cloud-description": "The client library for the Cloud Composer API, built on the popular Apache Airflow open source project. Cloud Composer is a fully managed workflow orchestration service, enabling you to create, schedule, monitor, and manage workflows that span across clouds and on-premises data centers. Note that google-cloud-orchestration-airflow-service-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-orchestration-airflow-service instead. See the readme for more details.",
+    "ruby-cloud-product-url": "https://cloud.google.com/composer",
     "library_type": "GAPIC_AUTO"
 }

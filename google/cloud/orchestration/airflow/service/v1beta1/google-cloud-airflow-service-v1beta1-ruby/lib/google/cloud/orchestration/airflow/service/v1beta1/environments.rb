@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/airflow/service/v1beta1/version"
+require "google/cloud/orchestration/airflow/service/v1beta1/version"
 
 require "google/cloud/orchestration/airflow/service/v1beta1/environments/credentials"
 require "google/cloud/orchestration/airflow/service/v1beta1/environments/paths"

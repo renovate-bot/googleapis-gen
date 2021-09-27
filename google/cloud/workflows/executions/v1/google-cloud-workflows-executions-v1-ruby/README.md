@@ -1,21 +1,21 @@
-# Ruby Client for the Google Cloud Executions V1 API
+# Ruby Client for the Workflows Executions V1 API
 
-API Client library for the Google Cloud Executions V1 API
+API Client library for the Workflows Executions V1 API
 
-google-cloud-executions-v1 is the official client library for the Google Cloud Executions V1 API.
+Workflows link series of serverless tasks together in an order you define. Combine the power of Google Cloud's APIs, serverless products like Cloud Functions and Cloud Run, and calls to external APIs to create flexible serverless applications. Workflows requires no infrastructure management and scales seamlessly with demand, including scaling down to zero..
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Executions V1 API. Most users should consider using
+specific version of the Workflows Executions V1 API. Most users should consider using
 the main client gem,
-[google-cloud-executions](https://rubygems.org/gems/google-cloud-executions).
+[google-cloud-workflows](https://rubygems.org/gems/google-cloud-workflows).
 See the section below titled *Which client should I use?* for more information.
 
 ## Installation
 
 ```
-$ gem install google-cloud-executions-v1
+$ gem install google-cloud-workflows-executions-v1
 ```
 
 ## Before You Begin
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/workflowexecutions.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -36,8 +37,11 @@ request = ::Google::Cloud::Workflows::Executions::V1::ListExecutionsRequest.new 
 response = client.list_executions request
 ```
 
-View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-executions-v1/latest)
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-workflows-executions-v1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/workflows/)
+for general usage information.
 
 ## Enabling Logging
 
@@ -79,9 +83,9 @@ about the Ruby support schedule.
 ## Which client should I use?
 
 Most modern Ruby client libraries for Google APIs come in two flavors: the main
-client library with a name such as `google-cloud-executions`,
+client library with a name such as `google-cloud-workflows`,
 and lower-level _versioned_ client libraries with names such as
-`google-cloud-executions-v1`.
+`google-cloud-workflows-executions-v1`.
 _In most cases, you should install the main client._
 
 ### What's the difference between the main client and a versioned client?
@@ -106,7 +110,7 @@ service version.
 
 We recommend that most users install the main client gem for a service. You can
 identify this gem as the one _without_ a version in its name, e.g.
-`google-cloud-executions`.
+`google-cloud-workflows`.
 The main client is recommended because it will embody the best practices for
 accessing the service, and may also provide more convenient interfaces or
 tighter integration into frameworks and third-party libraries. In addition, the
@@ -119,7 +123,7 @@ You can use a versioned client if you are content with a possibly lower-level
 class interface, you explicitly want to avoid features provided by the main
 client, or you want to access a specific service version not be covered by the
 main client. You can identify versioned client gems because the service version
-is part of the name, e.g. `google-cloud-executions-v1`.
+is part of the name, e.g. `google-cloud-workflows-executions-v1`.
 
 ### What about the google-apis-<name> clients?
 

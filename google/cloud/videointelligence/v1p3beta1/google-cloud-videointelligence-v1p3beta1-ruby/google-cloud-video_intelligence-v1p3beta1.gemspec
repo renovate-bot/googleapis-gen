@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/airflow/service/v1/version", __dir__)
+require File.expand_path("lib/google/cloud/video_intelligence/v1p3beta1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-airflow-service-v1"
-  gem.version       = Google::Cloud::Airflow::Service::V1::VERSION
+  gem.name          = "google-cloud-video_intelligence-v1p3beta1"
+  gem.version       = Google::Cloud::VideoIntelligence::V1p3beta1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-airflow-service-v1 is the official client library for the Google Cloud Airflow Service V1 API. Note that google-cloud-airflow-service-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-airflow-service instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Airflow Service V1 API"
+  gem.description   = "Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API. Note that google-cloud-video_intelligence-v1p3beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-video_intelligence instead. See the readme for more details."
+  gem.summary       = "API Client library for the Cloud Video Intelligence V1p3beta1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

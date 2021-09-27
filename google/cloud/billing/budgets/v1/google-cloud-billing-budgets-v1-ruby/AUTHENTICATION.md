@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
+export BILLING_BUDGETS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,6 +66,8 @@ The environment variables that google-cloud-billing-budgets-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Billing::Budgets::V1::BudgetService::Credentials}):
 
+* `BILLING_BUDGETS_CREDENTIALS` - Path to JSON file, or JSON contents
+* `BILLING_BUDGETS_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -73,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/billing/budgets/v1"
 
-ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["BILLING_BUDGETS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Billing::Budgets::V1::BudgetService::Client.new
 ```

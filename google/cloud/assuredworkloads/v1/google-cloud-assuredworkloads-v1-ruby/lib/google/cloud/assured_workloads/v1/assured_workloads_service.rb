@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/assuredworkloads/v1/version"
+require "google/cloud/assured_workloads/v1/version"
 
 require "google/cloud/assured_workloads/v1/assured_workloads_service/credentials"
 require "google/cloud/assured_workloads/v1/assured_workloads_service/paths"

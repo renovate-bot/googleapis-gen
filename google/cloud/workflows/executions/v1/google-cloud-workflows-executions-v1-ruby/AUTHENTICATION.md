@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-executions-v1 library uses
+In general, the google-cloud-workflows-executions-v1 library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
+export WORKFLOWS_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -32,7 +32,7 @@ client = ::Google::Cloud::Workflows::Executions::V1::Executions::Client.new
 
 ## Credential Lookup
 
-The google-cloud-executions-v1 library aims to make authentication
+The google-cloud-workflows-executions-v1 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,10 +62,12 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-executions-v1
+The environment variables that google-cloud-workflows-executions-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Workflows::Executions::V1::Executions::Credentials}):
 
+* `WORKFLOWS_CREDENTIALS` - Path to JSON file, or JSON contents
+* `WORKFLOWS_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -73,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/workflows/executions/v1"
 
-ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["WORKFLOWS_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Workflows::Executions::V1::Executions::Client.new
 ```
@@ -131,7 +133,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-executions-v1.
+connect to most services with google-cloud-workflows-executions-v1.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you
