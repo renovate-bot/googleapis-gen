@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START privatecatalog_v1beta1_generated_PrivateCatalog_SearchProducts_async]
+  // [START cloudprivatecatalog_v1beta1_generated_PrivateCatalog_SearchProducts_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(resource) {
   }
 
   searchProducts();
-  // [END privatecatalog_v1beta1_generated_PrivateCatalog_SearchProducts_async]
+  // [END cloudprivatecatalog_v1beta1_generated_PrivateCatalog_SearchProducts_async]
 }
 
 process.on('unhandledRejection', err => {

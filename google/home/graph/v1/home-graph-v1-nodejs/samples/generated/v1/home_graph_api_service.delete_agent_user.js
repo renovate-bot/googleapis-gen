@@ -16,7 +16,7 @@
 'use strict';
 
 function main(agentUserId) {
-  // [START graph_v1_generated_HomeGraphApiService_DeleteAgentUser_async]
+  // [START homegraph_v1_generated_HomeGraphApiService_DeleteAgentUser_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(agentUserId) {
   }
 
   deleteAgentUser();
-  // [END graph_v1_generated_HomeGraphApiService_DeleteAgentUser_async]
+  // [END homegraph_v1_generated_HomeGraphApiService_DeleteAgentUser_async]
 }
 
 process.on('unhandledRejection', err => {

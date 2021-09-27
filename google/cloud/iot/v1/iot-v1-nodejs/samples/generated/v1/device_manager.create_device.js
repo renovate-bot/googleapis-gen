@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, device) {
-  // [START iot_v1_generated_DeviceManager_CreateDevice_async]
+  // [START cloudiot_v1_generated_DeviceManager_CreateDevice_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent, device) {
   }
 
   createDevice();
-  // [END iot_v1_generated_DeviceManager_CreateDevice_async]
+  // [END cloudiot_v1_generated_DeviceManager_CreateDevice_async]
 }
 
 process.on('unhandledRejection', err => {

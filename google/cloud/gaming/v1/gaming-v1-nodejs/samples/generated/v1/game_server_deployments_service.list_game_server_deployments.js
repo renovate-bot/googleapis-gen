@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START gaming_v1_generated_GameServerDeploymentsService_ListGameServerDeployments_async]
+  // [START gameservices_v1_generated_GameServerDeploymentsService_ListGameServerDeployments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -68,7 +68,7 @@ function main(parent) {
   }
 
   listGameServerDeployments();
-  // [END gaming_v1_generated_GameServerDeploymentsService_ListGameServerDeployments_async]
+  // [END gameservices_v1_generated_GameServerDeploymentsService_ListGameServerDeployments_async]
 }
 
 process.on('unhandledRejection', err => {

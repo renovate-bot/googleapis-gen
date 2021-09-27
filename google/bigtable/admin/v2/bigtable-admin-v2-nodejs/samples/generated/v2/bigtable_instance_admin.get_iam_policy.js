@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START admin_v2_generated_BigtableInstanceAdmin_GetIamPolicy_async]
+  // [START bigtableadmin_v2_generated_BigtableInstanceAdmin_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END admin_v2_generated_BigtableInstanceAdmin_GetIamPolicy_async]
+  // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

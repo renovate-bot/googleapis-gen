@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3_generated_Agents_RestoreAgent_async]
+  // [START dialogflow_v3_generated_Agents_RestoreAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(name) {
   }
 
   restoreAgent();
-  // [END cx_v3_generated_Agents_RestoreAgent_async]
+  // [END dialogflow_v3_generated_Agents_RestoreAgent_async]
 }
 
 process.on('unhandledRejection', err => {

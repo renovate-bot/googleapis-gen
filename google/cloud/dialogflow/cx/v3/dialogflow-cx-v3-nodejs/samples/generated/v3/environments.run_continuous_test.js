@@ -16,7 +16,7 @@
 'use strict';
 
 function main(environment) {
-  // [START cx_v3_generated_Environments_RunContinuousTest_async]
+  // [START dialogflow_v3_generated_Environments_RunContinuousTest_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(environment) {
   }
 
   runContinuousTest();
-  // [END cx_v3_generated_Environments_RunContinuousTest_async]
+  // [END dialogflow_v3_generated_Environments_RunContinuousTest_async]
 }
 
 process.on('unhandledRejection', err => {

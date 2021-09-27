@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, configId, gameServerConfig) {
-  // [START gaming_v1_generated_GameServerConfigsService_CreateGameServerConfig_async]
+  // [START gameservices_v1_generated_GameServerConfigsService_CreateGameServerConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent, configId, gameServerConfig) {
   }
 
   createGameServerConfig();
-  // [END gaming_v1_generated_GameServerConfigsService_CreateGameServerConfig_async]
+  // [END gameservices_v1_generated_GameServerConfigsService_CreateGameServerConfig_async]
 }
 
 process.on('unhandledRejection', err => {

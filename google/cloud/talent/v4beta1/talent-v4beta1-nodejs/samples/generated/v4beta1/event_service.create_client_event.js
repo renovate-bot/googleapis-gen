@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, clientEvent) {
-  // [START talent_v4beta1_generated_EventService_CreateClientEvent_async]
+  // [START jobs_v4beta1_generated_EventService_CreateClientEvent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent, clientEvent) {
   }
 
   createClientEvent();
-  // [END talent_v4beta1_generated_EventService_CreateClientEvent_async]
+  // [END jobs_v4beta1_generated_EventService_CreateClientEvent_async]
 }
 
 process.on('unhandledRejection', err => {

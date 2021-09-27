@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START tables_v1alpha1_generated_TablesService_GetRow_async]
+  // [START area120tables_v1alpha1_generated_TablesService_GetRow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   getRow();
-  // [END tables_v1alpha1_generated_TablesService_GetRow_async]
+  // [END area120tables_v1alpha1_generated_TablesService_GetRow_async]
 }
 
 process.on('unhandledRejection', err => {

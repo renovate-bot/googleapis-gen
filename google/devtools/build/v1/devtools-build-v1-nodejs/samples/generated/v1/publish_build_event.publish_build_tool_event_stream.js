@@ -16,7 +16,7 @@
 'use strict';
 
 function main(orderedBuildEvent, projectId) {
-  // [START build_v1_generated_PublishBuildEvent_PublishBuildToolEventStream_async]
+  // [START buildeventservice_v1_generated_PublishBuildEvent_PublishBuildToolEventStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main(orderedBuildEvent, projectId) {
   }
 
   publishBuildToolEventStream();
-  // [END build_v1_generated_PublishBuildEvent_PublishBuildToolEventStream_async]
+  // [END buildeventservice_v1_generated_PublishBuildEvent_PublishBuildToolEventStream_async]
 }
 
 process.on('unhandledRejection', err => {

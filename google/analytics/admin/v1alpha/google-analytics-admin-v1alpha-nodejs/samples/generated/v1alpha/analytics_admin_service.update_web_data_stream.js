@@ -16,7 +16,7 @@
 'use strict';
 
 function main(webDataStream, updateMask) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateWebDataStream_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateWebDataStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(webDataStream, updateMask) {
   }
 
   updateWebDataStream();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateWebDataStream_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateWebDataStream_async]
 }
 
 process.on('unhandledRejection', err => {

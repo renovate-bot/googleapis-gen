@@ -16,7 +16,7 @@
 'use strict';
 
 function main(scope) {
-  // [START asset_v1p1beta1_generated_AssetService_SearchAllIamPolicies_async]
+  // [START cloudasset_v1p1beta1_generated_AssetService_SearchAllIamPolicies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(scope) {
   }
 
   searchAllIamPolicies();
-  // [END asset_v1p1beta1_generated_AssetService_SearchAllIamPolicies_async]
+  // [END cloudasset_v1p1beta1_generated_AssetService_SearchAllIamPolicies_async]
 }
 
 process.on('unhandledRejection', err => {

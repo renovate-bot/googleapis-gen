@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_v2_generated_BigtableTableAdmin_ListTables_async]
+  // [START bigtableadmin_v2_generated_BigtableTableAdmin_ListTables_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(parent) {
   }
 
   listTables();
-  // [END admin_v2_generated_BigtableTableAdmin_ListTables_async]
+  // [END bigtableadmin_v2_generated_BigtableTableAdmin_ListTables_async]
 }
 
 process.on('unhandledRejection', err => {

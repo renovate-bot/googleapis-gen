@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3beta1_generated_Environments_LookupEnvironmentHistory_async]
+  // [START dialogflow_v3beta1_generated_Environments_LookupEnvironmentHistory_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name) {
   }
 
   lookupEnvironmentHistory();
-  // [END cx_v3beta1_generated_Environments_LookupEnvironmentHistory_async]
+  // [END dialogflow_v3beta1_generated_Environments_LookupEnvironmentHistory_async]
 }
 
 process.on('unhandledRejection', err => {

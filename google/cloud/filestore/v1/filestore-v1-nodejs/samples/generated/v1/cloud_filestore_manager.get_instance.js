@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START filestore_v1_generated_CloudFilestoreManager_GetInstance_async]
+  // [START file_v1_generated_CloudFilestoreManager_GetInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getInstance();
-  // [END filestore_v1_generated_CloudFilestoreManager_GetInstance_async]
+  // [END file_v1_generated_CloudFilestoreManager_GetInstance_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START gaming_v1beta_generated_GameServerClustersService_PreviewDeleteGameServerCluster_async]
+  // [START gameservices_v1beta_generated_GameServerClustersService_PreviewDeleteGameServerCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   previewDeleteGameServerCluster();
-  // [END gaming_v1beta_generated_GameServerClustersService_PreviewDeleteGameServerCluster_async]
+  // [END gameservices_v1beta_generated_GameServerClustersService_PreviewDeleteGameServerCluster_async]
 }
 
 process.on('unhandledRejection', err => {

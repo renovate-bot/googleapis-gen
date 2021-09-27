@@ -16,7 +16,7 @@
 'use strict';
 
 function main(webhook) {
-  // [START cx_v3_generated_Webhooks_UpdateWebhook_async]
+  // [START dialogflow_v3_generated_Webhooks_UpdateWebhook_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(webhook) {
   }
 
   updateWebhook();
-  // [END cx_v3_generated_Webhooks_UpdateWebhook_async]
+  // [END dialogflow_v3_generated_Webhooks_UpdateWebhook_async]
 }
 
 process.on('unhandledRejection', err => {

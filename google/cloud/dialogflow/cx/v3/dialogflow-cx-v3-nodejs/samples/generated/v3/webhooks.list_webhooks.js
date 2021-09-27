@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_v3_generated_Webhooks_ListWebhooks_async]
+  // [START dialogflow_v3_generated_Webhooks_ListWebhooks_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(parent) {
   }
 
   listWebhooks();
-  // [END cx_v3_generated_Webhooks_ListWebhooks_async]
+  // [END dialogflow_v3_generated_Webhooks_ListWebhooks_async]
 }
 
 process.on('unhandledRejection', err => {

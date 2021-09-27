@@ -16,7 +16,7 @@
 'use strict';
 
 function main(session, queryInput) {
-  // [START cx_v3beta1_generated_Sessions_DetectIntent_async]
+  // [START dialogflow_v3beta1_generated_Sessions_DetectIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(session, queryInput) {
   }
 
   detectIntent();
-  // [END cx_v3beta1_generated_Sessions_DetectIntent_async]
+  // [END dialogflow_v3beta1_generated_Sessions_DetectIntent_async]
 }
 
 process.on('unhandledRejection', err => {

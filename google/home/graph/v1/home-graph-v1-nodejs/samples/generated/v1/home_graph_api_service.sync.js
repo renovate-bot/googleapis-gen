@@ -16,7 +16,7 @@
 'use strict';
 
 function main(agentUserId) {
-  // [START graph_v1_generated_HomeGraphApiService_Sync_async]
+  // [START homegraph_v1_generated_HomeGraphApiService_Sync_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main(agentUserId) {
   }
 
   sync();
-  // [END graph_v1_generated_HomeGraphApiService_Sync_async]
+  // [END homegraph_v1_generated_HomeGraphApiService_Sync_async]
 }
 
 process.on('unhandledRejection', err => {

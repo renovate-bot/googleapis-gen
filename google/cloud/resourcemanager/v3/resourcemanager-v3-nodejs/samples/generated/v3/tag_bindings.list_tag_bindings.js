@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START resourcemanager_v3_generated_TagBindings_ListTagBindings_async]
+  // [START cloudresourcemanager_v3_generated_TagBindings_ListTagBindings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent) {
   }
 
   listTagBindings();
-  // [END resourcemanager_v3_generated_TagBindings_ListTagBindings_async]
+  // [END cloudresourcemanager_v3_generated_TagBindings_ListTagBindings_async]
 }
 
 process.on('unhandledRejection', err => {

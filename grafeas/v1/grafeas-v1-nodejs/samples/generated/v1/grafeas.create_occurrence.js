@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, occurrence) {
-  // [START grafeas_v1_generated_Grafeas_CreateOccurrence_async]
+  // [START containeranalysis_v1_generated_Grafeas_CreateOccurrence_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, occurrence) {
   }
 
   createOccurrence();
-  // [END grafeas_v1_generated_Grafeas_CreateOccurrence_async]
+  // [END containeranalysis_v1_generated_Grafeas_CreateOccurrence_async]
 }
 
 process.on('unhandledRejection', err => {

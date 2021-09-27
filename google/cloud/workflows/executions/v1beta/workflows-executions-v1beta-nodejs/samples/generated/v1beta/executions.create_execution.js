@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, execution) {
-  // [START executions_v1beta_generated_Executions_CreateExecution_async]
+  // [START workflowexecutions_v1beta_generated_Executions_CreateExecution_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, execution) {
   }
 
   createExecution();
-  // [END executions_v1beta_generated_Executions_CreateExecution_async]
+  // [END workflowexecutions_v1beta_generated_Executions_CreateExecution_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, deliveryPipelineId, deliveryPipeline) {
-  // [START deploy_v1_generated_CloudDeploy_CreateDeliveryPipeline_async]
+  // [START clouddeploy_v1_generated_CloudDeploy_CreateDeliveryPipeline_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -74,7 +74,7 @@ function main(parent, deliveryPipelineId, deliveryPipeline) {
   }
 
   createDeliveryPipeline();
-  // [END deploy_v1_generated_CloudDeploy_CreateDeliveryPipeline_async]
+  // [END clouddeploy_v1_generated_CloudDeploy_CreateDeliveryPipeline_async]
 }
 
 process.on('unhandledRejection', err => {

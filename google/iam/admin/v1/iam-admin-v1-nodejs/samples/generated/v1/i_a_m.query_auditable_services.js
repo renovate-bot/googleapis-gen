@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_v1_generated_IAM_QueryAuditableServices_async]
+  // [START iam_v1_generated_IAM_QueryAuditableServices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   queryAuditableServices();
-  // [END admin_v1_generated_IAM_QueryAuditableServices_async]
+  // [END iam_v1_generated_IAM_QueryAuditableServices_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask) {
-  // [START service_v1beta1_generated_Environments_UpdateEnvironment_async]
+  // [START composer_v1beta1_generated_Environments_UpdateEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -173,7 +173,7 @@ function main(updateMask) {
   }
 
   updateEnvironment();
-  // [END service_v1beta1_generated_Environments_UpdateEnvironment_async]
+  // [END composer_v1beta1_generated_Environments_UpdateEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

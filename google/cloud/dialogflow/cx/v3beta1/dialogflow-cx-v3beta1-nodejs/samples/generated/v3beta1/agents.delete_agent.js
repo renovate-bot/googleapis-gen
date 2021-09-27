@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3beta1_generated_Agents_DeleteAgent_async]
+  // [START dialogflow_v3beta1_generated_Agents_DeleteAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteAgent();
-  // [END cx_v3beta1_generated_Agents_DeleteAgent_async]
+  // [END dialogflow_v3beta1_generated_Agents_DeleteAgent_async]
 }
 
 process.on('unhandledRejection', err => {

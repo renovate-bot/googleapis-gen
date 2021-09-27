@@ -16,7 +16,7 @@
 'use strict';
 
 function main(dataRetentionSettings, updateMask) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateDataRetentionSettings_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateDataRetentionSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(dataRetentionSettings, updateMask) {
   }
 
   updateDataRetentionSettings();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateDataRetentionSettings_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateDataRetentionSettings_async]
 }
 
 process.on('unhandledRejection', err => {

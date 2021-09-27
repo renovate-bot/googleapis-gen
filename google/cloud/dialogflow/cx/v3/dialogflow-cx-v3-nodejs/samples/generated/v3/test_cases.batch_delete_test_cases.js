@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, names) {
-  // [START cx_v3_generated_TestCases_BatchDeleteTestCases_async]
+  // [START dialogflow_v3_generated_TestCases_BatchDeleteTestCases_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, names) {
   }
 
   batchDeleteTestCases();
-  // [END cx_v3_generated_TestCases_BatchDeleteTestCases_async]
+  // [END dialogflow_v3_generated_TestCases_BatchDeleteTestCases_async]
 }
 
 process.on('unhandledRejection', err => {

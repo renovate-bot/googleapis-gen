@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_GetUserLink_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetUserLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getUserLink();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_GetUserLink_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetUserLink_async]
 }
 
 process.on('unhandledRejection', err => {

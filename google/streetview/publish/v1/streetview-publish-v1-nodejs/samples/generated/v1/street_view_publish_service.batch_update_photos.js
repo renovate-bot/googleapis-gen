@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START publish_v1_generated_StreetViewPublishService_BatchUpdatePhotos_async]
+  // [START streetviewpublish_v1_generated_StreetViewPublishService_BatchUpdatePhotos_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   batchUpdatePhotos();
-  // [END publish_v1_generated_StreetViewPublishService_BatchUpdatePhotos_async]
+  // [END streetviewpublish_v1_generated_StreetViewPublishService_BatchUpdatePhotos_async]
 }
 
 process.on('unhandledRejection', err => {

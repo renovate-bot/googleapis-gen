@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, payload) {
-  // [START admin_v1_generated_IAM_SignJwt_async]
+  // [START iam_v1_generated_IAM_SignJwt_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -63,7 +63,7 @@ function main(name, payload) {
   }
 
   signJwt();
-  // [END admin_v1_generated_IAM_SignJwt_async]
+  // [END iam_v1_generated_IAM_SignJwt_async]
 }
 
 process.on('unhandledRejection', err => {

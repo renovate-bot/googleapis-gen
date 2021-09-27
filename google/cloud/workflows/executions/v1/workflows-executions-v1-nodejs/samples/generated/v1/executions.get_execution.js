@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START executions_v1_generated_Executions_GetExecution_async]
+  // [START workflowexecutions_v1_generated_Executions_GetExecution_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(name) {
   }
 
   getExecution();
-  // [END executions_v1_generated_Executions_GetExecution_async]
+  // [END workflowexecutions_v1_generated_Executions_GetExecution_async]
 }
 
 process.on('unhandledRejection', err => {

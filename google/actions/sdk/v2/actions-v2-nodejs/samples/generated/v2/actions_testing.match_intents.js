@@ -16,7 +16,7 @@
 'use strict';
 
 function main(project, query, locale) {
-  // [START sdk_v2_generated_ActionsTesting_MatchIntents_async]
+  // [START actions_v2_generated_ActionsTesting_MatchIntents_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(project, query, locale) {
   }
 
   matchIntents();
-  // [END sdk_v2_generated_ActionsTesting_MatchIntents_async]
+  // [END actions_v2_generated_ActionsTesting_MatchIntents_async]
 }
 
 process.on('unhandledRejection', err => {

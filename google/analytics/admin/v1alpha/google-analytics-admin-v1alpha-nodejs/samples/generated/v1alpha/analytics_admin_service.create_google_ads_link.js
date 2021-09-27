@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, googleAdsLink) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateGoogleAdsLink_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateGoogleAdsLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(parent, googleAdsLink) {
   }
 
   createGoogleAdsLink();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateGoogleAdsLink_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateGoogleAdsLink_async]
 }
 
 process.on('unhandledRejection', err => {

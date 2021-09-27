@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START activity_v2_generated_DriveActivityService_QueryDriveActivity_async]
+  // [START driveactivity_v2_generated_DriveActivityService_QueryDriveActivity_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -88,7 +88,7 @@ function main() {
   }
 
   queryDriveActivity();
-  // [END activity_v2_generated_DriveActivityService_QueryDriveActivity_async]
+  // [END driveactivity_v2_generated_DriveActivityService_QueryDriveActivity_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, measurementProtocolSecret) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateMeasurementProtocolSecret_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateMeasurementProtocolSecret_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent, measurementProtocolSecret) {
   }
 
   createMeasurementProtocolSecret();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateMeasurementProtocolSecret_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateMeasurementProtocolSecret_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, permissions) {
-  // [START connection_v1beta1_generated_ConnectionService_TestIamPermissions_async]
+  // [START bigqueryconnection_v1beta1_generated_ConnectionService_TestIamPermissions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, permissions) {
   }
 
   testIamPermissions();
-  // [END connection_v1beta1_generated_ConnectionService_TestIamPermissions_async]
+  // [END bigqueryconnection_v1beta1_generated_ConnectionService_TestIamPermissions_async]
 }
 
 process.on('unhandledRejection', err => {

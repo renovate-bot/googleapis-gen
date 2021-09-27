@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START marketplace_v2_generated_LicenseNotificationService_List_async]
+  // [START appsmarket_v2_generated_LicenseNotificationService_List_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main() {
   }
 
   list();
-  // [END marketplace_v2_generated_LicenseNotificationService_List_async]
+  // [END appsmarket_v2_generated_LicenseNotificationService_List_async]
 }
 
 process.on('unhandledRejection', err => {

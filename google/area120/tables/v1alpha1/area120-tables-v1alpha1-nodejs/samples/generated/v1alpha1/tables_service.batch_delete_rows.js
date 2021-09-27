@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, names) {
-  // [START tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
+  // [START area120tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent, names) {
   }
 
   batchDeleteRows();
-  // [END tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
+  // [END area120tables_v1alpha1_generated_TablesService_BatchDeleteRows_async]
 }
 
 process.on('unhandledRejection', err => {

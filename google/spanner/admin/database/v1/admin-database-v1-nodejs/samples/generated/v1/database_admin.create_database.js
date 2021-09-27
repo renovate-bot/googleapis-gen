@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, createStatement) {
-  // [START database_v1_generated_DatabaseAdmin_CreateDatabase_async]
+  // [START spanner_v1_generated_DatabaseAdmin_CreateDatabase_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent, createStatement) {
   }
 
   createDatabase();
-  // [END database_v1_generated_DatabaseAdmin_CreateDatabase_async]
+  // [END spanner_v1_generated_DatabaseAdmin_CreateDatabase_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(profile) {
-  // [START talent_v4beta1_generated_ProfileService_UpdateProfile_async]
+  // [START jobs_v4beta1_generated_ProfileService_UpdateProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(profile) {
   }
 
   updateProfile();
-  // [END talent_v4beta1_generated_ProfileService_UpdateProfile_async]
+  // [END jobs_v4beta1_generated_ProfileService_UpdateProfile_async]
 }
 
 process.on('unhandledRejection', err => {

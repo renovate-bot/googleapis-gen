@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START secrets_v1beta1_generated_SecretManagerService_SetIamPolicy_async]
+  // [START secretmanager_v1beta1_generated_SecretManagerService_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END secrets_v1beta1_generated_SecretManagerService_SetIamPolicy_async]
+  // [END secretmanager_v1beta1_generated_SecretManagerService_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

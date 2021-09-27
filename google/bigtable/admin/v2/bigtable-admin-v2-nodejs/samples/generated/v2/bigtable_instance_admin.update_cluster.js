@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, state, serveNodes, encryptionConfig) {
-  // [START admin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async]
+  // [START bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(name, state, serveNodes, encryptionConfig) {
   }
 
   updateCluster();
-  // [END admin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async]
+  // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async]
 }
 
 process.on('unhandledRejection', err => {

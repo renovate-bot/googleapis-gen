@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START reservation_v1beta1_generated_ReservationService_GetBiReservation_async]
+  // [START bigqueryreservation_v1beta1_generated_ReservationService_GetBiReservation_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getBiReservation();
-  // [END reservation_v1beta1_generated_ReservationService_GetBiReservation_async]
+  // [END bigqueryreservation_v1beta1_generated_ReservationService_GetBiReservation_async]
 }
 
 process.on('unhandledRejection', err => {

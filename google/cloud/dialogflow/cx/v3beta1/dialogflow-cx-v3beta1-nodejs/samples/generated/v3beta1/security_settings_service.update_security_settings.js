@@ -16,7 +16,7 @@
 'use strict';
 
 function main(securitySettings, updateMask) {
-  // [START cx_v3beta1_generated_SecuritySettingsService_UpdateSecuritySettings_async]
+  // [START dialogflow_v3beta1_generated_SecuritySettingsService_UpdateSecuritySettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(securitySettings, updateMask) {
   }
 
   updateSecuritySettings();
-  // [END cx_v3beta1_generated_SecuritySettingsService_UpdateSecuritySettings_async]
+  // [END dialogflow_v3beta1_generated_SecuritySettingsService_UpdateSecuritySettings_async]
 }
 
 process.on('unhandledRejection', err => {

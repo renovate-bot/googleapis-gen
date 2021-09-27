@@ -16,7 +16,7 @@
 'use strict';
 
 function main(scope) {
-  // [START asset_v1_generated_AssetService_SearchAllResources_async]
+  // [START cloudasset_v1_generated_AssetService_SearchAllResources_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -173,7 +173,7 @@ function main(scope) {
   }
 
   searchAllResources();
-  // [END asset_v1_generated_AssetService_SearchAllResources_async]
+  // [END cloudasset_v1_generated_AssetService_SearchAllResources_async]
 }
 
 process.on('unhandledRejection', err => {

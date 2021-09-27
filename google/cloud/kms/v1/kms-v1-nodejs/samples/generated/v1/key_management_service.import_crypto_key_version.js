@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, algorithm, importJob) {
-  // [START kms_v1_generated_KeyManagementService_ImportCryptoKeyVersion_async]
+  // [START cloudkms_v1_generated_KeyManagementService_ImportCryptoKeyVersion_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -99,7 +99,7 @@ function main(parent, algorithm, importJob) {
   }
 
   importCryptoKeyVersion();
-  // [END kms_v1_generated_KeyManagementService_ImportCryptoKeyVersion_async]
+  // [END cloudkms_v1_generated_KeyManagementService_ImportCryptoKeyVersion_async]
 }
 
 process.on('unhandledRejection', err => {

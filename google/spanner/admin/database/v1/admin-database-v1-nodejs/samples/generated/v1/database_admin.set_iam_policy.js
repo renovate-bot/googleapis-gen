@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START database_v1_generated_DatabaseAdmin_SetIamPolicy_async]
+  // [START spanner_v1_generated_DatabaseAdmin_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END database_v1_generated_DatabaseAdmin_SetIamPolicy_async]
+  // [END spanner_v1_generated_DatabaseAdmin_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

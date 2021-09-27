@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, backup, backupId) {
-  // [START filestore_v1beta1_generated_CloudFilestoreManager_CreateBackup_async]
+  // [START file_v1beta1_generated_CloudFilestoreManager_CreateBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, backup, backupId) {
   }
 
   createBackup();
-  // [END filestore_v1beta1_generated_CloudFilestoreManager_CreateBackup_async]
+  // [END file_v1beta1_generated_CloudFilestoreManager_CreateBackup_async]
 }
 
 process.on('unhandledRejection', err => {

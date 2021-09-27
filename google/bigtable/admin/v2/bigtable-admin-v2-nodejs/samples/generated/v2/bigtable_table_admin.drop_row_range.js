@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_v2_generated_BigtableTableAdmin_DropRowRange_async]
+  // [START bigtableadmin_v2_generated_BigtableTableAdmin_DropRowRange_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(name) {
   }
 
   dropRowRange();
-  // [END admin_v2_generated_BigtableTableAdmin_DropRowRange_async]
+  // [END bigtableadmin_v2_generated_BigtableTableAdmin_DropRowRange_async]
 }
 
 process.on('unhandledRejection', err => {

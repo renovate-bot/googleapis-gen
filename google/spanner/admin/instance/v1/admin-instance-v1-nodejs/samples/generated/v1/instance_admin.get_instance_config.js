@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START instance_v1_generated_InstanceAdmin_GetInstanceConfig_async]
+  // [START spanner_v1_generated_InstanceAdmin_GetInstanceConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getInstanceConfig();
-  // [END instance_v1_generated_InstanceAdmin_GetInstanceConfig_async]
+  // [END spanner_v1_generated_InstanceAdmin_GetInstanceConfig_async]
 }
 
 process.on('unhandledRejection', err => {

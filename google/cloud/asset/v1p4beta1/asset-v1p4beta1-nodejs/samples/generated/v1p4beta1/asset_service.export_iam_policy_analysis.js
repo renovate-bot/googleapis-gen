@@ -16,7 +16,7 @@
 'use strict';
 
 function main(analysisQuery, outputConfig) {
-  // [START asset_v1p4beta1_generated_AssetService_ExportIamPolicyAnalysis_async]
+  // [START cloudasset_v1p4beta1_generated_AssetService_ExportIamPolicyAnalysis_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(analysisQuery, outputConfig) {
   }
 
   exportIamPolicyAnalysis();
-  // [END asset_v1p4beta1_generated_AssetService_ExportIamPolicyAnalysis_async]
+  // [END cloudasset_v1p4beta1_generated_AssetService_ExportIamPolicyAnalysis_async]
 }
 
 process.on('unhandledRejection', err => {

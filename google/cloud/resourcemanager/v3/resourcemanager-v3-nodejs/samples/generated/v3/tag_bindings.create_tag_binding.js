@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tagBinding) {
-  // [START resourcemanager_v3_generated_TagBindings_CreateTagBinding_async]
+  // [START cloudresourcemanager_v3_generated_TagBindings_CreateTagBinding_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(tagBinding) {
   }
 
   createTagBinding();
-  // [END resourcemanager_v3_generated_TagBindings_CreateTagBinding_async]
+  // [END cloudresourcemanager_v3_generated_TagBindings_CreateTagBinding_async]
 }
 
 process.on('unhandledRejection', err => {

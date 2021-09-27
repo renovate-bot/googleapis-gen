@@ -16,7 +16,7 @@
 'use strict';
 
 function main(agent, type) {
-  // [START cx_v3beta1_generated_TestCases_CalculateCoverage_async]
+  // [START dialogflow_v3beta1_generated_TestCases_CalculateCoverage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(agent, type) {
   }
 
   calculateCoverage();
-  // [END cx_v3beta1_generated_TestCases_CalculateCoverage_async]
+  // [END dialogflow_v3beta1_generated_TestCases_CalculateCoverage_async]
 }
 
 process.on('unhandledRejection', err => {

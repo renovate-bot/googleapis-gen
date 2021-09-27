@@ -16,7 +16,7 @@
 'use strict';
 
 function main(customer) {
-  // [START channel_v1_generated_CloudChannelService_ProvisionCloudIdentity_async]
+  // [START cloudchannel_v1_generated_CloudChannelService_ProvisionCloudIdentity_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(customer) {
   }
 
   provisionCloudIdentity();
-  // [END channel_v1_generated_CloudChannelService_ProvisionCloudIdentity_async]
+  // [END cloudchannel_v1_generated_CloudChannelService_ProvisionCloudIdentity_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(tagValue) {
-  // [START resourcemanager_v3_generated_TagValues_UpdateTagValue_async]
+  // [START cloudresourcemanager_v3_generated_TagValues_UpdateTagValue_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(tagValue) {
   }
 
   updateTagValue();
-  // [END resourcemanager_v3_generated_TagValues_UpdateTagValue_async]
+  // [END cloudresourcemanager_v3_generated_TagValues_UpdateTagValue_async]
 }
 
 process.on('unhandledRejection', err => {

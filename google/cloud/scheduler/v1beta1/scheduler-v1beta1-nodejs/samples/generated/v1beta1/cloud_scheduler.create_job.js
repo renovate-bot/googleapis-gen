@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, job) {
-  // [START scheduler_v1beta1_generated_CloudScheduler_CreateJob_async]
+  // [START cloudscheduler_v1beta1_generated_CloudScheduler_CreateJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent, job) {
   }
 
   createJob();
-  // [END scheduler_v1beta1_generated_CloudScheduler_CreateJob_async]
+  // [END cloudscheduler_v1beta1_generated_CloudScheduler_CreateJob_async]
 }
 
 process.on('unhandledRejection', err => {

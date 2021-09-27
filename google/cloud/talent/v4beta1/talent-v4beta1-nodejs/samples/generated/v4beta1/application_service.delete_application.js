@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START talent_v4beta1_generated_ApplicationService_DeleteApplication_async]
+  // [START jobs_v4beta1_generated_ApplicationService_DeleteApplication_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   deleteApplication();
-  // [END talent_v4beta1_generated_ApplicationService_DeleteApplication_async]
+  // [END jobs_v4beta1_generated_ApplicationService_DeleteApplication_async]
 }
 
 process.on('unhandledRejection', err => {

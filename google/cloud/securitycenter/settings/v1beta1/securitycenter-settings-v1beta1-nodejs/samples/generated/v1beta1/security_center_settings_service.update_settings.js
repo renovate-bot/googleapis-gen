@@ -16,7 +16,7 @@
 'use strict';
 
 function main(settings) {
-  // [START settings_v1beta1_generated_SecurityCenterSettingsService_UpdateSettings_async]
+  // [START securitycenter_v1beta1_generated_SecurityCenterSettingsService_UpdateSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(settings) {
   }
 
   updateSettings();
-  // [END settings_v1beta1_generated_SecurityCenterSettingsService_UpdateSettings_async]
+  // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_UpdateSettings_async]
 }
 
 process.on('unhandledRejection', err => {

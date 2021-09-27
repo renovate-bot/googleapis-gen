@@ -16,7 +16,7 @@
 'use strict';
 
 function main(realm, updateMask) {
-  // [START gaming_v1beta_generated_RealmsService_PreviewRealmUpdate_async]
+  // [START gameservices_v1beta_generated_RealmsService_PreviewRealmUpdate_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(realm, updateMask) {
   }
 
   previewRealmUpdate();
-  // [END gaming_v1beta_generated_RealmsService_PreviewRealmUpdate_async]
+  // [END gameservices_v1beta_generated_RealmsService_PreviewRealmUpdate_async]
 }
 
 process.on('unhandledRejection', err => {

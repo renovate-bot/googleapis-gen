@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instance, fieldMask) {
-  // [START instance_v1_generated_InstanceAdmin_UpdateInstance_async]
+  // [START spanner_v1_generated_InstanceAdmin_UpdateInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(instance, fieldMask) {
   }
 
   updateInstance();
-  // [END instance_v1_generated_InstanceAdmin_UpdateInstance_async]
+  // [END spanner_v1_generated_InstanceAdmin_UpdateInstance_async]
 }
 
 process.on('unhandledRejection', err => {

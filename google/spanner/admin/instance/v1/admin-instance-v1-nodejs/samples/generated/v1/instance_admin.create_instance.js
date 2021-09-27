@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, instanceId, instance) {
-  // [START instance_v1_generated_InstanceAdmin_CreateInstance_async]
+  // [START spanner_v1_generated_InstanceAdmin_CreateInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(parent, instanceId, instance) {
   }
 
   createInstance();
-  // [END instance_v1_generated_InstanceAdmin_CreateInstance_async]
+  // [END spanner_v1_generated_InstanceAdmin_CreateInstance_async]
 }
 
 process.on('unhandledRejection', err => {

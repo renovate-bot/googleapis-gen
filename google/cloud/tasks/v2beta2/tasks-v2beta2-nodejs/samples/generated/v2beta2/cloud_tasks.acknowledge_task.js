@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, scheduleTime) {
-  // [START tasks_v2beta2_generated_CloudTasks_AcknowledgeTask_async]
+  // [START cloudtasks_v2beta2_generated_CloudTasks_AcknowledgeTask_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name, scheduleTime) {
   }
 
   acknowledgeTask();
-  // [END tasks_v2beta2_generated_CloudTasks_AcknowledgeTask_async]
+  // [END cloudtasks_v2beta2_generated_CloudTasks_AcknowledgeTask_async]
 }
 
 process.on('unhandledRejection', err => {

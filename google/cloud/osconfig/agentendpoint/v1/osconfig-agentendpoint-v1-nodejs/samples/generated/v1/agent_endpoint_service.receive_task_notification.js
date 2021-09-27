@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instanceIdToken, agentVersion) {
-  // [START agentendpoint_v1_generated_AgentEndpointService_ReceiveTaskNotification_async]
+  // [START osconfig_v1_generated_AgentEndpointService_ReceiveTaskNotification_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(instanceIdToken, agentVersion) {
   }
 
   receiveTaskNotification();
-  // [END agentendpoint_v1_generated_AgentEndpointService_ReceiveTaskNotification_async]
+  // [END osconfig_v1_generated_AgentEndpointService_ReceiveTaskNotification_async]
 }
 
 process.on('unhandledRejection', err => {

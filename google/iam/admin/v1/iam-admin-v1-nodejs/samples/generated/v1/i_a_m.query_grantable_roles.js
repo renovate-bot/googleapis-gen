@@ -16,7 +16,7 @@
 'use strict';
 
 function main(fullResourceName) {
-  // [START admin_v1_generated_IAM_QueryGrantableRoles_async]
+  // [START iam_v1_generated_IAM_QueryGrantableRoles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(fullResourceName) {
   }
 
   queryGrantableRoles();
-  // [END admin_v1_generated_IAM_QueryGrantableRoles_async]
+  // [END iam_v1_generated_IAM_QueryGrantableRoles_async]
 }
 
 process.on('unhandledRejection', err => {

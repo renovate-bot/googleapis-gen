@@ -16,7 +16,7 @@
 'use strict';
 
 function main(webDataStream, parent) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateWebDataStream_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateWebDataStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(webDataStream, parent) {
   }
 
   createWebDataStream();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateWebDataStream_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateWebDataStream_async]
 }
 
 process.on('unhandledRejection', err => {

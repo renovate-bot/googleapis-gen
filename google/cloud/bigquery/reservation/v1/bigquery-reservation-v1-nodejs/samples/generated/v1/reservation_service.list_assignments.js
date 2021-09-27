@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START reservation_v1_generated_ReservationService_ListAssignments_async]
+  // [START bigqueryreservation_v1_generated_ReservationService_ListAssignments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent) {
   }
 
   listAssignments();
-  // [END reservation_v1_generated_ReservationService_ListAssignments_async]
+  // [END bigqueryreservation_v1_generated_ReservationService_ListAssignments_async]
 }
 
 process.on('unhandledRejection', err => {

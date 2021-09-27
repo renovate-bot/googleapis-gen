@@ -16,7 +16,7 @@
 'use strict';
 
 function main(gameServerCluster, updateMask) {
-  // [START gaming_v1_generated_GameServerClustersService_UpdateGameServerCluster_async]
+  // [START gameservices_v1_generated_GameServerClustersService_UpdateGameServerCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(gameServerCluster, updateMask) {
   }
 
   updateGameServerCluster();
-  // [END gaming_v1_generated_GameServerClustersService_UpdateGameServerCluster_async]
+  // [END gameservices_v1_generated_GameServerClustersService_UpdateGameServerCluster_async]
 }
 
 process.on('unhandledRejection', err => {

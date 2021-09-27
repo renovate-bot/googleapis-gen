@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START resourcemanager_v3_generated_Folders_ListFolders_async]
+  // [START cloudresourcemanager_v3_generated_Folders_ListFolders_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(parent) {
   }
 
   listFolders();
-  // [END resourcemanager_v3_generated_Folders_ListFolders_async]
+  // [END cloudresourcemanager_v3_generated_Folders_ListFolders_async]
 }
 
 process.on('unhandledRejection', err => {

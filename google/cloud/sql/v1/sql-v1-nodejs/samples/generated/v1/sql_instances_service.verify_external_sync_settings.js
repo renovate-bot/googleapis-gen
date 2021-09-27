@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_v1_generated_SqlInstancesService_VerifyExternalSyncSettings_async]
+  // [START sqladmin_v1_generated_SqlInstancesService_VerifyExternalSyncSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -62,7 +62,7 @@ function main() {
   }
 
   verifyExternalSyncSettings();
-  // [END sql_v1_generated_SqlInstancesService_VerifyExternalSyncSettings_async]
+  // [END sqladmin_v1_generated_SqlInstancesService_VerifyExternalSyncSettings_async]
 }
 
 process.on('unhandledRejection', err => {

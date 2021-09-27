@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START service_v1_generated_Environments_ListEnvironments_async]
+  // [START composer_v1_generated_Environments_ListEnvironments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   listEnvironments();
-  // [END service_v1_generated_Environments_ListEnvironments_async]
+  // [END composer_v1_generated_Environments_ListEnvironments_async]
 }
 
 process.on('unhandledRejection', err => {

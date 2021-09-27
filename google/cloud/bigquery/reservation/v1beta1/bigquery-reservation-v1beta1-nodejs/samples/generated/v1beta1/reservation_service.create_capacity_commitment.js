@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START reservation_v1beta1_generated_ReservationService_CreateCapacityCommitment_async]
+  // [START bigqueryreservation_v1beta1_generated_ReservationService_CreateCapacityCommitment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent) {
   }
 
   createCapacityCommitment();
-  // [END reservation_v1beta1_generated_ReservationService_CreateCapacityCommitment_async]
+  // [END bigqueryreservation_v1beta1_generated_ReservationService_CreateCapacityCommitment_async]
 }
 
 process.on('unhandledRejection', err => {

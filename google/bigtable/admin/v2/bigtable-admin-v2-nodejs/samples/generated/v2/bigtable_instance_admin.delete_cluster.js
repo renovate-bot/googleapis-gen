@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_v2_generated_BigtableInstanceAdmin_DeleteCluster_async]
+  // [START bigtableadmin_v2_generated_BigtableInstanceAdmin_DeleteCluster_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteCluster();
-  // [END admin_v2_generated_BigtableInstanceAdmin_DeleteCluster_async]
+  // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_DeleteCluster_async]
 }
 
 process.on('unhandledRejection', err => {

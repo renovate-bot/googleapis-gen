@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sdm_v1_generated_SmartDeviceManagementService_GetStructure_async]
+  // [START smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetStructure_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   getStructure();
-  // [END sdm_v1_generated_SmartDeviceManagementService_GetStructure_async]
+  // [END smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetStructure_async]
 }
 
 process.on('unhandledRejection', err => {

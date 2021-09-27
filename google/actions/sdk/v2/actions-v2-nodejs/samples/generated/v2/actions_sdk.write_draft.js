@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, files) {
-  // [START sdk_v2_generated_ActionsSdk_WriteDraft_async]
+  // [START actions_v2_generated_ActionsSdk_WriteDraft_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent, files) {
   }
 
   writeDraft();
-  // [END sdk_v2_generated_ActionsSdk_WriteDraft_async]
+  // [END actions_v2_generated_ActionsSdk_WriteDraft_async]
 }
 
 process.on('unhandledRejection', err => {

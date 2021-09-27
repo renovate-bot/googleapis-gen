@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START budgets_v1_generated_BudgetService_DeleteBudget_async]
+  // [START billingbudgets_v1_generated_BudgetService_DeleteBudget_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteBudget();
-  // [END budgets_v1_generated_BudgetService_DeleteBudget_async]
+  // [END billingbudgets_v1_generated_BudgetService_DeleteBudget_async]
 }
 
 process.on('unhandledRejection', err => {

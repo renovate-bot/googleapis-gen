@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START connection_v1_generated_ConnectionService_DeleteConnection_async]
+  // [START bigqueryconnection_v1_generated_ConnectionService_DeleteConnection_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteConnection();
-  // [END connection_v1_generated_ConnectionService_DeleteConnection_async]
+  // [END bigqueryconnection_v1_generated_ConnectionService_DeleteConnection_async]
 }
 
 process.on('unhandledRejection', err => {

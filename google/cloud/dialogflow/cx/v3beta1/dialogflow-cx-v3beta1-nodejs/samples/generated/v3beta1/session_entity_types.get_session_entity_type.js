@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3beta1_generated_SessionEntityTypes_GetSessionEntityType_async]
+  // [START dialogflow_v3beta1_generated_SessionEntityTypes_GetSessionEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(name) {
   }
 
   getSessionEntityType();
-  // [END cx_v3beta1_generated_SessionEntityTypes_GetSessionEntityType_async]
+  // [END dialogflow_v3beta1_generated_SessionEntityTypes_GetSessionEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

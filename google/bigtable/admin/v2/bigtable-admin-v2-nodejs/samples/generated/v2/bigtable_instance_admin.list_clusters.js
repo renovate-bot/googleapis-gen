@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_v2_generated_BigtableInstanceAdmin_ListClusters_async]
+  // [START bigtableadmin_v2_generated_BigtableInstanceAdmin_ListClusters_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent) {
   }
 
   listClusters();
-  // [END admin_v2_generated_BigtableInstanceAdmin_ListClusters_async]
+  // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_ListClusters_async]
 }
 
 process.on('unhandledRejection', err => {

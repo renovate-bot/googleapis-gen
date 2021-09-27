@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, channelPartnerLink) {
-  // [START channel_v1_generated_CloudChannelService_CreateChannelPartnerLink_async]
+  // [START cloudchannel_v1_generated_CloudChannelService_CreateChannelPartnerLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(parent, channelPartnerLink) {
   }
 
   createChannelPartnerLink();
-  // [END channel_v1_generated_CloudChannelService_CreateChannelPartnerLink_async]
+  // [END cloudchannel_v1_generated_CloudChannelService_CreateChannelPartnerLink_async]
 }
 
 process.on('unhandledRejection', err => {

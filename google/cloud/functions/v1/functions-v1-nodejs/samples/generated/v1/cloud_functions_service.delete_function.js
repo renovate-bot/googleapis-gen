@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START functions_v1_generated_CloudFunctionsService_DeleteFunction_async]
+  // [START cloudfunctions_v1_generated_CloudFunctionsService_DeleteFunction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   deleteFunction();
-  // [END functions_v1_generated_CloudFunctionsService_DeleteFunction_async]
+  // [END cloudfunctions_v1_generated_CloudFunctionsService_DeleteFunction_async]
 }
 
 process.on('unhandledRejection', err => {

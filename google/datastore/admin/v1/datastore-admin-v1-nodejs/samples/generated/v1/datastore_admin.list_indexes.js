@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_v1_generated_DatastoreAdmin_ListIndexes_async]
+  // [START datastore_v1_generated_DatastoreAdmin_ListIndexes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main() {
   }
 
   listIndexes();
-  // [END admin_v1_generated_DatastoreAdmin_ListIndexes_async]
+  // [END datastore_v1_generated_DatastoreAdmin_ListIndexes_async]
 }
 
 process.on('unhandledRejection', err => {

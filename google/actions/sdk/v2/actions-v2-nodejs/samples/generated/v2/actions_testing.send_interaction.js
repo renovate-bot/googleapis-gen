@@ -16,7 +16,7 @@
 'use strict';
 
 function main(project, input, deviceProperties) {
-  // [START sdk_v2_generated_ActionsTesting_SendInteraction_async]
+  // [START actions_v2_generated_ActionsTesting_SendInteraction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(project, input, deviceProperties) {
   }
 
   sendInteraction();
-  // [END sdk_v2_generated_ActionsTesting_SendInteraction_async]
+  // [END actions_v2_generated_ActionsTesting_SendInteraction_async]
 }
 
 process.on('unhandledRejection', err => {

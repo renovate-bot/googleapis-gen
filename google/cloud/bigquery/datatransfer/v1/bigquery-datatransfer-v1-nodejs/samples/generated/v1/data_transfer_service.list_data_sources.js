@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START datatransfer_v1_generated_DataTransferService_ListDataSources_async]
+  // [START bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listDataSources();
-  // [END datatransfer_v1_generated_DataTransferService_ListDataSources_async]
+  // [END bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_async]
 }
 
 process.on('unhandledRejection', err => {

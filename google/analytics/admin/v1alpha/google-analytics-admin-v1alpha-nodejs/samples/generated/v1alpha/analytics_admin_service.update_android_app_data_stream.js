@@ -16,7 +16,7 @@
 'use strict';
 
 function main(androidAppDataStream, updateMask) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateAndroidAppDataStream_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateAndroidAppDataStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(androidAppDataStream, updateMask) {
   }
 
   updateAndroidAppDataStream();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateAndroidAppDataStream_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateAndroidAppDataStream_async]
 }
 
 process.on('unhandledRejection', err => {

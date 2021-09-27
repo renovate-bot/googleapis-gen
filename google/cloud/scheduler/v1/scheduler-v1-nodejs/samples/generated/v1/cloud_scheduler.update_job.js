@@ -16,7 +16,7 @@
 'use strict';
 
 function main(job, updateMask) {
-  // [START scheduler_v1_generated_CloudScheduler_UpdateJob_async]
+  // [START cloudscheduler_v1_generated_CloudScheduler_UpdateJob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(job, updateMask) {
   }
 
   updateJob();
-  // [END scheduler_v1_generated_CloudScheduler_UpdateJob_async]
+  // [END cloudscheduler_v1_generated_CloudScheduler_UpdateJob_async]
 }
 
 process.on('unhandledRejection', err => {

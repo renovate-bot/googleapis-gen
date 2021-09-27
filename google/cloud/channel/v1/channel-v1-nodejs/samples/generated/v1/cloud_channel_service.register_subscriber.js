@@ -16,7 +16,7 @@
 'use strict';
 
 function main(account, serviceAccount) {
-  // [START channel_v1_generated_CloudChannelService_RegisterSubscriber_async]
+  // [START cloudchannel_v1_generated_CloudChannelService_RegisterSubscriber_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(account, serviceAccount) {
   }
 
   registerSubscriber();
-  // [END channel_v1_generated_CloudChannelService_RegisterSubscriber_async]
+  // [END cloudchannel_v1_generated_CloudChannelService_RegisterSubscriber_async]
 }
 
 process.on('unhandledRejection', err => {

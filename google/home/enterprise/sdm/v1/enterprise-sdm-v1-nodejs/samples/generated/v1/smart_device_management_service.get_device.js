@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sdm_v1_generated_SmartDeviceManagementService_GetDevice_async]
+  // [START smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetDevice_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main() {
   }
 
   getDevice();
-  // [END sdm_v1_generated_SmartDeviceManagementService_GetDevice_async]
+  // [END smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetDevice_async]
 }
 
 process.on('unhandledRejection', err => {

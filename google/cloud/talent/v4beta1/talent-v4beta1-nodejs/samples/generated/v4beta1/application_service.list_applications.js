@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START talent_v4beta1_generated_ApplicationService_ListApplications_async]
+  // [START jobs_v4beta1_generated_ApplicationService_ListApplications_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(parent) {
   }
 
   listApplications();
-  // [END talent_v4beta1_generated_ApplicationService_ListApplications_async]
+  // [END jobs_v4beta1_generated_ApplicationService_ListApplications_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_v1_generated_FirestoreAdmin_ListIndexes_async]
+  // [START firestore_v1_generated_FirestoreAdmin_ListIndexes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -60,7 +60,7 @@ function main(parent) {
   }
 
   listIndexes();
-  // [END admin_v1_generated_FirestoreAdmin_ListIndexes_async]
+  // [END firestore_v1_generated_FirestoreAdmin_ListIndexes_async]
 }
 
 process.on('unhandledRejection', err => {

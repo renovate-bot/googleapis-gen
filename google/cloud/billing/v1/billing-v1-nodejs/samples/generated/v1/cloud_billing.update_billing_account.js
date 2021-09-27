@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, account) {
-  // [START billing_v1_generated_CloudBilling_UpdateBillingAccount_async]
+  // [START cloudbilling_v1_generated_CloudBilling_UpdateBillingAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(name, account) {
   }
 
   updateBillingAccount();
-  // [END billing_v1_generated_CloudBilling_UpdateBillingAccount_async]
+  // [END cloudbilling_v1_generated_CloudBilling_UpdateBillingAccount_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(project) {
-  // [START resourcemanager_v3_generated_Projects_CreateProject_async]
+  // [START cloudresourcemanager_v3_generated_Projects_CreateProject_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(project) {
   }
 
   createProject();
-  // [END resourcemanager_v3_generated_Projects_CreateProject_async]
+  // [END cloudresourcemanager_v3_generated_Projects_CreateProject_async]
 }
 
 process.on('unhandledRejection', err => {

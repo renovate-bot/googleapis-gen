@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START datatransfer_v1_generated_DataTransferService_StartManualTransferRuns_async]
+  // [START bigquerydatatransfer_v1_generated_DataTransferService_StartManualTransferRuns_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main() {
   }
 
   startManualTransferRuns();
-  // [END datatransfer_v1_generated_DataTransferService_StartManualTransferRuns_async]
+  // [END bigquerydatatransfer_v1_generated_DataTransferService_StartManualTransferRuns_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_v3_generated_Pages_ListPages_async]
+  // [START dialogflow_v3_generated_Pages_ListPages_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -78,7 +78,7 @@ function main(parent) {
   }
 
   listPages();
-  // [END cx_v3_generated_Pages_ListPages_async]
+  // [END dialogflow_v3_generated_Pages_ListPages_async]
 }
 
 process.on('unhandledRejection', err => {

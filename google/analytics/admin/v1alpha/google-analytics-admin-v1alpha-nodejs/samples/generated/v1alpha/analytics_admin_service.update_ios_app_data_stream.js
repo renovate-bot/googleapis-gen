@@ -16,7 +16,7 @@
 'use strict';
 
 function main(iosAppDataStream, updateMask) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateIosAppDataStream_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateIosAppDataStream_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(iosAppDataStream, updateMask) {
   }
 
   updateIosAppDataStream();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateIosAppDataStream_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateIosAppDataStream_async]
 }
 
 process.on('unhandledRejection', err => {

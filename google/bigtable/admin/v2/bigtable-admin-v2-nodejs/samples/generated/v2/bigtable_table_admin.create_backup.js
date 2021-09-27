@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, backupId, backup) {
-  // [START admin_v2_generated_BigtableTableAdmin_CreateBackup_async]
+  // [START bigtableadmin_v2_generated_BigtableTableAdmin_CreateBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent, backupId, backup) {
   }
 
   createBackup();
-  // [END admin_v2_generated_BigtableTableAdmin_CreateBackup_async]
+  // [END bigtableadmin_v2_generated_BigtableTableAdmin_CreateBackup_async]
 }
 
 process.on('unhandledRejection', err => {

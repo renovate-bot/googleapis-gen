@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START sdk_v2_generated_ActionsSdk_ListVersions_async]
+  // [START actions_v2_generated_ActionsSdk_ListVersions_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listVersions();
-  // [END sdk_v2_generated_ActionsSdk_ListVersions_async]
+  // [END actions_v2_generated_ActionsSdk_ListVersions_async]
 }
 
 process.on('unhandledRejection', err => {

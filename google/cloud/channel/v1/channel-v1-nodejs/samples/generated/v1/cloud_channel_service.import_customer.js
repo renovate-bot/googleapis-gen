@@ -16,7 +16,7 @@
 'use strict';
 
 function main(domain, cloudIdentityId, parent, overwriteIfExists) {
-  // [START channel_v1_generated_CloudChannelService_ImportCustomer_async]
+  // [START cloudchannel_v1_generated_CloudChannelService_ImportCustomer_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -81,7 +81,7 @@ function main(domain, cloudIdentityId, parent, overwriteIfExists) {
   }
 
   importCustomer();
-  // [END channel_v1_generated_CloudChannelService_ImportCustomer_async]
+  // [END cloudchannel_v1_generated_CloudChannelService_ImportCustomer_async]
 }
 
 process.on('unhandledRejection', err => {

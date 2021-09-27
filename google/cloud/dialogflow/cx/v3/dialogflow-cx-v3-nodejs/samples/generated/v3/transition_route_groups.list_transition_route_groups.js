@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_v3_generated_TransitionRouteGroups_ListTransitionRouteGroups_async]
+  // [START dialogflow_v3_generated_TransitionRouteGroups_ListTransitionRouteGroups_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(parent) {
   }
 
   listTransitionRouteGroups();
-  // [END cx_v3_generated_TransitionRouteGroups_ListTransitionRouteGroups_async]
+  // [END dialogflow_v3_generated_TransitionRouteGroups_ListTransitionRouteGroups_async]
 }
 
 process.on('unhandledRejection', err => {

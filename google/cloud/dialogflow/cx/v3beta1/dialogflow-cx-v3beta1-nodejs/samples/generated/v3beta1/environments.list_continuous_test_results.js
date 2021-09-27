@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_v3beta1_generated_Environments_ListContinuousTestResults_async]
+  // [START dialogflow_v3beta1_generated_Environments_ListContinuousTestResults_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(parent) {
   }
 
   listContinuousTestResults();
-  // [END cx_v3beta1_generated_Environments_ListContinuousTestResults_async]
+  // [END dialogflow_v3beta1_generated_Environments_ListContinuousTestResults_async]
 }
 
 process.on('unhandledRejection', err => {

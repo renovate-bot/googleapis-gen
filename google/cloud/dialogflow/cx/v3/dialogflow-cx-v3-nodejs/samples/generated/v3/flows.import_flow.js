@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START cx_v3_generated_Flows_ImportFlow_async]
+  // [START dialogflow_v3_generated_Flows_ImportFlow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   importFlow();
-  // [END cx_v3_generated_Flows_ImportFlow_async]
+  // [END dialogflow_v3_generated_Flows_ImportFlow_async]
 }
 
 process.on('unhandledRejection', err => {

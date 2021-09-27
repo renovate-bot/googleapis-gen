@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, outputUrlPrefix) {
-  // [START admin_v1_generated_DatastoreAdmin_ExportEntities_async]
+  // [START datastore_v1_generated_DatastoreAdmin_ExportEntities_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(projectId, outputUrlPrefix) {
   }
 
   exportEntities();
-  // [END admin_v1_generated_DatastoreAdmin_ExportEntities_async]
+  // [END datastore_v1_generated_DatastoreAdmin_ExportEntities_async]
 }
 
 process.on('unhandledRejection', err => {

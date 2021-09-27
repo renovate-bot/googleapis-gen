@@ -16,7 +16,7 @@
 'use strict';
 
 function main(deviceRegistry, updateMask) {
-  // [START iot_v1_generated_DeviceManager_UpdateDeviceRegistry_async]
+  // [START cloudiot_v1_generated_DeviceManager_UpdateDeviceRegistry_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main(deviceRegistry, updateMask) {
   }
 
   updateDeviceRegistry();
-  // [END iot_v1_generated_DeviceManager_UpdateDeviceRegistry_async]
+  // [END cloudiot_v1_generated_DeviceManager_UpdateDeviceRegistry_async]
 }
 
 process.on('unhandledRejection', err => {

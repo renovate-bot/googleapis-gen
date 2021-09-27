@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START migration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
+  // [START bigquerymigration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   getMigrationWorkflow();
-  // [END migration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
+  // [END bigquerymigration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
 }
 
 process.on('unhandledRejection', err => {

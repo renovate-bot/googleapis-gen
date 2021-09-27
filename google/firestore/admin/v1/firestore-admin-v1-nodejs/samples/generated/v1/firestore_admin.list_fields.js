@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_v1_generated_FirestoreAdmin_ListFields_async]
+  // [START firestore_v1_generated_FirestoreAdmin_ListFields_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main(parent) {
   }
 
   listFields();
-  // [END admin_v1_generated_FirestoreAdmin_ListFields_async]
+  // [END firestore_v1_generated_FirestoreAdmin_ListFields_async]
 }
 
 process.on('unhandledRejection', err => {

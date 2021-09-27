@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, customDimension) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateCustomDimension_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateCustomDimension_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(parent, customDimension) {
   }
 
   createCustomDimension();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateCustomDimension_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateCustomDimension_async]
 }
 
 process.on('unhandledRejection', err => {

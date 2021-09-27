@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START dashboard_v1_generated_DashboardsService_GetDashboard_async]
+  // [START monitoring_v1_generated_DashboardsService_GetDashboard_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   getDashboard();
-  // [END dashboard_v1_generated_DashboardsService_GetDashboard_async]
+  // [END monitoring_v1_generated_DashboardsService_GetDashboard_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateDisplayVideo360AdvertiserLink_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateDisplayVideo360AdvertiserLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(updateMask) {
   }
 
   updateDisplayVideo360AdvertiserLink();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateDisplayVideo360AdvertiserLink_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateDisplayVideo360AdvertiserLink_async]
 }
 
 process.on('unhandledRejection', err => {

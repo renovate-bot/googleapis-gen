@@ -16,7 +16,7 @@
 'use strict';
 
 function main(backup, updateMask) {
-  // [START database_v1_generated_DatabaseAdmin_UpdateBackup_async]
+  // [START spanner_v1_generated_DatabaseAdmin_UpdateBackup_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -55,7 +55,7 @@ function main(backup, updateMask) {
   }
 
   updateBackup();
-  // [END database_v1_generated_DatabaseAdmin_UpdateBackup_async]
+  // [END spanner_v1_generated_DatabaseAdmin_UpdateBackup_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_v1_generated_SqlConnectService_GenerateEphemeralCert_async]
+  // [START sqladmin_v1_generated_SqlConnectService_GenerateEphemeralCert_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main() {
   }
 
   generateEphemeralCert();
-  // [END sql_v1_generated_SqlConnectService_GenerateEphemeralCert_async]
+  // [END sqladmin_v1_generated_SqlConnectService_GenerateEphemeralCert_async]
 }
 
 process.on('unhandledRejection', err => {

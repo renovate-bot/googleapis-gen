@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource, policy) {
-  // [START resourcemanager_v3_generated_Organizations_SetIamPolicy_async]
+  // [START cloudresourcemanager_v3_generated_Organizations_SetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(resource, policy) {
   }
 
   setIamPolicy();
-  // [END resourcemanager_v3_generated_Organizations_SetIamPolicy_async]
+  // [END cloudresourcemanager_v3_generated_Organizations_SetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

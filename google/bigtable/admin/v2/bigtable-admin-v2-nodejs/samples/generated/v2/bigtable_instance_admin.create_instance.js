@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, instanceId, instance, clusters) {
-  // [START admin_v2_generated_BigtableInstanceAdmin_CreateInstance_async]
+  // [START bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateInstance_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent, instanceId, instance, clusters) {
   }
 
   createInstance();
-  // [END admin_v2_generated_BigtableInstanceAdmin_CreateInstance_async]
+  // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateInstance_async]
 }
 
 process.on('unhandledRejection', err => {

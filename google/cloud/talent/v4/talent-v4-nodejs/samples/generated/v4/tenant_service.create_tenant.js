@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, tenant) {
-  // [START talent_v4_generated_TenantService_CreateTenant_async]
+  // [START jobs_v4_generated_TenantService_CreateTenant_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main(parent, tenant) {
   }
 
   createTenant();
-  // [END talent_v4_generated_TenantService_CreateTenant_async]
+  // [END jobs_v4_generated_TenantService_CreateTenant_async]
 }
 
 process.on('unhandledRejection', err => {

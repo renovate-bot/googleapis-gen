@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, readSession) {
-  // [START storage_v1_generated_BigQueryRead_CreateReadSession_async]
+  // [START bigquerystorage_v1_generated_BigQueryRead_CreateReadSession_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, readSession) {
   }
 
   createReadSession();
-  // [END storage_v1_generated_BigQueryRead_CreateReadSession_async]
+  // [END bigquerystorage_v1_generated_BigQueryRead_CreateReadSession_async]
 }
 
 process.on('unhandledRejection', err => {

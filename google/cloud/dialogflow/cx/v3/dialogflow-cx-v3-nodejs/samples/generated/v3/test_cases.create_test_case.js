@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, testCase) {
-  // [START cx_v3_generated_TestCases_CreateTestCase_async]
+  // [START dialogflow_v3_generated_TestCases_CreateTestCase_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, testCase) {
   }
 
   createTestCase();
-  // [END cx_v3_generated_TestCases_CreateTestCase_async]
+  // [END dialogflow_v3_generated_TestCases_CreateTestCase_async]
 }
 
 process.on('unhandledRejection', err => {

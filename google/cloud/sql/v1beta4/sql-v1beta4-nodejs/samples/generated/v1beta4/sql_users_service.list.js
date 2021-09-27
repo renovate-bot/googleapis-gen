@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_v1beta4_generated_SqlUsersService_List_async]
+  // [START sqladmin_v1beta4_generated_SqlUsersService_List_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main() {
   }
 
   list();
-  // [END sql_v1beta4_generated_SqlUsersService_List_async]
+  // [END sqladmin_v1beta4_generated_SqlUsersService_List_async]
 }
 
 process.on('unhandledRejection', err => {

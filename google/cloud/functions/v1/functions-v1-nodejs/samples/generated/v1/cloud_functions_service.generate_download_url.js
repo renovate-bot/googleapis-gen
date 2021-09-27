@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START functions_v1_generated_CloudFunctionsService_GenerateDownloadUrl_async]
+  // [START cloudfunctions_v1_generated_CloudFunctionsService_GenerateDownloadUrl_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main() {
   }
 
   generateDownloadUrl();
-  // [END functions_v1_generated_CloudFunctionsService_GenerateDownloadUrl_async]
+  // [END cloudfunctions_v1_generated_CloudFunctionsService_GenerateDownloadUrl_async]
 }
 
 process.on('unhandledRejection', err => {

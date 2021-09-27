@@ -16,7 +16,7 @@
 'use strict';
 
 function main(readStream) {
-  // [START storage_v1beta2_generated_BigQueryRead_ReadRows_async]
+  // [START bigquerystorage_v1beta2_generated_BigQueryRead_ReadRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(readStream) {
   }
 
   readRows();
-  // [END storage_v1beta2_generated_BigQueryRead_ReadRows_async]
+  // [END bigquerystorage_v1beta2_generated_BigQueryRead_ReadRows_async]
 }
 
 process.on('unhandledRejection', err => {

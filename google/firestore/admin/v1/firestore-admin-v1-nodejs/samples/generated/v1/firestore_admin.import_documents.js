@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_v1_generated_FirestoreAdmin_ImportDocuments_async]
+  // [START firestore_v1_generated_FirestoreAdmin_ImportDocuments_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   importDocuments();
-  // [END admin_v1_generated_FirestoreAdmin_ImportDocuments_async]
+  // [END firestore_v1_generated_FirestoreAdmin_ImportDocuments_async]
 }
 
 process.on('unhandledRejection', err => {

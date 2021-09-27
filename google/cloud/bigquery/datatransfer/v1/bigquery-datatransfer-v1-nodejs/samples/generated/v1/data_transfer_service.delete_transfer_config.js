@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START datatransfer_v1_generated_DataTransferService_DeleteTransferConfig_async]
+  // [START bigquerydatatransfer_v1_generated_DataTransferService_DeleteTransferConfig_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   deleteTransferConfig();
-  // [END datatransfer_v1_generated_DataTransferService_DeleteTransferConfig_async]
+  // [END bigquerydatatransfer_v1_generated_DataTransferService_DeleteTransferConfig_async]
 }
 
 process.on('unhandledRejection', err => {

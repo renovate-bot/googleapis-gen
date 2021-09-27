@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, page) {
-  // [START cx_v3_generated_Pages_CreatePage_async]
+  // [START dialogflow_v3_generated_Pages_CreatePage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -71,7 +71,7 @@ function main(parent, page) {
   }
 
   createPage();
-  // [END cx_v3_generated_Pages_CreatePage_async]
+  // [END dialogflow_v3_generated_Pages_CreatePage_async]
 }
 
 process.on('unhandledRejection', err => {

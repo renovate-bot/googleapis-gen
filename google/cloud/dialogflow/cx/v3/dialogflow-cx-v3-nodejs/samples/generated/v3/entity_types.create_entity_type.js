@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, entityType) {
-  // [START cx_v3_generated_EntityTypes_CreateEntityType_async]
+  // [START dialogflow_v3_generated_EntityTypes_CreateEntityType_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent, entityType) {
   }
 
   createEntityType();
-  // [END cx_v3_generated_EntityTypes_CreateEntityType_async]
+  // [END dialogflow_v3_generated_EntityTypes_CreateEntityType_async]
 }
 
 process.on('unhandledRejection', err => {

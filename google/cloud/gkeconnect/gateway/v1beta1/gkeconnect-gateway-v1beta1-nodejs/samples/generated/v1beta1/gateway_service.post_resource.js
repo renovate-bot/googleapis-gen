@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START gateway_v1beta1_generated_GatewayService_PostResource_async]
+  // [START connectgateway_v1beta1_generated_GatewayService_PostResource_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main() {
   }
 
   postResource();
-  // [END gateway_v1beta1_generated_GatewayService_PostResource_async]
+  // [END connectgateway_v1beta1_generated_GatewayService_PostResource_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START clouddms_v1_generated_DataMigrationService_DeleteConnectionProfile_async]
+  // [START datamigration_v1_generated_DataMigrationService_DeleteConnectionProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(name) {
   }
 
   deleteConnectionProfile();
-  // [END clouddms_v1_generated_DataMigrationService_DeleteConnectionProfile_async]
+  // [END datamigration_v1_generated_DataMigrationService_DeleteConnectionProfile_async]
 }
 
 process.on('unhandledRejection', err => {

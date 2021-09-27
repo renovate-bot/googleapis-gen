@@ -16,7 +16,7 @@
 'use strict';
 
 function main(book, updateMask) {
-  // [START library_v1_generated_LibraryService_UpdateBook_async]
+  // [START library-example_v1_generated_LibraryService_UpdateBook_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(book, updateMask) {
   }
 
   updateBook();
-  // [END library_v1_generated_LibraryService_UpdateBook_async]
+  // [END library-example_v1_generated_LibraryService_UpdateBook_async]
 }
 
 process.on('unhandledRejection', err => {

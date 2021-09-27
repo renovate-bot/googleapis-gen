@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, firebaseLink) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_CreateFirebaseLink_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateFirebaseLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(parent, firebaseLink) {
   }
 
   createFirebaseLink();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_CreateFirebaseLink_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateFirebaseLink_async]
 }
 
 process.on('unhandledRejection', err => {

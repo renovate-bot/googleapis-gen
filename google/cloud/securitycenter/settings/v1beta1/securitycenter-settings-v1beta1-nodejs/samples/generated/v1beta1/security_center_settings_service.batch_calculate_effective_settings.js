@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START settings_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async]
+  // [START securitycenter_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(parent) {
   }
 
   batchCalculateEffectiveSettings();
-  // [END settings_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async]
+  // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async]
 }
 
 process.on('unhandledRejection', err => {

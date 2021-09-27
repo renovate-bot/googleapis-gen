@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START billing_v1_generated_CloudCatalog_ListSkus_async]
+  // [START cloudbilling_v1_generated_CloudCatalog_ListSkus_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -80,7 +80,7 @@ function main(parent) {
   }
 
   listSkus();
-  // [END billing_v1_generated_CloudCatalog_ListSkus_async]
+  // [END cloudbilling_v1_generated_CloudCatalog_ListSkus_async]
 }
 
 process.on('unhandledRejection', err => {

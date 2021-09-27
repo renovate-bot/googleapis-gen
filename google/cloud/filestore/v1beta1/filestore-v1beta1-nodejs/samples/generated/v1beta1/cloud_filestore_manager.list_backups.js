@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START filestore_v1beta1_generated_CloudFilestoreManager_ListBackups_async]
+  // [START file_v1beta1_generated_CloudFilestoreManager_ListBackups_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -67,7 +67,7 @@ function main(parent) {
   }
 
   listBackups();
-  // [END filestore_v1beta1_generated_CloudFilestoreManager_ListBackups_async]
+  // [END file_v1beta1_generated_CloudFilestoreManager_ListBackups_async]
 }
 
 process.on('unhandledRejection', err => {

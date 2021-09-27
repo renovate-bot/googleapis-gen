@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_v1_generated_SqlInstancesService_Failover_async]
+  // [START sqladmin_v1_generated_SqlInstancesService_Failover_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main() {
   }
 
   failover();
-  // [END sql_v1_generated_SqlInstancesService_Failover_async]
+  // [END sqladmin_v1_generated_SqlInstancesService_Failover_async]
 }
 
 process.on('unhandledRejection', err => {

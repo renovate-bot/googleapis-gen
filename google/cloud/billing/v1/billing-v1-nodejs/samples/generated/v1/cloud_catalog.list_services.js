@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START billing_v1_generated_CloudCatalog_ListServices_async]
+  // [START cloudbilling_v1_generated_CloudCatalog_ListServices_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   listServices();
-  // [END billing_v1_generated_CloudCatalog_ListServices_async]
+  // [END cloudbilling_v1_generated_CloudCatalog_ListServices_async]
 }
 
 process.on('unhandledRejection', err => {

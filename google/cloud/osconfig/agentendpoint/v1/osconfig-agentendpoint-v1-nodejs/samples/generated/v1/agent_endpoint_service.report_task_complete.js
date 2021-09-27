@@ -16,7 +16,7 @@
 'use strict';
 
 function main(instanceIdToken, taskId, taskType) {
-  // [START agentendpoint_v1_generated_AgentEndpointService_ReportTaskComplete_async]
+  // [START osconfig_v1_generated_AgentEndpointService_ReportTaskComplete_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -76,7 +76,7 @@ function main(instanceIdToken, taskId, taskType) {
   }
 
   reportTaskComplete();
-  // [END agentendpoint_v1_generated_AgentEndpointService_ReportTaskComplete_async]
+  // [END osconfig_v1_generated_AgentEndpointService_ReportTaskComplete_async]
 }
 
 process.on('unhandledRejection', err => {

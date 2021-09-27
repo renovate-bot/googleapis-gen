@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START iot_v1_generated_DeviceManager_ListDeviceRegistries_async]
+  // [START cloudiot_v1_generated_DeviceManager_ListDeviceRegistries_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent) {
   }
 
   listDeviceRegistries();
-  // [END iot_v1_generated_DeviceManager_ListDeviceRegistries_async]
+  // [END cloudiot_v1_generated_DeviceManager_ListDeviceRegistries_async]
 }
 
 process.on('unhandledRejection', err => {

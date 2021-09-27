@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START clouddms_v1_generated_DataMigrationService_ListConnectionProfiles_async]
+  // [START datamigration_v1_generated_DataMigrationService_ListConnectionProfiles_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -75,7 +75,7 @@ function main(parent) {
   }
 
   listConnectionProfiles();
-  // [END clouddms_v1_generated_DataMigrationService_ListConnectionProfiles_async]
+  // [END datamigration_v1_generated_DataMigrationService_ListConnectionProfiles_async]
 }
 
 process.on('unhandledRejection', err => {

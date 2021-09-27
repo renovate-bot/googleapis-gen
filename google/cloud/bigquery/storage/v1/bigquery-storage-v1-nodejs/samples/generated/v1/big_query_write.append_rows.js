@@ -16,7 +16,7 @@
 'use strict';
 
 function main(writeStream) {
-  // [START storage_v1_generated_BigQueryWrite_AppendRows_async]
+  // [START bigquerystorage_v1_generated_BigQueryWrite_AppendRows_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -70,7 +70,7 @@ function main(writeStream) {
   }
 
   appendRows();
-  // [END storage_v1_generated_BigQueryWrite_AppendRows_async]
+  // [END bigquerystorage_v1_generated_BigQueryWrite_AppendRows_async]
 }
 
 process.on('unhandledRejection', err => {

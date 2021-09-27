@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_v1_generated_IAM_GetRole_async]
+  // [START iam_v1_generated_IAM_GetRole_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -64,7 +64,7 @@ function main() {
   }
 
   getRole();
-  // [END admin_v1_generated_IAM_GetRole_async]
+  // [END iam_v1_generated_IAM_GetRole_async]
 }
 
 process.on('unhandledRejection', err => {

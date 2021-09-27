@@ -16,7 +16,7 @@
 'use strict';
 
 function main(intent) {
-  // [START cx_v3_generated_Intents_UpdateIntent_async]
+  // [START dialogflow_v3_generated_Intents_UpdateIntent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(intent) {
   }
 
   updateIntent();
-  // [END cx_v3_generated_Intents_UpdateIntent_async]
+  // [END dialogflow_v3_generated_Intents_UpdateIntent_async]
 }
 
 process.on('unhandledRejection', err => {

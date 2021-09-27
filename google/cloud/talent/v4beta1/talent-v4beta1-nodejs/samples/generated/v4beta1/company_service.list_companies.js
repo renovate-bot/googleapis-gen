@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START talent_v4beta1_generated_CompanyService_ListCompanies_async]
+  // [START jobs_v4beta1_generated_CompanyService_ListCompanies_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -65,7 +65,7 @@ function main(parent) {
   }
 
   listCompanies();
-  // [END talent_v4beta1_generated_CompanyService_ListCompanies_async]
+  // [END jobs_v4beta1_generated_CompanyService_ListCompanies_async]
 }
 
 process.on('unhandledRejection', err => {

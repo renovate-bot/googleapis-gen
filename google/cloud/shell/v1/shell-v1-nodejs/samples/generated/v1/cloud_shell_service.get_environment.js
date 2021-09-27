@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START shell_v1_generated_CloudShellService_GetEnvironment_async]
+  // [START cloudshell_v1_generated_CloudShellService_GetEnvironment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -44,7 +44,7 @@ function main(name) {
   }
 
   getEnvironment();
-  // [END shell_v1_generated_CloudShellService_GetEnvironment_async]
+  // [END cloudshell_v1_generated_CloudShellService_GetEnvironment_async]
 }
 
 process.on('unhandledRejection', err => {

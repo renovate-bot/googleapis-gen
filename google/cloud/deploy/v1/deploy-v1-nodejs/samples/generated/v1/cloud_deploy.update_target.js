@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, target) {
-  // [START deploy_v1_generated_CloudDeploy_UpdateTarget_async]
+  // [START clouddeploy_v1_generated_CloudDeploy_UpdateTarget_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -77,7 +77,7 @@ function main(updateMask, target) {
   }
 
   updateTarget();
-  // [END deploy_v1_generated_CloudDeploy_UpdateTarget_async]
+  // [END clouddeploy_v1_generated_CloudDeploy_UpdateTarget_async]
 }
 
 process.on('unhandledRejection', err => {

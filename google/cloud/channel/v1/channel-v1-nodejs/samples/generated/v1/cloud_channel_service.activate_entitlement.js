@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START channel_v1_generated_CloudChannelService_ActivateEntitlement_async]
+  // [START cloudchannel_v1_generated_CloudChannelService_ActivateEntitlement_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name) {
   }
 
   activateEntitlement();
-  // [END channel_v1_generated_CloudChannelService_ActivateEntitlement_async]
+  // [END cloudchannel_v1_generated_CloudChannelService_ActivateEntitlement_async]
 }
 
 process.on('unhandledRejection', err => {

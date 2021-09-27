@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START sql_v1beta4_generated_SqlBackupRunsService_Get_async]
+  // [START sqladmin_v1beta4_generated_SqlBackupRunsService_Get_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -50,7 +50,7 @@ function main() {
   }
 
   get();
-  // [END sql_v1beta4_generated_SqlBackupRunsService_Get_async]
+  // [END sqladmin_v1beta4_generated_SqlBackupRunsService_Get_async]
 }
 
 process.on('unhandledRejection', err => {

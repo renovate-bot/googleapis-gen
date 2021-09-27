@@ -16,7 +16,7 @@
 'use strict';
 
 function main(database) {
-  // [START database_v1_generated_DatabaseAdmin_DropDatabase_async]
+  // [START spanner_v1_generated_DatabaseAdmin_DropDatabase_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(database) {
   }
 
   dropDatabase();
-  // [END database_v1_generated_DatabaseAdmin_DropDatabase_async]
+  // [END spanner_v1_generated_DatabaseAdmin_DropDatabase_async]
 }
 
 process.on('unhandledRejection', err => {

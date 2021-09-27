@@ -16,7 +16,7 @@
 'use strict';
 
 function main(resource) {
-  // [START instance_v1_generated_InstanceAdmin_GetIamPolicy_async]
+  // [START spanner_v1_generated_InstanceAdmin_GetIamPolicy_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -49,7 +49,7 @@ function main(resource) {
   }
 
   getIamPolicy();
-  // [END instance_v1_generated_InstanceAdmin_GetIamPolicy_async]
+  // [END spanner_v1_generated_InstanceAdmin_GetIamPolicy_async]
 }
 
 process.on('unhandledRejection', err => {

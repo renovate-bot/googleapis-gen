@@ -16,7 +16,7 @@
 'use strict';
 
 function main(filter) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_ListProperties_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListProperties_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -76,7 +76,7 @@ function main(filter) {
   }
 
   listProperties();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_ListProperties_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListProperties_async]
 }
 
 process.on('unhandledRejection', err => {

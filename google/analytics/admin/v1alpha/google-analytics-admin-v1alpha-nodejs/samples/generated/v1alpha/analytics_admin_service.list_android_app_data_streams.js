@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_ListAndroidAppDataStreams_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListAndroidAppDataStreams_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -61,7 +61,7 @@ function main(parent) {
   }
 
   listAndroidAppDataStreams();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_ListAndroidAppDataStreams_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListAndroidAppDataStreams_async]
 }
 
 process.on('unhandledRejection', err => {

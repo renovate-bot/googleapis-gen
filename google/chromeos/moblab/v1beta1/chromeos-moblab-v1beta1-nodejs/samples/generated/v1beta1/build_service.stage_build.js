@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START moblab_v1beta1_generated_BuildService_StageBuild_async]
+  // [START chromeosmoblab_v1beta1_generated_BuildService_StageBuild_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -52,7 +52,7 @@ function main(name) {
   }
 
   stageBuild();
-  // [END moblab_v1beta1_generated_BuildService_StageBuild_async]
+  // [END chromeosmoblab_v1beta1_generated_BuildService_StageBuild_async]
 }
 
 process.on('unhandledRejection', err => {

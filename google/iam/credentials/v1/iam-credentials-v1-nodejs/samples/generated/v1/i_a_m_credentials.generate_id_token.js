@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, audience) {
-  // [START credentials_v1_generated_IAMCredentials_GenerateIdToken_async]
+  // [START iamcredentials_v1_generated_IAMCredentials_GenerateIdToken_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -69,7 +69,7 @@ function main(name, audience) {
   }
 
   generateIdToken();
-  // [END credentials_v1_generated_IAMCredentials_GenerateIdToken_async]
+  // [END iamcredentials_v1_generated_IAMCredentials_GenerateIdToken_async]
 }
 
 process.on('unhandledRejection', err => {

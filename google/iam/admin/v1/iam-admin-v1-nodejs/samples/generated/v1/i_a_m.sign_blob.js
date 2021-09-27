@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, bytesToSign) {
-  // [START admin_v1_generated_IAM_SignBlob_async]
+  // [START iam_v1_generated_IAM_SignBlob_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name, bytesToSign) {
   }
 
   signBlob();
-  // [END admin_v1_generated_IAM_SignBlob_async]
+  // [END iam_v1_generated_IAM_SignBlob_async]
 }
 
 process.on('unhandledRejection', err => {

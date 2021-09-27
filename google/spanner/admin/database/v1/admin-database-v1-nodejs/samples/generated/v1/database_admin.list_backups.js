@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent) {
-  // [START database_v1_generated_DatabaseAdmin_ListBackups_async]
+  // [START spanner_v1_generated_DatabaseAdmin_ListBackups_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -90,7 +90,7 @@ function main(parent) {
   }
 
   listBackups();
-  // [END database_v1_generated_DatabaseAdmin_ListBackups_async]
+  // [END spanner_v1_generated_DatabaseAdmin_ListBackups_async]
 }
 
 process.on('unhandledRejection', err => {

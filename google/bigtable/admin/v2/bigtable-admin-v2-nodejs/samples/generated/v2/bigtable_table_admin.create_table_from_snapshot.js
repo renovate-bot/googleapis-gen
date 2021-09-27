@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, tableId, sourceSnapshot) {
-  // [START admin_v2_generated_BigtableTableAdmin_CreateTableFromSnapshot_async]
+  // [START bigtableadmin_v2_generated_BigtableTableAdmin_CreateTableFromSnapshot_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -59,7 +59,7 @@ function main(parent, tableId, sourceSnapshot) {
   }
 
   createTableFromSnapshot();
-  // [END admin_v2_generated_BigtableTableAdmin_CreateTableFromSnapshot_async]
+  // [END bigtableadmin_v2_generated_BigtableTableAdmin_CreateTableFromSnapshot_async]
 }
 
 process.on('unhandledRejection', err => {

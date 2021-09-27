@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START data_v1beta_generated_BetaAnalyticsData_BatchRunPivotReports_async]
+  // [START analyticsdata_v1beta_generated_BetaAnalyticsData_BatchRunPivotReports_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -54,7 +54,7 @@ function main() {
   }
 
   batchRunPivotReports();
-  // [END data_v1beta_generated_BetaAnalyticsData_BatchRunPivotReports_async]
+  // [END analyticsdata_v1beta_generated_BetaAnalyticsData_BatchRunPivotReports_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, scheduleTime) {
-  // [START tasks_v2beta2_generated_CloudTasks_CancelLease_async]
+  // [START cloudtasks_v2beta2_generated_CloudTasks_CancelLease_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -66,7 +66,7 @@ function main(name, scheduleTime) {
   }
 
   cancelLease();
-  // [END tasks_v2beta2_generated_CloudTasks_CancelLease_async]
+  // [END cloudtasks_v2beta2_generated_CloudTasks_CancelLease_async]
 }
 
 process.on('unhandledRejection', err => {

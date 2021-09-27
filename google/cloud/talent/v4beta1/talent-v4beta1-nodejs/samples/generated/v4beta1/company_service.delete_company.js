@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START talent_v4beta1_generated_CompanyService_DeleteCompany_async]
+  // [START jobs_v4beta1_generated_CompanyService_DeleteCompany_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   deleteCompany();
-  // [END talent_v4beta1_generated_CompanyService_DeleteCompany_async]
+  // [END jobs_v4beta1_generated_CompanyService_DeleteCompany_async]
 }
 
 process.on('unhandledRejection', err => {

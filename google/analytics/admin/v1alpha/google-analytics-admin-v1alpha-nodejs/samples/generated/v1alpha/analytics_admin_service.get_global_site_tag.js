@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_GetGlobalSiteTag_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetGlobalSiteTag_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -46,7 +46,7 @@ function main(name) {
   }
 
   getGlobalSiteTag();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_GetGlobalSiteTag_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetGlobalSiteTag_async]
 }
 
 process.on('unhandledRejection', err => {

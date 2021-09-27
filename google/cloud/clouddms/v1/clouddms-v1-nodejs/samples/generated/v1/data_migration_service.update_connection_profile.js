@@ -16,7 +16,7 @@
 'use strict';
 
 function main(updateMask, connectionProfile) {
-  // [START clouddms_v1_generated_DataMigrationService_UpdateConnectionProfile_async]
+  // [START datamigration_v1_generated_DataMigrationService_UpdateConnectionProfile_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(updateMask, connectionProfile) {
   }
 
   updateConnectionProfile();
-  // [END clouddms_v1_generated_DataMigrationService_UpdateConnectionProfile_async]
+  // [END datamigration_v1_generated_DataMigrationService_UpdateConnectionProfile_async]
 }
 
 process.on('unhandledRejection', err => {

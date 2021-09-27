@@ -16,7 +16,7 @@
 'use strict';
 
 function main(enhancedMeasurementSettings, updateMask) {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_UpdateEnhancedMeasurementSettings_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateEnhancedMeasurementSettings_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -51,7 +51,7 @@ function main(enhancedMeasurementSettings, updateMask) {
   }
 
   updateEnhancedMeasurementSettings();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_UpdateEnhancedMeasurementSettings_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateEnhancedMeasurementSettings_async]
 }
 
 process.on('unhandledRejection', err => {

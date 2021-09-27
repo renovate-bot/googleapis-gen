@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3_generated_Agents_ValidateAgent_async]
+  // [START dialogflow_v3_generated_Agents_ValidateAgent_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -48,7 +48,7 @@ function main(name) {
   }
 
   validateAgent();
-  // [END cx_v3_generated_Agents_ValidateAgent_async]
+  // [END dialogflow_v3_generated_Agents_ValidateAgent_async]
 }
 
 process.on('unhandledRejection', err => {

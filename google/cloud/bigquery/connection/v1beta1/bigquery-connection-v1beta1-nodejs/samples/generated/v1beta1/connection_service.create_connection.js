@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, connection) {
-  // [START connection_v1beta1_generated_ConnectionService_CreateConnection_async]
+  // [START bigqueryconnection_v1beta1_generated_ConnectionService_CreateConnection_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -53,7 +53,7 @@ function main(parent, connection) {
   }
 
   createConnection();
-  // [END connection_v1beta1_generated_ConnectionService_CreateConnection_async]
+  // [END bigqueryconnection_v1beta1_generated_ConnectionService_CreateConnection_async]
 }
 
 process.on('unhandledRejection', err => {

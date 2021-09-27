@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3beta1_generated_Experiments_StartExperiment_async]
+  // [START dialogflow_v3beta1_generated_Experiments_StartExperiment_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   startExperiment();
-  // [END cx_v3beta1_generated_Experiments_StartExperiment_async]
+  // [END dialogflow_v3beta1_generated_Experiments_StartExperiment_async]
 }
 
 process.on('unhandledRejection', err => {

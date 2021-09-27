@@ -16,7 +16,7 @@
 'use strict';
 
 function main(projectId, uniqueId, email, oauth2ClientId, disabled) {
-  // [START admin_v1_generated_IAM_UpdateServiceAccount_async]
+  // [START iam_v1_generated_IAM_UpdateServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -98,7 +98,7 @@ function main(projectId, uniqueId, email, oauth2ClientId, disabled) {
   }
 
   updateServiceAccount();
-  // [END admin_v1_generated_IAM_UpdateServiceAccount_async]
+  // [END iam_v1_generated_IAM_UpdateServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START settings_v1beta1_generated_SecurityCenterSettingsService_GetServiceAccount_async]
+  // [START securitycenter_v1beta1_generated_SecurityCenterSettingsService_GetServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -45,7 +45,7 @@ function main(name) {
   }
 
   getServiceAccount();
-  // [END settings_v1beta1_generated_SecurityCenterSettingsService_GetServiceAccount_async]
+  // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_GetServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

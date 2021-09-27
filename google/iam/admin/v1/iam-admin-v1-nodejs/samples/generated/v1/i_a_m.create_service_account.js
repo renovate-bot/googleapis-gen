@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name, accountId) {
-  // [START admin_v1_generated_IAM_CreateServiceAccount_async]
+  // [START iam_v1_generated_IAM_CreateServiceAccount_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -58,7 +58,7 @@ function main(name, accountId) {
   }
 
   createServiceAccount();
-  // [END admin_v1_generated_IAM_CreateServiceAccount_async]
+  // [END iam_v1_generated_IAM_CreateServiceAccount_async]
 }
 
 process.on('unhandledRejection', err => {

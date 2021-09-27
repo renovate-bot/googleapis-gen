@@ -16,7 +16,7 @@
 'use strict';
 
 function main() {
-  // [START admin_v1alpha_generated_AnalyticsAdminService_ProvisionAccountTicket_async]
+  // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_ProvisionAccountTicket_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -47,7 +47,7 @@ function main() {
   }
 
   provisionAccountTicket();
-  // [END admin_v1alpha_generated_AnalyticsAdminService_ProvisionAccountTicket_async]
+  // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ProvisionAccountTicket_async]
 }
 
 process.on('unhandledRejection', err => {

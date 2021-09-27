@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START library_v1_generated_LibraryService_GetBook_async]
+  // [START library-example_v1_generated_LibraryService_GetBook_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -43,7 +43,7 @@ function main(name) {
   }
 
   getBook();
-  // [END library_v1_generated_LibraryService_GetBook_async]
+  // [END library-example_v1_generated_LibraryService_GetBook_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START cx_v3beta1_generated_Pages_DeletePage_async]
+  // [START dialogflow_v3beta1_generated_Pages_DeletePage_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -57,7 +57,7 @@ function main(name) {
   }
 
   deletePage();
-  // [END cx_v3beta1_generated_Pages_DeletePage_async]
+  // [END dialogflow_v3beta1_generated_Pages_DeletePage_async]
 }
 
 process.on('unhandledRejection', err => {

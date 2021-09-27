@@ -16,7 +16,7 @@
 'use strict';
 
 function main(parent, query, pageSize) {
-  // [START talent_v4beta1_generated_Completion_CompleteQuery_async]
+  // [START jobs_v4beta1_generated_Completion_CompleteQuery_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -84,7 +84,7 @@ function main(parent, query, pageSize) {
   }
 
   completeQuery();
-  // [END talent_v4beta1_generated_Completion_CompleteQuery_async]
+  // [END jobs_v4beta1_generated_Completion_CompleteQuery_async]
 }
 
 process.on('unhandledRejection', err => {

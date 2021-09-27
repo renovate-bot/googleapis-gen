@@ -16,7 +16,7 @@
 'use strict';
 
 function main(name) {
-  // [START resourcemanager_v3_generated_TagKeys_DeleteTagKey_async]
+  // [START cloudresourcemanager_v3_generated_TagKeys_DeleteTagKey_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
@@ -56,7 +56,7 @@ function main(name) {
   }
 
   deleteTagKey();
-  // [END resourcemanager_v3_generated_TagKeys_DeleteTagKey_async]
+  // [END cloudresourcemanager_v3_generated_TagKeys_DeleteTagKey_async]
 }
 
 process.on('unhandledRejection', err => {
