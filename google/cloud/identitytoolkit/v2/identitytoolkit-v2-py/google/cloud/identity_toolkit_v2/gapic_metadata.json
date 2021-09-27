@@ -1,0 +1,87 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.identity_toolkit_v2",
+  "protoPackage": "google.cloud.identitytoolkit.v2",
+  "schema": "1.0",
+  "services": {
+    "AccountManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccountManagementServiceClient",
+          "rpcs": {
+            "FinalizeMfaEnrollment": {
+              "methods": [
+                "finalize_mfa_enrollment"
+              ]
+            },
+            "StartMfaEnrollment": {
+              "methods": [
+                "start_mfa_enrollment"
+              ]
+            },
+            "WithdrawMfa": {
+              "methods": [
+                "withdraw_mfa"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "AccountManagementServiceAsyncClient",
+          "rpcs": {
+            "FinalizeMfaEnrollment": {
+              "methods": [
+                "finalize_mfa_enrollment"
+              ]
+            },
+            "StartMfaEnrollment": {
+              "methods": [
+                "start_mfa_enrollment"
+              ]
+            },
+            "WithdrawMfa": {
+              "methods": [
+                "withdraw_mfa"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "AuthenticationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuthenticationServiceClient",
+          "rpcs": {
+            "FinalizeMfaSignIn": {
+              "methods": [
+                "finalize_mfa_sign_in"
+              ]
+            },
+            "StartMfaSignIn": {
+              "methods": [
+                "start_mfa_sign_in"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "AuthenticationServiceAsyncClient",
+          "rpcs": {
+            "FinalizeMfaSignIn": {
+              "methods": [
+                "finalize_mfa_sign_in"
+              ]
+            },
+            "StartMfaSignIn": {
+              "methods": [
+                "start_mfa_sign_in"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

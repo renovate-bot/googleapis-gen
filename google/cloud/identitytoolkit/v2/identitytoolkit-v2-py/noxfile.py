@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/identitytoolkit_v2/',
+        '--cov=google/cloud/identity_toolkit_v2/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

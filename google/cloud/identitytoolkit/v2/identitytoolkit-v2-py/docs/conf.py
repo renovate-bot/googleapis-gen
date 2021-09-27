@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-identitytoolkit documentation build configuration file
+# google-cloud-identity-toolkit documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-identitytoolkit"
+project = u"google-cloud-identity-toolkit"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-identitytoolkit-doc"
+htmlhelp_basename = "google-cloud-identity-toolkit-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-identitytoolkit.tex",
-        u"google-cloud-identitytoolkit Documentation",
+        "google-cloud-identity-toolkit.tex",
+        u"google-cloud-identity-toolkit Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-identitytoolkit",
-        u"Google Cloud Identitytoolkit Documentation",
+        "google-cloud-identity-toolkit",
+        u"Google Cloud Identity Toolkit Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-identitytoolkit",
-        u"google-cloud-identitytoolkit Documentation",
+        "google-cloud-identity-toolkit",
+        u"google-cloud-identity-toolkit Documentation",
         author,
-        "google-cloud-identitytoolkit",
-        "GAPIC library for Google Cloud Identitytoolkit API",
+        "google-cloud-identity-toolkit",
+        "GAPIC library for Google Cloud Identity Toolkit API",
         "APIs",
     )
 ]
