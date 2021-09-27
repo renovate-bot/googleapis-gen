@@ -27,7 +27,7 @@ function main(name) {
   // const name = 'abc123'
 
   // Imports the Binaryauthorization library
-  const {SystemPolicyV1Client} = require('@google-cloud/binaryauthorization').v1;
+  const {SystemPolicyV1Client} = require('@google-cloud/binary-authorization').v1;
 
   // Instantiates a client
   const binaryauthorizationClient = new SystemPolicyV1Client();

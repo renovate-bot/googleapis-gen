@@ -36,7 +36,7 @@ function main(parent, attestorId, attestor) {
   // const attestor = ''
 
   // Imports the Binaryauthorization library
-  const {BinauthzManagementServiceV1Client} = require('@google-cloud/binaryauthorization').v1;
+  const {BinauthzManagementServiceV1Client} = require('@google-cloud/binary-authorization').v1;
 
   // Instantiates a client
   const binaryauthorizationClient = new BinauthzManagementServiceV1Client();

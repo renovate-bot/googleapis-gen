@@ -45,7 +45,7 @@ function main(attestor, attestation, occurrenceNote, occurrenceResourceUri) {
   // const occurrenceResourceUri = 'abc123'
 
   // Imports the Binaryauthorization library
-  const {ValidationHelperV1Client} = require('@google-cloud/binaryauthorization').v1;
+  const {ValidationHelperV1Client} = require('@google-cloud/binary-authorization').v1;
 
   // Instantiates a client
   const binaryauthorizationClient = new ValidationHelperV1Client();
