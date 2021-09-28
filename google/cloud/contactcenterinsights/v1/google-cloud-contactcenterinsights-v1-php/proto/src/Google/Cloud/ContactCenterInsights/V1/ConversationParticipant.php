@@ -25,6 +25,12 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      */
     protected $dialogflow_participant = '';
     /**
+     * Obfuscated user ID from Dialogflow.
+     *
+     * Generated from protobuf field <code>string obfuscated_external_user_id = 3;</code>
+     */
+    protected $obfuscated_external_user_id = '';
+    /**
      * The role of the participant.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role = 2;</code>
@@ -47,6 +53,8 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      *           Deprecated. Use `dialogflow_participant_name` instead.
      *           The name of the Dialogflow participant. Format:
      *           projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     *     @type string $obfuscated_external_user_id
+     *           Obfuscated user ID from Dialogflow.
      *     @type int $role
      *           The role of the participant.
      * }
@@ -150,6 +158,32 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
         @trigger_error('dialogflow_participant is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->dialogflow_participant = $var;
+
+        return $this;
+    }
+
+    /**
+     * Obfuscated user ID from Dialogflow.
+     *
+     * Generated from protobuf field <code>string obfuscated_external_user_id = 3;</code>
+     * @return string
+     */
+    public function getObfuscatedExternalUserId()
+    {
+        return $this->obfuscated_external_user_id;
+    }
+
+    /**
+     * Obfuscated user ID from Dialogflow.
+     *
+     * Generated from protobuf field <code>string obfuscated_external_user_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setObfuscatedExternalUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->obfuscated_external_user_id = $var;
 
         return $this;
     }

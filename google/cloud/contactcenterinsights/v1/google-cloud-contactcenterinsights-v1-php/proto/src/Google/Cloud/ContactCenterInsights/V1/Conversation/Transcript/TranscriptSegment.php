@@ -16,6 +16,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class TranscriptSegment extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The time that the message occurred, if provided.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp message_time = 6;</code>
+     */
+    protected $message_time = null;
+    /**
      * The text of this segment.
      *
      * Generated from protobuf field <code>string text = 1;</code>
@@ -57,6 +63,18 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;</code>
      */
     protected $segment_participant = null;
+    /**
+     * CCAI metadata relating to the current transcript segment.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;</code>
+     */
+    protected $dialogflow_segment_metadata = null;
+    /**
+     * The sentiment for this transcript segment.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+     */
+    protected $sentiment = null;
 
     /**
      * Constructor.
@@ -64,6 +82,8 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Protobuf\Timestamp $message_time
+     *           The time that the message occurred, if provided.
      *     @type string $text
      *           The text of this segment.
      *     @type float $confidence
@@ -82,11 +102,51 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
      *           channel tag of 0 indicates that the audio is mono.
      *     @type \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant $segment_participant
      *           The participant of this segment.
+     *     @type \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\DialogflowSegmentMetadata $dialogflow_segment_metadata
+     *           CCAI metadata relating to the current transcript segment.
+     *     @type \Google\Cloud\ContactCenterInsights\V1\SentimentData $sentiment
+     *           The sentiment for this transcript segment.
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Contactcenterinsights\V1\Resources::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * The time that the message occurred, if provided.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp message_time = 6;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getMessageTime()
+    {
+        return isset($this->message_time) ? $this->message_time : null;
+    }
+
+    public function hasMessageTime()
+    {
+        return isset($this->message_time);
+    }
+
+    public function clearMessageTime()
+    {
+        unset($this->message_time);
+    }
+
+    /**
+     * The time that the message occurred, if provided.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp message_time = 6;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setMessageTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->message_time = $var;
+
+        return $this;
     }
 
     /**
@@ -263,6 +323,78 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant::class);
         $this->segment_participant = $var;
+
+        return $this;
+    }
+
+    /**
+     * CCAI metadata relating to the current transcript segment.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;</code>
+     * @return \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\DialogflowSegmentMetadata|null
+     */
+    public function getDialogflowSegmentMetadata()
+    {
+        return isset($this->dialogflow_segment_metadata) ? $this->dialogflow_segment_metadata : null;
+    }
+
+    public function hasDialogflowSegmentMetadata()
+    {
+        return isset($this->dialogflow_segment_metadata);
+    }
+
+    public function clearDialogflowSegmentMetadata()
+    {
+        unset($this->dialogflow_segment_metadata);
+    }
+
+    /**
+     * CCAI metadata relating to the current transcript segment.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata dialogflow_segment_metadata = 10;</code>
+     * @param \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\DialogflowSegmentMetadata $var
+     * @return $this
+     */
+    public function setDialogflowSegmentMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\DialogflowSegmentMetadata::class);
+        $this->dialogflow_segment_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * The sentiment for this transcript segment.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+     * @return \Google\Cloud\ContactCenterInsights\V1\SentimentData|null
+     */
+    public function getSentiment()
+    {
+        return isset($this->sentiment) ? $this->sentiment : null;
+    }
+
+    public function hasSentiment()
+    {
+        return isset($this->sentiment);
+    }
+
+    public function clearSentiment()
+    {
+        unset($this->sentiment);
+    }
+
+    /**
+     * The sentiment for this transcript segment.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.SentimentData sentiment = 11;</code>
+     * @param \Google\Cloud\ContactCenterInsights\V1\SentimentData $var
+     * @return $this
+     */
+    public function setSentiment($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\SentimentData::class);
+        $this->sentiment = $var;
 
         return $this;
     }

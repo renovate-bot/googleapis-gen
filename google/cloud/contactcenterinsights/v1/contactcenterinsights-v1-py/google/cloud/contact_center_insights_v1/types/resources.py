@@ -161,6 +161,9 @@ class Conversation(proto.Message):
         class TranscriptSegment(proto.Message):
             r"""A segment of a full transcript.
             Attributes:
+                message_time (google.protobuf.timestamp_pb2.Timestamp):
+                    The time that the message occurred, if
+                    provided.
                 text (str):
                     The text of this segment.
                 confidence (float):
@@ -183,6 +186,11 @@ class Conversation(proto.Message):
                     indicates that the audio is mono.
                 segment_participant (google.cloud.contact_center_insights_v1.types.ConversationParticipant):
                     The participant of this segment.
+                dialogflow_segment_metadata (google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata):
+                    CCAI metadata relating to the current
+                    transcript segment.
+                sentiment (google.cloud.contact_center_insights_v1.types.SentimentData):
+                    The sentiment for this transcript segment.
             """
 
             class WordInfo(proto.Message):
@@ -223,6 +231,27 @@ class Conversation(proto.Message):
                     number=4,
                 )
 
+            class DialogflowSegmentMetadata(proto.Message):
+                r"""Metadata from Dialogflow relating to the current transcript
+                segment.
+
+                Attributes:
+                    smart_reply_allowlist_covered (bool):
+                        Whether the transcript segment was covered
+                        under the configured smart reply allowlist in
+                        Agent Assist.
+                """
+
+                smart_reply_allowlist_covered = proto.Field(
+                    proto.BOOL,
+                    number=1,
+                )
+
+            message_time = proto.Field(
+                proto.MESSAGE,
+                number=6,
+                message=timestamp_pb2.Timestamp,
+            )
             text = proto.Field(
                 proto.STRING,
                 number=1,
@@ -248,6 +277,16 @@ class Conversation(proto.Message):
                 proto.MESSAGE,
                 number=9,
                 message='ConversationParticipant',
+            )
+            dialogflow_segment_metadata = proto.Field(
+                proto.MESSAGE,
+                number=10,
+                message='Conversation.Transcript.TranscriptSegment.DialogflowSegmentMetadata',
+            )
+            sentiment = proto.Field(
+                proto.MESSAGE,
+                number=11,
+                message='SentimentData',
             )
 
         transcript_segments = proto.RepeatedField(
@@ -1755,6 +1794,8 @@ class ConversationParticipant(proto.Message):
             Deprecated. Use ``dialogflow_participant_name`` instead. The
             name of the Dialogflow participant. Format:
             projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+        obfuscated_external_user_id (str):
+            Obfuscated user ID from Dialogflow.
         role (google.cloud.contact_center_insights_v1.types.ConversationParticipant.Role):
             The role of the participant.
     """
@@ -1779,6 +1820,10 @@ class ConversationParticipant(proto.Message):
     dialogflow_participant = proto.Field(
         proto.STRING,
         number=1,
+    )
+    obfuscated_external_user_id = proto.Field(
+        proto.STRING,
+        number=3,
     )
     role = proto.Field(
         proto.ENUM,
