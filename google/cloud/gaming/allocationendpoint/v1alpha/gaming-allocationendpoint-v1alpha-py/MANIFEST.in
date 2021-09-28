@@ -1,0 +1,2 @@
+recursive-include google/cloud/gaming/allocationendpoint *.py
+recursive-include google/cloud/gaming/allocationendpoint_v1alpha *.py

@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gaming.allocationendpoint.v1alpha",
+  "libraryPackage": "com.google.cloud.gaming.allocationendpoint.v1alpha",
+  "services": {
+    "AllocationEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AllocationEndpointServiceClient",
+          "rpcs": {
+            "Allocate": {
+              "methods": ["allocate", "allocateCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

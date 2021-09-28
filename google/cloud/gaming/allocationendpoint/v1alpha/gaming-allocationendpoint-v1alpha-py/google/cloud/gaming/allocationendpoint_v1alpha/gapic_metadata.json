@@ -1,0 +1,33 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.gaming.allocationendpoint_v1alpha",
+  "protoPackage": "google.cloud.gaming.allocationendpoint.v1alpha",
+  "schema": "1.0",
+  "services": {
+    "AllocationEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AllocationEndpointServiceClient",
+          "rpcs": {
+            "Allocate": {
+              "methods": [
+                "allocate"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "AllocationEndpointServiceAsyncClient",
+          "rpcs": {
+            "Allocate": {
+              "methods": [
+                "allocate"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

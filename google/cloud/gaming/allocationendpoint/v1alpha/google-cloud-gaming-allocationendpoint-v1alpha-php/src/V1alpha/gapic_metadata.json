@@ -1,0 +1,23 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.gaming.allocationendpoint.v1alpha",
+    "libraryPackage": "Google\\Cloud\\Gaming\\Allocationendpoint\\V1alpha",
+    "services": {
+        "AllocationEndpointService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AllocationEndpointServiceGapicClient",
+                    "rpcs": {
+                        "Allocate": {
+                            "methods": [
+                                "allocate"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

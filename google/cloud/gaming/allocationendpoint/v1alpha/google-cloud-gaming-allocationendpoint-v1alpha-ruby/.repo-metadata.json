@@ -1,0 +1,10 @@
+{
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-gaming-allocationendpoint-v1alpha/latest",
+    "distribution_name": "google-cloud-gaming-allocationendpoint-v1alpha",
+    "language": "ruby",
+    "name_pretty": "Google Cloud Gaming Allocationendpoint V1alpha API",
+    "repo": "googleapis/google-cloud-ruby",
+    "requires_billing": true,
+    "ruby-cloud-description": "google-cloud-gaming-allocationendpoint-v1alpha is the official client library for the Google Cloud Gaming Allocationendpoint V1alpha API. Note that google-cloud-gaming-allocationendpoint-v1alpha is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-gaming-allocationendpoint instead. See the readme for more details.",
+    "library_type": "GAPIC_AUTO"
+}
