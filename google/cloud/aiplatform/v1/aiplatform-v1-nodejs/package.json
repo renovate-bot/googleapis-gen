@@ -30,7 +30,8 @@
     "model service",
     "pipeline service",
     "prediction service",
-    "specialist pool service"
+    "specialist pool service",
+    "vizier service"
   ],
   "scripts": {
     "clean": "gts clean",

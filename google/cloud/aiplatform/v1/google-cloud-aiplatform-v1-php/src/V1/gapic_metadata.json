@@ -529,6 +529,90 @@
                     }
                 }
             }
+        },
+        "VizierService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "VizierServiceGapicClient",
+                    "rpcs": {
+                        "AddTrialMeasurement": {
+                            "methods": [
+                                "addTrialMeasurement"
+                            ]
+                        },
+                        "CheckTrialEarlyStoppingState": {
+                            "methods": [
+                                "checkTrialEarlyStoppingState"
+                            ]
+                        },
+                        "CompleteTrial": {
+                            "methods": [
+                                "completeTrial"
+                            ]
+                        },
+                        "CreateStudy": {
+                            "methods": [
+                                "createStudy"
+                            ]
+                        },
+                        "CreateTrial": {
+                            "methods": [
+                                "createTrial"
+                            ]
+                        },
+                        "DeleteStudy": {
+                            "methods": [
+                                "deleteStudy"
+                            ]
+                        },
+                        "DeleteTrial": {
+                            "methods": [
+                                "deleteTrial"
+                            ]
+                        },
+                        "GetStudy": {
+                            "methods": [
+                                "getStudy"
+                            ]
+                        },
+                        "GetTrial": {
+                            "methods": [
+                                "getTrial"
+                            ]
+                        },
+                        "ListOptimalTrials": {
+                            "methods": [
+                                "listOptimalTrials"
+                            ]
+                        },
+                        "ListStudies": {
+                            "methods": [
+                                "listStudies"
+                            ]
+                        },
+                        "ListTrials": {
+                            "methods": [
+                                "listTrials"
+                            ]
+                        },
+                        "LookupStudy": {
+                            "methods": [
+                                "lookupStudy"
+                            ]
+                        },
+                        "StopTrial": {
+                            "methods": [
+                                "stopTrial"
+                            ]
+                        },
+                        "SuggestTrials": {
+                            "methods": [
+                                "suggestTrials"
+                            ]
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {DatasetServiceClient, EndpointServiceClient, IndexEndpointServiceClient, IndexServiceClient, JobServiceClient, MigrationServiceClient, ModelServiceClient, PipelineServiceClient, PredictionServiceClient, SpecialistPoolServiceClient} from '@google-cloud/aiplatform';
+import {DatasetServiceClient, EndpointServiceClient, IndexEndpointServiceClient, IndexServiceClient, JobServiceClient, MigrationServiceClient, ModelServiceClient, PipelineServiceClient, PredictionServiceClient, SpecialistPoolServiceClient, VizierServiceClient} from '@google-cloud/aiplatform';
 
 // check that the client class type name can be used
 function doStuffWithDatasetServiceClient(client: DatasetServiceClient) {
@@ -47,6 +47,9 @@ function doStuffWithPredictionServiceClient(client: PredictionServiceClient) {
   client.close();
 }
 function doStuffWithSpecialistPoolServiceClient(client: SpecialistPoolServiceClient) {
+  client.close();
+}
+function doStuffWithVizierServiceClient(client: VizierServiceClient) {
   client.close();
 }
 
@@ -81,6 +84,9 @@ function main() {
   // check that the client instance can be created
   const specialistPoolServiceClient = new SpecialistPoolServiceClient();
   doStuffWithSpecialistPoolServiceClient(specialistPoolServiceClient);
+  // check that the client instance can be created
+  const vizierServiceClient = new VizierServiceClient();
+  doStuffWithVizierServiceClient(vizierServiceClient);
 }
 
 main();

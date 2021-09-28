@@ -34,6 +34,8 @@ from google.cloud.aiplatform_v1.services.prediction_service.client import Predic
 from google.cloud.aiplatform_v1.services.prediction_service.async_client import PredictionServiceAsyncClient
 from google.cloud.aiplatform_v1.services.specialist_pool_service.client import SpecialistPoolServiceClient
 from google.cloud.aiplatform_v1.services.specialist_pool_service.async_client import SpecialistPoolServiceAsyncClient
+from google.cloud.aiplatform_v1.services.vizier_service.client import VizierServiceClient
+from google.cloud.aiplatform_v1.services.vizier_service.async_client import VizierServiceAsyncClient
 
 from google.cloud.aiplatform_v1.types.accelerator_type import AcceleratorType
 from google.cloud.aiplatform_v1.types.annotation import Annotation
@@ -271,6 +273,28 @@ from google.cloud.aiplatform_v1.types.training_pipeline import TimestampSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TrainingPipeline
 from google.cloud.aiplatform_v1.types.user_action_reference import UserActionReference
 from google.cloud.aiplatform_v1.types.value import Value
+from google.cloud.aiplatform_v1.types.vizier_service import AddTrialMeasurementRequest
+from google.cloud.aiplatform_v1.types.vizier_service import CheckTrialEarlyStoppingStateMetatdata
+from google.cloud.aiplatform_v1.types.vizier_service import CheckTrialEarlyStoppingStateRequest
+from google.cloud.aiplatform_v1.types.vizier_service import CheckTrialEarlyStoppingStateResponse
+from google.cloud.aiplatform_v1.types.vizier_service import CompleteTrialRequest
+from google.cloud.aiplatform_v1.types.vizier_service import CreateStudyRequest
+from google.cloud.aiplatform_v1.types.vizier_service import CreateTrialRequest
+from google.cloud.aiplatform_v1.types.vizier_service import DeleteStudyRequest
+from google.cloud.aiplatform_v1.types.vizier_service import DeleteTrialRequest
+from google.cloud.aiplatform_v1.types.vizier_service import GetStudyRequest
+from google.cloud.aiplatform_v1.types.vizier_service import GetTrialRequest
+from google.cloud.aiplatform_v1.types.vizier_service import ListOptimalTrialsRequest
+from google.cloud.aiplatform_v1.types.vizier_service import ListOptimalTrialsResponse
+from google.cloud.aiplatform_v1.types.vizier_service import ListStudiesRequest
+from google.cloud.aiplatform_v1.types.vizier_service import ListStudiesResponse
+from google.cloud.aiplatform_v1.types.vizier_service import ListTrialsRequest
+from google.cloud.aiplatform_v1.types.vizier_service import ListTrialsResponse
+from google.cloud.aiplatform_v1.types.vizier_service import LookupStudyRequest
+from google.cloud.aiplatform_v1.types.vizier_service import StopTrialRequest
+from google.cloud.aiplatform_v1.types.vizier_service import SuggestTrialsMetadata
+from google.cloud.aiplatform_v1.types.vizier_service import SuggestTrialsRequest
+from google.cloud.aiplatform_v1.types.vizier_service import SuggestTrialsResponse
 
 __all__ = ('DatasetServiceClient',
     'DatasetServiceAsyncClient',
@@ -292,6 +316,8 @@ __all__ = ('DatasetServiceClient',
     'PredictionServiceAsyncClient',
     'SpecialistPoolServiceClient',
     'SpecialistPoolServiceAsyncClient',
+    'VizierServiceClient',
+    'VizierServiceAsyncClient',
     'AcceleratorType',
     'Annotation',
     'AnnotationSpec',
@@ -528,4 +554,26 @@ __all__ = ('DatasetServiceClient',
     'TrainingPipeline',
     'UserActionReference',
     'Value',
+    'AddTrialMeasurementRequest',
+    'CheckTrialEarlyStoppingStateMetatdata',
+    'CheckTrialEarlyStoppingStateRequest',
+    'CheckTrialEarlyStoppingStateResponse',
+    'CompleteTrialRequest',
+    'CreateStudyRequest',
+    'CreateTrialRequest',
+    'DeleteStudyRequest',
+    'DeleteTrialRequest',
+    'GetStudyRequest',
+    'GetTrialRequest',
+    'ListOptimalTrialsRequest',
+    'ListOptimalTrialsResponse',
+    'ListStudiesRequest',
+    'ListStudiesResponse',
+    'ListTrialsRequest',
+    'ListTrialsResponse',
+    'LookupStudyRequest',
+    'StopTrialRequest',
+    'SuggestTrialsMetadata',
+    'SuggestTrialsRequest',
+    'SuggestTrialsResponse',
 )

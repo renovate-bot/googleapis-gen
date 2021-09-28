@@ -529,6 +529,90 @@
           }
         }
       }
+    },
+    "VizierService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::AIPlatform::V1::VizierService::Client",
+          "rpcs": {
+            "CreateStudy": {
+              "methods": [
+                "create_study"
+              ]
+            },
+            "GetStudy": {
+              "methods": [
+                "get_study"
+              ]
+            },
+            "ListStudies": {
+              "methods": [
+                "list_studies"
+              ]
+            },
+            "DeleteStudy": {
+              "methods": [
+                "delete_study"
+              ]
+            },
+            "LookupStudy": {
+              "methods": [
+                "lookup_study"
+              ]
+            },
+            "SuggestTrials": {
+              "methods": [
+                "suggest_trials"
+              ]
+            },
+            "CreateTrial": {
+              "methods": [
+                "create_trial"
+              ]
+            },
+            "GetTrial": {
+              "methods": [
+                "get_trial"
+              ]
+            },
+            "ListTrials": {
+              "methods": [
+                "list_trials"
+              ]
+            },
+            "AddTrialMeasurement": {
+              "methods": [
+                "add_trial_measurement"
+              ]
+            },
+            "CompleteTrial": {
+              "methods": [
+                "complete_trial"
+              ]
+            },
+            "DeleteTrial": {
+              "methods": [
+                "delete_trial"
+              ]
+            },
+            "CheckTrialEarlyStoppingState": {
+              "methods": [
+                "check_trial_early_stopping_state"
+              ]
+            },
+            "StopTrial": {
+              "methods": [
+                "stop_trial"
+              ]
+            },
+            "ListOptimalTrials": {
+              "methods": [
+                "list_optimal_trials"
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }
