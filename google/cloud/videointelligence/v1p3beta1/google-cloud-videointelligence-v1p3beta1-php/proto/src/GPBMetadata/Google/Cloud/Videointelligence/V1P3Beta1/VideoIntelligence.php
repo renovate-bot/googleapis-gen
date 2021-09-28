@@ -23,7 +23,7 @@ class VideoIntelligence
         \GPBMetadata\Google\Rpc\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‰e
+·e
 Agoogle/cloud/videointelligence/v1p3beta1/video_intelligence.proto(google.cloud.videointelligence.v1p3beta1google/api/client.protogoogle/api/field_behavior.proto#google/longrunning/operations.protogoogle/protobuf/duration.protogoogle/protobuf/timestamp.protogoogle/rpc/status.proto"Œ
 AnnotateVideoRequest
 	input_uri (	
@@ -312,8 +312,8 @@ $STREAMING_EXPLICIT_CONTENT_DETECTION
 AnnotateVideo>.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest.google.longrunning.Operation"k‚Óä“"/v1p3beta1/videos:annotate:*ÚAinput_uri,featuresÊA.
 AnnotateVideoResponseAnnotateVideoProgressTÊA videointelligence.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platform2­
 !StreamingVideoIntelligenceService±
-StreamingAnnotateVideoG.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequestH.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse" (0TÊA videointelligence.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB€
-,com.google.cloud.videointelligence.v1p3beta1BVideoIntelligenceServiceProtoPZYgoogle.golang.org/genproto/googleapis/cloud/videointelligence/v1p3beta1;videointelligenceª(Google.Cloud.VideoIntelligence.V1P3Beta1Ê(Google\\Cloud\\VideoIntelligence\\V1p3beta1bproto3'
+StreamingAnnotateVideoG.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequestH.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse" (0TÊA videointelligence.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB®
+,com.google.cloud.videointelligence.v1p3beta1BVideoIntelligenceServiceProtoPZYgoogle.golang.org/genproto/googleapis/cloud/videointelligence/v1p3beta1;videointelligenceª(Google.Cloud.VideoIntelligence.V1P3Beta1Ê(Google\\Cloud\\VideoIntelligence\\V1p3beta1ê+Google::Cloud::VideoIntelligence::V1p3beta1bproto3'
         , true);
 
         static::$is_initialized = true;

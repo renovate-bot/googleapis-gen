@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.videointelligence.v1p3beta1",
-  "libraryPackage": "::Google::Cloud::Videointelligence::V1p3beta1",
+  "libraryPackage": "::Google::Cloud::VideoIntelligence::V1p3beta1",
   "services": {
     "VideoIntelligenceService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client",
+          "libraryClient": "::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client",
           "rpcs": {
             "AnnotateVideo": {
               "methods": [
@@ -22,7 +22,7 @@
     "StreamingVideoIntelligenceService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client",
+          "libraryClient": "::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client",
           "rpcs": {
             "StreamingAnnotateVideo": {
               "methods": [

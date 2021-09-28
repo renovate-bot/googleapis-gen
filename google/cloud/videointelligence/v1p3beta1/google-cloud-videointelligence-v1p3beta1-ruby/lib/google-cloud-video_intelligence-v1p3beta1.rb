@@ -18,4 +18,4 @@
 
 # This gem does not autoload during Bundler.require. To load this gem,
 # issue explicit require statements for the packages desired, e.g.:
-# require "google/cloud/videointelligence/v1p3beta1"
+# require "google/cloud/video_intelligence/v1p3beta1"

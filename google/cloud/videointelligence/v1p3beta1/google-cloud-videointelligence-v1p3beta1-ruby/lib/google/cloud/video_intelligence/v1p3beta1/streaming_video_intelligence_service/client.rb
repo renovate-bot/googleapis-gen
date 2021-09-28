@@ -21,7 +21,7 @@ require "google/cloud/videointelligence/v1p3beta1/video_intelligence_pb"
 
 module Google
   module Cloud
-    module Videointelligence
+    module VideoIntelligence
       module V1p3beta1
         module StreamingVideoIntelligenceService
           ##
@@ -36,13 +36,13 @@ module Google
             ##
             # Configure the StreamingVideoIntelligenceService Client class.
             #
-            # See {::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration}
+            # See {::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @example
             #
             #   # Modify the configuration for all StreamingVideoIntelligenceService clients
-            #   ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.configure do |config|
+            #   ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.configure do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -53,7 +53,7 @@ module Google
             #
             def self.configure
               @configure ||= begin
-                namespace = ["Google", "Cloud", "Videointelligence", "V1p3beta1"]
+                namespace = ["Google", "Cloud", "VideoIntelligence", "V1p3beta1"]
                 parent_config = while namespace.any?
                                   parent_name = namespace.join "::"
                                   parent_const = const_get parent_name
@@ -80,7 +80,7 @@ module Google
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration}
+            # See {::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -99,10 +99,10 @@ module Google
             # @example
             #
             #   # Create a client using the default configuration
-            #   client = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new
+            #   client = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new
             #
             #   # Create a client using a custom configuration
-            #   client = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
+            #   client = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -137,7 +137,7 @@ module Google
               @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
               @streaming_video_intelligence_service_stub = ::Gapic::ServiceStub.new(
-                ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Stub,
+                ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Stub,
                 credentials:  credentials,
                 endpoint:     @config.endpoint,
                 channel_args: @config.channel_args,
@@ -152,16 +152,16 @@ module Google
             # while sending video/audio bytes.
             # This method is only available via the gRPC API (not REST).
             #
-            # @param request [::Gapic::StreamInput, ::Enumerable<::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest, ::Hash>]
-            #   An enumerable of {::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest} instances.
+            # @param request [::Gapic::StreamInput, ::Enumerable<::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest, ::Hash>]
+            #   An enumerable of {::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest} instances.
             # @param options [::Gapic::CallOptions, ::Hash]
             #   Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
             # @yield [response, operation] Access the result along with the RPC operation
-            # @yieldparam response [::Enumerable<::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse>]
+            # @yieldparam response [::Enumerable<::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse>]
             # @yieldparam operation [::GRPC::ActiveCall::Operation]
             #
-            # @return [::Enumerable<::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse>]
+            # @return [::Enumerable<::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
@@ -172,7 +172,7 @@ module Google
               end
 
               request = request.lazy.map do |req|
-                ::Gapic::Protobuf.coerce req, to: ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest
+                ::Gapic::Protobuf.coerce req, to: ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest
               end
 
               # Converts hash and nil to an options object
@@ -210,7 +210,7 @@ module Google
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration::Rpcs}
+            # {::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -221,13 +221,13 @@ module Google
             #   # Modify the global config, setting the timeout for
             #   # streaming_annotate_video to 20 seconds,
             #   # and all remaining timeouts to 10 seconds.
-            #   ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.configure do |config|
+            #   ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.configure do |config|
             #     config.timeout = 10.0
             #     config.rpcs.streaming_annotate_video.timeout = 20.0
             #   end
             #
             #   # Apply the above configuration only to a new client.
-            #   client = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
+            #   client = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
             #     config.timeout = 10.0
             #     config.rpcs.streaming_annotate_video.timeout = 20.0
             #   end

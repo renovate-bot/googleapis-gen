@@ -25,9 +25,9 @@ export VIDEO_INTELLIGENCE_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/videointelligence/v1p3beta1"
+require "google/cloud/video_intelligence/v1p3beta1"
 
-client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new
+client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-video_intelligence-v1p3beta1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Credentials}):
+{::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Credentials}):
 
 * `VIDEO_INTELLIGENCE_CREDENTIALS` - Path to JSON file, or JSON contents
 * `VIDEO_INTELLIGENCE_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/videointelligence/v1p3beta1"
+require "google/cloud/video_intelligence/v1p3beta1"
 
 ENV["VIDEO_INTELLIGENCE_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new
+client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The path to the **Credentials JSON** file can be configured instead of storing
 it in an environment variable. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/videointelligence/v1p3beta1"
+require "google/cloud/video_intelligence/v1p3beta1"
 
-client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
+client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or globally for all clients:
 
 ```ruby
-require "google/cloud/videointelligence/v1p3beta1"
+require "google/cloud/video_intelligence/v1p3beta1"
 
-::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.configure do |config|
+::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new
+client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new
 ```
 
 ### Cloud SDK

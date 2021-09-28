@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_pb"
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_services_pb"
-require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service"
+require "google/cloud/video_intelligence/v1p3beta1/streaming_video_intelligence_service"
 
-class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::ClientTest < Minitest::Test
+class ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceS
 
   def test_streaming_annotate_video
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse.new
+    grpc_response = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -66,30 +66,30 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceS
 
     Gapic::ServiceStub.stub :new, streaming_annotate_video_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
       # Use enumerable object with hash and protobuf object.
       request_hash = { video_config: video_config }
-      request_proto = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
+      request_proto = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
       enum_input = [request_hash, request_proto].to_enum
       client.streaming_annotate_video enum_input do |response, operation|
         assert_kind_of Enumerable, response
         response.to_a.each do |r|
-          assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
+          assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
         end
         assert_equal grpc_operation, operation
       end
 
       # Use stream input object (from gapic-common).
       request_hash = { video_config: video_config }
-      request_proto = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
+      request_proto = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
       stream_input = Gapic::StreamInput.new
       client.streaming_annotate_video stream_input do |response, operation|
         assert_kind_of Enumerable, response
         response.to_a.each do |r|
-          assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
+          assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
         end
         assert_equal grpc_operation, operation
       end
@@ -99,24 +99,24 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceS
 
       # Use enumerable object with hash and protobuf object with options.
       request_hash = { video_config: video_config }
-      request_proto = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
+      request_proto = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
       enum_input = [request_hash, request_proto].to_enum
       client.streaming_annotate_video enum_input, grpc_options do |response, operation|
         assert_kind_of Enumerable, response
         response.to_a.each do |r|
-          assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
+          assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
         end
         assert_equal grpc_operation, operation
       end
 
       # Use stream input object (from gapic-common) with options.
       request_hash = { video_config: video_config }
-      request_proto = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
+      request_proto = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest.new video_config: video_config
       stream_input = Gapic::StreamInput.new
       client.streaming_annotate_video stream_input, grpc_options do |response, operation|
         assert_kind_of Enumerable, response
         response.to_a.each do |r|
-          assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
+          assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoResponse, r
         end
         assert_equal grpc_operation, operation
       end
@@ -128,8 +128,8 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceS
       assert_equal 4, streaming_annotate_video_client_stub.call_rpc_count
       streaming_annotate_video_client_stub.requests.each do |request|
         request.to_a.each do |r|
-          assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::StreamingAnnotateVideoRequest, r
-          assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoConfig), r["video_config"]
+          assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingAnnotateVideoRequest, r
+          assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoConfig), r["video_config"]
           assert_equal :video_config, r.streaming_request
         end
       end
@@ -141,7 +141,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceS
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -151,6 +151,6 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceS
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client::Configuration, config
   end
 end

@@ -22,20 +22,20 @@ require "gapic/config/method"
 
 require "google/cloud/video_intelligence/v1p3beta1/version"
 
-require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service/credentials"
-require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service/client"
+require "google/cloud/video_intelligence/v1p3beta1/streaming_video_intelligence_service/credentials"
+require "google/cloud/video_intelligence/v1p3beta1/streaming_video_intelligence_service/client"
 
 module Google
   module Cloud
-    module Videointelligence
+    module VideoIntelligence
       module V1p3beta1
         ##
         # Service that implements streaming Video Intelligence API.
         #
         # To load this service and instantiate a client:
         #
-        #     require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service"
-        #     client = ::Google::Cloud::Videointelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new
+        #     require "google/cloud/video_intelligence/v1p3beta1/streaming_video_intelligence_service"
+        #     client = ::Google::Cloud::VideoIntelligence::V1p3beta1::StreamingVideoIntelligenceService::Client.new
         #
         module StreamingVideoIntelligenceService
         end
@@ -45,4 +45,4 @@ module Google
 end
 
 helper_path = ::File.join __dir__, "streaming_video_intelligence_service", "helpers.rb"
-require "google/cloud/videointelligence/v1p3beta1/streaming_video_intelligence_service/helpers" if ::File.file? helper_path
+require "google/cloud/video_intelligence/v1p3beta1/streaming_video_intelligence_service/helpers" if ::File.file? helper_path

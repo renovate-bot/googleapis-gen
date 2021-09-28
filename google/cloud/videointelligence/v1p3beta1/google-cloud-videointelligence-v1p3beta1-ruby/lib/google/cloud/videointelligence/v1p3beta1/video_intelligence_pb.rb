@@ -337,7 +337,7 @@ end
 
 module Google
   module Cloud
-    module Videointelligence
+    module VideoIntelligence
       module V1p3beta1
         AnnotateVideoRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest").msgclass
         VideoContext = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.videointelligence.v1p3beta1.VideoContext").msgclass

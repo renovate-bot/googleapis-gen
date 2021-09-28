@@ -21,7 +21,7 @@ require "google/longrunning/operations_pb"
 
 module Google
   module Cloud
-    module Videointelligence
+    module VideoIntelligence
       module V1p3beta1
         module VideoIntelligenceService
           # Service that implements Longrunning Operations API.

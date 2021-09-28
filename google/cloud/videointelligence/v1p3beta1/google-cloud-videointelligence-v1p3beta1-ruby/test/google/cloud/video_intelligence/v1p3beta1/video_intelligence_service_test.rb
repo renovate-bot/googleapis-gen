@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_pb"
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_services_pb"
-require "google/cloud/videointelligence/v1p3beta1/video_intelligence_service"
+require "google/cloud/video_intelligence/v1p3beta1/video_intelligence_service"
 
-class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::ClientTest < Minitest::Test
+class ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -64,11 +64,11 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
 
     annotate_video_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :annotate_video, name
-      assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::AnnotateVideoRequest, request
+      assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::AnnotateVideoRequest, request
       assert_equal "hello world", request["input_uri"]
       assert_equal "hello world", request["input_content"]
       assert_equal [:FEATURE_UNSPECIFIED], request["features"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Videointelligence::V1p3beta1::VideoContext), request["video_context"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoContext), request["video_context"]
       assert_equal "hello world", request["output_uri"]
       assert_equal "hello world", request["location_id"]
       refute_nil options
@@ -76,7 +76,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
 
     Gapic::ServiceStub.stub :new, annotate_video_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -95,7 +95,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
       end
 
       # Use protobuf object
-      client.annotate_video ::Google::Cloud::Videointelligence::V1p3beta1::AnnotateVideoRequest.new(input_uri: input_uri, input_content: input_content, features: features, video_context: video_context, output_uri: output_uri, location_id: location_id) do |response, operation|
+      client.annotate_video ::Google::Cloud::VideoIntelligence::V1p3beta1::AnnotateVideoRequest.new(input_uri: input_uri, input_content: input_content, features: features, video_context: video_context, output_uri: output_uri, location_id: location_id) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -109,7 +109,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
       end
 
       # Use protobuf object with options
-      client.annotate_video(::Google::Cloud::Videointelligence::V1p3beta1::AnnotateVideoRequest.new(input_uri: input_uri, input_content: input_content, features: features, video_context: video_context, output_uri: output_uri, location_id: location_id), grpc_options) do |response, operation|
+      client.annotate_video(::Google::Cloud::VideoIntelligence::V1p3beta1::AnnotateVideoRequest.new(input_uri: input_uri, input_content: input_content, features: features, video_context: video_context, output_uri: output_uri, location_id: location_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -125,7 +125,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -135,7 +135,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client::Configuration, config
   end
 
   def test_operations_client
@@ -143,11 +143,11 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::C
 
     client = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
 
-    assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations, client.operations_client
+    assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations, client.operations_client
   end
 end

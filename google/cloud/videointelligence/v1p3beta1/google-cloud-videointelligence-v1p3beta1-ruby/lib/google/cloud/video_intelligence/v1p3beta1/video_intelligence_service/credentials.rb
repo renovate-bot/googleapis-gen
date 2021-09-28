@@ -20,7 +20,7 @@ require "googleauth"
 
 module Google
   module Cloud
-    module Videointelligence
+    module VideoIntelligence
       module V1p3beta1
         module VideoIntelligenceService
           # Credentials for the VideoIntelligenceService API.

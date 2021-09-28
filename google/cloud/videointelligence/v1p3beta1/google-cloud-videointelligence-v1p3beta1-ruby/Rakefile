@@ -85,8 +85,8 @@ task :acceptance, :project, :keyfile do |t, args|
   if project.nil? || keyfile.nil?
     fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or VIDEO_INTELLIGENCE_TEST_PROJECT=test123 VIDEO_INTELLIGENCE_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
-  require "google/cloud/videointelligence/v1p3beta1/video_intelligence_service/credentials"
-  ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Credentials.env_vars.each do |path|
+  require "google/cloud/video_intelligence/v1p3beta1/video_intelligence_service/credentials"
+  ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
   ENV["VIDEO_INTELLIGENCE_PROJECT"] = project

@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_pb"
 require "google/cloud/videointelligence/v1p3beta1/video_intelligence_services_pb"
-require "google/cloud/videointelligence/v1p3beta1/video_intelligence_service"
+require "google/cloud/video_intelligence/v1p3beta1/video_intelligence_service"
 
-class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::OperationsTest < Minitest::Test
+class ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::OperationsTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -72,7 +72,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
 
     Gapic::ServiceStub.stub :new, list_operations_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -135,7 +135,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
 
     Gapic::ServiceStub.stub :new, get_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -198,7 +198,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
 
     Gapic::ServiceStub.stub :new, delete_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -256,7 +256,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
 
     Gapic::ServiceStub.stub :new, cancel_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -316,7 +316,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
 
     Gapic::ServiceStub.stub :new, wait_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -365,7 +365,7 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
+      client = ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -375,6 +375,6 @@ class ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::O
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Videointelligence::V1p3beta1::VideoIntelligenceService::Operations::Configuration, config
+    assert_kind_of ::Google::Cloud::VideoIntelligence::V1p3beta1::VideoIntelligenceService::Operations::Configuration, config
   end
 end
