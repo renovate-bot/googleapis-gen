@@ -126,6 +126,24 @@ class CryptoKeyVersionAlgorithm
      */
     const RSA_DECRYPT_OAEP_4096_SHA512 = 17;
     /**
+     * RSAES-OAEP 2048 bit key with a SHA1 digest.
+     *
+     * Generated from protobuf enum <code>RSA_DECRYPT_OAEP_2048_SHA1 = 37;</code>
+     */
+    const RSA_DECRYPT_OAEP_2048_SHA1 = 37;
+    /**
+     * RSAES-OAEP 3072 bit key with a SHA1 digest.
+     *
+     * Generated from protobuf enum <code>RSA_DECRYPT_OAEP_3072_SHA1 = 38;</code>
+     */
+    const RSA_DECRYPT_OAEP_3072_SHA1 = 38;
+    /**
+     * RSAES-OAEP 4096 bit key with a SHA1 digest.
+     *
+     * Generated from protobuf enum <code>RSA_DECRYPT_OAEP_4096_SHA1 = 39;</code>
+     */
+    const RSA_DECRYPT_OAEP_4096_SHA1 = 39;
+    /**
      * ECDSA on the NIST P-256 curve with a SHA256 digest.
      *
      * Generated from protobuf enum <code>EC_SIGN_P256_SHA256 = 12;</code>
@@ -172,6 +190,9 @@ class CryptoKeyVersionAlgorithm
         self::RSA_DECRYPT_OAEP_3072_SHA256 => 'RSA_DECRYPT_OAEP_3072_SHA256',
         self::RSA_DECRYPT_OAEP_4096_SHA256 => 'RSA_DECRYPT_OAEP_4096_SHA256',
         self::RSA_DECRYPT_OAEP_4096_SHA512 => 'RSA_DECRYPT_OAEP_4096_SHA512',
+        self::RSA_DECRYPT_OAEP_2048_SHA1 => 'RSA_DECRYPT_OAEP_2048_SHA1',
+        self::RSA_DECRYPT_OAEP_3072_SHA1 => 'RSA_DECRYPT_OAEP_3072_SHA1',
+        self::RSA_DECRYPT_OAEP_4096_SHA1 => 'RSA_DECRYPT_OAEP_4096_SHA1',
         self::EC_SIGN_P256_SHA256 => 'EC_SIGN_P256_SHA256',
         self::EC_SIGN_P384_SHA384 => 'EC_SIGN_P384_SHA384',
         self::EC_SIGN_SECP256K1_SHA256 => 'EC_SIGN_SECP256K1_SHA256',
