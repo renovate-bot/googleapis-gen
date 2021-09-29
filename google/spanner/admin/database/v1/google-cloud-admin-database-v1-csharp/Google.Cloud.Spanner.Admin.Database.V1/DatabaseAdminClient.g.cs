@@ -83,6 +83,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -128,6 +134,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -143,6 +155,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -176,6 +194,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -191,6 +215,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -218,6 +248,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 30 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -275,6 +311,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -290,6 +332,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -305,6 +353,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -320,6 +374,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -366,6 +426,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
@@ -381,6 +447,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 32000 milliseconds.</description></item>
         /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
         /// <item><description>Timeout: 3600 seconds.</description></item>
         /// </list>
         /// </remarks>
