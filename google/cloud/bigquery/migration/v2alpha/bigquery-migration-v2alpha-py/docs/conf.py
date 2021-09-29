@@ -146,7 +146,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Cloud Bigquery Client Libraries for Python",
+    "description": "Google Cloud Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,

@@ -30,7 +30,7 @@ setuptools.setup(
     version=version,
     long_description=readme,
     packages=setuptools.PEP420PackageFinder.find(),
-    namespace_packages=('google', 'google.cloud', 'google.cloud.bigquery'),
+    namespace_packages=('google', 'google.cloud'),
     platforms='Posix; MacOS X; Windows',
     include_package_data=True,
     install_requires=(

@@ -1,2 +1,2 @@
-recursive-include google/cloud/bigquery/migration *.py
-recursive-include google/cloud/bigquery/migration_v2alpha *.py
+recursive-include google/cloud/bigquery_migration *.py
+recursive-include google/cloud/bigquery_migration_v2alpha *.py

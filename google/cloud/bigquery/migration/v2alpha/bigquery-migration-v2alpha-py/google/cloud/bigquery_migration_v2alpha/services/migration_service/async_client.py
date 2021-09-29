@@ -26,11 +26,11 @@ from google.api_core import retry as retries           # type: ignore
 from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
-from google.cloud.bigquery.migration_v2alpha.services.migration_service import pagers
-from google.cloud.bigquery.migration_v2alpha.types import migration_entities
-from google.cloud.bigquery.migration_v2alpha.types import migration_error_details
-from google.cloud.bigquery.migration_v2alpha.types import migration_metrics
-from google.cloud.bigquery.migration_v2alpha.types import migration_service
+from google.cloud.bigquery_migration_v2alpha.services.migration_service import pagers
+from google.cloud.bigquery_migration_v2alpha.types import migration_entities
+from google.cloud.bigquery_migration_v2alpha.types import migration_error_details
+from google.cloud.bigquery_migration_v2alpha.types import migration_metrics
+from google.cloud.bigquery_migration_v2alpha.types import migration_service
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.rpc import error_details_pb2  # type: ignore
 from .transports.base import MigrationServiceTransport, DEFAULT_CLIENT_INFO
@@ -163,7 +163,7 @@ class MigrationServiceAsyncClient:
         r"""Creates a migration workflow.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.CreateMigrationWorkflowRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.CreateMigrationWorkflowRequest`):
                 The request object. Request to create a migration
                 workflow resource.
             parent (:class:`str`):
@@ -174,7 +174,7 @@ class MigrationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            migration_workflow (:class:`google.cloud.bigquery.migration_v2alpha.types.MigrationWorkflow`):
+            migration_workflow (:class:`google.cloud.bigquery_migration_v2alpha.types.MigrationWorkflow`):
                 Required. The migration workflow to
                 create.
 
@@ -188,7 +188,7 @@ class MigrationServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.types.MigrationWorkflow:
+            google.cloud.bigquery_migration_v2alpha.types.MigrationWorkflow:
                 A migration workflow which specifies
                 what needs to be done for an EDW
                 migration.
@@ -249,7 +249,7 @@ class MigrationServiceAsyncClient:
         r"""Gets a previously created migration workflow.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.GetMigrationWorkflowRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.GetMigrationWorkflowRequest`):
                 The request object. A request to get a previously
                 created migration workflow.
             name (:class:`str`):
@@ -267,7 +267,7 @@ class MigrationServiceAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.types.MigrationWorkflow:
+            google.cloud.bigquery_migration_v2alpha.types.MigrationWorkflow:
                 A migration workflow which specifies
                 what needs to be done for an EDW
                 migration.
@@ -332,7 +332,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Lists previously created migration workflow.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.ListMigrationWorkflowsRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.ListMigrationWorkflowsRequest`):
                 The request object. A request to list previously created
                 migration workflows.
             parent (:class:`str`):
@@ -350,7 +350,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.services.migration_service.pagers.ListMigrationWorkflowsAsyncPager:
+            google.cloud.bigquery_migration_v2alpha.services.migration_service.pagers.ListMigrationWorkflowsAsyncPager:
                 Response object for a ListMigrationWorkflows call.
 
                 Iterating over this object will yield results and
@@ -425,7 +425,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Deletes a migration workflow by name.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.DeleteMigrationWorkflowRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.DeleteMigrationWorkflowRequest`):
                 The request object. A request to delete a previously
                 created migration workflow.
             name (:class:`str`):
@@ -496,7 +496,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         RUNNING.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.StartMigrationWorkflowRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.StartMigrationWorkflowRequest`):
                 The request object. A request to start a previously
                 created migration workflow.
             name (:class:`str`):
@@ -569,7 +569,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Gets a previously created migration subtask.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.GetMigrationSubtaskRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.GetMigrationSubtaskRequest`):
                 The request object. A request to get a previously
                 created migration subtasks.
             name (:class:`str`):
@@ -587,7 +587,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.types.MigrationSubtask:
+            google.cloud.bigquery_migration_v2alpha.types.MigrationSubtask:
                 A subtask for a migration which
                 carries details about the configuration
                 of the subtask. The content of the
@@ -655,7 +655,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         r"""Lists previously created migration subtasks.
 
         Args:
-            request (:class:`google.cloud.bigquery.migration_v2alpha.types.ListMigrationSubtasksRequest`):
+            request (:class:`google.cloud.bigquery_migration_v2alpha.types.ListMigrationSubtasksRequest`):
                 The request object. A request to list previously created
                 migration subtasks.
             parent (:class:`str`):
@@ -672,7 +672,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.services.migration_service.pagers.ListMigrationSubtasksAsyncPager:
+            google.cloud.bigquery_migration_v2alpha.services.migration_service.pagers.ListMigrationSubtasksAsyncPager:
                 Response object for a ListMigrationSubtasks call.
 
                 Iterating over this object will yield results and

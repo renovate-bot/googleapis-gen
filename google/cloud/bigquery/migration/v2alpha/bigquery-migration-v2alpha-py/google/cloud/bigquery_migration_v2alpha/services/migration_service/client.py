@@ -30,11 +30,11 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.cloud.bigquery.migration_v2alpha.services.migration_service import pagers
-from google.cloud.bigquery.migration_v2alpha.types import migration_entities
-from google.cloud.bigquery.migration_v2alpha.types import migration_error_details
-from google.cloud.bigquery.migration_v2alpha.types import migration_metrics
-from google.cloud.bigquery.migration_v2alpha.types import migration_service
+from google.cloud.bigquery_migration_v2alpha.services.migration_service import pagers
+from google.cloud.bigquery_migration_v2alpha.types import migration_entities
+from google.cloud.bigquery_migration_v2alpha.types import migration_error_details
+from google.cloud.bigquery_migration_v2alpha.types import migration_metrics
+from google.cloud.bigquery_migration_v2alpha.types import migration_service
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.rpc import error_details_pb2  # type: ignore
 from .transports.base import MigrationServiceTransport, DEFAULT_CLIENT_INFO
@@ -363,7 +363,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         r"""Creates a migration workflow.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.CreateMigrationWorkflowRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.CreateMigrationWorkflowRequest, dict]):
                 The request object. Request to create a migration
                 workflow resource.
             parent (str):
@@ -374,7 +374,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            migration_workflow (google.cloud.bigquery.migration_v2alpha.types.MigrationWorkflow):
+            migration_workflow (google.cloud.bigquery_migration_v2alpha.types.MigrationWorkflow):
                 Required. The migration workflow to
                 create.
 
@@ -388,7 +388,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.types.MigrationWorkflow:
+            google.cloud.bigquery_migration_v2alpha.types.MigrationWorkflow:
                 A migration workflow which specifies
                 what needs to be done for an EDW
                 migration.
@@ -449,7 +449,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         r"""Gets a previously created migration workflow.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.GetMigrationWorkflowRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.GetMigrationWorkflowRequest, dict]):
                 The request object. A request to get a previously
                 created migration workflow.
             name (str):
@@ -467,7 +467,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.types.MigrationWorkflow:
+            google.cloud.bigquery_migration_v2alpha.types.MigrationWorkflow:
                 A migration workflow which specifies
                 what needs to be done for an EDW
                 migration.
@@ -526,7 +526,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         r"""Lists previously created migration workflow.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.ListMigrationWorkflowsRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.ListMigrationWorkflowsRequest, dict]):
                 The request object. A request to list previously created
                 migration workflows.
             parent (str):
@@ -544,7 +544,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.services.migration_service.pagers.ListMigrationWorkflowsPager:
+            google.cloud.bigquery_migration_v2alpha.services.migration_service.pagers.ListMigrationWorkflowsPager:
                 Response object for a ListMigrationWorkflows call.
 
                 Iterating over this object will yield results and
@@ -613,7 +613,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         r"""Deletes a migration workflow by name.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.DeleteMigrationWorkflowRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.DeleteMigrationWorkflowRequest, dict]):
                 The request object. A request to delete a previously
                 created migration workflow.
             name (str):
@@ -684,7 +684,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         RUNNING.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.StartMigrationWorkflowRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.StartMigrationWorkflowRequest, dict]):
                 The request object. A request to start a previously
                 created migration workflow.
             name (str):
@@ -751,7 +751,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         r"""Gets a previously created migration subtask.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.GetMigrationSubtaskRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.GetMigrationSubtaskRequest, dict]):
                 The request object. A request to get a previously
                 created migration subtasks.
             name (str):
@@ -769,7 +769,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.types.MigrationSubtask:
+            google.cloud.bigquery_migration_v2alpha.types.MigrationSubtask:
                 A subtask for a migration which
                 carries details about the configuration
                 of the subtask. The content of the
@@ -831,7 +831,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         r"""Lists previously created migration subtasks.
 
         Args:
-            request (Union[google.cloud.bigquery.migration_v2alpha.types.ListMigrationSubtasksRequest, dict]):
+            request (Union[google.cloud.bigquery_migration_v2alpha.types.ListMigrationSubtasksRequest, dict]):
                 The request object. A request to list previously created
                 migration subtasks.
             parent (str):
@@ -848,7 +848,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.bigquery.migration_v2alpha.services.migration_service.pagers.ListMigrationSubtasksPager:
+            google.cloud.bigquery_migration_v2alpha.services.migration_service.pagers.ListMigrationSubtasksPager:
                 Response object for a ListMigrationSubtasks call.
 
                 Iterating over this object will yield results and
