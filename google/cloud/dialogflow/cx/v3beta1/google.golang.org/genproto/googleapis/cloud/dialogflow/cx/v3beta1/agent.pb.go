@@ -1794,6 +1794,7 @@ type AgentsClient interface {
 	// Deletes the specified agent.
 	DeleteAgent(ctx context.Context, in *DeleteAgentRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Exports the specified agent to a binary file.
+	//
 	// This method is a [long-running
 	// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
 	// The returned `Operation` type has the following method-specific fields:
@@ -1806,6 +1807,15 @@ type AgentsClient interface {
 	//
 	// Replaces the current agent with a new one. Note that all existing resources
 	// in agent (e.g. intents, entity types, flows) will be removed.
+	//
+	// This method is a [long-running
+	// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+	// The returned `Operation` type has the following method-specific fields:
+	//
+	// - `metadata`: An empty [Struct
+	//   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+	// - `response`: An [Empty
+	//   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
 	//
 	// Note: You should always train a flow prior to sending it queries. See the
 	// [training
@@ -1930,6 +1940,7 @@ type AgentsServer interface {
 	// Deletes the specified agent.
 	DeleteAgent(context.Context, *DeleteAgentRequest) (*emptypb.Empty, error)
 	// Exports the specified agent to a binary file.
+	//
 	// This method is a [long-running
 	// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
 	// The returned `Operation` type has the following method-specific fields:
@@ -1942,6 +1953,15 @@ type AgentsServer interface {
 	//
 	// Replaces the current agent with a new one. Note that all existing resources
 	// in agent (e.g. intents, entity types, flows) will be removed.
+	//
+	// This method is a [long-running
+	// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+	// The returned `Operation` type has the following method-specific fields:
+	//
+	// - `metadata`: An empty [Struct
+	//   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+	// - `response`: An [Empty
+	//   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
 	//
 	// Note: You should always train a flow prior to sending it queries. See the
 	// [training

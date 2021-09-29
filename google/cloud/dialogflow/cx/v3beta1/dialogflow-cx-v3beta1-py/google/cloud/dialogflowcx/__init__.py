@@ -16,6 +16,8 @@
 
 from google.cloud.dialogflowcx_v3beta1.services.agents.client import AgentsClient
 from google.cloud.dialogflowcx_v3beta1.services.agents.async_client import AgentsAsyncClient
+from google.cloud.dialogflowcx_v3beta1.services.deployments.client import DeploymentsClient
+from google.cloud.dialogflowcx_v3beta1.services.deployments.async_client import DeploymentsAsyncClient
 from google.cloud.dialogflowcx_v3beta1.services.entity_types.client import EntityTypesClient
 from google.cloud.dialogflowcx_v3beta1.services.entity_types.async_client import EntityTypesAsyncClient
 from google.cloud.dialogflowcx_v3beta1.services.environments.client import EnvironmentsClient
@@ -67,6 +69,10 @@ from google.cloud.dialogflowcx_v3beta1.types.audio_config import AudioEncoding
 from google.cloud.dialogflowcx_v3beta1.types.audio_config import OutputAudioEncoding
 from google.cloud.dialogflowcx_v3beta1.types.audio_config import SpeechModelVariant
 from google.cloud.dialogflowcx_v3beta1.types.audio_config import SsmlVoiceGender
+from google.cloud.dialogflowcx_v3beta1.types.deployment import Deployment
+from google.cloud.dialogflowcx_v3beta1.types.deployment import GetDeploymentRequest
+from google.cloud.dialogflowcx_v3beta1.types.deployment import ListDeploymentsRequest
+from google.cloud.dialogflowcx_v3beta1.types.deployment import ListDeploymentsResponse
 from google.cloud.dialogflowcx_v3beta1.types.entity_type import CreateEntityTypeRequest
 from google.cloud.dialogflowcx_v3beta1.types.entity_type import DeleteEntityTypeRequest
 from google.cloud.dialogflowcx_v3beta1.types.entity_type import EntityType
@@ -77,6 +83,9 @@ from google.cloud.dialogflowcx_v3beta1.types.entity_type import UpdateEntityType
 from google.cloud.dialogflowcx_v3beta1.types.environment import ContinuousTestResult
 from google.cloud.dialogflowcx_v3beta1.types.environment import CreateEnvironmentRequest
 from google.cloud.dialogflowcx_v3beta1.types.environment import DeleteEnvironmentRequest
+from google.cloud.dialogflowcx_v3beta1.types.environment import DeployFlowMetadata
+from google.cloud.dialogflowcx_v3beta1.types.environment import DeployFlowRequest
+from google.cloud.dialogflowcx_v3beta1.types.environment import DeployFlowResponse
 from google.cloud.dialogflowcx_v3beta1.types.environment import Environment
 from google.cloud.dialogflowcx_v3beta1.types.environment import GetEnvironmentRequest
 from google.cloud.dialogflowcx_v3beta1.types.environment import ListContinuousTestResultsRequest
@@ -237,6 +246,8 @@ from google.cloud.dialogflowcx_v3beta1.types.webhook import WebhookResponse
 
 __all__ = ('AgentsClient',
     'AgentsAsyncClient',
+    'DeploymentsClient',
+    'DeploymentsAsyncClient',
     'EntityTypesClient',
     'EntityTypesAsyncClient',
     'EnvironmentsClient',
@@ -287,6 +298,10 @@ __all__ = ('AgentsClient',
     'OutputAudioEncoding',
     'SpeechModelVariant',
     'SsmlVoiceGender',
+    'Deployment',
+    'GetDeploymentRequest',
+    'ListDeploymentsRequest',
+    'ListDeploymentsResponse',
     'CreateEntityTypeRequest',
     'DeleteEntityTypeRequest',
     'EntityType',
@@ -297,6 +312,9 @@ __all__ = ('AgentsClient',
     'ContinuousTestResult',
     'CreateEnvironmentRequest',
     'DeleteEnvironmentRequest',
+    'DeployFlowMetadata',
+    'DeployFlowRequest',
+    'DeployFlowResponse',
     'Environment',
     'GetEnvironmentRequest',
     'ListContinuousTestResultsRequest',

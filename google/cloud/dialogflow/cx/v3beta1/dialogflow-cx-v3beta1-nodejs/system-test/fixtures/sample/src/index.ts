@@ -16,10 +16,13 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {AgentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient} from '@google-cloud/dialogflow-cx';
+import {AgentsClient, DeploymentsClient, EntityTypesClient, EnvironmentsClient, ExperimentsClient, FlowsClient, IntentsClient, PagesClient, SecuritySettingsServiceClient, SessionEntityTypesClient, SessionsClient, TestCasesClient, TransitionRouteGroupsClient, VersionsClient, WebhooksClient} from '@google-cloud/dialogflow-cx';
 
 // check that the client class type name can be used
 function doStuffWithAgentsClient(client: AgentsClient) {
+  client.close();
+}
+function doStuffWithDeploymentsClient(client: DeploymentsClient) {
   client.close();
 }
 function doStuffWithEntityTypesClient(client: EntityTypesClient) {
@@ -66,6 +69,9 @@ function main() {
   // check that the client instance can be created
   const agentsClient = new AgentsClient();
   doStuffWithAgentsClient(agentsClient);
+  // check that the client instance can be created
+  const deploymentsClient = new DeploymentsClient();
+  doStuffWithDeploymentsClient(deploymentsClient);
   // check that the client instance can be created
   const entityTypesClient = new EntityTypesClient();
   doStuffWithEntityTypesClient(entityTypesClient);

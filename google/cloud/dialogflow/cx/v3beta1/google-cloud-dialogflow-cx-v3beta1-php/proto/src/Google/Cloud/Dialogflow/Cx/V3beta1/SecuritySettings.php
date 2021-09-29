@@ -18,11 +18,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class SecuritySettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/<Project ID>/locations/<Location
      * ID>/securitySettings/<Security Settings ID>`.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
     /**
@@ -98,7 +101,10 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. Resource name of the settings.
+     *           Resource name of the settings.
+     *           Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     *           [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     *           automatically.
      *           Format: `projects/<Project ID>/locations/<Location
      *           ID>/securitySettings/<Security Settings ID>`.
      *     @type string $display_name
@@ -155,11 +161,14 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/<Project ID>/locations/<Location
      * ID>/securitySettings/<Security Settings ID>`.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @return string
      */
     public function getName()
@@ -168,11 +177,14 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/<Project ID>/locations/<Location
      * ID>/securitySettings/<Security Settings ID>`.
      *
-     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
      * @return $this
      */

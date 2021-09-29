@@ -7,6 +7,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * <pre>
  * Metadata returned for the [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ExportTestCases] long running
  * operation.
+ * This message currently has no fields.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata}
@@ -233,6 +234,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Metadata returned for the [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ExportTestCases] long running
    * operation.
+   * This message currently has no fields.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata}

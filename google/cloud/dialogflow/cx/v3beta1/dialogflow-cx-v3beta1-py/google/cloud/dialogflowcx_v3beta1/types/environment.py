@@ -38,6 +38,9 @@ __protobuf__ = proto.module(
         'RunContinuousTestMetadata',
         'ListContinuousTestResultsRequest',
         'ListContinuousTestResultsResponse',
+        'DeployFlowRequest',
+        'DeployFlowResponse',
+        'DeployFlowMetadata',
     },
 )
 
@@ -73,6 +76,9 @@ class Environment(proto.Message):
             agent. Otherwise, an error will be returned.
         update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. Update time of this environment.
+        test_cases_config (google.cloud.dialogflowcx_v3beta1.types.Environment.TestCasesConfig):
+            The test cases config for continuous tests of
+            this environment.
     """
 
     class VersionConfig(proto.Message):
@@ -87,6 +93,37 @@ class Environment(proto.Message):
         version = proto.Field(
             proto.STRING,
             number=1,
+        )
+
+    class TestCasesConfig(proto.Message):
+        r"""The configuration for continuous tests.
+        Attributes:
+            test_cases (Sequence[str]):
+                A list of test case names to run. They should be under the
+                same agent. Format of each test case name:
+                ``projects/<Project ID>/locations/ <Location ID>/agents/<AgentID>/testCases/<TestCase ID>``
+            enable_continuous_run (bool):
+                Whether to run test cases in
+                [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig.test_cases]
+                periodically. Default false. If set to true, run once a day.
+            enable_predeployment_run (bool):
+                Whether to run test cases in
+                [TestCasesConfig.test_cases][google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig.test_cases]
+                before deploying a flow version to the environment. Default
+                false.
+        """
+
+        test_cases = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        enable_continuous_run = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
+        enable_predeployment_run = proto.Field(
+            proto.BOOL,
+            number=3,
         )
 
     name = proto.Field(
@@ -110,6 +147,11 @@ class Environment(proto.Message):
         proto.MESSAGE,
         number=5,
         message=timestamp_pb2.Timestamp,
+    )
+    test_cases_config = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=TestCasesConfig,
     )
 
 
@@ -472,6 +514,70 @@ class ListContinuousTestResultsResponse(proto.Message):
     next_page_token = proto.Field(
         proto.STRING,
         number=2,
+    )
+
+
+class DeployFlowRequest(proto.Message):
+    r"""The request message for
+    [Environments.DeployFlow][google.cloud.dialogflow.cx.v3beta1.Environments.DeployFlow].
+
+    Attributes:
+        environment (str):
+            Required. The environment to deploy the flow to. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/ environments/<Environment ID>``.
+        flow_version (str):
+            Required. The flow version to deploy. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/ flows/<Flow ID>/versions/<Version ID>``.
+    """
+
+    environment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow_version = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class DeployFlowResponse(proto.Message):
+    r"""The response message for
+    [Environments.DeployFlow][google.cloud.dialogflow.cx.v3beta1.Environments.DeployFlow].
+
+    Attributes:
+        environment (google.cloud.dialogflowcx_v3beta1.types.Environment):
+            The updated environment where the flow is
+            deployed.
+        deployment (str):
+            The name of the flow version deployment. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/ environments/<Environment ID>/deployments/<Deployment ID>``.
+    """
+
+    environment = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message='Environment',
+    )
+    deployment = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class DeployFlowMetadata(proto.Message):
+    r"""Metadata returned for the
+    [Environments.DeployFlow][google.cloud.dialogflow.cx.v3beta1.Environments.DeployFlow]
+    long running operation.
+
+    Attributes:
+        test_errors (Sequence[google.cloud.dialogflowcx_v3beta1.types.TestError]):
+            Errors of running deployment tests.
+    """
+
+    test_errors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=test_case.TestError,
     )
 
 

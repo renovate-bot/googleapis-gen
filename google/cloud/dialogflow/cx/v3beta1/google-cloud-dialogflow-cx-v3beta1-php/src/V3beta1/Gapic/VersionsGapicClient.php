@@ -32,14 +32,13 @@ use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
-
 use Google\ApiCore\PathTemplate;
-
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\Dialogflow\Cx\V3beta1\CreateVersionOperationMetadata;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CreateVersionRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\DeleteVersionRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetVersionRequest;
@@ -51,6 +50,7 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\Version;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Struct;
 
 /**
  * Service Description: Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
@@ -381,6 +381,13 @@ class VersionsGapicClient
     /**
      * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
+     *
      * Sample code:
      * ```
      * $versionsClient = new VersionsClient();
@@ -611,6 +618,15 @@ class VersionsGapicClient
 
     /**
      * Loads resources in the specified version to the draft flow.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      *
      * Sample code:
      * ```

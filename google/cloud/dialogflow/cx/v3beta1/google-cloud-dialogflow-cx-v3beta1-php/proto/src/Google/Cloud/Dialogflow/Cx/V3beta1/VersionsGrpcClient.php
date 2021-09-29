@@ -64,6 +64,13 @@ class VersionsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\CreateVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -109,6 +116,15 @@ class VersionsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Loads resources in the specified version to the draft flow.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\LoadVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

@@ -31,7 +31,6 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
-
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -42,20 +41,23 @@ use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CreateFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\DeleteFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ExportFlowRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ExportFlowResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\Flow;
 use Google\Cloud\Dialogflow\Cx\V3beta1\FlowValidationResult;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetFlowValidationResultRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListFlowsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListFlowsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\TrainFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\UpdateFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ValidateFlowRequest;
 use Google\LongRunning\Operation;
-
 use Google\Protobuf\FieldMask;
+
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Struct;
 
 /**
  * Service Description: Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
@@ -555,6 +557,14 @@ class FlowsGapicClient
     /**
      * Exports the specified flow to a binary file.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
+     *
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      *
@@ -755,6 +765,14 @@ class FlowsGapicClient
     /**
      * Imports the specified flow to the specified agent from a binary file.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+     *
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -938,6 +956,15 @@ class FlowsGapicClient
     /**
      * Trains the specified flow. Note that only the flow in 'draft' environment
      * is trained.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      *
      * Note: You should always train a flow prior to sending it queries. See the
      * [training

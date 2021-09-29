@@ -160,4 +160,31 @@ public interface EnvironmentOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * The test cases config for continuous tests of this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig test_cases_config = 7;</code>
+   * @return Whether the testCasesConfig field is set.
+   */
+  boolean hasTestCasesConfig();
+  /**
+   * <pre>
+   * The test cases config for continuous tests of this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig test_cases_config = 7;</code>
+   * @return The testCasesConfig.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig getTestCasesConfig();
+  /**
+   * <pre>
+   * The test cases config for continuous tests of this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfig test_cases_config = 7;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Environment.TestCasesConfigOrBuilder getTestCasesConfigOrBuilder();
 }

@@ -31,7 +31,6 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
-
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
@@ -40,15 +39,21 @@ use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\Cx\V3beta1\BatchDeleteTestCasesRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\BatchRunTestCasesMetadata;
 use Google\Cloud\Dialogflow\Cx\V3beta1\BatchRunTestCasesRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\BatchRunTestCasesResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CalculateCoverageRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CalculateCoverageRequest\CoverageType;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CalculateCoverageResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CreateTestCaseRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ExportTestCasesMetadata;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ExportTestCasesRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ExportTestCasesResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetTestCaseRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetTestCaseResultRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ImportTestCasesMetadata;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ImportTestCasesRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ImportTestCasesResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCaseResultsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCaseResultsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListTestCasesRequest;
@@ -489,6 +494,13 @@ class TestCasesGapicClient
     /**
      * Kicks off a batch run of test cases.
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
+     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
+     *
      * Sample code:
      * ```
      * $testCasesClient = new TestCasesClient();
@@ -664,6 +676,13 @@ class TestCasesGapicClient
     /**
      * Exports the test cases under the agent to a Cloud Storage bucket or a local
      * file. Filter can be applied to export a subset of test cases.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
+     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
      *
      * Sample code:
      * ```
@@ -854,6 +873,13 @@ class TestCasesGapicClient
      * Imports the test cases from a Cloud Storage bucket or a local file. It
      * always creates new test cases and won't overwite any existing ones. The
      * provided ID in the imported test case is neglected.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
+     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
      *
      * Sample code:
      * ```
@@ -1118,6 +1144,7 @@ class TestCasesGapicClient
 
     /**
      * Kicks off a test case run.
+     *
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:

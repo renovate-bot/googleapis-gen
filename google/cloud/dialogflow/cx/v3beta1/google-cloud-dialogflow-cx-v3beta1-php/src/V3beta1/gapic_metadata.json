@@ -186,6 +186,25 @@
                 }
             }
         },
+        "Deployments": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "DeploymentsGapicClient",
+                    "rpcs": {
+                        "GetDeployment": {
+                            "methods": [
+                                "getDeployment"
+                            ]
+                        },
+                        "ListDeployments": {
+                            "methods": [
+                                "listDeployments"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "EntityTypes": {
             "clients": {
                 "grpc": {
@@ -433,6 +452,11 @@
                         "DeleteEnvironment": {
                             "methods": [
                                 "deleteEnvironment"
+                            ]
+                        },
+                        "DeployFlow": {
+                            "methods": [
+                                "deployFlow"
                             ]
                         },
                         "GetEnvironment": {

@@ -57,6 +57,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             RunContinuousTestSettings = existing.RunContinuousTestSettings;
             RunContinuousTestOperationsSettings = existing.RunContinuousTestOperationsSettings.Clone();
             ListContinuousTestResultsSettings = existing.ListContinuousTestResultsSettings;
+            DeployFlowSettings = existing.DeployFlowSettings;
+            DeployFlowOperationsSettings = existing.DeployFlowOperationsSettings.Clone();
             OnCopy(existing);
         }
 
@@ -237,6 +239,39 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         /// </list>
         /// </remarks>
         public gaxgrpc::CallSettings ListContinuousTestResultsSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 2147483647, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>EnvironmentsClient.DeployFlow</c> and <c>EnvironmentsClient.DeployFlowAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: Unlimited</description></item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings DeployFlowSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 2147483647, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable)));
+
+        /// <summary>
+        /// Long Running Operation settings for calls to <c>EnvironmentsClient.DeployFlow</c> and
+        /// <c>EnvironmentsClient.DeployFlowAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// Uses default <see cref="gax::PollSettings"/> of:
+        /// <list type="bullet">
+        /// <item><description>Initial delay: 20 seconds.</description></item>
+        /// <item><description>Delay multiplier: 1.5</description></item>
+        /// <item><description>Maximum delay: 45 seconds.</description></item>
+        /// <item><description>Total timeout: 24 hours.</description></item>
+        /// </list>
+        /// </remarks>
+        public lro::OperationsSettings DeployFlowOperationsSettings { get; set; } = new lro::OperationsSettings
+        {
+            DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
+        };
 
         /// <summary>Creates a deep clone of this object, with all the same property values.</summary>
         /// <returns>A deep clone of this <see cref="EnvironmentsSettings"/> object.</returns>
@@ -637,6 +672,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -646,6 +689,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -655,6 +706,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -691,6 +750,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="parent">
         /// Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
@@ -710,6 +777,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="parent">
         /// Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
@@ -729,6 +804,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="parent">
         /// Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
@@ -744,6 +827,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="parent">
         /// Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
@@ -763,6 +854,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="parent">
         /// Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
@@ -782,6 +881,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="parent">
         /// Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for.
@@ -797,6 +904,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -806,6 +921,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -815,6 +938,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -851,6 +982,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="environment">
         /// Required. The environment to update.
@@ -869,6 +1008,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="environment">
         /// Required. The environment to update.
@@ -887,6 +1034,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="environment">
         /// Required. The environment to update.
@@ -1140,6 +1295,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+        /// - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1149,6 +1311,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+        /// - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1158,6 +1327,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+        /// - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -1313,6 +1489,80 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
                 PageToken = pageToken ?? "",
                 PageSize = pageSize ?? 0,
             }, callSettings);
+
+        /// <summary>
+        /// Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+        /// - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<DeployFlowResponse, DeployFlowMetadata> DeployFlow(DeployFlowRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+        /// - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<DeployFlowResponse, DeployFlowMetadata>> DeployFlowAsync(DeployFlowRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+        /// - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<DeployFlowResponse, DeployFlowMetadata>> DeployFlowAsync(DeployFlowRequest request, st::CancellationToken cancellationToken) =>
+            DeployFlowAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>The long-running operations client for <c>DeployFlow</c>.</summary>
+        public virtual lro::OperationsClient DeployFlowOperationsClient => throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Poll an operation once, using an <c>operationName</c> from a previous invocation of <c>DeployFlow</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The result of polling the operation.</returns>
+        public virtual lro::Operation<DeployFlowResponse, DeployFlowMetadata> PollOnceDeployFlow(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<DeployFlowResponse, DeployFlowMetadata>.PollOnceFromName(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DeployFlowOperationsClient, callSettings);
+
+        /// <summary>
+        /// Asynchronously poll an operation once, using an <c>operationName</c> from a previous invocation of
+        /// <c>DeployFlow</c>.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of a previously invoked operation. Must not be <c>null</c> or empty.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A task representing the result of polling the operation.</returns>
+        public virtual stt::Task<lro::Operation<DeployFlowResponse, DeployFlowMetadata>> PollOnceDeployFlowAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
+            lro::Operation<DeployFlowResponse, DeployFlowMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DeployFlowOperationsClient, callSettings);
     }
 
     /// <summary>Environments client wrapper implementation, for convenient use.</summary>
@@ -1337,6 +1587,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         private readonly gaxgrpc::ApiCall<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse> _callListContinuousTestResults;
 
+        private readonly gaxgrpc::ApiCall<DeployFlowRequest, lro::Operation> _callDeployFlow;
+
         /// <summary>
         /// Constructs a client wrapper for the Environments service, with the specified gRPC client and settings.
         /// </summary>
@@ -1350,6 +1602,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             CreateEnvironmentOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.CreateEnvironmentOperationsSettings);
             UpdateEnvironmentOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.UpdateEnvironmentOperationsSettings);
             RunContinuousTestOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.RunContinuousTestOperationsSettings);
+            DeployFlowOperationsClient = new lro::OperationsClientImpl(grpcClient.CreateOperationsClient(), effectiveSettings.DeployFlowOperationsSettings);
             _callListEnvironments = clientHelper.BuildApiCall<ListEnvironmentsRequest, ListEnvironmentsResponse>(grpcClient.ListEnvironmentsAsync, grpcClient.ListEnvironments, effectiveSettings.ListEnvironmentsSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callListEnvironments);
             Modify_ListEnvironmentsApiCall(ref _callListEnvironments);
@@ -1374,6 +1627,9 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             _callListContinuousTestResults = clientHelper.BuildApiCall<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse>(grpcClient.ListContinuousTestResultsAsync, grpcClient.ListContinuousTestResults, effectiveSettings.ListContinuousTestResultsSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callListContinuousTestResults);
             Modify_ListContinuousTestResultsApiCall(ref _callListContinuousTestResults);
+            _callDeployFlow = clientHelper.BuildApiCall<DeployFlowRequest, lro::Operation>(grpcClient.DeployFlowAsync, grpcClient.DeployFlow, effectiveSettings.DeployFlowSettings).WithGoogleRequestParam("environment", request => request.Environment);
+            Modify_ApiCall(ref _callDeployFlow);
+            Modify_DeployFlowApiCall(ref _callDeployFlow);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
         }
 
@@ -1395,6 +1651,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         partial void Modify_ListContinuousTestResultsApiCall(ref gaxgrpc::ApiCall<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse> call);
 
+        partial void Modify_DeployFlowApiCall(ref gaxgrpc::ApiCall<DeployFlowRequest, lro::Operation> call);
+
         partial void OnConstruction(Environments.EnvironmentsClient grpcClient, EnvironmentsSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>The underlying gRPC Environments client</summary>
@@ -1415,6 +1673,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         partial void Modify_RunContinuousTestRequest(ref RunContinuousTestRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_ListContinuousTestResultsRequest(ref ListContinuousTestResultsRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_DeployFlowRequest(ref DeployFlowRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
@@ -1469,6 +1729,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1481,6 +1749,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1496,6 +1772,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1508,6 +1792,14 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: An empty [Struct
+        /// message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+        /// - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1571,6 +1863,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+        /// - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1583,6 +1882,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
 
         /// <summary>
         /// Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+        /// - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1615,6 +1921,47 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         {
             Modify_ListContinuousTestResultsRequest(ref request, ref callSettings);
             return new gaxgrpc::GrpcPagedAsyncEnumerable<ListContinuousTestResultsRequest, ListContinuousTestResultsResponse, ContinuousTestResult>(_callListContinuousTestResults, request, callSettings);
+        }
+
+        /// <summary>The long-running operations client for <c>DeployFlow</c>.</summary>
+        public override lro::OperationsClient DeployFlowOperationsClient { get; }
+
+        /// <summary>
+        /// Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+        /// - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override lro::Operation<DeployFlowResponse, DeployFlowMetadata> DeployFlow(DeployFlowRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeployFlowRequest(ref request, ref callSettings);
+            return new lro::Operation<DeployFlowResponse, DeployFlowMetadata>(_callDeployFlow.Sync(request, callSettings), DeployFlowOperationsClient);
+        }
+
+        /// <summary>
+        /// Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+        /// 
+        /// This method is a [long-running
+        /// operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+        /// The returned `Operation` type has the following method-specific fields:
+        /// 
+        /// - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+        /// - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override async stt::Task<lro::Operation<DeployFlowResponse, DeployFlowMetadata>> DeployFlowAsync(DeployFlowRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeployFlowRequest(ref request, ref callSettings);
+            return new lro::Operation<DeployFlowResponse, DeployFlowMetadata>(await _callDeployFlow.Async(request, callSettings).ConfigureAwait(false), DeployFlowOperationsClient);
         }
     }
 
