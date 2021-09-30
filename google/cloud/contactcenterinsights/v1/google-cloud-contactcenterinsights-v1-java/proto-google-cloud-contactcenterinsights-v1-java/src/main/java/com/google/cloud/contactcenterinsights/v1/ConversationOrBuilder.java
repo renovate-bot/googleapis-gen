@@ -356,7 +356,7 @@ public interface ConversationOrBuilder extends
 
   /**
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -365,7 +365,7 @@ public interface ConversationOrBuilder extends
   int getMediumValue();
   /**
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>

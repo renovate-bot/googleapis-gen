@@ -14,7 +14,7 @@ use UnexpectedValueException;
 class Medium
 {
     /**
-     * Default value.
+     * Default value, if unspecified will default to PHONE_CALL.
      *
      * Generated from protobuf enum <code>MEDIUM_UNSPECIFIED = 0;</code>
      */

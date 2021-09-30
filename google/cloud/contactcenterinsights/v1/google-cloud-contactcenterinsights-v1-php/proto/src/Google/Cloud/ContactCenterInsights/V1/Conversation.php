@@ -74,7 +74,7 @@ class Conversation extends \Google\Protobuf\Internal\Message
      */
     protected $transcript = null;
     /**
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -152,7 +152,7 @@ class Conversation extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript $transcript
      *           Output only. The conversation transcript.
      *     @type int $medium
-     *           Immutable. The conversation medium.
+     *           Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      *     @type \Google\Protobuf\Duration $duration
      *           Output only. The duration of the conversation.
      *     @type int $turn_count
@@ -563,7 +563,7 @@ class Conversation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -574,7 +574,7 @@ class Conversation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var

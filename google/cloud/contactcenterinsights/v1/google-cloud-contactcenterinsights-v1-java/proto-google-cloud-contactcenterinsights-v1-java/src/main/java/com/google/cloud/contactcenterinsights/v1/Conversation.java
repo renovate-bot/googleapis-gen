@@ -315,7 +315,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * Default value.
+     * Default value, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>MEDIUM_UNSPECIFIED = 0;</code>
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Default value.
+     * Default value, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>MEDIUM_UNSPECIFIED = 0;</code>
@@ -6966,7 +6966,7 @@ private static final long serialVersionUID = 0L;
   private int medium_;
   /**
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -6977,7 +6977,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Immutable. The conversation medium.
+   * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
    * </pre>
    *
    * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9905,7 +9905,7 @@ private static final long serialVersionUID = 0L;
     private int medium_ = 0;
     /**
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9916,7 +9916,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9931,7 +9931,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9945,7 +9945,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9963,7 +9963,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The conversation medium.
+     * Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
      * </pre>
      *
      * <code>.google.cloud.contactcenterinsights.v1.Conversation.Medium medium = 9 [(.google.api.field_behavior) = IMMUTABLE];</code>

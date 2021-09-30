@@ -2482,7 +2482,7 @@ private static final long serialVersionUID = 0L;
     }
     return issueMatches_;
   }
-
+  @java.lang.Deprecated 
   public int getIssueMatchesCount() {
     return internalGetIssueMatches().getMap().size();
   }
@@ -2492,11 +2492,12 @@ private static final long serialVersionUID = 0L;
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
-
+  @java.lang.Deprecated 
   @java.lang.Override
   public boolean containsIssueMatches(
       java.lang.String key) {
@@ -2517,12 +2518,13 @@ private static final long serialVersionUID = 0L;
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
   @java.lang.Override
-
+  @java.lang.Deprecated 
   public java.util.Map<java.lang.String, java.lang.Integer> getIssueMatchesMap() {
     return internalGetIssueMatches().getMap();
   }
@@ -2532,12 +2534,13 @@ private static final long serialVersionUID = 0L;
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
   @java.lang.Override
-
+  @java.lang.Deprecated 
   public int getIssueMatchesOrDefault(
       java.lang.String key,
       int defaultValue) {
@@ -2552,12 +2555,13 @@ private static final long serialVersionUID = 0L;
    * matches in the set of conversations. Key has the format:
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
    * ID&gt;/issues/&lt;Issue ID&gt;`
+   * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
-   * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+   * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
    */
   @java.lang.Override
-
+  @java.lang.Deprecated 
   public int getIssueMatchesOrThrow(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
@@ -3704,7 +3708,7 @@ private static final long serialVersionUID = 0L;
       }
       return issueMatches_;
     }
-
+    @java.lang.Deprecated 
     public int getIssueMatchesCount() {
       return internalGetIssueMatches().getMap().size();
     }
@@ -3714,11 +3718,12 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
-
+    @java.lang.Deprecated 
     @java.lang.Override
     public boolean containsIssueMatches(
         java.lang.String key) {
@@ -3739,12 +3744,13 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
     @java.lang.Override
-
+    @java.lang.Deprecated 
     public java.util.Map<java.lang.String, java.lang.Integer> getIssueMatchesMap() {
       return internalGetIssueMatches().getMap();
     }
@@ -3754,12 +3760,13 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
     @java.lang.Override
-
+    @java.lang.Deprecated 
     public int getIssueMatchesOrDefault(
         java.lang.String key,
         int defaultValue) {
@@ -3774,12 +3781,13 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
     @java.lang.Override
-
+    @java.lang.Deprecated 
     public int getIssueMatchesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -3790,7 +3798,7 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
+    @java.lang.Deprecated 
     public Builder clearIssueMatches() {
       internalGetMutableIssueMatches().getMutableMap()
           .clear();
@@ -3802,11 +3810,12 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
-
+    @java.lang.Deprecated 
     public Builder removeIssueMatches(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -3828,11 +3837,12 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
-    public Builder putIssueMatches(
+    @java.lang.Deprecated public Builder putIssueMatches(
         java.lang.String key,
         int value) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -3847,11 +3857,12 @@ private static final long serialVersionUID = 0L;
      * matches in the set of conversations. Key has the format:
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
      * ID&gt;/issues/&lt;Issue ID&gt;`
+     * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
-     * <code>map&lt;string, int32&gt; issue_matches = 6;</code>
+     * <code>map&lt;string, int32&gt; issue_matches = 6 [deprecated = true];</code>
      */
-
+    @java.lang.Deprecated 
     public Builder putAllIssueMatches(
         java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableIssueMatches().getMutableMap()
