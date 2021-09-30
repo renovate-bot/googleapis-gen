@@ -32,6 +32,9 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\EndInteraction $end_interaction
      *           A signal that indicates the interaction with the Dialogflow agent has
      *           ended.
+     *     @type \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\TelephonyTransferCall $telephony_transfer_call
+     *           A signal that the client should transfer the phone call connected to
+     *           this agent to a third-party endpoint.
      * }
      */
     public function __construct($data = NULL) {
@@ -161,6 +164,39 @@ class ResponseMessage extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\EndInteraction::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 6;</code>
+     * @return \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\TelephonyTransferCall|null
+     */
+    public function getTelephonyTransferCall()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasTelephonyTransferCall()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * A signal that the client should transfer the phone call connected to
+     * this agent to a third-party endpoint.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall telephony_transfer_call = 6;</code>
+     * @param \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\TelephonyTransferCall $var
+     * @return $this
+     */
+    public function setTelephonyTransferCall($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\ResponseMessage\TelephonyTransferCall::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

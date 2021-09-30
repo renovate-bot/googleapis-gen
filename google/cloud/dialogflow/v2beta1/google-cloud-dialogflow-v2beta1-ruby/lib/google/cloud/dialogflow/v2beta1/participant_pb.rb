@@ -232,6 +232,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :payload, :message, 2, "google.protobuf.Struct"
         optional :live_agent_handoff, :message, 3, "google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff"
         optional :end_interaction, :message, 4, "google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction"
+        optional :telephony_transfer_call, :message, 6, "google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall"
       end
     end
     add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.Text" do
@@ -241,6 +242,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :metadata, :message, 1, "google.protobuf.Struct"
     end
     add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction" do
+    end
+    add_message "google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall" do
+      oneof :endpoint do
+        optional :phone_number, :string, 1
+        optional :sip_uri, :string, 2
+      end
     end
   end
 end
@@ -288,6 +295,7 @@ module Google
         ResponseMessage::Text = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.Text").msgclass
         ResponseMessage::LiveAgentHandoff = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff").msgclass
         ResponseMessage::EndInteraction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction").msgclass
+        ResponseMessage::TelephonyTransferCall = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall").msgclass
       end
     end
   end

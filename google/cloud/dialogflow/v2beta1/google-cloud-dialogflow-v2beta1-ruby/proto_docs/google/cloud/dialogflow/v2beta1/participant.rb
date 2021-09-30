@@ -896,6 +896,10 @@ module Google
         #   @return [::Google::Cloud::Dialogflow::V2beta1::ResponseMessage::EndInteraction]
         #     A signal that indicates the interaction with the Dialogflow agent has
         #     ended.
+        # @!attribute [rw] telephony_transfer_call
+        #   @return [::Google::Cloud::Dialogflow::V2beta1::ResponseMessage::TelephonyTransferCall]
+        #     A signal that the client should transfer the phone call connected to
+        #     this agent to a third-party endpoint.
         class ResponseMessage
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -931,6 +935,20 @@ module Google
 
           # Indicates that interaction with the Dialogflow agent has ended.
           class EndInteraction
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Represents the signal that telles the client to transfer the phone call
+          # connected to the agent to a third-party endpoint.
+          # @!attribute [rw] phone_number
+          #   @return [::String]
+          #     Transfer the call to a phone number
+          #     in [E.164 format](https://en.wikipedia.org/wiki/E.164).
+          # @!attribute [rw] sip_uri
+          #   @return [::String]
+          #     Transfer the call to a SIP endpoint.
+          class TelephonyTransferCall
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
