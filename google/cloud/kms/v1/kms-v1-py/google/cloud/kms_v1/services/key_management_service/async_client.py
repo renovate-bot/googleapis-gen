@@ -2609,7 +2609,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.mac_sign,
-            default_timeout=None,
+            default_retry=retries.Retry(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
+                ),
+                deadline=60.0,
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -2708,7 +2715,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.mac_verify,
-            default_timeout=None,
+            default_retry=retries.Retry(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
+                ),
+                deadline=60.0,
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -2809,7 +2823,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.generate_random_bytes,
-            default_timeout=None,
+            default_retry=retries.Retry(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
+                ),
+                deadline=60.0,
+            ),
+            default_timeout=60.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
