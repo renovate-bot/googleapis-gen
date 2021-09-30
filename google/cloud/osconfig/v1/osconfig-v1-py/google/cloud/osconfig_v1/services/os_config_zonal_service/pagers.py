@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.osconfig_v1.types import inventory
 from google.cloud.osconfig_v1.types import vulnerability
@@ -63,14 +63,14 @@ class ListInventoriesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[inventory.ListInventoriesResponse]:
+    def pages(self) -> Iterator[inventory.ListInventoriesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[inventory.Inventory]:
+    def __iter__(self) -> Iterator[inventory.Inventory]:
         for page in self.pages:
             yield from page.inventories
 
@@ -122,14 +122,14 @@ class ListInventoriesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[inventory.ListInventoriesResponse]:
+    async def pages(self) -> AsyncIterator[inventory.ListInventoriesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[inventory.Inventory]:
+    def __aiter__(self) -> AsyncIterator[inventory.Inventory]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.inventories:
@@ -185,14 +185,14 @@ class ListVulnerabilityReportsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[vulnerability.ListVulnerabilityReportsResponse]:
+    def pages(self) -> Iterator[vulnerability.ListVulnerabilityReportsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[vulnerability.VulnerabilityReport]:
+    def __iter__(self) -> Iterator[vulnerability.VulnerabilityReport]:
         for page in self.pages:
             yield from page.vulnerability_reports
 
@@ -244,14 +244,14 @@ class ListVulnerabilityReportsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[vulnerability.ListVulnerabilityReportsResponse]:
+    async def pages(self) -> AsyncIterator[vulnerability.ListVulnerabilityReportsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[vulnerability.VulnerabilityReport]:
+    def __aiter__(self) -> AsyncIterator[vulnerability.VulnerabilityReport]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.vulnerability_reports:

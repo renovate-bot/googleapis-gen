@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.sql_v1.types import cloud_sql_operations
 from google.cloud.sql_v1.types import cloud_sql_resources
@@ -63,14 +63,14 @@ class ListPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[cloud_sql_operations.OperationsListResponse]:
+    def pages(self) -> Iterator[cloud_sql_operations.OperationsListResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[cloud_sql_resources.Operation]:
+    def __iter__(self) -> Iterator[cloud_sql_resources.Operation]:
         for page in self.pages:
             yield from page.items
 
@@ -122,14 +122,14 @@ class ListAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[cloud_sql_operations.OperationsListResponse]:
+    async def pages(self) -> AsyncIterator[cloud_sql_operations.OperationsListResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[cloud_sql_resources.Operation]:
+    def __aiter__(self) -> AsyncIterator[cloud_sql_resources.Operation]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.items:

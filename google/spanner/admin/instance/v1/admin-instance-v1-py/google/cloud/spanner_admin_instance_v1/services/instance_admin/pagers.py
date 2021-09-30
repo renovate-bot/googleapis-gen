@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.spanner_admin_instance_v1.types import spanner_instance_admin
 
@@ -62,14 +62,14 @@ class ListInstanceConfigsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[spanner_instance_admin.ListInstanceConfigsResponse]:
+    def pages(self) -> Iterator[spanner_instance_admin.ListInstanceConfigsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[spanner_instance_admin.InstanceConfig]:
+    def __iter__(self) -> Iterator[spanner_instance_admin.InstanceConfig]:
         for page in self.pages:
             yield from page.instance_configs
 
@@ -121,14 +121,14 @@ class ListInstanceConfigsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[spanner_instance_admin.ListInstanceConfigsResponse]:
+    async def pages(self) -> AsyncIterator[spanner_instance_admin.ListInstanceConfigsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[spanner_instance_admin.InstanceConfig]:
+    def __aiter__(self) -> AsyncIterator[spanner_instance_admin.InstanceConfig]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.instance_configs:
@@ -184,14 +184,14 @@ class ListInstancesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[spanner_instance_admin.ListInstancesResponse]:
+    def pages(self) -> Iterator[spanner_instance_admin.ListInstancesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[spanner_instance_admin.Instance]:
+    def __iter__(self) -> Iterator[spanner_instance_admin.Instance]:
         for page in self.pages:
             yield from page.instances
 
@@ -243,14 +243,14 @@ class ListInstancesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[spanner_instance_admin.ListInstancesResponse]:
+    async def pages(self) -> AsyncIterator[spanner_instance_admin.ListInstancesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[spanner_instance_admin.Instance]:
+    def __aiter__(self) -> AsyncIterator[spanner_instance_admin.Instance]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.instances:

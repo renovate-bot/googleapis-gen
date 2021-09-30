@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.apigateway_v1.types import apigateway
 
@@ -62,14 +62,14 @@ class ListGatewaysPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[apigateway.ListGatewaysResponse]:
+    def pages(self) -> Iterator[apigateway.ListGatewaysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[apigateway.Gateway]:
+    def __iter__(self) -> Iterator[apigateway.Gateway]:
         for page in self.pages:
             yield from page.gateways
 
@@ -121,14 +121,14 @@ class ListGatewaysAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[apigateway.ListGatewaysResponse]:
+    async def pages(self) -> AsyncIterator[apigateway.ListGatewaysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[apigateway.Gateway]:
+    def __aiter__(self) -> AsyncIterator[apigateway.Gateway]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.gateways:
@@ -184,14 +184,14 @@ class ListApisPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[apigateway.ListApisResponse]:
+    def pages(self) -> Iterator[apigateway.ListApisResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[apigateway.Api]:
+    def __iter__(self) -> Iterator[apigateway.Api]:
         for page in self.pages:
             yield from page.apis
 
@@ -243,14 +243,14 @@ class ListApisAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[apigateway.ListApisResponse]:
+    async def pages(self) -> AsyncIterator[apigateway.ListApisResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[apigateway.Api]:
+    def __aiter__(self) -> AsyncIterator[apigateway.Api]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.apis:
@@ -306,14 +306,14 @@ class ListApiConfigsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[apigateway.ListApiConfigsResponse]:
+    def pages(self) -> Iterator[apigateway.ListApiConfigsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[apigateway.ApiConfig]:
+    def __iter__(self) -> Iterator[apigateway.ApiConfig]:
         for page in self.pages:
             yield from page.api_configs
 
@@ -365,14 +365,14 @@ class ListApiConfigsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[apigateway.ListApiConfigsResponse]:
+    async def pages(self) -> AsyncIterator[apigateway.ListApiConfigsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[apigateway.ApiConfig]:
+    def __aiter__(self) -> AsyncIterator[apigateway.ApiConfig]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.api_configs:

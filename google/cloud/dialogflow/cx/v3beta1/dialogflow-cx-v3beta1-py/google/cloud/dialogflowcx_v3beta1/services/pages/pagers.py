@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.dialogflowcx_v3beta1.types import page
 
@@ -62,14 +62,14 @@ class ListPagesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[page.ListPagesResponse]:
+    def pages(self) -> Iterator[page.ListPagesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[page.Page]:
+    def __iter__(self) -> Iterator[page.Page]:
         for page in self.pages:
             yield from page.pages
 
@@ -121,14 +121,14 @@ class ListPagesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[page.ListPagesResponse]:
+    async def pages(self) -> AsyncIterator[page.ListPagesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[page.Page]:
+    def __aiter__(self) -> AsyncIterator[page.Page]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.pages:

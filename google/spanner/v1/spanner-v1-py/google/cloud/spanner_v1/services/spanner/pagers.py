@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.spanner_v1.types import spanner
 
@@ -62,14 +62,14 @@ class ListSessionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[spanner.ListSessionsResponse]:
+    def pages(self) -> Iterator[spanner.ListSessionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[spanner.Session]:
+    def __iter__(self) -> Iterator[spanner.Session]:
         for page in self.pages:
             yield from page.sessions
 
@@ -121,14 +121,14 @@ class ListSessionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[spanner.ListSessionsResponse]:
+    async def pages(self) -> AsyncIterator[spanner.ListSessionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[spanner.Session]:
+    def __aiter__(self) -> AsyncIterator[spanner.Session]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.sessions:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.resourcemanager_v3.types import tag_keys
 
@@ -62,14 +62,14 @@ class ListTagKeysPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[tag_keys.ListTagKeysResponse]:
+    def pages(self) -> Iterator[tag_keys.ListTagKeysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[tag_keys.TagKey]:
+    def __iter__(self) -> Iterator[tag_keys.TagKey]:
         for page in self.pages:
             yield from page.tag_keys
 
@@ -121,14 +121,14 @@ class ListTagKeysAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[tag_keys.ListTagKeysResponse]:
+    async def pages(self) -> AsyncIterator[tag_keys.ListTagKeysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[tag_keys.TagKey]:
+    def __aiter__(self) -> AsyncIterator[tag_keys.TagKey]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.tag_keys:

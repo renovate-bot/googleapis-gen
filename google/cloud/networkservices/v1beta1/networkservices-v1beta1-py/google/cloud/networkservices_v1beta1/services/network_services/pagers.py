@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.networkservices_v1beta1.types import endpoint_policy
 
@@ -62,14 +62,14 @@ class ListEndpointPoliciesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[endpoint_policy.ListEndpointPoliciesResponse]:
+    def pages(self) -> Iterator[endpoint_policy.ListEndpointPoliciesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[endpoint_policy.EndpointPolicy]:
+    def __iter__(self) -> Iterator[endpoint_policy.EndpointPolicy]:
         for page in self.pages:
             yield from page.endpoint_policies
 
@@ -121,14 +121,14 @@ class ListEndpointPoliciesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[endpoint_policy.ListEndpointPoliciesResponse]:
+    async def pages(self) -> AsyncIterator[endpoint_policy.ListEndpointPoliciesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[endpoint_policy.EndpointPolicy]:
+    def __aiter__(self) -> AsyncIterator[endpoint_policy.EndpointPolicy]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.endpoint_policies:

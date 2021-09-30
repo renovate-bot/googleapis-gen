@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.api import metric_pb2  # type: ignore
 from google.api import monitored_resource_pb2  # type: ignore
@@ -65,14 +65,14 @@ class ListMonitoredResourceDescriptorsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metric_service.ListMonitoredResourceDescriptorsResponse]:
+    def pages(self) -> Iterator[metric_service.ListMonitoredResourceDescriptorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[monitored_resource_pb2.MonitoredResourceDescriptor]:
+    def __iter__(self) -> Iterator[monitored_resource_pb2.MonitoredResourceDescriptor]:
         for page in self.pages:
             yield from page.resource_descriptors
 
@@ -124,14 +124,14 @@ class ListMonitoredResourceDescriptorsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metric_service.ListMonitoredResourceDescriptorsResponse]:
+    async def pages(self) -> AsyncIterator[metric_service.ListMonitoredResourceDescriptorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[monitored_resource_pb2.MonitoredResourceDescriptor]:
+    def __aiter__(self) -> AsyncIterator[monitored_resource_pb2.MonitoredResourceDescriptor]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.resource_descriptors:
@@ -187,14 +187,14 @@ class ListMetricDescriptorsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metric_service.ListMetricDescriptorsResponse]:
+    def pages(self) -> Iterator[metric_service.ListMetricDescriptorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[metric_pb2.MetricDescriptor]:
+    def __iter__(self) -> Iterator[metric_pb2.MetricDescriptor]:
         for page in self.pages:
             yield from page.metric_descriptors
 
@@ -246,14 +246,14 @@ class ListMetricDescriptorsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metric_service.ListMetricDescriptorsResponse]:
+    async def pages(self) -> AsyncIterator[metric_service.ListMetricDescriptorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[metric_pb2.MetricDescriptor]:
+    def __aiter__(self) -> AsyncIterator[metric_pb2.MetricDescriptor]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.metric_descriptors:
@@ -309,14 +309,14 @@ class ListTimeSeriesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metric_service.ListTimeSeriesResponse]:
+    def pages(self) -> Iterator[metric_service.ListTimeSeriesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[gm_metric.TimeSeries]:
+    def __iter__(self) -> Iterator[gm_metric.TimeSeries]:
         for page in self.pages:
             yield from page.time_series
 
@@ -368,14 +368,14 @@ class ListTimeSeriesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metric_service.ListTimeSeriesResponse]:
+    async def pages(self) -> AsyncIterator[metric_service.ListTimeSeriesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[gm_metric.TimeSeries]:
+    def __aiter__(self) -> AsyncIterator[gm_metric.TimeSeries]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.time_series:

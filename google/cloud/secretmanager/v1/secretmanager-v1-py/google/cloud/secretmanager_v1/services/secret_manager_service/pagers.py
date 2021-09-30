@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.secretmanager_v1.types import resources
 from google.cloud.secretmanager_v1.types import service
@@ -63,14 +63,14 @@ class ListSecretsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListSecretsResponse]:
+    def pages(self) -> Iterator[service.ListSecretsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.Secret]:
+    def __iter__(self) -> Iterator[resources.Secret]:
         for page in self.pages:
             yield from page.secrets
 
@@ -122,14 +122,14 @@ class ListSecretsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListSecretsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListSecretsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.Secret]:
+    def __aiter__(self) -> AsyncIterator[resources.Secret]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.secrets:
@@ -185,14 +185,14 @@ class ListSecretVersionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListSecretVersionsResponse]:
+    def pages(self) -> Iterator[service.ListSecretVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.SecretVersion]:
+    def __iter__(self) -> Iterator[resources.SecretVersion]:
         for page in self.pages:
             yield from page.versions
 
@@ -244,14 +244,14 @@ class ListSecretVersionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListSecretVersionsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListSecretVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.SecretVersion]:
+    def __aiter__(self) -> AsyncIterator[resources.SecretVersion]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.versions:

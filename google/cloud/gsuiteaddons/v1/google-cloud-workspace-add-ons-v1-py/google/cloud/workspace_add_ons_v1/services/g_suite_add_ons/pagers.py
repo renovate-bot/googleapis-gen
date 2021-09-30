@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.workspace_add_ons_v1.types import gsuiteaddons
 
@@ -62,14 +62,14 @@ class ListDeploymentsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[gsuiteaddons.ListDeploymentsResponse]:
+    def pages(self) -> Iterator[gsuiteaddons.ListDeploymentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[gsuiteaddons.Deployment]:
+    def __iter__(self) -> Iterator[gsuiteaddons.Deployment]:
         for page in self.pages:
             yield from page.deployments
 
@@ -121,14 +121,14 @@ class ListDeploymentsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[gsuiteaddons.ListDeploymentsResponse]:
+    async def pages(self) -> AsyncIterator[gsuiteaddons.ListDeploymentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[gsuiteaddons.Deployment]:
+    def __aiter__(self) -> AsyncIterator[gsuiteaddons.Deployment]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.deployments:

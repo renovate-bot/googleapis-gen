@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.asset_v1p1beta1.types import asset_service
 from google.cloud.asset_v1p1beta1.types import assets
@@ -63,14 +63,14 @@ class SearchAllResourcesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[asset_service.SearchAllResourcesResponse]:
+    def pages(self) -> Iterator[asset_service.SearchAllResourcesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[assets.StandardResourceMetadata]:
+    def __iter__(self) -> Iterator[assets.StandardResourceMetadata]:
         for page in self.pages:
             yield from page.results
 
@@ -122,14 +122,14 @@ class SearchAllResourcesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[asset_service.SearchAllResourcesResponse]:
+    async def pages(self) -> AsyncIterator[asset_service.SearchAllResourcesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[assets.StandardResourceMetadata]:
+    def __aiter__(self) -> AsyncIterator[assets.StandardResourceMetadata]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.results:
@@ -185,14 +185,14 @@ class SearchAllIamPoliciesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[asset_service.SearchAllIamPoliciesResponse]:
+    def pages(self) -> Iterator[asset_service.SearchAllIamPoliciesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[assets.IamPolicySearchResult]:
+    def __iter__(self) -> Iterator[assets.IamPolicySearchResult]:
         for page in self.pages:
             yield from page.results
 
@@ -244,14 +244,14 @@ class SearchAllIamPoliciesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[asset_service.SearchAllIamPoliciesResponse]:
+    async def pages(self) -> AsyncIterator[asset_service.SearchAllIamPoliciesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[assets.IamPolicySearchResult]:
+    def __aiter__(self) -> AsyncIterator[assets.IamPolicySearchResult]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.results:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.talent_v4beta1.types import job
 from google.cloud.talent_v4beta1.types import job_service
@@ -63,14 +63,14 @@ class ListJobsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[job_service.ListJobsResponse]:
+    def pages(self) -> Iterator[job_service.ListJobsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[job.Job]:
+    def __iter__(self) -> Iterator[job.Job]:
         for page in self.pages:
             yield from page.jobs
 
@@ -122,14 +122,14 @@ class ListJobsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[job_service.ListJobsResponse]:
+    async def pages(self) -> AsyncIterator[job_service.ListJobsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[job.Job]:
+    def __aiter__(self) -> AsyncIterator[job.Job]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.jobs:
@@ -185,14 +185,14 @@ class SearchJobsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[job_service.SearchJobsResponse]:
+    def pages(self) -> Iterator[job_service.SearchJobsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[job_service.SearchJobsResponse.MatchingJob]:
+    def __iter__(self) -> Iterator[job_service.SearchJobsResponse.MatchingJob]:
         for page in self.pages:
             yield from page.matching_jobs
 
@@ -244,14 +244,14 @@ class SearchJobsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[job_service.SearchJobsResponse]:
+    async def pages(self) -> AsyncIterator[job_service.SearchJobsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[job_service.SearchJobsResponse.MatchingJob]:
+    def __aiter__(self) -> AsyncIterator[job_service.SearchJobsResponse.MatchingJob]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.matching_jobs:
@@ -307,14 +307,14 @@ class SearchJobsForAlertPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[job_service.SearchJobsResponse]:
+    def pages(self) -> Iterator[job_service.SearchJobsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[job_service.SearchJobsResponse.MatchingJob]:
+    def __iter__(self) -> Iterator[job_service.SearchJobsResponse.MatchingJob]:
         for page in self.pages:
             yield from page.matching_jobs
 
@@ -366,14 +366,14 @@ class SearchJobsForAlertAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[job_service.SearchJobsResponse]:
+    async def pages(self) -> AsyncIterator[job_service.SearchJobsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[job_service.SearchJobsResponse.MatchingJob]:
+    def __aiter__(self) -> AsyncIterator[job_service.SearchJobsResponse.MatchingJob]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.matching_jobs:

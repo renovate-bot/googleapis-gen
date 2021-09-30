@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.gkehub_v1alpha.types import feature
 from google.cloud.gkehub_v1alpha.types import service
@@ -63,14 +63,14 @@ class ListFeaturesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListFeaturesResponse]:
+    def pages(self) -> Iterator[service.ListFeaturesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[feature.Feature]:
+    def __iter__(self) -> Iterator[feature.Feature]:
         for page in self.pages:
             yield from page.resources
 
@@ -122,14 +122,14 @@ class ListFeaturesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListFeaturesResponse]:
+    async def pages(self) -> AsyncIterator[service.ListFeaturesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[feature.Feature]:
+    def __aiter__(self) -> AsyncIterator[feature.Feature]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.resources:

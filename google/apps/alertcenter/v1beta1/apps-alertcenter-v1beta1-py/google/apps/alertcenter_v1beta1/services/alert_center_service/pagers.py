@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.apps.alertcenter_v1beta1.types import alertcenter
 
@@ -62,14 +62,14 @@ class ListAlertsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[alertcenter.ListAlertsResponse]:
+    def pages(self) -> Iterator[alertcenter.ListAlertsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[alertcenter.Alert]:
+    def __iter__(self) -> Iterator[alertcenter.Alert]:
         for page in self.pages:
             yield from page.alerts
 
@@ -121,14 +121,14 @@ class ListAlertsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[alertcenter.ListAlertsResponse]:
+    async def pages(self) -> AsyncIterator[alertcenter.ListAlertsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[alertcenter.Alert]:
+    def __aiter__(self) -> AsyncIterator[alertcenter.Alert]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.alerts:

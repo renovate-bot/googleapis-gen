@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.securitycenter.settings_v1beta1.types import detector
 from google.cloud.securitycenter.settings_v1beta1.types import securitycenter_settings_service
@@ -63,14 +63,14 @@ class ListDetectorsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[securitycenter_settings_service.ListDetectorsResponse]:
+    def pages(self) -> Iterator[securitycenter_settings_service.ListDetectorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[detector.Detector]:
+    def __iter__(self) -> Iterator[detector.Detector]:
         for page in self.pages:
             yield from page.detectors
 
@@ -122,14 +122,14 @@ class ListDetectorsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[securitycenter_settings_service.ListDetectorsResponse]:
+    async def pages(self) -> AsyncIterator[securitycenter_settings_service.ListDetectorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[detector.Detector]:
+    def __aiter__(self) -> AsyncIterator[detector.Detector]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.detectors:
@@ -185,14 +185,14 @@ class ListComponentsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[securitycenter_settings_service.ListComponentsResponse]:
+    def pages(self) -> Iterator[securitycenter_settings_service.ListComponentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[str]:
+    def __iter__(self) -> Iterator[str]:
         for page in self.pages:
             yield from page.components
 
@@ -244,14 +244,14 @@ class ListComponentsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[securitycenter_settings_service.ListComponentsResponse]:
+    async def pages(self) -> AsyncIterator[securitycenter_settings_service.ListComponentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[str]:
+    def __aiter__(self) -> AsyncIterator[str]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.components:

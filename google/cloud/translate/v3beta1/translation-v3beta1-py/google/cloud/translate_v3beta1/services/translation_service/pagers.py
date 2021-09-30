@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.translate_v3beta1.types import translation_service
 
@@ -62,14 +62,14 @@ class ListGlossariesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[translation_service.ListGlossariesResponse]:
+    def pages(self) -> Iterator[translation_service.ListGlossariesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[translation_service.Glossary]:
+    def __iter__(self) -> Iterator[translation_service.Glossary]:
         for page in self.pages:
             yield from page.glossaries
 
@@ -121,14 +121,14 @@ class ListGlossariesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[translation_service.ListGlossariesResponse]:
+    async def pages(self) -> AsyncIterator[translation_service.ListGlossariesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[translation_service.Glossary]:
+    def __aiter__(self) -> AsyncIterator[translation_service.Glossary]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.glossaries:

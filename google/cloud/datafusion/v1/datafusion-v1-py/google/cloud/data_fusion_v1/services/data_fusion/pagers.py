@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.data_fusion_v1.types import datafusion
 
@@ -62,14 +62,14 @@ class ListAvailableVersionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datafusion.ListAvailableVersionsResponse]:
+    def pages(self) -> Iterator[datafusion.ListAvailableVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[datafusion.Version]:
+    def __iter__(self) -> Iterator[datafusion.Version]:
         for page in self.pages:
             yield from page.available_versions
 
@@ -121,14 +121,14 @@ class ListAvailableVersionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datafusion.ListAvailableVersionsResponse]:
+    async def pages(self) -> AsyncIterator[datafusion.ListAvailableVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[datafusion.Version]:
+    def __aiter__(self) -> AsyncIterator[datafusion.Version]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.available_versions:
@@ -184,14 +184,14 @@ class ListInstancesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datafusion.ListInstancesResponse]:
+    def pages(self) -> Iterator[datafusion.ListInstancesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[datafusion.Instance]:
+    def __iter__(self) -> Iterator[datafusion.Instance]:
         for page in self.pages:
             yield from page.instances
 
@@ -243,14 +243,14 @@ class ListInstancesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datafusion.ListInstancesResponse]:
+    async def pages(self) -> AsyncIterator[datafusion.ListInstancesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[datafusion.Instance]:
+    def __aiter__(self) -> AsyncIterator[datafusion.Instance]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.instances:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.monitoring_v3.types import metric
 from google.cloud.monitoring_v3.types import metric_service
@@ -63,14 +63,14 @@ class QueryTimeSeriesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metric_service.QueryTimeSeriesResponse]:
+    def pages(self) -> Iterator[metric_service.QueryTimeSeriesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[metric.TimeSeriesData]:
+    def __iter__(self) -> Iterator[metric.TimeSeriesData]:
         for page in self.pages:
             yield from page.time_series_data
 
@@ -122,14 +122,14 @@ class QueryTimeSeriesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metric_service.QueryTimeSeriesResponse]:
+    async def pages(self) -> AsyncIterator[metric_service.QueryTimeSeriesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[metric.TimeSeriesData]:
+    def __aiter__(self) -> AsyncIterator[metric.TimeSeriesData]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.time_series_data:

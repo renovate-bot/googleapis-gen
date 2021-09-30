@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.iam.admin_v1.types import iam
 
@@ -62,14 +62,14 @@ class ListServiceAccountsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[iam.ListServiceAccountsResponse]:
+    def pages(self) -> Iterator[iam.ListServiceAccountsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[iam.ServiceAccount]:
+    def __iter__(self) -> Iterator[iam.ServiceAccount]:
         for page in self.pages:
             yield from page.accounts
 
@@ -121,14 +121,14 @@ class ListServiceAccountsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[iam.ListServiceAccountsResponse]:
+    async def pages(self) -> AsyncIterator[iam.ListServiceAccountsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[iam.ServiceAccount]:
+    def __aiter__(self) -> AsyncIterator[iam.ServiceAccount]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.accounts:
@@ -184,14 +184,14 @@ class QueryGrantableRolesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[iam.QueryGrantableRolesResponse]:
+    def pages(self) -> Iterator[iam.QueryGrantableRolesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[iam.Role]:
+    def __iter__(self) -> Iterator[iam.Role]:
         for page in self.pages:
             yield from page.roles
 
@@ -243,14 +243,14 @@ class QueryGrantableRolesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[iam.QueryGrantableRolesResponse]:
+    async def pages(self) -> AsyncIterator[iam.QueryGrantableRolesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[iam.Role]:
+    def __aiter__(self) -> AsyncIterator[iam.Role]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.roles:
@@ -306,14 +306,14 @@ class ListRolesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[iam.ListRolesResponse]:
+    def pages(self) -> Iterator[iam.ListRolesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[iam.Role]:
+    def __iter__(self) -> Iterator[iam.Role]:
         for page in self.pages:
             yield from page.roles
 
@@ -365,14 +365,14 @@ class ListRolesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[iam.ListRolesResponse]:
+    async def pages(self) -> AsyncIterator[iam.ListRolesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[iam.Role]:
+    def __aiter__(self) -> AsyncIterator[iam.Role]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.roles:
@@ -428,14 +428,14 @@ class QueryTestablePermissionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[iam.QueryTestablePermissionsResponse]:
+    def pages(self) -> Iterator[iam.QueryTestablePermissionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[iam.Permission]:
+    def __iter__(self) -> Iterator[iam.Permission]:
         for page in self.pages:
             yield from page.permissions
 
@@ -487,14 +487,14 @@ class QueryTestablePermissionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[iam.QueryTestablePermissionsResponse]:
+    async def pages(self) -> AsyncIterator[iam.QueryTestablePermissionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[iam.Permission]:
+    def __aiter__(self) -> AsyncIterator[iam.Permission]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.permissions:

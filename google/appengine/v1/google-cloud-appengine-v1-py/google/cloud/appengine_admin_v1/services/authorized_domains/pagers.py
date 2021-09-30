@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain
@@ -63,14 +63,14 @@ class ListAuthorizedDomainsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[appengine.ListAuthorizedDomainsResponse]:
+    def pages(self) -> Iterator[appengine.ListAuthorizedDomainsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[domain.AuthorizedDomain]:
+    def __iter__(self) -> Iterator[domain.AuthorizedDomain]:
         for page in self.pages:
             yield from page.domains
 
@@ -122,14 +122,14 @@ class ListAuthorizedDomainsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[appengine.ListAuthorizedDomainsResponse]:
+    async def pages(self) -> AsyncIterator[appengine.ListAuthorizedDomainsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[domain.AuthorizedDomain]:
+    def __aiter__(self) -> AsyncIterator[domain.AuthorizedDomain]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.domains:

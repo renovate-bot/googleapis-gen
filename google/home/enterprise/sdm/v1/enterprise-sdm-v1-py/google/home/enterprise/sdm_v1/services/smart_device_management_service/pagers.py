@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
@@ -64,14 +64,14 @@ class ListDevicesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[smart_device_management_service.ListDevicesResponse]:
+    def pages(self) -> Iterator[smart_device_management_service.ListDevicesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[device.Device]:
+    def __iter__(self) -> Iterator[device.Device]:
         for page in self.pages:
             yield from page.devices
 
@@ -123,14 +123,14 @@ class ListDevicesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[smart_device_management_service.ListDevicesResponse]:
+    async def pages(self) -> AsyncIterator[smart_device_management_service.ListDevicesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[device.Device]:
+    def __aiter__(self) -> AsyncIterator[device.Device]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.devices:
@@ -186,14 +186,14 @@ class ListStructuresPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[smart_device_management_service.ListStructuresResponse]:
+    def pages(self) -> Iterator[smart_device_management_service.ListStructuresResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[site.Structure]:
+    def __iter__(self) -> Iterator[site.Structure]:
         for page in self.pages:
             yield from page.structures
 
@@ -245,14 +245,14 @@ class ListStructuresAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[smart_device_management_service.ListStructuresResponse]:
+    async def pages(self) -> AsyncIterator[smart_device_management_service.ListStructuresResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[site.Structure]:
+    def __aiter__(self) -> AsyncIterator[site.Structure]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.structures:
@@ -308,14 +308,14 @@ class ListRoomsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[smart_device_management_service.ListRoomsResponse]:
+    def pages(self) -> Iterator[smart_device_management_service.ListRoomsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[site.Room]:
+    def __iter__(self) -> Iterator[site.Room]:
         for page in self.pages:
             yield from page.rooms
 
@@ -367,14 +367,14 @@ class ListRoomsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[smart_device_management_service.ListRoomsResponse]:
+    async def pages(self) -> AsyncIterator[smart_device_management_service.ListRoomsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[site.Room]:
+    def __aiter__(self) -> AsyncIterator[site.Room]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.rooms:

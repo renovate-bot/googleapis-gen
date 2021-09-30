@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.dialogflow_v2.types import environment
 
@@ -62,14 +62,14 @@ class ListEnvironmentsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[environment.ListEnvironmentsResponse]:
+    def pages(self) -> Iterator[environment.ListEnvironmentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[environment.Environment]:
+    def __iter__(self) -> Iterator[environment.Environment]:
         for page in self.pages:
             yield from page.environments
 
@@ -121,14 +121,14 @@ class ListEnvironmentsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[environment.ListEnvironmentsResponse]:
+    async def pages(self) -> AsyncIterator[environment.ListEnvironmentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[environment.Environment]:
+    def __aiter__(self) -> AsyncIterator[environment.Environment]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.environments:
@@ -184,14 +184,14 @@ class GetEnvironmentHistoryPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[environment.EnvironmentHistory]:
+    def pages(self) -> Iterator[environment.EnvironmentHistory]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[environment.EnvironmentHistory.Entry]:
+    def __iter__(self) -> Iterator[environment.EnvironmentHistory.Entry]:
         for page in self.pages:
             yield from page.entries
 
@@ -243,14 +243,14 @@ class GetEnvironmentHistoryAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[environment.EnvironmentHistory]:
+    async def pages(self) -> AsyncIterator[environment.EnvironmentHistory]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[environment.EnvironmentHistory.Entry]:
+    def __aiter__(self) -> AsyncIterator[environment.EnvironmentHistory.Entry]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.entries:

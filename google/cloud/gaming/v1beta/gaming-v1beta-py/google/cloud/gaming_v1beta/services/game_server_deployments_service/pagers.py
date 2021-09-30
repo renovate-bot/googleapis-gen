@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.gaming_v1beta.types import game_server_deployments
 
@@ -62,14 +62,14 @@ class ListGameServerDeploymentsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[game_server_deployments.ListGameServerDeploymentsResponse]:
+    def pages(self) -> Iterator[game_server_deployments.ListGameServerDeploymentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[game_server_deployments.GameServerDeployment]:
+    def __iter__(self) -> Iterator[game_server_deployments.GameServerDeployment]:
         for page in self.pages:
             yield from page.game_server_deployments
 
@@ -121,14 +121,14 @@ class ListGameServerDeploymentsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[game_server_deployments.ListGameServerDeploymentsResponse]:
+    async def pages(self) -> AsyncIterator[game_server_deployments.ListGameServerDeploymentsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[game_server_deployments.GameServerDeployment]:
+    def __aiter__(self) -> AsyncIterator[game_server_deployments.GameServerDeployment]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.game_server_deployments:

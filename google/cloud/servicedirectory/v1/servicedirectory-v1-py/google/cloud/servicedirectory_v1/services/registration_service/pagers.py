@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.servicedirectory_v1.types import endpoint
 from google.cloud.servicedirectory_v1.types import namespace
@@ -65,14 +65,14 @@ class ListNamespacesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[registration_service.ListNamespacesResponse]:
+    def pages(self) -> Iterator[registration_service.ListNamespacesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[namespace.Namespace]:
+    def __iter__(self) -> Iterator[namespace.Namespace]:
         for page in self.pages:
             yield from page.namespaces
 
@@ -124,14 +124,14 @@ class ListNamespacesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[registration_service.ListNamespacesResponse]:
+    async def pages(self) -> AsyncIterator[registration_service.ListNamespacesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[namespace.Namespace]:
+    def __aiter__(self) -> AsyncIterator[namespace.Namespace]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.namespaces:
@@ -187,14 +187,14 @@ class ListServicesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[registration_service.ListServicesResponse]:
+    def pages(self) -> Iterator[registration_service.ListServicesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[service.Service]:
+    def __iter__(self) -> Iterator[service.Service]:
         for page in self.pages:
             yield from page.services
 
@@ -246,14 +246,14 @@ class ListServicesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[registration_service.ListServicesResponse]:
+    async def pages(self) -> AsyncIterator[registration_service.ListServicesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[service.Service]:
+    def __aiter__(self) -> AsyncIterator[service.Service]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.services:
@@ -309,14 +309,14 @@ class ListEndpointsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[registration_service.ListEndpointsResponse]:
+    def pages(self) -> Iterator[registration_service.ListEndpointsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[endpoint.Endpoint]:
+    def __iter__(self) -> Iterator[endpoint.Endpoint]:
         for page in self.pages:
             yield from page.endpoints
 
@@ -368,14 +368,14 @@ class ListEndpointsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[registration_service.ListEndpointsResponse]:
+    async def pages(self) -> AsyncIterator[registration_service.ListEndpointsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[endpoint.Endpoint]:
+    def __aiter__(self) -> AsyncIterator[endpoint.Endpoint]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.endpoints:

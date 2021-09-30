@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.chromeos.moblab_v1beta1.types import build_service
 from google.chromeos.moblab_v1beta1.types import resources
@@ -63,14 +63,14 @@ class ListBuildTargetsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[build_service.ListBuildTargetsResponse]:
+    def pages(self) -> Iterator[build_service.ListBuildTargetsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.BuildTarget]:
+    def __iter__(self) -> Iterator[resources.BuildTarget]:
         for page in self.pages:
             yield from page.build_targets
 
@@ -122,14 +122,14 @@ class ListBuildTargetsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[build_service.ListBuildTargetsResponse]:
+    async def pages(self) -> AsyncIterator[build_service.ListBuildTargetsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.BuildTarget]:
+    def __aiter__(self) -> AsyncIterator[resources.BuildTarget]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.build_targets:
@@ -185,14 +185,14 @@ class ListModelsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[build_service.ListModelsResponse]:
+    def pages(self) -> Iterator[build_service.ListModelsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.Model]:
+    def __iter__(self) -> Iterator[resources.Model]:
         for page in self.pages:
             yield from page.models
 
@@ -244,14 +244,14 @@ class ListModelsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[build_service.ListModelsResponse]:
+    async def pages(self) -> AsyncIterator[build_service.ListModelsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.Model]:
+    def __aiter__(self) -> AsyncIterator[resources.Model]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.models:
@@ -307,14 +307,14 @@ class ListBuildsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[build_service.ListBuildsResponse]:
+    def pages(self) -> Iterator[build_service.ListBuildsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.Build]:
+    def __iter__(self) -> Iterator[resources.Build]:
         for page in self.pages:
             yield from page.builds
 
@@ -366,14 +366,14 @@ class ListBuildsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[build_service.ListBuildsResponse]:
+    async def pages(self) -> AsyncIterator[build_service.ListBuildsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.Build]:
+    def __aiter__(self) -> AsyncIterator[resources.Build]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.builds:

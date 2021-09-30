@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.monitoring_v3.types import uptime
 from google.cloud.monitoring_v3.types import uptime_service
@@ -63,14 +63,14 @@ class ListUptimeCheckConfigsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[uptime_service.ListUptimeCheckConfigsResponse]:
+    def pages(self) -> Iterator[uptime_service.ListUptimeCheckConfigsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[uptime.UptimeCheckConfig]:
+    def __iter__(self) -> Iterator[uptime.UptimeCheckConfig]:
         for page in self.pages:
             yield from page.uptime_check_configs
 
@@ -122,14 +122,14 @@ class ListUptimeCheckConfigsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[uptime_service.ListUptimeCheckConfigsResponse]:
+    async def pages(self) -> AsyncIterator[uptime_service.ListUptimeCheckConfigsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[uptime.UptimeCheckConfig]:
+    def __aiter__(self) -> AsyncIterator[uptime.UptimeCheckConfig]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.uptime_check_configs:
@@ -185,14 +185,14 @@ class ListUptimeCheckIpsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[uptime_service.ListUptimeCheckIpsResponse]:
+    def pages(self) -> Iterator[uptime_service.ListUptimeCheckIpsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[uptime.UptimeCheckIp]:
+    def __iter__(self) -> Iterator[uptime.UptimeCheckIp]:
         for page in self.pages:
             yield from page.uptime_check_ips
 
@@ -244,14 +244,14 @@ class ListUptimeCheckIpsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[uptime_service.ListUptimeCheckIpsResponse]:
+    async def pages(self) -> AsyncIterator[uptime_service.ListUptimeCheckIpsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[uptime.UptimeCheckIp]:
+    def __aiter__(self) -> AsyncIterator[uptime.UptimeCheckIp]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.uptime_check_ips:

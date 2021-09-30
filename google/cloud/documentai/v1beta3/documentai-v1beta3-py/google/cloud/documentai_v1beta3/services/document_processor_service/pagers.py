@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.documentai_v1beta3.types import document_processor_service
 from google.cloud.documentai_v1beta3.types import processor
@@ -63,14 +63,14 @@ class ListProcessorsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[document_processor_service.ListProcessorsResponse]:
+    def pages(self) -> Iterator[document_processor_service.ListProcessorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[processor.Processor]:
+    def __iter__(self) -> Iterator[processor.Processor]:
         for page in self.pages:
             yield from page.processors
 
@@ -122,14 +122,14 @@ class ListProcessorsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[document_processor_service.ListProcessorsResponse]:
+    async def pages(self) -> AsyncIterator[document_processor_service.ListProcessorsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[processor.Processor]:
+    def __aiter__(self) -> AsyncIterator[processor.Processor]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.processors:

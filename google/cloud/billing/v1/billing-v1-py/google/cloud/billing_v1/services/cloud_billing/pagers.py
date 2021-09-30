@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.billing_v1.types import cloud_billing
 
@@ -62,14 +62,14 @@ class ListBillingAccountsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[cloud_billing.ListBillingAccountsResponse]:
+    def pages(self) -> Iterator[cloud_billing.ListBillingAccountsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[cloud_billing.BillingAccount]:
+    def __iter__(self) -> Iterator[cloud_billing.BillingAccount]:
         for page in self.pages:
             yield from page.billing_accounts
 
@@ -121,14 +121,14 @@ class ListBillingAccountsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[cloud_billing.ListBillingAccountsResponse]:
+    async def pages(self) -> AsyncIterator[cloud_billing.ListBillingAccountsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[cloud_billing.BillingAccount]:
+    def __aiter__(self) -> AsyncIterator[cloud_billing.BillingAccount]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.billing_accounts:
@@ -184,14 +184,14 @@ class ListProjectBillingInfoPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[cloud_billing.ListProjectBillingInfoResponse]:
+    def pages(self) -> Iterator[cloud_billing.ListProjectBillingInfoResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[cloud_billing.ProjectBillingInfo]:
+    def __iter__(self) -> Iterator[cloud_billing.ProjectBillingInfo]:
         for page in self.pages:
             yield from page.project_billing_info
 
@@ -243,14 +243,14 @@ class ListProjectBillingInfoAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[cloud_billing.ListProjectBillingInfoResponse]:
+    async def pages(self) -> AsyncIterator[cloud_billing.ListProjectBillingInfoResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[cloud_billing.ProjectBillingInfo]:
+    def __aiter__(self) -> AsyncIterator[cloud_billing.ProjectBillingInfo]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.project_billing_info:

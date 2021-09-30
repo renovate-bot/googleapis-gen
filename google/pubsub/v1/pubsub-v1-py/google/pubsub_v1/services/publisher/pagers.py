@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.pubsub_v1.types import pubsub
 
@@ -62,14 +62,14 @@ class ListTopicsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[pubsub.ListTopicsResponse]:
+    def pages(self) -> Iterator[pubsub.ListTopicsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[pubsub.Topic]:
+    def __iter__(self) -> Iterator[pubsub.Topic]:
         for page in self.pages:
             yield from page.topics
 
@@ -121,14 +121,14 @@ class ListTopicsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[pubsub.ListTopicsResponse]:
+    async def pages(self) -> AsyncIterator[pubsub.ListTopicsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[pubsub.Topic]:
+    def __aiter__(self) -> AsyncIterator[pubsub.Topic]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.topics:
@@ -184,14 +184,14 @@ class ListTopicSubscriptionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[pubsub.ListTopicSubscriptionsResponse]:
+    def pages(self) -> Iterator[pubsub.ListTopicSubscriptionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[str]:
+    def __iter__(self) -> Iterator[str]:
         for page in self.pages:
             yield from page.subscriptions
 
@@ -243,14 +243,14 @@ class ListTopicSubscriptionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[pubsub.ListTopicSubscriptionsResponse]:
+    async def pages(self) -> AsyncIterator[pubsub.ListTopicSubscriptionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[str]:
+    def __aiter__(self) -> AsyncIterator[str]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.subscriptions:
@@ -306,14 +306,14 @@ class ListTopicSnapshotsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[pubsub.ListTopicSnapshotsResponse]:
+    def pages(self) -> Iterator[pubsub.ListTopicSnapshotsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[str]:
+    def __iter__(self) -> Iterator[str]:
         for page in self.pages:
             yield from page.snapshots
 
@@ -365,14 +365,14 @@ class ListTopicSnapshotsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[pubsub.ListTopicSnapshotsResponse]:
+    async def pages(self) -> AsyncIterator[pubsub.ListTopicSnapshotsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[str]:
+    def __aiter__(self) -> AsyncIterator[str]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.snapshots:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.apps.drive.activity_v2.types import query_drive_activity_request
 from google.apps.drive.activity_v2.types import query_drive_activity_response
@@ -63,14 +63,14 @@ class QueryDriveActivityPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[query_drive_activity_response.QueryDriveActivityResponse]:
+    def pages(self) -> Iterator[query_drive_activity_response.QueryDriveActivityResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[query_drive_activity_response.DriveActivity]:
+    def __iter__(self) -> Iterator[query_drive_activity_response.DriveActivity]:
         for page in self.pages:
             yield from page.activities
 
@@ -122,14 +122,14 @@ class QueryDriveActivityAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[query_drive_activity_response.QueryDriveActivityResponse]:
+    async def pages(self) -> AsyncIterator[query_drive_activity_response.QueryDriveActivityResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[query_drive_activity_response.DriveActivity]:
+    def __aiter__(self) -> AsyncIterator[query_drive_activity_response.DriveActivity]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.activities:

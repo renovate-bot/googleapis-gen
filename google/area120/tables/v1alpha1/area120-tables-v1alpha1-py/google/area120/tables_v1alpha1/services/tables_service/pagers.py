@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.area120.tables_v1alpha1.types import tables
 
@@ -62,14 +62,14 @@ class ListTablesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[tables.ListTablesResponse]:
+    def pages(self) -> Iterator[tables.ListTablesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[tables.Table]:
+    def __iter__(self) -> Iterator[tables.Table]:
         for page in self.pages:
             yield from page.tables
 
@@ -121,14 +121,14 @@ class ListTablesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[tables.ListTablesResponse]:
+    async def pages(self) -> AsyncIterator[tables.ListTablesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[tables.Table]:
+    def __aiter__(self) -> AsyncIterator[tables.Table]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.tables:
@@ -184,14 +184,14 @@ class ListWorkspacesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[tables.ListWorkspacesResponse]:
+    def pages(self) -> Iterator[tables.ListWorkspacesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[tables.Workspace]:
+    def __iter__(self) -> Iterator[tables.Workspace]:
         for page in self.pages:
             yield from page.workspaces
 
@@ -243,14 +243,14 @@ class ListWorkspacesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[tables.ListWorkspacesResponse]:
+    async def pages(self) -> AsyncIterator[tables.ListWorkspacesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[tables.Workspace]:
+    def __aiter__(self) -> AsyncIterator[tables.Workspace]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.workspaces:
@@ -306,14 +306,14 @@ class ListRowsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[tables.ListRowsResponse]:
+    def pages(self) -> Iterator[tables.ListRowsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[tables.Row]:
+    def __iter__(self) -> Iterator[tables.Row]:
         for page in self.pages:
             yield from page.rows
 
@@ -365,14 +365,14 @@ class ListRowsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[tables.ListRowsResponse]:
+    async def pages(self) -> AsyncIterator[tables.ListRowsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[tables.Row]:
+    def __aiter__(self) -> AsyncIterator[tables.Row]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.rows:

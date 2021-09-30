@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.privatecatalog_v1beta1.types import private_catalog
 
@@ -62,14 +62,14 @@ class SearchCatalogsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[private_catalog.SearchCatalogsResponse]:
+    def pages(self) -> Iterator[private_catalog.SearchCatalogsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[private_catalog.Catalog]:
+    def __iter__(self) -> Iterator[private_catalog.Catalog]:
         for page in self.pages:
             yield from page.catalogs
 
@@ -121,14 +121,14 @@ class SearchCatalogsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[private_catalog.SearchCatalogsResponse]:
+    async def pages(self) -> AsyncIterator[private_catalog.SearchCatalogsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[private_catalog.Catalog]:
+    def __aiter__(self) -> AsyncIterator[private_catalog.Catalog]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.catalogs:
@@ -184,14 +184,14 @@ class SearchProductsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[private_catalog.SearchProductsResponse]:
+    def pages(self) -> Iterator[private_catalog.SearchProductsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[private_catalog.Product]:
+    def __iter__(self) -> Iterator[private_catalog.Product]:
         for page in self.pages:
             yield from page.products
 
@@ -243,14 +243,14 @@ class SearchProductsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[private_catalog.SearchProductsResponse]:
+    async def pages(self) -> AsyncIterator[private_catalog.SearchProductsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[private_catalog.Product]:
+    def __aiter__(self) -> AsyncIterator[private_catalog.Product]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.products:
@@ -306,14 +306,14 @@ class SearchVersionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[private_catalog.SearchVersionsResponse]:
+    def pages(self) -> Iterator[private_catalog.SearchVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[private_catalog.Version]:
+    def __iter__(self) -> Iterator[private_catalog.Version]:
         for page in self.pages:
             yield from page.versions
 
@@ -365,14 +365,14 @@ class SearchVersionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[private_catalog.SearchVersionsResponse]:
+    async def pages(self) -> AsyncIterator[private_catalog.SearchVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[private_catalog.Version]:
+    def __aiter__(self) -> AsyncIterator[private_catalog.Version]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.versions:

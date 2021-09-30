@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.example.library_v1.types import library
 
@@ -62,14 +62,14 @@ class ListShelvesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[library.ListShelvesResponse]:
+    def pages(self) -> Iterator[library.ListShelvesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[library.Shelf]:
+    def __iter__(self) -> Iterator[library.Shelf]:
         for page in self.pages:
             yield from page.shelves
 
@@ -121,14 +121,14 @@ class ListShelvesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[library.ListShelvesResponse]:
+    async def pages(self) -> AsyncIterator[library.ListShelvesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[library.Shelf]:
+    def __aiter__(self) -> AsyncIterator[library.Shelf]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.shelves:
@@ -184,14 +184,14 @@ class ListBooksPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[library.ListBooksResponse]:
+    def pages(self) -> Iterator[library.ListBooksResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[library.Book]:
+    def __iter__(self) -> Iterator[library.Book]:
         for page in self.pages:
             yield from page.books
 
@@ -243,14 +243,14 @@ class ListBooksAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[library.ListBooksResponse]:
+    async def pages(self) -> AsyncIterator[library.ListBooksResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[library.Book]:
+    def __aiter__(self) -> AsyncIterator[library.Book]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.books:

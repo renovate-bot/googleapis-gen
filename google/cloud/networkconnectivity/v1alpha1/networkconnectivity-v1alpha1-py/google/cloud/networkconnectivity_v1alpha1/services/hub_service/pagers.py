@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.networkconnectivity_v1alpha1.types import hub
 
@@ -62,14 +62,14 @@ class ListHubsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[hub.ListHubsResponse]:
+    def pages(self) -> Iterator[hub.ListHubsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[hub.Hub]:
+    def __iter__(self) -> Iterator[hub.Hub]:
         for page in self.pages:
             yield from page.hubs
 
@@ -121,14 +121,14 @@ class ListHubsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[hub.ListHubsResponse]:
+    async def pages(self) -> AsyncIterator[hub.ListHubsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[hub.Hub]:
+    def __aiter__(self) -> AsyncIterator[hub.Hub]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.hubs:
@@ -184,14 +184,14 @@ class ListSpokesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[hub.ListSpokesResponse]:
+    def pages(self) -> Iterator[hub.ListSpokesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[hub.Spoke]:
+    def __iter__(self) -> Iterator[hub.Spoke]:
         for page in self.pages:
             yield from page.spokes
 
@@ -243,14 +243,14 @@ class ListSpokesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[hub.ListSpokesResponse]:
+    async def pages(self) -> AsyncIterator[hub.ListSpokesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[hub.Spoke]:
+    def __aiter__(self) -> AsyncIterator[hub.Spoke]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.spokes:

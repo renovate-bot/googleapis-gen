@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.retail_v2.types import catalog
 from google.cloud.retail_v2.types import catalog_service
@@ -63,14 +63,14 @@ class ListCatalogsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[catalog_service.ListCatalogsResponse]:
+    def pages(self) -> Iterator[catalog_service.ListCatalogsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[catalog.Catalog]:
+    def __iter__(self) -> Iterator[catalog.Catalog]:
         for page in self.pages:
             yield from page.catalogs
 
@@ -122,14 +122,14 @@ class ListCatalogsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[catalog_service.ListCatalogsResponse]:
+    async def pages(self) -> AsyncIterator[catalog_service.ListCatalogsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[catalog.Catalog]:
+    def __aiter__(self) -> AsyncIterator[catalog.Catalog]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.catalogs:

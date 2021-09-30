@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.billing.budgets_v1beta1.types import budget_model
 from google.cloud.billing.budgets_v1beta1.types import budget_service
@@ -63,14 +63,14 @@ class ListBudgetsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[budget_service.ListBudgetsResponse]:
+    def pages(self) -> Iterator[budget_service.ListBudgetsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[budget_model.Budget]:
+    def __iter__(self) -> Iterator[budget_model.Budget]:
         for page in self.pages:
             yield from page.budgets
 
@@ -122,14 +122,14 @@ class ListBudgetsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[budget_service.ListBudgetsResponse]:
+    async def pages(self) -> AsyncIterator[budget_service.ListBudgetsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[budget_model.Budget]:
+    def __aiter__(self) -> AsyncIterator[budget_model.Budget]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.budgets:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.datafusion_v1beta1.types import v1beta1
 
@@ -62,14 +62,14 @@ class ListAvailableVersionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[v1beta1.ListAvailableVersionsResponse]:
+    def pages(self) -> Iterator[v1beta1.ListAvailableVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[v1beta1.Version]:
+    def __iter__(self) -> Iterator[v1beta1.Version]:
         for page in self.pages:
             yield from page.available_versions
 
@@ -121,14 +121,14 @@ class ListAvailableVersionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[v1beta1.ListAvailableVersionsResponse]:
+    async def pages(self) -> AsyncIterator[v1beta1.ListAvailableVersionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[v1beta1.Version]:
+    def __aiter__(self) -> AsyncIterator[v1beta1.Version]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.available_versions:
@@ -184,14 +184,14 @@ class ListInstancesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[v1beta1.ListInstancesResponse]:
+    def pages(self) -> Iterator[v1beta1.ListInstancesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[v1beta1.Instance]:
+    def __iter__(self) -> Iterator[v1beta1.Instance]:
         for page in self.pages:
             yield from page.instances
 
@@ -243,14 +243,14 @@ class ListInstancesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[v1beta1.ListInstancesResponse]:
+    async def pages(self) -> AsyncIterator[v1beta1.ListInstancesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[v1beta1.Instance]:
+    def __aiter__(self) -> AsyncIterator[v1beta1.Instance]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.instances:
@@ -306,14 +306,14 @@ class ListNamespacesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[v1beta1.ListNamespacesResponse]:
+    def pages(self) -> Iterator[v1beta1.ListNamespacesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[v1beta1.Namespace]:
+    def __iter__(self) -> Iterator[v1beta1.Namespace]:
         for page in self.pages:
             yield from page.namespaces
 
@@ -365,14 +365,14 @@ class ListNamespacesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[v1beta1.ListNamespacesResponse]:
+    async def pages(self) -> AsyncIterator[v1beta1.ListNamespacesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[v1beta1.Namespace]:
+    def __aiter__(self) -> AsyncIterator[v1beta1.Namespace]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.namespaces:
@@ -428,14 +428,14 @@ class ListDnsPeeringsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[v1beta1.ListDnsPeeringsResponse]:
+    def pages(self) -> Iterator[v1beta1.ListDnsPeeringsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[v1beta1.DnsPeering]:
+    def __iter__(self) -> Iterator[v1beta1.DnsPeering]:
         for page in self.pages:
             yield from page.dns_peerings
 
@@ -487,14 +487,14 @@ class ListDnsPeeringsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[v1beta1.ListDnsPeeringsResponse]:
+    async def pages(self) -> AsyncIterator[v1beta1.ListDnsPeeringsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[v1beta1.DnsPeering]:
+    def __aiter__(self) -> AsyncIterator[v1beta1.DnsPeering]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.dns_peerings:

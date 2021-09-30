@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.partner.aistreams_v1alpha1.types import aistreams
 
@@ -62,14 +62,14 @@ class ListClustersPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[aistreams.ListClustersResponse]:
+    def pages(self) -> Iterator[aistreams.ListClustersResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[aistreams.Cluster]:
+    def __iter__(self) -> Iterator[aistreams.Cluster]:
         for page in self.pages:
             yield from page.clusters
 
@@ -121,14 +121,14 @@ class ListClustersAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[aistreams.ListClustersResponse]:
+    async def pages(self) -> AsyncIterator[aistreams.ListClustersResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[aistreams.Cluster]:
+    def __aiter__(self) -> AsyncIterator[aistreams.Cluster]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.clusters:
@@ -184,14 +184,14 @@ class ListStreamsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[aistreams.ListStreamsResponse]:
+    def pages(self) -> Iterator[aistreams.ListStreamsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[aistreams.Stream]:
+    def __iter__(self) -> Iterator[aistreams.Stream]:
         for page in self.pages:
             yield from page.streams
 
@@ -243,14 +243,14 @@ class ListStreamsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[aistreams.ListStreamsResponse]:
+    async def pages(self) -> AsyncIterator[aistreams.ListStreamsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[aistreams.Stream]:
+    def __aiter__(self) -> AsyncIterator[aistreams.Stream]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.streams:

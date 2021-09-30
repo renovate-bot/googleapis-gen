@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.networkmanagement_v1beta1.types import connectivity_test
 from google.cloud.networkmanagement_v1beta1.types import reachability
@@ -63,14 +63,14 @@ class ListConnectivityTestsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[reachability.ListConnectivityTestsResponse]:
+    def pages(self) -> Iterator[reachability.ListConnectivityTestsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[connectivity_test.ConnectivityTest]:
+    def __iter__(self) -> Iterator[connectivity_test.ConnectivityTest]:
         for page in self.pages:
             yield from page.resources
 
@@ -122,14 +122,14 @@ class ListConnectivityTestsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[reachability.ListConnectivityTestsResponse]:
+    async def pages(self) -> AsyncIterator[reachability.ListConnectivityTestsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[connectivity_test.ConnectivityTest]:
+    def __aiter__(self) -> AsyncIterator[connectivity_test.ConnectivityTest]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.resources:

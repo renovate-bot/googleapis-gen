@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.aiplatform_v1beta1.types import artifact
 from google.cloud.aiplatform_v1beta1.types import context
@@ -67,14 +67,14 @@ class ListMetadataStoresPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metadata_service.ListMetadataStoresResponse]:
+    def pages(self) -> Iterator[metadata_service.ListMetadataStoresResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[metadata_store.MetadataStore]:
+    def __iter__(self) -> Iterator[metadata_store.MetadataStore]:
         for page in self.pages:
             yield from page.metadata_stores
 
@@ -126,14 +126,14 @@ class ListMetadataStoresAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metadata_service.ListMetadataStoresResponse]:
+    async def pages(self) -> AsyncIterator[metadata_service.ListMetadataStoresResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[metadata_store.MetadataStore]:
+    def __aiter__(self) -> AsyncIterator[metadata_store.MetadataStore]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.metadata_stores:
@@ -189,14 +189,14 @@ class ListArtifactsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metadata_service.ListArtifactsResponse]:
+    def pages(self) -> Iterator[metadata_service.ListArtifactsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[artifact.Artifact]:
+    def __iter__(self) -> Iterator[artifact.Artifact]:
         for page in self.pages:
             yield from page.artifacts
 
@@ -248,14 +248,14 @@ class ListArtifactsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metadata_service.ListArtifactsResponse]:
+    async def pages(self) -> AsyncIterator[metadata_service.ListArtifactsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[artifact.Artifact]:
+    def __aiter__(self) -> AsyncIterator[artifact.Artifact]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.artifacts:
@@ -311,14 +311,14 @@ class ListContextsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metadata_service.ListContextsResponse]:
+    def pages(self) -> Iterator[metadata_service.ListContextsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[context.Context]:
+    def __iter__(self) -> Iterator[context.Context]:
         for page in self.pages:
             yield from page.contexts
 
@@ -370,14 +370,14 @@ class ListContextsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metadata_service.ListContextsResponse]:
+    async def pages(self) -> AsyncIterator[metadata_service.ListContextsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[context.Context]:
+    def __aiter__(self) -> AsyncIterator[context.Context]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.contexts:
@@ -433,14 +433,14 @@ class ListExecutionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metadata_service.ListExecutionsResponse]:
+    def pages(self) -> Iterator[metadata_service.ListExecutionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[execution.Execution]:
+    def __iter__(self) -> Iterator[execution.Execution]:
         for page in self.pages:
             yield from page.executions
 
@@ -492,14 +492,14 @@ class ListExecutionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metadata_service.ListExecutionsResponse]:
+    async def pages(self) -> AsyncIterator[metadata_service.ListExecutionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[execution.Execution]:
+    def __aiter__(self) -> AsyncIterator[execution.Execution]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.executions:
@@ -555,14 +555,14 @@ class ListMetadataSchemasPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[metadata_service.ListMetadataSchemasResponse]:
+    def pages(self) -> Iterator[metadata_service.ListMetadataSchemasResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[metadata_schema.MetadataSchema]:
+    def __iter__(self) -> Iterator[metadata_schema.MetadataSchema]:
         for page in self.pages:
             yield from page.metadata_schemas
 
@@ -614,14 +614,14 @@ class ListMetadataSchemasAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[metadata_service.ListMetadataSchemasResponse]:
+    async def pages(self) -> AsyncIterator[metadata_service.ListMetadataSchemasResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[metadata_schema.MetadataSchema]:
+    def __aiter__(self) -> AsyncIterator[metadata_schema.MetadataSchema]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.metadata_schemas:

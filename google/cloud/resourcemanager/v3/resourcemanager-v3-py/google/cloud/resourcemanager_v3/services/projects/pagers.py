@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.resourcemanager_v3.types import projects
 
@@ -62,14 +62,14 @@ class ListProjectsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[projects.ListProjectsResponse]:
+    def pages(self) -> Iterator[projects.ListProjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[projects.Project]:
+    def __iter__(self) -> Iterator[projects.Project]:
         for page in self.pages:
             yield from page.projects
 
@@ -121,14 +121,14 @@ class ListProjectsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[projects.ListProjectsResponse]:
+    async def pages(self) -> AsyncIterator[projects.ListProjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[projects.Project]:
+    def __aiter__(self) -> AsyncIterator[projects.Project]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.projects:
@@ -184,14 +184,14 @@ class SearchProjectsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[projects.SearchProjectsResponse]:
+    def pages(self) -> Iterator[projects.SearchProjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[projects.Project]:
+    def __iter__(self) -> Iterator[projects.Project]:
         for page in self.pages:
             yield from page.projects
 
@@ -243,14 +243,14 @@ class SearchProjectsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[projects.SearchProjectsResponse]:
+    async def pages(self) -> AsyncIterator[projects.SearchProjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[projects.Project]:
+    def __aiter__(self) -> AsyncIterator[projects.Project]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.projects:

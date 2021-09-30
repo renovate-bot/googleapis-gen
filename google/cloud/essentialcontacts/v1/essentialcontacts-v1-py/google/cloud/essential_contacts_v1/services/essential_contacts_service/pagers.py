@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.essential_contacts_v1.types import service
 
@@ -62,14 +62,14 @@ class ListContactsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListContactsResponse]:
+    def pages(self) -> Iterator[service.ListContactsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[service.Contact]:
+    def __iter__(self) -> Iterator[service.Contact]:
         for page in self.pages:
             yield from page.contacts
 
@@ -121,14 +121,14 @@ class ListContactsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListContactsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListContactsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[service.Contact]:
+    def __aiter__(self) -> AsyncIterator[service.Contact]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.contacts:
@@ -184,14 +184,14 @@ class ComputeContactsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ComputeContactsResponse]:
+    def pages(self) -> Iterator[service.ComputeContactsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[service.Contact]:
+    def __iter__(self) -> Iterator[service.Contact]:
         for page in self.pages:
             yield from page.contacts
 
@@ -243,14 +243,14 @@ class ComputeContactsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ComputeContactsResponse]:
+    async def pages(self) -> AsyncIterator[service.ComputeContactsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[service.Contact]:
+    def __aiter__(self) -> AsyncIterator[service.Contact]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.contacts:

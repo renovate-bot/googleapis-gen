@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.bigtable_admin_v2.types import bigtable_instance_admin
 from google.cloud.bigtable_admin_v2.types import instance
@@ -63,14 +63,14 @@ class ListAppProfilesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[bigtable_instance_admin.ListAppProfilesResponse]:
+    def pages(self) -> Iterator[bigtable_instance_admin.ListAppProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[instance.AppProfile]:
+    def __iter__(self) -> Iterator[instance.AppProfile]:
         for page in self.pages:
             yield from page.app_profiles
 
@@ -122,14 +122,14 @@ class ListAppProfilesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[bigtable_instance_admin.ListAppProfilesResponse]:
+    async def pages(self) -> AsyncIterator[bigtable_instance_admin.ListAppProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[instance.AppProfile]:
+    def __aiter__(self) -> AsyncIterator[instance.AppProfile]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.app_profiles:

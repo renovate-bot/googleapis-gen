@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from maps.fleetengine_v1.types import trip_api
 from maps.fleetengine_v1.types import trips
@@ -63,14 +63,14 @@ class SearchTripsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[trip_api.SearchTripsResponse]:
+    def pages(self) -> Iterator[trip_api.SearchTripsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[trips.Trip]:
+    def __iter__(self) -> Iterator[trips.Trip]:
         for page in self.pages:
             yield from page.trips
 
@@ -122,14 +122,14 @@ class SearchTripsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[trip_api.SearchTripsResponse]:
+    async def pages(self) -> AsyncIterator[trip_api.SearchTripsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[trips.Trip]:
+    def __aiter__(self) -> AsyncIterator[trips.Trip]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.trips:

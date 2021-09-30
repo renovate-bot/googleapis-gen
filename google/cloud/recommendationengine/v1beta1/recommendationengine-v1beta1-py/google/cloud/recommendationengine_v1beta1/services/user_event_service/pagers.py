@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.recommendationengine_v1beta1.types import user_event
 from google.cloud.recommendationengine_v1beta1.types import user_event_service
@@ -63,14 +63,14 @@ class ListUserEventsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[user_event_service.ListUserEventsResponse]:
+    def pages(self) -> Iterator[user_event_service.ListUserEventsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[user_event.UserEvent]:
+    def __iter__(self) -> Iterator[user_event.UserEvent]:
         for page in self.pages:
             yield from page.user_events
 
@@ -122,14 +122,14 @@ class ListUserEventsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[user_event_service.ListUserEventsResponse]:
+    async def pages(self) -> AsyncIterator[user_event_service.ListUserEventsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[user_event.UserEvent]:
+    def __aiter__(self) -> AsyncIterator[user_event.UserEvent]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.user_events:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.bigquery_migration_v2alpha.types import migration_entities
 from google.cloud.bigquery_migration_v2alpha.types import migration_service
@@ -63,14 +63,14 @@ class ListMigrationWorkflowsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[migration_service.ListMigrationWorkflowsResponse]:
+    def pages(self) -> Iterator[migration_service.ListMigrationWorkflowsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[migration_entities.MigrationWorkflow]:
+    def __iter__(self) -> Iterator[migration_entities.MigrationWorkflow]:
         for page in self.pages:
             yield from page.migration_workflows
 
@@ -122,14 +122,14 @@ class ListMigrationWorkflowsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[migration_service.ListMigrationWorkflowsResponse]:
+    async def pages(self) -> AsyncIterator[migration_service.ListMigrationWorkflowsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[migration_entities.MigrationWorkflow]:
+    def __aiter__(self) -> AsyncIterator[migration_entities.MigrationWorkflow]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.migration_workflows:
@@ -185,14 +185,14 @@ class ListMigrationSubtasksPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[migration_service.ListMigrationSubtasksResponse]:
+    def pages(self) -> Iterator[migration_service.ListMigrationSubtasksResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[migration_entities.MigrationSubtask]:
+    def __iter__(self) -> Iterator[migration_entities.MigrationSubtask]:
         for page in self.pages:
             yield from page.migration_subtasks
 
@@ -244,14 +244,14 @@ class ListMigrationSubtasksAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[migration_service.ListMigrationSubtasksResponse]:
+    async def pages(self) -> AsyncIterator[migration_service.ListMigrationSubtasksResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[migration_entities.MigrationSubtask]:
+    def __aiter__(self) -> AsyncIterator[migration_entities.MigrationSubtask]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.migration_subtasks:

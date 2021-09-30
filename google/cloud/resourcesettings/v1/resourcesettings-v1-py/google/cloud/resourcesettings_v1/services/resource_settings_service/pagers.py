@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.resourcesettings_v1.types import resource_settings
 
@@ -62,14 +62,14 @@ class ListSettingsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[resource_settings.ListSettingsResponse]:
+    def pages(self) -> Iterator[resource_settings.ListSettingsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resource_settings.Setting]:
+    def __iter__(self) -> Iterator[resource_settings.Setting]:
         for page in self.pages:
             yield from page.settings
 
@@ -121,14 +121,14 @@ class ListSettingsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[resource_settings.ListSettingsResponse]:
+    async def pages(self) -> AsyncIterator[resource_settings.ListSettingsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resource_settings.Setting]:
+    def __aiter__(self) -> AsyncIterator[resource_settings.Setting]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.settings:

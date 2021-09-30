@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.iam_v1beta.types import workload_identity_pool
 
@@ -62,14 +62,14 @@ class ListWorkloadIdentityPoolsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[workload_identity_pool.ListWorkloadIdentityPoolsResponse]:
+    def pages(self) -> Iterator[workload_identity_pool.ListWorkloadIdentityPoolsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[workload_identity_pool.WorkloadIdentityPool]:
+    def __iter__(self) -> Iterator[workload_identity_pool.WorkloadIdentityPool]:
         for page in self.pages:
             yield from page.workload_identity_pools
 
@@ -121,14 +121,14 @@ class ListWorkloadIdentityPoolsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[workload_identity_pool.ListWorkloadIdentityPoolsResponse]:
+    async def pages(self) -> AsyncIterator[workload_identity_pool.ListWorkloadIdentityPoolsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[workload_identity_pool.WorkloadIdentityPool]:
+    def __aiter__(self) -> AsyncIterator[workload_identity_pool.WorkloadIdentityPool]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.workload_identity_pools:
@@ -184,14 +184,14 @@ class ListWorkloadIdentityPoolProvidersPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[workload_identity_pool.ListWorkloadIdentityPoolProvidersResponse]:
+    def pages(self) -> Iterator[workload_identity_pool.ListWorkloadIdentityPoolProvidersResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[workload_identity_pool.WorkloadIdentityPoolProvider]:
+    def __iter__(self) -> Iterator[workload_identity_pool.WorkloadIdentityPoolProvider]:
         for page in self.pages:
             yield from page.workload_identity_pool_providers
 
@@ -243,14 +243,14 @@ class ListWorkloadIdentityPoolProvidersAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[workload_identity_pool.ListWorkloadIdentityPoolProvidersResponse]:
+    async def pages(self) -> AsyncIterator[workload_identity_pool.ListWorkloadIdentityPoolProvidersResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[workload_identity_pool.WorkloadIdentityPoolProvider]:
+    def __aiter__(self) -> AsyncIterator[workload_identity_pool.WorkloadIdentityPoolProvider]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.workload_identity_pool_providers:

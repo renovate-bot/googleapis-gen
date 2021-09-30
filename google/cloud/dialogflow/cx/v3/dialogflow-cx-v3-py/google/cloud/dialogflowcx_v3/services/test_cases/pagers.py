@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.dialogflowcx_v3.types import test_case
 
@@ -62,14 +62,14 @@ class ListTestCasesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[test_case.ListTestCasesResponse]:
+    def pages(self) -> Iterator[test_case.ListTestCasesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[test_case.TestCase]:
+    def __iter__(self) -> Iterator[test_case.TestCase]:
         for page in self.pages:
             yield from page.test_cases
 
@@ -121,14 +121,14 @@ class ListTestCasesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[test_case.ListTestCasesResponse]:
+    async def pages(self) -> AsyncIterator[test_case.ListTestCasesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[test_case.TestCase]:
+    def __aiter__(self) -> AsyncIterator[test_case.TestCase]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.test_cases:
@@ -184,14 +184,14 @@ class ListTestCaseResultsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[test_case.ListTestCaseResultsResponse]:
+    def pages(self) -> Iterator[test_case.ListTestCaseResultsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[test_case.TestCaseResult]:
+    def __iter__(self) -> Iterator[test_case.TestCaseResult]:
         for page in self.pages:
             yield from page.test_case_results
 
@@ -243,14 +243,14 @@ class ListTestCaseResultsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[test_case.ListTestCaseResultsResponse]:
+    async def pages(self) -> AsyncIterator[test_case.ListTestCaseResultsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[test_case.TestCaseResult]:
+    def __aiter__(self) -> AsyncIterator[test_case.TestCaseResult]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.test_case_results:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
@@ -63,14 +63,14 @@ class ListBucketsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[storage_resources.ListBucketsResponse]:
+    def pages(self) -> Iterator[storage_resources.ListBucketsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[storage_resources.Bucket]:
+    def __iter__(self) -> Iterator[storage_resources.Bucket]:
         for page in self.pages:
             yield from page.items
 
@@ -122,14 +122,14 @@ class ListBucketsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[storage_resources.ListBucketsResponse]:
+    async def pages(self) -> AsyncIterator[storage_resources.ListBucketsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[storage_resources.Bucket]:
+    def __aiter__(self) -> AsyncIterator[storage_resources.Bucket]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.items:
@@ -185,14 +185,14 @@ class ListObjectsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[storage_resources.ListObjectsResponse]:
+    def pages(self) -> Iterator[storage_resources.ListObjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[str]:
+    def __iter__(self) -> Iterator[str]:
         for page in self.pages:
             yield from page.prefixes
 
@@ -244,14 +244,14 @@ class ListObjectsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[storage_resources.ListObjectsResponse]:
+    async def pages(self) -> AsyncIterator[storage_resources.ListObjectsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[str]:
+    def __aiter__(self) -> AsyncIterator[str]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.prefixes:
@@ -307,14 +307,14 @@ class ListHmacKeysPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[storage.ListHmacKeysResponse]:
+    def pages(self) -> Iterator[storage.ListHmacKeysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[storage_resources.HmacKeyMetadata]:
+    def __iter__(self) -> Iterator[storage_resources.HmacKeyMetadata]:
         for page in self.pages:
             yield from page.items
 
@@ -366,14 +366,14 @@ class ListHmacKeysAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[storage.ListHmacKeysResponse]:
+    async def pages(self) -> AsyncIterator[storage.ListHmacKeysResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[storage_resources.HmacKeyMetadata]:
+    def __aiter__(self) -> AsyncIterator[storage_resources.HmacKeyMetadata]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.items:

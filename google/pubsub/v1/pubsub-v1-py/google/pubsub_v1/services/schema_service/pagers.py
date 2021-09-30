@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.pubsub_v1.types import schema
 
@@ -62,14 +62,14 @@ class ListSchemasPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[schema.ListSchemasResponse]:
+    def pages(self) -> Iterator[schema.ListSchemasResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[schema.Schema]:
+    def __iter__(self) -> Iterator[schema.Schema]:
         for page in self.pages:
             yield from page.schemas
 
@@ -121,14 +121,14 @@ class ListSchemasAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[schema.ListSchemasResponse]:
+    async def pages(self) -> AsyncIterator[schema.ListSchemasResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[schema.Schema]:
+    def __aiter__(self) -> AsyncIterator[schema.Schema]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.schemas:

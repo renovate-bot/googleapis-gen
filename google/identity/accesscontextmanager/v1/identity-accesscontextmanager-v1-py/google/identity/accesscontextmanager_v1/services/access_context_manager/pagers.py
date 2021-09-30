@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.identity.accesscontextmanager_v1.types import access_context_manager
 from google.identity.accesscontextmanager_v1.types import access_level
@@ -66,14 +66,14 @@ class ListAccessPoliciesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[access_context_manager.ListAccessPoliciesResponse]:
+    def pages(self) -> Iterator[access_context_manager.ListAccessPoliciesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[access_policy.AccessPolicy]:
+    def __iter__(self) -> Iterator[access_policy.AccessPolicy]:
         for page in self.pages:
             yield from page.access_policies
 
@@ -125,14 +125,14 @@ class ListAccessPoliciesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[access_context_manager.ListAccessPoliciesResponse]:
+    async def pages(self) -> AsyncIterator[access_context_manager.ListAccessPoliciesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[access_policy.AccessPolicy]:
+    def __aiter__(self) -> AsyncIterator[access_policy.AccessPolicy]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.access_policies:
@@ -188,14 +188,14 @@ class ListAccessLevelsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[access_context_manager.ListAccessLevelsResponse]:
+    def pages(self) -> Iterator[access_context_manager.ListAccessLevelsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[access_level.AccessLevel]:
+    def __iter__(self) -> Iterator[access_level.AccessLevel]:
         for page in self.pages:
             yield from page.access_levels
 
@@ -247,14 +247,14 @@ class ListAccessLevelsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[access_context_manager.ListAccessLevelsResponse]:
+    async def pages(self) -> AsyncIterator[access_context_manager.ListAccessLevelsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[access_level.AccessLevel]:
+    def __aiter__(self) -> AsyncIterator[access_level.AccessLevel]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.access_levels:
@@ -310,14 +310,14 @@ class ListServicePerimetersPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[access_context_manager.ListServicePerimetersResponse]:
+    def pages(self) -> Iterator[access_context_manager.ListServicePerimetersResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[service_perimeter.ServicePerimeter]:
+    def __iter__(self) -> Iterator[service_perimeter.ServicePerimeter]:
         for page in self.pages:
             yield from page.service_perimeters
 
@@ -369,14 +369,14 @@ class ListServicePerimetersAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[access_context_manager.ListServicePerimetersResponse]:
+    async def pages(self) -> AsyncIterator[access_context_manager.ListServicePerimetersResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[service_perimeter.ServicePerimeter]:
+    def __aiter__(self) -> AsyncIterator[service_perimeter.ServicePerimeter]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.service_perimeters:
@@ -432,14 +432,14 @@ class ListGcpUserAccessBindingsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[access_context_manager.ListGcpUserAccessBindingsResponse]:
+    def pages(self) -> Iterator[access_context_manager.ListGcpUserAccessBindingsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[gcp_user_access_binding.GcpUserAccessBinding]:
+    def __iter__(self) -> Iterator[gcp_user_access_binding.GcpUserAccessBinding]:
         for page in self.pages:
             yield from page.gcp_user_access_bindings
 
@@ -491,14 +491,14 @@ class ListGcpUserAccessBindingsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[access_context_manager.ListGcpUserAccessBindingsResponse]:
+    async def pages(self) -> AsyncIterator[access_context_manager.ListGcpUserAccessBindingsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[gcp_user_access_binding.GcpUserAccessBinding]:
+    def __aiter__(self) -> AsyncIterator[gcp_user_access_binding.GcpUserAccessBinding]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.gcp_user_access_bindings:

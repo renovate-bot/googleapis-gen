@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.api.serviceusage_v1beta1.types import resources
 from google.api.serviceusage_v1beta1.types import serviceusage
@@ -63,14 +63,14 @@ class ListServicesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[serviceusage.ListServicesResponse]:
+    def pages(self) -> Iterator[serviceusage.ListServicesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.Service]:
+    def __iter__(self) -> Iterator[resources.Service]:
         for page in self.pages:
             yield from page.services
 
@@ -122,14 +122,14 @@ class ListServicesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[serviceusage.ListServicesResponse]:
+    async def pages(self) -> AsyncIterator[serviceusage.ListServicesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.Service]:
+    def __aiter__(self) -> AsyncIterator[resources.Service]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.services:
@@ -185,14 +185,14 @@ class ListConsumerQuotaMetricsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[serviceusage.ListConsumerQuotaMetricsResponse]:
+    def pages(self) -> Iterator[serviceusage.ListConsumerQuotaMetricsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.ConsumerQuotaMetric]:
+    def __iter__(self) -> Iterator[resources.ConsumerQuotaMetric]:
         for page in self.pages:
             yield from page.metrics
 
@@ -244,14 +244,14 @@ class ListConsumerQuotaMetricsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[serviceusage.ListConsumerQuotaMetricsResponse]:
+    async def pages(self) -> AsyncIterator[serviceusage.ListConsumerQuotaMetricsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.ConsumerQuotaMetric]:
+    def __aiter__(self) -> AsyncIterator[resources.ConsumerQuotaMetric]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.metrics:
@@ -307,14 +307,14 @@ class ListAdminOverridesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[serviceusage.ListAdminOverridesResponse]:
+    def pages(self) -> Iterator[serviceusage.ListAdminOverridesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.QuotaOverride]:
+    def __iter__(self) -> Iterator[resources.QuotaOverride]:
         for page in self.pages:
             yield from page.overrides
 
@@ -366,14 +366,14 @@ class ListAdminOverridesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[serviceusage.ListAdminOverridesResponse]:
+    async def pages(self) -> AsyncIterator[serviceusage.ListAdminOverridesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.QuotaOverride]:
+    def __aiter__(self) -> AsyncIterator[resources.QuotaOverride]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.overrides:
@@ -429,14 +429,14 @@ class ListConsumerOverridesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[serviceusage.ListConsumerOverridesResponse]:
+    def pages(self) -> Iterator[serviceusage.ListConsumerOverridesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[resources.QuotaOverride]:
+    def __iter__(self) -> Iterator[resources.QuotaOverride]:
         for page in self.pages:
             yield from page.overrides
 
@@ -488,14 +488,14 @@ class ListConsumerOverridesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[serviceusage.ListConsumerOverridesResponse]:
+    async def pages(self) -> AsyncIterator[serviceusage.ListConsumerOverridesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[resources.QuotaOverride]:
+    def __aiter__(self) -> AsyncIterator[resources.QuotaOverride]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.overrides:

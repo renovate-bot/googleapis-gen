@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.datastream_v1alpha1.types import datastream
 from google.cloud.datastream_v1alpha1.types import datastream_resources
@@ -63,14 +63,14 @@ class ListConnectionProfilesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datastream.ListConnectionProfilesResponse]:
+    def pages(self) -> Iterator[datastream.ListConnectionProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[datastream_resources.ConnectionProfile]:
+    def __iter__(self) -> Iterator[datastream_resources.ConnectionProfile]:
         for page in self.pages:
             yield from page.connection_profiles
 
@@ -122,14 +122,14 @@ class ListConnectionProfilesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datastream.ListConnectionProfilesResponse]:
+    async def pages(self) -> AsyncIterator[datastream.ListConnectionProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[datastream_resources.ConnectionProfile]:
+    def __aiter__(self) -> AsyncIterator[datastream_resources.ConnectionProfile]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.connection_profiles:
@@ -185,14 +185,14 @@ class ListStreamsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datastream.ListStreamsResponse]:
+    def pages(self) -> Iterator[datastream.ListStreamsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[datastream_resources.Stream]:
+    def __iter__(self) -> Iterator[datastream_resources.Stream]:
         for page in self.pages:
             yield from page.streams
 
@@ -244,14 +244,14 @@ class ListStreamsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datastream.ListStreamsResponse]:
+    async def pages(self) -> AsyncIterator[datastream.ListStreamsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[datastream_resources.Stream]:
+    def __aiter__(self) -> AsyncIterator[datastream_resources.Stream]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.streams:
@@ -307,14 +307,14 @@ class FetchStaticIpsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datastream.FetchStaticIpsResponse]:
+    def pages(self) -> Iterator[datastream.FetchStaticIpsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[str]:
+    def __iter__(self) -> Iterator[str]:
         for page in self.pages:
             yield from page.static_ips
 
@@ -366,14 +366,14 @@ class FetchStaticIpsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datastream.FetchStaticIpsResponse]:
+    async def pages(self) -> AsyncIterator[datastream.FetchStaticIpsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[str]:
+    def __aiter__(self) -> AsyncIterator[str]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.static_ips:
@@ -429,14 +429,14 @@ class ListPrivateConnectionsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datastream.ListPrivateConnectionsResponse]:
+    def pages(self) -> Iterator[datastream.ListPrivateConnectionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[datastream_resources.PrivateConnection]:
+    def __iter__(self) -> Iterator[datastream_resources.PrivateConnection]:
         for page in self.pages:
             yield from page.private_connections
 
@@ -488,14 +488,14 @@ class ListPrivateConnectionsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datastream.ListPrivateConnectionsResponse]:
+    async def pages(self) -> AsyncIterator[datastream.ListPrivateConnectionsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[datastream_resources.PrivateConnection]:
+    def __aiter__(self) -> AsyncIterator[datastream_resources.PrivateConnection]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.private_connections:
@@ -551,14 +551,14 @@ class ListRoutesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[datastream.ListRoutesResponse]:
+    def pages(self) -> Iterator[datastream.ListRoutesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[datastream_resources.Route]:
+    def __iter__(self) -> Iterator[datastream_resources.Route]:
         for page in self.pages:
             yield from page.routes
 
@@ -610,14 +610,14 @@ class ListRoutesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[datastream.ListRoutesResponse]:
+    async def pages(self) -> AsyncIterator[datastream.ListRoutesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[datastream_resources.Route]:
+    def __aiter__(self) -> AsyncIterator[datastream_resources.Route]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.routes:

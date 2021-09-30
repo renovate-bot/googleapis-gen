@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.tasks_v2.types import cloudtasks
 from google.cloud.tasks_v2.types import queue
@@ -64,14 +64,14 @@ class ListQueuesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[cloudtasks.ListQueuesResponse]:
+    def pages(self) -> Iterator[cloudtasks.ListQueuesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[queue.Queue]:
+    def __iter__(self) -> Iterator[queue.Queue]:
         for page in self.pages:
             yield from page.queues
 
@@ -123,14 +123,14 @@ class ListQueuesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[cloudtasks.ListQueuesResponse]:
+    async def pages(self) -> AsyncIterator[cloudtasks.ListQueuesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[queue.Queue]:
+    def __aiter__(self) -> AsyncIterator[queue.Queue]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.queues:
@@ -186,14 +186,14 @@ class ListTasksPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[cloudtasks.ListTasksResponse]:
+    def pages(self) -> Iterator[cloudtasks.ListTasksResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[task.Task]:
+    def __iter__(self) -> Iterator[task.Task]:
         for page in self.pages:
             yield from page.tasks
 
@@ -245,14 +245,14 @@ class ListTasksAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[cloudtasks.ListTasksResponse]:
+    async def pages(self) -> AsyncIterator[cloudtasks.ListTasksResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[task.Task]:
+    def __aiter__(self) -> AsyncIterator[task.Task]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.tasks:

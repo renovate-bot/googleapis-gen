@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.automl_v1beta1.types import column_spec
 from google.cloud.automl_v1beta1.types import dataset
@@ -67,14 +67,14 @@ class ListDatasetsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListDatasetsResponse]:
+    def pages(self) -> Iterator[service.ListDatasetsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[dataset.Dataset]:
+    def __iter__(self) -> Iterator[dataset.Dataset]:
         for page in self.pages:
             yield from page.datasets
 
@@ -126,14 +126,14 @@ class ListDatasetsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListDatasetsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListDatasetsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[dataset.Dataset]:
+    def __aiter__(self) -> AsyncIterator[dataset.Dataset]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.datasets:
@@ -189,14 +189,14 @@ class ListTableSpecsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListTableSpecsResponse]:
+    def pages(self) -> Iterator[service.ListTableSpecsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[table_spec.TableSpec]:
+    def __iter__(self) -> Iterator[table_spec.TableSpec]:
         for page in self.pages:
             yield from page.table_specs
 
@@ -248,14 +248,14 @@ class ListTableSpecsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListTableSpecsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListTableSpecsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[table_spec.TableSpec]:
+    def __aiter__(self) -> AsyncIterator[table_spec.TableSpec]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.table_specs:
@@ -311,14 +311,14 @@ class ListColumnSpecsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListColumnSpecsResponse]:
+    def pages(self) -> Iterator[service.ListColumnSpecsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[column_spec.ColumnSpec]:
+    def __iter__(self) -> Iterator[column_spec.ColumnSpec]:
         for page in self.pages:
             yield from page.column_specs
 
@@ -370,14 +370,14 @@ class ListColumnSpecsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListColumnSpecsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListColumnSpecsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[column_spec.ColumnSpec]:
+    def __aiter__(self) -> AsyncIterator[column_spec.ColumnSpec]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.column_specs:
@@ -433,14 +433,14 @@ class ListModelsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListModelsResponse]:
+    def pages(self) -> Iterator[service.ListModelsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[model.Model]:
+    def __iter__(self) -> Iterator[model.Model]:
         for page in self.pages:
             yield from page.model
 
@@ -492,14 +492,14 @@ class ListModelsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListModelsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListModelsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[model.Model]:
+    def __aiter__(self) -> AsyncIterator[model.Model]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.model:
@@ -555,14 +555,14 @@ class ListModelEvaluationsPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[service.ListModelEvaluationsResponse]:
+    def pages(self) -> Iterator[service.ListModelEvaluationsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[model_evaluation.ModelEvaluation]:
+    def __iter__(self) -> Iterator[model_evaluation.ModelEvaluation]:
         for page in self.pages:
             yield from page.model_evaluation
 
@@ -614,14 +614,14 @@ class ListModelEvaluationsAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[service.ListModelEvaluationsResponse]:
+    async def pages(self) -> AsyncIterator[service.ListModelEvaluationsResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[model_evaluation.ModelEvaluation]:
+    def __aiter__(self) -> AsyncIterator[model_evaluation.ModelEvaluation]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.model_evaluation:

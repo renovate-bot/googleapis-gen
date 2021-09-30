@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
+from typing import Any, AsyncIterator, Awaitable, Callable, Sequence, Tuple, Optional, Iterator
 
 from google.cloud.talent_v4beta1.types import histogram
 from google.cloud.talent_v4beta1.types import profile
@@ -64,14 +64,14 @@ class ListProfilesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[profile_service.ListProfilesResponse]:
+    def pages(self) -> Iterator[profile_service.ListProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[profile.Profile]:
+    def __iter__(self) -> Iterator[profile.Profile]:
         for page in self.pages:
             yield from page.profiles
 
@@ -123,14 +123,14 @@ class ListProfilesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[profile_service.ListProfilesResponse]:
+    async def pages(self) -> AsyncIterator[profile_service.ListProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[profile.Profile]:
+    def __aiter__(self) -> AsyncIterator[profile.Profile]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.profiles:
@@ -186,14 +186,14 @@ class SearchProfilesPager:
         return getattr(self._response, name)
 
     @property
-    def pages(self) -> Iterable[profile_service.SearchProfilesResponse]:
+    def pages(self) -> Iterator[profile_service.SearchProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[histogram.HistogramQueryResult]:
+    def __iter__(self) -> Iterator[histogram.HistogramQueryResult]:
         for page in self.pages:
             yield from page.histogram_query_results
 
@@ -245,14 +245,14 @@ class SearchProfilesAsyncPager:
         return getattr(self._response, name)
 
     @property
-    async def pages(self) -> AsyncIterable[profile_service.SearchProfilesResponse]:
+    async def pages(self) -> AsyncIterator[profile_service.SearchProfilesResponse]:
         yield self._response
         while self._response.next_page_token:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[histogram.HistogramQueryResult]:
+    def __aiter__(self) -> AsyncIterator[histogram.HistogramQueryResult]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.histogram_query_results:
