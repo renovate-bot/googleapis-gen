@@ -36,8 +36,8 @@ public interface UpdateBackupRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,8 +46,8 @@ public interface UpdateBackupRequestOrBuilder extends
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,8 +56,8 @@ public interface UpdateBackupRequestOrBuilder extends
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

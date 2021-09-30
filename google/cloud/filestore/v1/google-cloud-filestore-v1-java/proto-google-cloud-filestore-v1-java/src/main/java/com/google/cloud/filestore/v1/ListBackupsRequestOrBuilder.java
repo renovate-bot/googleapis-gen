@@ -9,11 +9,11 @@ public interface ListBackupsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project and location for which to retrieve backup information,
-   * in the format `projects/{project_number}/locations/{location}`.
-   * In Cloud Filestore, backup locations map to GCP regions,
-   * for example **us-west1**.
-   * To retrieve backup information for all locations, use "-" for the
+   * Required. The project and location for which to retrieve backup
+   * information, in the format
+   * `projects/{project_number}/locations/{location}`. In Cloud Filestore,
+   * backup locations map to GCP regions, for example **us-west1**. To retrieve
+   * backup information for all locations, use "-" for the
    * `{location}` value.
    * </pre>
    *
@@ -23,11 +23,11 @@ public interface ListBackupsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The project and location for which to retrieve backup information,
-   * in the format `projects/{project_number}/locations/{location}`.
-   * In Cloud Filestore, backup locations map to GCP regions,
-   * for example **us-west1**.
-   * To retrieve backup information for all locations, use "-" for the
+   * Required. The project and location for which to retrieve backup
+   * information, in the format
+   * `projects/{project_number}/locations/{location}`. In Cloud Filestore,
+   * backup locations map to GCP regions, for example **us-west1**. To retrieve
+   * backup information for all locations, use "-" for the
    * `{location}` value.
    * </pre>
    *

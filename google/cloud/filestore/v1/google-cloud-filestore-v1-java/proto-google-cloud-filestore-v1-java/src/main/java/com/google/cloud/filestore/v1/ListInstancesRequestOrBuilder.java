@@ -9,9 +9,9 @@ public interface ListInstancesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The project and location for which to retrieve instance information,
-   * in the format `projects/{project_id}/locations/{location}`. In Cloud
-   * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+   * Required. The project and location for which to retrieve instance
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
    * retrieve instance information for all locations, use "-" for the
    * `{location}` value.
    * </pre>
@@ -22,9 +22,9 @@ public interface ListInstancesRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The project and location for which to retrieve instance information,
-   * in the format `projects/{project_id}/locations/{location}`. In Cloud
-   * Filestore, locations map to GCP zones, for example **us-west1-b**. To
+   * Required. The project and location for which to retrieve instance
+   * information, in the format `projects/{project_id}/locations/{location}`. In
+   * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
    * retrieve instance information for all locations, use "-" for the
    * `{location}` value.
    * </pre>

@@ -651,8 +651,8 @@ private static final long serialVersionUID = 0L;
   private long storageBytes_;
   /**
    * <pre>
-   * Output only. The size of the storage used by the backup. As backups share storage,
-   * this number is expected to change with backup creation/deletion.
+   * Output only. The size of the storage used by the backup. As backups share
+   * storage, this number is expected to change with backup creation/deletion.
    * </pre>
    *
    * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -765,8 +765,8 @@ private static final long serialVersionUID = 0L;
   private int sourceInstanceTier_;
   /**
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Cloud Filestore instance that
+   * this backup is created from.
    * </pre>
    *
    * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -777,8 +777,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
-   * is created from.
+   * Output only. The service tier of the source Cloud Filestore instance that
+   * this backup is created from.
    * </pre>
    *
    * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -794,9 +794,9 @@ private static final long serialVersionUID = 0L;
   private long downloadBytes_;
   /**
    * <pre>
-   * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-   * may be different than storage bytes, since sequential backups of the same
-   * disk will share storage.
+   * Output only. Amount of bytes that will be downloaded if the backup is
+   * restored. This may be different than storage bytes, since sequential
+   * backups of the same disk will share storage.
    * </pre>
    *
    * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2032,8 +2032,8 @@ private static final long serialVersionUID = 0L;
     private long storageBytes_ ;
     /**
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2045,8 +2045,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2061,8 +2061,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The size of the storage used by the backup. As backups share storage,
-     * this number is expected to change with backup creation/deletion.
+     * Output only. The size of the storage used by the backup. As backups share
+     * storage, this number is expected to change with backup creation/deletion.
      * </pre>
      *
      * <code>int64 storage_bytes = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2285,8 +2285,8 @@ private static final long serialVersionUID = 0L;
     private int sourceInstanceTier_ = 0;
     /**
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2297,8 +2297,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2313,8 +2313,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2328,8 +2328,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2347,8 +2347,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that this backup
-     * is created from.
+     * Output only. The service tier of the source Cloud Filestore instance that
+     * this backup is created from.
      * </pre>
      *
      * <code>.google.cloud.filestore.v1.Instance.Tier source_instance_tier = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2364,9 +2364,9 @@ private static final long serialVersionUID = 0L;
     private long downloadBytes_ ;
     /**
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-     * may be different than storage bytes, since sequential backups of the same
-     * disk will share storage.
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored. This may be different than storage bytes, since sequential
+     * backups of the same disk will share storage.
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2378,9 +2378,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-     * may be different than storage bytes, since sequential backups of the same
-     * disk will share storage.
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored. This may be different than storage bytes, since sequential
+     * backups of the same disk will share storage.
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2395,9 +2395,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Amount of bytes that will be downloaded if the backup is restored. This
-     * may be different than storage bytes, since sequential backups of the same
-     * disk will share storage.
+     * Output only. Amount of bytes that will be downloaded if the backup is
+     * restored. This may be different than storage bytes, since sequential
+     * backups of the same disk will share storage.
      * </pre>
      *
      * <code>int64 download_bytes = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

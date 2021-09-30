@@ -778,8 +778,8 @@ export class CloudFilestoreManagerClient {
  *   Required. The resource name of the instance, in the format
  *   `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
  * @param {string} request.fileShare
- *   Required. Name of the file share in the Cloud Filestore instance that the backup
- *   is being restored to.
+ *   Required. Name of the file share in the Cloud Filestore instance that the
+ *   backup is being restored to.
  * @param {string} request.sourceBackup
  *   The resource name of the backup, in the format
  *   `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
@@ -1178,8 +1178,8 @@ export class CloudFilestoreManagerClient {
  * @param {google.cloud.filestore.v1.Backup} request.backup
  *   Required. A {@link google.cloud.filestore.v1.Backup|backup resource}
  * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. Mask of fields to update.  At least one path must be supplied in this
- *   field.
+ *   Required. Mask of fields to update.  At least one path must be supplied in
+ *   this field.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1276,9 +1276,9 @@ export class CloudFilestoreManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project and location for which to retrieve instance information,
- *   in the format `projects/{project_id}/locations/{location}`. In Cloud
- *   Filestore, locations map to GCP zones, for example **us-west1-b**. To
+ *   Required. The project and location for which to retrieve instance
+ *   information, in the format `projects/{project_id}/locations/{location}`. In
+ *   Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
  *   retrieve instance information for all locations, use "-" for the
  *   `{location}` value.
  * @param {number} request.pageSize
@@ -1344,9 +1344,9 @@ export class CloudFilestoreManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project and location for which to retrieve instance information,
- *   in the format `projects/{project_id}/locations/{location}`. In Cloud
- *   Filestore, locations map to GCP zones, for example **us-west1-b**. To
+ *   Required. The project and location for which to retrieve instance
+ *   information, in the format `projects/{project_id}/locations/{location}`. In
+ *   Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
  *   retrieve instance information for all locations, use "-" for the
  *   `{location}` value.
  * @param {number} request.pageSize
@@ -1400,9 +1400,9 @@ export class CloudFilestoreManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project and location for which to retrieve instance information,
- *   in the format `projects/{project_id}/locations/{location}`. In Cloud
- *   Filestore, locations map to GCP zones, for example **us-west1-b**. To
+ *   Required. The project and location for which to retrieve instance
+ *   information, in the format `projects/{project_id}/locations/{location}`. In
+ *   Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
  *   retrieve instance information for all locations, use "-" for the
  *   `{location}` value.
  * @param {number} request.pageSize
@@ -1481,11 +1481,11 @@ export class CloudFilestoreManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project and location for which to retrieve backup information,
- *   in the format `projects/{project_number}/locations/{location}`.
- *   In Cloud Filestore, backup locations map to GCP regions,
- *   for example **us-west1**.
- *   To retrieve backup information for all locations, use "-" for the
+ *   Required. The project and location for which to retrieve backup
+ *   information, in the format
+ *   `projects/{project_number}/locations/{location}`. In Cloud Filestore,
+ *   backup locations map to GCP regions, for example **us-west1**. To retrieve
+ *   backup information for all locations, use "-" for the
  *   `{location}` value.
  * @param {number} request.pageSize
  *   The maximum number of items to return.
@@ -1550,11 +1550,11 @@ export class CloudFilestoreManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project and location for which to retrieve backup information,
- *   in the format `projects/{project_number}/locations/{location}`.
- *   In Cloud Filestore, backup locations map to GCP regions,
- *   for example **us-west1**.
- *   To retrieve backup information for all locations, use "-" for the
+ *   Required. The project and location for which to retrieve backup
+ *   information, in the format
+ *   `projects/{project_number}/locations/{location}`. In Cloud Filestore,
+ *   backup locations map to GCP regions, for example **us-west1**. To retrieve
+ *   backup information for all locations, use "-" for the
  *   `{location}` value.
  * @param {number} request.pageSize
  *   The maximum number of items to return.
@@ -1607,11 +1607,11 @@ export class CloudFilestoreManagerClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. The project and location for which to retrieve backup information,
- *   in the format `projects/{project_number}/locations/{location}`.
- *   In Cloud Filestore, backup locations map to GCP regions,
- *   for example **us-west1**.
- *   To retrieve backup information for all locations, use "-" for the
+ *   Required. The project and location for which to retrieve backup
+ *   information, in the format
+ *   `projects/{project_number}/locations/{location}`. In Cloud Filestore,
+ *   backup locations map to GCP regions, for example **us-west1**. To retrieve
+ *   backup information for all locations, use "-" for the
  *   `{location}` value.
  * @param {number} request.pageSize
  *   The maximum number of items to return.

@@ -31,8 +31,8 @@ public interface RestoreInstanceRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the backup
-   * is being restored to.
+   * Required. Name of the file share in the Cloud Filestore instance that the
+   * backup is being restored to.
    * </pre>
    *
    * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,8 +41,8 @@ public interface RestoreInstanceRequestOrBuilder extends
   java.lang.String getFileShare();
   /**
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the backup
-   * is being restored to.
+   * Required. Name of the file share in the Cloud Filestore instance that the
+   * backup is being restored to.
    * </pre>
    *
    * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>

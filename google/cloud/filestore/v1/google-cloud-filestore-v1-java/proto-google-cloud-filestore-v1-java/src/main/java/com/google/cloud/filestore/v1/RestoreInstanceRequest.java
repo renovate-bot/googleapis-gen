@@ -196,8 +196,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object fileShare_;
   /**
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the backup
-   * is being restored to.
+   * Required. Name of the file share in the Cloud Filestore instance that the
+   * backup is being restored to.
    * </pre>
    *
    * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -218,8 +218,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the backup
-   * is being restored to.
+   * Required. Name of the file share in the Cloud Filestore instance that the
+   * backup is being restored to.
    * </pre>
    *
    * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -790,8 +790,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object fileShare_ = "";
     /**
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -811,8 +811,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -833,8 +833,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -853,8 +853,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -868,8 +868,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the backup
-     * is being restored to.
+     * Required. Name of the file share in the Cloud Filestore instance that the
+     * backup is being restored to.
      * </pre>
      *
      * <code>string file_share = 2 [(.google.api.field_behavior) = REQUIRED];</code>
