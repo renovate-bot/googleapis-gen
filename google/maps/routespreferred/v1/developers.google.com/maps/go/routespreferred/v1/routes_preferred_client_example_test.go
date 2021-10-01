@@ -54,3 +54,23 @@ func ExampleRoutesPreferredClient_ComputeRoutes() {
 	// TODO: Use resp.
 	_ = resp
 }
+
+func ExampleRoutesPreferredClient_ComputeCustomRoutes() {
+	ctx := context.Background()
+	c, err := routes.NewRoutesPreferredClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &routespb.ComputeCustomRoutesRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/maps/routes/v1#ComputeCustomRoutesRequest.
+	}
+	resp, err := c.ComputeCustomRoutes(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}

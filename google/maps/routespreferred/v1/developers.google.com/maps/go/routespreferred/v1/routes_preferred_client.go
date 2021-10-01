@@ -33,8 +33,9 @@ var newRoutesPreferredClientHook clientHook
 
 // RoutesPreferredCallOptions contains the retry settings for each method of RoutesPreferredClient.
 type RoutesPreferredCallOptions struct {
-	ComputeRoutes      []gax.CallOption
-	ComputeRouteMatrix []gax.CallOption
+	ComputeRoutes       []gax.CallOption
+	ComputeRouteMatrix  []gax.CallOption
+	ComputeCustomRoutes []gax.CallOption
 }
 
 func defaultRoutesPreferredGRPCClientOptions() []option.ClientOption {
@@ -52,8 +53,9 @@ func defaultRoutesPreferredGRPCClientOptions() []option.ClientOption {
 
 func defaultRoutesPreferredCallOptions() *RoutesPreferredCallOptions {
 	return &RoutesPreferredCallOptions{
-		ComputeRoutes:      []gax.CallOption{},
-		ComputeRouteMatrix: []gax.CallOption{},
+		ComputeRoutes:       []gax.CallOption{},
+		ComputeRouteMatrix:  []gax.CallOption{},
+		ComputeCustomRoutes: []gax.CallOption{},
 	}
 }
 
@@ -64,6 +66,7 @@ type internalRoutesPreferredClient interface {
 	Connection() *grpc.ClientConn
 	ComputeRoutes(context.Context, *routespb.ComputeRoutesRequest, ...gax.CallOption) (*routespb.ComputeRoutesResponse, error)
 	ComputeRouteMatrix(context.Context, *routespb.ComputeRouteMatrixRequest, ...gax.CallOption) (routespb.RoutesPreferred_ComputeRouteMatrixClient, error)
+	ComputeCustomRoutes(context.Context, *routespb.ComputeCustomRoutesRequest, ...gax.CallOption) (*routespb.ComputeCustomRoutesResponse, error)
 }
 
 // RoutesPreferredClient is a client for interacting with Routes Preferred API.
@@ -182,6 +185,46 @@ func (c *RoutesPreferredClient) ComputeRouteMatrix(ctx context.Context, req *rou
 	return c.internalClient.ComputeRouteMatrix(ctx, req, opts...)
 }
 
+// ComputeCustomRoutes given a set of terminal and intermediate waypoints, and a route objective,
+// computes the best route for the route objective. Also returns fastest route
+// and shortest route as reference routes.
+//
+// NOTE: This method requires that you specify a response field mask in
+// the input. You can provide the response field mask by using the URL
+// parameter $fields or fields, or by using the HTTP/gRPC header
+// X-Goog-FieldMask (see the available URL parameters and
+// headers (at https://cloud.google.com/apis/docs/system-parameters). The value
+// is a comma separated list of field paths. See this detailed documentation
+// about how to construct the field
+// paths (at https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+//
+// For example, in this method:
+//
+//   Field mask of all available fields (for manual inspection):
+//   X-Goog-FieldMask: *
+//
+//   Field mask of route distances, durations, token and toll info:
+//   X-Goog-FieldMask: routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo
+//
+// Google discourages the use of the wildcard (*) response field mask, or
+// specifying the field mask at the top level (routes), because:
+//
+//   Selecting only the fields that you need helps our server save computation
+//   cycles, allowing us to return the result to you with a lower latency.
+//
+//   Selecting only the fields that you need in your production job ensures
+//   stable latency performance. We might add more response fields in the
+//   future, and those new fields might require extra computation time. If you
+//   select all fields, or if you select all fields at the top level, then you
+//   might experience performance degradation because any new field we add will
+//   be automatically included in the response.
+//
+//   Selecting only the fields that you need results in a smaller response
+//   size, and thus higher network throughput.
+func (c *RoutesPreferredClient) ComputeCustomRoutes(ctx context.Context, req *routespb.ComputeCustomRoutesRequest, opts ...gax.CallOption) (*routespb.ComputeCustomRoutesResponse, error) {
+	return c.internalClient.ComputeCustomRoutes(ctx, req, opts...)
+}
+
 // routesPreferredGRPCClient is a client for interacting with Routes Preferred API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
@@ -283,6 +326,21 @@ func (c *routesPreferredGRPCClient) ComputeRouteMatrix(ctx context.Context, req 
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.routesPreferredClient.ComputeRouteMatrix(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *routesPreferredGRPCClient) ComputeCustomRoutes(ctx context.Context, req *routespb.ComputeCustomRoutesRequest, opts ...gax.CallOption) (*routespb.ComputeCustomRoutesResponse, error) {
+	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	opts = append((*c.CallOptions).ComputeCustomRoutes[0:len((*c.CallOptions).ComputeCustomRoutes):len((*c.CallOptions).ComputeCustomRoutes)], opts...)
+	var resp *routespb.ComputeCustomRoutesResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.routesPreferredClient.ComputeCustomRoutes(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {

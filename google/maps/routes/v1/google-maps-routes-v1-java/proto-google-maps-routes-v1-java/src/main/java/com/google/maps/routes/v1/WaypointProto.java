@@ -34,23 +34,25 @@ public final class WaypointProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/maps/routes/v1/waypoint.proto\022\025" +
-      "google.maps.routes.v1\032\036google/protobuf/w" +
-      "rappers.proto\032\030google/type/latlng.proto\"" +
-      "\241\001\n\010Waypoint\0223\n\010location\030\001 \001(\0132\037.google." +
-      "maps.routes.v1.LocationH\000\022\022\n\010place_id\030\002 " +
-      "\001(\tH\000\022\013\n\003via\030\003 \001(\010\022\030\n\020vehicle_stopover\030\004" +
-      " \001(\010\022\024\n\014side_of_road\030\005 \001(\010B\017\n\rlocation_t" +
-      "ype\"^\n\010Location\022$\n\007lat_lng\030\001 \001(\0132\023.googl" +
-      "e.type.LatLng\022,\n\007heading\030\002 \001(\0132\033.google." +
-      "protobuf.Int32ValueB\243\001\n\031com.google.maps." +
-      "routes.v1B\rWaypointProtoP\001Z;google.golan" +
-      "g.org/genproto/googleapis/maps/routes/v1" +
-      ";routes\370\001\001\242\002\004GMRS\252\002\025Google.Maps.Routes.V" +
-      "1\312\002\025Google\\Maps\\Routes\\V1b\006proto3"
+      "google.maps.routes.v1\032\036google/protobuf/d" +
+      "uration.proto\032\036google/protobuf/wrappers." +
+      "proto\032\030google/type/latlng.proto\"\241\001\n\010Wayp" +
+      "oint\0223\n\010location\030\001 \001(\0132\037.google.maps.rou" +
+      "tes.v1.LocationH\000\022\022\n\010place_id\030\002 \001(\tH\000\022\013\n" +
+      "\003via\030\003 \001(\010\022\030\n\020vehicle_stopover\030\004 \001(\010\022\024\n\014" +
+      "side_of_road\030\005 \001(\010B\017\n\rlocation_type\"^\n\010L" +
+      "ocation\022$\n\007lat_lng\030\001 \001(\0132\023.google.type.L" +
+      "atLng\022,\n\007heading\030\002 \001(\0132\033.google.protobuf" +
+      ".Int32ValueB\243\001\n\031com.google.maps.routes.v" +
+      "1B\rWaypointProtoP\001Z;google.golang.org/ge" +
+      "nproto/googleapis/maps/routes/v1;routes\370" +
+      "\001\001\242\002\004GMRS\252\002\025Google.Maps.Routes.V1\312\002\025Goog" +
+      "le\\Maps\\Routes\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.type.LatLngProto.getDescriptor(),
         });
@@ -66,6 +68,7 @@ public final class WaypointProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_maps_routes_v1_Location_descriptor,
         new java.lang.String[] { "LatLng", "Heading", });
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
   }

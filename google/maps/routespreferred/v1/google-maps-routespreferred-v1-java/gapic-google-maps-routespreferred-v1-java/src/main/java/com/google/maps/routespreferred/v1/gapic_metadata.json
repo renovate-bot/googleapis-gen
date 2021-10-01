@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "RoutesPreferredClient",
           "rpcs": {
+            "ComputeCustomRoutes": {
+              "methods": ["computeCustomRoutes", "computeCustomRoutesCallable"]
+            },
             "ComputeRouteMatrix": {
               "methods": ["computeRouteMatrixCallable"]
             },

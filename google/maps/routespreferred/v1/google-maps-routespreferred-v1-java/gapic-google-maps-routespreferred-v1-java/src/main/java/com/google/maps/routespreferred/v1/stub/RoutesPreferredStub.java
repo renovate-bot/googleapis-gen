@@ -19,6 +19,8 @@ package com.google.maps.routespreferred.v1.stub;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
@@ -41,6 +43,11 @@ public abstract class RoutesPreferredStub implements BackgroundResource {
   public ServerStreamingCallable<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixCallable() {
     throw new UnsupportedOperationException("Not implemented: computeRouteMatrixCallable()");
+  }
+
+  public UnaryCallable<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesCallable() {
+    throw new UnsupportedOperationException("Not implemented: computeCustomRoutesCallable()");
   }
 
   @Override

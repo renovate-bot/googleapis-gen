@@ -26,9 +26,12 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
+import com.google.maps.routes.v1.CustomRoute;
 import com.google.maps.routes.v1.FallbackInfo;
 import com.google.maps.routes.v1.PolylineEncoding;
 import com.google.maps.routes.v1.PolylineQuality;
@@ -38,6 +41,7 @@ import com.google.maps.routes.v1.RouteMatrixElement;
 import com.google.maps.routes.v1.RouteMatrixElementCondition;
 import com.google.maps.routes.v1.RouteMatrixOrigin;
 import com.google.maps.routes.v1.RouteModifiers;
+import com.google.maps.routes.v1.RouteObjective;
 import com.google.maps.routes.v1.RouteTravelAdvisory;
 import com.google.maps.routes.v1.RouteTravelMode;
 import com.google.maps.routes.v1.RoutingPreference;
@@ -240,6 +244,86 @@ public class RoutesPreferredClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void computeCustomRoutesTest() throws Exception {
+    ComputeCustomRoutesResponse expectedResponse =
+        ComputeCustomRoutesResponse.newBuilder()
+            .addAllRoutes(new ArrayList<CustomRoute>())
+            .setFastestRoute(CustomRoute.newBuilder().build())
+            .setShortestRoute(CustomRoute.newBuilder().build())
+            .setFallbackInfo(ComputeCustomRoutesResponse.FallbackInfo.newBuilder().build())
+            .build();
+    mockRoutesPreferred.addResponse(expectedResponse);
+
+    ComputeCustomRoutesRequest request =
+        ComputeCustomRoutesRequest.newBuilder()
+            .setOrigin(Waypoint.newBuilder().build())
+            .setDestination(Waypoint.newBuilder().build())
+            .addAllIntermediates(new ArrayList<Waypoint>())
+            .setTravelMode(RouteTravelMode.forNumber(0))
+            .setRoutingPreference(RoutingPreference.forNumber(0))
+            .setPolylineQuality(PolylineQuality.forNumber(0))
+            .setPolylineEncoding(PolylineEncoding.forNumber(0))
+            .setDepartureTime(Timestamp.newBuilder().build())
+            .setRouteModifiers(RouteModifiers.newBuilder().build())
+            .setRouteObjective(RouteObjective.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .setUnits(Units.forNumber(0))
+            .build();
+
+    ComputeCustomRoutesResponse actualResponse = client.computeCustomRoutes(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRoutesPreferred.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ComputeCustomRoutesRequest actualRequest = ((ComputeCustomRoutesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getOrigin(), actualRequest.getOrigin());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertEquals(request.getIntermediatesList(), actualRequest.getIntermediatesList());
+    Assert.assertEquals(request.getTravelMode(), actualRequest.getTravelMode());
+    Assert.assertEquals(request.getRoutingPreference(), actualRequest.getRoutingPreference());
+    Assert.assertEquals(request.getPolylineQuality(), actualRequest.getPolylineQuality());
+    Assert.assertEquals(request.getPolylineEncoding(), actualRequest.getPolylineEncoding());
+    Assert.assertEquals(request.getDepartureTime(), actualRequest.getDepartureTime());
+    Assert.assertEquals(request.getRouteModifiers(), actualRequest.getRouteModifiers());
+    Assert.assertEquals(request.getRouteObjective(), actualRequest.getRouteObjective());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertEquals(request.getUnits(), actualRequest.getUnits());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void computeCustomRoutesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRoutesPreferred.addException(exception);
+
+    try {
+      ComputeCustomRoutesRequest request =
+          ComputeCustomRoutesRequest.newBuilder()
+              .setOrigin(Waypoint.newBuilder().build())
+              .setDestination(Waypoint.newBuilder().build())
+              .addAllIntermediates(new ArrayList<Waypoint>())
+              .setTravelMode(RouteTravelMode.forNumber(0))
+              .setRoutingPreference(RoutingPreference.forNumber(0))
+              .setPolylineQuality(PolylineQuality.forNumber(0))
+              .setPolylineEncoding(PolylineEncoding.forNumber(0))
+              .setDepartureTime(Timestamp.newBuilder().build())
+              .setRouteModifiers(RouteModifiers.newBuilder().build())
+              .setRouteObjective(RouteObjective.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setUnits(Units.forNumber(0))
+              .build();
+      client.computeCustomRoutes(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

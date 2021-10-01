@@ -34,7 +34,7 @@ public final class RoutesServiceProto {
       "proto\0323google/maps/routes/v1/compute_rou" +
       "tes_response.proto\0320google/maps/routes/v" +
       "1/route_matrix_element.proto\032\027google/api" +
-      "/client.proto2\230\003\n\017RoutesPreferred\022\210\001\n\rCo" +
+      "/client.proto2\273\004\n\017RoutesPreferred\022\210\001\n\rCo" +
       "mputeRoutes\022+.google.maps.routes.v1.Comp" +
       "uteRoutesRequest\032,.google.maps.routes.v1" +
       ".ComputeRoutesResponse\"\034\202\323\344\223\002\026\"\021/v1:comp" +
@@ -42,14 +42,18 @@ public final class RoutesServiceProto {
       "ogle.maps.routes.v1.ComputeRouteMatrixRe" +
       "quest\032).google.maps.routes.v1.RouteMatri" +
       "xElement\"!\202\323\344\223\002\033\"\026/v1:computeRouteMatrix" +
-      ":\001*0\001\032a\312A\036routespreferred.googleapis.com" +
-      "\322A=https://www.googleapis.com/auth/maps-" +
-      "platform.routespreferredB\250\001\n\031com.google." +
-      "maps.routes.v1B\022RoutesServiceProtoP\001Z;go" +
-      "ogle.golang.org/genproto/googleapis/maps" +
-      "/routes/v1;routes\370\001\001\242\002\004GMRS\252\002\025Google.Map" +
-      "s.Routes.V1\312\002\025Google\\Maps\\Routes\\V1b\006pro" +
-      "to3"
+      ":\001*0\001\022\240\001\n\023ComputeCustomRoutes\0221.google.m" +
+      "aps.routes.v1.ComputeCustomRoutesRequest" +
+      "\0322.google.maps.routes.v1.ComputeCustomRo" +
+      "utesResponse\"\"\202\323\344\223\002\034\"\027/v1:computeCustomR" +
+      "outes:\001*\032a\312A\036routespreferred.googleapis." +
+      "com\322A=https://www.googleapis.com/auth/ma" +
+      "ps-platform.routespreferredB\250\001\n\031com.goog" +
+      "le.maps.routes.v1B\022RoutesServiceProtoP\001Z" +
+      ";google.golang.org/genproto/googleapis/m" +
+      "aps/routes/v1;routes\370\001\001\242\002\004GMRS\252\002\025Google." +
+      "Maps.Routes.V1\312\002\025Google\\Maps\\Routes\\V1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -36,6 +36,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
@@ -90,6 +92,8 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
       computeRoutesSettings;
   private final ServerStreamingCallSettings<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixSettings;
+  private final UnaryCallSettings<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesSettings;
 
   /** Returns the object with the settings used for calls to computeRoutes. */
   public UnaryCallSettings<ComputeRoutesRequest, ComputeRoutesResponse> computeRoutesSettings() {
@@ -100,6 +104,12 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
   public ServerStreamingCallSettings<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixSettings() {
     return computeRouteMatrixSettings;
+  }
+
+  /** Returns the object with the settings used for calls to computeCustomRoutes. */
+  public UnaryCallSettings<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesSettings() {
+    return computeCustomRoutesSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -180,6 +190,7 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
 
     computeRoutesSettings = settingsBuilder.computeRoutesSettings().build();
     computeRouteMatrixSettings = settingsBuilder.computeRouteMatrixSettings().build();
+    computeCustomRoutesSettings = settingsBuilder.computeCustomRoutesSettings().build();
   }
 
   /** Builder for RoutesPreferredStubSettings. */
@@ -189,6 +200,8 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
         computeRoutesSettings;
     private final ServerStreamingCallSettings.Builder<ComputeRouteMatrixRequest, RouteMatrixElement>
         computeRouteMatrixSettings;
+    private final UnaryCallSettings.Builder<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+        computeCustomRoutesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -225,9 +238,11 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
 
       computeRoutesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       computeRouteMatrixSettings = ServerStreamingCallSettings.newBuilder();
+      computeCustomRoutesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(computeRoutesSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              computeRoutesSettings, computeCustomRoutesSettings);
       initDefaults(this);
     }
 
@@ -236,9 +251,11 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
 
       computeRoutesSettings = settings.computeRoutesSettings.toBuilder();
       computeRouteMatrixSettings = settings.computeRouteMatrixSettings.toBuilder();
+      computeCustomRoutesSettings = settings.computeCustomRoutesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(computeRoutesSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              computeRoutesSettings, computeCustomRoutesSettings);
     }
 
     private static Builder createDefault() {
@@ -262,6 +279,11 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
 
       builder
           .computeRouteMatrixSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .computeCustomRoutesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -293,6 +315,12 @@ public class RoutesPreferredStubSettings extends StubSettings<RoutesPreferredStu
     public ServerStreamingCallSettings.Builder<ComputeRouteMatrixRequest, RouteMatrixElement>
         computeRouteMatrixSettings() {
       return computeRouteMatrixSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to computeCustomRoutes. */
+    public UnaryCallSettings.Builder<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+        computeCustomRoutesSettings() {
+      return computeCustomRoutesSettings;
     }
 
     @Override

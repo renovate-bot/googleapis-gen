@@ -20,6 +20,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
@@ -353,6 +355,141 @@ public class RoutesPreferredClient implements BackgroundResource {
   public final ServerStreamingCallable<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixCallable() {
     return stub.computeRouteMatrixCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given a set of terminal and intermediate waypoints, and a route objective, computes the best
+   * route for the route objective. Also returns fastest route and shortest route as reference
+   * routes.
+   *
+   * <p>&#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the
+   * input. You can provide the response field mask by using the URL parameter `$fields` or
+   * `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL
+   * parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a
+   * comma separated list of field paths. See this detailed documentation about [how to construct
+   * the field
+   * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+   *
+   * <p>For example, in this method:
+   *
+   * <ul>
+   *   <li> Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
+   *   <li> Field mask of route distances, durations, token and toll info: `X-Goog-FieldMask:
+   *       routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo`
+   * </ul>
+   *
+   * <p>Google discourages the use of the wildcard (`&#42;`) response field mask, or specifying the
+   * field mask at the top level (`routes`), because:
+   *
+   * <ul>
+   *   <li> Selecting only the fields that you need helps our server save computation cycles,
+   *       allowing us to return the result to you with a lower latency.
+   *   <li> Selecting only the fields that you need in your production job ensures stable latency
+   *       performance. We might add more response fields in the future, and those new fields might
+   *       require extra computation time. If you select all fields, or if you select all fields at
+   *       the top level, then you might experience performance degradation because any new field we
+   *       add will be automatically included in the response.
+   *   <li> Selecting only the fields that you need results in a smaller response size, and thus
+   *       higher network throughput.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
+   *   ComputeCustomRoutesRequest request =
+   *       ComputeCustomRoutesRequest.newBuilder()
+   *           .setOrigin(Waypoint.newBuilder().build())
+   *           .setDestination(Waypoint.newBuilder().build())
+   *           .addAllIntermediates(new ArrayList<Waypoint>())
+   *           .setTravelMode(RouteTravelMode.forNumber(0))
+   *           .setRoutingPreference(RoutingPreference.forNumber(0))
+   *           .setPolylineQuality(PolylineQuality.forNumber(0))
+   *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
+   *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .setRouteModifiers(RouteModifiers.newBuilder().build())
+   *           .setRouteObjective(RouteObjective.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUnits(Units.forNumber(0))
+   *           .build();
+   *   ComputeCustomRoutesResponse response = routesPreferredClient.computeCustomRoutes(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ComputeCustomRoutesResponse computeCustomRoutes(ComputeCustomRoutesRequest request) {
+    return computeCustomRoutesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given a set of terminal and intermediate waypoints, and a route objective, computes the best
+   * route for the route objective. Also returns fastest route and shortest route as reference
+   * routes.
+   *
+   * <p>&#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the
+   * input. You can provide the response field mask by using the URL parameter `$fields` or
+   * `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL
+   * parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a
+   * comma separated list of field paths. See this detailed documentation about [how to construct
+   * the field
+   * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+   *
+   * <p>For example, in this method:
+   *
+   * <ul>
+   *   <li> Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
+   *   <li> Field mask of route distances, durations, token and toll info: `X-Goog-FieldMask:
+   *       routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo`
+   * </ul>
+   *
+   * <p>Google discourages the use of the wildcard (`&#42;`) response field mask, or specifying the
+   * field mask at the top level (`routes`), because:
+   *
+   * <ul>
+   *   <li> Selecting only the fields that you need helps our server save computation cycles,
+   *       allowing us to return the result to you with a lower latency.
+   *   <li> Selecting only the fields that you need in your production job ensures stable latency
+   *       performance. We might add more response fields in the future, and those new fields might
+   *       require extra computation time. If you select all fields, or if you select all fields at
+   *       the top level, then you might experience performance degradation because any new field we
+   *       add will be automatically included in the response.
+   *   <li> Selecting only the fields that you need results in a smaller response size, and thus
+   *       higher network throughput.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (RoutesPreferredClient routesPreferredClient = RoutesPreferredClient.create()) {
+   *   ComputeCustomRoutesRequest request =
+   *       ComputeCustomRoutesRequest.newBuilder()
+   *           .setOrigin(Waypoint.newBuilder().build())
+   *           .setDestination(Waypoint.newBuilder().build())
+   *           .addAllIntermediates(new ArrayList<Waypoint>())
+   *           .setTravelMode(RouteTravelMode.forNumber(0))
+   *           .setRoutingPreference(RoutingPreference.forNumber(0))
+   *           .setPolylineQuality(PolylineQuality.forNumber(0))
+   *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
+   *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .setRouteModifiers(RouteModifiers.newBuilder().build())
+   *           .setRouteObjective(RouteObjective.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUnits(Units.forNumber(0))
+   *           .build();
+   *   ApiFuture<ComputeCustomRoutesResponse> future =
+   *       routesPreferredClient.computeCustomRoutesCallable().futureCall(request);
+   *   // Do something.
+   *   ComputeCustomRoutesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesCallable() {
+    return stub.computeCustomRoutesCallable();
   }
 
   @Override

@@ -287,7 +287,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. A set of waypoints along the route (excluding terminal points), for either
    * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-   * Intermediates are not supported in ComputeCustomRoutes Alpha.
    * </pre>
    *
    * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -300,7 +299,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. A set of waypoints along the route (excluding terminal points), for either
    * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-   * Intermediates are not supported in ComputeCustomRoutes Alpha.
    * </pre>
    *
    * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -314,7 +312,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. A set of waypoints along the route (excluding terminal points), for either
    * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-   * Intermediates are not supported in ComputeCustomRoutes Alpha.
    * </pre>
    *
    * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -327,7 +324,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. A set of waypoints along the route (excluding terminal points), for either
    * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-   * Intermediates are not supported in ComputeCustomRoutes Alpha.
    * </pre>
    *
    * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -340,7 +336,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Optional. A set of waypoints along the route (excluding terminal points), for either
    * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-   * Intermediates are not supported in ComputeCustomRoutes Alpha.
    * </pre>
    *
    * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -355,8 +350,7 @@ private static final long serialVersionUID = 0L;
   private int travelMode_;
   /**
    * <pre>
-   * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-   * ComputeCustomRoutes Alpha.
+   * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
    * </pre>
    *
    * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -367,8 +361,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-   * ComputeCustomRoutes Alpha.
+   * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
    * </pre>
    *
    * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1603,7 +1596,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1619,7 +1611,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1635,7 +1626,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1651,7 +1641,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1674,7 +1663,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1694,7 +1682,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1716,7 +1703,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1739,7 +1725,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1759,7 +1744,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1779,7 +1763,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1800,7 +1783,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1819,7 +1801,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1838,7 +1819,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1851,7 +1831,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1867,7 +1846,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1884,7 +1862,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1897,7 +1874,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1911,7 +1887,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional. A set of waypoints along the route (excluding terminal points), for either
      * stopping at or passing by. Up to 25 intermediate waypoints are supported.
-     * Intermediates are not supported in ComputeCustomRoutes Alpha.
      * </pre>
      *
      * <code>repeated .google.maps.routes.v1.Waypoint intermediates = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1938,8 +1913,7 @@ private static final long serialVersionUID = 0L;
     private int travelMode_ = 0;
     /**
      * <pre>
-     * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-     * ComputeCustomRoutes Alpha.
+     * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1950,8 +1924,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-     * ComputeCustomRoutes Alpha.
+     * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1966,8 +1939,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-     * ComputeCustomRoutes Alpha.
+     * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1981,8 +1953,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-     * ComputeCustomRoutes Alpha.
+     * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2000,8 +1971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the mode of transportation. Only DRIVE is supported in
-     * ComputeCustomRoutes Alpha.
+     * Optional. Specifies the mode of transportation. Only DRIVE is supported now.
      * </pre>
      *
      * <code>.google.maps.routes.v1.RouteTravelMode travel_mode = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -80,6 +80,19 @@ public enum TollPass
   BR_VELOE(11),
   /**
    * <pre>
+   * Indonesia.
+   * E-card provided by multiple banks used to pay for tolls. All e-cards
+   * via banks are charged the same so only one enum value is needed. E.g.
+   * Bank Mandiri https://www.bankmandiri.co.id/e-money
+   * BCA https://www.bca.co.id/flazz
+   * BNI https://www.bni.co.id/id-id/ebanking/tapcash
+   * </pre>
+   *
+   * <code>ID_E_TOLL = 16;</code>
+   */
+  ID_E_TOLL(16),
+  /**
+   * <pre>
    * Mexico toll pass.
    * </pre>
    *
@@ -220,6 +233,19 @@ public enum TollPass
   public static final int BR_VELOE_VALUE = 11;
   /**
    * <pre>
+   * Indonesia.
+   * E-card provided by multiple banks used to pay for tolls. All e-cards
+   * via banks are charged the same so only one enum value is needed. E.g.
+   * Bank Mandiri https://www.bankmandiri.co.id/e-money
+   * BCA https://www.bca.co.id/flazz
+   * BNI https://www.bni.co.id/id-id/ebanking/tapcash
+   * </pre>
+   *
+   * <code>ID_E_TOLL = 16;</code>
+   */
+  public static final int ID_E_TOLL_VALUE = 16;
+  /**
+   * <pre>
    * Mexico toll pass.
    * </pre>
    *
@@ -323,6 +349,7 @@ public enum TollPass
       case 9: return BR_SEM_PARAR;
       case 10: return BR_TAGGY;
       case 11: return BR_VELOE;
+      case 16: return ID_E_TOLL;
       case 12: return MX_TAG_IAVE;
       case 13: return MX_TAG_TELEVIA;
       case 14: return MX_VIAPASS;

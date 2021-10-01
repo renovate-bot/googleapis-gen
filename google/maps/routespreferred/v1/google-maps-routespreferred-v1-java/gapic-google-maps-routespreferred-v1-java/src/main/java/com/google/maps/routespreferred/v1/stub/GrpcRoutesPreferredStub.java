@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
@@ -63,9 +65,22 @@ public class GrpcRoutesPreferredStub extends RoutesPreferredStub {
               .setResponseMarshaller(ProtoUtils.marshaller(RouteMatrixElement.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesMethodDescriptor =
+          MethodDescriptor.<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.maps.routes.v1.RoutesPreferred/ComputeCustomRoutes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ComputeCustomRoutesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ComputeCustomRoutesResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ComputeRoutesRequest, ComputeRoutesResponse> computeRoutesCallable;
   private final ServerStreamingCallable<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixCallable;
+  private final UnaryCallable<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -120,6 +135,11 @@ public class GrpcRoutesPreferredStub extends RoutesPreferredStub {
             GrpcCallSettings.<ComputeRouteMatrixRequest, RouteMatrixElement>newBuilder()
                 .setMethodDescriptor(computeRouteMatrixMethodDescriptor)
                 .build();
+    GrpcCallSettings<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+        computeCustomRoutesTransportSettings =
+            GrpcCallSettings.<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>newBuilder()
+                .setMethodDescriptor(computeCustomRoutesMethodDescriptor)
+                .build();
 
     this.computeRoutesCallable =
         callableFactory.createUnaryCallable(
@@ -128,6 +148,11 @@ public class GrpcRoutesPreferredStub extends RoutesPreferredStub {
         callableFactory.createServerStreamingCallable(
             computeRouteMatrixTransportSettings,
             settings.computeRouteMatrixSettings(),
+            clientContext);
+    this.computeCustomRoutesCallable =
+        callableFactory.createUnaryCallable(
+            computeCustomRoutesTransportSettings,
+            settings.computeCustomRoutesSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -147,6 +172,12 @@ public class GrpcRoutesPreferredStub extends RoutesPreferredStub {
   public ServerStreamingCallable<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixCallable() {
     return computeRouteMatrixCallable;
+  }
+
+  @Override
+  public UnaryCallable<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesCallable() {
+    return computeCustomRoutesCallable;
   }
 
   @Override

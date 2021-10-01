@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
   private com.google.maps.routes.v1.VehicleInfo vehicleInfo_;
   /**
    * <pre>
-   * Optional. Specifies the vehicle information.
+   * Specifies the vehicle information.
    * </pre>
    *
    * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Specifies the vehicle information.
+   * Specifies the vehicle information.
    * </pre>
    *
    * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Specifies the vehicle information.
+   * Specifies the vehicle information.
    * </pre>
    *
    * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -267,7 +267,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -282,7 +284,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -296,7 +300,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -311,7 +317,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -326,7 +334,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -977,7 +987,7 @@ private static final long serialVersionUID = 0L;
         com.google.maps.routes.v1.VehicleInfo, com.google.maps.routes.v1.VehicleInfo.Builder, com.google.maps.routes.v1.VehicleInfoOrBuilder> vehicleInfoBuilder_;
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -988,7 +998,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1003,7 +1013,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1023,7 +1033,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1041,7 +1051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1063,7 +1073,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1081,7 +1091,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1093,7 +1103,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1108,7 +1118,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Specifies the vehicle information.
+     * Specifies the vehicle information.
      * </pre>
      *
      * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -1138,7 +1148,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1152,7 +1164,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1165,7 +1179,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1179,7 +1195,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1201,7 +1219,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1221,7 +1241,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1241,7 +1263,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1257,7 +1281,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1271,7 +1297,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1285,7 +1313,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1304,7 +1334,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *
@@ -1321,7 +1353,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Encapsulates information about toll passes.
-     * TollPass is unset means no available pass.
+     * If toll passes are provided, the API tries to return the pass price. If
+     * toll passes are not provided, the API treats the toll pass as unknown and
+     * tries to return the cash price.
      * Applies only to the DRIVE and TWO_WHEELER travel modes.
      * </pre>
      *

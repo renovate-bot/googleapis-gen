@@ -17,6 +17,8 @@
 package com.google.maps.routespreferred.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
@@ -100,6 +102,28 @@ public class MockRoutesPreferredImpl extends RoutesPreferredImplBase {
                   "Unrecognized response type %s for method ComputeRouteMatrix, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RouteMatrixElement.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void computeCustomRoutes(
+      ComputeCustomRoutesRequest request,
+      StreamObserver<ComputeCustomRoutesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ComputeCustomRoutesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ComputeCustomRoutesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ComputeCustomRoutes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ComputeCustomRoutesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

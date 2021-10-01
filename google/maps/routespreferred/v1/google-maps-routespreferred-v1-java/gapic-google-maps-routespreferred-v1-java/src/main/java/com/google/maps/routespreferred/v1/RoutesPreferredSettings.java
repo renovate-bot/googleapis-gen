@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.maps.routes.v1.ComputeCustomRoutesRequest;
+import com.google.maps.routes.v1.ComputeCustomRoutesResponse;
 import com.google.maps.routes.v1.ComputeRouteMatrixRequest;
 import com.google.maps.routes.v1.ComputeRoutesRequest;
 import com.google.maps.routes.v1.ComputeRoutesResponse;
@@ -82,6 +84,12 @@ public class RoutesPreferredSettings extends ClientSettings<RoutesPreferredSetti
   public ServerStreamingCallSettings<ComputeRouteMatrixRequest, RouteMatrixElement>
       computeRouteMatrixSettings() {
     return ((RoutesPreferredStubSettings) getStubSettings()).computeRouteMatrixSettings();
+  }
+
+  /** Returns the object with the settings used for calls to computeCustomRoutes. */
+  public UnaryCallSettings<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+      computeCustomRoutesSettings() {
+    return ((RoutesPreferredStubSettings) getStubSettings()).computeCustomRoutesSettings();
   }
 
   public static final RoutesPreferredSettings create(RoutesPreferredStubSettings stub)
@@ -191,6 +199,12 @@ public class RoutesPreferredSettings extends ClientSettings<RoutesPreferredSetti
     public ServerStreamingCallSettings.Builder<ComputeRouteMatrixRequest, RouteMatrixElement>
         computeRouteMatrixSettings() {
       return getStubSettingsBuilder().computeRouteMatrixSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to computeCustomRoutes. */
+    public UnaryCallSettings.Builder<ComputeCustomRoutesRequest, ComputeCustomRoutesResponse>
+        computeCustomRoutesSettings() {
+      return getStubSettingsBuilder().computeCustomRoutesSettings();
     }
 
     @Override

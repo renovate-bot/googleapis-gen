@@ -220,8 +220,7 @@ private static final long serialVersionUID = 0L;
    * the customer, it will fallback to another routing mode. In this case
    * fallback_routing_mode and routing_mode_fallback_reason are used to
    * communicate the fallback routing mode used, as well as the reason for
-   * fallback. Fallback of routing_preference is not supported in
-   * ComputeCustomRoutes Alpha.
+   * fallback.
    * 2. If it cannot compute a 'best' route for the route objective specified by
    * the customer, it might fallback to another objective.
    * fallback_route_objective is used to communicate the fallback route
@@ -734,8 +733,7 @@ private static final long serialVersionUID = 0L;
      * the customer, it will fallback to another routing mode. In this case
      * fallback_routing_mode and routing_mode_fallback_reason are used to
      * communicate the fallback routing mode used, as well as the reason for
-     * fallback. Fallback of routing_preference is not supported in
-     * ComputeCustomRoutes Alpha.
+     * fallback.
      * 2. If it cannot compute a 'best' route for the route objective specified by
      * the customer, it might fallback to another objective.
      * fallback_route_objective is used to communicate the fallback route

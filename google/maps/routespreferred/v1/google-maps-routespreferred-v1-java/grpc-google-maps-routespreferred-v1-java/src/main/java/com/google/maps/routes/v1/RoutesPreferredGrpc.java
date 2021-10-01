@@ -79,6 +79,37 @@ public final class RoutesPreferredGrpc {
     return getComputeRouteMatrixMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.maps.routes.v1.ComputeCustomRoutesRequest,
+      com.google.maps.routes.v1.ComputeCustomRoutesResponse> getComputeCustomRoutesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ComputeCustomRoutes",
+      requestType = com.google.maps.routes.v1.ComputeCustomRoutesRequest.class,
+      responseType = com.google.maps.routes.v1.ComputeCustomRoutesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.maps.routes.v1.ComputeCustomRoutesRequest,
+      com.google.maps.routes.v1.ComputeCustomRoutesResponse> getComputeCustomRoutesMethod() {
+    io.grpc.MethodDescriptor<com.google.maps.routes.v1.ComputeCustomRoutesRequest, com.google.maps.routes.v1.ComputeCustomRoutesResponse> getComputeCustomRoutesMethod;
+    if ((getComputeCustomRoutesMethod = RoutesPreferredGrpc.getComputeCustomRoutesMethod) == null) {
+      synchronized (RoutesPreferredGrpc.class) {
+        if ((getComputeCustomRoutesMethod = RoutesPreferredGrpc.getComputeCustomRoutesMethod) == null) {
+          RoutesPreferredGrpc.getComputeCustomRoutesMethod = getComputeCustomRoutesMethod =
+              io.grpc.MethodDescriptor.<com.google.maps.routes.v1.ComputeCustomRoutesRequest, com.google.maps.routes.v1.ComputeCustomRoutesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ComputeCustomRoutes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.maps.routes.v1.ComputeCustomRoutesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.maps.routes.v1.ComputeCustomRoutesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RoutesPreferredMethodDescriptorSupplier("ComputeCustomRoutes"))
+              .build();
+        }
+      }
+    }
+    return getComputeCustomRoutesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -208,6 +239,44 @@ public final class RoutesPreferredGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComputeRouteMatrixMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Given a set of terminal and intermediate waypoints, and a route objective,
+     * computes the best route for the route objective. Also returns fastest route
+     * and shortest route as reference routes.
+     * **NOTE:** This method requires that you specify a response field mask in
+     * the input. You can provide the response field mask by using the URL
+     * parameter `$fields` or `fields`, or by using the HTTP/gRPC header
+     * `X-Goog-FieldMask` (see the [available URL parameters and
+     * headers](https://cloud.google.com/apis/docs/system-parameters). The value
+     * is a comma separated list of field paths. See this detailed documentation
+     * about [how to construct the field
+     * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+     * For example, in this method:
+     * * Field mask of all available fields (for manual inspection):
+     *   `X-Goog-FieldMask: *`
+     * * Field mask of route distances, durations, token and toll info:
+     *   `X-Goog-FieldMask:
+     *   routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo`
+     * Google discourages the use of the wildcard (`*`) response field mask, or
+     * specifying the field mask at the top level (`routes`), because:
+     * * Selecting only the fields that you need helps our server save computation
+     * cycles, allowing us to return the result to you with a lower latency.
+     * * Selecting only the fields that you need in your production job ensures
+     * stable latency performance. We might add more response fields in the
+     * future, and those new fields might require extra computation time. If you
+     * select all fields, or if you select all fields at the top level, then you
+     * might experience performance degradation because any new field we add will
+     * be automatically included in the response.
+     * * Selecting only the fields that you need results in a smaller response
+     * size, and thus higher network throughput.
+     * </pre>
+     */
+    public void computeCustomRoutes(com.google.maps.routes.v1.ComputeCustomRoutesRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.routes.v1.ComputeCustomRoutesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getComputeCustomRoutesMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -224,6 +293,13 @@ public final class RoutesPreferredGrpc {
                 com.google.maps.routes.v1.ComputeRouteMatrixRequest,
                 com.google.maps.routes.v1.RouteMatrixElement>(
                   this, METHODID_COMPUTE_ROUTE_MATRIX)))
+          .addMethod(
+            getComputeCustomRoutesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.maps.routes.v1.ComputeCustomRoutesRequest,
+                com.google.maps.routes.v1.ComputeCustomRoutesResponse>(
+                  this, METHODID_COMPUTE_CUSTOM_ROUTES)))
           .build();
     }
   }
@@ -324,6 +400,45 @@ public final class RoutesPreferredGrpc {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getComputeRouteMatrixMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Given a set of terminal and intermediate waypoints, and a route objective,
+     * computes the best route for the route objective. Also returns fastest route
+     * and shortest route as reference routes.
+     * **NOTE:** This method requires that you specify a response field mask in
+     * the input. You can provide the response field mask by using the URL
+     * parameter `$fields` or `fields`, or by using the HTTP/gRPC header
+     * `X-Goog-FieldMask` (see the [available URL parameters and
+     * headers](https://cloud.google.com/apis/docs/system-parameters). The value
+     * is a comma separated list of field paths. See this detailed documentation
+     * about [how to construct the field
+     * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+     * For example, in this method:
+     * * Field mask of all available fields (for manual inspection):
+     *   `X-Goog-FieldMask: *`
+     * * Field mask of route distances, durations, token and toll info:
+     *   `X-Goog-FieldMask:
+     *   routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo`
+     * Google discourages the use of the wildcard (`*`) response field mask, or
+     * specifying the field mask at the top level (`routes`), because:
+     * * Selecting only the fields that you need helps our server save computation
+     * cycles, allowing us to return the result to you with a lower latency.
+     * * Selecting only the fields that you need in your production job ensures
+     * stable latency performance. We might add more response fields in the
+     * future, and those new fields might require extra computation time. If you
+     * select all fields, or if you select all fields at the top level, then you
+     * might experience performance degradation because any new field we add will
+     * be automatically included in the response.
+     * * Selecting only the fields that you need results in a smaller response
+     * size, and thus higher network throughput.
+     * </pre>
+     */
+    public void computeCustomRoutes(com.google.maps.routes.v1.ComputeCustomRoutesRequest request,
+        io.grpc.stub.StreamObserver<com.google.maps.routes.v1.ComputeCustomRoutesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getComputeCustomRoutesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -421,6 +536,44 @@ public final class RoutesPreferredGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getComputeRouteMatrixMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Given a set of terminal and intermediate waypoints, and a route objective,
+     * computes the best route for the route objective. Also returns fastest route
+     * and shortest route as reference routes.
+     * **NOTE:** This method requires that you specify a response field mask in
+     * the input. You can provide the response field mask by using the URL
+     * parameter `$fields` or `fields`, or by using the HTTP/gRPC header
+     * `X-Goog-FieldMask` (see the [available URL parameters and
+     * headers](https://cloud.google.com/apis/docs/system-parameters). The value
+     * is a comma separated list of field paths. See this detailed documentation
+     * about [how to construct the field
+     * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+     * For example, in this method:
+     * * Field mask of all available fields (for manual inspection):
+     *   `X-Goog-FieldMask: *`
+     * * Field mask of route distances, durations, token and toll info:
+     *   `X-Goog-FieldMask:
+     *   routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo`
+     * Google discourages the use of the wildcard (`*`) response field mask, or
+     * specifying the field mask at the top level (`routes`), because:
+     * * Selecting only the fields that you need helps our server save computation
+     * cycles, allowing us to return the result to you with a lower latency.
+     * * Selecting only the fields that you need in your production job ensures
+     * stable latency performance. We might add more response fields in the
+     * future, and those new fields might require extra computation time. If you
+     * select all fields, or if you select all fields at the top level, then you
+     * might experience performance degradation because any new field we add will
+     * be automatically included in the response.
+     * * Selecting only the fields that you need results in a smaller response
+     * size, and thus higher network throughput.
+     * </pre>
+     */
+    public com.google.maps.routes.v1.ComputeCustomRoutesResponse computeCustomRoutes(com.google.maps.routes.v1.ComputeCustomRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getComputeCustomRoutesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -479,10 +632,50 @@ public final class RoutesPreferredGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getComputeRoutesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Given a set of terminal and intermediate waypoints, and a route objective,
+     * computes the best route for the route objective. Also returns fastest route
+     * and shortest route as reference routes.
+     * **NOTE:** This method requires that you specify a response field mask in
+     * the input. You can provide the response field mask by using the URL
+     * parameter `$fields` or `fields`, or by using the HTTP/gRPC header
+     * `X-Goog-FieldMask` (see the [available URL parameters and
+     * headers](https://cloud.google.com/apis/docs/system-parameters). The value
+     * is a comma separated list of field paths. See this detailed documentation
+     * about [how to construct the field
+     * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+     * For example, in this method:
+     * * Field mask of all available fields (for manual inspection):
+     *   `X-Goog-FieldMask: *`
+     * * Field mask of route distances, durations, token and toll info:
+     *   `X-Goog-FieldMask:
+     *   routes.route.distanceMeters,routes.route.duration,routes.token,routes.route.travelAdvisory.tollInfo`
+     * Google discourages the use of the wildcard (`*`) response field mask, or
+     * specifying the field mask at the top level (`routes`), because:
+     * * Selecting only the fields that you need helps our server save computation
+     * cycles, allowing us to return the result to you with a lower latency.
+     * * Selecting only the fields that you need in your production job ensures
+     * stable latency performance. We might add more response fields in the
+     * future, and those new fields might require extra computation time. If you
+     * select all fields, or if you select all fields at the top level, then you
+     * might experience performance degradation because any new field we add will
+     * be automatically included in the response.
+     * * Selecting only the fields that you need results in a smaller response
+     * size, and thus higher network throughput.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.maps.routes.v1.ComputeCustomRoutesResponse> computeCustomRoutes(
+        com.google.maps.routes.v1.ComputeCustomRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getComputeCustomRoutesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_COMPUTE_ROUTES = 0;
   private static final int METHODID_COMPUTE_ROUTE_MATRIX = 1;
+  private static final int METHODID_COMPUTE_CUSTOM_ROUTES = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -508,6 +701,10 @@ public final class RoutesPreferredGrpc {
         case METHODID_COMPUTE_ROUTE_MATRIX:
           serviceImpl.computeRouteMatrix((com.google.maps.routes.v1.ComputeRouteMatrixRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.routes.v1.RouteMatrixElement>) responseObserver);
+          break;
+        case METHODID_COMPUTE_CUSTOM_ROUTES:
+          serviceImpl.computeCustomRoutes((com.google.maps.routes.v1.ComputeCustomRoutesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.maps.routes.v1.ComputeCustomRoutesResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -572,6 +769,7 @@ public final class RoutesPreferredGrpc {
               .setSchemaDescriptor(new RoutesPreferredFileDescriptorSupplier())
               .addMethod(getComputeRoutesMethod())
               .addMethod(getComputeRouteMatrixMethod())
+              .addMethod(getComputeCustomRoutesMethod())
               .build();
         }
       }

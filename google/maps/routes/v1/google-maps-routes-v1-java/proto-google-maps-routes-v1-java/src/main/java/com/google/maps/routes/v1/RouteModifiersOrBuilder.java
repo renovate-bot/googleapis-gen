@@ -57,7 +57,7 @@ public interface RouteModifiersOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Specifies the vehicle information.
+   * Specifies the vehicle information.
    * </pre>
    *
    * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -66,7 +66,7 @@ public interface RouteModifiersOrBuilder extends
   boolean hasVehicleInfo();
   /**
    * <pre>
-   * Optional. Specifies the vehicle information.
+   * Specifies the vehicle information.
    * </pre>
    *
    * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -75,7 +75,7 @@ public interface RouteModifiersOrBuilder extends
   com.google.maps.routes.v1.VehicleInfo getVehicleInfo();
   /**
    * <pre>
-   * Optional. Specifies the vehicle information.
+   * Specifies the vehicle information.
    * </pre>
    *
    * <code>.google.maps.routes.v1.VehicleInfo vehicle_info = 5;</code>
@@ -85,7 +85,9 @@ public interface RouteModifiersOrBuilder extends
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -96,7 +98,9 @@ public interface RouteModifiersOrBuilder extends
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -107,7 +111,9 @@ public interface RouteModifiersOrBuilder extends
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -119,7 +125,9 @@ public interface RouteModifiersOrBuilder extends
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
@@ -131,7 +139,9 @@ public interface RouteModifiersOrBuilder extends
   /**
    * <pre>
    * Encapsulates information about toll passes.
-   * TollPass is unset means no available pass.
+   * If toll passes are provided, the API tries to return the pass price. If
+   * toll passes are not provided, the API treats the toll pass as unknown and
+   * tries to return the cash price.
    * Applies only to the DRIVE and TWO_WHEELER travel modes.
    * </pre>
    *
