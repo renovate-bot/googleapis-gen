@@ -670,6 +670,9 @@ class QueryResult(proto.Message):
             If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput]
             was provided as input, this field will contain the name of
             the event.
+        dtmf (google.cloud.dialogflowcx_v3beta1.types.DtmfInput):
+            If a [DTMF][DTMFInput] was provided as input, this field
+            will contain a copy of the [DTMFInput][].
         language_code (str):
             The language that was triggered during intent detection. See
             `Language
@@ -768,6 +771,12 @@ class QueryResult(proto.Message):
         proto.STRING,
         number=14,
         oneof='query',
+    )
+    dtmf = proto.Field(
+        proto.MESSAGE,
+        number=23,
+        oneof='query',
+        message='DtmfInput',
     )
     language_code = proto.Field(
         proto.STRING,
