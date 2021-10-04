@@ -191,6 +191,11 @@ class EnvironmentsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.deploy_flow: gapic_v1.method.wrap_method(
+                self.deploy_flow,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     @property
@@ -267,6 +272,15 @@ class EnvironmentsTransport(abc.ABC):
             Union[
                 environment.ListContinuousTestResultsResponse,
                 Awaitable[environment.ListContinuousTestResultsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def deploy_flow(self) -> Callable[
+            [environment.DeployFlowRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
             ]]:
         raise NotImplementedError()
 

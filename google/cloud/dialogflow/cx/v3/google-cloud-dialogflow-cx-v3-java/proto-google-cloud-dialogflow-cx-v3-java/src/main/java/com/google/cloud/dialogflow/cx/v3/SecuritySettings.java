@@ -1131,12 +1131,15 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. Resource name of the settings.
+   * Resource name of the settings.
+   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+   * automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -1154,12 +1157,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the settings.
+   * Resource name of the settings.
+   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+   * automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -2101,12 +2107,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -2123,12 +2132,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -2146,12 +2158,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2167,12 +2182,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -2183,12 +2201,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */

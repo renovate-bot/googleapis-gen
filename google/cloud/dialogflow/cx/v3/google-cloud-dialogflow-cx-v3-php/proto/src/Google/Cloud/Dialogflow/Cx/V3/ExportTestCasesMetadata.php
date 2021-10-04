@@ -11,6 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Metadata returned for the [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases] long running
  * operation.
+ * This message currently has no fields.
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata</code>
  */

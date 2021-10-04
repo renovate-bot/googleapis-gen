@@ -110,6 +110,7 @@ class TestCasesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Kicks off a test case run.
+     *
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -131,6 +132,13 @@ class TestCasesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Kicks off a batch run of test cases.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3.BatchRunTestCasesMetadata]
+     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3.BatchRunTestCasesResponse]
      * @param \Google\Cloud\Dialogflow\Cx\V3\BatchRunTestCasesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -163,6 +171,13 @@ class TestCasesGrpcClient extends \Grpc\BaseStub {
      * Imports the test cases from a Cloud Storage bucket or a local file. It
      * always creates new test cases and won't overwite any existing ones. The
      * provided ID in the imported test case is neglected.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ImportTestCasesMetadata]
+     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3.ImportTestCasesResponse]
      * @param \Google\Cloud\Dialogflow\Cx\V3\ImportTestCasesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -179,6 +194,13 @@ class TestCasesGrpcClient extends \Grpc\BaseStub {
     /**
      * Exports the test cases under the agent to a Cloud Storage bucket or a local
      * file. Filter can be applied to export a subset of test cases.
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata]
+     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3.ExportTestCasesResponse]
      * @param \Google\Cloud\Dialogflow\Cx\V3\ExportTestCasesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

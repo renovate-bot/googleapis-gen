@@ -26,6 +26,18 @@ return [
                     ],
                 ],
             ],
+            'DeployFlow' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{environment=projects/*/locations/*/agents/*/environments/*}:deployFlow',
+                'body' => '*',
+                'placeholders' => [
+                    'environment' => [
+                        'getters' => [
+                            'getEnvironment',
+                        ],
+                    ],
+                ],
+            ],
             'GetEnvironment' => [
                 'method' => 'get',
                 'uriTemplate' => '/v3/{name=projects/*/locations/*/agents/*/environments/*}',

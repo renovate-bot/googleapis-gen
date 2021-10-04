@@ -30,7 +30,6 @@ use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
-
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -39,6 +38,9 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\Cx\V3\CreateEnvironmentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\DeleteEnvironmentRequest;
+use Google\Cloud\Dialogflow\Cx\V3\DeployFlowMetadata;
+use Google\Cloud\Dialogflow\Cx\V3\DeployFlowRequest;
+use Google\Cloud\Dialogflow\Cx\V3\DeployFlowResponse;
 use Google\Cloud\Dialogflow\Cx\V3\Environment;
 use Google\Cloud\Dialogflow\Cx\V3\GetEnvironmentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\ListContinuousTestResultsRequest;
@@ -47,11 +49,14 @@ use Google\Cloud\Dialogflow\Cx\V3\ListEnvironmentsRequest;
 use Google\Cloud\Dialogflow\Cx\V3\ListEnvironmentsResponse;
 use Google\Cloud\Dialogflow\Cx\V3\LookupEnvironmentHistoryRequest;
 use Google\Cloud\Dialogflow\Cx\V3\LookupEnvironmentHistoryResponse;
+use Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestMetadata;
 use Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestRequest;
+use Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestResponse;
 use Google\Cloud\Dialogflow\Cx\V3\UpdateEnvironmentRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Struct;
 
 /**
  * Service Description: Service for managing [Environments][google.cloud.dialogflow.cx.v3.Environment].
@@ -136,6 +141,8 @@ class EnvironmentsGapicClient
 
     private static $environmentNameTemplate;
 
+    private static $versionNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -177,12 +184,22 @@ class EnvironmentsGapicClient
         return self::$environmentNameTemplate;
     }
 
+    private static function getVersionNameTemplate()
+    {
+        if (self::$versionNameTemplate == null) {
+            self::$versionNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}');
+        }
+
+        return self::$versionNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'agent' => self::getAgentNameTemplate(),
                 'environment' => self::getEnvironmentNameTemplate(),
+                'version' => self::getVersionNameTemplate(),
             ];
         }
 
@@ -230,11 +247,35 @@ class EnvironmentsGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a version
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $agent
+     * @param string $flow
+     * @param string $version
+     *
+     * @return string The formatted version resource.
+     */
+    public static function versionName($project, $location, $agent, $flow, $version)
+    {
+        return self::getVersionNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'agent' => $agent,
+            'flow' => $flow,
+            'version' => $version,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - agent: projects/{project}/locations/{location}/agents/{agent}
      * - environment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}
+     * - version: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -364,6 +405,14 @@ class EnvironmentsGapicClient
     /**
      * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
+     *
      * Sample code:
      * ```
      * $environmentsClient = new EnvironmentsClient();
@@ -468,6 +517,85 @@ class EnvironmentsGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('DeleteEnvironment', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata]
+     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+     *
+     * Sample code:
+     * ```
+     * $environmentsClient = new EnvironmentsClient();
+     * try {
+     *     $formattedEnvironment = $environmentsClient->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
+     *     $formattedFlowVersion = $environmentsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+     *     $operationResponse = $environmentsClient->deployFlow($formattedEnvironment, $formattedFlowVersion);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $environmentsClient->deployFlow($formattedEnvironment, $formattedFlowVersion);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $environmentsClient->resumeOperation($operationName, 'deployFlow');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $environmentsClient->close();
+     * }
+     * ```
+     *
+     * @param string $environment  Required. The environment to deploy the flow to.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/
+     *                             environments/<Environment ID>`.
+     * @param string $flowVersion  Required. The flow version to deploy.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/
+     *                             flows/<Flow ID>/versions/<Version ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deployFlow($environment, $flowVersion, array $optionalArgs = [])
+    {
+        $request = new DeployFlowRequest();
+        $requestParamHeaders = [];
+        $request->setEnvironment($environment);
+        $request->setFlowVersion($flowVersion);
+        $requestParamHeaders['environment'] = $environment;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeployFlow', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -727,6 +855,13 @@ class EnvironmentsGapicClient
     /**
      * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
      *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata]
+     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
+     *
      * Sample code:
      * ```
      * $environmentsClient = new EnvironmentsClient();
@@ -792,6 +927,14 @@ class EnvironmentsGapicClient
 
     /**
      * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     * message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      *
      * Sample code:
      * ```

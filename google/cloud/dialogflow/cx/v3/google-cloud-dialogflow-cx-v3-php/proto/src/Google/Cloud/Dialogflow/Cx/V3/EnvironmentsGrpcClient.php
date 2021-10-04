@@ -64,6 +64,14 @@ class EnvironmentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * @param \Google\Cloud\Dialogflow\Cx\V3\CreateEnvironmentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -79,6 +87,14 @@ class EnvironmentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: [Environment][google.cloud.dialogflow.cx.v3.Environment]
      * @param \Google\Cloud\Dialogflow\Cx\V3\UpdateEnvironmentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -124,6 +140,13 @@ class EnvironmentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata]
+     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3.RunContinuousTestResponse]
      * @param \Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -149,6 +172,28 @@ class EnvironmentsGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3.Environments/ListContinuousTestResults',
         $argument,
         ['\Google\Cloud\Dialogflow\Cx\V3\ListContinuousTestResultsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     *
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     *
+     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3.DeployFlowMetadata]
+     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3.DeployFlowResponse]
+     * @param \Google\Cloud\Dialogflow\Cx\V3\DeployFlowRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeployFlow(\Google\Cloud\Dialogflow\Cx\V3\DeployFlowRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3.Environments/DeployFlow',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
         $metadata, $options);
     }
 

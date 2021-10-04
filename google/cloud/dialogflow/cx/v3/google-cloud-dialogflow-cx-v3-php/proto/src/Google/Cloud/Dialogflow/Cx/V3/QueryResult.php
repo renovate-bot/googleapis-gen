@@ -139,6 +139,9 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *     @type string $trigger_event
      *           If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
      *           the name of the event.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\DtmfInput $dtmf
+     *           If a [DTMF][DTMFInput] was provided as input, this field will contain
+     *           a copy of the [DTMFInput][].
      *     @type string $language_code
      *           The language that was triggered during intent detection.
      *           See [Language
@@ -334,6 +337,39 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(14, $var);
+
+        return $this;
+    }
+
+    /**
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.DtmfInput dtmf = 23;</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3\DtmfInput|null
+     */
+    public function getDtmf()
+    {
+        return $this->readOneof(23);
+    }
+
+    public function hasDtmf()
+    {
+        return $this->hasOneof(23);
+    }
+
+    /**
+     * If a [DTMF][DTMFInput] was provided as input, this field will contain
+     * a copy of the [DTMFInput][].
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.DtmfInput dtmf = 23;</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3\DtmfInput $var
+     * @return $this
+     */
+    public function setDtmf($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\DtmfInput::class);
+        $this->writeOneof(23, $var);
 
         return $this;
     }

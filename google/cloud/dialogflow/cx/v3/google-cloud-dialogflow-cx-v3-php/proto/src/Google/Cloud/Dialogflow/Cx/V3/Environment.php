@@ -59,6 +59,12 @@ class Environment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $update_time = null;
+    /**
+     * The test cases config for continuous tests of this environment.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;</code>
+     */
+    protected $test_cases_config = null;
 
     /**
      * Constructor.
@@ -83,6 +89,8 @@ class Environment extends \Google\Protobuf\Internal\Message
      *           returned.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Update time of this environment.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\Environment\TestCasesConfig $test_cases_config
+     *           The test cases config for continuous tests of this environment.
      * }
      */
     public function __construct($data = NULL) {
@@ -240,6 +248,42 @@ class Environment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The test cases config for continuous tests of this environment.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3\Environment\TestCasesConfig|null
+     */
+    public function getTestCasesConfig()
+    {
+        return isset($this->test_cases_config) ? $this->test_cases_config : null;
+    }
+
+    public function hasTestCasesConfig()
+    {
+        return isset($this->test_cases_config);
+    }
+
+    public function clearTestCasesConfig()
+    {
+        unset($this->test_cases_config);
+    }
+
+    /**
+     * The test cases config for continuous tests of this environment.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfig test_cases_config = 7;</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3\Environment\TestCasesConfig $var
+     * @return $this
+     */
+    public function setTestCasesConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\Environment\TestCasesConfig::class);
+        $this->test_cases_config = $var;
 
         return $this;
     }

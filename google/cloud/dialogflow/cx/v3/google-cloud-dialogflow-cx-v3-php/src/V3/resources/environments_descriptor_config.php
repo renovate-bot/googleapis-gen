@@ -13,6 +13,16 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'DeployFlow' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Dialogflow\Cx\V3\DeployFlowResponse',
+                    'metadataReturnType' => '\Google\Cloud\Dialogflow\Cx\V3\DeployFlowMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'RunContinuousTest' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Dialogflow\Cx\V3\RunContinuousTestResponse',

@@ -96,8 +96,6 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $securitySettings = new SecuritySettings();
-        $securitySettingsName = 'securitySettingsName-1610888018';
-        $securitySettings->setName($securitySettingsName);
         $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
         $securitySettings->setDisplayName($securitySettingsDisplayName);
         $response = $client->createSecuritySettings($formattedParent, $securitySettings);
@@ -137,8 +135,6 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $securitySettings = new SecuritySettings();
-        $securitySettingsName = 'securitySettingsName-1610888018';
-        $securitySettings->setName($securitySettingsName);
         $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
         $securitySettings->setDisplayName($securitySettingsDisplayName);
         try {
@@ -384,8 +380,6 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $securitySettings = new SecuritySettings();
-        $securitySettingsName = 'securitySettingsName-1610888018';
-        $securitySettings->setName($securitySettingsName);
         $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
         $securitySettings->setDisplayName($securitySettingsDisplayName);
         $updateMask = new FieldMask();
@@ -425,8 +419,6 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $securitySettings = new SecuritySettings();
-        $securitySettingsName = 'securitySettingsName-1610888018';
-        $securitySettings->setName($securitySettingsName);
         $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
         $securitySettings->setDisplayName($securitySettingsDisplayName);
         $updateMask = new FieldMask();
