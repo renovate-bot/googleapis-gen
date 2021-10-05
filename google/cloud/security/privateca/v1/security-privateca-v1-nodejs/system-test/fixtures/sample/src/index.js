@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const privateca = require('@google-cloud/privateca');
+const privateca = require('@google-cloud/security-private-ca');
 
 function main() {
   const certificateAuthorityServiceClient = new privateca.CertificateAuthorityServiceClient();

@@ -46,7 +46,7 @@ function main(name) {
   // const ignoreActiveCertificates = true
 
   // Imports the Privateca library
-  const {CertificateAuthorityServiceClient} = require('@google-cloud/privateca').v1;
+  const {CertificateAuthorityServiceClient} = require('@google-cloud/security-private-ca').v1;
 
   // Instantiates a client
   const privatecaClient = new CertificateAuthorityServiceClient();

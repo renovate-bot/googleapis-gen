@@ -41,7 +41,7 @@ function main(caPool) {
   // const requestId = 'abc123'
 
   // Imports the Privateca library
-  const {CertificateAuthorityServiceClient} = require('@google-cloud/privateca').v1;
+  const {CertificateAuthorityServiceClient} = require('@google-cloud/security-private-ca').v1;
 
   // Instantiates a client
   const privatecaClient = new CertificateAuthorityServiceClient();

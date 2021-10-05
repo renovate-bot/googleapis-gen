@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/privateca",
+  "name": "@google-cloud/security-private-ca",
   "version": "0.1.0",
   "description": "Privateca client for Node.js",
   "repository": "googleapis/nodejs-privateca",
