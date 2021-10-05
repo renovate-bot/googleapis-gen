@@ -911,10 +911,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -923,10 +923,10 @@ private static final long serialVersionUID = 0L;
     java.lang.String getTune();
     /**
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1048,10 +1048,10 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object tune_;
     /**
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1072,10 +1072,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set the denoiser mode. The default is `"standard"`.
+     * Set the denoiser mode. The default is `standard`.
      * Supported denoiser modes:
-     * - 'standard'
-     * - 'grain'
+     * - `standard`
+     * - `grain`
      * </pre>
      *
      * <code>string tune = 2;</code>
@@ -1470,10 +1470,10 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object tune_ = "";
       /**
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1493,10 +1493,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1517,10 +1517,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1539,10 +1539,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>
@@ -1556,10 +1556,10 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Set the denoiser mode. The default is `"standard"`.
+       * Set the denoiser mode. The default is `standard`.
        * Supported denoiser modes:
-       * - 'standard'
-       * - 'grain'
+       * - `standard`
+       * - `grain`
        * </pre>
        *
        * <code>string tune = 2;</code>

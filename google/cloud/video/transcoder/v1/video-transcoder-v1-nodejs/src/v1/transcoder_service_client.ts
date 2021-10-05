@@ -481,6 +481,9 @@ export class TranscoderServiceClient {
  * @param {string} request.name
  *   Required. The name of the job to delete.
  *   Format: `projects/{project}/locations/{location}/jobs/{job}`
+ * @param {boolean} request.allowMissing
+ *   If set to true, and the job is not found, the request will succeed but no
+ *   action will be taken on the server.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -706,6 +709,9 @@ export class TranscoderServiceClient {
  * @param {string} request.name
  *   Required. The name of the job template to delete.
  *   `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+ * @param {boolean} request.allowMissing
+ *   If set to true, and the job template is not found, the request will succeed
+ *   but no action will be taken on the server.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

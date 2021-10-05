@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The resource name of the job template.
    * Format:
-   * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+   * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The resource name of the job template.
    * Format:
-   * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+   * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the job template.
      * Format:
-     * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+     * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -555,7 +555,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the job template.
      * Format:
-     * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+     * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the job template.
      * Format:
-     * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+     * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the job template.
      * Format:
-     * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+     * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -615,7 +615,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the job template.
      * Format:
-     * `projects/{project}/locations/{location}/jobTemplates/{job_template}`
+     * `projects/{project_number}/locations/{location}/jobTemplates/{job_template}`
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
 
   /**
    * <pre>
-   * The manifest type can be either `"HLS"` or `"DASH"`.
+   * The manifest type can be either `HLS` or `DASH`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.video.transcoder.v1.Manifest.ManifestType}
@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
     MANIFEST_TYPE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Create `"HLS"` manifest. The corresponding file extension is `".m3u8"`.
+     * Create `HLS` manifest. The corresponding file extension is `.m3u8`.
      * </pre>
      *
      * <code>HLS = 1;</code>
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
     HLS(1),
     /**
      * <pre>
-     * Create `"DASH"` manifest. The corresponding file extension is `".mpd"`.
+     * Create `DASH` manifest. The corresponding file extension is `.mpd`.
      * </pre>
      *
      * <code>DASH = 2;</code>
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
     public static final int MANIFEST_TYPE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Create `"HLS"` manifest. The corresponding file extension is `".m3u8"`.
+     * Create `HLS` manifest. The corresponding file extension is `.m3u8`.
      * </pre>
      *
      * <code>HLS = 1;</code>
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
     public static final int HLS_VALUE = 1;
     /**
      * <pre>
-     * Create `"DASH"` manifest. The corresponding file extension is `".mpd"`.
+     * Create `DASH` manifest. The corresponding file extension is `.mpd`.
      * </pre>
      *
      * <code>DASH = 2;</code>
@@ -261,7 +261,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object fileName_;
   /**
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -309,7 +309,7 @@ private static final long serialVersionUID = 0L;
   private int type_;
   /**
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object fileName_ = "";
     /**
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -819,7 +819,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the generated file. The default is `"manifest"` with the
+     * The name of the generated file. The default is `manifest` with the
      * extension suffix corresponding to the `Manifest.type`.
      * </pre>
      *
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
     private int type_ = 0;
     /**
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -897,7 +897,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -915,7 +915,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Type of the manifest, can be "HLS" or "DASH".
+     * Required. Type of the manifest, can be `HLS` or `DASH`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>

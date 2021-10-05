@@ -5,7 +5,7 @@ package com.google.cloud.video.transcoder.v1;
 
 /**
  * <pre>
- * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+ * Segment settings for `ts`, `fmp4` and `vtt`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.video.transcoder.v1.SegmentSettings}
@@ -106,7 +106,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration segmentDuration_;
   /**
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -136,7 +136,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+   * Duration of the segments in seconds. The default is `6.0s`. Note that
    * `segmentDuration` must be greater than or equal to
    * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
    * [`gopDuration`](#videostream).
@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.SegmentSettings}
@@ -506,7 +506,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> segmentDurationBuilder_;
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -561,7 +561,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Duration of the segments in seconds. The default is `"6.0s"`. Note that
+     * Duration of the segments in seconds. The default is `6.0s`. Note that
      * `segmentDuration` must be greater than or equal to
      * [`gopDuration`](#videostream), and `segmentDuration` must be divisible by
      * [`gopDuration`](#videostream).

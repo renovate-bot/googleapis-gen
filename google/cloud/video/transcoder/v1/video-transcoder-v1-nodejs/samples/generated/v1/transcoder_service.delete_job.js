@@ -25,6 +25,11 @@ function main(name) {
    *  Format: `projects/{project}/locations/{location}/jobs/{job}`
    */
   // const name = 'abc123'
+  /**
+   *  If set to true, and the job is not found, the request will succeed but no
+   *  action will be taken on the server.
+   */
+  // const allowMissing = true
 
   // Imports the Transcoder library
   const {TranscoderServiceClient} = require('@google-cloud/transcoder').v1;

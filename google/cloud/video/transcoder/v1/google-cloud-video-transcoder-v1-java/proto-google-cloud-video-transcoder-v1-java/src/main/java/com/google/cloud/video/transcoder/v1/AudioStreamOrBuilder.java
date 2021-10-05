@@ -9,14 +9,14 @@ public interface AudioStreamOrBuilder extends
 
   /**
    * <pre>
-   * The codec for this audio stream. The default is `"aac"`.
+   * The codec for this audio stream. The default is `aac`.
    * Supported audio codecs:
-   * - 'aac'
-   * - 'aac-he'
-   * - 'aac-he-v2'
-   * - 'mp3'
-   * - 'ac3'
-   * - 'eac3'
+   * - `aac`
+   * - `aac-he`
+   * - `aac-he-v2`
+   * - `mp3`
+   * - `ac3`
+   * - `eac3`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -25,14 +25,14 @@ public interface AudioStreamOrBuilder extends
   java.lang.String getCodec();
   /**
    * <pre>
-   * The codec for this audio stream. The default is `"aac"`.
+   * The codec for this audio stream. The default is `aac`.
    * Supported audio codecs:
-   * - 'aac'
-   * - 'aac-he'
-   * - 'aac-he-v2'
-   * - 'mp3'
-   * - 'ac3'
-   * - 'eac3'
+   * - `aac`
+   * - `aac-he`
+   * - `aac-he-v2`
+   * - `mp3`
+   * - `ac3`
+   * - `eac3`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -67,12 +67,12 @@ public interface AudioStreamOrBuilder extends
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `["fl", "fr"]`.
    * Supported channel names:
-   * - 'fl' - Front left channel
-   * - 'fr' - Front right channel
-   * - 'sl' - Side left channel
-   * - 'sr' - Side right channel
-   * - 'fc' - Front center channel
-   * - 'lfe' - Low frequency
+   * - `fl` - Front left channel
+   * - `fr` - Front right channel
+   * - `sl` - Side left channel
+   * - `sr` - Side right channel
+   * - `fc` - Front center channel
+   * - `lfe` - Low frequency
    * </pre>
    *
    * <code>repeated string channel_layout = 4;</code>
@@ -86,12 +86,12 @@ public interface AudioStreamOrBuilder extends
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `["fl", "fr"]`.
    * Supported channel names:
-   * - 'fl' - Front left channel
-   * - 'fr' - Front right channel
-   * - 'sl' - Side left channel
-   * - 'sr' - Side right channel
-   * - 'fc' - Front center channel
-   * - 'lfe' - Low frequency
+   * - `fl` - Front left channel
+   * - `fr` - Front right channel
+   * - `sl` - Side left channel
+   * - `sr` - Side right channel
+   * - `fc` - Front center channel
+   * - `lfe` - Low frequency
    * </pre>
    *
    * <code>repeated string channel_layout = 4;</code>
@@ -104,12 +104,12 @@ public interface AudioStreamOrBuilder extends
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `["fl", "fr"]`.
    * Supported channel names:
-   * - 'fl' - Front left channel
-   * - 'fr' - Front right channel
-   * - 'sl' - Side left channel
-   * - 'sr' - Side right channel
-   * - 'fc' - Front center channel
-   * - 'lfe' - Low frequency
+   * - `fl` - Front left channel
+   * - `fr` - Front right channel
+   * - `sl` - Side left channel
+   * - `sr` - Side right channel
+   * - `fc` - Front center channel
+   * - `lfe` - Low frequency
    * </pre>
    *
    * <code>repeated string channel_layout = 4;</code>
@@ -123,12 +123,12 @@ public interface AudioStreamOrBuilder extends
    * This only affects the metadata embedded in the container headers, if
    * supported by the specified format. The default is `["fl", "fr"]`.
    * Supported channel names:
-   * - 'fl' - Front left channel
-   * - 'fr' - Front right channel
-   * - 'sl' - Side left channel
-   * - 'sr' - Side right channel
-   * - 'fc' - Front center channel
-   * - 'lfe' - Low frequency
+   * - `fl` - Front left channel
+   * - `fr` - Front right channel
+   * - `sl` - Side left channel
+   * - `sr` - Side right channel
+   * - `fc` - Front center channel
+   * - `lfe` - Low frequency
    * </pre>
    *
    * <code>repeated string channel_layout = 4;</code>

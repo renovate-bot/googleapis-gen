@@ -41,8 +41,8 @@ class transcoderCallTransformer(cst.CSTTransformer):
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
         'create_job': ('parent', 'job', ),
         'create_job_template': ('parent', 'job_template', 'job_template_id', ),
-        'delete_job': ('name', ),
-        'delete_job_template': ('name', ),
+        'delete_job': ('name', 'allow_missing', ),
+        'delete_job_template': ('name', 'allow_missing', ),
         'get_job': ('name', ),
         'get_job_template': ('name', ),
         'list_jobs': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),

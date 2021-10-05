@@ -213,9 +213,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object format_;
   /**
    * <pre>
-   * Format type. The default is `"jpeg"`.
+   * Format type. The default is `jpeg`.
    * Supported formats:
-   * - 'jpeg'
+   * - `jpeg`
    * </pre>
    *
    * <code>string format = 1;</code>
@@ -236,9 +236,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Format type. The default is `"jpeg"`.
+   * Format type. The default is `jpeg`.
    * Supported formats:
-   * - 'jpeg'
+   * - `jpeg`
    * </pre>
    *
    * <code>string format = 1;</code>
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. File name prefix for the generated sprite sheets.
    * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-   * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+   * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
    * </pre>
    *
    * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -288,7 +288,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. File name prefix for the generated sprite sheets.
    * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-   * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+   * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
    * </pre>
    *
    * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1113,9 +1113,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object format_ = "";
     /**
      * <pre>
-     * Format type. The default is `"jpeg"`.
+     * Format type. The default is `jpeg`.
      * Supported formats:
-     * - 'jpeg'
+     * - `jpeg`
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -1135,9 +1135,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Format type. The default is `"jpeg"`.
+     * Format type. The default is `jpeg`.
      * Supported formats:
-     * - 'jpeg'
+     * - `jpeg`
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -1158,9 +1158,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Format type. The default is `"jpeg"`.
+     * Format type. The default is `jpeg`.
      * Supported formats:
-     * - 'jpeg'
+     * - `jpeg`
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -1179,9 +1179,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Format type. The default is `"jpeg"`.
+     * Format type. The default is `jpeg`.
      * Supported formats:
-     * - 'jpeg'
+     * - `jpeg`
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -1195,9 +1195,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Format type. The default is `"jpeg"`.
+     * Format type. The default is `jpeg`.
      * Supported formats:
-     * - 'jpeg'
+     * - `jpeg`
      * </pre>
      *
      * <code>string format = 1;</code>
@@ -1221,7 +1221,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-     * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+     * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
      *
      * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1243,7 +1243,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-     * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+     * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
      *
      * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1266,7 +1266,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-     * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+     * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
      *
      * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1287,7 +1287,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-     * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+     * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
      *
      * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1303,7 +1303,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
-     * from 0 before the extension, such as `"sprite_sheet0000000123.jpeg"`.
+     * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
      *
      * <code>string file_prefix = 2 [(.google.api.field_behavior) = REQUIRED];</code>

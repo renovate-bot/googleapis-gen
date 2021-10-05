@@ -1006,13 +1006,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object codec_;
   /**
    * <pre>
-   * The codec for this text stream. The default is `"webvtt"`.
+   * The codec for this text stream. The default is `webvtt`.
    * Supported text codecs:
-   * - 'srt'
-   * - 'ttml'
-   * - 'cea608'
-   * - 'cea708'
-   * - 'webvtt'
+   * - `srt`
+   * - `ttml`
+   * - `cea608`
+   * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -1033,13 +1033,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The codec for this text stream. The default is `"webvtt"`.
+   * The codec for this text stream. The default is `webvtt`.
    * Supported text codecs:
-   * - 'srt'
-   * - 'ttml'
-   * - 'cea608'
-   * - 'cea708'
-   * - 'webvtt'
+   * - `srt`
+   * - `ttml`
+   * - `cea608`
+   * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -1486,13 +1486,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object codec_ = "";
     /**
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1512,13 +1512,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1539,13 +1539,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1564,13 +1564,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1584,13 +1584,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The codec for this text stream. The default is `"webvtt"`.
+     * The codec for this text stream. The default is `webvtt`.
      * Supported text codecs:
-     * - 'srt'
-     * - 'ttml'
-     * - 'cea608'
-     * - 'cea708'
-     * - 'webvtt'
+     * - `srt`
+     * - `ttml`
+     * - `cea608`
+     * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1;</code>

@@ -21,7 +21,6 @@ from google.cloud.video.transcoder_v1.types.resources import AdBreak
 from google.cloud.video.transcoder_v1.types.resources import AudioStream
 from google.cloud.video.transcoder_v1.types.resources import EditAtom
 from google.cloud.video.transcoder_v1.types.resources import ElementaryStream
-from google.cloud.video.transcoder_v1.types.resources import Encryption
 from google.cloud.video.transcoder_v1.types.resources import Input
 from google.cloud.video.transcoder_v1.types.resources import Job
 from google.cloud.video.transcoder_v1.types.resources import JobConfig
@@ -53,7 +52,6 @@ __all__ = ('TranscoderServiceClient',
     'AudioStream',
     'EditAtom',
     'ElementaryStream',
-    'Encryption',
     'Input',
     'Job',
     'JobConfig',

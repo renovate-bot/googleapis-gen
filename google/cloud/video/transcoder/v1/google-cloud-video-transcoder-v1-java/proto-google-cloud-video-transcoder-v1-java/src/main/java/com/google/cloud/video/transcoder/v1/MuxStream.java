@@ -97,19 +97,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 50: {
-            com.google.cloud.video.transcoder.v1.Encryption.Builder subBuilder = null;
-            if (encryption_ != null) {
-              subBuilder = encryption_.toBuilder();
-            }
-            encryption_ = input.readMessage(com.google.cloud.video.transcoder.v1.Encryption.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(encryption_);
-              encryption_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -150,7 +137,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `".m3u8"` extension suffix.
+   * named `MuxStream.key` with the `.m3u8` extension suffix.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -172,7 +159,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A unique key for this multiplexed stream. HLS media manifests will be
-   * named `MuxStream.key` with the `".m3u8"` extension suffix.
+   * named `MuxStream.key` with the `.m3u8` extension suffix.
    * </pre>
    *
    * <code>string key = 1;</code>
@@ -200,7 +187,7 @@ private static final long serialVersionUID = 0L;
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
    * Individual segments also have an incremental 10-digit zero-padded suffix
-   * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+   * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
    *
    * <code>string file_name = 2;</code>
@@ -224,7 +211,7 @@ private static final long serialVersionUID = 0L;
    * The name of the generated file. The default is `MuxStream.key` with the
    * extension suffix corresponding to the `MuxStream.container`.
    * Individual segments also have an incremental 10-digit zero-padded suffix
-   * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+   * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
    * </pre>
    *
    * <code>string file_name = 2;</code>
@@ -249,12 +236,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object container_;
   /**
    * <pre>
-   * The container format. The default is `"mp4"`
+   * The container format. The default is `mp4`
    * Supported container formats:
-   * - 'ts'
-   * - 'fmp4'- the corresponding file extension is `".m4s"`
-   * - 'mp4'
-   * - 'vtt'
+   * - `ts`
+   * - `fmp4`- the corresponding file extension is `.m4s`
+   * - `mp4`
+   * - `vtt`
    * </pre>
    *
    * <code>string container = 3;</code>
@@ -275,12 +262,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The container format. The default is `"mp4"`
+   * The container format. The default is `mp4`
    * Supported container formats:
-   * - 'ts'
-   * - 'fmp4'- the corresponding file extension is `".m4s"`
-   * - 'mp4'
-   * - 'vtt'
+   * - `ts`
+   * - `fmp4`- the corresponding file extension is `.m4s`
+   * - `mp4`
+   * - `vtt`
    * </pre>
    *
    * <code>string container = 3;</code>
@@ -356,7 +343,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.video.transcoder.v1.SegmentSettings segmentSettings_;
   /**
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -368,7 +355,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -380,7 +367,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+   * Segment settings for `ts`, `fmp4` and `vtt`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -388,44 +375,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.SegmentSettingsOrBuilder getSegmentSettingsOrBuilder() {
     return getSegmentSettings();
-  }
-
-  public static final int ENCRYPTION_FIELD_NUMBER = 6;
-  private com.google.cloud.video.transcoder.v1.Encryption encryption_;
-  /**
-   * <pre>
-   * Encryption settings.
-   * </pre>
-   *
-   * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-   * @return Whether the encryption field is set.
-   */
-  @java.lang.Override
-  public boolean hasEncryption() {
-    return encryption_ != null;
-  }
-  /**
-   * <pre>
-   * Encryption settings.
-   * </pre>
-   *
-   * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-   * @return The encryption.
-   */
-  @java.lang.Override
-  public com.google.cloud.video.transcoder.v1.Encryption getEncryption() {
-    return encryption_ == null ? com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance() : encryption_;
-  }
-  /**
-   * <pre>
-   * Encryption settings.
-   * </pre>
-   *
-   * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.video.transcoder.v1.EncryptionOrBuilder getEncryptionOrBuilder() {
-    return getEncryption();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -457,9 +406,6 @@ private static final long serialVersionUID = 0L;
     if (segmentSettings_ != null) {
       output.writeMessage(5, getSegmentSettings());
     }
-    if (encryption_ != null) {
-      output.writeMessage(6, getEncryption());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -490,10 +436,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getSegmentSettings());
     }
-    if (encryption_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getEncryption());
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -522,11 +464,6 @@ private static final long serialVersionUID = 0L;
       if (!getSegmentSettings()
           .equals(other.getSegmentSettings())) return false;
     }
-    if (hasEncryption() != other.hasEncryption()) return false;
-    if (hasEncryption()) {
-      if (!getEncryption()
-          .equals(other.getEncryption())) return false;
-    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -551,10 +488,6 @@ private static final long serialVersionUID = 0L;
     if (hasSegmentSettings()) {
       hash = (37 * hash) + SEGMENT_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSegmentSettings().hashCode();
-    }
-    if (hasEncryption()) {
-      hash = (37 * hash) + ENCRYPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getEncryption().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -707,12 +640,6 @@ private static final long serialVersionUID = 0L;
         segmentSettings_ = null;
         segmentSettingsBuilder_ = null;
       }
-      if (encryptionBuilder_ == null) {
-        encryption_ = null;
-      } else {
-        encryption_ = null;
-        encryptionBuilder_ = null;
-      }
       return this;
     }
 
@@ -752,11 +679,6 @@ private static final long serialVersionUID = 0L;
         result.segmentSettings_ = segmentSettings_;
       } else {
         result.segmentSettings_ = segmentSettingsBuilder_.build();
-      }
-      if (encryptionBuilder_ == null) {
-        result.encryption_ = encryption_;
-      } else {
-        result.encryption_ = encryptionBuilder_.build();
       }
       onBuilt();
       return result;
@@ -831,9 +753,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasSegmentSettings()) {
         mergeSegmentSettings(other.getSegmentSettings());
       }
-      if (other.hasEncryption()) {
-        mergeEncryption(other.getEncryption());
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -868,7 +787,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `".m3u8"` extension suffix.
+     * named `MuxStream.key` with the `.m3u8` extension suffix.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -889,7 +808,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `".m3u8"` extension suffix.
+     * named `MuxStream.key` with the `.m3u8` extension suffix.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -911,7 +830,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `".m3u8"` extension suffix.
+     * named `MuxStream.key` with the `.m3u8` extension suffix.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -931,7 +850,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `".m3u8"` extension suffix.
+     * named `MuxStream.key` with the `.m3u8` extension suffix.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -946,7 +865,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique key for this multiplexed stream. HLS media manifests will be
-     * named `MuxStream.key` with the `".m3u8"` extension suffix.
+     * named `MuxStream.key` with the `.m3u8` extension suffix.
      * </pre>
      *
      * <code>string key = 1;</code>
@@ -971,7 +890,7 @@ private static final long serialVersionUID = 0L;
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
      * Individual segments also have an incremental 10-digit zero-padded suffix
-     * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+     * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
      *
      * <code>string file_name = 2;</code>
@@ -994,7 +913,7 @@ private static final long serialVersionUID = 0L;
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
      * Individual segments also have an incremental 10-digit zero-padded suffix
-     * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+     * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
      *
      * <code>string file_name = 2;</code>
@@ -1018,7 +937,7 @@ private static final long serialVersionUID = 0L;
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
      * Individual segments also have an incremental 10-digit zero-padded suffix
-     * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+     * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
      *
      * <code>string file_name = 2;</code>
@@ -1040,7 +959,7 @@ private static final long serialVersionUID = 0L;
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
      * Individual segments also have an incremental 10-digit zero-padded suffix
-     * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+     * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
      *
      * <code>string file_name = 2;</code>
@@ -1057,7 +976,7 @@ private static final long serialVersionUID = 0L;
      * The name of the generated file. The default is `MuxStream.key` with the
      * extension suffix corresponding to the `MuxStream.container`.
      * Individual segments also have an incremental 10-digit zero-padded suffix
-     * starting from 0 before the extension, such as `"mux_stream0000000123.ts"`.
+     * starting from 0 before the extension, such as `mux_stream0000000123.ts`.
      * </pre>
      *
      * <code>string file_name = 2;</code>
@@ -1079,12 +998,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object container_ = "";
     /**
      * <pre>
-     * The container format. The default is `"mp4"`
+     * The container format. The default is `mp4`
      * Supported container formats:
-     * - 'ts'
-     * - 'fmp4'- the corresponding file extension is `".m4s"`
-     * - 'mp4'
-     * - 'vtt'
+     * - `ts`
+     * - `fmp4`- the corresponding file extension is `.m4s`
+     * - `mp4`
+     * - `vtt`
      * </pre>
      *
      * <code>string container = 3;</code>
@@ -1104,12 +1023,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The container format. The default is `"mp4"`
+     * The container format. The default is `mp4`
      * Supported container formats:
-     * - 'ts'
-     * - 'fmp4'- the corresponding file extension is `".m4s"`
-     * - 'mp4'
-     * - 'vtt'
+     * - `ts`
+     * - `fmp4`- the corresponding file extension is `.m4s`
+     * - `mp4`
+     * - `vtt`
      * </pre>
      *
      * <code>string container = 3;</code>
@@ -1130,12 +1049,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The container format. The default is `"mp4"`
+     * The container format. The default is `mp4`
      * Supported container formats:
-     * - 'ts'
-     * - 'fmp4'- the corresponding file extension is `".m4s"`
-     * - 'mp4'
-     * - 'vtt'
+     * - `ts`
+     * - `fmp4`- the corresponding file extension is `.m4s`
+     * - `mp4`
+     * - `vtt`
      * </pre>
      *
      * <code>string container = 3;</code>
@@ -1154,12 +1073,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The container format. The default is `"mp4"`
+     * The container format. The default is `mp4`
      * Supported container formats:
-     * - 'ts'
-     * - 'fmp4'- the corresponding file extension is `".m4s"`
-     * - 'mp4'
-     * - 'vtt'
+     * - `ts`
+     * - `fmp4`- the corresponding file extension is `.m4s`
+     * - `mp4`
+     * - `vtt`
      * </pre>
      *
      * <code>string container = 3;</code>
@@ -1173,12 +1092,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The container format. The default is `"mp4"`
+     * The container format. The default is `mp4`
      * Supported container formats:
-     * - 'ts'
-     * - 'fmp4'- the corresponding file extension is `".m4s"`
-     * - 'mp4'
-     * - 'vtt'
+     * - `ts`
+     * - `fmp4`- the corresponding file extension is `.m4s`
+     * - `mp4`
+     * - `vtt`
      * </pre>
      *
      * <code>string container = 3;</code>
@@ -1348,7 +1267,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.video.transcoder.v1.SegmentSettings, com.google.cloud.video.transcoder.v1.SegmentSettings.Builder, com.google.cloud.video.transcoder.v1.SegmentSettingsOrBuilder> segmentSettingsBuilder_;
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1359,7 +1278,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1374,7 +1293,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1394,7 +1313,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1412,7 +1331,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1434,7 +1353,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1452,7 +1371,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1464,7 +1383,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1479,7 +1398,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Segment settings for `"ts"`, `"fmp4"` and `"vtt"`.
+     * Segment settings for `ts`, `fmp4` and `vtt`.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1.SegmentSettings segment_settings = 5;</code>
@@ -1496,161 +1415,6 @@ private static final long serialVersionUID = 0L;
         segmentSettings_ = null;
       }
       return segmentSettingsBuilder_;
-    }
-
-    private com.google.cloud.video.transcoder.v1.Encryption encryption_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.video.transcoder.v1.Encryption, com.google.cloud.video.transcoder.v1.Encryption.Builder, com.google.cloud.video.transcoder.v1.EncryptionOrBuilder> encryptionBuilder_;
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     * @return Whether the encryption field is set.
-     */
-    public boolean hasEncryption() {
-      return encryptionBuilder_ != null || encryption_ != null;
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     * @return The encryption.
-     */
-    public com.google.cloud.video.transcoder.v1.Encryption getEncryption() {
-      if (encryptionBuilder_ == null) {
-        return encryption_ == null ? com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance() : encryption_;
-      } else {
-        return encryptionBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    public Builder setEncryption(com.google.cloud.video.transcoder.v1.Encryption value) {
-      if (encryptionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        encryption_ = value;
-        onChanged();
-      } else {
-        encryptionBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    public Builder setEncryption(
-        com.google.cloud.video.transcoder.v1.Encryption.Builder builderForValue) {
-      if (encryptionBuilder_ == null) {
-        encryption_ = builderForValue.build();
-        onChanged();
-      } else {
-        encryptionBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    public Builder mergeEncryption(com.google.cloud.video.transcoder.v1.Encryption value) {
-      if (encryptionBuilder_ == null) {
-        if (encryption_ != null) {
-          encryption_ =
-            com.google.cloud.video.transcoder.v1.Encryption.newBuilder(encryption_).mergeFrom(value).buildPartial();
-        } else {
-          encryption_ = value;
-        }
-        onChanged();
-      } else {
-        encryptionBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    public Builder clearEncryption() {
-      if (encryptionBuilder_ == null) {
-        encryption_ = null;
-        onChanged();
-      } else {
-        encryption_ = null;
-        encryptionBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    public com.google.cloud.video.transcoder.v1.Encryption.Builder getEncryptionBuilder() {
-      
-      onChanged();
-      return getEncryptionFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    public com.google.cloud.video.transcoder.v1.EncryptionOrBuilder getEncryptionOrBuilder() {
-      if (encryptionBuilder_ != null) {
-        return encryptionBuilder_.getMessageOrBuilder();
-      } else {
-        return encryption_ == null ?
-            com.google.cloud.video.transcoder.v1.Encryption.getDefaultInstance() : encryption_;
-      }
-    }
-    /**
-     * <pre>
-     * Encryption settings.
-     * </pre>
-     *
-     * <code>.google.cloud.video.transcoder.v1.Encryption encryption = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.video.transcoder.v1.Encryption, com.google.cloud.video.transcoder.v1.Encryption.Builder, com.google.cloud.video.transcoder.v1.EncryptionOrBuilder> 
-        getEncryptionFieldBuilder() {
-      if (encryptionBuilder_ == null) {
-        encryptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.video.transcoder.v1.Encryption, com.google.cloud.video.transcoder.v1.Encryption.Builder, com.google.cloud.video.transcoder.v1.EncryptionOrBuilder>(
-                getEncryption(),
-                getParentForChildren(),
-                isClean());
-        encryption_ = null;
-      }
-      return encryptionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

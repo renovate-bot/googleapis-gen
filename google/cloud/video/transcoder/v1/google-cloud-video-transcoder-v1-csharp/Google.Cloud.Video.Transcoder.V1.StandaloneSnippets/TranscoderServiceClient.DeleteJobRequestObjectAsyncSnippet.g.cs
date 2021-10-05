@@ -34,6 +34,7 @@ namespace Google.Cloud.Video.Transcoder.V1.Snippets
             DeleteJobRequest request = new DeleteJobRequest
             {
                 JobName = JobName.FromProjectLocationJob("[PROJECT]", "[LOCATION]", "[JOB]"),
+                AllowMissing = false,
             };
             // Make the request
             await transcoderServiceClient.DeleteJobAsync(request);

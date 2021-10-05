@@ -9,7 +9,7 @@ public interface ManifestOrBuilder extends
 
   /**
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface ManifestOrBuilder extends
   java.lang.String getFileName();
   /**
    * <pre>
-   * The name of the generated file. The default is `"manifest"` with the
+   * The name of the generated file. The default is `manifest` with the
    * extension suffix corresponding to the `Manifest.type`.
    * </pre>
    *
@@ -31,7 +31,7 @@ public interface ManifestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +40,7 @@ public interface ManifestOrBuilder extends
   int getTypeValue();
   /**
    * <pre>
-   * Required. Type of the manifest, can be "HLS" or "DASH".
+   * Required. Type of the manifest, can be `HLS` or `DASH`.
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1.Manifest.ManifestType type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
