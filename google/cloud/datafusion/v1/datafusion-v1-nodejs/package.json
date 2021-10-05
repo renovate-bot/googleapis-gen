@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/datafusion",
+  "name": "@google-cloud/data-fusion",
   "version": "0.1.0",
   "description": "Datafusion client for Node.js",
   "repository": "googleapis/nodejs-datafusion",
