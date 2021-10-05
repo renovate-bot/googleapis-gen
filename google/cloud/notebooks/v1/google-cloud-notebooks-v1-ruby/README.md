@@ -30,7 +30,7 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/location"
+require "google/cloud/notebooks/v1"
 
 client = ::Google::Cloud::Notebooks::V1::ManagedNotebookService::Client.new
 request = ::Google::Cloud::Notebooks::V1::ListRuntimesRequest.new # (request fields as keyword arguments...)

@@ -1357,7 +1357,7 @@ class NotebookServiceGapicClient
      *     @type string $filter
      *           Filter applied to resulting executions. Currently only supports filtering
      *           executions by a specified schedule_id.
-     *           Format: "schedule_id=<Schedule_ID>"
+     *           Format: `schedule_id=<Schedule_ID>`
      *     @type string $orderBy
      *           Sort by field.
      *     @type RetrySettings|array $retrySettings

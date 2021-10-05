@@ -104,7 +104,7 @@ namespace Google.Cloud.Notebooks.V1 {
     public const int EnableHealthMonitoringFieldNumber = 2;
     private bool enableHealthMonitoring_;
     /// <summary>
-    /// Verifies core internal services are running. More info: go/notebooks-health
+    /// Verifies core internal services are running.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool EnableHealthMonitoring {

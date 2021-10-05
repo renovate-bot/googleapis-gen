@@ -25,7 +25,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      *
      * Generated from protobuf field <code>string post_startup_script = 4;</code>
      */
@@ -170,8 +170,8 @@ class Instance extends \Google\Protobuf\Internal\Message
     private $disks;
     /**
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig shielded_instance_config = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -276,7 +276,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      *     @type string $post_startup_script
      *           Path to a Bash script that automatically runs after a notebook instance
      *           fully boots up. The path must be a URL or
-     *           Cloud Storage path (gs://path-to-file/file-name).
+     *           Cloud Storage path (`gs://path-to-file/file-name`).
      *     @type string $proxy_uri
      *           Output only. The proxy endpoint that is used to access the Jupyter notebook.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $instance_owners
@@ -349,8 +349,8 @@ class Instance extends \Google\Protobuf\Internal\Message
      *           Output only. Attached disks to notebook instance.
      *     @type \Google\Cloud\Notebooks\V1\Instance\ShieldedInstanceConfig $shielded_instance_config
      *           Optional. Shielded VM configuration.
-     *           [Images using supported Shielded VM features]
-     *           (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     *           [Images using supported Shielded VM
+     *           features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      *     @type bool $no_public_ip
      *           If true, no public IP will be assigned to this instance.
      *     @type bool $no_proxy_access
@@ -485,7 +485,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      *
      * Generated from protobuf field <code>string post_startup_script = 4;</code>
      * @return string
@@ -498,7 +498,7 @@ class Instance extends \Google\Protobuf\Internal\Message
     /**
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      *
      * Generated from protobuf field <code>string post_startup_script = 4;</code>
      * @param string $var
@@ -1038,8 +1038,8 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig shielded_instance_config = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Cloud\Notebooks\V1\Instance\ShieldedInstanceConfig|null
@@ -1061,8 +1061,8 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Shielded VM configuration.
-     * [Images using supported Shielded VM features]
-     * (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+     * [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      *
      * Generated from protobuf field <code>.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig shielded_instance_config = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Cloud\Notebooks\V1\Instance\ShieldedInstanceConfig $var

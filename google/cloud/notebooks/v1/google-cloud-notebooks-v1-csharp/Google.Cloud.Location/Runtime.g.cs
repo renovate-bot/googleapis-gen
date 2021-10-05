@@ -2912,7 +2912,7 @@ namespace Google.Cloud.Notebooks.V1 {
     /// <summary>
     /// Path to a Bash script that automatically runs after a notebook instance
     /// fully boots up. The path must be a URL or
-    /// Cloud Storage path (gs://path-to-file/file-name).
+    /// Cloud Storage path (`gs://path-to-file/file-name`).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string PostStartupScript {

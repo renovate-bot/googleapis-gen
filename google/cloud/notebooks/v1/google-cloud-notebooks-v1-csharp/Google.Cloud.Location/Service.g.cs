@@ -7129,9 +7129,10 @@ namespace Google.Cloud.Notebooks.V1 {
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> unreachable_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Schedules that could not be reached. For example,
-    /// ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-    ///  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+    /// Schedules that could not be reached. For example:
+    ///
+    ///     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+    ///      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Unreachable {
@@ -8187,7 +8188,7 @@ namespace Google.Cloud.Notebooks.V1 {
     /// <summary>
     /// Filter applied to resulting executions. Currently only supports filtering
     /// executions by a specified schedule_id.
-    /// Format: "schedule_id=&lt;Schedule_ID>"
+    /// Format: `schedule_id=&lt;Schedule_ID>`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Filter {
@@ -8507,9 +8508,10 @@ namespace Google.Cloud.Notebooks.V1 {
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> unreachable_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Executions IDs that could not be reached. For example,
-    /// ['projects/{project_id}/location/{location}/executions/imagenet_test1',
-    ///  'projects/{project_id}/location/{location}/executions/classifier_train1'].
+    /// Executions IDs that could not be reached. For example:
+    ///
+    ///     ['projects/{project_id}/location/{location}/executions/imagenet_test1',
+    ///      'projects/{project_id}/location/{location}/executions/classifier_train1']
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Unreachable {

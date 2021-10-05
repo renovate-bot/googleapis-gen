@@ -75,9 +75,9 @@ public interface ListSchedulesResponseOrBuilder extends
 
   /**
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -87,9 +87,9 @@ public interface ListSchedulesResponseOrBuilder extends
       getUnreachableList();
   /**
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -98,9 +98,9 @@ public interface ListSchedulesResponseOrBuilder extends
   int getUnreachableCount();
   /**
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -110,9 +110,9 @@ public interface ListSchedulesResponseOrBuilder extends
   java.lang.String getUnreachable(int index);
   /**
    * <pre>
-   * Schedules that could not be reached. For example,
-   * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-   *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+   * Schedules that could not be reached. For example:
+   *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+   *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>

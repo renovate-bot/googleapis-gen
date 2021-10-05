@@ -516,9 +516,10 @@ module Google
         #     next list call.
         # @!attribute [rw] unreachable
         #   @return [::Array<::String>]
-        #     Schedules that could not be reached. For example,
-        #     ['projects/\\{project_id}/location/\\{location}/schedules/monthly_digest',
-        #      'projects/\\{project_id}/location/\\{location}/schedules/weekly_sentiment'].
+        #     Schedules that could not be reached. For example:
+        #
+        #         ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+        #          'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
         class ListSchedulesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -586,7 +587,7 @@ module Google
         #   @return [::String]
         #     Filter applied to resulting executions. Currently only supports filtering
         #     executions by a specified schedule_id.
-        #     Format: "schedule_id=<Schedule_ID>"
+        #     Format: `schedule_id=<Schedule_ID>`
         # @!attribute [rw] order_by
         #   @return [::String]
         #     Sort by field.
@@ -605,9 +606,10 @@ module Google
         #     next list call.
         # @!attribute [rw] unreachable
         #   @return [::Array<::String>]
-        #     Executions IDs that could not be reached. For example,
-        #     ['projects/\\{project_id}/location/\\{location}/executions/imagenet_test1',
-        #      'projects/\\{project_id}/location/\\{location}/executions/classifier_train1'].
+        #     Executions IDs that could not be reached. For example:
+        #
+        #         ['projects/{project_id}/location/{location}/executions/imagenet_test1',
+        #          'projects/{project_id}/location/{location}/executions/classifier_train1']
         class ListExecutionsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

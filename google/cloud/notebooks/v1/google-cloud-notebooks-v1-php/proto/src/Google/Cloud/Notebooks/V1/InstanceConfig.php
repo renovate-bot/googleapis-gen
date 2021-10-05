@@ -23,7 +23,7 @@ class InstanceConfig extends \Google\Protobuf\Internal\Message
      */
     protected $notebook_upgrade_schedule = '';
     /**
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      *
      * Generated from protobuf field <code>bool enable_health_monitoring = 2;</code>
      */
@@ -39,7 +39,7 @@ class InstanceConfig extends \Google\Protobuf\Internal\Message
      *           Cron expression in UTC timezone, used to schedule instance auto upgrade.
      *           Please follow the [cron format](https://en.wikipedia.org/wiki/Cron).
      *     @type bool $enable_health_monitoring
-     *           Verifies core internal services are running. More info: go/notebooks-health
+     *           Verifies core internal services are running.
      * }
      */
     public function __construct($data = NULL) {
@@ -76,7 +76,7 @@ class InstanceConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      *
      * Generated from protobuf field <code>bool enable_health_monitoring = 2;</code>
      * @return bool
@@ -87,7 +87,7 @@ class InstanceConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      *
      * Generated from protobuf field <code>bool enable_health_monitoring = 2;</code>
      * @param bool $var

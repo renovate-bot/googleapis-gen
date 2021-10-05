@@ -28,7 +28,7 @@ module Google
         #     Please follow the [cron format](https://en.wikipedia.org/wiki/Cron).
         # @!attribute [rw] enable_health_monitoring
         #   @return [::Boolean]
-        #     Verifies core internal services are running. More info: go/notebooks-health
+        #     Verifies core internal services are running.
         class InstanceConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

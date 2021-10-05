@@ -3703,7 +3703,7 @@ export class NotebookServiceClient {
  * @param {string} request.filter
  *   Filter applied to resulting executions. Currently only supports filtering
  *   executions by a specified schedule_id.
- *   Format: "schedule_id=<Schedule_ID>"
+ *   Format: `schedule_id=<Schedule_ID>`
  * @param {string} request.orderBy
  *   Sort by field.
  * @param {object} [options]
@@ -3770,7 +3770,7 @@ export class NotebookServiceClient {
  * @param {string} request.filter
  *   Filter applied to resulting executions. Currently only supports filtering
  *   executions by a specified schedule_id.
- *   Format: "schedule_id=<Schedule_ID>"
+ *   Format: `schedule_id=<Schedule_ID>`
  * @param {string} request.orderBy
  *   Sort by field.
  * @param {object} [options]
@@ -3825,7 +3825,7 @@ export class NotebookServiceClient {
  * @param {string} request.filter
  *   Filter applied to resulting executions. Currently only supports filtering
  *   executions by a specified schedule_id.
- *   Format: "schedule_id=<Schedule_ID>"
+ *   Format: `schedule_id=<Schedule_ID>`
  * @param {string} request.orderBy
  *   Sort by field.
  * @param {object} [options]

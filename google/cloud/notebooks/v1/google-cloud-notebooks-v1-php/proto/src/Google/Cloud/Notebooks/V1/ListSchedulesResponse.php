@@ -29,9 +29,9 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
      */
     protected $next_page_token = '';
     /**
-     * Schedules that could not be reached. For example,
-     * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-     *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+     * Schedules that could not be reached. For example:
+     *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+     *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
      *
      * Generated from protobuf field <code>repeated string unreachable = 3;</code>
      */
@@ -49,9 +49,9 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
      *           Page token that can be used to continue listing from the last result in the
      *           next list call.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $unreachable
-     *           Schedules that could not be reached. For example,
-     *           ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-     *            'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+     *           Schedules that could not be reached. For example:
+     *               ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+     *                'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
      * }
      */
     public function __construct($data = NULL) {
@@ -114,9 +114,9 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Schedules that could not be reached. For example,
-     * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-     *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+     * Schedules that could not be reached. For example:
+     *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+     *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
      *
      * Generated from protobuf field <code>repeated string unreachable = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -127,9 +127,9 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Schedules that could not be reached. For example,
-     * ['projects/{project_id}/location/{location}/schedules/monthly_digest',
-     *  'projects/{project_id}/location/{location}/schedules/weekly_sentiment'].
+     * Schedules that could not be reached. For example:
+     *     ['projects/{project_id}/location/{location}/schedules/monthly_digest',
+     *      'projects/{project_id}/location/{location}/schedules/weekly_sentiment']
      *
      * Generated from protobuf field <code>repeated string unreachable = 3;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

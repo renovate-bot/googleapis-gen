@@ -88,8 +88,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: gs://{project_id}/{folder}/{notebook_file_name}
-     * Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb
+     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      *
      * Generated from protobuf field <code>string input_notebook_file = 5;</code>
      */
@@ -106,8 +106,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: gs://{project_id}/{folder}
-     * Ex: gs://notebook_user/scheduled_notebooks
+     * Format: `gs://{project_id}/{folder}`
+     * Ex: `gs://notebook_user/scheduled_notebooks`
      *
      * Generated from protobuf field <code>string output_notebook_folder = 7;</code>
      */
@@ -117,7 +117,7 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
      * Ref https://papermill.readthedocs.io/en/latest/usage-parameterize.html on
      * how to specifying parameters in the input notebook and pass them here
      * in an YAML file.
-     * Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml
+     * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml`
      *
      * Generated from protobuf field <code>string params_yaml_file = 8;</code>
      */
@@ -206,8 +206,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
      *     @type string $input_notebook_file
      *           Path to the notebook file to execute.
      *           Must be in a Google Cloud Storage bucket.
-     *           Format: gs://{project_id}/{folder}/{notebook_file_name}
-     *           Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb
+     *           Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     *           Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      *     @type string $container_image_uri
      *           Container Image URI to a DLVM
      *           Example: 'gcr.io/deeplearning-platform-release/base-cu100'
@@ -216,14 +216,14 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
      *     @type string $output_notebook_folder
      *           Path to the notebook folder to write to.
      *           Must be in a Google Cloud Storage bucket path.
-     *           Format: gs://{project_id}/{folder}
-     *           Ex: gs://notebook_user/scheduled_notebooks
+     *           Format: `gs://{project_id}/{folder}`
+     *           Ex: `gs://notebook_user/scheduled_notebooks`
      *     @type string $params_yaml_file
      *           Parameters to be overridden in the notebook during execution.
      *           Ref https://papermill.readthedocs.io/en/latest/usage-parameterize.html on
      *           how to specifying parameters in the input notebook and pass them here
      *           in an YAML file.
-     *           Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml
+     *           Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml`
      *     @type string $parameters
      *           Parameters used within the 'input_notebook_file' notebook.
      *     @type string $service_account
@@ -452,8 +452,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: gs://{project_id}/{folder}/{notebook_file_name}
-     * Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb
+     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      *
      * Generated from protobuf field <code>string input_notebook_file = 5;</code>
      * @return string
@@ -466,8 +466,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Path to the notebook file to execute.
      * Must be in a Google Cloud Storage bucket.
-     * Format: gs://{project_id}/{folder}/{notebook_file_name}
-     * Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb
+     * Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+     * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
      *
      * Generated from protobuf field <code>string input_notebook_file = 5;</code>
      * @param string $var
@@ -516,8 +516,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: gs://{project_id}/{folder}
-     * Ex: gs://notebook_user/scheduled_notebooks
+     * Format: `gs://{project_id}/{folder}`
+     * Ex: `gs://notebook_user/scheduled_notebooks`
      *
      * Generated from protobuf field <code>string output_notebook_folder = 7;</code>
      * @return string
@@ -530,8 +530,8 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
     /**
      * Path to the notebook folder to write to.
      * Must be in a Google Cloud Storage bucket path.
-     * Format: gs://{project_id}/{folder}
-     * Ex: gs://notebook_user/scheduled_notebooks
+     * Format: `gs://{project_id}/{folder}`
+     * Ex: `gs://notebook_user/scheduled_notebooks`
      *
      * Generated from protobuf field <code>string output_notebook_folder = 7;</code>
      * @param string $var
@@ -550,7 +550,7 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
      * Ref https://papermill.readthedocs.io/en/latest/usage-parameterize.html on
      * how to specifying parameters in the input notebook and pass them here
      * in an YAML file.
-     * Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml
+     * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml`
      *
      * Generated from protobuf field <code>string params_yaml_file = 8;</code>
      * @return string
@@ -565,7 +565,7 @@ class ExecutionTemplate extends \Google\Protobuf\Internal\Message
      * Ref https://papermill.readthedocs.io/en/latest/usage-parameterize.html on
      * how to specifying parameters in the input notebook and pass them here
      * in an YAML file.
-     * Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml
+     * Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml`
      *
      * Generated from protobuf field <code>string params_yaml_file = 8;</code>
      * @param string $var

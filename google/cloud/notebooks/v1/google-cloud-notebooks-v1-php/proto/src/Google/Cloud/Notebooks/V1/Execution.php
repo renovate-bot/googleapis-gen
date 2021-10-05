@@ -23,7 +23,7 @@ class Execution extends \Google\Protobuf\Internal\Message
     protected $execution_template = null;
     /**
      * Output only. The resource name of the execute. Format:
-     * `projects/{project_id}/locations/{location}/execution/{execution_id}
+     * `projects/{project_id}/locations/{location}/execution/{execution_id}`
      *
      * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -82,7 +82,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      *           execute metadata including name, hardware spec, region, labels, etc.
      *     @type string $name
      *           Output only. The resource name of the execute. Format:
-     *           `projects/{project_id}/locations/{location}/execution/{execution_id}
+     *           `projects/{project_id}/locations/{location}/execution/{execution_id}`
      *     @type string $display_name
      *           Output only. Name used for UI purposes.
      *           Name can only contain alphanumeric characters and underscores '_'.
@@ -143,7 +143,7 @@ class Execution extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the execute. Format:
-     * `projects/{project_id}/locations/{location}/execution/{execution_id}
+     * `projects/{project_id}/locations/{location}/execution/{execution_id}`
      *
      * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -155,7 +155,7 @@ class Execution extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the execute. Format:
-     * `projects/{project_id}/locations/{location}/execution/{execution_id}
+     * `projects/{project_id}/locations/{location}/execution/{execution_id}`
      *
      * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

@@ -17,7 +17,7 @@ class DataprocParameters extends \Google\Protobuf\Internal\Message
 {
     /**
      * URI for cluster used to run Dataproc execution.
-     * Format: 'projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}
+     * Format: `projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}`
      *
      * Generated from protobuf field <code>string cluster = 1;</code>
      */
@@ -31,7 +31,7 @@ class DataprocParameters extends \Google\Protobuf\Internal\Message
      *
      *     @type string $cluster
      *           URI for cluster used to run Dataproc execution.
-     *           Format: 'projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}
+     *           Format: `projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}`
      * }
      */
     public function __construct($data = NULL) {
@@ -41,7 +41,7 @@ class DataprocParameters extends \Google\Protobuf\Internal\Message
 
     /**
      * URI for cluster used to run Dataproc execution.
-     * Format: 'projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}
+     * Format: `projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}`
      *
      * Generated from protobuf field <code>string cluster = 1;</code>
      * @return string
@@ -53,7 +53,7 @@ class DataprocParameters extends \Google\Protobuf\Internal\Message
 
     /**
      * URI for cluster used to run Dataproc execution.
-     * Format: 'projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}
+     * Format: `projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}`
      *
      * Generated from protobuf field <code>string cluster = 1;</code>
      * @param string $var

@@ -90,8 +90,8 @@ module Google
         #   @return [::String]
         #     Path to the notebook file to execute.
         #     Must be in a Google Cloud Storage bucket.
-        #     Format: gs://\\{project_id}/\\{folder}/\\{notebook_file_name}
-        #     Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb
+        #     Format: `gs://{project_id}/{folder}/{notebook_file_name}`
+        #     Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook.ipynb`
         # @!attribute [rw] container_image_uri
         #   @return [::String]
         #     Container Image URI to a DLVM
@@ -102,15 +102,15 @@ module Google
         #   @return [::String]
         #     Path to the notebook folder to write to.
         #     Must be in a Google Cloud Storage bucket path.
-        #     Format: gs://\\{project_id}/\\{folder}
-        #     Ex: gs://notebook_user/scheduled_notebooks
+        #     Format: `gs://{project_id}/{folder}`
+        #     Ex: `gs://notebook_user/scheduled_notebooks`
         # @!attribute [rw] params_yaml_file
         #   @return [::String]
         #     Parameters to be overridden in the notebook during execution.
         #     Ref https://papermill.readthedocs.io/en/latest/usage-parameterize.html on
         #     how to specifying parameters in the input notebook and pass them here
         #     in an YAML file.
-        #     Ex: gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml
+        #     Ex: `gs://notebook_user/scheduled_notebooks/sentiment_notebook_params.yaml`
         # @!attribute [rw] parameters
         #   @return [::String]
         #     Parameters used within the 'input_notebook_file' notebook.
@@ -148,7 +148,7 @@ module Google
           # @!attribute [rw] cluster
           #   @return [::String]
           #     URI for cluster used to run Dataproc execution.
-          #     Format: 'projects/\\{PROJECT_ID}/regions/\\{REGION}/clusters/\\{CLUSTER_NAME}
+          #     Format: `projects/{PROJECT_ID}/regions/{REGION}/clusters/{CLUSTER_NAME}`
           class DataprocParameters
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -260,7 +260,7 @@ module Google
         # @!attribute [r] name
         #   @return [::String]
         #     Output only. The resource name of the execute. Format:
-        #     `projects/{project_id}/locations/{location}/execution/{execution_id}
+        #     `projects/{project_id}/locations/{location}/execution/{execution_id}`
         # @!attribute [r] display_name
         #   @return [::String]
         #     Output only. Name used for UI purposes.

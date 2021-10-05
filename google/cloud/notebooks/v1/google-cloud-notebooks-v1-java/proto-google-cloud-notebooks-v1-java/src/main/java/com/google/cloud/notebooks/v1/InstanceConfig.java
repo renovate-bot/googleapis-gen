@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
   private boolean enableHealthMonitoring_;
   /**
    * <pre>
-   * Verifies core internal services are running. More info: go/notebooks-health
+   * Verifies core internal services are running.
    * </pre>
    *
    * <code>bool enable_health_monitoring = 2;</code>
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
     private boolean enableHealthMonitoring_ ;
     /**
      * <pre>
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      * </pre>
      *
      * <code>bool enable_health_monitoring = 2;</code>
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      * </pre>
      *
      * <code>bool enable_health_monitoring = 2;</code>
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Verifies core internal services are running. More info: go/notebooks-health
+     * Verifies core internal services are running.
      * </pre>
      *
      * <code>bool enable_health_monitoring = 2;</code>

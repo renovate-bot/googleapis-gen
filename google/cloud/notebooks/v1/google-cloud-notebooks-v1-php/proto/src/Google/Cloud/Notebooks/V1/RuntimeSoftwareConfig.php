@@ -63,7 +63,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
     /**
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      *
      * Generated from protobuf field <code>string post_startup_script = 7;</code>
      */
@@ -94,7 +94,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
      *     @type string $post_startup_script
      *           Path to a Bash script that automatically runs after a notebook instance
      *           fully boots up. The path must be a URL or
-     *           Cloud Storage path (gs://path-to-file/file-name).
+     *           Cloud Storage path (`gs://path-to-file/file-name`).
      * }
      */
     public function __construct($data = NULL) {
@@ -289,7 +289,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
     /**
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      *
      * Generated from protobuf field <code>string post_startup_script = 7;</code>
      * @return string
@@ -302,7 +302,7 @@ class RuntimeSoftwareConfig extends \Google\Protobuf\Internal\Message
     /**
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      *
      * Generated from protobuf field <code>string post_startup_script = 7;</code>
      * @param string $var

@@ -29,9 +29,9 @@ class ListExecutionsResponse extends \Google\Protobuf\Internal\Message
      */
     protected $next_page_token = '';
     /**
-     * Executions IDs that could not be reached. For example,
-     * ['projects/{project_id}/location/{location}/executions/imagenet_test1',
-     *  'projects/{project_id}/location/{location}/executions/classifier_train1'].
+     * Executions IDs that could not be reached. For example:
+     *     ['projects/{project_id}/location/{location}/executions/imagenet_test1',
+     *      'projects/{project_id}/location/{location}/executions/classifier_train1']
      *
      * Generated from protobuf field <code>repeated string unreachable = 3;</code>
      */
@@ -49,9 +49,9 @@ class ListExecutionsResponse extends \Google\Protobuf\Internal\Message
      *           Page token that can be used to continue listing from the last result in the
      *           next list call.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $unreachable
-     *           Executions IDs that could not be reached. For example,
-     *           ['projects/{project_id}/location/{location}/executions/imagenet_test1',
-     *            'projects/{project_id}/location/{location}/executions/classifier_train1'].
+     *           Executions IDs that could not be reached. For example:
+     *               ['projects/{project_id}/location/{location}/executions/imagenet_test1',
+     *                'projects/{project_id}/location/{location}/executions/classifier_train1']
      * }
      */
     public function __construct($data = NULL) {
@@ -114,9 +114,9 @@ class ListExecutionsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Executions IDs that could not be reached. For example,
-     * ['projects/{project_id}/location/{location}/executions/imagenet_test1',
-     *  'projects/{project_id}/location/{location}/executions/classifier_train1'].
+     * Executions IDs that could not be reached. For example:
+     *     ['projects/{project_id}/location/{location}/executions/imagenet_test1',
+     *      'projects/{project_id}/location/{location}/executions/classifier_train1']
      *
      * Generated from protobuf field <code>repeated string unreachable = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -127,9 +127,9 @@ class ListExecutionsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Executions IDs that could not be reached. For example,
-     * ['projects/{project_id}/location/{location}/executions/imagenet_test1',
-     *  'projects/{project_id}/location/{location}/executions/classifier_train1'].
+     * Executions IDs that could not be reached. For example:
+     *     ['projects/{project_id}/location/{location}/executions/imagenet_test1',
+     *      'projects/{project_id}/location/{location}/executions/classifier_train1']
      *
      * Generated from protobuf field <code>repeated string unreachable = 3;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

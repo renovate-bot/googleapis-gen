@@ -67,7 +67,7 @@ module Google
         #   @return [::String]
         #     Path to a Bash script that automatically runs after a notebook instance
         #     fully boots up. The path must be a URL or
-        #     Cloud Storage path (gs://path-to-file/file-name).
+        #     Cloud Storage path (`gs://path-to-file/file-name`).
         # @!attribute [r] proxy_uri
         #   @return [::String]
         #     Output only. The proxy endpoint that is used to access the Jupyter notebook.
@@ -162,8 +162,8 @@ module Google
         # @!attribute [rw] shielded_instance_config
         #   @return [::Google::Cloud::Notebooks::V1::Instance::ShieldedInstanceConfig]
         #     Optional. Shielded VM configuration.
-        #     [Images using supported Shielded VM features]
-        #     (https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+        #     [Images using supported Shielded VM
+        #     features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
         # @!attribute [rw] no_public_ip
         #   @return [::Boolean]
         #     If true, no public IP will be assigned to this instance.
