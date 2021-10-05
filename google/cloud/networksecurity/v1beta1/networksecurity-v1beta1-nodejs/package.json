@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/networksecurity",
+  "name": "@google-cloud/network-security",
   "version": "0.1.0",
   "description": "Networksecurity client for Node.js",
   "repository": "googleapis/nodejs-networksecurity",
