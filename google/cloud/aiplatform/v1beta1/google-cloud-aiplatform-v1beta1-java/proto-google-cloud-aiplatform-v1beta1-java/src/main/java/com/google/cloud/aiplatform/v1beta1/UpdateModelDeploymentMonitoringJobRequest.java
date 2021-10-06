@@ -156,7 +156,31 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Required. The update mask applies to the resource.
+   * Required. The update mask is used to specify the fields to be overwritten in the
+   * ModelDeploymentMonitoringJob resource by the update.
+   * The fields specified in the update_mask are relative to the resource, not
+   * the full request. A field will be overwritten if it is in the mask. If the
+   * user does not provide a mask then only the non-empty fields present in the
+   * request will be overwritten. Set the update_mask to `*` to override all
+   * fields.
+   * For the objective config, the user can either provide the update mask for
+   * model_deployment_monitoring_objective_configs or any combination of its
+   * nested fields, such as:
+   * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   * Updatable fields:
+   *   * `display_name`
+   *   * `model_deployment_monitoring_schedule_config`
+   *   * `model_monitoring_alert_config`
+   *   * `logging_sampling_strategy`
+   *   * `labels`
+   *   * `log_ttl`
+   *   * `enable_monitoring_pipeline_logs`
+   * .  and
+   *   * `model_deployment_monitoring_objective_configs`
+   * .  or
+   *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+   *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+   *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -168,7 +192,31 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The update mask applies to the resource.
+   * Required. The update mask is used to specify the fields to be overwritten in the
+   * ModelDeploymentMonitoringJob resource by the update.
+   * The fields specified in the update_mask are relative to the resource, not
+   * the full request. A field will be overwritten if it is in the mask. If the
+   * user does not provide a mask then only the non-empty fields present in the
+   * request will be overwritten. Set the update_mask to `*` to override all
+   * fields.
+   * For the objective config, the user can either provide the update mask for
+   * model_deployment_monitoring_objective_configs or any combination of its
+   * nested fields, such as:
+   * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   * Updatable fields:
+   *   * `display_name`
+   *   * `model_deployment_monitoring_schedule_config`
+   *   * `model_monitoring_alert_config`
+   *   * `logging_sampling_strategy`
+   *   * `labels`
+   *   * `log_ttl`
+   *   * `enable_monitoring_pipeline_logs`
+   * .  and
+   *   * `model_deployment_monitoring_objective_configs`
+   * .  or
+   *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+   *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+   *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -180,7 +228,31 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The update mask applies to the resource.
+   * Required. The update mask is used to specify the fields to be overwritten in the
+   * ModelDeploymentMonitoringJob resource by the update.
+   * The fields specified in the update_mask are relative to the resource, not
+   * the full request. A field will be overwritten if it is in the mask. If the
+   * user does not provide a mask then only the non-empty fields present in the
+   * request will be overwritten. Set the update_mask to `*` to override all
+   * fields.
+   * For the objective config, the user can either provide the update mask for
+   * model_deployment_monitoring_objective_configs or any combination of its
+   * nested fields, such as:
+   * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+   * Updatable fields:
+   *   * `display_name`
+   *   * `model_deployment_monitoring_schedule_config`
+   *   * `model_monitoring_alert_config`
+   *   * `logging_sampling_strategy`
+   *   * `labels`
+   *   * `log_ttl`
+   *   * `enable_monitoring_pipeline_logs`
+   * .  and
+   *   * `model_deployment_monitoring_objective_configs`
+   * .  or
+   *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+   *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+   *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -709,7 +781,31 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -720,7 +816,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -735,7 +855,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -755,7 +899,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -773,7 +941,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -795,7 +987,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -813,7 +1029,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -825,7 +1065,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -840,7 +1104,31 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The update mask applies to the resource.
+     * Required. The update mask is used to specify the fields to be overwritten in the
+     * ModelDeploymentMonitoringJob resource by the update.
+     * The fields specified in the update_mask are relative to the resource, not
+     * the full request. A field will be overwritten if it is in the mask. If the
+     * user does not provide a mask then only the non-empty fields present in the
+     * request will be overwritten. Set the update_mask to `*` to override all
+     * fields.
+     * For the objective config, the user can either provide the update mask for
+     * model_deployment_monitoring_objective_configs or any combination of its
+     * nested fields, such as:
+     * model_deployment_monitoring_objective_configs.objective_config.training_dataset.
+     * Updatable fields:
+     *   * `display_name`
+     *   * `model_deployment_monitoring_schedule_config`
+     *   * `model_monitoring_alert_config`
+     *   * `logging_sampling_strategy`
+     *   * `labels`
+     *   * `log_ttl`
+     *   * `enable_monitoring_pipeline_logs`
+     * .  and
+     *   * `model_deployment_monitoring_objective_configs`
+     * .  or
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_dataset`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.training_prediction_skew_detection_config`
+     *   * `model_deployment_monitoring_objective_configs.objective_config.prediction_drift_detection_config`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

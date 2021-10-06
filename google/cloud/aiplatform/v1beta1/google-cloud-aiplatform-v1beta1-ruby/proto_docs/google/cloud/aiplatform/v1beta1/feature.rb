@@ -67,6 +67,8 @@ module Google
         #   @return [::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig]
         #     Optional. The custom monitoring configuration for this Feature, if not set, use the
         #     monitoring_config defined for the EntityType this Feature belongs to.
+        #     Only Features with type ({::Google::Cloud::AIPlatform::V1beta1::Feature::ValueType Feature.ValueType}) BOOL, STRING, DOUBLE or
+        #     INT64 can enable monitoring.
         #
         #     If this is populated with
         #     [FeaturestoreMonitoringConfig.disabled][] = true, snapshot analysis

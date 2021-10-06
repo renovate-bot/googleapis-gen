@@ -266,6 +266,14 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
         .deleteTensorboardTimeSeriesOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchReadTensorboardTimeSeriesData. */
+  public UnaryCallSettings<
+          BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+      batchReadTensorboardTimeSeriesDataSettings() {
+    return ((TensorboardServiceStubSettings) getStubSettings())
+        .batchReadTensorboardTimeSeriesDataSettings();
+  }
+
   /** Returns the object with the settings used for calls to readTensorboardTimeSeriesData. */
   public UnaryCallSettings<
           ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>
@@ -580,6 +588,15 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
             DeleteTensorboardTimeSeriesRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardTimeSeriesOperationSettings() {
       return getStubSettingsBuilder().deleteTensorboardTimeSeriesOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchReadTensorboardTimeSeriesData.
+     */
+    public UnaryCallSettings.Builder<
+            BatchReadTensorboardTimeSeriesDataRequest, BatchReadTensorboardTimeSeriesDataResponse>
+        batchReadTensorboardTimeSeriesDataSettings() {
+      return getStubSettingsBuilder().batchReadTensorboardTimeSeriesDataSettings();
     }
 
     /** Returns the builder for the settings used for calls to readTensorboardTimeSeriesData. */

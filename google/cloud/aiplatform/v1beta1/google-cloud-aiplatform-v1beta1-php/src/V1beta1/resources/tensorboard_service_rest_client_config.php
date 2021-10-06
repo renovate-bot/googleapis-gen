@@ -27,6 +27,17 @@ return [
                     ],
                 ],
             ],
+            'BatchReadTensorboardTimeSeriesData' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{tensorboard=projects/*/locations/*/tensorboards/*}/experiments/*/runs/*/timeSeries:batchRead',
+                'placeholders' => [
+                    'tensorboard' => [
+                        'getters' => [
+                            'getTensorboard',
+                        ],
+                    ],
+                ],
+            ],
             'CreateTensorboard' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/tensorboards',

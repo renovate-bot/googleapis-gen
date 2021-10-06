@@ -145,6 +145,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest" do
       optional :name, :string, 1
     end
+    add_message "google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest" do
+      optional :tensorboard, :string, 1
+      repeated :time_series, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse" do
+      repeated :time_series_data, :message, 1, "google.cloud.aiplatform.v1beta1.TimeSeriesData"
+    end
     add_message "google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest" do
       optional :tensorboard_time_series, :string, 1
       optional :max_data_points, :int32, 2
@@ -219,6 +226,8 @@ module Google
         ListTensorboardTimeSeriesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesResponse").msgclass
         UpdateTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest").msgclass
         DeleteTensorboardTimeSeriesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest").msgclass
+        BatchReadTensorboardTimeSeriesDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest").msgclass
+        BatchReadTensorboardTimeSeriesDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse").msgclass
         ReadTensorboardTimeSeriesDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest").msgclass
         ReadTensorboardTimeSeriesDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse").msgclass
         WriteTensorboardExperimentDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest").msgclass

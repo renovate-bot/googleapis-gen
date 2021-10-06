@@ -31,6 +31,20 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string deployed_model_id = 2;</code>
      */
     protected $deployed_model_id = '';
+    /**
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     *
+     * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     */
+    protected $model = '';
+    /**
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     *
+     * Generated from protobuf field <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $model_display_name = '';
 
     /**
      * Constructor.
@@ -46,6 +60,12 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
      *           [prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri].
      *     @type string $deployed_model_id
      *           ID of the Endpoint's DeployedModel that served this prediction.
+     *     @type string $model
+     *           Output only. The name of the Model this DeployedModel, that served this prediction, was
+     *           created from.
+     *     @type string $model_display_name
+     *           Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     *           that served this prediction, was created from.
      * }
      */
     public function __construct($data = NULL) {
@@ -109,6 +129,62 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->deployed_model_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     *
+     * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    /**
+     * Output only. The name of the Model this DeployedModel, that served this prediction, was
+     * created from.
+     *
+     * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     *
+     * Generated from protobuf field <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getModelDisplayName()
+    {
+        return $this->model_display_name;
+    }
+
+    /**
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
+     * that served this prediction, was created from.
+     *
+     * Generated from protobuf field <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModelDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->model_display_name = $var;
 
         return $this;
     }

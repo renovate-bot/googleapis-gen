@@ -28,7 +28,7 @@ class TensorboardService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿq
+œv
 9google/cloud/aiplatform/v1beta1/tensorboard_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto/google/cloud/aiplatform/v1beta1/operation.proto1google/cloud/aiplatform/v1beta1/tensorboard.proto6google/cloud/aiplatform/v1beta1/tensorboard_data.proto<google/cloud/aiplatform/v1beta1/tensorboard_experiment.proto5google/cloud/aiplatform/v1beta1/tensorboard_run.proto=google/cloud/aiplatform/v1beta1/tensorboard_time_series.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"°
 CreateTensorboardRequest=
 parent (	B-‡A˙A\'
@@ -146,7 +146,14 @@ page_token (	
 tensorboard_time_series (26.google.cloud.aiplatform.v1beta1.TensorboardTimeSeriesB‡A"k
 "DeleteTensorboardTimeSeriesRequestE
 name (	B7‡A˙A1
-/aiplatform.googleapis.com/TensorboardTimeSeries"©
+/aiplatform.googleapis.com/TensorboardTimeSeries"Ω
+)BatchReadTensorboardTimeSeriesDataRequestB
+tensorboard (	B-‡A˙A\'
+%aiplatform.googleapis.com/TensorboardL
+time_series (	B7‡A˙A1
+/aiplatform.googleapis.com/TensorboardTimeSeries"w
+*BatchReadTensorboardTimeSeriesDataResponseI
+time_series_data (2/.google.cloud.aiplatform.v1beta1.TimeSeriesData"©
 $ReadTensorboardTimeSeriesDataRequestX
 tensorboard_time_series (	B7‡A˙A1
 /aiplatform.googleapis.com/TensorboardTimeSeries
@@ -178,7 +185,7 @@ page_token (	
 "CreateTensorboardOperationMetadataS
 generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"y
 "UpdateTensorboardOperationMetadataS
-generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata2’;
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata2ì>
 TensorboardServiceÉ
 CreateTensorboard9.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest.google.longrunning.Operation"ìÇ”‰ìD"5/v1beta1/{parent=projects/*/locations/*}/tensorboards:tensorboard⁄Aparent,tensorboard A1
 Tensorboard"CreateTensorboardOperationMetadataº
@@ -207,7 +214,8 @@ page_token (	
 UpdateTensorboardTimeSeriesC.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest6.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries"∑Ç”‰ìä2o/v1beta1/{tensorboard_time_series.name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:tensorboard_time_series⁄A#tensorboard_time_series,update_maskå
 ListTensorboardTimeSeriesA.google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequestB.google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesResponse"hÇ”‰ìYW/v1beta1/{parent=projects/*/locations/*/tensorboards/*/experiments/*/runs/*}/timeSeries⁄Aparentù
 DeleteTensorboardTimeSeriesC.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest.google.longrunning.Operation"ôÇ”‰ìY*W/v1beta1/{name=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}⁄Aname A0
-google.protobuf.EmptyDeleteOperationMetadata¬
+google.protobuf.EmptyDeleteOperationMetadataª
+"BatchReadTensorboardTimeSeriesDataJ.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequestK.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataResponse"|Ç”‰ìhf/v1beta1/{tensorboard=projects/*/locations/*/tensorboards/*}/experiments/*/runs/*/timeSeries:batchRead⁄Atensorboard¬
 ReadTensorboardTimeSeriesDataE.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequestF.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse"ëÇ”‰ìqo/v1beta1/{tensorboard_time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:read⁄Atensorboard_time_series¢
 ReadTensorboardBlobData?.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest@.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse"ÅÇ”‰ìmk/v1beta1/{time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:readBlobData⁄Atime_series0À
 WriteTensorboardExperimentDataF.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequestG.google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataResponse"óÇ”‰ì`"[/v1beta1/{tensorboard_experiment=projects/*/locations/*/tensorboards/*/experiments/*}:write:*⁄A.tensorboard_experiment,write_run_data_requests®

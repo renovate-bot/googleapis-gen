@@ -18,7 +18,7 @@ class AddContextChildrenRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *
      * Generated from protobuf field <code>string context = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -39,7 +39,7 @@ class AddContextChildrenRequest extends \Google\Protobuf\Internal\Message
      *     @type string $context
      *           Required. The resource name of the parent Context.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $child_contexts
      *           The resource names of the child Contexts.
      * }
@@ -52,7 +52,7 @@ class AddContextChildrenRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *
      * Generated from protobuf field <code>string context = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -65,7 +65,7 @@ class AddContextChildrenRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the parent Context.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *
      * Generated from protobuf field <code>string context = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

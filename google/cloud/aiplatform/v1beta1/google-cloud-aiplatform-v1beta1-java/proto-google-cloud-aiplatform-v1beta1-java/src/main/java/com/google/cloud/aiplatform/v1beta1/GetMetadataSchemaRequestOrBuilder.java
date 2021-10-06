@@ -11,7 +11,7 @@ public interface GetMetadataSchemaRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the MetadataSchema to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,7 +22,7 @@ public interface GetMetadataSchemaRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the MetadataSchema to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

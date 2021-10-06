@@ -11,7 +11,7 @@ public interface AddContextChildrenRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the parent Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>string context = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,7 +22,7 @@ public interface AddContextChildrenRequestOrBuilder extends
    * <pre>
    * Required. The resource name of the parent Context.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>string context = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

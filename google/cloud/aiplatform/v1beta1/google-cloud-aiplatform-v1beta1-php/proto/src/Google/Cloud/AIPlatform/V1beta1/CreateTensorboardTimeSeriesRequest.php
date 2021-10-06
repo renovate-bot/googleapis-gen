@@ -27,7 +27,7 @@ class CreateTensorboardTimeSeriesRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
      * will become the final component of the TensorboardTimeSeries's resource
-     * name. Ref: go/ucaip-user-specified-id
+     * name.
      * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
      *
      * Generated from protobuf field <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -54,7 +54,7 @@ class CreateTensorboardTimeSeriesRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $tensorboard_time_series_id
      *           Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
      *           will become the final component of the TensorboardTimeSeries's resource
-     *           name. Ref: go/ucaip-user-specified-id
+     *           name.
      *           This value should match "[a-z0-9][a-z0-9-]{0, 127}"
      *     @type \Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries $tensorboard_time_series
      *           Required. The TensorboardTimeSeries to create.
@@ -100,7 +100,7 @@ class CreateTensorboardTimeSeriesRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
      * will become the final component of the TensorboardTimeSeries's resource
-     * name. Ref: go/ucaip-user-specified-id
+     * name.
      * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
      *
      * Generated from protobuf field <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -114,7 +114,7 @@ class CreateTensorboardTimeSeriesRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
      * will become the final component of the TensorboardTimeSeries's resource
-     * name. Ref: go/ucaip-user-specified-id
+     * name.
      * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
      *
      * Generated from protobuf field <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

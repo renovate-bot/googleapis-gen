@@ -13,7 +13,7 @@ public interface UpdateArtifactRequestOrBuilder extends
    * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
    * be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Artifact artifact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -26,7 +26,7 @@ public interface UpdateArtifactRequestOrBuilder extends
    * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
    * be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Artifact artifact = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +39,7 @@ public interface UpdateArtifactRequestOrBuilder extends
    * The Artifact's [Artifact.name][google.cloud.aiplatform.v1beta1.Artifact.name] field is used to identify the Artifact to
    * be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Artifact artifact = 1 [(.google.api.field_behavior) = REQUIRED];</code>

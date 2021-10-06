@@ -12,7 +12,7 @@ public interface QueryContextLineageSubgraphRequestOrBuilder extends
    * Required. The resource name of the Context whose Artifacts and Executions
    * should be retrieved as a LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -27,7 +27,7 @@ public interface QueryContextLineageSubgraphRequestOrBuilder extends
    * Required. The resource name of the Context whose Artifacts and Executions
    * should be retrieved as a LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.

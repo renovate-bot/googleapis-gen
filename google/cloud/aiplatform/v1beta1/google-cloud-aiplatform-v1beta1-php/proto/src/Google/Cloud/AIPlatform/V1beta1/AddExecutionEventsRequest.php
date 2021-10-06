@@ -19,7 +19,7 @@ class AddExecutionEventsRequest extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the Execution that the Events connect
      * Artifacts with.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -41,7 +41,7 @@ class AddExecutionEventsRequest extends \Google\Protobuf\Internal\Message
      *           Required. The resource name of the Execution that the Events connect
      *           Artifacts with.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *     @type \Google\Cloud\AIPlatform\V1beta1\Event[]|\Google\Protobuf\Internal\RepeatedField $events
      *           The Events to create and add.
      * }
@@ -55,7 +55,7 @@ class AddExecutionEventsRequest extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the Execution that the Events connect
      * Artifacts with.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -69,7 +69,7 @@ class AddExecutionEventsRequest extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the Execution that the Events connect
      * Artifacts with.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

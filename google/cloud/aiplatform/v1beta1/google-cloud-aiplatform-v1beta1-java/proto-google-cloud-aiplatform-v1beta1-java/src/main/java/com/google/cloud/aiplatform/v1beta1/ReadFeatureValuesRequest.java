@@ -116,10 +116,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the EntityType for the entity being read.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
-   * {featurestore}/entityTypes/{entityType}`. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * EntityType ID could be "user".
+   * Value format:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+   * For example, for a machine learning model predicting user clicks on a
+   * website, an EntityType ID could be `user`.
    * </pre>
    *
    * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -141,10 +141,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the EntityType for the entity being read.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
-   * {featurestore}/entityTypes/{entityType}`. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * EntityType ID could be "user".
+   * Value format:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+   * For example, for a machine learning model predicting user clicks on a
+   * website, an EntityType ID could be `user`.
    * </pre>
    *
    * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. ID for a specific entity. For example,
    * for a machine learning model predicting user clicks on a website, an entity
-   * ID could be "user_123".
+   * ID could be `user_123`.
    * </pre>
    *
    * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. ID for a specific entity. For example,
    * for a machine learning model predicting user clicks on a website, an entity
-   * ID could be "user_123".
+   * ID could be `user_123`.
    * </pre>
    *
    * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -610,10 +610,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -634,10 +634,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -659,10 +659,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -682,10 +682,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -700,10 +700,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      * </pre>
      *
      * <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

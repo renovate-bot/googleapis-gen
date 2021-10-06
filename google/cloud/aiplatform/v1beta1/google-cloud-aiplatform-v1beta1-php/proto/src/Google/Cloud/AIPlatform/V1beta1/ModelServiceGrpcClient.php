@@ -94,7 +94,8 @@ class ModelServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
+     *
+     * Model can only be deleted if there are no [DeployedModels][] created
      * from it.
      * @param \Google\Cloud\AIPlatform\V1beta1\DeleteModelRequest $argument input argument
      * @param array $metadata metadata

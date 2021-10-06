@@ -19,7 +19,7 @@ class QueryExecutionInputsAndOutputsRequest extends \Google\Protobuf\Internal\Me
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -35,7 +35,7 @@ class QueryExecutionInputsAndOutputsRequest extends \Google\Protobuf\Internal\Me
      *           Required. The resource name of the Execution whose input and output Artifacts should
      *           be retrieved as a LineageSubgraph.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * }
      */
     public function __construct($data = NULL) {
@@ -47,7 +47,7 @@ class QueryExecutionInputsAndOutputsRequest extends \Google\Protobuf\Internal\Me
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,7 +61,7 @@ class QueryExecutionInputsAndOutputsRequest extends \Google\Protobuf\Internal\Me
      * Required. The resource name of the Execution whose input and output Artifacts should
      * be retrieved as a LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -17,10 +17,10 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      *
      * Generated from protobuf field <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -28,7 +28,7 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      *
      * Generated from protobuf field <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -48,14 +48,14 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $entity_type
      *           Required. The resource name of the EntityType for the entity being read.
-     *           Value format: `projects/{project}/locations/{location}/featurestores/
-     *           {featurestore}/entityTypes/{entityType}`. For example,
-     *           for a machine learning model predicting user clicks on a website, an
-     *           EntityType ID could be "user".
+     *           Value format:
+     *           `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     *           For example, for a machine learning model predicting user clicks on a
+     *           website, an EntityType ID could be `user`.
      *     @type string $entity_id
      *           Required. ID for a specific entity. For example,
      *           for a machine learning model predicting user clicks on a website, an entity
-     *           ID could be "user_123".
+     *           ID could be `user_123`.
      *     @type \Google\Cloud\AIPlatform\V1beta1\FeatureSelector $feature_selector
      *           Required. Selector choosing Features of the target EntityType.
      * }
@@ -67,10 +67,10 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      *
      * Generated from protobuf field <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -82,10 +82,10 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the EntityType for the entity being read.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example, for a machine learning model predicting user clicks on a
+     * website, an EntityType ID could be `user`.
      *
      * Generated from protobuf field <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -102,7 +102,7 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      *
      * Generated from protobuf field <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -115,7 +115,7 @@ class ReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID for a specific entity. For example,
      * for a machine learning model predicting user clicks on a website, an entity
-     * ID could be "user_123".
+     * ID could be `user_123`.
      *
      * Generated from protobuf field <code>string entity_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

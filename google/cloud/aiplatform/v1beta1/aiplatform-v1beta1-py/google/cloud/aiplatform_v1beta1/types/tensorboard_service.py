@@ -57,6 +57,8 @@ __protobuf__ = proto.module(
         'ListTensorboardTimeSeriesResponse',
         'UpdateTensorboardTimeSeriesRequest',
         'DeleteTensorboardTimeSeriesRequest',
+        'BatchReadTensorboardTimeSeriesDataRequest',
+        'BatchReadTensorboardTimeSeriesDataResponse',
         'ReadTensorboardTimeSeriesDataRequest',
         'ReadTensorboardTimeSeriesDataResponse',
         'WriteTensorboardExperimentDataRequest',
@@ -767,10 +769,8 @@ class CreateTensorboardTimeSeriesRequest(proto.Message):
         tensorboard_time_series_id (str):
             Optional. The user specified unique ID to use for the
             TensorboardTimeSeries, which will become the final component
-            of the TensorboardTimeSeries's resource name. Ref:
-            go/ucaip-user-specified-id
-
-            This value should match "[a-z0-9][a-z0-9-]{0, 127}".
+            of the TensorboardTimeSeries's resource name. This value
+            should match "[a-z0-9][a-z0-9-]{0, 127}".
         tensorboard_time_series (google.cloud.aiplatform_v1beta1.types.TensorboardTimeSeries):
             Required. The TensorboardTimeSeries to
             create.
@@ -944,6 +944,50 @@ class DeleteTensorboardTimeSeriesRequest(proto.Message):
     name = proto.Field(
         proto.STRING,
         number=1,
+    )
+
+
+class BatchReadTensorboardTimeSeriesDataRequest(proto.Message):
+    r"""Request message for
+    [TensorboardService.BatchReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.BatchReadTensorboardTimeSeriesData].
+
+    Attributes:
+        tensorboard (str):
+            Required. The resource name of the Tensorboard containing
+            TensorboardTimeSeries to read data from. Format:
+            ``projects/{project}/locations/{location}/tensorboards/{tensorboard}``.
+            The TensorboardTimeSeries referenced by
+            [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+            must be sub resources of this Tensorboard.
+        time_series (Sequence[str]):
+            Required. The resource names of the TensorboardTimeSeries to
+            read data from. Format:
+            ``projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}``
+    """
+
+    tensorboard = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    time_series = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+
+
+class BatchReadTensorboardTimeSeriesDataResponse(proto.Message):
+    r"""Response message for
+    [TensorboardService.BatchReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.BatchReadTensorboardTimeSeriesData].
+
+    Attributes:
+        time_series_data (Sequence[google.cloud.aiplatform_v1beta1.types.TimeSeriesData]):
+            The returned time series data.
+    """
+
+    time_series_data = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=tensorboard_data.TimeSeriesData,
     )
 
 

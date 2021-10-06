@@ -199,6 +199,10 @@ module Google
         #     house or an animal. If the images are taken in artificial environments,
         #     like a lab or manufacturing line, or from diagnostic equipment, like
         #     x-rays or quality-control cameras, use Integrated Gradients instead.
+        # @!attribute [rw] similarity
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Similarity]
+        #     Similarity explainability that returns the nearest neighbors from the
+        #     provided dataset.
         # @!attribute [rw] top_k
         #   @return [::Integer]
         #     If populated, returns attributions for top K indices of outputs
@@ -352,6 +356,20 @@ module Google
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
+        end
+
+        # Similarity explainability that returns the nearest neighbors from the
+        # provided dataset.
+        # @!attribute [rw] gcs_source
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsSource]
+        #     The Cloud Storage location for the input instances.
+        # @!attribute [rw] nearest_neighbor_search_config
+        #   @return [::Google::Protobuf::Value]
+        #     The configuration for the generated index, the semantics are the same as
+        #     {::Google::Cloud::AIPlatform::V1beta1::Index#metadata metadata} and should match NearestNeighborSearchConfig.
+        class Similarity
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
         # The {::Google::Cloud::AIPlatform::V1beta1::ExplanationSpec ExplanationSpec} entries that can be overridden at

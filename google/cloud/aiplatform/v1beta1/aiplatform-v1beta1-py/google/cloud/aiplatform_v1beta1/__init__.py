@@ -117,6 +117,7 @@ from .types.explanation import FeatureNoiseSigma
 from .types.explanation import IntegratedGradientsAttribution
 from .types.explanation import ModelExplanation
 from .types.explanation import SampledShapleyAttribution
+from .types.explanation import Similarity
 from .types.explanation import SmoothGradConfig
 from .types.explanation import XraiAttribution
 from .types.explanation_metadata import ExplanationMetadata
@@ -391,6 +392,8 @@ from .types.tensorboard_service import BatchCreateTensorboardRunsRequest
 from .types.tensorboard_service import BatchCreateTensorboardRunsResponse
 from .types.tensorboard_service import BatchCreateTensorboardTimeSeriesRequest
 from .types.tensorboard_service import BatchCreateTensorboardTimeSeriesResponse
+from .types.tensorboard_service import BatchReadTensorboardTimeSeriesDataRequest
+from .types.tensorboard_service import BatchReadTensorboardTimeSeriesDataResponse
 from .types.tensorboard_service import CreateTensorboardExperimentRequest
 from .types.tensorboard_service import CreateTensorboardOperationMetadata
 from .types.tensorboard_service import CreateTensorboardRequest
@@ -510,6 +513,8 @@ __all__ = (
 'BatchReadFeatureValuesOperationMetadata',
 'BatchReadFeatureValuesRequest',
 'BatchReadFeatureValuesResponse',
+'BatchReadTensorboardTimeSeriesDataRequest',
+'BatchReadTensorboardTimeSeriesDataResponse',
 'BigQueryDestination',
 'BigQuerySource',
 'BoolArray',
@@ -844,6 +849,7 @@ __all__ = (
 'SearchMigratableResourcesResponse',
 'SearchModelDeploymentMonitoringStatsAnomaliesRequest',
 'SearchModelDeploymentMonitoringStatsAnomaliesResponse',
+'Similarity',
 'SmoothGradConfig',
 'SpecialistPool',
 'SpecialistPoolServiceClient',

@@ -262,8 +262,8 @@ class ExportModelRequest(proto.Message):
 
     Attributes:
         name (str):
-            Required. The resource name of the Model to export. Format:
-            ``projects/{project}/locations/{location}/models/{model}``
+            Required. The resource name of the Model to
+            export.
         output_config (google.cloud.aiplatform_v1beta1.types.ExportModelRequest.OutputConfig):
             Required. The desired output location and
             configuration.

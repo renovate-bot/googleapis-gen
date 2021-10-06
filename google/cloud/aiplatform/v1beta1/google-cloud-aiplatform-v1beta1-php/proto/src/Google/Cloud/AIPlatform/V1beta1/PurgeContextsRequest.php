@@ -18,14 +18,14 @@ class PurgeContextsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $parent = '';
     /**
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time <= 2020-11-19T11:30:00-04:00`.
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -48,10 +48,10 @@ class PurgeContextsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The metadata store to purge Contexts from.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *     @type string $filter
      *           Required. A required filter matching the Contexts to be purged.
-     *           E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     *           E.g., `update_time <= 2020-11-19T11:30:00-04:00`.
      *     @type bool $force
      *           Optional. Flag to indicate to actually perform the purge.
      *           If `force` is set to false, the method will return a sample of
@@ -66,7 +66,7 @@ class PurgeContextsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -79,7 +79,7 @@ class PurgeContextsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The metadata store to purge Contexts from.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -95,7 +95,7 @@ class PurgeContextsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time <= 2020-11-19T11:30:00-04:00`.
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -107,7 +107,7 @@ class PurgeContextsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. A required filter matching the Contexts to be purged.
-     * E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     * E.g., `update_time <= 2020-11-19T11:30:00-04:00`.
      *
      * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

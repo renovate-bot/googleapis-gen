@@ -20,6 +20,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.PredictResponse" do
       repeated :predictions, :message, 1, "google.protobuf.Value"
       optional :deployed_model_id, :string, 2
+      optional :model, :string, 3
+      optional :model_display_name, :string, 4
     end
     add_message "google.cloud.aiplatform.v1beta1.RawPredictRequest" do
       optional :endpoint, :string, 1

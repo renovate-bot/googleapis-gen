@@ -522,6 +522,26 @@ func ExampleTensorboardClient_DeleteTensorboardTimeSeries() {
 	}
 }
 
+func ExampleTensorboardClient_BatchReadTensorboardTimeSeriesData() {
+	ctx := context.Background()
+	c, err := aiplatform.NewTensorboardClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.BatchReadTensorboardTimeSeriesDataRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1#BatchReadTensorboardTimeSeriesDataRequest.
+	}
+	resp, err := c.BatchReadTensorboardTimeSeriesData(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleTensorboardClient_ReadTensorboardTimeSeriesData() {
 	ctx := context.Background()
 	c, err := aiplatform.NewTensorboardClient(ctx)

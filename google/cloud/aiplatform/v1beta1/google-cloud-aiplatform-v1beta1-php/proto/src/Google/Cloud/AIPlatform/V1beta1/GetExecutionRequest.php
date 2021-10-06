@@ -18,7 +18,7 @@ class GetExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Execution to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -33,7 +33,7 @@ class GetExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. The resource name of the Execution to retrieve.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class GetExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Execution to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -57,7 +57,7 @@ class GetExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Execution to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

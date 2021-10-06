@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The MetadataStore whose MetadataSchemas should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The MetadataStore whose MetadataSchemas should be listed.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

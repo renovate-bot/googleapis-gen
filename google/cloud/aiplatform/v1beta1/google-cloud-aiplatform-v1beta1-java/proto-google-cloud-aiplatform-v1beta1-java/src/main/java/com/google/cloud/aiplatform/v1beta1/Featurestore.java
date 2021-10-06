@@ -126,6 +126,19 @@ private static final long serialVersionUID = 0L;
             state_ = rawValue;
             break;
           }
+          case 82: {
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
+            if (encryptionSpec_ != null) {
+              subBuilder = encryptionSpec_.toBuilder();
+            }
+            encryptionSpec_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(encryptionSpec_);
+              encryptionSpec_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1227,6 +1240,47 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.cloud.aiplatform.v1beta1.Featurestore.State.UNRECOGNIZED : result;
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+   * online and offline data storage will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+   * online and offline data storage will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+  }
+  /**
+   * <pre>
+   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+   * online and offline data storage will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return getEncryptionSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1264,6 +1318,9 @@ private static final long serialVersionUID = 0L;
     }
     if (state_ != com.google.cloud.aiplatform.v1beta1.Featurestore.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, state_);
+    }
+    if (encryptionSpec_ != null) {
+      output.writeMessage(10, getEncryptionSpec());
     }
     unknownFields.writeTo(output);
   }
@@ -1306,6 +1363,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, state_);
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getEncryptionSpec());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1343,6 +1404,11 @@ private static final long serialVersionUID = 0L;
           .equals(other.getOnlineServingConfig())) return false;
     }
     if (state_ != other.state_) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec()
+          .equals(other.getEncryptionSpec())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1376,6 +1442,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1560,6 +1630,12 @@ private static final long serialVersionUID = 0L;
       }
       state_ = 0;
 
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1607,6 +1683,11 @@ private static final long serialVersionUID = 0L;
         result.onlineServingConfig_ = onlineServingConfigBuilder_.build();
       }
       result.state_ = state_;
+      if (encryptionSpecBuilder_ == null) {
+        result.encryptionSpec_ = encryptionSpec_;
+      } else {
+        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1676,6 +1757,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2658,6 +2742,170 @@ private static final long serialVersionUID = 0L;
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> encryptionSpecBuilder_;
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (encryptionSpec_ != null) {
+          encryptionSpec_ =
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_).mergeFrom(value).buildPartial();
+        } else {
+          encryptionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+        onChanged();
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null ?
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance() : encryptionSpec_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
+     * online and offline data storage will be secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> 
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(),
+                getParentForChildren(),
+                isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

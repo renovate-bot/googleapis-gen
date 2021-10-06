@@ -18,7 +18,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -58,7 +58,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The MetadataStore whose MetadataSchemas should be listed.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *     @type int $page_size
      *           The maximum number of MetadataSchemas to return. The service may return
      *           fewer.
@@ -82,7 +82,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -95,7 +95,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The MetadataStore whose MetadataSchemas should be listed.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

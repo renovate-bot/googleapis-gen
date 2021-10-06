@@ -36,6 +36,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :sampled_shapley_attribution, :message, 1, "google.cloud.aiplatform.v1beta1.SampledShapleyAttribution"
         optional :integrated_gradients_attribution, :message, 2, "google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution"
         optional :xrai_attribution, :message, 3, "google.cloud.aiplatform.v1beta1.XraiAttribution"
+        optional :similarity, :message, 7, "google.cloud.aiplatform.v1beta1.Similarity"
       end
     end
     add_message "google.cloud.aiplatform.v1beta1.SampledShapleyAttribution" do
@@ -62,6 +63,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.NoiseSigmaForFeature" do
       optional :name, :string, 1
       optional :sigma, :float, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.Similarity" do
+      optional :gcs_source, :message, 1, "google.cloud.aiplatform.v1beta1.GcsSource"
+      optional :nearest_neighbor_search_config, :message, 2, "google.protobuf.Value"
     end
     add_message "google.cloud.aiplatform.v1beta1.ExplanationSpecOverride" do
       optional :parameters, :message, 1, "google.cloud.aiplatform.v1beta1.ExplanationParameters"
@@ -91,6 +96,7 @@ module Google
         SmoothGradConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.SmoothGradConfig").msgclass
         FeatureNoiseSigma = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.FeatureNoiseSigma").msgclass
         FeatureNoiseSigma::NoiseSigmaForFeature = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.NoiseSigmaForFeature").msgclass
+        Similarity = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Similarity").msgclass
         ExplanationSpecOverride = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExplanationSpecOverride").msgclass
         ExplanationMetadataOverride = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride").msgclass
         ExplanationMetadataOverride::InputMetadataOverride = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride").msgclass

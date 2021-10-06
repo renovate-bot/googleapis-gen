@@ -717,7 +717,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload list_pipeline_jobs(parent: nil, filter: nil, page_size: nil, page_token: nil)
+            # @overload list_pipeline_jobs(parent: nil, filter: nil, page_size: nil, page_token: nil, order_by: nil)
             #   Pass arguments to `list_pipeline_jobs` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -730,6 +730,10 @@ module Google
             #     fields are supported:
             #
             #     * `pipeline_name`: Supports `=` and `!=` comparisons.
+            #     * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+            #     * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+            #      for example, can check if pipeline's display_name contains *step* by doing
+            #       display_name:\"*step*\"
             #     * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
             #       Values must be in RFC 3339 format.
             #     * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -759,6 +763,18 @@ module Google
             #     Typically obtained via
             #     {::Google::Cloud::AIPlatform::V1beta1::ListPipelineJobsResponse#next_page_token ListPipelineJobsResponse.next_page_token} of the previous
             #     {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs} call.
+            #   @param order_by [::String]
+            #     A comma-separated list of fields to order by. The default sort order is in
+            #     ascending order. Use "desc" after a field name for descending. You can have
+            #     multiple order_by fields provided e.g. "create_time desc, end_time",
+            #     "end_time, start_time, update_time" For example, using "create_time desc,
+            #     end_time" will order results by create time in descending order, and if
+            #     there are multiple jobs having the same create time, order them by the end
+            #     time in ascending order. if order_by is not specified, it will order by
+            #     default order is create time in descending order. Supported fields:
+            #       * `create_time`
+            #       * `update_time`
+            #       * `end_time`
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::AIPlatform::V1beta1::PipelineJob>]

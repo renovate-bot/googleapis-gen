@@ -18,7 +18,7 @@ class ListMetadataStoresRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -52,7 +52,7 @@ class ListMetadataStoresRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The Location whose MetadataStores should be listed.
      *           Format:
-     *           projects/{project}/locations/{location}
+     *           `projects/{project}/locations/{location}`
      *     @type int $page_size
      *           The maximum number of Metadata Stores to return. The service may return
      *           fewer.
@@ -74,7 +74,7 @@ class ListMetadataStoresRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -87,7 +87,7 @@ class ListMetadataStoresRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The Location whose MetadataStores should be listed.
      * Format:
-     * projects/{project}/locations/{location}
+     * `projects/{project}/locations/{location}`
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

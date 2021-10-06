@@ -18,7 +18,7 @@ class DeleteArtifactRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -41,7 +41,7 @@ class DeleteArtifactRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. The resource name of the Artifact to delete.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      *     @type string $etag
      *           Optional. The etag of the Artifact to delete.
      *           If this is provided, it must match the server's etag. Otherwise, the
@@ -56,7 +56,7 @@ class DeleteArtifactRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -69,7 +69,7 @@ class DeleteArtifactRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Artifact to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

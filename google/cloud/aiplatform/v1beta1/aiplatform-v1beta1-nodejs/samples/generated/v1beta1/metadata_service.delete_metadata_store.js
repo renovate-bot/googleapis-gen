@@ -23,7 +23,7 @@ function main(name) {
   /**
    *  Required. The resource name of the MetadataStore to delete.
    *  Format:
-   *  projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   *  `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    */
   // const name = 'abc123'
   /**

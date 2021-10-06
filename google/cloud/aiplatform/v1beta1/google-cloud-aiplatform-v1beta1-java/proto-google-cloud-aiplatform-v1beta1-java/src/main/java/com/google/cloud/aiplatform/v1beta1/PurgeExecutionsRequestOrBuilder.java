@@ -11,7 +11,7 @@ public interface PurgeExecutionsRequestOrBuilder extends
    * <pre>
    * Required. The metadata store to purge Executions from.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,7 +22,7 @@ public interface PurgeExecutionsRequestOrBuilder extends
    * <pre>
    * Required. The metadata store to purge Executions from.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -34,7 +34,7 @@ public interface PurgeExecutionsRequestOrBuilder extends
   /**
    * <pre>
    * Required. A required filter matching the Executions to be purged.
-   * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+   * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,7 +44,7 @@ public interface PurgeExecutionsRequestOrBuilder extends
   /**
    * <pre>
    * Required. A required filter matching the Executions to be purged.
-   * E.g., update_time &lt;= 2020-11-19T11:30:00-04:00.
+   * E.g., `update_time &lt;= 2020-11-19T11:30:00-04:00`.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>

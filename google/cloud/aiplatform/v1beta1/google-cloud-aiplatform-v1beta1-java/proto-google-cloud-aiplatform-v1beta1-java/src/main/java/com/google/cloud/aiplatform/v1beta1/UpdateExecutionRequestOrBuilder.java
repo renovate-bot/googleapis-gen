@@ -13,7 +13,7 @@ public interface UpdateExecutionRequestOrBuilder extends
    * The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
    * to be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Execution execution = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -26,7 +26,7 @@ public interface UpdateExecutionRequestOrBuilder extends
    * The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
    * to be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Execution execution = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +39,7 @@ public interface UpdateExecutionRequestOrBuilder extends
    * The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
    * to be updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Execution execution = 1 [(.google.api.field_behavior) = REQUIRED];</code>

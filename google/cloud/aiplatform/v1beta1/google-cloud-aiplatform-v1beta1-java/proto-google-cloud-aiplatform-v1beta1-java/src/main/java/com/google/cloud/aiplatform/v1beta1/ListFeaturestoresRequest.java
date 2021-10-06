@@ -186,14 +186,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Lists the featurestores that match the filter expression. The following
    * fields are supported:
-   * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-   * be
+   * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+   * Values must be
    *   in RFC 3339 format.
-   * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-   * be
+   * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+   * Values must be
    *   in RFC 3339 format.
-   * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-   * and &gt;= comparisons.
+   * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+   * `&lt;=`, and `&gt;=` comparisons.
    * * `labels`: Supports key-value equality and key presence.
    * Examples:
    * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`
@@ -222,14 +222,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Lists the featurestores that match the filter expression. The following
    * fields are supported:
-   * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-   * be
+   * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+   * Values must be
    *   in RFC 3339 format.
-   * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-   * be
+   * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+   * Values must be
    *   in RFC 3339 format.
-   * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-   * and &gt;= comparisons.
+   * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+   * `&lt;=`, and `&gt;=` comparisons.
    * * `labels`: Supports key-value equality and key presence.
    * Examples:
    * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`
@@ -939,14 +939,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-     * and &gt;= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+     * `&lt;=`, and `&gt;=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`
@@ -974,14 +974,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-     * and &gt;= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+     * `&lt;=`, and `&gt;=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`
@@ -1010,14 +1010,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-     * and &gt;= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+     * `&lt;=`, and `&gt;=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`
@@ -1044,14 +1044,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-     * and &gt;= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+     * `&lt;=`, and `&gt;=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`
@@ -1073,14 +1073,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, &lt;, &gt;, &lt;=, and &gt;= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, &lt;, &gt;, &lt;=,
-     * and &gt;= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `&lt;`, `&gt;`,
+     * `&lt;=`, and `&gt;=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time &gt; "2020-01-01" OR update_time &gt; "2020-01-01"`

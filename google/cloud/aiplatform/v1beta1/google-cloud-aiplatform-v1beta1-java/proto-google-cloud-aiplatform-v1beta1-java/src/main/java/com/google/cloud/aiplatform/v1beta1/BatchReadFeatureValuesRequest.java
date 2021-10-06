@@ -6,7 +6,6 @@ package com.google.cloud.aiplatform.v1beta1;
 /**
  * <pre>
  * Request message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchReadFeatureValues].
- * (- Next Id: 6 -)
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest}
@@ -2829,7 +2828,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Request message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchReadFeatureValues].
-   * (- Next Id: 6 -)
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest}

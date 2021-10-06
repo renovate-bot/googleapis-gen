@@ -40,6 +40,7 @@ from google.cloud.aiplatform_v1beta1.services.featurestore_service import Featur
 from google.cloud.aiplatform_v1beta1.services.featurestore_service import pagers
 from google.cloud.aiplatform_v1beta1.services.featurestore_service import transports
 from google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.base import _GOOGLE_AUTH_VERSION
+from google.cloud.aiplatform_v1beta1.types import encryption_spec
 from google.cloud.aiplatform_v1beta1.types import entity_type
 from google.cloud.aiplatform_v1beta1.types import entity_type as gca_entity_type
 from google.cloud.aiplatform_v1beta1.types import feature
@@ -1694,6 +1695,7 @@ def test_delete_featurestore_flattened():
         # using the keyword arguments to the method.
         client.delete_featurestore(
             name='name_value',
+            force=True,
         )
 
         # Establish that the underlying call was made with the expected
@@ -1701,6 +1703,7 @@ def test_delete_featurestore_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
+        assert args[0].force == True
 
 
 def test_delete_featurestore_flattened_error():
@@ -1714,6 +1717,7 @@ def test_delete_featurestore_flattened_error():
         client.delete_featurestore(
             featurestore_service.DeleteFeaturestoreRequest(),
             name='name_value',
+            force=True,
         )
 
 
@@ -1737,6 +1741,7 @@ async def test_delete_featurestore_flattened_async():
         # using the keyword arguments to the method.
         response = await client.delete_featurestore(
             name='name_value',
+            force=True,
         )
 
         # Establish that the underlying call was made with the expected
@@ -1744,6 +1749,7 @@ async def test_delete_featurestore_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
+        assert args[0].force == True
 
 
 @pytest.mark.asyncio
@@ -1758,6 +1764,7 @@ async def test_delete_featurestore_flattened_error_async():
         await client.delete_featurestore(
             featurestore_service.DeleteFeaturestoreRequest(),
             name='name_value',
+            force=True,
         )
 
 
@@ -3059,6 +3066,7 @@ def test_delete_entity_type_flattened():
         # using the keyword arguments to the method.
         client.delete_entity_type(
             name='name_value',
+            force=True,
         )
 
         # Establish that the underlying call was made with the expected
@@ -3066,6 +3074,7 @@ def test_delete_entity_type_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
+        assert args[0].force == True
 
 
 def test_delete_entity_type_flattened_error():
@@ -3079,6 +3088,7 @@ def test_delete_entity_type_flattened_error():
         client.delete_entity_type(
             featurestore_service.DeleteEntityTypeRequest(),
             name='name_value',
+            force=True,
         )
 
 
@@ -3102,6 +3112,7 @@ async def test_delete_entity_type_flattened_async():
         # using the keyword arguments to the method.
         response = await client.delete_entity_type(
             name='name_value',
+            force=True,
         )
 
         # Establish that the underlying call was made with the expected
@@ -3109,6 +3120,7 @@ async def test_delete_entity_type_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
+        assert args[0].force == True
 
 
 @pytest.mark.asyncio
@@ -3123,6 +3135,7 @@ async def test_delete_entity_type_flattened_error_async():
         await client.delete_entity_type(
             featurestore_service.DeleteEntityTypeRequest(),
             name='name_value',
+            force=True,
         )
 
 
@@ -5587,6 +5600,7 @@ def test_search_features_flattened():
         # using the keyword arguments to the method.
         client.search_features(
             location='location_value',
+            query='query_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -5594,6 +5608,7 @@ def test_search_features_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].location == 'location_value'
+        assert args[0].query == 'query_value'
 
 
 def test_search_features_flattened_error():
@@ -5607,6 +5622,7 @@ def test_search_features_flattened_error():
         client.search_features(
             featurestore_service.SearchFeaturesRequest(),
             location='location_value',
+            query='query_value',
         )
 
 
@@ -5628,6 +5644,7 @@ async def test_search_features_flattened_async():
         # using the keyword arguments to the method.
         response = await client.search_features(
             location='location_value',
+            query='query_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -5635,6 +5652,7 @@ async def test_search_features_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].location == 'location_value'
+        assert args[0].query == 'query_value'
 
 
 @pytest.mark.asyncio
@@ -5649,6 +5667,7 @@ async def test_search_features_flattened_error_async():
         await client.search_features(
             featurestore_service.SearchFeaturesRequest(),
             location='location_value',
+            query='query_value',
         )
 
 

@@ -937,6 +937,11 @@
                 "delete_tensorboard_time_series"
               ]
             },
+            "BatchReadTensorboardTimeSeriesData": {
+              "methods": [
+                "batch_read_tensorboard_time_series_data"
+              ]
+            },
             "ReadTensorboardTimeSeriesData": {
               "methods": [
                 "read_tensorboard_time_series_data"

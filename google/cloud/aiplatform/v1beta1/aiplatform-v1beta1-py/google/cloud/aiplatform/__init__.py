@@ -117,6 +117,7 @@ from google.cloud.aiplatform_v1beta1.types.explanation import FeatureNoiseSigma
 from google.cloud.aiplatform_v1beta1.types.explanation import IntegratedGradientsAttribution
 from google.cloud.aiplatform_v1beta1.types.explanation import ModelExplanation
 from google.cloud.aiplatform_v1beta1.types.explanation import SampledShapleyAttribution
+from google.cloud.aiplatform_v1beta1.types.explanation import Similarity
 from google.cloud.aiplatform_v1beta1.types.explanation import SmoothGradConfig
 from google.cloud.aiplatform_v1beta1.types.explanation import XraiAttribution
 from google.cloud.aiplatform_v1beta1.types.explanation_metadata import ExplanationMetadata
@@ -391,6 +392,8 @@ from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreat
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardRunsResponse
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardTimeSeriesRequest
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchCreateTensorboardTimeSeriesResponse
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchReadTensorboardTimeSeriesDataRequest
+from google.cloud.aiplatform_v1beta1.types.tensorboard_service import BatchReadTensorboardTimeSeriesDataResponse
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import CreateTensorboardExperimentRequest
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import CreateTensorboardOperationMetadata
 from google.cloud.aiplatform_v1beta1.types.tensorboard_service import CreateTensorboardRequest
@@ -565,6 +568,7 @@ __all__ = ('DatasetServiceClient',
     'IntegratedGradientsAttribution',
     'ModelExplanation',
     'SampledShapleyAttribution',
+    'Similarity',
     'SmoothGradConfig',
     'XraiAttribution',
     'ExplanationMetadata',
@@ -839,6 +843,8 @@ __all__ = ('DatasetServiceClient',
     'BatchCreateTensorboardRunsResponse',
     'BatchCreateTensorboardTimeSeriesRequest',
     'BatchCreateTensorboardTimeSeriesResponse',
+    'BatchReadTensorboardTimeSeriesDataRequest',
+    'BatchReadTensorboardTimeSeriesDataResponse',
     'CreateTensorboardExperimentRequest',
     'CreateTensorboardOperationMetadata',
     'CreateTensorboardRequest',

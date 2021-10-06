@@ -1439,6 +1439,66 @@ class ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::ClientTest < Min
     end
   end
 
+  def test_batch_read_tensorboard_time_series_data
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    tensorboard = "hello world"
+    time_series = ["hello world"]
+
+    batch_read_tensorboard_time_series_data_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :batch_read_tensorboard_time_series_data, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest, request
+      assert_equal "hello world", request["tensorboard"]
+      assert_equal ["hello world"], request["time_series"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, batch_read_tensorboard_time_series_data_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.batch_read_tensorboard_time_series_data({ tensorboard: tensorboard, time_series: time_series }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.batch_read_tensorboard_time_series_data tensorboard: tensorboard, time_series: time_series do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.batch_read_tensorboard_time_series_data ::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest.new(tensorboard: tensorboard, time_series: time_series) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.batch_read_tensorboard_time_series_data({ tensorboard: tensorboard, time_series: time_series }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.batch_read_tensorboard_time_series_data(::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest.new(tensorboard: tensorboard, time_series: time_series), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, batch_read_tensorboard_time_series_data_client_stub.call_rpc_count
+    end
+  end
+
   def test_read_tensorboard_time_series_data
     # Create GRPC objects.
     grpc_response = ::Google::Cloud::AIPlatform::V1beta1::ReadTensorboardTimeSeriesDataResponse.new

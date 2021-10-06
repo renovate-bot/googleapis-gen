@@ -13,7 +13,7 @@ public interface UpdateContextRequestOrBuilder extends
    * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
    * updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -26,7 +26,7 @@ public interface UpdateContextRequestOrBuilder extends
    * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
    * updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +39,7 @@ public interface UpdateContextRequestOrBuilder extends
    * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
    * updated.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];</code>

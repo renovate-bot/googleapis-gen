@@ -142,7 +142,6 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The resource name of the Model to export.
-        #     Format: `projects/{project}/locations/{location}/models/{model}`
         # @!attribute [rw] output_config
         #   @return [::Google::Cloud::AIPlatform::V1beta1::ExportModelRequest::OutputConfig]
         #     Required. The desired output location and configuration.

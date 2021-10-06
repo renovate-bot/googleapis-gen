@@ -12,7 +12,7 @@ public interface QueryExecutionInputsAndOutputsRequestOrBuilder extends
    * Required. The resource name of the Execution whose input and output Artifacts should
    * be retrieved as a LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -24,7 +24,7 @@ public interface QueryExecutionInputsAndOutputsRequestOrBuilder extends
    * Required. The resource name of the Execution whose input and output Artifacts should
    * be retrieved as a LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
    * <code>string execution = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

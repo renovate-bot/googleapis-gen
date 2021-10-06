@@ -38,6 +38,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :next_schedule_time, :message, 14, "google.protobuf.Timestamp"
       optional :stats_anomalies_base_directory, :message, 20, "google.cloud.aiplatform.v1beta1.GcsDestination"
       optional :encryption_spec, :message, 21, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
+      optional :enable_monitoring_pipeline_logs, :bool, 22
       optional :error, :message, 23, "google.rpc.Status"
     end
     add_enum "google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.MonitoringScheduleState" do

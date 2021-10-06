@@ -136,12 +136,15 @@ class ListFeaturestoresRequest(proto.Message):
             Lists the featurestores that match the filter expression.
             The following fields are supported:
 
-            -  ``create_time``: Supports =, !=, <, >, <=, and >=
-               comparisons. Values must be in RFC 3339 format.
-            -  ``update_time``: Supports =, !=, <, >, <=, and >=
-               comparisons. Values must be in RFC 3339 format.
-            -  ``online_serving_config.fixed_node_count``: Supports =,
-               !=, <, >, <=, and >= comparisons.
+            -  ``create_time``: Supports ``=``, ``!=``, ``<``, ``>``,
+               ``<=``, and ``>=`` comparisons. Values must be in RFC
+               3339 format.
+            -  ``update_time``: Supports ``=``, ``!=``, ``<``, ``>``,
+               ``<=``, and ``>=`` comparisons. Values must be in RFC
+               3339 format.
+            -  ``online_serving_config.fixed_node_count``: Supports
+               ``=``, ``!=``, ``<``, ``>``, ``<=``, and ``>=``
+               comparisons.
             -  ``labels``: Supports key-value equality and key presence.
 
             Examples:
@@ -455,7 +458,6 @@ class ImportFeatureValuesResponse(proto.Message):
 class BatchReadFeatureValuesRequest(proto.Message):
     r"""Request message for
     [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchReadFeatureValues].
-    (- Next Id: 6 -)
 
     Attributes:
         csv_read_instances (google.cloud.aiplatform_v1beta1.types.CsvSource):
@@ -807,10 +809,12 @@ class ListEntityTypesRequest(proto.Message):
             Lists the EntityTypes that match the filter expression. The
             following filters are supported:
 
-            -  ``create_time``: Supports =, !=, <, >, >=, and <=
-               comparisons. Values must be in RFC 3339 format.
-            -  ``update_time``: Supports =, !=, <, >, >=, and <=
-               comparisons. Values must be in RFC 3339 format.
+            -  ``create_time``: Supports ``=``, ``!=``, ``<``, ``>``,
+               ``>=``, and ``<=`` comparisons. Values must be in RFC
+               3339 format.
+            -  ``update_time``: Supports ``=``, ``!=``, ``<``, ``>``,
+               ``>=``, and ``<=`` comparisons. Values must be in RFC
+               3339 format.
             -  ``labels``: Supports key-value equality as well as key
                presence.
 
@@ -1217,9 +1221,9 @@ class SearchFeaturesRequest(proto.Message):
 
             -  Removing leading/trailing whitespace and tokenizing the
                search value. Characters that are not one of alphanumeric
-               [a-zA-Z0-9], underscore [_], or asterisk [*] are treated
-               as delimiters for tokens. (*) is treated as a wildcard
-               that matches characters within a token.
+               ``[a-zA-Z0-9]``, underscore ``_``, or asterisk ``*`` are
+               treated as delimiters for tokens. ``*`` is treated as a
+               wildcard that matches characters within a token.
             -  Ignoring case.
             -  Prepending an asterisk to the first and appending an
                asterisk to the last token in QUERY.

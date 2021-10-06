@@ -55,6 +55,10 @@ module Google
         # @!attribute [r] state
         #   @return [::Google::Cloud::AIPlatform::V1beta1::Featurestore::State]
         #     Output only. State of the featurestore.
+        # @!attribute [rw] encryption_spec
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
+        #     Optional. Customer-managed encryption key spec for data storage. If set, both of the
+        #     online and offline data storage will be secured by this key.
         class Featurestore
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

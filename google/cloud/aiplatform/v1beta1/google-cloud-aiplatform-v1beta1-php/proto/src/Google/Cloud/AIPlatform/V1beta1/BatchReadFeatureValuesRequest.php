@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Request message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchReadFeatureValues].
- * (- Next Id: 6 -)
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest</code>
  */

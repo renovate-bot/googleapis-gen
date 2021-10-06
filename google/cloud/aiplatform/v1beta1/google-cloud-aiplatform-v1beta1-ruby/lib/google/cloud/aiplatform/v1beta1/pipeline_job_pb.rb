@@ -54,8 +54,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :state, :enum, 7, "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.State"
       optional :execution, :message, 8, "google.cloud.aiplatform.v1beta1.Execution"
       optional :error, :message, 9, "google.rpc.Status"
+      repeated :pipeline_task_status, :message, 13, "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus"
       map :inputs, :string, :message, 10, "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList"
       map :outputs, :string, :message, 11, "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus" do
+      optional :update_time, :message, 1, "google.protobuf.Timestamp"
+      optional :state, :enum, 2, "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.State"
+      optional :error, :message, 3, "google.rpc.Status"
     end
     add_message "google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList" do
       repeated :artifacts, :message, 1, "google.cloud.aiplatform.v1beta1.Artifact"
@@ -96,6 +102,7 @@ module Google
         PipelineJob::RuntimeConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig").msgclass
         PipelineJobDetail = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineJobDetail").msgclass
         PipelineTaskDetail = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineTaskDetail").msgclass
+        PipelineTaskDetail::PipelineTaskStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus").msgclass
         PipelineTaskDetail::ArtifactList = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList").msgclass
         PipelineTaskDetail::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineTaskDetail.State").enummodule
         PipelineTaskExecutorDetail = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail").msgclass

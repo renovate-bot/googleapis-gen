@@ -161,6 +161,11 @@ class ModelDeploymentMonitoringJob(proto.Message):
             ModelDeploymentMonitoringJob and all sub-
             resources of this ModelDeploymentMonitoringJob
             will be secured by this key.
+        enable_monitoring_pipeline_logs (bool):
+            If true, the scheduled monitoring pipeline status logs are
+            sent to Google Cloud Logging. Please note the logs incur
+            cost, which are subject to `Cloud Logging
+            pricing <https://cloud.google.com/logging#pricing>`__.
         error (google.rpc.status_pb2.Status):
             Output only. Only populated when the job's state is
             ``JOB_STATE_FAILED`` or ``JOB_STATE_CANCELLED``.
@@ -266,6 +271,10 @@ class ModelDeploymentMonitoringJob(proto.Message):
         proto.MESSAGE,
         number=21,
         message=gca_encryption_spec.EncryptionSpec,
+    )
+    enable_monitoring_pipeline_logs = proto.Field(
+        proto.BOOL,
+        number=22,
     )
     error = proto.Field(
         proto.MESSAGE,

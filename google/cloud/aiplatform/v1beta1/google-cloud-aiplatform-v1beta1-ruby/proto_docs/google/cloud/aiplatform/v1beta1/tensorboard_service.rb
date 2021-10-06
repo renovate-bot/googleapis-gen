@@ -434,8 +434,7 @@ module Google
         #   @return [::String]
         #     Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
         #     will become the final component of the TensorboardTimeSeries's resource
-        #     name. Ref: go/ucaip-user-specified-id
-        #
+        #     name.
         #     This value should match "[a-z0-9][a-z0-9-]\\{0, 127}"
         # @!attribute [rw] tensorboard_time_series
         #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries]
@@ -532,6 +531,34 @@ module Google
         #     Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
         class DeleteTensorboardTimeSeriesRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for
+        # {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#batch_read_tensorboard_time_series_data TensorboardService.BatchReadTensorboardTimeSeriesData}.
+        # @!attribute [rw] tensorboard
+        #   @return [::String]
+        #     Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
+        #     read data from. Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
+        #     The TensorboardTimeSeries referenced by {::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest#time_series time_series} must be sub
+        #     resources of this Tensorboard.
+        # @!attribute [rw] time_series
+        #   @return [::Array<::String>]
+        #     Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
+        class BatchReadTensorboardTimeSeriesDataRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for
+        # {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#batch_read_tensorboard_time_series_data TensorboardService.BatchReadTensorboardTimeSeriesData}.
+        # @!attribute [rw] time_series_data
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TimeSeriesData>]
+        #     The returned time series data.
+        class BatchReadTensorboardTimeSeriesDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

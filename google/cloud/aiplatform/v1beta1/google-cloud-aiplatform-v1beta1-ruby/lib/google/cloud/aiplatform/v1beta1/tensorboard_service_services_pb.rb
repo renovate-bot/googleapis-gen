@@ -77,11 +77,17 @@ module Google
             rpc :ListTensorboardTimeSeries, ::Google::Cloud::AIPlatform::V1beta1::ListTensorboardTimeSeriesRequest, ::Google::Cloud::AIPlatform::V1beta1::ListTensorboardTimeSeriesResponse
             # Deletes a TensorboardTimeSeries.
             rpc :DeleteTensorboardTimeSeries, ::Google::Cloud::AIPlatform::V1beta1::DeleteTensorboardTimeSeriesRequest, ::Google::Longrunning::Operation
-            # Reads a TensorboardTimeSeries' data. Data is returned in paginated
-            # responses. By default, if the number of data points stored is less than
-            # 1000, all data will be returned. Otherwise, 1000 data points will be
-            # randomly selected from this time series and returned. This value can be
-            # changed by changing max_data_points.
+            # Reads multiple TensorboardTimeSeries' data. The data point number limit is
+            # 1000 for scalars, 100 for tensors and blob references. If the number of
+            # data points stored is less than the limit, all data will be returned.
+            # Otherwise, that limit number of data points will be randomly selected from
+            # this time series and returned.
+            rpc :BatchReadTensorboardTimeSeriesData, ::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest, ::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataResponse
+            # Reads a TensorboardTimeSeries' data. By default, if the number of data
+            # points stored is less than 1000, all data will be returned. Otherwise, 1000
+            # data points will be randomly selected from this time series and returned.
+            # This value can be changed by changing max_data_points, which can't be
+            # greater than 10k.
             rpc :ReadTensorboardTimeSeriesData, ::Google::Cloud::AIPlatform::V1beta1::ReadTensorboardTimeSeriesDataRequest, ::Google::Cloud::AIPlatform::V1beta1::ReadTensorboardTimeSeriesDataResponse
             # Gets bytes of TensorboardBlobs.
             # This is to allow reading blob data stored in consumer project's Cloud

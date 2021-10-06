@@ -265,6 +265,11 @@ class TensorboardServiceTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.batch_read_tensorboard_time_series_data: gapic_v1.method.wrap_method(
+                self.batch_read_tensorboard_time_series_data,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.read_tensorboard_time_series_data: gapic_v1.method.wrap_method(
                 self.read_tensorboard_time_series_data,
                 default_timeout=None,
@@ -501,6 +506,15 @@ class TensorboardServiceTransport(abc.ABC):
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def batch_read_tensorboard_time_series_data(self) -> Callable[
+            [tensorboard_service.BatchReadTensorboardTimeSeriesDataRequest],
+            Union[
+                tensorboard_service.BatchReadTensorboardTimeSeriesDataResponse,
+                Awaitable[tensorboard_service.BatchReadTensorboardTimeSeriesDataResponse]
             ]]:
         raise NotImplementedError()
 

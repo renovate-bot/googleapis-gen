@@ -26,6 +26,11 @@
                     "retry_codes_name": "no_retry_codes",
                     "retry_params_name": "no_retry_params"
                 },
+                "BatchReadTensorboardTimeSeriesData": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "CreateTensorboard": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "no_retry_codes",

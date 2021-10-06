@@ -20,7 +20,7 @@ class UpdateExecutionRequest extends \Google\Protobuf\Internal\Message
      * The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
      * to be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Execution execution = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -51,7 +51,7 @@ class UpdateExecutionRequest extends \Google\Protobuf\Internal\Message
      *           The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
      *           to be updated.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. A FieldMask indicating which fields should be updated.
      *           Functionality of this field is not yet supported.
@@ -70,7 +70,7 @@ class UpdateExecutionRequest extends \Google\Protobuf\Internal\Message
      * The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
      * to be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Execution execution = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\AIPlatform\V1beta1\Execution|null
@@ -95,7 +95,7 @@ class UpdateExecutionRequest extends \Google\Protobuf\Internal\Message
      * The Execution's [Execution.name][google.cloud.aiplatform.v1beta1.Execution.name] field is used to identify the Execution
      * to be updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Execution execution = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\Execution $var

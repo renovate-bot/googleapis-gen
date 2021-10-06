@@ -52,6 +52,9 @@ class SpecialistPool(proto.Message):
         pending_data_labeling_jobs (Sequence[str]):
             Output only. The resource name of the pending
             data labeling jobs.
+        specialist_worker_emails (Sequence[str]):
+            The email addresses of workers in the
+            SpecialistPool.
     """
 
     name = proto.Field(
@@ -73,6 +76,10 @@ class SpecialistPool(proto.Message):
     pending_data_labeling_jobs = proto.RepeatedField(
         proto.STRING,
         number=5,
+    )
+    specialist_worker_emails = proto.RepeatedField(
+        proto.STRING,
+        number=7,
     )
 
 

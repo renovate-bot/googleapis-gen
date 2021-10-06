@@ -170,6 +170,17 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def model_path(project: str,location: str,model: str,) -> str:
+        """Returns a fully-qualified model string."""
+        return "projects/{project}/locations/{location}/models/{model}".format(project=project, location=location, model=model, )
+
+    @staticmethod
+    def parse_model_path(path: str) -> Dict[str,str]:
+        """Parses a model path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/models/(?P<model>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )

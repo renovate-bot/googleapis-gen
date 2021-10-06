@@ -25,15 +25,15 @@ module Google
         # @!attribute [rw] entity_type
         #   @return [::String]
         #     Required. The resource name of the EntityType for the entity being read.
-        #     Value format: `projects/{project}/locations/{location}/featurestores/
-        #     \\{featurestore}/entityTypes/\\{entityType}`. For example,
-        #     for a machine learning model predicting user clicks on a website, an
-        #     EntityType ID could be "user".
+        #     Value format:
+        #     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+        #     For example, for a machine learning model predicting user clicks on a
+        #     website, an EntityType ID could be `user`.
         # @!attribute [rw] entity_id
         #   @return [::String]
         #     Required. ID for a specific entity. For example,
         #     for a machine learning model predicting user clicks on a website, an entity
-        #     ID could be "user_123".
+        #     ID could be `user_123`.
         # @!attribute [rw] feature_selector
         #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureSelector]
         #     Required. Selector choosing Features of the target EntityType.
@@ -71,8 +71,7 @@ module Google
           #   @return [::String]
           #     The resource name of the EntityType from the
           #     {::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesRequest ReadFeatureValuesRequest}. Value format:
-          #     `projects/{project}/locations/{location}/featurestores/
-          #     \\{featurestore}/entityTypes/\\{entityType}`.
+          #     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
           # @!attribute [rw] feature_descriptors
           #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse::FeatureDescriptor>]
           #     List of Feature metadata corresponding to each piece of
@@ -120,15 +119,16 @@ module Google
         # @!attribute [rw] entity_type
         #   @return [::String]
         #     Required. The resource name of the entities' type.
-        #     Value format: `projects/{project}/locations/{location}/featurestores/
-        #     \\{featurestore}/entityTypes/\\{entityType}`. For example,
+        #     Value format:
+        #     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+        #     For example,
         #     for a machine learning model predicting user clicks on a website, an
-        #     EntityType ID could be "user".
+        #     EntityType ID could be `user`.
         # @!attribute [rw] entity_ids
         #   @return [::Array<::String>]
         #     Required. IDs of entities to read Feature values of. The maximum number of IDs is
         #     100. For example, for a machine learning model predicting user clicks on a
-        #     website, an entity ID could be "user_123".
+        #     website, an entity ID could be `user_123`.
         # @!attribute [rw] feature_selector
         #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureSelector]
         #     Required. Selector choosing Features of the target EntityType. Feature IDs will be

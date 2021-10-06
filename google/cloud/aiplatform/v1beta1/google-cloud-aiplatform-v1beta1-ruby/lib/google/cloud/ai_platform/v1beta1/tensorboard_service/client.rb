@@ -1487,8 +1487,7 @@ module Google
             #   @param tensorboard_time_series_id [::String]
             #     Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
             #     will become the final component of the TensorboardTimeSeries's resource
-            #     name. Ref: go/ucaip-user-specified-id
-            #
+            #     name.
             #     This value should match "[a-z0-9][a-z0-9-]\\{0, 127}"
             #   @param tensorboard_time_series [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries, ::Hash]
             #     Required. The TensorboardTimeSeries to create.
@@ -1850,11 +1849,90 @@ module Google
             end
 
             ##
-            # Reads a TensorboardTimeSeries' data. Data is returned in paginated
-            # responses. By default, if the number of data points stored is less than
-            # 1000, all data will be returned. Otherwise, 1000 data points will be
-            # randomly selected from this time series and returned. This value can be
-            # changed by changing max_data_points.
+            # Reads multiple TensorboardTimeSeries' data. The data point number limit is
+            # 1000 for scalars, 100 for tensors and blob references. If the number of
+            # data points stored is less than the limit, all data will be returned.
+            # Otherwise, that limit number of data points will be randomly selected from
+            # this time series and returned.
+            #
+            # @overload batch_read_tensorboard_time_series_data(request, options = nil)
+            #   Pass arguments to `batch_read_tensorboard_time_series_data` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload batch_read_tensorboard_time_series_data(tensorboard: nil, time_series: nil)
+            #   Pass arguments to `batch_read_tensorboard_time_series_data` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param tensorboard [::String]
+            #     Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
+            #     read data from. Format:
+            #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
+            #     The TensorboardTimeSeries referenced by {::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest#time_series time_series} must be sub
+            #     resources of this Tensorboard.
+            #   @param time_series [::Array<::String>]
+            #     Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+            #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def batch_read_tensorboard_time_series_data request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1beta1::BatchReadTensorboardTimeSeriesDataRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.batch_read_tensorboard_time_series_data.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "tensorboard" => request.tensorboard
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.batch_read_tensorboard_time_series_data.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.batch_read_tensorboard_time_series_data.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @tensorboard_service_stub.call_rpc :batch_read_tensorboard_time_series_data, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Reads a TensorboardTimeSeries' data. By default, if the number of data
+            # points stored is less than 1000, all data will be returned. Otherwise, 1000
+            # data points will be randomly selected from this time series and returned.
+            # This value can be changed by changing max_data_points, which can't be
+            # greater than 10k.
             #
             # @overload read_tensorboard_time_series_data(request, options = nil)
             #   Pass arguments to `read_tensorboard_time_series_data` via a request object, either of type
@@ -2493,6 +2571,11 @@ module Google
                 #
                 attr_reader :delete_tensorboard_time_series
                 ##
+                # RPC-specific configuration for `batch_read_tensorboard_time_series_data`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :batch_read_tensorboard_time_series_data
+                ##
                 # RPC-specific configuration for `read_tensorboard_time_series_data`
                 # @return [::Gapic::Config::Method]
                 #
@@ -2564,6 +2647,8 @@ module Google
                   @list_tensorboard_time_series = ::Gapic::Config::Method.new list_tensorboard_time_series_config
                   delete_tensorboard_time_series_config = parent_rpcs.delete_tensorboard_time_series if parent_rpcs.respond_to? :delete_tensorboard_time_series
                   @delete_tensorboard_time_series = ::Gapic::Config::Method.new delete_tensorboard_time_series_config
+                  batch_read_tensorboard_time_series_data_config = parent_rpcs.batch_read_tensorboard_time_series_data if parent_rpcs.respond_to? :batch_read_tensorboard_time_series_data
+                  @batch_read_tensorboard_time_series_data = ::Gapic::Config::Method.new batch_read_tensorboard_time_series_data_config
                   read_tensorboard_time_series_data_config = parent_rpcs.read_tensorboard_time_series_data if parent_rpcs.respond_to? :read_tensorboard_time_series_data
                   @read_tensorboard_time_series_data = ::Gapic::Config::Method.new read_tensorboard_time_series_data_config
                   read_tensorboard_blob_data_config = parent_rpcs.read_tensorboard_blob_data if parent_rpcs.respond_to? :read_tensorboard_blob_data

@@ -20,7 +20,7 @@ class UpdateContextRequest extends \Google\Protobuf\Internal\Message
      * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
      * updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -51,7 +51,7 @@ class UpdateContextRequest extends \Google\Protobuf\Internal\Message
      *           The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
      *           updated.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. A FieldMask indicating which fields should be updated.
      *           Functionality of this field is not yet supported.
@@ -70,7 +70,7 @@ class UpdateContextRequest extends \Google\Protobuf\Internal\Message
      * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
      * updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\AIPlatform\V1beta1\Context|null
@@ -95,7 +95,7 @@ class UpdateContextRequest extends \Google\Protobuf\Internal\Message
      * The Context's [Context.name][google.cloud.aiplatform.v1beta1.Context.name] field is used to identify the Context to be
      * updated.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Context context = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\Context $var

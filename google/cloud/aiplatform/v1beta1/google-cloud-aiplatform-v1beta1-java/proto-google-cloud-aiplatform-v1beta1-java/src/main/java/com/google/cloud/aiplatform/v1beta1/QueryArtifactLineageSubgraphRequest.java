@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
    * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
    * LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
    * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
    * LineageSubgraph.
    * Format:
-   * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+   * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
      * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
      * LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
      * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
      * LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
      * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
      * LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -684,7 +684,7 @@ private static final long serialVersionUID = 0L;
      * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
      * LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -704,7 +704,7 @@ private static final long serialVersionUID = 0L;
      * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
      * LineageSubgraph.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.

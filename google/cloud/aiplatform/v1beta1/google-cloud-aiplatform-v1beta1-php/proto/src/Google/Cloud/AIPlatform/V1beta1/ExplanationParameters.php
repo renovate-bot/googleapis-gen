@@ -64,6 +64,9 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
      *           house or an animal. If the images are taken in artificial environments,
      *           like a lab or manufacturing line, or from diagnostic equipment, like
      *           x-rays or quality-control cameras, use Integrated Gradients instead.
+     *     @type \Google\Cloud\AIPlatform\V1beta1\Similarity $similarity
+     *           Similarity explainability that returns the nearest neighbors from the
+     *           provided dataset.
      *     @type int $top_k
      *           If populated, returns attributions for top K indices of outputs
      *           (defaults to 1). Only applies to Models that predicts more than one outputs
@@ -199,6 +202,39 @@ class ExplanationParameters extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\XraiAttribution::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * @return \Google\Cloud\AIPlatform\V1beta1\Similarity|null
+     */
+    public function getSimilarity()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasSimilarity()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * @param \Google\Cloud\AIPlatform\V1beta1\Similarity $var
+     * @return $this
+     */
+    public function setSimilarity($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\Similarity::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }

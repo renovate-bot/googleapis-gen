@@ -45,6 +45,9 @@ module Google
         # @!attribute [r] pending_data_labeling_jobs
         #   @return [::Array<::String>]
         #     Output only. The resource name of the pending data labeling jobs.
+        # @!attribute [rw] specialist_worker_emails
+        #   @return [::Array<::String>]
+        #     The email addresses of workers in the SpecialistPool.
         class SpecialistPool
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

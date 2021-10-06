@@ -26,14 +26,14 @@ class ListFeaturestoresRequest extends \Google\Protobuf\Internal\Message
     /**
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, <, >, <=,
-     * and >= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `<`, `>`,
+     * `<=`, and `>=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time > "2020-01-01" OR update_time > "2020-01-01"`
@@ -95,14 +95,14 @@ class ListFeaturestoresRequest extends \Google\Protobuf\Internal\Message
      *     @type string $filter
      *           Lists the featurestores that match the filter expression. The following
      *           fields are supported:
-     *           * `create_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     *           be
+     *           * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be
      *             in RFC 3339 format.
-     *           * `update_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     *           be
+     *           * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be
      *             in RFC 3339 format.
-     *           * `online_serving_config.fixed_node_count`: Supports =, !=, <, >, <=,
-     *           and >= comparisons.
+     *           * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `<`, `>`,
+     *           `<=`, and `>=` comparisons.
      *           * `labels`: Supports key-value equality and key presence.
      *           Examples:
      *           * `create_time > "2020-01-01" OR update_time > "2020-01-01"`
@@ -170,14 +170,14 @@ class ListFeaturestoresRequest extends \Google\Protobuf\Internal\Message
     /**
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, <, >, <=,
-     * and >= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `<`, `>`,
+     * `<=`, and `>=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time > "2020-01-01" OR update_time > "2020-01-01"`
@@ -196,14 +196,14 @@ class ListFeaturestoresRequest extends \Google\Protobuf\Internal\Message
     /**
      * Lists the featurestores that match the filter expression. The following
      * fields are supported:
-     * * `create_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     * be
+     * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `update_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
-     * be
+     * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     * Values must be
      *   in RFC 3339 format.
-     * * `online_serving_config.fixed_node_count`: Supports =, !=, <, >, <=,
-     * and >= comparisons.
+     * * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `<`, `>`,
+     * `<=`, and `>=` comparisons.
      * * `labels`: Supports key-value equality and key presence.
      * Examples:
      * * `create_time > "2020-01-01" OR update_time > "2020-01-01"`

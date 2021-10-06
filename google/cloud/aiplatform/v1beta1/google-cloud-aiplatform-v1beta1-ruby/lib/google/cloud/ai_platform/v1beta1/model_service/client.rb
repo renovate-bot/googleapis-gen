@@ -485,7 +485,8 @@ module Google
 
             ##
             # Deletes a Model.
-            # Note: Model can only be deleted if there are no DeployedModels created
+            #
+            # Model can only be deleted if there are no [DeployedModels][] created
             # from it.
             #
             # @overload delete_model(request, options = nil)
@@ -577,7 +578,6 @@ module Google
             #
             #   @param name [::String]
             #     Required. The resource name of the Model to export.
-            #     Format: `projects/{project}/locations/{location}/models/{model}`
             #   @param output_config [::Google::Cloud::AIPlatform::V1beta1::ExportModelRequest::OutputConfig, ::Hash]
             #     Required. The desired output location and configuration.
             #

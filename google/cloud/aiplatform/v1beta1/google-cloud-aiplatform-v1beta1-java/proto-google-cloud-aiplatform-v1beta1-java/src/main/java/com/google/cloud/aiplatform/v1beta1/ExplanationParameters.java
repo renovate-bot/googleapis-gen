@@ -112,6 +112,20 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.google.cloud.aiplatform.v1beta1.Similarity.Builder subBuilder = null;
+            if (methodCase_ == 7) {
+              subBuilder = ((com.google.cloud.aiplatform.v1beta1.Similarity) method_).toBuilder();
+            }
+            method_ =
+                input.readMessage(com.google.cloud.aiplatform.v1beta1.Similarity.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.Similarity) method_);
+              method_ = subBuilder.buildPartial();
+            }
+            methodCase_ = 7;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -152,6 +166,7 @@ private static final long serialVersionUID = 0L;
     SAMPLED_SHAPLEY_ATTRIBUTION(1),
     INTEGRATED_GRADIENTS_ATTRIBUTION(2),
     XRAI_ATTRIBUTION(3),
+    SIMILARITY(7),
     METHOD_NOT_SET(0);
     private final int value;
     private MethodCase(int value) {
@@ -172,6 +187,7 @@ private static final long serialVersionUID = 0L;
         case 1: return SAMPLED_SHAPLEY_ATTRIBUTION;
         case 2: return INTEGRATED_GRADIENTS_ATTRIBUTION;
         case 3: return XRAI_ATTRIBUTION;
+        case 7: return SIMILARITY;
         case 0: return METHOD_NOT_SET;
         default: return null;
       }
@@ -352,6 +368,52 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.aiplatform.v1beta1.XraiAttribution.getDefaultInstance();
   }
 
+  public static final int SIMILARITY_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Similarity explainability that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * @return Whether the similarity field is set.
+   */
+  @java.lang.Override
+  public boolean hasSimilarity() {
+    return methodCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Similarity explainability that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   * @return The similarity.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Similarity getSimilarity() {
+    if (methodCase_ == 7) {
+       return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Similarity explainability that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder getSimilarityOrBuilder() {
+    if (methodCase_ == 7) {
+       return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+  }
+
   public static final int TOP_K_FIELD_NUMBER = 4;
   private int topK_;
   /**
@@ -461,6 +523,9 @@ private static final long serialVersionUID = 0L;
     if (outputIndices_ != null) {
       output.writeMessage(5, getOutputIndices());
     }
+    if (methodCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.Similarity) method_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -489,6 +554,10 @@ private static final long serialVersionUID = 0L;
     if (outputIndices_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getOutputIndices());
+    }
+    if (methodCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.google.cloud.aiplatform.v1beta1.Similarity) method_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -526,6 +595,10 @@ private static final long serialVersionUID = 0L;
         if (!getXraiAttribution()
             .equals(other.getXraiAttribution())) return false;
         break;
+      case 7:
+        if (!getSimilarity()
+            .equals(other.getSimilarity())) return false;
+        break;
       case 0:
       default:
     }
@@ -558,6 +631,10 @@ private static final long serialVersionUID = 0L;
       case 3:
         hash = (37 * hash) + XRAI_ATTRIBUTION_FIELD_NUMBER;
         hash = (53 * hash) + getXraiAttribution().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + SIMILARITY_FIELD_NUMBER;
+        hash = (53 * hash) + getSimilarity().hashCode();
         break;
       case 0:
       default:
@@ -756,6 +833,13 @@ private static final long serialVersionUID = 0L;
           result.method_ = xraiAttributionBuilder_.build();
         }
       }
+      if (methodCase_ == 7) {
+        if (similarityBuilder_ == null) {
+          result.method_ = method_;
+        } else {
+          result.method_ = similarityBuilder_.build();
+        }
+      }
       result.topK_ = topK_;
       if (outputIndicesBuilder_ == null) {
         result.outputIndices_ = outputIndices_;
@@ -828,6 +912,10 @@ private static final long serialVersionUID = 0L;
         }
         case XRAI_ATTRIBUTION: {
           mergeXraiAttribution(other.getXraiAttribution());
+          break;
+        }
+        case SIMILARITY: {
+          mergeSimilarity(other.getSimilarity());
           break;
         }
         case METHOD_NOT_SET: {
@@ -1515,6 +1603,192 @@ private static final long serialVersionUID = 0L;
       methodCase_ = 3;
       onChanged();;
       return xraiAttributionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.Similarity, com.google.cloud.aiplatform.v1beta1.Similarity.Builder, com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder> similarityBuilder_;
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * @return Whether the similarity field is set.
+     */
+    @java.lang.Override
+    public boolean hasSimilarity() {
+      return methodCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     * @return The similarity.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Similarity getSimilarity() {
+      if (similarityBuilder_ == null) {
+        if (methodCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+      } else {
+        if (methodCase_ == 7) {
+          return similarityBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    public Builder setSimilarity(com.google.cloud.aiplatform.v1beta1.Similarity value) {
+      if (similarityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        method_ = value;
+        onChanged();
+      } else {
+        similarityBuilder_.setMessage(value);
+      }
+      methodCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    public Builder setSimilarity(
+        com.google.cloud.aiplatform.v1beta1.Similarity.Builder builderForValue) {
+      if (similarityBuilder_ == null) {
+        method_ = builderForValue.build();
+        onChanged();
+      } else {
+        similarityBuilder_.setMessage(builderForValue.build());
+      }
+      methodCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    public Builder mergeSimilarity(com.google.cloud.aiplatform.v1beta1.Similarity value) {
+      if (similarityBuilder_ == null) {
+        if (methodCase_ == 7 &&
+            method_ != com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance()) {
+          method_ = com.google.cloud.aiplatform.v1beta1.Similarity.newBuilder((com.google.cloud.aiplatform.v1beta1.Similarity) method_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          method_ = value;
+        }
+        onChanged();
+      } else {
+        if (methodCase_ == 7) {
+          similarityBuilder_.mergeFrom(value);
+        }
+        similarityBuilder_.setMessage(value);
+      }
+      methodCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    public Builder clearSimilarity() {
+      if (similarityBuilder_ == null) {
+        if (methodCase_ == 7) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+      } else {
+        if (methodCase_ == 7) {
+          methodCase_ = 0;
+          method_ = null;
+        }
+        similarityBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Similarity.Builder getSimilarityBuilder() {
+      return getSimilarityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder getSimilarityOrBuilder() {
+      if ((methodCase_ == 7) && (similarityBuilder_ != null)) {
+        return similarityBuilder_.getMessageOrBuilder();
+      } else {
+        if (methodCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1beta1.Similarity) method_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Similarity explainability that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Similarity similarity = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.Similarity, com.google.cloud.aiplatform.v1beta1.Similarity.Builder, com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder> 
+        getSimilarityFieldBuilder() {
+      if (similarityBuilder_ == null) {
+        if (!(methodCase_ == 7)) {
+          method_ = com.google.cloud.aiplatform.v1beta1.Similarity.getDefaultInstance();
+        }
+        similarityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Similarity, com.google.cloud.aiplatform.v1beta1.Similarity.Builder, com.google.cloud.aiplatform.v1beta1.SimilarityOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Similarity) method_,
+                getParentForChildren(),
+                isClean());
+        method_ = null;
+      }
+      methodCase_ = 7;
+      onChanged();;
+      return similarityBuilder_;
     }
 
     private int topK_ ;

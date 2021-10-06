@@ -730,8 +730,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -742,8 +741,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -910,8 +908,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -934,8 +931,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The resource name of the EntityType from the
      * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-     * `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`.
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1390,8 +1386,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1413,8 +1408,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1437,8 +1431,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1459,8 +1452,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1476,8 +1468,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The resource name of the EntityType from the
        * [ReadFeatureValuesRequest][google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest]. Value format:
-       * `projects/{project}/locations/{location}/featurestores/
-       * {featurestore}/entityTypes/{entityType}`.
+       * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
        * </pre>
        *
        * <code>string entity_type = 1 [(.google.api.resource_reference) = { ... }</code>

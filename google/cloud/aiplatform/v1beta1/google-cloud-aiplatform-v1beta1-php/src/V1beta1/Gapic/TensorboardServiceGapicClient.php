@@ -44,6 +44,8 @@ use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsRequest;
 use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardRunsResponse;
 use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesRequest;
 use Google\Cloud\AIPlatform\V1beta1\BatchCreateTensorboardTimeSeriesResponse;
+use Google\Cloud\AIPlatform\V1beta1\BatchReadTensorboardTimeSeriesDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\BatchReadTensorboardTimeSeriesDataResponse;
 use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardExperimentRequest;
 use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardRequest;
 use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardRunRequest;
@@ -595,6 +597,62 @@ class TensorboardServiceGapicClient
     }
 
     /**
+     * Reads multiple TensorboardTimeSeries' data. The data point number limit is
+     * 1000 for scalars, 100 for tensors and blob references. If the number of
+     * data points stored is less than the limit, all data will be returned.
+     * Otherwise, that limit number of data points will be randomly selected from
+     * this time series and returned.
+     *
+     * Sample code:
+     * ```
+     * $tensorboardServiceClient = new TensorboardServiceClient();
+     * try {
+     *     $formattedTensorboard = $tensorboardServiceClient->tensorboardName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]');
+     *     $formattedTimeSeries = [
+     *         $tensorboardServiceClient->tensorboardTimeSeriesName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]', '[RUN]', '[TIME_SERIES]'),
+     *     ];
+     *     $response = $tensorboardServiceClient->batchReadTensorboardTimeSeriesData($formattedTensorboard, $formattedTimeSeries);
+     * } finally {
+     *     $tensorboardServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string   $tensorboard  Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
+     *                               read data from. Format:
+     *                               `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
+     *                               The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
+     *                               resources of this Tensorboard.
+     * @param string[] $timeSeries   Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     *                               `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
+     * @param array    $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\AIPlatform\V1beta1\BatchReadTensorboardTimeSeriesDataResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function batchReadTensorboardTimeSeriesData($tensorboard, $timeSeries, array $optionalArgs = [])
+    {
+        $request = new BatchReadTensorboardTimeSeriesDataRequest();
+        $requestParamHeaders = [];
+        $request->setTensorboard($tensorboard);
+        $request->setTimeSeries($timeSeries);
+        $requestParamHeaders['tensorboard'] = $tensorboard;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('BatchReadTensorboardTimeSeriesData', BatchReadTensorboardTimeSeriesDataResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Creates a Tensorboard.
      *
      * Sample code:
@@ -802,8 +860,7 @@ class TensorboardServiceGapicClient
      *     @type string $tensorboardTimeSeriesId
      *           Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
      *           will become the final component of the TensorboardTimeSeries's resource
-     *           name. Ref: go/ucaip-user-specified-id
-     *
+     *           name.
      *           This value should match "[a-z0-9][a-z0-9-]{0, 127}"
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
@@ -1785,11 +1842,11 @@ class TensorboardServiceGapicClient
     }
 
     /**
-     * Reads a TensorboardTimeSeries' data. Data is returned in paginated
-     * responses. By default, if the number of data points stored is less than
-     * 1000, all data will be returned. Otherwise, 1000 data points will be
-     * randomly selected from this time series and returned. This value can be
-     * changed by changing max_data_points.
+     * Reads a TensorboardTimeSeries' data. By default, if the number of data
+     * points stored is less than 1000, all data will be returned. Otherwise, 1000
+     * data points will be randomly selected from this time series and returned.
+     * This value can be changed by changing max_data_points, which can't be
+     * greater than 10k.
      *
      * Sample code:
      * ```

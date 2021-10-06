@@ -18,10 +18,11 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
 {
     /**
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      *
      * Generated from protobuf field <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -29,7 +30,7 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      *
      * Generated from protobuf field <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -50,14 +51,15 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
      *
      *     @type string $entity_type
      *           Required. The resource name of the entities' type.
-     *           Value format: `projects/{project}/locations/{location}/featurestores/
-     *           {featurestore}/entityTypes/{entityType}`. For example,
+     *           Value format:
+     *           `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     *           For example,
      *           for a machine learning model predicting user clicks on a website, an
-     *           EntityType ID could be "user".
+     *           EntityType ID could be `user`.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $entity_ids
      *           Required. IDs of entities to read Feature values of. The maximum number of IDs is
      *           100. For example, for a machine learning model predicting user clicks on a
-     *           website, an entity ID could be "user_123".
+     *           website, an entity ID could be `user_123`.
      *     @type \Google\Cloud\AIPlatform\V1beta1\FeatureSelector $feature_selector
      *           Required. Selector choosing Features of the target EntityType. Feature IDs will be
      *           deduplicated.
@@ -70,10 +72,11 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
 
     /**
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      *
      * Generated from protobuf field <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -85,10 +88,11 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
 
     /**
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      *
      * Generated from protobuf field <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -105,7 +109,7 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      *
      * Generated from protobuf field <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -118,7 +122,7 @@ class StreamingReadFeatureValuesRequest extends \Google\Protobuf\Internal\Messag
     /**
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      *
      * Generated from protobuf field <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

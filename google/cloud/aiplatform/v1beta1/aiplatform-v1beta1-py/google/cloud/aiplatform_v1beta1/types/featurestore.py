@@ -15,6 +15,7 @@
 #
 import proto  # type: ignore
 
+from google.cloud.aiplatform_v1beta1.types import encryption_spec as gca_encryption_spec
 from google.protobuf import timestamp_pb2  # type: ignore
 
 
@@ -63,6 +64,11 @@ class Featurestore(proto.Message):
             resources.
         state (google.cloud.aiplatform_v1beta1.types.Featurestore.State):
             Output only. State of the featurestore.
+        encryption_spec (google.cloud.aiplatform_v1beta1.types.EncryptionSpec):
+            Optional. Customer-managed encryption key
+            spec for data storage. If set, both of the
+            online and offline data storage will be secured
+            by this key.
     """
     class State(proto.Enum):
         r"""Possible states a Featurestore can have."""
@@ -119,6 +125,11 @@ class Featurestore(proto.Message):
         proto.ENUM,
         number=8,
         enum=State,
+    )
+    encryption_spec = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=gca_encryption_spec.EncryptionSpec,
     )
 
 

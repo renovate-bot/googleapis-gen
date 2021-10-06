@@ -18,7 +18,7 @@ class DeleteExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -41,7 +41,7 @@ class DeleteExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Required. The resource name of the Execution to delete.
      *           Format:
-     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     *           `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *     @type string $etag
      *           Optional. The etag of the Execution to delete.
      *           If this is provided, it must match the server's etag. Otherwise, the
@@ -56,7 +56,7 @@ class DeleteExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -69,7 +69,7 @@ class DeleteExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The resource name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -124,10 +124,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the entities' type.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
-   * {featurestore}/entityTypes/{entityType}`. For example,
+   * Value format:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+   * For example,
    * for a machine learning model predicting user clicks on a website, an
-   * EntityType ID could be "user".
+   * EntityType ID could be `user`.
    * </pre>
    *
    * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -149,10 +150,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The resource name of the entities' type.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
-   * {featurestore}/entityTypes/{entityType}`. For example,
+   * Value format:
+   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+   * For example,
    * for a machine learning model predicting user clicks on a website, an
-   * EntityType ID could be "user".
+   * EntityType ID could be `user`.
    * </pre>
    *
    * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -179,7 +181,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. IDs of entities to read Feature values of. The maximum number of IDs is
    * 100. For example, for a machine learning model predicting user clicks on a
-   * website, an entity ID could be "user_123".
+   * website, an entity ID could be `user_123`.
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -193,7 +195,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. IDs of entities to read Feature values of. The maximum number of IDs is
    * 100. For example, for a machine learning model predicting user clicks on a
-   * website, an entity ID could be "user_123".
+   * website, an entity ID could be `user_123`.
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -206,7 +208,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. IDs of entities to read Feature values of. The maximum number of IDs is
    * 100. For example, for a machine learning model predicting user clicks on a
-   * website, an entity ID could be "user_123".
+   * website, an entity ID could be `user_123`.
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -220,7 +222,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. IDs of entities to read Feature values of. The maximum number of IDs is
    * 100. For example, for a machine learning model predicting user clicks on a
-   * website, an entity ID could be "user_123".
+   * website, an entity ID could be `user_123`.
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -650,10 +652,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -674,10 +677,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -699,10 +703,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -722,10 +727,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -740,10 +746,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The resource name of the entities' type.
-     * Value format: `projects/{project}/locations/{location}/featurestores/
-     * {featurestore}/entityTypes/{entityType}`. For example,
+     * Value format:
+     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`.
+     * For example,
      * for a machine learning model predicting user clicks on a website, an
-     * EntityType ID could be "user".
+     * EntityType ID could be `user`.
      * </pre>
      *
      * <code>string entity_type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -773,7 +780,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -787,7 +794,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -800,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -814,7 +821,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -829,7 +836,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -851,7 +858,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -872,7 +879,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -891,7 +898,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -907,7 +914,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. IDs of entities to read Feature values of. The maximum number of IDs is
      * 100. For example, for a machine learning model predicting user clicks on a
-     * website, an entity ID could be "user_123".
+     * website, an entity ID could be `user_123`.
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>

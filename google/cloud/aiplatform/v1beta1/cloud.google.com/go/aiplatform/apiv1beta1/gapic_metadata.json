@@ -837,6 +837,11 @@
                 "BatchCreateTensorboardTimeSeries"
               ]
             },
+            "BatchReadTensorboardTimeSeriesData": {
+              "methods": [
+                "BatchReadTensorboardTimeSeriesData"
+              ]
+            },
             "CreateTensorboard": {
               "methods": [
                 "CreateTensorboard"

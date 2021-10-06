@@ -62,7 +62,8 @@ module Google
         #     "overwrite" update happens.
         # @!attribute [rw] monitoring_config
         #   @return [::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig]
-        #     Optional. The default monitoring configuration for all Features under this
+        #     Optional. The default monitoring configuration for all Features with value type
+        #     ({::Google::Cloud::AIPlatform::V1beta1::Feature::ValueType Feature.ValueType}) BOOL, STRING, DOUBLE or INT64 under this
         #     EntityType.
         #
         #     If this is populated with

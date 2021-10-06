@@ -41,33 +41,34 @@ var newTensorboardClientHook clientHook
 
 // TensorboardCallOptions contains the retry settings for each method of TensorboardClient.
 type TensorboardCallOptions struct {
-	CreateTensorboard                []gax.CallOption
-	GetTensorboard                   []gax.CallOption
-	UpdateTensorboard                []gax.CallOption
-	ListTensorboards                 []gax.CallOption
-	DeleteTensorboard                []gax.CallOption
-	CreateTensorboardExperiment      []gax.CallOption
-	GetTensorboardExperiment         []gax.CallOption
-	UpdateTensorboardExperiment      []gax.CallOption
-	ListTensorboardExperiments       []gax.CallOption
-	DeleteTensorboardExperiment      []gax.CallOption
-	CreateTensorboardRun             []gax.CallOption
-	BatchCreateTensorboardRuns       []gax.CallOption
-	GetTensorboardRun                []gax.CallOption
-	UpdateTensorboardRun             []gax.CallOption
-	ListTensorboardRuns              []gax.CallOption
-	DeleteTensorboardRun             []gax.CallOption
-	BatchCreateTensorboardTimeSeries []gax.CallOption
-	CreateTensorboardTimeSeries      []gax.CallOption
-	GetTensorboardTimeSeries         []gax.CallOption
-	UpdateTensorboardTimeSeries      []gax.CallOption
-	ListTensorboardTimeSeries        []gax.CallOption
-	DeleteTensorboardTimeSeries      []gax.CallOption
-	ReadTensorboardTimeSeriesData    []gax.CallOption
-	ReadTensorboardBlobData          []gax.CallOption
-	WriteTensorboardExperimentData   []gax.CallOption
-	WriteTensorboardRunData          []gax.CallOption
-	ExportTensorboardTimeSeriesData  []gax.CallOption
+	CreateTensorboard                  []gax.CallOption
+	GetTensorboard                     []gax.CallOption
+	UpdateTensorboard                  []gax.CallOption
+	ListTensorboards                   []gax.CallOption
+	DeleteTensorboard                  []gax.CallOption
+	CreateTensorboardExperiment        []gax.CallOption
+	GetTensorboardExperiment           []gax.CallOption
+	UpdateTensorboardExperiment        []gax.CallOption
+	ListTensorboardExperiments         []gax.CallOption
+	DeleteTensorboardExperiment        []gax.CallOption
+	CreateTensorboardRun               []gax.CallOption
+	BatchCreateTensorboardRuns         []gax.CallOption
+	GetTensorboardRun                  []gax.CallOption
+	UpdateTensorboardRun               []gax.CallOption
+	ListTensorboardRuns                []gax.CallOption
+	DeleteTensorboardRun               []gax.CallOption
+	BatchCreateTensorboardTimeSeries   []gax.CallOption
+	CreateTensorboardTimeSeries        []gax.CallOption
+	GetTensorboardTimeSeries           []gax.CallOption
+	UpdateTensorboardTimeSeries        []gax.CallOption
+	ListTensorboardTimeSeries          []gax.CallOption
+	DeleteTensorboardTimeSeries        []gax.CallOption
+	BatchReadTensorboardTimeSeriesData []gax.CallOption
+	ReadTensorboardTimeSeriesData      []gax.CallOption
+	ReadTensorboardBlobData            []gax.CallOption
+	WriteTensorboardExperimentData     []gax.CallOption
+	WriteTensorboardRunData            []gax.CallOption
+	ExportTensorboardTimeSeriesData    []gax.CallOption
 }
 
 func defaultTensorboardGRPCClientOptions() []option.ClientOption {
@@ -85,33 +86,34 @@ func defaultTensorboardGRPCClientOptions() []option.ClientOption {
 
 func defaultTensorboardCallOptions() *TensorboardCallOptions {
 	return &TensorboardCallOptions{
-		CreateTensorboard:                []gax.CallOption{},
-		GetTensorboard:                   []gax.CallOption{},
-		UpdateTensorboard:                []gax.CallOption{},
-		ListTensorboards:                 []gax.CallOption{},
-		DeleteTensorboard:                []gax.CallOption{},
-		CreateTensorboardExperiment:      []gax.CallOption{},
-		GetTensorboardExperiment:         []gax.CallOption{},
-		UpdateTensorboardExperiment:      []gax.CallOption{},
-		ListTensorboardExperiments:       []gax.CallOption{},
-		DeleteTensorboardExperiment:      []gax.CallOption{},
-		CreateTensorboardRun:             []gax.CallOption{},
-		BatchCreateTensorboardRuns:       []gax.CallOption{},
-		GetTensorboardRun:                []gax.CallOption{},
-		UpdateTensorboardRun:             []gax.CallOption{},
-		ListTensorboardRuns:              []gax.CallOption{},
-		DeleteTensorboardRun:             []gax.CallOption{},
-		BatchCreateTensorboardTimeSeries: []gax.CallOption{},
-		CreateTensorboardTimeSeries:      []gax.CallOption{},
-		GetTensorboardTimeSeries:         []gax.CallOption{},
-		UpdateTensorboardTimeSeries:      []gax.CallOption{},
-		ListTensorboardTimeSeries:        []gax.CallOption{},
-		DeleteTensorboardTimeSeries:      []gax.CallOption{},
-		ReadTensorboardTimeSeriesData:    []gax.CallOption{},
-		ReadTensorboardBlobData:          []gax.CallOption{},
-		WriteTensorboardExperimentData:   []gax.CallOption{},
-		WriteTensorboardRunData:          []gax.CallOption{},
-		ExportTensorboardTimeSeriesData:  []gax.CallOption{},
+		CreateTensorboard:                  []gax.CallOption{},
+		GetTensorboard:                     []gax.CallOption{},
+		UpdateTensorboard:                  []gax.CallOption{},
+		ListTensorboards:                   []gax.CallOption{},
+		DeleteTensorboard:                  []gax.CallOption{},
+		CreateTensorboardExperiment:        []gax.CallOption{},
+		GetTensorboardExperiment:           []gax.CallOption{},
+		UpdateTensorboardExperiment:        []gax.CallOption{},
+		ListTensorboardExperiments:         []gax.CallOption{},
+		DeleteTensorboardExperiment:        []gax.CallOption{},
+		CreateTensorboardRun:               []gax.CallOption{},
+		BatchCreateTensorboardRuns:         []gax.CallOption{},
+		GetTensorboardRun:                  []gax.CallOption{},
+		UpdateTensorboardRun:               []gax.CallOption{},
+		ListTensorboardRuns:                []gax.CallOption{},
+		DeleteTensorboardRun:               []gax.CallOption{},
+		BatchCreateTensorboardTimeSeries:   []gax.CallOption{},
+		CreateTensorboardTimeSeries:        []gax.CallOption{},
+		GetTensorboardTimeSeries:           []gax.CallOption{},
+		UpdateTensorboardTimeSeries:        []gax.CallOption{},
+		ListTensorboardTimeSeries:          []gax.CallOption{},
+		DeleteTensorboardTimeSeries:        []gax.CallOption{},
+		BatchReadTensorboardTimeSeriesData: []gax.CallOption{},
+		ReadTensorboardTimeSeriesData:      []gax.CallOption{},
+		ReadTensorboardBlobData:            []gax.CallOption{},
+		WriteTensorboardExperimentData:     []gax.CallOption{},
+		WriteTensorboardRunData:            []gax.CallOption{},
+		ExportTensorboardTimeSeriesData:    []gax.CallOption{},
 	}
 }
 
@@ -148,6 +150,7 @@ type internalTensorboardClient interface {
 	ListTensorboardTimeSeries(context.Context, *aiplatformpb.ListTensorboardTimeSeriesRequest, ...gax.CallOption) *TensorboardTimeSeriesIterator
 	DeleteTensorboardTimeSeries(context.Context, *aiplatformpb.DeleteTensorboardTimeSeriesRequest, ...gax.CallOption) (*DeleteTensorboardTimeSeriesOperation, error)
 	DeleteTensorboardTimeSeriesOperation(name string) *DeleteTensorboardTimeSeriesOperation
+	BatchReadTensorboardTimeSeriesData(context.Context, *aiplatformpb.BatchReadTensorboardTimeSeriesDataRequest, ...gax.CallOption) (*aiplatformpb.BatchReadTensorboardTimeSeriesDataResponse, error)
 	ReadTensorboardTimeSeriesData(context.Context, *aiplatformpb.ReadTensorboardTimeSeriesDataRequest, ...gax.CallOption) (*aiplatformpb.ReadTensorboardTimeSeriesDataResponse, error)
 	ReadTensorboardBlobData(context.Context, *aiplatformpb.ReadTensorboardBlobDataRequest, ...gax.CallOption) (aiplatformpb.TensorboardService_ReadTensorboardBlobDataClient, error)
 	WriteTensorboardExperimentData(context.Context, *aiplatformpb.WriteTensorboardExperimentDataRequest, ...gax.CallOption) (*aiplatformpb.WriteTensorboardExperimentDataResponse, error)
@@ -340,11 +343,20 @@ func (c *TensorboardClient) DeleteTensorboardTimeSeriesOperation(name string) *D
 	return c.internalClient.DeleteTensorboardTimeSeriesOperation(name)
 }
 
-// ReadTensorboardTimeSeriesData reads a TensorboardTimeSeries’ data. Data is returned in paginated
-// responses. By default, if the number of data points stored is less than
-// 1000, all data will be returned. Otherwise, 1000 data points will be
-// randomly selected from this time series and returned. This value can be
-// changed by changing max_data_points.
+// BatchReadTensorboardTimeSeriesData reads multiple TensorboardTimeSeries’ data. The data point number limit is
+// 1000 for scalars, 100 for tensors and blob references. If the number of
+// data points stored is less than the limit, all data will be returned.
+// Otherwise, that limit number of data points will be randomly selected from
+// this time series and returned.
+func (c *TensorboardClient) BatchReadTensorboardTimeSeriesData(ctx context.Context, req *aiplatformpb.BatchReadTensorboardTimeSeriesDataRequest, opts ...gax.CallOption) (*aiplatformpb.BatchReadTensorboardTimeSeriesDataResponse, error) {
+	return c.internalClient.BatchReadTensorboardTimeSeriesData(ctx, req, opts...)
+}
+
+// ReadTensorboardTimeSeriesData reads a TensorboardTimeSeries’ data. By default, if the number of data
+// points stored is less than 1000, all data will be returned. Otherwise, 1000
+// data points will be randomly selected from this time series and returned.
+// This value can be changed by changing max_data_points, which can’t be
+// greater than 10k.
 func (c *TensorboardClient) ReadTensorboardTimeSeriesData(ctx context.Context, req *aiplatformpb.ReadTensorboardTimeSeriesDataRequest, opts ...gax.CallOption) (*aiplatformpb.ReadTensorboardTimeSeriesDataResponse, error) {
 	return c.internalClient.ReadTensorboardTimeSeriesData(ctx, req, opts...)
 }
@@ -947,6 +959,22 @@ func (c *tensorboardGRPCClient) DeleteTensorboardTimeSeries(ctx context.Context,
 	return &DeleteTensorboardTimeSeriesOperation{
 		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
+}
+
+func (c *tensorboardGRPCClient) BatchReadTensorboardTimeSeriesData(ctx context.Context, req *aiplatformpb.BatchReadTensorboardTimeSeriesDataRequest, opts ...gax.CallOption) (*aiplatformpb.BatchReadTensorboardTimeSeriesDataResponse, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "tensorboard", url.QueryEscape(req.GetTensorboard())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).BatchReadTensorboardTimeSeriesData[0:len((*c.CallOptions).BatchReadTensorboardTimeSeriesData):len((*c.CallOptions).BatchReadTensorboardTimeSeriesData)], opts...)
+	var resp *aiplatformpb.BatchReadTensorboardTimeSeriesDataResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.tensorboardClient.BatchReadTensorboardTimeSeriesData(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
 }
 
 func (c *tensorboardGRPCClient) ReadTensorboardTimeSeriesData(ctx context.Context, req *aiplatformpb.ReadTensorboardTimeSeriesDataRequest, opts ...gax.CallOption) (*aiplatformpb.ReadTensorboardTimeSeriesDataResponse, error) {
