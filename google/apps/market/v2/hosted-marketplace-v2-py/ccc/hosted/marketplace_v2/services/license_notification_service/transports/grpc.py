@@ -246,6 +246,8 @@ class LicenseNotificationServiceGrpcTransport(LicenseNotificationServiceTranspor
             )
         return self._stubs['list']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'LicenseNotificationServiceGrpcTransport',

@@ -310,6 +310,8 @@ class IdentityAwareProxyAdminV1Beta1GrpcTransport(IdentityAwareProxyAdminV1Beta1
             )
         return self._stubs['test_iam_permissions']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'IdentityAwareProxyAdminV1Beta1GrpcTransport',

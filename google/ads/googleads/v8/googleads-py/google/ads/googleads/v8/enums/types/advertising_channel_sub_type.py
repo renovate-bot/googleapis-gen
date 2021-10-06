@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdvertisingChannelSubTypeEnum(proto.Message):
-    r"""An immutable specialization of an Advertising Channel.    """
+    r"""An immutable specialization of an Advertising Channel.
+    """
     class AdvertisingChannelSubType(proto.Enum):
         r"""Enum describing the different channel subtypes."""
         UNSPECIFIED = 0

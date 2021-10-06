@@ -91,6 +91,7 @@ class Secret(proto.Message):
 
 class SecretVersion(proto.Message):
     r"""A secret version resource in the Secret Manager API.
+
     Attributes:
         name (str):
             Output only. The resource name of the
@@ -148,6 +149,7 @@ class SecretVersion(proto.Message):
 
 class Replication(proto.Message):
     r"""A policy that defines the replication configuration of data.
+
     Attributes:
         automatic (google.cloud.secretmanager_v1beta1.types.Replication.Automatic):
             The [Secret][google.cloud.secrets.v1beta1.Secret] will
@@ -161,7 +163,8 @@ class Replication(proto.Message):
         r"""A replication policy that replicates the
         [Secret][google.cloud.secrets.v1beta1.Secret] payload without any
         restrictions.
-            """
+
+        """
 
     class UserManaged(proto.Message):
         r"""A replication policy that replicates the

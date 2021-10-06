@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ValueRuleGeoLocationMatchTypeEnum(proto.Message):
     r"""Container for enum describing possible geographic location
     matching types used in a conversion value rule.
-        """
+
+    """
     class ValueRuleGeoLocationMatchType(proto.Enum):
         r"""Possible geographic location matching types."""
         UNSPECIFIED = 0

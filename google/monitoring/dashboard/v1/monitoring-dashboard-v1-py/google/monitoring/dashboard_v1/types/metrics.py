@@ -215,6 +215,7 @@ class TimeSeriesFilterRatio(proto.Message):
 
 class Threshold(proto.Message):
     r"""Defines a threshold for categorizing time series values.
+
     Attributes:
         label (str):
             A label for the threshold.

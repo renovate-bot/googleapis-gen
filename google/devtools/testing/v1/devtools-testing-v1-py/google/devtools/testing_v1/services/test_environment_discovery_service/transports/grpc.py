@@ -287,6 +287,8 @@ class TestEnvironmentDiscoveryServiceGrpcTransport(TestEnvironmentDiscoveryServi
             )
         return self._stubs['get_test_environment_catalog']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TestEnvironmentDiscoveryServiceGrpcTransport',

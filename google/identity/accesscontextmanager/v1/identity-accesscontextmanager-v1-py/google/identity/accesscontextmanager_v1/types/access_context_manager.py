@@ -70,6 +70,7 @@ class LevelFormat(proto.Enum):
 
 class ListAccessPoliciesRequest(proto.Message):
     r"""A request to list all ``AccessPolicies`` for a container.
+
     Attributes:
         parent (str):
             Required. Resource name for the container to list
@@ -101,6 +102,7 @@ class ListAccessPoliciesRequest(proto.Message):
 
 class ListAccessPoliciesResponse(proto.Message):
     r"""A response to ``ListAccessPoliciesRequest``.
+
     Attributes:
         access_policies (Sequence[google.identity.accesscontextmanager_v1.types.AccessPolicy]):
             List of the AccessPolicy instances.
@@ -127,6 +129,7 @@ class ListAccessPoliciesResponse(proto.Message):
 
 class GetAccessPolicyRequest(proto.Message):
     r"""A request to get a particular ``AccessPolicy``.
+
     Attributes:
         name (str):
             Required. Resource name for the access policy to get.
@@ -142,6 +145,7 @@ class GetAccessPolicyRequest(proto.Message):
 
 class UpdateAccessPolicyRequest(proto.Message):
     r"""A request to update an ``AccessPolicy``.
+
     Attributes:
         policy (google.identity.accesscontextmanager_v1.types.AccessPolicy):
             Required. The updated AccessPolicy.
@@ -164,6 +168,7 @@ class UpdateAccessPolicyRequest(proto.Message):
 
 class DeleteAccessPolicyRequest(proto.Message):
     r"""A request to delete an ``AccessPolicy``.
+
     Attributes:
         name (str):
             Required. Resource name for the access policy to delete.
@@ -179,6 +184,7 @@ class DeleteAccessPolicyRequest(proto.Message):
 
 class ListAccessLevelsRequest(proto.Message):
     r"""A request to list all ``AccessLevels`` in an ``AccessPolicy``.
+
     Attributes:
         parent (str):
             Required. Resource name for the access policy to list
@@ -222,6 +228,7 @@ class ListAccessLevelsRequest(proto.Message):
 
 class ListAccessLevelsResponse(proto.Message):
     r"""A response to ``ListAccessLevelsRequest``.
+
     Attributes:
         access_levels (Sequence[google.identity.accesscontextmanager_v1.types.AccessLevel]):
             List of the [Access Level]
@@ -250,6 +257,7 @@ class ListAccessLevelsResponse(proto.Message):
 
 class GetAccessLevelRequest(proto.Message):
     r"""A request to get a particular ``AccessLevel``.
+
     Attributes:
         name (str):
             Required. Resource name for the [Access Level]
@@ -283,6 +291,7 @@ class GetAccessLevelRequest(proto.Message):
 
 class CreateAccessLevelRequest(proto.Message):
     r"""A request to create an ``AccessLevel``.
+
     Attributes:
         parent (str):
             Required. Resource name for the access policy which owns
@@ -311,6 +320,7 @@ class CreateAccessLevelRequest(proto.Message):
 
 class UpdateAccessLevelRequest(proto.Message):
     r"""A request to update an ``AccessLevel``.
+
     Attributes:
         access_level (google.identity.accesscontextmanager_v1.types.AccessLevel):
             Required. The updated [Access Level]
@@ -337,6 +347,7 @@ class UpdateAccessLevelRequest(proto.Message):
 
 class DeleteAccessLevelRequest(proto.Message):
     r"""A request to delete an ``AccessLevel``.
+
     Attributes:
         name (str):
             Required. Resource name for the [Access Level]
@@ -417,6 +428,7 @@ class ReplaceAccessLevelsResponse(proto.Message):
 
 class ListServicePerimetersRequest(proto.Message):
     r"""A request to list all ``ServicePerimeters`` in an ``AccessPolicy``.
+
     Attributes:
         parent (str):
             Required. Resource name for the access policy to list
@@ -451,6 +463,7 @@ class ListServicePerimetersRequest(proto.Message):
 
 class ListServicePerimetersResponse(proto.Message):
     r"""A response to ``ListServicePerimetersRequest``.
+
     Attributes:
         service_perimeters (Sequence[google.identity.accesscontextmanager_v1.types.ServicePerimeter]):
             List of the [Service Perimeter]
@@ -479,6 +492,7 @@ class ListServicePerimetersResponse(proto.Message):
 
 class GetServicePerimeterRequest(proto.Message):
     r"""A request to get a particular ``ServicePerimeter``.
+
     Attributes:
         name (str):
             Required. Resource name for the [Service Perimeter]
@@ -496,6 +510,7 @@ class GetServicePerimeterRequest(proto.Message):
 
 class CreateServicePerimeterRequest(proto.Message):
     r"""A request to create a ``ServicePerimeter``.
+
     Attributes:
         parent (str):
             Required. Resource name for the access policy which owns
@@ -524,6 +539,7 @@ class CreateServicePerimeterRequest(proto.Message):
 
 class UpdateServicePerimeterRequest(proto.Message):
     r"""A request to update a ``ServicePerimeter``.
+
     Attributes:
         service_perimeter (google.identity.accesscontextmanager_v1.types.ServicePerimeter):
             Required. The updated ``ServicePerimeter``. Syntactic
@@ -548,6 +564,7 @@ class UpdateServicePerimeterRequest(proto.Message):
 
 class DeleteServicePerimeterRequest(proto.Message):
     r"""A request to delete a ``ServicePerimeter``.
+
     Attributes:
         name (str):
             Required. Resource name for the [Service Perimeter]
@@ -832,11 +849,13 @@ class GcpUserAccessBindingOperationMetadata(proto.Message):
     future, this metadata and a completed operation may indicate
     that the binding has taken effect and is affecting access
     decisions for all users.
-        """
+
+    """
 
 
 class AccessContextManagerOperationMetadata(proto.Message):
-    r"""Metadata of Access Context Manager's Long Running Operations.    """
+    r"""Metadata of Access Context Manager's Long Running Operations.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

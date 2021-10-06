@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdGroupErrorEnum(proto.Message):
-    r"""Container for enum describing possible ad group errors.    """
+    r"""Container for enum describing possible ad group errors.
+    """
     class AdGroupError(proto.Enum):
         r"""Enum describing possible ad group errors."""
         UNSPECIFIED = 0

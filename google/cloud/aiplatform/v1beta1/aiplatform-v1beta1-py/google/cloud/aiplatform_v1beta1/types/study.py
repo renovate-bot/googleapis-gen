@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class Study(proto.Message):
     r"""A message representing a Study.
+
     Attributes:
         name (str):
             Output only. The name of a study. The study's globally
@@ -165,6 +166,7 @@ class Trial(proto.Message):
 
     class Parameter(proto.Message):
         r"""A message representing a parameter to be tuned.
+
         Attributes:
             parameter_id (str):
                 Output only. The ID of the parameter. The parameter should
@@ -247,6 +249,7 @@ class Trial(proto.Message):
 
 class StudySpec(proto.Message):
     r"""Represents specification of a Study.
+
     Attributes:
         decay_curve_stopping_spec (google.cloud.aiplatform_v1beta1.types.StudySpec.DecayCurveAutomatedStoppingSpec):
             The automated early stopping spec using decay
@@ -308,6 +311,7 @@ class StudySpec(proto.Message):
 
     class MetricSpec(proto.Message):
         r"""Represents a metric to optimize.
+
         Attributes:
             metric_id (str):
                 Required. The ID of the metric. Must not
@@ -335,6 +339,7 @@ class StudySpec(proto.Message):
 
     class ParameterSpec(proto.Message):
         r"""Represents a single parameter to optimize.
+
         Attributes:
             double_value_spec (google.cloud.aiplatform_v1beta1.types.StudySpec.ParameterSpec.DoubleValueSpec):
                 The value spec for a 'DOUBLE' parameter.
@@ -367,6 +372,7 @@ class StudySpec(proto.Message):
 
         class DoubleValueSpec(proto.Message):
             r"""Value specification for a parameter in ``DOUBLE`` type.
+
             Attributes:
                 min_value (float):
                     Required. Inclusive minimum value of the
@@ -399,6 +405,7 @@ class StudySpec(proto.Message):
 
         class IntegerValueSpec(proto.Message):
             r"""Value specification for a parameter in ``INTEGER`` type.
+
             Attributes:
                 min_value (int):
                     Required. Inclusive minimum value of the
@@ -431,6 +438,7 @@ class StudySpec(proto.Message):
 
         class CategoricalValueSpec(proto.Message):
             r"""Value specification for a parameter in ``CATEGORICAL`` type.
+
             Attributes:
                 values (Sequence[str]):
                     Required. The list of possible categories.
@@ -455,6 +463,7 @@ class StudySpec(proto.Message):
 
         class DiscreteValueSpec(proto.Message):
             r"""Value specification for a parameter in ``DISCRETE`` type.
+
             Attributes:
                 values (Sequence[float]):
                     Required. A list of possible values.
@@ -661,6 +670,7 @@ class StudySpec(proto.Message):
 
     class ConvexStopConfig(proto.Message):
         r"""Configuration for ConvexStopPolicy.
+
         Attributes:
             max_num_steps (int):
                 Steps used in predicting the final objective for early
@@ -783,6 +793,7 @@ class Measurement(proto.Message):
 
     class Metric(proto.Message):
         r"""A message representing a metric in the measurement.
+
         Attributes:
             metric_id (str):
                 Output only. The ID of the Metric. The Metric should be

@@ -97,6 +97,7 @@ class WorkloadIdentityPool(proto.Message):
 
 class WorkloadIdentityPoolProvider(proto.Message):
     r"""A configuration for an external identity provider.
+
     Attributes:
         name (str):
             Output only. The resource name of the
@@ -240,6 +241,7 @@ class WorkloadIdentityPoolProvider(proto.Message):
 
     class Aws(proto.Message):
         r"""Represents an Amazon Web Services identity provider.
+
         Attributes:
             account_id (str):
                 Required. The AWS account ID.
@@ -252,6 +254,7 @@ class WorkloadIdentityPoolProvider(proto.Message):
 
     class Oidc(proto.Message):
         r"""Represents an OpenId Connect 1.0 identity provider.
+
         Attributes:
             issuer_uri (str):
                 Required. The OIDC issuer URL.
@@ -328,6 +331,7 @@ class WorkloadIdentityPoolProvider(proto.Message):
 
 class ListWorkloadIdentityPoolsRequest(proto.Message):
     r"""Request message for ListWorkloadIdentityPools.
+
     Attributes:
         parent (str):
             Required. The parent resource to list pools
@@ -365,6 +369,7 @@ class ListWorkloadIdentityPoolsRequest(proto.Message):
 
 class ListWorkloadIdentityPoolsResponse(proto.Message):
     r"""Response message for ListWorkloadIdentityPools.
+
     Attributes:
         workload_identity_pools (Sequence[google.iam_v1beta.types.WorkloadIdentityPool]):
             A list of pools.
@@ -391,6 +396,7 @@ class ListWorkloadIdentityPoolsResponse(proto.Message):
 
 class GetWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for GetWorkloadIdentityPool.
+
     Attributes:
         name (str):
             Required. The name of the pool to retrieve.
@@ -404,6 +410,7 @@ class GetWorkloadIdentityPoolRequest(proto.Message):
 
 class CreateWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for CreateWorkloadIdentityPool.
+
     Attributes:
         parent (str):
             Required. The parent resource to create the pool in. The
@@ -435,6 +442,7 @@ class CreateWorkloadIdentityPoolRequest(proto.Message):
 
 class UpdateWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for UpdateWorkloadIdentityPool.
+
     Attributes:
         workload_identity_pool (google.iam_v1beta.types.WorkloadIdentityPool):
             Required. The pool to update. The ``name`` field is used to
@@ -457,6 +465,7 @@ class UpdateWorkloadIdentityPoolRequest(proto.Message):
 
 class DeleteWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for DeleteWorkloadIdentityPool.
+
     Attributes:
         name (str):
             Required. The name of the pool to delete.
@@ -470,6 +479,7 @@ class DeleteWorkloadIdentityPoolRequest(proto.Message):
 
 class UndeleteWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for UndeleteWorkloadIdentityPool.
+
     Attributes:
         name (str):
             Required. The name of the pool to undelete.
@@ -483,6 +493,7 @@ class UndeleteWorkloadIdentityPoolRequest(proto.Message):
 
 class ListWorkloadIdentityPoolProvidersRequest(proto.Message):
     r"""Request message for ListWorkloadIdentityPoolProviders.
+
     Attributes:
         parent (str):
             Required. The pool to list providers for.
@@ -519,6 +530,7 @@ class ListWorkloadIdentityPoolProvidersRequest(proto.Message):
 
 class ListWorkloadIdentityPoolProvidersResponse(proto.Message):
     r"""Response message for ListWorkloadIdentityPoolProviders.
+
     Attributes:
         workload_identity_pool_providers (Sequence[google.iam_v1beta.types.WorkloadIdentityPoolProvider]):
             A list of providers.
@@ -545,6 +557,7 @@ class ListWorkloadIdentityPoolProvidersResponse(proto.Message):
 
 class GetWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for GetWorkloadIdentityPoolProvider.
+
     Attributes:
         name (str):
             Required. The name of the provider to
@@ -559,6 +572,7 @@ class GetWorkloadIdentityPoolProviderRequest(proto.Message):
 
 class CreateWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for CreateWorkloadIdentityPoolProvider.
+
     Attributes:
         parent (str):
             Required. The pool to create this provider
@@ -590,6 +604,7 @@ class CreateWorkloadIdentityPoolProviderRequest(proto.Message):
 
 class UpdateWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for UpdateWorkloadIdentityPoolProvider.
+
     Attributes:
         workload_identity_pool_provider (google.iam_v1beta.types.WorkloadIdentityPoolProvider):
             Required. The provider to update.
@@ -611,6 +626,7 @@ class UpdateWorkloadIdentityPoolProviderRequest(proto.Message):
 
 class DeleteWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for DeleteWorkloadIdentityPoolProvider.
+
     Attributes:
         name (str):
             Required. The name of the provider to delete.
@@ -624,6 +640,7 @@ class DeleteWorkloadIdentityPoolProviderRequest(proto.Message):
 
 class UndeleteWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for UndeleteWorkloadIdentityPoolProvider.
+
     Attributes:
         name (str):
             Required. The name of the provider to
@@ -637,13 +654,15 @@ class UndeleteWorkloadIdentityPoolProviderRequest(proto.Message):
 
 
 class WorkloadIdentityPoolOperationMetadata(proto.Message):
-    r"""Metadata for long-running WorkloadIdentityPool operations.    """
+    r"""Metadata for long-running WorkloadIdentityPool operations.
+    """
 
 
 class WorkloadIdentityPoolProviderOperationMetadata(proto.Message):
     r"""Metadata for long-running WorkloadIdentityPoolProvider
     operations.
-        """
+
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

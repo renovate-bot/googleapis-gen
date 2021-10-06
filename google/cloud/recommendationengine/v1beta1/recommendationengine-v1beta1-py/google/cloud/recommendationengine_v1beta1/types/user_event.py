@@ -139,6 +139,7 @@ class UserEvent(proto.Message):
 
 class UserInfo(proto.Message):
     r"""Information of end users.
+
     Attributes:
         visitor_id (str):
             Required. A unique identifier for tracking
@@ -201,6 +202,7 @@ class UserInfo(proto.Message):
 
 class EventDetail(proto.Message):
     r"""User event details shared by all recommendation types.
+
     Attributes:
         uri (str):
             Optional. Complete url (window.location.href)
@@ -375,6 +377,7 @@ class ProductEventDetail(proto.Message):
 
 class PurchaseTransaction(proto.Message):
     r"""A transaction represents the entire purchase transaction.
+
     Attributes:
         id (str):
             Optional. The transaction ID with a length
@@ -431,6 +434,7 @@ class PurchaseTransaction(proto.Message):
 
 class ProductDetail(proto.Message):
     r"""Detailed product information associated with a user event.
+
     Attributes:
         id (str):
             Required. Catalog item ID. UTF-8 encoded

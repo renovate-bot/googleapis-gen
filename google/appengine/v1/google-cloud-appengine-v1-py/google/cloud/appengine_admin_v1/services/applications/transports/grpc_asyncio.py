@@ -374,6 +374,9 @@ class ApplicationsGrpcAsyncIOTransport(ApplicationsTransport):
             )
         return self._stubs['repair_application']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ApplicationsGrpcAsyncIOTransport',

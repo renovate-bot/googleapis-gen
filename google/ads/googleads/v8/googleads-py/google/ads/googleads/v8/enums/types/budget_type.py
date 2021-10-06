@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BudgetTypeEnum(proto.Message):
-    r"""Describes Budget types.    """
+    r"""Describes Budget types.
+    """
     class BudgetType(proto.Enum):
         r"""Possible Budget types."""
         UNSPECIFIED = 0

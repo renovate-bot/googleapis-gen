@@ -76,6 +76,7 @@ __protobuf__ = proto.module(
 
 class CreateDatasetRequest(proto.Message):
     r"""Request message for CreateDataset.
+
     Attributes:
         parent (str):
             Required. Dataset resource parent, format:
@@ -97,6 +98,7 @@ class CreateDatasetRequest(proto.Message):
 
 class GetDatasetRequest(proto.Message):
     r"""Request message for GetDataSet.
+
     Attributes:
         name (str):
             Required. Dataset resource name, format:
@@ -111,6 +113,7 @@ class GetDatasetRequest(proto.Message):
 
 class ListDatasetsRequest(proto.Message):
     r"""Request message for ListDataset.
+
     Attributes:
         parent (str):
             Required. Dataset resource parent, format:
@@ -150,6 +153,7 @@ class ListDatasetsRequest(proto.Message):
 
 class ListDatasetsResponse(proto.Message):
     r"""Results of listing datasets within a project.
+
     Attributes:
         datasets (Sequence[google.cloud.datalabeling_v1beta1.types.Dataset]):
             The list of datasets to return.
@@ -174,6 +178,7 @@ class ListDatasetsResponse(proto.Message):
 
 class DeleteDatasetRequest(proto.Message):
     r"""Request message for DeleteDataset.
+
     Attributes:
         name (str):
             Required. Dataset resource name, format:
@@ -188,6 +193,7 @@ class DeleteDatasetRequest(proto.Message):
 
 class ImportDataRequest(proto.Message):
     r"""Request message for ImportData API.
+
     Attributes:
         name (str):
             Required. Dataset resource name, format:
@@ -218,6 +224,7 @@ class ImportDataRequest(proto.Message):
 
 class ExportDataRequest(proto.Message):
     r"""Request message for ExportData API.
+
     Attributes:
         name (str):
             Required. Dataset resource name, format:
@@ -264,6 +271,7 @@ class ExportDataRequest(proto.Message):
 
 class GetDataItemRequest(proto.Message):
     r"""Request message for GetDataItem.
+
     Attributes:
         name (str):
             Required. The name of the data item to get, format:
@@ -278,6 +286,7 @@ class GetDataItemRequest(proto.Message):
 
 class ListDataItemsRequest(proto.Message):
     r"""Request message for ListDataItems.
+
     Attributes:
         parent (str):
             Required. Name of the dataset to list data items, format:
@@ -317,6 +326,7 @@ class ListDataItemsRequest(proto.Message):
 
 class ListDataItemsResponse(proto.Message):
     r"""Results of listing data items in a dataset.
+
     Attributes:
         data_items (Sequence[google.cloud.datalabeling_v1beta1.types.DataItem]):
             The list of data items to return.
@@ -341,6 +351,7 @@ class ListDataItemsResponse(proto.Message):
 
 class GetAnnotatedDatasetRequest(proto.Message):
     r"""Request message for GetAnnotatedDataset.
+
     Attributes:
         name (str):
             Required. Name of the annotated dataset to get, format:
@@ -356,6 +367,7 @@ class GetAnnotatedDatasetRequest(proto.Message):
 
 class ListAnnotatedDatasetsRequest(proto.Message):
     r"""Request message for ListAnnotatedDatasets.
+
     Attributes:
         parent (str):
             Required. Name of the dataset to list annotated datasets,
@@ -395,6 +407,7 @@ class ListAnnotatedDatasetsRequest(proto.Message):
 
 class ListAnnotatedDatasetsResponse(proto.Message):
     r"""Results of listing annotated datasets for a dataset.
+
     Attributes:
         annotated_datasets (Sequence[google.cloud.datalabeling_v1beta1.types.AnnotatedDataset]):
             The list of annotated datasets to return.
@@ -419,6 +432,7 @@ class ListAnnotatedDatasetsResponse(proto.Message):
 
 class DeleteAnnotatedDatasetRequest(proto.Message):
     r"""Request message for DeleteAnnotatedDataset.
+
     Attributes:
         name (str):
             Required. Name of the annotated dataset to delete, format:
@@ -434,6 +448,7 @@ class DeleteAnnotatedDatasetRequest(proto.Message):
 
 class LabelImageRequest(proto.Message):
     r"""Request message for starting an image labeling task.
+
     Attributes:
         image_classification_config (google.cloud.datalabeling_v1beta1.types.ImageClassificationConfig):
             Configuration for image classification task. One of
@@ -511,6 +526,7 @@ class LabelImageRequest(proto.Message):
 
 class LabelVideoRequest(proto.Message):
     r"""Request message for LabelVideo.
+
     Attributes:
         video_classification_config (google.cloud.datalabeling_v1beta1.types.VideoClassificationConfig):
             Configuration for video classification task. One of
@@ -586,6 +602,7 @@ class LabelVideoRequest(proto.Message):
 
 class LabelTextRequest(proto.Message):
     r"""Request message for LabelText.
+
     Attributes:
         text_classification_config (google.cloud.datalabeling_v1beta1.types.TextClassificationConfig):
             Configuration for text classification task. One of
@@ -639,6 +656,7 @@ class LabelTextRequest(proto.Message):
 
 class GetExampleRequest(proto.Message):
     r"""Request message for GetExample
+
     Attributes:
         name (str):
             Required. Name of example, format:
@@ -662,6 +680,7 @@ class GetExampleRequest(proto.Message):
 
 class ListExamplesRequest(proto.Message):
     r"""Request message for ListExamples.
+
     Attributes:
         parent (str):
             Required. Example resource parent.
@@ -702,6 +721,7 @@ class ListExamplesRequest(proto.Message):
 
 class ListExamplesResponse(proto.Message):
     r"""Results of listing Examples in and annotated dataset.
+
     Attributes:
         examples (Sequence[google.cloud.datalabeling_v1beta1.types.Example]):
             The list of examples to return.
@@ -726,6 +746,7 @@ class ListExamplesResponse(proto.Message):
 
 class CreateAnnotationSpecSetRequest(proto.Message):
     r"""Request message for CreateAnnotationSpecSet.
+
     Attributes:
         parent (str):
             Required. AnnotationSpecSet resource parent, format:
@@ -749,6 +770,7 @@ class CreateAnnotationSpecSetRequest(proto.Message):
 
 class GetAnnotationSpecSetRequest(proto.Message):
     r"""Request message for GetAnnotationSpecSet.
+
     Attributes:
         name (str):
             Required. AnnotationSpecSet resource name, format:
@@ -763,6 +785,7 @@ class GetAnnotationSpecSetRequest(proto.Message):
 
 class ListAnnotationSpecSetsRequest(proto.Message):
     r"""Request message for ListAnnotationSpecSets.
+
     Attributes:
         parent (str):
             Required. Parent of AnnotationSpecSet resource, format:
@@ -802,6 +825,7 @@ class ListAnnotationSpecSetsRequest(proto.Message):
 
 class ListAnnotationSpecSetsResponse(proto.Message):
     r"""Results of listing annotation spec set under a project.
+
     Attributes:
         annotation_spec_sets (Sequence[google.cloud.datalabeling_v1beta1.types.AnnotationSpecSet]):
             The list of annotation spec sets.
@@ -826,6 +850,7 @@ class ListAnnotationSpecSetsResponse(proto.Message):
 
 class DeleteAnnotationSpecSetRequest(proto.Message):
     r"""Request message for DeleteAnnotationSpecSet.
+
     Attributes:
         name (str):
             Required. AnnotationSpec resource name, format:
@@ -840,6 +865,7 @@ class DeleteAnnotationSpecSetRequest(proto.Message):
 
 class CreateInstructionRequest(proto.Message):
     r"""Request message for CreateInstruction.
+
     Attributes:
         parent (str):
             Required. Instruction resource parent, format:
@@ -862,6 +888,7 @@ class CreateInstructionRequest(proto.Message):
 
 class GetInstructionRequest(proto.Message):
     r"""Request message for GetInstruction.
+
     Attributes:
         name (str):
             Required. Instruction resource name, format:
@@ -876,6 +903,7 @@ class GetInstructionRequest(proto.Message):
 
 class DeleteInstructionRequest(proto.Message):
     r"""Request message for DeleteInstruction.
+
     Attributes:
         name (str):
             Required. Instruction resource name, format:
@@ -890,6 +918,7 @@ class DeleteInstructionRequest(proto.Message):
 
 class ListInstructionsRequest(proto.Message):
     r"""Request message for ListInstructions.
+
     Attributes:
         parent (str):
             Required. Instruction resource parent, format:
@@ -929,6 +958,7 @@ class ListInstructionsRequest(proto.Message):
 
 class ListInstructionsResponse(proto.Message):
     r"""Results of listing instructions under a project.
+
     Attributes:
         instructions (Sequence[google.cloud.datalabeling_v1beta1.types.Instruction]):
             The list of Instructions to return.
@@ -953,6 +983,7 @@ class ListInstructionsResponse(proto.Message):
 
 class GetEvaluationRequest(proto.Message):
     r"""Request message for GetEvaluation.
+
     Attributes:
         name (str):
             Required. Name of the evaluation. Format:
@@ -968,6 +999,7 @@ class GetEvaluationRequest(proto.Message):
 
 class SearchEvaluationsRequest(proto.Message):
     r"""Request message for SearchEvaluation.
+
     Attributes:
         parent (str):
             Required. Evaluation search parent (project ID). Format:
@@ -1038,6 +1070,7 @@ class SearchEvaluationsRequest(proto.Message):
 
 class SearchEvaluationsResponse(proto.Message):
     r"""Results of searching evaluations.
+
     Attributes:
         evaluations (Sequence[google.cloud.datalabeling_v1beta1.types.Evaluation]):
             The list of evaluations matching the search.
@@ -1062,6 +1095,7 @@ class SearchEvaluationsResponse(proto.Message):
 
 class SearchExampleComparisonsRequest(proto.Message):
     r"""Request message of SearchExampleComparisons.
+
     Attributes:
         parent (str):
             Required. Name of the
@@ -1099,6 +1133,7 @@ class SearchExampleComparisonsRequest(proto.Message):
 
 class SearchExampleComparisonsResponse(proto.Message):
     r"""Results of searching example comparisons.
+
     Attributes:
         example_comparisons (Sequence[google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsResponse.ExampleComparison]):
             A list of example comparisons matching the
@@ -1146,6 +1181,7 @@ class SearchExampleComparisonsResponse(proto.Message):
 
 class CreateEvaluationJobRequest(proto.Message):
     r"""Request message for CreateEvaluationJob.
+
     Attributes:
         parent (str):
             Required. Evaluation job resource parent. Format:
@@ -1167,6 +1203,7 @@ class CreateEvaluationJobRequest(proto.Message):
 
 class UpdateEvaluationJobRequest(proto.Message):
     r"""Request message for UpdateEvaluationJob.
+
     Attributes:
         evaluation_job (google.cloud.datalabeling_v1beta1.types.EvaluationJob):
             Required. Evaluation job that is going to be
@@ -1197,6 +1234,7 @@ class UpdateEvaluationJobRequest(proto.Message):
 
 class GetEvaluationJobRequest(proto.Message):
     r"""Request message for GetEvaluationJob.
+
     Attributes:
         name (str):
             Required. Name of the evaluation job. Format:
@@ -1212,6 +1250,7 @@ class GetEvaluationJobRequest(proto.Message):
 
 class PauseEvaluationJobRequest(proto.Message):
     r"""Request message for PauseEvaluationJob.
+
     Attributes:
         name (str):
             Required. Name of the evaluation job that is going to be
@@ -1228,6 +1267,7 @@ class PauseEvaluationJobRequest(proto.Message):
 
 class ResumeEvaluationJobRequest(proto.Message):
     r"""Request message ResumeEvaluationJob.
+
     Attributes:
         name (str):
             Required. Name of the evaluation job that is going to be
@@ -1244,6 +1284,7 @@ class ResumeEvaluationJobRequest(proto.Message):
 
 class DeleteEvaluationJobRequest(proto.Message):
     r"""Request message DeleteEvaluationJob.
+
     Attributes:
         name (str):
             Required. Name of the evaluation job that is going to be
@@ -1260,6 +1301,7 @@ class DeleteEvaluationJobRequest(proto.Message):
 
 class ListEvaluationJobsRequest(proto.Message):
     r"""Request message for ListEvaluationJobs.
+
     Attributes:
         parent (str):
             Required. Evaluation job resource parent. Format:
@@ -1307,6 +1349,7 @@ class ListEvaluationJobsRequest(proto.Message):
 
 class ListEvaluationJobsResponse(proto.Message):
     r"""Results for listing evaluation jobs.
+
     Attributes:
         evaluation_jobs (Sequence[google.cloud.datalabeling_v1beta1.types.EvaluationJob]):
             The list of evaluation jobs to return.

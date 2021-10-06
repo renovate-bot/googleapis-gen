@@ -336,6 +336,9 @@ class SqlSslCertsServiceGrpcAsyncIOTransport(SqlSslCertsServiceTransport):
             )
         return self._stubs['list']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SqlSslCertsServiceGrpcAsyncIOTransport',

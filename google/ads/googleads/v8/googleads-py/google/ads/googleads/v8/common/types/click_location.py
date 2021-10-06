@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class ClickLocation(proto.Message):
     r"""Location criteria associated with a click.
+
     Attributes:
         city (str):
             The city location criterion associated with

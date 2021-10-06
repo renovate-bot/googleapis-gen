@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class QuotaErrorEnum(proto.Message):
-    r"""Container for enum describing possible quota errors.    """
+    r"""Container for enum describing possible quota errors.
+    """
     class QuotaError(proto.Enum):
         r"""Enum describing possible quota errors."""
         UNSPECIFIED = 0

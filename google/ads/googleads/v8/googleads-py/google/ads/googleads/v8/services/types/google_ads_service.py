@@ -419,6 +419,7 @@ class SearchGoogleAdsStreamResponse(proto.Message):
 
 class GoogleAdsRow(proto.Message):
     r"""A returned row from the query.
+
     Attributes:
         account_budget (google.ads.googleads.v8.resources.types.AccountBudget):
             The account budget in the query.
@@ -1472,6 +1473,7 @@ class MutateGoogleAdsResponse(proto.Message):
 
 class MutateOperation(proto.Message):
     r"""A single operation (create, update, remove) on a resource.
+
     Attributes:
         ad_group_ad_label_operation (google.ads.googleads.v8.services.types.AdGroupAdLabelOperation):
             An ad group ad label mutate operation.
@@ -1933,6 +1935,7 @@ class MutateOperation(proto.Message):
 
 class MutateOperationResponse(proto.Message):
     r"""Response message for the resource mutate.
+
     Attributes:
         ad_group_ad_label_result (google.ads.googleads.v8.services.types.MutateAdGroupAdLabelResult):
             The result for the ad group ad label mutate.

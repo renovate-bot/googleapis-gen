@@ -380,6 +380,8 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
             )
         return self._stubs['report_inventory']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AgentEndpointServiceGrpcTransport',

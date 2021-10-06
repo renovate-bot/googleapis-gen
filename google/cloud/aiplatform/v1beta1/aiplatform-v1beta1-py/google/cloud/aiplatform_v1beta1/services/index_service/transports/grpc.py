@@ -373,6 +373,8 @@ class IndexServiceGrpcTransport(IndexServiceTransport):
             )
         return self._stubs['delete_index']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'IndexServiceGrpcTransport',

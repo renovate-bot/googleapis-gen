@@ -642,6 +642,9 @@ class FirestoreGrpcAsyncIOTransport(FirestoreTransport):
             )
         return self._stubs['create_document']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'FirestoreGrpcAsyncIOTransport',

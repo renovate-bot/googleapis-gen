@@ -40,6 +40,7 @@ __protobuf__ = proto.module(
 
 class EntityResult(proto.Message):
     r"""The result of fetching an entity from Datastore.
+
     Attributes:
         entity (google.cloud.datastore_v1.types.Entity):
             The resulting entity.
@@ -90,6 +91,7 @@ class EntityResult(proto.Message):
 
 class Query(proto.Message):
     r"""A query for entities.
+
     Attributes:
         projection (Sequence[google.cloud.datastore_v1.types.Projection]):
             The projection to return. Defaults to
@@ -175,6 +177,7 @@ class Query(proto.Message):
 
 class KindExpression(proto.Message):
     r"""A representation of a kind.
+
     Attributes:
         name (str):
             The name of the kind.
@@ -188,6 +191,7 @@ class KindExpression(proto.Message):
 
 class PropertyReference(proto.Message):
     r"""A reference to a property relative to the kind expressions.
+
     Attributes:
         name (str):
             The name of the property.
@@ -203,6 +207,7 @@ class PropertyReference(proto.Message):
 
 class Projection(proto.Message):
     r"""A representation of a property in a projection.
+
     Attributes:
         property (google.cloud.datastore_v1.types.PropertyReference):
             The property to project.
@@ -217,6 +222,7 @@ class Projection(proto.Message):
 
 class PropertyOrder(proto.Message):
     r"""The desired order for a specific property.
+
     Attributes:
         property (google.cloud.datastore_v1.types.PropertyReference):
             The property to order by.
@@ -243,6 +249,7 @@ class PropertyOrder(proto.Message):
 
 class Filter(proto.Message):
     r"""A holder for any type of filter.
+
     Attributes:
         composite_filter (google.cloud.datastore_v1.types.CompositeFilter):
             A composite filter.
@@ -294,6 +301,7 @@ class CompositeFilter(proto.Message):
 
 class PropertyFilter(proto.Message):
     r"""A filter on a specific property.
+
     Attributes:
         property (google.cloud.datastore_v1.types.PropertyReference):
             The property to filter by.
@@ -382,6 +390,7 @@ class GqlQuery(proto.Message):
 
 class GqlQueryParameter(proto.Message):
     r"""A binding parameter for a GQL query.
+
     Attributes:
         value (google.cloud.datastore_v1.types.Value):
             A value parameter.
@@ -405,6 +414,7 @@ class GqlQueryParameter(proto.Message):
 
 class QueryResultBatch(proto.Message):
     r"""A batch of results produced by a query.
+
     Attributes:
         skipped_results (int):
             The number of results skipped, typically

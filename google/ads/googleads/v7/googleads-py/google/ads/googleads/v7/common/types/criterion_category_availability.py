@@ -107,6 +107,7 @@ class CriterionCategoryChannelAvailability(proto.Message):
 
 class CriterionCategoryLocaleAvailability(proto.Message):
     r"""Information about which locales a category is available in.
+
     Attributes:
         availability_mode (google.ads.googleads.v7.enums.types.CriterionCategoryLocaleAvailabilityModeEnum.CriterionCategoryLocaleAvailabilityMode):
             Format of the locale availability. Can be LAUNCHED_TO_ALL

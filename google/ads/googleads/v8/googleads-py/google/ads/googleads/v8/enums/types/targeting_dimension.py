@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class TargetingDimensionEnum(proto.Message):
-    r"""The dimensions that can be targeted.    """
+    r"""The dimensions that can be targeted.
+    """
     class TargetingDimension(proto.Enum):
         r"""Enum describing possible targeting dimensions."""
         UNSPECIFIED = 0

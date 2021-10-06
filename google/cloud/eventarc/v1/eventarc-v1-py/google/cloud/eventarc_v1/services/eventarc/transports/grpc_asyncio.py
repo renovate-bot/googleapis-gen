@@ -377,6 +377,9 @@ class EventarcGrpcAsyncIOTransport(EventarcTransport):
             )
         return self._stubs['delete_trigger']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'EventarcGrpcAsyncIOTransport',

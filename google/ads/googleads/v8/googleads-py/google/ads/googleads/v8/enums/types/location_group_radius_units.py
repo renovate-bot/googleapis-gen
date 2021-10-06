@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class LocationGroupRadiusUnitsEnum(proto.Message):
     r"""Container for enum describing unit of radius in location
     group.
-        """
+
+    """
     class LocationGroupRadiusUnits(proto.Enum):
         r"""The unit of radius distance in location group (e.g. MILES)"""
         UNSPECIFIED = 0

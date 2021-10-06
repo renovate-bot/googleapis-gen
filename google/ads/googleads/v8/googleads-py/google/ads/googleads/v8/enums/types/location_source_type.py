@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LocationSourceTypeEnum(proto.Message):
-    r"""Used to distinguish the location source type.    """
+    r"""Used to distinguish the location source type.
+    """
     class LocationSourceType(proto.Enum):
         r"""The possible types of a location source."""
         UNSPECIFIED = 0

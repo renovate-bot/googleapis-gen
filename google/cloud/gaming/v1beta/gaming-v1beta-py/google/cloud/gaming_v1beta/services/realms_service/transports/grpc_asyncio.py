@@ -400,6 +400,9 @@ class RealmsServiceGrpcAsyncIOTransport(RealmsServiceTransport):
             )
         return self._stubs['preview_realm_update']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'RealmsServiceGrpcAsyncIOTransport',

@@ -358,6 +358,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
             )
         return self._stubs['delete_feed']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AssetServiceGrpcAsyncIOTransport',

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdTypeEnum(proto.Message):
-    r"""Container for enum describing possible types of an ad.    """
+    r"""Container for enum describing possible types of an ad.
+    """
     class AdType(proto.Enum):
         r"""The possible types of an ad."""
         UNSPECIFIED = 0

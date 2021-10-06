@@ -92,6 +92,7 @@ class MutateUserListsRequest(proto.Message):
 
 class UserListOperation(proto.Message):
     r"""A single operation (create, update) on a user list.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -135,6 +136,7 @@ class UserListOperation(proto.Message):
 
 class MutateUserListsResponse(proto.Message):
     r"""Response message for user list mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -160,6 +162,7 @@ class MutateUserListsResponse(proto.Message):
 
 class MutateUserListResult(proto.Message):
     r"""The result for the user list mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

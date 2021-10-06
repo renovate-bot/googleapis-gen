@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemQualityDisapprovalReasonEnum(proto.Message):
     r"""Container for enum describing possible quality evaluation
     disapproval reasons of a feed item.
-        """
+
+    """
     class FeedItemQualityDisapprovalReason(proto.Enum):
         r"""The possible quality evaluation disapproval reasons of a feed
         item.

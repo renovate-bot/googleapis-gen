@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class TimeRange(proto.Message):
     r"""Information about time ranges.
+
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             The start of the time range.
@@ -51,6 +52,7 @@ class TimeRange(proto.Message):
 
 class Group(proto.Message):
     r"""Information about a group.
+
     Attributes:
         email (str):
             The email address of the group.
@@ -70,6 +72,7 @@ class Group(proto.Message):
 
 class Domain(proto.Message):
     r"""Information about a domain.
+
     Attributes:
         name (str):
             The name of the domain, e.g. ``google.com``.

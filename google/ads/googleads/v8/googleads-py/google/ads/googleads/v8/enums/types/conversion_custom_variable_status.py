@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionCustomVariableStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of a
     conversion custom variable.
-        """
+
+    """
     class ConversionCustomVariableStatus(proto.Enum):
         r"""Possible statuses of a conversion custom variable."""
         UNSPECIFIED = 0

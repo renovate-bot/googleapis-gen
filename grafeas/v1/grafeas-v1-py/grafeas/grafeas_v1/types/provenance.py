@@ -217,6 +217,7 @@ class FileHashes(proto.Message):
 
 class Hash(proto.Message):
     r"""Container message for hash values.
+
     Attributes:
         type_ (str):
             Required. The type of hash that was
@@ -289,6 +290,7 @@ class Command(proto.Message):
 
 class Artifact(proto.Message):
     r"""Artifact describes a build product.
+
     Attributes:
         checksum (str):
             Hash or checksum value of a binary, or Docker
@@ -366,6 +368,7 @@ class SourceContext(proto.Message):
 
 class AliasContext(proto.Message):
     r"""An alias to a repo revision.
+
     Attributes:
         kind (grafeas.grafeas_v1.types.AliasContext.Kind):
             The alias kind.
@@ -423,6 +426,7 @@ class CloudRepoSourceContext(proto.Message):
 
 class GerritSourceContext(proto.Message):
     r"""A SourceContext referring to a Gerrit project.
+
     Attributes:
         host_uri (str):
             The URI of a running Gerrit instance.
@@ -481,6 +485,7 @@ class GitSourceContext(proto.Message):
 
 class RepoId(proto.Message):
     r"""A unique identifier for a Cloud Repo.
+
     Attributes:
         project_repo_id (grafeas.grafeas_v1.types.ProjectRepoId):
             A combination of a project ID and a repo

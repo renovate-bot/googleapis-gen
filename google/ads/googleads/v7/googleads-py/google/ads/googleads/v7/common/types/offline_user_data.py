@@ -37,6 +37,7 @@ __protobuf__ = proto.module(
 
 class OfflineUserAddressInfo(proto.Message):
     r"""Address identifier of offline data.
+
     Attributes:
         hashed_first_name (str):
             First name of the user, which is hashed as
@@ -94,6 +95,7 @@ class OfflineUserAddressInfo(proto.Message):
 
 class UserIdentifier(proto.Message):
     r"""Hashed user identifying information.
+
     Attributes:
         user_identifier_source (google.ads.googleads.v7.enums.types.UserIdentifierSourceEnum.UserIdentifierSource):
             Source of the user identifier when the upload
@@ -149,6 +151,7 @@ class UserIdentifier(proto.Message):
 
 class TransactionAttribute(proto.Message):
     r"""Attribute of the store sales transaction.
+
     Attributes:
         transaction_date_time (str):
             Timestamp when transaction occurred. Required. The format is
@@ -216,6 +219,7 @@ class TransactionAttribute(proto.Message):
 
 class StoreAttribute(proto.Message):
     r"""Store attributes of the transaction.
+
     Attributes:
         store_code (str):
             Store code from
@@ -231,6 +235,7 @@ class StoreAttribute(proto.Message):
 
 class UserData(proto.Message):
     r"""User data holding user identifiers and attributes.
+
     Attributes:
         user_identifiers (Sequence[google.ads.googleads.v7.common.types.UserIdentifier]):
             User identification info. Required.
@@ -291,6 +296,7 @@ class UserAttribute(proto.Message):
 
 class CustomerMatchUserListMetadata(proto.Message):
     r"""Metadata for customer match user list.
+
     Attributes:
         user_list (str):
             The resource name of remarketing list to update data.
@@ -306,6 +312,7 @@ class CustomerMatchUserListMetadata(proto.Message):
 
 class StoreSalesMetadata(proto.Message):
     r"""Metadata for Store Sales Direct.
+
     Attributes:
         loyalty_fraction (float):
             This is the fraction of all transactions that

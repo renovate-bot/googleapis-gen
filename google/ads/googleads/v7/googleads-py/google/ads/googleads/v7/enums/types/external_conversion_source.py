@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ExternalConversionSourceEnum(proto.Message):
     r"""Container for enum describing the external conversion source
     that is associated with a ConversionAction.
-        """
+
+    """
     class ExternalConversionSource(proto.Enum):
         r"""The external conversion source that is associated with a
         ConversionAction.

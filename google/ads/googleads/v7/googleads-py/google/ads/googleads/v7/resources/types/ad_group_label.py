@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class AdGroupLabel(proto.Message):
     r"""A relationship between an ad group and a label.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group label. Ad group

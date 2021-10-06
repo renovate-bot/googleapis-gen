@@ -51,6 +51,7 @@ class CommandTask(proto.Message):
 
     class Inputs(proto.Message):
         r"""Describes the inputs to a shell-style task.
+
         Attributes:
             arguments (Sequence[str]):
                 The command itself to run (e.g., argv).
@@ -101,6 +102,7 @@ class CommandTask(proto.Message):
 
         class EnvironmentVariable(proto.Message):
             r"""An environment variable required by this task.
+
             Attributes:
                 name (str):
                     The envvar name.
@@ -143,6 +145,7 @@ class CommandTask(proto.Message):
 
     class Outputs(proto.Message):
         r"""Describes the expected outputs of the command.
+
         Attributes:
             files (Sequence[str]):
                 A list of expected files, relative to the
@@ -187,6 +190,7 @@ class CommandTask(proto.Message):
 
     class Timeouts(proto.Message):
         r"""Describes the timeouts associated with this task.
+
         Attributes:
             execution (google.protobuf.duration_pb2.Duration):
                 This specifies the maximum time that the task
@@ -475,6 +479,7 @@ class Digest(proto.Message):
 
 class Blob(proto.Message):
     r"""Describes a blob of binary content with its digest.
+
     Attributes:
         digest (google.devtools.remoteworkers_v1.types.Digest):
             The digest of the blob. This should be

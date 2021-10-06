@@ -112,6 +112,7 @@ class DockerImage(proto.Message):
 
 class ListDockerImagesRequest(proto.Message):
     r"""The request to list docker images.
+
     Attributes:
         parent (str):
             Required. The name of the parent resource
@@ -139,6 +140,7 @@ class ListDockerImagesRequest(proto.Message):
 
 class ListDockerImagesResponse(proto.Message):
     r"""The response from listing docker images.
+
     Attributes:
         docker_images (Sequence[google.cloud.artifactregistry_v1.types.DockerImage]):
             The docker images returned.

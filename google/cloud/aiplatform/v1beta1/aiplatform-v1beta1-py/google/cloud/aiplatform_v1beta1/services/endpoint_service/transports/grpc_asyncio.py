@@ -430,6 +430,9 @@ class EndpointServiceGrpcAsyncIOTransport(EndpointServiceTransport):
             )
         return self._stubs['undeploy_model']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'EndpointServiceGrpcAsyncIOTransport',

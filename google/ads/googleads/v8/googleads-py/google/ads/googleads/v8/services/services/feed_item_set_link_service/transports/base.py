@@ -95,6 +95,15 @@ class FeedItemSetLinkServiceTransport(metaclass=abc.ABCMeta):
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+        .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def get_feed_item_set_link(self) -> typing.Callable[
             [feed_item_set_link_service.GetFeedItemSetLinkRequest],

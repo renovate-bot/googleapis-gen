@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemTargetDeviceEnum(proto.Message):
     r"""Container for enum describing possible data types for a feed
     item target device.
-        """
+
+    """
     class FeedItemTargetDevice(proto.Enum):
         r"""Possible data types for a feed item target device."""
         UNSPECIFIED = 0

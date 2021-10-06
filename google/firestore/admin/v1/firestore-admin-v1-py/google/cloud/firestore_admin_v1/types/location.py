@@ -27,7 +27,8 @@ __protobuf__ = proto.module(
 class LocationMetadata(proto.Message):
     r"""The metadata message for
     [google.cloud.location.Location.metadata][google.cloud.location.Location.metadata].
-        """
+
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

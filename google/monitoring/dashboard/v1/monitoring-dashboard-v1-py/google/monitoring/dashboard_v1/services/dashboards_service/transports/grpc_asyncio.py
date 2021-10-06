@@ -383,6 +383,9 @@ class DashboardsServiceGrpcAsyncIOTransport(DashboardsServiceTransport):
             )
         return self._stubs['update_dashboard']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DashboardsServiceGrpcAsyncIOTransport',

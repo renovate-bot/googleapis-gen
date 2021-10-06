@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class GetMetricsScopeRequest(proto.Message):
     r"""Request for the ``GetMetricsScope`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ``Metrics Scope``.
@@ -49,6 +50,7 @@ class GetMetricsScopeRequest(proto.Message):
 
 class ListMetricsScopesByMonitoredProjectRequest(proto.Message):
     r"""Request for the ``ListMetricsScopesByMonitoredProject`` method.
+
     Attributes:
         monitored_resource_container (str):
             Required. The resource name of the ``Monitored Project``
@@ -64,6 +66,7 @@ class ListMetricsScopesByMonitoredProjectRequest(proto.Message):
 
 class ListMetricsScopesByMonitoredProjectResponse(proto.Message):
     r"""Response for the ``ListMetricsScopesByMonitoredProject`` method.
+
     Attributes:
         metrics_scopes (Sequence[google.cloud.monitoring_metrics_scope_v1.types.MetricsScope]):
             A set of all metrics scopes that the
@@ -79,6 +82,7 @@ class ListMetricsScopesByMonitoredProjectResponse(proto.Message):
 
 class CreateMonitoredProjectRequest(proto.Message):
     r"""Request for the ``CreateMonitoredProject`` method.
+
     Attributes:
         parent (str):
             Required. The resource name of the existing
@@ -105,6 +109,7 @@ class CreateMonitoredProjectRequest(proto.Message):
 
 class DeleteMonitoredProjectRequest(proto.Message):
     r"""Request for the ``DeleteMonitoredProject`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ``MonitoredProject``.

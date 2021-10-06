@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class NegativeGeoTargetTypeEnum(proto.Message):
     r"""Container for enum describing possible negative geo target
     types.
-        """
+
+    """
     class NegativeGeoTargetType(proto.Enum):
         r"""The possible negative geo target types."""
         UNSPECIFIED = 0

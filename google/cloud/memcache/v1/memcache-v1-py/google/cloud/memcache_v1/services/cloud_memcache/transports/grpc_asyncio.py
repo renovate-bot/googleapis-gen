@@ -449,6 +449,9 @@ class CloudMemcacheGrpcAsyncIOTransport(CloudMemcacheTransport):
             )
         return self._stubs['apply_parameters']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudMemcacheGrpcAsyncIOTransport',

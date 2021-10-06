@@ -56,6 +56,7 @@ __protobuf__ = proto.module(
 
 class Membership(proto.Message):
     r"""Membership contains information about a member cluster.
+
     Attributes:
         name (str):
             Output only. The full, unique name of this Membership
@@ -385,6 +386,7 @@ class ResourceManifest(proto.Message):
 
 class GkeCluster(proto.Message):
     r"""GkeCluster contains information specific to GKE clusters.
+
     Attributes:
         resource_link (str):
             Immutable. Self-link of the GCP resource for
@@ -594,6 +596,7 @@ class Authority(proto.Message):
 
 class MembershipState(proto.Message):
     r"""State of the Membership resource.
+
     Attributes:
         code (google.cloud.gkehub_v1beta1.types.MembershipState.Code):
             Output only. The current state of the
@@ -1027,6 +1030,7 @@ class TypeMeta(proto.Message):
 
 class ConnectAgent(proto.Message):
     r"""The information required from end users to use GKE Connect.
+
     Attributes:
         name (str):
             Do not set.
@@ -1176,6 +1180,7 @@ class GenerateExclusivityManifestResponse(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

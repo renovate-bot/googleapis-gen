@@ -196,6 +196,7 @@ class UpdateConnectionCredentialRequest(proto.Message):
 
 class DeleteConnectionRequest(proto.Message):
     r"""The request for [ConnectionService.DeleteConnectionRequest][].
+
     Attributes:
         name (str):
             Required. Name of the deleted connection, for example:
@@ -268,6 +269,7 @@ class Connection(proto.Message):
 
 class ConnectionCredential(proto.Message):
     r"""Credential to use with a connection.
+
     Attributes:
         cloud_sql (google.cloud.bigquery.connection_v1beta1.types.CloudSqlCredential):
             Credential for Cloud SQL database.
@@ -283,6 +285,7 @@ class ConnectionCredential(proto.Message):
 
 class CloudSqlProperties(proto.Message):
     r"""Connection properties specific to the Cloud SQL.
+
     Attributes:
         instance_id (str):
             Cloud SQL instance ID in the form
@@ -322,6 +325,7 @@ class CloudSqlProperties(proto.Message):
 
 class CloudSqlCredential(proto.Message):
     r"""Credential info for the Cloud SQL.
+
     Attributes:
         username (str):
             The username for the credential.

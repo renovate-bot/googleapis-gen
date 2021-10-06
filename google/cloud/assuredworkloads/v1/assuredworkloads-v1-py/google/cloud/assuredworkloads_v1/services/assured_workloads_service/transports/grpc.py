@@ -375,6 +375,8 @@ class AssuredWorkloadsServiceGrpcTransport(AssuredWorkloadsServiceTransport):
             )
         return self._stubs['list_workloads']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AssuredWorkloadsServiceGrpcTransport',

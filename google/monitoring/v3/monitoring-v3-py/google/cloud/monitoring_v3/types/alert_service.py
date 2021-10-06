@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class CreateAlertPolicyRequest(proto.Message):
     r"""The protocol for the ``CreateAlertPolicy`` request.
+
     Attributes:
         name (str):
             Required. The
@@ -71,6 +72,7 @@ class CreateAlertPolicyRequest(proto.Message):
 
 class GetAlertPolicyRequest(proto.Message):
     r"""The protocol for the ``GetAlertPolicy`` request.
+
     Attributes:
         name (str):
             Required. The alerting policy to retrieve. The format is:
@@ -88,6 +90,7 @@ class GetAlertPolicyRequest(proto.Message):
 
 class ListAlertPoliciesRequest(proto.Message):
     r"""The protocol for the ``ListAlertPolicies`` request.
+
     Attributes:
         name (str):
             Required. The
@@ -151,6 +154,7 @@ class ListAlertPoliciesRequest(proto.Message):
 
 class ListAlertPoliciesResponse(proto.Message):
     r"""The protocol for the ``ListAlertPolicies`` response.
+
     Attributes:
         alert_policies (Sequence[google.cloud.monitoring_v3.types.AlertPolicy]):
             The returned alert policies.
@@ -186,6 +190,7 @@ class ListAlertPoliciesResponse(proto.Message):
 
 class UpdateAlertPolicyRequest(proto.Message):
     r"""The protocol for the ``UpdateAlertPolicy`` request.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. A list of alerting policy field names. If this
@@ -236,6 +241,7 @@ class UpdateAlertPolicyRequest(proto.Message):
 
 class DeleteAlertPolicyRequest(proto.Message):
     r"""The protocol for the ``DeleteAlertPolicy`` request.
+
     Attributes:
         name (str):
             Required. The alerting policy to delete. The format is:

@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class ArrowSchema(proto.Message):
     r"""Arrow schema.
+
     Attributes:
         serialized_schema (bytes):
             IPC serialized Arrow schema.
@@ -40,6 +41,7 @@ class ArrowSchema(proto.Message):
 
 class ArrowRecordBatch(proto.Message):
     r"""Arrow RecordBatch.
+
     Attributes:
         serialized_record_batch (bytes):
             IPC serialized Arrow RecordBatch.

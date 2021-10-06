@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AffiliateLocationFeedRelationshipTypeEnum(proto.Message):
     r"""Container for enum describing possible values for a
     relationship type for an affiliate location feed.
-        """
+
+    """
     class AffiliateLocationFeedRelationshipType(proto.Enum):
         r"""Possible values for a relationship type for an affiliate
         location feed.

@@ -391,6 +391,9 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
             )
         return self._stubs['annotate_text']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'LanguageServiceGrpcAsyncIOTransport',

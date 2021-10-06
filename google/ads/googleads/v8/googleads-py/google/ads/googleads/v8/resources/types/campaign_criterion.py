@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class CampaignCriterion(proto.Message):
     r"""A campaign criterion.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign criterion.

@@ -97,6 +97,7 @@ class Authorization(proto.Message):
 
 class CreateDeploymentRequest(proto.Message):
     r"""Request message to create a deployment.
+
     Attributes:
         parent (str):
             Required. Name of the project in which to create the
@@ -129,6 +130,7 @@ class CreateDeploymentRequest(proto.Message):
 
 class ReplaceDeploymentRequest(proto.Message):
     r"""Request message to create or replace a deployment.
+
     Attributes:
         deployment (google.cloud.workspace_add_ons_v1.types.Deployment):
             Required. The deployment to create or
@@ -144,6 +146,7 @@ class ReplaceDeploymentRequest(proto.Message):
 
 class GetDeploymentRequest(proto.Message):
     r"""Request message to get a deployment.
+
     Attributes:
         name (str):
             Required. The full resource name of the deployment to get.
@@ -159,6 +162,7 @@ class GetDeploymentRequest(proto.Message):
 
 class ListDeploymentsRequest(proto.Message):
     r"""Request message to list deployments for a project.
+
     Attributes:
         parent (str):
             Required. Name of the project in which to create the
@@ -196,6 +200,7 @@ class ListDeploymentsRequest(proto.Message):
 
 class ListDeploymentsResponse(proto.Message):
     r"""Response message to list deployments.
+
     Attributes:
         deployments (Sequence[google.cloud.workspace_add_ons_v1.types.Deployment]):
             The list of deployments for the given
@@ -223,6 +228,7 @@ class ListDeploymentsResponse(proto.Message):
 
 class DeleteDeploymentRequest(proto.Message):
     r"""Request message to delete a deployment.
+
     Attributes:
         name (str):
             Required. The full resource name of the deployment to
@@ -247,6 +253,7 @@ class DeleteDeploymentRequest(proto.Message):
 
 class InstallDeploymentRequest(proto.Message):
     r"""Request message to install a developer mode deployment.
+
     Attributes:
         name (str):
             Required. The full resource name of the deployment to
@@ -263,6 +270,7 @@ class InstallDeploymentRequest(proto.Message):
 
 class UninstallDeploymentRequest(proto.Message):
     r"""Request message to uninstall a developer mode deployment.
+
     Attributes:
         name (str):
             Required. The full resource name of the deployment to
@@ -297,6 +305,7 @@ class GetInstallStatusRequest(proto.Message):
 
 class InstallStatus(proto.Message):
     r"""Developer mode install status of a deployment
+
     Attributes:
         name (str):
             The canonical full resource name of the deployment install
@@ -322,6 +331,7 @@ class InstallStatus(proto.Message):
 
 class Deployment(proto.Message):
     r"""A Google Workspace Add-on deployment
+
     Attributes:
         name (str):
             The deployment resource name. Example:
@@ -361,6 +371,7 @@ class Deployment(proto.Message):
 
 class AddOns(proto.Message):
     r"""A Google Workspace Add-on configuration.
+
     Attributes:
         common (google.apps.script.type.script_manifest_pb2.CommonAddOnManifest):
             Configuration that is common across all

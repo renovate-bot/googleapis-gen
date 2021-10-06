@@ -86,6 +86,7 @@ class IamPolicyAnalysisResult(proto.Message):
 
     class Resource(proto.Message):
         r"""A GCP resource that appears in an access control list.
+
         Attributes:
             full_resource_name (str):
                 The `full resource
@@ -106,6 +107,7 @@ class IamPolicyAnalysisResult(proto.Message):
 
     class Access(proto.Message):
         r"""A role or permission that appears in an access control list.
+
         Attributes:
             role (str):
                 The role.
@@ -133,6 +135,7 @@ class IamPolicyAnalysisResult(proto.Message):
 
     class Edge(proto.Message):
         r"""A directional edge.
+
         Attributes:
             source_node (str):
                 The source node of the edge.
@@ -151,6 +154,7 @@ class IamPolicyAnalysisResult(proto.Message):
 
     class Identity(proto.Message):
         r"""An identity that appears in an access control list.
+
         Attributes:
             name (str):
                 The identity name in any form of members appear in `IAM
@@ -241,6 +245,7 @@ class IamPolicyAnalysisResult(proto.Message):
 
     class IdentityList(proto.Message):
         r"""
+
         Attributes:
             identities (Sequence[google.cloud.asset_v1p4beta1.types.IamPolicyAnalysisResult.Identity]):
                 Only the identities that match one of the following

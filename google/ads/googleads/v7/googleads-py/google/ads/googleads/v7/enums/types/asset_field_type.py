@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AssetFieldTypeEnum(proto.Message):
     r"""Container for enum describing the possible placements of an
     asset.
-        """
+
+    """
     class AssetFieldType(proto.Enum):
         r"""Enum describing the possible placements of an asset."""
         UNSPECIFIED = 0

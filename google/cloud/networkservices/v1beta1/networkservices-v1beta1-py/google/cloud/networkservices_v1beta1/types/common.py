@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -91,6 +92,7 @@ class OperationMetadata(proto.Message):
 
 class TrafficPortSelector(proto.Message):
     r"""Specification of a port-based selector.
+
     Attributes:
         ports (Sequence[str]):
             Optional. A list of ports. Can be port numbers or port range
@@ -163,6 +165,7 @@ class EndpointMatcher(proto.Message):
 
         class MetadataLabels(proto.Message):
             r"""Defines a name-pair value for a single label.
+
             Attributes:
                 label_name (str):
                     Required. Label name presented as key in xDS

@@ -325,6 +325,8 @@ class PrivateCatalogGrpcTransport(PrivateCatalogTransport):
             )
         return self._stubs['search_versions']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'PrivateCatalogGrpcTransport',

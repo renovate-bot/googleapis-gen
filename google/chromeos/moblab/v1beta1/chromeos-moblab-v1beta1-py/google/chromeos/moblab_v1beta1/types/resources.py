@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class BuildTarget(proto.Message):
     r"""Resource that represents a build target.
+
     Attributes:
         name (str):
             The resource name of the build target. Format:
@@ -61,6 +62,7 @@ class Model(proto.Message):
 
 class Milestone(proto.Message):
     r"""Resource that represents a chrome OS milestone.
+
     Attributes:
         name (str):
             The resource name of the milestone.

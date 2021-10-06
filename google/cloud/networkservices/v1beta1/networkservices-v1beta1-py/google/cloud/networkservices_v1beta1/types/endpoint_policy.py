@@ -155,6 +155,7 @@ class EndpointPolicy(proto.Message):
 
 class ListEndpointPoliciesRequest(proto.Message):
     r"""Request used with the ListEndpointPolicies method.
+
     Attributes:
         parent (str):
             Required. The project and location from which the
@@ -186,6 +187,7 @@ class ListEndpointPoliciesRequest(proto.Message):
 
 class ListEndpointPoliciesResponse(proto.Message):
     r"""Response returned by the ListEndpointPolicies method.
+
     Attributes:
         endpoint_policies (Sequence[google.cloud.networkservices_v1beta1.types.EndpointPolicy]):
             List of EndpointPolicy resources.
@@ -213,6 +215,7 @@ class ListEndpointPoliciesResponse(proto.Message):
 
 class GetEndpointPolicyRequest(proto.Message):
     r"""Request used with the GetEndpointPolicy method.
+
     Attributes:
         name (str):
             Required. A name of the EndpointPolicy to get. Must be in
@@ -228,6 +231,7 @@ class GetEndpointPolicyRequest(proto.Message):
 
 class CreateEndpointPolicyRequest(proto.Message):
     r"""Request used with the CreateEndpointPolicy method.
+
     Attributes:
         parent (str):
             Required. The parent resource of the EndpointPolicy. Must be
@@ -257,6 +261,7 @@ class CreateEndpointPolicyRequest(proto.Message):
 
 class UpdateEndpointPolicyRequest(proto.Message):
     r"""Request used with the UpdateEndpointPolicy method.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. Field mask is used to specify the fields to be
@@ -283,6 +288,7 @@ class UpdateEndpointPolicyRequest(proto.Message):
 
 class DeleteEndpointPolicyRequest(proto.Message):
     r"""Request used with the DeleteEndpointPolicy method.
+
     Attributes:
         name (str):
             Required. A name of the EndpointPolicy to delete. Must be in

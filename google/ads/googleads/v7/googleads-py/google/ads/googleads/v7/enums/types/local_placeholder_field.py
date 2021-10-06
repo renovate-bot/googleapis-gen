@@ -29,7 +29,8 @@ class LocalPlaceholderFieldEnum(proto.Message):
     r"""Values for Local placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-        """
+
+    """
     class LocalPlaceholderField(proto.Enum):
         r"""Possible values for Local placeholder fields."""
         UNSPECIFIED = 0

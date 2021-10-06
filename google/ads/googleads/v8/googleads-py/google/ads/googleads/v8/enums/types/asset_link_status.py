@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AssetLinkStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of an asset
     link.
-        """
+
+    """
     class AssetLinkStatus(proto.Enum):
         r"""Enum describing statuses of an asset link."""
         UNSPECIFIED = 0

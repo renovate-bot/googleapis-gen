@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class RequestErrorEnum(proto.Message):
-    r"""Container for enum describing possible request errors.    """
+    r"""Container for enum describing possible request errors.
+    """
     class RequestError(proto.Enum):
         r"""Enum describing possible request errors."""
         UNSPECIFIED = 0

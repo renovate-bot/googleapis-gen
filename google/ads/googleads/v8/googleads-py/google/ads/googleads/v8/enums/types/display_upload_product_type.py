@@ -32,7 +32,8 @@ class DisplayUploadProductTypeEnum(proto.Message):
     https://support.google.com/google-ads/answer/6053288 for more
     info about dynamic remarketing. Other product types are regarded
     as "static" and do not have this requirement.
-        """
+
+    """
     class DisplayUploadProductType(proto.Enum):
         r"""Enumerates display upload product types."""
         UNSPECIFIED = 0

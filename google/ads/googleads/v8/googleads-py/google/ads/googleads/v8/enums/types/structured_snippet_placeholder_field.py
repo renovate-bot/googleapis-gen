@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class StructuredSnippetPlaceholderFieldEnum(proto.Message):
-    r"""Values for Structured Snippet placeholder fields.    """
+    r"""Values for Structured Snippet placeholder fields.
+    """
     class StructuredSnippetPlaceholderField(proto.Enum):
         r"""Possible values for Structured Snippet placeholder fields."""
         UNSPECIFIED = 0

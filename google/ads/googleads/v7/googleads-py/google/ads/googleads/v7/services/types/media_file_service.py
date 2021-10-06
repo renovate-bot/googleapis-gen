@@ -101,6 +101,7 @@ class MutateMediaFilesRequest(proto.Message):
 
 class MediaFileOperation(proto.Message):
     r"""A single operation to create media file.
+
     Attributes:
         create (google.ads.googleads.v7.resources.types.MediaFile):
             Create operation: No resource name is
@@ -117,6 +118,7 @@ class MediaFileOperation(proto.Message):
 
 class MutateMediaFilesResponse(proto.Message):
     r"""Response message for a media file mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -142,6 +144,7 @@ class MutateMediaFilesResponse(proto.Message):
 
 class MutateMediaFileResult(proto.Message):
     r"""The result for the media file mutate.
+
     Attributes:
         resource_name (str):
             The resource name returned for successful

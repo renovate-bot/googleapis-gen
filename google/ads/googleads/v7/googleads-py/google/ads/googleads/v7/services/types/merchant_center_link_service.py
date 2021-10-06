@@ -117,6 +117,7 @@ class MutateMerchantCenterLinkRequest(proto.Message):
 
 class MerchantCenterLinkOperation(proto.Message):
     r"""A single update on a Merchant Center link.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -151,6 +152,7 @@ class MerchantCenterLinkOperation(proto.Message):
 
 class MutateMerchantCenterLinkResponse(proto.Message):
     r"""Response message for Merchant Center link mutate.
+
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateMerchantCenterLinkResult):
             Result for the mutate.
@@ -165,6 +167,7 @@ class MutateMerchantCenterLinkResponse(proto.Message):
 
 class MutateMerchantCenterLinkResult(proto.Message):
     r"""The result for the Merchant Center link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

@@ -46,6 +46,7 @@ __protobuf__ = proto.module(
 
 class CreateEnvironmentRequest(proto.Message):
     r"""Create a new environment.
+
     Attributes:
         parent (str):
             The parent must be of the form
@@ -67,6 +68,7 @@ class CreateEnvironmentRequest(proto.Message):
 
 class GetEnvironmentRequest(proto.Message):
     r"""Get an environment.
+
     Attributes:
         name (str):
             The resource name of the environment to get,
@@ -82,6 +84,7 @@ class GetEnvironmentRequest(proto.Message):
 
 class ListEnvironmentsRequest(proto.Message):
     r"""List environments in a project and location.
+
     Attributes:
         parent (str):
             List environments in the given project and
@@ -110,6 +113,7 @@ class ListEnvironmentsRequest(proto.Message):
 
 class ListEnvironmentsResponse(proto.Message):
     r"""The environments in a project and location.
+
     Attributes:
         environments (Sequence[google.cloud.orchestration.airflow.service_v1.types.Environment]):
             The list of environments returned by a
@@ -136,6 +140,7 @@ class ListEnvironmentsResponse(proto.Message):
 
 class DeleteEnvironmentRequest(proto.Message):
     r"""Delete an environment.
+
     Attributes:
         name (str):
             The environment to delete, in the form:
@@ -150,6 +155,7 @@ class DeleteEnvironmentRequest(proto.Message):
 
 class UpdateEnvironmentRequest(proto.Message):
     r"""Update an environment.
+
     Attributes:
         name (str):
             The relative resource name of the environment
@@ -331,6 +337,7 @@ class UpdateEnvironmentRequest(proto.Message):
 
 class EnvironmentConfig(proto.Message):
     r"""Configuration information for an environment.
+
     Attributes:
         gke_cluster (str):
             Output only. The Kubernetes Engine cluster
@@ -443,6 +450,7 @@ class WebServerNetworkAccessControl(proto.Message):
 
     class AllowedIpRange(proto.Message):
         r"""Allowed IP range with user-provided description.
+
         Attributes:
             value (str):
                 IP address or range, defined using CIDR notation, of
@@ -956,6 +964,7 @@ class PrivateEnvironmentConfig(proto.Message):
 
 class Environment(proto.Message):
     r"""An environment for running orchestration tasks.
+
     Attributes:
         name (str):
             The resource name of the environment, in the

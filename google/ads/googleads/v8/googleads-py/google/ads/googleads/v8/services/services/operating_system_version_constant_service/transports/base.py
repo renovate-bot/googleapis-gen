@@ -90,6 +90,15 @@ class OperatingSystemVersionConstantServiceTransport(metaclass=abc.ABCMeta):
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+        .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def get_operating_system_version_constant(self) -> typing.Callable[
             [operating_system_version_constant_service.GetOperatingSystemVersionConstantRequest],

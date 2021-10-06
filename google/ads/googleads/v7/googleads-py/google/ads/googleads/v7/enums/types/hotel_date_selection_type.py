@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class HotelDateSelectionTypeEnum(proto.Message):
     r"""Container for enum describing possible hotel date selection
     types
-        """
+
+    """
     class HotelDateSelectionType(proto.Enum):
         r"""Enum describing possible hotel date selection types."""
         UNSPECIFIED = 0

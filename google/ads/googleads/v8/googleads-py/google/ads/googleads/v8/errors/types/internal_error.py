@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class InternalErrorEnum(proto.Message):
-    r"""Container for enum describing possible internal errors.    """
+    r"""Container for enum describing possible internal errors.
+    """
     class InternalError(proto.Enum):
         r"""Enum describing possible internal errors."""
         UNSPECIFIED = 0

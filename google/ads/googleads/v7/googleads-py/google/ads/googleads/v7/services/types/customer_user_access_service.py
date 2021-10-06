@@ -74,6 +74,7 @@ class MutateCustomerUserAccessRequest(proto.Message):
 
 class CustomerUserAccessOperation(proto.Message):
     r"""A single operation (update, remove) on customer user access.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -108,6 +109,7 @@ class CustomerUserAccessOperation(proto.Message):
 
 class MutateCustomerUserAccessResponse(proto.Message):
     r"""Response message for customer user access mutate.
+
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateCustomerUserAccessResult):
             Result for the mutate.
@@ -122,6 +124,7 @@ class MutateCustomerUserAccessResponse(proto.Message):
 
 class MutateCustomerUserAccessResult(proto.Message):
     r"""The result for the customer user access mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

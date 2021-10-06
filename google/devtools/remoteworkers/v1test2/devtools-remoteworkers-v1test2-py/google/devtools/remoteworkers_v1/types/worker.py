@@ -216,6 +216,7 @@ class Device(proto.Message):
 
     class Property(proto.Message):
         r"""A device property; see ``properties`` for more information.
+
         Attributes:
             key (str):
                 For general information on keys, see the documentation to

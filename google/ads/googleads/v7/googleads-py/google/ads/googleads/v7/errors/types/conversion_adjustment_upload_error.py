@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionAdjustmentUploadErrorEnum(proto.Message):
     r"""Container for enum describing possible conversion adjustment
     upload errors.
-        """
+
+    """
     class ConversionAdjustmentUploadError(proto.Enum):
         r"""Enum describing possible conversion adjustment upload errors."""
         UNSPECIFIED = 0

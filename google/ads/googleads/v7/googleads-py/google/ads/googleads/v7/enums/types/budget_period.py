@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BudgetPeriodEnum(proto.Message):
-    r"""Message describing Budget period.    """
+    r"""Message describing Budget period.
+    """
     class BudgetPeriod(proto.Enum):
         r"""Possible period of a Budget."""
         UNSPECIFIED = 0

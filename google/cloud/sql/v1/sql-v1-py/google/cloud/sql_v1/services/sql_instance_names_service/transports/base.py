@@ -146,6 +146,15 @@ class SqlInstanceNamesServiceTransport(abc.ABC):
         self._wrapped_methods = {
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+       .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
 
 __all__ = (
     'SqlInstanceNamesServiceTransport',

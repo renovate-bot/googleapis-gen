@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class CampaignFeed(proto.Message):
     r"""A campaign feed.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign feed. Campaign

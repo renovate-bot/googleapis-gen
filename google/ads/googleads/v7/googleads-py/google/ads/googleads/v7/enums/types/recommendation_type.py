@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class RecommendationTypeEnum(proto.Message):
-    r"""Container for enum describing types of recommendations.    """
+    r"""Container for enum describing types of recommendations.
+    """
     class RecommendationType(proto.Enum):
         r"""Types of recommendations."""
         UNSPECIFIED = 0

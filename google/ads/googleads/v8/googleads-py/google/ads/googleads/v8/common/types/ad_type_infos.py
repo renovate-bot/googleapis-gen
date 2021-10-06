@@ -64,6 +64,7 @@ __protobuf__ = proto.module(
 
 class TextAdInfo(proto.Message):
     r"""A text ad.
+
     Attributes:
         headline (str):
             The headline of the ad.
@@ -92,6 +93,7 @@ class TextAdInfo(proto.Message):
 
 class ExpandedTextAdInfo(proto.Message):
     r"""An expanded text ad.
+
     Attributes:
         headline_part1 (str):
             The first part of the ad's headline.
@@ -150,6 +152,7 @@ class ExpandedTextAdInfo(proto.Message):
 
 class ExpandedDynamicSearchAdInfo(proto.Message):
     r"""An expanded dynamic search ad.
+
     Attributes:
         description (str):
             The description of the ad.
@@ -170,19 +173,23 @@ class ExpandedDynamicSearchAdInfo(proto.Message):
 
 
 class HotelAdInfo(proto.Message):
-    r"""A hotel ad.    """
+    r"""A hotel ad.
+    """
 
 
 class ShoppingSmartAdInfo(proto.Message):
-    r"""A Smart Shopping ad.    """
+    r"""A Smart Shopping ad.
+    """
 
 
 class ShoppingProductAdInfo(proto.Message):
-    r"""A standard Shopping ad.    """
+    r"""A standard Shopping ad.
+    """
 
 
 class ShoppingComparisonListingAdInfo(proto.Message):
     r"""A Shopping Comparison Listing ad.
+
     Attributes:
         headline (str):
             Headline of the ad. This field is required.
@@ -198,6 +205,7 @@ class ShoppingComparisonListingAdInfo(proto.Message):
 
 class GmailAdInfo(proto.Message):
     r"""A Gmail ad.
+
     Attributes:
         teaser (google.ads.googleads.v8.common.types.GmailTeaser):
             The Gmail teaser.
@@ -346,6 +354,7 @@ class DisplayCallToAction(proto.Message):
 
 class ProductImage(proto.Message):
     r"""Product image specific data.
+
     Attributes:
         product_image (str):
             The MediaFile resource name of the product
@@ -377,6 +386,7 @@ class ProductImage(proto.Message):
 
 class ProductVideo(proto.Message):
     r"""Product video specific data.
+
     Attributes:
         product_video (str):
             The MediaFile resource name of a video which
@@ -392,6 +402,7 @@ class ProductVideo(proto.Message):
 
 class ImageAdInfo(proto.Message):
     r"""An image ad.
+
     Attributes:
         pixel_width (int):
             Width in pixels of the full size image.
@@ -573,6 +584,7 @@ class VideoOutstreamAdInfo(proto.Message):
 
 class VideoTrueViewDiscoveryAdInfo(proto.Message):
     r"""Representation of video TrueView discovery ad format.
+
     Attributes:
         headline (str):
             The headline of the ad.
@@ -603,6 +615,7 @@ class VideoTrueViewDiscoveryAdInfo(proto.Message):
 
 class VideoAdInfo(proto.Message):
     r"""A video ad.
+
     Attributes:
         media_file (str):
             The MediaFile resource to use for the video.
@@ -657,6 +670,7 @@ class VideoAdInfo(proto.Message):
 
 class VideoResponsiveAdInfo(proto.Message):
     r"""A video responsive ad.
+
     Attributes:
         headlines (Sequence[google.ads.googleads.v8.common.types.AdTextAsset]):
             List of text assets used for the short
@@ -901,6 +915,7 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
 
 class AppAdInfo(proto.Message):
     r"""An app ad.
+
     Attributes:
         mandatory_ad_text (google.ads.googleads.v8.common.types.AdTextAsset):
             Mandatory ad text.
@@ -1047,6 +1062,7 @@ class LegacyAppInstallAdInfo(proto.Message):
 
 class ResponsiveDisplayAdInfo(proto.Message):
     r"""A responsive display ad.
+
     Attributes:
         marketing_images (Sequence[google.ads.googleads.v8.common.types.AdImageAsset]):
             Marketing images to be used in the ad. Valid image types are
@@ -1206,6 +1222,7 @@ class ResponsiveDisplayAdInfo(proto.Message):
 
 class LocalAdInfo(proto.Message):
     r"""A local ad.
+
     Attributes:
         headlines (Sequence[google.ads.googleads.v8.common.types.AdTextAsset]):
             List of text assets for headlines. When the
@@ -1346,6 +1363,7 @@ class ResponsiveDisplayAdControlSpec(proto.Message):
 
 class SmartCampaignAdInfo(proto.Message):
     r"""A Smart campaign ad.
+
     Attributes:
         headlines (Sequence[google.ads.googleads.v8.common.types.AdTextAsset]):
             List of text assets for headlines. When the
@@ -1372,6 +1390,7 @@ class SmartCampaignAdInfo(proto.Message):
 
 class CallAdInfo(proto.Message):
     r"""A call ad.
+
     Attributes:
         country_code (str):
             The country code in the ad.

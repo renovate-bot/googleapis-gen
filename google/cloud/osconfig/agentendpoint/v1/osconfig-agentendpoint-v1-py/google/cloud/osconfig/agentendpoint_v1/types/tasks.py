@@ -56,6 +56,7 @@ class TaskType(proto.Enum):
 
 class Task(proto.Message):
     r"""A unit of work to be performed by the agent.
+
     Attributes:
         task_id (str):
             Unique task id.
@@ -122,6 +123,7 @@ class Task(proto.Message):
 
 class ApplyPatchesTask(proto.Message):
     r"""Message which instructs agent to apply patches.
+
     Attributes:
         patch_config (google.cloud.osconfig.agentendpoint_v1.types.PatchConfig):
             Specific information about how patches should
@@ -267,6 +269,7 @@ class ApplyConfigTask(proto.Message):
 
     class OSPolicy(proto.Message):
         r"""Message representing an OS policy.
+
         Attributes:
             id (str):
                 User provided policy id.
@@ -350,6 +353,7 @@ class ApplyConfigTaskOutput(proto.Message):
 
     class OSPolicyResult(proto.Message):
         r"""Result of applying desired state config for an OS policy.
+
         Attributes:
             os_policy_id (str):
                 The OS policy id

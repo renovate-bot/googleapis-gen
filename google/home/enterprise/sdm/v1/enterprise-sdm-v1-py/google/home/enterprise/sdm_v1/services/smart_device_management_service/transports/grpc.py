@@ -406,6 +406,8 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
             )
         return self._stubs['list_rooms']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SmartDeviceManagementServiceGrpcTransport',

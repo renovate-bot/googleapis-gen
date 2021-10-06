@@ -54,6 +54,7 @@ __protobuf__ = proto.module(
 
 class FeedMapping(proto.Message):
     r"""A feed mapping.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed mapping. Feed

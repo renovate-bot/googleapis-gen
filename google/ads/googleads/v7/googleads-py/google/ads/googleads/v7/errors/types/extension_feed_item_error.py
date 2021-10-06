@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ExtensionFeedItemErrorEnum(proto.Message):
     r"""Container for enum describing possible extension feed item
     error.
-        """
+
+    """
     class ExtensionFeedItemError(proto.Enum):
         r"""Enum describing possible extension feed item errors."""
         UNSPECIFIED = 0

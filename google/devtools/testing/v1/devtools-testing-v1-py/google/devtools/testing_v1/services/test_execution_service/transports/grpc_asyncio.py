@@ -352,6 +352,9 @@ class TestExecutionServiceGrpcAsyncIOTransport(TestExecutionServiceTransport):
             )
         return self._stubs['cancel_test_matrix']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TestExecutionServiceGrpcAsyncIOTransport',

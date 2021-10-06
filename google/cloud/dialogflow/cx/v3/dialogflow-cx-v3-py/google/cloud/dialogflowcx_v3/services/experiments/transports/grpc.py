@@ -416,6 +416,8 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
             )
         return self._stubs['stop_experiment']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ExperimentsGrpcTransport',

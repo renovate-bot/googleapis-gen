@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AppUrlOperatingSystemTypeEnum(proto.Message):
-    r"""The possible OS types for a deeplink AppUrl.    """
+    r"""The possible OS types for a deeplink AppUrl.
+    """
     class AppUrlOperatingSystemType(proto.Enum):
         r"""Operating System"""
         UNSPECIFIED = 0

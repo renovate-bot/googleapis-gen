@@ -530,6 +530,9 @@ class EnvironmentsGrpcAsyncIOTransport(EnvironmentsTransport):
             )
         return self._stubs['deploy_flow']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'EnvironmentsGrpcAsyncIOTransport',

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AppCampaignAppStoreEnum(proto.Message):
-    r"""The application store that distributes mobile applications.    """
+    r"""The application store that distributes mobile applications.
+    """
     class AppCampaignAppStore(proto.Enum):
         r"""Enum describing app campaign app store."""
         UNSPECIFIED = 0

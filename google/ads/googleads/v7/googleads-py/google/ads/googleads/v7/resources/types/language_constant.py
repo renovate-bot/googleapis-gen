@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class LanguageConstant(proto.Message):
     r"""A language.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the language constant.

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SharedSetStatusEnum(proto.Message):
-    r"""Container for enum describing types of shared set statuses.    """
+    r"""Container for enum describing types of shared set statuses.
+    """
     class SharedSetStatus(proto.Enum):
         r"""Enum listing the possible shared set statuses."""
         UNSPECIFIED = 0

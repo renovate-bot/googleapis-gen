@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class FinalizeMfaSignInRequest(proto.Message):
     r"""Finalizes sign-in by verifying MFA challenge.
+
     Attributes:
         mfa_pending_credential (str):
             Required. Pending credential from first
@@ -63,6 +64,7 @@ class FinalizeMfaSignInRequest(proto.Message):
 
 class FinalizeMfaSignInResponse(proto.Message):
     r"""FinalizeMfaSignIn response.
+
     Attributes:
         id_token (str):
             ID token for the authenticated user.
@@ -132,6 +134,7 @@ class StartMfaSignInRequest(proto.Message):
 
 class StartMfaSignInResponse(proto.Message):
     r"""StartMfaSignIn response.
+
     Attributes:
         phone_response_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneResponseInfo):
             MultiFactor sign-in session information

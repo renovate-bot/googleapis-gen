@@ -358,6 +358,9 @@ class KnowledgeBasesGrpcAsyncIOTransport(KnowledgeBasesTransport):
             )
         return self._stubs['update_knowledge_base']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'KnowledgeBasesGrpcAsyncIOTransport',

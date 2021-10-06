@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListCrmDataSourceTypeEnum(proto.Message):
-    r"""Indicates source of Crm upload data.    """
+    r"""Indicates source of Crm upload data.
+    """
     class UserListCrmDataSourceType(proto.Enum):
         r"""Enum describing possible user list crm data source type."""
         UNSPECIFIED = 0

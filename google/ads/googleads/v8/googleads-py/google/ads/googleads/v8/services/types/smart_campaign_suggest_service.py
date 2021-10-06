@@ -103,6 +103,7 @@ class SmartCampaignSuggestionInfo(proto.Message):
 
     class LocationList(proto.Message):
         r"""A list of locations.
+
         Attributes:
             locations (Sequence[google.ads.googleads.v8.common.types.LocationInfo]):
                 Required. Locations.
@@ -116,6 +117,7 @@ class SmartCampaignSuggestionInfo(proto.Message):
 
     class BusinessContext(proto.Message):
         r"""A context that describes a business.
+
         Attributes:
             business_name (str):
                 Optional. The name of the business.
@@ -186,6 +188,7 @@ class SuggestSmartCampaignBudgetOptionsResponse(proto.Message):
 
     class Metrics(proto.Message):
         r"""Performance metrics for a given budget option.
+
         Attributes:
             min_daily_clicks (int):
                 The estimated min daily clicks.
@@ -204,6 +207,7 @@ class SuggestSmartCampaignBudgetOptionsResponse(proto.Message):
 
     class BudgetOption(proto.Message):
         r"""Smart Campaign budget option.
+
         Attributes:
             daily_amount_micros (int):
                 The amount of the budget, in the local

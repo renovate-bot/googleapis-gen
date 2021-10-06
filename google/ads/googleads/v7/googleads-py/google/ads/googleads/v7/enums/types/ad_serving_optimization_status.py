@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdServingOptimizationStatusEnum(proto.Message):
-    r"""Possible ad serving statuses of a campaign.    """
+    r"""Possible ad serving statuses of a campaign.
+    """
     class AdServingOptimizationStatus(proto.Enum):
         r"""Enum describing possible serving statuses."""
         UNSPECIFIED = 0

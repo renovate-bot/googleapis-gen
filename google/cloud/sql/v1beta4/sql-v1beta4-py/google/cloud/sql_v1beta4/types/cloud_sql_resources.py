@@ -243,6 +243,7 @@ class SqlFlagType(proto.Enum):
 
 class AclEntry(proto.Message):
     r"""An entry for an Access Control list.
+
     Attributes:
         value (str):
             The allowlisted value for the access control
@@ -280,6 +281,7 @@ class AclEntry(proto.Message):
 
 class ApiWarning(proto.Message):
     r"""An Admin API warning message.
+
     Attributes:
         code (google.cloud.sql_v1beta4.types.ApiWarning.SqlApiWarningCode):
             Code to uniquely identify the warning type.
@@ -339,6 +341,7 @@ class BackupRetentionSettings(proto.Message):
 
 class BackupConfiguration(proto.Message):
     r"""Database instance backup configuration.
+
     Attributes:
         start_time (str):
             Start time for the daily backup configuration
@@ -412,6 +415,7 @@ class BackupConfiguration(proto.Message):
 
 class BackupRun(proto.Message):
     r"""A BackupRun resource.
+
     Attributes:
         kind (str):
             This is always <b>sql#backupRun</b>.
@@ -550,6 +554,7 @@ class BackupRun(proto.Message):
 
 class BackupRunsListResponse(proto.Message):
     r"""Backup run list results.
+
     Attributes:
         kind (str):
             This is always <b>sql#backupRunsList</b>.
@@ -584,6 +589,7 @@ class BackupRunsListResponse(proto.Message):
 
 class BinLogCoordinates(proto.Message):
     r"""Binary log coordinates.
+
     Attributes:
         bin_log_file_name (str):
             Name of the binary log file for a Cloud SQL
@@ -610,6 +616,7 @@ class BinLogCoordinates(proto.Message):
 
 class BackupContext(proto.Message):
     r"""Backup context.
+
     Attributes:
         backup_id (int):
             The identifier of the backup.
@@ -629,6 +636,7 @@ class BackupContext(proto.Message):
 
 class CloneContext(proto.Message):
     r"""Database instance clone context.
+
     Attributes:
         kind (str):
             This is always <b>sql#cloneContext</b>.
@@ -673,6 +681,7 @@ class CloneContext(proto.Message):
 
 class Database(proto.Message):
     r"""Represents a SQL database on the Cloud SQL instance.
+
     Attributes:
         kind (str):
             This is always <b>sql#database</b>.
@@ -742,6 +751,7 @@ class Database(proto.Message):
 
 class SqlServerDatabaseDetails(proto.Message):
     r"""Represents a Sql Server database on the Cloud SQL instance.
+
     Attributes:
         compatibility_level (int):
             The version of SQL Server with which the
@@ -762,6 +772,7 @@ class SqlServerDatabaseDetails(proto.Message):
 
 class DatabaseFlags(proto.Message):
     r"""Database flags for Cloud SQL instances.
+
     Attributes:
         name (str):
             The name of the flag. These flags are passed
@@ -791,6 +802,7 @@ class DatabaseFlags(proto.Message):
 
 class DatabaseInstance(proto.Message):
     r"""A Cloud SQL instance resource.
+
     Attributes:
         kind (str):
             This is always <b>sql#instance</b>.
@@ -937,6 +949,7 @@ class DatabaseInstance(proto.Message):
 
     class SqlFailoverReplica(proto.Message):
         r"""
+
         Attributes:
             name (str):
                 The name of the failover replica. If
@@ -964,6 +977,7 @@ class DatabaseInstance(proto.Message):
 
     class SqlScheduledMaintenance(proto.Message):
         r"""Any scheduled maintenancce for this instance.
+
         Attributes:
             start_time (google.protobuf.timestamp_pb2.Timestamp):
                 The start time of any upcoming scheduled
@@ -1179,6 +1193,7 @@ class DatabaseInstance(proto.Message):
 
 class DatabasesListResponse(proto.Message):
     r"""Database list response.
+
     Attributes:
         kind (str):
             This is always <b>sql#databasesList</b>.
@@ -1230,6 +1245,7 @@ class DemoteMasterConfiguration(proto.Message):
 
 class DemoteMasterContext(proto.Message):
     r"""Database instance demote primary instance context.
+
     Attributes:
         kind (str):
             This is always
@@ -1278,6 +1294,7 @@ class DemoteMasterContext(proto.Message):
 
 class DemoteMasterMySqlReplicaConfiguration(proto.Message):
     r"""Read-replica configuration specific to MySQL databases.
+
     Attributes:
         kind (str):
             This is always
@@ -1328,6 +1345,7 @@ class DemoteMasterMySqlReplicaConfiguration(proto.Message):
 
 class ExportContext(proto.Message):
     r"""Database instance export context.
+
     Attributes:
         uri (str):
             The path to the file in Google Cloud Storage
@@ -1375,6 +1393,7 @@ class ExportContext(proto.Message):
 
     class SqlCsvExportOptions(proto.Message):
         r"""
+
         Attributes:
             select_query (str):
                 The select query used to extract the data.
@@ -1387,6 +1406,7 @@ class ExportContext(proto.Message):
 
     class SqlExportOptions(proto.Message):
         r"""
+
         Attributes:
             tables (Sequence[str]):
                 Tables to export, or that were exported, from
@@ -1402,6 +1422,7 @@ class ExportContext(proto.Message):
 
         class MysqlExportOptions(proto.Message):
             r"""Options for exporting from MySQL.
+
             Attributes:
                 master_data (google.protobuf.wrappers_pb2.Int32Value):
                     Option to include SQL statement required to
@@ -1473,6 +1494,7 @@ class ExportContext(proto.Message):
 
 class FailoverContext(proto.Message):
     r"""Database instance failover context.
+
     Attributes:
         settings_version (int):
             The current settings version of this
@@ -1495,6 +1517,7 @@ class FailoverContext(proto.Message):
 
 class Flag(proto.Message):
     r"""A flag resource.
+
     Attributes:
         name (str):
             This is the name of the flag. Flag names always use
@@ -1580,6 +1603,7 @@ class Flag(proto.Message):
 
 class FlagsListResponse(proto.Message):
     r"""Flags list response.
+
     Attributes:
         kind (str):
             This is always <b>sql#flagsList</b>.
@@ -1600,6 +1624,7 @@ class FlagsListResponse(proto.Message):
 
 class ImportContext(proto.Message):
     r"""Database instance import context.
+
     Attributes:
         uri (str):
             Path to the import file in Cloud Storage, in
@@ -1635,6 +1660,7 @@ class ImportContext(proto.Message):
 
     class SqlCsvImportOptions(proto.Message):
         r"""
+
         Attributes:
             table (str):
                 The table to which CSV data is imported.
@@ -1655,6 +1681,7 @@ class ImportContext(proto.Message):
 
     class SqlBakImportOptions(proto.Message):
         r"""
+
         Attributes:
             encryption_options (google.cloud.sql_v1beta4.types.ImportContext.SqlBakImportOptions.EncryptionOptions):
 
@@ -1662,6 +1689,7 @@ class ImportContext(proto.Message):
 
         class EncryptionOptions(proto.Message):
             r"""
+
             Attributes:
                 cert_path (str):
                     Path to the Certificate (.cer) in Cloud
@@ -1733,6 +1761,7 @@ class ImportContext(proto.Message):
 
 class InstancesCloneRequest(proto.Message):
     r"""Database instance clone request.
+
     Attributes:
         clone_context (google.cloud.sql_v1beta4.types.CloneContext):
             Contains details about the clone operation.
@@ -1747,6 +1776,7 @@ class InstancesCloneRequest(proto.Message):
 
 class InstancesDemoteMasterRequest(proto.Message):
     r"""Database demote primary instance request.
+
     Attributes:
         demote_master_context (google.cloud.sql_v1beta4.types.DemoteMasterContext):
             Contains details about the demoteMaster
@@ -1762,6 +1792,7 @@ class InstancesDemoteMasterRequest(proto.Message):
 
 class InstancesExportRequest(proto.Message):
     r"""Database instance export request.
+
     Attributes:
         export_context (google.cloud.sql_v1beta4.types.ExportContext):
             Contains details about the export operation.
@@ -1776,6 +1807,7 @@ class InstancesExportRequest(proto.Message):
 
 class InstancesFailoverRequest(proto.Message):
     r"""Instance failover request.
+
     Attributes:
         failover_context (google.cloud.sql_v1beta4.types.FailoverContext):
             Failover Context.
@@ -1790,6 +1822,7 @@ class InstancesFailoverRequest(proto.Message):
 
 class InstancesImportRequest(proto.Message):
     r"""Database instance import request.
+
     Attributes:
         import_context (google.cloud.sql_v1beta4.types.ImportContext):
             Contains details about the import operation.
@@ -1804,6 +1837,7 @@ class InstancesImportRequest(proto.Message):
 
 class InstancesListResponse(proto.Message):
     r"""Database instances list response.
+
     Attributes:
         kind (str):
             This is always <b>sql#instancesList</b>.
@@ -1845,6 +1879,7 @@ class InstancesListResponse(proto.Message):
 
 class InstancesListServerCasResponse(proto.Message):
     r"""Instances ListServerCas response.
+
     Attributes:
         certs (Sequence[google.cloud.sql_v1beta4.types.SslCert]):
             List of server CA certificates for the
@@ -1873,6 +1908,7 @@ class InstancesListServerCasResponse(proto.Message):
 
 class InstancesRestoreBackupRequest(proto.Message):
     r"""Database instance restore backup request.
+
     Attributes:
         restore_backup_context (google.cloud.sql_v1beta4.types.RestoreBackupContext):
             Parameters required to perform the restore
@@ -1888,6 +1924,7 @@ class InstancesRestoreBackupRequest(proto.Message):
 
 class InstancesRotateServerCaRequest(proto.Message):
     r"""Rotate Server CA request.
+
     Attributes:
         rotate_server_ca_context (google.cloud.sql_v1beta4.types.RotateServerCaContext):
             Contains details about the rotate server CA
@@ -1903,6 +1940,7 @@ class InstancesRotateServerCaRequest(proto.Message):
 
 class InstancesTruncateLogRequest(proto.Message):
     r"""Instance truncate log request.
+
     Attributes:
         truncate_log_context (google.cloud.sql_v1beta4.types.TruncateLogContext):
             Contains details about the truncate log
@@ -1918,6 +1956,7 @@ class InstancesTruncateLogRequest(proto.Message):
 
 class SqlInstancesVerifyExternalSyncSettingsResponse(proto.Message):
     r"""Instance verify external sync settings response.
+
     Attributes:
         kind (str):
             This is always
@@ -1946,6 +1985,7 @@ class SqlInstancesVerifyExternalSyncSettingsResponse(proto.Message):
 
 class SqlExternalSyncSettingError(proto.Message):
     r"""External primary instance migration setting error/warning.
+
     Attributes:
         kind (str):
             Can be <b>sql#externalSyncSettingError</b> or
@@ -1998,6 +2038,7 @@ class SqlExternalSyncSettingError(proto.Message):
 
 class IpConfiguration(proto.Message):
     r"""IP Management configuration.
+
     Attributes:
         ipv4_enabled (google.protobuf.wrappers_pb2.BoolValue):
             Whether the instance is assigned a public IP
@@ -2042,6 +2083,7 @@ class IpConfiguration(proto.Message):
 
 class IpMapping(proto.Message):
     r"""Database instance IP Mapping.
+
     Attributes:
         type_ (google.cloud.sql_v1beta4.types.SqlIpAddressType):
             The type of this IP address. A <b>PRIMARY</b>
@@ -2247,6 +2289,7 @@ class InsightsConfig(proto.Message):
 
 class MySqlReplicaConfiguration(proto.Message):
     r"""Read-replica configuration specific to MySQL databases.
+
     Attributes:
         dump_file_path (str):
             Path to a SQL dump file in Google Cloud
@@ -2340,6 +2383,7 @@ class MySqlReplicaConfiguration(proto.Message):
 
 class OnPremisesConfiguration(proto.Message):
     r"""On-premises instance configuration.
+
     Attributes:
         host_port (str):
             The host and port of the on-premises instance
@@ -2404,6 +2448,7 @@ class OnPremisesConfiguration(proto.Message):
 
 class DiskEncryptionConfiguration(proto.Message):
     r"""Disk encryption configuration for an instance.
+
     Attributes:
         kms_key_name (str):
             Resource name of KMS key for disk encryption
@@ -2424,6 +2469,7 @@ class DiskEncryptionConfiguration(proto.Message):
 
 class DiskEncryptionStatus(proto.Message):
     r"""Disk encryption status for an instance.
+
     Attributes:
         kms_key_version_name (str):
             KMS key version used to encrypt the Cloud SQL
@@ -2629,6 +2675,7 @@ class Operation(proto.Message):
 
 class OperationError(proto.Message):
     r"""Database instance operation error.
+
     Attributes:
         kind (str):
             This is always <b>sql#operationError</b>.
@@ -2655,6 +2702,7 @@ class OperationError(proto.Message):
 
 class OperationErrors(proto.Message):
     r"""Database instance operation errors list wrapper.
+
     Attributes:
         kind (str):
             This is always <b>sql#operationErrors</b>.
@@ -2676,6 +2724,7 @@ class OperationErrors(proto.Message):
 
 class OperationsListResponse(proto.Message):
     r"""Database instance list operations response.
+
     Attributes:
         kind (str):
             This is always <b>sql#operationsList</b>.
@@ -2790,6 +2839,7 @@ class RestoreBackupContext(proto.Message):
 
 class RotateServerCaContext(proto.Message):
     r"""Instance rotate server CA context.
+
     Attributes:
         kind (str):
             This is always
@@ -2812,6 +2862,7 @@ class RotateServerCaContext(proto.Message):
 
 class Settings(proto.Message):
     r"""Database instance settings.
+
     Attributes:
         settings_version (google.protobuf.wrappers_pb2.Int64Value):
             The version of instance settings. This is a
@@ -3048,6 +3099,7 @@ class Settings(proto.Message):
 
 class SslCert(proto.Message):
     r"""SslCerts Resource
+
     Attributes:
         kind (str):
             This is always <b>sql#sslCert</b>.
@@ -3119,6 +3171,7 @@ class SslCert(proto.Message):
 
 class SslCertDetail(proto.Message):
     r"""SslCertDetail.
+
     Attributes:
         cert_info (google.cloud.sql_v1beta4.types.SslCert):
             The public information about the cert.
@@ -3141,6 +3194,7 @@ class SslCertDetail(proto.Message):
 
 class SslCertsCreateEphemeralRequest(proto.Message):
     r"""SslCerts create ephemeral certificate request.
+
     Attributes:
         public_key (str):
             PEM encoded public key to include in the
@@ -3162,6 +3216,7 @@ class SslCertsCreateEphemeralRequest(proto.Message):
 
 class SslCertsInsertRequest(proto.Message):
     r"""SslCerts insert request.
+
     Attributes:
         common_name (str):
             User supplied name.  Must be a distinct name
@@ -3176,6 +3231,7 @@ class SslCertsInsertRequest(proto.Message):
 
 class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
     r"""Reschedule options for maintenance windows.
+
     Attributes:
         reschedule (google.cloud.sql_v1beta4.types.SqlInstancesRescheduleMaintenanceRequestBody.Reschedule):
             Required. The type of the reschedule the user
@@ -3190,6 +3246,7 @@ class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
 
     class Reschedule(proto.Message):
         r"""
+
         Attributes:
             reschedule_type (google.cloud.sql_v1beta4.types.SqlInstancesRescheduleMaintenanceRequestBody.RescheduleType):
                 Required. The type of the reschedule.
@@ -3219,6 +3276,7 @@ class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
 
 class SslCertsInsertResponse(proto.Message):
     r"""SslCert insert response.
+
     Attributes:
         kind (str):
             This is always <b>sql#sslCertsInsert</b>.
@@ -3257,6 +3315,7 @@ class SslCertsInsertResponse(proto.Message):
 
 class SslCertsListResponse(proto.Message):
     r"""SslCerts list response.
+
     Attributes:
         kind (str):
             This is always <b>sql#sslCertsList</b>.
@@ -3277,6 +3336,7 @@ class SslCertsListResponse(proto.Message):
 
 class TruncateLogContext(proto.Message):
     r"""Database Instance truncate log context.
+
     Attributes:
         kind (str):
             This is always <b>sql#truncateLogContext</b>.

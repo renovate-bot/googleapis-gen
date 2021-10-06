@@ -57,6 +57,7 @@ class AlertFeedbackType(proto.Enum):
 
 class Alert(proto.Message):
     r"""An alert affecting a customer.
+
     Attributes:
         customer_id (str):
             Output only. The unique identifier of the
@@ -185,6 +186,7 @@ class Alert(proto.Message):
 
 class AlertFeedback(proto.Message):
     r"""A customer feedback about an alert.
+
     Attributes:
         customer_id (str):
             Output only. The unique identifier of the
@@ -234,6 +236,7 @@ class AlertFeedback(proto.Message):
 
 class AlertMetadata(proto.Message):
     r"""An alert metadata.
+
     Attributes:
         customer_id (str):
             Output only. The unique identifier of the
@@ -312,6 +315,7 @@ class AlertMetadata(proto.Message):
 
 class Settings(proto.Message):
     r"""Customer-level settings.
+
     Attributes:
         notifications (Sequence[google.apps.alertcenter_v1beta1.types.Settings.Notification]):
             The list of notifications.
@@ -374,6 +378,7 @@ class Settings(proto.Message):
 
 class BatchDeleteAlertsRequest(proto.Message):
     r"""A request to perform batch delete on alerts.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -395,6 +400,7 @@ class BatchDeleteAlertsRequest(proto.Message):
 
 class BatchDeleteAlertsResponse(proto.Message):
     r"""Response to batch delete operation on alerts.
+
     Attributes:
         success_alert_ids (Sequence[str]):
             The successful list of alert IDs.
@@ -416,6 +422,7 @@ class BatchDeleteAlertsResponse(proto.Message):
 
 class BatchUndeleteAlertsRequest(proto.Message):
     r"""A request to perform batch undelete on alerts.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -437,6 +444,7 @@ class BatchUndeleteAlertsRequest(proto.Message):
 
 class BatchUndeleteAlertsResponse(proto.Message):
     r"""Response to batch undelete operation on alerts.
+
     Attributes:
         success_alert_ids (Sequence[str]):
             The successful list of alert IDs.
@@ -458,6 +466,7 @@ class BatchUndeleteAlertsResponse(proto.Message):
 
 class ListAlertsRequest(proto.Message):
     r"""An alert listing request.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -515,6 +524,7 @@ class ListAlertsRequest(proto.Message):
 
 class ListAlertsResponse(proto.Message):
     r"""Response message for an alert listing request.
+
     Attributes:
         alerts (Sequence[google.apps.alertcenter_v1beta1.types.Alert]):
             The list of alerts.
@@ -544,6 +554,7 @@ class ListAlertsResponse(proto.Message):
 
 class GetAlertRequest(proto.Message):
     r"""Request for a specific alert.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -567,6 +578,7 @@ class GetAlertRequest(proto.Message):
 
 class DeleteAlertRequest(proto.Message):
     r"""A request to mark a specific alert for deletion.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -615,6 +627,7 @@ class UndeleteAlertRequest(proto.Message):
 
 class CreateAlertFeedbackRequest(proto.Message):
     r"""A request to create a new alert feedback.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -645,6 +658,7 @@ class CreateAlertFeedbackRequest(proto.Message):
 
 class ListAlertFeedbackRequest(proto.Message):
     r"""An alert feedback listing request.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -679,6 +693,7 @@ class ListAlertFeedbackRequest(proto.Message):
 
 class ListAlertFeedbackResponse(proto.Message):
     r"""Response message for an alert feedback listing request.
+
     Attributes:
         feedback (Sequence[google.apps.alertcenter_v1beta1.types.AlertFeedback]):
             The list of alert feedback.
@@ -695,6 +710,7 @@ class ListAlertFeedbackResponse(proto.Message):
 
 class GetAlertMetadataRequest(proto.Message):
     r"""Get the alert metadata.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -718,6 +734,7 @@ class GetAlertMetadataRequest(proto.Message):
 
 class GetSettingsRequest(proto.Message):
     r"""Get the customer level settings.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google
@@ -734,6 +751,7 @@ class GetSettingsRequest(proto.Message):
 
 class UpdateSettingsRequest(proto.Message):
     r"""Update the customer level settings.
+
     Attributes:
         customer_id (str):
             Optional. The unique identifier of the Google

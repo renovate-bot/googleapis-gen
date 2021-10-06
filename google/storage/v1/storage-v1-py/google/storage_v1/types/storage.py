@@ -93,6 +93,7 @@ __protobuf__ = proto.module(
 
 class DeleteBucketAccessControlRequest(proto.Message):
     r"""Request message for DeleteBucketAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -127,6 +128,7 @@ class DeleteBucketAccessControlRequest(proto.Message):
 
 class GetBucketAccessControlRequest(proto.Message):
     r"""Request message for GetBucketAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -161,6 +163,7 @@ class GetBucketAccessControlRequest(proto.Message):
 
 class InsertBucketAccessControlRequest(proto.Message):
     r"""Request message for InsertBucketAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -190,6 +193,7 @@ class InsertBucketAccessControlRequest(proto.Message):
 
 class ListBucketAccessControlsRequest(proto.Message):
     r"""Request message for ListBucketAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -211,6 +215,7 @@ class ListBucketAccessControlsRequest(proto.Message):
 
 class PatchBucketAccessControlRequest(proto.Message):
     r"""Request for PatchBucketAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -266,6 +271,7 @@ class PatchBucketAccessControlRequest(proto.Message):
 
 class UpdateBucketAccessControlRequest(proto.Message):
     r"""Request for UpdateBucketAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -307,6 +313,7 @@ class UpdateBucketAccessControlRequest(proto.Message):
 
 class DeleteBucketRequest(proto.Message):
     r"""Request message for DeleteBucket.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -344,6 +351,7 @@ class DeleteBucketRequest(proto.Message):
 
 class GetBucketRequest(proto.Message):
     r"""Request message for GetBucket.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -390,6 +398,7 @@ class GetBucketRequest(proto.Message):
 
 class InsertBucketRequest(proto.Message):
     r"""Request message for InsertBucket.
+
     Attributes:
         predefined_acl (google.storage_v1.types.CommonEnums.PredefinedBucketAcl):
             Apply a predefined set of access controls to
@@ -445,6 +454,7 @@ class InsertBucketRequest(proto.Message):
 
 class ListChannelsRequest(proto.Message):
     r"""Request message for ListChannels.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -466,6 +476,7 @@ class ListChannelsRequest(proto.Message):
 
 class ListBucketsRequest(proto.Message):
     r"""Request message for ListBuckets.
+
     Attributes:
         max_results (int):
             Maximum number of buckets to return in a
@@ -516,6 +527,7 @@ class ListBucketsRequest(proto.Message):
 
 class LockRetentionPolicyRequest(proto.Message):
     r"""Request message for LockRetentionPolicy.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -545,6 +557,7 @@ class LockRetentionPolicyRequest(proto.Message):
 
 class PatchBucketRequest(proto.Message):
     r"""Request for PatchBucket method.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -631,6 +644,7 @@ class PatchBucketRequest(proto.Message):
 
 class UpdateBucketRequest(proto.Message):
     r"""Request for UpdateBucket method.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -700,6 +714,7 @@ class UpdateBucketRequest(proto.Message):
 
 class StopChannelRequest(proto.Message):
     r"""Request message for StopChannel.
+
     Attributes:
         channel (google.storage_v1.types.Channel):
             The channel to be stopped.
@@ -722,6 +737,7 @@ class StopChannelRequest(proto.Message):
 
 class DeleteDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for DeleteDefaultObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -756,6 +772,7 @@ class DeleteDefaultObjectAccessControlRequest(proto.Message):
 
 class GetDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for GetDefaultObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -790,6 +807,7 @@ class GetDefaultObjectAccessControlRequest(proto.Message):
 
 class InsertDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for InsertDefaultObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -819,6 +837,7 @@ class InsertDefaultObjectAccessControlRequest(proto.Message):
 
 class ListDefaultObjectAccessControlsRequest(proto.Message):
     r"""Request message for ListDefaultObjectAccessControls.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -858,6 +877,7 @@ class ListDefaultObjectAccessControlsRequest(proto.Message):
 
 class PatchDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for PatchDefaultObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -916,6 +936,7 @@ class PatchDefaultObjectAccessControlRequest(proto.Message):
 
 class UpdateDefaultObjectAccessControlRequest(proto.Message):
     r"""Request message for UpdateDefaultObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -957,6 +978,7 @@ class UpdateDefaultObjectAccessControlRequest(proto.Message):
 
 class DeleteNotificationRequest(proto.Message):
     r"""Request message for DeleteNotification.
+
     Attributes:
         bucket (str):
             Required. The parent bucket of the
@@ -985,6 +1007,7 @@ class DeleteNotificationRequest(proto.Message):
 
 class GetNotificationRequest(proto.Message):
     r"""Request message for GetNotification.
+
     Attributes:
         bucket (str):
             Required. The parent bucket of the
@@ -1014,6 +1037,7 @@ class GetNotificationRequest(proto.Message):
 
 class InsertNotificationRequest(proto.Message):
     r"""Request message for InsertNotification.
+
     Attributes:
         bucket (str):
             Required. The parent bucket of the
@@ -1044,6 +1068,7 @@ class InsertNotificationRequest(proto.Message):
 
 class ListNotificationsRequest(proto.Message):
     r"""Request message for ListNotifications.
+
     Attributes:
         bucket (str):
             Required. Name of a Google Cloud Storage
@@ -1066,6 +1091,7 @@ class ListNotificationsRequest(proto.Message):
 
 class DeleteObjectAccessControlRequest(proto.Message):
     r"""Request message for DeleteObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1114,6 +1140,7 @@ class DeleteObjectAccessControlRequest(proto.Message):
 
 class GetObjectAccessControlRequest(proto.Message):
     r"""Request message for GetObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1162,6 +1189,7 @@ class GetObjectAccessControlRequest(proto.Message):
 
 class InsertObjectAccessControlRequest(proto.Message):
     r"""Request message for InsertObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1205,6 +1233,7 @@ class InsertObjectAccessControlRequest(proto.Message):
 
 class ListObjectAccessControlsRequest(proto.Message):
     r"""Request message for ListObjectAccessControls.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1240,6 +1269,7 @@ class ListObjectAccessControlsRequest(proto.Message):
 
 class PatchObjectAccessControlRequest(proto.Message):
     r"""Request message for PatchObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1313,6 +1343,7 @@ class PatchObjectAccessControlRequest(proto.Message):
 
 class UpdateObjectAccessControlRequest(proto.Message):
     r"""Request message for UpdateObjectAccessControl.
+
     Attributes:
         bucket (str):
             Required. Name of a bucket.
@@ -1386,6 +1417,7 @@ class UpdateObjectAccessControlRequest(proto.Message):
 
 class ComposeObjectRequest(proto.Message):
     r"""Request message for ComposeObject.
+
     Attributes:
         destination_bucket (str):
             Required. Name of the bucket containing the
@@ -1426,6 +1458,7 @@ class ComposeObjectRequest(proto.Message):
 
     class SourceObjects(proto.Message):
         r"""Description of a source object for a composition request.
+
         Attributes:
             name (str):
                 The source object's name. All source objects
@@ -1440,6 +1473,7 @@ class ComposeObjectRequest(proto.Message):
 
         class ObjectPreconditions(proto.Message):
             r"""Preconditions for a source object of a composition request.
+
             Attributes:
                 if_generation_match (google.protobuf.wrappers_pb2.Int64Value):
                     Only perform the composition if the
@@ -1520,6 +1554,7 @@ class ComposeObjectRequest(proto.Message):
 
 class CopyObjectRequest(proto.Message):
     r"""Request message for CopyObject.
+
     Attributes:
         destination_bucket (str):
             Required. Name of the bucket in which to store the new
@@ -1787,6 +1822,7 @@ class DeleteObjectRequest(proto.Message):
 
 class GetObjectMediaRequest(proto.Message):
     r"""Request message for GetObjectMedia.
+
     Attributes:
         bucket (str):
             The name of the bucket containing the object
@@ -1900,6 +1936,7 @@ class GetObjectMediaRequest(proto.Message):
 
 class GetObjectRequest(proto.Message):
     r"""Request message for GetObject.
+
     Attributes:
         bucket (str):
             Required. Name of the bucket in which the
@@ -1992,6 +2029,7 @@ class GetObjectRequest(proto.Message):
 
 class GetObjectMediaResponse(proto.Message):
     r"""Response message for GetObject.
+
     Attributes:
         checksummed_data (google.storage_v1.types.ChecksummedData):
             A portion of the data for the object. The service **may**
@@ -2113,6 +2151,7 @@ class InsertObjectSpec(proto.Message):
 
 class InsertObjectRequest(proto.Message):
     r"""Message for writing an object.
+
     Attributes:
         upload_id (str):
             For resumable uploads. This should be the ``upload_id``
@@ -2227,6 +2266,7 @@ class InsertObjectRequest(proto.Message):
 
 class ListObjectsRequest(proto.Message):
     r"""Request message for ListObjects.
+
     Attributes:
         bucket (str):
             Required. Name of the bucket in which to look
@@ -2308,6 +2348,7 @@ class ListObjectsRequest(proto.Message):
 
 class QueryWriteStatusRequest(proto.Message):
     r"""Request object for ``ByteStream.QueryWriteStatus``.
+
     Attributes:
         upload_id (str):
             Required. The name of the resume token for
@@ -2339,6 +2380,7 @@ class QueryWriteStatusRequest(proto.Message):
 
 class QueryWriteStatusResponse(proto.Message):
     r"""Response object for ``ByteStream.QueryWriteStatus``.
+
     Attributes:
         committed_size (int):
             The number of bytes that have been processed
@@ -2361,6 +2403,7 @@ class QueryWriteStatusResponse(proto.Message):
 
 class RewriteObjectRequest(proto.Message):
     r"""Request message for RewriteObject.
+
     Attributes:
         destination_bucket (str):
             Required. Name of the bucket in which to store the new
@@ -2579,6 +2622,7 @@ class RewriteObjectRequest(proto.Message):
 
 class RewriteResponse(proto.Message):
     r"""A rewrite response.
+
     Attributes:
         total_bytes_rewritten (int):
             The total bytes written so far, which can be
@@ -2629,6 +2673,7 @@ class RewriteResponse(proto.Message):
 
 class StartResumableWriteRequest(proto.Message):
     r"""Request message StartResumableWrite.
+
     Attributes:
         insert_object_spec (google.storage_v1.types.InsertObjectSpec):
             The destination bucket, object, and metadata,
@@ -2660,6 +2705,7 @@ class StartResumableWriteRequest(proto.Message):
 
 class StartResumableWriteResponse(proto.Message):
     r"""Response object for ByteStream.StartResumableWrite.
+
     Attributes:
         upload_id (str):
             The upload_id of the newly started resumable write
@@ -2675,6 +2721,7 @@ class StartResumableWriteResponse(proto.Message):
 
 class PatchObjectRequest(proto.Message):
     r"""Request message for PatchObject.
+
     Attributes:
         bucket (str):
             Required. Name of the bucket in which the
@@ -2799,6 +2846,7 @@ class PatchObjectRequest(proto.Message):
 
 class UpdateObjectRequest(proto.Message):
     r"""Request message for UpdateObject.
+
     Attributes:
         bucket (str):
             Required. Name of the bucket in which the
@@ -2906,6 +2954,7 @@ class UpdateObjectRequest(proto.Message):
 
 class WatchAllObjectsRequest(proto.Message):
     r"""Request message for WatchAllObjects.
+
     Attributes:
         bucket (str):
             Name of the bucket in which to look for
@@ -2994,6 +3043,7 @@ class WatchAllObjectsRequest(proto.Message):
 
 class GetProjectServiceAccountRequest(proto.Message):
     r"""Request message for GetProjectServiceAccount.
+
     Attributes:
         project_id (str):
             Required. Project ID.
@@ -3015,6 +3065,7 @@ class GetProjectServiceAccountRequest(proto.Message):
 
 class CreateHmacKeyRequest(proto.Message):
     r"""
+
     Attributes:
         project_id (str):
             Required. The project that the HMAC-owning
@@ -3066,6 +3117,7 @@ class CreateHmacKeyResponse(proto.Message):
 
 class DeleteHmacKeyRequest(proto.Message):
     r"""Request object to delete a given HMAC key.
+
     Attributes:
         access_id (str):
             Required. The identifying key for the HMAC to
@@ -3095,6 +3147,7 @@ class DeleteHmacKeyRequest(proto.Message):
 
 class GetHmacKeyRequest(proto.Message):
     r"""Request object to get metadata on a given HMAC key.
+
     Attributes:
         access_id (str):
             Required. The identifying key for the HMAC to
@@ -3124,6 +3177,7 @@ class GetHmacKeyRequest(proto.Message):
 
 class ListHmacKeysRequest(proto.Message):
     r"""Request to fetch a list of HMAC keys under a given project.
+
     Attributes:
         project_id (str):
             Required. The project id to list HMAC keys
@@ -3173,6 +3227,7 @@ class ListHmacKeysRequest(proto.Message):
 
 class ListHmacKeysResponse(proto.Message):
     r"""Hmac key list response with next page information.
+
     Attributes:
         next_page_token (str):
             The continuation token, used to page through
@@ -3200,6 +3255,7 @@ class ListHmacKeysResponse(proto.Message):
 
 class UpdateHmacKeyRequest(proto.Message):
     r"""Request object to update an HMAC key state.
+
     Attributes:
         access_id (str):
             Required. The id of the HMAC key.
@@ -3308,6 +3364,7 @@ class TestIamPermissionsRequest(proto.Message):
 
 class CommonObjectRequestParams(proto.Message):
     r"""Parameters that can be passed to any object request.
+
     Attributes:
         encryption_algorithm (str):
             Encryption algorithm used with Customer-
@@ -3336,6 +3393,7 @@ class CommonObjectRequestParams(proto.Message):
 
 class CommonRequestParams(proto.Message):
     r"""Parameters that can be passed to any request.
+
     Attributes:
         user_project (str):
             Required. Required when using buckets with
@@ -3368,7 +3426,8 @@ class CommonRequestParams(proto.Message):
 
 
 class ServiceConstants(proto.Message):
-    r"""Shared constants.    """
+    r"""Shared constants.
+    """
     class Values(proto.Enum):
         r"""A collection of constant values meaningful to the Storage
         API.

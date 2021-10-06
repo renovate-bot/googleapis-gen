@@ -365,6 +365,8 @@ class StorageGrpcTransport(StorageTransport):
             )
         return self._stubs['query_write_status']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'StorageGrpcTransport',

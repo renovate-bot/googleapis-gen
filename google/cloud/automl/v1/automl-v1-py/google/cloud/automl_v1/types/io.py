@@ -1466,6 +1466,7 @@ class BatchPredictOutputConfig(proto.Message):
 
 class ModelExportOutputConfig(proto.Message):
     r"""Output configuration for ModelExport Action.
+
     Attributes:
         gcs_destination (google.cloud.automl_v1.types.GcsDestination):
             Required. The Google Cloud Storage location where the model
@@ -1548,6 +1549,7 @@ class ModelExportOutputConfig(proto.Message):
 
 class GcsSource(proto.Message):
     r"""The Google Cloud Storage location for the input content.
+
     Attributes:
         input_uris (Sequence[str]):
             Required. Google Cloud Storage URIs to input files, up to

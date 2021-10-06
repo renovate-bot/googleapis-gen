@@ -147,6 +147,7 @@ class AdGroupFeedOperation(proto.Message):
 
 class MutateAdGroupFeedsResponse(proto.Message):
     r"""Response message for an ad group feed mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -172,6 +173,7 @@ class MutateAdGroupFeedsResponse(proto.Message):
 
 class MutateAdGroupFeedResult(proto.Message):
     r"""The result for the ad group feed mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

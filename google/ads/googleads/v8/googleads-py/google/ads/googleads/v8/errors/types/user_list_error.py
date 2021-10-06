@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListErrorEnum(proto.Message):
-    r"""Container for enum describing possible user list errors.    """
+    r"""Container for enum describing possible user list errors.
+    """
     class UserListError(proto.Enum):
         r"""Enum describing possible user list errors."""
         UNSPECIFIED = 0

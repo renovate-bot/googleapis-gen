@@ -290,6 +290,8 @@ class SessionsGrpcTransport(SessionsTransport):
             )
         return self._stubs['streaming_detect_intent']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SessionsGrpcTransport',

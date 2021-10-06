@@ -282,6 +282,7 @@ class TestMatrix(proto.Message):
 
 class TestExecution(proto.Message):
     r"""A single test executed in a single environment.
+
     Attributes:
         id (str):
             Output only. Unique id set by the service.
@@ -362,6 +363,7 @@ class TestExecution(proto.Message):
 
 class TestSpecification(proto.Message):
     r"""A description of how to run the test.
+
     Attributes:
         test_timeout (google.protobuf.duration_pb2.Duration):
             Max time a test execution is allowed to run
@@ -449,6 +451,7 @@ class TestSpecification(proto.Message):
 
 class SystraceSetup(proto.Message):
     r"""
+
     Attributes:
         duration_seconds (int):
             Systrace duration in seconds.
@@ -617,6 +620,7 @@ class EnvironmentVariable(proto.Message):
 
 class Account(proto.Message):
     r"""Identifies an account and how to log into it.
+
     Attributes:
         google_auto (google.devtools.testing_v1.types.GoogleAuto):
             An automatic google login account.
@@ -638,11 +642,13 @@ class GoogleAuto(proto.Message):
     Many applications show their full set of functionalities when an
     account is present on the device. Logging into the device with
     these generated accounts allows testing more functionalities.
-        """
+
+    """
 
 
 class Apk(proto.Message):
     r"""An Android package file to install.
+
     Attributes:
         location (google.devtools.testing_v1.types.FileReference):
             The path to an APK to be installed on the
@@ -687,6 +693,7 @@ class AppBundle(proto.Message):
 
 class DeviceFile(proto.Message):
     r"""A single device file description.
+
     Attributes:
         obb_file (google.devtools.testing_v1.types.ObbFile):
             A reference to an opaque binary blob file.
@@ -1202,6 +1209,7 @@ class RoboDirective(proto.Message):
 
 class RoboStartingIntent(proto.Message):
     r"""Message for specifying the start activities to crawl.
+
     Attributes:
         launcher_activity (google.devtools.testing_v1.types.LauncherActivityIntent):
             An intent that starts the main launcher
@@ -1233,7 +1241,8 @@ class RoboStartingIntent(proto.Message):
 
 
 class LauncherActivityIntent(proto.Message):
-    r"""Specifies an intent that starts the main launcher activity.    """
+    r"""Specifies an intent that starts the main launcher activity.
+    """
 
 
 class StartActivityIntent(proto.Message):
@@ -1380,6 +1389,7 @@ class AndroidMatrix(proto.Message):
 
 class ClientInfo(proto.Message):
     r"""Information about the client which invoked the test.
+
     Attributes:
         name (str):
             Required. Client name, such as gcloud.
@@ -1425,6 +1435,7 @@ class ClientInfoDetail(proto.Message):
 
 class ResultStorage(proto.Message):
     r"""Locations where the results of running the test are stored.
+
     Attributes:
         google_cloud_storage (google.devtools.testing_v1.types.GoogleCloudStorage):
             Required.
@@ -1465,6 +1476,7 @@ class ResultStorage(proto.Message):
 
 class ToolResultsHistory(proto.Message):
     r"""Represents a tool results history resource.
+
     Attributes:
         project_id (str):
             Required. The cloud project that owns the
@@ -1547,6 +1559,7 @@ class ToolResultsStep(proto.Message):
 
 class GoogleCloudStorage(proto.Message):
     r"""A storage location within Google cloud storage (GCS).
+
     Attributes:
         gcs_path (str):
             Required. The path to a directory in GCS that
@@ -1563,6 +1576,7 @@ class GoogleCloudStorage(proto.Message):
 
 class FileReference(proto.Message):
     r"""A reference to a file, used for user inputs.
+
     Attributes:
         gcs_path (str):
             A path to a file in Google Cloud Storage.
@@ -1581,6 +1595,7 @@ class FileReference(proto.Message):
 
 class Environment(proto.Message):
     r"""The environment in which the test is run.
+
     Attributes:
         android_device (google.devtools.testing_v1.types.AndroidDevice):
             An Android device which must be used with an
@@ -1606,6 +1621,7 @@ class Environment(proto.Message):
 
 class AndroidDevice(proto.Message):
     r"""A single Android device.
+
     Attributes:
         android_model_id (str):
             Required. The id of the Android device to be
@@ -1646,6 +1662,7 @@ class AndroidDevice(proto.Message):
 
 class IosDevice(proto.Message):
     r"""A single iOS device.
+
     Attributes:
         ios_model_id (str):
             Required. The id of the iOS device to be
@@ -1687,6 +1704,7 @@ class IosDevice(proto.Message):
 
 class TestDetails(proto.Message):
     r"""Additional details about the progress of the running test.
+
     Attributes:
         progress_messages (Sequence[str]):
             Output only. Human-readable, detailed descriptions of the
@@ -1713,6 +1731,7 @@ class TestDetails(proto.Message):
 
 class InvalidRequestDetail(proto.Message):
     r"""Details behind an invalid request.
+
     Attributes:
         reason (google.devtools.testing_v1.types.InvalidRequestDetail.Reason):
             The reason behind the error.
@@ -1735,6 +1754,7 @@ class InvalidRequestDetail(proto.Message):
 
 class ShardingOption(proto.Message):
     r"""Options for enabling sharding.
+
     Attributes:
         uniform_sharding (google.devtools.testing_v1.types.UniformSharding):
             Uniformly shards test cases given a total
@@ -1805,6 +1825,7 @@ class ManualSharding(proto.Message):
 
 class TestTargetsForShard(proto.Message):
     r"""Test targets for a shard.
+
     Attributes:
         test_targets (Sequence[str]):
             Group of packages, classes, and/or test methods to be run
@@ -1823,6 +1844,7 @@ class TestTargetsForShard(proto.Message):
 
 class Shard(proto.Message):
     r"""Output only. Details about the shard.
+
     Attributes:
         shard_index (int):
             Output only. The index of the shard among all
@@ -1850,6 +1872,7 @@ class Shard(proto.Message):
 
 class CreateTestMatrixRequest(proto.Message):
     r"""Request to submit a matrix of tests for execution.
+
     Attributes:
         project_id (str):
             The GCE project under which this job will
@@ -1883,6 +1906,7 @@ class CreateTestMatrixRequest(proto.Message):
 
 class GetTestMatrixRequest(proto.Message):
     r"""Request to get the Test Matrix with the given id.
+
     Attributes:
         project_id (str):
             Cloud project that owns the test matrix.

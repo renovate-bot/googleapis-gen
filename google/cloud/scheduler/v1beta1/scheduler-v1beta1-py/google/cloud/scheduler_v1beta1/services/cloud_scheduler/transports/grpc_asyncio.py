@@ -470,6 +470,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
             )
         return self._stubs['run_job']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudSchedulerGrpcAsyncIOTransport',

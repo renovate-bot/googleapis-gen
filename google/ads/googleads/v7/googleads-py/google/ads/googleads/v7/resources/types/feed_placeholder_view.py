@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class FeedPlaceholderView(proto.Message):
     r"""A feed placeholder view.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the feed placeholder view.

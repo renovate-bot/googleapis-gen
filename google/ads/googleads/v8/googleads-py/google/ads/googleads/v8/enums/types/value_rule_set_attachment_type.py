@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ValueRuleSetAttachmentTypeEnum(proto.Message):
     r"""Container for enum describing where a value rule set is
     attached.
-        """
+
+    """
     class ValueRuleSetAttachmentType(proto.Enum):
         r"""Possible level where a value rule set is attached."""
         UNSPECIFIED = 0

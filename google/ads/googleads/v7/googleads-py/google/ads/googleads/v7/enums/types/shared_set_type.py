@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SharedSetTypeEnum(proto.Message):
-    r"""Container for enum describing types of shared sets.    """
+    r"""Container for enum describing types of shared sets.
+    """
     class SharedSetType(proto.Enum):
         r"""Enum listing the possible shared set types."""
         UNSPECIFIED = 0

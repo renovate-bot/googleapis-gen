@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class Recommendation(proto.Message):
     r"""A recommendation.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the recommendation.
@@ -205,6 +206,7 @@ class Recommendation(proto.Message):
 
     class CampaignBudgetRecommendation(proto.Message):
         r"""The budget recommendation for budget constrained campaigns.
+
         Attributes:
             current_budget_amount_micros (int):
                 Output only. The current budget amount in
@@ -220,6 +222,7 @@ class Recommendation(proto.Message):
 
         class CampaignBudgetRecommendationOption(proto.Message):
             r"""The impact estimates for a given budget amount.
+
             Attributes:
                 budget_amount_micros (int):
                     Output only. The budget amount for this
@@ -258,6 +261,7 @@ class Recommendation(proto.Message):
 
     class KeywordRecommendation(proto.Message):
         r"""The keyword recommendation.
+
         Attributes:
             keyword (google.ads.googleads.v8.common.types.KeywordInfo):
                 Output only. The recommended keyword.
@@ -279,6 +283,7 @@ class Recommendation(proto.Message):
 
     class KeywordMatchTypeRecommendation(proto.Message):
         r"""The keyword match type recommendation.
+
         Attributes:
             keyword (google.ads.googleads.v8.common.types.KeywordInfo):
                 Output only. The existing keyword where the
@@ -300,6 +305,7 @@ class Recommendation(proto.Message):
 
     class TextAdRecommendation(proto.Message):
         r"""The text ad recommendation.
+
         Attributes:
             ad (google.ads.googleads.v8.resources.types.Ad):
                 Output only. Recommended ad.
@@ -330,6 +336,7 @@ class Recommendation(proto.Message):
 
     class MoveUnusedBudgetRecommendation(proto.Message):
         r"""The move unused budget recommendation.
+
         Attributes:
             excess_campaign_budget (str):
                 Output only. The excess budget's resource_name.
@@ -351,6 +358,7 @@ class Recommendation(proto.Message):
 
     class TargetCpaOptInRecommendation(proto.Message):
         r"""The Target CPA opt-in recommendation.
+
         Attributes:
             options (Sequence[google.ads.googleads.v8.resources.types.Recommendation.TargetCpaOptInRecommendation.TargetCpaOptInRecommendationOption]):
                 Output only. The available goals and
@@ -363,6 +371,7 @@ class Recommendation(proto.Message):
 
         class TargetCpaOptInRecommendationOption(proto.Message):
             r"""The Target CPA opt-in option with impact estimate.
+
             Attributes:
                 goal (google.ads.googleads.v8.enums.types.TargetCpaOptInRecommendationGoalEnum.TargetCpaOptInRecommendationGoal):
                     Output only. The goal achieved by this
@@ -414,6 +423,7 @@ class Recommendation(proto.Message):
 
     class ResponsiveSearchAdRecommendation(proto.Message):
         r"""The add responsive search ad recommendation.
+
         Attributes:
             ad (google.ads.googleads.v8.resources.types.Ad):
                 Output only. Recommended ad.
@@ -427,6 +437,7 @@ class Recommendation(proto.Message):
 
     class MaximizeConversionsOptInRecommendation(proto.Message):
         r"""The Maximize Conversions Opt-In recommendation.
+
         Attributes:
             recommended_budget_amount_micros (int):
                 Output only. The recommended new budget
@@ -441,6 +452,7 @@ class Recommendation(proto.Message):
 
     class CalloutExtensionRecommendation(proto.Message):
         r"""The Callout extension recommendation.
+
         Attributes:
             recommended_extensions (Sequence[google.ads.googleads.v8.common.types.CalloutFeedItem]):
                 Output only. Callout extensions recommended
@@ -454,16 +466,20 @@ class Recommendation(proto.Message):
         )
 
     class EnhancedCpcOptInRecommendation(proto.Message):
-        r"""The Enhanced Cost-Per-Click Opt-In recommendation.    """
+        r"""The Enhanced Cost-Per-Click Opt-In recommendation.
+        """
 
     class SearchPartnersOptInRecommendation(proto.Message):
-        r"""The Search Partners Opt-In recommendation.    """
+        r"""The Search Partners Opt-In recommendation.
+        """
 
     class OptimizeAdRotationRecommendation(proto.Message):
-        r"""The Optimize Ad Rotation recommendation.    """
+        r"""The Optimize Ad Rotation recommendation.
+        """
 
     class MaximizeClicksOptInRecommendation(proto.Message):
         r"""The Maximize Clicks opt-in recommendation.
+
         Attributes:
             recommended_budget_amount_micros (int):
                 Output only. The recommended new budget
@@ -479,6 +495,7 @@ class Recommendation(proto.Message):
 
     class SitelinkExtensionRecommendation(proto.Message):
         r"""The Sitelink extension recommendation.
+
         Attributes:
             recommended_extensions (Sequence[google.ads.googleads.v8.common.types.SitelinkFeedItem]):
                 Output only. Sitelink extensions recommended
@@ -493,6 +510,7 @@ class Recommendation(proto.Message):
 
     class TargetRoasOptInRecommendation(proto.Message):
         r"""The Target ROAS opt-in recommendation.
+
         Attributes:
             recommended_target_roas (float):
                 Output only. The recommended target ROAS
@@ -519,6 +537,7 @@ class Recommendation(proto.Message):
 
     class CallExtensionRecommendation(proto.Message):
         r"""The Call extension recommendation.
+
         Attributes:
             recommended_extensions (Sequence[google.ads.googleads.v8.common.types.CallFeedItem]):
                 Output only. Call extensions recommended to

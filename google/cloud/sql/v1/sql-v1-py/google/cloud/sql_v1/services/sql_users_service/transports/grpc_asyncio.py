@@ -329,6 +329,9 @@ class SqlUsersServiceGrpcAsyncIOTransport(SqlUsersServiceTransport):
             )
         return self._stubs['update']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SqlUsersServiceGrpcAsyncIOTransport',

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ParentalStatusTypeEnum(proto.Message):
     r"""Container for enum describing the type of demographic
     parental statuses.
-        """
+
+    """
     class ParentalStatusType(proto.Enum):
         r"""The type of parental statuses (e.g. not a parent)."""
         UNSPECIFIED = 0

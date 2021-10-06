@@ -407,6 +407,8 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
             )
         return self._stubs['send_test_message']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'EssentialContactsServiceGrpcTransport',

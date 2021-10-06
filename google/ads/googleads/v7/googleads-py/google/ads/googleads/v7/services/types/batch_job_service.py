@@ -66,6 +66,7 @@ class MutateBatchJobRequest(proto.Message):
 
 class BatchJobOperation(proto.Message):
     r"""A single operation on a batch job.
+
     Attributes:
         create (google.ads.googleads.v7.resources.types.BatchJob):
             Create operation: No resource name is
@@ -98,6 +99,7 @@ class MutateBatchJobResponse(proto.Message):
 
 class MutateBatchJobResult(proto.Message):
     r"""The result for the batch job mutate.
+
     Attributes:
         resource_name (str):
             The resource name of the batch job.
@@ -283,6 +285,7 @@ class ListBatchJobResultsResponse(proto.Message):
 
 class BatchJobResult(proto.Message):
     r"""An individual batch job result.
+
     Attributes:
         operation_index (int):
             Index of the mutate operation.

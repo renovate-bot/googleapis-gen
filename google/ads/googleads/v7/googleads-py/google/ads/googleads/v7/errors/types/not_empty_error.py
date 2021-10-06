@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class NotEmptyErrorEnum(proto.Message):
-    r"""Container for enum describing possible not empty errors.    """
+    r"""Container for enum describing possible not empty errors.
+    """
     class NotEmptyError(proto.Enum):
         r"""Enum describing possible not empty errors."""
         UNSPECIFIED = 0

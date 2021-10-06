@@ -488,6 +488,9 @@ class DocumentProcessorServiceGrpcAsyncIOTransport(DocumentProcessorServiceTrans
             )
         return self._stubs['review_document']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DocumentProcessorServiceGrpcAsyncIOTransport',

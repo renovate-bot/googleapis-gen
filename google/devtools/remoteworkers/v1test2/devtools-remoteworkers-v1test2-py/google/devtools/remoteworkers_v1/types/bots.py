@@ -312,6 +312,7 @@ class AdminTemp(proto.Message):
 
 class CreateBotSessionRequest(proto.Message):
     r"""Request message for CreateBotSession.
+
     Attributes:
         parent (str):
             Required. The farm resource.
@@ -333,6 +334,7 @@ class CreateBotSessionRequest(proto.Message):
 
 class UpdateBotSessionRequest(proto.Message):
     r"""Request message for UpdateBotSession.
+
     Attributes:
         name (str):
             Required. The bot session name. Must match bot_session.name.

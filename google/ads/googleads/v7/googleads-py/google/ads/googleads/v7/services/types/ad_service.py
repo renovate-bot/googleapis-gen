@@ -103,6 +103,7 @@ class MutateAdsRequest(proto.Message):
 
 class AdOperation(proto.Message):
     r"""A single update operation on an ad.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -136,6 +137,7 @@ class AdOperation(proto.Message):
 
 class MutateAdsResponse(proto.Message):
     r"""Response message for an ad mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -161,6 +163,7 @@ class MutateAdsResponse(proto.Message):
 
 class MutateAdResult(proto.Message):
     r"""The result for the ad mutate.
+
     Attributes:
         resource_name (str):
             The resource name returned for successful

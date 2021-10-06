@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class FieldMaskErrorEnum(proto.Message):
-    r"""Container for enum describing possible field mask errors.    """
+    r"""Container for enum describing possible field mask errors.
+    """
     class FieldMaskError(proto.Enum):
         r"""Enum describing possible field mask errors."""
         UNSPECIFIED = 0

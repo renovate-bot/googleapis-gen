@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ContentLabelTypeEnum(proto.Message):
     r"""Container for enum describing content label types in
     ContentLabel.
-        """
+
+    """
     class ContentLabelType(proto.Enum):
         r"""Enum listing the content label types supported by
         ContentLabel criterion.

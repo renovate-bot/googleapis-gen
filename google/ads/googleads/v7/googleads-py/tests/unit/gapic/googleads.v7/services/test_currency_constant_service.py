@@ -424,6 +424,9 @@ def test_currency_constant_service_base_transport():
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
+    with pytest.raises(NotImplementedError):
+        transport.close()
+
 
 def test_currency_constant_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
@@ -690,3 +693,25 @@ def test_client_withDEFAULT_CLIENT_INFO():
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
+
+def test_grpc_transport_close():
+    client = CurrencyConstantServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+    with mock.patch.object(type(client.transport._grpc_channel), 'close') as chan_close:
+        with client as _:
+            chan_close.assert_not_called()
+        chan_close.assert_called_once()
+
+def test_grpc_client_ctx():
+    client = CurrencyConstantServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+    # Test client calls underlying transport.
+    with mock.patch.object(type(client.transport), "close") as close:
+        close.assert_not_called()
+        with client as _:
+            pass
+        close.assert_called()

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CriterionSystemServingStatusEnum(proto.Message):
     r"""Container for enum describing possible criterion system
     serving statuses.
-        """
+
+    """
     class CriterionSystemServingStatus(proto.Enum):
         r"""Enumerates criterion system serving statuses."""
         UNSPECIFIED = 0

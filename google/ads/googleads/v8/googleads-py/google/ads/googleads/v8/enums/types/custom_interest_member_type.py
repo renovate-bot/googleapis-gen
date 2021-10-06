@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomInterestMemberTypeEnum(proto.Message):
-    r"""The types of custom interest member, either KEYWORD or URL.    """
+    r"""The types of custom interest member, either KEYWORD or URL.
+    """
     class CustomInterestMemberType(proto.Enum):
         r"""Enum containing possible custom interest member types."""
         UNSPECIFIED = 0

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ImageErrorEnum(proto.Message):
-    r"""Container for enum describing possible image errors.    """
+    r"""Container for enum describing possible image errors.
+    """
     class ImageError(proto.Enum):
         r"""Enum describing possible image errors."""
         UNSPECIFIED = 0

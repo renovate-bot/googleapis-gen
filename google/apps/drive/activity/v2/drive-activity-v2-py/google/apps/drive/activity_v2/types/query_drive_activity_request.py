@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class QueryDriveActivityRequest(proto.Message):
     r"""The request message for querying Drive activity.
+
     Attributes:
         item_name (str):
             Return activities for this Drive item. The format is
@@ -123,7 +124,8 @@ class ConsolidationStrategy(proto.Message):
     class NoConsolidation(proto.Message):
         r"""A strategy which does no consolidation of individual
         activities.
-            """
+
+        """
 
     class Legacy(proto.Message):
         r"""A strategy which consolidates activities using the grouping
@@ -132,7 +134,8 @@ class ConsolidationStrategy(proto.Message):
         (such as moving a set of files at once) or multiple actors (such
         as several users editing the same item). Grouping rules for this
         strategy are specific to each type of action.
-            """
+
+        """
 
     none = proto.Field(
         proto.MESSAGE,

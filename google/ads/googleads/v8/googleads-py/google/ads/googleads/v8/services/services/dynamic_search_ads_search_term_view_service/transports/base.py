@@ -90,6 +90,15 @@ class DynamicSearchAdsSearchTermViewServiceTransport(metaclass=abc.ABCMeta):
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+        .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def get_dynamic_search_ads_search_term_view(self) -> typing.Callable[
             [dynamic_search_ads_search_term_view_service.GetDynamicSearchAdsSearchTermViewRequest],

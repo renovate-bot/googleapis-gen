@@ -307,6 +307,8 @@ class TopicStatsServiceGrpcTransport(TopicStatsServiceTransport):
             )
         return self._stubs['compute_time_cursor']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TopicStatsServiceGrpcTransport',

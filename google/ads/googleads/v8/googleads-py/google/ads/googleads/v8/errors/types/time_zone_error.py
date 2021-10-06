@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class TimeZoneErrorEnum(proto.Message):
-    r"""Container for enum describing possible time zone errors.    """
+    r"""Container for enum describing possible time zone errors.
+    """
     class TimeZoneError(proto.Enum):
         r"""Enum describing possible currency code errors."""
         UNSPECIFIED = 0

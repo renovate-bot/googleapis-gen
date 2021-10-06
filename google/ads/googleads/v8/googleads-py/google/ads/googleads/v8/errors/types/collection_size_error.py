@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CollectionSizeErrorEnum(proto.Message):
     r"""Container for enum describing possible collection size
     errors.
-        """
+
+    """
     class CollectionSizeError(proto.Enum):
         r"""Enum describing possible collection size errors."""
         UNSPECIFIED = 0

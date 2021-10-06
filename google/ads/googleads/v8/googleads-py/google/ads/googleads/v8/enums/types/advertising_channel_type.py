@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdvertisingChannelTypeEnum(proto.Message):
-    r"""The channel type a campaign may target to serve on.    """
+    r"""The channel type a campaign may target to serve on.
+    """
     class AdvertisingChannelType(proto.Enum):
         r"""Enum describing the various advertising channel types."""
         UNSPECIFIED = 0

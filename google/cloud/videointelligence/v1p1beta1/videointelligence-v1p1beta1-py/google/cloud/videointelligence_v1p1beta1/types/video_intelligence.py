@@ -80,6 +80,7 @@ class Likelihood(proto.Enum):
 
 class AnnotateVideoRequest(proto.Message):
     r"""Video annotation request.
+
     Attributes:
         input_uri (str):
             Input video location. Currently, only `Google Cloud
@@ -151,6 +152,7 @@ class AnnotateVideoRequest(proto.Message):
 
 class VideoContext(proto.Message):
     r"""Video context and/or feature-specific parameters.
+
     Attributes:
         segments (Sequence[google.cloud.videointelligence_v1p1beta1.types.VideoSegment]):
             Video segments to annotate. The segments may
@@ -196,6 +198,7 @@ class VideoContext(proto.Message):
 
 class LabelDetectionConfig(proto.Message):
     r"""Config for LABEL_DETECTION.
+
     Attributes:
         label_detection_mode (google.cloud.videointelligence_v1p1beta1.types.LabelDetectionMode):
             What labels should be detected with LABEL_DETECTION, in
@@ -229,6 +232,7 @@ class LabelDetectionConfig(proto.Message):
 
 class ShotChangeDetectionConfig(proto.Message):
     r"""Config for SHOT_CHANGE_DETECTION.
+
     Attributes:
         model (str):
             Model to use for shot change detection.
@@ -244,6 +248,7 @@ class ShotChangeDetectionConfig(proto.Message):
 
 class ExplicitContentDetectionConfig(proto.Message):
     r"""Config for EXPLICIT_CONTENT_DETECTION.
+
     Attributes:
         model (str):
             Model to use for explicit content detection.
@@ -259,6 +264,7 @@ class ExplicitContentDetectionConfig(proto.Message):
 
 class VideoSegment(proto.Message):
     r"""Video segment.
+
     Attributes:
         start_time_offset (google.protobuf.duration_pb2.Duration):
             Time-offset, relative to the beginning of the
@@ -284,6 +290,7 @@ class VideoSegment(proto.Message):
 
 class LabelSegment(proto.Message):
     r"""Video segment level annotation results for label detection.
+
     Attributes:
         segment (google.cloud.videointelligence_v1p1beta1.types.VideoSegment):
             Video segment where a label was detected.
@@ -304,6 +311,7 @@ class LabelSegment(proto.Message):
 
 class LabelFrame(proto.Message):
     r"""Video frame level annotation results for label detection.
+
     Attributes:
         time_offset (google.protobuf.duration_pb2.Duration):
             Time-offset, relative to the beginning of the
@@ -326,6 +334,7 @@ class LabelFrame(proto.Message):
 
 class Entity(proto.Message):
     r"""Detected entity from video analysis.
+
     Attributes:
         entity_id (str):
             Opaque entity ID. Some IDs may be available in `Google
@@ -353,6 +362,7 @@ class Entity(proto.Message):
 
 class LabelAnnotation(proto.Message):
     r"""Label annotation.
+
     Attributes:
         entity (google.cloud.videointelligence_v1p1beta1.types.Entity):
             Detected entity.
@@ -392,6 +402,7 @@ class LabelAnnotation(proto.Message):
 
 class ExplicitContentFrame(proto.Message):
     r"""Video frame level annotation results for explicit content.
+
     Attributes:
         time_offset (google.protobuf.duration_pb2.Duration):
             Time-offset, relative to the beginning of the
@@ -433,6 +444,7 @@ class ExplicitContentAnnotation(proto.Message):
 
 class VideoAnnotationResults(proto.Message):
     r"""Annotation results for a single video.
+
     Attributes:
         input_uri (str):
             Output only. Video file location in `Google Cloud
@@ -523,6 +535,7 @@ class AnnotateVideoResponse(proto.Message):
 
 class VideoAnnotationProgress(proto.Message):
     r"""Annotation progress for a single video.
+
     Attributes:
         input_uri (str):
             Output only. Video file location in `Google Cloud
@@ -578,6 +591,7 @@ class AnnotateVideoProgress(proto.Message):
 
 class SpeechTranscriptionConfig(proto.Message):
     r"""Config for SPEECH_TRANSCRIPTION.
+
     Attributes:
         language_code (str):
             Required. *Required* The language of the supplied audio as a
@@ -690,6 +704,7 @@ class SpeechTranscription(proto.Message):
 
 class SpeechRecognitionAlternative(proto.Message):
     r"""Alternative hypotheses (a.k.a. n-best list).
+
     Attributes:
         transcript (str):
             Output only. Transcript text representing the

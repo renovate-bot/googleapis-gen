@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class KeywordPlanAggregateMetricTypeEnum(proto.Message):
-    r"""The enumeration of keyword plan aggregate metric types.    """
+    r"""The enumeration of keyword plan aggregate metric types.
+    """
     class KeywordPlanAggregateMetricType(proto.Enum):
         r"""Aggregate fields."""
         UNSPECIFIED = 0

@@ -63,11 +63,13 @@ class EnhancedCpc(proto.Message):
     r"""An automated bidding strategy that raises bids for clicks
     that seem more likely to lead to a conversion and lowers them
     for clicks where they seem less likely.
-        """
+
+    """
 
 
 class ManualCpc(proto.Message):
     r"""Manual click-based bidding where user pays per click.
+
     Attributes:
         enhanced_cpc_enabled (bool):
             Whether bids are to be enhanced based on
@@ -84,11 +86,13 @@ class ManualCpc(proto.Message):
 class ManualCpm(proto.Message):
     r"""Manual impression-based bidding where user pays per thousand
     impressions.
-        """
+
+    """
 
 
 class ManualCpv(proto.Message):
-    r"""View based bidding where user pays per video view.    """
+    r"""View based bidding where user pays per video view.
+    """
 
 
 class MaximizeConversions(proto.Message):
@@ -179,7 +183,8 @@ class TargetCpm(proto.Message):
     r"""Target CPM (cost per thousand impressions) is an automated
     bidding strategy that sets bids to optimize performance given
     the target CPM you set.
-        """
+
+    """
 
 
 class TargetImpressionShare(proto.Message):

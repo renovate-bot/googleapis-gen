@@ -934,6 +934,7 @@ class BatchPredictOutputConfig(proto.Message):
 
 class ModelExportOutputConfig(proto.Message):
     r"""Output configuration for ModelExport Action.
+
     Attributes:
         gcs_destination (google.cloud.automl_v1beta1.types.GcsDestination):
             The Google Cloud Storage location where the model is to be
@@ -1089,6 +1090,7 @@ class ExportEvaluatedExamplesOutputConfig(proto.Message):
 
 class GcsSource(proto.Message):
     r"""The Google Cloud Storage location for the input content.
+
     Attributes:
         input_uris (Sequence[str]):
             Required. Google Cloud Storage URIs to input files, up to
@@ -1105,6 +1107,7 @@ class GcsSource(proto.Message):
 
 class BigQuerySource(proto.Message):
     r"""The BigQuery location for the input content.
+
     Attributes:
         input_uri (str):
             Required. BigQuery URI to a table, up to 2000 characters
@@ -1141,6 +1144,7 @@ class GcsDestination(proto.Message):
 
 class BigQueryDestination(proto.Message):
     r"""The BigQuery location for the output content.
+
     Attributes:
         output_uri (str):
             Required. BigQuery URI to a project, up to 2000 characters
@@ -1157,6 +1161,7 @@ class BigQueryDestination(proto.Message):
 
 class GcrDestination(proto.Message):
     r"""The GCR location where the image must be pushed to.
+
     Attributes:
         output_uri (str):
             Required. Google Contained Registry URI of the new image, up

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ThirdPartyAppAnalyticsLinkErrorEnum(proto.Message):
     r"""Container for enum describing possible third party app
     analytics link errors.
-        """
+
+    """
     class ThirdPartyAppAnalyticsLinkError(proto.Enum):
         r"""Enum describing possible third party app analytics link
         errors.

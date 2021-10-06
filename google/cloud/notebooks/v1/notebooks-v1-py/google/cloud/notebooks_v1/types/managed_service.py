@@ -38,6 +38,7 @@ __protobuf__ = proto.module(
 
 class ListRuntimesRequest(proto.Message):
     r"""Request for listing Managed Notebook Runtimes.
+
     Attributes:
         parent (str):
             Required. Format:
@@ -65,6 +66,7 @@ class ListRuntimesRequest(proto.Message):
 
 class ListRuntimesResponse(proto.Message):
     r"""Response for listing Managed Notebook Runtimes.
+
     Attributes:
         runtimes (Sequence[google.cloud.notebooks_v1.types.Runtime]):
             A list of returned Runtimes.
@@ -99,6 +101,7 @@ class ListRuntimesResponse(proto.Message):
 
 class GetRuntimeRequest(proto.Message):
     r"""Request for getting a Managed Notebook Runtime.
+
     Attributes:
         name (str):
             Required. Format:
@@ -113,6 +116,7 @@ class GetRuntimeRequest(proto.Message):
 
 class CreateRuntimeRequest(proto.Message):
     r"""Request for creating a Managed Notebook Runtime.
+
     Attributes:
         parent (str):
             Required. Format:
@@ -141,6 +145,7 @@ class CreateRuntimeRequest(proto.Message):
 
 class DeleteRuntimeRequest(proto.Message):
     r"""Request for deleting a Managed Notebook Runtime.
+
     Attributes:
         name (str):
             Required. Format:
@@ -155,6 +160,7 @@ class DeleteRuntimeRequest(proto.Message):
 
 class StartRuntimeRequest(proto.Message):
     r"""Request for starting a Managed Notebook Runtime.
+
     Attributes:
         name (str):
             Required. Format:
@@ -169,6 +175,7 @@ class StartRuntimeRequest(proto.Message):
 
 class StopRuntimeRequest(proto.Message):
     r"""Request for stopping a Managed Notebook Runtime.
+
     Attributes:
         name (str):
             Required. Format:
@@ -183,6 +190,7 @@ class StopRuntimeRequest(proto.Message):
 
 class SwitchRuntimeRequest(proto.Message):
     r"""Request for switching a Managed Notebook Runtime.
+
     Attributes:
         name (str):
             Required. Format:
@@ -210,6 +218,7 @@ class SwitchRuntimeRequest(proto.Message):
 
 class ResetRuntimeRequest(proto.Message):
     r"""Request for reseting a Managed Notebook Runtime.
+
     Attributes:
         name (str):
             Required. Format:
@@ -224,6 +233,7 @@ class ResetRuntimeRequest(proto.Message):
 
 class ReportRuntimeEventRequest(proto.Message):
     r"""Request for reporting a Managed Notebook Event.
+
     Attributes:
         name (str):
             Required. Format:

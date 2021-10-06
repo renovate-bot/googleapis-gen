@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class ConversionValueRule(proto.Message):
     r"""A conversion value rule
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the conversion value rule.
@@ -65,6 +66,7 @@ class ConversionValueRule(proto.Message):
 
     class ValueRuleAction(proto.Message):
         r"""Action applied when rule is applied.
+
         Attributes:
             operation (google.ads.googleads.v8.enums.types.ValueRuleOperationEnum.ValueRuleOperation):
                 Specifies applied operation.
@@ -84,6 +86,7 @@ class ConversionValueRule(proto.Message):
 
     class ValueRuleGeoLocationCondition(proto.Message):
         r"""Condition on Geo dimension.
+
         Attributes:
             excluded_geo_target_constants (Sequence[str]):
                 Geo locations that advertisers want to
@@ -118,6 +121,7 @@ class ConversionValueRule(proto.Message):
 
     class ValueRuleDeviceCondition(proto.Message):
         r"""Condition on Device dimension.
+
         Attributes:
             device_types (Sequence[google.ads.googleads.v8.enums.types.ValueRuleDeviceTypeEnum.ValueRuleDeviceType]):
                 Value for device type condition.
@@ -131,6 +135,7 @@ class ConversionValueRule(proto.Message):
 
     class ValueRuleAudienceCondition(proto.Message):
         r"""Condition on Audience dimension.
+
         Attributes:
             user_lists (Sequence[str]):
                 User Lists.

@@ -613,6 +613,8 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
             )
         return self._stubs['batch_delete_photos']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'StreetViewPublishServiceGrpcTransport',

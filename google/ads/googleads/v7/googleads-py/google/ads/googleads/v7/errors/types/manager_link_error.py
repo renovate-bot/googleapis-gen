@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ManagerLinkErrorEnum(proto.Message):
-    r"""Container for enum describing possible ManagerLink errors.    """
+    r"""Container for enum describing possible ManagerLink errors.
+    """
     class ManagerLinkError(proto.Enum):
         r"""Enum describing possible ManagerLink errors."""
         UNSPECIFIED = 0

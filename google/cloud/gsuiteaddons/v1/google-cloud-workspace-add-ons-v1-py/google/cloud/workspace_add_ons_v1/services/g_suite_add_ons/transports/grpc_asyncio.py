@@ -497,6 +497,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             )
         return self._stubs['get_install_status']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'GSuiteAddOnsGrpcAsyncIOTransport',

@@ -280,6 +280,7 @@ class DnsSettings(proto.Message):
 
     class CustomDns(proto.Message):
         r"""Configuration for an arbitrary DNS provider.
+
         Attributes:
             name_servers (Sequence[str]):
                 Required. A list of name servers that store
@@ -494,6 +495,7 @@ class ContactSettings(proto.Message):
 
     class Contact(proto.Message):
         r"""Details required for a contact associated with a ``Registration``.
+
         Attributes:
             postal_address (google.type.postal_address_pb2.PostalAddress):
                 Required. Postal address of the contact.
@@ -549,6 +551,7 @@ class ContactSettings(proto.Message):
 
 class SearchDomainsRequest(proto.Message):
     r"""Request for the ``SearchDomains`` method.
+
     Attributes:
         query (str):
             Required. String used to search for available
@@ -570,6 +573,7 @@ class SearchDomainsRequest(proto.Message):
 
 class SearchDomainsResponse(proto.Message):
     r"""Response for the ``SearchDomains`` method.
+
     Attributes:
         register_parameters (Sequence[google.cloud.domains_v1alpha2.types.RegisterParameters]):
             Results of the domain name search.
@@ -584,6 +588,7 @@ class SearchDomainsResponse(proto.Message):
 
 class RetrieveRegisterParametersRequest(proto.Message):
     r"""Request for the ``RetrieveRegisterParameters`` method.
+
     Attributes:
         domain_name (str):
             Required. The domain name. Unicode domain
@@ -605,6 +610,7 @@ class RetrieveRegisterParametersRequest(proto.Message):
 
 class RetrieveRegisterParametersResponse(proto.Message):
     r"""Response for the ``RetrieveRegisterParameters`` method.
+
     Attributes:
         register_parameters (google.cloud.domains_v1alpha2.types.RegisterParameters):
             Parameters to use when calling the ``RegisterDomain``
@@ -620,6 +626,7 @@ class RetrieveRegisterParametersResponse(proto.Message):
 
 class RegisterDomainRequest(proto.Message):
     r"""Request for the ``RegisterDomain`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource of the ``Registration``. Must
@@ -678,6 +685,7 @@ class RegisterDomainRequest(proto.Message):
 
 class ListRegistrationsRequest(proto.Message):
     r"""Request for the ``ListRegistrations`` method.
+
     Attributes:
         parent (str):
             Required. The project and location from which to list
@@ -731,6 +739,7 @@ class ListRegistrationsRequest(proto.Message):
 
 class ListRegistrationsResponse(proto.Message):
     r"""Response for the ``ListRegistrations`` method.
+
     Attributes:
         registrations (Sequence[google.cloud.domains_v1alpha2.types.Registration]):
             A list of ``Registration``\ s.
@@ -757,6 +766,7 @@ class ListRegistrationsResponse(proto.Message):
 
 class GetRegistrationRequest(proto.Message):
     r"""Request for the ``GetRegistration`` method.
+
     Attributes:
         name (str):
             Required. The name of the ``Registration`` to get, in the
@@ -771,6 +781,7 @@ class GetRegistrationRequest(proto.Message):
 
 class UpdateRegistrationRequest(proto.Message):
     r"""Request for the ``UpdateRegistration`` method.
+
     Attributes:
         registration (google.cloud.domains_v1alpha2.types.Registration):
             Fields of the ``Registration`` to update.
@@ -795,6 +806,7 @@ class UpdateRegistrationRequest(proto.Message):
 
 class ConfigureManagementSettingsRequest(proto.Message):
     r"""Request for the ``ConfigureManagementSettings`` method.
+
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose management
@@ -827,6 +839,7 @@ class ConfigureManagementSettingsRequest(proto.Message):
 
 class ConfigureDnsSettingsRequest(proto.Message):
     r"""Request for the ``ConfigureDnsSettings`` method.
+
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose DNS
@@ -873,6 +886,7 @@ class ConfigureDnsSettingsRequest(proto.Message):
 
 class ConfigureContactSettingsRequest(proto.Message):
     r"""Request for the ``ConfigureContactSettings`` method.
+
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose contact
@@ -921,6 +935,7 @@ class ConfigureContactSettingsRequest(proto.Message):
 
 class ExportRegistrationRequest(proto.Message):
     r"""Request for the ``ExportRegistration`` method.
+
     Attributes:
         name (str):
             Required. The name of the ``Registration`` to export, in the
@@ -935,6 +950,7 @@ class ExportRegistrationRequest(proto.Message):
 
 class DeleteRegistrationRequest(proto.Message):
     r"""Request for the ``DeleteRegistration`` method.
+
     Attributes:
         name (str):
             Required. The name of the ``Registration`` to delete, in the
@@ -949,6 +965,7 @@ class DeleteRegistrationRequest(proto.Message):
 
 class RetrieveAuthorizationCodeRequest(proto.Message):
     r"""Request for the ``RetrieveAuthorizationCode`` method.
+
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose
@@ -964,6 +981,7 @@ class RetrieveAuthorizationCodeRequest(proto.Message):
 
 class ResetAuthorizationCodeRequest(proto.Message):
     r"""Request for the ``ResetAuthorizationCode`` method.
+
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose
@@ -979,6 +997,7 @@ class ResetAuthorizationCodeRequest(proto.Message):
 
 class RegisterParameters(proto.Message):
     r"""Parameters required to register a new domain.
+
     Attributes:
         domain_name (str):
             The domain name. Unicode domain names are
@@ -1034,6 +1053,7 @@ class RegisterParameters(proto.Message):
 
 class AuthorizationCode(proto.Message):
     r"""Defines an authorization code.
+
     Attributes:
         code (str):
             The Authorization Code in ASCII. It can be

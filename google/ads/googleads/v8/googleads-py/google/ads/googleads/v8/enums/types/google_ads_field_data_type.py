@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class GoogleAdsFieldDataTypeEnum(proto.Message):
-    r"""Container holding the various data types.    """
+    r"""Container holding the various data types.
+    """
     class GoogleAdsFieldDataType(proto.Enum):
         r"""These are the various types a GoogleAdsService artifact may
         take on.

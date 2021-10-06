@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SettingErrorEnum(proto.Message):
-    r"""Container for enum describing possible setting errors.    """
+    r"""Container for enum describing possible setting errors.
+    """
     class SettingError(proto.Enum):
         r"""Enum describing possible setting errors."""
         UNSPECIFIED = 0

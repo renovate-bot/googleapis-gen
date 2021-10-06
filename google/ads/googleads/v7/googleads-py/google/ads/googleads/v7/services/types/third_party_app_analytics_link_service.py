@@ -62,7 +62,8 @@ class RegenerateShareableLinkIdRequest(proto.Message):
 class RegenerateShareableLinkIdResponse(proto.Message):
     r"""Response message for
     [ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId][google.ads.googleads.v7.services.ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId].
-        """
+
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

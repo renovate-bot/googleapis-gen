@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ExtensionSettingDeviceEnum(proto.Message):
-    r"""Container for enum describing extension setting device types.    """
+    r"""Container for enum describing extension setting device types.
+    """
     class ExtensionSettingDevice(proto.Enum):
         r"""Possible device types for an extension setting."""
         UNSPECIFIED = 0

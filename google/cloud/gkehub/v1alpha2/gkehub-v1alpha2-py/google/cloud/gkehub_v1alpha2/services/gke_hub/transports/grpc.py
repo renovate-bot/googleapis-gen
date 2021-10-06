@@ -450,6 +450,8 @@ class GkeHubGrpcTransport(GkeHubTransport):
             )
         return self._stubs['initialize_hub']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'GkeHubGrpcTransport',

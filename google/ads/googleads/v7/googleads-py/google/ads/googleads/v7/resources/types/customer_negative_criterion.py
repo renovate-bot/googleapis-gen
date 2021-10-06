@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class CustomerNegativeCriterion(proto.Message):
     r"""A negative criterion for exclusions at the customer level.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer negative

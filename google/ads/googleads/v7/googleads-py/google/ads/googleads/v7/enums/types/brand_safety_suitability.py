@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class BrandSafetySuitabilityEnum(proto.Message):
     r"""Container for enum with 3-Tier brand safety suitability
     control.
-        """
+
+    """
     class BrandSafetySuitability(proto.Enum):
         r"""3-Tier brand safety suitability control."""
         UNSPECIFIED = 0

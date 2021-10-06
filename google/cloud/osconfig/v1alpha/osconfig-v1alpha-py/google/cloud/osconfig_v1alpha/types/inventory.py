@@ -71,6 +71,7 @@ class Inventory(proto.Message):
 
     class OsInfo(proto.Message):
         r"""Operating system information for the VM.
+
         Attributes:
             hostname (str):
                 The VM hostname.
@@ -130,6 +131,7 @@ class Inventory(proto.Message):
 
     class Item(proto.Message):
         r"""A single piece of inventory on a VM.
+
         Attributes:
             id (str):
                 Identifier for this item, unique across items
@@ -199,6 +201,7 @@ class Inventory(proto.Message):
 
     class SoftwarePackage(proto.Message):
         r"""Software package information of the operating system.
+
         Attributes:
             yum_package (google.cloud.osconfig_v1alpha.types.Inventory.VersionedPackage):
                 Yum package info. For details about the yum package manager,
@@ -321,6 +324,7 @@ class Inventory(proto.Message):
 
     class ZypperPatch(proto.Message):
         r"""Details related to a Zypper Patch.
+
         Attributes:
             patch_name (str):
                 The name of the patch.
@@ -388,6 +392,7 @@ class Inventory(proto.Message):
 
         class WindowsUpdateCategory(proto.Message):
             r"""Categories specified by the Windows Update.
+
             Attributes:
                 id (str):
                     The identifier of the windows update

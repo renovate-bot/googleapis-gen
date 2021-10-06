@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class TableSchema(proto.Message):
     r"""Schema of a table
+
     Attributes:
         fields (Sequence[google.cloud.bigquery_storage_v1beta2.types.TableFieldSchema]):
             Describes the fields in a table.
@@ -41,6 +42,7 @@ class TableSchema(proto.Message):
 
 class TableFieldSchema(proto.Message):
     r"""A field in TableSchema
+
     Attributes:
         name (str):
             Required. The field name. The name must contain only letters

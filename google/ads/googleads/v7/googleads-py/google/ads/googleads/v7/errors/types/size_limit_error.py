@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SizeLimitErrorEnum(proto.Message):
-    r"""Container for enum describing possible size limit errors.    """
+    r"""Container for enum describing possible size limit errors.
+    """
     class SizeLimitError(proto.Enum):
         r"""Enum describing possible size limit errors."""
         UNSPECIFIED = 0

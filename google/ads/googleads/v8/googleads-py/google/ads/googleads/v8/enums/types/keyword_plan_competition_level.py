@@ -32,7 +32,8 @@ class KeywordPlanCompetitionLevelEnum(proto.Message):
     on that keyword relative to all keywords across Google. The
     competition level can depend on the location and Search Network
     targeting options you've selected.
-        """
+
+    """
     class KeywordPlanCompetitionLevel(proto.Enum):
         r"""Competition level of a keyword."""
         UNSPECIFIED = 0

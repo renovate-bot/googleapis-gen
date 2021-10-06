@@ -636,6 +636,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
             )
         return self._stubs['delete_api_config']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ApiGatewayServiceGrpcAsyncIOTransport',

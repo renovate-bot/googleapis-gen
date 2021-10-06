@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class DeviceEnum(proto.Message):
     r"""Container for enumeration of Google Ads devices available for
     targeting.
-        """
+
+    """
     class Device(proto.Enum):
         r"""Enumerates Google Ads devices available for targeting."""
         UNSPECIFIED = 0

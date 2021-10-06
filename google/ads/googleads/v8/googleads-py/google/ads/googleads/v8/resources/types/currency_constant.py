@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class CurrencyConstant(proto.Message):
     r"""A currency constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the currency constant.

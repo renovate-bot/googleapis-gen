@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CustomerManagerLink(proto.Message):
     r"""Represents customer-manager link relationship.
+
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. CustomerManagerLink

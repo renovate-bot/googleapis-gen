@@ -479,6 +479,9 @@ class WorkflowTemplateServiceGrpcAsyncIOTransport(WorkflowTemplateServiceTranspo
             )
         return self._stubs['delete_workflow_template']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'WorkflowTemplateServiceGrpcAsyncIOTransport',

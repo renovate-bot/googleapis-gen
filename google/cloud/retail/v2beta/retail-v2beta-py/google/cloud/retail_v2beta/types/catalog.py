@@ -98,6 +98,7 @@ class ProductLevelConfig(proto.Message):
 
 class Catalog(proto.Message):
     r"""The catalog configuration.
+
     Attributes:
         name (str):
             Required. Immutable. The fully qualified

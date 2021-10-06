@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomInterestTypeEnum(proto.Message):
-    r"""The types of custom interest.    """
+    r"""The types of custom interest.
+    """
     class CustomInterestType(proto.Enum):
         r"""Enum containing possible custom interest types."""
         UNSPECIFIED = 0

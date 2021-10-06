@@ -75,6 +75,7 @@ class BillingSetup(proto.Message):
 
     class PaymentsAccountInfo(proto.Message):
         r"""Container of payments account information for this billing.
+
         Attributes:
             payments_account_id (str):
                 Output only. A 16 digit id used to identify

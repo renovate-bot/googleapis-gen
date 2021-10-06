@@ -107,6 +107,7 @@ class KeywordPlanCampaign(proto.Message):
 
 class KeywordPlanGeoTarget(proto.Message):
     r"""A geo target.
+
     Attributes:
         geo_target_constant (str):
             Required. The resource name of the geo

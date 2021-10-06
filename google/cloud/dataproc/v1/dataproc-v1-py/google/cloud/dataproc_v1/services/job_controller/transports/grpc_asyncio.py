@@ -432,6 +432,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
             )
         return self._stubs['delete_job']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'JobControllerGrpcAsyncIOTransport',

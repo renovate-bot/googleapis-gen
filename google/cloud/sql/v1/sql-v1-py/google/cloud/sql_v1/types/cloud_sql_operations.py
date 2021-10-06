@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class SqlOperationsGetRequest(proto.Message):
     r"""Operations get request.
+
     Attributes:
         operation (str):
             Instance operation ID.
@@ -50,6 +51,7 @@ class SqlOperationsGetRequest(proto.Message):
 
 class SqlOperationsListRequest(proto.Message):
     r"""Operations list request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -84,6 +86,7 @@ class SqlOperationsListRequest(proto.Message):
 
 class OperationsListResponse(proto.Message):
     r"""Operations list response.
+
     Attributes:
         kind (str):
             This is always **sql#operationsList**.

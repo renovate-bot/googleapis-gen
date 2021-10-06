@@ -56,6 +56,7 @@ __protobuf__ = proto.module(
 
 class CreateFindingRequest(proto.Message):
     r"""Request message for creating a finding.
+
     Attributes:
         parent (str):
             Required. Resource name of the new finding's parent. Its
@@ -90,6 +91,7 @@ class CreateFindingRequest(proto.Message):
 
 class CreateSourceRequest(proto.Message):
     r"""Request message for creating a source.
+
     Attributes:
         parent (str):
             Required. Resource name of the new source's parent. Its
@@ -113,6 +115,7 @@ class CreateSourceRequest(proto.Message):
 
 class GetOrganizationSettingsRequest(proto.Message):
     r"""Request message for getting organization settings.
+
     Attributes:
         name (str):
             Required. Name of the organization to get organization
@@ -128,6 +131,7 @@ class GetOrganizationSettingsRequest(proto.Message):
 
 class GetSourceRequest(proto.Message):
     r"""Request message for getting a source.
+
     Attributes:
         name (str):
             Required. Relative resource name of the source. Its format
@@ -142,6 +146,7 @@ class GetSourceRequest(proto.Message):
 
 class GroupAssetsRequest(proto.Message):
     r"""Request message for grouping by assets.
+
     Attributes:
         parent (str):
             Required. Name of the organization to groupBy. Its format is
@@ -271,6 +276,7 @@ class GroupAssetsRequest(proto.Message):
 
 class GroupAssetsResponse(proto.Message):
     r"""Response message for grouping by assets.
+
     Attributes:
         group_by_results (Sequence[google.cloud.securitycenter_v1beta1.types.GroupResult]):
             Group results. There exists an element for
@@ -307,6 +313,7 @@ class GroupAssetsResponse(proto.Message):
 
 class GroupFindingsRequest(proto.Message):
     r"""Request message for grouping by findings.
+
     Attributes:
         parent (str):
             Required. Name of the source to groupBy. Its format is
@@ -400,6 +407,7 @@ class GroupFindingsRequest(proto.Message):
 
 class GroupFindingsResponse(proto.Message):
     r"""Response message for group by findings.
+
     Attributes:
         group_by_results (Sequence[google.cloud.securitycenter_v1beta1.types.GroupResult]):
             Group results. There exists an element for
@@ -461,6 +469,7 @@ class GroupResult(proto.Message):
 
 class ListSourcesRequest(proto.Message):
     r"""Request message for listing sources.
+
     Attributes:
         parent (str):
             Required. Resource name of the parent of sources to list.
@@ -492,6 +501,7 @@ class ListSourcesRequest(proto.Message):
 
 class ListSourcesResponse(proto.Message):
     r"""Response message for listing sources.
+
     Attributes:
         sources (Sequence[google.cloud.securitycenter_v1beta1.types.Source]):
             Sources belonging to the requested parent.
@@ -517,6 +527,7 @@ class ListSourcesResponse(proto.Message):
 
 class ListAssetsRequest(proto.Message):
     r"""Request message for listing assets.
+
     Attributes:
         parent (str):
             Required. Name of the organization assets should belong to.
@@ -651,6 +662,7 @@ class ListAssetsRequest(proto.Message):
 
 class ListAssetsResponse(proto.Message):
     r"""Response message for listing assets.
+
     Attributes:
         list_assets_results (Sequence[google.cloud.securitycenter_v1beta1.types.ListAssetsResponse.ListAssetsResult]):
             Assets matching the list request.
@@ -666,6 +678,7 @@ class ListAssetsResponse(proto.Message):
 
     class ListAssetsResult(proto.Message):
         r"""Result containing the Asset and its State.
+
         Attributes:
             asset (google.cloud.securitycenter_v1beta1.types.Asset):
                 Asset matching the search request.
@@ -722,6 +735,7 @@ class ListAssetsResponse(proto.Message):
 
 class ListFindingsRequest(proto.Message):
     r"""Request message for listing findings.
+
     Attributes:
         parent (str):
             Required. Name of the source the findings belong to. Its
@@ -824,6 +838,7 @@ class ListFindingsRequest(proto.Message):
 
 class ListFindingsResponse(proto.Message):
     r"""Response message for listing findings.
+
     Attributes:
         findings (Sequence[google.cloud.securitycenter_v1beta1.types.Finding]):
             Findings matching the list request.
@@ -863,6 +878,7 @@ class ListFindingsResponse(proto.Message):
 
 class SetFindingStateRequest(proto.Message):
     r"""Request message for updating a finding's state.
+
     Attributes:
         name (str):
             Required. The relative resource name of the finding. See:
@@ -910,6 +926,7 @@ class RunAssetDiscoveryRequest(proto.Message):
 
 class UpdateFindingRequest(proto.Message):
     r"""Request message for updating or creating a finding.
+
     Attributes:
         finding (google.cloud.securitycenter_v1beta1.types.Finding):
             Required. The finding resource to update or create if it
@@ -939,6 +956,7 @@ class UpdateFindingRequest(proto.Message):
 
 class UpdateOrganizationSettingsRequest(proto.Message):
     r"""Request message for updating an organization's settings.
+
     Attributes:
         organization_settings (google.cloud.securitycenter_v1beta1.types.OrganizationSettings):
             Required. The organization settings resource
@@ -962,6 +980,7 @@ class UpdateOrganizationSettingsRequest(proto.Message):
 
 class UpdateSourceRequest(proto.Message):
     r"""Request message for updating a source.
+
     Attributes:
         source (google.cloud.securitycenter_v1beta1.types.Source):
             Required. The source resource to update.
@@ -984,6 +1003,7 @@ class UpdateSourceRequest(proto.Message):
 
 class UpdateSecurityMarksRequest(proto.Message):
     r"""Request message for updating a SecurityMarks resource.
+
     Attributes:
         security_marks (google.cloud.securitycenter_v1beta1.types.SecurityMarks):
             Required. The security marks resource to

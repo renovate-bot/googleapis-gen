@@ -379,6 +379,8 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
             )
         return self._stubs['delete_domain_mapping']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DomainMappingsGrpcTransport',

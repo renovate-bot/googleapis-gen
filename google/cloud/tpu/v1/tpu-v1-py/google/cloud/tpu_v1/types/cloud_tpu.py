@@ -48,6 +48,7 @@ __protobuf__ = proto.module(
 
 class SchedulingConfig(proto.Message):
     r"""Sets the scheduling options for this node.
+
     Attributes:
         preemptible (bool):
             Defines whether the node is preemptible.
@@ -68,6 +69,7 @@ class SchedulingConfig(proto.Message):
 
 class NetworkEndpoint(proto.Message):
     r"""A network endpoint over which a TPU worker can be reached.
+
     Attributes:
         ip_address (str):
             The IP address of this network endpoint.
@@ -87,6 +89,7 @@ class NetworkEndpoint(proto.Message):
 
 class Node(proto.Message):
     r"""A TPU instance.
+
     Attributes:
         name (str):
             Output only. Immutable. The name of the TPU
@@ -295,6 +298,7 @@ class Node(proto.Message):
 
 class ListNodesRequest(proto.Message):
     r"""Request for [ListNodes][google.cloud.tpu.v1.Tpu.ListNodes].
+
     Attributes:
         parent (str):
             Required. The parent resource name.
@@ -321,6 +325,7 @@ class ListNodesRequest(proto.Message):
 
 class ListNodesResponse(proto.Message):
     r"""Response for [ListNodes][google.cloud.tpu.v1.Tpu.ListNodes].
+
     Attributes:
         nodes (Sequence[google.cloud.tpu_v1.types.Node]):
             The listed nodes.
@@ -351,6 +356,7 @@ class ListNodesResponse(proto.Message):
 
 class GetNodeRequest(proto.Message):
     r"""Request for [GetNode][google.cloud.tpu.v1.Tpu.GetNode].
+
     Attributes:
         name (str):
             Required. The resource name.
@@ -364,6 +370,7 @@ class GetNodeRequest(proto.Message):
 
 class CreateNodeRequest(proto.Message):
     r"""Request for [CreateNode][google.cloud.tpu.v1.Tpu.CreateNode].
+
     Attributes:
         parent (str):
             Required. The parent resource name.
@@ -390,6 +397,7 @@ class CreateNodeRequest(proto.Message):
 
 class DeleteNodeRequest(proto.Message):
     r"""Request for [DeleteNode][google.cloud.tpu.v1.Tpu.DeleteNode].
+
     Attributes:
         name (str):
             Required. The resource name.
@@ -403,6 +411,7 @@ class DeleteNodeRequest(proto.Message):
 
 class ReimageNodeRequest(proto.Message):
     r"""Request for [ReimageNode][google.cloud.tpu.v1.Tpu.ReimageNode].
+
     Attributes:
         name (str):
             The resource name.
@@ -422,6 +431,7 @@ class ReimageNodeRequest(proto.Message):
 
 class StopNodeRequest(proto.Message):
     r"""Request for [StopNode][google.cloud.tpu.v1.Tpu.StopNode].
+
     Attributes:
         name (str):
             The resource name.
@@ -435,6 +445,7 @@ class StopNodeRequest(proto.Message):
 
 class StartNodeRequest(proto.Message):
     r"""Request for [StartNode][google.cloud.tpu.v1.Tpu.StartNode].
+
     Attributes:
         name (str):
             The resource name.
@@ -448,6 +459,7 @@ class StartNodeRequest(proto.Message):
 
 class TensorFlowVersion(proto.Message):
     r"""A tensorflow version that a Node can be configured with.
+
     Attributes:
         name (str):
             The resource name.
@@ -554,6 +566,7 @@ class ListTensorFlowVersionsResponse(proto.Message):
 
 class AcceleratorType(proto.Message):
     r"""A accelerator type that a Node can be configured with.
+
     Attributes:
         name (str):
             The resource name.
@@ -660,6 +673,7 @@ class ListAcceleratorTypesResponse(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Metadata describing an [Operation][google.longrunning.Operation]
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             The time the operation was created.
@@ -714,6 +728,7 @@ class OperationMetadata(proto.Message):
 
 class Symptom(proto.Message):
     r"""A Symptom instance.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Timestamp when the Symptom is created.

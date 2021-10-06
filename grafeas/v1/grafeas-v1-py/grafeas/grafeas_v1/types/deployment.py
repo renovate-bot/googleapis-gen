@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class DeploymentNote(proto.Message):
     r"""An artifact that can be deployed in some runtime.
+
     Attributes:
         resource_uri (Sequence[str]):
             Required. Resource URI for the artifact being

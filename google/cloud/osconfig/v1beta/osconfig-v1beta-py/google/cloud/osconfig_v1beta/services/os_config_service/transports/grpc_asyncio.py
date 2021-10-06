@@ -627,6 +627,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
             )
         return self._stubs['lookup_effective_guest_policy']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'OsConfigServiceGrpcAsyncIOTransport',

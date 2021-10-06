@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class PolicyFindingErrorEnum(proto.Message):
-    r"""Container for enum describing possible policy finding errors.    """
+    r"""Container for enum describing possible policy finding errors.
+    """
     class PolicyFindingError(proto.Enum):
         r"""Enum describing possible policy finding errors."""
         UNSPECIFIED = 0

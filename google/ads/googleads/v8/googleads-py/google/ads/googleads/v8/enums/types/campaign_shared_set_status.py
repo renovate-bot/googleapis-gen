@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CampaignSharedSetStatusEnum(proto.Message):
     r"""Container for enum describing types of campaign shared set
     statuses.
-        """
+
+    """
     class CampaignSharedSetStatus(proto.Enum):
         r"""Enum listing the possible campaign shared set statuses."""
         UNSPECIFIED = 0

@@ -44,6 +44,7 @@ __protobuf__ = proto.module(
 
 class Action(proto.Message):
     r"""Information about the action.
+
     Attributes:
         detail (google.apps.drive.activity_v2.types.ActionDetail):
             The type and detailed information about the
@@ -192,6 +193,7 @@ class ActionDetail(proto.Message):
 
 class Create(proto.Message):
     r"""An object was created.
+
     Attributes:
         new (google.apps.drive.activity_v2.types.Create.New):
             If present, indicates the object was newly
@@ -206,13 +208,16 @@ class Create(proto.Message):
     """
 
     class New(proto.Message):
-        r"""An object was created from scratch.    """
+        r"""An object was created from scratch.
+        """
 
     class Upload(proto.Message):
-        r"""An object was uploaded into Drive.    """
+        r"""An object was uploaded into Drive.
+        """
 
     class Copy(proto.Message):
         r"""An object was created by copying an existing object.
+
         Attributes:
             original_object (google.apps.drive.activity_v2.types.TargetReference):
                 The original object.
@@ -245,11 +250,13 @@ class Create(proto.Message):
 
 
 class Edit(proto.Message):
-    r"""An empty message indicating an object was edited.    """
+    r"""An empty message indicating an object was edited.
+    """
 
 
 class Move(proto.Message):
     r"""An object was moved.
+
     Attributes:
         added_parents (Sequence[google.apps.drive.activity_v2.types.TargetReference]):
             The added parent object(s).
@@ -271,6 +278,7 @@ class Move(proto.Message):
 
 class Rename(proto.Message):
     r"""An object was renamed.
+
     Attributes:
         old_title (str):
             The previous title of the drive object.
@@ -290,6 +298,7 @@ class Rename(proto.Message):
 
 class Delete(proto.Message):
     r"""An object was deleted.
+
     Attributes:
         type_ (google.apps.drive.activity_v2.types.Delete.Type):
             The type of delete action taken.
@@ -309,6 +318,7 @@ class Delete(proto.Message):
 
 class Restore(proto.Message):
     r"""A deleted object was restored.
+
     Attributes:
         type_ (google.apps.drive.activity_v2.types.Restore.Type):
             The type of restore action taken.
@@ -327,6 +337,7 @@ class Restore(proto.Message):
 
 class PermissionChange(proto.Message):
     r"""A change of the permission setting on an item.
+
     Attributes:
         added_permissions (Sequence[google.apps.drive.activity_v2.types.Permission]):
             The set of permissions added by this change.
@@ -349,6 +360,7 @@ class PermissionChange(proto.Message):
 
 class Permission(proto.Message):
     r"""The permission setting of an object.
+
     Attributes:
         role (google.apps.drive.activity_v2.types.Permission.Role):
             Indicates the `Google Drive permissions
@@ -383,7 +395,8 @@ class Permission(proto.Message):
         PUBLISHED_VIEWER = 7
 
     class Anyone(proto.Message):
-        r"""Represents any user (including a logged out user).    """
+        r"""Represents any user (including a logged out user).
+        """
 
     role = proto.Field(
         proto.ENUM,
@@ -422,6 +435,7 @@ class Permission(proto.Message):
 
 class Comment(proto.Message):
     r"""A change about comments on an object.
+
     Attributes:
         post (google.apps.drive.activity_v2.types.Comment.Post):
             A change on a regular posted comment.
@@ -435,6 +449,7 @@ class Comment(proto.Message):
 
     class Post(proto.Message):
         r"""A regular posted comment.
+
         Attributes:
             subtype (google.apps.drive.activity_v2.types.Comment.Post.Subtype):
                 The sub-type of this event.
@@ -457,6 +472,7 @@ class Comment(proto.Message):
 
     class Assignment(proto.Message):
         r"""A comment with an assignment.
+
         Attributes:
             subtype (google.apps.drive.activity_v2.types.Comment.Assignment.Subtype):
                 The sub-type of this event.
@@ -487,6 +503,7 @@ class Comment(proto.Message):
 
     class Suggestion(proto.Message):
         r"""A suggestion.
+
         Attributes:
             subtype (google.apps.drive.activity_v2.types.Comment.Suggestion.Subtype):
                 The sub-type of this event.
@@ -536,6 +553,7 @@ class Comment(proto.Message):
 
 class DataLeakPreventionChange(proto.Message):
     r"""A change in the object's data leak prevention status.
+
     Attributes:
         type_ (google.apps.drive.activity_v2.types.DataLeakPreventionChange.Type):
             The type of Data Leak Prevention (DLP)
@@ -556,6 +574,7 @@ class DataLeakPreventionChange(proto.Message):
 
 class ApplicationReference(proto.Message):
     r"""Activity in applications other than Drive.
+
     Attributes:
         type_ (google.apps.drive.activity_v2.types.ApplicationReference.Type):
             The reference type corresponding to this
@@ -576,6 +595,7 @@ class ApplicationReference(proto.Message):
 
 class SettingsChange(proto.Message):
     r"""Information about settings changes.
+
     Attributes:
         restriction_changes (Sequence[google.apps.drive.activity_v2.types.SettingsChange.RestrictionChange]):
             The set of changes made to restrictions.
@@ -583,6 +603,7 @@ class SettingsChange(proto.Message):
 
     class RestrictionChange(proto.Message):
         r"""Information about restriction policy changes to a feature.
+
         Attributes:
             feature (google.apps.drive.activity_v2.types.SettingsChange.RestrictionChange.Feature):
                 The feature which had a change in restriction

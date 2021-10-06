@@ -38,6 +38,7 @@ __protobuf__ = proto.module(
 
 class Target(proto.Message):
     r"""Information about the target of activity.
+
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItem):
             The target is a Drive item.
@@ -77,6 +78,7 @@ class Target(proto.Message):
 
 class TargetReference(proto.Message):
     r"""A lightweight reference to the target of activity.
+
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItemReference):
             The target is a Drive item.
@@ -108,6 +110,7 @@ class TargetReference(proto.Message):
 
 class FileComment(proto.Message):
     r"""A comment on a file.
+
     Attributes:
         legacy_comment_id (str):
             The comment in the discussion thread. This
@@ -149,6 +152,7 @@ class FileComment(proto.Message):
 
 class DriveItem(proto.Message):
     r"""A Drive item, such as a file or folder.
+
     Attributes:
         name (str):
             The target Drive item. The format is ``items/ITEM_ID``.
@@ -175,10 +179,12 @@ class DriveItem(proto.Message):
     """
 
     class File(proto.Message):
-        r"""This item is deprecated; please see ``DriveFile`` instead.    """
+        r"""This item is deprecated; please see ``DriveFile`` instead.
+        """
 
     class Folder(proto.Message):
         r"""This item is deprecated; please see ``DriveFolder`` instead.
+
         Attributes:
             type_ (google.apps.drive.activity_v2.types.DriveItem.Folder.Type):
                 This field is deprecated; please see ``DriveFolder.type``
@@ -199,10 +205,12 @@ class DriveItem(proto.Message):
         )
 
     class DriveFile(proto.Message):
-        r"""A Drive item which is a file.    """
+        r"""A Drive item which is a file.
+        """
 
     class DriveFolder(proto.Message):
         r"""A Drive item which is a folder.
+
         Attributes:
             type_ (google.apps.drive.activity_v2.types.DriveItem.DriveFolder.Type):
                 The type of Drive folder.
@@ -263,6 +271,7 @@ class DriveItem(proto.Message):
 
 class Owner(proto.Message):
     r"""Information about the owner of a Drive item.
+
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             The user that owns the Drive item.
@@ -301,6 +310,7 @@ class Owner(proto.Message):
 
 class TeamDrive(proto.Message):
     r"""This item is deprecated; please see ``Drive`` instead.
+
     Attributes:
         name (str):
             This field is deprecated; please see ``Drive.name`` instead.
@@ -328,6 +338,7 @@ class TeamDrive(proto.Message):
 
 class Drive(proto.Message):
     r"""Information about a shared drive.
+
     Attributes:
         name (str):
             The resource name of the shared drive. The format is
@@ -410,6 +421,7 @@ class DriveItemReference(proto.Message):
 
 class TeamDriveReference(proto.Message):
     r"""This item is deprecated; please see ``DriveReference`` instead.
+
     Attributes:
         name (str):
             This field is deprecated; please see ``DriveReference.name``
@@ -431,6 +443,7 @@ class TeamDriveReference(proto.Message):
 
 class DriveReference(proto.Message):
     r"""A lightweight reference to a shared drive.
+
     Attributes:
         name (str):
             The resource name of the shared drive. The format is

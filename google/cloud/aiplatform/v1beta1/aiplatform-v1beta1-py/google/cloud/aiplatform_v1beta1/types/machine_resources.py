@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class MachineSpec(proto.Message):
     r"""Specification of a single machine.
+
     Attributes:
         machine_type (str):
             Immutable. The type of the machine.
@@ -235,6 +236,7 @@ class BatchDedicatedResources(proto.Message):
 
 class ResourcesConsumed(proto.Message):
     r"""Statistics information about resource consumption.
+
     Attributes:
         replica_hours (float):
             Output only. The number of replica hours
@@ -252,6 +254,7 @@ class ResourcesConsumed(proto.Message):
 
 class DiskSpec(proto.Message):
     r"""Represents the spec of disk options.
+
     Attributes:
         boot_disk_type (str):
             Type of the boot disk (default is "pd-ssd").

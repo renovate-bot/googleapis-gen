@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SlotEnum(proto.Message):
-    r"""Container for enumeration of possible positions of the Ad.    """
+    r"""Container for enumeration of possible positions of the Ad.
+    """
     class Slot(proto.Enum):
         r"""Enumerates possible positions of the Ad."""
         UNSPECIFIED = 0

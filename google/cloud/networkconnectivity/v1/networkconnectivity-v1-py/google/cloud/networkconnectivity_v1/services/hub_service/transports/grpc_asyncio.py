@@ -510,6 +510,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
             )
         return self._stubs['delete_spoke']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'HubServiceGrpcAsyncIOTransport',

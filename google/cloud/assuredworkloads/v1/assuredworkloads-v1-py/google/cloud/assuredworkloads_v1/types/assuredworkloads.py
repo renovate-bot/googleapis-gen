@@ -37,6 +37,7 @@ __protobuf__ = proto.module(
 
 class CreateWorkloadRequest(proto.Message):
     r"""Request for creating a workload.
+
     Attributes:
         parent (str):
             Required. The resource name of the new Workload's parent.
@@ -70,6 +71,7 @@ class CreateWorkloadRequest(proto.Message):
 
 class UpdateWorkloadRequest(proto.Message):
     r"""Request for Updating a workload.
+
     Attributes:
         workload (google.cloud.assuredworkloads_v1.types.Workload):
             Required. The workload to update. The workload’s ``name``
@@ -94,6 +96,7 @@ class UpdateWorkloadRequest(proto.Message):
 
 class DeleteWorkloadRequest(proto.Message):
     r"""Request for deleting a Workload.
+
     Attributes:
         name (str):
             Required. The ``name`` field is used to identify the
@@ -117,6 +120,7 @@ class DeleteWorkloadRequest(proto.Message):
 
 class GetWorkloadRequest(proto.Message):
     r"""Request for fetching a workload.
+
     Attributes:
         name (str):
             Required. The resource name of the Workload to fetch. This
@@ -134,6 +138,7 @@ class GetWorkloadRequest(proto.Message):
 
 class ListWorkloadsRequest(proto.Message):
     r"""Request for fetching workloads in an organization.
+
     Attributes:
         parent (str):
             Required. Parent Resource to list workloads from. Must be of
@@ -171,6 +176,7 @@ class ListWorkloadsRequest(proto.Message):
 
 class ListWorkloadsResponse(proto.Message):
     r"""Response of ListWorkloads endpoint.
+
     Attributes:
         workloads (Sequence[google.cloud.assuredworkloads_v1.types.Workload]):
             List of Workloads under a given parent.
@@ -273,6 +279,7 @@ class Workload(proto.Message):
 
     class ResourceInfo(proto.Message):
         r"""Represent the resources that are children of this Workload.
+
         Attributes:
             resource_id (int):
                 Resource identifier. For a project this represents
@@ -299,6 +306,7 @@ class Workload(proto.Message):
 
     class KMSSettings(proto.Message):
         r"""Settings specific to the Key Management Service.
+
         Attributes:
             next_rotation_time (google.protobuf.timestamp_pb2.Timestamp):
                 Required. Input only. Immutable. The time at
@@ -410,6 +418,7 @@ class Workload(proto.Message):
 
 class CreateWorkloadOperationMetadata(proto.Message):
     r"""Operation metadata to give request details of CreateWorkload.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Optional. Time when the operation was

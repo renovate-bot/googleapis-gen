@@ -42,7 +42,8 @@ class AutoMlTextExtraction(proto.Message):
 
 
 class AutoMlTextExtractionInputs(proto.Message):
-    r"""    """
+    r"""
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

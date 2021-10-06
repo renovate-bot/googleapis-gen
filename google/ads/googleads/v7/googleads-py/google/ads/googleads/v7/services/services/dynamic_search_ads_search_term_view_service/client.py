@@ -150,6 +150,19 @@ class DynamicSearchAdsSearchTermViewServiceClient(metaclass=DynamicSearchAdsSear
         """
         return self._transport
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
     @staticmethod
     def dynamic_search_ads_search_term_view_path(customer_id: str,ad_group_id: str,search_term_fingerprint: str,headline_fingerprint: str,landing_page_fingerprint: str,page_url_fingerprint: str,) -> str:
         """Return a fully-qualified dynamic_search_ads_search_term_view string."""

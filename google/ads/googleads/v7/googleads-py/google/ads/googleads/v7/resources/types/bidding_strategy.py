@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class BiddingStrategy(proto.Message):
     r"""A bidding strategy.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the bidding strategy.

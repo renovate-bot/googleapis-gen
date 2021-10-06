@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ProductTypeLevelEnum(proto.Message):
-    r"""Level of the type of a product offer.    """
+    r"""Level of the type of a product offer.
+    """
     class ProductTypeLevel(proto.Enum):
         r"""Enum describing the level of the type of a product offer."""
         UNSPECIFIED = 0

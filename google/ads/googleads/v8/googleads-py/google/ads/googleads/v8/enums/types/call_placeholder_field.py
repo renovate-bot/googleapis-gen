@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CallPlaceholderFieldEnum(proto.Message):
-    r"""Values for Call placeholder fields.    """
+    r"""Values for Call placeholder fields.
+    """
     class CallPlaceholderField(proto.Enum):
         r"""Possible values for Call placeholder fields."""
         UNSPECIFIED = 0

@@ -248,6 +248,8 @@ class SubscriberServiceGrpcTransport(SubscriberServiceTransport):
             )
         return self._stubs['subscribe']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SubscriberServiceGrpcTransport',

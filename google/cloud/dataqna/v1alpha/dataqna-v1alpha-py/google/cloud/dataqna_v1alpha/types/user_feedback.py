@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class UserFeedback(proto.Message):
     r"""Feedback provided by a user.
+
     Attributes:
         name (str):
             Required. The unique identifier for the user feedback. User

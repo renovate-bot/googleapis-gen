@@ -487,6 +487,9 @@ class VehicleServiceGrpcAsyncIOTransport(VehicleServiceTransport):
             )
         return self._stubs['search_fuzzed_vehicles']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'VehicleServiceGrpcAsyncIOTransport',

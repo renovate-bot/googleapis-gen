@@ -81,6 +81,7 @@ class Distribution(proto.Message):
 
     class LinearBuckets(proto.Message):
         r"""Describing buckets with constant width.
+
         Attributes:
             num_finite_buckets (int):
                 The number of finite buckets. With the underflow and
@@ -112,6 +113,7 @@ class Distribution(proto.Message):
 
     class ExponentialBuckets(proto.Message):
         r"""Describing buckets with exponentially growing width.
+
         Attributes:
             num_finite_buckets (int):
                 The number of finite buckets. With the underflow and
@@ -144,6 +146,7 @@ class Distribution(proto.Message):
 
     class ExplicitBuckets(proto.Message):
         r"""Describing buckets with arbitrary user-provided width.
+
         Attributes:
             bounds (Sequence[float]):
                 'bound' is a list of strictly increasing boundaries between

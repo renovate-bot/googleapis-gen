@@ -52,6 +52,7 @@ __protobuf__ = proto.module(
 
 class LoggingConfig(proto.Message):
     r"""The runtime logging config of the job.
+
     Attributes:
         driver_log_levels (Sequence[google.cloud.dataproc_v1.types.LoggingConfig.DriverLogLevelsEntry]):
             The per-package log levels for the driver.
@@ -329,6 +330,7 @@ class PySparkJob(proto.Message):
 
 class QueryList(proto.Message):
     r"""A list of queries to run on a cluster.
+
     Attributes:
         queries (Sequence[str]):
             Required. The queries to execute. You do not need to end a
@@ -679,6 +681,7 @@ class PrestoJob(proto.Message):
 
 class JobPlacement(proto.Message):
     r"""Dataproc job config.
+
     Attributes:
         cluster_name (str):
             Required. The name of the cluster where the
@@ -708,6 +711,7 @@ class JobPlacement(proto.Message):
 
 class JobStatus(proto.Message):
     r"""Dataproc job status.
+
     Attributes:
         state (google.cloud.dataproc_v1.types.JobStatus.State):
             Output only. A state message specifying the
@@ -766,6 +770,7 @@ class JobStatus(proto.Message):
 
 class JobReference(proto.Message):
     r"""Encapsulates the full scoping used to reference a job.
+
     Attributes:
         project_id (str):
             Optional. The ID of the Google Cloud Platform
@@ -852,6 +857,7 @@ class YarnApplication(proto.Message):
 
 class Job(proto.Message):
     r"""A Dataproc job resource.
+
     Attributes:
         reference (google.cloud.dataproc_v1.types.JobReference):
             Optional. The fully qualified reference to the job, which
@@ -1021,6 +1027,7 @@ class Job(proto.Message):
 
 class JobScheduling(proto.Message):
     r"""Job scheduling options.
+
     Attributes:
         max_failures_per_hour (int):
             Optional. Maximum number of times per hour a
@@ -1052,6 +1059,7 @@ class JobScheduling(proto.Message):
 
 class SubmitJobRequest(proto.Message):
     r"""A request to submit a job.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1098,6 +1106,7 @@ class SubmitJobRequest(proto.Message):
 
 class JobMetadata(proto.Message):
     r"""Job Operation metadata.
+
     Attributes:
         job_id (str):
             Output only. The job id.
@@ -1160,6 +1169,7 @@ class GetJobRequest(proto.Message):
 
 class ListJobsRequest(proto.Message):
     r"""A request to list jobs in a project.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1241,6 +1251,7 @@ class ListJobsRequest(proto.Message):
 
 class UpdateJobRequest(proto.Message):
     r"""A request to update a job.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1286,6 +1297,7 @@ class UpdateJobRequest(proto.Message):
 
 class ListJobsResponse(proto.Message):
     r"""A list of jobs in a project.
+
     Attributes:
         jobs (Sequence[google.cloud.dataproc_v1.types.Job]):
             Output only. Jobs list.
@@ -1313,6 +1325,7 @@ class ListJobsResponse(proto.Message):
 
 class CancelJobRequest(proto.Message):
     r"""A request to cancel a job.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1340,6 +1353,7 @@ class CancelJobRequest(proto.Message):
 
 class DeleteJobRequest(proto.Message):
     r"""A request to delete a job.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform

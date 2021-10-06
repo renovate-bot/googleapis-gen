@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class NotAllowlistedErrorEnum(proto.Message):
     r"""Container for enum describing possible not allowlisted
     errors.
-        """
+
+    """
     class NotAllowlistedError(proto.Enum):
         r"""Enum describing possible not allowlisted errors."""
         UNSPECIFIED = 0

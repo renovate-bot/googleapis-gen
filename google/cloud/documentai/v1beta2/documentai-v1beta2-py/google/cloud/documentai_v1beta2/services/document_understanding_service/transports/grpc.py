@@ -295,6 +295,8 @@ class DocumentUnderstandingServiceGrpcTransport(DocumentUnderstandingServiceTran
             )
         return self._stubs['process_document']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DocumentUnderstandingServiceGrpcTransport',

@@ -410,6 +410,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
             )
         return self._stubs['list_rooms']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SmartDeviceManagementServiceGrpcAsyncIOTransport',

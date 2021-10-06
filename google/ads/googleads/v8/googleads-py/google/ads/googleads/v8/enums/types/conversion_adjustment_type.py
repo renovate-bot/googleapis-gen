@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ConversionAdjustmentTypeEnum(proto.Message):
-    r"""Container for enum describing conversion adjustment types.    """
+    r"""Container for enum describing conversion adjustment types.
+    """
     class ConversionAdjustmentType(proto.Enum):
         r"""The different actions advertisers can take to adjust the
         conversions that they already reported. Retractions negate a

@@ -143,6 +143,7 @@ class Invoice(proto.Message):
 
     class AccountBudgetSummary(proto.Message):
         r"""Represents a summarized account budget billable cost.
+
         Attributes:
             customer (str):
                 Output only. The resource name of the customer associated

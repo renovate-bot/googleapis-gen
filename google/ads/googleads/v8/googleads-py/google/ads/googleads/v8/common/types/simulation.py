@@ -59,6 +59,7 @@ class BidModifierSimulationPointList(proto.Message):
 
 class CpcBidSimulationPointList(proto.Message):
     r"""A container for simulation points for simulations of type CPC_BID.
+
     Attributes:
         points (Sequence[google.ads.googleads.v8.common.types.CpcBidSimulationPoint]):
             Projected metrics for a series of CPC bid
@@ -74,6 +75,7 @@ class CpcBidSimulationPointList(proto.Message):
 
 class CpvBidSimulationPointList(proto.Message):
     r"""A container for simulation points for simulations of type CPV_BID.
+
     Attributes:
         points (Sequence[google.ads.googleads.v8.common.types.CpvBidSimulationPoint]):
             Projected metrics for a series of CPV bid
@@ -174,6 +176,7 @@ class TargetImpressionShareSimulationPointList(proto.Message):
 
 class BidModifierSimulationPoint(proto.Message):
     r"""Projected metrics for a specific bid modifier amount.
+
     Attributes:
         bid_modifier (float):
             The simulated bid modifier upon which
@@ -297,6 +300,7 @@ class BidModifierSimulationPoint(proto.Message):
 
 class CpcBidSimulationPoint(proto.Message):
     r"""Projected metrics for a specific CPC bid amount.
+
     Attributes:
         required_budget_amount_micros (int):
             Projected required daily budget that the
@@ -376,6 +380,7 @@ class CpcBidSimulationPoint(proto.Message):
 
 class CpvBidSimulationPoint(proto.Message):
     r"""Projected metrics for a specific CPV bid amount.
+
     Attributes:
         cpv_bid_micros (int):
             The simulated CPV bid upon which projected
@@ -412,6 +417,7 @@ class CpvBidSimulationPoint(proto.Message):
 
 class TargetCpaSimulationPoint(proto.Message):
     r"""Projected metrics for a specific target CPA amount.
+
     Attributes:
         required_budget_amount_micros (int):
             Projected required daily budget that the
@@ -503,6 +509,7 @@ class TargetCpaSimulationPoint(proto.Message):
 
 class TargetRoasSimulationPoint(proto.Message):
     r"""Projected metrics for a specific target ROAS amount.
+
     Attributes:
         target_roas (float):
             The simulated target ROAS upon which
@@ -634,6 +641,7 @@ class PercentCpcBidSimulationPoint(proto.Message):
 
 class BudgetSimulationPoint(proto.Message):
     r"""Projected metrics for a specific budget amount.
+
     Attributes:
         budget_amount_micros (int):
             The simulated budget upon which projected

@@ -371,6 +371,7 @@ class Job(proto.Message):
 
 class DatastoreIODetails(proto.Message):
     r"""Metadata for a Datastore connector used by the job.
+
     Attributes:
         namespace (str):
             Namespace used in the connection.
@@ -390,6 +391,7 @@ class DatastoreIODetails(proto.Message):
 
 class PubSubIODetails(proto.Message):
     r"""Metadata for a Pub/Sub connector used by the job.
+
     Attributes:
         topic (str):
             Topic accessed in the connection.
@@ -409,6 +411,7 @@ class PubSubIODetails(proto.Message):
 
 class FileIODetails(proto.Message):
     r"""Metadata for a File connector used by the job.
+
     Attributes:
         file_pattern (str):
             File Pattern used to access files by the
@@ -423,6 +426,7 @@ class FileIODetails(proto.Message):
 
 class BigTableIODetails(proto.Message):
     r"""Metadata for a Cloud BigTable connector used by the job.
+
     Attributes:
         project_id (str):
             ProjectId accessed in the connection.
@@ -448,6 +452,7 @@ class BigTableIODetails(proto.Message):
 
 class BigQueryIODetails(proto.Message):
     r"""Metadata for a BigQuery connector used by the job.
+
     Attributes:
         table (str):
             Table accessed in the connection.
@@ -479,6 +484,7 @@ class BigQueryIODetails(proto.Message):
 
 class SpannerIODetails(proto.Message):
     r"""Metadata for a Spanner connector used by the job.
+
     Attributes:
         project_id (str):
             ProjectId accessed in the connection.
@@ -504,6 +510,7 @@ class SpannerIODetails(proto.Message):
 
 class SdkVersion(proto.Message):
     r"""The version of the SDK used to run the job.
+
     Attributes:
         version (str):
             The version of the SDK used to run the job.
@@ -746,6 +753,7 @@ class ExecutionStageSummary(proto.Message):
 
     class StageSource(proto.Message):
         r"""Description of an input or output of an execution stage.
+
         Attributes:
             user_name (str):
                 Human-readable name for this source; may be
@@ -1079,6 +1087,7 @@ class JobExecutionStageInfo(proto.Message):
 
 class CreateJobRequest(proto.Message):
     r"""Request to create a Cloud Dataflow job.
+
     Attributes:
         project_id (str):
             The ID of the Cloud Platform project that the
@@ -1123,6 +1132,7 @@ class CreateJobRequest(proto.Message):
 
 class GetJobRequest(proto.Message):
     r"""Request to get the state of a Cloud Dataflow job.
+
     Attributes:
         project_id (str):
             The ID of the Cloud Platform project that the
@@ -1159,6 +1169,7 @@ class GetJobRequest(proto.Message):
 
 class UpdateJobRequest(proto.Message):
     r"""Request to update a Cloud Dataflow job.
+
     Attributes:
         project_id (str):
             The ID of the Cloud Platform project that the
@@ -1196,6 +1207,7 @@ class UpdateJobRequest(proto.Message):
 
 class ListJobsRequest(proto.Message):
     r"""Request to list Cloud Dataflow jobs.
+
     Attributes:
         filter (google.cloud.dataflow_v1beta3.types.ListJobsRequest.Filter):
             The kind of filter to use.
@@ -1313,6 +1325,7 @@ class ListJobsResponse(proto.Message):
 
 class SnapshotJobRequest(proto.Message):
     r"""Request to create a snapshot of a job.
+
     Attributes:
         project_id (str):
             The project which owns the job to be
@@ -1360,6 +1373,7 @@ class SnapshotJobRequest(proto.Message):
 
 class CheckActiveJobsRequest(proto.Message):
     r"""Request to check is active jobs exists for a project
+
     Attributes:
         project_id (str):
             The project which owns the jobs.
@@ -1373,6 +1387,7 @@ class CheckActiveJobsRequest(proto.Message):
 
 class CheckActiveJobsResponse(proto.Message):
     r"""Response for CheckActiveJobsRequest.
+
     Attributes:
         active_jobs_exist (bool):
             If True, active jobs exists for project.

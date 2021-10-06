@@ -28,6 +28,7 @@ __protobuf__ = proto.module(
 
 class CustomerLicenseGetRequest(proto.Message):
     r"""
+
     Attributes:
         application_id (str):
             Application Id
@@ -47,6 +48,7 @@ class CustomerLicenseGetRequest(proto.Message):
 
 class LicenseNotificationListRequest(proto.Message):
     r"""
+
     Attributes:
         application_id (str):
             Application Id
@@ -78,6 +80,7 @@ class LicenseNotificationListRequest(proto.Message):
 
 class UserLicenseGetRequest(proto.Message):
     r"""
+
     Attributes:
         application_id (str):
             Application Id

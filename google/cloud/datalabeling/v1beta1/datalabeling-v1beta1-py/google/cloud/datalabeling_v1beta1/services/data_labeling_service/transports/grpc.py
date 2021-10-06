@@ -1169,6 +1169,8 @@ class DataLabelingServiceGrpcTransport(DataLabelingServiceTransport):
             )
         return self._stubs['list_evaluation_jobs']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DataLabelingServiceGrpcTransport',

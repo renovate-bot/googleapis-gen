@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BiddingStrategyStatusEnum(proto.Message):
-    r"""Message describing BiddingStrategy statuses.    """
+    r"""Message describing BiddingStrategy statuses.
+    """
     class BiddingStrategyStatus(proto.Enum):
         r"""The possible statuses of a BiddingStrategy."""
         UNSPECIFIED = 0

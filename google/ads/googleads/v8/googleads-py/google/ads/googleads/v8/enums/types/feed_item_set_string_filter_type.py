@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemSetStringFilterTypeEnum(proto.Message):
     r"""The type of string matching to be used for a dynamic
     FeedItemSet filter.
-        """
+
+    """
     class FeedItemSetStringFilterType(proto.Enum):
         r"""describe the possible types for a FeedItemSetStringFilter."""
         UNSPECIFIED = 0

@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class UrlCollection(proto.Message):
     r"""Collection of urls that is tagged with a unique identifier.
+
     Attributes:
         url_collection_id (str):
             Unique identifier for this UrlCollection

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LocationPlaceholderFieldEnum(proto.Message):
-    r"""Values for Location placeholder fields.    """
+    r"""Values for Location placeholder fields.
+    """
     class LocationPlaceholderField(proto.Enum):
         r"""Possible values for Location placeholder fields."""
         UNSPECIFIED = 0

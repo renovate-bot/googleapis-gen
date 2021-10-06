@@ -277,6 +277,7 @@ class ServicePerimeterConfig(proto.Message):
 
     class ApiOperation(proto.Message):
         r"""Identification for an API Operation.
+
         Attributes:
             service_name (str):
                 The name of the API whose methods or permissions the

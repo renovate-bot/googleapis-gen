@@ -277,6 +277,8 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
             )
         return self._stubs['export_assets']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AssetServiceGrpcTransport',

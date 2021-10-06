@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class GetTriggerRequest(proto.Message):
     r"""The request message for the GetTrigger method.
+
     Attributes:
         name (str):
             Required. The name of the trigger to get.
@@ -49,6 +50,7 @@ class GetTriggerRequest(proto.Message):
 
 class ListTriggersRequest(proto.Message):
     r"""The request message for the ListTriggers method.
+
     Attributes:
         parent (str):
             Required. The parent collection to list
@@ -92,6 +94,7 @@ class ListTriggersRequest(proto.Message):
 
 class ListTriggersResponse(proto.Message):
     r"""The response message for the ListTriggers method.
+
     Attributes:
         triggers (Sequence[google.cloud.eventarc_v1.types.Trigger]):
             The requested triggers, up to the number specified in
@@ -125,6 +128,7 @@ class ListTriggersResponse(proto.Message):
 
 class CreateTriggerRequest(proto.Message):
     r"""The request message for the CreateTrigger method.
+
     Attributes:
         parent (str):
             Required. The parent collection in which to
@@ -160,6 +164,7 @@ class CreateTriggerRequest(proto.Message):
 
 class UpdateTriggerRequest(proto.Message):
     r"""The request message for the UpdateTrigger method.
+
     Attributes:
         trigger (google.cloud.eventarc_v1.types.Trigger):
             The trigger to be updated.
@@ -199,6 +204,7 @@ class UpdateTriggerRequest(proto.Message):
 
 class DeleteTriggerRequest(proto.Message):
     r"""The request message for the DeleteTrigger method.
+
     Attributes:
         name (str):
             Required. The name of the trigger to be
@@ -236,6 +242,7 @@ class DeleteTriggerRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class DynamicSearchAdsSearchTermView(proto.Message):
     r"""A dynamic search ads search term view.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the dynamic search ads

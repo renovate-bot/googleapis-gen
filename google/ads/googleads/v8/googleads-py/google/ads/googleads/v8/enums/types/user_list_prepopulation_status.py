@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListPrepopulationStatusEnum(proto.Message):
-    r"""Indicates status of prepopulation based on the rule.    """
+    r"""Indicates status of prepopulation based on the rule.
+    """
     class UserListPrepopulationStatus(proto.Enum):
         r"""Enum describing possible user list prepopulation status."""
         UNSPECIFIED = 0

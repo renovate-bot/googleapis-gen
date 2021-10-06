@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PromotionExtensionDiscountModifierEnum(proto.Message):
     r"""Container for enum describing possible a promotion extension
     discount modifier.
-        """
+
+    """
     class PromotionExtensionDiscountModifier(proto.Enum):
         r"""A promotion extension discount modifier."""
         UNSPECIFIED = 0

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionCustomVariableErrorEnum(proto.Message):
     r"""Container for enum describing possible conversion custom
     variable errors.
-        """
+
+    """
     class ConversionCustomVariableError(proto.Enum):
         r"""Enum describing possible conversion custom variable errors."""
         UNSPECIFIED = 0

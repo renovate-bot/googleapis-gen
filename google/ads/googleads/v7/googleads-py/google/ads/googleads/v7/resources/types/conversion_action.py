@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class ConversionAction(proto.Message):
     r"""A conversion action.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the conversion action.
@@ -192,6 +193,7 @@ class ConversionAction(proto.Message):
 
     class FirebaseSettings(proto.Message):
         r"""Settings related to a Firebase conversion action.
+
         Attributes:
             event_name (str):
                 Output only. The event name of a Firebase

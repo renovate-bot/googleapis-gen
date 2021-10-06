@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AccessInvitationErrorEnum(proto.Message):
     r"""Container for enum describing possible AccessInvitation
     errors.
-        """
+
+    """
     class AccessInvitationError(proto.Enum):
         r"""Enum describing possible AccessInvitation errors."""
         UNSPECIFIED = 0

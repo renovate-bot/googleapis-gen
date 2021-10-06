@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ChangeStatusErrorEnum(proto.Message):
-    r"""Container for enum describing possible change status errors.    """
+    r"""Container for enum describing possible change status errors.
+    """
     class ChangeStatusError(proto.Enum):
         r"""Enum describing possible change status errors."""
         UNSPECIFIED = 0

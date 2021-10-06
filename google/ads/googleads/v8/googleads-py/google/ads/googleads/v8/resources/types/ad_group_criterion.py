@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class AdGroupCriterion(proto.Message):
     r"""An ad group criterion.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group criterion. Ad
@@ -193,6 +194,7 @@ class AdGroupCriterion(proto.Message):
 
     class QualityInfo(proto.Message):
         r"""A container for ad group criterion quality information.
+
         Attributes:
             quality_score (int):
                 Output only. The quality score.
@@ -233,6 +235,7 @@ class AdGroupCriterion(proto.Message):
 
     class PositionEstimates(proto.Message):
         r"""Estimates for criterion bids at various positions.
+
         Attributes:
             first_page_cpc_micros (int):
                 Output only. The estimate of the CPC bid

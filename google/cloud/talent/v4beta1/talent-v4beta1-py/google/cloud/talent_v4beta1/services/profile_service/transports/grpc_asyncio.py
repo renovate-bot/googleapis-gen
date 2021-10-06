@@ -395,6 +395,9 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
             )
         return self._stubs['search_profiles']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ProfileServiceGrpcAsyncIOTransport',

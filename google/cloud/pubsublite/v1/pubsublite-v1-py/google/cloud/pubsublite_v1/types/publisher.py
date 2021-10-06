@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class InitialPublishRequest(proto.Message):
     r"""The first request that must be sent on a newly-opened stream.
+
     Attributes:
         topic (str):
             The topic to which messages will be written.
@@ -53,11 +54,13 @@ class InitialPublishRequest(proto.Message):
 
 
 class InitialPublishResponse(proto.Message):
-    r"""Response to an InitialPublishRequest.    """
+    r"""Response to an InitialPublishRequest.
+    """
 
 
 class MessagePublishRequest(proto.Message):
     r"""Request to publish messages to the topic.
+
     Attributes:
         messages (Sequence[google.cloud.pubsublite_v1.types.PubSubMessage]):
             The messages to publish.
@@ -72,6 +75,7 @@ class MessagePublishRequest(proto.Message):
 
 class MessagePublishResponse(proto.Message):
     r"""Response to a MessagePublishRequest.
+
     Attributes:
         start_cursor (google.cloud.pubsublite_v1.types.Cursor):
             The cursor of the first published message in
@@ -89,6 +93,7 @@ class MessagePublishResponse(proto.Message):
 
 class PublishRequest(proto.Message):
     r"""Request sent from the client to the server on a stream.
+
     Attributes:
         initial_request (google.cloud.pubsublite_v1.types.InitialPublishRequest):
             Initial request on the stream.
@@ -112,6 +117,7 @@ class PublishRequest(proto.Message):
 
 class PublishResponse(proto.Message):
     r"""Response to a PublishRequest.
+
     Attributes:
         initial_response (google.cloud.pubsublite_v1.types.InitialPublishResponse):
             Initial response on the stream.

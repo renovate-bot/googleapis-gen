@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ChangeStatusOperationEnum(proto.Message):
     r"""Container for enum describing operations for the ChangeStatus
     resource.
-        """
+
+    """
     class ChangeStatusOperation(proto.Enum):
         r"""Status of the changed resource"""
         UNSPECIFIED = 0

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class NullErrorEnum(proto.Message):
-    r"""Container for enum describing possible null errors.    """
+    r"""Container for enum describing possible null errors.
+    """
     class NullError(proto.Enum):
         r"""Enum describing possible null errors."""
         UNSPECIFIED = 0

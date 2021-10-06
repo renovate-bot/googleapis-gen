@@ -38,6 +38,7 @@ __protobuf__ = proto.module(
 
 class ListRealmsRequest(proto.Message):
     r"""Request message for RealmsService.ListRealms.
+
     Attributes:
         parent (str):
             Required. The parent resource name. Uses the form:
@@ -85,6 +86,7 @@ class ListRealmsRequest(proto.Message):
 
 class ListRealmsResponse(proto.Message):
     r"""Response message for RealmsService.ListRealms.
+
     Attributes:
         realms (Sequence[google.cloud.gaming_v1beta.types.Realm]):
             The list of realms.
@@ -117,6 +119,7 @@ class ListRealmsResponse(proto.Message):
 
 class GetRealmRequest(proto.Message):
     r"""Request message for RealmsService.GetRealm.
+
     Attributes:
         name (str):
             Required. The name of the realm to retrieve. Uses the form:
@@ -131,6 +134,7 @@ class GetRealmRequest(proto.Message):
 
 class CreateRealmRequest(proto.Message):
     r"""Request message for RealmsService.CreateRealm.
+
     Attributes:
         parent (str):
             Required. The parent resource name. Uses the form:
@@ -159,6 +163,7 @@ class CreateRealmRequest(proto.Message):
 
 class DeleteRealmRequest(proto.Message):
     r"""Request message for RealmsService.DeleteRealm.
+
     Attributes:
         name (str):
             Required. The name of the realm to delete. Uses the form:
@@ -173,6 +178,7 @@ class DeleteRealmRequest(proto.Message):
 
 class UpdateRealmRequest(proto.Message):
     r"""Request message for RealmsService.UpdateRealm.
+
     Attributes:
         realm (google.cloud.gaming_v1beta.types.Realm):
             Required. The realm to be updated. Only fields specified in
@@ -199,6 +205,7 @@ class UpdateRealmRequest(proto.Message):
 
 class PreviewRealmUpdateRequest(proto.Message):
     r"""Request message for RealmsService.PreviewRealmUpdate.
+
     Attributes:
         realm (google.cloud.gaming_v1beta.types.Realm):
             Required. The realm to be updated. Only fields specified in
@@ -233,6 +240,7 @@ class PreviewRealmUpdateRequest(proto.Message):
 
 class PreviewRealmUpdateResponse(proto.Message):
     r"""Response message for RealmsService.PreviewRealmUpdate.
+
     Attributes:
         etag (str):
             ETag of the realm.
@@ -253,6 +261,7 @@ class PreviewRealmUpdateResponse(proto.Message):
 
 class Realm(proto.Message):
     r"""A realm resource.
+
     Attributes:
         name (str):
             The resource name of the realm. Uses the form:

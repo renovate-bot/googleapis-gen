@@ -98,6 +98,7 @@ class UserEventInlineSource(proto.Message):
 
 class ImportErrorsConfig(proto.Message):
     r"""Configuration of destination for Import related errors.
+
     Attributes:
         gcs_prefix (str):
             Google Cloud Storage path for import errors. This must be an
@@ -115,6 +116,7 @@ class ImportErrorsConfig(proto.Message):
 
 class ImportCatalogItemsRequest(proto.Message):
     r"""Request message for Import methods.
+
     Attributes:
         parent (str):
             Required.
@@ -157,6 +159,7 @@ class ImportCatalogItemsRequest(proto.Message):
 
 class ImportUserEventsRequest(proto.Message):
     r"""Request message for the ImportUserEvents request.
+
     Attributes:
         parent (str):
             Required.
@@ -199,6 +202,7 @@ class ImportUserEventsRequest(proto.Message):
 
 class InputConfig(proto.Message):
     r"""The input config source.
+
     Attributes:
         catalog_inline_source (google.cloud.recommendationengine_v1beta1.types.CatalogInlineSource):
             The Inline source for the input content for

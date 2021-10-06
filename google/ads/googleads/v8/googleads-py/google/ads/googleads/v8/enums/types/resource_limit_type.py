@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ResourceLimitTypeEnum(proto.Message):
-    r"""Container for enum describing possible resource limit types.    """
+    r"""Container for enum describing possible resource limit types.
+    """
     class ResourceLimitType(proto.Enum):
         r"""Resource limit type."""
         UNSPECIFIED = 0

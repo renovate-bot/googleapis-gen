@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CriterionTypeEnum(proto.Message):
-    r"""The possible types of a criterion.    """
+    r"""The possible types of a criterion.
+    """
     class CriterionType(proto.Enum):
         r"""Enum describing possible criterion types."""
         UNSPECIFIED = 0

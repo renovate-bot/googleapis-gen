@@ -328,6 +328,8 @@ class SqlUsersServiceGrpcTransport(SqlUsersServiceTransport):
             )
         return self._stubs['update']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SqlUsersServiceGrpcTransport',

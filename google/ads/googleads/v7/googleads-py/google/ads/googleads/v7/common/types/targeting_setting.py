@@ -62,6 +62,7 @@ class TargetingSetting(proto.Message):
 
 class TargetRestriction(proto.Message):
     r"""The list of per-targeting-dimension targeting settings.
+
     Attributes:
         targeting_dimension (google.ads.googleads.v7.enums.types.TargetingDimensionEnum.TargetingDimension):
             The targeting dimension that these settings

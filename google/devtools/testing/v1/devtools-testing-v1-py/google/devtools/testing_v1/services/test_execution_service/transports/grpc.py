@@ -348,6 +348,8 @@ class TestExecutionServiceGrpcTransport(TestExecutionServiceTransport):
             )
         return self._stubs['cancel_test_matrix']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TestExecutionServiceGrpcTransport',

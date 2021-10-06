@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class LeadFormPostSubmitCallToActionTypeEnum(proto.Message):
     r"""Describes the type of post-submit call-to-action phrases for
     a lead form.
-        """
+
+    """
     class LeadFormPostSubmitCallToActionType(proto.Enum):
         r"""Enum describing the type of post-submit call-to-action
         phrases for a lead form.

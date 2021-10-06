@@ -358,6 +358,9 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
             )
         return self._stubs['list_tenants']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TenantServiceGrpcAsyncIOTransport',

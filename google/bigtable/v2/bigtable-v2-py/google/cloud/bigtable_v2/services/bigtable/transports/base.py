@@ -215,6 +215,15 @@ initial=0.01,maximum=60.0,multiplier=2,                    predicate=retries.if_
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+       .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def read_rows(self) -> Callable[
             [bigtable.ReadRowsRequest],

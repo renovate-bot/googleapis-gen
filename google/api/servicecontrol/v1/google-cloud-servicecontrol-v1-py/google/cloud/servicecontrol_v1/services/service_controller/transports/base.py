@@ -165,6 +165,15 @@ initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+       .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def check(self) -> Callable[
             [service_controller.CheckRequest],

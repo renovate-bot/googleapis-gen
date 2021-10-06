@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyViolationErrorEnum(proto.Message):
     r"""Container for enum describing possible policy violation
     errors.
-        """
+
+    """
     class PolicyViolationError(proto.Enum):
         r"""Enum describing possible policy violation errors."""
         UNSPECIFIED = 0

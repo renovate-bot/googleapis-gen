@@ -353,6 +353,9 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
             )
         return self._stubs['create_submission']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'WebRiskServiceGrpcAsyncIOTransport',

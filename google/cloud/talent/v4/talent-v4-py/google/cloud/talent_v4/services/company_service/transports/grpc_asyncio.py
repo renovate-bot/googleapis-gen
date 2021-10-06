@@ -360,6 +360,9 @@ class CompanyServiceGrpcAsyncIOTransport(CompanyServiceTransport):
             )
         return self._stubs['list_companies']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CompanyServiceGrpcAsyncIOTransport',

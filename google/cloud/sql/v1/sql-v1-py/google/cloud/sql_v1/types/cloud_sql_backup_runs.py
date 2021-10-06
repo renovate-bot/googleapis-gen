@@ -65,6 +65,7 @@ class SqlBackupRunType(proto.Enum):
 
 class SqlBackupRunsDeleteRequest(proto.Message):
     r"""Backup runs delete request.
+
     Attributes:
         id (int):
             The ID of the backup run to delete. To find a backup run ID,
@@ -95,6 +96,7 @@ class SqlBackupRunsDeleteRequest(proto.Message):
 
 class SqlBackupRunsGetRequest(proto.Message):
     r"""Backup runs get request.
+
     Attributes:
         id (int):
             The ID of this backup run.
@@ -122,6 +124,7 @@ class SqlBackupRunsGetRequest(proto.Message):
 
 class SqlBackupRunsInsertRequest(proto.Message):
     r"""Backup runs insert request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -150,6 +153,7 @@ class SqlBackupRunsInsertRequest(proto.Message):
 
 class SqlBackupRunsListRequest(proto.Message):
     r"""Backup runs list request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID, or "-" for all
@@ -184,6 +188,7 @@ class SqlBackupRunsListRequest(proto.Message):
 
 class BackupRun(proto.Message):
     r"""A BackupRun resource.
+
     Attributes:
         kind (str):
             This is always **sql#backupRun**.
@@ -314,6 +319,7 @@ class BackupRun(proto.Message):
 
 class BackupRunsListResponse(proto.Message):
     r"""Backup run list results.
+
     Attributes:
         kind (str):
             This is always **sql#backupRunsList**.

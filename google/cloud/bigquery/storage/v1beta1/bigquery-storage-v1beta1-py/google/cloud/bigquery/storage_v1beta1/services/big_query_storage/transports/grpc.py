@@ -410,6 +410,8 @@ class BigQueryStorageGrpcTransport(BigQueryStorageTransport):
             )
         return self._stubs['split_read_stream']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'BigQueryStorageGrpcTransport',

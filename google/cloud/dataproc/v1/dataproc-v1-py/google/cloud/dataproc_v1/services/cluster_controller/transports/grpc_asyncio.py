@@ -470,6 +470,9 @@ class ClusterControllerGrpcAsyncIOTransport(ClusterControllerTransport):
             )
         return self._stubs['diagnose_cluster']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ClusterControllerGrpcAsyncIOTransport',

@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class IamPolicyAnalysisQuery(proto.Message):
     r"""IAM policy analysis query message.
+
     Attributes:
         parent (str):
             Required. The relative name of the root
@@ -149,6 +150,7 @@ class AnalyzeIamPolicyRequest(proto.Message):
 
     class Options(proto.Message):
         r"""Contains request options.
+
         Attributes:
             expand_groups (bool):
                 Optional. If true, the identities section of the result will
@@ -301,6 +303,7 @@ class AnalyzeIamPolicyResponse(proto.Message):
 
     class IamPolicyAnalysis(proto.Message):
         r"""An analysis message to group the query and results.
+
         Attributes:
             analysis_query (google.cloud.asset_v1p4beta1.types.IamPolicyAnalysisQuery):
                 The analysis query.
@@ -362,6 +365,7 @@ class IamPolicyAnalysisOutputConfig(proto.Message):
 
     class GcsDestination(proto.Message):
         r"""A Cloud Storage location.
+
         Attributes:
             uri (str):
                 Required. The uri of the Cloud Storage object. It's the same
@@ -401,6 +405,7 @@ class ExportIamPolicyAnalysisRequest(proto.Message):
 
     class Options(proto.Message):
         r"""Contains request options.
+
         Attributes:
             expand_groups (bool):
                 Optional. If true, the identities section of the result will

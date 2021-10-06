@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedOriginEnum(proto.Message):
     r"""Container for enum describing possible values for a feed
     origin.
-        """
+
+    """
     class FeedOrigin(proto.Enum):
         r"""Possible values for a feed origin."""
         UNSPECIFIED = 0

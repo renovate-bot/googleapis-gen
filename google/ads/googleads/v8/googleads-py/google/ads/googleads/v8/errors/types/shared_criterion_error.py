@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class SharedCriterionErrorEnum(proto.Message):
     r"""Container for enum describing possible shared criterion
     errors.
-        """
+
+    """
     class SharedCriterionError(proto.Enum):
         r"""Enum describing possible shared criterion errors."""
         UNSPECIFIED = 0

@@ -1152,6 +1152,8 @@ class IAMGrpcTransport(IAMTransport):
             )
         return self._stubs['lint_policy']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'IAMGrpcTransport',

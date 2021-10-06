@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListCombinedRuleOperatorEnum(proto.Message):
-    r"""Logical operator connecting two rules.    """
+    r"""Logical operator connecting two rules.
+    """
     class UserListCombinedRuleOperator(proto.Enum):
         r"""Enum describing possible user list combined rule operators."""
         UNSPECIFIED = 0

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SitelinkPlaceholderFieldEnum(proto.Message):
-    r"""Values for Sitelink placeholder fields.    """
+    r"""Values for Sitelink placeholder fields.
+    """
     class SitelinkPlaceholderField(proto.Enum):
         r"""Possible values for Sitelink placeholder fields."""
         UNSPECIFIED = 0

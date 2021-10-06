@@ -876,6 +876,9 @@ class ProductSearchGrpcAsyncIOTransport(ProductSearchTransport):
             )
         return self._stubs['import_product_sets']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ProductSearchGrpcAsyncIOTransport',

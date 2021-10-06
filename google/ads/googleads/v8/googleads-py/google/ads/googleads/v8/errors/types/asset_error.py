@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AssetErrorEnum(proto.Message):
-    r"""Container for enum describing possible asset errors.    """
+    r"""Container for enum describing possible asset errors.
+    """
     class AssetError(proto.Enum):
         r"""Enum describing possible asset errors."""
         UNSPECIFIED = 0

@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class ProductBiddingCategoryConstant(proto.Message):
     r"""A Product Bidding Category.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the product bidding

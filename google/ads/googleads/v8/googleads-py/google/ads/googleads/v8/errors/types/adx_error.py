@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdxErrorEnum(proto.Message):
-    r"""Container for enum describing possible adx errors.    """
+    r"""Container for enum describing possible adx errors.
+    """
     class AdxError(proto.Enum):
         r"""Enum describing possible adx errors."""
         UNSPECIFIED = 0

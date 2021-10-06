@@ -44,6 +44,7 @@ class JobMessageImportance(proto.Enum):
 
 class JobMessage(proto.Message):
     r"""A particular message pertaining to a Dataflow job.
+
     Attributes:
         id (str):
             Deprecated.
@@ -94,6 +95,7 @@ class StructuredMessage(proto.Message):
 
     class Parameter(proto.Message):
         r"""Structured data associated with this message.
+
         Attributes:
             key (str):
                 Key or name for this parameter.
@@ -264,6 +266,7 @@ class ListJobMessagesRequest(proto.Message):
 
 class ListJobMessagesResponse(proto.Message):
     r"""Response to a request to list job messages.
+
     Attributes:
         job_messages (Sequence[google.cloud.dataflow_v1beta3.types.JobMessage]):
             Messages in ascending timestamp order.

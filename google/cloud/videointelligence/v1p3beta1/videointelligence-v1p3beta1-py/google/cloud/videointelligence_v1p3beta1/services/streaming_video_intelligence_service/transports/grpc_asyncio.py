@@ -253,6 +253,9 @@ class StreamingVideoIntelligenceServiceGrpcAsyncIOTransport(StreamingVideoIntell
             )
         return self._stubs['streaming_annotate_video']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'StreamingVideoIntelligenceServiceGrpcAsyncIOTransport',

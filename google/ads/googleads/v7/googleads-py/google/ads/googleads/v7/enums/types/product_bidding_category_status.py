@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ProductBiddingCategoryStatusEnum(proto.Message):
-    r"""Status of the product bidding category.    """
+    r"""Status of the product bidding category.
+    """
     class ProductBiddingCategoryStatus(proto.Enum):
         r"""Enum describing the status of the product bidding category."""
         UNSPECIFIED = 0

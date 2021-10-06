@@ -129,6 +129,7 @@ class CampaignSharedSetOperation(proto.Message):
 
 class MutateCampaignSharedSetsResponse(proto.Message):
     r"""Response message for a campaign shared set mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -154,6 +155,7 @@ class MutateCampaignSharedSetsResponse(proto.Message):
 
 class MutateCampaignSharedSetResult(proto.Message):
     r"""The result for the campaign shared set mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

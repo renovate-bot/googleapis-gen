@@ -348,6 +348,8 @@ class VpcAccessServiceGrpcTransport(VpcAccessServiceTransport):
             )
         return self._stubs['delete_connector']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'VpcAccessServiceGrpcTransport',

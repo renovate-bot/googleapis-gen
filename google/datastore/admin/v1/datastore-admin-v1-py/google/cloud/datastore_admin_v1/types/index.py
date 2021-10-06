@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class Index(proto.Message):
     r"""Datastore composite index definition.
+
     Attributes:
         project_id (str):
             Output only. Project ID.
@@ -67,6 +68,7 @@ class Index(proto.Message):
 
     class IndexedProperty(proto.Message):
         r"""A property of an index.
+
         Attributes:
             name (str):
                 Required. The property name to index.

@@ -83,6 +83,7 @@ class Environment(proto.Message):
 
     class VersionConfig(proto.Message):
         r"""Configuration for the version.
+
         Attributes:
             version (str):
                 Required. Format: projects/<Project
@@ -97,6 +98,7 @@ class Environment(proto.Message):
 
     class TestCasesConfig(proto.Message):
         r"""The configuration for continuous tests.
+
         Attributes:
             test_cases (Sequence[str]):
                 A list of test case names to run. They should be under the
@@ -491,6 +493,7 @@ class ListContinuousTestResultsRequest(proto.Message):
 
 class ListContinuousTestResultsResponse(proto.Message):
     r"""The response message for [Environments.ListTestCaseResults][].
+
     Attributes:
         continuous_test_results (Sequence[google.cloud.dialogflowcx_v3.types.ContinuousTestResult]):
             The list of continuous test results.

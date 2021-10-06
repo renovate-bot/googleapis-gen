@@ -182,6 +182,7 @@ class GoogleAdsFailure(proto.Message):
 
 class GoogleAdsError(proto.Message):
     r"""GoogleAds-specific error.
+
     Attributes:
         error_code (google.ads.googleads.v7.errors.types.ErrorCode):
             An enum value that indicates which error
@@ -227,6 +228,7 @@ class GoogleAdsError(proto.Message):
 
 class ErrorCode(proto.Message):
     r"""The error reason represented by type and enum.
+
     Attributes:
         request_error (google.ads.googleads.v7.errors.types.RequestErrorEnum.RequestError):
             An error caused by the request
@@ -1222,6 +1224,7 @@ class ErrorLocation(proto.Message):
 
     class FieldPathElement(proto.Message):
         r"""A part of a field path.
+
         Attributes:
             field_name (str):
                 The name of a field or a oneof
@@ -1249,6 +1252,7 @@ class ErrorLocation(proto.Message):
 
 class ErrorDetails(proto.Message):
     r"""Additional error details.
+
     Attributes:
         unpublished_error_code (str):
             The error code that should have been
@@ -1355,6 +1359,7 @@ class PolicyFindingDetails(proto.Message):
 
 class QuotaErrorDetails(proto.Message):
     r"""Additional quota error details when there is QuotaError.
+
     Attributes:
         rate_scope (google.ads.googleads.v7.errors.types.QuotaErrorDetails.QuotaRateScope):
             The rate scope of the quota limit.

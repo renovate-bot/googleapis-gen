@@ -218,6 +218,7 @@ class Assignment(proto.Message):
 
     class OsType(proto.Message):
         r"""Defines the criteria for selecting VM Instances by OS type.
+
         Attributes:
             os_short_name (str):
                 Targets VM instances with OS Inventory
@@ -491,6 +492,7 @@ class GooRepository(proto.Message):
 
 class PackageRepository(proto.Message):
     r"""A package repository.
+
     Attributes:
         apt (google.cloud.osconfig_v1beta.types.AptRepository):
             An Apt Repository.
@@ -599,6 +601,7 @@ class SoftwareRecipe(proto.Message):
 
     class Artifact(proto.Message):
         r"""Specifies a resource to be used in the recipe.
+
         Attributes:
             id (str):
                 Required. Id of the artifact, which the
@@ -622,6 +625,7 @@ class SoftwareRecipe(proto.Message):
 
         class Remote(proto.Message):
             r"""Specifies an artifact available via some URI.
+
             Attributes:
                 uri (str):
                     URI from which to fetch the object. It should
@@ -725,6 +729,7 @@ class SoftwareRecipe(proto.Message):
 
         class CopyFile(proto.Message):
             r"""Copies the artifact to the specified path on the instance.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
@@ -813,6 +818,7 @@ class SoftwareRecipe(proto.Message):
 
         class InstallMsi(proto.Message):
             r"""Installs an MSI file.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
@@ -840,6 +846,7 @@ class SoftwareRecipe(proto.Message):
 
         class InstallDpkg(proto.Message):
             r"""Installs a deb via dpkg.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
@@ -853,6 +860,7 @@ class SoftwareRecipe(proto.Message):
 
         class InstallRpm(proto.Message):
             r"""Installs an rpm file via the rpm utility.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
@@ -866,6 +874,7 @@ class SoftwareRecipe(proto.Message):
 
         class ExecFile(proto.Message):
             r"""Executes an artifact or local file.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -902,6 +911,7 @@ class SoftwareRecipe(proto.Message):
 
         class RunScript(proto.Message):
             r"""Runs a script through an interpreter.
+
             Attributes:
                 script (str):
                     Required. The shell script to be executed.
@@ -1009,6 +1019,7 @@ class SoftwareRecipe(proto.Message):
 
 class CreateGuestPolicyRequest(proto.Message):
     r"""A request message for creating a guest policy.
+
     Attributes:
         parent (str):
             Required. The resource name of the parent using one of the
@@ -1044,6 +1055,7 @@ class CreateGuestPolicyRequest(proto.Message):
 
 class GetGuestPolicyRequest(proto.Message):
     r"""A request message for retrieving a guest policy.
+
     Attributes:
         name (str):
             Required. The resource name of the guest policy using one of
@@ -1059,6 +1071,7 @@ class GetGuestPolicyRequest(proto.Message):
 
 class ListGuestPoliciesRequest(proto.Message):
     r"""A request message for listing guest policies.
+
     Attributes:
         parent (str):
             Required. The resource name of the parent using one of the
@@ -1088,6 +1101,7 @@ class ListGuestPoliciesRequest(proto.Message):
 
 class ListGuestPoliciesResponse(proto.Message):
     r"""A response message for listing guest policies.
+
     Attributes:
         guest_policies (Sequence[google.cloud.osconfig_v1beta.types.GuestPolicy]):
             The list of GuestPolicies.
@@ -1113,6 +1127,7 @@ class ListGuestPoliciesResponse(proto.Message):
 
 class UpdateGuestPolicyRequest(proto.Message):
     r"""A request message for updating a guest policy.
+
     Attributes:
         guest_policy (google.cloud.osconfig_v1beta.types.GuestPolicy):
             Required. The updated GuestPolicy.
@@ -1135,6 +1150,7 @@ class UpdateGuestPolicyRequest(proto.Message):
 
 class DeleteGuestPolicyRequest(proto.Message):
     r"""A request message for deleting a guest policy.
+
     Attributes:
         name (str):
             Required. The resource name of the guest policy using one of
@@ -1193,6 +1209,7 @@ class LookupEffectiveGuestPolicyRequest(proto.Message):
 
 class EffectiveGuestPolicy(proto.Message):
     r"""The effective guest policy that applies to a VM instance.
+
     Attributes:
         packages (Sequence[google.cloud.osconfig_v1beta.types.EffectiveGuestPolicy.SourcedPackage]):
             List of package configurations assigned to
@@ -1206,6 +1223,7 @@ class EffectiveGuestPolicy(proto.Message):
 
     class SourcedPackage(proto.Message):
         r"""A guest policy package including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -1227,6 +1245,7 @@ class EffectiveGuestPolicy(proto.Message):
 
     class SourcedPackageRepository(proto.Message):
         r"""A guest policy package repository including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -1248,6 +1267,7 @@ class EffectiveGuestPolicy(proto.Message):
 
     class SourcedSoftwareRecipe(proto.Message):
         r"""A guest policy recipe including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this

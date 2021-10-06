@@ -87,6 +87,7 @@ class StandardSqlDataType(proto.Message):
 
 class StandardSqlField(proto.Message):
     r"""A field or a column.
+
     Attributes:
         name (str):
             Optional. The name of this field. Can be
@@ -112,6 +113,7 @@ class StandardSqlField(proto.Message):
 
 class StandardSqlStructType(proto.Message):
     r"""
+
     Attributes:
         fields (Sequence[google.cloud.bigquery_v2.types.StandardSqlField]):
 
@@ -126,6 +128,7 @@ class StandardSqlStructType(proto.Message):
 
 class StandardSqlTableType(proto.Message):
     r"""A table type
+
     Attributes:
         columns (Sequence[google.cloud.bigquery_v2.types.StandardSqlField]):
             The columns in this table type

@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class FormatMessage(proto.Message):
     r"""Represents a message with parameters.
+
     Attributes:
         format_ (str):
             Format template for the message. The ``format`` uses
@@ -105,6 +106,7 @@ class StatusMessage(proto.Message):
 
 class SourceLocation(proto.Message):
     r"""Represents a location in the source code.
+
     Attributes:
         path (str):
             Path to the source file within the source
@@ -294,6 +296,7 @@ class Variable(proto.Message):
 
 class StackFrame(proto.Message):
     r"""Represents a stack frame context.
+
     Attributes:
         function (str):
             Demangled function name at the call site.
@@ -332,6 +335,7 @@ class StackFrame(proto.Message):
 
 class Breakpoint(proto.Message):
     r"""Represents the breakpoint specification, status and results.
+
     Attributes:
         id (str):
             Breakpoint identifier, unique in the scope of

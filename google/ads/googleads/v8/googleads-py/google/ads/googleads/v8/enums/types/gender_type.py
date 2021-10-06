@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class GenderTypeEnum(proto.Message):
     r"""Container for enum describing the type of demographic
     genders.
-        """
+
+    """
     class GenderType(proto.Enum):
         r"""The type of demographic genders (e.g. female)."""
         UNSPECIFIED = 0

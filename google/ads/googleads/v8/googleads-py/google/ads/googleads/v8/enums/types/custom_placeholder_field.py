@@ -29,7 +29,8 @@ class CustomPlaceholderFieldEnum(proto.Message):
     r"""Values for Custom placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-        """
+
+    """
     class CustomPlaceholderField(proto.Enum):
         r"""Possible values for Custom placeholder fields."""
         UNSPECIFIED = 0

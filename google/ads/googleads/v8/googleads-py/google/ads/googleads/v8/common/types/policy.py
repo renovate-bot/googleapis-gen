@@ -64,6 +64,7 @@ class PolicyViolationKey(proto.Message):
 
 class PolicyValidationParameter(proto.Message):
     r"""Parameter for controlling how policy exemption is done.
+
     Attributes:
         ignorable_policy_topics (Sequence[str]):
             The list of policy topics that should not
@@ -152,6 +153,7 @@ class PolicyTopicEntry(proto.Message):
 
 class PolicyTopicEvidence(proto.Message):
     r"""Additional information that explains a policy finding.
+
     Attributes:
         website_list (google.ads.googleads.v8.common.types.PolicyTopicEvidence.WebsiteList):
             List of websites linked with this resource.
@@ -176,6 +178,7 @@ class PolicyTopicEvidence(proto.Message):
 
     class TextList(proto.Message):
         r"""A list of fragments of text that violated a policy.
+
         Attributes:
             texts (Sequence[str]):
                 The fragments of text from the resource that
@@ -220,6 +223,7 @@ class PolicyTopicEvidence(proto.Message):
 
     class DestinationMismatch(proto.Message):
         r"""Evidence of mismatches between the URLs of a resource.
+
         Attributes:
             url_types (Sequence[google.ads.googleads.v8.enums.types.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType]):
                 The set of URLs that did not match each
@@ -361,7 +365,8 @@ class PolicyTopicConstraint(proto.Message):
     class ResellerConstraint(proto.Message):
         r"""Indicates that a policy topic was constrained due to
         disapproval of the website for reseller purposes.
-            """
+
+        """
 
     class CountryConstraint(proto.Message):
         r"""Indicates that a resource's ability to serve in a particular

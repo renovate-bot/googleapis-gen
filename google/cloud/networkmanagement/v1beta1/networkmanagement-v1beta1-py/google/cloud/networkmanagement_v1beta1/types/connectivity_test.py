@@ -35,6 +35,7 @@ __protobuf__ = proto.module(
 
 class ConnectivityTest(proto.Message):
     r"""A Connectivity Test for a network reachability analysis.
+
     Attributes:
         name (str):
             Required. Unique name of the resource using the form:
@@ -186,6 +187,7 @@ class ConnectivityTest(proto.Message):
 
 class Endpoint(proto.Message):
     r"""Source or destination of the Connectivity Test.
+
     Attributes:
         ip_address (str):
             The IP address of the endpoint, which can be an external or
@@ -317,6 +319,7 @@ class ReachabilityDetails(proto.Message):
 
 class LatencyPercentile(proto.Message):
     r"""Latency percentile rank and value.
+
     Attributes:
         percent (int):
             Percentage of samples this data point applies
@@ -340,6 +343,7 @@ class LatencyPercentile(proto.Message):
 
 class LatencyDistribution(proto.Message):
     r"""Describes measured latency distribution.
+
     Attributes:
         latency_percentiles (Sequence[google.cloud.networkmanagement_v1beta1.types.LatencyPercentile]):
             Representative latency percentiles.
@@ -354,6 +358,7 @@ class LatencyDistribution(proto.Message):
 
 class ProbingDetails(proto.Message):
     r"""Results of active probing from the last run of the test.
+
     Attributes:
         result (google.cloud.networkmanagement_v1beta1.types.ProbingDetails.ProbingResult):
             The overall result of active probing.

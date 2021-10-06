@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class BudgetDeliveryMethodEnum(proto.Message):
     r"""Message describing Budget delivery methods. A delivery method
     determines the rate at which the Budget is spent.
-        """
+
+    """
     class BudgetDeliveryMethod(proto.Enum):
         r"""Possible delivery methods of a Budget."""
         UNSPECIFIED = 0

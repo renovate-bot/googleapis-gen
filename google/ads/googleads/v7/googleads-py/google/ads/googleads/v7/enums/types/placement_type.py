@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class PlacementTypeEnum(proto.Message):
-    r"""Container for enum describing possible placement types.    """
+    r"""Container for enum describing possible placement types.
+    """
     class PlacementType(proto.Enum):
         r"""Possible placement types for a feed mapping."""
         UNSPECIFIED = 0

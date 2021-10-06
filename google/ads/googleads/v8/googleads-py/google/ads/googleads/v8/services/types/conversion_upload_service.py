@@ -196,6 +196,7 @@ class UploadCallConversionsResponse(proto.Message):
 
 class ClickConversion(proto.Message):
     r"""A click conversion.
+
     Attributes:
         gclid (str):
             The Google click ID (gclid) associated with
@@ -296,6 +297,7 @@ class ClickConversion(proto.Message):
 
 class CallConversion(proto.Message):
     r"""A call conversion.
+
     Attributes:
         caller_id (str):
             The caller id from which this call was
@@ -481,6 +483,7 @@ class CallConversionResult(proto.Message):
 
 class CustomVariable(proto.Message):
     r"""A custom variable.
+
     Attributes:
         conversion_custom_variable (str):
             Resource name of the custom variable
@@ -509,6 +512,7 @@ class CustomVariable(proto.Message):
 
 class CartData(proto.Message):
     r"""Contains additional information about cart data.
+
     Attributes:
         merchant_id (str):
             The Merchant Center ID where the items are
@@ -530,6 +534,7 @@ class CartData(proto.Message):
 
     class Item(proto.Message):
         r"""Contains data of the items purchased.
+
         Attributes:
             product_id (str):
                 The shopping id of the item. Must be equal to

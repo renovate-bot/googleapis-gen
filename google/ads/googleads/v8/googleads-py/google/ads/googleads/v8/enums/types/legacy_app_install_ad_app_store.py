@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class LegacyAppInstallAdAppStoreEnum(proto.Message):
     r"""Container for enum describing app store type in a legacy app
     install ad.
-        """
+
+    """
     class LegacyAppInstallAdAppStore(proto.Enum):
         r"""App store type in a legacy app install ad."""
         UNSPECIFIED = 0

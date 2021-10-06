@@ -37,6 +37,7 @@ __protobuf__ = proto.module(
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -118,6 +119,7 @@ class OperationMetadata(proto.Message):
 
 class OperationStatus(proto.Message):
     r"""
+
     Attributes:
         done (bool):
             Output only. Whether the operation is done or
@@ -151,6 +153,7 @@ class OperationStatus(proto.Message):
 
 class LabelSelector(proto.Message):
     r"""The label selector, used to group labels on the resources.
+
     Attributes:
         labels (Sequence[google.cloud.gaming_v1beta.types.LabelSelector.LabelsEntry]):
             Resource labels for this selector.
@@ -165,6 +168,7 @@ class LabelSelector(proto.Message):
 
 class RealmSelector(proto.Message):
     r"""The realm selector, used to match realm resources.
+
     Attributes:
         realms (Sequence[str]):
             List of realms to match.
@@ -251,6 +255,7 @@ class SpecSource(proto.Message):
 
 class TargetDetails(proto.Message):
     r"""Details about the Agones resources.
+
     Attributes:
         game_server_cluster_name (str):
             The game server cluster name. Uses the form:
@@ -267,6 +272,7 @@ class TargetDetails(proto.Message):
 
     class TargetFleetDetails(proto.Message):
         r"""Details of the target Agones fleet.
+
         Attributes:
             fleet (google.cloud.gaming_v1beta.types.TargetDetails.TargetFleetDetails.TargetFleet):
                 Reference to target Agones fleet.
@@ -277,6 +283,7 @@ class TargetDetails(proto.Message):
 
         class TargetFleet(proto.Message):
             r"""Target Agones fleet specification.
+
             Attributes:
                 name (str):
                     The name of the Agones fleet.
@@ -297,6 +304,7 @@ class TargetDetails(proto.Message):
 
         class TargetFleetAutoscaler(proto.Message):
             r"""Target Agones autoscaler policy reference.
+
             Attributes:
                 name (str):
                     The name of the Agones autoscaler.
@@ -343,6 +351,7 @@ class TargetDetails(proto.Message):
 
 class TargetState(proto.Message):
     r"""Encapsulates the Target state.
+
     Attributes:
         details (Sequence[google.cloud.gaming_v1beta.types.TargetDetails]):
             Details about Agones fleets.
@@ -357,6 +366,7 @@ class TargetState(proto.Message):
 
 class DeployedFleetDetails(proto.Message):
     r"""Details of the deployed Agones fleet.
+
     Attributes:
         deployed_fleet (google.cloud.gaming_v1beta.types.DeployedFleetDetails.DeployedFleet):
             Information about the Agones fleet.
@@ -367,6 +377,7 @@ class DeployedFleetDetails(proto.Message):
 
     class DeployedFleet(proto.Message):
         r"""Agones fleet specification and details.
+
         Attributes:
             fleet (str):
                 The name of the Agones fleet.
@@ -442,6 +453,7 @@ class DeployedFleetDetails(proto.Message):
 
     class DeployedFleetAutoscaler(proto.Message):
         r"""Details about the Agones autoscaler.
+
         Attributes:
             autoscaler (str):
                 The name of the Agones autoscaler.

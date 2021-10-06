@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CompleteQueryRequest(proto.Message):
     r"""Auto-complete parameters.
+
     Attributes:
         tenant (str):
             Required. Resource name of tenant the completion is
@@ -110,6 +111,7 @@ class CompleteQueryRequest(proto.Message):
 
 class CompleteQueryResponse(proto.Message):
     r"""Response of auto-complete query.
+
     Attributes:
         completion_results (Sequence[google.cloud.talent_v4.types.CompleteQueryResponse.CompletionResult]):
             Results of the matching job/company
@@ -121,6 +123,7 @@ class CompleteQueryResponse(proto.Message):
 
     class CompletionResult(proto.Message):
         r"""Resource that represents completion results.
+
         Attributes:
             suggestion (str):
                 The suggestion for the query.

@@ -355,6 +355,9 @@ class MetricsScopesGrpcAsyncIOTransport(MetricsScopesTransport):
             )
         return self._stubs['delete_monitored_project']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'MetricsScopesGrpcAsyncIOTransport',

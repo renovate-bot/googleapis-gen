@@ -331,6 +331,8 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
             )
         return self._stubs['generate_mediation_report']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AdMobApiGrpcTransport',

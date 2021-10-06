@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemQualityApprovalStatusEnum(proto.Message):
     r"""Container for enum describing possible quality evaluation
     approval statuses of a feed item.
-        """
+
+    """
     class FeedItemQualityApprovalStatus(proto.Enum):
         r"""The possible quality evaluation approval statuses of a feed
         item.

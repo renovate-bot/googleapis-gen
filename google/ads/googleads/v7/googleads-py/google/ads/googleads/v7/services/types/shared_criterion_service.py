@@ -101,6 +101,7 @@ class MutateSharedCriteriaRequest(proto.Message):
 
 class SharedCriterionOperation(proto.Message):
     r"""A single operation (create, remove) on an shared criterion.
+
     Attributes:
         create (google.ads.googleads.v7.resources.types.SharedCriterion):
             Create operation: No resource name is
@@ -127,6 +128,7 @@ class SharedCriterionOperation(proto.Message):
 
 class MutateSharedCriteriaResponse(proto.Message):
     r"""Response message for a shared criterion mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -152,6 +154,7 @@ class MutateSharedCriteriaResponse(proto.Message):
 
 class MutateSharedCriterionResult(proto.Message):
     r"""The result for the shared criterion mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

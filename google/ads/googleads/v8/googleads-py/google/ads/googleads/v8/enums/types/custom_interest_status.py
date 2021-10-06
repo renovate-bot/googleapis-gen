@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomInterestStatusEnum(proto.Message):
-    r"""The status of custom interest.    """
+    r"""The status of custom interest.
+    """
     class CustomInterestStatus(proto.Enum):
         r"""Enum containing possible custom interest types."""
         UNSPECIFIED = 0

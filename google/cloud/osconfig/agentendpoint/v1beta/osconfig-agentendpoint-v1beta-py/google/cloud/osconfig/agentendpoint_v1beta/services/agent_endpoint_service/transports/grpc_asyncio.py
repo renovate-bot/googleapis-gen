@@ -387,6 +387,9 @@ class AgentEndpointServiceGrpcAsyncIOTransport(AgentEndpointServiceTransport):
             )
         return self._stubs['register_agent']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AgentEndpointServiceGrpcAsyncIOTransport',

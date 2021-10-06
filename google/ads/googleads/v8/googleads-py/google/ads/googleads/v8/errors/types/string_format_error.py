@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class StringFormatErrorEnum(proto.Message):
-    r"""Container for enum describing possible string format errors.    """
+    r"""Container for enum describing possible string format errors.
+    """
     class StringFormatError(proto.Enum):
         r"""Enum describing possible string format errors."""
         UNSPECIFIED = 0

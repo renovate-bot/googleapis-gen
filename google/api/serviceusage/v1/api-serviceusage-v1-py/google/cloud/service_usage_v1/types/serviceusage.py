@@ -38,6 +38,7 @@ __protobuf__ = proto.module(
 
 class EnableServiceRequest(proto.Message):
     r"""Request message for the ``EnableService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to enable the service on.
@@ -78,6 +79,7 @@ class EnableServiceResponse(proto.Message):
 
 class DisableServiceRequest(proto.Message):
     r"""Request message for the ``DisableService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to disable the service on.
@@ -142,6 +144,7 @@ class DisableServiceResponse(proto.Message):
 
 class GetServiceRequest(proto.Message):
     r"""Request message for the ``GetService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to get the
@@ -160,6 +163,7 @@ class GetServiceRequest(proto.Message):
 
 class ListServicesRequest(proto.Message):
     r"""Request message for the ``ListServices`` method.
+
     Attributes:
         parent (str):
             Parent to search for services on.
@@ -199,6 +203,7 @@ class ListServicesRequest(proto.Message):
 
 class ListServicesResponse(proto.Message):
     r"""Response message for the ``ListServices`` method.
+
     Attributes:
         services (Sequence[google.cloud.service_usage_v1.types.Service]):
             The available services for the requested
@@ -225,6 +230,7 @@ class ListServicesResponse(proto.Message):
 
 class BatchEnableServicesRequest(proto.Message):
     r"""Request message for the ``BatchEnableServices`` method.
+
     Attributes:
         parent (str):
             Parent to enable services on.
@@ -276,6 +282,7 @@ class BatchEnableServicesResponse(proto.Message):
 
     class EnableFailure(proto.Message):
         r"""Provides error messages for the failing services.
+
         Attributes:
             service_id (str):
                 The service id of a service that could not be
@@ -308,6 +315,7 @@ class BatchEnableServicesResponse(proto.Message):
 
 class BatchGetServicesRequest(proto.Message):
     r"""Request message for the ``BatchGetServices`` method.
+
     Attributes:
         parent (str):
             Parent to retrieve services from. If this is set, the parent
@@ -336,6 +344,7 @@ class BatchGetServicesRequest(proto.Message):
 
 class BatchGetServicesResponse(proto.Message):
     r"""Response message for the ``BatchGetServices`` method.
+
     Attributes:
         services (Sequence[google.cloud.service_usage_v1.types.Service]):
             The requested Service states.

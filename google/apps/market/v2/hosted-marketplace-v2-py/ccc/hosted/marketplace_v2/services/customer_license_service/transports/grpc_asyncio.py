@@ -250,6 +250,9 @@ class CustomerLicenseServiceGrpcAsyncIOTransport(CustomerLicenseServiceTransport
             )
         return self._stubs['get']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CustomerLicenseServiceGrpcAsyncIOTransport',

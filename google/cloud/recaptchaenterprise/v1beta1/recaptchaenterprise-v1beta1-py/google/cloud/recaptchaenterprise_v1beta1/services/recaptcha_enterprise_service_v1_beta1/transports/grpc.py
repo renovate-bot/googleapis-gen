@@ -407,6 +407,8 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
             )
         return self._stubs['delete_key']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'RecaptchaEnterpriseServiceV1Beta1GrpcTransport',

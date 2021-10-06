@@ -28,6 +28,7 @@ __protobuf__ = proto.module(
 
 class CommitResponse(proto.Message):
     r"""The response for [Commit][google.spanner.v1.Spanner.Commit].
+
     Attributes:
         commit_timestamp (google.protobuf.timestamp_pb2.Timestamp):
             The Cloud Spanner timestamp at which the
@@ -40,6 +41,7 @@ class CommitResponse(proto.Message):
 
     class CommitStats(proto.Message):
         r"""Additional statistics about a commit.
+
         Attributes:
             mutation_count (int):
                 The total number of mutations for the transaction. Knowing

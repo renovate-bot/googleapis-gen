@@ -44,6 +44,7 @@ __protobuf__ = proto.module(
 
 class CreateProductRequest(proto.Message):
     r"""Request message for [CreateProduct][] method.
+
     Attributes:
         parent (str):
             Required. The parent catalog resource name, such as
@@ -90,6 +91,7 @@ class CreateProductRequest(proto.Message):
 
 class GetProductRequest(proto.Message):
     r"""Request message for [GetProduct][] method.
+
     Attributes:
         name (str):
             Required. Full resource name of
@@ -114,6 +116,7 @@ class GetProductRequest(proto.Message):
 
 class UpdateProductRequest(proto.Message):
     r"""Request message for [UpdateProduct][] method.
+
     Attributes:
         product (google.cloud.retail_v2alpha.types.Product):
             Required. The product to update/create.
@@ -161,6 +164,7 @@ class UpdateProductRequest(proto.Message):
 
 class DeleteProductRequest(proto.Message):
     r"""Request message for [DeleteProduct][] method.
+
     Attributes:
         name (str):
             Required. Full resource name of
@@ -370,6 +374,7 @@ class ListProductsResponse(proto.Message):
 
 class SetInventoryRequest(proto.Message):
     r"""Request message for [SetInventory][] method.
+
     Attributes:
         inventory (google.cloud.retail_v2alpha.types.Product):
             Required. The inventory information to update. The allowable
@@ -464,18 +469,21 @@ class SetInventoryMetadata(proto.Message):
     r"""Metadata related to the progress of the SetInventory operation.
     Currently empty because there is no meaningful metadata populated
     from the [SetInventory][] method.
-        """
+
+    """
 
 
 class SetInventoryResponse(proto.Message):
     r"""Response of the SetInventoryRequest. Currently empty because there
     is no meaningful response populated from the [SetInventory][]
     method.
-        """
+
+    """
 
 
 class AddFulfillmentPlacesRequest(proto.Message):
     r"""Request message for [AddFulfillmentPlaces][] method.
+
     Attributes:
         product (str):
             Required. Full resource name of
@@ -568,18 +576,21 @@ class AddFulfillmentPlacesMetadata(proto.Message):
     r"""Metadata related to the progress of the AddFulfillmentPlaces
     operation. Currently empty because there is no meaningful metadata
     populated from the [AddFulfillmentPlaces][] method.
-        """
+
+    """
 
 
 class AddFulfillmentPlacesResponse(proto.Message):
     r"""Response of the RemoveFulfillmentPlacesRequest. Currently empty
     because there is no meaningful response populated from the
     [AddFulfillmentPlaces][] method.
-        """
+
+    """
 
 
 class RemoveFulfillmentPlacesRequest(proto.Message):
     r"""Request message for [RemoveFulfillmentPlaces][] method.
+
     Attributes:
         product (str):
             Required. Full resource name of
@@ -667,14 +678,16 @@ class RemoveFulfillmentPlacesMetadata(proto.Message):
     r"""Metadata related to the progress of the RemoveFulfillmentPlaces
     operation. Currently empty because there is no meaningful metadata
     populated from the [RemoveFulfillmentPlaces][] method.
-        """
+
+    """
 
 
 class RemoveFulfillmentPlacesResponse(proto.Message):
     r"""Response of the RemoveFulfillmentPlacesRequest. Currently empty
     because there is no meaningful response populated from the
     [RemoveFulfillmentPlaces][] method.
-        """
+
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -104,6 +104,7 @@ class KeywordPlanHistoricalMetrics(proto.Message):
 
 class HistoricalMetricsOptions(proto.Message):
     r"""Historical metrics options.
+
     Attributes:
         year_month_range (google.ads.googleads.v8.common.types.YearMonthRange):
             The year month range for historical metrics. If not
@@ -124,6 +125,7 @@ class HistoricalMetricsOptions(proto.Message):
 
 class MonthlySearchVolume(proto.Message):
     r"""Monthly search volume.
+
     Attributes:
         year (int):
             The year of the search volume (e.g. 2020).
@@ -154,6 +156,7 @@ class MonthlySearchVolume(proto.Message):
 
 class KeywordPlanAggregateMetrics(proto.Message):
     r"""The aggregate metrics specification of the request.
+
     Attributes:
         aggregate_metric_types (Sequence[google.ads.googleads.v8.enums.types.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType]):
             The list of aggregate metrics to fetch data.
@@ -168,6 +171,7 @@ class KeywordPlanAggregateMetrics(proto.Message):
 
 class KeywordPlanAggregateMetricResults(proto.Message):
     r"""The aggregated historical metrics for keyword plan keywords.
+
     Attributes:
         device_searches (Sequence[google.ads.googleads.v8.common.types.KeywordPlanDeviceSearches]):
             The aggregate searches for all the keywords
@@ -212,6 +216,7 @@ class KeywordPlanDeviceSearches(proto.Message):
 
 class KeywordAnnotations(proto.Message):
     r"""The Annotations for the Keyword plan keywords.
+
     Attributes:
         concepts (Sequence[google.ads.googleads.v8.common.types.KeywordConcept]):
             The list of concepts for the keyword.
@@ -226,6 +231,7 @@ class KeywordAnnotations(proto.Message):
 
 class KeywordConcept(proto.Message):
     r"""The concept for the keyword.
+
     Attributes:
         name (str):
             The concept name for the keyword in the concept_group.
@@ -246,6 +252,7 @@ class KeywordConcept(proto.Message):
 
 class ConceptGroup(proto.Message):
     r"""The concept group for the keyword concept.
+
     Attributes:
         name (str):
             The concept group name.

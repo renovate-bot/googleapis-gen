@@ -486,6 +486,8 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
             )
         return self._stubs['delete_service_level_objective']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ServiceMonitoringServiceGrpcTransport',

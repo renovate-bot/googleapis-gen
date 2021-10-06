@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ProductBiddingCategoryLevelEnum(proto.Message):
-    r"""Level of a product bidding category.    """
+    r"""Level of a product bidding category.
+    """
     class ProductBiddingCategoryLevel(proto.Enum):
         r"""Enum describing the level of the product bidding category."""
         UNSPECIFIED = 0

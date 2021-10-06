@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AgeRangeTypeEnum(proto.Message):
     r"""Container for enum describing the type of demographic age
     ranges.
-        """
+
+    """
     class AgeRangeType(proto.Enum):
         r"""The type of demographic age ranges (e.g. between 18 and 24
         years old).

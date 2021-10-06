@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SummaryRowSettingEnum(proto.Message):
-    r"""Indicates summary row setting in request parameter.    """
+    r"""Indicates summary row setting in request parameter.
+    """
     class SummaryRowSetting(proto.Enum):
         r"""Enum describing return summary row settings."""
         UNSPECIFIED = 0

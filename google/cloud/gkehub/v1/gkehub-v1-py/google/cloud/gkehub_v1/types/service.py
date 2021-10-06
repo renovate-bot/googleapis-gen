@@ -47,6 +47,7 @@ __protobuf__ = proto.module(
 
 class ListMembershipsRequest(proto.Message):
     r"""Request message for ``GkeHub.ListMemberships`` method.
+
     Attributes:
         parent (str):
             Required. The parent (project and location) where the
@@ -115,6 +116,7 @@ class ListMembershipsRequest(proto.Message):
 
 class ListMembershipsResponse(proto.Message):
     r"""Response message for the ``GkeHub.ListMemberships`` method.
+
     Attributes:
         resources (Sequence[google.cloud.gkehub_v1.types.Membership]):
             The list of matching Memberships.
@@ -148,6 +150,7 @@ class ListMembershipsResponse(proto.Message):
 
 class GetMembershipRequest(proto.Message):
     r"""Request message for ``GkeHub.GetMembership`` method.
+
     Attributes:
         name (str):
             Required. The Membership resource name in the format
@@ -162,6 +165,7 @@ class GetMembershipRequest(proto.Message):
 
 class CreateMembershipRequest(proto.Message):
     r"""Request message for the ``GkeHub.CreateMembership`` method.
+
     Attributes:
         parent (str):
             Required. The parent (project and location) where the
@@ -223,6 +227,7 @@ class CreateMembershipRequest(proto.Message):
 
 class DeleteMembershipRequest(proto.Message):
     r"""Request message for ``GkeHub.DeleteMembership`` method.
+
     Attributes:
         name (str):
             Required. The Membership resource name in the format
@@ -259,6 +264,7 @@ class DeleteMembershipRequest(proto.Message):
 
 class UpdateMembershipRequest(proto.Message):
     r"""Request message for ``GkeHub.UpdateMembership`` method.
+
     Attributes:
         name (str):
             Required. The Membership resource name in the format
@@ -316,6 +322,7 @@ class UpdateMembershipRequest(proto.Message):
 
 class GenerateConnectManifestRequest(proto.Message):
     r"""Request message for ``GkeHub.GenerateConnectManifest`` method. .
+
     Attributes:
         name (str):
             Required. The Membership resource name the Agent will
@@ -443,6 +450,7 @@ class TypeMeta(proto.Message):
 
 class ListFeaturesRequest(proto.Message):
     r"""Request message for ``GkeHub.ListFeatures`` method.
+
     Attributes:
         parent (str):
             The parent (project and location) where the Features will be
@@ -505,6 +513,7 @@ class ListFeaturesRequest(proto.Message):
 
 class ListFeaturesResponse(proto.Message):
     r"""Response message for the ``GkeHub.ListFeatures`` method.
+
     Attributes:
         resources (Sequence[google.cloud.gkehub_v1.types.Feature]):
             The list of matching Features
@@ -531,6 +540,7 @@ class ListFeaturesResponse(proto.Message):
 
 class GetFeatureRequest(proto.Message):
     r"""Request message for ``GkeHub.GetFeature`` method.
+
     Attributes:
         name (str):
             The Feature resource name in the format
@@ -545,6 +555,7 @@ class GetFeatureRequest(proto.Message):
 
 class CreateFeatureRequest(proto.Message):
     r"""Request message for the ``GkeHub.CreateFeature`` method.
+
     Attributes:
         parent (str):
             The parent (project and location) where the Feature will be
@@ -594,6 +605,7 @@ class CreateFeatureRequest(proto.Message):
 
 class DeleteFeatureRequest(proto.Message):
     r"""Request message for ``GkeHub.DeleteFeature`` method.
+
     Attributes:
         name (str):
             The Feature resource name in the format
@@ -639,6 +651,7 @@ class DeleteFeatureRequest(proto.Message):
 
 class UpdateFeatureRequest(proto.Message):
     r"""Request message for ``GkeHub.UpdateFeature`` method.
+
     Attributes:
         name (str):
             The Feature resource name in the format
@@ -696,6 +709,7 @@ class UpdateFeatureRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

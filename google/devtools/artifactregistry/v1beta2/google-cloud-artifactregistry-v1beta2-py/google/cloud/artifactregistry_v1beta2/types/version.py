@@ -91,6 +91,7 @@ class Version(proto.Message):
 
 class ListVersionsRequest(proto.Message):
     r"""The request to list versions.
+
     Attributes:
         parent (str):
             The name of the parent resource whose
@@ -127,6 +128,7 @@ class ListVersionsRequest(proto.Message):
 
 class ListVersionsResponse(proto.Message):
     r"""The response from listing versions.
+
     Attributes:
         versions (Sequence[google.cloud.artifactregistry_v1beta2.types.Version]):
             The versions returned.
@@ -153,6 +155,7 @@ class ListVersionsResponse(proto.Message):
 
 class GetVersionRequest(proto.Message):
     r"""The request to retrieve a version.
+
     Attributes:
         name (str):
             The name of the version to retrieve.
@@ -174,6 +177,7 @@ class GetVersionRequest(proto.Message):
 
 class DeleteVersionRequest(proto.Message):
     r"""The request to delete a version.
+
     Attributes:
         name (str):
             The name of the version to delete.

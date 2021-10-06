@@ -329,6 +329,9 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
             )
         return self._stubs['search_versions']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'PrivateCatalogGrpcAsyncIOTransport',

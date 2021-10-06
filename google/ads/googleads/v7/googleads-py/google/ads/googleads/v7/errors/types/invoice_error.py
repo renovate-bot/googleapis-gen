@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class InvoiceErrorEnum(proto.Message):
-    r"""Container for enum describing possible invoice errors.    """
+    r"""Container for enum describing possible invoice errors.
+    """
     class InvoiceError(proto.Enum):
         r"""Enum describing possible invoice errors."""
         UNSPECIFIED = 0

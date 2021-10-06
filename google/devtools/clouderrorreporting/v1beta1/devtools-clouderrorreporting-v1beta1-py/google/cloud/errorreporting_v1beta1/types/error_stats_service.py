@@ -59,6 +59,7 @@ class ErrorGroupOrder(proto.Enum):
 
 class ListGroupStatsRequest(proto.Message):
     r"""Specifies a set of ``ErrorGroupStats`` to return.
+
     Attributes:
         project_name (str):
             Required. The resource name of the Google Cloud Platform
@@ -157,6 +158,7 @@ class ListGroupStatsRequest(proto.Message):
 
 class ListGroupStatsResponse(proto.Message):
     r"""Contains a set of requested error group stats.
+
     Attributes:
         error_group_stats (Sequence[google.cloud.errorreporting_v1beta1.types.ErrorGroupStats]):
             The error group stats which match the given
@@ -330,6 +332,7 @@ class TimedCount(proto.Message):
 
 class ListEventsRequest(proto.Message):
     r"""Specifies a set of error events to return.
+
     Attributes:
         project_name (str):
             Required. The resource name of the Google Cloud Platform
@@ -389,6 +392,7 @@ class ListEventsRequest(proto.Message):
 
 class ListEventsResponse(proto.Message):
     r"""Contains a set of requested error events.
+
     Attributes:
         error_events (Sequence[google.cloud.errorreporting_v1beta1.types.ErrorEvent]):
             The error events which match the given
@@ -482,6 +486,7 @@ class ServiceContextFilter(proto.Message):
 
 class DeleteEventsRequest(proto.Message):
     r"""Deletes all events in the project.
+
     Attributes:
         project_name (str):
             Required. The resource name of the Google Cloud Platform
@@ -499,7 +504,8 @@ class DeleteEventsRequest(proto.Message):
 
 
 class DeleteEventsResponse(proto.Message):
-    r"""Response message for deleting error events.    """
+    r"""Response message for deleting error events.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

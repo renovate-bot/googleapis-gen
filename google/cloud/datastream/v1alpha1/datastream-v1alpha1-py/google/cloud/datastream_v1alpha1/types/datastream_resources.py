@@ -76,6 +76,7 @@ class SchemaFileFormat(proto.Enum):
 
 class OracleProfile(proto.Message):
     r"""Oracle database profile.
+
     Attributes:
         hostname (str):
             Required. Hostname for the Oracle connection.
@@ -121,6 +122,7 @@ class OracleProfile(proto.Message):
 
 class MysqlProfile(proto.Message):
     r"""MySQL database profile.
+
     Attributes:
         hostname (str):
             Required. Hostname for the MySQL connection.
@@ -161,6 +163,7 @@ class MysqlProfile(proto.Message):
 
 class GcsProfile(proto.Message):
     r"""Cloud Storage bucket profile.
+
     Attributes:
         bucket_name (str):
             Required. The full project and resource path
@@ -181,15 +184,18 @@ class GcsProfile(proto.Message):
 
 
 class NoConnectivitySettings(proto.Message):
-    r"""No connectivity settings.    """
+    r"""No connectivity settings.
+    """
 
 
 class StaticServiceIpConnectivity(proto.Message):
-    r"""Static IP address connectivity.    """
+    r"""Static IP address connectivity.
+    """
 
 
 class ForwardSshTunnelConnectivity(proto.Message):
     r"""Forward SSH Tunnel connectivity.
+
     Attributes:
         hostname (str):
             Required. Hostname for the SSH tunnel.
@@ -323,6 +329,7 @@ class PrivateConnection(proto.Message):
 
 class PrivateConnectivity(proto.Message):
     r"""Private Connectivity
+
     Attributes:
         private_connection_name (str):
 
@@ -391,6 +398,7 @@ class Route(proto.Message):
 
 class MysqlSslConfig(proto.Message):
     r"""MySQL SSL configuration information.
+
     Attributes:
         client_key (str):
             Input only. PEM-encoded private key associated with the
@@ -444,6 +452,7 @@ class MysqlSslConfig(proto.Message):
 
 class ConnectionProfile(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Output only. The resource's name.
@@ -541,6 +550,7 @@ class ConnectionProfile(proto.Message):
 
 class OracleColumn(proto.Message):
     r"""Oracle Column.
+
     Attributes:
         column_name (str):
             Column name.
@@ -605,6 +615,7 @@ class OracleColumn(proto.Message):
 
 class OracleTable(proto.Message):
     r"""Oracle table.
+
     Attributes:
         table_name (str):
             Table name.
@@ -627,6 +638,7 @@ class OracleTable(proto.Message):
 
 class OracleSchema(proto.Message):
     r"""Oracle schema.
+
     Attributes:
         schema_name (str):
             Schema name.
@@ -647,6 +659,7 @@ class OracleSchema(proto.Message):
 
 class OracleRdbms(proto.Message):
     r"""Oracle database structure.
+
     Attributes:
         oracle_schemas (Sequence[google.cloud.datastream_v1alpha1.types.OracleSchema]):
             Oracle schemas/databases in the database
@@ -662,6 +675,7 @@ class OracleRdbms(proto.Message):
 
 class OracleSourceConfig(proto.Message):
     r"""Oracle data source configuration
+
     Attributes:
         allowlist (google.cloud.datastream_v1alpha1.types.OracleRdbms):
             Oracle objects to include in the stream.
@@ -683,6 +697,7 @@ class OracleSourceConfig(proto.Message):
 
 class MysqlColumn(proto.Message):
     r"""MySQL Column.
+
     Attributes:
         column_name (str):
             Column name.
@@ -738,6 +753,7 @@ class MysqlColumn(proto.Message):
 
 class MysqlTable(proto.Message):
     r"""MySQL table.
+
     Attributes:
         table_name (str):
             Table name.
@@ -760,6 +776,7 @@ class MysqlTable(proto.Message):
 
 class MysqlDatabase(proto.Message):
     r"""MySQL database.
+
     Attributes:
         database_name (str):
             Database name.
@@ -780,6 +797,7 @@ class MysqlDatabase(proto.Message):
 
 class MysqlRdbms(proto.Message):
     r"""MySQL database structure
+
     Attributes:
         mysql_databases (Sequence[google.cloud.datastream_v1alpha1.types.MysqlDatabase]):
             Mysql databases on the server
@@ -794,6 +812,7 @@ class MysqlRdbms(proto.Message):
 
 class MysqlSourceConfig(proto.Message):
     r"""MySQL source configuration
+
     Attributes:
         allowlist (google.cloud.datastream_v1alpha1.types.MysqlRdbms):
             MySQL objects to retrieve from the source.
@@ -815,6 +834,7 @@ class MysqlSourceConfig(proto.Message):
 
 class SourceConfig(proto.Message):
     r"""The configuration of the stream source.
+
     Attributes:
         source_connection_profile_name (str):
             Required. Source connection profile
@@ -844,11 +864,13 @@ class SourceConfig(proto.Message):
 
 
 class AvroFileFormat(proto.Message):
-    r"""AVRO file format configuration.    """
+    r"""AVRO file format configuration.
+    """
 
 
 class JsonFileFormat(proto.Message):
     r"""JSON file format configuration.
+
     Attributes:
         schema_file_format (google.cloud.datastream_v1alpha1.types.SchemaFileFormat):
             The schema file format along JSON data files.
@@ -875,6 +897,7 @@ class JsonFileFormat(proto.Message):
 
 class GcsDestinationConfig(proto.Message):
     r"""Google Cloud Storage destination configuration
+
     Attributes:
         path (str):
             Path inside the Cloud Storage bucket to write
@@ -929,6 +952,7 @@ class GcsDestinationConfig(proto.Message):
 
 class DestinationConfig(proto.Message):
     r"""The configuration of the stream destination.
+
     Attributes:
         destination_connection_profile_name (str):
             Required. Destination connection profile
@@ -951,6 +975,7 @@ class DestinationConfig(proto.Message):
 
 class Stream(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Output only. The stream's name.
@@ -1021,7 +1046,8 @@ class Stream(proto.Message):
     class BackfillNoneStrategy(proto.Message):
         r"""Backfill strategy to disable automatic backfill for the
         Stream's objects.
-            """
+
+        """
 
     name = proto.Field(
         proto.STRING,
@@ -1082,6 +1108,7 @@ class Stream(proto.Message):
 
 class Error(proto.Message):
     r"""Represent a user-facing Error.
+
     Attributes:
         reason (str):
             A title that explains the reason for the
@@ -1125,6 +1152,7 @@ class Error(proto.Message):
 
 class ValidationResult(proto.Message):
     r"""Contains the current validation results.
+
     Attributes:
         validations (Sequence[google.cloud.datastream_v1alpha1.types.Validation]):
             A list of validations (includes both executed
@@ -1140,6 +1168,7 @@ class ValidationResult(proto.Message):
 
 class Validation(proto.Message):
     r"""
+
     Attributes:
         description (str):
             A short description of the validation.
@@ -1179,6 +1208,7 @@ class Validation(proto.Message):
 
 class ValidationMessage(proto.Message):
     r"""Represent user-facing validation result message.
+
     Attributes:
         message (str):
             The result of the validation.

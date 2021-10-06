@@ -350,6 +350,9 @@ class ServicesGrpcAsyncIOTransport(ServicesTransport):
             )
         return self._stubs['delete_service']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ServicesGrpcAsyncIOTransport',

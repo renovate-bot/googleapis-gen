@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyTopicEvidenceDestinationMismatchUrlTypeEnum(proto.Message):
     r"""Container for enum describing possible policy topic evidence
     destination mismatch url types.
-        """
+
+    """
     class PolicyTopicEvidenceDestinationMismatchUrlType(proto.Enum):
         r"""The possible policy topic evidence destination mismatch url
         types.

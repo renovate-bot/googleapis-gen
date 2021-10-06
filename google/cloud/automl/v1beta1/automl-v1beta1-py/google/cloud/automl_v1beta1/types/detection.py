@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class ImageObjectDetectionAnnotation(proto.Message):
     r"""Annotation details for image object detection.
+
     Attributes:
         bounding_box (google.cloud.automl_v1beta1.types.BoundingPoly):
             Output only. The rectangle representing the
@@ -56,6 +57,7 @@ class ImageObjectDetectionAnnotation(proto.Message):
 
 class VideoObjectTrackingAnnotation(proto.Message):
     r"""Annotation details for video object tracking.
+
     Attributes:
         instance_id (str):
             Optional. The instance of the object,
@@ -126,6 +128,7 @@ class BoundingBoxMetricsEntry(proto.Message):
 
     class ConfidenceMetricsEntry(proto.Message):
         r"""Metrics for a single confidence threshold.
+
         Attributes:
             confidence_threshold (float):
                 Output only. The confidence threshold value

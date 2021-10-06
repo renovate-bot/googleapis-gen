@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class ConnectivityTest(proto.Message):
     r"""A Connectivity Test for a network reachability analysis.
+
     Attributes:
         name (str):
             Required. Unique name of the resource using the form:
@@ -171,6 +172,7 @@ class ConnectivityTest(proto.Message):
 
 class Endpoint(proto.Message):
     r"""Source or destination of the Connectivity Test.
+
     Attributes:
         ip_address (str):
             The IP address of the endpoint, which can be an external or

@@ -202,7 +202,8 @@ class YumSettings(proto.Message):
 
 
 class GooSettings(proto.Message):
-    r"""Googet patching is performed by running ``googet update``.    """
+    r"""Googet patching is performed by running ``googet update``.
+    """
 
 
 class ZypperSettings(proto.Message):
@@ -259,6 +260,7 @@ class ZypperSettings(proto.Message):
 
 class WindowsUpdateSettings(proto.Message):
     r"""Windows patching is performed using the Windows Update Agent.
+
     Attributes:
         classifications (Sequence[google.cloud.osconfig.agentendpoint_v1beta.types.WindowsUpdateSettings.Classification]):
             Only apply updates of these windows update
@@ -320,6 +322,7 @@ class RetryStrategy(proto.Message):
 
 class ExecStep(proto.Message):
     r"""A step that runs an executable for a PatchJob.
+
     Attributes:
         linux_exec_step_config (google.cloud.osconfig.agentendpoint_v1beta.types.ExecStepConfig):
             The ExecStepConfig for all Linux VMs targeted
@@ -343,6 +346,7 @@ class ExecStep(proto.Message):
 
 class ExecStepConfig(proto.Message):
     r"""Common configurations for an ExecStep.
+
     Attributes:
         local_path (str):
             An absolute path to the executable on the VM.
@@ -388,6 +392,7 @@ class ExecStepConfig(proto.Message):
 
 class GcsObject(proto.Message):
     r"""GCS object representation.
+
     Attributes:
         bucket (str):
             Bucket of the GCS object.

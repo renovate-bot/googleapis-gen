@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class WebpageConditionOperatorEnum(proto.Message):
     r"""Container for enum describing webpage condition operator in
     webpage criterion.
-        """
+
+    """
     class WebpageConditionOperator(proto.Enum):
         r"""The webpage condition operator in webpage criterion."""
         UNSPECIFIED = 0

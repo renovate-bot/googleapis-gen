@@ -28,6 +28,7 @@ __protobuf__ = proto.module(
 
 class DomainMapping(proto.Message):
     r"""A domain serving an App Engine application.
+
     Attributes:
         name (str):
             Full path to the ``DomainMapping`` resource in the API.
@@ -71,6 +72,7 @@ class DomainMapping(proto.Message):
 
 class SslSettings(proto.Message):
     r"""SSL configuration for a ``DomainMapping`` resource.
+
     Attributes:
         certificate_id (str):
             ID of the ``AuthorizedCertificate`` resource configuring SSL
@@ -125,6 +127,7 @@ class SslSettings(proto.Message):
 
 class ResourceRecord(proto.Message):
     r"""A DNS resource record.
+
     Attributes:
         name (str):
             Relative name of the object affected by this record. Only

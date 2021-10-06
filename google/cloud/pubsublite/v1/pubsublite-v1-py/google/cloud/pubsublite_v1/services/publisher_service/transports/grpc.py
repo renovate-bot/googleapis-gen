@@ -258,6 +258,8 @@ class PublisherServiceGrpcTransport(PublisherServiceTransport):
             )
         return self._stubs['publish']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'PublisherServiceGrpcTransport',

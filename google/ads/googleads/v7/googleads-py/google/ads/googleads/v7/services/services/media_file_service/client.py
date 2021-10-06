@@ -153,6 +153,19 @@ class MediaFileServiceClient(metaclass=MediaFileServiceClientMeta):
         """
         return self._transport
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
     @staticmethod
     def media_file_path(customer_id: str,media_file_id: str,) -> str:
         """Return a fully-qualified media_file string."""

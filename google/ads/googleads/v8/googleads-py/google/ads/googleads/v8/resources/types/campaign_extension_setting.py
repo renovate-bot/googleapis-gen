@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class CampaignExtensionSetting(proto.Message):
     r"""A campaign extension setting.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign extension

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AuthenticationErrorEnum(proto.Message):
-    r"""Container for enum describing possible authentication errors.    """
+    r"""Container for enum describing possible authentication errors.
+    """
     class AuthenticationError(proto.Enum):
         r"""Enum describing possible authentication errors."""
         UNSPECIFIED = 0

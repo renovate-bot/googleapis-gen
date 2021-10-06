@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class FinalizeMfaEnrollmentRequest(proto.Message):
     r"""Finishes enrolling a second factor for the user.
+
     Attributes:
         id_token (str):
             Required. ID token.
@@ -72,6 +73,7 @@ class FinalizeMfaEnrollmentRequest(proto.Message):
 
 class FinalizeMfaEnrollmentResponse(proto.Message):
     r"""FinalizeMfaEnrollment response.
+
     Attributes:
         id_token (str):
             ID token updated to reflect MFA enrollment.
@@ -100,6 +102,7 @@ class FinalizeMfaEnrollmentResponse(proto.Message):
 
 class StartMfaEnrollmentRequest(proto.Message):
     r"""Sends MFA enrollment verification SMS for a user.
+
     Attributes:
         id_token (str):
             Required. User's ID token.
@@ -131,6 +134,7 @@ class StartMfaEnrollmentRequest(proto.Message):
 
 class StartMfaEnrollmentResponse(proto.Message):
     r"""StartMfaEnrollment response.
+
     Attributes:
         phone_session_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneResponseInfo):
             Verification info to authorize sending an SMS
@@ -147,6 +151,7 @@ class StartMfaEnrollmentResponse(proto.Message):
 
 class WithdrawMfaRequest(proto.Message):
     r"""Withdraws MFA.
+
     Attributes:
         id_token (str):
             Required. User's ID token.
@@ -176,6 +181,7 @@ class WithdrawMfaRequest(proto.Message):
 
 class WithdrawMfaResponse(proto.Message):
     r"""Withdraws MultiFactorAuth response.
+
     Attributes:
         id_token (str):
             ID token updated to reflect removal of the

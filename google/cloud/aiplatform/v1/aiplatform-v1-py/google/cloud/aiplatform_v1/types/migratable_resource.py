@@ -55,6 +55,7 @@ class MigratableResource(proto.Message):
 
     class MlEngineModelVersion(proto.Message):
         r"""Represents one model Version in ml.googleapis.com.
+
         Attributes:
             endpoint (str):
                 The ml.googleapis.com endpoint that this model Version
@@ -80,6 +81,7 @@ class MigratableResource(proto.Message):
 
     class AutomlModel(proto.Message):
         r"""Represents one Model in automl.googleapis.com.
+
         Attributes:
             model (str):
                 Full resource name of automl Model. Format:
@@ -100,6 +102,7 @@ class MigratableResource(proto.Message):
 
     class AutomlDataset(proto.Message):
         r"""Represents one Dataset in automl.googleapis.com.
+
         Attributes:
             dataset (str):
                 Full resource name of automl Dataset. Format:
@@ -120,6 +123,7 @@ class MigratableResource(proto.Message):
 
     class DataLabelingDataset(proto.Message):
         r"""Represents one Dataset in datalabeling.googleapis.com.
+
         Attributes:
             dataset (str):
                 Full resource name of data labeling Dataset. Format:

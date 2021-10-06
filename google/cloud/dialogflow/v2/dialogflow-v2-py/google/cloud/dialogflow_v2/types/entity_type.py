@@ -94,6 +94,7 @@ class EntityType(proto.Message):
 
     class Entity(proto.Message):
         r"""An **entity entry** for an associated entity type.
+
         Attributes:
             value (str):
                 Required. The primary value associated with this entity

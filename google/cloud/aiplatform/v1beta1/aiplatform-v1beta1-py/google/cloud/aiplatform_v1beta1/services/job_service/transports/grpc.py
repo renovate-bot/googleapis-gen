@@ -1037,6 +1037,8 @@ class JobServiceGrpcTransport(JobServiceTransport):
             )
         return self._stubs['resume_model_deployment_monitoring_job']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'JobServiceGrpcTransport',

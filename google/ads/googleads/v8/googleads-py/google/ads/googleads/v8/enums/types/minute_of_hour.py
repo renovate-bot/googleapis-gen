@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MinuteOfHourEnum(proto.Message):
-    r"""Container for enumeration of quarter-hours.    """
+    r"""Container for enumeration of quarter-hours.
+    """
     class MinuteOfHour(proto.Enum):
         r"""Enumerates of quarter-hours. E.g. "FIFTEEN"."""
         UNSPECIFIED = 0

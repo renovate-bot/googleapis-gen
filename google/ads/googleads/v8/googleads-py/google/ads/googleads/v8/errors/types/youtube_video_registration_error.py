@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class YoutubeVideoRegistrationErrorEnum(proto.Message):
     r"""Container for enum describing YouTube video registration
     errors.
-        """
+
+    """
     class YoutubeVideoRegistrationError(proto.Enum):
         r"""Enum describing YouTube video registration errors."""
         UNSPECIFIED = 0

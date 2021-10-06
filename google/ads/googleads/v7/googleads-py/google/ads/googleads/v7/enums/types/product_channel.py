@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ProductChannelEnum(proto.Message):
-    r"""Locality of a product offer.    """
+    r"""Locality of a product offer.
+    """
     class ProductChannel(proto.Enum):
         r"""Enum describing the locality of a product offer."""
         UNSPECIFIED = 0

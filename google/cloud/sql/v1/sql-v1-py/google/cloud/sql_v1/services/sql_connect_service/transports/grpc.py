@@ -277,6 +277,8 @@ class SqlConnectServiceGrpcTransport(SqlConnectServiceTransport):
             )
         return self._stubs['generate_ephemeral_cert']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SqlConnectServiceGrpcTransport',

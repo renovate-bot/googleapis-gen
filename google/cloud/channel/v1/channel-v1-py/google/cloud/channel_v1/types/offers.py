@@ -235,6 +235,7 @@ class ParameterDefinition(proto.Message):
 
 class Constraints(proto.Message):
     r"""Represents the constraints for buying the Offer.
+
     Attributes:
         customer_constraints (google.cloud.channel_v1.types.CustomerConstraints):
             Represents constraints required to purchase
@@ -333,6 +334,7 @@ class Plan(proto.Message):
 
 class PriceByResource(proto.Message):
     r"""Represents price by resource type.
+
     Attributes:
         resource_type (google.cloud.channel_v1.types.ResourceType):
             Resource Type. Example: SEAT
@@ -362,6 +364,7 @@ class PriceByResource(proto.Message):
 
 class Price(proto.Message):
     r"""Represents the price of the Offer.
+
     Attributes:
         base_price (google.type.money_pb2.Money):
             Base price.
@@ -478,6 +481,7 @@ class PriceTier(proto.Message):
 
 class Period(proto.Message):
     r"""Represents period in days/months/years.
+
     Attributes:
         duration (int):
             Total duration of Period Type defined.

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ProximityRadiusUnitsEnum(proto.Message):
-    r"""Container for enum describing unit of radius in proximity.    """
+    r"""Container for enum describing unit of radius in proximity.
+    """
     class ProximityRadiusUnits(proto.Enum):
         r"""The unit of radius distance in proximity (e.g. MILES)"""
         UNSPECIFIED = 0

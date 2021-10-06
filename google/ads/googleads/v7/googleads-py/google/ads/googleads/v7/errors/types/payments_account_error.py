@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PaymentsAccountErrorEnum(proto.Message):
     r"""Container for enum describing possible errors in payments
     account service.
-        """
+
+    """
     class PaymentsAccountError(proto.Enum):
         r"""Enum describing possible errors in payments account service."""
         UNSPECIFIED = 0

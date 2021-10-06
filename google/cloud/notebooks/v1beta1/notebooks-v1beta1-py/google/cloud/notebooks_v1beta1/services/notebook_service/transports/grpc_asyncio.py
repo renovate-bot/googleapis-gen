@@ -751,6 +751,9 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
             )
         return self._stubs['delete_environment']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'NotebookServiceGrpcAsyncIOTransport',

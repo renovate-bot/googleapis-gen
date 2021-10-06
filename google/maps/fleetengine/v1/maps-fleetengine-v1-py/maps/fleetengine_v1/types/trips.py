@@ -71,6 +71,7 @@ class TripView(proto.Enum):
 
 class Trip(proto.Message):
     r"""Trip metadata.
+
     Attributes:
         name (str):
             In the format
@@ -366,6 +367,7 @@ class Trip(proto.Message):
 
 class StopLocation(proto.Message):
     r"""The actual location where a stop (pickup/dropoff) happened.
+
     Attributes:
         point (google.type.latlng_pb2.LatLng):
             Required. Denotes the actual location.

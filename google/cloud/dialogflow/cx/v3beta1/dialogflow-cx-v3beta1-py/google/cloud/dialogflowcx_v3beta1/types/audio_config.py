@@ -90,6 +90,7 @@ class OutputAudioEncoding(proto.Enum):
 
 class SpeechWordInfo(proto.Message):
     r"""Information for a word recognized by the speech recognizer.
+
     Attributes:
         word (str):
             The word this info is for.
@@ -226,6 +227,7 @@ class InputAudioConfig(proto.Message):
 
 class VoiceSelectionParams(proto.Message):
     r"""Description of which voice to use for speech synthesis.
+
     Attributes:
         name (str):
             Optional. The name of the voice. If not set, the service
@@ -260,6 +262,7 @@ class VoiceSelectionParams(proto.Message):
 
 class SynthesizeSpeechConfig(proto.Message):
     r"""Configuration of how speech should be synthesized.
+
     Attributes:
         speaking_rate (float):
             Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0

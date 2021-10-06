@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LabelStatusEnum(proto.Message):
-    r"""Container for enum describing possible status of a label.    """
+    r"""Container for enum describing possible status of a label.
+    """
     class LabelStatus(proto.Enum):
         r"""Possible statuses of a label."""
         UNSPECIFIED = 0

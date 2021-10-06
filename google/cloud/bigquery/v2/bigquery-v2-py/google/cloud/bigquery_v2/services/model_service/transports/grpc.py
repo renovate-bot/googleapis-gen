@@ -328,6 +328,8 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
             )
         return self._stubs['delete_model']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ModelServiceGrpcTransport',

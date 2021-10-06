@@ -131,6 +131,7 @@ class Folder(proto.Message):
 
 class GetFolderRequest(proto.Message):
     r"""The GetFolder request message.
+
     Attributes:
         name (str):
             Required. The resource name of the folder to retrieve. Must
@@ -145,6 +146,7 @@ class GetFolderRequest(proto.Message):
 
 class ListFoldersRequest(proto.Message):
     r"""The ListFolders request message.
+
     Attributes:
         parent (str):
             Required. The resource name of the organization or folder
@@ -187,6 +189,7 @@ class ListFoldersRequest(proto.Message):
 
 class ListFoldersResponse(proto.Message):
     r"""The ListFolders response message.
+
     Attributes:
         folders (Sequence[google.cloud.resourcemanager_v3.types.Folder]):
             A possibly paginated list of folders that are
@@ -215,6 +218,7 @@ class ListFoldersResponse(proto.Message):
 
 class SearchFoldersRequest(proto.Message):
     r"""The request message for searching folders.
+
     Attributes:
         page_size (int):
             Optional. The maximum number of folders to
@@ -276,6 +280,7 @@ class SearchFoldersRequest(proto.Message):
 
 class SearchFoldersResponse(proto.Message):
     r"""The response message for searching folders.
+
     Attributes:
         folders (Sequence[google.cloud.resourcemanager_v3.types.Folder]):
             A possibly paginated folder search results.
@@ -303,6 +308,7 @@ class SearchFoldersResponse(proto.Message):
 
 class CreateFolderRequest(proto.Message):
     r"""The CreateFolder request message.
+
     Attributes:
         folder (google.cloud.resourcemanager_v3.types.Folder):
             Required. The folder being created, only the
@@ -319,6 +325,7 @@ class CreateFolderRequest(proto.Message):
 
 class CreateFolderMetadata(proto.Message):
     r"""Metadata pertaining to the Folder creation process.
+
     Attributes:
         display_name (str):
             The display name of the folder.
@@ -371,11 +378,13 @@ class UpdateFolderRequest(proto.Message):
 class UpdateFolderMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     Operation returned by UpdateFolder.
-        """
+
+    """
 
 
 class MoveFolderRequest(proto.Message):
     r"""The MoveFolder request message.
+
     Attributes:
         name (str):
             Required. The resource name of the Folder to move. Must be
@@ -398,6 +407,7 @@ class MoveFolderRequest(proto.Message):
 
 class MoveFolderMetadata(proto.Message):
     r"""Metadata pertaining to the folder move process.
+
     Attributes:
         display_name (str):
             The display name of the folder.
@@ -424,6 +434,7 @@ class MoveFolderMetadata(proto.Message):
 
 class DeleteFolderRequest(proto.Message):
     r"""The DeleteFolder request message.
+
     Attributes:
         name (str):
             Required. The resource name of the folder to be deleted.
@@ -439,11 +450,13 @@ class DeleteFolderRequest(proto.Message):
 class DeleteFolderMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     ``Operation`` returned by ``DeleteFolder``.
-        """
+
+    """
 
 
 class UndeleteFolderRequest(proto.Message):
     r"""The UndeleteFolder request message.
+
     Attributes:
         name (str):
             Required. The resource name of the folder to undelete. Must
@@ -459,7 +472,8 @@ class UndeleteFolderRequest(proto.Message):
 class UndeleteFolderMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     ``Operation`` returned by ``UndeleteFolder``.
-        """
+
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

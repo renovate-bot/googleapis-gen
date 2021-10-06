@@ -56,11 +56,13 @@ __protobuf__ = proto.module(
 class ListPlannableLocationsRequest(proto.Message):
     r"""Request message for
     [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
-        """
+
+    """
 
 
 class ListPlannableLocationsResponse(proto.Message):
     r"""The list of plannable locations.
+
     Attributes:
         plannable_locations (Sequence[google.ads.googleads.v7.services.types.PlannableLocation]):
             The list of locations available for planning
@@ -114,6 +116,7 @@ class PlannableLocation(proto.Message):
 
 class ListPlannableProductsRequest(proto.Message):
     r"""Request to list available products in a given location.
+
     Attributes:
         plannable_location_id (str):
             Required. The ID of the selected location for
@@ -129,6 +132,7 @@ class ListPlannableProductsRequest(proto.Message):
 
 class ListPlannableProductsResponse(proto.Message):
     r"""A response with all available products.
+
     Attributes:
         product_metadata (Sequence[google.ads.googleads.v7.services.types.ProductMetadata]):
             The list of products available for planning
@@ -144,6 +148,7 @@ class ListPlannableProductsResponse(proto.Message):
 
 class ProductMetadata(proto.Message):
     r"""The metadata associated with an available plannable product.
+
     Attributes:
         plannable_product_code (str):
             The code associated with the ad product. E.g. BUMPER,
@@ -174,6 +179,7 @@ class ProductMetadata(proto.Message):
 
 class PlannableTargeting(proto.Message):
     r"""The targeting for which traffic metrics will be reported.
+
     Attributes:
         age_ranges (Sequence[google.ads.googleads.v7.enums.types.ReachPlanAgeRangeEnum.ReachPlanAgeRange]):
             Allowed plannable age ranges for the product
@@ -259,6 +265,7 @@ class GenerateProductMixIdeasRequest(proto.Message):
 
 class Preferences(proto.Message):
     r"""Set of preferences about the planned mix.
+
     Attributes:
         is_skippable (bool):
             True if ad skippable.
@@ -307,6 +314,7 @@ class Preferences(proto.Message):
 
 class GenerateProductMixIdeasResponse(proto.Message):
     r"""The suggested product mix.
+
     Attributes:
         product_allocation (Sequence[google.ads.googleads.v7.services.types.ProductAllocation]):
             A list of products (ad formats) and the
@@ -322,6 +330,7 @@ class GenerateProductMixIdeasResponse(proto.Message):
 
 class ProductAllocation(proto.Message):
     r"""An allocation of a part of the budget on a given product.
+
     Attributes:
         plannable_product_code (str):
             Selected product for planning. The product
@@ -467,6 +476,7 @@ class FrequencyCap(proto.Message):
 
 class Targeting(proto.Message):
     r"""The targeting for which traffic metrics will be reported.
+
     Attributes:
         plannable_location_id (str):
             Required. The ID of the selected location.
@@ -521,6 +531,7 @@ class Targeting(proto.Message):
 
 class CampaignDuration(proto.Message):
     r"""The duration of a planned campaign.
+
     Attributes:
         duration_in_days (int):
             The duration value in days.
@@ -535,6 +546,7 @@ class CampaignDuration(proto.Message):
 
 class PlannedProduct(proto.Message):
     r"""A product being planned for reach.
+
     Attributes:
         plannable_product_code (str):
             Required. Selected product for planning.
@@ -562,6 +574,7 @@ class PlannedProduct(proto.Message):
 
 class GenerateReachForecastResponse(proto.Message):
     r"""Response message containing the generated reach curve.
+
     Attributes:
         on_target_audience_metrics (google.ads.googleads.v7.services.types.OnTargetAudienceMetrics):
             Reference on target audiences for this curve.
@@ -584,6 +597,7 @@ class GenerateReachForecastResponse(proto.Message):
 
 class ReachCurve(proto.Message):
     r"""The reach curve for the planned products.
+
     Attributes:
         reach_forecasts (Sequence[google.ads.googleads.v7.services.types.ReachForecast]):
             All points on the reach curve.
@@ -598,6 +612,7 @@ class ReachCurve(proto.Message):
 
 class ReachForecast(proto.Message):
     r"""A point on reach curve.
+
     Attributes:
         cost_micros (int):
             The cost in micros.
@@ -719,6 +734,7 @@ class PlannedProductReachForecast(proto.Message):
 
 class PlannedProductForecast(proto.Message):
     r"""Forecasted traffic metrics for a planned product.
+
     Attributes:
         on_target_reach (int):
             Number of unique people reached that exactly

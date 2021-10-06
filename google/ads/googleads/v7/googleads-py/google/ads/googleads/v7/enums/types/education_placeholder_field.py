@@ -29,7 +29,8 @@ class EducationPlaceholderFieldEnum(proto.Message):
     r"""Values for Education placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-        """
+
+    """
     class EducationPlaceholderField(proto.Enum):
         r"""Possible values for Education placeholder fields."""
         UNSPECIFIED = 0

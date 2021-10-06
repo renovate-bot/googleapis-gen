@@ -816,6 +816,9 @@ class CertificateAuthorityServiceGrpcAsyncIOTransport(CertificateAuthorityServic
             )
         return self._stubs['list_reusable_configs']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CertificateAuthorityServiceGrpcAsyncIOTransport',

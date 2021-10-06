@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ValueRuleDeviceTypeEnum(proto.Message):
     r"""Container for enum describing possible device types used in a
     conversion value rule.
-        """
+
+    """
     class ValueRuleDeviceType(proto.Enum):
         r"""Possible device types used in conversion value rule."""
         UNSPECIFIED = 0

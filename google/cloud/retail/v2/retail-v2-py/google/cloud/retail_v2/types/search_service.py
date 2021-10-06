@@ -238,6 +238,7 @@ class SearchRequest(proto.Message):
 
     class FacetSpec(proto.Message):
         r"""A facet specification to perform faceted search.
+
         Attributes:
             facet_key (google.cloud.retail_v2.types.SearchRequest.FacetSpec.FacetKey):
                 Required. The facet key specification.
@@ -307,6 +308,7 @@ class SearchRequest(proto.Message):
 
         class FacetKey(proto.Message):
             r"""Specifies how a facet is computed.
+
             Attributes:
                 key (str):
                     Required. Supported textual and numerical facet keys in
@@ -490,6 +492,7 @@ class SearchRequest(proto.Message):
 
     class DynamicFacetSpec(proto.Message):
         r"""The specifications of dynamically generated facets.
+
         Attributes:
             mode (google.cloud.retail_v2.types.SearchRequest.DynamicFacetSpec.Mode):
                 Mode of the DynamicFacet feature. Defaults to
@@ -510,6 +513,7 @@ class SearchRequest(proto.Message):
 
     class BoostSpec(proto.Message):
         r"""Boost specification to boost certain items.
+
         Attributes:
             condition_boost_specs (Sequence[google.cloud.retail_v2.types.SearchRequest.BoostSpec.ConditionBoostSpec]):
                 Condition boost specifications. If a product
@@ -522,6 +526,7 @@ class SearchRequest(proto.Message):
 
         class ConditionBoostSpec(proto.Message):
             r"""Boost applies to products which match a condition.
+
             Attributes:
                 condition (str):
                     An expression which specifies a boost condition. The syntax
@@ -726,6 +731,7 @@ class SearchResponse(proto.Message):
 
     class SearchResult(proto.Message):
         r"""Represents the search results.
+
         Attributes:
             id (str):
                 [Product.id][google.cloud.retail.v2.Product.id] of the
@@ -832,6 +838,7 @@ class SearchResponse(proto.Message):
 
     class Facet(proto.Message):
         r"""A facet result.
+
         Attributes:
             key (str):
                 The key for this facet. E.g., "colorFamilies"
@@ -844,6 +851,7 @@ class SearchResponse(proto.Message):
 
         class FacetValue(proto.Message):
             r"""A facet value which contains value names and their count.
+
             Attributes:
                 value (str):
                     Text value of a facet, such as "Black" for

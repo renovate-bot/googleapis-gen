@@ -59,6 +59,7 @@ class Tag(proto.Message):
 
 class ListTagsRequest(proto.Message):
     r"""The request to list tags.
+
     Attributes:
         parent (str):
             The name of the parent resource whose tags
@@ -103,6 +104,7 @@ class ListTagsRequest(proto.Message):
 
 class ListTagsResponse(proto.Message):
     r"""The response from listing tags.
+
     Attributes:
         tags (Sequence[google.cloud.artifactregistry_v1beta2.types.Tag]):
             The tags returned.
@@ -128,6 +130,7 @@ class ListTagsResponse(proto.Message):
 
 class GetTagRequest(proto.Message):
     r"""The request to retrieve a tag.
+
     Attributes:
         name (str):
             The name of the tag to retrieve.
@@ -141,6 +144,7 @@ class GetTagRequest(proto.Message):
 
 class CreateTagRequest(proto.Message):
     r"""The request to create a new tag.
+
     Attributes:
         parent (str):
             The name of the parent resource where the tag
@@ -168,6 +172,7 @@ class CreateTagRequest(proto.Message):
 
 class UpdateTagRequest(proto.Message):
     r"""The request to create or update a tag.
+
     Attributes:
         tag (google.cloud.artifactregistry_v1beta2.types.Tag):
             The tag that replaces the resource on the
@@ -192,6 +197,7 @@ class UpdateTagRequest(proto.Message):
 
 class DeleteTagRequest(proto.Message):
     r"""The request to delete a tag.
+
     Attributes:
         name (str):
             The name of the tag to delete.

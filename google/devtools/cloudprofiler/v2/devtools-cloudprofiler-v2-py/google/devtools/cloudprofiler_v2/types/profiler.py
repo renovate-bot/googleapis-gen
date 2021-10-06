@@ -105,6 +105,7 @@ class CreateOfflineProfileRequest(proto.Message):
 
 class UpdateProfileRequest(proto.Message):
     r"""UpdateProfileRequest contains the profile to update.
+
     Attributes:
         profile (google.devtools.cloudprofiler_v2.types.Profile):
             Profile to update
@@ -130,6 +131,7 @@ class UpdateProfileRequest(proto.Message):
 
 class Profile(proto.Message):
     r"""Profile resource.
+
     Attributes:
         name (str):
             Output only. Opaque, server-assigned, unique

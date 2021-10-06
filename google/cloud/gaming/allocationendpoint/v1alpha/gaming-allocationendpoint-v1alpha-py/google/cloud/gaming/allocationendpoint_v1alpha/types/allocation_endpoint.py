@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class AllocationRequest(proto.Message):
     r"""
+
     Attributes:
         realm (str):
             The required realm name in the following form:
@@ -71,6 +72,7 @@ class AllocationRequest(proto.Message):
 
 class AllocationResponse(proto.Message):
     r"""
+
     Attributes:
         game_server_name (str):
             The name of the allocated game server.
@@ -90,6 +92,7 @@ class AllocationResponse(proto.Message):
 
     class GameServerStatusPort(proto.Message):
         r"""The game server port info that is allocated.
+
         Attributes:
             name (str):
 

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class UserIdentifierSourceEnum(proto.Message):
     r"""Container for enum describing the source of the user
     identifier for offline Store Sales third party uploads.
-        """
+
+    """
     class UserIdentifierSource(proto.Enum):
         r"""The type of user identifier source for offline Store Sales
         third party uploads.

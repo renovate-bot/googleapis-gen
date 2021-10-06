@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ChangeClientTypeEnum(proto.Message):
     r"""Container for enum describing the sources that the change
     event resource was made through.
-        """
+
+    """
     class ChangeClientType(proto.Enum):
         r"""The source that the change_event resource was made through."""
         UNSPECIFIED = 0

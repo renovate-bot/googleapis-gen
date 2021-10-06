@@ -826,6 +826,7 @@ class MoveAssignmentRequest(proto.Message):
 
 class BiReservation(proto.Message):
     r"""Represents a BI Reservation.
+
     Attributes:
         name (str):
             The resource name of the singleton BI reservation.
@@ -855,6 +856,7 @@ class BiReservation(proto.Message):
 
 class GetBiReservationRequest(proto.Message):
     r"""A request to get a singleton BI reservation.
+
     Attributes:
         name (str):
             Required. Name of the requested reservation, for example:
@@ -869,6 +871,7 @@ class GetBiReservationRequest(proto.Message):
 
 class UpdateBiReservationRequest(proto.Message):
     r"""A request to update a BI reservation.
+
     Attributes:
         reservation (google.cloud.bigquery.reservation_v1beta1.types.BiReservation):
             A reservation to update.

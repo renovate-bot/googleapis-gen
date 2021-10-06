@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class DistanceBucketEnum(proto.Message):
     r"""Container for distance buckets of a user’s distance from an
     advertiser’s location extension.
-        """
+
+    """
     class DistanceBucket(proto.Enum):
         r"""The distance bucket for a user’s distance from an
         advertiser’s location extension.

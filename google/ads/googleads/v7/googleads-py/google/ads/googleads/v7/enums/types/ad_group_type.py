@@ -29,7 +29,8 @@ class AdGroupTypeEnum(proto.Message):
     r"""Defines types of an ad group, specific to a particular
     campaign channel type. This type drives validations that
     restrict which entities can be added to the ad group.
-        """
+
+    """
     class AdGroupType(proto.Enum):
         r"""Enum listing the possible types of an ad group."""
         UNSPECIFIED = 0

@@ -368,6 +368,9 @@ class AlertPolicyServiceGrpcAsyncIOTransport(AlertPolicyServiceTransport):
             )
         return self._stubs['update_alert_policy']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AlertPolicyServiceGrpcAsyncIOTransport',

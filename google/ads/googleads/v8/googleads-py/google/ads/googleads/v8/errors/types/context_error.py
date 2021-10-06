@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ContextErrorEnum(proto.Message):
-    r"""Container for enum describing possible context errors.    """
+    r"""Container for enum describing possible context errors.
+    """
     class ContextError(proto.Enum):
         r"""Enum describing possible context errors."""
         UNSPECIFIED = 0

@@ -90,6 +90,7 @@ class MatchingFunction(proto.Message):
 
 class Operand(proto.Message):
     r"""An operand in a matching function.
+
     Attributes:
         constant_operand (google.ads.googleads.v7.common.types.Operand.ConstantOperand):
             A constant operand in a matching function.
@@ -106,6 +107,7 @@ class Operand(proto.Message):
 
     class ConstantOperand(proto.Message):
         r"""A constant operand in a matching function.
+
         Attributes:
             string_value (str):
                 String value of the operand if it is a string

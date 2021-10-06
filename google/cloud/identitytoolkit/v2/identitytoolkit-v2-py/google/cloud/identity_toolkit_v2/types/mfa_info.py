@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class AutoRetrievalInfo(proto.Message):
     r"""The information required to auto-retrieve an SMS.
+
     Attributes:
         app_signature_hash (str):
             The Android app's signature hash for Google
@@ -46,6 +47,7 @@ class AutoRetrievalInfo(proto.Message):
 
 class StartMfaPhoneRequestInfo(proto.Message):
     r"""App Verification info for a StartMfa request.
+
     Attributes:
         phone_number (str):
             Required for enrollment. Phone number to be
@@ -99,6 +101,7 @@ class StartMfaPhoneRequestInfo(proto.Message):
 
 class StartMfaPhoneResponseInfo(proto.Message):
     r"""Phone Verification info for a StartMfa response.
+
     Attributes:
         session_info (str):
             An opaque string that represents the
@@ -113,6 +116,7 @@ class StartMfaPhoneResponseInfo(proto.Message):
 
 class FinalizeMfaPhoneRequestInfo(proto.Message):
     r"""Phone Verification info for a FinalizeMfa request.
+
     Attributes:
         session_info (str):
             An opaque string that represents the
@@ -147,6 +151,7 @@ class FinalizeMfaPhoneRequestInfo(proto.Message):
 
 class FinalizeMfaPhoneResponseInfo(proto.Message):
     r"""Phone Verification info for a FinalizeMfa response.
+
     Attributes:
         android_verification_proof (str):
             Android only. Long-lived replacement for

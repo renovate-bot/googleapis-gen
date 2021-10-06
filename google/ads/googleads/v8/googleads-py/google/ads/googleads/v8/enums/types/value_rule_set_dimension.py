@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ValueRuleSetDimensionEnum(proto.Message):
     r"""Container for enum describing possible dimensions of a
     conversion value rule set.
-        """
+
+    """
     class ValueRuleSetDimension(proto.Enum):
         r"""Possible dimensions of a conversion value rule set."""
         UNSPECIFIED = 0

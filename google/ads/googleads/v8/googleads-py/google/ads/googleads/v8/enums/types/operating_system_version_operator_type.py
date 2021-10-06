@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class OperatingSystemVersionOperatorTypeEnum(proto.Message):
-    r"""Container for enum describing the type of OS operators.    """
+    r"""Container for enum describing the type of OS operators.
+    """
     class OperatingSystemVersionOperatorType(proto.Enum):
         r"""The type of operating system version."""
         UNSPECIFIED = 0

@@ -43,6 +43,7 @@ __protobuf__ = proto.module(
 
 class FeedItem(proto.Message):
     r"""A feed item.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed item. Feed item
@@ -145,6 +146,7 @@ class FeedItem(proto.Message):
 
 class FeedItemAttributeValue(proto.Message):
     r"""A feed item attribute value.
+
     Attributes:
         feed_attribute_id (int):
             Id of the feed attribute for which the value

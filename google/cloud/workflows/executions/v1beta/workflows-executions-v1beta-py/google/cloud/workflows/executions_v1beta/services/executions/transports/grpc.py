@@ -331,6 +331,8 @@ class ExecutionsGrpcTransport(ExecutionsTransport):
             )
         return self._stubs['cancel_execution']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ExecutionsGrpcTransport',

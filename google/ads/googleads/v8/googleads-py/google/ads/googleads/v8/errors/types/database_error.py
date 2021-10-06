@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class DatabaseErrorEnum(proto.Message):
-    r"""Container for enum describing possible database errors.    """
+    r"""Container for enum describing possible database errors.
+    """
     class DatabaseError(proto.Enum):
         r"""Enum describing possible database errors."""
         UNSPECIFIED = 0

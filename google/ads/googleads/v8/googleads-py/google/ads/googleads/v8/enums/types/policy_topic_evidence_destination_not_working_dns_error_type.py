@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum(proto.Message):
     r"""Container for enum describing possible policy topic evidence
     destination not working DNS error types.
-        """
+
+    """
     class PolicyTopicEvidenceDestinationNotWorkingDnsErrorType(proto.Enum):
         r"""The possible policy topic evidence destination not working
         DNS error types.

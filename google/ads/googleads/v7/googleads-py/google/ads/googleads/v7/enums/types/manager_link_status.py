@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ManagerLinkStatusEnum(proto.Message):
     r"""Container for enum describing possible status of a manager
     and client link.
-        """
+
+    """
     class ManagerLinkStatus(proto.Enum):
         r"""Possible statuses of a link."""
         UNSPECIFIED = 0

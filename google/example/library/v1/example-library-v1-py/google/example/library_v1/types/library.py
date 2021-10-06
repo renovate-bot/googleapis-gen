@@ -42,6 +42,7 @@ __protobuf__ = proto.module(
 
 class Book(proto.Message):
     r"""A single book in the library.
+
     Attributes:
         name (str):
             The resource name of the book. Book names have the form
@@ -76,6 +77,7 @@ class Book(proto.Message):
 
 class Shelf(proto.Message):
     r"""A Shelf contains a collection of books with a theme.
+
     Attributes:
         name (str):
             The resource name of the shelf. Shelf names have the form
@@ -97,6 +99,7 @@ class Shelf(proto.Message):
 
 class CreateShelfRequest(proto.Message):
     r"""Request message for LibraryService.CreateShelf.
+
     Attributes:
         shelf (google.example.library_v1.types.Shelf):
             The shelf to create.
@@ -111,6 +114,7 @@ class CreateShelfRequest(proto.Message):
 
 class GetShelfRequest(proto.Message):
     r"""Request message for LibraryService.GetShelf.
+
     Attributes:
         name (str):
             The name of the shelf to retrieve.
@@ -124,6 +128,7 @@ class GetShelfRequest(proto.Message):
 
 class ListShelvesRequest(proto.Message):
     r"""Request message for LibraryService.ListShelves.
+
     Attributes:
         page_size (int):
             Requested page size. Server may return fewer
@@ -148,6 +153,7 @@ class ListShelvesRequest(proto.Message):
 
 class ListShelvesResponse(proto.Message):
     r"""Response message for LibraryService.ListShelves.
+
     Attributes:
         shelves (Sequence[google.example.library_v1.types.Shelf]):
             The list of shelves.
@@ -176,6 +182,7 @@ class ListShelvesResponse(proto.Message):
 
 class DeleteShelfRequest(proto.Message):
     r"""Request message for LibraryService.DeleteShelf.
+
     Attributes:
         name (str):
             The name of the shelf to delete.
@@ -211,6 +218,7 @@ class MergeShelvesRequest(proto.Message):
 
 class CreateBookRequest(proto.Message):
     r"""Request message for LibraryService.CreateBook.
+
     Attributes:
         parent (str):
             The name of the shelf in which the book is
@@ -232,6 +240,7 @@ class CreateBookRequest(proto.Message):
 
 class GetBookRequest(proto.Message):
     r"""Request message for LibraryService.GetBook.
+
     Attributes:
         name (str):
             The name of the book to retrieve.
@@ -245,6 +254,7 @@ class GetBookRequest(proto.Message):
 
 class ListBooksRequest(proto.Message):
     r"""Request message for LibraryService.ListBooks.
+
     Attributes:
         parent (str):
             The name of the shelf whose books we'd like
@@ -276,6 +286,7 @@ class ListBooksRequest(proto.Message):
 
 class ListBooksResponse(proto.Message):
     r"""Response message for LibraryService.ListBooks.
+
     Attributes:
         books (Sequence[google.example.library_v1.types.Book]):
             The list of books.
@@ -304,6 +315,7 @@ class ListBooksResponse(proto.Message):
 
 class UpdateBookRequest(proto.Message):
     r"""Request message for LibraryService.UpdateBook.
+
     Attributes:
         book (google.example.library_v1.types.Book):
             The name of the book to update.
@@ -325,6 +337,7 @@ class UpdateBookRequest(proto.Message):
 
 class DeleteBookRequest(proto.Message):
     r"""Request message for LibraryService.DeleteBook.
+
     Attributes:
         name (str):
             The name of the book to delete.

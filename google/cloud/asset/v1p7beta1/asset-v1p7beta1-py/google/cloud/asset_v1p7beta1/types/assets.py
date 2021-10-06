@@ -168,6 +168,7 @@ class Asset(proto.Message):
 
 class Resource(proto.Message):
     r"""A representation of a Google Cloud resource.
+
     Attributes:
         version (str):
             The API version. Example: ``v1``
@@ -247,6 +248,7 @@ class Resource(proto.Message):
 
 class RelatedAssets(proto.Message):
     r"""The detailed related assets with the ``relationship_type``.
+
     Attributes:
         relationship_attributes (google.cloud.asset_v1p7beta1.types.RelationshipAttributes):
             The detailed relation attributes.

@@ -311,6 +311,8 @@ class TraceServiceGrpcTransport(TraceServiceTransport):
             )
         return self._stubs['patch_traces']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TraceServiceGrpcTransport',

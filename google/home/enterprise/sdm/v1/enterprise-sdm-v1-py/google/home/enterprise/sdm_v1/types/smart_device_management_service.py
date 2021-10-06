@@ -40,6 +40,7 @@ __protobuf__ = proto.module(
 
 class GetDeviceRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.GetDevice
+
     Attributes:
         name (str):
             The name of the device requested. For
@@ -54,6 +55,7 @@ class GetDeviceRequest(proto.Message):
 
 class ListDevicesRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.ListDevices
+
     Attributes:
         parent (str):
             The parent enterprise to list devices under.
@@ -94,6 +96,7 @@ class ListDevicesRequest(proto.Message):
 
 class ListDevicesResponse(proto.Message):
     r"""Response message for SmartDeviceManagementService.ListDevices
+
     Attributes:
         devices (Sequence[google.home.enterprise.sdm_v1.types.Device]):
             The list of devices.
@@ -166,6 +169,7 @@ class ExecuteDeviceCommandResponse(proto.Message):
 
 class GetStructureRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.GetStructure
+
     Attributes:
         name (str):
             The name of the structure requested. For
@@ -244,6 +248,7 @@ class ListStructuresResponse(proto.Message):
 
 class GetRoomRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.GetRoom
+
     Attributes:
         name (str):
             The name of the room requested. For example:
@@ -258,6 +263,7 @@ class GetRoomRequest(proto.Message):
 
 class ListRoomsRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.ListRooms
+
     Attributes:
         parent (str):
             The parent resource name of the rooms
@@ -287,6 +293,7 @@ class ListRoomsRequest(proto.Message):
 
 class ListRoomsResponse(proto.Message):
     r"""Response message for SmartDeviceManagementService.ListRooms
+
     Attributes:
         rooms (Sequence[google.home.enterprise.sdm_v1.types.Room]):
             The list of rooms.

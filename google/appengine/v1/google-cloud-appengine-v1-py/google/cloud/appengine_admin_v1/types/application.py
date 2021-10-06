@@ -113,6 +113,7 @@ class Application(proto.Message):
 
     class IdentityAwareProxy(proto.Message):
         r"""Identity-Aware Proxy
+
         Attributes:
             enabled (bool):
                 Whether the serving infrastructure will authenticate and

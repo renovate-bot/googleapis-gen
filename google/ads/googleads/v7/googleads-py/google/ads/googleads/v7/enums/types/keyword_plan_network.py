@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class KeywordPlanNetworkEnum(proto.Message):
     r"""Container for enumeration of keyword plan forecastable
     network types.
-        """
+
+    """
     class KeywordPlanNetwork(proto.Enum):
         r"""Enumerates keyword plan forecastable network types."""
         UNSPECIFIED = 0

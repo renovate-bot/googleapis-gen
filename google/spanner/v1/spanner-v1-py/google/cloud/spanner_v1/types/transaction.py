@@ -356,13 +356,16 @@ class TransactionOptions(proto.Message):
     class ReadWrite(proto.Message):
         r"""Message type to initiate a read-write transaction. Currently
         this transaction type has no options.
-            """
+
+        """
 
     class PartitionedDml(proto.Message):
-        r"""Message type to initiate a Partitioned DML transaction.    """
+        r"""Message type to initiate a Partitioned DML transaction.
+        """
 
     class ReadOnly(proto.Message):
         r"""Message type to initiate a read-only transaction.
+
         Attributes:
             strong (bool):
                 Read at a timestamp where all previously
@@ -483,6 +486,7 @@ class TransactionOptions(proto.Message):
 
 class Transaction(proto.Message):
     r"""A transaction.
+
     Attributes:
         id (bytes):
             ``id`` may be used to identify the transaction in subsequent

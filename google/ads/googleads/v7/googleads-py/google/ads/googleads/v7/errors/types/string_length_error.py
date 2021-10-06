@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class StringLengthErrorEnum(proto.Message):
-    r"""Container for enum describing possible string length errors.    """
+    r"""Container for enum describing possible string length errors.
+    """
     class StringLengthError(proto.Enum):
         r"""Enum describing possible string length errors."""
         UNSPECIFIED = 0

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class InteractionTypeEnum(proto.Message):
-    r"""Container for enum describing possible interaction types.    """
+    r"""Container for enum describing possible interaction types.
+    """
     class InteractionType(proto.Enum):
         r"""Enum describing possible interaction types."""
         UNSPECIFIED = 0

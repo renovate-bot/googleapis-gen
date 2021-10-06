@@ -535,6 +535,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
             )
         return self._stubs['move_book']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'LibraryServiceGrpcAsyncIOTransport',

@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class ExtensionFeedItem(proto.Message):
     r"""An extension feed item.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the extension feed item.

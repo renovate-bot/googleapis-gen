@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class StructuredQuery(proto.Message):
     r"""A Firestore query.
+
     Attributes:
         select (google.firestore_v1beta1.types.StructuredQuery.Projection):
             The projection to return.
@@ -80,6 +81,7 @@ class StructuredQuery(proto.Message):
 
     class CollectionSelector(proto.Message):
         r"""A selection of a collection, such as ``messages as m1``.
+
         Attributes:
             collection_id (str):
                 The collection ID.
@@ -102,6 +104,7 @@ class StructuredQuery(proto.Message):
 
     class Filter(proto.Message):
         r"""A filter.
+
         Attributes:
             composite_filter (google.firestore_v1beta1.types.StructuredQuery.CompositeFilter):
                 A composite filter.
@@ -159,6 +162,7 @@ class StructuredQuery(proto.Message):
 
     class FieldFilter(proto.Message):
         r"""A filter on a specific field.
+
         Attributes:
             field (google.firestore_v1beta1.types.StructuredQuery.FieldReference):
                 The field to filter by.
@@ -199,6 +203,7 @@ class StructuredQuery(proto.Message):
 
     class UnaryFilter(proto.Message):
         r"""A filter with a single operand.
+
         Attributes:
             op (google.firestore_v1beta1.types.StructuredQuery.UnaryFilter.Operator):
                 The unary operator to apply.
@@ -227,6 +232,7 @@ class StructuredQuery(proto.Message):
 
     class FieldReference(proto.Message):
         r"""A reference to a field, such as ``max(messages.time) as max_time``.
+
         Attributes:
             field_path (str):
 
@@ -239,6 +245,7 @@ class StructuredQuery(proto.Message):
 
     class Order(proto.Message):
         r"""An order on a field.
+
         Attributes:
             field (google.firestore_v1beta1.types.StructuredQuery.FieldReference):
                 The field to order by.
@@ -259,6 +266,7 @@ class StructuredQuery(proto.Message):
 
     class Projection(proto.Message):
         r"""The projection of document's fields to return.
+
         Attributes:
             fields (Sequence[google.firestore_v1beta1.types.StructuredQuery.FieldReference]):
                 The fields to return.
@@ -316,6 +324,7 @@ class StructuredQuery(proto.Message):
 
 class Cursor(proto.Message):
     r"""A position in a query result set.
+
     Attributes:
         values (Sequence[google.firestore_v1beta1.types.Value]):
             The values that represent a position, in the

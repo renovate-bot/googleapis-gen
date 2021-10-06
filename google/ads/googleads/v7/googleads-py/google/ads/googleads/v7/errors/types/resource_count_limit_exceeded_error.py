@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ResourceCountLimitExceededErrorEnum(proto.Message):
     r"""Container for enum describing possible resource count limit
     exceeded errors.
-        """
+
+    """
     class ResourceCountLimitExceededError(proto.Enum):
         r"""Enum describing possible resource count limit exceeded
         errors.

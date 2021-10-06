@@ -147,6 +147,7 @@ class CampaignFeedOperation(proto.Message):
 
 class MutateCampaignFeedsResponse(proto.Message):
     r"""Response message for a campaign feed mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -172,6 +173,7 @@ class MutateCampaignFeedsResponse(proto.Message):
 
 class MutateCampaignFeedResult(proto.Message):
     r"""The result for the campaign feed mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

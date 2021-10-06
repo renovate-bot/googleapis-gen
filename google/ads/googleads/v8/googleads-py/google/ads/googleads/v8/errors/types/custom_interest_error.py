@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CustomInterestErrorEnum(proto.Message):
     r"""Container for enum describing possible custom interest
     errors.
-        """
+
+    """
     class CustomInterestError(proto.Enum):
         r"""Enum describing possible custom interest errors."""
         UNSPECIFIED = 0

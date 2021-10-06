@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class TableReadOptions(proto.Message):
     r"""Options dictating how we read a table.
+
     Attributes:
         selected_fields (Sequence[str]):
             Optional. Names of the fields in the table that should be

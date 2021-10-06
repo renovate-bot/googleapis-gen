@@ -185,6 +185,7 @@ class SerialPipeline(proto.Message):
 
 class Stage(proto.Message):
     r"""Stage specifies a location to which to deploy.
+
     Attributes:
         target_id (str):
             The target_id to which this stage points. This field refers
@@ -290,6 +291,7 @@ class PipelineCondition(proto.Message):
 
 class ListDeliveryPipelinesRequest(proto.Message):
     r"""The request object for ``ListDeliveryPipelines``.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of
@@ -341,6 +343,7 @@ class ListDeliveryPipelinesRequest(proto.Message):
 
 class ListDeliveryPipelinesResponse(proto.Message):
     r"""The response object from ``ListDeliveryPipelines``.
+
     Attributes:
         delivery_pipelines (Sequence[google.cloud.deploy_v1.types.DeliveryPipeline]):
             The ``DeliveryPipeline`` objects.
@@ -373,6 +376,7 @@ class ListDeliveryPipelinesResponse(proto.Message):
 
 class GetDeliveryPipelineRequest(proto.Message):
     r"""The request object for ``GetDeliveryPipeline``
+
     Attributes:
         name (str):
             Required. Name of the ``DeliveryPipeline``. Format must be
@@ -387,6 +391,7 @@ class GetDeliveryPipelineRequest(proto.Message):
 
 class CreateDeliveryPipelineRequest(proto.Message):
     r"""The request object for ``CreateDeliveryPipeline``.
+
     Attributes:
         parent (str):
             Required. The parent collection in which the
@@ -445,6 +450,7 @@ class CreateDeliveryPipelineRequest(proto.Message):
 
 class UpdateDeliveryPipelineRequest(proto.Message):
     r"""The request object for ``UpdateDeliveryPipeline``.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the fields to be
@@ -509,6 +515,7 @@ class UpdateDeliveryPipelineRequest(proto.Message):
 
 class DeleteDeliveryPipelineRequest(proto.Message):
     r"""The request object for ``DeleteDeliveryPipeline``.
+
     Attributes:
         name (str):
             Required. The name of the ``DeliveryPipeline`` to delete.
@@ -732,6 +739,7 @@ class ExecutionConfig(proto.Message):
 
 class DefaultPool(proto.Message):
     r"""Execution using the default Cloud Build pool.
+
     Attributes:
         service_account (str):
             Optional. Google service account to use for execution. If
@@ -759,6 +767,7 @@ class DefaultPool(proto.Message):
 
 class PrivatePool(proto.Message):
     r"""Execution using a private Cloud Build pool.
+
     Attributes:
         worker_pool (str):
             Required. Resource name of the Cloud Build worker pool to
@@ -794,6 +803,7 @@ class PrivatePool(proto.Message):
 
 class GkeCluster(proto.Message):
     r"""Information specifying a GKE Cluster.
+
     Attributes:
         cluster (str):
             Information specifying a GKE Cluster. Format is
@@ -808,6 +818,7 @@ class GkeCluster(proto.Message):
 
 class ListTargetsRequest(proto.Message):
     r"""The request object for ``ListTargets``.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of targets.
@@ -859,6 +870,7 @@ class ListTargetsRequest(proto.Message):
 
 class ListTargetsResponse(proto.Message):
     r"""The response object from ``ListTargets``.
+
     Attributes:
         targets (Sequence[google.cloud.deploy_v1.types.Target]):
             The ``Target`` objects.
@@ -891,6 +903,7 @@ class ListTargetsResponse(proto.Message):
 
 class GetTargetRequest(proto.Message):
     r"""The request object for ``GetTarget``.
+
     Attributes:
         name (str):
             Required. Name of the ``Target``. Format must be
@@ -905,6 +918,7 @@ class GetTargetRequest(proto.Message):
 
 class CreateTargetRequest(proto.Message):
     r"""The request object for ``CreateTarget``.
+
     Attributes:
         parent (str):
             Required. The parent collection in which the ``Target``
@@ -963,6 +977,7 @@ class CreateTargetRequest(proto.Message):
 
 class UpdateTargetRequest(proto.Message):
     r"""The request object for ``UpdateTarget``.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the fields to be
@@ -1026,6 +1041,7 @@ class UpdateTargetRequest(proto.Message):
 
 class DeleteTargetRequest(proto.Message):
     r"""The request object for ``DeleteTarget``.
+
     Attributes:
         name (str):
             Required. The name of the ``Target`` to delete. Format
@@ -1172,6 +1188,7 @@ class Release(proto.Message):
 
     class TargetRender(proto.Message):
         r"""Details of rendering for a single target.
+
         Attributes:
             rendering_build (str):
                 Output only. The resource name of the Cloud Build ``Build``
@@ -1288,6 +1305,7 @@ class Release(proto.Message):
 
 class BuildArtifact(proto.Message):
     r"""Description of an a image to use during Skaffold rendering.
+
     Attributes:
         image (str):
             Image name in Skaffold configuration.
@@ -1310,6 +1328,7 @@ class BuildArtifact(proto.Message):
 
 class TargetArtifact(proto.Message):
     r"""The artifacts produced by a target render operation.
+
     Attributes:
         artifact_uri (str):
             Output only. URI of a directory containing
@@ -1341,6 +1360,7 @@ class TargetArtifact(proto.Message):
 
 class ListReleasesRequest(proto.Message):
     r"""The request object for ``ListReleases``.
+
     Attributes:
         parent (str):
             Required. The ``DeliveryPipeline`` which owns this
@@ -1391,6 +1411,7 @@ class ListReleasesRequest(proto.Message):
 
 class ListReleasesResponse(proto.Message):
     r"""The response object from ``ListReleases``.
+
     Attributes:
         releases (Sequence[google.cloud.deploy_v1.types.Release]):
             The ``Release`` objects.
@@ -1423,6 +1444,7 @@ class ListReleasesResponse(proto.Message):
 
 class GetReleaseRequest(proto.Message):
     r"""The request object for ``GetRelease``.
+
     Attributes:
         name (str):
             Required. Name of the ``Release``. Format must be
@@ -1437,6 +1459,7 @@ class GetReleaseRequest(proto.Message):
 
 class CreateReleaseRequest(proto.Message):
     r"""The request object for ``CreateRelease``,
+
     Attributes:
         parent (str):
             Required. The parent collection in which the ``Release``
@@ -1652,6 +1675,7 @@ class Rollout(proto.Message):
 
 class ListRolloutsRequest(proto.Message):
     r"""ListRolloutsRequest is the request object used by ``ListRollouts``.
+
     Attributes:
         parent (str):
             Required. The ``Release`` which owns this collection of
@@ -1736,6 +1760,7 @@ class ListRolloutsResponse(proto.Message):
 
 class GetRolloutRequest(proto.Message):
     r"""GetRolloutRequest is the request object used by ``GetRollout``.
+
     Attributes:
         name (str):
             Required. Name of the ``Rollout``. Format must be
@@ -1810,6 +1835,7 @@ class CreateRolloutRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -1871,6 +1897,7 @@ class OperationMetadata(proto.Message):
 
 class ApproveRolloutRequest(proto.Message):
     r"""The request object used by ``ApproveRollout``.
+
     Attributes:
         name (str):
             Required. Name of the Rollout. Format is
@@ -1891,11 +1918,13 @@ class ApproveRolloutRequest(proto.Message):
 
 
 class ApproveRolloutResponse(proto.Message):
-    r"""The response object from ``ApproveRollout``.    """
+    r"""The response object from ``ApproveRollout``.
+    """
 
 
 class Config(proto.Message):
     r"""Service-wide configuration.
+
     Attributes:
         name (str):
             Name of the configuration.
@@ -1925,6 +1954,7 @@ class Config(proto.Message):
 
 class SkaffoldVersion(proto.Message):
     r"""Details of a supported Skaffold version.
+
     Attributes:
         version (str):
             Release version number. For example,
@@ -1947,6 +1977,7 @@ class SkaffoldVersion(proto.Message):
 
 class GetConfigRequest(proto.Message):
     r"""Request to get a configuration.
+
     Attributes:
         name (str):
             Required. Name of requested configuration.

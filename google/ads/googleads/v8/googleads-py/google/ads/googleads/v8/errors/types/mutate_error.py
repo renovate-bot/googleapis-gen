@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MutateErrorEnum(proto.Message):
-    r"""Container for enum describing possible mutate errors.    """
+    r"""Container for enum describing possible mutate errors.
+    """
     class MutateError(proto.Enum):
         r"""Enum describing possible mutate errors."""
         UNSPECIFIED = 0

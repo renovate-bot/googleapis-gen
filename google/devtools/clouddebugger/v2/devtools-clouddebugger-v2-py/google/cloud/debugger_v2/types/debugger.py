@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class SetBreakpointRequest(proto.Message):
     r"""Request to set a breakpoint
+
     Attributes:
         debuggee_id (str):
             Required. ID of the debuggee where the
@@ -65,6 +66,7 @@ class SetBreakpointRequest(proto.Message):
 
 class SetBreakpointResponse(proto.Message):
     r"""Response for setting a breakpoint.
+
     Attributes:
         breakpoint_ (google.cloud.debugger_v2.types.Breakpoint):
             Breakpoint resource. The field ``id`` is guaranteed to be
@@ -80,6 +82,7 @@ class SetBreakpointResponse(proto.Message):
 
 class GetBreakpointRequest(proto.Message):
     r"""Request to get breakpoint information.
+
     Attributes:
         debuggee_id (str):
             Required. ID of the debuggee whose breakpoint
@@ -107,6 +110,7 @@ class GetBreakpointRequest(proto.Message):
 
 class GetBreakpointResponse(proto.Message):
     r"""Response for getting breakpoint information.
+
     Attributes:
         breakpoint_ (google.cloud.debugger_v2.types.Breakpoint):
             Complete breakpoint state. The fields ``id`` and
@@ -122,6 +126,7 @@ class GetBreakpointResponse(proto.Message):
 
 class DeleteBreakpointRequest(proto.Message):
     r"""Request to delete a breakpoint.
+
     Attributes:
         debuggee_id (str):
             Required. ID of the debuggee whose breakpoint
@@ -149,6 +154,7 @@ class DeleteBreakpointRequest(proto.Message):
 
 class ListBreakpointsRequest(proto.Message):
     r"""Request to list breakpoints.
+
     Attributes:
         debuggee_id (str):
             Required. ID of the debuggee whose
@@ -229,6 +235,7 @@ class ListBreakpointsRequest(proto.Message):
 
 class ListBreakpointsResponse(proto.Message):
     r"""Response for listing breakpoints.
+
     Attributes:
         breakpoints (Sequence[google.cloud.debugger_v2.types.Breakpoint]):
             List of breakpoints matching the request. The fields ``id``
@@ -255,6 +262,7 @@ class ListBreakpointsResponse(proto.Message):
 
 class ListDebuggeesRequest(proto.Message):
     r"""Request to list debuggees.
+
     Attributes:
         project (str):
             Required. Project number of a Google Cloud
@@ -284,6 +292,7 @@ class ListDebuggeesRequest(proto.Message):
 
 class ListDebuggeesResponse(proto.Message):
     r"""Response for listing debuggees.
+
     Attributes:
         debuggees (Sequence[google.cloud.debugger_v2.types.Debuggee]):
             List of debuggees accessible to the calling user. The fields

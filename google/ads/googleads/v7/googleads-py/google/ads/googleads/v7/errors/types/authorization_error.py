@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AuthorizationErrorEnum(proto.Message):
-    r"""Container for enum describing possible authorization errors.    """
+    r"""Container for enum describing possible authorization errors.
+    """
     class AuthorizationError(proto.Enum):
         r"""Enum describing possible authorization errors."""
         UNSPECIFIED = 0

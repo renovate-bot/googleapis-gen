@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CampaignErrorEnum(proto.Message):
-    r"""Container for enum describing possible campaign errors.    """
+    r"""Container for enum describing possible campaign errors.
+    """
     class CampaignError(proto.Enum):
         r"""Enum describing possible campaign errors."""
         UNSPECIFIED = 0

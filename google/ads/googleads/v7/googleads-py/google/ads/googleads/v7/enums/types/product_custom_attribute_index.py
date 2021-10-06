@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ProductCustomAttributeIndexEnum(proto.Message):
     r"""Container for enum describing the index of the product custom
     attribute.
-        """
+
+    """
     class ProductCustomAttributeIndex(proto.Enum):
         r"""The index of the product custom attribute."""
         UNSPECIFIED = 0

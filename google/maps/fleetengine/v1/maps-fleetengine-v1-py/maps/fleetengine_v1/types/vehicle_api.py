@@ -47,6 +47,7 @@ __protobuf__ = proto.module(
 
 class CreateVehicleRequest(proto.Message):
     r"""CreateVehicle request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -108,6 +109,7 @@ class CreateVehicleRequest(proto.Message):
 
 class GetVehicleRequest(proto.Message):
     r"""GetVehicle request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -156,6 +158,7 @@ class GetVehicleRequest(proto.Message):
 
 class UpdateVehicleRequest(proto.Message):
     r"""UpdateVehicle request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -205,6 +208,7 @@ class UpdateVehicleRequest(proto.Message):
 
 class UpdateVehicleLocationRequest(proto.Message):
     r"""UpdateVehicleLocation request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -247,6 +251,7 @@ class UpdateVehicleLocationRequest(proto.Message):
 
 class UpdateVehicleAttributesRequest(proto.Message):
     r"""UpdateVehicleAttributes request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -282,6 +287,7 @@ class UpdateVehicleAttributesRequest(proto.Message):
 
 class UpdateVehicleAttributesResponse(proto.Message):
     r"""UpdateVehicleAttributes response message.
+
     Attributes:
         attributes (Sequence[maps.fleetengine_v1.types.VehicleAttribute]):
             Required. The updated full list of vehicle
@@ -298,6 +304,7 @@ class UpdateVehicleAttributesResponse(proto.Message):
 
 class SearchVehiclesRequest(proto.Message):
     r"""SearchVehicles request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -485,6 +492,7 @@ class SearchVehiclesRequest(proto.Message):
 
 class SearchVehiclesResponse(proto.Message):
     r"""SearchVehicles response message.
+
     Attributes:
         matches (Sequence[maps.fleetengine_v1.types.VehicleMatch]):
             List of vehicles that match the request options.
@@ -512,6 +520,7 @@ class SearchVehiclesResponse(proto.Message):
 
 class ListVehiclesRequest(proto.Message):
     r"""ListVehicles request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -653,6 +662,7 @@ class ListVehiclesRequest(proto.Message):
 
 class ListVehiclesResponse(proto.Message):
     r"""ListVehicles response message.
+
     Attributes:
         vehicles (Sequence[maps.fleetengine_v1.types.Vehicle]):
             Depends on vehicles matching request criteria. There will be
@@ -688,6 +698,7 @@ class ListVehiclesResponse(proto.Message):
 
 class Waypoint(proto.Message):
     r"""Waypoint describes intermediate points along a route.
+
     Attributes:
         lat_lng (google.type.latlng_pb2.LatLng):
             The location of this waypoint.

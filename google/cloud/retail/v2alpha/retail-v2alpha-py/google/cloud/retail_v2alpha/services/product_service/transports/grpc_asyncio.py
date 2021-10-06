@@ -570,6 +570,9 @@ class ProductServiceGrpcAsyncIOTransport(ProductServiceTransport):
             )
         return self._stubs['remove_fulfillment_places']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ProductServiceGrpcAsyncIOTransport',

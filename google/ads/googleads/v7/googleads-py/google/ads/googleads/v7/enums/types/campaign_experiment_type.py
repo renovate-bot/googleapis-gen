@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CampaignExperimentTypeEnum(proto.Message):
-    r"""Container for enum describing campaign experiment type.    """
+    r"""Container for enum describing campaign experiment type.
+    """
     class CampaignExperimentType(proto.Enum):
         r"""Indicates if this campaign is a normal campaign,
         a draft campaign, or an experiment campaign.

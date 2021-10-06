@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class DataDrivenModelStatusEnum(proto.Message):
-    r"""Container for enum indicating data driven model status.    """
+    r"""Container for enum indicating data driven model status.
+    """
     class DataDrivenModelStatus(proto.Enum):
         r"""Enumerates data driven model statuses."""
         UNSPECIFIED = 0

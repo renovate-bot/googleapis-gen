@@ -1837,6 +1837,9 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             )
         return self._stubs['list_subscribers']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudChannelServiceGrpcAsyncIOTransport',

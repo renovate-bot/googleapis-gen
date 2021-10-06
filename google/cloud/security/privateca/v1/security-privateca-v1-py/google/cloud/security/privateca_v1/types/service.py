@@ -1058,6 +1058,7 @@ class FetchCaCertsResponse(proto.Message):
 
     class CertChain(proto.Message):
         r"""
+
         Attributes:
             certificates (Sequence[str]):
                 The certificates that form the CA chain, from
@@ -1594,6 +1595,7 @@ class UpdateCertificateTemplateRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

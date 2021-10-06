@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemSetLinkErrorEnum(proto.Message):
     r"""Container for enum describing possible feed item set link
     errors.
-        """
+
+    """
     class FeedItemSetLinkError(proto.Enum):
         r"""Enum describing possible feed item set link errors."""
         UNSPECIFIED = 0

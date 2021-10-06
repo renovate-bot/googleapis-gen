@@ -943,6 +943,9 @@ class CloudTasksGrpcAsyncIOTransport(CloudTasksTransport):
             )
         return self._stubs['run_task']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudTasksGrpcAsyncIOTransport',

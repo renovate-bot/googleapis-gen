@@ -146,6 +146,7 @@ class ApplyRecommendationOperation(proto.Message):
 
     class TextAdParameters(proto.Message):
         r"""Parameters to use when applying a text ad recommendation.
+
         Attributes:
             ad (google.ads.googleads.v7.resources.types.Ad):
                 New ad to add to recommended ad group. All
@@ -161,6 +162,7 @@ class ApplyRecommendationOperation(proto.Message):
 
     class KeywordParameters(proto.Message):
         r"""Parameters to use when applying keyword recommendation.
+
         Attributes:
             ad_group (str):
                 The ad group resource to add keyword to. This
@@ -192,6 +194,7 @@ class ApplyRecommendationOperation(proto.Message):
 
     class TargetCpaOptInParameters(proto.Message):
         r"""Parameters to use when applying Target CPA recommendation.
+
         Attributes:
             target_cpa_micros (int):
                 Average CPA to use for Target CPA bidding
@@ -414,6 +417,7 @@ class ApplyRecommendationResponse(proto.Message):
 
 class ApplyRecommendationResult(proto.Message):
     r"""The result of applying a recommendation.
+
     Attributes:
         resource_name (str):
             Returned for successful applies.
@@ -494,6 +498,7 @@ class DismissRecommendationResponse(proto.Message):
 
     class DismissRecommendationResult(proto.Message):
         r"""The result of dismissing a recommendation.
+
         Attributes:
             resource_name (str):
                 Returned for successful dismissals.

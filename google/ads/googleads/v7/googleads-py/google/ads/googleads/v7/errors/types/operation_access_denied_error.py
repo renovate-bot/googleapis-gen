@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class OperationAccessDeniedErrorEnum(proto.Message):
     r"""Container for enum describing possible operation access
     denied errors.
-        """
+
+    """
     class OperationAccessDeniedError(proto.Enum):
         r"""Enum describing possible operation access denied errors."""
         UNSPECIFIED = 0

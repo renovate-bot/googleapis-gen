@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class KeywordPlanIdeaErrorEnum(proto.Message):
     r"""Container for enum describing possible errors from
     KeywordPlanIdeaService.
-        """
+
+    """
     class KeywordPlanIdeaError(proto.Enum):
         r"""Enum describing possible errors from KeywordPlanIdeaService."""
         UNSPECIFIED = 0

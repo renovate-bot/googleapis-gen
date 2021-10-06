@@ -114,6 +114,7 @@ class UploadConversionAdjustmentsResponse(proto.Message):
 
 class ConversionAdjustment(proto.Message):
     r"""A conversion adjustment.
+
     Attributes:
         conversion_action (str):
             Resource name of the conversion action
@@ -185,6 +186,7 @@ class ConversionAdjustment(proto.Message):
 
 class RestatementValue(proto.Message):
     r"""Contains information needed to restate a conversion's value.
+
     Attributes:
         adjusted_value (float):
             The restated conversion value. This is the

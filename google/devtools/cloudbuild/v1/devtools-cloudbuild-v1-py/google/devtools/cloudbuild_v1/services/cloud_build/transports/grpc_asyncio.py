@@ -773,6 +773,9 @@ class CloudBuildGrpcAsyncIOTransport(CloudBuildTransport):
             )
         return self._stubs['list_worker_pools']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudBuildGrpcAsyncIOTransport',

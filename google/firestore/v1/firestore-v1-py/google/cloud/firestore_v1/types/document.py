@@ -106,6 +106,7 @@ class Document(proto.Message):
 
 class Value(proto.Message):
     r"""A message that can hold any of the supported value types.
+
     Attributes:
         null_value (google.protobuf.struct_pb2.NullValue):
             A null value.
@@ -209,6 +210,7 @@ class Value(proto.Message):
 
 class ArrayValue(proto.Message):
     r"""An array value.
+
     Attributes:
         values (Sequence[google.cloud.firestore_v1.types.Value]):
             Values in the array.
@@ -223,6 +225,7 @@ class ArrayValue(proto.Message):
 
 class MapValue(proto.Message):
     r"""A map value.
+
     Attributes:
         fields (Sequence[google.cloud.firestore_v1.types.MapValue.FieldsEntry]):
             The map's fields.

@@ -63,6 +63,7 @@ class UploadUserDataRequest(proto.Message):
 
 class UserDataOperation(proto.Message):
     r"""Operation to be made for the UploadUserDataRequest.
+
     Attributes:
         create (google.ads.googleads.v8.common.types.UserData):
             The list of user data to be appended to the

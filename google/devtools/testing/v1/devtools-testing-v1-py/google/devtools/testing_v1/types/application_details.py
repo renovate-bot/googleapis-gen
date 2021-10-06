@@ -134,6 +134,7 @@ class IntentFilter(proto.Message):
 
 class GetApkDetailsRequest(proto.Message):
     r"""A request to get the details of an Android application APK.
+
     Attributes:
         location (google.devtools.testing_v1.types.FileReference):
             The APK to be parsed for details.

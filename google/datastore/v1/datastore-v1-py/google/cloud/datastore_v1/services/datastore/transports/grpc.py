@@ -411,6 +411,8 @@ class DatastoreGrpcTransport(DatastoreTransport):
             )
         return self._stubs['reserve_ids']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DatastoreGrpcTransport',

@@ -90,6 +90,15 @@ class ProductGroupViewServiceTransport(metaclass=abc.ABCMeta):
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+        .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def get_product_group_view(self) -> typing.Callable[
             [product_group_view_service.GetProductGroupViewRequest],

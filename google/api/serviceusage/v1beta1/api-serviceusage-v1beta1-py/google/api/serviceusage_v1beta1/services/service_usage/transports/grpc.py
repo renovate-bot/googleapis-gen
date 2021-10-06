@@ -783,6 +783,8 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             )
         return self._stubs['generate_service_identity']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ServiceUsageGrpcTransport',

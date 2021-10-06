@@ -451,6 +451,7 @@ class Profile(proto.Message):
 
 class AvailabilitySignal(proto.Message):
     r"""Candidate availability signal.
+
     Attributes:
         type_ (google.cloud.talent_v4beta1.types.AvailabilitySignalType):
             Type of signal.
@@ -492,6 +493,7 @@ class AvailabilitySignal(proto.Message):
 
 class Resume(proto.Message):
     r"""Resource that represents a resume.
+
     Attributes:
         structured_resume (str):
             Users can create a profile with only this field field, if
@@ -531,6 +533,7 @@ class Resume(proto.Message):
 
 class PersonName(proto.Message):
     r"""Resource that represents the name of a person.
+
     Attributes:
         formatted_name (str):
             A string represents a person's full name. For
@@ -549,6 +552,7 @@ class PersonName(proto.Message):
 
     class PersonStructuredName(proto.Message):
         r"""Resource that represents a person's structured name.
+
         Attributes:
             given_name (str):
                 Given/first name.
@@ -629,6 +633,7 @@ class PersonName(proto.Message):
 
 class Address(proto.Message):
     r"""Resource that represents a address.
+
     Attributes:
         usage (google.cloud.talent_v4beta1.types.ContactInfoUsage):
             The usage of the address. For example,
@@ -672,6 +677,7 @@ class Address(proto.Message):
 
 class Email(proto.Message):
     r"""Resource that represents a person's email address.
+
     Attributes:
         usage (google.cloud.talent_v4beta1.types.ContactInfoUsage):
             The usage of the email address. For example,
@@ -694,6 +700,7 @@ class Email(proto.Message):
 
 class Phone(proto.Message):
     r"""Resource that represents a person's telephone number.
+
     Attributes:
         usage (google.cloud.talent_v4beta1.types.ContactInfoUsage):
             The usage of the phone. For example, SCHOOL,
@@ -750,6 +757,7 @@ class Phone(proto.Message):
 
 class PersonalUri(proto.Message):
     r"""Resource that represents a valid URI for a personal use.
+
     Attributes:
         uri (str):
             The personal URI.
@@ -797,6 +805,7 @@ class AdditionalContactInfo(proto.Message):
 
 class EmploymentRecord(proto.Message):
     r"""Resource that represents an employment record of a candidate.
+
     Attributes:
         start_date (google.type.date_pb2.Date):
             Start date of the employment.
@@ -910,6 +919,7 @@ class EmploymentRecord(proto.Message):
 
 class EducationRecord(proto.Message):
     r"""Resource that represents an education record of a candidate.
+
     Attributes:
         start_date (google.type.date_pb2.Date):
             The start date of the education.
@@ -1210,6 +1220,7 @@ class Publication(proto.Message):
 
 class Patent(proto.Message):
     r"""Resource that represents the patent acquired by a candidate.
+
     Attributes:
         display_name (str):
             Name of the patent.

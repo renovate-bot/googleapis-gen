@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AdGroupCriterionApprovalStatusEnum(proto.Message):
     r"""Container for enum describing possible AdGroupCriterion
     approval statuses.
-        """
+
+    """
     class AdGroupCriterionApprovalStatus(proto.Enum):
         r"""Enumerates AdGroupCriterion approval statuses."""
         UNSPECIFIED = 0

@@ -42,6 +42,7 @@ __protobuf__ = proto.module(
 
 class FindMostStableBuildRequest(proto.Message):
     r"""Request message for finding the most stable build.
+
     Attributes:
         build_target (str):
             Required. The full resource name of the build
@@ -57,6 +58,7 @@ class FindMostStableBuildRequest(proto.Message):
 
 class FindMostStableBuildResponse(proto.Message):
     r"""Response message for finding the most stable build.
+
     Attributes:
         build (google.chromeos.moblab_v1beta1.types.Build):
             The most stable build.
@@ -71,6 +73,7 @@ class FindMostStableBuildResponse(proto.Message):
 
 class ListBuildTargetsRequest(proto.Message):
     r"""Request message for listing build targets.
+
     Attributes:
         page_size (int):
             Optional. The number of build targets to
@@ -93,6 +96,7 @@ class ListBuildTargetsRequest(proto.Message):
 
 class ListBuildTargetsResponse(proto.Message):
     r"""Response message for listing build targets.
+
     Attributes:
         build_targets (Sequence[google.chromeos.moblab_v1beta1.types.BuildTarget]):
             The list of build targets.
@@ -125,6 +129,7 @@ class ListBuildTargetsResponse(proto.Message):
 
 class ListModelsRequest(proto.Message):
     r"""Request message for listing models.
+
     Attributes:
         parent (str):
             Required. The full resource name of build
@@ -154,6 +159,7 @@ class ListModelsRequest(proto.Message):
 
 class ListModelsResponse(proto.Message):
     r"""Response message for listing models.
+
     Attributes:
         models (Sequence[google.chromeos.moblab_v1beta1.types.Model]):
             The list of models.
@@ -186,6 +192,7 @@ class ListModelsResponse(proto.Message):
 
 class ListBuildsRequest(proto.Message):
     r"""Request message for listing builds.
+
     Attributes:
         parent (str):
             Required. The full resource name of the
@@ -247,6 +254,7 @@ class ListBuildsRequest(proto.Message):
 
 class ListBuildsResponse(proto.Message):
     r"""Response message for listing builds.
+
     Attributes:
         builds (Sequence[google.chromeos.moblab_v1beta1.types.Build]):
             The list of builds.
@@ -279,6 +287,7 @@ class ListBuildsResponse(proto.Message):
 
 class CheckBuildStageStatusRequest(proto.Message):
     r"""Request message for checking if the build artifact is staged.
+
     Attributes:
         name (str):
             Required. The full resource name of the build
@@ -336,6 +345,7 @@ class CheckBuildStageStatusResponse(proto.Message):
 
 class StageBuildRequest(proto.Message):
     r"""Request message for staging a build artifact.
+
     Attributes:
         name (str):
             Required. The full resource name of the build
@@ -361,6 +371,7 @@ class StageBuildRequest(proto.Message):
 
 class StageBuildResponse(proto.Message):
     r"""Response message for staging a build artifact.
+
     Attributes:
         staged_build_artifact (google.chromeos.moblab_v1beta1.types.BuildArtifact):
             The staged build in the destination bucket.
@@ -375,6 +386,7 @@ class StageBuildResponse(proto.Message):
 
 class StageBuildMetadata(proto.Message):
     r"""Metadata message for staging a build artifact.
+
     Attributes:
         progress_percent (float):
             Approximate percentage of progress, e.g. "50"

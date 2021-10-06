@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class RegisterDebuggeeRequest(proto.Message):
     r"""Request to register a debuggee.
+
     Attributes:
         debuggee (google.cloud.debugger_v2.types.Debuggee):
             Required. Debuggee information to register. The fields
@@ -49,6 +50,7 @@ class RegisterDebuggeeRequest(proto.Message):
 
 class RegisterDebuggeeResponse(proto.Message):
     r"""Response for registering a debuggee.
+
     Attributes:
         debuggee (google.cloud.debugger_v2.types.Debuggee):
             Debuggee resource. The field ``id`` is guaranteed to be set
@@ -68,6 +70,7 @@ class RegisterDebuggeeResponse(proto.Message):
 
 class ListActiveBreakpointsRequest(proto.Message):
     r"""Request to list active breakpoints.
+
     Attributes:
         debuggee_id (str):
             Required. Identifies the debuggee.
@@ -104,6 +107,7 @@ class ListActiveBreakpointsRequest(proto.Message):
 
 class ListActiveBreakpointsResponse(proto.Message):
     r"""Response for listing active breakpoints.
+
     Attributes:
         breakpoints (Sequence[google.cloud.debugger_v2.types.Breakpoint]):
             List of all active breakpoints. The fields ``id`` and
@@ -136,6 +140,7 @@ class ListActiveBreakpointsResponse(proto.Message):
 
 class UpdateActiveBreakpointRequest(proto.Message):
     r"""Request to update an active breakpoint.
+
     Attributes:
         debuggee_id (str):
             Required. Identifies the debuggee being
@@ -160,7 +165,8 @@ class UpdateActiveBreakpointRequest(proto.Message):
 class UpdateActiveBreakpointResponse(proto.Message):
     r"""Response for updating an active breakpoint.
     The message is defined to allow future extensions.
-        """
+
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

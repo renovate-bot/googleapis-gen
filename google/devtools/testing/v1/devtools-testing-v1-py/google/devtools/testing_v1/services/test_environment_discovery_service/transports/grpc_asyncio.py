@@ -291,6 +291,9 @@ class TestEnvironmentDiscoveryServiceGrpcAsyncIOTransport(TestEnvironmentDiscove
             )
         return self._stubs['get_test_environment_catalog']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TestEnvironmentDiscoveryServiceGrpcAsyncIOTransport',

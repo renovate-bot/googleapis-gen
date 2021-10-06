@@ -466,6 +466,8 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
             )
         return self._stubs['run_job']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'CloudSchedulerGrpcTransport',

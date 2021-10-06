@@ -411,6 +411,9 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
             )
         return self._stubs['list_messages']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ConversationsGrpcAsyncIOTransport',

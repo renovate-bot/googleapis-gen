@@ -324,6 +324,7 @@ class Job(proto.Message):
 
     class ApplicationInfo(proto.Message):
         r"""Application related details of a job posting.
+
         Attributes:
             emails (Sequence[str]):
                 Use this field to specify email address(es)
@@ -362,6 +363,7 @@ class Job(proto.Message):
 
     class DerivedInfo(proto.Message):
         r"""Derived details about the job posting.
+
         Attributes:
             locations (Sequence[google.cloud.talent_v4beta1.types.Location]):
                 Structured locations of the job, resolved from
@@ -390,6 +392,7 @@ class Job(proto.Message):
 
     class ProcessingOptions(proto.Message):
         r"""Options for job processing.
+
         Attributes:
             disable_street_address_resolution (bool):
                 If set to ``true``, the service does not attempt to resolve

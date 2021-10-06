@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AdGroupAdRotationModeEnum(proto.Message):
     r"""Container for enum describing possible ad rotation modes of
     ads within an ad group.
-        """
+
+    """
     class AdGroupAdRotationMode(proto.Enum):
         r"""The possible ad rotation modes of an ad group."""
         UNSPECIFIED = 0

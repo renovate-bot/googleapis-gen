@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SharedSetErrorEnum(proto.Message):
-    r"""Container for enum describing possible shared set errors.    """
+    r"""Container for enum describing possible shared set errors.
+    """
     class SharedSetError(proto.Enum):
         r"""Enum describing possible shared set errors."""
         UNSPECIFIED = 0

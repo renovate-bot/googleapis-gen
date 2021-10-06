@@ -411,6 +411,9 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcAsyncIOTransport(RecaptchaEnterpriseS
             )
         return self._stubs['delete_key']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'RecaptchaEnterpriseServiceV1Beta1GrpcAsyncIOTransport',

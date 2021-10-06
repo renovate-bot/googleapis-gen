@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CustomerClientLink(proto.Message):
     r"""Represents customer client link relationship.
+
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. CustomerClientLink resource

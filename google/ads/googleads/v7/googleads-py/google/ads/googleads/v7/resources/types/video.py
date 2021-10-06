@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class Video(proto.Message):
     r"""A video.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the video. Video resource

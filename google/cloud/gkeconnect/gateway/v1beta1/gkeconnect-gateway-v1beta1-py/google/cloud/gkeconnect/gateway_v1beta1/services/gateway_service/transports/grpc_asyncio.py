@@ -364,6 +364,9 @@ class GatewayServiceGrpcAsyncIOTransport(GatewayServiceTransport):
             )
         return self._stubs['patch_resource']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'GatewayServiceGrpcAsyncIOTransport',

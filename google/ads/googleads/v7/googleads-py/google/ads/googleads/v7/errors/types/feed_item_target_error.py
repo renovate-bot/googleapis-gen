@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemTargetErrorEnum(proto.Message):
     r"""Container for enum describing possible feed item target
     errors.
-        """
+
+    """
     class FeedItemTargetError(proto.Enum):
         r"""Enum describing possible feed item target errors."""
         UNSPECIFIED = 0

@@ -147,6 +147,7 @@ class ExtensionFeedItemOperation(proto.Message):
 
 class MutateExtensionFeedItemsResponse(proto.Message):
     r"""Response message for an extension feed item mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -172,6 +173,7 @@ class MutateExtensionFeedItemsResponse(proto.Message):
 
 class MutateExtensionFeedItemResult(proto.Message):
     r"""The result for the extension feed item mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

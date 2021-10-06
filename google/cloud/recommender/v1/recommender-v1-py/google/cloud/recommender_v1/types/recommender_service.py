@@ -38,6 +38,7 @@ __protobuf__ = proto.module(
 
 class ListInsightsRequest(proto.Message):
     r"""Request for the ``ListInsights`` method.
+
     Attributes:
         parent (str):
             Required. The container resource on which to execute the
@@ -88,6 +89,7 @@ class ListInsightsRequest(proto.Message):
 
 class ListInsightsResponse(proto.Message):
     r"""Response to the ``ListInsights`` method.
+
     Attributes:
         insights (Sequence[google.cloud.recommender_v1.types.Insight]):
             The set of insights for the ``parent`` resource.
@@ -114,6 +116,7 @@ class ListInsightsResponse(proto.Message):
 
 class GetInsightRequest(proto.Message):
     r"""Request to the ``GetInsight`` method.
+
     Attributes:
         name (str):
             Required. Name of the insight.
@@ -127,6 +130,7 @@ class GetInsightRequest(proto.Message):
 
 class MarkInsightAcceptedRequest(proto.Message):
     r"""Request for the ``MarkInsightAccepted`` method.
+
     Attributes:
         name (str):
             Required. Name of the insight.
@@ -155,6 +159,7 @@ class MarkInsightAcceptedRequest(proto.Message):
 
 class ListRecommendationsRequest(proto.Message):
     r"""Request for the ``ListRecommendations`` method.
+
     Attributes:
         parent (str):
             Required. The container resource on which to execute the
@@ -205,6 +210,7 @@ class ListRecommendationsRequest(proto.Message):
 
 class ListRecommendationsResponse(proto.Message):
     r"""Response to the ``ListRecommendations`` method.
+
     Attributes:
         recommendations (Sequence[google.cloud.recommender_v1.types.Recommendation]):
             The set of recommendations for the ``parent`` resource.
@@ -231,6 +237,7 @@ class ListRecommendationsResponse(proto.Message):
 
 class GetRecommendationRequest(proto.Message):
     r"""Request to the ``GetRecommendation`` method.
+
     Attributes:
         name (str):
             Required. Name of the recommendation.
@@ -244,6 +251,7 @@ class GetRecommendationRequest(proto.Message):
 
 class MarkRecommendationClaimedRequest(proto.Message):
     r"""Request for the ``MarkRecommendationClaimed`` Method.
+
     Attributes:
         name (str):
             Required. Name of the recommendation.
@@ -274,6 +282,7 @@ class MarkRecommendationClaimedRequest(proto.Message):
 
 class MarkRecommendationSucceededRequest(proto.Message):
     r"""Request for the ``MarkRecommendationSucceeded`` Method.
+
     Attributes:
         name (str):
             Required. Name of the recommendation.
@@ -304,6 +313,7 @@ class MarkRecommendationSucceededRequest(proto.Message):
 
 class MarkRecommendationFailedRequest(proto.Message):
     r"""Request for the ``MarkRecommendationFailed`` Method.
+
     Attributes:
         name (str):
             Required. Name of the recommendation.

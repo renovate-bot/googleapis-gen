@@ -111,6 +111,7 @@ class ApiConfigHandler(proto.Message):
 
 class ErrorHandler(proto.Message):
     r"""Custom static error page to be served when an error occurs.
+
     Attributes:
         error_code (google.cloud.appengine_admin_v1.types.ErrorHandler.ErrorCode):
             Error condition this handler applies to.
@@ -324,6 +325,7 @@ class ScriptHandler(proto.Message):
 
 class ApiEndpointHandler(proto.Message):
     r"""Uses Google Cloud Endpoints to handle requests.
+
     Attributes:
         script_path (str):
             Path to the script from the application root

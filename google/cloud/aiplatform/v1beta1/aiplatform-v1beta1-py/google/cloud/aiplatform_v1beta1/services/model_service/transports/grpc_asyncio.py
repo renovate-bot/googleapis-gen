@@ -512,6 +512,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
             )
         return self._stubs['list_model_evaluation_slices']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ModelServiceGrpcAsyncIOTransport',

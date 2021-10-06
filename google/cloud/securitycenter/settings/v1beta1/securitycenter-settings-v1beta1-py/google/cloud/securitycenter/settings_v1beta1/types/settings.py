@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class Settings(proto.Message):
     r"""Common configuration settings for all of Security Center.
+
     Attributes:
         name (str):
             The relative resource name of the settings resource.

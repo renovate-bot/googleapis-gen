@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class CampaignAsset(proto.Message):
     r"""A link between a Campaign and an Asset.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign asset.

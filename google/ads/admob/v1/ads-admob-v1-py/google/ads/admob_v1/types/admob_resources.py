@@ -229,6 +229,7 @@ class NetworkReportSpec(proto.Message):
 
     class SortCondition(proto.Message):
         r"""Sorting direction to be applied on a dimension or a metric.
+
         Attributes:
             dimension (google.ads.admob_v1.types.NetworkReportSpec.Dimension):
                 Sort by the specified dimension.
@@ -441,6 +442,7 @@ class MediationReportSpec(proto.Message):
 
     class SortCondition(proto.Message):
         r"""Sorting direction to be applied on a dimension or a metric.
+
         Attributes:
             dimension (google.ads.admob_v1.types.MediationReportSpec.Dimension):
                 Sort by the specified dimension.
@@ -510,6 +512,7 @@ class MediationReportSpec(proto.Message):
 
 class ReportRow(proto.Message):
     r"""A row of the returning report.
+
     Attributes:
         dimension_values (Sequence[google.ads.admob_v1.types.ReportRow.DimensionValuesEntry]):
             Map of dimension values in a row, with keys
@@ -523,6 +526,7 @@ class ReportRow(proto.Message):
 
     class DimensionValue(proto.Message):
         r"""Representation of a dimension value.
+
         Attributes:
             value (str):
                 Dimension value in the format specified in
@@ -544,6 +548,7 @@ class ReportRow(proto.Message):
 
     class MetricValue(proto.Message):
         r"""Representation of a metric value.
+
         Attributes:
             integer_value (int):
                 Metric integer value.
@@ -590,6 +595,7 @@ class ReportRow(proto.Message):
 
 class ReportWarning(proto.Message):
     r"""Warnings associated with generation of the report.
+
     Attributes:
         type_ (google.ads.admob_v1.types.ReportWarning.Type):
             Type of the warning.
@@ -733,6 +739,7 @@ class LocalizationSettings(proto.Message):
 
 class StringList(proto.Message):
     r"""List of string values.
+
     Attributes:
         values (Sequence[str]):
             The string values.

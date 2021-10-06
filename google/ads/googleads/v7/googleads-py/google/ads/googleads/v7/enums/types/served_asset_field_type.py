@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ServedAssetFieldTypeEnum(proto.Message):
-    r"""Container for enum describing possible asset field types.    """
+    r"""Container for enum describing possible asset field types.
+    """
     class ServedAssetFieldType(proto.Enum):
         r"""The possible asset field types."""
         UNSPECIFIED = 0

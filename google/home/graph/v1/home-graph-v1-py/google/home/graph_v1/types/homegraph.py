@@ -74,7 +74,8 @@ class RequestSyncDevicesResponse(proto.Message):
 
     Intentionally empty upon success. An HTTP response code is returned
     with more details upon failure.
-        """
+
+    """
 
 
 class ReportStateAndNotificationRequest(proto.Message):
@@ -187,6 +188,7 @@ class StateAndNotificationPayload(proto.Message):
 
 class ReportStateAndNotificationDevice(proto.Message):
     r"""The states and notifications specific to a device.
+
     Attributes:
         states (google.protobuf.struct_pb2.Struct):
             States of devices to update. See the **Device STATES**
@@ -280,6 +282,7 @@ class QueryRequestInput(proto.Message):
 
 class QueryRequestPayload(proto.Message):
     r"""Payload containing device IDs.
+
     Attributes:
         devices (Sequence[google.home.graph_v1.types.AgentDeviceId]):
             Third-party device IDs for which to get the
@@ -295,6 +298,7 @@ class QueryRequestPayload(proto.Message):
 
 class AgentDeviceId(proto.Message):
     r"""Third-party device ID for one device.
+
     Attributes:
         id (str):
             Third-party device ID.
@@ -361,6 +365,7 @@ class QueryResponse(proto.Message):
 
 class QueryResponsePayload(proto.Message):
     r"""Payload containing device states information.
+
     Attributes:
         devices (Sequence[google.home.graph_v1.types.QueryResponsePayload.DevicesEntry]):
             States of the devices. Map of third-party
@@ -460,6 +465,7 @@ class SyncResponse(proto.Message):
 
 class SyncResponsePayload(proto.Message):
     r"""Payload containing device information.
+
     Attributes:
         agent_user_id (str):
             Third-party user ID

@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class CustomInterest(proto.Message):
     r"""A custom interest. This is a list of users by interest.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the custom interest. Custom

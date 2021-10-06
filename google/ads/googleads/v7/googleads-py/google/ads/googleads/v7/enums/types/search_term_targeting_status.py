@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class SearchTermTargetingStatusEnum(proto.Message):
     r"""Container for enum indicating whether a search term is one of
     your targeted or excluded keywords.
-        """
+
+    """
     class SearchTermTargetingStatus(proto.Enum):
         r"""Indicates whether the search term is one of your targeted or
         excluded keywords.

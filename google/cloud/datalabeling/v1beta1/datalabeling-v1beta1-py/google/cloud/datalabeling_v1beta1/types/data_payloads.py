@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class ImagePayload(proto.Message):
     r"""Container of information about an image.
+
     Attributes:
         mime_type (str):
             Image format.
@@ -63,6 +64,7 @@ class ImagePayload(proto.Message):
 
 class TextPayload(proto.Message):
     r"""Container of information about a piece of text.
+
     Attributes:
         text_content (str):
             Text content.
@@ -76,6 +78,7 @@ class TextPayload(proto.Message):
 
 class VideoThumbnail(proto.Message):
     r"""Container of information of a video thumbnail.
+
     Attributes:
         thumbnail (bytes):
             A byte string of the video frame.
@@ -98,6 +101,7 @@ class VideoThumbnail(proto.Message):
 
 class VideoPayload(proto.Message):
     r"""Container of information of a video.
+
     Attributes:
         mime_type (str):
             Video format.

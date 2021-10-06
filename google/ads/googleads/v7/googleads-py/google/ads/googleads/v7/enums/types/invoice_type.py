@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class InvoiceTypeEnum(proto.Message):
-    r"""Container for enum describing the type of invoices.    """
+    r"""Container for enum describing the type of invoices.
+    """
     class InvoiceType(proto.Enum):
         r"""The possible type of invoices."""
         UNSPECIFIED = 0

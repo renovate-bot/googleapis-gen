@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListDateRuleItemOperatorEnum(proto.Message):
-    r"""Supported rule operator for date type.    """
+    r"""Supported rule operator for date type.
+    """
     class UserListDateRuleItemOperator(proto.Enum):
         r"""Enum describing possible user list date rule item operators."""
         UNSPECIFIED = 0

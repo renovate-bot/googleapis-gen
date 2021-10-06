@@ -332,6 +332,8 @@ class SqlSslCertsServiceGrpcTransport(SqlSslCertsServiceTransport):
             )
         return self._stubs['list']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SqlSslCertsServiceGrpcTransport',

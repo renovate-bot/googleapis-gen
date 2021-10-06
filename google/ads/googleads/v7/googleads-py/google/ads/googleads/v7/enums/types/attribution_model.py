@@ -29,7 +29,8 @@ class AttributionModelEnum(proto.Message):
     r"""Container for enum representing the attribution model that
     describes how to distribute credit for a particular conversion
     across potentially many prior interactions.
-        """
+
+    """
     class AttributionModel(proto.Enum):
         r"""The attribution model that describes how to distribute credit
         for a particular conversion across potentially many prior

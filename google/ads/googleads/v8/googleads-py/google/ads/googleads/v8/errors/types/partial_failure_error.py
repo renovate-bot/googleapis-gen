@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PartialFailureErrorEnum(proto.Message):
     r"""Container for enum describing possible partial failure
     errors.
-        """
+
+    """
     class PartialFailureError(proto.Enum):
         r"""Enum describing possible partial failure errors."""
         UNSPECIFIED = 0

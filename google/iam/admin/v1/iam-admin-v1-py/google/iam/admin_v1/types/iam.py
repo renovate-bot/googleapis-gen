@@ -214,6 +214,7 @@ class ServiceAccount(proto.Message):
 
 class CreateServiceAccountRequest(proto.Message):
     r"""The service account create request.
+
     Attributes:
         name (str):
             Required. The resource name of the project associated with
@@ -247,6 +248,7 @@ class CreateServiceAccountRequest(proto.Message):
 
 class ListServiceAccountsRequest(proto.Message):
     r"""The service account list request.
+
     Attributes:
         name (str):
             Required. The resource name of the project associated with
@@ -280,6 +282,7 @@ class ListServiceAccountsRequest(proto.Message):
 
 class ListServiceAccountsResponse(proto.Message):
     r"""The service account list response.
+
     Attributes:
         accounts (Sequence[google.iam.admin_v1.types.ServiceAccount]):
             The list of matching service accounts.
@@ -306,6 +309,7 @@ class ListServiceAccountsResponse(proto.Message):
 
 class GetServiceAccountRequest(proto.Message):
     r"""The service account get request.
+
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -325,6 +329,7 @@ class GetServiceAccountRequest(proto.Message):
 
 class DeleteServiceAccountRequest(proto.Message):
     r"""The service account delete request.
+
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -374,6 +379,7 @@ class PatchServiceAccountRequest(proto.Message):
 
 class UndeleteServiceAccountRequest(proto.Message):
     r"""The service account undelete request.
+
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -391,6 +397,7 @@ class UndeleteServiceAccountRequest(proto.Message):
 
 class UndeleteServiceAccountResponse(proto.Message):
     r"""
+
     Attributes:
         restored_account (google.iam.admin_v1.types.ServiceAccount):
             Metadata for the restored service account.
@@ -405,6 +412,7 @@ class UndeleteServiceAccountResponse(proto.Message):
 
 class EnableServiceAccountRequest(proto.Message):
     r"""The service account enable request.
+
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -423,6 +431,7 @@ class EnableServiceAccountRequest(proto.Message):
 
 class DisableServiceAccountRequest(proto.Message):
     r"""The service account disable request.
+
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -441,6 +450,7 @@ class DisableServiceAccountRequest(proto.Message):
 
 class ListServiceAccountKeysRequest(proto.Message):
     r"""The service account keys list request.
+
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -478,6 +488,7 @@ class ListServiceAccountKeysRequest(proto.Message):
 
 class ListServiceAccountKeysResponse(proto.Message):
     r"""The service account keys list response.
+
     Attributes:
         keys (Sequence[google.iam.admin_v1.types.ServiceAccountKey]):
             The public keys for the service account.
@@ -492,6 +503,7 @@ class ListServiceAccountKeysResponse(proto.Message):
 
 class GetServiceAccountKeyRequest(proto.Message):
     r"""The service account key get by id request.
+
     Attributes:
         name (str):
             Required. The resource name of the service account key in
@@ -633,6 +645,7 @@ class ServiceAccountKey(proto.Message):
 
 class CreateServiceAccountKeyRequest(proto.Message):
     r"""The service account key create request.
+
     Attributes:
         name (str):
             Required. The resource name of the service account in the
@@ -670,6 +683,7 @@ class CreateServiceAccountKeyRequest(proto.Message):
 
 class UploadServiceAccountKeyRequest(proto.Message):
     r"""The service account key upload request.
+
     Attributes:
         name (str):
             The resource name of the service account in the following
@@ -697,6 +711,7 @@ class UploadServiceAccountKeyRequest(proto.Message):
 
 class DeleteServiceAccountKeyRequest(proto.Message):
     r"""The service account key delete request.
+
     Attributes:
         name (str):
             Required. The resource name of the service account key in
@@ -856,6 +871,7 @@ class SignJwtResponse(proto.Message):
 
 class Role(proto.Message):
     r"""A role in the Identity and Access Management API.
+
     Attributes:
         name (str):
             The name of the role.
@@ -933,6 +949,7 @@ class Role(proto.Message):
 
 class QueryGrantableRolesRequest(proto.Message):
     r"""The grantable role query request.
+
     Attributes:
         full_resource_name (str):
             Required. The full resource name to query from the list of
@@ -974,6 +991,7 @@ class QueryGrantableRolesRequest(proto.Message):
 
 class QueryGrantableRolesResponse(proto.Message):
     r"""The grantable role query response.
+
     Attributes:
         roles (Sequence[google.iam.admin_v1.types.Role]):
             The list of matching roles.
@@ -999,6 +1017,7 @@ class QueryGrantableRolesResponse(proto.Message):
 
 class ListRolesRequest(proto.Message):
     r"""The request to get all roles defined under a resource.
+
     Attributes:
         parent (str):
             The ``parent`` parameter's value depends on the target
@@ -1074,6 +1093,7 @@ class ListRolesRequest(proto.Message):
 
 class ListRolesResponse(proto.Message):
     r"""The response containing the roles defined under a resource.
+
     Attributes:
         roles (Sequence[google.iam.admin_v1.types.Role]):
             The Roles defined on this resource.
@@ -1099,6 +1119,7 @@ class ListRolesResponse(proto.Message):
 
 class GetRoleRequest(proto.Message):
     r"""The request to get the definition of an existing role.
+
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1143,6 +1164,7 @@ class GetRoleRequest(proto.Message):
 
 class CreateRoleRequest(proto.Message):
     r"""The request to create a new role.
+
     Attributes:
         parent (str):
             The ``parent`` parameter's value depends on the target
@@ -1195,6 +1217,7 @@ class CreateRoleRequest(proto.Message):
 
 class UpdateRoleRequest(proto.Message):
     r"""The request to update a role.
+
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1246,6 +1269,7 @@ class UpdateRoleRequest(proto.Message):
 
 class DeleteRoleRequest(proto.Message):
     r"""The request to delete an existing role.
+
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1289,6 +1313,7 @@ class DeleteRoleRequest(proto.Message):
 
 class UndeleteRoleRequest(proto.Message):
     r"""The request to undelete an existing role.
+
     Attributes:
         name (str):
             The ``name`` parameter's value depends on the target
@@ -1332,6 +1357,7 @@ class UndeleteRoleRequest(proto.Message):
 
 class Permission(proto.Message):
     r"""A permission which can be included by a role.
+
     Attributes:
         name (str):
             The name of this Permission.
@@ -1500,6 +1526,7 @@ class QueryAuditableServicesResponse(proto.Message):
 
     class AuditableService(proto.Message):
         r"""Contains information about an auditable service.
+
         Attributes:
             name (str):
                 Public name of the service.
@@ -1521,6 +1548,7 @@ class QueryAuditableServicesResponse(proto.Message):
 
 class LintPolicyRequest(proto.Message):
     r"""The request to lint a Cloud IAM policy object.
+
     Attributes:
         full_resource_name (str):
             The full resource name of the policy this lint request is
@@ -1553,6 +1581,7 @@ class LintPolicyRequest(proto.Message):
 
 class LintResult(proto.Message):
     r"""Structured response of a single validation unit.
+
     Attributes:
         level (google.iam.admin_v1.types.LintResult.Level):
             The validation unit level.

@@ -122,6 +122,7 @@ __protobuf__ = proto.module(
 
 class NodeConfig(proto.Message):
     r"""Parameters that describe the nodes in a cluster.
+
     Attributes:
         machine_type (str):
             The name of a Google Compute Engine `machine
@@ -380,6 +381,7 @@ class NodeConfig(proto.Message):
 
 class ShieldedInstanceConfig(proto.Message):
     r"""A set of Shielded Instance options.
+
     Attributes:
         enable_secure_boot (bool):
             Defines whether the instance has Secure Boot
@@ -588,6 +590,7 @@ class MasterAuth(proto.Message):
 
 class ClientCertificateConfig(proto.Message):
     r"""Configuration for client certificates on the cluster.
+
     Attributes:
         issue_client_certificate (bool):
             Issue a client certificate.
@@ -720,6 +723,7 @@ class HorizontalPodAutoscaling(proto.Message):
 
 class KubernetesDashboard(proto.Message):
     r"""Configuration for the Kubernetes Dashboard.
+
     Attributes:
         disabled (bool):
             Whether the Kubernetes Dashboard is enabled
@@ -751,6 +755,7 @@ class NetworkPolicyConfig(proto.Message):
 
 class DnsCacheConfig(proto.Message):
     r"""Configuration for NodeLocal DNSCache
+
     Attributes:
         enabled (bool):
             Whether NodeLocal DNSCache is enabled for
@@ -765,6 +770,7 @@ class DnsCacheConfig(proto.Message):
 
 class PrivateClusterMasterGlobalAccessConfig(proto.Message):
     r"""Configuration for controlling master global access settings.
+
     Attributes:
         enabled (bool):
             Whenever master is accessible globally or
@@ -779,6 +785,7 @@ class PrivateClusterMasterGlobalAccessConfig(proto.Message):
 
 class PrivateClusterConfig(proto.Message):
     r"""Configuration options for private clusters.
+
     Attributes:
         enable_private_nodes (bool):
             Whether nodes have internal IP addresses
@@ -865,6 +872,7 @@ class AuthenticatorGroupsConfig(proto.Message):
 
 class CloudRunConfig(proto.Message):
     r"""Configuration options for the Cloud Run feature.
+
     Attributes:
         disabled (bool):
             Whether Cloud Run addon is enabled for this
@@ -892,6 +900,7 @@ class CloudRunConfig(proto.Message):
 
 class ConfigConnectorConfig(proto.Message):
     r"""Configuration options for the Config Connector add-on.
+
     Attributes:
         enabled (bool):
             Whether Cloud Connector is enabled for this
@@ -922,6 +931,7 @@ class MasterAuthorizedNetworksConfig(proto.Message):
 
     class CidrBlock(proto.Message):
         r"""CidrBlock contains an optional name and one CIDR block.
+
         Attributes:
             display_name (str):
                 display_name is an optional field for users to identify CIDR
@@ -1000,6 +1010,7 @@ class NetworkPolicy(proto.Message):
 
 class BinaryAuthorization(proto.Message):
     r"""Configuration for Binary Authorization.
+
     Attributes:
         enabled (bool):
             Enable Binary Authorization for this cluster.
@@ -1189,6 +1200,7 @@ class IPAllocationPolicy(proto.Message):
 
 class Cluster(proto.Message):
     r"""A Google Kubernetes Engine cluster.
+
     Attributes:
         name (str):
             The name of this cluster. The name must be unique within
@@ -2062,6 +2074,7 @@ class Operation(proto.Message):
 
 class OperationProgress(proto.Message):
     r"""Information about operation (or operation stage) progress.
+
     Attributes:
         name (str):
             A non-parameterized string describing an
@@ -2081,6 +2094,7 @@ class OperationProgress(proto.Message):
 
     class Metric(proto.Message):
         r"""Progress metric is (string, int|float|string) pair.
+
         Attributes:
             name (str):
                 Required. Metric name, e.g., "nodes total",
@@ -2137,6 +2151,7 @@ class OperationProgress(proto.Message):
 
 class CreateClusterRequest(proto.Message):
     r"""CreateClusterRequest creates a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2178,6 +2193,7 @@ class CreateClusterRequest(proto.Message):
 
 class GetClusterRequest(proto.Message):
     r"""GetClusterRequest gets the settings of a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2220,6 +2236,7 @@ class GetClusterRequest(proto.Message):
 
 class UpdateClusterRequest(proto.Message):
     r"""UpdateClusterRequest updates the settings of a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2610,6 +2627,7 @@ class SetAddonsConfigRequest(proto.Message):
 
 class SetLocationsRequest(proto.Message):
     r"""SetLocationsRequest sets the locations of the cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2665,6 +2683,7 @@ class SetLocationsRequest(proto.Message):
 
 class UpdateMasterRequest(proto.Message):
     r"""UpdateMasterRequest updates the master of the cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2724,6 +2743,7 @@ class UpdateMasterRequest(proto.Message):
 
 class SetMasterAuthRequest(proto.Message):
     r"""SetMasterAuthRequest updates the admin password of a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2787,6 +2807,7 @@ class SetMasterAuthRequest(proto.Message):
 
 class DeleteClusterRequest(proto.Message):
     r"""DeleteClusterRequest deletes a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2829,6 +2850,7 @@ class DeleteClusterRequest(proto.Message):
 
 class ListClustersRequest(proto.Message):
     r"""ListClustersRequest lists clusters.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2863,6 +2885,7 @@ class ListClustersRequest(proto.Message):
 
 class ListClustersResponse(proto.Message):
     r"""ListClustersResponse is the result of ListClustersRequest.
+
     Attributes:
         clusters (Sequence[google.container_v1.types.Cluster]):
             A list of clusters in the project in the
@@ -2885,6 +2908,7 @@ class ListClustersResponse(proto.Message):
 
 class GetOperationRequest(proto.Message):
     r"""GetOperationRequest gets a single operation.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2927,6 +2951,7 @@ class GetOperationRequest(proto.Message):
 
 class ListOperationsRequest(proto.Message):
     r"""ListOperationsRequest lists operations.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -2962,6 +2987,7 @@ class ListOperationsRequest(proto.Message):
 
 class CancelOperationRequest(proto.Message):
     r"""CancelOperationRequest cancels a single operation.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -3029,6 +3055,7 @@ class ListOperationsResponse(proto.Message):
 
 class GetServerConfigRequest(proto.Message):
     r"""Gets the current Kubernetes Engine service configuration.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -3062,6 +3089,7 @@ class GetServerConfigRequest(proto.Message):
 
 class ServerConfig(proto.Message):
     r"""Kubernetes Engine service configuration.
+
     Attributes:
         default_cluster_version (str):
             Version of Kubernetes the service deploys by
@@ -3138,6 +3166,7 @@ class ServerConfig(proto.Message):
 
 class CreateNodePoolRequest(proto.Message):
     r"""CreateNodePoolRequest creates a node pool for a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -3187,6 +3216,7 @@ class CreateNodePoolRequest(proto.Message):
 
 class DeleteNodePoolRequest(proto.Message):
     r"""DeleteNodePoolRequest deletes a node pool for a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -3237,6 +3267,7 @@ class DeleteNodePoolRequest(proto.Message):
 
 class ListNodePoolsRequest(proto.Message):
     r"""ListNodePoolsRequest lists the node pool(s) for a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -3279,6 +3310,7 @@ class ListNodePoolsRequest(proto.Message):
 
 class GetNodePoolRequest(proto.Message):
     r"""GetNodePoolRequest retrieves a node pool for a cluster.
+
     Attributes:
         project_id (str):
             Deprecated. The Google Developers Console `project ID or
@@ -3652,6 +3684,7 @@ class MaintenanceWindow(proto.Message):
 
 class TimeWindow(proto.Message):
     r"""Represents an arbitrary window of time.
+
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             The time that the window first starts.
@@ -3674,6 +3707,7 @@ class TimeWindow(proto.Message):
 
 class RecurringTimeWindow(proto.Message):
     r"""Represents an arbitrary window of time that recurs.
+
     Attributes:
         window (google.container_v1.types.TimeWindow):
             The window of the first recurrence.
@@ -3731,6 +3765,7 @@ class RecurringTimeWindow(proto.Message):
 
 class DailyMaintenanceWindow(proto.Message):
     r"""Time window specified for daily maintenance operations.
+
     Attributes:
         start_time (str):
             Time within the maintenance window to start the maintenance
@@ -3929,6 +3964,7 @@ class RollbackNodePoolUpgradeRequest(proto.Message):
 
 class ListNodePoolsResponse(proto.Message):
     r"""ListNodePoolsResponse is the result of ListNodePoolsRequest.
+
     Attributes:
         node_pools (Sequence[google.container_v1.types.NodePool]):
             A list of node pools for a cluster.
@@ -4360,6 +4396,7 @@ class CompleteIPRotationRequest(proto.Message):
 
 class AcceleratorConfig(proto.Message):
     r"""AcceleratorConfig represents a Hardware Accelerator request.
+
     Attributes:
         accelerator_count (int):
             The number of the accelerator cards exposed
@@ -4673,6 +4710,7 @@ class GetJSONWebKeysRequest(proto.Message):
 
 class Jwk(proto.Message):
     r"""Jwk is a JSON Web Key as specified in RFC 7517
+
     Attributes:
         kty (str):
             Key Type.
@@ -4793,6 +4831,7 @@ class IntraNodeVisibilityConfig(proto.Message):
 
 class MaxPodsConstraint(proto.Message):
     r"""Constraints applied to pods.
+
     Attributes:
         max_pods_per_node (int):
             Constraint enforced on the max num of pods
@@ -4823,6 +4862,7 @@ class WorkloadIdentityConfig(proto.Message):
 
 class DatabaseEncryption(proto.Message):
     r"""Configuration of etcd encryption.
+
     Attributes:
         state (google.container_v1.types.DatabaseEncryption.State):
             Denotes the state of etcd encryption.
@@ -4927,6 +4967,7 @@ class ListUsableSubnetworksResponse(proto.Message):
 
 class UsableSubnetworkSecondaryRange(proto.Message):
     r"""Secondary IP range of a usable subnetwork.
+
     Attributes:
         range_name (str):
             The name associated with this subnetwork
@@ -5013,6 +5054,7 @@ class UsableSubnetwork(proto.Message):
 
 class ResourceUsageExportConfig(proto.Message):
     r"""Configuration for exporting cluster resource usages.
+
     Attributes:
         bigquery_destination (google.container_v1.types.ResourceUsageExportConfig.BigQueryDestination):
             Configuration to use BigQuery as usage export
@@ -5043,6 +5085,7 @@ class ResourceUsageExportConfig(proto.Message):
 
     class ConsumptionMeteringConfig(proto.Message):
         r"""Parameters for controlling consumption metering.
+
         Attributes:
             enabled (bool):
                 Whether to enable consumption metering for
@@ -5105,6 +5148,7 @@ class DefaultSnatStatus(proto.Message):
 
 class ShieldedNodes(proto.Message):
     r"""Configuration of Shielded Nodes feature.
+
     Attributes:
         enabled (bool):
             Whether Shielded Nodes features are enabled

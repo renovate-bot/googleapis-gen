@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomerFeedErrorEnum(proto.Message):
-    r"""Container for enum describing possible customer feed errors.    """
+    r"""Container for enum describing possible customer feed errors.
+    """
     class CustomerFeedError(proto.Enum):
         r"""Enum describing possible customer feed errors."""
         UNSPECIFIED = 0

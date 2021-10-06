@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class RegionCodeErrorEnum(proto.Message):
-    r"""Container for enum describing possible region code errors.    """
+    r"""Container for enum describing possible region code errors.
+    """
     class RegionCodeError(proto.Enum):
         r"""Enum describing possible region code errors."""
         UNSPECIFIED = 0

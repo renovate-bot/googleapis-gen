@@ -328,6 +328,8 @@ class ProfilerServiceGrpcTransport(ProfilerServiceTransport):
             )
         return self._stubs['update_profile']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ProfilerServiceGrpcTransport',

@@ -88,6 +88,7 @@ class OperationMetadata(proto.Message):
 
     class Step(proto.Message):
         r"""Represents the status of one operation step.
+
         Attributes:
             description (str):
                 The short description of the step.
@@ -127,6 +128,7 @@ class OperationMetadata(proto.Message):
 
 class Diagnostic(proto.Message):
     r"""Represents a diagnostic message (error or warning)
+
     Attributes:
         location (str):
             File name and line number of the error or
@@ -184,6 +186,7 @@ class ConfigSource(proto.Message):
 
 class ConfigFile(proto.Message):
     r"""Generic specification of a source configuration file
+
     Attributes:
         file_path (str):
             The file name of the configuration file (full
@@ -220,6 +223,7 @@ class ConfigFile(proto.Message):
 
 class ConfigRef(proto.Message):
     r"""Represents a service configuration with its name and id.
+
     Attributes:
         name (str):
             Resource name of a service config. It must
@@ -355,7 +359,8 @@ class Rollout(proto.Message):
         r"""Strategy used to delete a service. This strategy is a
         placeholder only used by the system generated rollout to delete
         a service.
-            """
+
+        """
 
     rollout_id = proto.Field(
         proto.STRING,

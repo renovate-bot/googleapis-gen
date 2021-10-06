@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ListingGroupTypeEnum(proto.Message):
-    r"""Container for enum describing the type of the listing group.    """
+    r"""Container for enum describing the type of the listing group.
+    """
     class ListingGroupType(proto.Enum):
         r"""The type of the listing group."""
         UNSPECIFIED = 0

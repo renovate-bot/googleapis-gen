@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CurrencyCodeErrorEnum(proto.Message):
-    r"""Container for enum describing possible currency code errors.    """
+    r"""Container for enum describing possible currency code errors.
+    """
     class CurrencyCodeError(proto.Enum):
         r"""Enum describing possible currency code errors."""
         UNSPECIFIED = 0

@@ -1156,6 +1156,9 @@ class IAMGrpcAsyncIOTransport(IAMTransport):
             )
         return self._stubs['lint_policy']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'IAMGrpcAsyncIOTransport',

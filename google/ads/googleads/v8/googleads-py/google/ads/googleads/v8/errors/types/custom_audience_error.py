@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CustomAudienceErrorEnum(proto.Message):
     r"""Container for enum describing possible custom audience
     errors.
-        """
+
+    """
     class CustomAudienceError(proto.Enum):
         r"""Enum describing possible custom audience errors."""
         UNSPECIFIED = 0

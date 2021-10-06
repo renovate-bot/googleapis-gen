@@ -51,6 +51,7 @@ __protobuf__ = proto.module(
 
 class WorkflowTemplate(proto.Message):
     r"""A Dataproc workflow template resource.
+
     Attributes:
         id (str):
 
@@ -203,6 +204,7 @@ class WorkflowTemplatePlacement(proto.Message):
 
 class ManagedCluster(proto.Message):
     r"""Cluster that is managed by the workflow.
+
     Attributes:
         cluster_name (str):
             Required. The cluster name prefix. A unique
@@ -275,6 +277,7 @@ class ClusterSelector(proto.Message):
 
 class OrderedJob(proto.Message):
     r"""A job executed by the workflow.
+
     Attributes:
         step_id (str):
             Required. The step id. The id must be unique among all jobs
@@ -493,6 +496,7 @@ class TemplateParameter(proto.Message):
 
 class ParameterValidation(proto.Message):
     r"""Configuration for parameter validation.
+
     Attributes:
         regex (google.cloud.dataproc_v1.types.RegexValidation):
             Validation based on regular expressions.
@@ -516,6 +520,7 @@ class ParameterValidation(proto.Message):
 
 class RegexValidation(proto.Message):
     r"""Validation based on regular expressions.
+
     Attributes:
         regexes (Sequence[str]):
             Required. RE2 regular expressions used to
@@ -532,6 +537,7 @@ class RegexValidation(proto.Message):
 
 class ValueValidation(proto.Message):
     r"""Validation based on a list of allowed values.
+
     Attributes:
         values (Sequence[str]):
             Required. List of allowed values for the
@@ -546,6 +552,7 @@ class ValueValidation(proto.Message):
 
 class WorkflowMetadata(proto.Message):
     r"""A Dataproc workflow template resource.
+
     Attributes:
         template (str):
             Output only. The resource name of the workflow template as
@@ -673,6 +680,7 @@ class WorkflowMetadata(proto.Message):
 
 class ClusterOperation(proto.Message):
     r"""The cluster operation triggered by a workflow.
+
     Attributes:
         operation_id (str):
             Output only. The id of the cluster operation.
@@ -698,6 +706,7 @@ class ClusterOperation(proto.Message):
 
 class WorkflowGraph(proto.Message):
     r"""The workflow graph.
+
     Attributes:
         nodes (Sequence[google.cloud.dataproc_v1.types.WorkflowNode]):
             Output only. The workflow nodes.
@@ -712,6 +721,7 @@ class WorkflowGraph(proto.Message):
 
 class WorkflowNode(proto.Message):
     r"""The workflow node.
+
     Attributes:
         step_id (str):
             Output only. The name of the node.
@@ -759,6 +769,7 @@ class WorkflowNode(proto.Message):
 
 class CreateWorkflowTemplateRequest(proto.Message):
     r"""A request to create a workflow template.
+
     Attributes:
         parent (str):
             Required. The resource name of the region or location, as
@@ -790,6 +801,7 @@ class CreateWorkflowTemplateRequest(proto.Message):
 
 class GetWorkflowTemplateRequest(proto.Message):
     r"""A request to fetch a workflow template.
+
     Attributes:
         name (str):
             Required. The resource name of the workflow template, as
@@ -822,6 +834,7 @@ class GetWorkflowTemplateRequest(proto.Message):
 
 class InstantiateWorkflowTemplateRequest(proto.Message):
     r"""A request to instantiate a workflow template.
+
     Attributes:
         name (str):
             Required. The resource name of the workflow template, as
@@ -882,6 +895,7 @@ class InstantiateWorkflowTemplateRequest(proto.Message):
 
 class InstantiateInlineWorkflowTemplateRequest(proto.Message):
     r"""A request to instantiate an inline workflow template.
+
     Attributes:
         parent (str):
             Required. The resource name of the region or location, as
@@ -930,6 +944,7 @@ class InstantiateInlineWorkflowTemplateRequest(proto.Message):
 
 class UpdateWorkflowTemplateRequest(proto.Message):
     r"""A request to update a workflow template.
+
     Attributes:
         template (google.cloud.dataproc_v1.types.WorkflowTemplate):
             Required. The updated workflow template.
@@ -947,6 +962,7 @@ class UpdateWorkflowTemplateRequest(proto.Message):
 
 class ListWorkflowTemplatesRequest(proto.Message):
     r"""A request to list workflow templates in a project.
+
     Attributes:
         parent (str):
             Required. The resource name of the region or location, as

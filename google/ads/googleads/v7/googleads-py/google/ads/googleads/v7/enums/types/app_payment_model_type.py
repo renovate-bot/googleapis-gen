@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AppPaymentModelTypeEnum(proto.Message):
-    r"""Represents a criterion for targeting paid apps.    """
+    r"""Represents a criterion for targeting paid apps.
+    """
     class AppPaymentModelType(proto.Enum):
         r"""Enum describing possible app payment models."""
         UNSPECIFIED = 0

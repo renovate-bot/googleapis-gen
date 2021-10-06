@@ -46,6 +46,7 @@ class ContentType(proto.Enum):
 
 class ExportAssetsRequest(proto.Message):
     r"""Export asset request.
+
     Attributes:
         parent (str):
             Required. The relative name of the root
@@ -176,6 +177,7 @@ class ExportAssetsResponse(proto.Message):
 
 class OutputConfig(proto.Message):
     r"""Output configuration for export assets destination.
+
     Attributes:
         gcs_destination (google.cloud.asset_v1p7beta1.types.GcsDestination):
             Destination on Cloud Storage.
@@ -201,6 +203,7 @@ class OutputConfig(proto.Message):
 
 class OutputResult(proto.Message):
     r"""Output result of export assets.
+
     Attributes:
         gcs_result (google.cloud.asset_v1p7beta1.types.GcsOutputResult):
             Export result on Cloud Storage.
@@ -216,6 +219,7 @@ class OutputResult(proto.Message):
 
 class GcsOutputResult(proto.Message):
     r"""A Cloud Storage output result.
+
     Attributes:
         uris (Sequence[str]):
             List of uris of the Cloud Storage objects. Example:
@@ -230,6 +234,7 @@ class GcsOutputResult(proto.Message):
 
 class GcsDestination(proto.Message):
     r"""A Cloud Storage location.
+
     Attributes:
         uri (str):
             The uri of the Cloud Storage object. It's the same uri that
@@ -265,6 +270,7 @@ class GcsDestination(proto.Message):
 
 class BigQueryDestination(proto.Message):
     r"""A BigQuery destination for exporting assets to.
+
     Attributes:
         dataset (str):
             Required. The BigQuery dataset in format

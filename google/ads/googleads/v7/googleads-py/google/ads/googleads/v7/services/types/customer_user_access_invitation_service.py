@@ -101,6 +101,7 @@ class CustomerUserAccessInvitationOperation(proto.Message):
 
 class MutateCustomerUserAccessInvitationResponse(proto.Message):
     r"""Response message for access invitation mutate.
+
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateCustomerUserAccessInvitationResult):
             Result for the mutate.
@@ -115,6 +116,7 @@ class MutateCustomerUserAccessInvitationResponse(proto.Message):
 
 class MutateCustomerUserAccessInvitationResult(proto.Message):
     r"""The result for the access invitation mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

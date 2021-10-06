@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class LinkedAccountTypeEnum(proto.Message):
     r"""Container for enum describing different types of Linked
     accounts.
-        """
+
+    """
     class LinkedAccountType(proto.Enum):
         r"""Describes the possible link types between a Google Ads
         customer and another account.

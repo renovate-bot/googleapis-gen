@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListAccessStatusEnum(proto.Message):
-    r"""Indicates if this client still has access to the list.    """
+    r"""Indicates if this client still has access to the list.
+    """
     class UserListAccessStatus(proto.Enum):
         r"""Enum containing possible user list access statuses."""
         UNSPECIFIED = 0

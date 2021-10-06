@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ClickTypeEnum(proto.Message):
-    r"""Container for enumeration of Google Ads click types.    """
+    r"""Container for enumeration of Google Ads click types.
+    """
     class ClickType(proto.Enum):
         r"""Enumerates Google Ads click types."""
         UNSPECIFIED = 0

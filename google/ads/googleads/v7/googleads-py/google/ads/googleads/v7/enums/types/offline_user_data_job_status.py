@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class OfflineUserDataJobStatusEnum(proto.Message):
     r"""Container for enum describing status of an offline user data
     job.
-        """
+
+    """
     class OfflineUserDataJobStatus(proto.Enum):
         r"""The status of an offline user data job."""
         UNSPECIFIED = 0

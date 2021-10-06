@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MediaBundleErrorEnum(proto.Message):
-    r"""Container for enum describing possible media bundle errors.    """
+    r"""Container for enum describing possible media bundle errors.
+    """
     class MediaBundleError(proto.Enum):
         r"""Enum describing possible media bundle errors."""
         UNSPECIFIED = 0

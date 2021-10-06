@@ -909,6 +909,8 @@ class SqlInstancesServiceGrpcTransport(SqlInstancesServiceTransport):
             )
         return self._stubs['start_external_sync']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SqlInstancesServiceGrpcTransport',

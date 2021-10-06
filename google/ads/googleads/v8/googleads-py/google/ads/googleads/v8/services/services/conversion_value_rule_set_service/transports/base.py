@@ -95,6 +95,15 @@ class ConversionValueRuleSetServiceTransport(metaclass=abc.ABCMeta):
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+        .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def get_conversion_value_rule_set(self) -> typing.Callable[
             [conversion_value_rule_set_service.GetConversionValueRuleSetRequest],

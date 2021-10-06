@@ -37,6 +37,7 @@ __protobuf__ = proto.module(
 
 class GetGoogleServiceAccountRequest(proto.Message):
     r"""Request passed to GetGoogleServiceAccount.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -52,6 +53,7 @@ class GetGoogleServiceAccountRequest(proto.Message):
 
 class CreateTransferJobRequest(proto.Message):
     r"""Request passed to CreateTransferJob.
+
     Attributes:
         transfer_job (google.cloud.storage_transfer_v1.types.TransferJob):
             Required. The job to create.
@@ -66,6 +68,7 @@ class CreateTransferJobRequest(proto.Message):
 
 class UpdateTransferJobRequest(proto.Message):
     r"""Request passed to UpdateTransferJob.
+
     Attributes:
         job_name (str):
             Required. The name of job to update.
@@ -122,6 +125,7 @@ class UpdateTransferJobRequest(proto.Message):
 
 class GetTransferJobRequest(proto.Message):
     r"""Request passed to GetTransferJob.
+
     Attributes:
         job_name (str):
             Required.
@@ -183,6 +187,7 @@ class ListTransferJobsRequest(proto.Message):
 
 class ListTransferJobsResponse(proto.Message):
     r"""Response from ListTransferJobs.
+
     Attributes:
         transfer_jobs (Sequence[google.cloud.storage_transfer_v1.types.TransferJob]):
             A list of transfer jobs.
@@ -207,6 +212,7 @@ class ListTransferJobsResponse(proto.Message):
 
 class PauseTransferOperationRequest(proto.Message):
     r"""Request passed to PauseTransferOperation.
+
     Attributes:
         name (str):
             Required. The name of the transfer operation.
@@ -220,6 +226,7 @@ class PauseTransferOperationRequest(proto.Message):
 
 class ResumeTransferOperationRequest(proto.Message):
     r"""Request passed to ResumeTransferOperation.
+
     Attributes:
         name (str):
             Required. The name of the transfer operation.
@@ -233,6 +240,7 @@ class ResumeTransferOperationRequest(proto.Message):
 
 class RunTransferJobRequest(proto.Message):
     r"""Request passed to RunTransferJob.
+
     Attributes:
         job_name (str):
             Required. The name of the transfer job.

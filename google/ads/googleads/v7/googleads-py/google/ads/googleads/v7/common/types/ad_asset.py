@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class AdTextAsset(proto.Message):
     r"""A text asset used inside an ad.
+
     Attributes:
         text (str):
             Asset text.
@@ -74,6 +75,7 @@ class AdTextAsset(proto.Message):
 
 class AdImageAsset(proto.Message):
     r"""An image asset used inside an ad.
+
     Attributes:
         asset (str):
             The Asset resource name of this image.
@@ -88,6 +90,7 @@ class AdImageAsset(proto.Message):
 
 class AdVideoAsset(proto.Message):
     r"""A video asset used inside an ad.
+
     Attributes:
         asset (str):
             The Asset resource name of this video.
@@ -102,6 +105,7 @@ class AdVideoAsset(proto.Message):
 
 class AdMediaBundleAsset(proto.Message):
     r"""A media bundle asset used inside an ad.
+
     Attributes:
         asset (str):
             The Asset resource name of this media bundle.

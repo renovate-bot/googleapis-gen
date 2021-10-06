@@ -85,6 +85,7 @@ class LocationSensor(proto.Enum):
 
 class TerminalPointId(proto.Message):
     r"""Identifies a terminal point.
+
     Attributes:
         place_id (str):
             Deprecated.
@@ -112,6 +113,7 @@ class TerminalPointId(proto.Message):
 
 class TerminalLocation(proto.Message):
     r"""Describes the location of a pickup or dropoff.
+
     Attributes:
         point (google.type.latlng_pb2.LatLng):
             Required. Denotes the actual location of a
@@ -224,6 +226,7 @@ class TripWaypoint(proto.Message):
 
 class Status(proto.Message):
     r"""The 'Status' defines a FleetEngine custom logical error mode.
+
     Attributes:
         code (maps.fleetengine_v1.types.Status.Code):
             The error code. It is not possible to have a
@@ -276,6 +279,7 @@ class FormattedAddress(proto.Message):
 
 class Address(proto.Message):
     r"""Address of a place.
+
     Attributes:
         formatted_address (maps.fleetengine_v1.types.FormattedAddress):
             A full, human-readable address for this
@@ -291,6 +295,7 @@ class Address(proto.Message):
 
 class VehicleAttribute(proto.Message):
     r"""Describes a vehicle attribute as a key-value pair.
+
     Attributes:
         key (str):
             The attribute's key. Keys may not contain the

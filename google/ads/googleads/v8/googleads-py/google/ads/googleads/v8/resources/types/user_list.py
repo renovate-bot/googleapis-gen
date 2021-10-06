@@ -35,6 +35,7 @@ __protobuf__ = proto.module(
 
 class UserList(proto.Message):
     r"""A user list. This is a list of users a customer may target.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the user list. User list

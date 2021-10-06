@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class PricePlaceholderFieldEnum(proto.Message):
-    r"""Values for Price placeholder fields.    """
+    r"""Values for Price placeholder fields.
+    """
     class PricePlaceholderField(proto.Enum):
         r"""Possible values for Price placeholder fields."""
         UNSPECIFIED = 0

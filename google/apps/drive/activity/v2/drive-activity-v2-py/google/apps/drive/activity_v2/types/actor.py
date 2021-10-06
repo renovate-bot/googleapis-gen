@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class Actor(proto.Message):
     r"""The actor of a Drive activity.
+
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             An end user.
@@ -78,6 +79,7 @@ class Actor(proto.Message):
 
 class User(proto.Message):
     r"""Information about an end user.
+
     Attributes:
         known_user (google.apps.drive.activity_v2.types.User.KnownUser):
             A known user.
@@ -89,6 +91,7 @@ class User(proto.Message):
 
     class KnownUser(proto.Message):
         r"""A known user.
+
         Attributes:
             person_name (str):
                 The identifier for this user that can be used with the
@@ -109,10 +112,12 @@ class User(proto.Message):
         )
 
     class DeletedUser(proto.Message):
-        r"""A user whose account has since been deleted.    """
+        r"""A user whose account has since been deleted.
+        """
 
     class UnknownUser(proto.Message):
-        r"""A user about whom nothing is currently known.    """
+        r"""A user about whom nothing is currently known.
+        """
 
     known_user = proto.Field(
         proto.MESSAGE,
@@ -137,7 +142,8 @@ class User(proto.Message):
 class AnonymousUser(proto.Message):
     r"""Empty message representing an anonymous user or indicating
     the authenticated user should be anonymized.
-        """
+
+    """
 
 
 class Impersonation(proto.Message):
@@ -159,6 +165,7 @@ class Impersonation(proto.Message):
 
 class SystemEvent(proto.Message):
     r"""Event triggered by system operations instead of end users.
+
     Attributes:
         type_ (google.apps.drive.activity_v2.types.SystemEvent.Type):
             The type of the system event that may
@@ -178,7 +185,8 @@ class SystemEvent(proto.Message):
 
 
 class Administrator(proto.Message):
-    r"""Empty message representing an administrator.    """
+    r"""Empty message representing an administrator.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

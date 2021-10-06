@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdGroupCriterionStatusEnum(proto.Message):
-    r"""Message describing AdGroupCriterion statuses.    """
+    r"""Message describing AdGroupCriterion statuses.
+    """
     class AdGroupCriterionStatus(proto.Enum):
         r"""The possible statuses of an AdGroupCriterion."""
         UNSPECIFIED = 0

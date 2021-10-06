@@ -721,6 +721,8 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
             )
         return self._stubs['disable_service']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ServiceManagerGrpcTransport',

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AccessReasonEnum(proto.Message):
     r"""Indicates the way the resource such as user list is related
     to a user.
-        """
+
+    """
     class AccessReason(proto.Enum):
         r"""Enum describing possible access reasons."""
         UNSPECIFIED = 0

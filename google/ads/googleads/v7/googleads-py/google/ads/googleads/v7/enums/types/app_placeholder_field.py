@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AppPlaceholderFieldEnum(proto.Message):
-    r"""Values for App placeholder fields.    """
+    r"""Values for App placeholder fields.
+    """
     class AppPlaceholderField(proto.Enum):
         r"""Possible values for App placeholder fields."""
         UNSPECIFIED = 0

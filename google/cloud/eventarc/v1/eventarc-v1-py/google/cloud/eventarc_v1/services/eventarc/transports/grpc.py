@@ -373,6 +373,8 @@ class EventarcGrpcTransport(EventarcTransport):
             )
         return self._stubs['delete_trigger']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'EventarcGrpcTransport',

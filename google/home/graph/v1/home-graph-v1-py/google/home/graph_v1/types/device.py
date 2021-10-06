@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class Device(proto.Message):
     r"""Third-party device definition.
+
     Attributes:
         id (str):
             Third-party device ID.
@@ -139,6 +140,7 @@ class Device(proto.Message):
 
 class DeviceNames(proto.Message):
     r"""Identifiers used to describe the device.
+
     Attributes:
         name (str):
             Primary name of the device, generally
@@ -168,6 +170,7 @@ class DeviceNames(proto.Message):
 
 class DeviceInfo(proto.Message):
     r"""Device information.
+
     Attributes:
         manufacturer (str):
             Device manufacturer.
@@ -199,6 +202,7 @@ class DeviceInfo(proto.Message):
 
 class AgentOtherDeviceId(proto.Message):
     r"""Alternate third-party device ID.
+
     Attributes:
         agent_id (str):
             Project ID for your smart home Action.

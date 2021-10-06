@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class SqlUsersDeleteRequest(proto.Message):
     r"""
+
     Attributes:
         host (str):
             Host of the user in the instance.
@@ -65,6 +66,7 @@ class SqlUsersDeleteRequest(proto.Message):
 
 class SqlUsersInsertRequest(proto.Message):
     r"""
+
     Attributes:
         instance (str):
             Database instance ID. This does not include
@@ -93,6 +95,7 @@ class SqlUsersInsertRequest(proto.Message):
 
 class SqlUsersListRequest(proto.Message):
     r"""
+
     Attributes:
         instance (str):
             Database instance ID. This does not include
@@ -114,6 +117,7 @@ class SqlUsersListRequest(proto.Message):
 
 class SqlUsersUpdateRequest(proto.Message):
     r"""
+
     Attributes:
         host (str):
             Optional. Host of the user in the instance.
@@ -154,6 +158,7 @@ class SqlUsersUpdateRequest(proto.Message):
 
 class User(proto.Message):
     r"""A Cloud SQL user resource.
+
     Attributes:
         kind (str):
             This is always **sql#user**.
@@ -237,6 +242,7 @@ class User(proto.Message):
 
 class SqlServerUserDetails(proto.Message):
     r"""Represents a Sql Server user on the Cloud SQL instance.
+
     Attributes:
         disabled (bool):
             If the user has been disabled
@@ -256,6 +262,7 @@ class SqlServerUserDetails(proto.Message):
 
 class UsersListResponse(proto.Message):
     r"""User list response.
+
     Attributes:
         kind (str):
             This is always **sql#usersList**.

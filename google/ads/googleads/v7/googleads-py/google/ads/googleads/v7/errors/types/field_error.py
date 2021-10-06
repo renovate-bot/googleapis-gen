@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class FieldErrorEnum(proto.Message):
-    r"""Container for enum describing possible field errors.    """
+    r"""Container for enum describing possible field errors.
+    """
     class FieldError(proto.Enum):
         r"""Enum describing possible field errors."""
         UNSPECIFIED = 0

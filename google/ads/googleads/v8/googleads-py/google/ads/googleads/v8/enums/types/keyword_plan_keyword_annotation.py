@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class KeywordPlanKeywordAnnotationEnum(proto.Message):
     r"""Container for enumeration of keyword plan keyword
     annotations.
-        """
+
+    """
     class KeywordPlanKeywordAnnotation(proto.Enum):
         r"""Enumerates keyword plan annotations that can be requested."""
         UNSPECIFIED = 0

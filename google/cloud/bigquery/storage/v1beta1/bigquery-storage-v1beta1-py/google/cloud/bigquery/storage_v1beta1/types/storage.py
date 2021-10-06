@@ -63,6 +63,7 @@ class ShardingStrategy(proto.Enum):
 
 class Stream(proto.Message):
     r"""Information about a single data stream within a read session.
+
     Attributes:
         name (str):
             Name of the stream, in the form
@@ -99,6 +100,7 @@ class StreamPosition(proto.Message):
 
 class ReadSession(proto.Message):
     r"""Information returned from a ``CreateReadSession`` request.
+
     Attributes:
         name (str):
             Unique identifier for the session, in the form
@@ -260,6 +262,7 @@ class ReadRowsRequest(proto.Message):
 
 class StreamStatus(proto.Message):
     r"""Progress information for a given Stream.
+
     Attributes:
         estimated_row_count (int):
             Number of estimated rows in the current
@@ -310,6 +313,7 @@ class StreamStatus(proto.Message):
 
 class Progress(proto.Message):
     r"""
+
     Attributes:
         at_response_start (float):
             The fraction of rows assigned to the stream that have been
@@ -341,6 +345,7 @@ class Progress(proto.Message):
 
 class ThrottleStatus(proto.Message):
     r"""Information on if the current connection is being throttled.
+
     Attributes:
         throttle_percent (int):
             How much this connection is being throttled.
@@ -450,6 +455,7 @@ class BatchCreateReadSessionStreamsResponse(proto.Message):
 
 class FinalizeStreamRequest(proto.Message):
     r"""Request information for invoking ``FinalizeStream``.
+
     Attributes:
         stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
             Required. Stream to finalize.
@@ -464,6 +470,7 @@ class FinalizeStreamRequest(proto.Message):
 
 class SplitReadStreamRequest(proto.Message):
     r"""Request information for ``SplitReadStream``.
+
     Attributes:
         original_stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
             Required. Stream to split.
@@ -495,6 +502,7 @@ class SplitReadStreamRequest(proto.Message):
 
 class SplitReadStreamResponse(proto.Message):
     r"""Response from ``SplitReadStream``.
+
     Attributes:
         primary_stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
             Primary stream, which contains the beginning portion of

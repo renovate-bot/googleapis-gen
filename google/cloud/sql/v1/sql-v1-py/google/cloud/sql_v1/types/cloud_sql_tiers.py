@@ -28,6 +28,7 @@ __protobuf__ = proto.module(
 
 class SqlTiersListRequest(proto.Message):
     r"""Tiers list request.
+
     Attributes:
         project (str):
             Project ID of the project for which to list
@@ -42,6 +43,7 @@ class SqlTiersListRequest(proto.Message):
 
 class TiersListResponse(proto.Message):
     r"""Tiers list response.
+
     Attributes:
         kind (str):
             This is always **sql#tiersList**.
@@ -62,6 +64,7 @@ class TiersListResponse(proto.Message):
 
 class Tier(proto.Message):
     r"""A Google Cloud SQL service tier resource.
+
     Attributes:
         tier (str):
             An identifier for the machine type, for example,

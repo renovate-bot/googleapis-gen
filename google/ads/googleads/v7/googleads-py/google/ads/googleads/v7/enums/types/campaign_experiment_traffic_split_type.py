@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CampaignExperimentTrafficSplitTypeEnum(proto.Message):
     r"""Container for enum describing campaign experiment traffic
     split type.
-        """
+
+    """
     class CampaignExperimentTrafficSplitType(proto.Enum):
         r"""Enum of strategies for splitting traffic between base and
         experiment campaigns in campaign experiment.

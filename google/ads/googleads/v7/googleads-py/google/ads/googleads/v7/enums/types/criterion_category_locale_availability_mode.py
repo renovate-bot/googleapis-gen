@@ -30,7 +30,8 @@ class CriterionCategoryLocaleAvailabilityModeEnum(proto.Message):
     availability - whether it's available globally, or a particular
     country with all languages, or a particular language with all
     countries, or a country-language pair.
-        """
+
+    """
     class CriterionCategoryLocaleAvailabilityMode(proto.Enum):
         r"""Enum containing the possible
         CriterionCategoryLocaleAvailabilityMode.

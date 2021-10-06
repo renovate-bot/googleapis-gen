@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AssetTypeEnum(proto.Message):
-    r"""Container for enum describing the types of asset.    """
+    r"""Container for enum describing the types of asset.
+    """
     class AssetType(proto.Enum):
         r"""Enum describing possible types of asset."""
         UNSPECIFIED = 0

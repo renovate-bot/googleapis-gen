@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class AdGroupExtensionSetting(proto.Message):
     r"""An ad group extension setting.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group extension

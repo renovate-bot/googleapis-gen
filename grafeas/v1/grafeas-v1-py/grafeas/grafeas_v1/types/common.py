@@ -41,6 +41,7 @@ class NoteKind(proto.Enum):
 
 class RelatedUrl(proto.Message):
     r"""Metadata for any related URL information.
+
     Attributes:
         url (str):
             Specific URL associated with the resource.

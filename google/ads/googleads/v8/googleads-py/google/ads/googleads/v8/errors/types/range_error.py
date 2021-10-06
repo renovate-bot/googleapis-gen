@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class RangeErrorEnum(proto.Message):
-    r"""Container for enum describing possible range errors.    """
+    r"""Container for enum describing possible range errors.
+    """
     class RangeError(proto.Enum):
         r"""Enum describing possible range errors."""
         UNSPECIFIED = 0

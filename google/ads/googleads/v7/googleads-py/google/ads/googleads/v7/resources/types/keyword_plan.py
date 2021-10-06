@@ -74,6 +74,7 @@ class KeywordPlan(proto.Message):
 
 class KeywordPlanForecastPeriod(proto.Message):
     r"""The forecasting period associated with the keyword plan.
+
     Attributes:
         date_interval (google.ads.googleads.v7.enums.types.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval):
             A future date range relative to the current

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ExtensionTypeEnum(proto.Message):
     r"""Container for enum describing possible data types for an
     extension in an extension setting.
-        """
+
+    """
     class ExtensionType(proto.Enum):
         r"""Possible data types for an extension in an extension setting."""
         UNSPECIFIED = 0

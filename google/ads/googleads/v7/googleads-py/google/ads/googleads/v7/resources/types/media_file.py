@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class MediaFile(proto.Message):
     r"""A media file.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the media file. Media file
@@ -130,6 +131,7 @@ class MediaFile(proto.Message):
 
 class MediaImage(proto.Message):
     r"""Encapsulates an Image.
+
     Attributes:
         data (bytes):
             Immutable. Raw image data.
@@ -186,6 +188,7 @@ class MediaBundle(proto.Message):
 
 class MediaAudio(proto.Message):
     r"""Encapsulates an Audio.
+
     Attributes:
         ad_duration_millis (int):
             Output only. The duration of the Audio in
@@ -201,6 +204,7 @@ class MediaAudio(proto.Message):
 
 class MediaVideo(proto.Message):
     r"""Encapsulates a Video.
+
     Attributes:
         ad_duration_millis (int):
             Output only. The duration of the Video in

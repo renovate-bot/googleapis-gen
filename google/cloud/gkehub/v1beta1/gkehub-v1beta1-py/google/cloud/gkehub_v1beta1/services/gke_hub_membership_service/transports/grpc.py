@@ -482,6 +482,8 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
             )
         return self._stubs['generate_exclusivity_manifest']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'GkeHubMembershipServiceGrpcTransport',

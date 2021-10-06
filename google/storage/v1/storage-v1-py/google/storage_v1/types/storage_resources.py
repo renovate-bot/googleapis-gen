@@ -48,6 +48,7 @@ __protobuf__ = proto.module(
 
 class Bucket(proto.Message):
     r"""A bucket.
+
     Attributes:
         acl (Sequence[google.storage_v1.types.BucketAccessControl]):
             Access controls on the bucket.
@@ -177,6 +178,7 @@ class Bucket(proto.Message):
 
     class Billing(proto.Message):
         r"""Billing properties of a bucket.
+
         Attributes:
             requester_pays (bool):
                 When set to true, Requester Pays is enabled
@@ -234,6 +236,7 @@ class Bucket(proto.Message):
 
     class Encryption(proto.Message):
         r"""Encryption properties of a bucket.
+
         Attributes:
             default_kms_key_name (str):
                 A Cloud KMS key that will be used to encrypt
@@ -248,6 +251,7 @@ class Bucket(proto.Message):
 
     class IamConfiguration(proto.Message):
         r"""Bucket restriction options currently enforced on the bucket.
+
         Attributes:
             uniform_bucket_level_access (google.storage_v1.types.Bucket.IamConfiguration.UniformBucketLevelAccess):
 
@@ -255,6 +259,7 @@ class Bucket(proto.Message):
 
         class UniformBucketLevelAccess(proto.Message):
             r"""
+
             Attributes:
                 enabled (bool):
                     If set, access checks only use bucket-level
@@ -308,6 +313,7 @@ class Bucket(proto.Message):
 
             class Action(proto.Message):
                 r"""An action to take on an object.
+
                 Attributes:
                     type_ (str):
                         Type of the action. Currently, only ``Delete`` and
@@ -328,6 +334,7 @@ class Bucket(proto.Message):
 
             class Condition(proto.Message):
                 r"""A condition of an object which triggers some action.
+
                 Attributes:
                     age (int):
                         Age of an object (in days). This condition is
@@ -412,6 +419,7 @@ class Bucket(proto.Message):
 
     class Logging(proto.Message):
         r"""Logging-related properties of a bucket.
+
         Attributes:
             log_bucket (str):
                 The destination bucket where the current
@@ -431,6 +439,7 @@ class Bucket(proto.Message):
 
     class RetentionPolicy(proto.Message):
         r"""Retention policy properties of a bucket.
+
         Attributes:
             effective_time (google.protobuf.timestamp_pb2.Timestamp):
                 Server-determined value that indicates the time from which
@@ -628,6 +637,7 @@ class Bucket(proto.Message):
 
 class BucketAccessControl(proto.Message):
     r"""An access-control entry.
+
     Attributes:
         role (str):
             The access permission for the entity.
@@ -727,6 +737,7 @@ class ListBucketAccessControlsResponse(proto.Message):
 
 class ListBucketsResponse(proto.Message):
     r"""The result of a call to Buckets.ListBuckets
+
     Attributes:
         items (Sequence[google.storage_v1.types.Bucket]):
             The list of items.
@@ -754,6 +765,7 @@ class ListBucketsResponse(proto.Message):
 
 class Channel(proto.Message):
     r"""An notification channel used to watch for resource changes.
+
     Attributes:
         id (str):
             A UUID or similar unique string that
@@ -828,6 +840,7 @@ class Channel(proto.Message):
 
 class ListChannelsResponse(proto.Message):
     r"""The result of a call to Channels.ListChannels
+
     Attributes:
         items (Sequence[google.storage_v1.types.ListChannelsResponse.Items]):
             The list of notification channels for a
@@ -836,6 +849,7 @@ class ListChannelsResponse(proto.Message):
 
     class Items(proto.Message):
         r"""
+
         Attributes:
             channel_id (str):
                 User-specified name for a channel. Needed to
@@ -934,7 +948,8 @@ class ObjectChecksums(proto.Message):
 class CommonEnums(proto.Message):
     r"""A collection of enums used in multiple places throughout the
     API.
-        """
+
+    """
     class Projection(proto.Enum):
         r"""A set of properties to return in a response."""
         PROJECTION_UNSPECIFIED = 0
@@ -967,6 +982,7 @@ class CommonEnums(proto.Message):
 
 class ContentRange(proto.Message):
     r"""Specifies a requested range of bytes to download.
+
     Attributes:
         start (int):
             The starting offset of the object data.
@@ -1057,6 +1073,7 @@ class HmacKeyMetadata(proto.Message):
 
 class Notification(proto.Message):
     r"""A subscription to receive Google PubSub notifications.
+
     Attributes:
         topic (str):
             The Cloud PubSub topic to which this
@@ -1118,6 +1135,7 @@ class Notification(proto.Message):
 
 class ListNotificationsResponse(proto.Message):
     r"""The result of a call to Notifications.ListNotifications
+
     Attributes:
         items (Sequence[google.storage_v1.types.Notification]):
             The list of items.
@@ -1132,6 +1150,7 @@ class ListNotificationsResponse(proto.Message):
 
 class Object(proto.Message):
     r"""An object.
+
     Attributes:
         content_encoding (str):
             Content-Encoding of the object data, matching
@@ -1435,6 +1454,7 @@ class Object(proto.Message):
 
 class ObjectAccessControl(proto.Message):
     r"""An access-control entry.
+
     Attributes:
         role (str):
             The access permission for the entity.
@@ -1548,6 +1568,7 @@ class ListObjectAccessControlsResponse(proto.Message):
 
 class ListObjectsResponse(proto.Message):
     r"""The result of a call to Objects.ListObjects
+
     Attributes:
         prefixes (Sequence[str]):
             The list of prefixes of objects matching-but-
@@ -1604,6 +1625,7 @@ class ProjectTeam(proto.Message):
 
 class ServiceAccount(proto.Message):
     r"""A subscription to receive Google PubSub notifications.
+
     Attributes:
         email_address (str):
             The ID of the notification.
@@ -1617,6 +1639,7 @@ class ServiceAccount(proto.Message):
 
 class Owner(proto.Message):
     r"""The owner of a specific resource.
+
     Attributes:
         entity (str):
             The entity, in the form ``user-``\ *userId*.

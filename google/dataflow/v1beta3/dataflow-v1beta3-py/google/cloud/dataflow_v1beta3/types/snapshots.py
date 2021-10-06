@@ -46,6 +46,7 @@ class SnapshotState(proto.Enum):
 
 class PubsubSnapshotMetadata(proto.Message):
     r"""Represents a Pubsub snapshot.
+
     Attributes:
         topic_name (str):
             The name of the Pubsub topic.
@@ -72,6 +73,7 @@ class PubsubSnapshotMetadata(proto.Message):
 
 class Snapshot(proto.Message):
     r"""Represents a snapshot of a job.
+
     Attributes:
         id (str):
             The unique ID of this snapshot.
@@ -147,6 +149,7 @@ class Snapshot(proto.Message):
 
 class GetSnapshotRequest(proto.Message):
     r"""Request to get information about a snapshot
+
     Attributes:
         project_id (str):
             The ID of the Cloud Platform project that the
@@ -173,6 +176,7 @@ class GetSnapshotRequest(proto.Message):
 
 class DeleteSnapshotRequest(proto.Message):
     r"""Request to delete a snapshot.
+
     Attributes:
         project_id (str):
             The ID of the Cloud Platform project that the
@@ -198,11 +202,13 @@ class DeleteSnapshotRequest(proto.Message):
 
 
 class DeleteSnapshotResponse(proto.Message):
-    r"""Response from deleting a snapshot.    """
+    r"""Response from deleting a snapshot.
+    """
 
 
 class ListSnapshotsRequest(proto.Message):
     r"""Request to list snapshots.
+
     Attributes:
         project_id (str):
             The project ID to list snapshots for.
@@ -229,6 +235,7 @@ class ListSnapshotsRequest(proto.Message):
 
 class ListSnapshotsResponse(proto.Message):
     r"""List of snapshots.
+
     Attributes:
         snapshots (Sequence[google.cloud.dataflow_v1beta3.types.Snapshot]):
             Returned snapshots.

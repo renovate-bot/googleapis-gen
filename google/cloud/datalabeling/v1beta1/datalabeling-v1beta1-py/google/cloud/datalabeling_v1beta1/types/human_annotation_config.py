@@ -48,6 +48,7 @@ class StringAggregationType(proto.Enum):
 
 class HumanAnnotationConfig(proto.Message):
     r"""Configuration for how human labeling task should be done.
+
     Attributes:
         instruction (str):
             Required. Instruction resource name.
@@ -134,6 +135,7 @@ class HumanAnnotationConfig(proto.Message):
 
 class ImageClassificationConfig(proto.Message):
     r"""Config for image classification human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
@@ -184,6 +186,7 @@ class BoundingPolyConfig(proto.Message):
 
 class PolylineConfig(proto.Message):
     r"""Config for image polyline human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
@@ -204,6 +207,7 @@ class PolylineConfig(proto.Message):
 
 class SegmentationConfig(proto.Message):
     r"""Config for image segmentation
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name. format:
@@ -303,6 +307,7 @@ class ObjectDetectionConfig(proto.Message):
 
 class ObjectTrackingConfig(proto.Message):
     r"""Config for video object tracking human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.
@@ -316,6 +321,7 @@ class ObjectTrackingConfig(proto.Message):
 
 class EventConfig(proto.Message):
     r"""Config for video event human labeling task.
+
     Attributes:
         annotation_spec_sets (Sequence[str]):
             Required. The list of annotation spec set
@@ -332,6 +338,7 @@ class EventConfig(proto.Message):
 
 class TextClassificationConfig(proto.Message):
     r"""Config for text classification human labeling task.
+
     Attributes:
         allow_multi_label (bool):
             Optional. If allow_multi_label is true, contributors are
@@ -359,6 +366,7 @@ class TextClassificationConfig(proto.Message):
 
 class SentimentConfig(proto.Message):
     r"""Config for setting up sentiments.
+
     Attributes:
         enable_label_sentiment_selection (bool):
             If set to true, contributors will have the
@@ -375,6 +383,7 @@ class SentimentConfig(proto.Message):
 
 class TextEntityExtractionConfig(proto.Message):
     r"""Config for text entity extraction human labeling task.
+
     Attributes:
         annotation_spec_set (str):
             Required. Annotation spec set resource name.

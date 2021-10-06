@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class MobileDeviceConstant(proto.Message):
     r"""A mobile device constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the mobile device

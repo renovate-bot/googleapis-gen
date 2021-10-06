@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionActionCountingTypeEnum(proto.Message):
     r"""Container for enum describing the conversion deduplication
     mode for conversion optimizer.
-        """
+
+    """
     class ConversionActionCountingType(proto.Enum):
         r"""Indicates how conversions for this action will be counted.
         For more information, see https://support.google.com/google-

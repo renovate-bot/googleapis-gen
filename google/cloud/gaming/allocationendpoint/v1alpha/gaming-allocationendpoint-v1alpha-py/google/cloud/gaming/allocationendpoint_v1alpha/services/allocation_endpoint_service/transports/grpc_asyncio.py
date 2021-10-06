@@ -248,6 +248,9 @@ class AllocationEndpointServiceGrpcAsyncIOTransport(AllocationEndpointServiceTra
             )
         return self._stubs['allocate']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AllocationEndpointServiceGrpcAsyncIOTransport',

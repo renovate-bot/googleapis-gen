@@ -536,6 +536,9 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
             )
         return self._stubs['verify_notification_channel']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'NotificationChannelServiceGrpcAsyncIOTransport',

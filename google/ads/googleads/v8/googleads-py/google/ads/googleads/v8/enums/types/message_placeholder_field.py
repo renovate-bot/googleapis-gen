@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MessagePlaceholderFieldEnum(proto.Message):
-    r"""Values for Message placeholder fields.    """
+    r"""Values for Message placeholder fields.
+    """
     class MessagePlaceholderField(proto.Enum):
         r"""Possible values for Message placeholder fields."""
         UNSPECIFIED = 0

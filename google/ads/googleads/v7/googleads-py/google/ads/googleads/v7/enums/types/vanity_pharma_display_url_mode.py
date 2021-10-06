@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class VanityPharmaDisplayUrlModeEnum(proto.Message):
-    r"""The display mode for vanity pharma URLs.    """
+    r"""The display mode for vanity pharma URLs.
+    """
     class VanityPharmaDisplayUrlMode(proto.Enum):
         r"""Enum describing possible display modes for vanity pharma
         URLs.

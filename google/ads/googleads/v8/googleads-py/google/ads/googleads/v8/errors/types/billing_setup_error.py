@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BillingSetupErrorEnum(proto.Message):
-    r"""Container for enum describing possible billing setup errors.    """
+    r"""Container for enum describing possible billing setup errors.
+    """
     class BillingSetupError(proto.Enum):
         r"""Enum describing possible billing setup errors."""
         UNSPECIFIED = 0

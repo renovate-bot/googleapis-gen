@@ -311,6 +311,9 @@ class BotsGrpcAsyncIOTransport(BotsTransport):
             )
         return self._stubs['update_bot_session']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'BotsGrpcAsyncIOTransport',

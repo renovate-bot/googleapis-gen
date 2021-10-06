@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BatchJobStatusEnum(proto.Message):
-    r"""Container for enum describing possible batch job statuses.    """
+    r"""Container for enum describing possible batch job statuses.
+    """
     class BatchJobStatus(proto.Enum):
         r"""The batch job statuses."""
         UNSPECIFIED = 0

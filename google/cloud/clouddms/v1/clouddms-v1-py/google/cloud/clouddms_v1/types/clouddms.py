@@ -115,6 +115,7 @@ class ListMigrationJobsRequest(proto.Message):
 
 class ListMigrationJobsResponse(proto.Message):
     r"""Response message for 'ListMigrationJobs' request.
+
     Attributes:
         migration_jobs (Sequence[google.cloud.clouddms_v1.types.MigrationJob]):
             The list of migration jobs objects.
@@ -147,6 +148,7 @@ class ListMigrationJobsResponse(proto.Message):
 
 class GetMigrationJobRequest(proto.Message):
     r"""Request message for 'GetMigrationJob' request.
+
     Attributes:
         name (str):
             Required. Name of the migration job resource
@@ -206,6 +208,7 @@ class CreateMigrationJobRequest(proto.Message):
 
 class UpdateMigrationJobRequest(proto.Message):
     r"""Request message for 'UpdateMigrationJob' request.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the
@@ -244,6 +247,7 @@ class UpdateMigrationJobRequest(proto.Message):
 
 class DeleteMigrationJobRequest(proto.Message):
     r"""Request message for 'DeleteMigrationJob' request.
+
     Attributes:
         name (str):
             Required. Name of the migration job resource
@@ -281,6 +285,7 @@ class DeleteMigrationJobRequest(proto.Message):
 
 class StartMigrationJobRequest(proto.Message):
     r"""Request message for 'StartMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to start.
@@ -294,6 +299,7 @@ class StartMigrationJobRequest(proto.Message):
 
 class StopMigrationJobRequest(proto.Message):
     r"""Request message for 'StopMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to stop.
@@ -307,6 +313,7 @@ class StopMigrationJobRequest(proto.Message):
 
 class ResumeMigrationJobRequest(proto.Message):
     r"""Request message for 'ResumeMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to resume.
@@ -320,6 +327,7 @@ class ResumeMigrationJobRequest(proto.Message):
 
 class PromoteMigrationJobRequest(proto.Message):
     r"""Request message for 'PromoteMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to
@@ -334,6 +342,7 @@ class PromoteMigrationJobRequest(proto.Message):
 
 class VerifyMigrationJobRequest(proto.Message):
     r"""Request message for 'VerifyMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to verify.
@@ -347,6 +356,7 @@ class VerifyMigrationJobRequest(proto.Message):
 
 class RestartMigrationJobRequest(proto.Message):
     r"""Request message for 'RestartMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to
@@ -361,6 +371,7 @@ class RestartMigrationJobRequest(proto.Message):
 
 class GenerateSshScriptRequest(proto.Message):
     r"""Request message for 'GenerateSshScript' request.
+
     Attributes:
         migration_job (str):
             Name of the migration job resource to
@@ -405,6 +416,7 @@ class GenerateSshScriptRequest(proto.Message):
 
 class VmCreationConfig(proto.Message):
     r"""VM creation configuration message
+
     Attributes:
         vm_machine_type (str):
             Required. VM instance machine type to create.
@@ -432,6 +444,7 @@ class VmCreationConfig(proto.Message):
 
 class VmSelectionConfig(proto.Message):
     r"""VM selection configuration message
+
     Attributes:
         vm_zone (str):
             Required. The Google Cloud Platform zone the
@@ -446,6 +459,7 @@ class VmSelectionConfig(proto.Message):
 
 class SshScript(proto.Message):
     r"""Response message for 'GenerateSshScript' request.
+
     Attributes:
         script (str):
             The ssh configuration script.
@@ -459,6 +473,7 @@ class SshScript(proto.Message):
 
 class ListConnectionProfilesRequest(proto.Message):
     r"""Request message for 'ListConnectionProfiles' request.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this
@@ -517,6 +532,7 @@ class ListConnectionProfilesRequest(proto.Message):
 
 class ListConnectionProfilesResponse(proto.Message):
     r"""Response message for 'ListConnectionProfiles' request.
+
     Attributes:
         connection_profiles (Sequence[google.cloud.clouddms_v1.types.ConnectionProfile]):
             The response list of connection profiles.
@@ -549,6 +565,7 @@ class ListConnectionProfilesResponse(proto.Message):
 
 class GetConnectionProfileRequest(proto.Message):
     r"""Request message for 'GetConnectionProfile' request.
+
     Attributes:
         name (str):
             Required. Name of the connection profile
@@ -563,6 +580,7 @@ class GetConnectionProfileRequest(proto.Message):
 
 class CreateConnectionProfileRequest(proto.Message):
     r"""Request message for 'CreateConnectionProfile' request.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this
@@ -605,6 +623,7 @@ class CreateConnectionProfileRequest(proto.Message):
 
 class UpdateConnectionProfileRequest(proto.Message):
     r"""Request message for 'UpdateConnectionProfile' request.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the
@@ -643,6 +662,7 @@ class UpdateConnectionProfileRequest(proto.Message):
 
 class DeleteConnectionProfileRequest(proto.Message):
     r"""Request message for 'DeleteConnectionProfile' request.
+
     Attributes:
         name (str):
             Required. Name of the connection profile
@@ -679,6 +699,7 @@ class DeleteConnectionProfileRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

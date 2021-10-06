@@ -151,6 +151,19 @@ class DetailPlacementViewServiceClient(metaclass=DetailPlacementViewServiceClien
         """
         return self._transport
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
     @staticmethod
     def detail_placement_view_path(customer_id: str,ad_group_id: str,base64_placement: str,) -> str:
         """Return a fully-qualified detail_placement_view string."""

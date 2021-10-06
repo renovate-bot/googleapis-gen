@@ -55,6 +55,7 @@ class RestoreSourceType(proto.Enum):
 
 class RestoreInfo(proto.Message):
     r"""Information about the database restore.
+
     Attributes:
         source_type (google.cloud.spanner_admin_database_v1.types.RestoreSourceType):
             The type of the restore source.
@@ -78,6 +79,7 @@ class RestoreInfo(proto.Message):
 
 class Database(proto.Message):
     r"""A Cloud Spanner database.
+
     Attributes:
         name (str):
             Required. The name of the database. Values are of the form
@@ -673,6 +675,7 @@ class RestoreDatabaseRequest(proto.Message):
 
 class RestoreDatabaseEncryptionConfig(proto.Message):
     r"""Encryption configuration for the restored database.
+
     Attributes:
         encryption_type (google.cloud.spanner_admin_database_v1.types.RestoreDatabaseEncryptionConfig.EncryptionType):
             Required. The encryption type of the restored

@@ -335,6 +335,9 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
             )
         return self._stubs['generate_mediation_report']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AdMobApiGrpcAsyncIOTransport',

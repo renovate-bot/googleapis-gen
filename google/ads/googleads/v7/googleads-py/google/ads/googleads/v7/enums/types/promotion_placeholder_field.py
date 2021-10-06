@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class PromotionPlaceholderFieldEnum(proto.Message):
-    r"""Values for Promotion placeholder fields.    """
+    r"""Values for Promotion placeholder fields.
+    """
     class PromotionPlaceholderField(proto.Enum):
         r"""Possible values for Promotion placeholder fields."""
         UNSPECIFIED = 0

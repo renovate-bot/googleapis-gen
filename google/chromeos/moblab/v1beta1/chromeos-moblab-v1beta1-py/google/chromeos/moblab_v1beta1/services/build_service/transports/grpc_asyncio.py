@@ -421,6 +421,9 @@ class BuildServiceGrpcAsyncIOTransport(BuildServiceTransport):
             )
         return self._stubs['find_most_stable_build']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'BuildServiceGrpcAsyncIOTransport',

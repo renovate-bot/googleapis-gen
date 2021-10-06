@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ListOperationErrorEnum(proto.Message):
-    r"""Container for enum describing possible list operation errors.    """
+    r"""Container for enum describing possible list operation errors.
+    """
     class ListOperationError(proto.Enum):
         r"""Enum describing possible list operation errors."""
         UNSPECIFIED = 0

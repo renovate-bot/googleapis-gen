@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class Layer(proto.Message):
     r"""Layer holds metadata specific to a layer of a Docker image.
+
     Attributes:
         directive (str):
             Required. The recovered Dockerfile directive

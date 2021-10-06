@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CampaignDraft(proto.Message):
     r"""A campaign draft.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign draft. Campaign

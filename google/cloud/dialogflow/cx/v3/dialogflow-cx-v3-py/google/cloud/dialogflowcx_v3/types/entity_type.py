@@ -117,6 +117,7 @@ class EntityType(proto.Message):
 
     class Entity(proto.Message):
         r"""An **entity entry** for an associated entity type.
+
         Attributes:
             value (str):
                 Required. The primary value associated with this entity
@@ -153,6 +154,7 @@ class EntityType(proto.Message):
 
     class ExcludedPhrase(proto.Message):
         r"""An excluded entity phrase that should not be matched.
+
         Attributes:
             value (str):
                 Required. The word or phrase to be excluded.

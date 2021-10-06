@@ -145,6 +145,7 @@ class WindowsUpdate(proto.Message):
 
     class Identity(proto.Message):
         r"""The unique identifier of the update.
+
         Attributes:
             update_id (str):
                 The revision independent identifier of the
@@ -164,6 +165,7 @@ class WindowsUpdate(proto.Message):
 
     class Category(proto.Message):
         r"""The category to which the update belongs.
+
         Attributes:
             category_id (str):
                 The identifier of the category.

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CustomerPayPerConversionEligibilityFailureReasonEnum(proto.Message):
     r"""Container for enum describing reasons why a customer is not
     eligible to use PaymentMode.CONVERSIONS.
-        """
+
+    """
     class CustomerPayPerConversionEligibilityFailureReason(proto.Enum):
         r"""Enum describing possible reasons a customer is not eligible
         to use PaymentMode.CONVERSIONS.

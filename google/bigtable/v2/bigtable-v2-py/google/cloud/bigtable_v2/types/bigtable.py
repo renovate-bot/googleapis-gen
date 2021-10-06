@@ -41,6 +41,7 @@ __protobuf__ = proto.module(
 
 class ReadRowsRequest(proto.Message):
     r"""Request message for Bigtable.ReadRows.
+
     Attributes:
         table_name (str):
             Required. The unique name of the table from which to read.
@@ -89,6 +90,7 @@ class ReadRowsRequest(proto.Message):
 
 class ReadRowsResponse(proto.Message):
     r"""Response message for Bigtable.ReadRows.
+
     Attributes:
         chunks (Sequence[google.cloud.bigtable_v2.types.ReadRowsResponse.CellChunk]):
             A collection of a row's contents as part of
@@ -220,6 +222,7 @@ class ReadRowsResponse(proto.Message):
 
 class SampleRowKeysRequest(proto.Message):
     r"""Request message for Bigtable.SampleRowKeys.
+
     Attributes:
         table_name (str):
             Required. The unique name of the table from which to sample
@@ -243,6 +246,7 @@ class SampleRowKeysRequest(proto.Message):
 
 class SampleRowKeysResponse(proto.Message):
     r"""Response message for Bigtable.SampleRowKeys.
+
     Attributes:
         row_key (bytes):
             Sorted streamed sequence of sample row keys
@@ -276,6 +280,7 @@ class SampleRowKeysResponse(proto.Message):
 
 class MutateRowRequest(proto.Message):
     r"""Request message for Bigtable.MutateRow.
+
     Attributes:
         table_name (str):
             Required. The unique name of the table to which the mutation
@@ -316,11 +321,13 @@ class MutateRowRequest(proto.Message):
 
 
 class MutateRowResponse(proto.Message):
-    r"""Response message for Bigtable.MutateRow.    """
+    r"""Response message for Bigtable.MutateRow.
+    """
 
 
 class MutateRowsRequest(proto.Message):
     r"""Request message for BigtableService.MutateRows.
+
     Attributes:
         table_name (str):
             Required. The unique name of the table to
@@ -341,6 +348,7 @@ class MutateRowsRequest(proto.Message):
 
     class Entry(proto.Message):
         r"""A mutation for a given row.
+
         Attributes:
             row_key (bytes):
                 The key of the row to which the ``mutations`` should be
@@ -380,6 +388,7 @@ class MutateRowsRequest(proto.Message):
 
 class MutateRowsResponse(proto.Message):
     r"""Response message for BigtableService.MutateRows.
+
     Attributes:
         entries (Sequence[google.cloud.bigtable_v2.types.MutateRowsResponse.Entry]):
             One or more results for Entries from the
@@ -421,6 +430,7 @@ class MutateRowsResponse(proto.Message):
 
 class CheckAndMutateRowRequest(proto.Message):
     r"""Request message for Bigtable.CheckAndMutateRow.
+
     Attributes:
         table_name (str):
             Required. The unique name of the table to which the
@@ -487,6 +497,7 @@ class CheckAndMutateRowRequest(proto.Message):
 
 class CheckAndMutateRowResponse(proto.Message):
     r"""Response message for Bigtable.CheckAndMutateRow.
+
     Attributes:
         predicate_matched (bool):
             Whether or not the request's ``predicate_filter`` yielded
@@ -501,6 +512,7 @@ class CheckAndMutateRowResponse(proto.Message):
 
 class ReadModifyWriteRowRequest(proto.Message):
     r"""Request message for Bigtable.ReadModifyWriteRow.
+
     Attributes:
         table_name (str):
             Required. The unique name of the table to which the
@@ -543,6 +555,7 @@ class ReadModifyWriteRowRequest(proto.Message):
 
 class ReadModifyWriteRowResponse(proto.Message):
     r"""Response message for Bigtable.ReadModifyWriteRow.
+
     Attributes:
         row (google.cloud.bigtable_v2.types.Row):
             A Row containing the new contents of all

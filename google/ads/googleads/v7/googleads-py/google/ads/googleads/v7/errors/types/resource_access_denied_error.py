@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ResourceAccessDeniedErrorEnum(proto.Message):
     r"""Container for enum describing possible resource access denied
     errors.
-        """
+
+    """
     class ResourceAccessDeniedError(proto.Enum):
         r"""Enum describing possible resource access denied errors."""
         UNSPECIFIED = 0

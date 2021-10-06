@@ -76,6 +76,7 @@ class TensorboardTimeSeries(proto.Message):
 
     class Metadata(proto.Message):
         r"""Describes metadata for a TensorboardTimeSeries.
+
         Attributes:
             max_step (int):
                 Output only. Max step index of all data

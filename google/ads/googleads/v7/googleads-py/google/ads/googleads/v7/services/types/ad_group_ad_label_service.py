@@ -91,6 +91,7 @@ class MutateAdGroupAdLabelsRequest(proto.Message):
 
 class AdGroupAdLabelOperation(proto.Message):
     r"""A single operation (create, remove) on an ad group ad label.
+
     Attributes:
         create (google.ads.googleads.v7.resources.types.AdGroupAdLabel):
             Create operation: No resource name is
@@ -117,6 +118,7 @@ class AdGroupAdLabelOperation(proto.Message):
 
 class MutateAdGroupAdLabelsResponse(proto.Message):
     r"""Response message for an ad group ad labels mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -142,6 +144,7 @@ class MutateAdGroupAdLabelsResponse(proto.Message):
 
 class MutateAdGroupAdLabelResult(proto.Message):
     r"""The result for an ad group ad label mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

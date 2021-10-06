@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class DisplayAdFormatSettingEnum(proto.Message):
-    r"""Container for display ad format settings.    """
+    r"""Container for display ad format settings.
+    """
     class DisplayAdFormatSetting(proto.Enum):
         r"""Enumerates display ad format settings."""
         UNSPECIFIED = 0

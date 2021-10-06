@@ -148,6 +148,7 @@ class CustomerExtensionSettingOperation(proto.Message):
 
 class MutateCustomerExtensionSettingsResponse(proto.Message):
     r"""Response message for a customer extension setting mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -173,6 +174,7 @@ class MutateCustomerExtensionSettingsResponse(proto.Message):
 
 class MutateCustomerExtensionSettingResult(proto.Message):
     r"""The result for the customer extension setting mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

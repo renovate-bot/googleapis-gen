@@ -329,6 +329,9 @@ class TagBindingsGrpcAsyncIOTransport(TagBindingsTransport):
             )
         return self._stubs['delete_tag_binding']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TagBindingsGrpcAsyncIOTransport',

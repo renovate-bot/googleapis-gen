@@ -47,6 +47,7 @@ __protobuf__ = proto.module(
 
 class Job(proto.Message):
     r"""Transcoding job resource.
+
     Attributes:
         name (str):
             The resource name of the job. Format:
@@ -159,6 +160,7 @@ class Job(proto.Message):
 
 class JobTemplate(proto.Message):
     r"""Transcoding job template resource.
+
     Attributes:
         name (str):
             The resource name of the job template. Format:
@@ -180,6 +182,7 @@ class JobTemplate(proto.Message):
 
 class JobConfig(proto.Message):
     r"""Job configuration
+
     Attributes:
         inputs (Sequence[google.cloud.video.transcoder_v1.types.Input]):
             List of input assets stored in Cloud Storage.
@@ -261,6 +264,7 @@ class JobConfig(proto.Message):
 
 class Input(proto.Message):
     r"""Input asset.
+
     Attributes:
         key (str):
             A unique key for this input. Must be
@@ -292,6 +296,7 @@ class Input(proto.Message):
 
 class Output(proto.Message):
     r"""Location of output file(s) in a Cloud Storage bucket.
+
     Attributes:
         uri (str):
             URI for the output file(s). For example,
@@ -307,6 +312,7 @@ class Output(proto.Message):
 
 class EditAtom(proto.Message):
     r"""Edit atom.
+
     Attributes:
         key (str):
             A unique key for this atom. Must be specified
@@ -346,6 +352,7 @@ class EditAtom(proto.Message):
 
 class AdBreak(proto.Message):
     r"""Ad break.
+
     Attributes:
         start_time_offset (google.protobuf.duration_pb2.Duration):
             Start time in seconds for the ad break, relative to the
@@ -402,6 +409,7 @@ class ElementaryStream(proto.Message):
 
 class MuxStream(proto.Message):
     r"""Multiplexing settings for output stream.
+
     Attributes:
         key (str):
             A unique key for this multiplexed stream. HLS media
@@ -456,6 +464,7 @@ class MuxStream(proto.Message):
 
 class Manifest(proto.Message):
     r"""Manifest configuration.
+
     Attributes:
         file_name (str):
             The name of the generated file. The default is ``manifest``
@@ -494,6 +503,7 @@ class Manifest(proto.Message):
 
 class PubsubDestination(proto.Message):
     r"""A Pub/Sub destination.
+
     Attributes:
         topic (str):
             The name of the Pub/Sub topic to publish job completion
@@ -509,6 +519,7 @@ class PubsubDestination(proto.Message):
 
 class SpriteSheet(proto.Message):
     r"""Sprite sheet configuration.
+
     Attributes:
         format_ (str):
             Format type. The default is ``jpeg``.
@@ -624,6 +635,7 @@ class SpriteSheet(proto.Message):
 
 class Overlay(proto.Message):
     r"""Overlay configuration.
+
     Attributes:
         image (google.cloud.video.transcoder_v1.types.Overlay.Image):
             Image overlay.
@@ -639,6 +651,7 @@ class Overlay(proto.Message):
 
     class NormalizedCoordinate(proto.Message):
         r"""2D normalized coordinates. Default: ``{0.0, 0.0}``
+
         Attributes:
             x (float):
                 Normalized x coordinate.
@@ -657,6 +670,7 @@ class Overlay(proto.Message):
 
     class Image(proto.Message):
         r"""Overlaid jpeg image.
+
         Attributes:
             uri (str):
                 Required. URI of the JPEG image in Cloud Storage. For
@@ -690,6 +704,7 @@ class Overlay(proto.Message):
 
     class AnimationStatic(proto.Message):
         r"""Display static overlay object.
+
         Attributes:
             xy (google.cloud.video.transcoder_v1.types.Overlay.NormalizedCoordinate):
                 Normalized coordinates based on output video resolution.
@@ -716,6 +731,7 @@ class Overlay(proto.Message):
 
     class AnimationFade(proto.Message):
         r"""Display overlay object with fade animation.
+
         Attributes:
             fade_type (google.cloud.video.transcoder_v1.types.Overlay.FadeType):
                 Required. Type of fade animation: ``FADE_IN`` or
@@ -775,6 +791,7 @@ class Overlay(proto.Message):
 
     class Animation(proto.Message):
         r"""Animation types.
+
         Attributes:
             animation_static (google.cloud.video.transcoder_v1.types.Overlay.AnimationStatic):
                 Display static overlay object.
@@ -817,6 +834,7 @@ class Overlay(proto.Message):
 
 class PreprocessingConfig(proto.Message):
     r"""Preprocessing configurations.
+
     Attributes:
         color (google.cloud.video.transcoder_v1.types.PreprocessingConfig.Color):
             Color preprocessing configuration.
@@ -834,6 +852,7 @@ class PreprocessingConfig(proto.Message):
 
     class Color(proto.Message):
         r"""Color preprocessing configuration.
+
         Attributes:
             saturation (float):
                 Control color saturation of the video. Enter
@@ -867,6 +886,7 @@ class PreprocessingConfig(proto.Message):
 
     class Denoise(proto.Message):
         r"""Denoise preprocessing configuration.
+
         Attributes:
             strength (float):
                 Set strength of the denoise. Enter a value
@@ -893,6 +913,7 @@ class PreprocessingConfig(proto.Message):
 
     class Deblock(proto.Message):
         r"""Deblock preprocessing configuration.
+
         Attributes:
             strength (float):
                 Set strength of the deblocker. Enter a value
@@ -914,6 +935,7 @@ class PreprocessingConfig(proto.Message):
 
     class Audio(proto.Message):
         r"""Audio preprocessing configuration.
+
         Attributes:
             lufs (float):
                 Specify audio loudness normalization in loudness units
@@ -1057,6 +1079,7 @@ class PreprocessingConfig(proto.Message):
 
 class VideoStream(proto.Message):
     r"""Video stream resource.
+
     Attributes:
         h264 (google.cloud.video.transcoder_v1.types.VideoStream.H264CodecSettings):
             H264 codec settings.
@@ -1068,6 +1091,7 @@ class VideoStream(proto.Message):
 
     class H264CodecSettings(proto.Message):
         r"""H264 codec settings.
+
         Attributes:
             width_pixels (int):
                 The width of the video in pixels. Must be an
@@ -1277,6 +1301,7 @@ class VideoStream(proto.Message):
 
     class H265CodecSettings(proto.Message):
         r"""H265 codec settings.
+
         Attributes:
             width_pixels (int):
                 The width of the video in pixels. Must be an
@@ -1495,6 +1520,7 @@ class VideoStream(proto.Message):
 
     class Vp9CodecSettings(proto.Message):
         r"""VP9 codec settings.
+
         Attributes:
             width_pixels (int):
                 The width of the video in pixels. Must be an
@@ -1637,6 +1663,7 @@ class VideoStream(proto.Message):
 
 class AudioStream(proto.Message):
     r"""Audio stream resource.
+
     Attributes:
         codec (str):
             The codec for this audio stream. The default is ``aac``.
@@ -1815,6 +1842,7 @@ class TextStream(proto.Message):
 
 class SegmentSettings(proto.Message):
     r"""Segment settings for ``ts``, ``fmp4`` and ``vtt``.
+
     Attributes:
         segment_duration (google.protobuf.duration_pb2.Duration):
             Duration of the segments in seconds. The default is

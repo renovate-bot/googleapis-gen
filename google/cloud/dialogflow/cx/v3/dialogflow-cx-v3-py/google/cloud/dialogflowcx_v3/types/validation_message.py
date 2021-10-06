@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class ValidationMessage(proto.Message):
     r"""Agent/flow validation message.
+
     Attributes:
         resource_type (google.cloud.dialogflowcx_v3.types.ValidationMessage.ResourceType):
             The type of the resources where the message
@@ -93,6 +94,7 @@ class ValidationMessage(proto.Message):
 
 class ResourceName(proto.Message):
     r"""Resource name and display name.
+
     Attributes:
         name (str):
             Name.

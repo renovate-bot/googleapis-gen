@@ -610,6 +610,9 @@ class OsConfigZonalServiceGrpcAsyncIOTransport(OsConfigZonalServiceTransport):
             )
         return self._stubs['list_vulnerability_reports']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'OsConfigZonalServiceGrpcAsyncIOTransport',

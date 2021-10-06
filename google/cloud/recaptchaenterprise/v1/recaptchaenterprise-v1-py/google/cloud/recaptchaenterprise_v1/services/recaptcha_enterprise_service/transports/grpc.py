@@ -466,6 +466,8 @@ class RecaptchaEnterpriseServiceGrpcTransport(RecaptchaEnterpriseServiceTranspor
             )
         return self._stubs['get_metrics']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'RecaptchaEnterpriseServiceGrpcTransport',

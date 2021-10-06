@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class CustomerExtensionSetting(proto.Message):
     r"""A customer extension setting.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer extension

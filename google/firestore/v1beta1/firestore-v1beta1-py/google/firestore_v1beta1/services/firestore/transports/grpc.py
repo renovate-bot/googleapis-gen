@@ -638,6 +638,8 @@ class FirestoreGrpcTransport(FirestoreTransport):
             )
         return self._stubs['create_document']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'FirestoreGrpcTransport',

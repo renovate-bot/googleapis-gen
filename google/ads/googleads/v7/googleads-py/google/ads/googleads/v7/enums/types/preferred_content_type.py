@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PreferredContentTypeEnum(proto.Message):
     r"""Container for enumeration of preferred content criterion
     type.
-        """
+
+    """
     class PreferredContentType(proto.Enum):
         r"""Enumerates preferred content criterion type."""
         UNSPECIFIED = 0

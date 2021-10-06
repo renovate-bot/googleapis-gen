@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class GeoTargetingRestrictionEnum(proto.Message):
-    r"""Message describing feed item geo targeting restriction.    """
+    r"""Message describing feed item geo targeting restriction.
+    """
     class GeoTargetingRestriction(proto.Enum):
         r"""A restriction used to determine if the request context's
         geo should be matched.

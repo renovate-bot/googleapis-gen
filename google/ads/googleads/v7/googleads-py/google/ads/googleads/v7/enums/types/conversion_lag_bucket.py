@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionLagBucketEnum(proto.Message):
     r"""Container for enum representing the number of days between
     impression and conversion.
-        """
+
+    """
     class ConversionLagBucket(proto.Enum):
         r"""Enum representing the number of days between impression and
         conversion.

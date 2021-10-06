@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class AnnotationPayload(proto.Message):
     r"""Contains annotation information that is relevant to AutoML.
+
     Attributes:
         translation (google.cloud.automl_v1.types.TranslationAnnotation):
             Annotation details for translation.

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class MatchingFunctionContextTypeEnum(proto.Message):
     r"""Container for context types for an operand in a matching
     function.
-        """
+
+    """
     class MatchingFunctionContextType(proto.Enum):
         r"""Possible context types for an operand in a matching function."""
         UNSPECIFIED = 0

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AssetPerformanceLabelEnum(proto.Message):
     r"""Container for enum describing the performance label of an
     asset.
-        """
+
+    """
     class AssetPerformanceLabel(proto.Enum):
         r"""Enum describing the possible performance labels of an asset,
         usually computed in the context of a linkage.

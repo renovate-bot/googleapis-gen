@@ -31,7 +31,8 @@ class CriterionCategoryChannelAvailabilityModeEnum(proto.Message):
     advertising channels, or a particular channel with all its
     channel subtypes, or a channel with a certain subset of channel
     subtypes.
-        """
+
+    """
     class CriterionCategoryChannelAvailabilityMode(proto.Enum):
         r"""Enum containing the possible
         CriterionCategoryChannelAvailabilityMode.

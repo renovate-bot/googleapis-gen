@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class AdGroupFeed(proto.Message):
     r"""An ad group feed.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group feed. Ad group

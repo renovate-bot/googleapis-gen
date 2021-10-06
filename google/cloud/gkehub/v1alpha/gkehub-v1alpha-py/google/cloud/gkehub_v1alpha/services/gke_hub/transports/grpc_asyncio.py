@@ -387,6 +387,9 @@ class GkeHubGrpcAsyncIOTransport(GkeHubTransport):
             )
         return self._stubs['update_feature']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'GkeHubGrpcAsyncIOTransport',

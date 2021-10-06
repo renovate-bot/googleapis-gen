@@ -147,6 +147,7 @@ class Document(proto.Message):
 
         class FontSize(proto.Message):
             r"""Font size with unit.
+
             Attributes:
                 size (float):
                     Font size for the text.
@@ -199,6 +200,7 @@ class Document(proto.Message):
 
     class Page(proto.Message):
         r"""A page in a [Document][google.cloud.documentai.v1.Document].
+
         Attributes:
             page_number (int):
                 1-based index for current
@@ -255,6 +257,7 @@ class Document(proto.Message):
 
         class Dimension(proto.Message):
             r"""Dimension for the page.
+
             Attributes:
                 width (float):
                     Page width.
@@ -279,6 +282,7 @@ class Document(proto.Message):
 
         class Image(proto.Message):
             r"""Rendered image contents for this page.
+
             Attributes:
                 content (bytes):
                     Raw byte content of the image.
@@ -345,6 +349,7 @@ class Document(proto.Message):
 
         class Layout(proto.Message):
             r"""Visual element describing a layout unit on a page.
+
             Attributes:
                 text_anchor (google.cloud.documentai_v1.types.Document.TextAnchor):
                     Text anchor indexing into the
@@ -487,6 +492,7 @@ class Document(proto.Message):
 
         class Token(proto.Message):
             r"""A detected token.
+
             Attributes:
                 layout (google.cloud.documentai_v1.types.Document.Page.Layout):
                     [Layout][google.cloud.documentai.v1.Document.Page.Layout]
@@ -577,6 +583,7 @@ class Document(proto.Message):
 
         class Table(proto.Message):
             r"""A table representation similar to HTML table structure.
+
             Attributes:
                 layout (google.cloud.documentai_v1.types.Document.Page.Layout):
                     [Layout][google.cloud.documentai.v1.Document.Page.Layout]
@@ -592,6 +599,7 @@ class Document(proto.Message):
 
             class TableRow(proto.Message):
                 r"""A row of table cells.
+
                 Attributes:
                     cells (Sequence[google.cloud.documentai_v1.types.Document.Page.Table.TableCell]):
                         Cells that make up this row.
@@ -605,6 +613,7 @@ class Document(proto.Message):
 
             class TableCell(proto.Message):
                 r"""A cell representation inside the table.
+
                 Attributes:
                     layout (google.cloud.documentai_v1.types.Document.Page.Layout):
                         [Layout][google.cloud.documentai.v1.Document.Page.Layout]
@@ -661,6 +670,7 @@ class Document(proto.Message):
 
         class FormField(proto.Message):
             r"""A form field detected on the page.
+
             Attributes:
                 field_name (google.cloud.documentai_v1.types.Document.Page.Layout):
                     [Layout][google.cloud.documentai.v1.Document.Page.Layout]
@@ -722,6 +732,7 @@ class Document(proto.Message):
 
         class DetectedLanguage(proto.Message):
             r"""Detected language for a structural component.
+
             Attributes:
                 language_code (str):
                     The BCP-47 language code, such as "en-US" or "sr-Latn". For
@@ -855,6 +866,7 @@ class Document(proto.Message):
 
         class NormalizedValue(proto.Message):
             r"""Parsed and normalized entity value.
+
             Attributes:
                 money_value (google.type.money_pb2.Money):
                     Money value. See also:
@@ -1205,6 +1217,7 @@ class Document(proto.Message):
 
     class Revision(proto.Message):
         r"""Contains past or forward revisions of this document.
+
         Attributes:
             agent (str):
                 If the change was made by a person specify
@@ -1227,6 +1240,7 @@ class Document(proto.Message):
 
         class HumanReview(proto.Message):
             r"""Human Review information of the document.
+
             Attributes:
                 state (str):
                     Human review state. e.g. ``requested``, ``succeeded``,
@@ -1277,6 +1291,7 @@ class Document(proto.Message):
 
     class TextChange(proto.Message):
         r"""This message is used for text changes aka. OCR corrections.
+
         Attributes:
             text_anchor (google.cloud.documentai_v1.types.Document.TextAnchor):
                 Provenance of the correction. Text anchor indexing into the

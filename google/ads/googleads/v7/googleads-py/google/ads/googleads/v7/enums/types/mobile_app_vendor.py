@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class MobileAppVendorEnum(proto.Message):
     r"""Container for enum describing different types of mobile app
     vendors.
-        """
+
+    """
     class MobileAppVendor(proto.Enum):
         r"""The type of mobile app vendor"""
         UNSPECIFIED = 0

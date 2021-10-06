@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FunctionParsingErrorEnum(proto.Message):
     r"""Container for enum describing possible function parsing
     errors.
-        """
+
+    """
     class FunctionParsingError(proto.Enum):
         r"""Enum describing possible function parsing errors."""
         UNSPECIFIED = 0

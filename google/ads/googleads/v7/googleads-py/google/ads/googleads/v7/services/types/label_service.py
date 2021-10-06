@@ -102,6 +102,7 @@ class MutateLabelsRequest(proto.Message):
 
 class LabelOperation(proto.Message):
     r"""A single operation (create, remove, update) on a label.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -145,6 +146,7 @@ class LabelOperation(proto.Message):
 
 class MutateLabelsResponse(proto.Message):
     r"""Response message for a labels mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -170,6 +172,7 @@ class MutateLabelsResponse(proto.Message):
 
 class MutateLabelResult(proto.Message):
     r"""The result for a label mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

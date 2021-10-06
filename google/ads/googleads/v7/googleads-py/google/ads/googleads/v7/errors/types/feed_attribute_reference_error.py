@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedAttributeReferenceErrorEnum(proto.Message):
     r"""Container for enum describing possible feed attribute
     reference errors.
-        """
+
+    """
     class FeedAttributeReferenceError(proto.Enum):
         r"""Enum describing possible feed attribute reference errors."""
         UNSPECIFIED = 0

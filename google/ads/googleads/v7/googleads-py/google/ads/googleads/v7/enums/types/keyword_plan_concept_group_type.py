@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class KeywordPlanConceptGroupTypeEnum(proto.Message):
     r"""Container for enumeration of keyword plan concept group
     types.
-        """
+
+    """
     class KeywordPlanConceptGroupType(proto.Enum):
         r"""Enumerates keyword plan concept group types."""
         UNSPECIFIED = 0

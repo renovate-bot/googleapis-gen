@@ -157,6 +157,19 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         """
         return self._transport
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
     @staticmethod
     def conversion_action_path(customer_id: str,conversion_action_id: str,) -> str:
         """Return a fully-qualified conversion_action string."""

@@ -505,6 +505,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
             )
         return self._stubs['reload_document']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DocumentsGrpcAsyncIOTransport',

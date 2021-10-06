@@ -129,6 +129,7 @@ class EvaluationConfig(proto.Message):
 
 class BoundingBoxEvaluationOptions(proto.Message):
     r"""Options regarding evaluation between bounding boxes.
+
     Attributes:
         iou_threshold (float):
             Minimum [intersection-over-union
@@ -146,6 +147,7 @@ class BoundingBoxEvaluationOptions(proto.Message):
 
 class EvaluationMetrics(proto.Message):
     r"""
+
     Attributes:
         classification_metrics (google.cloud.datalabeling_v1beta1.types.ClassificationMetrics):
 
@@ -169,6 +171,7 @@ class EvaluationMetrics(proto.Message):
 
 class ClassificationMetrics(proto.Message):
     r"""Metrics calculated for a classification model.
+
     Attributes:
         pr_curve (google.cloud.datalabeling_v1beta1.types.PrCurve):
             Precision-recall curve based on ground truth
@@ -209,6 +212,7 @@ class ObjectDetectionMetrics(proto.Message):
 
 class PrCurve(proto.Message):
     r"""
+
     Attributes:
         annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
             The annotation spec of the label for which
@@ -229,6 +233,7 @@ class PrCurve(proto.Message):
 
     class ConfidenceMetricsEntry(proto.Message):
         r"""
+
         Attributes:
             confidence_threshold (float):
                 Threshold used for this entry.
@@ -346,6 +351,7 @@ class ConfusionMatrix(proto.Message):
 
     class ConfusionMatrixEntry(proto.Message):
         r"""
+
         Attributes:
             annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
                 The annotation spec of a predicted label.

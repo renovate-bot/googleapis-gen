@@ -605,6 +605,9 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             )
         return self._stubs['undelete_workload_identity_pool_provider']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'WorkloadIdentityPoolsGrpcAsyncIOTransport',

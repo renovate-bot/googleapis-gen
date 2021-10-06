@@ -92,6 +92,7 @@ class MutateRemarketingActionsRequest(proto.Message):
 
 class RemarketingActionOperation(proto.Message):
     r"""A single operation (create, update) on a remarketing action.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -125,6 +126,7 @@ class RemarketingActionOperation(proto.Message):
 
 class MutateRemarketingActionsResponse(proto.Message):
     r"""Response message for remarketing action mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -150,6 +152,7 @@ class MutateRemarketingActionsResponse(proto.Message):
 
 class MutateRemarketingActionResult(proto.Message):
     r"""The result for the remarketing action mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

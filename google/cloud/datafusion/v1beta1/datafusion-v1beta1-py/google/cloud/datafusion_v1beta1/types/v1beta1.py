@@ -103,6 +103,7 @@ class NetworkConfig(proto.Message):
 
 class Version(proto.Message):
     r"""The Data Fusion version.
+
     Attributes:
         version_number (str):
             The version number of the Data Fusion
@@ -131,6 +132,7 @@ class Version(proto.Message):
 
 class Accelerator(proto.Message):
     r"""Identifies Data Fusion accelerators for an instance.
+
     Attributes:
         accelerator_type (google.cloud.datafusion_v1beta1.types.Accelerator.AcceleratorType):
             The type of an accelator for a CDF instance.
@@ -170,6 +172,7 @@ class CryptoKeyConfig(proto.Message):
 
 class Instance(proto.Message):
     r"""Represents a Data Fusion instance.
+
     Attributes:
         name (str):
             Output only. The name of this instance is in
@@ -403,6 +406,7 @@ class Instance(proto.Message):
 
 class ListInstancesRequest(proto.Message):
     r"""Request message for listing Data Fusion instances.
+
     Attributes:
         parent (str):
             The project and location for which to
@@ -447,6 +451,7 @@ class ListInstancesRequest(proto.Message):
 
 class ListInstancesResponse(proto.Message):
     r"""Response message for the list instance request.
+
     Attributes:
         instances (Sequence[google.cloud.datafusion_v1beta1.types.Instance]):
             Represents a list of Data Fusion instances.
@@ -478,6 +483,7 @@ class ListInstancesResponse(proto.Message):
 
 class ListAvailableVersionsRequest(proto.Message):
     r"""Request message for the list available versions request.
+
     Attributes:
         parent (str):
             Required. The project and location for which
@@ -515,6 +521,7 @@ class ListAvailableVersionsRequest(proto.Message):
 
 class ListAvailableVersionsResponse(proto.Message):
     r"""Response message for the list available versions request.
+
     Attributes:
         available_versions (Sequence[google.cloud.datafusion_v1beta1.types.Version]):
             Represents a list of versions that are
@@ -557,6 +564,7 @@ class GetInstanceRequest(proto.Message):
 
 class CreateInstanceRequest(proto.Message):
     r"""Request message for creating a Data Fusion instance.
+
     Attributes:
         parent (str):
             The instance's project and location in the
@@ -584,6 +592,7 @@ class CreateInstanceRequest(proto.Message):
 
 class DeleteInstanceRequest(proto.Message):
     r"""Request message for deleting a Data Fusion instance.
+
     Attributes:
         name (str):
             The instance resource name in the format
@@ -631,6 +640,7 @@ class UpdateInstanceRequest(proto.Message):
 
 class RestartInstanceRequest(proto.Message):
     r"""Request message for restarting a Data Fusion instance.
+
     Attributes:
         name (str):
             Name of the Data Fusion instance which need
@@ -666,6 +676,7 @@ class UpgradeInstanceRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of a long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             The time the operation was created.
@@ -723,6 +734,7 @@ class OperationMetadata(proto.Message):
 
 class RemoveIamPolicyRequest(proto.Message):
     r"""Request message for RemoveIamPolicy method.
+
     Attributes:
         resource (str):
             The resource on which IAM policy to be
@@ -736,11 +748,13 @@ class RemoveIamPolicyRequest(proto.Message):
 
 
 class RemoveIamPolicyResponse(proto.Message):
-    r"""Response message for RemoveIamPolicy method.    """
+    r"""Response message for RemoveIamPolicy method.
+    """
 
 
 class ListNamespacesRequest(proto.Message):
     r"""List namespaces request.
+
     Attributes:
         parent (str):
             Required. The instance to list its
@@ -803,6 +817,7 @@ class IAMPolicy(proto.Message):
 
 class Namespace(proto.Message):
     r"""Represents the information of a namespace
+
     Attributes:
         name (str):
             Name of the given namespace.
@@ -823,6 +838,7 @@ class Namespace(proto.Message):
 
 class ListNamespacesResponse(proto.Message):
     r"""List namespaces response.
+
     Attributes:
         namespaces (Sequence[google.cloud.datafusion_v1beta1.types.Namespace]):
             List of namespaces
@@ -890,6 +906,7 @@ class DnsPeering(proto.Message):
 
 class AddDnsPeeringRequest(proto.Message):
     r"""Request message to create dns peering.
+
     Attributes:
         parent (str):
             The resource on which DNS peering will be
@@ -910,11 +927,13 @@ class AddDnsPeeringRequest(proto.Message):
 
 
 class AddDnsPeeringResponse(proto.Message):
-    r"""Response message for set dns peering method.    """
+    r"""Response message for set dns peering method.
+    """
 
 
 class RemoveDnsPeeringRequest(proto.Message):
     r"""Request message to remove dns peering.
+
     Attributes:
         parent (str):
             The resource on which DNS peering will be
@@ -934,11 +953,13 @@ class RemoveDnsPeeringRequest(proto.Message):
 
 
 class RemoveDnsPeeringResponse(proto.Message):
-    r"""Response message for set dns peering method.    """
+    r"""Response message for set dns peering method.
+    """
 
 
 class ListDnsPeeringsRequest(proto.Message):
     r"""List dns peering request.
+
     Attributes:
         parent (str):
             Required. The resource on which dns peering
@@ -966,6 +987,7 @@ class ListDnsPeeringsRequest(proto.Message):
 
 class ListDnsPeeringsResponse(proto.Message):
     r"""List dns peering response.
+
     Attributes:
         dns_peerings (Sequence[google.cloud.datafusion_v1beta1.types.DnsPeering]):
             List of dns peering configs.

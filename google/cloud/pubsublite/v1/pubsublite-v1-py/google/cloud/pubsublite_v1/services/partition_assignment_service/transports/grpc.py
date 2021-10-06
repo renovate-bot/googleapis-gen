@@ -255,6 +255,8 @@ class PartitionAssignmentServiceGrpcTransport(PartitionAssignmentServiceTranspor
             )
         return self._stubs['assign_partitions']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'PartitionAssignmentServiceGrpcTransport',

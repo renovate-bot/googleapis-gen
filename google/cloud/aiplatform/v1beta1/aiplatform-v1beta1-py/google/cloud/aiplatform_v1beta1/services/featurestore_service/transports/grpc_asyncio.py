@@ -801,6 +801,9 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             )
         return self._stubs['search_features']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'FeaturestoreServiceGrpcAsyncIOTransport',

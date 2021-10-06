@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomerErrorEnum(proto.Message):
-    r"""Container for enum describing possible customer errors.    """
+    r"""Container for enum describing possible customer errors.
+    """
     class CustomerError(proto.Enum):
         r"""Set of errors that are related to requests dealing with
         Customer.

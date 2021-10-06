@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CampaignSharedSetErrorEnum(proto.Message):
     r"""Container for enum describing possible campaign shared set
     errors.
-        """
+
+    """
     class CampaignSharedSetError(proto.Enum):
         r"""Enum describing possible campaign shared set errors."""
         UNSPECIFIED = 0

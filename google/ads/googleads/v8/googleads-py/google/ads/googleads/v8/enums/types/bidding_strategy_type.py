@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class BiddingStrategyTypeEnum(proto.Message):
     r"""Container for enum describing possible bidding strategy
     types.
-        """
+
+    """
     class BiddingStrategyType(proto.Enum):
         r"""Enum describing possible bidding strategy types."""
         UNSPECIFIED = 0

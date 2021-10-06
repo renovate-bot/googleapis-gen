@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class FeedItemTarget(proto.Message):
     r"""A feed item target.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed item target. Feed

@@ -1779,6 +1779,8 @@ class StorageGrpcTransport(StorageTransport):
             )
         return self._stubs['update_hmac_key']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'StorageGrpcTransport',

@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class SearchAllResourcesRequest(proto.Message):
     r"""Search all resources request.
+
     Attributes:
         scope (str):
             Required. The relative name of an asset. The search is
@@ -97,6 +98,7 @@ class SearchAllResourcesRequest(proto.Message):
 
 class SearchAllResourcesResponse(proto.Message):
     r"""Search all resources response.
+
     Attributes:
         results (Sequence[google.cloud.asset_v1p1beta1.types.StandardResourceMetadata]):
             A list of resource that match the search
@@ -125,6 +127,7 @@ class SearchAllResourcesResponse(proto.Message):
 
 class SearchAllIamPoliciesRequest(proto.Message):
     r"""Search all IAM policies request.
+
     Attributes:
         scope (str):
             Required. The relative name of an asset. The search is
@@ -175,6 +178,7 @@ class SearchAllIamPoliciesRequest(proto.Message):
 
 class SearchAllIamPoliciesResponse(proto.Message):
     r"""Search all IAM policies response.
+
     Attributes:
         results (Sequence[google.cloud.asset_v1p1beta1.types.IamPolicySearchResult]):
             A list of IamPolicy that match the search

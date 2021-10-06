@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CampaignExperimentErrorEnum(proto.Message):
     r"""Container for enum describing possible campaign experiment
     errors.
-        """
+
+    """
     class CampaignExperimentError(proto.Enum):
         r"""Enum describing possible campaign experiment errors."""
         UNSPECIFIED = 0

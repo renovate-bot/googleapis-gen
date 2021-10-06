@@ -120,6 +120,7 @@ class Mutation(proto.Message):
 
     class Delete(proto.Message):
         r"""Arguments to [delete][google.spanner.v1.Mutation.delete] operations.
+
         Attributes:
             table (str):
                 Required. The table whose rows will be

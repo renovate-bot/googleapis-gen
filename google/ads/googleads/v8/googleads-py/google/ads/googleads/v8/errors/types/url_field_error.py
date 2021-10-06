@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UrlFieldErrorEnum(proto.Message):
-    r"""Container for enum describing possible url field errors.    """
+    r"""Container for enum describing possible url field errors.
+    """
     class UrlFieldError(proto.Enum):
         r"""Enum describing possible url field errors."""
         UNSPECIFIED = 0

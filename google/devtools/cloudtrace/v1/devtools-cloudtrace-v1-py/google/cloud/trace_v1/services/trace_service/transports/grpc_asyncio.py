@@ -315,6 +315,9 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
             )
         return self._stubs['patch_traces']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TraceServiceGrpcAsyncIOTransport',

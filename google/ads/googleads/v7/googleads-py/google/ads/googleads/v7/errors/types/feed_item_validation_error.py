@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemValidationErrorEnum(proto.Message):
     r"""Container for enum describing possible validation errors of a
     feed item.
-        """
+
+    """
     class FeedItemValidationError(proto.Enum):
         r"""The possible validation errors of a feed item."""
         UNSPECIFIED = 0

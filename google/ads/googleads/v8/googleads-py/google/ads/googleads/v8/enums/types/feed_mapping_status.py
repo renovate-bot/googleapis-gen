@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedMappingStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of a feed
     mapping.
-        """
+
+    """
     class FeedMappingStatus(proto.Enum):
         r"""Possible statuses of a feed mapping."""
         UNSPECIFIED = 0

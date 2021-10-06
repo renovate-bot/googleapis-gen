@@ -227,6 +227,7 @@ class StoredInfoTypeState(proto.Enum):
 
 class ExcludeInfoTypes(proto.Message):
     r"""List of exclude infoTypes.
+
     Attributes:
         info_types (Sequence[google.cloud.dlp_v2.types.InfoType]):
             InfoType list in ExclusionRule rule drops a finding when it
@@ -393,6 +394,7 @@ class InspectConfig(proto.Message):
 
     class FindingLimits(proto.Message):
         r"""Configuration to control the number of findings returned.
+
         Attributes:
             max_findings_per_item (int):
                 Max number of findings that will be returned for each item
@@ -489,6 +491,7 @@ class InspectConfig(proto.Message):
 
 class ByteContentItem(proto.Message):
     r"""Container for bytes to inspect or redact.
+
     Attributes:
         type_ (google.cloud.dlp_v2.types.ByteContentItem.BytesType):
             The type of data stored in the bytes string. Default will be
@@ -524,6 +527,7 @@ class ByteContentItem(proto.Message):
 
 class ContentItem(proto.Message):
     r"""Container structure for the content to inspect.
+
     Attributes:
         value (str):
             String data to inspect or redact.
@@ -570,6 +574,7 @@ class Table(proto.Message):
 
     class Row(proto.Message):
         r"""Values of the row.
+
         Attributes:
             values (Sequence[google.cloud.dlp_v2.types.Value]):
                 Individual cells.
@@ -595,6 +600,7 @@ class Table(proto.Message):
 
 class InspectResult(proto.Message):
     r"""All the findings for a single scanned item.
+
     Attributes:
         findings (Sequence[google.cloud.dlp_v2.types.Finding]):
             List of findings for an item.
@@ -623,6 +629,7 @@ class InspectResult(proto.Message):
 
 class Finding(proto.Message):
     r"""Represents a piece of potentially sensitive content.
+
     Attributes:
         name (str):
             Resource name in format
@@ -738,6 +745,7 @@ class Finding(proto.Message):
 
 class Location(proto.Message):
     r"""Specifies the location of the finding.
+
     Attributes:
         byte_range (google.cloud.dlp_v2.types.Range):
             Zero-based byte offsets delimiting the
@@ -860,6 +868,7 @@ class ContentLocation(proto.Message):
 
 class MetadataLocation(proto.Message):
     r"""Metadata Location
+
     Attributes:
         type_ (google.cloud.dlp_v2.types.MetadataType):
             Type of metadata containing the finding.
@@ -897,6 +906,7 @@ class StorageMetadataLabel(proto.Message):
 
 class DocumentLocation(proto.Message):
     r"""Location of a finding within a document.
+
     Attributes:
         file_offset (int):
             Offset of the line, from the beginning of the
@@ -911,6 +921,7 @@ class DocumentLocation(proto.Message):
 
 class RecordLocation(proto.Message):
     r"""Location of a finding within a row or record.
+
     Attributes:
         record_key (google.cloud.dlp_v2.types.RecordKey):
             Key of the finding.
@@ -939,6 +950,7 @@ class RecordLocation(proto.Message):
 
 class TableLocation(proto.Message):
     r"""Location of a finding within a table.
+
     Attributes:
         row_index (int):
             The zero-based index of the row where the finding is
@@ -1034,6 +1046,7 @@ class Container(proto.Message):
 
 class Range(proto.Message):
     r"""Generic half-open interval [start, end)
+
     Attributes:
         start (int):
             Index of the first character of the range
@@ -1055,6 +1068,7 @@ class Range(proto.Message):
 
 class ImageLocation(proto.Message):
     r"""Location of the finding within an image.
+
     Attributes:
         bounding_boxes (Sequence[google.cloud.dlp_v2.types.BoundingBox]):
             Bounding boxes locating the pixels within the
@@ -1070,6 +1084,7 @@ class ImageLocation(proto.Message):
 
 class BoundingBox(proto.Message):
     r"""Bounding box encompassing detected text within an image.
+
     Attributes:
         top (int):
             Top coordinate of the bounding box. (0,0) is
@@ -1208,6 +1223,7 @@ class RedactImageRequest(proto.Message):
 
 class Color(proto.Message):
     r"""Represents a color in the RGB color space.
+
     Attributes:
         red (float):
             The amount of red in the color as a value in the interval
@@ -1236,6 +1252,7 @@ class Color(proto.Message):
 
 class RedactImageResponse(proto.Message):
     r"""Results of redacting an image.
+
     Attributes:
         redacted_image (bytes):
             The redacted image. The type will be the same
@@ -1266,6 +1283,7 @@ class RedactImageResponse(proto.Message):
 
 class DeidentifyContentRequest(proto.Message):
     r"""Request to de-identify a list of items.
+
     Attributes:
         parent (str):
             Parent resource name.
@@ -1350,6 +1368,7 @@ class DeidentifyContentRequest(proto.Message):
 
 class DeidentifyContentResponse(proto.Message):
     r"""Results of de-identifying a ContentItem.
+
     Attributes:
         item (google.cloud.dlp_v2.types.ContentItem):
             The de-identified item.
@@ -1371,6 +1390,7 @@ class DeidentifyContentResponse(proto.Message):
 
 class ReidentifyContentRequest(proto.Message):
     r"""Request to re-identify an item.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -1465,6 +1485,7 @@ class ReidentifyContentRequest(proto.Message):
 
 class ReidentifyContentResponse(proto.Message):
     r"""Results of re-identifying a item.
+
     Attributes:
         item (google.cloud.dlp_v2.types.ContentItem):
             The re-identified item.
@@ -1551,6 +1572,7 @@ class InspectContentRequest(proto.Message):
 
 class InspectContentResponse(proto.Message):
     r"""Results of inspecting an item.
+
     Attributes:
         result (google.cloud.dlp_v2.types.InspectResult):
             The findings.
@@ -1565,6 +1587,7 @@ class InspectContentResponse(proto.Message):
 
 class OutputStorageConfig(proto.Message):
     r"""Cloud repository for storing output.
+
     Attributes:
         table (google.cloud.dlp_v2.types.BigQueryTable):
             Store findings in an existing table or a new table in an
@@ -1622,6 +1645,7 @@ class OutputStorageConfig(proto.Message):
 
 class InfoTypeStats(proto.Message):
     r"""Statistics regarding a specific InfoType.
+
     Attributes:
         info_type (google.cloud.dlp_v2.types.InfoType):
             The type of finding this stat is for.
@@ -1642,6 +1666,7 @@ class InfoTypeStats(proto.Message):
 
 class InspectDataSourceDetails(proto.Message):
     r"""The results of an inspect DataSource job.
+
     Attributes:
         requested_options (google.cloud.dlp_v2.types.InspectDataSourceDetails.RequestedOptions):
             The configuration used for this job.
@@ -1651,6 +1676,7 @@ class InspectDataSourceDetails(proto.Message):
 
     class RequestedOptions(proto.Message):
         r"""Snapshot of the inspection configuration.
+
         Attributes:
             snapshot_inspect_template (google.cloud.dlp_v2.types.InspectTemplate):
                 If run with an InspectTemplate, a snapshot of
@@ -1724,6 +1750,7 @@ class InspectDataSourceDetails(proto.Message):
 
 class HybridInspectStatistics(proto.Message):
     r"""Statistics related to processing hybrid inspect requests.
+
     Attributes:
         processed_count (int):
             The number of hybrid inspection requests
@@ -1757,6 +1784,7 @@ class HybridInspectStatistics(proto.Message):
 
 class InfoTypeDescription(proto.Message):
     r"""InfoType description.
+
     Attributes:
         name (str):
             Internal name of the infoType.
@@ -1791,6 +1819,7 @@ class InfoTypeDescription(proto.Message):
 
 class ListInfoTypesRequest(proto.Message):
     r"""Request for the list of infoTypes.
+
     Attributes:
         parent (str):
             The parent resource name.
@@ -1832,6 +1861,7 @@ class ListInfoTypesRequest(proto.Message):
 
 class ListInfoTypesResponse(proto.Message):
     r"""Response to the ListInfoTypes request.
+
     Attributes:
         info_types (Sequence[google.cloud.dlp_v2.types.InfoTypeDescription]):
             Set of sensitive infoTypes.
@@ -1878,6 +1908,7 @@ class RiskAnalysisJobConfig(proto.Message):
 
 class QuasiId(proto.Message):
     r"""A column with a semantic tag attached.
+
     Attributes:
         field (google.cloud.dlp_v2.types.FieldId):
             Required. Identifies the column.
@@ -1987,6 +2018,7 @@ class StatisticalTable(proto.Message):
 
 class PrivacyMetric(proto.Message):
     r"""Privacy metric to compute for reidentification risk analysis.
+
     Attributes:
         numerical_stats_config (google.cloud.dlp_v2.types.PrivacyMetric.NumericalStatsConfig):
             Numerical stats
@@ -2129,6 +2161,7 @@ class PrivacyMetric(proto.Message):
 
         class TaggedField(proto.Message):
             r"""A column with a semantic tag attached.
+
             Attributes:
                 field (google.cloud.dlp_v2.types.FieldId):
                     Required. Identifies the column.
@@ -2322,6 +2355,7 @@ class PrivacyMetric(proto.Message):
 
 class AnalyzeDataSourceRiskDetails(proto.Message):
     r"""Result of a risk analysis operation request.
+
     Attributes:
         requested_privacy_metric (google.cloud.dlp_v2.types.PrivacyMetric):
             Privacy metric to compute.
@@ -2345,6 +2379,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
     class NumericalStatsResult(proto.Message):
         r"""Result of the numerical stats computation.
+
         Attributes:
             min_value (google.cloud.dlp_v2.types.Value):
                 Minimum value appearing in the column.
@@ -2373,6 +2408,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
     class CategoricalStatsResult(proto.Message):
         r"""Result of the categorical stats computation.
+
         Attributes:
             value_frequency_histogram_buckets (Sequence[google.cloud.dlp_v2.types.AnalyzeDataSourceRiskDetails.CategoricalStatsResult.CategoricalStatsHistogramBucket]):
                 Histogram of value frequencies in the column.
@@ -2380,6 +2416,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
         class CategoricalStatsHistogramBucket(proto.Message):
             r"""Histogram of value frequencies in the column.
+
             Attributes:
                 value_frequency_lower_bound (int):
                     Lower bound on the value frequency of the
@@ -2428,6 +2465,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
     class KAnonymityResult(proto.Message):
         r"""Result of the k-anonymity computation.
+
         Attributes:
             equivalence_class_histogram_buckets (Sequence[google.cloud.dlp_v2.types.AnalyzeDataSourceRiskDetails.KAnonymityResult.KAnonymityHistogramBucket]):
                 Histogram of k-anonymity equivalence classes.
@@ -2460,6 +2498,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
         class KAnonymityHistogramBucket(proto.Message):
             r"""Histogram of k-anonymity equivalence classes.
+
             Attributes:
                 equivalence_class_size_lower_bound (int):
                     Lower bound on the size of the equivalence
@@ -2509,6 +2548,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
     class LDiversityResult(proto.Message):
         r"""Result of the l-diversity computation.
+
         Attributes:
             sensitive_value_frequency_histogram_buckets (Sequence[google.cloud.dlp_v2.types.AnalyzeDataSourceRiskDetails.LDiversityResult.LDiversityHistogramBucket]):
                 Histogram of l-diversity equivalence class
@@ -2624,6 +2664,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
         class KMapEstimationQuasiIdValues(proto.Message):
             r"""A tuple of values for the quasi-identifier columns.
+
             Attributes:
                 quasi_ids_values (Sequence[google.cloud.dlp_v2.types.Value]):
                     The quasi-identifier values.
@@ -2714,6 +2755,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
         class DeltaPresenceEstimationQuasiIdValues(proto.Message):
             r"""A tuple of values for the quasi-identifier columns.
+
             Attributes:
                 quasi_ids_values (Sequence[google.cloud.dlp_v2.types.Value]):
                     The quasi-identifier values.
@@ -2795,6 +2837,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
     class RequestedRiskAnalysisOptions(proto.Message):
         r"""Risk analysis options.
+
         Attributes:
             job_config (google.cloud.dlp_v2.types.RiskAnalysisJobConfig):
                 The job config for the risk job.
@@ -2861,6 +2904,7 @@ class AnalyzeDataSourceRiskDetails(proto.Message):
 
 class ValueFrequency(proto.Message):
     r"""A value of a field, including its frequency.
+
     Attributes:
         value (google.cloud.dlp_v2.types.Value):
             A value contained in the field in question.
@@ -2955,6 +2999,7 @@ class Value(proto.Message):
 
 class QuoteInfo(proto.Message):
     r"""Message for infoType-dependent details parsed from quote.
+
     Attributes:
         date_time (google.cloud.dlp_v2.types.DateTime):
             The date time indicated by the quote.
@@ -2986,6 +3031,7 @@ class DateTime(proto.Message):
 
     class TimeZone(proto.Message):
         r"""Time zone of the date time object.
+
         Attributes:
             offset_minutes (int):
                 Set only if the offset can be determined.
@@ -3022,6 +3068,7 @@ class DateTime(proto.Message):
 
 class DeidentifyConfig(proto.Message):
     r"""The configuration that controls how the data will change.
+
     Attributes:
         info_type_transformations (google.cloud.dlp_v2.types.InfoTypeTransformations):
             Treat the dataset as free-form text and apply
@@ -3076,14 +3123,16 @@ class TransformationErrorHandling(proto.Message):
     class ThrowError(proto.Message):
         r"""Throw an error and fail the request when a transformation
         error occurs.
-            """
+
+        """
 
     class LeaveUntransformed(proto.Message):
         r"""Skips the data without modifying it if the requested transformation
         would cause an error. For example, if a ``DateShift`` transformation
         were applied an an IP address, this mode would leave the IP address
         unchanged in the response.
-            """
+
+        """
 
     throw_error = proto.Field(
         proto.MESSAGE,
@@ -3101,6 +3150,7 @@ class TransformationErrorHandling(proto.Message):
 
 class PrimitiveTransformation(proto.Message):
     r"""A rule for transforming a value.
+
     Attributes:
         replace_config (google.cloud.dlp_v2.types.ReplaceValueConfig):
             Replace
@@ -3331,6 +3381,7 @@ class CryptoDeterministicConfig(proto.Message):
 
 class ReplaceValueConfig(proto.Message):
     r"""Replace each input value with a given ``Value``.
+
     Attributes:
         new_value (google.cloud.dlp_v2.types.Value):
             Value to replace it with.
@@ -3344,7 +3395,8 @@ class ReplaceValueConfig(proto.Message):
 
 
 class ReplaceWithInfoTypeConfig(proto.Message):
-    r"""Replace each matching finding with the name of the info_type.    """
+    r"""Replace each matching finding with the name of the info_type.
+    """
 
 
 class RedactConfig(proto.Message):
@@ -3352,7 +3404,8 @@ class RedactConfig(proto.Message):
     ``InfoTypeTransformation`` transforming PHONE_NUMBER, and input 'My
     phone number is 206-555-0123', the output would be 'My phone number
     is '.
-        """
+
+    """
 
 
 class CharsToIgnore(proto.Message):
@@ -3887,6 +3940,7 @@ class InfoTypeTransformations(proto.Message):
 
 class FieldTransformation(proto.Message):
     r"""The transformation to apply to the field.
+
     Attributes:
         fields (Sequence[google.cloud.dlp_v2.types.FieldId]):
             Required. Input field(s) to apply the
@@ -4039,6 +4093,7 @@ class RecordCondition(proto.Message):
 
     class Conditions(proto.Message):
         r"""A collection of conditions.
+
         Attributes:
             conditions (Sequence[google.cloud.dlp_v2.types.RecordCondition.Condition]):
                 A collection of conditions.
@@ -4052,6 +4107,7 @@ class RecordCondition(proto.Message):
 
     class Expressions(proto.Message):
         r"""An expression, consisting or an operator and conditions.
+
         Attributes:
             logical_operator (google.cloud.dlp_v2.types.RecordCondition.Expressions.LogicalOperator):
                 The operator to apply to the result of conditions. Default
@@ -4085,6 +4141,7 @@ class RecordCondition(proto.Message):
 
 class TransformationOverview(proto.Message):
     r"""Overview of the modifications that occurred.
+
     Attributes:
         transformed_bytes (int):
             Total size in bytes that were transformed in
@@ -4206,6 +4263,7 @@ class TransformationSummary(proto.Message):
 
 class Schedule(proto.Message):
     r"""Schedule for triggeredJobs.
+
     Attributes:
         recurrence_period_duration (google.protobuf.duration_pb2.Duration):
             With this option a job is started a regular
@@ -4230,7 +4288,8 @@ class Schedule(proto.Message):
 class Manual(proto.Message):
     r"""Job trigger option for hybrid jobs. Jobs must be manually
     created and finished.
-        """
+
+    """
 
 
 class InspectTemplate(proto.Message):
@@ -4427,6 +4486,7 @@ class JobTrigger(proto.Message):
 
     class Trigger(proto.Message):
         r"""What event needs to occur for a new job to be started.
+
         Attributes:
             schedule (google.cloud.dlp_v2.types.Schedule):
                 Create a job on a repeating basis based on
@@ -4578,7 +4638,8 @@ class Action(proto.Message):
         https://cloud.google.com/terms/service-terms Only a single
         instance of this action can be specified. Compatible with:
         Inspect
-            """
+
+        """
 
     class PublishFindingsToCloudDataCatalog(proto.Message):
         r"""Publish findings of a DlpJob to Cloud Data Catalog. Labels
@@ -4592,19 +4653,22 @@ class Action(proto.Message):
         Only a single instance of this action can be specified and only
         allowed if all resources being scanned are BigQuery tables.
         Compatible with: Inspect
-            """
+
+        """
 
     class JobNotificationEmails(proto.Message):
         r"""Enable email notification to project owners and editors on
         jobs's completion/failure.
-            """
+
+        """
 
     class PublishToStackdriver(proto.Message):
         r"""Enable Stackdriver metric dlp.googleapis.com/finding_count. This
         will publish a metric to stack driver on each infotype requested and
         how many findings were found for it. CustomDetectors will be
         bucketed as 'Custom' under the Stackdriver label 'info_type'.
-            """
+
+        """
 
     save_findings = proto.Field(
         proto.MESSAGE,
@@ -4646,6 +4710,7 @@ class Action(proto.Message):
 
 class CreateInspectTemplateRequest(proto.Message):
     r"""Request message for CreateInspectTemplate.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -4704,6 +4769,7 @@ class CreateInspectTemplateRequest(proto.Message):
 
 class UpdateInspectTemplateRequest(proto.Message):
     r"""Request message for UpdateInspectTemplate.
+
     Attributes:
         name (str):
             Required. Resource name of organization and inspectTemplate
@@ -4734,6 +4800,7 @@ class UpdateInspectTemplateRequest(proto.Message):
 
 class GetInspectTemplateRequest(proto.Message):
     r"""Request message for GetInspectTemplate.
+
     Attributes:
         name (str):
             Required. Resource name of the organization and
@@ -4750,6 +4817,7 @@ class GetInspectTemplateRequest(proto.Message):
 
 class ListInspectTemplatesRequest(proto.Message):
     r"""Request message for ListInspectTemplates.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -4825,6 +4893,7 @@ class ListInspectTemplatesRequest(proto.Message):
 
 class ListInspectTemplatesResponse(proto.Message):
     r"""Response message for ListInspectTemplates.
+
     Attributes:
         inspect_templates (Sequence[google.cloud.dlp_v2.types.InspectTemplate]):
             List of inspectTemplates, up to page_size in
@@ -4852,6 +4921,7 @@ class ListInspectTemplatesResponse(proto.Message):
 
 class DeleteInspectTemplateRequest(proto.Message):
     r"""Request message for DeleteInspectTemplate.
+
     Attributes:
         name (str):
             Required. Resource name of the organization and
@@ -4868,6 +4938,7 @@ class DeleteInspectTemplateRequest(proto.Message):
 
 class CreateJobTriggerRequest(proto.Message):
     r"""Request message for CreateJobTrigger.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -4921,6 +4992,7 @@ class CreateJobTriggerRequest(proto.Message):
 
 class ActivateJobTriggerRequest(proto.Message):
     r"""Request message for ActivateJobTrigger.
+
     Attributes:
         name (str):
             Required. Resource name of the trigger to activate, for
@@ -4935,6 +5007,7 @@ class ActivateJobTriggerRequest(proto.Message):
 
 class UpdateJobTriggerRequest(proto.Message):
     r"""Request message for UpdateJobTrigger.
+
     Attributes:
         name (str):
             Required. Resource name of the project and the triggeredJob,
@@ -4964,6 +5037,7 @@ class UpdateJobTriggerRequest(proto.Message):
 
 class GetJobTriggerRequest(proto.Message):
     r"""Request message for GetJobTrigger.
+
     Attributes:
         name (str):
             Required. Resource name of the project and the triggeredJob,
@@ -5044,6 +5118,7 @@ class CreateDlpJobRequest(proto.Message):
 
 class ListJobTriggersRequest(proto.Message):
     r"""Request message for ListJobTriggers.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -5159,6 +5234,7 @@ class ListJobTriggersRequest(proto.Message):
 
 class ListJobTriggersResponse(proto.Message):
     r"""Response message for ListJobTriggers.
+
     Attributes:
         job_triggers (Sequence[google.cloud.dlp_v2.types.JobTrigger]):
             List of triggeredJobs, up to page_size in
@@ -5186,6 +5262,7 @@ class ListJobTriggersResponse(proto.Message):
 
 class DeleteJobTriggerRequest(proto.Message):
     r"""Request message for DeleteJobTrigger.
+
     Attributes:
         name (str):
             Required. Resource name of the project and the triggeredJob,
@@ -5201,6 +5278,7 @@ class DeleteJobTriggerRequest(proto.Message):
 
 class InspectJobConfig(proto.Message):
     r"""Controls what and how to inspect for findings.
+
     Attributes:
         storage_config (google.cloud.dlp_v2.types.StorageConfig):
             The data to scan.
@@ -5238,6 +5316,7 @@ class InspectJobConfig(proto.Message):
 
 class DlpJob(proto.Message):
     r"""Combines all of the information about a DLP job.
+
     Attributes:
         name (str):
             The server-assigned name.
@@ -5326,6 +5405,7 @@ class DlpJob(proto.Message):
 
 class GetDlpJobRequest(proto.Message):
     r"""The request message for [DlpJobs.GetDlpJob][].
+
     Attributes:
         name (str):
             Required. The name of the DlpJob resource.
@@ -5339,6 +5419,7 @@ class GetDlpJobRequest(proto.Message):
 
 class ListDlpJobsRequest(proto.Message):
     r"""The request message for listing DLP jobs.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -5457,6 +5538,7 @@ class ListDlpJobsRequest(proto.Message):
 
 class ListDlpJobsResponse(proto.Message):
     r"""The response message for listing DLP jobs.
+
     Attributes:
         jobs (Sequence[google.cloud.dlp_v2.types.DlpJob]):
             A list of DlpJobs that matches the specified
@@ -5482,6 +5564,7 @@ class ListDlpJobsResponse(proto.Message):
 
 class CancelDlpJobRequest(proto.Message):
     r"""The request message for canceling a DLP job.
+
     Attributes:
         name (str):
             Required. The name of the DlpJob resource to
@@ -5496,6 +5579,7 @@ class CancelDlpJobRequest(proto.Message):
 
 class FinishDlpJobRequest(proto.Message):
     r"""The request message for finishing a DLP hybrid job.
+
     Attributes:
         name (str):
             Required. The name of the DlpJob resource to
@@ -5510,6 +5594,7 @@ class FinishDlpJobRequest(proto.Message):
 
 class DeleteDlpJobRequest(proto.Message):
     r"""The request message for deleting a DLP job.
+
     Attributes:
         name (str):
             Required. The name of the DlpJob resource to
@@ -5524,6 +5609,7 @@ class DeleteDlpJobRequest(proto.Message):
 
 class CreateDeidentifyTemplateRequest(proto.Message):
     r"""Request message for CreateDeidentifyTemplate.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -5582,6 +5668,7 @@ class CreateDeidentifyTemplateRequest(proto.Message):
 
 class UpdateDeidentifyTemplateRequest(proto.Message):
     r"""Request message for UpdateDeidentifyTemplate.
+
     Attributes:
         name (str):
             Required. Resource name of organization and deidentify
@@ -5612,6 +5699,7 @@ class UpdateDeidentifyTemplateRequest(proto.Message):
 
 class GetDeidentifyTemplateRequest(proto.Message):
     r"""Request message for GetDeidentifyTemplate.
+
     Attributes:
         name (str):
             Required. Resource name of the organization and deidentify
@@ -5628,6 +5716,7 @@ class GetDeidentifyTemplateRequest(proto.Message):
 
 class ListDeidentifyTemplatesRequest(proto.Message):
     r"""Request message for ListDeidentifyTemplates.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -5703,6 +5792,7 @@ class ListDeidentifyTemplatesRequest(proto.Message):
 
 class ListDeidentifyTemplatesResponse(proto.Message):
     r"""Response message for ListDeidentifyTemplates.
+
     Attributes:
         deidentify_templates (Sequence[google.cloud.dlp_v2.types.DeidentifyTemplate]):
             List of deidentify templates, up to page_size in
@@ -5730,6 +5820,7 @@ class ListDeidentifyTemplatesResponse(proto.Message):
 
 class DeleteDeidentifyTemplateRequest(proto.Message):
     r"""Request message for DeleteDeidentifyTemplate.
+
     Attributes:
         name (str):
             Required. Resource name of the organization and deidentify
@@ -5789,6 +5880,7 @@ class LargeCustomDictionaryConfig(proto.Message):
 
 class LargeCustomDictionaryStats(proto.Message):
     r"""Summary statistics of a custom dictionary.
+
     Attributes:
         approx_num_phrases (int):
             Approximate number of distinct phrases in the
@@ -5853,6 +5945,7 @@ class StoredInfoTypeConfig(proto.Message):
 
 class StoredInfoTypeStats(proto.Message):
     r"""Statistics for a StoredInfoType.
+
     Attributes:
         large_custom_dictionary (google.cloud.dlp_v2.types.LargeCustomDictionaryStats):
             StoredInfoType where findings are defined by
@@ -5962,6 +6055,7 @@ class StoredInfoType(proto.Message):
 
 class CreateStoredInfoTypeRequest(proto.Message):
     r"""Request message for CreateStoredInfoType.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -6021,6 +6115,7 @@ class CreateStoredInfoTypeRequest(proto.Message):
 
 class UpdateStoredInfoTypeRequest(proto.Message):
     r"""Request message for UpdateStoredInfoType.
+
     Attributes:
         name (str):
             Required. Resource name of organization and storedInfoType
@@ -6054,6 +6149,7 @@ class UpdateStoredInfoTypeRequest(proto.Message):
 
 class GetStoredInfoTypeRequest(proto.Message):
     r"""Request message for GetStoredInfoType.
+
     Attributes:
         name (str):
             Required. Resource name of the organization and
@@ -6070,6 +6166,7 @@ class GetStoredInfoTypeRequest(proto.Message):
 
 class ListStoredInfoTypesRequest(proto.Message):
     r"""Request message for ListStoredInfoTypes.
+
     Attributes:
         parent (str):
             Required. Parent resource name.
@@ -6145,6 +6242,7 @@ class ListStoredInfoTypesRequest(proto.Message):
 
 class ListStoredInfoTypesResponse(proto.Message):
     r"""Response message for ListStoredInfoTypes.
+
     Attributes:
         stored_info_types (Sequence[google.cloud.dlp_v2.types.StoredInfoType]):
             List of storedInfoTypes, up to page_size in
@@ -6172,6 +6270,7 @@ class ListStoredInfoTypesResponse(proto.Message):
 
 class DeleteStoredInfoTypeRequest(proto.Message):
     r"""Request message for DeleteStoredInfoType.
+
     Attributes:
         name (str):
             Required. Resource name of the organization and
@@ -6260,6 +6359,7 @@ class HybridContentItem(proto.Message):
 
 class HybridFindingDetails(proto.Message):
     r"""Populate to associate additional data with each finding.
+
     Attributes:
         container_details (google.cloud.dlp_v2.types.Container):
             Details about the container where the content
@@ -6332,7 +6432,8 @@ class HybridFindingDetails(proto.Message):
 
 
 class HybridInspectResponse(proto.Message):
-    r"""Quota exceeded errors will be thrown once quota has been met.    """
+    r"""Quota exceeded errors will be thrown once quota has been met.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

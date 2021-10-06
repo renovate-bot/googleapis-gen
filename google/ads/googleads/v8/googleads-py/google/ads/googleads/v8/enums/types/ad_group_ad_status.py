@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AdGroupAdStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of an
     AdGroupAd.
-        """
+
+    """
     class AdGroupAdStatus(proto.Enum):
         r"""The possible statuses of an AdGroupAd."""
         UNSPECIFIED = 0

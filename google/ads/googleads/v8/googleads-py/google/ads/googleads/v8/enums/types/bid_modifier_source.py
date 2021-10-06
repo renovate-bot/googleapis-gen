@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BidModifierSourceEnum(proto.Message):
-    r"""Container for enum describing possible bid modifier sources.    """
+    r"""Container for enum describing possible bid modifier sources.
+    """
     class BidModifierSource(proto.Enum):
         r"""Enum describing possible bid modifier sources."""
         UNSPECIFIED = 0

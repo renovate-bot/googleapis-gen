@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SpendingLimitTypeEnum(proto.Message):
-    r"""Message describing spending limit types.    """
+    r"""Message describing spending limit types.
+    """
     class SpendingLimitType(proto.Enum):
         r"""The possible spending limit types used by certain resources
         as an alternative to absolute money values in micros.

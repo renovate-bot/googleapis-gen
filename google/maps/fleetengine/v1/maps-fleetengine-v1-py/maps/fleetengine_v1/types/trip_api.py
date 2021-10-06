@@ -38,6 +38,7 @@ __protobuf__ = proto.module(
 
 class CreateTripRequest(proto.Message):
     r"""CreateTrip request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -111,6 +112,7 @@ class CreateTripRequest(proto.Message):
 
 class GetTripRequest(proto.Message):
     r"""GetTrip request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -176,6 +178,7 @@ class GetTripRequest(proto.Message):
 
 class ReportBillableTripRequest(proto.Message):
     r"""ReportBillableTrip request message.
+
     Attributes:
         name (str):
             Required. Must be in the format
@@ -231,6 +234,7 @@ class ReportBillableTripRequest(proto.Message):
 
 class UpdateTripRequest(proto.Message):
     r"""UpdateTrip request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -309,6 +313,7 @@ class UpdateTripRequest(proto.Message):
 
 class SearchTripsRequest(proto.Message):
     r"""SearchTrips request message.
+
     Attributes:
         header (maps.fleetengine_v1.types.RequestHeader):
             The standard Fleet Engine request header.
@@ -374,6 +379,7 @@ class SearchTripsRequest(proto.Message):
 
 class SearchTripsResponse(proto.Message):
     r"""SearchTrips response message.
+
     Attributes:
         trips (Sequence[maps.fleetengine_v1.types.Trip]):
             The list of trips for the requested vehicle.

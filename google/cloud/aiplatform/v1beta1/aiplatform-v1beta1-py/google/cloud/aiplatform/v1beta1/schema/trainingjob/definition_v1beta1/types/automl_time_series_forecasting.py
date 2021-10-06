@@ -53,6 +53,7 @@ class AutoMlForecasting(proto.Message):
 
 class AutoMlForecastingInputs(proto.Message):
     r"""
+
     Attributes:
         target_column (str):
             The name of the column that the model is to
@@ -178,6 +179,7 @@ class AutoMlForecastingInputs(proto.Message):
 
     class Transformation(proto.Message):
         r"""
+
         Attributes:
             auto (google.cloud.aiplatform.v1beta1.schema.trainingjob.definition_v1beta1.types.AutoMlForecastingInputs.Transformation.AutoTransformation):
 
@@ -353,6 +355,7 @@ class AutoMlForecastingInputs(proto.Message):
 
     class Granularity(proto.Message):
         r"""A duration of time expressed in time granularity units.
+
         Attributes:
             unit (str):
                 The time granularity unit of this time period. The supported
@@ -460,6 +463,7 @@ class AutoMlForecastingInputs(proto.Message):
 
 class AutoMlForecastingMetadata(proto.Message):
     r"""Model metadata specific to AutoML Forecasting.
+
     Attributes:
         train_cost_milli_node_hours (int):
             Output only. The actual training cost of the

@@ -219,6 +219,8 @@ class SqlInstanceNamesServiceGrpcTransport(SqlInstanceNamesServiceTransport):
         """
         return self._grpc_channel
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SqlInstanceNamesServiceGrpcTransport',

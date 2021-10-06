@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ValueRuleOperationEnum(proto.Message):
     r"""Container for enum describing possible operations for value
     rules which are executed when rules are triggered.
-        """
+
+    """
     class ValueRuleOperation(proto.Enum):
         r"""Possible operations of the action of a conversion value rule."""
         UNSPECIFIED = 0

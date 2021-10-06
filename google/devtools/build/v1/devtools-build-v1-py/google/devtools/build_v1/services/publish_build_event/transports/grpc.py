@@ -300,6 +300,8 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
             )
         return self._stubs['publish_build_tool_event_stream']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'PublishBuildEventGrpcTransport',

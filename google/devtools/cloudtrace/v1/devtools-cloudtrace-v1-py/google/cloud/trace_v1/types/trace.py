@@ -66,6 +66,7 @@ class Trace(proto.Message):
 
 class Traces(proto.Message):
     r"""List of new or updated traces.
+
     Attributes:
         traces (Sequence[google.cloud.trace_v1.types.Trace]):
             List of traces.
@@ -318,6 +319,7 @@ class ListTracesRequest(proto.Message):
 
 class ListTracesResponse(proto.Message):
     r"""The response message for the ``ListTraces`` method.
+
     Attributes:
         traces (Sequence[google.cloud.trace_v1.types.Trace]):
             List of trace records as specified by the
@@ -346,6 +348,7 @@ class ListTracesResponse(proto.Message):
 
 class GetTraceRequest(proto.Message):
     r"""The request message for the ``GetTrace`` method.
+
     Attributes:
         project_id (str):
             Required. ID of the Cloud project where the
@@ -366,6 +369,7 @@ class GetTraceRequest(proto.Message):
 
 class PatchTracesRequest(proto.Message):
     r"""The request message for the ``PatchTraces`` method.
+
     Attributes:
         project_id (str):
             Required. ID of the Cloud project where the

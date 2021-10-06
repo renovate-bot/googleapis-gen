@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListLogicalRuleOperatorEnum(proto.Message):
-    r"""The logical operator of the rule.    """
+    r"""The logical operator of the rule.
+    """
     class UserListLogicalRuleOperator(proto.Enum):
         r"""Enum describing possible user list logical rule operators."""
         UNSPECIFIED = 0

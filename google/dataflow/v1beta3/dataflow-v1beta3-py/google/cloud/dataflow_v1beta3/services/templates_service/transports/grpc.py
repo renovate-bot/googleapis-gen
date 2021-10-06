@@ -300,6 +300,8 @@ class TemplatesServiceGrpcTransport(TemplatesServiceTransport):
             )
         return self._stubs['get_template']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TemplatesServiceGrpcTransport',

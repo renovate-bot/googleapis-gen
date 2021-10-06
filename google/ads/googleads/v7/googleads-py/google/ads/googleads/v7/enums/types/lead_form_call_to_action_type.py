@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LeadFormCallToActionTypeEnum(proto.Message):
-    r"""Describes the type of call-to-action phrases in a lead form.    """
+    r"""Describes the type of call-to-action phrases in a lead form.
+    """
     class LeadFormCallToActionType(proto.Enum):
         r"""Enum describing the type of call-to-action phrases in a lead
         form.

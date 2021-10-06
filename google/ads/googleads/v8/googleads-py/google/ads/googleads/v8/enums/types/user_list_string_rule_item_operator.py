@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListStringRuleItemOperatorEnum(proto.Message):
-    r"""Supported rule operator for string type.    """
+    r"""Supported rule operator for string type.
+    """
     class UserListStringRuleItemOperator(proto.Enum):
         r"""Enum describing possible user list string rule item
         operators.

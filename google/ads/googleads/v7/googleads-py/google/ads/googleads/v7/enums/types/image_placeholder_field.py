@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ImagePlaceholderFieldEnum(proto.Message):
-    r"""Values for Advertiser Provided Image placeholder fields.    """
+    r"""Values for Advertiser Provided Image placeholder fields.
+    """
     class ImagePlaceholderField(proto.Enum):
         r"""Possible values for Advertiser Provided Image placeholder
         fields.

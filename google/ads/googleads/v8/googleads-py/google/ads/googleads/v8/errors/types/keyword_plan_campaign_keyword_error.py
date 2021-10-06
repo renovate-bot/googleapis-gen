@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class KeywordPlanCampaignKeywordErrorEnum(proto.Message):
     r"""Container for enum describing possible errors from applying a
     keyword plan campaign keyword.
-        """
+
+    """
     class KeywordPlanCampaignKeywordError(proto.Enum):
         r"""Enum describing possible errors from applying a keyword plan
         campaign keyword.

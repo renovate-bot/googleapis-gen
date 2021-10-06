@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CallConversionReportingStateEnum(proto.Message):
     r"""Container for enum describing possible data types for call
     conversion reporting state.
-        """
+
+    """
     class CallConversionReportingState(proto.Enum):
         r"""Possible data types for a call conversion action state."""
         UNSPECIFIED = 0

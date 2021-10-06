@@ -752,6 +752,9 @@ class SpannerGrpcAsyncIOTransport(SpannerTransport):
             )
         return self._stubs['partition_read']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SpannerGrpcAsyncIOTransport',

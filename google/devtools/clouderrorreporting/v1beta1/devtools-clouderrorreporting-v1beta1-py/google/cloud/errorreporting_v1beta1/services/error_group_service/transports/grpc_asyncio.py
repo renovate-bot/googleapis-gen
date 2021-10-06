@@ -278,6 +278,9 @@ class ErrorGroupServiceGrpcAsyncIOTransport(ErrorGroupServiceTransport):
             )
         return self._stubs['update_group']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ErrorGroupServiceGrpcAsyncIOTransport',

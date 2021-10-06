@@ -109,6 +109,7 @@ __protobuf__ = proto.module(
 
 class KeywordInfo(proto.Message):
     r"""A keyword criterion.
+
     Attributes:
         text (str):
             The text of the keyword (at most 80
@@ -148,6 +149,7 @@ class PlacementInfo(proto.Message):
 
 class MobileAppCategoryInfo(proto.Message):
     r"""A mobile app category criterion.
+
     Attributes:
         mobile_app_category_constant (str):
             The mobile app category constant resource
@@ -163,6 +165,7 @@ class MobileAppCategoryInfo(proto.Message):
 
 class MobileApplicationInfo(proto.Message):
     r"""A mobile application criterion.
+
     Attributes:
         app_id (str):
             A string that uniquely identifies a mobile application to
@@ -201,6 +204,7 @@ class MobileApplicationInfo(proto.Message):
 
 class LocationInfo(proto.Message):
     r"""A location criterion.
+
     Attributes:
         geo_target_constant (str):
             The geo target constant resource name.
@@ -215,6 +219,7 @@ class LocationInfo(proto.Message):
 
 class DeviceInfo(proto.Message):
     r"""A device criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.DeviceEnum.Device):
             Type of the device.
@@ -229,6 +234,7 @@ class DeviceInfo(proto.Message):
 
 class PreferredContentInfo(proto.Message):
     r"""A preferred content criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.PreferredContentTypeEnum.PreferredContentType):
             Type of the preferred content.
@@ -243,6 +249,7 @@ class PreferredContentInfo(proto.Message):
 
 class ListingGroupInfo(proto.Message):
     r"""A listing group criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.ListingGroupTypeEnum.ListingGroupType):
             Type of the listing group.
@@ -275,6 +282,7 @@ class ListingGroupInfo(proto.Message):
 
 class ListingScopeInfo(proto.Message):
     r"""A listing scope criterion.
+
     Attributes:
         dimensions (Sequence[google.ads.googleads.v7.common.types.ListingDimensionInfo]):
             Scope of the campaign criterion.
@@ -289,6 +297,7 @@ class ListingScopeInfo(proto.Message):
 
 class ListingDimensionInfo(proto.Message):
     r"""Listing dimensions for listing group criterion.
+
     Attributes:
         hotel_id (google.ads.googleads.v7.common.types.HotelIdInfo):
             Advertiser-specific hotel ID.
@@ -410,6 +419,7 @@ class ListingDimensionInfo(proto.Message):
 
 class HotelIdInfo(proto.Message):
     r"""Advertiser-specific hotel ID.
+
     Attributes:
         value (str):
             String value of the hotel ID.
@@ -424,6 +434,7 @@ class HotelIdInfo(proto.Message):
 
 class HotelClassInfo(proto.Message):
     r"""Class of the hotel as a number of stars 1 to 5.
+
     Attributes:
         value (int):
             Long value of the hotel class.
@@ -438,6 +449,7 @@ class HotelClassInfo(proto.Message):
 
 class HotelCountryRegionInfo(proto.Message):
     r"""Country or Region the hotel is located in.
+
     Attributes:
         country_region_criterion (str):
             The Geo Target Constant resource name.
@@ -452,6 +464,7 @@ class HotelCountryRegionInfo(proto.Message):
 
 class HotelStateInfo(proto.Message):
     r"""State the hotel is located in.
+
     Attributes:
         state_criterion (str):
             The Geo Target Constant resource name.
@@ -466,6 +479,7 @@ class HotelStateInfo(proto.Message):
 
 class HotelCityInfo(proto.Message):
     r"""City the hotel is located in.
+
     Attributes:
         city_criterion (str):
             The Geo Target Constant resource name.
@@ -480,6 +494,7 @@ class HotelCityInfo(proto.Message):
 
 class ProductBiddingCategoryInfo(proto.Message):
     r"""Bidding category of a product offer.
+
     Attributes:
         id (int):
             ID of the product bidding category.
@@ -514,6 +529,7 @@ class ProductBiddingCategoryInfo(proto.Message):
 
 class ProductBrandInfo(proto.Message):
     r"""Brand of the product.
+
     Attributes:
         value (str):
             String value of the product brand.
@@ -528,6 +544,7 @@ class ProductBrandInfo(proto.Message):
 
 class ProductChannelInfo(proto.Message):
     r"""Locality of a product offer.
+
     Attributes:
         channel (google.ads.googleads.v7.enums.types.ProductChannelEnum.ProductChannel):
             Value of the locality.
@@ -542,6 +559,7 @@ class ProductChannelInfo(proto.Message):
 
 class ProductChannelExclusivityInfo(proto.Message):
     r"""Availability of a product offer.
+
     Attributes:
         channel_exclusivity (google.ads.googleads.v7.enums.types.ProductChannelExclusivityEnum.ProductChannelExclusivity):
             Value of the availability.
@@ -556,6 +574,7 @@ class ProductChannelExclusivityInfo(proto.Message):
 
 class ProductConditionInfo(proto.Message):
     r"""Condition of a product offer.
+
     Attributes:
         condition (google.ads.googleads.v7.enums.types.ProductConditionEnum.ProductCondition):
             Value of the condition.
@@ -570,6 +589,7 @@ class ProductConditionInfo(proto.Message):
 
 class ProductCustomAttributeInfo(proto.Message):
     r"""Custom attribute of a product offer.
+
     Attributes:
         value (str):
             String value of the product custom attribute.
@@ -591,6 +611,7 @@ class ProductCustomAttributeInfo(proto.Message):
 
 class ProductItemIdInfo(proto.Message):
     r"""Item id of a product offer.
+
     Attributes:
         value (str):
             Value of the id.
@@ -605,6 +626,7 @@ class ProductItemIdInfo(proto.Message):
 
 class ProductTypeInfo(proto.Message):
     r"""Type of a product offer.
+
     Attributes:
         value (str):
             Value of the type.
@@ -625,7 +647,8 @@ class ProductTypeInfo(proto.Message):
 
 
 class UnknownListingDimensionInfo(proto.Message):
-    r"""Unknown listing dimension.    """
+    r"""Unknown listing dimension.
+    """
 
 
 class HotelDateSelectionTypeInfo(proto.Message):
@@ -671,6 +694,7 @@ class HotelAdvanceBookingWindowInfo(proto.Message):
 
 class HotelLengthOfStayInfo(proto.Message):
     r"""Criterion for length of hotel stay in nights.
+
     Attributes:
         min_nights (int):
             Low end of the number of nights in the stay.
@@ -692,6 +716,7 @@ class HotelLengthOfStayInfo(proto.Message):
 
 class HotelCheckInDateRangeInfo(proto.Message):
     r"""Criterion for a check-in date range.
+
     Attributes:
         start_date (str):
             Start date in the YYYY-MM-DD format.
@@ -711,6 +736,7 @@ class HotelCheckInDateRangeInfo(proto.Message):
 
 class HotelCheckInDayInfo(proto.Message):
     r"""Criterion for day of the week the booking is for.
+
     Attributes:
         day_of_week (google.ads.googleads.v7.enums.types.DayOfWeekEnum.DayOfWeek):
             The day of the week.
@@ -725,6 +751,7 @@ class HotelCheckInDayInfo(proto.Message):
 
 class InteractionTypeInfo(proto.Message):
     r"""Criterion for Interaction Type.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.InteractionTypeEnum.InteractionType):
             The interaction type.
@@ -802,6 +829,7 @@ class AdScheduleInfo(proto.Message):
 
 class AgeRangeInfo(proto.Message):
     r"""An age range criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.AgeRangeTypeEnum.AgeRangeType):
             Type of the age range.
@@ -816,6 +844,7 @@ class AgeRangeInfo(proto.Message):
 
 class GenderInfo(proto.Message):
     r"""A gender criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.GenderTypeEnum.GenderType):
             Type of the gender.
@@ -830,6 +859,7 @@ class GenderInfo(proto.Message):
 
 class IncomeRangeInfo(proto.Message):
     r"""An income range criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.IncomeRangeTypeEnum.IncomeRangeType):
             Type of the income range.
@@ -844,6 +874,7 @@ class IncomeRangeInfo(proto.Message):
 
 class ParentalStatusInfo(proto.Message):
     r"""A parental status criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.ParentalStatusTypeEnum.ParentalStatusType):
             Type of the parental status.
@@ -858,6 +889,7 @@ class ParentalStatusInfo(proto.Message):
 
 class YouTubeVideoInfo(proto.Message):
     r"""A YouTube Video criterion.
+
     Attributes:
         video_id (str):
             YouTube video id as it appears on the YouTube
@@ -873,6 +905,7 @@ class YouTubeVideoInfo(proto.Message):
 
 class YouTubeChannelInfo(proto.Message):
     r"""A YouTube Channel criterion.
+
     Attributes:
         channel_id (str):
             The YouTube uploader channel id or the
@@ -948,6 +981,7 @@ class ProximityInfo(proto.Message):
 
 class GeoPointInfo(proto.Message):
     r"""Geo point for proximity criterion.
+
     Attributes:
         longitude_in_micro_degrees (int):
             Micro degrees for the longitude.
@@ -969,6 +1003,7 @@ class GeoPointInfo(proto.Message):
 
 class AddressInfo(proto.Message):
     r"""Address for proximity criterion.
+
     Attributes:
         postal_code (str):
             Postal code.
@@ -1054,6 +1089,7 @@ class TopicInfo(proto.Message):
 
 class LanguageInfo(proto.Message):
     r"""A language criterion.
+
     Attributes:
         language_constant (str):
             The language constant resource name.
@@ -1087,6 +1123,7 @@ class IpBlockInfo(proto.Message):
 
 class ContentLabelInfo(proto.Message):
     r"""Content Label for category exclusion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.ContentLabelTypeEnum.ContentLabelType):
             Content label type, required for CREATE
@@ -1102,6 +1139,7 @@ class ContentLabelInfo(proto.Message):
 
 class CarrierInfo(proto.Message):
     r"""Represents a Carrier Criterion.
+
     Attributes:
         carrier_constant (str):
             The Carrier constant resource name.
@@ -1116,6 +1154,7 @@ class CarrierInfo(proto.Message):
 
 class UserInterestInfo(proto.Message):
     r"""Represents a particular interest-based topic to be targeted.
+
     Attributes:
         user_interest_category (str):
             The UserInterest resource name.
@@ -1215,6 +1254,7 @@ class WebpageConditionInfo(proto.Message):
 
 class WebpageSampleInfo(proto.Message):
     r"""List of sample urls that match the website target
+
     Attributes:
         sample_urls (Sequence[str]):
             Webpage sample urls
@@ -1228,6 +1268,7 @@ class WebpageSampleInfo(proto.Message):
 
 class OperatingSystemVersionInfo(proto.Message):
     r"""Represents an operating system version to be targeted.
+
     Attributes:
         operating_system_version_constant (str):
             The operating system version constant
@@ -1243,6 +1284,7 @@ class OperatingSystemVersionInfo(proto.Message):
 
 class AppPaymentModelInfo(proto.Message):
     r"""An app payment model criterion.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.AppPaymentModelTypeEnum.AppPaymentModelType):
             Type of the app payment model.
@@ -1257,6 +1299,7 @@ class AppPaymentModelInfo(proto.Message):
 
 class MobileDeviceInfo(proto.Message):
     r"""A mobile device criterion.
+
     Attributes:
         mobile_device_constant (str):
             The mobile device constant resource name.
@@ -1303,6 +1346,7 @@ class CustomIntentInfo(proto.Message):
 
 class LocationGroupInfo(proto.Message):
     r"""A radius around a list of locations specified via a feed.
+
     Attributes:
         feed (str):
             Feed specifying locations for targeting.
@@ -1358,6 +1402,7 @@ class LocationGroupInfo(proto.Message):
 
 class CustomAudienceInfo(proto.Message):
     r"""A custom audience criterion.
+
     Attributes:
         custom_audience (str):
             The CustomAudience resource name.
@@ -1371,6 +1416,7 @@ class CustomAudienceInfo(proto.Message):
 
 class CombinedAudienceInfo(proto.Message):
     r"""A combined audience criterion.
+
     Attributes:
         combined_audience (str):
             The CombinedAudience resource name.

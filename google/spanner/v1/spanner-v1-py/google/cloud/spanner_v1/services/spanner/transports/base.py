@@ -306,6 +306,15 @@ initial=0.25,maximum=32.0,multiplier=1.3,                    predicate=retries.i
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+       .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def create_session(self) -> Callable[
             [spanner.CreateSessionRequest],

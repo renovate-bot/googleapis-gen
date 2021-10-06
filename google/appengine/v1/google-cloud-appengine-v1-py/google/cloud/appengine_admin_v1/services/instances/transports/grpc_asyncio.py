@@ -375,6 +375,9 @@ class InstancesGrpcAsyncIOTransport(InstancesTransport):
             )
         return self._stubs['debug_instance']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'InstancesGrpcAsyncIOTransport',

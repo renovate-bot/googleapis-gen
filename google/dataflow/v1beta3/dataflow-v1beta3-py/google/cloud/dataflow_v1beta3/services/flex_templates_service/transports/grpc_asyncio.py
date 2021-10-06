@@ -251,6 +251,9 @@ class FlexTemplatesServiceGrpcAsyncIOTransport(FlexTemplatesServiceTransport):
             )
         return self._stubs['launch_flex_template']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'FlexTemplatesServiceGrpcAsyncIOTransport',

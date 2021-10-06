@@ -48,6 +48,7 @@ __protobuf__ = proto.module(
 
 class GetServiceAccountRequest(proto.Message):
     r"""Request message for GetServiceAccount.
+
     Attributes:
         name (str):
             Required. The relative resource name of the service account
@@ -91,6 +92,7 @@ class ServiceAccount(proto.Message):
 
 class GetSettingsRequest(proto.Message):
     r"""Request message for GetSettings.
+
     Attributes:
         name (str):
             Required. The name of the settings to retrieve. Formats:
@@ -111,6 +113,7 @@ class GetSettingsRequest(proto.Message):
 
 class UpdateSettingsRequest(proto.Message):
     r"""Request message for UpdateSettings.
+
     Attributes:
         settings (google.cloud.securitycenter.settings_v1beta1.types.Settings):
             Required. The settings to update.
@@ -143,6 +146,7 @@ class UpdateSettingsRequest(proto.Message):
 
 class ResetSettingsRequest(proto.Message):
     r"""Request message for ResetSettings.
+
     Attributes:
         name (str):
             Required. The name of the settings to reset. Formats:
@@ -171,6 +175,7 @@ class ResetSettingsRequest(proto.Message):
 
 class BatchGetSettingsRequest(proto.Message):
     r"""Request message for BatchGetSettings.
+
     Attributes:
         parent (str):
             Required. The relative resource name of the organization
@@ -201,6 +206,7 @@ class BatchGetSettingsRequest(proto.Message):
 
 class BatchGetSettingsResponse(proto.Message):
     r"""Response message for BatchGetSettings.
+
     Attributes:
         settings (Sequence[google.cloud.securitycenter.settings_v1beta1.types.Settings]):
             Settings requested.
@@ -215,6 +221,7 @@ class BatchGetSettingsResponse(proto.Message):
 
 class CalculateEffectiveSettingsRequest(proto.Message):
     r"""Request message for CalculateEffectiveSettings.
+
     Attributes:
         name (str):
             Required. The name of the effective settings to retrieve.
@@ -236,6 +243,7 @@ class CalculateEffectiveSettingsRequest(proto.Message):
 
 class BatchCalculateEffectiveSettingsRequest(proto.Message):
     r"""Request message for BatchGetEffectiveSettings.
+
     Attributes:
         parent (str):
             Required. The relative resource name of the organization
@@ -261,6 +269,7 @@ class BatchCalculateEffectiveSettingsRequest(proto.Message):
 
 class BatchCalculateEffectiveSettingsResponse(proto.Message):
     r"""Response message for BatchGetEffectiveSettings.
+
     Attributes:
         settings (Sequence[google.cloud.securitycenter.settings_v1beta1.types.Settings]):
             Settings requested.
@@ -275,6 +284,7 @@ class BatchCalculateEffectiveSettingsResponse(proto.Message):
 
 class GetComponentSettingsRequest(proto.Message):
     r"""Request message for GetComponentSettings.
+
     Attributes:
         name (str):
             Required. The component settings to retrieve.
@@ -297,6 +307,7 @@ class GetComponentSettingsRequest(proto.Message):
 
 class UpdateComponentSettingsRequest(proto.Message):
     r"""Request message for UpdateComponentSettings.
+
     Attributes:
         component_settings (google.cloud.securitycenter.settings_v1beta1.types.ComponentSettings):
             Required. The component settings to update.
@@ -329,6 +340,7 @@ class UpdateComponentSettingsRequest(proto.Message):
 
 class ResetComponentSettingsRequest(proto.Message):
     r"""Request message for ResetComponentSettings.
+
     Attributes:
         name (str):
             Required. The component settings to reset.
@@ -359,6 +371,7 @@ class ResetComponentSettingsRequest(proto.Message):
 
 class CalculateEffectiveComponentSettingsRequest(proto.Message):
     r"""Request message for CalculateEffectiveComponentSettings.
+
     Attributes:
         name (str):
             Required. The effective component settings to retrieve.
@@ -381,6 +394,7 @@ class CalculateEffectiveComponentSettingsRequest(proto.Message):
 
 class ListDetectorsRequest(proto.Message):
     r"""Request message for ListDetectors.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of
@@ -436,6 +450,7 @@ class ListDetectorsRequest(proto.Message):
 
 class ListDetectorsResponse(proto.Message):
     r"""Response message for ListDetectors.
+
     Attributes:
         detectors (Sequence[google.cloud.securitycenter.settings_v1beta1.types.Detector]):
             The detectors from the specified
@@ -463,6 +478,7 @@ class ListDetectorsResponse(proto.Message):
 
 class ListComponentsRequest(proto.Message):
     r"""Request message for ListComponents.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of
@@ -500,6 +516,7 @@ class ListComponentsRequest(proto.Message):
 
 class ListComponentsResponse(proto.Message):
     r"""Response message for ListComponents.
+
     Attributes:
         components (Sequence[str]):
             The components from the specified

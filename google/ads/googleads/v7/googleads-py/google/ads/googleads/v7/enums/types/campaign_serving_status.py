@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CampaignServingStatusEnum(proto.Message):
-    r"""Message describing Campaign serving statuses.    """
+    r"""Message describing Campaign serving statuses.
+    """
     class CampaignServingStatus(proto.Enum):
         r"""Possible serving statuses of a campaign."""
         UNSPECIFIED = 0

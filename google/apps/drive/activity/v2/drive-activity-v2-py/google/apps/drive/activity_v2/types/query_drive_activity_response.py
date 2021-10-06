@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class QueryDriveActivityResponse(proto.Message):
     r"""Response message for querying Drive activity.
+
     Attributes:
         activities (Sequence[google.apps.drive.activity_v2.types.DriveActivity]):
             List of activity requested.

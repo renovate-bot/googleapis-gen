@@ -100,6 +100,7 @@ class AnswerRecord(proto.Message):
 
 class AgentAssistantRecord(proto.Message):
     r"""Represents a record of a human agent assistant answer.
+
     Attributes:
         article_suggestion_answer (google.cloud.dialogflow_v2beta1.types.ArticleAnswer):
             Output only. The article suggestion answer.
@@ -183,6 +184,7 @@ class AnswerFeedback(proto.Message):
 
 class AgentAssistantFeedback(proto.Message):
     r"""Detail feedback of Agent Assistant result.
+
     Attributes:
         answer_relevance (google.cloud.dialogflow_v2beta1.types.AgentAssistantFeedback.AnswerRelevance):
             Optional. Whether or not the suggested answer is relevant.
@@ -237,6 +239,7 @@ class AgentAssistantFeedback(proto.Message):
 
     class SummarizationFeedback(proto.Message):
         r"""Feedback for conversation summarization.
+
         Attributes:
             start_timestamp (google.protobuf.timestamp_pb2.Timestamp):
                 Timestamp when composing of the summary

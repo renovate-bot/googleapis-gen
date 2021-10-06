@@ -165,6 +165,7 @@ class CustomJob(proto.Message):
 
 class CustomJobSpec(proto.Message):
     r"""Represents the spec of a CustomJob.
+
     Attributes:
         worker_pool_specs (Sequence[google.cloud.aiplatform_v1.types.WorkerPoolSpec]):
             Required. The spec of the worker pools
@@ -267,6 +268,7 @@ class CustomJobSpec(proto.Message):
 
 class WorkerPoolSpec(proto.Message):
     r"""Represents the spec of a worker pool in a job.
+
     Attributes:
         container_spec (google.cloud.aiplatform_v1.types.ContainerSpec):
             The custom container task.
@@ -312,6 +314,7 @@ class WorkerPoolSpec(proto.Message):
 
 class ContainerSpec(proto.Message):
     r"""The spec of a Container.
+
     Attributes:
         image_uri (str):
             Required. The URI of a container image in the
@@ -350,6 +353,7 @@ class ContainerSpec(proto.Message):
 
 class PythonPackageSpec(proto.Message):
     r"""The spec of a Python packaged code.
+
     Attributes:
         executor_image_uri (str):
             Required. The URI of a container image in Artifact Registry

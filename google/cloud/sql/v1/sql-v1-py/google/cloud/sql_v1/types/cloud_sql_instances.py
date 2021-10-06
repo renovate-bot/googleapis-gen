@@ -99,6 +99,7 @@ class SqlSuspensionReason(proto.Enum):
 
 class SqlInstancesAddServerCaRequest(proto.Message):
     r"""Instance add server CA request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -120,6 +121,7 @@ class SqlInstancesAddServerCaRequest(proto.Message):
 
 class SqlInstancesCloneRequest(proto.Message):
     r"""Instance clone request.
+
     Attributes:
         instance (str):
             The ID of the Cloud SQL instance to be cloned
@@ -148,6 +150,7 @@ class SqlInstancesCloneRequest(proto.Message):
 
 class SqlInstancesDeleteRequest(proto.Message):
     r"""Instance delete request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -169,6 +172,7 @@ class SqlInstancesDeleteRequest(proto.Message):
 
 class SqlInstancesDemoteMasterRequest(proto.Message):
     r"""Instance demote master request.
+
     Attributes:
         instance (str):
             Cloud SQL instance name.
@@ -195,6 +199,7 @@ class SqlInstancesDemoteMasterRequest(proto.Message):
 
 class SqlInstancesExportRequest(proto.Message):
     r"""Instance export request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -223,6 +228,7 @@ class SqlInstancesExportRequest(proto.Message):
 
 class SqlInstancesFailoverRequest(proto.Message):
     r"""Instance failover request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -251,6 +257,7 @@ class SqlInstancesFailoverRequest(proto.Message):
 
 class SqlInstancesGetRequest(proto.Message):
     r"""Instance get request.
+
     Attributes:
         instance (str):
             Database instance ID. This does not include
@@ -272,6 +279,7 @@ class SqlInstancesGetRequest(proto.Message):
 
 class SqlInstancesImportRequest(proto.Message):
     r"""Instance import request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -300,6 +308,7 @@ class SqlInstancesImportRequest(proto.Message):
 
 class SqlInstancesInsertRequest(proto.Message):
     r"""Instance insert request.
+
     Attributes:
         project (str):
             Project ID of the project to which the newly
@@ -321,6 +330,7 @@ class SqlInstancesInsertRequest(proto.Message):
 
 class SqlInstancesListRequest(proto.Message):
     r"""Instance list request.
+
     Attributes:
         filter (str):
             A filter expression that filters resources listed in the
@@ -364,6 +374,7 @@ class SqlInstancesListRequest(proto.Message):
 
 class SqlInstancesListServerCasRequest(proto.Message):
     r"""Instance list server CAs request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -385,6 +396,7 @@ class SqlInstancesListServerCasRequest(proto.Message):
 
 class SqlInstancesPatchRequest(proto.Message):
     r"""Instance patch request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -413,6 +425,7 @@ class SqlInstancesPatchRequest(proto.Message):
 
 class SqlInstancesPromoteReplicaRequest(proto.Message):
     r"""Instance promote replica request.
+
     Attributes:
         instance (str):
             Cloud SQL read replica instance name.
@@ -433,6 +446,7 @@ class SqlInstancesPromoteReplicaRequest(proto.Message):
 
 class SqlInstancesResetSslConfigRequest(proto.Message):
     r"""Instance reset SSL config request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -454,6 +468,7 @@ class SqlInstancesResetSslConfigRequest(proto.Message):
 
 class SqlInstancesRestartRequest(proto.Message):
     r"""Instance restart request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -475,6 +490,7 @@ class SqlInstancesRestartRequest(proto.Message):
 
 class SqlInstancesRestoreBackupRequest(proto.Message):
     r"""Instance restore backup request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -503,6 +519,7 @@ class SqlInstancesRestoreBackupRequest(proto.Message):
 
 class SqlInstancesRotateServerCaRequest(proto.Message):
     r"""Instance rotate server CA request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -531,6 +548,7 @@ class SqlInstancesRotateServerCaRequest(proto.Message):
 
 class SqlInstancesStartReplicaRequest(proto.Message):
     r"""Instance start replica request.
+
     Attributes:
         instance (str):
             Cloud SQL read replica instance name.
@@ -551,6 +569,7 @@ class SqlInstancesStartReplicaRequest(proto.Message):
 
 class SqlInstancesStopReplicaRequest(proto.Message):
     r"""Instance stop replica request.
+
     Attributes:
         instance (str):
             Cloud SQL read replica instance name.
@@ -571,6 +590,7 @@ class SqlInstancesStopReplicaRequest(proto.Message):
 
 class SqlInstancesTruncateLogRequest(proto.Message):
     r"""Instance truncate log request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -598,6 +618,7 @@ class SqlInstancesTruncateLogRequest(proto.Message):
 
 class SqlInstancesUpdateRequest(proto.Message):
     r"""Instance update request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -626,6 +647,7 @@ class SqlInstancesUpdateRequest(proto.Message):
 
 class SqlInstancesRescheduleMaintenanceRequest(proto.Message):
     r"""Instance reschedule maintenance request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -653,6 +675,7 @@ class SqlInstancesRescheduleMaintenanceRequest(proto.Message):
 
 class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
     r"""Instance verify external sync settings request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -708,6 +731,7 @@ class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
 
 class SqlInstancesStartExternalSyncRequest(proto.Message):
     r"""Instance start external sync request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -750,6 +774,7 @@ class SqlInstancesStartExternalSyncRequest(proto.Message):
 
 class SqlInstancesCreateEphemeralCertRequest(proto.Message):
     r"""Instance create ephemeral certificate request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -777,6 +802,7 @@ class SqlInstancesCreateEphemeralCertRequest(proto.Message):
 
 class InstancesCloneRequest(proto.Message):
     r"""Database instance clone request.
+
     Attributes:
         clone_context (google.cloud.sql_v1.types.CloneContext):
             Contains details about the clone operation.
@@ -791,6 +817,7 @@ class InstancesCloneRequest(proto.Message):
 
 class InstancesDemoteMasterRequest(proto.Message):
     r"""Database demote primary instance request.
+
     Attributes:
         demote_master_context (google.cloud.sql_v1.types.DemoteMasterContext):
             Contains details about the demoteMaster
@@ -806,6 +833,7 @@ class InstancesDemoteMasterRequest(proto.Message):
 
 class InstancesExportRequest(proto.Message):
     r"""Database instance export request.
+
     Attributes:
         export_context (google.cloud.sql_v1.types.ExportContext):
             Contains details about the export operation.
@@ -820,6 +848,7 @@ class InstancesExportRequest(proto.Message):
 
 class InstancesFailoverRequest(proto.Message):
     r"""Instance failover request.
+
     Attributes:
         failover_context (google.cloud.sql_v1.types.FailoverContext):
             Failover Context.
@@ -834,6 +863,7 @@ class InstancesFailoverRequest(proto.Message):
 
 class SslCertsCreateEphemeralRequest(proto.Message):
     r"""SslCerts create ephemeral certificate request.
+
     Attributes:
         public_key (str):
             PEM encoded public key to include in the
@@ -855,6 +885,7 @@ class SslCertsCreateEphemeralRequest(proto.Message):
 
 class InstancesImportRequest(proto.Message):
     r"""Database instance import request.
+
     Attributes:
         import_context (google.cloud.sql_v1.types.ImportContext):
             Contains details about the import operation.
@@ -869,6 +900,7 @@ class InstancesImportRequest(proto.Message):
 
 class InstancesListResponse(proto.Message):
     r"""Database instances list response.
+
     Attributes:
         kind (str):
             This is always **sql#instancesList**.
@@ -910,6 +942,7 @@ class InstancesListResponse(proto.Message):
 
 class InstancesListServerCasResponse(proto.Message):
     r"""Instances ListServerCas response.
+
     Attributes:
         certs (Sequence[google.cloud.sql_v1.types.SslCert]):
             List of server CA certificates for the
@@ -937,6 +970,7 @@ class InstancesListServerCasResponse(proto.Message):
 
 class InstancesRestoreBackupRequest(proto.Message):
     r"""Database instance restore backup request.
+
     Attributes:
         restore_backup_context (google.cloud.sql_v1.types.RestoreBackupContext):
             Parameters required to perform the restore
@@ -952,6 +986,7 @@ class InstancesRestoreBackupRequest(proto.Message):
 
 class InstancesRotateServerCaRequest(proto.Message):
     r"""Rotate server CA request.
+
     Attributes:
         rotate_server_ca_context (google.cloud.sql_v1.types.RotateServerCaContext):
             Contains details about the rotate server CA
@@ -967,6 +1002,7 @@ class InstancesRotateServerCaRequest(proto.Message):
 
 class InstancesTruncateLogRequest(proto.Message):
     r"""Instance truncate log request.
+
     Attributes:
         truncate_log_context (google.cloud.sql_v1.types.TruncateLogContext):
             Contains details about the truncate log
@@ -982,6 +1018,7 @@ class InstancesTruncateLogRequest(proto.Message):
 
 class SqlInstancesVerifyExternalSyncSettingsResponse(proto.Message):
     r"""Instance verify external sync settings response.
+
     Attributes:
         kind (str):
             This is always **sql#migrationSettingErrorList**.
@@ -1009,6 +1046,7 @@ class SqlInstancesVerifyExternalSyncSettingsResponse(proto.Message):
 
 class CloneContext(proto.Message):
     r"""Database instance clone context.
+
     Attributes:
         kind (str):
             This is always **sql#cloneContext**.
@@ -1054,6 +1092,7 @@ class CloneContext(proto.Message):
 
 class BinLogCoordinates(proto.Message):
     r"""Binary log coordinates.
+
     Attributes:
         bin_log_file_name (str):
             Name of the binary log file for a Cloud SQL
@@ -1080,6 +1119,7 @@ class BinLogCoordinates(proto.Message):
 
 class DatabaseInstance(proto.Message):
     r"""A Cloud SQL instance resource.
+
     Attributes:
         kind (str):
             This is always **sql#instance**.
@@ -1246,6 +1286,7 @@ class DatabaseInstance(proto.Message):
 
     class SqlFailoverReplica(proto.Message):
         r"""
+
         Attributes:
             name (str):
                 The name of the failover replica. If
@@ -1272,6 +1313,7 @@ class DatabaseInstance(proto.Message):
 
     class SqlScheduledMaintenance(proto.Message):
         r"""Any scheduled maintenancce for this instance.
+
         Attributes:
             start_time (google.protobuf.timestamp_pb2.Timestamp):
                 The start time of any upcoming scheduled
@@ -1503,6 +1545,7 @@ class DatabaseInstance(proto.Message):
 
 class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
     r"""Reschedule options for maintenance windows.
+
     Attributes:
         reschedule (google.cloud.sql_v1.types.SqlInstancesRescheduleMaintenanceRequestBody.Reschedule):
             Required. The type of the reschedule the user
@@ -1517,6 +1560,7 @@ class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
 
     class Reschedule(proto.Message):
         r"""
+
         Attributes:
             reschedule_type (google.cloud.sql_v1.types.SqlInstancesRescheduleMaintenanceRequestBody.RescheduleType):
                 Required. The type of the reschedule.
@@ -1547,6 +1591,7 @@ class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
 
 class DemoteMasterContext(proto.Message):
     r"""Database instance demote primary instance context.
+
     Attributes:
         kind (str):
             This is always **sql#demoteMasterContext**.
@@ -1598,6 +1643,7 @@ class DemoteMasterContext(proto.Message):
 
 class FailoverContext(proto.Message):
     r"""Database instance failover context.
+
     Attributes:
         settings_version (int):
             The current settings version of this
@@ -1654,6 +1700,7 @@ class RestoreBackupContext(proto.Message):
 
 class RotateServerCaContext(proto.Message):
     r"""Instance rotate server CA context.
+
     Attributes:
         kind (str):
             This is always **sql#rotateServerCaContext**.
@@ -1675,6 +1722,7 @@ class RotateServerCaContext(proto.Message):
 
 class TruncateLogContext(proto.Message):
     r"""Database Instance truncate log context.
+
     Attributes:
         kind (str):
             This is always **sql#truncateLogContext**.
@@ -1695,6 +1743,7 @@ class TruncateLogContext(proto.Message):
 
 class SqlExternalSyncSettingError(proto.Message):
     r"""External primary instance migration setting error/warning.
+
     Attributes:
         kind (str):
             Can be **sql#externalSyncSettingError** or
@@ -1751,6 +1800,7 @@ class SqlExternalSyncSettingError(proto.Message):
 
 class OnPremisesConfiguration(proto.Message):
     r"""On-premises instance configuration.
+
     Attributes:
         host_port (str):
             The host and port of the on-premises instance

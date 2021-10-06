@@ -262,6 +262,7 @@ class GooRepository(proto.Message):
 
 class PackageRepository(proto.Message):
     r"""A package repository.
+
     Attributes:
         apt (google.cloud.osconfig.agentendpoint_v1beta.types.AptRepository):
             An Apt Repository.
@@ -374,6 +375,7 @@ class SoftwareRecipe(proto.Message):
 
     class Artifact(proto.Message):
         r"""Specifies a resource to be used in the recipe.
+
         Attributes:
             id (str):
                 Id of the artifact, which the installation
@@ -395,6 +397,7 @@ class SoftwareRecipe(proto.Message):
 
         class Remote(proto.Message):
             r"""Specifies an artifact available via some URI.
+
             Attributes:
                 uri (str):
                     URI from which to fetch the object. It should
@@ -419,6 +422,7 @@ class SoftwareRecipe(proto.Message):
 
         class Gcs(proto.Message):
             r"""Specifies an artifact available as a Cloud Storage object.
+
             Attributes:
                 bucket (str):
                     Bucket of the Cloud Storage object. Given an example URL:
@@ -495,6 +499,7 @@ class SoftwareRecipe(proto.Message):
 
         class CopyFile(proto.Message):
             r"""Copies the artifact to the specified path on the instance.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -583,6 +588,7 @@ class SoftwareRecipe(proto.Message):
 
         class InstallMsi(proto.Message):
             r"""Installs an MSI file.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -610,6 +616,7 @@ class SoftwareRecipe(proto.Message):
 
         class InstallDpkg(proto.Message):
             r"""Installs a deb via dpkg.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -623,6 +630,7 @@ class SoftwareRecipe(proto.Message):
 
         class InstallRpm(proto.Message):
             r"""Installs an rpm file via the rpm utility.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -636,6 +644,7 @@ class SoftwareRecipe(proto.Message):
 
         class ExecFile(proto.Message):
             r"""Executes an artifact or local file.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -672,6 +681,7 @@ class SoftwareRecipe(proto.Message):
 
         class RunScript(proto.Message):
             r"""Runs a script through an interpreter.
+
             Attributes:
                 script (str):
                     The shell script to be executed.
@@ -826,6 +836,7 @@ class LookupEffectiveGuestPolicyRequest(proto.Message):
 
 class EffectiveGuestPolicy(proto.Message):
     r"""The effective guest policy assigned to the instance.
+
     Attributes:
         packages (Sequence[google.cloud.osconfig.agentendpoint_v1beta.types.EffectiveGuestPolicy.SourcedPackage]):
             List of package configurations assigned to
@@ -839,6 +850,7 @@ class EffectiveGuestPolicy(proto.Message):
 
     class SourcedPackage(proto.Message):
         r"""A guest policy package including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -860,6 +872,7 @@ class EffectiveGuestPolicy(proto.Message):
 
     class SourcedPackageRepository(proto.Message):
         r"""A guest policy package repository including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -881,6 +894,7 @@ class EffectiveGuestPolicy(proto.Message):
 
     class SourcedSoftwareRecipe(proto.Message):
         r"""A guest policy recipe including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this

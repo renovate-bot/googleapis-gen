@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class HeaderErrorEnum(proto.Message):
-    r"""Container for enum describing possible header errors.    """
+    r"""Container for enum describing possible header errors.
+    """
     class HeaderError(proto.Enum):
         r"""Enum describing possible header errors."""
         UNSPECIFIED = 0

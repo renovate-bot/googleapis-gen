@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AccessRoleEnum(proto.Message):
-    r"""Container for enum describing possible access role for user.    """
+    r"""Container for enum describing possible access role for user.
+    """
     class AccessRole(proto.Enum):
         r"""Possible access role of a user."""
         UNSPECIFIED = 0

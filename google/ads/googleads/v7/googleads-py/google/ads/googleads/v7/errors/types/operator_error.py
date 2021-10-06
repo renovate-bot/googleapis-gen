@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class OperatorErrorEnum(proto.Message):
-    r"""Container for enum describing possible operator errors.    """
+    r"""Container for enum describing possible operator errors.
+    """
     class OperatorError(proto.Enum):
         r"""Enum describing possible operator errors."""
         UNSPECIFIED = 0

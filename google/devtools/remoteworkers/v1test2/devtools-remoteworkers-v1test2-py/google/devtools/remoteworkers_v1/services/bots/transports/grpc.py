@@ -307,6 +307,8 @@ class BotsGrpcTransport(BotsTransport):
             )
         return self._stubs['update_bot_session']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'BotsGrpcTransport',

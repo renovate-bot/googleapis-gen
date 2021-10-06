@@ -64,6 +64,7 @@ __protobuf__ = proto.module(
 
 class EnableServiceRequest(proto.Message):
     r"""Request message for the ``EnableService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to enable the service on.
@@ -87,6 +88,7 @@ class EnableServiceRequest(proto.Message):
 
 class DisableServiceRequest(proto.Message):
     r"""Request message for the ``DisableService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to disable the service on.
@@ -107,6 +109,7 @@ class DisableServiceRequest(proto.Message):
 
 class GetServiceRequest(proto.Message):
     r"""Request message for the ``GetService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to get the
@@ -125,6 +128,7 @@ class GetServiceRequest(proto.Message):
 
 class ListServicesRequest(proto.Message):
     r"""Request message for the ``ListServices`` method.
+
     Attributes:
         parent (str):
             Parent to search for services on.
@@ -164,6 +168,7 @@ class ListServicesRequest(proto.Message):
 
 class ListServicesResponse(proto.Message):
     r"""Response message for the ``ListServices`` method.
+
     Attributes:
         services (Sequence[google.api.serviceusage_v1beta1.types.Service]):
             The available services for the requested
@@ -190,6 +195,7 @@ class ListServicesResponse(proto.Message):
 
 class BatchEnableServicesRequest(proto.Message):
     r"""Request message for the ``BatchEnableServices`` method.
+
     Attributes:
         parent (str):
             Parent to enable services on.
@@ -227,6 +233,7 @@ class BatchEnableServicesRequest(proto.Message):
 
 class ListConsumerQuotaMetricsRequest(proto.Message):
     r"""Request message for ListConsumerQuotaMetrics
+
     Attributes:
         parent (str):
             Parent of the quotas resource.
@@ -266,6 +273,7 @@ class ListConsumerQuotaMetricsRequest(proto.Message):
 
 class ListConsumerQuotaMetricsResponse(proto.Message):
     r"""Response message for ListConsumerQuotaMetrics
+
     Attributes:
         metrics (Sequence[google.api.serviceusage_v1beta1.types.ConsumerQuotaMetric]):
             Quota settings for the consumer, organized by
@@ -292,6 +300,7 @@ class ListConsumerQuotaMetricsResponse(proto.Message):
 
 class GetConsumerQuotaMetricRequest(proto.Message):
     r"""Request message for GetConsumerQuotaMetric
+
     Attributes:
         name (str):
             The resource name of the quota limit.
@@ -316,6 +325,7 @@ class GetConsumerQuotaMetricRequest(proto.Message):
 
 class GetConsumerQuotaLimitRequest(proto.Message):
     r"""Request message for GetConsumerQuotaLimit
+
     Attributes:
         name (str):
             The resource name of the quota limit.
@@ -340,6 +350,7 @@ class GetConsumerQuotaLimitRequest(proto.Message):
 
 class CreateAdminOverrideRequest(proto.Message):
     r"""Request message for CreateAdminOverride.
+
     Attributes:
         parent (str):
             The resource name of the parent quota limit, returned by a
@@ -385,6 +396,7 @@ class CreateAdminOverrideRequest(proto.Message):
 
 class UpdateAdminOverrideRequest(proto.Message):
     r"""Request message for UpdateAdminOverride.
+
     Attributes:
         name (str):
             The resource name of the override to update.
@@ -438,6 +450,7 @@ class UpdateAdminOverrideRequest(proto.Message):
 
 class DeleteAdminOverrideRequest(proto.Message):
     r"""Request message for DeleteAdminOverride.
+
     Attributes:
         name (str):
             The resource name of the override to delete.
@@ -475,6 +488,7 @@ class DeleteAdminOverrideRequest(proto.Message):
 
 class ListAdminOverridesRequest(proto.Message):
     r"""Request message for ListAdminOverrides
+
     Attributes:
         parent (str):
             The resource name of the parent quota limit, returned by a
@@ -505,6 +519,7 @@ class ListAdminOverridesRequest(proto.Message):
 
 class ListAdminOverridesResponse(proto.Message):
     r"""Response message for ListAdminOverrides.
+
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             Admin overrides on this limit.
@@ -530,6 +545,7 @@ class ListAdminOverridesResponse(proto.Message):
 
 class BatchCreateAdminOverridesResponse(proto.Message):
     r"""Response message for BatchCreateAdminOverrides
+
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             The overrides that were created.
@@ -544,6 +560,7 @@ class BatchCreateAdminOverridesResponse(proto.Message):
 
 class ImportAdminOverridesRequest(proto.Message):
     r"""Request message for ImportAdminOverrides
+
     Attributes:
         parent (str):
             The resource name of the consumer.
@@ -590,6 +607,7 @@ class ImportAdminOverridesRequest(proto.Message):
 
 class ImportAdminOverridesResponse(proto.Message):
     r"""Response message for ImportAdminOverrides
+
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             The overrides that were created from the
@@ -607,11 +625,13 @@ class ImportAdminOverridesMetadata(proto.Message):
     r"""Metadata message that provides information such as progress,
     partial failures, and similar information on each GetOperation
     call of LRO returned by ImportAdminOverrides.
-        """
+
+    """
 
 
 class CreateConsumerOverrideRequest(proto.Message):
     r"""Request message for CreateConsumerOverride.
+
     Attributes:
         parent (str):
             The resource name of the parent quota limit, returned by a
@@ -657,6 +677,7 @@ class CreateConsumerOverrideRequest(proto.Message):
 
 class UpdateConsumerOverrideRequest(proto.Message):
     r"""Request message for UpdateConsumerOverride.
+
     Attributes:
         name (str):
             The resource name of the override to update.
@@ -710,6 +731,7 @@ class UpdateConsumerOverrideRequest(proto.Message):
 
 class DeleteConsumerOverrideRequest(proto.Message):
     r"""Request message for DeleteConsumerOverride.
+
     Attributes:
         name (str):
             The resource name of the override to delete.
@@ -747,6 +769,7 @@ class DeleteConsumerOverrideRequest(proto.Message):
 
 class ListConsumerOverridesRequest(proto.Message):
     r"""Request message for ListConsumerOverrides
+
     Attributes:
         parent (str):
             The resource name of the parent quota limit, returned by a
@@ -777,6 +800,7 @@ class ListConsumerOverridesRequest(proto.Message):
 
 class ListConsumerOverridesResponse(proto.Message):
     r"""Response message for ListConsumerOverrides.
+
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             Consumer overrides on this limit.
@@ -802,6 +826,7 @@ class ListConsumerOverridesResponse(proto.Message):
 
 class BatchCreateConsumerOverridesResponse(proto.Message):
     r"""Response message for BatchCreateConsumerOverrides
+
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             The overrides that were created.
@@ -816,6 +841,7 @@ class BatchCreateConsumerOverridesResponse(proto.Message):
 
 class ImportConsumerOverridesRequest(proto.Message):
     r"""Request message for ImportConsumerOverrides
+
     Attributes:
         parent (str):
             The resource name of the consumer.
@@ -862,6 +888,7 @@ class ImportConsumerOverridesRequest(proto.Message):
 
 class ImportConsumerOverridesResponse(proto.Message):
     r"""Response message for ImportConsumerOverrides
+
     Attributes:
         overrides (Sequence[google.api.serviceusage_v1beta1.types.QuotaOverride]):
             The overrides that were created from the
@@ -879,11 +906,13 @@ class ImportConsumerOverridesMetadata(proto.Message):
     r"""Metadata message that provides information such as progress,
     partial failures, and similar information on each GetOperation
     call of LRO returned by ImportConsumerOverrides.
-        """
+
+    """
 
 
 class ImportAdminQuotaPoliciesResponse(proto.Message):
     r"""Response message for ImportAdminQuotaPolicies
+
     Attributes:
         policies (Sequence[google.api.serviceusage_v1beta1.types.AdminQuotaPolicy]):
             The policies that were created from the
@@ -901,32 +930,37 @@ class ImportAdminQuotaPoliciesMetadata(proto.Message):
     r"""Metadata message that provides information such as progress,
     partial failures, and similar information on each GetOperation
     call of LRO returned by ImportAdminQuotaPolicies.
-        """
+
+    """
 
 
 class CreateAdminQuotaPolicyMetadata(proto.Message):
     r"""Metadata message that provides information such as progress,
     partial failures, and similar information on each GetOperation
     call of LRO returned by CreateAdminQuotaPolicy.
-        """
+
+    """
 
 
 class UpdateAdminQuotaPolicyMetadata(proto.Message):
     r"""Metadata message that provides information such as progress,
     partial failures, and similar information on each GetOperation
     call of LRO returned by UpdateAdminQuotaPolicy.
-        """
+
+    """
 
 
 class DeleteAdminQuotaPolicyMetadata(proto.Message):
     r"""Metadata message that provides information such as progress,
     partial failures, and similar information on each GetOperation
     call of LRO returned by DeleteAdminQuotaPolicy.
-        """
+
+    """
 
 
 class GenerateServiceIdentityRequest(proto.Message):
     r"""Request message for generating service identity.
+
     Attributes:
         parent (str):
             Name of the consumer and service to generate an identity
@@ -948,6 +982,7 @@ class GenerateServiceIdentityRequest(proto.Message):
 
 class GetServiceIdentityResponse(proto.Message):
     r"""Response message for getting service identity.
+
     Attributes:
         identity (google.api.serviceusage_v1beta1.types.ServiceIdentity):
             Service identity that service producer can use to access
@@ -975,7 +1010,8 @@ class GetServiceIdentityResponse(proto.Message):
 
 
 class GetServiceIdentityMetadata(proto.Message):
-    r"""Metadata for the ``GetServiceIdentity`` method.    """
+    r"""Metadata for the ``GetServiceIdentity`` method.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

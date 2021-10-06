@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListRuleTypeEnum(proto.Message):
-    r"""Rule based user list rule type.    """
+    r"""Rule based user list rule type.
+    """
     class UserListRuleType(proto.Enum):
         r"""Enum describing possible user list rule types."""
         UNSPECIFIED = 0

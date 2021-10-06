@@ -1783,6 +1783,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
             )
         return self._stubs['update_hmac_key']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'StorageGrpcAsyncIOTransport',

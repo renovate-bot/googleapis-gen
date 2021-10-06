@@ -498,6 +498,8 @@ class DatastoreAdminGrpcTransport(DatastoreAdminTransport):
             )
         return self._stubs['list_indexes']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DatastoreAdminGrpcTransport',

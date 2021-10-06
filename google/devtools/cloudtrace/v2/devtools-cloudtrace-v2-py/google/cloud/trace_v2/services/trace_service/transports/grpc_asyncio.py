@@ -284,6 +284,9 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
             )
         return self._stubs['create_span']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TraceServiceGrpcAsyncIOTransport',

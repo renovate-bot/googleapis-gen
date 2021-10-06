@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class MobileAppCategoryConstant(proto.Message):
     r"""A mobile application category constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the mobile app category

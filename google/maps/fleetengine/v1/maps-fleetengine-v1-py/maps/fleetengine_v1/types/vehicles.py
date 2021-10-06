@@ -76,6 +76,7 @@ class PowerSource(proto.Enum):
 
 class Vehicle(proto.Message):
     r"""Vehicle metadata.
+
     Attributes:
         name (str):
             The unique name for this vehicle.
@@ -185,6 +186,7 @@ class Vehicle(proto.Message):
 
     class VehicleType(proto.Message):
         r"""Types of vehicles that may be filtered for in SearchVehicles.
+
         Attributes:
             category (maps.fleetengine_v1.types.Vehicle.VehicleType.Category):
                 Vehicle type category
@@ -311,6 +313,7 @@ class Vehicle(proto.Message):
 
 class BatteryInfo(proto.Message):
     r"""Information about the device's battery.
+
     Attributes:
         battery_status (maps.fleetengine_v1.types.BatteryStatus):
             Status of the battery, whether full or
@@ -339,6 +342,7 @@ class BatteryInfo(proto.Message):
 
 class DeviceSettings(proto.Message):
     r"""Information about various settings on the device.
+
     Attributes:
         location_power_save_mode (maps.fleetengine_v1.types.LocationPowerSaveMode):
             How location features are set to behave on

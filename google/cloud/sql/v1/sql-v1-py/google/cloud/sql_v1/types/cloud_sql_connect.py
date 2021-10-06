@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class GetConnectSettingsRequest(proto.Message):
     r"""Connect settings retrieval request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -61,6 +62,7 @@ class GetConnectSettingsRequest(proto.Message):
 
 class ConnectSettings(proto.Message):
     r"""Connect settings retrieval response.
+
     Attributes:
         kind (str):
             This is always ``sql#connectSettings``.
@@ -121,6 +123,7 @@ class ConnectSettings(proto.Message):
 
 class GenerateEphemeralCertRequest(proto.Message):
     r"""Ephemeral certificate creation request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -164,6 +167,7 @@ class GenerateEphemeralCertRequest(proto.Message):
 
 class GenerateEphemeralCertResponse(proto.Message):
     r"""Ephemeral certificate creation request.
+
     Attributes:
         ephemeral_cert (google.cloud.sql_v1.types.SslCert):
             Generated cert

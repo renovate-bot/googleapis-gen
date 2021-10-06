@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class DistinctErrorEnum(proto.Message):
-    r"""Container for enum describing possible distinct errors.    """
+    r"""Container for enum describing possible distinct errors.
+    """
     class DistinctError(proto.Enum):
         r"""Enum describing possible distinct errors."""
         UNSPECIFIED = 0

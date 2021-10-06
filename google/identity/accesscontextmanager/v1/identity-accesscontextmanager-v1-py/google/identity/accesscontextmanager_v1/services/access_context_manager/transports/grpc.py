@@ -992,6 +992,8 @@ class AccessContextManagerGrpcTransport(AccessContextManagerTransport):
             )
         return self._stubs['delete_gcp_user_access_binding']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AccessContextManagerGrpcTransport',

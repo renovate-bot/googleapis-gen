@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class AdAssetPolicySummary(proto.Message):
     r"""Contains policy information for an asset inside an ad.
+
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v8.common.types.PolicyTopicEntry]):
             The list of policy findings for this asset.

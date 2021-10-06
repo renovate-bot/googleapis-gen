@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdCustomizerErrorEnum(proto.Message):
-    r"""Container for enum describing possible ad customizer errors.    """
+    r"""Container for enum describing possible ad customizer errors.
+    """
     class AdCustomizerError(proto.Enum):
         r"""Enum describing possible ad customizer errors."""
         UNSPECIFIED = 0

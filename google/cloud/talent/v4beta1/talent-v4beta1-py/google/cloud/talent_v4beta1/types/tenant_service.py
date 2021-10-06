@@ -35,6 +35,7 @@ __protobuf__ = proto.module(
 
 class CreateTenantRequest(proto.Message):
     r"""The Request of the CreateTenant method.
+
     Attributes:
         parent (str):
             Required. Resource name of the project under which the
@@ -59,6 +60,7 @@ class CreateTenantRequest(proto.Message):
 
 class GetTenantRequest(proto.Message):
     r"""Request for getting a tenant by name.
+
     Attributes:
         name (str):
             Required. The resource name of the tenant to be retrieved.
@@ -75,6 +77,7 @@ class GetTenantRequest(proto.Message):
 
 class UpdateTenantRequest(proto.Message):
     r"""Request for updating a specified tenant.
+
     Attributes:
         tenant (google.cloud.talent_v4beta1.types.Tenant):
             Required. The tenant resource to replace the
@@ -107,6 +110,7 @@ class UpdateTenantRequest(proto.Message):
 
 class DeleteTenantRequest(proto.Message):
     r"""Request to delete a tenant.
+
     Attributes:
         name (str):
             Required. The resource name of the tenant to be deleted.
@@ -123,6 +127,7 @@ class DeleteTenantRequest(proto.Message):
 
 class ListTenantsRequest(proto.Message):
     r"""List tenants for which the client has ACL visibility.
+
     Attributes:
         parent (str):
             Required. Resource name of the project under which the
@@ -155,6 +160,7 @@ class ListTenantsRequest(proto.Message):
 
 class ListTenantsResponse(proto.Message):
     r"""The List tenants response object.
+
     Attributes:
         tenants (Sequence[google.cloud.talent_v4beta1.types.Tenant]):
             Tenants for the current client.

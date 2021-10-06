@@ -717,6 +717,9 @@ class CloudDeployGrpcAsyncIOTransport(CloudDeployTransport):
             )
         return self._stubs['get_config']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudDeployGrpcAsyncIOTransport',

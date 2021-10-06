@@ -247,6 +247,8 @@ class ApplicationDetailServiceGrpcTransport(ApplicationDetailServiceTransport):
             )
         return self._stubs['get_apk_details']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ApplicationDetailServiceGrpcTransport',

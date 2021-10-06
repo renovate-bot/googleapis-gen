@@ -124,6 +124,7 @@ class Asset(proto.Message):
 
 class Resource(proto.Message):
     r"""Representation of a cloud resource.
+
     Attributes:
         version (str):
             The API version. Example: "v1".

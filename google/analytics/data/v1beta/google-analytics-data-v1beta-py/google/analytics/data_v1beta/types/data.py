@@ -243,6 +243,7 @@ class DimensionExpression(proto.Message):
 
     class CaseExpression(proto.Message):
         r"""Used to convert a dimension value to a single case.
+
         Attributes:
             dimension_name (str):
                 Name of a dimension. The name must refer back
@@ -256,6 +257,7 @@ class DimensionExpression(proto.Message):
 
     class ConcatenateExpression(proto.Message):
         r"""Used to combine dimension values to a single dimension.
+
         Attributes:
             dimension_names (Sequence[str]):
                 Names of dimensions. The names must refer
@@ -392,6 +394,7 @@ class FilterExpression(proto.Message):
 
 class FilterExpressionList(proto.Message):
     r"""A list of filter expressions.
+
     Attributes:
         expressions (Sequence[google.analytics.data_v1beta.types.FilterExpression]):
             A list of filter expressions.
@@ -406,6 +409,7 @@ class FilterExpressionList(proto.Message):
 
 class Filter(proto.Message):
     r"""An expression to filter dimension or metric values.
+
     Attributes:
         field_name (str):
             The dimension name or metric name. Must be a
@@ -422,6 +426,7 @@ class Filter(proto.Message):
 
     class StringFilter(proto.Message):
         r"""The filter for string
+
         Attributes:
             match_type (google.analytics.data_v1beta.types.Filter.StringFilter.MatchType):
                 The match type for this filter.
@@ -456,6 +461,7 @@ class Filter(proto.Message):
 
     class InListFilter(proto.Message):
         r"""The result needs to be in a list of string values.
+
         Attributes:
             values (Sequence[str]):
                 The list of string values.
@@ -475,6 +481,7 @@ class Filter(proto.Message):
 
     class NumericFilter(proto.Message):
         r"""Filters for numeric or date values.
+
         Attributes:
             operation (google.analytics.data_v1beta.types.Filter.NumericFilter.Operation):
                 The operation type for this filter.
@@ -555,6 +562,7 @@ class Filter(proto.Message):
 
 class OrderBy(proto.Message):
     r"""The sort options.
+
     Attributes:
         metric (google.analytics.data_v1beta.types.OrderBy.MetricOrderBy):
             Sorts results by a metric's values.
@@ -569,6 +577,7 @@ class OrderBy(proto.Message):
 
     class MetricOrderBy(proto.Message):
         r"""Sorts by metric values.
+
         Attributes:
             metric_name (str):
                 A metric name in the request to order by.
@@ -581,6 +590,7 @@ class OrderBy(proto.Message):
 
     class DimensionOrderBy(proto.Message):
         r"""Sorts by dimension values.
+
         Attributes:
             dimension_name (str):
                 A dimension name in the request to order by.
@@ -607,6 +617,7 @@ class OrderBy(proto.Message):
 
     class PivotOrderBy(proto.Message):
         r"""Sorts by a pivot column group.
+
         Attributes:
             metric_name (str):
                 In the response to order by, order rows by
@@ -930,6 +941,7 @@ class CohortsRange(proto.Message):
 
 class CohortReportSettings(proto.Message):
     r"""Optional settings of a cohort report.
+
     Attributes:
         accumulate (bool):
             If true, accumulates the result from first touch day to the
@@ -1004,6 +1016,7 @@ class MetricHeader(proto.Message):
 
 class PivotHeader(proto.Message):
     r"""Dimensions' values in a single pivot.
+
     Attributes:
         pivot_dimension_headers (Sequence[google.analytics.data_v1beta.types.PivotDimensionHeader]):
             The size is the same as the cardinality of
@@ -1027,6 +1040,7 @@ class PivotHeader(proto.Message):
 
 class PivotDimensionHeader(proto.Message):
     r"""Summarizes dimension values from a row for this pivot.
+
     Attributes:
         dimension_values (Sequence[google.analytics.data_v1beta.types.DimensionValue]):
             Values of multiple dimensions in a pivot.
@@ -1100,6 +1114,7 @@ class Row(proto.Message):
 
 class DimensionValue(proto.Message):
     r"""The value of a dimension.
+
     Attributes:
         value (str):
             Value as a string if the dimension type is a
@@ -1115,6 +1130,7 @@ class DimensionValue(proto.Message):
 
 class MetricValue(proto.Message):
     r"""The value of a metric.
+
     Attributes:
         value (str):
             Measurement value. See MetricHeader for type.
@@ -1129,6 +1145,7 @@ class MetricValue(proto.Message):
 
 class NumericValue(proto.Message):
     r"""To represent a number.
+
     Attributes:
         int64_value (int):
             Integer value
@@ -1214,6 +1231,7 @@ class PropertyQuota(proto.Message):
 
 class QuotaStatus(proto.Message):
     r"""Current state for a particular quota group.
+
     Attributes:
         consumed (int):
             Quota consumed by this request.
@@ -1233,6 +1251,7 @@ class QuotaStatus(proto.Message):
 
 class DimensionMetadata(proto.Message):
     r"""Explains a dimension.
+
     Attributes:
         api_name (str):
             This dimension's name. Useable in
@@ -1287,6 +1306,7 @@ class DimensionMetadata(proto.Message):
 
 class MetricMetadata(proto.Message):
     r"""Explains a metric.
+
     Attributes:
         api_name (str):
             A metric name. Useable in `Metric <#Metric>`__'s ``name``.
@@ -1356,6 +1376,7 @@ class MetricMetadata(proto.Message):
 
 class DimensionCompatibility(proto.Message):
     r"""The compatibility for a single dimension.
+
     Attributes:
         dimension_metadata (google.analytics.data_v1beta.types.DimensionMetadata):
             The dimension metadata contains the API name
@@ -1384,6 +1405,7 @@ class DimensionCompatibility(proto.Message):
 
 class MetricCompatibility(proto.Message):
     r"""The compatibility for a single metric.
+
     Attributes:
         metric_metadata (google.analytics.data_v1beta.types.MetricMetadata):
             The metric metadata contains the API name for

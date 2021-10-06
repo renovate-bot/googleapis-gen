@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class Feed(proto.Message):
     r"""A feed.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed. Feed resource
@@ -109,6 +110,7 @@ class Feed(proto.Message):
 
         class OAuthInfo(proto.Message):
             r"""Data used for authorization using OAuth.
+
             Attributes:
                 http_method (str):
                     The HTTP method used to obtain authorization.

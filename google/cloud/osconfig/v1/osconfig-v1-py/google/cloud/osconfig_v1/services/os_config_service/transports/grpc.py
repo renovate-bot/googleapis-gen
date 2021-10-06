@@ -464,6 +464,8 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
             )
         return self._stubs['delete_patch_deployment']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'OsConfigServiceGrpcTransport',

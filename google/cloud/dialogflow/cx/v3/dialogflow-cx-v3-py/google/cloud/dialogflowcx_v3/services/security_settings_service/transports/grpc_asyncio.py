@@ -361,6 +361,9 @@ class SecuritySettingsServiceGrpcAsyncIOTransport(SecuritySettingsServiceTranspo
             )
         return self._stubs['delete_security_settings']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SecuritySettingsServiceGrpcAsyncIOTransport',

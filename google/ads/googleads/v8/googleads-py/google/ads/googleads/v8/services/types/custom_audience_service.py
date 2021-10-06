@@ -81,6 +81,7 @@ class MutateCustomAudiencesRequest(proto.Message):
 
 class CustomAudienceOperation(proto.Message):
     r"""A single operation (create, update) on a custom audience.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -124,6 +125,7 @@ class CustomAudienceOperation(proto.Message):
 
 class MutateCustomAudiencesResponse(proto.Message):
     r"""Response message for custom audience mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v8.services.types.MutateCustomAudienceResult]):
             All results for the mutate.
@@ -138,6 +140,7 @@ class MutateCustomAudiencesResponse(proto.Message):
 
 class MutateCustomAudienceResult(proto.Message):
     r"""The result for the custom audience mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

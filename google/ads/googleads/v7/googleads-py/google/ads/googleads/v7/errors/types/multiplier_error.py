@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MultiplierErrorEnum(proto.Message):
-    r"""Container for enum describing possible multiplier errors.    """
+    r"""Container for enum describing possible multiplier errors.
+    """
     class MultiplierError(proto.Enum):
         r"""Enum describing possible multiplier errors."""
         UNSPECIFIED = 0

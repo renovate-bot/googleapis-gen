@@ -253,9 +253,11 @@ initial=1.0,maximum=120.0,multiplier=2.5,                predicate=retries.if_ex
         # Done; return the response.
         return response
 
+    async def __aenter__(self):
+        return self
 
-
-
+    async def __aexit__(self, exc_type, exc, tb):
+        await self.transport.close()
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(

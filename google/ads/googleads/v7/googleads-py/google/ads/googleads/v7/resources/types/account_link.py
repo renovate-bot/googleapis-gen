@@ -97,6 +97,7 @@ class AccountLink(proto.Message):
 
 class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
     r"""The identifiers of a Third Party App Analytics Link.
+
     Attributes:
         app_analytics_provider_id (int):
             Immutable. The ID of the app analytics
@@ -146,6 +147,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
 
 class DataPartnerLinkIdentifier(proto.Message):
     r"""The identifier for Data Partner account.
+
     Attributes:
         data_partner_id (int):
             Immutable. The customer ID of the Data
@@ -164,6 +166,7 @@ class DataPartnerLinkIdentifier(proto.Message):
 
 class GoogleAdsLinkIdentifier(proto.Message):
     r"""The identifier for Google Ads account.
+
     Attributes:
         customer (str):
             Immutable. The resource name of the Google

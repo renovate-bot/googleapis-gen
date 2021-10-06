@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ResponseContentTypeEnum(proto.Message):
-    r"""Container for possible response content types.    """
+    r"""Container for possible response content types.
+    """
     class ResponseContentType(proto.Enum):
         r"""Possible response content types."""
         UNSPECIFIED = 0

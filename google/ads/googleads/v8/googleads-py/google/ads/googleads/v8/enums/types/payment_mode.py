@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class PaymentModeEnum(proto.Message):
-    r"""Container for enum describing possible payment modes.    """
+    r"""Container for enum describing possible payment modes.
+    """
     class PaymentMode(proto.Enum):
         r"""Enum describing possible payment modes."""
         UNSPECIFIED = 0

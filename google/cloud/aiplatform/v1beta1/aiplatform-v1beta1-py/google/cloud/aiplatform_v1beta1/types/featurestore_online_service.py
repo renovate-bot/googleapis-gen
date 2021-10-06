@@ -84,6 +84,7 @@ class ReadFeatureValuesResponse(proto.Message):
 
     class FeatureDescriptor(proto.Message):
         r"""Metadata for requested Features.
+
         Attributes:
             id (str):
                 Feature ID.
@@ -122,6 +123,7 @@ class ReadFeatureValuesResponse(proto.Message):
 
     class EntityView(proto.Message):
         r"""Entity view with Feature values.
+
         Attributes:
             entity_id (str):
                 ID of the requested entity.
@@ -250,6 +252,7 @@ class FeatureValue(proto.Message):
 
     class Metadata(proto.Message):
         r"""Metadata of feature value.
+
         Attributes:
             generate_time (google.protobuf.timestamp_pb2.Timestamp):
                 Feature generation timestamp. Typically, it
@@ -323,6 +326,7 @@ class FeatureValue(proto.Message):
 
 class FeatureValueList(proto.Message):
     r"""Container for list of values.
+
     Attributes:
         values (Sequence[google.cloud.aiplatform_v1beta1.types.FeatureValue]):
             A list of feature values. All of them should

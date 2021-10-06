@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class FeatureSpec(proto.Message):
     r"""**Cloud Audit Logging**: Spec for Audit Logging Allowlisting.
+
     Attributes:
         allowlisted_service_accounts (Sequence[str]):
             Service account that should be allowlisted to

@@ -162,6 +162,7 @@ class GenerateKeywordIdeasRequest(proto.Message):
 
 class KeywordAndUrlSeed(proto.Message):
     r"""Keyword And Url Seed
+
     Attributes:
         url (str):
             The URL to crawl in order to generate keyword
@@ -183,6 +184,7 @@ class KeywordAndUrlSeed(proto.Message):
 
 class KeywordSeed(proto.Message):
     r"""Keyword Seed
+
     Attributes:
         keywords (Sequence[str]):
             Requires at least one keyword.
@@ -196,6 +198,7 @@ class KeywordSeed(proto.Message):
 
 class SiteSeed(proto.Message):
     r"""Site Seed
+
     Attributes:
         site (str):
             The domain name of the site. If the customer
@@ -212,6 +215,7 @@ class SiteSeed(proto.Message):
 
 class UrlSeed(proto.Message):
     r"""Url Seed
+
     Attributes:
         url (str):
             The URL to crawl in order to generate keyword
@@ -269,6 +273,7 @@ class GenerateKeywordIdeaResponse(proto.Message):
 
 class GenerateKeywordIdeaResult(proto.Message):
     r"""The result of generating keyword ideas.
+
     Attributes:
         text (str):
             Text of the keyword idea.

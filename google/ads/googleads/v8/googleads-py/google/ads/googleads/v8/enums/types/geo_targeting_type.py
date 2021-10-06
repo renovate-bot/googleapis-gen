@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class GeoTargetingTypeEnum(proto.Message):
-    r"""Container for enum describing possible geo targeting types.    """
+    r"""Container for enum describing possible geo targeting types.
+    """
     class GeoTargetingType(proto.Enum):
         r"""The possible geo targeting types."""
         UNSPECIFIED = 0

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class TrackingCodeTypeEnum(proto.Message):
     r"""Container for enum describing the type of the generated tag
     snippets for tracking conversions.
-        """
+
+    """
     class TrackingCodeType(proto.Enum):
         r"""The type of the generated tag snippets for tracking
         conversions.

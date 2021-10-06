@@ -332,6 +332,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
             )
         return self._stubs['delete_model']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ModelServiceGrpcAsyncIOTransport',

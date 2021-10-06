@@ -42,6 +42,7 @@ class AdvancedSettings(proto.Message):
 
     class LoggingSettings(proto.Message):
         r"""Define behaviors on logging.
+
         Attributes:
             enable_stackdriver_logging (bool):
                 If true, StackDriver logging is currently

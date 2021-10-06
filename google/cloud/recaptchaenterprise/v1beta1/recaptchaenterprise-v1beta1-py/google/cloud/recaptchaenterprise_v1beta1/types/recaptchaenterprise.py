@@ -44,6 +44,7 @@ __protobuf__ = proto.module(
 
 class CreateAssessmentRequest(proto.Message):
     r"""The create assessment request message.
+
     Attributes:
         parent (str):
             Required. The name of the project in which the assessment
@@ -65,6 +66,7 @@ class CreateAssessmentRequest(proto.Message):
 
 class AnnotateAssessmentRequest(proto.Message):
     r"""The request message to annotate an Assessment.
+
     Attributes:
         name (str):
             Required. The resource name of the Assessment, in the format
@@ -91,11 +93,13 @@ class AnnotateAssessmentRequest(proto.Message):
 
 
 class AnnotateAssessmentResponse(proto.Message):
-    r"""Empty response for AnnotateAssessment.    """
+    r"""Empty response for AnnotateAssessment.
+    """
 
 
 class Assessment(proto.Message):
     r"""A recaptcha assessment resource.
+
     Attributes:
         name (str):
             Output only. The resource name for the Assessment in the
@@ -153,6 +157,7 @@ class Assessment(proto.Message):
 
 class Event(proto.Message):
     r"""
+
     Attributes:
         token (str):
             Optional. The user response token provided by
@@ -201,6 +206,7 @@ class Event(proto.Message):
 
 class TokenProperties(proto.Message):
     r"""
+
     Attributes:
         valid (bool):
             Whether the provided user response token is
@@ -255,6 +261,7 @@ class TokenProperties(proto.Message):
 
 class CreateKeyRequest(proto.Message):
     r"""The create key request message.
+
     Attributes:
         parent (str):
             Required. The name of the project in which the key will be
@@ -277,6 +284,7 @@ class CreateKeyRequest(proto.Message):
 
 class ListKeysRequest(proto.Message):
     r"""The list keys request message.
+
     Attributes:
         parent (str):
             Required. The name of the project that contains the keys
@@ -306,6 +314,7 @@ class ListKeysRequest(proto.Message):
 
 class ListKeysResponse(proto.Message):
     r"""Response to request to list keys in a project.
+
     Attributes:
         keys (Sequence[google.cloud.recaptchaenterprise_v1beta1.types.Key]):
             Key details.
@@ -331,6 +340,7 @@ class ListKeysResponse(proto.Message):
 
 class GetKeyRequest(proto.Message):
     r"""The get key request message.
+
     Attributes:
         name (str):
             Required. The name of the requested key, in the format
@@ -345,6 +355,7 @@ class GetKeyRequest(proto.Message):
 
 class UpdateKeyRequest(proto.Message):
     r"""The update key request message.
+
     Attributes:
         key (google.cloud.recaptchaenterprise_v1beta1.types.Key):
             Required. The key to update.
@@ -368,6 +379,7 @@ class UpdateKeyRequest(proto.Message):
 
 class DeleteKeyRequest(proto.Message):
     r"""The delete key request message.
+
     Attributes:
         name (str):
             Required. The name of the key to be deleted, in the format
@@ -432,6 +444,7 @@ class Key(proto.Message):
 
 class WebKeySettings(proto.Message):
     r"""Settings specific to keys that can be used by websites.
+
     Attributes:
         enforce_allowed_domains (bool):
             Whether allowed_domains is enforced or not.
@@ -496,6 +509,7 @@ class WebKeySettings(proto.Message):
 
 class AndroidKeySettings(proto.Message):
     r"""Settings specific to keys that can be used by Android apps.
+
     Attributes:
         allowed_package_names (Sequence[str]):
             Android package names of apps allowed to use
@@ -510,6 +524,7 @@ class AndroidKeySettings(proto.Message):
 
 class IOSKeySettings(proto.Message):
     r"""Settings specific to keys that can be used by iOS apps.
+
     Attributes:
         allowed_bundle_ids (Sequence[str]):
             iOS bundle ids of apps allowed to use the

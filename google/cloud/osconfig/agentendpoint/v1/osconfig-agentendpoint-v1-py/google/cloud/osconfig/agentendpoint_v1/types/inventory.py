@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class Inventory(proto.Message):
     r"""The inventory details of a VM.
+
     Attributes:
         os_info (google.cloud.osconfig.agentendpoint_v1.types.Inventory.OsInfo):
             Base level operating system information for
@@ -43,6 +44,7 @@ class Inventory(proto.Message):
 
     class OsInfo(proto.Message):
         r"""Operating system information for the VM.
+
         Attributes:
             hostname (str):
                 The VM hostname.
@@ -102,6 +104,7 @@ class Inventory(proto.Message):
 
     class SoftwarePackage(proto.Message):
         r"""Software package information of the operating system.
+
         Attributes:
             yum_package (google.cloud.osconfig.agentendpoint_v1.types.Inventory.VersionedPackage):
                 Yum package info. For details about the yum package manager,
@@ -263,6 +266,7 @@ class Inventory(proto.Message):
 
     class ZypperPatch(proto.Message):
         r"""Details related to a Zypper Patch.
+
         Attributes:
             patch_name (str):
                 The name of the patch.
@@ -330,6 +334,7 @@ class Inventory(proto.Message):
 
         class WindowsUpdateCategory(proto.Message):
             r"""Categories specified by the Windows Update.
+
             Attributes:
                 id (str):
                     The identifier of the windows update

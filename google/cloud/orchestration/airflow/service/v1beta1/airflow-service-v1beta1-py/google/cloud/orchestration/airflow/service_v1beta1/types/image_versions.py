@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class ListImageVersionsRequest(proto.Message):
     r"""List ImageVersions in a project and location.
+
     Attributes:
         parent (str):
             List ImageVersions in the given project and
@@ -65,6 +66,7 @@ class ListImageVersionsRequest(proto.Message):
 
 class ListImageVersionsResponse(proto.Message):
     r"""The ImageVersions in a project and location.
+
     Attributes:
         image_versions (Sequence[google.cloud.orchestration.airflow.service_v1beta1.types.ImageVersion]):
             The list of supported ImageVersions in a
@@ -91,6 +93,7 @@ class ListImageVersionsResponse(proto.Message):
 
 class ImageVersion(proto.Message):
     r"""Image Version information
+
     Attributes:
         image_version_id (str):
             The string identifier of the ImageVersion, in

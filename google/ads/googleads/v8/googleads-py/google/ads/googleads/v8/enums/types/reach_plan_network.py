@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ReachPlanNetworkEnum(proto.Message):
-    r"""Container for enum describing plannable networks.    """
+    r"""Container for enum describing plannable networks.
+    """
     class ReachPlanNetwork(proto.Enum):
         r"""Possible plannable network values."""
         UNSPECIFIED = 0

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BiddingErrorEnum(proto.Message):
-    r"""Container for enum describing possible bidding errors.    """
+    r"""Container for enum describing possible bidding errors.
+    """
     class BiddingError(proto.Enum):
         r"""Enum describing possible bidding errors."""
         UNSPECIFIED = 0

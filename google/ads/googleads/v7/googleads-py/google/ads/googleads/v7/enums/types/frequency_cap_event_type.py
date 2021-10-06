@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FrequencyCapEventTypeEnum(proto.Message):
     r"""Container for enum describing the type of event that the cap
     applies to.
-        """
+
+    """
     class FrequencyCapEventType(proto.Enum):
         r"""The type of event that the cap applies to (e.g. impression)."""
         UNSPECIFIED = 0

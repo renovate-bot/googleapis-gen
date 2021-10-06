@@ -349,6 +349,8 @@ class WebRiskServiceGrpcTransport(WebRiskServiceTransport):
             )
         return self._stubs['create_submission']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'WebRiskServiceGrpcTransport',

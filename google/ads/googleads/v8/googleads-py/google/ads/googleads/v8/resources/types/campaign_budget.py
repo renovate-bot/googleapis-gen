@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class CampaignBudget(proto.Message):
     r"""A campaign budget.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign budget.

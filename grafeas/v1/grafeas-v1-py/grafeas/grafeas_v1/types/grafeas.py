@@ -192,6 +192,7 @@ class Occurrence(proto.Message):
 
 class Note(proto.Message):
     r"""A type of analysis that can be done for a resource.
+
     Attributes:
         name (str):
             Output only. The name of the note in the form of
@@ -333,6 +334,7 @@ class Note(proto.Message):
 
 class GetOccurrenceRequest(proto.Message):
     r"""Request to get an occurrence.
+
     Attributes:
         name (str):
             The name of the occurrence in the form of
@@ -347,6 +349,7 @@ class GetOccurrenceRequest(proto.Message):
 
 class ListOccurrencesRequest(proto.Message):
     r"""Request to list occurrences.
+
     Attributes:
         parent (str):
             The name of the project to list occurrences for in the form
@@ -382,6 +385,7 @@ class ListOccurrencesRequest(proto.Message):
 
 class ListOccurrencesResponse(proto.Message):
     r"""Response for listing occurrences.
+
     Attributes:
         occurrences (Sequence[grafeas.grafeas_v1.types.Occurrence]):
             The occurrences requested.
@@ -408,6 +412,7 @@ class ListOccurrencesResponse(proto.Message):
 
 class DeleteOccurrenceRequest(proto.Message):
     r"""Request to delete an occurrence.
+
     Attributes:
         name (str):
             The name of the occurrence in the form of
@@ -422,6 +427,7 @@ class DeleteOccurrenceRequest(proto.Message):
 
 class CreateOccurrenceRequest(proto.Message):
     r"""Request to create a new occurrence.
+
     Attributes:
         parent (str):
             The name of the project in the form of
@@ -444,6 +450,7 @@ class CreateOccurrenceRequest(proto.Message):
 
 class UpdateOccurrenceRequest(proto.Message):
     r"""Request to update an occurrence.
+
     Attributes:
         name (str):
             The name of the occurrence in the form of
@@ -472,6 +479,7 @@ class UpdateOccurrenceRequest(proto.Message):
 
 class GetNoteRequest(proto.Message):
     r"""Request to get a note.
+
     Attributes:
         name (str):
             The name of the note in the form of
@@ -502,6 +510,7 @@ class GetOccurrenceNoteRequest(proto.Message):
 
 class ListNotesRequest(proto.Message):
     r"""Request to list notes.
+
     Attributes:
         parent (str):
             The name of the project to list notes for in the form of
@@ -537,6 +546,7 @@ class ListNotesRequest(proto.Message):
 
 class ListNotesResponse(proto.Message):
     r"""Response for listing notes.
+
     Attributes:
         notes (Sequence[grafeas.grafeas_v1.types.Note]):
             The notes requested.
@@ -563,6 +573,7 @@ class ListNotesResponse(proto.Message):
 
 class DeleteNoteRequest(proto.Message):
     r"""Request to delete a note.
+
     Attributes:
         name (str):
             The name of the note in the form of
@@ -577,6 +588,7 @@ class DeleteNoteRequest(proto.Message):
 
 class CreateNoteRequest(proto.Message):
     r"""Request to create a new note.
+
     Attributes:
         parent (str):
             The name of the project in the form of
@@ -605,6 +617,7 @@ class CreateNoteRequest(proto.Message):
 
 class UpdateNoteRequest(proto.Message):
     r"""Request to update a note.
+
     Attributes:
         name (str):
             The name of the note in the form of
@@ -633,6 +646,7 @@ class UpdateNoteRequest(proto.Message):
 
 class ListNoteOccurrencesRequest(proto.Message):
     r"""Request to list occurrences for a note.
+
     Attributes:
         name (str):
             The name of the note to list occurrences for in the form of
@@ -666,6 +680,7 @@ class ListNoteOccurrencesRequest(proto.Message):
 
 class ListNoteOccurrencesResponse(proto.Message):
     r"""Response for listing occurrences for a note.
+
     Attributes:
         occurrences (Sequence[grafeas.grafeas_v1.types.Occurrence]):
             The occurrences attached to the specified
@@ -692,6 +707,7 @@ class ListNoteOccurrencesResponse(proto.Message):
 
 class BatchCreateNotesRequest(proto.Message):
     r"""Request to create notes in batch.
+
     Attributes:
         parent (str):
             The name of the project in the form of
@@ -716,6 +732,7 @@ class BatchCreateNotesRequest(proto.Message):
 
 class BatchCreateNotesResponse(proto.Message):
     r"""Response for creating notes in batch.
+
     Attributes:
         notes (Sequence[grafeas.grafeas_v1.types.Note]):
             The notes that were created.
@@ -730,6 +747,7 @@ class BatchCreateNotesResponse(proto.Message):
 
 class BatchCreateOccurrencesRequest(proto.Message):
     r"""Request to create occurrences in batch.
+
     Attributes:
         parent (str):
             The name of the project in the form of
@@ -753,6 +771,7 @@ class BatchCreateOccurrencesRequest(proto.Message):
 
 class BatchCreateOccurrencesResponse(proto.Message):
     r"""Response for creating occurrences in batch.
+
     Attributes:
         occurrences (Sequence[grafeas.grafeas_v1.types.Occurrence]):
             The occurrences that were created.

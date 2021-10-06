@@ -127,6 +127,7 @@ class AccountBudgetProposalOperation(proto.Message):
 
 class MutateAccountBudgetProposalResponse(proto.Message):
     r"""Response message for account-level budget mutate operations.
+
     Attributes:
         result (google.ads.googleads.v8.services.types.MutateAccountBudgetProposalResult):
             The result of the mutate.
@@ -141,6 +142,7 @@ class MutateAccountBudgetProposalResponse(proto.Message):
 
 class MutateAccountBudgetProposalResult(proto.Message):
     r"""The result for the account budget proposal mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

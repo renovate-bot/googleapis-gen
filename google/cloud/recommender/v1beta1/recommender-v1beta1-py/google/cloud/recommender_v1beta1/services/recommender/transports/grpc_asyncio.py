@@ -480,6 +480,9 @@ class RecommenderGrpcAsyncIOTransport(RecommenderTransport):
             )
         return self._stubs['mark_recommendation_failed']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'RecommenderGrpcAsyncIOTransport',

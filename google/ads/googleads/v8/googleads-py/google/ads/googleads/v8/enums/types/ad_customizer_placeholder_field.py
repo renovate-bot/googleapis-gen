@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdCustomizerPlaceholderFieldEnum(proto.Message):
-    r"""Values for Ad Customizer placeholder fields.    """
+    r"""Values for Ad Customizer placeholder fields.
+    """
     class AdCustomizerPlaceholderField(proto.Enum):
         r"""Possible values for Ad Customizers placeholder fields."""
         UNSPECIFIED = 0

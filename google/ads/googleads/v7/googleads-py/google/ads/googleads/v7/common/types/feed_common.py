@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class Money(proto.Message):
     r"""Represents a price in a particular currency.
+
     Attributes:
         currency_code (str):
             Three-character ISO 4217 currency code.

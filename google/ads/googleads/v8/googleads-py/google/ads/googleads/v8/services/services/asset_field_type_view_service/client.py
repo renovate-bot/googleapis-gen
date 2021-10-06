@@ -151,6 +151,19 @@ class AssetFieldTypeViewServiceClient(metaclass=AssetFieldTypeViewServiceClientM
         """
         return self._transport
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
     @staticmethod
     def asset_field_type_view_path(customer_id: str,field_type: str,) -> str:
         """Return a fully-qualified asset_field_type_view string."""

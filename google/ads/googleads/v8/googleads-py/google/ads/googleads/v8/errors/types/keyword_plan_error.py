@@ -30,7 +30,8 @@ class KeywordPlanErrorEnum(proto.Message):
     keyword plan resource (keyword plan, keyword plan campaign,
     keyword plan ad group or keyword plan keyword) or
     KeywordPlanService RPC.
-        """
+
+    """
     class KeywordPlanError(proto.Enum):
         r"""Enum describing possible errors from applying a keyword plan."""
         UNSPECIFIED = 0

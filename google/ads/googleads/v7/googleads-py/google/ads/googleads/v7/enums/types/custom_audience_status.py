@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomAudienceStatusEnum(proto.Message):
-    r"""The status of custom audience.    """
+    r"""The status of custom audience.
+    """
     class CustomAudienceStatus(proto.Enum):
         r"""Enum containing possible custom audience statuses."""
         UNSPECIFIED = 0

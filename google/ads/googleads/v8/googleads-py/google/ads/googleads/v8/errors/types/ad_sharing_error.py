@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdSharingErrorEnum(proto.Message):
-    r"""Container for enum describing possible ad sharing errors.    """
+    r"""Container for enum describing possible ad sharing errors.
+    """
     class AdSharingError(proto.Enum):
         r"""Enum describing possible ad sharing errors."""
         UNSPECIFIED = 0

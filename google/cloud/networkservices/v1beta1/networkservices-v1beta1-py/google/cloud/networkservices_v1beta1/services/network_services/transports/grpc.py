@@ -370,6 +370,8 @@ class NetworkServicesGrpcTransport(NetworkServicesTransport):
             )
         return self._stubs['delete_endpoint_policy']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'NetworkServicesGrpcTransport',

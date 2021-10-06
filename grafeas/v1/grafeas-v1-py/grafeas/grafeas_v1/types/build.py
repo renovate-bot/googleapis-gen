@@ -46,6 +46,7 @@ class BuildNote(proto.Message):
 
 class BuildOccurrence(proto.Message):
     r"""Details of a build occurrence.
+
     Attributes:
         provenance (grafeas.grafeas_v1.types.BuildProvenance):
             Required. The actual provenance for the

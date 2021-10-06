@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FrequencyCapTimeUnitEnum(proto.Message):
     r"""Container for enum describing the unit of time the cap is
     defined at.
-        """
+
+    """
     class FrequencyCapTimeUnit(proto.Enum):
         r"""Unit of time the cap is defined at (e.g. day, week)."""
         UNSPECIFIED = 0

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ReachPlanAgeRangeEnum(proto.Message):
-    r"""Message describing plannable age ranges.    """
+    r"""Message describing plannable age ranges.
+    """
     class ReachPlanAgeRange(proto.Enum):
         r"""Possible plannable age range values."""
         UNSPECIFIED = 0

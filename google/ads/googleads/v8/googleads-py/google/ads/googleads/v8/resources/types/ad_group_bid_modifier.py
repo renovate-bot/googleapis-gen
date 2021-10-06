@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class AdGroupBidModifier(proto.Message):
     r"""Represents an ad group bid modifier.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group bid modifier.

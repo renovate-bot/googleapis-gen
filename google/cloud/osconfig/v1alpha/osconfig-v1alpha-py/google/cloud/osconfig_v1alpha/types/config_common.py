@@ -81,6 +81,7 @@ class OSPolicyResourceConfigStep(proto.Message):
 
 class OSPolicyResourceCompliance(proto.Message):
     r"""Compliance data for an OS policy resource.
+
     Attributes:
         os_policy_resource_id (str):
             The id of the OS policy resource.
@@ -95,6 +96,7 @@ class OSPolicyResourceCompliance(proto.Message):
 
     class ExecResourceOutput(proto.Message):
         r"""ExecResource specific output.
+
         Attributes:
             enforcement_output (bytes):
                 Output from Enforcement phase output file (if

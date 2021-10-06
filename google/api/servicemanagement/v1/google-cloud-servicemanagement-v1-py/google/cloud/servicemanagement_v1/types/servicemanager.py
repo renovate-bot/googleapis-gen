@@ -52,6 +52,7 @@ __protobuf__ = proto.module(
 
 class ListServicesRequest(proto.Message):
     r"""Request message for ``ListServices`` method.
+
     Attributes:
         producer_project_id (str):
             Include services produced by the specified
@@ -92,6 +93,7 @@ class ListServicesRequest(proto.Message):
 
 class ListServicesResponse(proto.Message):
     r"""Response message for ``ListServices`` method.
+
     Attributes:
         services (Sequence[google.cloud.servicemanagement_v1.types.ManagedService]):
             The returned services will only have the name
@@ -118,6 +120,7 @@ class ListServicesResponse(proto.Message):
 
 class GetServiceRequest(proto.Message):
     r"""Request message for ``GetService`` method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -133,6 +136,7 @@ class GetServiceRequest(proto.Message):
 
 class CreateServiceRequest(proto.Message):
     r"""Request message for CreateService method.
+
     Attributes:
         service (google.cloud.servicemanagement_v1.types.ManagedService):
             Required. Initial values for the service
@@ -148,6 +152,7 @@ class CreateServiceRequest(proto.Message):
 
 class DeleteServiceRequest(proto.Message):
     r"""Request message for DeleteService method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -164,6 +169,7 @@ class DeleteServiceRequest(proto.Message):
 
 class UndeleteServiceRequest(proto.Message):
     r"""Request message for UndeleteService method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -180,6 +186,7 @@ class UndeleteServiceRequest(proto.Message):
 
 class UndeleteServiceResponse(proto.Message):
     r"""Response message for UndeleteService method.
+
     Attributes:
         service (google.cloud.servicemanagement_v1.types.ManagedService):
             Revived service resource.
@@ -194,6 +201,7 @@ class UndeleteServiceResponse(proto.Message):
 
 class GetServiceConfigRequest(proto.Message):
     r"""Request message for GetServiceConfig method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -231,6 +239,7 @@ class GetServiceConfigRequest(proto.Message):
 
 class ListServiceConfigsRequest(proto.Message):
     r"""Request message for ListServiceConfigs method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -261,6 +270,7 @@ class ListServiceConfigsRequest(proto.Message):
 
 class ListServiceConfigsResponse(proto.Message):
     r"""Response message for ListServiceConfigs method.
+
     Attributes:
         service_configs (Sequence[google.api.service_pb2.Service]):
             The list of service configuration resources.
@@ -285,6 +295,7 @@ class ListServiceConfigsResponse(proto.Message):
 
 class CreateServiceConfigRequest(proto.Message):
     r"""Request message for CreateServiceConfig method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -308,6 +319,7 @@ class CreateServiceConfigRequest(proto.Message):
 
 class SubmitConfigSourceRequest(proto.Message):
     r"""Request message for SubmitConfigSource method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -341,6 +353,7 @@ class SubmitConfigSourceRequest(proto.Message):
 
 class SubmitConfigSourceResponse(proto.Message):
     r"""Response message for SubmitConfigSource method.
+
     Attributes:
         service_config (google.api.service_pb2.Service):
             The generated service configuration.
@@ -355,6 +368,7 @@ class SubmitConfigSourceResponse(proto.Message):
 
 class CreateServiceRolloutRequest(proto.Message):
     r"""Request message for 'CreateServiceRollout'
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -379,6 +393,7 @@ class CreateServiceRolloutRequest(proto.Message):
 
 class ListServiceRolloutsRequest(proto.Message):
     r"""Request message for 'ListServiceRollouts'
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -422,6 +437,7 @@ class ListServiceRolloutsRequest(proto.Message):
 
 class ListServiceRolloutsResponse(proto.Message):
     r"""Response message for ListServiceRollouts method.
+
     Attributes:
         rollouts (Sequence[google.cloud.servicemanagement_v1.types.Rollout]):
             The list of rollout resources.
@@ -446,6 +462,7 @@ class ListServiceRolloutsResponse(proto.Message):
 
 class GetServiceRolloutRequest(proto.Message):
     r"""Request message for GetServiceRollout method.
+
     Attributes:
         service_name (str):
             Required. The name of the service. See the
@@ -468,6 +485,7 @@ class GetServiceRolloutRequest(proto.Message):
 
 class EnableServiceRequest(proto.Message):
     r"""Request message for EnableService method.
+
     Attributes:
         service_name (str):
             Required. Name of the service to enable.
@@ -497,11 +515,13 @@ class EnableServiceRequest(proto.Message):
 
 
 class EnableServiceResponse(proto.Message):
-    r"""Operation payload for EnableService method.    """
+    r"""Operation payload for EnableService method.
+    """
 
 
 class DisableServiceRequest(proto.Message):
     r"""Request message for DisableService method.
+
     Attributes:
         service_name (str):
             Required. Name of the service to disable.
@@ -531,11 +551,13 @@ class DisableServiceRequest(proto.Message):
 
 
 class DisableServiceResponse(proto.Message):
-    r"""Operation payload for DisableService method.    """
+    r"""Operation payload for DisableService method.
+    """
 
 
 class GenerateConfigReportRequest(proto.Message):
     r"""Request message for GenerateConfigReport method.
+
     Attributes:
         new_config (google.protobuf.any_pb2.Any):
             Required. Service configuration for which we want to
@@ -567,6 +589,7 @@ class GenerateConfigReportRequest(proto.Message):
 
 class GenerateConfigReportResponse(proto.Message):
     r"""Response message for GenerateConfigReport method.
+
     Attributes:
         service_name (str):
             Name of the service this report belongs to.

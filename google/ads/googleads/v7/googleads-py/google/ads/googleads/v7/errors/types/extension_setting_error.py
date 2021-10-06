@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ExtensionSettingErrorEnum(proto.Message):
     r"""Container for enum describing validation errors of extension
     settings.
-        """
+
+    """
     class ExtensionSettingError(proto.Enum):
         r"""Enum describing possible extension setting errors."""
         UNSPECIFIED = 0

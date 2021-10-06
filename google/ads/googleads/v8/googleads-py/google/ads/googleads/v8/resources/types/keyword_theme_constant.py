@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class KeywordThemeConstant(proto.Message):
     r"""A Smart Campaign keyword theme constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the keyword theme

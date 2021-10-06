@@ -52,6 +52,7 @@ __protobuf__ = proto.module(
 
 class CreateReadSessionRequest(proto.Message):
     r"""Request message for ``CreateReadSession``.
+
     Attributes:
         parent (str):
             Required. The request project that owns the session, in the
@@ -89,6 +90,7 @@ class CreateReadSessionRequest(proto.Message):
 
 class ReadRowsRequest(proto.Message):
     r"""Request message for ``ReadRows``.
+
     Attributes:
         read_stream (str):
             Required. Stream to read rows from.
@@ -111,6 +113,7 @@ class ReadRowsRequest(proto.Message):
 
 class ThrottleState(proto.Message):
     r"""Information on if the current connection is being throttled.
+
     Attributes:
         throttle_percent (int):
             How much this connection is being throttled.
@@ -126,6 +129,7 @@ class ThrottleState(proto.Message):
 
 class StreamStats(proto.Message):
     r"""Estimated stream statistics for a given Stream.
+
     Attributes:
         progress (google.cloud.bigquery_storage_v1beta2.types.StreamStats.Progress):
             Represents the progress of the current
@@ -134,6 +138,7 @@ class StreamStats(proto.Message):
 
     class Progress(proto.Message):
         r"""
+
         Attributes:
             at_response_start (float):
                 The fraction of rows assigned to the stream that have been
@@ -235,6 +240,7 @@ class ReadRowsResponse(proto.Message):
 
 class SplitReadStreamRequest(proto.Message):
     r"""Request message for ``SplitReadStream``.
+
     Attributes:
         name (str):
             Required. Name of the stream to split.
@@ -265,6 +271,7 @@ class SplitReadStreamRequest(proto.Message):
 
 class SplitReadStreamResponse(proto.Message):
     r"""
+
     Attributes:
         primary_stream (google.cloud.bigquery_storage_v1beta2.types.ReadStream):
             Primary stream, which contains the beginning portion of
@@ -290,6 +297,7 @@ class SplitReadStreamResponse(proto.Message):
 
 class CreateWriteStreamRequest(proto.Message):
     r"""Request message for ``CreateWriteStream``.
+
     Attributes:
         parent (str):
             Required. Reference to the table to which the stream
@@ -312,6 +320,7 @@ class CreateWriteStreamRequest(proto.Message):
 
 class AppendRowsRequest(proto.Message):
     r"""Request message for ``AppendRows``.
+
     Attributes:
         write_stream (str):
             Required. The stream that is the target of the append
@@ -336,6 +345,7 @@ class AppendRowsRequest(proto.Message):
 
     class ProtoData(proto.Message):
         r"""Proto schema and data.
+
         Attributes:
             writer_schema (google.cloud.bigquery_storage_v1beta2.types.ProtoSchema):
                 Proto schema used to serialize the data.
@@ -378,6 +388,7 @@ class AppendRowsRequest(proto.Message):
 
 class AppendRowsResponse(proto.Message):
     r"""Response message for ``AppendRows``.
+
     Attributes:
         append_result (google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.AppendResult):
             Result if the append is successful.
@@ -414,6 +425,7 @@ class AppendRowsResponse(proto.Message):
 
     class AppendResult(proto.Message):
         r"""AppendResult is returned for successful append requests.
+
         Attributes:
             offset (google.protobuf.wrappers_pb2.Int64Value):
                 The row offset at which the last append
@@ -448,6 +460,7 @@ class AppendRowsResponse(proto.Message):
 
 class GetWriteStreamRequest(proto.Message):
     r"""Request message for ``GetWriteStreamRequest``.
+
     Attributes:
         name (str):
             Required. Name of the stream to get, in the form of
@@ -462,6 +475,7 @@ class GetWriteStreamRequest(proto.Message):
 
 class BatchCommitWriteStreamsRequest(proto.Message):
     r"""Request message for ``BatchCommitWriteStreams``.
+
     Attributes:
         parent (str):
             Required. Parent table that all the streams should belong
@@ -484,6 +498,7 @@ class BatchCommitWriteStreamsRequest(proto.Message):
 
 class BatchCommitWriteStreamsResponse(proto.Message):
     r"""Response message for ``BatchCommitWriteStreams``.
+
     Attributes:
         commit_time (google.protobuf.timestamp_pb2.Timestamp):
             The time at which streams were committed in microseconds
@@ -513,6 +528,7 @@ class BatchCommitWriteStreamsResponse(proto.Message):
 
 class FinalizeWriteStreamRequest(proto.Message):
     r"""Request message for invoking ``FinalizeWriteStream``.
+
     Attributes:
         name (str):
             Required. Name of the stream to finalize, in the form of
@@ -527,6 +543,7 @@ class FinalizeWriteStreamRequest(proto.Message):
 
 class FinalizeWriteStreamResponse(proto.Message):
     r"""Response message for ``FinalizeWriteStream``.
+
     Attributes:
         row_count (int):
             Number of rows in the finalized stream.
@@ -540,6 +557,7 @@ class FinalizeWriteStreamResponse(proto.Message):
 
 class FlushRowsRequest(proto.Message):
     r"""Request message for ``FlushRows``.
+
     Attributes:
         write_stream (str):
             Required. The stream that is the target of
@@ -563,6 +581,7 @@ class FlushRowsRequest(proto.Message):
 
 class FlushRowsResponse(proto.Message):
     r"""Respond message for ``FlushRows``.
+
     Attributes:
         offset (int):
             The rows before this offset (including this

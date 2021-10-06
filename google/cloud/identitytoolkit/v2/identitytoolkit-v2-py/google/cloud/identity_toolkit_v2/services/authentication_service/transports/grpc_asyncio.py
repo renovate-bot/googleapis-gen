@@ -276,6 +276,9 @@ class AuthenticationServiceGrpcAsyncIOTransport(AuthenticationServiceTransport):
             )
         return self._stubs['start_mfa_sign_in']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AuthenticationServiceGrpcAsyncIOTransport',

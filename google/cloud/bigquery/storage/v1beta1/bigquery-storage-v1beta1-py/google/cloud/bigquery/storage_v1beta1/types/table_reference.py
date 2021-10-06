@@ -56,6 +56,7 @@ class TableReference(proto.Message):
 
 class TableModifiers(proto.Message):
     r"""All fields in this message optional.
+
     Attributes:
         snapshot_time (google.protobuf.timestamp_pb2.Timestamp):
             The snapshot time of the table. If not set,

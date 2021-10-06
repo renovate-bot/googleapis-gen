@@ -38,6 +38,7 @@ class TableSourceType(proto.Enum):
 
 class BigQueryTableSpec(proto.Message):
     r"""Describes a BigQuery table.
+
     Attributes:
         table_source_type (google.cloud.datacatalog_v1.types.TableSourceType):
             Output only. The table source type.
@@ -70,6 +71,7 @@ class BigQueryTableSpec(proto.Message):
 
 class ViewSpec(proto.Message):
     r"""Table view specification.
+
     Attributes:
         view_query (str):
             Output only. The query that defines the table
@@ -84,6 +86,7 @@ class ViewSpec(proto.Message):
 
 class TableSpec(proto.Message):
     r"""Normal BigQuery table specification.
+
     Attributes:
         grouped_entry (str):
             Output only. If the table is date-sharded, that is, it

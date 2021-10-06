@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AdGroupBidModifierErrorEnum(proto.Message):
     r"""Container for enum describing possible ad group bid modifier
     errors.
-        """
+
+    """
     class AdGroupBidModifierError(proto.Enum):
         r"""Enum describing possible ad group bid modifier errors."""
         UNSPECIFIED = 0

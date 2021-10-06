@@ -91,6 +91,7 @@ class MutateFeedItemSetsRequest(proto.Message):
 
 class FeedItemSetOperation(proto.Message):
     r"""A single operation (create, remove) on an feed item set.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -133,6 +134,7 @@ class FeedItemSetOperation(proto.Message):
 
 class MutateFeedItemSetsResponse(proto.Message):
     r"""Response message for an feed item set mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v7.services.types.MutateFeedItemSetResult]):
             All results for the mutate.
@@ -147,6 +149,7 @@ class MutateFeedItemSetsResponse(proto.Message):
 
 class MutateFeedItemSetResult(proto.Message):
     r"""The result for the feed item set mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

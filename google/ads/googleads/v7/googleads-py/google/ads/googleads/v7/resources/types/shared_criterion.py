@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class SharedCriterion(proto.Message):
     r"""A criterion belonging to a shared set.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the shared criterion. Shared

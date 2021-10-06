@@ -166,6 +166,7 @@ class ConversationProfile(proto.Message):
 
 class AutomatedAgentConfig(proto.Message):
     r"""Defines the Automated Agent to connect to a conversation.
+
     Attributes:
         agent (str):
             Required. ID of the Dialogflow agent environment to use.
@@ -216,6 +217,7 @@ class HumanAgentAssistantConfig(proto.Message):
 
     class SuggestionTriggerSettings(proto.Message):
         r"""Settings of suggestion trigger.
+
         Attributes:
             no_small_talk (bool):
                 Do not trigger if last utterance is small
@@ -236,6 +238,7 @@ class HumanAgentAssistantConfig(proto.Message):
 
     class SuggestionFeatureConfig(proto.Message):
         r"""Config for suggestion features.
+
         Attributes:
             suggestion_feature (google.cloud.dialogflow_v2beta1.types.SuggestionFeature):
                 The suggestion feature.
@@ -283,6 +286,7 @@ class HumanAgentAssistantConfig(proto.Message):
 
     class SuggestionConfig(proto.Message):
         r"""Detail human agent assistant config.
+
         Attributes:
             feature_configs (Sequence[google.cloud.dialogflow_v2beta1.types.HumanAgentAssistantConfig.SuggestionFeatureConfig]):
                 Configuration of different suggestion
@@ -314,6 +318,7 @@ class HumanAgentAssistantConfig(proto.Message):
 
     class SuggestionQueryConfig(proto.Message):
         r"""Config for suggestion query.
+
         Attributes:
             knowledge_base_query_source (google.cloud.dialogflow_v2beta1.types.HumanAgentAssistantConfig.SuggestionQueryConfig.KnowledgeBaseQuerySource):
                 Query from knowledgebase. It is used by: ARTICLE_SUGGESTION,
@@ -587,6 +592,7 @@ class HumanAgentHandoffConfig(proto.Message):
 
     class SalesforceLiveAgentConfig(proto.Message):
         r"""Configuration specific to Salesforce Live Agent.
+
         Attributes:
             organization_id (str):
                 Required. The organization ID of the
@@ -636,6 +642,7 @@ class HumanAgentHandoffConfig(proto.Message):
 
 class NotificationConfig(proto.Message):
     r"""Defines notification behavior.
+
     Attributes:
         topic (str):
             Name of the Pub/Sub topic to publish conversation events
@@ -674,6 +681,7 @@ class NotificationConfig(proto.Message):
 
 class LoggingConfig(proto.Message):
     r"""Defines logging behavior for conversation lifecycle events.
+
     Attributes:
         enable_stackdriver_logging (bool):
             Whether to log conversation events like

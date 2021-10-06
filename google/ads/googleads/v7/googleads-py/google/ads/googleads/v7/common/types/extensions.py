@@ -49,6 +49,7 @@ __protobuf__ = proto.module(
 
 class AppFeedItem(proto.Message):
     r"""Represents an App extension.
+
     Attributes:
         link_text (str):
             The visible text displayed when the link is
@@ -121,6 +122,7 @@ class AppFeedItem(proto.Message):
 
 class CallFeedItem(proto.Message):
     r"""Represents a Call extension.
+
     Attributes:
         phone_number (str):
             The advertiser's phone number to append to
@@ -182,6 +184,7 @@ class CallFeedItem(proto.Message):
 
 class CalloutFeedItem(proto.Message):
     r"""Represents a callout extension.
+
     Attributes:
         callout_text (str):
             The callout text.
@@ -198,6 +201,7 @@ class CalloutFeedItem(proto.Message):
 
 class LocationFeedItem(proto.Message):
     r"""Represents a location extension.
+
     Attributes:
         business_name (str):
             The name of the business.
@@ -261,6 +265,7 @@ class LocationFeedItem(proto.Message):
 
 class AffiliateLocationFeedItem(proto.Message):
     r"""Represents an affiliate location extension.
+
     Attributes:
         business_name (str):
             The name of the business.
@@ -388,6 +393,7 @@ class TextMessageFeedItem(proto.Message):
 
 class PriceFeedItem(proto.Message):
     r"""Represents a Price extension.
+
     Attributes:
         type_ (google.ads.googleads.v7.enums.types.PriceExtensionTypeEnum.PriceExtensionType):
             Price extension type of this extension.
@@ -441,6 +447,7 @@ class PriceFeedItem(proto.Message):
 
 class PriceOffer(proto.Message):
     r"""Represents one price offer in a price extension.
+
     Attributes:
         header (str):
             Header text of this offer.
@@ -490,6 +497,7 @@ class PriceOffer(proto.Message):
 
 class PromotionFeedItem(proto.Message):
     r"""Represents a Promotion extension.
+
     Attributes:
         promotion_target (str):
             A freeform description of what the promotion
@@ -620,6 +628,7 @@ class PromotionFeedItem(proto.Message):
 
 class StructuredSnippetFeedItem(proto.Message):
     r"""Represents a structured snippet extension.
+
     Attributes:
         header (str):
             The header of the snippet.
@@ -642,6 +651,7 @@ class StructuredSnippetFeedItem(proto.Message):
 
 class SitelinkFeedItem(proto.Message):
     r"""Represents a sitelink extension.
+
     Attributes:
         link_text (str):
             URL display text for the sitelink.
@@ -716,6 +726,7 @@ class SitelinkFeedItem(proto.Message):
 
 class HotelCalloutFeedItem(proto.Message):
     r"""Represents a hotel callout extension.
+
     Attributes:
         text (str):
             The callout text.
@@ -740,6 +751,7 @@ class HotelCalloutFeedItem(proto.Message):
 
 class ImageFeedItem(proto.Message):
     r"""Represents an advertiser provided image extension.
+
     Attributes:
         image_asset (str):
             Required. Resource name of the image asset.

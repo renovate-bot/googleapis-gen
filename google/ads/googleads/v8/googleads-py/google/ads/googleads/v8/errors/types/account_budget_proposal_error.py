@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AccountBudgetProposalErrorEnum(proto.Message):
     r"""Container for enum describing possible account budget
     proposal errors.
-        """
+
+    """
     class AccountBudgetProposalError(proto.Enum):
         r"""Enum describing possible account budget proposal errors."""
         UNSPECIFIED = 0

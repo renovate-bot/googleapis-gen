@@ -37,6 +37,7 @@ __protobuf__ = proto.module(
 
 class ReceiveTaskNotificationRequest(proto.Message):
     r"""A request message to receive task notifications.
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -63,7 +64,8 @@ class ReceiveTaskNotificationRequest(proto.Message):
 class ReceiveTaskNotificationResponse(proto.Message):
     r"""The streaming rpc message that notifies the agent when it has
     a task that it needs to perform on the VM instance.
-        """
+
+    """
 
 
 class StartNextTaskRequest(proto.Message):
@@ -106,6 +108,7 @@ class StartNextTaskResponse(proto.Message):
 
 class ReportTaskProgressRequest(proto.Message):
     r"""A request message for reporting the progress of current task.
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -240,11 +243,13 @@ class ReportTaskCompleteRequest(proto.Message):
 class ReportTaskCompleteResponse(proto.Message):
     r"""The response message after the agent signaled the current
     task complete.
-        """
+
+    """
 
 
 class RegisterAgentRequest(proto.Message):
     r"""The request message for registering the agent.
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -275,7 +280,8 @@ class RegisterAgentRequest(proto.Message):
 
 
 class RegisterAgentResponse(proto.Message):
-    r"""The response message after the agent registered.    """
+    r"""The response message after the agent registered.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

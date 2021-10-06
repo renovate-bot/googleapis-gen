@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class NewResourceCreationErrorEnum(proto.Message):
     r"""Container for enum describing possible new resource creation
     errors.
-        """
+
+    """
     class NewResourceCreationError(proto.Enum):
         r"""Enum describing possible new resource creation errors."""
         UNSPECIFIED = 0

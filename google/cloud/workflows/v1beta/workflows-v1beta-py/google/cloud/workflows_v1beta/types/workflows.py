@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class Workflow(proto.Message):
     r"""Workflow program to be executed by Workflows.
+
     Attributes:
         name (str):
             The resource name of the workflow.
@@ -345,6 +346,7 @@ class UpdateWorkflowRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             The time the operation was created.

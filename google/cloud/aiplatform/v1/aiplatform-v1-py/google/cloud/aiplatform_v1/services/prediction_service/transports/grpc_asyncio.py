@@ -315,6 +315,9 @@ class PredictionServiceGrpcAsyncIOTransport(PredictionServiceTransport):
             )
         return self._stubs['explain']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'PredictionServiceGrpcAsyncIOTransport',

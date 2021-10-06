@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ChangeEventResourceTypeEnum(proto.Message):
     r"""Container for enum describing supported resource types for
     the ChangeEvent resource.
-        """
+
+    """
     class ChangeEventResourceType(proto.Enum):
         r"""Enum listing the resource types support by the ChangeEvent
         resource.

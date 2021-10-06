@@ -1042,6 +1042,7 @@ class TransferEntitlementsToGoogleRequest(proto.Message):
 
 class ChangeParametersRequest(proto.Message):
     r"""Request message for [CloudChannelService.ChangeParametersRequest][].
+
     Attributes:
         name (str):
             Required. The name of the entitlement to update. Name uses
@@ -1336,6 +1337,7 @@ class ActivateEntitlementRequest(proto.Message):
 
 class LookupOfferRequest(proto.Message):
     r"""Request message for LookupOffer.
+
     Attributes:
         entitlement (str):
             Required. The resource name of the entitlement to retrieve
@@ -1351,6 +1353,7 @@ class LookupOfferRequest(proto.Message):
 
 class ListProductsRequest(proto.Message):
     r"""Request message for ListProducts.
+
     Attributes:
         account (str):
             Required. The resource name of the reseller account. Format:
@@ -1391,6 +1394,7 @@ class ListProductsRequest(proto.Message):
 
 class ListProductsResponse(proto.Message):
     r"""Response message for ListProducts.
+
     Attributes:
         products (Sequence[google.cloud.channel_v1.types.Product]):
             List of Products requested.
@@ -1415,6 +1419,7 @@ class ListProductsResponse(proto.Message):
 
 class ListSkusRequest(proto.Message):
     r"""Request message for ListSkus.
+
     Attributes:
         parent (str):
             Required. The resource name of the Product to list SKUs for.
@@ -1463,6 +1468,7 @@ class ListSkusRequest(proto.Message):
 
 class ListSkusResponse(proto.Message):
     r"""Response message for ListSkus.
+
     Attributes:
         skus (Sequence[google.cloud.channel_v1.types.Sku]):
             The list of SKUs requested.
@@ -1487,6 +1493,7 @@ class ListSkusResponse(proto.Message):
 
 class ListOffersRequest(proto.Message):
     r"""Request message for ListOffers.
+
     Attributes:
         parent (str):
             Required. The resource name of the reseller account from
@@ -1539,6 +1546,7 @@ class ListOffersRequest(proto.Message):
 
 class ListOffersResponse(proto.Message):
     r"""Response message for ListOffers.
+
     Attributes:
         offers (Sequence[google.cloud.channel_v1.types.Offer]):
             The list of Offers requested.
@@ -1563,6 +1571,7 @@ class ListOffersResponse(proto.Message):
 
 class ListPurchasableSkusRequest(proto.Message):
     r"""Request message for ListPurchasableSkus.
+
     Attributes:
         create_entitlement_purchase (google.cloud.channel_v1.types.ListPurchasableSkusRequest.CreateEntitlementPurchase):
             List SKUs for CreateEntitlement purchase.
@@ -1664,6 +1673,7 @@ class ListPurchasableSkusRequest(proto.Message):
 
 class ListPurchasableSkusResponse(proto.Message):
     r"""Response message for ListPurchasableSkus.
+
     Attributes:
         purchasable_skus (Sequence[google.cloud.channel_v1.types.PurchasableSku]):
             The list of SKUs requested.
@@ -1704,6 +1714,7 @@ class PurchasableSku(proto.Message):
 
 class ListPurchasableOffersRequest(proto.Message):
     r"""Request message for ListPurchasableOffers.
+
     Attributes:
         create_entitlement_purchase (google.cloud.channel_v1.types.ListPurchasableOffersRequest.CreateEntitlementPurchase):
             List Offers for CreateEntitlement purchase.
@@ -1730,6 +1741,7 @@ class ListPurchasableOffersRequest(proto.Message):
 
     class CreateEntitlementPurchase(proto.Message):
         r"""List Offers for CreateEntitlement purchase.
+
         Attributes:
             sku (str):
                 Required. SKU that the result should be restricted to.
@@ -1743,6 +1755,7 @@ class ListPurchasableOffersRequest(proto.Message):
 
     class ChangeOfferPurchase(proto.Message):
         r"""List Offers for ChangeOffer purchase.
+
         Attributes:
             entitlement (str):
                 Required. Resource name of the entitlement. Format:
@@ -1794,6 +1807,7 @@ class ListPurchasableOffersRequest(proto.Message):
 
 class ListPurchasableOffersResponse(proto.Message):
     r"""Response message for ListPurchasableOffers.
+
     Attributes:
         purchasable_offers (Sequence[google.cloud.channel_v1.types.PurchasableOffer]):
             The list of Offers requested.
@@ -1834,6 +1848,7 @@ class PurchasableOffer(proto.Message):
 
 class RegisterSubscriberRequest(proto.Message):
     r"""Request Message for RegisterSubscriber.
+
     Attributes:
         account (str):
             Required. Resource name of the account.
@@ -1854,6 +1869,7 @@ class RegisterSubscriberRequest(proto.Message):
 
 class RegisterSubscriberResponse(proto.Message):
     r"""Response Message for RegisterSubscriber.
+
     Attributes:
         topic (str):
             Name of the topic the subscriber will listen
@@ -1868,6 +1884,7 @@ class RegisterSubscriberResponse(proto.Message):
 
 class UnregisterSubscriberRequest(proto.Message):
     r"""Request Message for UnregisterSubscriber.
+
     Attributes:
         account (str):
             Required. Resource name of the account.
@@ -1888,6 +1905,7 @@ class UnregisterSubscriberRequest(proto.Message):
 
 class UnregisterSubscriberResponse(proto.Message):
     r"""Response Message for UnregisterSubscriber.
+
     Attributes:
         topic (str):
             Name of the topic the service account
@@ -1902,6 +1920,7 @@ class UnregisterSubscriberResponse(proto.Message):
 
 class ListSubscribersRequest(proto.Message):
     r"""Request Message for ListSubscribers.
+
     Attributes:
         account (str):
             Required. Resource name of the account.
@@ -1937,6 +1956,7 @@ class ListSubscribersRequest(proto.Message):
 
 class ListSubscribersResponse(proto.Message):
     r"""Response Message for ListSubscribers.
+
     Attributes:
         topic (str):
             Name of the topic registered with the

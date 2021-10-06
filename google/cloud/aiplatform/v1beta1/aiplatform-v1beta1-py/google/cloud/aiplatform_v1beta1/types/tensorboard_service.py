@@ -1024,7 +1024,8 @@ class WriteTensorboardExperimentDataRequest(proto.Message):
 class WriteTensorboardExperimentDataResponse(proto.Message):
     r"""Response message for
     [TensorboardService.WriteTensorboardExperimentData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardExperimentData].
-        """
+
+    """
 
 
 class WriteTensorboardRunDataRequest(proto.Message):
@@ -1060,7 +1061,8 @@ class WriteTensorboardRunDataRequest(proto.Message):
 class WriteTensorboardRunDataResponse(proto.Message):
     r"""Response message for
     [TensorboardService.WriteTensorboardRunData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardRunData].
-        """
+
+    """
 
 
 class ExportTensorboardTimeSeriesDataRequest(proto.Message):
@@ -1147,6 +1149,7 @@ class ExportTensorboardTimeSeriesDataResponse(proto.Message):
 
 class CreateTensorboardOperationMetadata(proto.Message):
     r"""Details of operations that perform create Tensorboard.
+
     Attributes:
         generic_metadata (google.cloud.aiplatform_v1beta1.types.GenericOperationMetadata):
             Operation metadata for Tensorboard.
@@ -1161,6 +1164,7 @@ class CreateTensorboardOperationMetadata(proto.Message):
 
 class UpdateTensorboardOperationMetadata(proto.Message):
     r"""Details of operations that perform update Tensorboard.
+
     Attributes:
         generic_metadata (google.cloud.aiplatform_v1beta1.types.GenericOperationMetadata):
             Operation metadata for Tensorboard.

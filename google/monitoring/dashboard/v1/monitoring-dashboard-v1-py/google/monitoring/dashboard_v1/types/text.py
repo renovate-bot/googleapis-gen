@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class Text(proto.Message):
     r"""A widget that displays textual content.
+
     Attributes:
         content (str):
             The text content to be displayed.

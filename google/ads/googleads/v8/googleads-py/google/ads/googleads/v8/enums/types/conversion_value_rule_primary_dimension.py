@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionValueRulePrimaryDimensionEnum(proto.Message):
     r"""Container for enum describing value rule primary dimension
     for stats.
-        """
+
+    """
     class ConversionValueRulePrimaryDimension(proto.Enum):
         r"""Identifies the primary dimension for conversion value rule
         stats.

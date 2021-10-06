@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class OfflineUserDataJobTypeEnum(proto.Message):
     r"""Container for enum describing types of an offline user data
     job.
-        """
+
+    """
     class OfflineUserDataJobType(proto.Enum):
         r"""The type of an offline user data job."""
         UNSPECIFIED = 0

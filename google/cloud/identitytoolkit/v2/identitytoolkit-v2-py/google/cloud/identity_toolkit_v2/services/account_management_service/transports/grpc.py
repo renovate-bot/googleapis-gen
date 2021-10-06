@@ -300,6 +300,8 @@ class AccountManagementServiceGrpcTransport(AccountManagementServiceTransport):
             )
         return self._stubs['withdraw_mfa']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AccountManagementServiceGrpcTransport',

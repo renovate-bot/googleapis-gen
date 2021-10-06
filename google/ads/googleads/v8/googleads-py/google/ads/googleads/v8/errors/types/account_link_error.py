@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AccountLinkErrorEnum(proto.Message):
-    r"""Container for enum describing possible account link errors.    """
+    r"""Container for enum describing possible account link errors.
+    """
     class AccountLinkError(proto.Enum):
         r"""Enum describing possible account link errors."""
         UNSPECIFIED = 0

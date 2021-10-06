@@ -415,6 +415,9 @@ class DatastoreGrpcAsyncIOTransport(DatastoreTransport):
             )
         return self._stubs['reserve_ids']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DatastoreGrpcAsyncIOTransport',

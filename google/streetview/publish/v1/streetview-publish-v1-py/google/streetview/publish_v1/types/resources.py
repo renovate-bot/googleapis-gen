@@ -35,6 +35,7 @@ __protobuf__ = proto.module(
 
 class UploadRef(proto.Message):
     r"""Upload reference for media files.
+
     Attributes:
         upload_url (str):
             Required. An upload reference should be unique for each
@@ -50,6 +51,7 @@ class UploadRef(proto.Message):
 
 class PhotoId(proto.Message):
     r"""Identifier for a [Photo][google.streetview.publish.v1.Photo].
+
     Attributes:
         id (str):
             Required. A unique identifier for a photo.
@@ -90,6 +92,7 @@ class Level(proto.Message):
 
 class Pose(proto.Message):
     r"""Raw pose measurement for an entity.
+
     Attributes:
         lat_lng_pair (google.type.latlng_pb2.LatLng):
             Latitude and longitude pair of the pose, as explained here:
@@ -164,6 +167,7 @@ class Pose(proto.Message):
 
 class Place(proto.Message):
     r"""Place metadata for an entity.
+
     Attributes:
         place_id (str):
             Place identifier, as described in
@@ -210,6 +214,7 @@ class Connection(proto.Message):
 
 class Photo(proto.Message):
     r"""Photo is used to store 360 photos along with photo metadata.
+
     Attributes:
         photo_id (google.streetview.publish_v1.types.PhotoId):
             Required when updating a photo. Output only

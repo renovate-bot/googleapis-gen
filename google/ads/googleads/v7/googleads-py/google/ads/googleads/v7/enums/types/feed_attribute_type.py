@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedAttributeTypeEnum(proto.Message):
     r"""Container for enum describing possible data types for a feed
     attribute.
-        """
+
+    """
     class FeedAttributeType(proto.Enum):
         r"""Possible data types for a feed attribute."""
         UNSPECIFIED = 0

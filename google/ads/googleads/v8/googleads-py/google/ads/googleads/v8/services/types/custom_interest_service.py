@@ -81,6 +81,7 @@ class MutateCustomInterestsRequest(proto.Message):
 
 class CustomInterestOperation(proto.Message):
     r"""A single operation (create, update) on a custom interest.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -114,6 +115,7 @@ class CustomInterestOperation(proto.Message):
 
 class MutateCustomInterestsResponse(proto.Message):
     r"""Response message for custom interest mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v8.services.types.MutateCustomInterestResult]):
             All results for the mutate.
@@ -128,6 +130,7 @@ class MutateCustomInterestsResponse(proto.Message):
 
 class MutateCustomInterestResult(proto.Message):
     r"""The result for the custom interest mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

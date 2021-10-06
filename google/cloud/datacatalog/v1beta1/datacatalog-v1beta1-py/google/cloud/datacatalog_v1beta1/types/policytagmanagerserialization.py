@@ -123,6 +123,7 @@ class ImportTaxonomiesRequest(proto.Message):
 
 class InlineSource(proto.Message):
     r"""Inline source used for taxonomies import.
+
     Attributes:
         taxonomies (Sequence[google.cloud.datacatalog_v1beta1.types.SerializedTaxonomy]):
             Required. Taxonomies to be imported.

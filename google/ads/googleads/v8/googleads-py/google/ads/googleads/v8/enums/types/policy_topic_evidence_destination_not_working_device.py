@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyTopicEvidenceDestinationNotWorkingDeviceEnum(proto.Message):
     r"""Container for enum describing possible policy topic evidence
     destination not working devices.
-        """
+
+    """
     class PolicyTopicEvidenceDestinationNotWorkingDevice(proto.Enum):
         r"""The possible policy topic evidence destination not working
         devices.

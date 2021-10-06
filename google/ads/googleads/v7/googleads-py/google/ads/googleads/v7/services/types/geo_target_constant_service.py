@@ -69,6 +69,7 @@ class SuggestGeoTargetConstantsRequest(proto.Message):
 
     class LocationNames(proto.Message):
         r"""A list of location names.
+
         Attributes:
             names (Sequence[str]):
                 A list of location names.
@@ -81,6 +82,7 @@ class SuggestGeoTargetConstantsRequest(proto.Message):
 
     class GeoTargets(proto.Message):
         r"""A list of geo target constant resource names.
+
         Attributes:
             geo_target_constants (Sequence[str]):
                 A list of geo target constant resource names.
@@ -133,6 +135,7 @@ class SuggestGeoTargetConstantsResponse(proto.Message):
 
 class GeoTargetConstantSuggestion(proto.Message):
     r"""A geo target constant suggestion.
+
     Attributes:
         locale (str):
             The language this GeoTargetConstantSuggestion

@@ -2425,6 +2425,9 @@ class AnalyticsAdminServiceGrpcAsyncIOTransport(AnalyticsAdminServiceTransport):
             )
         return self._stubs['update_data_retention_settings']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AnalyticsAdminServiceGrpcAsyncIOTransport',

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class SimulationTypeEnum(proto.Message):
     r"""Container for enum describing the field a simulation
     modifies.
-        """
+
+    """
     class SimulationType(proto.Enum):
         r"""Enum describing the field a simulation modifies."""
         UNSPECIFIED = 0

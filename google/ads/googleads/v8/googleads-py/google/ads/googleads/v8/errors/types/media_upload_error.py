@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class MediaUploadErrorEnum(proto.Message):
     r"""Container for enum describing possible media uploading
     errors.
-        """
+
+    """
     class MediaUploadError(proto.Enum):
         r"""Enum describing possible media uploading errors."""
         UNSPECIFIED = 0

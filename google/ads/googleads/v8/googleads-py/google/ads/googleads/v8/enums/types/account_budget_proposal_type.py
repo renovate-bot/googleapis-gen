@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AccountBudgetProposalTypeEnum(proto.Message):
-    r"""Message describing AccountBudgetProposal types.    """
+    r"""Message describing AccountBudgetProposal types.
+    """
     class AccountBudgetProposalType(proto.Enum):
         r"""The possible types of an AccountBudgetProposal."""
         UNSPECIFIED = 0

@@ -535,6 +535,9 @@ class ParticipantsGrpcAsyncIOTransport(ParticipantsTransport):
             )
         return self._stubs['compile_suggestion']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ParticipantsGrpcAsyncIOTransport',

@@ -185,6 +185,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             ),
          }
 
+    def close(self):
+        """Closes resources associated with the transport.
+
+       .. warning::
+            Only call this method if the transport is NOT shared
+            with other clients - this may cause errors in other clients!
+        """
+        raise NotImplementedError()
+
     @property
     def create_prediction_api_key_registration(self) -> Callable[
             [prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest],

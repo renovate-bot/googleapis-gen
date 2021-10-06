@@ -353,6 +353,8 @@ class TripServiceGrpcTransport(TripServiceTransport):
             )
         return self._stubs['update_trip']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TripServiceGrpcTransport',

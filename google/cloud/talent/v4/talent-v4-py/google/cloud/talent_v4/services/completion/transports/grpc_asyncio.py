@@ -252,6 +252,9 @@ class CompletionGrpcAsyncIOTransport(CompletionTransport):
             )
         return self._stubs['complete_query']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CompletionGrpcAsyncIOTransport',

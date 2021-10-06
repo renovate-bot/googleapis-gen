@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class PriceExtensionPriceUnitEnum(proto.Message):
-    r"""Container for enum describing price extension price unit.    """
+    r"""Container for enum describing price extension price unit.
+    """
     class PriceExtensionPriceUnit(proto.Enum):
         r"""Price extension price unit."""
         UNSPECIFIED = 0

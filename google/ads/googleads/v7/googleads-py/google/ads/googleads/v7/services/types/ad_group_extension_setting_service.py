@@ -148,6 +148,7 @@ class AdGroupExtensionSettingOperation(proto.Message):
 
 class MutateAdGroupExtensionSettingsResponse(proto.Message):
     r"""Response message for an ad group extension setting mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -173,6 +174,7 @@ class MutateAdGroupExtensionSettingsResponse(proto.Message):
 
 class MutateAdGroupExtensionSettingResult(proto.Message):
     r"""The result for the ad group extension setting mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

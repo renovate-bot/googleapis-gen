@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BiddingSourceEnum(proto.Message):
-    r"""Container for enum describing possible bidding sources.    """
+    r"""Container for enum describing possible bidding sources.
+    """
     class BiddingSource(proto.Enum):
         r"""Indicates where a bid or target is defined. For example, an
         ad group criterion may define a cpc bid directly, or it can

@@ -29,7 +29,8 @@ class PromotionExtensionOccasionEnum(proto.Message):
     r"""Container for enum describing a promotion extension occasion.
     For more information about the occasions please check:
     https://support.google.com/google-ads/answer/7367521
-        """
+
+    """
     class PromotionExtensionOccasion(proto.Enum):
         r"""A promotion extension occasion."""
         UNSPECIFIED = 0

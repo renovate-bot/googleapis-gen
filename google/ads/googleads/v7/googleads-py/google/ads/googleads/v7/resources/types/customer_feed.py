@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class CustomerFeed(proto.Message):
     r"""A customer feed.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer feed. Customer

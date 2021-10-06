@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CustomerLicense(proto.Message):
     r"""
+
     Attributes:
         kind (str):
             The type of API resource. This is always
@@ -53,6 +54,7 @@ class CustomerLicense(proto.Message):
 
     class Editions(proto.Message):
         r"""
+
         Attributes:
             edition_id (str):
                 (Deprecated)
@@ -104,6 +106,7 @@ class CustomerLicense(proto.Message):
 
 class LicenseNotification(proto.Message):
     r"""
+
     Attributes:
         id (str):
             The ID of the license notification.
@@ -131,6 +134,7 @@ class LicenseNotification(proto.Message):
 
     class Deletes(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -149,6 +153,7 @@ class LicenseNotification(proto.Message):
 
     class Expiries(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -167,6 +172,7 @@ class LicenseNotification(proto.Message):
 
     class Provisions(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -191,6 +197,7 @@ class LicenseNotification(proto.Message):
 
     class Reassignments(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -263,6 +270,7 @@ class LicenseNotification(proto.Message):
 
 class LicenseNotificationList(proto.Message):
     r"""
+
     Attributes:
         kind (str):
 
@@ -304,6 +312,7 @@ class LicenseNotificationList(proto.Message):
 
 class UserLicense(proto.Message):
     r"""
+
     Attributes:
         kind (str):
             The type of API resource. This is always

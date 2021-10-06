@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class SearchTermMatchTypeEnum(proto.Message):
     r"""Container for enum describing match types for a keyword
     triggering an ad.
-        """
+
+    """
     class SearchTermMatchType(proto.Enum):
         r"""Possible match types for a keyword triggering an ad,
         including variants.

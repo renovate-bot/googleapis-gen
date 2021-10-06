@@ -152,6 +152,7 @@ class CustomerManagerLinkOperation(proto.Message):
 
 class MutateCustomerManagerLinkResponse(proto.Message):
     r"""Response message for a CustomerManagerLink mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v7.services.types.MutateCustomerManagerLinkResult]):
             A result that identifies the resource
@@ -167,6 +168,7 @@ class MutateCustomerManagerLinkResponse(proto.Message):
 
 class MoveManagerLinkResponse(proto.Message):
     r"""Response message for a CustomerManagerLink moveManagerLink.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -183,6 +185,7 @@ class MoveManagerLinkResponse(proto.Message):
 
 class MutateCustomerManagerLinkResult(proto.Message):
     r"""The result for the customer manager link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

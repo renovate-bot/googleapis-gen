@@ -46,6 +46,7 @@ class ContentType(proto.Enum):
 
 class CreateFeedRequest(proto.Message):
     r"""Create asset feed request.
+
     Attributes:
         parent (str):
             Required. The name of the
@@ -85,6 +86,7 @@ class CreateFeedRequest(proto.Message):
 
 class GetFeedRequest(proto.Message):
     r"""Get asset feed request.
+
     Attributes:
         name (str):
             Required. The name of the Feed and it must be in the format
@@ -101,6 +103,7 @@ class GetFeedRequest(proto.Message):
 
 class ListFeedsRequest(proto.Message):
     r"""List asset feeds request.
+
     Attributes:
         parent (str):
             Required. The parent
@@ -119,6 +122,7 @@ class ListFeedsRequest(proto.Message):
 
 class ListFeedsResponse(proto.Message):
     r"""
+
     Attributes:
         feeds (Sequence[google.cloud.asset_v1p2beta1.types.Feed]):
             A list of feeds.
@@ -133,6 +137,7 @@ class ListFeedsResponse(proto.Message):
 
 class UpdateFeedRequest(proto.Message):
     r"""Update asset feed request.
+
     Attributes:
         feed (google.cloud.asset_v1p2beta1.types.Feed):
             Required. The new values of feed details. It must match an
@@ -160,6 +165,7 @@ class UpdateFeedRequest(proto.Message):
 
 class DeleteFeedRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the feed and it must be in the format
@@ -176,6 +182,7 @@ class DeleteFeedRequest(proto.Message):
 
 class OutputConfig(proto.Message):
     r"""Output configuration for export assets destination.
+
     Attributes:
         gcs_destination (google.cloud.asset_v1p2beta1.types.GcsDestination):
             Destination on Cloud Storage.
@@ -191,6 +198,7 @@ class OutputConfig(proto.Message):
 
 class GcsDestination(proto.Message):
     r"""A Cloud Storage location.
+
     Attributes:
         uri (str):
             The uri of the Cloud Storage object. It's the same uri that
@@ -210,6 +218,7 @@ class GcsDestination(proto.Message):
 
 class PubsubDestination(proto.Message):
     r"""A Cloud Pubsub destination.
+
     Attributes:
         topic (str):
             The name of the Cloud Pub/Sub topic to publish to. For
@@ -224,6 +233,7 @@ class PubsubDestination(proto.Message):
 
 class FeedOutputConfig(proto.Message):
     r"""Output configuration for asset feed destination.
+
     Attributes:
         pubsub_destination (google.cloud.asset_v1p2beta1.types.PubsubDestination):
             Destination on Cloud Pubsub.

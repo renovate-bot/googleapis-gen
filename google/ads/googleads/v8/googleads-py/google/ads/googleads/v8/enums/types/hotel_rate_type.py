@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class HotelRateTypeEnum(proto.Message):
-    r"""Container for enum describing possible hotel rate types.    """
+    r"""Container for enum describing possible hotel rate types.
+    """
     class HotelRateType(proto.Enum):
         r"""Enum describing possible hotel rate types."""
         UNSPECIFIED = 0

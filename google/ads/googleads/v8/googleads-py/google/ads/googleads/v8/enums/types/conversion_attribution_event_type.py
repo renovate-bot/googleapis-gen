@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionAttributionEventTypeEnum(proto.Message):
     r"""Container for enum indicating the event type the conversion
     is attributed to.
-        """
+
+    """
     class ConversionAttributionEventType(proto.Enum):
         r"""The event type of conversions that are attributed to."""
         UNSPECIFIED = 0

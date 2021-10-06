@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListTypeEnum(proto.Message):
-    r"""The user list types.    """
+    r"""The user list types.
+    """
     class UserListType(proto.Enum):
         r"""Enum containing possible user list types."""
         UNSPECIFIED = 0

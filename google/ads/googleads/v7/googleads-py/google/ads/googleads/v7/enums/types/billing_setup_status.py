@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BillingSetupStatusEnum(proto.Message):
-    r"""Message describing BillingSetup statuses.    """
+    r"""Message describing BillingSetup statuses.
+    """
     class BillingSetupStatus(proto.Enum):
         r"""The possible statuses of a BillingSetup."""
         UNSPECIFIED = 0

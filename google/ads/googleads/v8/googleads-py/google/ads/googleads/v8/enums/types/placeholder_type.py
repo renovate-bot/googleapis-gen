@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PlaceholderTypeEnum(proto.Message):
     r"""Container for enum describing possible placeholder types for
     a feed mapping.
-        """
+
+    """
     class PlaceholderType(proto.Enum):
         r"""Possible placeholder types for a feed mapping."""
         UNSPECIFIED = 0

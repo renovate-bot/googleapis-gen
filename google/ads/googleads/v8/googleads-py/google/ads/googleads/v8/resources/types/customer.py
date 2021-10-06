@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class Customer(proto.Message):
     r"""A customer.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer. Customer
@@ -197,6 +198,7 @@ class Customer(proto.Message):
 
 class CallReportingSetting(proto.Message):
     r"""Call reporting setting for a customer.
+
     Attributes:
         call_reporting_enabled (bool):
             Enable reporting of phone call events by
@@ -260,6 +262,7 @@ class ConversionTrackingSetting(proto.Message):
 
 class RemarketingSetting(proto.Message):
     r"""Remarketing setting for a customer.
+
     Attributes:
         google_global_site_tag (str):
             Output only. The Google global site tag.

@@ -44,6 +44,7 @@ class SqlFlagType(proto.Enum):
 
 class SqlFlagsListRequest(proto.Message):
     r"""Flags list request.
+
     Attributes:
         database_version (str):
             Database type and version you want to
@@ -60,6 +61,7 @@ class SqlFlagsListRequest(proto.Message):
 
 class FlagsListResponse(proto.Message):
     r"""Flags list response.
+
     Attributes:
         kind (str):
             This is always **sql#flagsList**.
@@ -80,6 +82,7 @@ class FlagsListResponse(proto.Message):
 
 class Flag(proto.Message):
     r"""A flag resource.
+
     Attributes:
         name (str):
             This is the name of the flag. Flag names always use

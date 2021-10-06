@@ -137,6 +137,7 @@ class TagField(proto.Message):
 
     class EnumValue(proto.Message):
         r"""An enum value.
+
         Attributes:
             display_name (str):
                 The display name of the enum value.
@@ -285,6 +286,7 @@ class TagTemplate(proto.Message):
 
 class TagTemplateField(proto.Message):
     r"""The template for an individual field within a tag template.
+
     Attributes:
         name (str):
             Output only. The resource name of the tag template field in
@@ -354,6 +356,7 @@ class TagTemplateField(proto.Message):
 
 class FieldType(proto.Message):
     r"""
+
     Attributes:
         primitive_type (google.cloud.datacatalog_v1.types.FieldType.PrimitiveType):
             Primitive types, such as string, boolean,
@@ -372,6 +375,7 @@ class FieldType(proto.Message):
 
     class EnumType(proto.Message):
         r"""
+
         Attributes:
             allowed_values (Sequence[google.cloud.datacatalog_v1.types.FieldType.EnumType.EnumValue]):
                 The set of allowed values for this enum.
@@ -389,6 +393,7 @@ class FieldType(proto.Message):
 
         class EnumValue(proto.Message):
             r"""
+
             Attributes:
                 display_name (str):
                     Required. The display name of the enum value. Must not be an

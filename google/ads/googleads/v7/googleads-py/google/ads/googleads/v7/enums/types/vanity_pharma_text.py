@@ -29,7 +29,8 @@ class VanityPharmaTextEnum(proto.Message):
     r"""The text that will be displayed in display URL of the text ad
     when website description is the selected display mode for vanity
     pharma URLs.
-        """
+
+    """
     class VanityPharmaText(proto.Enum):
         r"""Enum describing possible text."""
         UNSPECIFIED = 0

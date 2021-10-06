@@ -131,6 +131,7 @@ class MutateAccountLinkRequest(proto.Message):
 
 class AccountLinkOperation(proto.Message):
     r"""A single update on an account link.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -165,6 +166,7 @@ class AccountLinkOperation(proto.Message):
 
 class MutateAccountLinkResponse(proto.Message):
     r"""Response message for account link mutate.
+
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateAccountLinkResult):
             Result for the mutate.
@@ -179,6 +181,7 @@ class MutateAccountLinkResponse(proto.Message):
 
 class MutateAccountLinkResult(proto.Message):
     r"""The result for the account link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

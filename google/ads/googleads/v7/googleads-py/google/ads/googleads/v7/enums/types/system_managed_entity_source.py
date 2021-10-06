@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class SystemManagedResourceSourceEnum(proto.Message):
     r"""Container for enum describing possible system managed entity
     sources.
-        """
+
+    """
     class SystemManagedResourceSource(proto.Enum):
         r"""Enum listing the possible system managed entity sources."""
         UNSPECIFIED = 0

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CustomerMatchUploadKeyTypeEnum(proto.Message):
     r"""Indicates what type of data are the user list's members
     matched from.
-        """
+
+    """
     class CustomerMatchUploadKeyType(proto.Enum):
         r"""Enum describing possible customer match upload key types."""
         UNSPECIFIED = 0

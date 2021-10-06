@@ -51,6 +51,7 @@ class FeatureMap(proto.Message):
 
     class StringList(proto.Message):
         r"""A list of string features.
+
         Attributes:
             value (Sequence[str]):
                 String feature value with a length limit of
@@ -64,6 +65,7 @@ class FeatureMap(proto.Message):
 
     class FloatList(proto.Message):
         r"""A list of float features.
+
         Attributes:
             value (Sequence[float]):
                 Float feature value.

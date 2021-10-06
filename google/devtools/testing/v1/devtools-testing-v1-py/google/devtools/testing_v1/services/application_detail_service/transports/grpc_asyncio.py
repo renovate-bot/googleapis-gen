@@ -251,6 +251,9 @@ class ApplicationDetailServiceGrpcAsyncIOTransport(ApplicationDetailServiceTrans
             )
         return self._stubs['get_apk_details']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ApplicationDetailServiceGrpcAsyncIOTransport',

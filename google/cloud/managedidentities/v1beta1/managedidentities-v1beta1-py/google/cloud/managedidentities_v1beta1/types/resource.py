@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class Domain(proto.Message):
     r"""Represents a managed Microsoft Active Directory domain.
+
     Attributes:
         name (str):
             Output only. The unique name of the domain using the form:

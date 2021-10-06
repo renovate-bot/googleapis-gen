@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MatchingFunctionOperatorEnum(proto.Message):
-    r"""Container for enum describing matching function operator.    """
+    r"""Container for enum describing matching function operator.
+    """
     class MatchingFunctionOperator(proto.Enum):
         r"""Possible operators in a matching function."""
         UNSPECIFIED = 0

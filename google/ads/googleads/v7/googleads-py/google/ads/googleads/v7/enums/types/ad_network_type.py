@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdNetworkTypeEnum(proto.Message):
-    r"""Container for enumeration of Google Ads network types.    """
+    r"""Container for enumeration of Google Ads network types.
+    """
     class AdNetworkType(proto.Enum):
         r"""Enumerates Google Ads network types."""
         UNSPECIFIED = 0

@@ -244,6 +244,8 @@ class AllocationEndpointServiceGrpcTransport(AllocationEndpointServiceTransport)
             )
         return self._stubs['allocate']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AllocationEndpointServiceGrpcTransport',

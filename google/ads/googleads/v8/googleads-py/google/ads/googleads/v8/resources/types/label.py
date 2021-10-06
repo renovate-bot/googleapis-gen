@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class Label(proto.Message):
     r"""A label.
+
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. Label resource names have

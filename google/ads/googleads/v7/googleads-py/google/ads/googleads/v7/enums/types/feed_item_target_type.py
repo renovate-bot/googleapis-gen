@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemTargetTypeEnum(proto.Message):
     r"""Container for enum describing possible types of a feed item
     target.
-        """
+
+    """
     class FeedItemTargetType(proto.Enum):
         r"""Possible type of a feed item target."""
         UNSPECIFIED = 0

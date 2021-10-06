@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class MonthOfYearEnum(proto.Message):
     r"""Container for enumeration of months of the year, e.g.,
     "January".
-        """
+
+    """
     class MonthOfYear(proto.Enum):
         r"""Enumerates months of the year, e.g., "January"."""
         UNSPECIFIED = 0

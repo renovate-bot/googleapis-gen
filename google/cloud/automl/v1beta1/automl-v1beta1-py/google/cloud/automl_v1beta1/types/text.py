@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class TextClassificationDatasetMetadata(proto.Message):
     r"""Dataset metadata for classification.
+
     Attributes:
         classification_type (google.cloud.automl_v1beta1.types.ClassificationType):
             Required. Type of the classification problem.
@@ -47,6 +48,7 @@ class TextClassificationDatasetMetadata(proto.Message):
 
 class TextClassificationModelMetadata(proto.Message):
     r"""Model metadata that is specific to text classification.
+
     Attributes:
         classification_type (google.cloud.automl_v1beta1.types.ClassificationType):
             Output only. Classification type of the
@@ -61,11 +63,13 @@ class TextClassificationModelMetadata(proto.Message):
 
 
 class TextExtractionDatasetMetadata(proto.Message):
-    r"""Dataset metadata that is specific to text extraction    """
+    r"""Dataset metadata that is specific to text extraction
+    """
 
 
 class TextExtractionModelMetadata(proto.Message):
     r"""Model metadata that is specific to text extraction.
+
     Attributes:
         model_hint (str):
             Indicates the scope of model use case.
@@ -85,6 +89,7 @@ class TextExtractionModelMetadata(proto.Message):
 
 class TextSentimentDatasetMetadata(proto.Message):
     r"""Dataset metadata for text sentiment.
+
     Attributes:
         sentiment_max (int):
             Required. A sentiment is expressed as an integer ordinal,
@@ -103,7 +108,8 @@ class TextSentimentDatasetMetadata(proto.Message):
 
 
 class TextSentimentModelMetadata(proto.Message):
-    r"""Model metadata that is specific to text sentiment.    """
+    r"""Model metadata that is specific to text sentiment.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

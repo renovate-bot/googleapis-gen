@@ -130,6 +130,7 @@ class CsvInstruction(proto.Message):
 
 class PdfInstruction(proto.Message):
     r"""Instruction from a PDF file.
+
     Attributes:
         gcs_file_uri (str):
             PDF file for the instruction. Only gcs path

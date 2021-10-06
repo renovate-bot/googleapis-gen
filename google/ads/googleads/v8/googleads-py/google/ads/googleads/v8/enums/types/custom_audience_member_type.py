@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class CustomAudienceMemberTypeEnum(proto.Message):
-    r"""The type of custom audience member.    """
+    r"""The type of custom audience member.
+    """
     class CustomAudienceMemberType(proto.Enum):
         r"""Enum containing possible custom audience member types."""
         UNSPECIFIED = 0

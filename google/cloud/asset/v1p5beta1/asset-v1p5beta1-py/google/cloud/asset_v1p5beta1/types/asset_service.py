@@ -40,6 +40,7 @@ class ContentType(proto.Enum):
 
 class ListAssetsRequest(proto.Message):
     r"""ListAssets request.
+
     Attributes:
         parent (str):
             Required. Name of the organization or project the assets
@@ -107,6 +108,7 @@ class ListAssetsRequest(proto.Message):
 
 class ListAssetsResponse(proto.Message):
     r"""ListAssets response.
+
     Attributes:
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Time the snapshot was taken.

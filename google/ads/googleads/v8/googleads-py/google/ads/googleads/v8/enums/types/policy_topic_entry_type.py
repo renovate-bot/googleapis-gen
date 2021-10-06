@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyTopicEntryTypeEnum(proto.Message):
     r"""Container for enum describing possible policy topic entry
     types.
-        """
+
+    """
     class PolicyTopicEntryType(proto.Enum):
         r"""The possible policy topic entry types."""
         UNSPECIFIED = 0

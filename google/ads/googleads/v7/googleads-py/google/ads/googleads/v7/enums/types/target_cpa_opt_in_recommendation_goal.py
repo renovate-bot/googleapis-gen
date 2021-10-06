@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class TargetCpaOptInRecommendationGoalEnum(proto.Message):
     r"""Container for enum describing goals for TargetCpaOptIn
     recommendation.
-        """
+
+    """
     class TargetCpaOptInRecommendationGoal(proto.Enum):
         r"""Goal of TargetCpaOptIn recommendation."""
         UNSPECIFIED = 0

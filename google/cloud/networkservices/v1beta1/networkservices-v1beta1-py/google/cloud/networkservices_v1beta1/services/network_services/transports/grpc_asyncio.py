@@ -374,6 +374,9 @@ class NetworkServicesGrpcAsyncIOTransport(NetworkServicesTransport):
             )
         return self._stubs['delete_endpoint_policy']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'NetworkServicesGrpcAsyncIOTransport',

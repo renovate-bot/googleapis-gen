@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class KeywordMatchTypeEnum(proto.Message):
-    r"""Message describing Keyword match types.    """
+    r"""Message describing Keyword match types.
+    """
     class KeywordMatchType(proto.Enum):
         r"""Possible Keyword match types."""
         UNSPECIFIED = 0

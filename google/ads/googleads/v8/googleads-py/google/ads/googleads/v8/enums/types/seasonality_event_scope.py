@@ -29,7 +29,8 @@ class SeasonalityEventScopeEnum(proto.Message):
     r"""Message describing seasonality event scopes. The two types of
     seasonality events are BiddingSeasonalityAdjustments and
     BiddingDataExclusions.
-        """
+
+    """
     class SeasonalityEventScope(proto.Enum):
         r"""The possible scopes of a Seasonality Event."""
         UNSPECIFIED = 0

@@ -148,6 +148,7 @@ class CampaignExtensionSettingOperation(proto.Message):
 
 class MutateCampaignExtensionSettingsResponse(proto.Message):
     r"""Response message for a campaign extension setting mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -173,6 +174,7 @@ class MutateCampaignExtensionSettingsResponse(proto.Message):
 
 class MutateCampaignExtensionSettingResult(proto.Message):
     r"""The result for the campaign extension setting mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

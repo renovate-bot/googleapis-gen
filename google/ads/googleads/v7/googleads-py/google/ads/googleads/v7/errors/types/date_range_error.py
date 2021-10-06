@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class DateRangeErrorEnum(proto.Message):
-    r"""Container for enum describing possible date range errors.    """
+    r"""Container for enum describing possible date range errors.
+    """
     class DateRangeError(proto.Enum):
         r"""Enum describing possible date range errors."""
         UNSPECIFIED = 0

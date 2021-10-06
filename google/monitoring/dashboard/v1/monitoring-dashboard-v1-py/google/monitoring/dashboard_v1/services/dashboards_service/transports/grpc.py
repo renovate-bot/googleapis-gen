@@ -379,6 +379,8 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
             )
         return self._stubs['update_dashboard']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DashboardsServiceGrpcTransport',

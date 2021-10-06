@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class TextLabel(proto.Message):
     r"""A type of label displaying text on a colored background.
+
     Attributes:
         background_color (str):
             Background color of the label in RGB format. This string

@@ -64,6 +64,7 @@ class PredefinedObjectAcl(proto.Enum):
 
 class ReadObjectRequest(proto.Message):
     r"""Request message for ReadObject.
+
     Attributes:
         bucket (str):
             The name of the bucket containing the object
@@ -191,6 +192,7 @@ class ReadObjectRequest(proto.Message):
 
 class ReadObjectResponse(proto.Message):
     r"""Response message for GetObject.
+
     Attributes:
         checksummed_data (google.storage_v2.types.ChecksummedData):
             A portion of the data for the object. The service **may**
@@ -303,6 +305,7 @@ class WriteObjectSpec(proto.Message):
 
 class WriteObjectRequest(proto.Message):
     r"""Request message for WriteObject.
+
     Attributes:
         upload_id (str):
             For resumable uploads. This should be the ``upload_id``
@@ -394,6 +397,7 @@ class WriteObjectRequest(proto.Message):
 
 class WriteObjectResponse(proto.Message):
     r"""Response message for WriteObject.
+
     Attributes:
         committed_size (int):
             The total number of bytes that have been processed for the
@@ -420,6 +424,7 @@ class WriteObjectResponse(proto.Message):
 
 class QueryWriteStatusRequest(proto.Message):
     r"""Request object for ``QueryWriteStatus``.
+
     Attributes:
         upload_id (str):
             Required. The name of the resume token for
@@ -451,6 +456,7 @@ class QueryWriteStatusRequest(proto.Message):
 
 class QueryWriteStatusResponse(proto.Message):
     r"""Response object for ``QueryWriteStatus``.
+
     Attributes:
         committed_size (int):
             The total number of bytes that have been processed for the
@@ -479,6 +485,7 @@ class QueryWriteStatusResponse(proto.Message):
 
 class StartResumableWriteRequest(proto.Message):
     r"""Request message StartResumableWrite.
+
     Attributes:
         write_object_spec (google.storage_v2.types.WriteObjectSpec):
             The destination bucket, object, and metadata,
@@ -510,6 +517,7 @@ class StartResumableWriteRequest(proto.Message):
 
 class StartResumableWriteResponse(proto.Message):
     r"""Response object for ``StartResumableWrite``.
+
     Attributes:
         upload_id (str):
             The upload_id of the newly started resumable write
@@ -525,6 +533,7 @@ class StartResumableWriteResponse(proto.Message):
 
 class CommonObjectRequestParams(proto.Message):
     r"""Parameters that can be passed to any object request.
+
     Attributes:
         encryption_algorithm (str):
             Encryption algorithm used with Customer-
@@ -554,6 +563,7 @@ class CommonObjectRequestParams(proto.Message):
 
 class CommonRequestParams(proto.Message):
     r"""Parameters that can be passed to any request.
+
     Attributes:
         user_project (str):
             Required. Required when using buckets with Requestor Pays
@@ -567,7 +577,8 @@ class CommonRequestParams(proto.Message):
 
 
 class ServiceConstants(proto.Message):
-    r"""Shared constants.    """
+    r"""Shared constants.
+    """
     class Values(proto.Enum):
         r"""A collection of constant values meaningful to the Storage
         API.
@@ -595,6 +606,7 @@ class ServiceConstants(proto.Message):
 
 class Bucket(proto.Message):
     r"""A bucket.
+
     Attributes:
         name (str):
             Immutable. The name of the bucket. Global buckets will be of
@@ -730,6 +742,7 @@ class Bucket(proto.Message):
 
     class Billing(proto.Message):
         r"""Billing properties of a bucket.
+
         Attributes:
             requester_pays (bool):
                 When set to true, Requester Pays is enabled
@@ -787,6 +800,7 @@ class Bucket(proto.Message):
 
     class Encryption(proto.Message):
         r"""Encryption properties of a bucket.
+
         Attributes:
             default_kms_key (str):
                 A Cloud KMS key that will be used to encrypt
@@ -801,6 +815,7 @@ class Bucket(proto.Message):
 
     class IamConfig(proto.Message):
         r"""Bucket restriction options.
+
         Attributes:
             uniform_bucket_level_access (google.storage_v2.types.Bucket.IamConfig.UniformBucketLevelAccess):
                 Bucket restriction options currently enforced
@@ -878,6 +893,7 @@ class Bucket(proto.Message):
 
             class Action(proto.Message):
                 r"""An action to take on an object.
+
                 Attributes:
                     type_ (str):
                         Type of the action. Currently, only ``Delete`` and
@@ -898,6 +914,7 @@ class Bucket(proto.Message):
 
             class Condition(proto.Message):
                 r"""A condition of an object which triggers some action.
+
                 Attributes:
                     age_days (int):
                         Age of an object (in days). This condition is
@@ -1013,6 +1030,7 @@ class Bucket(proto.Message):
 
     class Logging(proto.Message):
         r"""Logging-related properties of a bucket.
+
         Attributes:
             log_bucket (str):
                 The destination bucket where the current
@@ -1032,6 +1050,7 @@ class Bucket(proto.Message):
 
     class RetentionPolicy(proto.Message):
         r"""Retention policy properties of a bucket.
+
         Attributes:
             effective_time (google.protobuf.timestamp_pb2.Timestamp):
                 Server-determined value that indicates the time from which
@@ -1229,6 +1248,7 @@ class Bucket(proto.Message):
 
 class BucketAccessControl(proto.Message):
     r"""An access-control entry.
+
     Attributes:
         role (str):
             The access permission for the entity.
@@ -1353,6 +1373,7 @@ class ObjectChecksums(proto.Message):
 
 class Object(proto.Message):
     r"""An object.
+
     Attributes:
         name (str):
             Immutable. The name of this object. Nearly any sequence of
@@ -1631,6 +1652,7 @@ class Object(proto.Message):
 
 class ObjectAccessControl(proto.Message):
     r"""An access-control entry.
+
     Attributes:
         role (str):
             The access permission for the entity.
@@ -1721,6 +1743,7 @@ class ProjectTeam(proto.Message):
 
 class Owner(proto.Message):
     r"""The owner of a specific resource.
+
     Attributes:
         entity (str):
             The entity, in the form ``user-``\ *userId*.
@@ -1740,6 +1763,7 @@ class Owner(proto.Message):
 
 class ContentRange(proto.Message):
     r"""Specifies a requested range of bytes to download.
+
     Attributes:
         start (int):
             The starting offset of the object data.

@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AssetLinkErrorEnum(proto.Message):
-    r"""Container for enum describing possible asset link errors.    """
+    r"""Container for enum describing possible asset link errors.
+    """
     class AssetLinkError(proto.Enum):
         r"""Enum describing possible asset link errors."""
         UNSPECIFIED = 0

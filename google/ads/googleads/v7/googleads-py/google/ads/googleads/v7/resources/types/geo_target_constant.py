@@ -29,6 +29,7 @@ __protobuf__ = proto.module(
 
 class GeoTargetConstant(proto.Message):
     r"""A geo target constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the geo target constant.

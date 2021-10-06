@@ -74,6 +74,7 @@ class InitialSubscribeRequest(proto.Message):
 
 class InitialSubscribeResponse(proto.Message):
     r"""Response to an InitialSubscribeRequest.
+
     Attributes:
         cursor (google.cloud.pubsublite_v1.types.Cursor):
             The cursor from which the subscriber will
@@ -128,6 +129,7 @@ class SeekRequest(proto.Message):
 
 class SeekResponse(proto.Message):
     r"""Response to a SeekRequest.
+
     Attributes:
         cursor (google.cloud.pubsublite_v1.types.Cursor):
             The new delivery cursor for the current
@@ -166,6 +168,7 @@ class FlowControlRequest(proto.Message):
 
 class SubscribeRequest(proto.Message):
     r"""A request sent from the client to the server on a stream.
+
     Attributes:
         initial (google.cloud.pubsublite_v1.types.InitialSubscribeRequest):
             Initial request on the stream.
@@ -219,6 +222,7 @@ class MessageResponse(proto.Message):
 
 class SubscribeResponse(proto.Message):
     r"""Response to SubscribeRequest.
+
     Attributes:
         initial (google.cloud.pubsublite_v1.types.InitialSubscribeResponse):
             Initial response on the stream.
@@ -306,11 +310,13 @@ class PartitionAssignmentAck(proto.Message):
     assignment, partitions may remain unassigned for a period of
     time until the client is known to be inactive, after which time
     the server will break the stream.
-        """
+
+    """
 
 
 class PartitionAssignmentRequest(proto.Message):
     r"""A request on the PartitionAssignment stream.
+
     Attributes:
         initial (google.cloud.pubsublite_v1.types.InitialPartitionAssignmentRequest):
             Initial request on the stream.

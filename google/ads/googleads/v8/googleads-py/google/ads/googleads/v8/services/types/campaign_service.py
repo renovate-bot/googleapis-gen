@@ -102,6 +102,7 @@ class MutateCampaignsRequest(proto.Message):
 
 class CampaignOperation(proto.Message):
     r"""A single operation (create, update, remove) on a campaign.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -145,6 +146,7 @@ class CampaignOperation(proto.Message):
 
 class MutateCampaignsResponse(proto.Message):
     r"""Response message for campaign mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -170,6 +172,7 @@ class MutateCampaignsResponse(proto.Message):
 
 class MutateCampaignResult(proto.Message):
     r"""The result for the campaign mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

@@ -249,6 +249,8 @@ class AuthorizedDomainsGrpcTransport(AuthorizedDomainsTransport):
             )
         return self._stubs['list_authorized_domains']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AuthorizedDomainsGrpcTransport',

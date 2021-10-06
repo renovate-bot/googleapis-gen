@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class OptimizationGoalTypeEnum(proto.Message):
-    r"""Container for enum describing the type of optimization goal.    """
+    r"""Container for enum describing the type of optimization goal.
+    """
     class OptimizationGoalType(proto.Enum):
         r"""The type of optimization goal"""
         UNSPECIFIED = 0

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyValidationParameterErrorEnum(proto.Message):
     r"""Container for enum describing possible policy validation
     parameter errors.
-        """
+
+    """
     class PolicyValidationParameterError(proto.Enum):
         r"""Enum describing possible policy validation parameter errors."""
         UNSPECIFIED = 0

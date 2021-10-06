@@ -252,6 +252,9 @@ class SpeechTranslationServiceGrpcAsyncIOTransport(SpeechTranslationServiceTrans
             )
         return self._stubs['streaming_translate_speech']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SpeechTranslationServiceGrpcAsyncIOTransport',

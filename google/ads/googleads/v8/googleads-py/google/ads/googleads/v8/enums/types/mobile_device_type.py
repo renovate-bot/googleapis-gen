@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MobileDeviceTypeEnum(proto.Message):
-    r"""Container for enum describing the types of mobile device.    """
+    r"""Container for enum describing the types of mobile device.
+    """
     class MobileDeviceType(proto.Enum):
         r"""The type of mobile device."""
         UNSPECIFIED = 0

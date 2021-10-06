@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionValueRuleErrorEnum(proto.Message):
     r"""Container for enum describing possible conversion value rule
     errors.
-        """
+
+    """
     class ConversionValueRuleError(proto.Enum):
         r"""Enum describing possible conversion value rule errors."""
         UNSPECIFIED = 0

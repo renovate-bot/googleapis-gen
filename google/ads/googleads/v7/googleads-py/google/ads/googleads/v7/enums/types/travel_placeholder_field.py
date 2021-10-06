@@ -29,7 +29,8 @@ class TravelPlaceholderFieldEnum(proto.Message):
     r"""Values for Travel placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-        """
+
+    """
     class TravelPlaceholderField(proto.Enum):
         r"""Possible values for Travel placeholder fields."""
         UNSPECIFIED = 0

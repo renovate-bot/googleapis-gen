@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class IdErrorEnum(proto.Message):
-    r"""Container for enum describing possible id errors.    """
+    r"""Container for enum describing possible id errors.
+    """
     class IdError(proto.Enum):
         r"""Enum describing possible id errors."""
         UNSPECIFIED = 0

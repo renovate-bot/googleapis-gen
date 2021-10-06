@@ -83,6 +83,7 @@ class ConversationView(proto.Enum):
 
 class CalculateStatsRequest(proto.Message):
     r"""The request for calculating conversation statistics.
+
     Attributes:
         location (str):
             Required. The location of the conversations.
@@ -105,6 +106,7 @@ class CalculateStatsRequest(proto.Message):
 
 class CalculateStatsResponse(proto.Message):
     r"""The response for calculating conversation statistics.
+
     Attributes:
         average_duration (google.protobuf.duration_pb2.Duration):
             The average duration of all conversations.
@@ -136,6 +138,7 @@ class CalculateStatsResponse(proto.Message):
 
     class TimeSeries(proto.Message):
         r"""A time series representing conversations over time.
+
         Attributes:
             interval_duration (google.protobuf.duration_pb2.Duration):
                 The duration of each interval.
@@ -148,6 +151,7 @@ class CalculateStatsResponse(proto.Message):
 
         class Interval(proto.Message):
             r"""A single interval in a time series.
+
             Attributes:
                 start_time (google.protobuf.timestamp_pb2.Timestamp):
                     The start time of this interval.
@@ -214,6 +218,7 @@ class CalculateStatsResponse(proto.Message):
 
 class CreateAnalysisOperationMetadata(proto.Message):
     r"""Metadata for a create analysis operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -244,6 +249,7 @@ class CreateAnalysisOperationMetadata(proto.Message):
 
 class CreateConversationRequest(proto.Message):
     r"""Request to create a conversation.
+
     Attributes:
         parent (str):
             Required. The parent resource of the
@@ -278,6 +284,7 @@ class CreateConversationRequest(proto.Message):
 
 class ListConversationsRequest(proto.Message):
     r"""Request to list conversations.
+
     Attributes:
         parent (str):
             Required. The parent resource of the
@@ -328,6 +335,7 @@ class ListConversationsRequest(proto.Message):
 
 class ListConversationsResponse(proto.Message):
     r"""The response of listing conversations.
+
     Attributes:
         conversations (Sequence[google.cloud.contact_center_insights_v1.types.Conversation]):
             The conversations that match the request.
@@ -355,6 +363,7 @@ class ListConversationsResponse(proto.Message):
 
 class GetConversationRequest(proto.Message):
     r"""The request to get a conversation.
+
     Attributes:
         name (str):
             Required. The name of the conversation to
@@ -377,6 +386,7 @@ class GetConversationRequest(proto.Message):
 
 class UpdateConversationRequest(proto.Message):
     r"""The request to update a conversation.
+
     Attributes:
         conversation (google.cloud.contact_center_insights_v1.types.Conversation):
             Required. The new values for the
@@ -399,6 +409,7 @@ class UpdateConversationRequest(proto.Message):
 
 class DeleteConversationRequest(proto.Message):
     r"""The request to delete a conversation.
+
     Attributes:
         name (str):
             Required. The name of the conversation to
@@ -422,6 +433,7 @@ class DeleteConversationRequest(proto.Message):
 
 class CreateAnalysisRequest(proto.Message):
     r"""The request to create an analysis.
+
     Attributes:
         parent (str):
             Required. The parent resource of the
@@ -443,6 +455,7 @@ class CreateAnalysisRequest(proto.Message):
 
 class ListAnalysesRequest(proto.Message):
     r"""The request to list analyses.
+
     Attributes:
         parent (str):
             Required. The parent resource of the
@@ -484,6 +497,7 @@ class ListAnalysesRequest(proto.Message):
 
 class ListAnalysesResponse(proto.Message):
     r"""The response to list analyses.
+
     Attributes:
         analyses (Sequence[google.cloud.contact_center_insights_v1.types.Analysis]):
             The analyses that match the request.
@@ -510,6 +524,7 @@ class ListAnalysesResponse(proto.Message):
 
 class GetAnalysisRequest(proto.Message):
     r"""The request to get an analysis.
+
     Attributes:
         name (str):
             Required. The name of the analysis to get.
@@ -523,6 +538,7 @@ class GetAnalysisRequest(proto.Message):
 
 class DeleteAnalysisRequest(proto.Message):
     r"""The request to delete an analysis.
+
     Attributes:
         name (str):
             Required. The name of the analysis to delete.
@@ -536,6 +552,7 @@ class DeleteAnalysisRequest(proto.Message):
 
 class ExportInsightsDataRequest(proto.Message):
     r"""The request to export insights.
+
     Attributes:
         big_query_destination (google.cloud.contact_center_insights_v1.types.ExportInsightsDataRequest.BigQueryDestination):
             Specified if sink is a BigQuery table.
@@ -554,6 +571,7 @@ class ExportInsightsDataRequest(proto.Message):
 
     class BigQueryDestination(proto.Message):
         r"""A BigQuery Table Reference.
+
         Attributes:
             project_id (str):
                 A project ID or number. If specified, then
@@ -605,6 +623,7 @@ class ExportInsightsDataRequest(proto.Message):
 
 class ExportInsightsDataMetadata(proto.Message):
     r"""Metadata for an export insights operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -643,11 +662,13 @@ class ExportInsightsDataMetadata(proto.Message):
 
 
 class ExportInsightsDataResponse(proto.Message):
-    r"""Response for an export insights operation.    """
+    r"""Response for an export insights operation.
+    """
 
 
 class CreateIssueModelRequest(proto.Message):
     r"""The request to create an issue model.
+
     Attributes:
         parent (str):
             Required. The parent resource of the issue
@@ -669,6 +690,7 @@ class CreateIssueModelRequest(proto.Message):
 
 class CreateIssueModelMetadata(proto.Message):
     r"""Metadata for creating an issue model.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -699,6 +721,7 @@ class CreateIssueModelMetadata(proto.Message):
 
 class UpdateIssueModelRequest(proto.Message):
     r"""The request to update an issue model.
+
     Attributes:
         issue_model (google.cloud.contact_center_insights_v1.types.IssueModel):
             Required. The new values for the issue model.
@@ -720,6 +743,7 @@ class UpdateIssueModelRequest(proto.Message):
 
 class ListIssueModelsRequest(proto.Message):
     r"""Request to list issue models.
+
     Attributes:
         parent (str):
             Required. The parent resource of the issue
@@ -734,6 +758,7 @@ class ListIssueModelsRequest(proto.Message):
 
 class ListIssueModelsResponse(proto.Message):
     r"""The response of listing issue models.
+
     Attributes:
         issue_models (Sequence[google.cloud.contact_center_insights_v1.types.IssueModel]):
             The issue models that match the request.
@@ -748,6 +773,7 @@ class ListIssueModelsResponse(proto.Message):
 
 class GetIssueModelRequest(proto.Message):
     r"""The request to get an issue model.
+
     Attributes:
         name (str):
             Required. The name of the issue model to get.
@@ -761,6 +787,7 @@ class GetIssueModelRequest(proto.Message):
 
 class DeleteIssueModelRequest(proto.Message):
     r"""The request to delete an issue model.
+
     Attributes:
         name (str):
             Required. The name of the issue model to
@@ -775,6 +802,7 @@ class DeleteIssueModelRequest(proto.Message):
 
 class DeleteIssueModelMetadata(proto.Message):
     r"""Metadata for deleting an issue model.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -805,6 +833,7 @@ class DeleteIssueModelMetadata(proto.Message):
 
 class DeployIssueModelRequest(proto.Message):
     r"""The request to deploy an issue model.
+
     Attributes:
         name (str):
             Required. The issue model to deploy.
@@ -817,11 +846,13 @@ class DeployIssueModelRequest(proto.Message):
 
 
 class DeployIssueModelResponse(proto.Message):
-    r"""The response to deploy an issue model.    """
+    r"""The response to deploy an issue model.
+    """
 
 
 class DeployIssueModelMetadata(proto.Message):
     r"""Metadata for deploying an issue model.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -852,6 +883,7 @@ class DeployIssueModelMetadata(proto.Message):
 
 class UndeployIssueModelRequest(proto.Message):
     r"""The request to undeploy an issue model.
+
     Attributes:
         name (str):
             Required. The issue model to undeploy.
@@ -864,11 +896,13 @@ class UndeployIssueModelRequest(proto.Message):
 
 
 class UndeployIssueModelResponse(proto.Message):
-    r"""The response to undeploy an issue model.    """
+    r"""The response to undeploy an issue model.
+    """
 
 
 class UndeployIssueModelMetadata(proto.Message):
     r"""Metadata for undeploying an issue model.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -899,6 +933,7 @@ class UndeployIssueModelMetadata(proto.Message):
 
 class GetIssueRequest(proto.Message):
     r"""The request to get an issue.
+
     Attributes:
         name (str):
             Required. The name of the issue to get.
@@ -912,6 +947,7 @@ class GetIssueRequest(proto.Message):
 
 class ListIssuesRequest(proto.Message):
     r"""Request to list issues.
+
     Attributes:
         parent (str):
             Required. The parent resource of the issue.
@@ -925,6 +961,7 @@ class ListIssuesRequest(proto.Message):
 
 class ListIssuesResponse(proto.Message):
     r"""The response of listing issues.
+
     Attributes:
         issues (Sequence[google.cloud.contact_center_insights_v1.types.Issue]):
             The issues that match the request.
@@ -939,6 +976,7 @@ class ListIssuesResponse(proto.Message):
 
 class UpdateIssueRequest(proto.Message):
     r"""The request to update an issue.
+
     Attributes:
         issue (google.cloud.contact_center_insights_v1.types.Issue):
             Required. The new values for the issue.
@@ -960,6 +998,7 @@ class UpdateIssueRequest(proto.Message):
 
 class CalculateIssueModelStatsRequest(proto.Message):
     r"""Request to get statistics of an issue model.
+
     Attributes:
         issue_model (str):
             Required. The resource name of the issue
@@ -974,6 +1013,7 @@ class CalculateIssueModelStatsRequest(proto.Message):
 
 class CalculateIssueModelStatsResponse(proto.Message):
     r"""Response of querying an issue model's statistics.
+
     Attributes:
         current_stats (google.cloud.contact_center_insights_v1.types.IssueModelLabelStats):
             The latest label statistics for the queried
@@ -990,6 +1030,7 @@ class CalculateIssueModelStatsResponse(proto.Message):
 
 class CreatePhraseMatcherRequest(proto.Message):
     r"""Request to create a phrase matcher.
+
     Attributes:
         parent (str):
             Required. The parent resource of the phrase matcher.
@@ -1014,6 +1055,7 @@ class CreatePhraseMatcherRequest(proto.Message):
 
 class ListPhraseMatchersRequest(proto.Message):
     r"""Request to list phrase matchers.
+
     Attributes:
         parent (str):
             Required. The parent resource of the phrase
@@ -1056,6 +1098,7 @@ class ListPhraseMatchersRequest(proto.Message):
 
 class ListPhraseMatchersResponse(proto.Message):
     r"""The response of listing phrase matchers.
+
     Attributes:
         phrase_matchers (Sequence[google.cloud.contact_center_insights_v1.types.PhraseMatcher]):
             The phrase matchers that match the request.
@@ -1082,6 +1125,7 @@ class ListPhraseMatchersResponse(proto.Message):
 
 class GetPhraseMatcherRequest(proto.Message):
     r"""The request to get a a phrase matcher.
+
     Attributes:
         name (str):
             Required. The name of the phrase matcher to
@@ -1096,6 +1140,7 @@ class GetPhraseMatcherRequest(proto.Message):
 
 class DeletePhraseMatcherRequest(proto.Message):
     r"""The request to delete a phrase matcher.
+
     Attributes:
         name (str):
             Required. The name of the phrase matcher to
@@ -1110,6 +1155,7 @@ class DeletePhraseMatcherRequest(proto.Message):
 
 class GetSettingsRequest(proto.Message):
     r"""The request to get project-level settings.
+
     Attributes:
         name (str):
             Required. The name of the settings resource
@@ -1124,6 +1170,7 @@ class GetSettingsRequest(proto.Message):
 
 class UpdateSettingsRequest(proto.Message):
     r"""The request to update project-level settings.
+
     Attributes:
         settings (google.cloud.contact_center_insights_v1.types.Settings):
             Required. The new settings values.

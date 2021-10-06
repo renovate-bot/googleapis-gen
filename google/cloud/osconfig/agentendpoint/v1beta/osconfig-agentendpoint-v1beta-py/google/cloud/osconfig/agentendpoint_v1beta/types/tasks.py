@@ -50,6 +50,7 @@ class TaskType(proto.Enum):
 
 class Task(proto.Message):
     r"""A unit of work to be performed by the agent.
+
     Attributes:
         task_id (str):
             Unique task id.
@@ -106,6 +107,7 @@ class Task(proto.Message):
 
 class ApplyPatchesTask(proto.Message):
     r"""Message which instructs agent to apply patches.
+
     Attributes:
         patch_config (google.cloud.osconfig.agentendpoint_v1beta.types.PatchConfig):
             Specific information about how patches should

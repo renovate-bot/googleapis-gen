@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class ReportPhishingRequest(proto.Message):
     r"""The ReportPhishing request message.
+
     Attributes:
         parent (str):
             Required. The name of the project for which the report will
@@ -47,7 +48,8 @@ class ReportPhishingRequest(proto.Message):
 
 
 class ReportPhishingResponse(proto.Message):
-    r"""The ReportPhishing (empty) response message.    """
+    r"""The ReportPhishing (empty) response message.
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

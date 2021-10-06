@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class Package(proto.Message):
     r"""Packages are named collections of versions.
+
     Attributes:
         name (str):
             The name of the package, for example:
@@ -69,6 +70,7 @@ class Package(proto.Message):
 
 class ListPackagesRequest(proto.Message):
     r"""The request to list packages.
+
     Attributes:
         parent (str):
             The name of the parent resource whose
@@ -97,6 +99,7 @@ class ListPackagesRequest(proto.Message):
 
 class ListPackagesResponse(proto.Message):
     r"""The response from listing packages.
+
     Attributes:
         packages (Sequence[google.cloud.artifactregistry_v1beta2.types.Package]):
             The packages returned.
@@ -123,6 +126,7 @@ class ListPackagesResponse(proto.Message):
 
 class GetPackageRequest(proto.Message):
     r"""The request to retrieve a package.
+
     Attributes:
         name (str):
             The name of the package to retrieve.
@@ -136,6 +140,7 @@ class GetPackageRequest(proto.Message):
 
 class DeletePackageRequest(proto.Message):
     r"""The request to delete a package.
+
     Attributes:
         name (str):
             The name of the package to delete.

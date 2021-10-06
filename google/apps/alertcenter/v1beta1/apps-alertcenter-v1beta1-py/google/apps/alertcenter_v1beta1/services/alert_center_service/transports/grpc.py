@@ -522,6 +522,8 @@ class AlertCenterServiceGrpcTransport(AlertCenterServiceTransport):
             )
         return self._stubs['batch_undelete_alerts']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AlertCenterServiceGrpcTransport',

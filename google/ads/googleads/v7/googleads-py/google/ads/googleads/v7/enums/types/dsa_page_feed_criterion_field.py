@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class DsaPageFeedCriterionFieldEnum(proto.Message):
-    r"""Values for Dynamic Search Ad Page Feed criterion fields.    """
+    r"""Values for Dynamic Search Ad Page Feed criterion fields.
+    """
     class DsaPageFeedCriterionField(proto.Enum):
         r"""Possible values for Dynamic Search Ad Page Feed criterion
         fields.

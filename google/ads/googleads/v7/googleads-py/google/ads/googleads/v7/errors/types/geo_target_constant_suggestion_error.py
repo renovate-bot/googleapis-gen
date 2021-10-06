@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class GeoTargetConstantSuggestionErrorEnum(proto.Message):
     r"""Container for enum describing possible geo target constant
     suggestion errors.
-        """
+
+    """
     class GeoTargetConstantSuggestionError(proto.Enum):
         r"""Enum describing possible geo target constant suggestion
         errors.

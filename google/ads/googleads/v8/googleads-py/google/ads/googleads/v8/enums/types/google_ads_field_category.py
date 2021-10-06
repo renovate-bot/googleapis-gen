@@ -29,7 +29,8 @@ class GoogleAdsFieldCategoryEnum(proto.Message):
     r"""Container for enum that determines if the described artifact
     is a resource or a field, and if it is a field, when it segments
     search queries.
-        """
+
+    """
     class GoogleAdsFieldCategory(proto.Enum):
         r"""The category of the artifact."""
         UNSPECIFIED = 0

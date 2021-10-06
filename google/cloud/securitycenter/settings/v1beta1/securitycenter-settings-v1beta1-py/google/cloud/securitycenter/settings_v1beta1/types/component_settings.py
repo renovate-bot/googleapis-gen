@@ -41,6 +41,7 @@ class ComponentEnablementState(proto.Enum):
 
 class ComponentSettings(proto.Message):
     r"""Component Settings for Security Command Center
+
     Attributes:
         name (str):
             The relative resource name of the component settings.
@@ -91,6 +92,7 @@ class ComponentSettings(proto.Message):
 
     class DetectorSettings(proto.Message):
         r"""Settings for each detector.
+
         Attributes:
             state (google.cloud.securitycenter.settings_v1beta1.types.ComponentEnablementState):
                 ENABLE to enable component, DISABLE to
@@ -159,19 +161,23 @@ class ComponentSettings(proto.Message):
 
 
 class WebSecurityScanner(proto.Message):
-    r"""User specified settings for Web Security Scanner    """
+    r"""User specified settings for Web Security Scanner
+    """
 
 
 class ContainerThreatDetectionSettings(proto.Message):
-    r"""User specified settings for KTD    """
+    r"""User specified settings for KTD
+    """
 
 
 class EventThreatDetectionSettings(proto.Message):
-    r"""User specified settings for ETD    """
+    r"""User specified settings for ETD
+    """
 
 
 class SecurityHealthAnalyticsSettings(proto.Message):
     r"""User specified settings for Security Health Analytics
+
     Attributes:
         non_org_iam_member_settings (google.cloud.securitycenter.settings_v1beta1.types.SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings):
             Settings for "NON_ORG_IAM_MEMBER" scanner.
@@ -181,6 +187,7 @@ class SecurityHealthAnalyticsSettings(proto.Message):
 
     class NonOrgIamMemberSettings(proto.Message):
         r"""Settings for "NON_ORG_IAM_MEMBER" scanner.
+
         Attributes:
             approved_identities (Sequence[str]):
                 User emails ending in the provided identities are allowed to
@@ -204,6 +211,7 @@ class SecurityHealthAnalyticsSettings(proto.Message):
 
     class AdminServiceAccountSettings(proto.Message):
         r"""Settings for "ADMIN_SERVICE_ACCOUNT" scanner.
+
         Attributes:
             approved_identities (Sequence[str]):
                 User-created service accounts ending in the provided

@@ -440,6 +440,9 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
             )
         return self._stubs['delete_job_template']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TranscoderServiceGrpcAsyncIOTransport',

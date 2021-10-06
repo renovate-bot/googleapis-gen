@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class TagSnippet(proto.Message):
     r"""The site tag and event snippet pair for a TrackingCodeType.
+
     Attributes:
         type_ (google.ads.googleads.v8.enums.types.TrackingCodeTypeEnum.TrackingCodeType):
             The type of the generated tag snippets for

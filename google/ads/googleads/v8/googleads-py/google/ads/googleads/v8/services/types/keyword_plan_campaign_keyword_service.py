@@ -138,6 +138,7 @@ class KeywordPlanCampaignKeywordOperation(proto.Message):
 
 class MutateKeywordPlanCampaignKeywordsResponse(proto.Message):
     r"""Response message for a Keyword Plan campaign keyword mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -163,6 +164,7 @@ class MutateKeywordPlanCampaignKeywordsResponse(proto.Message):
 
 class MutateKeywordPlanCampaignKeywordResult(proto.Message):
     r"""The result for the Keyword Plan campaign keyword mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

@@ -537,6 +537,9 @@ class PipelineServiceGrpcAsyncIOTransport(PipelineServiceTransport):
             )
         return self._stubs['cancel_pipeline_job']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'PipelineServiceGrpcAsyncIOTransport',

@@ -100,6 +100,7 @@ class BuildEvent(proto.Message):
 
     class InvocationAttemptFinished(proto.Message):
         r"""Notification that an invocation attempt has finished.
+
         Attributes:
             invocation_status (google.devtools.build_v1.types.BuildStatus):
                 Final status of the invocation.
@@ -121,6 +122,7 @@ class BuildEvent(proto.Message):
 
     class BuildEnqueued(proto.Message):
         r"""Notification that the build request is enqueued.
+
         Attributes:
             details (google.protobuf.any_pb2.Any):
                 Additional details about the Build.
@@ -158,6 +160,7 @@ class BuildEvent(proto.Message):
 
     class ConsoleOutput(proto.Message):
         r"""Textual output written to standard output or standard error.
+
         Attributes:
             type_ (google.devtools.build_v1.types.ConsoleOutputStream):
                 The output stream type.
@@ -268,6 +271,7 @@ class BuildEvent(proto.Message):
 
 class StreamId(proto.Message):
     r"""Unique identifier for a build event stream.
+
     Attributes:
         build_id (str):
             The id of a Build message.

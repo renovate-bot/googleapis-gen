@@ -28,6 +28,7 @@ __protobuf__ = proto.module(
 
 class OperationMetadata(proto.Message):
     r"""Metadata describing an operation.
+
     Attributes:
         state (google.cloud.orchestration.airflow.service_v1.types.OperationMetadata.State):
             Output only. The current operation state.

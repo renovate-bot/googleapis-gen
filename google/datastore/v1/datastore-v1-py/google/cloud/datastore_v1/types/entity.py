@@ -157,6 +157,7 @@ class Key(proto.Message):
 
 class ArrayValue(proto.Message):
     r"""An array value.
+
     Attributes:
         values (Sequence[google.cloud.datastore_v1.types.Value]):
             Values in the array. The order of values in an array is

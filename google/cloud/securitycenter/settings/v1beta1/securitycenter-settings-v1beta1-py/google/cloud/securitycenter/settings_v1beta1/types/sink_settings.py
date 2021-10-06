@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class SinkSettings(proto.Message):
     r"""Sink Settings for Security Command Center
+
     Attributes:
         logging_sink_project (str):
             The resource name of the project to send logs to. This

@@ -151,6 +151,7 @@ class Question(proto.Message):
 
 class InterpretError(proto.Message):
     r"""Details on the failure to interpret the question.
+
     Attributes:
         message (str):
             Error message explaining why this question
@@ -172,6 +173,7 @@ class InterpretError(proto.Message):
 
     class InterpretErrorDetails(proto.Message):
         r"""Details on interpretation failure.
+
         Attributes:
             unsupported_details (google.cloud.dataqna_v1alpha.types.InterpretError.InterpretUnsupportedDetails):
                 Populated if parts of the query are
@@ -200,6 +202,7 @@ class InterpretError(proto.Message):
 
     class InterpretUnsupportedDetails(proto.Message):
         r"""Details about unsupported parts in a query.
+
         Attributes:
             operators (Sequence[str]):
                 Unsupported operators. For example: median.
@@ -218,6 +221,7 @@ class InterpretError(proto.Message):
 
     class InterpretIncompleteQueryDetails(proto.Message):
         r"""Details about an incomplete query.
+
         Attributes:
             entities (Sequence[google.cloud.dataqna_v1alpha.types.InterpretEntity]):
                 List of missing interpret entities.
@@ -233,7 +237,8 @@ class InterpretError(proto.Message):
         r"""Details about a query that was too ambiguous. Currently, the
         message has no fields and its presence signals that there was
         ambiguity.
-            """
+
+        """
 
     message = proto.Field(
         proto.STRING,
@@ -329,6 +334,7 @@ class BigQueryJob(proto.Message):
 
 class Interpretation(proto.Message):
     r"""An interpretation of a natural language query.
+
     Attributes:
         data_sources (Sequence[str]):
             List of data sources used in the current
@@ -413,6 +419,7 @@ class DataQuery(proto.Message):
 
 class HumanReadable(proto.Message):
     r"""Human readable interpretation.
+
     Attributes:
         generated_interpretation (google.cloud.dataqna_v1alpha.types.AnnotatedString):
             Generated query explaining the
@@ -467,6 +474,7 @@ class InterpretationStructure(proto.Message):
 
     class ColumnInfo(proto.Message):
         r"""Information about a column.
+
         Attributes:
             output_alias (str):
                 The alias of the output column as used by the
@@ -500,6 +508,7 @@ class InterpretationStructure(proto.Message):
 
 class DebugFlags(proto.Message):
     r"""Configuriation of debug flags.
+
     Attributes:
         include_va_query (bool):
             Whether to include the original VAQuery.

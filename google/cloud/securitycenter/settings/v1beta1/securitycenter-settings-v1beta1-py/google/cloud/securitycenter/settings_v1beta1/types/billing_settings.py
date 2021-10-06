@@ -45,6 +45,7 @@ class BillingType(proto.Enum):
 
 class BillingSettings(proto.Message):
     r"""Billing settings
+
     Attributes:
         billing_tier (google.cloud.securitycenter.settings_v1beta1.types.BillingTier):
             Output only. Billing tier selected by

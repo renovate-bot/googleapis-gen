@@ -43,6 +43,7 @@ class AutoMlTextClassification(proto.Message):
 
 class AutoMlTextClassificationInputs(proto.Message):
     r"""
+
     Attributes:
         multi_label (bool):
 

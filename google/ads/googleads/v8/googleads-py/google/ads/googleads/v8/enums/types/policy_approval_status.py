@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyApprovalStatusEnum(proto.Message):
     r"""Container for enum describing possible policy approval
     statuses.
-        """
+
+    """
     class PolicyApprovalStatus(proto.Enum):
         r"""The possible policy approval statuses. When there are several
         approval statuses available the most severe one will be used. The

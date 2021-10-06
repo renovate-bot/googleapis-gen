@@ -339,6 +339,7 @@ class DataSource(proto.Message):
 
 class GetDataSourceRequest(proto.Message):
     r"""A request to get data source info.
+
     Attributes:
         name (str):
             Required. The field will contain name of the resource
@@ -390,6 +391,7 @@ class ListDataSourcesRequest(proto.Message):
 
 class ListDataSourcesResponse(proto.Message):
     r"""Returns list of supported data sources and their metadata.
+
     Attributes:
         data_sources (Sequence[google.cloud.bigquery_datatransfer_v1.types.DataSource]):
             List of supported data sources and their
@@ -568,6 +570,7 @@ class UpdateTransferConfigRequest(proto.Message):
 
 class GetTransferConfigRequest(proto.Message):
     r"""A request to get data transfer information.
+
     Attributes:
         name (str):
             Required. The field will contain name of the resource
@@ -602,6 +605,7 @@ class DeleteTransferConfigRequest(proto.Message):
 
 class GetTransferRunRequest(proto.Message):
     r"""A request to get data transfer run information.
+
     Attributes:
         name (str):
             Required. The field will contain name of the resource
@@ -619,6 +623,7 @@ class GetTransferRunRequest(proto.Message):
 
 class DeleteTransferRunRequest(proto.Message):
     r"""A request to delete data transfer run information.
+
     Attributes:
         name (str):
             Required. The field will contain name of the resource
@@ -677,6 +682,7 @@ class ListTransferConfigsRequest(proto.Message):
 
 class ListTransferConfigsResponse(proto.Message):
     r"""The returned list of pipelines in the project.
+
     Attributes:
         transfer_configs (Sequence[google.cloud.bigquery_datatransfer_v1.types.TransferConfig]):
             Output only. The stored pipeline transfer
@@ -762,6 +768,7 @@ class ListTransferRunsRequest(proto.Message):
 
 class ListTransferRunsResponse(proto.Message):
     r"""The returned list of pipelines in the project.
+
     Attributes:
         transfer_runs (Sequence[google.cloud.bigquery_datatransfer_v1.types.TransferRun]):
             Output only. The stored pipeline transfer
@@ -834,6 +841,7 @@ class ListTransferLogsRequest(proto.Message):
 
 class ListTransferLogsResponse(proto.Message):
     r"""The returned list transfer run messages.
+
     Attributes:
         transfer_messages (Sequence[google.cloud.bigquery_datatransfer_v1.types.TransferMessage]):
             Output only. The stored pipeline transfer
@@ -899,6 +907,7 @@ class CheckValidCredsResponse(proto.Message):
 
 class ScheduleTransferRunsRequest(proto.Message):
     r"""A request to schedule transfer runs for a time range.
+
     Attributes:
         parent (str):
             Required. Transfer configuration name in the form:
@@ -930,6 +939,7 @@ class ScheduleTransferRunsRequest(proto.Message):
 
 class ScheduleTransferRunsResponse(proto.Message):
     r"""A response to schedule transfer runs for a time range.
+
     Attributes:
         runs (Sequence[google.cloud.bigquery_datatransfer_v1.types.TransferRun]):
             The transfer runs that were scheduled.
@@ -944,6 +954,7 @@ class ScheduleTransferRunsResponse(proto.Message):
 
 class StartManualTransferRunsRequest(proto.Message):
     r"""A request to start manual transfer runs.
+
     Attributes:
         parent (str):
             Transfer configuration name in the form:
@@ -1008,6 +1019,7 @@ class StartManualTransferRunsRequest(proto.Message):
 
 class StartManualTransferRunsResponse(proto.Message):
     r"""A response to start manual transfer runs.
+
     Attributes:
         runs (Sequence[google.cloud.bigquery_datatransfer_v1.types.TransferRun]):
             The transfer runs that were created.

@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class SqlDatabasesDeleteRequest(proto.Message):
     r"""Database delete request.
+
     Attributes:
         database (str):
             Name of the database to be deleted in the
@@ -61,6 +62,7 @@ class SqlDatabasesDeleteRequest(proto.Message):
 
 class SqlDatabasesGetRequest(proto.Message):
     r"""Database get request.
+
     Attributes:
         database (str):
             Name of the database in the instance.
@@ -88,6 +90,7 @@ class SqlDatabasesGetRequest(proto.Message):
 
 class SqlDatabasesInsertRequest(proto.Message):
     r"""Database insert request.
+
     Attributes:
         instance (str):
             Database instance ID. This does not include
@@ -116,6 +119,7 @@ class SqlDatabasesInsertRequest(proto.Message):
 
 class SqlDatabasesListRequest(proto.Message):
     r"""Database list request.
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -137,6 +141,7 @@ class SqlDatabasesListRequest(proto.Message):
 
 class SqlDatabasesUpdateRequest(proto.Message):
     r"""Database update request.
+
     Attributes:
         database (str):
             Name of the database to be updated in the
@@ -172,6 +177,7 @@ class SqlDatabasesUpdateRequest(proto.Message):
 
 class DatabasesListResponse(proto.Message):
     r"""Database list response.
+
     Attributes:
         kind (str):
             This is always **sql#databasesList**.

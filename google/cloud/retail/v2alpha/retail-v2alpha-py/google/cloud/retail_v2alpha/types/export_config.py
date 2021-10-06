@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
 
 class ExportErrorsConfig(proto.Message):
     r"""Configuration of destination for Export related errors.
+
     Attributes:
         gcs_prefix (str):
             Google Cloud Storage path for import errors. This must be an

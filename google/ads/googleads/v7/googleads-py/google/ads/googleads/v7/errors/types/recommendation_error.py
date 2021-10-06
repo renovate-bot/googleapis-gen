@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class RecommendationErrorEnum(proto.Message):
     r"""Container for enum describing possible errors from applying a
     recommendation.
-        """
+
+    """
     class RecommendationError(proto.Enum):
         r"""Enum describing possible errors from applying a
         recommendation.

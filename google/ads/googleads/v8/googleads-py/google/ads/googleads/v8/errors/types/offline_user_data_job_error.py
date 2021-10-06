@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class OfflineUserDataJobErrorEnum(proto.Message):
     r"""Container for enum describing possible offline user data job
     errors.
-        """
+
+    """
     class OfflineUserDataJobError(proto.Enum):
         r"""Enum describing possible request errors."""
         UNSPECIFIED = 0

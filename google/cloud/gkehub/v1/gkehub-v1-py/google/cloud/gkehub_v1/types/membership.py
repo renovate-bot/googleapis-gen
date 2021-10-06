@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class Membership(proto.Message):
     r"""Membership contains information about a member cluster.
+
     Attributes:
         endpoint (google.cloud.gkehub_v1.types.MembershipEndpoint):
             Optional. Endpoint information to reach this
@@ -190,6 +191,7 @@ class MembershipEndpoint(proto.Message):
 
 class GkeCluster(proto.Message):
     r"""GkeCluster contains information specific to GKE clusters.
+
     Attributes:
         resource_link (str):
             Immutable. Self-link of the GCP resource for
@@ -265,6 +267,7 @@ class KubernetesMetadata(proto.Message):
 
 class MembershipState(proto.Message):
     r"""MembershipState describes the state of a Membership resource.
+
     Attributes:
         code (google.cloud.gkehub_v1.types.MembershipState.Code):
             Output only. The current state of the

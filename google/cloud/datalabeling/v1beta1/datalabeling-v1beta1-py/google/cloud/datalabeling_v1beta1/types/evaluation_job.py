@@ -352,6 +352,7 @@ class EvaluationJobAlertConfig(proto.Message):
 
 class Attempt(proto.Message):
     r"""Records a failed evaluation job run.
+
     Attributes:
         attempt_time (google.protobuf.timestamp_pb2.Timestamp):
 

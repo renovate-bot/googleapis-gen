@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class PolicyReviewStatusEnum(proto.Message):
     r"""Container for enum describing possible policy review
     statuses.
-        """
+
+    """
     class PolicyReviewStatus(proto.Enum):
         r"""The possible policy review statuses."""
         UNSPECIFIED = 0

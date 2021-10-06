@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class SmartCampaignSetting(proto.Message):
     r"""Settings for configuring Smart campaigns.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the Smart campaign setting.
@@ -56,6 +57,7 @@ class SmartCampaignSetting(proto.Message):
 
     class PhoneNumber(proto.Message):
         r"""Phone number and country code in smart campaign settings.
+
         Attributes:
             phone_number (str):
                 Phone number of the smart campaign.

@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedMappingCriterionTypeEnum(proto.Message):
     r"""Container for enum describing possible criterion types for a
     feed mapping.
-        """
+
+    """
     class FeedMappingCriterionType(proto.Enum):
         r"""Possible placeholder types for a feed mapping."""
         UNSPECIFIED = 0

@@ -369,6 +369,9 @@ class StorageGrpcAsyncIOTransport(StorageTransport):
             )
         return self._stubs['query_write_status']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'StorageGrpcAsyncIOTransport',

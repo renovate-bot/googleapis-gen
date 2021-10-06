@@ -614,6 +614,9 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
             )
         return self._stubs['list_components']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SecurityCenterSettingsServiceGrpcAsyncIOTransport',

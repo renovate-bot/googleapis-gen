@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CampaignBudgetErrorEnum(proto.Message):
     r"""Container for enum describing possible campaign budget
     errors.
-        """
+
+    """
     class CampaignBudgetError(proto.Enum):
         r"""Enum describing possible campaign budget errors."""
         UNSPECIFIED = 0

@@ -332,6 +332,9 @@ class ProfilerServiceGrpcAsyncIOTransport(ProfilerServiceTransport):
             )
         return self._stubs['update_profile']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ProfilerServiceGrpcAsyncIOTransport',

@@ -1242,6 +1242,9 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
             )
         return self._stubs['finish_dlp_job']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DlpServiceGrpcAsyncIOTransport',

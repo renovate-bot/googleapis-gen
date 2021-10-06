@@ -33,6 +33,7 @@ __protobuf__ = proto.module(
 
 class GetFeedItemSetLinkRequest(proto.Message):
     r"""Request message for [FeedItemSetLinkService.GetFeedItemSetLinks][].
+
     Attributes:
         resource_name (str):
             Required. The resource name of the feed item
@@ -116,6 +117,7 @@ class FeedItemSetLinkOperation(proto.Message):
 
 class MutateFeedItemSetLinksResponse(proto.Message):
     r"""Response message for a feed item set link mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v8.services.types.MutateFeedItemSetLinkResult]):
             All results for the mutate.
@@ -130,6 +132,7 @@ class MutateFeedItemSetLinksResponse(proto.Message):
 
 class MutateFeedItemSetLinkResult(proto.Message):
     r"""The result for the feed item set link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

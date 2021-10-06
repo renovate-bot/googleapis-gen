@@ -172,6 +172,7 @@ class UpdateConnectionRequest(proto.Message):
 
 class DeleteConnectionRequest(proto.Message):
     r"""The request for [ConnectionService.DeleteConnectionRequest][].
+
     Attributes:
         name (str):
             Required. Name of the deleted connection, for example:
@@ -260,6 +261,7 @@ class Connection(proto.Message):
 
 class CloudSqlProperties(proto.Message):
     r"""Connection properties specific to the Cloud SQL.
+
     Attributes:
         instance_id (str):
             Cloud SQL instance ID in the form
@@ -299,6 +301,7 @@ class CloudSqlProperties(proto.Message):
 
 class CloudSqlCredential(proto.Message):
     r"""Credential info for the Cloud SQL.
+
     Attributes:
         username (str):
             The username for the credential.
@@ -318,6 +321,7 @@ class CloudSqlCredential(proto.Message):
 
 class CloudSpannerProperties(proto.Message):
     r"""Connection properties specific to Cloud Spanner.
+
     Attributes:
         database (str):
             Cloud Spanner database in the form
@@ -339,6 +343,7 @@ class CloudSpannerProperties(proto.Message):
 
 class AwsProperties(proto.Message):
     r"""Connection properties specific to Amazon Web Services (AWS).
+
     Attributes:
         cross_account_role (google.cloud.bigquery_connection_v1.types.AwsCrossAccountRole):
             Authentication using Google owned AWS IAM

@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class JobQuery(proto.Message):
     r"""The query required to perform a search query.
+
     Attributes:
         query (str):
             The query string that matches against the job
@@ -256,6 +257,7 @@ class JobQuery(proto.Message):
 
 class LocationFilter(proto.Message):
     r"""Geographic region of the search.
+
     Attributes:
         address (str):
             The address name, such as "Mountain View" or
@@ -346,6 +348,7 @@ class LocationFilter(proto.Message):
 
 class CompensationFilter(proto.Message):
     r"""Filter on job compensation type and amount.
+
     Attributes:
         type_ (google.cloud.talent_v4.types.CompensationFilter.FilterType):
             Required. Type of filter.
@@ -389,6 +392,7 @@ class CompensationFilter(proto.Message):
 
 class CommuteFilter(proto.Message):
     r"""Parameters needed for commute search.
+
     Attributes:
         commute_method (google.cloud.talent_v4.types.CommuteMethod):
             Required. The method of transportation to

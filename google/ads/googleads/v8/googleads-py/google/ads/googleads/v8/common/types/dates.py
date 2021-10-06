@@ -31,6 +31,7 @@ __protobuf__ = proto.module(
 
 class DateRange(proto.Message):
     r"""A date range.
+
     Attributes:
         start_date (str):
             The start date, in yyyy-mm-dd format. This
@@ -78,6 +79,7 @@ class YearMonthRange(proto.Message):
 
 class YearMonth(proto.Message):
     r"""Year month.
+
     Attributes:
         year (int):
             The year (e.g. 2020).

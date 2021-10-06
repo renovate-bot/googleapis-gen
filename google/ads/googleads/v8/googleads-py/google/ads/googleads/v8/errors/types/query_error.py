@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class QueryErrorEnum(proto.Message):
-    r"""Container for enum describing possible query errors.    """
+    r"""Container for enum describing possible query errors.
+    """
     class QueryError(proto.Enum):
         r"""Enum describing possible query errors."""
         UNSPECIFIED = 0

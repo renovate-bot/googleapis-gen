@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class GoogleAdsField(proto.Message):
     r"""A field or resource (artifact) used by GoogleAdsService.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the artifact. Artifact

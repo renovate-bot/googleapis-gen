@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class HotelPriceBucketEnum(proto.Message):
     r"""Container for enum describing hotel price bucket for a hotel
     itinerary.
-        """
+
+    """
     class HotelPriceBucket(proto.Enum):
         r"""Enum describing possible hotel price buckets."""
         UNSPECIFIED = 0

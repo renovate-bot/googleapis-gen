@@ -249,6 +249,8 @@ class DriveActivityServiceGrpcTransport(DriveActivityServiceTransport):
             )
         return self._stubs['query_drive_activity']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DriveActivityServiceGrpcTransport',

@@ -52,6 +52,7 @@ class OperationType(proto.Enum):
 
 class CommonMetadata(proto.Message):
     r"""Metadata common to all Datastore Admin operations.
+
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             The time that work began on the operation.
@@ -108,6 +109,7 @@ class CommonMetadata(proto.Message):
 
 class Progress(proto.Message):
     r"""Measures the progress of a particular metric.
+
     Attributes:
         work_completed (int):
             The amount of work that has been completed. Note that this
@@ -261,6 +263,7 @@ class ExportEntitiesResponse(proto.Message):
 
 class ExportEntitiesMetadata(proto.Message):
     r"""Metadata for ExportEntities operations.
+
     Attributes:
         common (google.cloud.datastore_admin_v1.types.CommonMetadata):
             Metadata common to all Datastore Admin
@@ -309,6 +312,7 @@ class ExportEntitiesMetadata(proto.Message):
 
 class ImportEntitiesMetadata(proto.Message):
     r"""Metadata for ImportEntities operations.
+
     Attributes:
         common (google.cloud.datastore_admin_v1.types.CommonMetadata):
             Metadata common to all Datastore Admin
@@ -526,6 +530,7 @@ class ListIndexesResponse(proto.Message):
 
 class IndexOperationMetadata(proto.Message):
     r"""Metadata for Index operations.
+
     Attributes:
         common (google.cloud.datastore_admin_v1.types.CommonMetadata):
             Metadata common to all Datastore Admin

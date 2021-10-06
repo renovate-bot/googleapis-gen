@@ -81,6 +81,7 @@ class SnapToRoadsRequest(proto.Message):
 
 class SnappedPoint(proto.Message):
     r"""A snapped point object, representing the result of snapping.
+
     Attributes:
         location (google.type.latlng_pb2.LatLng):
             The lat,lng of the snapped location.

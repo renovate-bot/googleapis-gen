@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MediaTypeEnum(proto.Message):
-    r"""Container for enum describing the types of media.    """
+    r"""Container for enum describing the types of media.
+    """
     class MediaType(proto.Enum):
         r"""The type of media."""
         UNSPECIFIED = 0

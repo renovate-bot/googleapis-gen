@@ -276,6 +276,8 @@ class RoadsServiceGrpcTransport(RoadsServiceTransport):
             )
         return self._stubs['list_nearest_roads']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'RoadsServiceGrpcTransport',

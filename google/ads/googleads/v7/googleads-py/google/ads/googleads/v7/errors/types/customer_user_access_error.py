@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CustomerUserAccessErrorEnum(proto.Message):
     r"""Container for enum describing possible CustomerUserAccess
     errors.
-        """
+
+    """
     class CustomerUserAccessError(proto.Enum):
         r"""Enum describing possible customer user access errors."""
         UNSPECIFIED = 0

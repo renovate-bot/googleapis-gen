@@ -56,6 +56,7 @@ __protobuf__ = proto.module(
 
 class Segments(proto.Message):
     r"""Segment only fields.
+
     Attributes:
         ad_destination_type (google.ads.googleads.v8.enums.types.AdDestinationTypeEnum.AdDestinationType):
             Ad Destination type.
@@ -707,6 +708,7 @@ class Segments(proto.Message):
 
 class Keyword(proto.Message):
     r"""A Keyword criterion segment.
+
     Attributes:
         ad_group_criterion (str):
             The AdGroupCriterion resource name.
@@ -728,6 +730,7 @@ class Keyword(proto.Message):
 
 class BudgetCampaignAssociationStatus(proto.Message):
     r"""A BudgetCampaignAssociationStatus segment.
+
     Attributes:
         campaign (str):
             The campaign resource name.
@@ -749,6 +752,7 @@ class BudgetCampaignAssociationStatus(proto.Message):
 
 class AssetInteractionTarget(proto.Message):
     r"""An AssetInteractionTarget segment.
+
     Attributes:
         asset (str):
             The asset resource name.

@@ -36,6 +36,7 @@ __protobuf__ = proto.module(
 
 class ListFeaturesRequest(proto.Message):
     r"""Request message for ``GkeHub.ListFeatures`` method.
+
     Attributes:
         parent (str):
             The parent (project and location) where the Features will be
@@ -98,6 +99,7 @@ class ListFeaturesRequest(proto.Message):
 
 class ListFeaturesResponse(proto.Message):
     r"""Response message for the ``GkeHub.ListFeatures`` method.
+
     Attributes:
         resources (Sequence[google.cloud.gkehub_v1alpha.types.Feature]):
             The list of matching Features
@@ -124,6 +126,7 @@ class ListFeaturesResponse(proto.Message):
 
 class GetFeatureRequest(proto.Message):
     r"""Request message for ``GkeHub.GetFeature`` method.
+
     Attributes:
         name (str):
             The Feature resource name in the format
@@ -138,6 +141,7 @@ class GetFeatureRequest(proto.Message):
 
 class CreateFeatureRequest(proto.Message):
     r"""Request message for the ``GkeHub.CreateFeature`` method.
+
     Attributes:
         parent (str):
             The parent (project and location) where the Feature will be
@@ -187,6 +191,7 @@ class CreateFeatureRequest(proto.Message):
 
 class DeleteFeatureRequest(proto.Message):
     r"""Request message for ``GkeHub.DeleteFeature`` method.
+
     Attributes:
         name (str):
             The Feature resource name in the format
@@ -232,6 +237,7 @@ class DeleteFeatureRequest(proto.Message):
 
 class UpdateFeatureRequest(proto.Message):
     r"""Request message for ``GkeHub.UpdateFeature`` method.
+
     Attributes:
         name (str):
             The Feature resource name in the format
@@ -289,6 +295,7 @@ class UpdateFeatureRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

@@ -62,6 +62,7 @@ class DeploymentState(proto.Enum):
 
 class MembershipState(proto.Message):
     r"""**Anthos Config Management**: State for a single cluster.
+
     Attributes:
         cluster_name (str):
             The user-defined name for the cluster used by
@@ -170,6 +171,7 @@ class MembershipSpec(proto.Message):
 
 class ConfigSync(proto.Message):
     r"""Configuration for Config Sync
+
     Attributes:
         git (google.cloud.gkehub.configmanagement_v1alpha.types.GitConfig):
             Git repo configuration for the cluster.
@@ -191,6 +193,7 @@ class ConfigSync(proto.Message):
 
 class GitConfig(proto.Message):
     r"""Git repo configuration for a single cluster.
+
     Attributes:
         sync_repo (str):
             The URL of the Git repository to use as the
@@ -255,6 +258,7 @@ class GitConfig(proto.Message):
 
 class PolicyController(proto.Message):
     r"""Configuration for Policy Controller
+
     Attributes:
         enabled (bool):
             Enables the installation of Policy
@@ -316,6 +320,7 @@ class PolicyController(proto.Message):
 
 class BinauthzConfig(proto.Message):
     r"""Configuration for Binauthz
+
     Attributes:
         enabled (bool):
             Whether binauthz is enabled in this cluster.
@@ -329,6 +334,7 @@ class BinauthzConfig(proto.Message):
 
 class HierarchyControllerConfig(proto.Message):
     r"""Configuration for Hierarchy Controller
+
     Attributes:
         enabled (bool):
             Whether Hierarchy Controller is enabled in
@@ -357,6 +363,7 @@ class HierarchyControllerConfig(proto.Message):
 
 class HierarchyControllerDeploymentState(proto.Message):
     r"""Deployment state for Hierarchy Controller
+
     Attributes:
         hnc (google.cloud.gkehub.configmanagement_v1alpha.types.DeploymentState):
             The deployment state for open source HNC
@@ -380,6 +387,7 @@ class HierarchyControllerDeploymentState(proto.Message):
 
 class HierarchyControllerVersion(proto.Message):
     r"""Version for Hierarchy Controller
+
     Attributes:
         hnc (str):
             Version for open source HNC
@@ -399,6 +407,7 @@ class HierarchyControllerVersion(proto.Message):
 
 class HierarchyControllerState(proto.Message):
     r"""State for Hierarchy Controller
+
     Attributes:
         version (google.cloud.gkehub.configmanagement_v1alpha.types.HierarchyControllerVersion):
             The version for Hierarchy Controller
@@ -420,6 +429,7 @@ class HierarchyControllerState(proto.Message):
 
 class OperatorState(proto.Message):
     r"""State information for an ACM's Operator
+
     Attributes:
         version (str):
             The semenatic version number of the operator
@@ -447,6 +457,7 @@ class OperatorState(proto.Message):
 
 class InstallError(proto.Message):
     r"""Errors pertaining to the installation of ACM
+
     Attributes:
         error_message (str):
             A string representing the user facing error
@@ -461,6 +472,7 @@ class InstallError(proto.Message):
 
 class ConfigSyncState(proto.Message):
     r"""State information for ConfigSync
+
     Attributes:
         version (google.cloud.gkehub.configmanagement_v1alpha.types.ConfigSyncVersion):
             The version of ConfigSync deployed
@@ -539,6 +551,7 @@ class ConfigSyncVersion(proto.Message):
 
 class ConfigSyncDeploymentState(proto.Message):
     r"""The state of ConfigSync's deployment on a cluster
+
     Attributes:
         importer (google.cloud.gkehub.configmanagement_v1alpha.types.DeploymentState):
             Deployment state of the importer pod
@@ -726,6 +739,7 @@ class ErrorResource(proto.Message):
 
 class GroupVersionKind(proto.Message):
     r"""A Kubernetes object's GVK
+
     Attributes:
         group (str):
             Kubernetes Group
@@ -751,6 +765,7 @@ class GroupVersionKind(proto.Message):
 
 class PolicyControllerState(proto.Message):
     r"""State for PolicyControllerState.
+
     Attributes:
         version (google.cloud.gkehub.configmanagement_v1alpha.types.PolicyControllerVersion):
             The version of Gatekeeper Policy Controller
@@ -774,6 +789,7 @@ class PolicyControllerState(proto.Message):
 
 class PolicyControllerVersion(proto.Message):
     r"""The build version of Gatekeeper Policy Controller is using.
+
     Attributes:
         version (str):
             The gatekeeper image tag that is composed of
@@ -788,6 +804,7 @@ class PolicyControllerVersion(proto.Message):
 
 class BinauthzState(proto.Message):
     r"""State for Binauthz
+
     Attributes:
         webhook (google.cloud.gkehub.configmanagement_v1alpha.types.DeploymentState):
             The state of the binauthz webhook.
@@ -809,6 +826,7 @@ class BinauthzState(proto.Message):
 
 class BinauthzVersion(proto.Message):
     r"""The version of binauthz.
+
     Attributes:
         webhook_version (str):
             The version of the binauthz webhook.
@@ -822,6 +840,7 @@ class BinauthzVersion(proto.Message):
 
 class GatekeeperDeploymentState(proto.Message):
     r"""State of Policy Controller installation.
+
     Attributes:
         gatekeeper_controller_manager_state (google.cloud.gkehub.configmanagement_v1alpha.types.DeploymentState):
             Status of gatekeeper-controller-manager pod.

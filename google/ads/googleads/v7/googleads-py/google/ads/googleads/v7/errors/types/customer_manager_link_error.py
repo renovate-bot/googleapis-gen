@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CustomerManagerLinkErrorEnum(proto.Message):
     r"""Container for enum describing possible CustomerManagerLink
     errors.
-        """
+
+    """
     class CustomerManagerLinkError(proto.Enum):
         r"""Enum describing possible CustomerManagerLink errors."""
         UNSPECIFIED = 0

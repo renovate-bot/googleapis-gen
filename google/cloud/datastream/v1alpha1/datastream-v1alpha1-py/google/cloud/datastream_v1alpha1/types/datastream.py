@@ -58,6 +58,7 @@ __protobuf__ = proto.module(
 
 class DiscoverConnectionProfileRequest(proto.Message):
     r"""Request message for 'discover' ConnectionProfile request.
+
     Attributes:
         parent (str):
             Required. The parent resource of the ConnectionProfile type.
@@ -122,6 +123,7 @@ class DiscoverConnectionProfileRequest(proto.Message):
 
 class DiscoverConnectionProfileResponse(proto.Message):
     r"""
+
     Attributes:
         oracle_rdbms (google.cloud.datastream_v1alpha1.types.OracleRdbms):
             Enriched Oracle RDBMS object.
@@ -145,6 +147,7 @@ class DiscoverConnectionProfileResponse(proto.Message):
 
 class FetchStaticIpsRequest(proto.Message):
     r"""Request message for 'FetchStaticIps' request.
+
     Attributes:
         name (str):
             Required. The name resource of the Response type. Must be in
@@ -173,6 +176,7 @@ class FetchStaticIpsRequest(proto.Message):
 
 class FetchStaticIpsResponse(proto.Message):
     r"""Response message for a 'FetchStaticIps' response.
+
     Attributes:
         static_ips (Sequence[str]):
             list of static ips by account
@@ -198,6 +202,7 @@ class FetchStaticIpsResponse(proto.Message):
 
 class FetchErrorsRequest(proto.Message):
     r"""Request message for 'FetchErrors' request.
+
     Attributes:
         stream (str):
             Name of the Stream resource for which to
@@ -212,6 +217,7 @@ class FetchErrorsRequest(proto.Message):
 
 class FetchErrorsResponse(proto.Message):
     r"""Response message for a 'FetchErrors' response.
+
     Attributes:
         errors (Sequence[google.cloud.datastream_v1alpha1.types.Error]):
             The list of errors on the Stream.
@@ -226,6 +232,7 @@ class FetchErrorsResponse(proto.Message):
 
 class ListConnectionProfilesRequest(proto.Message):
     r"""
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -273,6 +280,7 @@ class ListConnectionProfilesRequest(proto.Message):
 
 class ListConnectionProfilesResponse(proto.Message):
     r"""
+
     Attributes:
         connection_profiles (Sequence[google.cloud.datastream_v1alpha1.types.ConnectionProfile]):
             List of connection profiles.
@@ -305,6 +313,7 @@ class ListConnectionProfilesResponse(proto.Message):
 
 class GetConnectionProfileRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the connection profile
@@ -319,6 +328,7 @@ class GetConnectionProfileRequest(proto.Message):
 
 class CreateConnectionProfileRequest(proto.Message):
     r"""
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -369,6 +379,7 @@ class CreateConnectionProfileRequest(proto.Message):
 
 class UpdateConnectionProfileRequest(proto.Message):
     r"""
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. Field mask is used to specify the fields to be
@@ -417,6 +428,7 @@ class UpdateConnectionProfileRequest(proto.Message):
 
 class DeleteConnectionProfileRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the connection profile
@@ -453,6 +465,7 @@ class DeleteConnectionProfileRequest(proto.Message):
 
 class ListStreamsRequest(proto.Message):
     r"""
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -499,6 +512,7 @@ class ListStreamsRequest(proto.Message):
 
 class ListStreamsResponse(proto.Message):
     r"""
+
     Attributes:
         streams (Sequence[google.cloud.datastream_v1alpha1.types.Stream]):
             List of streams
@@ -531,6 +545,7 @@ class ListStreamsResponse(proto.Message):
 
 class GetStreamRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the stream resource to
@@ -545,6 +560,7 @@ class GetStreamRequest(proto.Message):
 
 class CreateStreamRequest(proto.Message):
     r"""
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -608,6 +624,7 @@ class CreateStreamRequest(proto.Message):
 
 class UpdateStreamRequest(proto.Message):
     r"""
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. Field mask is used to specify the fields to be
@@ -671,6 +688,7 @@ class UpdateStreamRequest(proto.Message):
 
 class DeleteStreamRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the stream resource to
@@ -707,6 +725,7 @@ class DeleteStreamRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -776,6 +795,7 @@ class OperationMetadata(proto.Message):
 
 class CreatePrivateConnectionRequest(proto.Message):
     r"""
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -827,6 +847,7 @@ class CreatePrivateConnectionRequest(proto.Message):
 
 class ListPrivateConnectionsRequest(proto.Message):
     r"""
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -875,6 +896,7 @@ class ListPrivateConnectionsRequest(proto.Message):
 
 class ListPrivateConnectionsResponse(proto.Message):
     r"""
+
     Attributes:
         private_connections (Sequence[google.cloud.datastream_v1alpha1.types.PrivateConnection]):
             List of private connectivity configurations.
@@ -907,6 +929,7 @@ class ListPrivateConnectionsResponse(proto.Message):
 
 class DeletePrivateConnectionRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the private
@@ -951,6 +974,7 @@ class DeletePrivateConnectionRequest(proto.Message):
 
 class GetPrivateConnectionRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the  private
@@ -965,6 +989,7 @@ class GetPrivateConnectionRequest(proto.Message):
 
 class CreateRouteRequest(proto.Message):
     r"""route creation request
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -1014,6 +1039,7 @@ class CreateRouteRequest(proto.Message):
 
 class ListRoutesRequest(proto.Message):
     r"""route list request
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -1061,6 +1087,7 @@ class ListRoutesRequest(proto.Message):
 
 class ListRoutesResponse(proto.Message):
     r"""route list response
+
     Attributes:
         routes (Sequence[google.cloud.datastream_v1alpha1.types.Route]):
             List of Routes.
@@ -1093,6 +1120,7 @@ class ListRoutesResponse(proto.Message):
 
 class DeleteRouteRequest(proto.Message):
     r"""route deletion request
+
     Attributes:
         name (str):
             Required. The name of the Route resource to
@@ -1129,6 +1157,7 @@ class DeleteRouteRequest(proto.Message):
 
 class GetRouteRequest(proto.Message):
     r"""route get request
+
     Attributes:
         name (str):
             Required. The name of the Route resource to

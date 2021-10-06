@@ -51,6 +51,7 @@ __protobuf__ = proto.module(
 
 class YoutubeVideoAsset(proto.Message):
     r"""A YouTube asset.
+
     Attributes:
         youtube_video_id (str):
             YouTube video id. This is the 11 character
@@ -72,6 +73,7 @@ class YoutubeVideoAsset(proto.Message):
 
 class MediaBundleAsset(proto.Message):
     r"""A MediaBundle asset.
+
     Attributes:
         data (bytes):
             Media bundle (ZIP file) asset data. The
@@ -91,6 +93,7 @@ class MediaBundleAsset(proto.Message):
 
 class ImageAsset(proto.Message):
     r"""An Image asset.
+
     Attributes:
         data (bytes):
             The raw bytes data of an image. This field is
@@ -158,6 +161,7 @@ class ImageDimension(proto.Message):
 
 class TextAsset(proto.Message):
     r"""A Text asset.
+
     Attributes:
         text (str):
             Text content of the text asset.
@@ -172,6 +176,7 @@ class TextAsset(proto.Message):
 
 class LeadFormAsset(proto.Message):
     r"""A Lead Form asset.
+
     Attributes:
         business_name (str):
             Required. The name of the business being
@@ -294,6 +299,7 @@ class LeadFormAsset(proto.Message):
 
 class LeadFormField(proto.Message):
     r"""One input field instance within a form.
+
     Attributes:
         input_type (google.ads.googleads.v7.enums.types.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType):
             Describes the input type, which may be a
@@ -338,6 +344,7 @@ class LeadFormSingleChoiceAnswers(proto.Message):
 
 class LeadFormDeliveryMethod(proto.Message):
     r"""A configuration of how leads are delivered to the advertiser.
+
     Attributes:
         webhook (google.ads.googleads.v7.common.types.WebhookDelivery):
             Webhook method of delivery.
@@ -390,11 +397,13 @@ class BookOnGoogleAsset(proto.Message):
     r"""A Book on Google asset. Used to redirect user to book through
     Google. Book on Google will change the redirect url to book
     directly through Google.
-        """
+
+    """
 
 
 class PromotionAsset(proto.Message):
     r"""A Promotion asset.
+
     Attributes:
         promotion_target (str):
             Required. A freeform description of what the
@@ -505,6 +514,7 @@ class PromotionAsset(proto.Message):
 
 class CalloutAsset(proto.Message):
     r"""A Callout asset.
+
     Attributes:
         callout_text (str):
             Required. The callout text.
@@ -544,6 +554,7 @@ class CalloutAsset(proto.Message):
 
 class StructuredSnippetAsset(proto.Message):
     r"""A Structured Snippet asset.
+
     Attributes:
         header (str):
             Required. The header of the snippet.
@@ -571,6 +582,7 @@ class StructuredSnippetAsset(proto.Message):
 
 class SitelinkAsset(proto.Message):
     r"""A Sitelink asset.
+
     Attributes:
         link_text (str):
             Required. URL display text for the sitelink.

@@ -71,6 +71,7 @@ class BatchProcessDocumentsRequest(proto.Message):
 
 class ProcessDocumentRequest(proto.Message):
     r"""Request to process one document.
+
     Attributes:
         input_config (google.cloud.documentai_v1beta1.types.InputConfig):
             Required. Information about the input file.
@@ -153,6 +154,7 @@ class BatchProcessDocumentsResponse(proto.Message):
 
 class ProcessDocumentResponse(proto.Message):
     r"""Response to a single document processing request.
+
     Attributes:
         input_config (google.cloud.documentai_v1beta1.types.InputConfig):
             Information about the input file. This is the
@@ -201,6 +203,7 @@ class OcrParams(proto.Message):
 
 class TableExtractionParams(proto.Message):
     r"""Parameters to control table extraction behavior.
+
     Attributes:
         enabled (bool):
             Whether to enable table extraction.
@@ -266,6 +269,7 @@ class TableBoundHint(proto.Message):
 
 class FormExtractionParams(proto.Message):
     r"""Parameters to control form extraction behavior.
+
     Attributes:
         enabled (bool):
             Whether to enable form extraction.
@@ -306,6 +310,7 @@ class FormExtractionParams(proto.Message):
 
 class KeyValuePairHint(proto.Message):
     r"""User-provided hint for key value pair.
+
     Attributes:
         key (str):
             The key text for the hint.
@@ -328,6 +333,7 @@ class KeyValuePairHint(proto.Message):
 
 class EntityExtractionParams(proto.Message):
     r"""Parameters to control entity extraction behavior.
+
     Attributes:
         enabled (bool):
             Whether to enable entity extraction.
@@ -349,6 +355,7 @@ class EntityExtractionParams(proto.Message):
 
 class InputConfig(proto.Message):
     r"""The desired input location and metadata.
+
     Attributes:
         gcs_source (google.cloud.documentai_v1beta1.types.GcsSource):
             The Google Cloud Storage location to read the
@@ -373,6 +380,7 @@ class InputConfig(proto.Message):
 
 class OutputConfig(proto.Message):
     r"""The desired output location and metadata.
+
     Attributes:
         gcs_destination (google.cloud.documentai_v1beta1.types.GcsDestination):
             The Google Cloud Storage location to write
@@ -441,6 +449,7 @@ class GcsDestination(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Contains metadata for the BatchProcessDocuments operation.
+
     Attributes:
         state (google.cloud.documentai_v1beta1.types.OperationMetadata.State):
             The state of the current batch processing.

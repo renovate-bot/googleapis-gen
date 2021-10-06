@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionValueRuleSetStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of a
     conversion value rule set.
-        """
+
+    """
     class ConversionValueRuleSetStatus(proto.Enum):
         r"""Possible statuses of a conversion value rule set."""
         UNSPECIFIED = 0

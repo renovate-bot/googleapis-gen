@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class CarrierConstant(proto.Message):
     r"""A carrier criterion that can be used in campaign targeting.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the carrier criterion.

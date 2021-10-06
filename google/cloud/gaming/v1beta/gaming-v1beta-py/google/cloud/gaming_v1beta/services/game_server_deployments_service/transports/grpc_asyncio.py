@@ -493,6 +493,9 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
             )
         return self._stubs['fetch_deployment_state']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'GameServerDeploymentsServiceGrpcAsyncIOTransport',

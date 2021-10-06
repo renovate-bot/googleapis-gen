@@ -203,6 +203,7 @@ class Asset(proto.Message):
 
 class AssetPolicySummary(proto.Message):
     r"""Contains policy information for an asset.
+
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v8.common.types.PolicyTopicEntry]):
             Output only. The list of policy findings for

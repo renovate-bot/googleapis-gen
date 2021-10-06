@@ -156,6 +156,7 @@ class KeywordPlanOperation(proto.Message):
 
 class MutateKeywordPlansResponse(proto.Message):
     r"""Response message for a keyword plan mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -181,6 +182,7 @@ class MutateKeywordPlansResponse(proto.Message):
 
 class MutateKeywordPlansResult(proto.Message):
     r"""The result for the keyword plan mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -307,6 +309,7 @@ class GenerateForecastMetricsResponse(proto.Message):
 
 class KeywordPlanCampaignForecast(proto.Message):
     r"""A campaign forecast.
+
     Attributes:
         keyword_plan_campaign (str):
             The resource name of the Keyword Plan campaign related to
@@ -331,6 +334,7 @@ class KeywordPlanCampaignForecast(proto.Message):
 
 class KeywordPlanAdGroupForecast(proto.Message):
     r"""An ad group forecast.
+
     Attributes:
         keyword_plan_ad_group (str):
             The resource name of the Keyword Plan ad group related to
@@ -355,6 +359,7 @@ class KeywordPlanAdGroupForecast(proto.Message):
 
 class KeywordPlanKeywordForecast(proto.Message):
     r"""A keyword forecast.
+
     Attributes:
         keyword_plan_ad_group_keyword (str):
             The resource name of the Keyword Plan keyword related to the
@@ -379,6 +384,7 @@ class KeywordPlanKeywordForecast(proto.Message):
 
 class KeywordPlanCampaignForecastCurve(proto.Message):
     r"""The forecast curve for the campaign.
+
     Attributes:
         keyword_plan_campaign (str):
             The resource name of the Keyword Plan campaign related to
@@ -404,6 +410,7 @@ class KeywordPlanCampaignForecastCurve(proto.Message):
 
 class KeywordPlanMaxCpcBidForecastCurve(proto.Message):
     r"""The max cpc bid forecast curve.
+
     Attributes:
         max_cpc_bid_forecasts (Sequence[google.ads.googleads.v8.services.types.KeywordPlanMaxCpcBidForecast]):
             The forecasts for the Keyword Plan campaign
@@ -419,6 +426,7 @@ class KeywordPlanMaxCpcBidForecastCurve(proto.Message):
 
 class KeywordPlanMaxCpcBidForecast(proto.Message):
     r"""The forecast of the campaign at a specific bid.
+
     Attributes:
         max_cpc_bid_micros (int):
             The max cpc bid in micros.
@@ -468,6 +476,7 @@ class KeywordPlanWeeklyTimeSeriesForecast(proto.Message):
 
 class KeywordPlanWeeklyForecast(proto.Message):
     r"""The forecast of the campaign for the week starting start_date.
+
     Attributes:
         start_date (str):
             The start date, in yyyy-mm-dd format. This
@@ -491,6 +500,7 @@ class KeywordPlanWeeklyForecast(proto.Message):
 
 class ForecastMetrics(proto.Message):
     r"""Forecast metrics.
+
     Attributes:
         impressions (float):
             Impressions
@@ -587,6 +597,7 @@ class GenerateHistoricalMetricsResponse(proto.Message):
 
 class KeywordPlanKeywordHistoricalMetrics(proto.Message):
     r"""A keyword historical metrics.
+
     Attributes:
         search_query (str):
             The text of the query associated with one or more

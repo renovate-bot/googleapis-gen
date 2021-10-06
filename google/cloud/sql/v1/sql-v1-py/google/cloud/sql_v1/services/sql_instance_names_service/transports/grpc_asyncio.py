@@ -223,6 +223,9 @@ class SqlInstanceNamesServiceGrpcAsyncIOTransport(SqlInstanceNamesServiceTranspo
         # Return the channel from cache.
         return self._grpc_channel
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SqlInstanceNamesServiceGrpcAsyncIOTransport',

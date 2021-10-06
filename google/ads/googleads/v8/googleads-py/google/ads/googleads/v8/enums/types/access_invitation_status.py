@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AccessInvitationStatusEnum(proto.Message):
     r"""Container for enum for identifying the status of access
     invitation
-        """
+
+    """
     class AccessInvitationStatus(proto.Enum):
         r"""Possible access invitation status of a user"""
         UNSPECIFIED = 0

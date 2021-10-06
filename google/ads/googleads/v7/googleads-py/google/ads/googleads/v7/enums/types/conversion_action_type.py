@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionActionTypeEnum(proto.Message):
     r"""Container for enum describing possible types of a conversion
     action.
-        """
+
+    """
     class ConversionActionType(proto.Enum):
         r"""Possible types of a conversion action."""
         UNSPECIFIED = 0

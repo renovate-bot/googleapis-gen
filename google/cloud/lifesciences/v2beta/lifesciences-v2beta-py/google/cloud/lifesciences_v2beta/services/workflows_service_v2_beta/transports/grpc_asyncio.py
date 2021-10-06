@@ -287,6 +287,9 @@ class WorkflowsServiceV2BetaGrpcAsyncIOTransport(WorkflowsServiceV2BetaTransport
             )
         return self._stubs['run_pipeline']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'WorkflowsServiceV2BetaGrpcAsyncIOTransport',

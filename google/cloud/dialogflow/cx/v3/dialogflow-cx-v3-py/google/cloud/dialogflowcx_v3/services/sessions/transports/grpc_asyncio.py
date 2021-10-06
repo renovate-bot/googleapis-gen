@@ -352,6 +352,9 @@ class SessionsGrpcAsyncIOTransport(SessionsTransport):
             )
         return self._stubs['fulfill_intent']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'SessionsGrpcAsyncIOTransport',

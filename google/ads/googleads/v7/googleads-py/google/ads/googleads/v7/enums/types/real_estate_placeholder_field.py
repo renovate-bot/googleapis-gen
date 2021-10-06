@@ -29,7 +29,8 @@ class RealEstatePlaceholderFieldEnum(proto.Message):
     r"""Values for Real Estate placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-        """
+
+    """
     class RealEstatePlaceholderField(proto.Enum):
         r"""Possible values for Real Estate placeholder fields."""
         UNSPECIFIED = 0

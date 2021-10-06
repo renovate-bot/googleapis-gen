@@ -489,6 +489,9 @@ class AdaptationGrpcAsyncIOTransport(AdaptationTransport):
             )
         return self._stubs['delete_custom_class']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'AdaptationGrpcAsyncIOTransport',

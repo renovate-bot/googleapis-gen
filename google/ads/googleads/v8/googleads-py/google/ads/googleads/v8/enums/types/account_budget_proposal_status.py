@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AccountBudgetProposalStatusEnum(proto.Message):
-    r"""Message describing AccountBudgetProposal statuses.    """
+    r"""Message describing AccountBudgetProposal statuses.
+    """
     class AccountBudgetProposalStatus(proto.Enum):
         r"""The possible statuses of an AccountBudgetProposal."""
         UNSPECIFIED = 0

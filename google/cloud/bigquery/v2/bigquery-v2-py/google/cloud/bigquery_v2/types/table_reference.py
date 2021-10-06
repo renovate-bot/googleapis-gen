@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
 
 class TableReference(proto.Message):
     r"""
+
     Attributes:
         project_id (str):
             Required. The ID of the project containing

@@ -370,6 +370,9 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
             )
         return self._stubs['delete_entity_type']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'EntityTypesGrpcAsyncIOTransport',

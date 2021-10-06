@@ -60,6 +60,7 @@ class DatabaseProvider(proto.Enum):
 
 class SslConfig(proto.Message):
     r"""SSL configuration information.
+
     Attributes:
         type_ (google.cloud.clouddms_v1.types.SslConfig.SslType):
             Output only. The ssl config type according to 'client_key',
@@ -279,6 +280,7 @@ class CloudSqlConnectionProfile(proto.Message):
 
 class SqlAclEntry(proto.Message):
     r"""An entry for an Access Control list.
+
     Attributes:
         value (str):
             The allowlisted value for the access control
@@ -318,6 +320,7 @@ class SqlAclEntry(proto.Message):
 
 class SqlIpConfig(proto.Message):
     r"""IP Management configuration.
+
     Attributes:
         enable_ipv4 (google.protobuf.wrappers_pb2.BoolValue):
             Whether the instance should be assigned an
@@ -360,6 +363,7 @@ class SqlIpConfig(proto.Message):
 
 class CloudSqlSettings(proto.Message):
     r"""Settings for creating a Cloud SQL database instance.
+
     Attributes:
         database_version (google.cloud.clouddms_v1.types.CloudSqlSettings.SqlDatabaseVersion):
             The database engine type and version.
@@ -532,7 +536,8 @@ class StaticIpConnectivity(proto.Message):
     destination database's public IP. You can retrieve the Cloud SQL
     instance's public IP from the Cloud SQL console or using Cloud
     SQL APIs. No additional configuration is required.
-        """
+
+    """
 
 
 class ReverseSshConnectivity(proto.Message):
@@ -600,6 +605,7 @@ class VpcPeeringConnectivity(proto.Message):
 
 class DatabaseType(proto.Message):
     r"""A message defining the database engine and provider.
+
     Attributes:
         provider (google.cloud.clouddms_v1.types.DatabaseProvider):
             The database provider.
@@ -621,6 +627,7 @@ class DatabaseType(proto.Message):
 
 class MigrationJob(proto.Message):
     r"""Represents a Database Migration Service migration job object.
+
     Attributes:
         name (str):
             The name (URI) of this migration job
@@ -819,6 +826,7 @@ class MigrationJob(proto.Message):
 
 class ConnectionProfile(proto.Message):
     r"""A connection profile definition.
+
     Attributes:
         name (str):
             The name of this connection profile resource
@@ -932,6 +940,7 @@ class ConnectionProfile(proto.Message):
 
 class MigrationJobVerificationError(proto.Message):
     r"""Error message of a verification Migration job.
+
     Attributes:
         error_code (google.cloud.clouddms_v1.types.MigrationJobVerificationError.ErrorCode):
             Output only. An instance of ErrorCode

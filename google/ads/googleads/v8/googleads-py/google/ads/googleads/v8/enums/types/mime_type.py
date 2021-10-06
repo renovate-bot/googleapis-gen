@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class MimeTypeEnum(proto.Message):
-    r"""Container for enum describing the mime types.    """
+    r"""Container for enum describing the mime types.
+    """
     class MimeType(proto.Enum):
         r"""The mime type"""
         UNSPECIFIED = 0

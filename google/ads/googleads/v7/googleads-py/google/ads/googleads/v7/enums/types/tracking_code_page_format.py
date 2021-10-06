@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class TrackingCodePageFormatEnum(proto.Message):
     r"""Container for enum describing the format of the web page
     where the tracking tag and snippet will be installed.
-        """
+
+    """
     class TrackingCodePageFormat(proto.Enum):
         r"""The format of the web page where the tracking tag and snippet
         will be installed.

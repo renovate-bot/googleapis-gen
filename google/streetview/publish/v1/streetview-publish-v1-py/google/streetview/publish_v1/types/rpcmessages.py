@@ -52,6 +52,7 @@ class PhotoView(proto.Enum):
 
 class CreatePhotoRequest(proto.Message):
     r"""Request to create a [Photo][google.streetview.publish.v1.Photo].
+
     Attributes:
         photo (google.streetview.publish_v1.types.Photo):
             Required. Photo to create.
@@ -273,6 +274,7 @@ class ListPhotosRequest(proto.Message):
 
 class ListPhotosResponse(proto.Message):
     r"""Response to list all photos that belong to a user.
+
     Attributes:
         photos (Sequence[google.streetview.publish_v1.types.Photo]):
             List of photos. The
@@ -389,6 +391,7 @@ class BatchUpdatePhotosResponse(proto.Message):
 
 class DeletePhotoRequest(proto.Message):
     r"""Request to delete a [Photo][google.streetview.publish.v1.Photo].
+
     Attributes:
         photo_id (str):
             Required. ID of the

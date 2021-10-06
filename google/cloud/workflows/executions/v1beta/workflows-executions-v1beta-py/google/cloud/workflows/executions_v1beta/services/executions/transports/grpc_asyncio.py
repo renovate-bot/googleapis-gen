@@ -335,6 +335,9 @@ class ExecutionsGrpcAsyncIOTransport(ExecutionsTransport):
             )
         return self._stubs['cancel_execution']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ExecutionsGrpcAsyncIOTransport',

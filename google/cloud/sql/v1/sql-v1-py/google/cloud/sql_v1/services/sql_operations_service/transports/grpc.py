@@ -276,6 +276,8 @@ class SqlOperationsServiceGrpcTransport(SqlOperationsServiceTransport):
             )
         return self._stubs['list']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'SqlOperationsServiceGrpcTransport',

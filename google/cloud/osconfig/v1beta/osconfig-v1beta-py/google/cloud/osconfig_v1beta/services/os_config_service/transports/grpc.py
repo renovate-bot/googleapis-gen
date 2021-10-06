@@ -623,6 +623,8 @@ class OsConfigServiceGrpcTransport(OsConfigServiceTransport):
             )
         return self._stubs['lookup_effective_guest_policy']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'OsConfigServiceGrpcTransport',

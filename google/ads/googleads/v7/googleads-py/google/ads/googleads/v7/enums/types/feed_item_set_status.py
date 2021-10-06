@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemSetStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of a feed
     item set.
-        """
+
+    """
     class FeedItemSetStatus(proto.Enum):
         r"""Possible statuses of a feed item set."""
         UNSPECIFIED = 0

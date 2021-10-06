@@ -101,6 +101,7 @@ class MutateFeedMappingsRequest(proto.Message):
 
 class FeedMappingOperation(proto.Message):
     r"""A single operation (create, remove) on a feed mapping.
+
     Attributes:
         create (google.ads.googleads.v8.resources.types.FeedMapping):
             Create operation: No resource name is
@@ -127,6 +128,7 @@ class FeedMappingOperation(proto.Message):
 
 class MutateFeedMappingsResponse(proto.Message):
     r"""Response message for a feed mapping mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -152,6 +154,7 @@ class MutateFeedMappingsResponse(proto.Message):
 
 class MutateFeedMappingResult(proto.Message):
     r"""The result for the feed mapping mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

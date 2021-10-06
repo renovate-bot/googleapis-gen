@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class GetPublisherAccountRequest(proto.Message):
     r"""Request to retrieve the specified publisher account.
+
     Attributes:
         name (str):
             Resource name of the publisher account to
@@ -73,6 +74,7 @@ class ListPublisherAccountsRequest(proto.Message):
 
 class ListPublisherAccountsResponse(proto.Message):
     r"""Response for the publisher account list request.
+
     Attributes:
         account (Sequence[google.ads.admob_v1.types.PublisherAccount]):
             Publisher that the client credentials can
@@ -100,6 +102,7 @@ class ListPublisherAccountsResponse(proto.Message):
 
 class GenerateMediationReportRequest(proto.Message):
     r"""Request to generate an AdMob Mediation report.
+
     Attributes:
         parent (str):
             Resource name of the account to generate the
@@ -193,6 +196,7 @@ class GenerateMediationReportResponse(proto.Message):
 
 class GenerateNetworkReportRequest(proto.Message):
     r"""Request to generate an AdMob Network report.
+
     Attributes:
         parent (str):
             Resource name of the account to generate the

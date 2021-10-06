@@ -153,6 +153,19 @@ class SharedCriterionServiceClient(metaclass=SharedCriterionServiceClientMeta):
         """
         return self._transport
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
     @staticmethod
     def shared_criterion_path(customer_id: str,shared_set_id: str,criterion_id: str,) -> str:
         """Return a fully-qualified shared_criterion string."""

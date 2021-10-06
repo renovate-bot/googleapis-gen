@@ -159,13 +159,15 @@ class GetEnvironmentRequest(proto.Message):
 class CreateEnvironmentMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [CreateEnvironment][google.cloud.shell.v1.CloudShellService.CreateEnvironment].
-        """
+
+    """
 
 
 class DeleteEnvironmentMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [DeleteEnvironment][google.cloud.shell.v1.CloudShellService.DeleteEnvironment].
-        """
+
+    """
 
 
 class StartEnvironmentRequest(proto.Message):
@@ -247,13 +249,15 @@ class AuthorizeEnvironmentRequest(proto.Message):
 class AuthorizeEnvironmentResponse(proto.Message):
     r"""Response message for
     [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
-        """
+
+    """
 
 
 class AuthorizeEnvironmentMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
-        """
+
+    """
 
 
 class StartEnvironmentMetadata(proto.Message):
@@ -348,7 +352,8 @@ class AddPublicKeyResponse(proto.Message):
 class AddPublicKeyMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [AddPublicKey][google.cloud.shell.v1.CloudShellService.AddPublicKey].
-        """
+
+    """
 
 
 class RemovePublicKeyRequest(proto.Message):
@@ -377,13 +382,15 @@ class RemovePublicKeyRequest(proto.Message):
 class RemovePublicKeyResponse(proto.Message):
     r"""Response message for
     [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
-        """
+
+    """
 
 
 class RemovePublicKeyMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
-        """
+
+    """
 
 
 class CloudShellErrorDetails(proto.Message):

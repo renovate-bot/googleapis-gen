@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class OutdatedLibrary(proto.Message):
     r"""Information reported for an outdated library.
+
     Attributes:
         library_name (str):
             The name of the outdated library.
@@ -77,6 +78,7 @@ class ViolatingResource(proto.Message):
 
 class VulnerableParameters(proto.Message):
     r"""Information about vulnerable request parameters.
+
     Attributes:
         parameter_names (Sequence[str]):
             The vulnerable parameter names.
@@ -90,6 +92,7 @@ class VulnerableParameters(proto.Message):
 
 class VulnerableHeaders(proto.Message):
     r"""Information about vulnerable or missing HTTP Headers.
+
     Attributes:
         headers (Sequence[google.cloud.websecurityscanner_v1alpha.types.VulnerableHeaders.Header]):
             List of vulnerable headers.
@@ -99,6 +102,7 @@ class VulnerableHeaders(proto.Message):
 
     class Header(proto.Message):
         r"""Describes a HTTP Header.
+
         Attributes:
             name (str):
                 Header name.
@@ -129,6 +133,7 @@ class VulnerableHeaders(proto.Message):
 
 class Xss(proto.Message):
     r"""Information reported for an XSS.
+
     Attributes:
         stack_traces (Sequence[str]):
             Stack traces leading to the point where the

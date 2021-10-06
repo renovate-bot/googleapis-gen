@@ -794,6 +794,8 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
             )
         return self._stubs['list_backup_operations']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'DatabaseAdminGrpcTransport',

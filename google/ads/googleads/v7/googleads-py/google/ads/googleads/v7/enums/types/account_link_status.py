@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AccountLinkStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of an account
     link.
-        """
+
+    """
     class AccountLinkStatus(proto.Enum):
         r"""Describes the possible statuses for a link between a Google
         Ads customer and another account.

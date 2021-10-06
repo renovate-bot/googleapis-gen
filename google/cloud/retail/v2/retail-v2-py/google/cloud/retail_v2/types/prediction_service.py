@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class PredictRequest(proto.Message):
     r"""Request message for Predict method.
+
     Attributes:
         placement (str):
             Required. Full resource name of the format:
@@ -187,6 +188,7 @@ class PredictRequest(proto.Message):
 
 class PredictResponse(proto.Message):
     r"""Response message for predict method.
+
     Attributes:
         results (Sequence[google.cloud.retail_v2.types.PredictResponse.PredictionResult]):
             A list of recommended products. The order

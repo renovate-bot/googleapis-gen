@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserListSizeRangeEnum(proto.Message):
-    r"""Size range in terms of number of users of a UserList.    """
+    r"""Size range in terms of number of users of a UserList.
+    """
     class UserListSizeRange(proto.Enum):
         r"""Enum containing possible user list size ranges."""
         UNSPECIFIED = 0

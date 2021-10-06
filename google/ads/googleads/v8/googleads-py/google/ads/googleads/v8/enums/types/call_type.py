@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CallTypeEnum(proto.Message):
     r"""Container for enum describing possible types of property from
     where the call was made.
-        """
+
+    """
     class CallType(proto.Enum):
         r"""Possible types of property from where the call was made."""
         UNSPECIFIED = 0

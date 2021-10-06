@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class BudgetCampaignAssociationStatusEnum(proto.Message):
     r"""Message describing the status of the association between the
     Budget and the Campaign.
-        """
+
+    """
     class BudgetCampaignAssociationStatus(proto.Enum):
         r"""Possible statuses of the association between the Budget and
         the Campaign.

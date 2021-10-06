@@ -50,6 +50,7 @@ __protobuf__ = proto.module(
 
 class GetIapSettingsRequest(proto.Message):
     r"""The request sent to GetIapSettings.
+
     Attributes:
         name (str):
             Required. The resource name for which to retrieve the
@@ -65,6 +66,7 @@ class GetIapSettingsRequest(proto.Message):
 
 class UpdateIapSettingsRequest(proto.Message):
     r"""The request sent to UpdateIapSettings.
+
     Attributes:
         iap_settings (google.cloud.iap_v1.types.IapSettings):
             Required. The new values for the IAP settings to be updated.
@@ -92,6 +94,7 @@ class UpdateIapSettingsRequest(proto.Message):
 
 class IapSettings(proto.Message):
     r"""The IAP configurable settings.
+
     Attributes:
         name (str):
             Required. The resource name of the IAP
@@ -122,6 +125,7 @@ class IapSettings(proto.Message):
 
 class AccessSettings(proto.Message):
     r"""Access related settings for IAP protected apps.
+
     Attributes:
         gcip_settings (google.cloud.iap_v1.types.GcipSettings):
             GCIP claims and endpoint configurations for
@@ -152,6 +156,7 @@ class AccessSettings(proto.Message):
 
 class GcipSettings(proto.Message):
     r"""Allows customers to configure tenant_id for GCIP instance per-app.
+
     Attributes:
         tenant_ids (Sequence[str]):
             GCIP tenant ids that are linked to the IAP resource.
@@ -223,6 +228,7 @@ class OAuthSettings(proto.Message):
 
 class ApplicationSettings(proto.Message):
     r"""Wrapper over application specific settings for IAP.
+
     Attributes:
         csm_settings (google.cloud.iap_v1.types.CsmSettings):
             Settings to configure IAP's behavior for a
@@ -301,6 +307,7 @@ class AccessDeniedPageSettings(proto.Message):
 
 class ListBrandsRequest(proto.Message):
     r"""The request sent to ListBrands.
+
     Attributes:
         parent (str):
             Required. GCP Project number/id. In the following format:
@@ -315,6 +322,7 @@ class ListBrandsRequest(proto.Message):
 
 class ListBrandsResponse(proto.Message):
     r"""Response message for ListBrands.
+
     Attributes:
         brands (Sequence[google.cloud.iap_v1.types.Brand]):
             Brands existing in the project.
@@ -329,6 +337,7 @@ class ListBrandsResponse(proto.Message):
 
 class CreateBrandRequest(proto.Message):
     r"""The request sent to CreateBrand.
+
     Attributes:
         parent (str):
             Required. GCP Project number/id under which the brand is to
@@ -351,6 +360,7 @@ class CreateBrandRequest(proto.Message):
 
 class GetBrandRequest(proto.Message):
     r"""The request sent to GetBrand.
+
     Attributes:
         name (str):
             Required. Name of the brand to be fetched. In the following
@@ -365,6 +375,7 @@ class GetBrandRequest(proto.Message):
 
 class ListIdentityAwareProxyClientsRequest(proto.Message):
     r"""The request sent to ListIdentityAwareProxyClients.
+
     Attributes:
         parent (str):
             Required. Full brand path. In the following format:
@@ -401,6 +412,7 @@ class ListIdentityAwareProxyClientsRequest(proto.Message):
 
 class ListIdentityAwareProxyClientsResponse(proto.Message):
     r"""Response message for ListIdentityAwareProxyClients.
+
     Attributes:
         identity_aware_proxy_clients (Sequence[google.cloud.iap_v1.types.IdentityAwareProxyClient]):
             Clients existing in the brand.
@@ -427,6 +439,7 @@ class ListIdentityAwareProxyClientsResponse(proto.Message):
 
 class CreateIdentityAwareProxyClientRequest(proto.Message):
     r"""The request sent to CreateIdentityAwareProxyClient.
+
     Attributes:
         parent (str):
             Required. Path to create the client in. In the following
@@ -450,6 +463,7 @@ class CreateIdentityAwareProxyClientRequest(proto.Message):
 
 class GetIdentityAwareProxyClientRequest(proto.Message):
     r"""The request sent to GetIdentityAwareProxyClient.
+
     Attributes:
         name (str):
             Required. Name of the Identity Aware Proxy client to be
@@ -465,6 +479,7 @@ class GetIdentityAwareProxyClientRequest(proto.Message):
 
 class ResetIdentityAwareProxyClientSecretRequest(proto.Message):
     r"""The request sent to ResetIdentityAwareProxyClientSecret.
+
     Attributes:
         name (str):
             Required. Name of the Identity Aware Proxy client to that
@@ -480,6 +495,7 @@ class ResetIdentityAwareProxyClientSecretRequest(proto.Message):
 
 class DeleteIdentityAwareProxyClientRequest(proto.Message):
     r"""The request sent to DeleteIdentityAwareProxyClient.
+
     Attributes:
         name (str):
             Required. Name of the Identity Aware Proxy client to be

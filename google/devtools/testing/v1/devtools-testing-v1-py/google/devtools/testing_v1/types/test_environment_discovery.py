@@ -67,6 +67,7 @@ class DeviceFormFactor(proto.Enum):
 
 class DeviceIpBlock(proto.Message):
     r"""A single device IP block
+
     Attributes:
         block (str):
             An IP address block in CIDR notation eg:
@@ -129,6 +130,7 @@ class GetTestEnvironmentCatalogRequest(proto.Message):
 
 class TestEnvironmentCatalog(proto.Message):
     r"""A description of a test environment.
+
     Attributes:
         android_device_catalog (google.devtools.testing_v1.types.AndroidDeviceCatalog):
             Supported Android devices.
@@ -178,6 +180,7 @@ class TestEnvironmentCatalog(proto.Message):
 
 class DeviceIpBlockCatalog(proto.Message):
     r"""List of IP blocks used by the Firebase Test Lab
+
     Attributes:
         ip_blocks (Sequence[google.devtools.testing_v1.types.DeviceIpBlock]):
             The device IP blocks used by Firebase Test
@@ -193,6 +196,7 @@ class DeviceIpBlockCatalog(proto.Message):
 
 class AndroidDeviceCatalog(proto.Message):
     r"""The currently supported Android devices.
+
     Attributes:
         models (Sequence[google.devtools.testing_v1.types.AndroidModel]):
             The set of supported Android device models.
@@ -244,6 +248,7 @@ class AndroidRuntimeConfiguration(proto.Message):
 
 class AndroidModel(proto.Message):
     r"""A description of an Android device tests may be run on.
+
     Attributes:
         id (str):
             The unique opaque id for this model.
@@ -363,6 +368,7 @@ class AndroidModel(proto.Message):
 
 class AndroidVersion(proto.Message):
     r"""A version of the Android OS.
+
     Attributes:
         id (str):
             An opaque id for this Android version.
@@ -444,6 +450,7 @@ class Distribution(proto.Message):
 
 class IosDeviceCatalog(proto.Message):
     r"""The currently supported iOS devices.
+
     Attributes:
         models (Sequence[google.devtools.testing_v1.types.IosModel]):
             The set of supported iOS device models.
@@ -502,6 +509,7 @@ class IosRuntimeConfiguration(proto.Message):
 
 class IosModel(proto.Message):
     r"""A description of an iOS device tests may be run on.
+
     Attributes:
         id (str):
             The unique opaque id for this model.
@@ -573,6 +581,7 @@ class IosModel(proto.Message):
 
 class IosVersion(proto.Message):
     r"""An iOS version.
+
     Attributes:
         id (str):
             An opaque id for this iOS version.
@@ -615,6 +624,7 @@ class IosVersion(proto.Message):
 
 class Locale(proto.Message):
     r"""A location/region designation for language.
+
     Attributes:
         id (str):
             The id for this locale. Example: "en_US".
@@ -650,6 +660,7 @@ class Locale(proto.Message):
 
 class Orientation(proto.Message):
     r"""Screen orientation of the device.
+
     Attributes:
         id (str):
             The id for this orientation.
@@ -678,6 +689,7 @@ class Orientation(proto.Message):
 
 class XcodeVersion(proto.Message):
     r"""An Xcode version that an iOS version is compatible with.
+
     Attributes:
         version (str):
             The id for this version.
@@ -699,6 +711,7 @@ class XcodeVersion(proto.Message):
 
 class NetworkConfigurationCatalog(proto.Message):
     r"""
+
     Attributes:
         configurations (Sequence[google.devtools.testing_v1.types.NetworkConfiguration]):
 
@@ -713,6 +726,7 @@ class NetworkConfigurationCatalog(proto.Message):
 
 class NetworkConfiguration(proto.Message):
     r"""
+
     Attributes:
         id (str):
             The unique opaque id for this network traffic
@@ -743,6 +757,7 @@ class NetworkConfiguration(proto.Message):
 
 class TrafficRule(proto.Message):
     r"""Network emulation parameters.
+
     Attributes:
         delay (google.protobuf.duration_pb2.Duration):
             Packet delay, must be >= 0.

@@ -501,6 +501,8 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
             )
         return self._stubs['delete_stream']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'AIStreamsGrpcTransport',

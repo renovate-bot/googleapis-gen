@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class SimulationModificationMethodEnum(proto.Message):
     r"""Container for enum describing the method by which a
     simulation modifies a field.
-        """
+
+    """
     class SimulationModificationMethod(proto.Enum):
         r"""Enum describing the method by which a simulation modifies a
         field.

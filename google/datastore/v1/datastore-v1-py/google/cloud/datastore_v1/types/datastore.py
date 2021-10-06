@@ -250,7 +250,8 @@ class RollbackResponse(proto.Message):
     r"""The response for
     [Datastore.Rollback][google.datastore.v1.Datastore.Rollback]. (an
     empty message).
-        """
+
+    """
 
 
 class CommitRequest(proto.Message):
@@ -414,11 +415,13 @@ class ReserveIdsRequest(proto.Message):
 class ReserveIdsResponse(proto.Message):
     r"""The response for
     [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
-        """
+
+    """
 
 
 class Mutation(proto.Message):
     r"""A mutation to apply to an entity.
+
     Attributes:
         insert (google.cloud.datastore_v1.types.Entity):
             The entity to insert. The entity must not
@@ -476,6 +479,7 @@ class Mutation(proto.Message):
 
 class MutationResult(proto.Message):
     r"""The result of applying a mutation.
+
     Attributes:
         key (google.cloud.datastore_v1.types.Key):
             The automatically allocated key.
@@ -512,6 +516,7 @@ class MutationResult(proto.Message):
 
 class ReadOptions(proto.Message):
     r"""The options shared by read requests.
+
     Attributes:
         read_consistency (google.cloud.datastore_v1.types.ReadOptions.ReadConsistency):
             The non-transactional read consistency to use. Cannot be set
@@ -559,6 +564,7 @@ class TransactionOptions(proto.Message):
 
     class ReadWrite(proto.Message):
         r"""Options specific to read / write transactions.
+
         Attributes:
             previous_transaction (bytes):
                 The transaction identifier of the transaction
@@ -571,7 +577,8 @@ class TransactionOptions(proto.Message):
         )
 
     class ReadOnly(proto.Message):
-        r"""Options specific to read-only transactions.    """
+        r"""Options specific to read-only transactions.
+        """
 
     read_write = proto.Field(
         proto.MESSAGE,

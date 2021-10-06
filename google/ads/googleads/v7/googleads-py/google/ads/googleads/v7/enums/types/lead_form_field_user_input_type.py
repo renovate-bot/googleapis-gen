@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LeadFormFieldUserInputTypeEnum(proto.Message):
-    r"""Describes the input type of a lead form field.    """
+    r"""Describes the input type of a lead form field.
+    """
     class LeadFormFieldUserInputType(proto.Enum):
         r"""Enum describing the input type of a lead form field."""
         UNSPECIFIED = 0

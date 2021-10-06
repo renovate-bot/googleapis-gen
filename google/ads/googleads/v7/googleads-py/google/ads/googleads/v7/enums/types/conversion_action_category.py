@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ConversionActionCategoryEnum(proto.Message):
     r"""Container for enum describing the category of conversions
     that are associated with a ConversionAction.
-        """
+
+    """
     class ConversionActionCategory(proto.Enum):
         r"""The category of conversions that are associated with a
         ConversionAction.

@@ -52,6 +52,7 @@ __protobuf__ = proto.module(
 
 class Membership(proto.Message):
     r"""Membership contains information about a member cluster.
+
     Attributes:
         name (str):
             Output only. The full, unique name of this Membership
@@ -356,6 +357,7 @@ class ResourceOptions(proto.Message):
 
 class GkeCluster(proto.Message):
     r"""GkeCluster contains information specific to GKE clusters.
+
     Attributes:
         resource_link (str):
             Immutable. Self-link of the GCP resource for
@@ -566,6 +568,7 @@ class Authority(proto.Message):
 
 class MembershipState(proto.Message):
     r"""MembershipState describes the state of a Membership resource.
+
     Attributes:
         code (google.cloud.gkehub_v1alpha2.types.MembershipState.Code):
             Output only. The current state of the
@@ -589,6 +592,7 @@ class MembershipState(proto.Message):
 
 class ListMembershipsRequest(proto.Message):
     r"""Request message for ``GkeHub.ListMemberships`` method.
+
     Attributes:
         parent (str):
             Required. The parent (project and location) where the
@@ -657,6 +661,7 @@ class ListMembershipsRequest(proto.Message):
 
 class ListMembershipsResponse(proto.Message):
     r"""Response message for the ``GkeHub.ListMemberships`` method.
+
     Attributes:
         resources (Sequence[google.cloud.gkehub_v1alpha2.types.Membership]):
             The list of matching Memberships.
@@ -690,6 +695,7 @@ class ListMembershipsResponse(proto.Message):
 
 class GetMembershipRequest(proto.Message):
     r"""Request message for ``GkeHub.GetMembership`` method.
+
     Attributes:
         name (str):
             Required. The Membership resource name in the format
@@ -704,6 +710,7 @@ class GetMembershipRequest(proto.Message):
 
 class CreateMembershipRequest(proto.Message):
     r"""Request message for the ``GkeHub.CreateMembership`` method.
+
     Attributes:
         parent (str):
             Required. The parent (project and location) where the
@@ -743,6 +750,7 @@ class CreateMembershipRequest(proto.Message):
 
 class DeleteMembershipRequest(proto.Message):
     r"""Request message for ``GkeHub.DeleteMembership`` method.
+
     Attributes:
         name (str):
             Required. The Membership resource name in the format
@@ -757,6 +765,7 @@ class DeleteMembershipRequest(proto.Message):
 
 class UpdateMembershipRequest(proto.Message):
     r"""Request message for ``GkeHub.UpdateMembership`` method.
+
     Attributes:
         name (str):
             Required. The Membership resource name in the format
@@ -792,6 +801,7 @@ class UpdateMembershipRequest(proto.Message):
 
 class GenerateConnectManifestRequest(proto.Message):
     r"""Request message for ``GkeHub.GenerateConnectManifest`` method. .
+
     Attributes:
         name (str):
             Required. The Membership resource name the Agent will
@@ -945,6 +955,7 @@ class TypeMeta(proto.Message):
 
 class InitializeHubRequest(proto.Message):
     r"""Request message for the InitializeHub method.
+
     Attributes:
         project (str):
             Required. The Hub to initialize, in the format
@@ -959,6 +970,7 @@ class InitializeHubRequest(proto.Message):
 
 class InitializeHubResponse(proto.Message):
     r"""Response message for the InitializeHub method.
+
     Attributes:
         service_identity (str):
             Name of the Hub default service identity, in the format:
@@ -987,6 +999,7 @@ class InitializeHubResponse(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

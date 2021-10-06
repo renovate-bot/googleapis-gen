@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class ReachPlanAdLengthEnum(proto.Message):
-    r"""Message describing length of a plannable video ad.    """
+    r"""Message describing length of a plannable video ad.
+    """
     class ReachPlanAdLength(proto.Enum):
         r"""Possible ad length values."""
         UNSPECIFIED = 0

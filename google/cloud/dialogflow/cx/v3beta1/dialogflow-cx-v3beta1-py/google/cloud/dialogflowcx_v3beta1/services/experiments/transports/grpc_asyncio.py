@@ -422,6 +422,9 @@ class ExperimentsGrpcAsyncIOTransport(ExperimentsTransport):
             )
         return self._stubs['stop_experiment']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ExperimentsGrpcAsyncIOTransport',

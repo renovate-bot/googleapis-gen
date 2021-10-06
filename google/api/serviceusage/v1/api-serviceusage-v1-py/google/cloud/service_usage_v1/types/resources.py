@@ -47,6 +47,7 @@ class State(proto.Enum):
 
 class Service(proto.Message):
     r"""A service that is available for use by the consumer.
+
     Attributes:
         name (str):
             The resource name of the consumer and
@@ -90,6 +91,7 @@ class Service(proto.Message):
 
 class ServiceConfig(proto.Message):
     r"""The configuration of the service.
+
     Attributes:
         name (str):
             The DNS address at which this service is available.

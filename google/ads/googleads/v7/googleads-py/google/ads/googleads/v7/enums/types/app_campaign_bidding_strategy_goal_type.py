@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AppCampaignBiddingStrategyGoalTypeEnum(proto.Message):
     r"""Container for enum describing goal towards which the bidding
     strategy of an app campaign should optimize for.
-        """
+
+    """
     class AppCampaignBiddingStrategyGoalType(proto.Enum):
         r"""Goal type of App campaign BiddingStrategy."""
         UNSPECIFIED = 0

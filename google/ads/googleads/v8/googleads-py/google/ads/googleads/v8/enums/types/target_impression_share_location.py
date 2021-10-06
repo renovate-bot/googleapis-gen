@@ -29,7 +29,8 @@ class TargetImpressionShareLocationEnum(proto.Message):
     r"""Container for enum describing where on the first search
     results page the automated bidding system should target
     impressions for the TargetImpressionShare bidding strategy.
-        """
+
+    """
     class TargetImpressionShareLocation(proto.Enum):
         r"""Enum describing possible goals."""
         UNSPECIFIED = 0

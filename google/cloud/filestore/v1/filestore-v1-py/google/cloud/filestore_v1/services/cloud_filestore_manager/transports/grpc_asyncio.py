@@ -561,6 +561,9 @@ class CloudFilestoreManagerGrpcAsyncIOTransport(CloudFilestoreManagerTransport):
             )
         return self._stubs['update_backup']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'CloudFilestoreManagerGrpcAsyncIOTransport',

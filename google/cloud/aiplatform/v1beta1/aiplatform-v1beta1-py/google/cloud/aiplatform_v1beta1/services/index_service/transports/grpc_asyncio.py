@@ -377,6 +377,9 @@ class IndexServiceGrpcAsyncIOTransport(IndexServiceTransport):
             )
         return self._stubs['delete_index']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'IndexServiceGrpcAsyncIOTransport',

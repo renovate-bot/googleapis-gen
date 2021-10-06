@@ -29,7 +29,8 @@ class ConversionOrAdjustmentLagBucketEnum(proto.Message):
     r"""Container for enum representing the number of days between
     the impression and the conversion or between the impression and
     adjustments to the conversion.
-        """
+
+    """
     class ConversionOrAdjustmentLagBucket(proto.Enum):
         r"""Enum representing the number of days between the impression
         and the conversion or between the impression and adjustments to

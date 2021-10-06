@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LocationExtensionTargetingCriterionFieldEnum(proto.Message):
-    r"""Values for Location Extension Targeting criterion fields.    """
+    r"""Values for Location Extension Targeting criterion fields.
+    """
     class LocationExtensionTargetingCriterionField(proto.Enum):
         r"""Possible values for Location Extension Targeting criterion
         fields.

@@ -908,6 +908,9 @@ class ProductSearchGrpcAsyncIOTransport(ProductSearchTransport):
             )
         return self._stubs['purge_products']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'ProductSearchGrpcAsyncIOTransport',

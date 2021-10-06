@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CallTrackingDisplayLocationEnum(proto.Message):
     r"""Container for enum describing possible call tracking display
     locations.
-        """
+
+    """
     class CallTrackingDisplayLocation(proto.Enum):
         r"""Possible call tracking display locations."""
         UNSPECIFIED = 0

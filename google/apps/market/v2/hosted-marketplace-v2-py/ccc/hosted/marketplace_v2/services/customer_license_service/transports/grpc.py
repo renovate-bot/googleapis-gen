@@ -246,6 +246,8 @@ class CustomerLicenseServiceGrpcTransport(CustomerLicenseServiceTransport):
             )
         return self._stubs['get']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'CustomerLicenseServiceGrpcTransport',

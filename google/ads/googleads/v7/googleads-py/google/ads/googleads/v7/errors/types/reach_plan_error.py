@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class ReachPlanErrorEnum(proto.Message):
     r"""Container for enum describing possible errors returned from
     the ReachPlanService.
-        """
+
+    """
     class ReachPlanError(proto.Enum):
         r"""Enum describing possible errors from ReachPlanService."""
         UNSPECIFIED = 0

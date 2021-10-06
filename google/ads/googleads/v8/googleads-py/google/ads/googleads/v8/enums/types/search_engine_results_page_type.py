@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class SearchEngineResultsPageTypeEnum(proto.Message):
-    r"""The type of the search engine results page.    """
+    r"""The type of the search engine results page.
+    """
     class SearchEngineResultsPageType(proto.Enum):
         r"""The type of the search engine results page."""
         UNSPECIFIED = 0

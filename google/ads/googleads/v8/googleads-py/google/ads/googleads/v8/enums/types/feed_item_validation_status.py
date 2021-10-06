@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class FeedItemValidationStatusEnum(proto.Message):
     r"""Container for enum describing possible validation statuses of
     a feed item.
-        """
+
+    """
     class FeedItemValidationStatus(proto.Enum):
         r"""The possible validation statuses of a feed item."""
         UNSPECIFIED = 0

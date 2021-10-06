@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class OfflineUserDataJobFailureReasonEnum(proto.Message):
     r"""Container for enum describing reasons why an offline user
     data job failed to be processed.
-        """
+
+    """
     class OfflineUserDataJobFailureReason(proto.Enum):
         r"""The failure reason of an offline user data job."""
         UNSPECIFIED = 0

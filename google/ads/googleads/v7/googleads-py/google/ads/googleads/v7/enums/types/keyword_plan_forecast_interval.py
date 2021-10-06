@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class KeywordPlanForecastIntervalEnum(proto.Message):
-    r"""Container for enumeration of forecast intervals.    """
+    r"""Container for enumeration of forecast intervals.
+    """
     class KeywordPlanForecastInterval(proto.Enum):
         r"""Forecast intervals."""
         UNSPECIFIED = 0

@@ -142,6 +142,7 @@ class Cluster(proto.Message):
 
 class ClusterConfig(proto.Message):
     r"""The cluster config.
+
     Attributes:
         config_bucket (str):
             Optional. A Cloud Storage bucket used to stage job
@@ -299,6 +300,7 @@ class ClusterConfig(proto.Message):
 
 class GkeClusterConfig(proto.Message):
     r"""The GKE config for this cluster.
+
     Attributes:
         namespaced_gke_deployment_target (google.cloud.dataproc_v1.types.GkeClusterConfig.NamespacedGkeDeploymentTarget):
             Optional. A target for the deployment.
@@ -335,6 +337,7 @@ class GkeClusterConfig(proto.Message):
 
 class EndpointConfig(proto.Message):
     r"""Endpoint config for this cluster
+
     Attributes:
         http_ports (Sequence[google.cloud.dataproc_v1.types.EndpointConfig.HttpPortsEntry]):
             Output only. The map of port descriptions to URLs. Will only
@@ -358,6 +361,7 @@ class EndpointConfig(proto.Message):
 
 class AutoscalingConfig(proto.Message):
     r"""Autoscaling Policy config associated with the cluster.
+
     Attributes:
         policy_uri (str):
             Optional. The autoscaling policy used by the cluster.
@@ -380,6 +384,7 @@ class AutoscalingConfig(proto.Message):
 
 class EncryptionConfig(proto.Message):
     r"""Encryption settings for the cluster.
+
     Attributes:
         gce_pd_kms_key_name (str):
             Optional. The Cloud KMS key name to use for
@@ -878,6 +883,7 @@ class NodeInitializationAction(proto.Message):
 
 class ClusterStatus(proto.Message):
     r"""The status of a cluster and its instances.
+
     Attributes:
         state (google.cloud.dataproc_v1.types.ClusterStatus.State):
             Output only. The cluster's state.
@@ -958,6 +964,7 @@ class SecurityConfig(proto.Message):
 
 class KerberosConfig(proto.Message):
     r"""Specifies Kerberos related configuration.
+
     Attributes:
         enable_kerberos (bool):
             Optional. Flag to indicate whether to
@@ -1163,6 +1170,7 @@ class SoftwareConfig(proto.Message):
 
 class LifecycleConfig(proto.Message):
     r"""Specifies the cluster auto-delete schedule configuration.
+
     Attributes:
         idle_delete_ttl (google.protobuf.duration_pb2.Duration):
             Optional. The duration to keep the cluster alive while
@@ -1214,6 +1222,7 @@ class LifecycleConfig(proto.Message):
 
 class MetastoreConfig(proto.Message):
     r"""Specifies a Metastore configuration.
+
     Attributes:
         dataproc_metastore_service (str):
             Required. Resource name of an existing Dataproc Metastore
@@ -1257,6 +1266,7 @@ class ClusterMetrics(proto.Message):
 
 class CreateClusterRequest(proto.Message):
     r"""A request to create a cluster.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1304,6 +1314,7 @@ class CreateClusterRequest(proto.Message):
 
 class UpdateClusterRequest(proto.Message):
     r"""A request to update a cluster.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1440,6 +1451,7 @@ class UpdateClusterRequest(proto.Message):
 
 class StopClusterRequest(proto.Message):
     r"""A request to stop a cluster.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1494,6 +1506,7 @@ class StopClusterRequest(proto.Message):
 
 class StartClusterRequest(proto.Message):
     r"""A request to start a cluster.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1548,6 +1561,7 @@ class StartClusterRequest(proto.Message):
 
 class DeleteClusterRequest(proto.Message):
     r"""A request to delete a cluster.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1631,6 +1645,7 @@ class GetClusterRequest(proto.Message):
 
 class ListClustersRequest(proto.Message):
     r"""A request to list the clusters in a project.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1690,6 +1705,7 @@ class ListClustersRequest(proto.Message):
 
 class ListClustersResponse(proto.Message):
     r"""The list of all clusters in a project.
+
     Attributes:
         clusters (Sequence[google.cloud.dataproc_v1.types.Cluster]):
             Output only. The clusters in the project.
@@ -1717,6 +1733,7 @@ class ListClustersResponse(proto.Message):
 
 class DiagnoseClusterRequest(proto.Message):
     r"""A request to collect cluster diagnostic information.
+
     Attributes:
         project_id (str):
             Required. The ID of the Google Cloud Platform
@@ -1744,6 +1761,7 @@ class DiagnoseClusterRequest(proto.Message):
 
 class DiagnoseClusterResults(proto.Message):
     r"""The location of diagnostic output.
+
     Attributes:
         output_uri (str):
             Output only. The Cloud Storage URI of the
@@ -1760,6 +1778,7 @@ class DiagnoseClusterResults(proto.Message):
 
 class ReservationAffinity(proto.Message):
     r"""Reservation Affinity for consuming Zonal reservation.
+
     Attributes:
         consume_reservation_type (google.cloud.dataproc_v1.types.ReservationAffinity.Type):
             Optional. Type of reservation to consume

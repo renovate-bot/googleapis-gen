@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class LabelErrorEnum(proto.Message):
-    r"""Container for enum describing possible label errors.    """
+    r"""Container for enum describing possible label errors.
+    """
     class LabelError(proto.Enum):
         r"""Enum describing possible label errors."""
         UNSPECIFIED = 0

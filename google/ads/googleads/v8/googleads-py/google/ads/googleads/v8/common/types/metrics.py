@@ -30,6 +30,7 @@ __protobuf__ = proto.module(
 
 class Metrics(proto.Message):
     r"""Metrics data.
+
     Attributes:
         absolute_top_impression_percentage (float):
             The percent of your ad impressions that are

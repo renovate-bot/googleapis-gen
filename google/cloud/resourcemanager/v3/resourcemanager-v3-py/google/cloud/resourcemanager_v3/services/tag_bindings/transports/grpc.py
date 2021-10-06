@@ -325,6 +325,8 @@ class TagBindingsGrpcTransport(TagBindingsTransport):
             )
         return self._stubs['delete_tag_binding']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TagBindingsGrpcTransport',

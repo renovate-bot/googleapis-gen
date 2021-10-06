@@ -101,6 +101,7 @@ class MutateFeedItemTargetsRequest(proto.Message):
 
 class FeedItemTargetOperation(proto.Message):
     r"""A single operation (create, remove) on an feed item target.
+
     Attributes:
         create (google.ads.googleads.v8.resources.types.FeedItemTarget):
             Create operation: No resource name is
@@ -127,6 +128,7 @@ class FeedItemTargetOperation(proto.Message):
 
 class MutateFeedItemTargetsResponse(proto.Message):
     r"""Response message for an feed item target mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -152,6 +154,7 @@ class MutateFeedItemTargetsResponse(proto.Message):
 
 class MutateFeedItemTargetResult(proto.Message):
     r"""The result for the feed item target mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

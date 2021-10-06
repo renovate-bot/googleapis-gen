@@ -35,6 +35,7 @@ __protobuf__ = proto.module(
 
 class Ad(proto.Message):
     r"""An ad.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad. Ad resource names

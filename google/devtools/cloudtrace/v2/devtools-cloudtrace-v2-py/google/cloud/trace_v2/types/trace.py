@@ -130,6 +130,7 @@ class Span(proto.Message):
 
     class Attributes(proto.Message):
         r"""A set of attributes, each in the format ``[KEY]:[VALUE]``.
+
         Attributes:
             attribute_map (Sequence[google.cloud.trace_v2.types.Span.Attributes.AttributeMapEntry]):
                 The set of attributes. Each attribute's key can be up to 128
@@ -163,6 +164,7 @@ class Span(proto.Message):
 
     class TimeEvent(proto.Message):
         r"""A time-stamped annotation or message event in the Span.
+
         Attributes:
             time (google.protobuf.timestamp_pb2.Timestamp):
                 The timestamp indicating the time the event
@@ -176,6 +178,7 @@ class Span(proto.Message):
 
         class Annotation(proto.Message):
             r"""Text annotation with a set of attributes.
+
             Attributes:
                 description (google.cloud.trace_v2.types.TruncatableString):
                     A user-supplied message describing the event.
@@ -199,6 +202,7 @@ class Span(proto.Message):
 
         class MessageEvent(proto.Message):
             r"""An event describing a message sent/received between Spans.
+
             Attributes:
                 type_ (google.cloud.trace_v2.types.Span.TimeEvent.MessageEvent.Type):
                     Type of MessageEvent. Indicates whether the
@@ -430,6 +434,7 @@ class Span(proto.Message):
 
 class AttributeValue(proto.Message):
     r"""The allowed types for [VALUE] in a ``[KEY]:[VALUE]`` attribute.
+
     Attributes:
         string_value (google.cloud.trace_v2.types.TruncatableString):
             A string up to 256 bytes long.
@@ -459,6 +464,7 @@ class AttributeValue(proto.Message):
 
 class StackTrace(proto.Message):
     r"""A call stack appearing in a trace.
+
     Attributes:
         stack_frames (google.cloud.trace_v2.types.StackTrace.StackFrames):
             Stack frames in this stack trace. A maximum
@@ -477,6 +483,7 @@ class StackTrace(proto.Message):
 
     class StackFrame(proto.Message):
         r"""Represents a single stack frame in a stack trace.
+
         Attributes:
             function_name (google.cloud.trace_v2.types.TruncatableString):
                 The fully-qualified name that uniquely
@@ -540,6 +547,7 @@ class StackTrace(proto.Message):
 
     class StackFrames(proto.Message):
         r"""A collection of stack frames, which can be truncated.
+
         Attributes:
             frame (Sequence[google.cloud.trace_v2.types.StackTrace.StackFrame]):
                 Stack frames in this call stack.
@@ -573,6 +581,7 @@ class StackTrace(proto.Message):
 
 class Module(proto.Message):
     r"""Binary module.
+
     Attributes:
         module (google.cloud.trace_v2.types.TruncatableString):
             For example: main binary, kernel modules, and

@@ -35,6 +35,7 @@ __protobuf__ = proto.module(
 
 class AdGroupAd(proto.Message):
     r"""An ad group ad.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad. Ad group ad resource
@@ -95,6 +96,7 @@ class AdGroupAd(proto.Message):
 
 class AdGroupAdPolicySummary(proto.Message):
     r"""Contains policy information for an ad.
+
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v7.common.types.PolicyTopicEntry]):
             Output only. The list of policy findings for

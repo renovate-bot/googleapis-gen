@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class GoogleVoiceCallStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of a google
     voice call.
-        """
+
+    """
     class GoogleVoiceCallStatus(proto.Enum):
         r"""Possible statuses of a google voice call."""
         UNSPECIFIED = 0

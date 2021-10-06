@@ -383,6 +383,9 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
             )
         return self._stubs['delete_domain_mapping']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DomainMappingsGrpcAsyncIOTransport',

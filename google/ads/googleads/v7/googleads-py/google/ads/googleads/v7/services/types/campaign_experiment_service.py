@@ -110,6 +110,7 @@ class MutateCampaignExperimentsRequest(proto.Message):
 
 class CampaignExperimentOperation(proto.Message):
     r"""A single update operation on a campaign experiment.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -144,6 +145,7 @@ class CampaignExperimentOperation(proto.Message):
 
 class MutateCampaignExperimentsResponse(proto.Message):
     r"""Response message for campaign experiment mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -169,6 +171,7 @@ class MutateCampaignExperimentsResponse(proto.Message):
 
 class MutateCampaignExperimentResult(proto.Message):
     r"""The result for the campaign experiment mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -268,6 +271,7 @@ class GraduateCampaignExperimentRequest(proto.Message):
 
 class GraduateCampaignExperimentResponse(proto.Message):
     r"""Response message for campaign experiment graduate.
+
     Attributes:
         graduated_campaign (str):
             The resource name of the campaign from the graduated

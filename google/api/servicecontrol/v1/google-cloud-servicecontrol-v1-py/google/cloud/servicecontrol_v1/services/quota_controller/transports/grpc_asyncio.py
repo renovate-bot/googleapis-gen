@@ -264,6 +264,9 @@ class QuotaControllerGrpcAsyncIOTransport(QuotaControllerTransport):
             )
         return self._stubs['allocate_quota']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'QuotaControllerGrpcAsyncIOTransport',

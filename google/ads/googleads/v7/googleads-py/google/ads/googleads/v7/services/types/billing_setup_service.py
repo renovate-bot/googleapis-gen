@@ -49,6 +49,7 @@ class GetBillingSetupRequest(proto.Message):
 
 class MutateBillingSetupRequest(proto.Message):
     r"""Request message for billing setup mutate operations.
+
     Attributes:
         customer_id (str):
             Required. Id of the customer to apply the
@@ -98,6 +99,7 @@ class BillingSetupOperation(proto.Message):
 
 class MutateBillingSetupResponse(proto.Message):
     r"""Response message for a billing setup operation.
+
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateBillingSetupResult):
             A result that identifies the resource
@@ -113,6 +115,7 @@ class MutateBillingSetupResponse(proto.Message):
 
 class MutateBillingSetupResult(proto.Message):
     r"""Result for a single billing setup mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

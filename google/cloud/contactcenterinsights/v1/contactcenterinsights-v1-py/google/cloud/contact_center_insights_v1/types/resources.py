@@ -66,6 +66,7 @@ __protobuf__ = proto.module(
 
 class Conversation(proto.Message):
     r"""The conversation resource.
+
     Attributes:
         call_metadata (google.cloud.contact_center_insights_v1.types.Conversation.CallMetadata):
             Call-specific metadata.
@@ -135,6 +136,7 @@ class Conversation(proto.Message):
 
     class CallMetadata(proto.Message):
         r"""Call-specific metadata.
+
         Attributes:
             customer_channel (int):
                 The audio channel that contains the customer.
@@ -153,6 +155,7 @@ class Conversation(proto.Message):
 
     class Transcript(proto.Message):
         r"""A message representing the transcript of a conversation.
+
         Attributes:
             transcript_segments (Sequence[google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment]):
                 A list of sequential transcript segments that
@@ -161,6 +164,7 @@ class Conversation(proto.Message):
 
         class TranscriptSegment(proto.Message):
             r"""A segment of a full transcript.
+
             Attributes:
                 message_time (google.protobuf.timestamp_pb2.Timestamp):
                     The time that the message occurred, if
@@ -196,6 +200,7 @@ class Conversation(proto.Message):
 
             class WordInfo(proto.Message):
                 r"""Word-level info for words in a transcript.
+
                 Attributes:
                     start_offset (google.protobuf.duration_pb2.Duration):
                         Time offset of the start of this word
@@ -390,6 +395,7 @@ class Conversation(proto.Message):
 
 class Analysis(proto.Message):
     r"""The analysis resource.
+
     Attributes:
         name (str):
             Immutable. The resource name of the analysis.
@@ -457,6 +463,7 @@ class ConversationDataSource(proto.Message):
 
 class GcsSource(proto.Message):
     r"""A Cloud Storage source of conversation data.
+
     Attributes:
         audio_uri (str):
             Cloud Storage URI that points to a file that
@@ -478,6 +485,7 @@ class GcsSource(proto.Message):
 
 class DialogflowSource(proto.Message):
     r"""A Dialogflow source of conversation data.
+
     Attributes:
         dialogflow_conversation (str):
             Output only. The name of the Dialogflow
@@ -501,6 +509,7 @@ class DialogflowSource(proto.Message):
 
 class AnalysisResult(proto.Message):
     r"""The result of an analysis.
+
     Attributes:
         call_analysis_metadata (google.cloud.contact_center_insights_v1.types.AnalysisResult.CallAnalysisMetadata):
             Call-specific metadata created by the
@@ -511,6 +520,7 @@ class AnalysisResult(proto.Message):
 
     class CallAnalysisMetadata(proto.Message):
         r"""Call-specific metadata created during analysis.
+
         Attributes:
             annotations (Sequence[google.cloud.contact_center_insights_v1.types.CallAnnotation]):
                 A list of call annotations that apply to this
@@ -578,6 +588,7 @@ class AnalysisResult(proto.Message):
 
 class IssueModelResult(proto.Message):
     r"""Issue Modeling result on a conversation.
+
     Attributes:
         issue_model (str):
             Issue model that generates the result.
@@ -598,6 +609,7 @@ class IssueModelResult(proto.Message):
 
 class ConversationLevelSentiment(proto.Message):
     r"""One channel of conversation-level sentiment data.
+
     Attributes:
         channel_tag (int):
             The channel of the audio that the data
@@ -619,6 +631,7 @@ class ConversationLevelSentiment(proto.Message):
 
 class IssueAssignment(proto.Message):
     r"""Information about the issue.
+
     Attributes:
         issue (str):
             Resource name of the assigned issue.
@@ -647,6 +660,7 @@ class IssueAssignment(proto.Message):
 
 class CallAnnotation(proto.Message):
     r"""A piece of metadata that applies to a window of a call.
+
     Attributes:
         interruption_data (google.cloud.contact_center_insights_v1.types.InterruptionData):
             Data specifying an interruption.
@@ -893,15 +907,18 @@ class DialogflowIntent(proto.Message):
 
 
 class InterruptionData(proto.Message):
-    r"""The data for an interruption annotation.    """
+    r"""The data for an interruption annotation.
+    """
 
 
 class SilenceData(proto.Message):
-    r"""The data for a silence annotation.    """
+    r"""The data for a silence annotation.
+    """
 
 
 class HoldData(proto.Message):
-    r"""The data for a hold annotation.    """
+    r"""The data for a hold annotation.
+    """
 
 
 class EntityMentionData(proto.Message):
@@ -962,6 +979,7 @@ class IntentMatchData(proto.Message):
 
 class SentimentData(proto.Message):
     r"""The data for a sentiment annotation.
+
     Attributes:
         magnitude (float):
             A non-negative number from 0 to infinity
@@ -984,6 +1002,7 @@ class SentimentData(proto.Message):
 
 class IssueModel(proto.Message):
     r"""The issue model resource.
+
     Attributes:
         name (str):
             Immutable. The resource name of the issue model. Format:
@@ -1016,6 +1035,7 @@ class IssueModel(proto.Message):
 
     class InputDataConfig(proto.Message):
         r"""Configs for the input data used to create the issue model.
+
         Attributes:
             medium (google.cloud.contact_center_insights_v1.types.Conversation.Medium):
                 Medium of conversations used in training data. This field is
@@ -1081,6 +1101,7 @@ class IssueModel(proto.Message):
 
 class Issue(proto.Message):
     r"""The issue resource.
+
     Attributes:
         name (str):
             Immutable. The resource name of the issue. Format:
@@ -1117,6 +1138,7 @@ class Issue(proto.Message):
 
 class IssueModelLabelStats(proto.Message):
     r"""Aggregated statistics about an issue model.
+
     Attributes:
         analyzed_conversations_count (int):
             Number of conversations the issue model has
@@ -1131,6 +1153,7 @@ class IssueModelLabelStats(proto.Message):
 
     class IssueStats(proto.Message):
         r"""Aggregated statistics about an issue.
+
         Attributes:
             issue (str):
                 Issue resource. Format:
@@ -1167,6 +1190,7 @@ class IssueModelLabelStats(proto.Message):
 
 class PhraseMatcher(proto.Message):
     r"""The phrase matcher resource.
+
     Attributes:
         name (str):
             The resource name of the phrase matcher. Format:
@@ -1270,6 +1294,7 @@ class PhraseMatcher(proto.Message):
 
 class PhraseMatchRuleGroup(proto.Message):
     r"""A message representing a rule in the phrase matcher.
+
     Attributes:
         type_ (google.cloud.contact_center_insights_v1.types.PhraseMatchRuleGroup.PhraseMatchRuleGroupType):
             Required. The type of this phrase match rule
@@ -1300,6 +1325,7 @@ class PhraseMatchRuleGroup(proto.Message):
 
 class PhraseMatchRule(proto.Message):
     r"""The data for a phrase match rule.
+
     Attributes:
         query (str):
             Required. The phrase to be matched.
@@ -1329,6 +1355,7 @@ class PhraseMatchRule(proto.Message):
 
 class PhraseMatchRuleConfig(proto.Message):
     r"""Configuration information of a phrase match rule.
+
     Attributes:
         exact_match_config (google.cloud.contact_center_insights_v1.types.ExactMatchConfig):
             The configuration for the exact match rule.
@@ -1344,6 +1371,7 @@ class PhraseMatchRuleConfig(proto.Message):
 
 class ExactMatchConfig(proto.Message):
     r"""Exact match configuration.
+
     Attributes:
         case_sensitive (bool):
             Whether to consider case sensitivity when
@@ -1358,6 +1386,7 @@ class ExactMatchConfig(proto.Message):
 
 class Settings(proto.Message):
     r"""The settings resource.
+
     Attributes:
         name (str):
             Immutable. The resource name of the settings
@@ -1409,6 +1438,7 @@ class Settings(proto.Message):
 
     class AnalysisConfig(proto.Message):
         r"""Default configuration when creating Analyses in Insights.
+
         Attributes:
             runtime_integration_analysis_percentage (float):
                 Percentage of conversations created using Dialogflow runtime
@@ -1582,6 +1612,7 @@ class AnswerFeedback(proto.Message):
 
 class ArticleSuggestionData(proto.Message):
     r"""Agent Assist Article Suggestion data.
+
     Attributes:
         title (str):
             Article title.
@@ -1634,6 +1665,7 @@ class ArticleSuggestionData(proto.Message):
 
 class FaqAnswerData(proto.Message):
     r"""Agent Assist frequently-asked-question answer data.
+
     Attributes:
         answer (str):
             The piece of text from the ``source`` knowledge base
@@ -1686,6 +1718,7 @@ class FaqAnswerData(proto.Message):
 
 class SmartReplyData(proto.Message):
     r"""Agent Assist Smart Reply data.
+
     Attributes:
         reply (str):
             The content of the reply.
@@ -1723,6 +1756,7 @@ class SmartReplyData(proto.Message):
 
 class SmartComposeSuggestionData(proto.Message):
     r"""Agent Assist Smart Compose suggestion data.
+
     Attributes:
         suggestion (str):
             The content of the suggestion.
@@ -1761,6 +1795,7 @@ class SmartComposeSuggestionData(proto.Message):
 
 class DialogflowInteractionData(proto.Message):
     r"""Dialogflow interaction data.
+
     Attributes:
         dialogflow_intent_id (str):
             The Dialogflow intent resource path. Format:
@@ -1783,6 +1818,7 @@ class DialogflowInteractionData(proto.Message):
 
 class ConversationParticipant(proto.Message):
     r"""The call participant speaking for a given utterance.
+
     Attributes:
         dialogflow_participant_name (str):
             The name of the participant provided by

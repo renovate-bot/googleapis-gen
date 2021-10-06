@@ -47,6 +47,7 @@ __protobuf__ = proto.module(
 
 class NetworkConfig(proto.Message):
     r"""Network configuration for the instance.
+
     Attributes:
         network (str):
             The name of the Google Compute Engine `VPC
@@ -96,6 +97,7 @@ class NetworkConfig(proto.Message):
 
 class FileShareConfig(proto.Message):
     r"""File share configuration for the instance.
+
     Attributes:
         name (str):
             The name of the file share (must be 16
@@ -135,6 +137,7 @@ class FileShareConfig(proto.Message):
 
 class NfsExportOptions(proto.Message):
     r"""NFS export options specifications.
+
     Attributes:
         ip_ranges (Sequence[str]):
             List of either an IPv4 addresses in the format
@@ -202,6 +205,7 @@ class NfsExportOptions(proto.Message):
 
 class Instance(proto.Message):
     r"""A Cloud Filestore instance.
+
     Attributes:
         name (str):
             Output only. The resource name of the instance, in the
@@ -312,6 +316,7 @@ class Instance(proto.Message):
 
 class CreateInstanceRequest(proto.Message):
     r"""CreateInstanceRequest creates an instance.
+
     Attributes:
         parent (str):
             Required. The instance's project and location, in the format
@@ -344,6 +349,7 @@ class CreateInstanceRequest(proto.Message):
 
 class GetInstanceRequest(proto.Message):
     r"""GetInstanceRequest gets the state of an instance.
+
     Attributes:
         name (str):
             Required. The instance resource name, in the format
@@ -358,6 +364,7 @@ class GetInstanceRequest(proto.Message):
 
 class UpdateInstanceRequest(proto.Message):
     r"""UpdateInstanceRequest updates the settings of an instance.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Mask of fields to update. At least one path must be supplied
@@ -417,6 +424,7 @@ class RestoreInstanceRequest(proto.Message):
 
 class DeleteInstanceRequest(proto.Message):
     r"""DeleteInstanceRequest deletes an instance.
+
     Attributes:
         name (str):
             Required. The instance resource name, in the format
@@ -431,6 +439,7 @@ class DeleteInstanceRequest(proto.Message):
 
 class ListInstancesRequest(proto.Message):
     r"""ListInstancesRequest lists instances.
+
     Attributes:
         parent (str):
             Required. The project and location for which to retrieve
@@ -475,6 +484,7 @@ class ListInstancesRequest(proto.Message):
 
 class ListInstancesResponse(proto.Message):
     r"""ListInstancesResponse is the result of ListInstancesRequest.
+
     Attributes:
         instances (Sequence[google.cloud.filestore_v1.types.Instance]):
             A list of instances in the project for the specified
@@ -514,6 +524,7 @@ class ListInstancesResponse(proto.Message):
 
 class Backup(proto.Message):
     r"""A Cloud Filestore backup.
+
     Attributes:
         name (str):
             Output only. The resource name of the backup, in the format
@@ -625,6 +636,7 @@ class Backup(proto.Message):
 
 class CreateBackupRequest(proto.Message):
     r"""CreateBackupRequest creates a backup.
+
     Attributes:
         parent (str):
             Required. The backup's project and location, in the format
@@ -661,6 +673,7 @@ class CreateBackupRequest(proto.Message):
 
 class DeleteBackupRequest(proto.Message):
     r"""DeleteBackupRequest deletes a backup.
+
     Attributes:
         name (str):
             Required. The backup resource name, in the format
@@ -700,6 +713,7 @@ class UpdateBackupRequest(proto.Message):
 
 class GetBackupRequest(proto.Message):
     r"""GetBackupRequest gets the state of a backup.
+
     Attributes:
         name (str):
             Required. The backup resource name, in the format
@@ -714,6 +728,7 @@ class GetBackupRequest(proto.Message):
 
 class ListBackupsRequest(proto.Message):
     r"""ListBackupsRequest lists backups.
+
     Attributes:
         parent (str):
             Required. The project and location for which to retrieve
@@ -758,6 +773,7 @@ class ListBackupsRequest(proto.Message):
 
 class ListBackupsResponse(proto.Message):
     r"""ListBackupsResponse is the result of ListBackupsRequest.
+
     Attributes:
         backups (Sequence[google.cloud.filestore_v1.types.Backup]):
             A list of backups in the project for the specified location.

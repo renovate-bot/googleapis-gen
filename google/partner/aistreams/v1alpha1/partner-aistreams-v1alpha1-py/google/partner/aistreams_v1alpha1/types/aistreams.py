@@ -43,6 +43,7 @@ __protobuf__ = proto.module(
 
 class Cluster(proto.Message):
     r"""Cluster resource.
+
     Attributes:
         name (str):
             The name of the cluster. The format of
@@ -96,6 +97,7 @@ class Cluster(proto.Message):
 
 class ListClustersRequest(proto.Message):
     r"""Request message for 'ListClusters'.
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -138,6 +140,7 @@ class ListClustersRequest(proto.Message):
 
 class ListClustersResponse(proto.Message):
     r"""Response message from 'ListClusters'.
+
     Attributes:
         clusters (Sequence[google.partner.aistreams_v1alpha1.types.Cluster]):
             List of clusters.
@@ -170,6 +173,7 @@ class ListClustersResponse(proto.Message):
 
 class GetClusterRequest(proto.Message):
     r"""Request message for 'GetCluster'.
+
     Attributes:
         name (str):
             Required. The name of the Cluster resource to
@@ -184,6 +188,7 @@ class GetClusterRequest(proto.Message):
 
 class CreateClusterRequest(proto.Message):
     r"""Request message for 'CreateCluster'.
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -233,6 +238,7 @@ class CreateClusterRequest(proto.Message):
 
 class UpdateClusterRequest(proto.Message):
     r"""Request message for 'UpdateCluster'.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the fields to be
@@ -281,6 +287,7 @@ class UpdateClusterRequest(proto.Message):
 
 class DeleteClusterRequest(proto.Message):
     r"""Request message for 'DeleteCluster'.
+
     Attributes:
         name (str):
             Required. The name of cluster to delete.
@@ -316,6 +323,7 @@ class DeleteClusterRequest(proto.Message):
 
 class Stream(proto.Message):
     r"""Stream resource.
+
     Attributes:
         name (str):
             The name of the stream. The format for the
@@ -354,6 +362,7 @@ class Stream(proto.Message):
 
 class ListStreamsRequest(proto.Message):
     r"""Request message for 'ListStreams'.
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -396,6 +405,7 @@ class ListStreamsRequest(proto.Message):
 
 class ListStreamsResponse(proto.Message):
     r"""Response message from 'ListStreams'.
+
     Attributes:
         streams (Sequence[google.partner.aistreams_v1alpha1.types.Stream]):
             List of the streams.
@@ -428,6 +438,7 @@ class ListStreamsResponse(proto.Message):
 
 class GetStreamRequest(proto.Message):
     r"""Request message for 'GetStream'.
+
     Attributes:
         name (str):
             Required. The name of the stream.
@@ -441,6 +452,7 @@ class GetStreamRequest(proto.Message):
 
 class CreateStreamRequest(proto.Message):
     r"""Request message for 'CreateStream'.
+
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -490,6 +502,7 @@ class CreateStreamRequest(proto.Message):
 
 class UpdateStreamRequest(proto.Message):
     r"""Request message for 'UpdateStream'.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the fields to be
@@ -538,6 +551,7 @@ class UpdateStreamRequest(proto.Message):
 
 class DeleteStreamRequest(proto.Message):
     r"""Request message for 'DeleteStream'.
+
     Attributes:
         name (str):
             Required. The name of the stream.
@@ -573,6 +587,7 @@ class DeleteStreamRequest(proto.Message):
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was

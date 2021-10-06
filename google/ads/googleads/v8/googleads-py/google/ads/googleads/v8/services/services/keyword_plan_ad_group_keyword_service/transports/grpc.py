@@ -197,6 +197,9 @@ class KeywordPlanAdGroupKeywordServiceGrpcTransport(KeywordPlanAdGroupKeywordSer
             **kwargs
         )
 
+    def close(self):
+        self.grpc_channel.close()
+
     @property
     def grpc_channel(self) -> grpc.Channel:
         """Return the channel designed to connect to this service.

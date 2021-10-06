@@ -48,6 +48,7 @@ __protobuf__ = proto.module(
 
 class ImportDataOperationResponse(proto.Message):
     r"""Response used for ImportData longrunning operation.
+
     Attributes:
         dataset (str):
             Ouptut only. The name of imported dataset.
@@ -75,6 +76,7 @@ class ImportDataOperationResponse(proto.Message):
 
 class ExportDataOperationResponse(proto.Message):
     r"""Response used for ExportDataset longrunning operation.
+
     Attributes:
         dataset (str):
             Ouptut only. The name of dataset. "projects/*/datasets/*".
@@ -117,6 +119,7 @@ class ExportDataOperationResponse(proto.Message):
 
 class ImportDataOperationMetadata(proto.Message):
     r"""Metadata of an ImportData operation.
+
     Attributes:
         dataset (str):
             Output only. The name of imported dataset.
@@ -149,6 +152,7 @@ class ImportDataOperationMetadata(proto.Message):
 
 class ExportDataOperationMetadata(proto.Message):
     r"""Metadata of an ExportData operation.
+
     Attributes:
         dataset (str):
             Output only. The name of dataset to be exported.
@@ -320,6 +324,7 @@ class LabelOperationMetadata(proto.Message):
 
 class LabelImageClassificationOperationMetadata(proto.Message):
     r"""Metadata of a LabelImageClassification operation.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -335,6 +340,7 @@ class LabelImageClassificationOperationMetadata(proto.Message):
 
 class LabelImageBoundingBoxOperationMetadata(proto.Message):
     r"""Details of a LabelImageBoundingBox operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -366,6 +372,7 @@ class LabelImageOrientedBoundingBoxOperationMetadata(proto.Message):
 
 class LabelImageBoundingPolyOperationMetadata(proto.Message):
     r"""Details of LabelImageBoundingPoly operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -381,6 +388,7 @@ class LabelImageBoundingPolyOperationMetadata(proto.Message):
 
 class LabelImagePolylineOperationMetadata(proto.Message):
     r"""Details of LabelImagePolyline operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -396,6 +404,7 @@ class LabelImagePolylineOperationMetadata(proto.Message):
 
 class LabelImageSegmentationOperationMetadata(proto.Message):
     r"""Details of a LabelImageSegmentation operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config.
@@ -410,6 +419,7 @@ class LabelImageSegmentationOperationMetadata(proto.Message):
 
 class LabelVideoClassificationOperationMetadata(proto.Message):
     r"""Details of a LabelVideoClassification operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -425,6 +435,7 @@ class LabelVideoClassificationOperationMetadata(proto.Message):
 
 class LabelVideoObjectDetectionOperationMetadata(proto.Message):
     r"""Details of a LabelVideoObjectDetection operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -440,6 +451,7 @@ class LabelVideoObjectDetectionOperationMetadata(proto.Message):
 
 class LabelVideoObjectTrackingOperationMetadata(proto.Message):
     r"""Details of a LabelVideoObjectTracking operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -455,6 +467,7 @@ class LabelVideoObjectTrackingOperationMetadata(proto.Message):
 
 class LabelVideoEventOperationMetadata(proto.Message):
     r"""Details of a LabelVideoEvent operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -470,6 +483,7 @@ class LabelVideoEventOperationMetadata(proto.Message):
 
 class LabelTextClassificationOperationMetadata(proto.Message):
     r"""Details of a LabelTextClassification operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -485,6 +499,7 @@ class LabelTextClassificationOperationMetadata(proto.Message):
 
 class LabelTextEntityExtractionOperationMetadata(proto.Message):
     r"""Details of a LabelTextEntityExtraction operation metadata.
+
     Attributes:
         basic_config (google.cloud.datalabeling_v1beta1.types.HumanAnnotationConfig):
             Basic human annotation config used in
@@ -500,6 +515,7 @@ class LabelTextEntityExtractionOperationMetadata(proto.Message):
 
 class CreateInstructionMetadata(proto.Message):
     r"""Metadata of a CreateInstruction operation.
+
     Attributes:
         instruction (str):
             The name of the created Instruction.

@@ -156,6 +156,7 @@ class OrderedBuildEvent(proto.Message):
 
 class PublishBuildToolEventStreamRequest(proto.Message):
     r"""Streaming request message for PublishBuildToolEventStream.
+
     Attributes:
         ordered_build_event (google.devtools.build_v1.types.OrderedBuildEvent):
             Required. The build event with position info.

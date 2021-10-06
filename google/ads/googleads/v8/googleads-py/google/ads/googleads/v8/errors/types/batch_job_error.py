@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class BatchJobErrorEnum(proto.Message):
-    r"""Container for enum describing possible batch job errors.    """
+    r"""Container for enum describing possible batch job errors.
+    """
     class BatchJobError(proto.Enum):
         r"""Enum describing possible request errors."""
         UNSPECIFIED = 0

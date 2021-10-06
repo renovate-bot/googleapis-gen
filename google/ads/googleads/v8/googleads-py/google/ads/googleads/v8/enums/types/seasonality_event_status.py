@@ -29,7 +29,8 @@ class SeasonalityEventStatusEnum(proto.Message):
     r"""Message describing seasonality event statuses. The two types
     of seasonality events are BiddingSeasonalityAdjustments and
     BiddingDataExclusions.
-        """
+
+    """
     class SeasonalityEventStatus(proto.Enum):
         r"""The possible statuses of a Seasonality Event."""
         UNSPECIFIED = 0

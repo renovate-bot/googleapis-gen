@@ -29,7 +29,8 @@ class JobPlaceholderFieldEnum(proto.Message):
     r"""Values for Job placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-        """
+
+    """
     class JobPlaceholderField(proto.Enum):
         r"""Possible values for Job placeholder fields."""
         UNSPECIFIED = 0

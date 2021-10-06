@@ -299,6 +299,9 @@ class DocumentUnderstandingServiceGrpcAsyncIOTransport(DocumentUnderstandingServ
             )
         return self._stubs['process_document']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'DocumentUnderstandingServiceGrpcAsyncIOTransport',

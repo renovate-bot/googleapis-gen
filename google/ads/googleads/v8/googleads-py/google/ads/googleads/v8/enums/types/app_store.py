@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class AppStoreEnum(proto.Message):
     r"""Container for enum describing app store type in an app
     extension.
-        """
+
+    """
     class AppStore(proto.Enum):
         r"""App store type in an app extension."""
         UNSPECIFIED = 0

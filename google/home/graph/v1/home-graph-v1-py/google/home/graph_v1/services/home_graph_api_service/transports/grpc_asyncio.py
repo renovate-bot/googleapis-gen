@@ -410,6 +410,9 @@ class HomeGraphApiServiceGrpcAsyncIOTransport(HomeGraphApiServiceTransport):
             )
         return self._stubs['sync']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'HomeGraphApiServiceGrpcAsyncIOTransport',

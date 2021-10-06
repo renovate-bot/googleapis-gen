@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class IncomeRangeTypeEnum(proto.Message):
     r"""Container for enum describing the type of demographic income
     ranges.
-        """
+
+    """
     class IncomeRangeType(proto.Enum):
         r"""The type of demographic income ranges (e.g. between 0% to
         50%).

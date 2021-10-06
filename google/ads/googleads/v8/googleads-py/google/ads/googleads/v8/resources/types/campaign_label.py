@@ -27,6 +27,7 @@ __protobuf__ = proto.module(
 
 class CampaignLabel(proto.Message):
     r"""Represents a relationship between a campaign and a label.
+
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. Campaign label resource

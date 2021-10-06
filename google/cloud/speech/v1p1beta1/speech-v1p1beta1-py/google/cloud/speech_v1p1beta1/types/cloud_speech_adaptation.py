@@ -40,6 +40,7 @@ __protobuf__ = proto.module(
 
 class CreatePhraseSetRequest(proto.Message):
     r"""Message sent by the client for the ``CreatePhraseSet`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource where this phrase set will be
@@ -73,6 +74,7 @@ class CreatePhraseSetRequest(proto.Message):
 
 class UpdatePhraseSetRequest(proto.Message):
     r"""Message sent by the client for the ``UpdatePhraseSet`` method.
+
     Attributes:
         phrase_set (google.cloud.speech_v1p1beta1.types.PhraseSet):
             Required. The phrase set to update.
@@ -98,6 +100,7 @@ class UpdatePhraseSetRequest(proto.Message):
 
 class GetPhraseSetRequest(proto.Message):
     r"""Message sent by the client for the ``GetPhraseSet`` method.
+
     Attributes:
         name (str):
             Required. The name of the phrase set to retrieve. Format:
@@ -112,6 +115,7 @@ class GetPhraseSetRequest(proto.Message):
 
 class ListPhraseSetRequest(proto.Message):
     r"""Message sent by the client for the ``ListPhraseSet`` method.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this
@@ -148,6 +152,7 @@ class ListPhraseSetRequest(proto.Message):
 
 class ListPhraseSetResponse(proto.Message):
     r"""Message returned to the client by the ``ListPhraseSet`` method.
+
     Attributes:
         phrase_sets (Sequence[google.cloud.speech_v1p1beta1.types.PhraseSet]):
             The phrase set.
@@ -174,6 +179,7 @@ class ListPhraseSetResponse(proto.Message):
 
 class DeletePhraseSetRequest(proto.Message):
     r"""Message sent by the client for the ``DeletePhraseSet`` method.
+
     Attributes:
         name (str):
             Required. The name of the phrase set to delete. Format:
@@ -188,6 +194,7 @@ class DeletePhraseSetRequest(proto.Message):
 
 class CreateCustomClassRequest(proto.Message):
     r"""Message sent by the client for the ``CreateCustomClass`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource where this custom class will
@@ -221,6 +228,7 @@ class CreateCustomClassRequest(proto.Message):
 
 class UpdateCustomClassRequest(proto.Message):
     r"""Message sent by the client for the ``UpdateCustomClass`` method.
+
     Attributes:
         custom_class (google.cloud.speech_v1p1beta1.types.CustomClass):
             Required. The custom class to update.
@@ -246,6 +254,7 @@ class UpdateCustomClassRequest(proto.Message):
 
 class GetCustomClassRequest(proto.Message):
     r"""Message sent by the client for the ``GetCustomClass`` method.
+
     Attributes:
         name (str):
             Required. The name of the custom class to retrieve. Format:
@@ -260,6 +269,7 @@ class GetCustomClassRequest(proto.Message):
 
 class ListCustomClassesRequest(proto.Message):
     r"""Message sent by the client for the ``ListCustomClasses`` method.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this collection of custom
@@ -296,6 +306,7 @@ class ListCustomClassesRequest(proto.Message):
 
 class ListCustomClassesResponse(proto.Message):
     r"""Message returned to the client by the ``ListCustomClasses`` method.
+
     Attributes:
         custom_classes (Sequence[google.cloud.speech_v1p1beta1.types.CustomClass]):
             The custom classes.
@@ -322,6 +333,7 @@ class ListCustomClassesResponse(proto.Message):
 
 class DeleteCustomClassRequest(proto.Message):
     r"""Message sent by the client for the ``DeleteCustomClass`` method.
+
     Attributes:
         name (str):
             Required. The name of the custom class to delete. Format:

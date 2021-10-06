@@ -966,6 +966,8 @@ class TensorboardServiceGrpcTransport(TensorboardServiceTransport):
             )
         return self._stubs['export_tensorboard_time_series_data']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'TensorboardServiceGrpcTransport',

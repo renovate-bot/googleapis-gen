@@ -28,6 +28,7 @@ __protobuf__ = proto.module(
 
 class MembershipState(proto.Message):
     r"""**Metering**: Per-Membership Feature State.
+
     Attributes:
         last_measurement_time (google.protobuf.timestamp_pb2.Timestamp):
             The time stamp of the most recent measurement

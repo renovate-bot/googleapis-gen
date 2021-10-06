@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class InteractionEventTypeEnum(proto.Message):
     r"""Container for enum describing types of payable and free
     interactions.
-        """
+
+    """
     class InteractionEventType(proto.Enum):
         r"""Enum describing possible types of payable and free
         interactions.

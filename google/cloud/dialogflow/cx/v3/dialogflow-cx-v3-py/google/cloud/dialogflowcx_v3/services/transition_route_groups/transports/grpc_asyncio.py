@@ -375,6 +375,9 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
             )
         return self._stubs['delete_transition_route_group']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'TransitionRouteGroupsGrpcAsyncIOTransport',

@@ -1024,6 +1024,7 @@ class ListenResponse(proto.Message):
 
 class Target(proto.Message):
     r"""A specification of a set of documents to listen to.
+
     Attributes:
         query (google.cloud.firestore_v1.types.Target.QueryTarget):
             A target specified by a query.
@@ -1053,6 +1054,7 @@ class Target(proto.Message):
 
     class DocumentsTarget(proto.Message):
         r"""A target specified by a set of documents names.
+
         Attributes:
             documents (Sequence[str]):
                 The names of the documents to retrieve. In the format:
@@ -1069,6 +1071,7 @@ class Target(proto.Message):
 
     class QueryTarget(proto.Message):
         r"""A target specified by a query.
+
         Attributes:
             parent (str):
                 The parent resource name. In the format:
@@ -1128,6 +1131,7 @@ class Target(proto.Message):
 
 class TargetChange(proto.Message):
     r"""Targets being watched have changed.
+
     Attributes:
         target_change_type (google.cloud.firestore_v1.types.TargetChange.TargetChangeType):
             The type of change that occurred.

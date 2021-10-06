@@ -81,6 +81,7 @@ class MutateCustomerClientLinkRequest(proto.Message):
 
 class CustomerClientLinkOperation(proto.Message):
     r"""A single operation (create, update) on a CustomerClientLink.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -114,6 +115,7 @@ class CustomerClientLinkOperation(proto.Message):
 
 class MutateCustomerClientLinkResponse(proto.Message):
     r"""Response message for a CustomerClientLink mutate.
+
     Attributes:
         result (google.ads.googleads.v8.services.types.MutateCustomerClientLinkResult):
             A result that identifies the resource
@@ -129,6 +131,7 @@ class MutateCustomerClientLinkResponse(proto.Message):
 
 class MutateCustomerClientLinkResult(proto.Message):
     r"""The result for a single customer client link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

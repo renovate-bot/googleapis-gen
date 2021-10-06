@@ -109,6 +109,7 @@ class AdGroupAdAssetView(proto.Message):
 
 class AdGroupAdAssetPolicySummary(proto.Message):
     r"""Contains policy information for an ad group ad asset.
+
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v7.common.types.PolicyTopicEntry]):
             Output only. The list of policy findings for

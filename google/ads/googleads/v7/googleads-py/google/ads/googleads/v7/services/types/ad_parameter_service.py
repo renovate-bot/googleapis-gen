@@ -102,6 +102,7 @@ class MutateAdParametersRequest(proto.Message):
 
 class AdParameterOperation(proto.Message):
     r"""A single operation (create, update, remove) on ad parameter.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -145,6 +146,7 @@ class AdParameterOperation(proto.Message):
 
 class MutateAdParametersResponse(proto.Message):
     r"""Response message for an ad parameter mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -170,6 +172,7 @@ class MutateAdParametersResponse(proto.Message):
 
 class MutateAdParameterResult(proto.Message):
     r"""The result for the ad parameter mutate.
+
     Attributes:
         resource_name (str):
             The resource name returned for successful

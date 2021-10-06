@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class UserInterestTaxonomyTypeEnum(proto.Message):
-    r"""Message describing a UserInterestTaxonomyType.    """
+    r"""Message describing a UserInterestTaxonomyType.
+    """
     class UserInterestTaxonomyType(proto.Enum):
         r"""Enum containing the possible UserInterestTaxonomyTypes."""
         UNSPECIFIED = 0

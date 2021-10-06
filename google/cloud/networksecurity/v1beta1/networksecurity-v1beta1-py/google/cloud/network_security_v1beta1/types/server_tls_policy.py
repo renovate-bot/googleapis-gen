@@ -81,6 +81,7 @@ class ServerTlsPolicy(proto.Message):
 
     class MTLSPolicy(proto.Message):
         r"""Specification of the MTLSPolicy.
+
         Attributes:
             client_validation_ca (Sequence[google.cloud.network_security_v1beta1.types.ValidationCA]):
                 Required. Defines the mechanism to obtain the
@@ -135,6 +136,7 @@ class ServerTlsPolicy(proto.Message):
 
 class ListServerTlsPoliciesRequest(proto.Message):
     r"""Request used by the ListServerTlsPolicies method.
+
     Attributes:
         parent (str):
             Required. The project and location from which the
@@ -166,6 +168,7 @@ class ListServerTlsPoliciesRequest(proto.Message):
 
 class ListServerTlsPoliciesResponse(proto.Message):
     r"""Response returned by the ListServerTlsPolicies method.
+
     Attributes:
         server_tls_policies (Sequence[google.cloud.network_security_v1beta1.types.ServerTlsPolicy]):
             List of ServerTlsPolicy resources.
@@ -193,6 +196,7 @@ class ListServerTlsPoliciesResponse(proto.Message):
 
 class GetServerTlsPolicyRequest(proto.Message):
     r"""Request used by the GetServerTlsPolicy method.
+
     Attributes:
         name (str):
             Required. A name of the ServerTlsPolicy to get. Must be in
@@ -208,6 +212,7 @@ class GetServerTlsPolicyRequest(proto.Message):
 
 class CreateServerTlsPolicyRequest(proto.Message):
     r"""Request used by the CreateServerTlsPolicy method.
+
     Attributes:
         parent (str):
             Required. The parent resource of the ServerTlsPolicy. Must
@@ -240,6 +245,7 @@ class CreateServerTlsPolicyRequest(proto.Message):
 
 class UpdateServerTlsPolicyRequest(proto.Message):
     r"""Request used by UpdateServerTlsPolicy method.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. Field mask is used to specify the fields to be
@@ -266,6 +272,7 @@ class UpdateServerTlsPolicyRequest(proto.Message):
 
 class DeleteServerTlsPolicyRequest(proto.Message):
     r"""Request used by the DeleteServerTlsPolicy method.
+
     Attributes:
         name (str):
             Required. A name of the ServerTlsPolicy to delete. Must be

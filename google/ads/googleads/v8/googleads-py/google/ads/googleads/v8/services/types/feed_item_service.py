@@ -102,6 +102,7 @@ class MutateFeedItemsRequest(proto.Message):
 
 class FeedItemOperation(proto.Message):
     r"""A single operation (create, update, remove) on an feed item.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -145,6 +146,7 @@ class FeedItemOperation(proto.Message):
 
 class MutateFeedItemsResponse(proto.Message):
     r"""Response message for an feed item mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -170,6 +172,7 @@ class MutateFeedItemsResponse(proto.Message):
 
 class MutateFeedItemResult(proto.Message):
     r"""The result for the feed item mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

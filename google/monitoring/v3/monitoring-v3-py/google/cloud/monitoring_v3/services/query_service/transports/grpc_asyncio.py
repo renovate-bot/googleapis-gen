@@ -253,6 +253,9 @@ class QueryServiceGrpcAsyncIOTransport(QueryServiceTransport):
             )
         return self._stubs['query_time_series']
 
+    def close(self):
+        return self.grpc_channel.close()
+
 
 __all__ = (
     'QueryServiceGrpcAsyncIOTransport',

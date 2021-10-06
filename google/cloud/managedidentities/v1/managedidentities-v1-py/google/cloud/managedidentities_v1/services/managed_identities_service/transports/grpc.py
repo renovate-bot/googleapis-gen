@@ -536,6 +536,8 @@ class ManagedIdentitiesServiceGrpcTransport(ManagedIdentitiesServiceTransport):
             )
         return self._stubs['validate_trust']
 
+    def close(self):
+        self.grpc_channel.close()
 
 __all__ = (
     'ManagedIdentitiesServiceGrpcTransport',

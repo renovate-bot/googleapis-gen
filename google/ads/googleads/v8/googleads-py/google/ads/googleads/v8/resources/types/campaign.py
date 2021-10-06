@@ -51,6 +51,7 @@ __protobuf__ = proto.module(
 
 class Campaign(proto.Message):
     r"""A campaign.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign. Campaign
@@ -259,6 +260,7 @@ class Campaign(proto.Message):
 
     class NetworkSettings(proto.Message):
         r"""The network settings for the campaign.
+
         Attributes:
             target_google_search (bool):
                 Whether ads will be served with google.com
@@ -301,6 +303,7 @@ class Campaign(proto.Message):
 
     class HotelSettingInfo(proto.Message):
         r"""Campaign-level settings for hotel ads.
+
         Attributes:
             hotel_center_id (int):
                 Immutable. The linked Hotel Center account.
@@ -314,6 +317,7 @@ class Campaign(proto.Message):
 
     class TrackingSetting(proto.Message):
         r"""Campaign-level settings for tracking information.
+
         Attributes:
             tracking_url (str):
                 Output only. The url used for dynamic
@@ -344,6 +348,7 @@ class Campaign(proto.Message):
 
     class DynamicSearchAdsSetting(proto.Message):
         r"""The setting for controlling Dynamic Search Ads (DSA).
+
         Attributes:
             domain_name (str):
                 Required. The Internet domain name that this
@@ -429,6 +434,7 @@ class Campaign(proto.Message):
 
     class VanityPharma(proto.Message):
         r"""Describes how unbranded pharma ads will be displayed.
+
         Attributes:
             vanity_pharma_display_url_mode (google.ads.googleads.v8.enums.types.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode):
                 The display mode for vanity pharma URLs.
@@ -476,6 +482,7 @@ class Campaign(proto.Message):
 
     class LocalCampaignSetting(proto.Message):
         r"""Campaign setting for local campaigns.
+
         Attributes:
             location_source_type (google.ads.googleads.v8.enums.types.LocationSourceTypeEnum.LocationSourceType):
                 The location source type for this local
@@ -490,6 +497,7 @@ class Campaign(proto.Message):
 
     class AppCampaignSetting(proto.Message):
         r"""Campaign-level settings for App Campaigns.
+
         Attributes:
             bidding_strategy_goal_type (google.ads.googleads.v8.enums.types.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType):
                 Represents the goal which the bidding

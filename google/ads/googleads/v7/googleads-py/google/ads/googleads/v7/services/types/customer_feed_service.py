@@ -147,6 +147,7 @@ class CustomerFeedOperation(proto.Message):
 
 class MutateCustomerFeedsResponse(proto.Message):
     r"""Response message for a customer feed mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -172,6 +173,7 @@ class MutateCustomerFeedsResponse(proto.Message):
 
 class MutateCustomerFeedResult(proto.Message):
     r"""The result for the customer feed mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.

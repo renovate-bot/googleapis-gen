@@ -26,7 +26,8 @@ __protobuf__ = proto.module(
 
 
 class AdStrengthEnum(proto.Message):
-    r"""Container for enum describing possible ad strengths.    """
+    r"""Container for enum describing possible ad strengths.
+    """
     class AdStrength(proto.Enum):
         r"""Enum listing the possible ad strengths."""
         UNSPECIFIED = 0

@@ -34,6 +34,7 @@ __protobuf__ = proto.module(
 
 class BundledQuery(proto.Message):
     r"""Encodes a query saved in the bundle.
+
     Attributes:
         parent (str):
             The parent resource name.
@@ -104,6 +105,7 @@ class NamedQuery(proto.Message):
 
 class BundledDocumentMetadata(proto.Message):
     r"""Metadata describing a Firestore document saved in the bundle.
+
     Attributes:
         name (str):
             The document key of a bundled document.
@@ -138,6 +140,7 @@ class BundledDocumentMetadata(proto.Message):
 
 class BundleMetadata(proto.Message):
     r"""Metadata describing the bundle file/stream.
+
     Attributes:
         id (str):
             The ID of the bundle.

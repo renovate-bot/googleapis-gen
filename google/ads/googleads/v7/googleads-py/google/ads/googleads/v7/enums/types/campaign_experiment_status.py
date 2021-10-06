@@ -28,7 +28,8 @@ __protobuf__ = proto.module(
 class CampaignExperimentStatusEnum(proto.Message):
     r"""Container for enum describing possible statuses of a campaign
     experiment.
-        """
+
+    """
     class CampaignExperimentStatus(proto.Enum):
         r"""Possible statuses of a campaign experiment."""
         UNSPECIFIED = 0
