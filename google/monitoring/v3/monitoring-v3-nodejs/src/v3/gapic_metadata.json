@@ -185,6 +185,11 @@
                 "createTimeSeries"
               ]
             },
+            "CreateServiceTimeSeries": {
+              "methods": [
+                "createServiceTimeSeries"
+              ]
+            },
             "ListMonitoredResourceDescriptors": {
               "methods": [
                 "listMonitoredResourceDescriptors",
@@ -234,6 +239,11 @@
             "CreateTimeSeries": {
               "methods": [
                 "createTimeSeries"
+              ]
+            },
+            "CreateServiceTimeSeries": {
+              "methods": [
+                "createServiceTimeSeries"
               ]
             },
             "ListMonitoredResourceDescriptors": {

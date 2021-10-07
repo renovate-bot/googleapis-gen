@@ -309,7 +309,7 @@ export class MetricServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const metricServiceStubMethods =
-        ['listMonitoredResourceDescriptors', 'getMonitoredResourceDescriptor', 'listMetricDescriptors', 'getMetricDescriptor', 'createMetricDescriptor', 'deleteMetricDescriptor', 'listTimeSeries', 'createTimeSeries'];
+        ['listMonitoredResourceDescriptors', 'getMonitoredResourceDescriptor', 'listMetricDescriptors', 'getMetricDescriptor', 'createMetricDescriptor', 'deleteMetricDescriptor', 'listTimeSeries', 'createTimeSeries', 'createServiceTimeSeries'];
     for (const methodName of metricServiceStubMethods) {
       const callPromise = this.metricServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -569,6 +569,8 @@ export class MetricServiceClient {
           {}|null|undefined>): void;
 /**
  * Creates a new metric descriptor.
+ * The creation is executed asynchronously and callers may check the returned
+ * operation to track its progress.
  * User-created metric descriptors define
  * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
  *
@@ -788,6 +790,96 @@ export class MetricServiceClient {
     });
     this.initialize();
     return this.innerApiCalls.createTimeSeries(request, options, callback);
+  }
+  createServiceTimeSeries(
+      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.ICreateTimeSeriesRequest|undefined, {}|undefined
+      ]>;
+  createServiceTimeSeries(
+      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>): void;
+  createServiceTimeSeries(
+      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Creates or adds data to one or more service time series. A service time
+ * series is a time series for a metric from a Google Cloud service. The
+ * response is empty if all time series in the request were written. If any
+ * time series could not be written, a corresponding failure message is
+ * included in the error response. This endpoint rejects writes to
+ * user-defined metrics.
+ * This method is only for use by Google Cloud services. Use
+ * {@link google.monitoring.v3.MetricService.CreateTimeSeries|projects.timeSeries.create}
+ * instead.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+ *   which to execute the request. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]
+ * @param {number[]} request.timeSeries
+ *   Required. The new data to be added to a list of time series.
+ *   Adds at most one data point to each of several time series.  The new data
+ *   point must be more recent than any other point in its time series.  Each
+ *   `TimeSeries` value must fully specify a unique time series by supplying
+ *   all label values for the metric and the monitored resource.
+ *
+ *   The maximum number of `TimeSeries` objects per `Create` request is 200.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.createServiceTimeSeries(request);
+ */
+  createServiceTimeSeries(
+      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.ICreateTimeSeriesRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.createServiceTimeSeries(request, options, callback);
   }
 
   listMonitoredResourceDescriptors(

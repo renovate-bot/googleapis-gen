@@ -228,6 +228,11 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=12.0,
                 client_info=client_info,
             ),
+            self.create_service_time_series: gapic_v1.method.wrap_method(
+                self.create_service_time_series,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     def close(self):
@@ -304,6 +309,15 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
 
     @property
     def create_time_series(self) -> Callable[
+            [metric_service.CreateTimeSeriesRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_service_time_series(self) -> Callable[
             [metric_service.CreateTimeSeriesRequest],
             Union[
                 empty_pb2.Empty,

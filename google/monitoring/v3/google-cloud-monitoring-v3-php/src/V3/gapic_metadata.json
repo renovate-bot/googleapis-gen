@@ -88,6 +88,11 @@
                                 "createMetricDescriptor"
                             ]
                         },
+                        "CreateServiceTimeSeries": {
+                            "methods": [
+                                "createServiceTimeSeries"
+                            ]
+                        },
                         "CreateTimeSeries": {
                             "methods": [
                                 "createTimeSeries"

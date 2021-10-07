@@ -585,6 +585,90 @@ describe('v3.MetricServiceClient', () => {
         });
     });
 
+    describe('createServiceTimeSeries', () => {
+        it('invokes createServiceTimeSeries without error', async () => {
+            const client = new metricserviceModule.v3.MetricServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.monitoring.v3.CreateTimeSeriesRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.createServiceTimeSeries = stubSimpleCall(expectedResponse);
+            const [response] = await client.createServiceTimeSeries(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.createServiceTimeSeries as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes createServiceTimeSeries without error using callback', async () => {
+            const client = new metricserviceModule.v3.MetricServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.monitoring.v3.CreateTimeSeriesRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
+            client.innerApiCalls.createServiceTimeSeries = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.createServiceTimeSeries(
+                    request,
+                    (err?: Error|null, result?: protos.google.protobuf.IEmpty|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.createServiceTimeSeries as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes createServiceTimeSeries with error', async () => {
+            const client = new metricserviceModule.v3.MetricServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.monitoring.v3.CreateTimeSeriesRequest());
+            request.name = '';
+            const expectedHeaderRequestParams = "name=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.createServiceTimeSeries = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.createServiceTimeSeries(request), expectedError);
+            assert((client.innerApiCalls.createServiceTimeSeries as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
     describe('listMonitoredResourceDescriptors', () => {
         it('invokes listMonitoredResourceDescriptors without error', async () => {
             const client = new metricserviceModule.v3.MetricServiceClient({

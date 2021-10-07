@@ -595,6 +595,8 @@ class MetricServiceGapicClient
 
     /**
      * Creates a new metric descriptor.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      *
@@ -640,6 +642,64 @@ class MetricServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CreateMetricDescriptor', MetricDescriptor::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Creates or adds data to one or more service time series. A service time
+     * series is a time series for a metric from a Google Cloud service. The
+     * response is empty if all time series in the request were written. If any
+     * time series could not be written, a corresponding failure message is
+     * included in the error response. This endpoint rejects writes to
+     * user-defined metrics.
+     * This method is only for use by Google Cloud services. Use
+     * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+     * instead.
+     *
+     * Sample code:
+     * ```
+     * $metricServiceClient = new MetricServiceClient();
+     * try {
+     *     $formattedName = $metricServiceClient->projectName('[PROJECT]');
+     *     $timeSeries = [];
+     *     $metricServiceClient->createServiceTimeSeries($formattedName, $timeSeries);
+     * } finally {
+     *     $metricServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string       $name         Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+     *                                   which to execute the request. The format is:
+     *
+     *                                   projects/[PROJECT_ID_OR_NUMBER]
+     * @param TimeSeries[] $timeSeries   Required. The new data to be added to a list of time series.
+     *                                   Adds at most one data point to each of several time series.  The new data
+     *                                   point must be more recent than any other point in its time series.  Each
+     *                                   `TimeSeries` value must fully specify a unique time series by supplying
+     *                                   all label values for the metric and the monitored resource.
+     *
+     *                                   The maximum number of `TimeSeries` objects per `Create` request is 200.
+     * @param array        $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function createServiceTimeSeries($name, $timeSeries, array $optionalArgs = [])
+    {
+        $request = new CreateTimeSeriesRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $request->setTimeSeries($timeSeries);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateServiceTimeSeries', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 
     /**

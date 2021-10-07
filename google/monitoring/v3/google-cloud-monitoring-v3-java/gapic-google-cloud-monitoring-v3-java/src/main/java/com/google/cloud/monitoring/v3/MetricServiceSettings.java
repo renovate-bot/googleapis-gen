@@ -137,6 +137,11 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
     return ((MetricServiceStubSettings) getStubSettings()).createTimeSeriesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createServiceTimeSeries. */
+  public UnaryCallSettings<CreateTimeSeriesRequest, Empty> createServiceTimeSeriesSettings() {
+    return ((MetricServiceStubSettings) getStubSettings()).createServiceTimeSeriesSettings();
+  }
+
   public static final MetricServiceSettings create(MetricServiceStubSettings stub)
       throws IOException {
     return new MetricServiceSettings.Builder(stub.toBuilder()).build();
@@ -285,6 +290,12 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
     /** Returns the builder for the settings used for calls to createTimeSeries. */
     public UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
       return getStubSettingsBuilder().createTimeSeriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createServiceTimeSeries. */
+    public UnaryCallSettings.Builder<CreateTimeSeriesRequest, Empty>
+        createServiceTimeSeriesSettings() {
+      return getStubSettingsBuilder().createServiceTimeSeriesSettings();
     }
 
     @Override

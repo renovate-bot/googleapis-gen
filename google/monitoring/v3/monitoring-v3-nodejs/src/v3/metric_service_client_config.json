@@ -71,6 +71,10 @@
           "timeout_millis": 12000,
           "retry_codes_name": "non_idempotent",
           "retry_params_name": "default"
+        },
+        "CreateServiceTimeSeries": {
+          "retry_codes_name": "non_idempotent",
+          "retry_params_name": "default"
         }
       }
     }

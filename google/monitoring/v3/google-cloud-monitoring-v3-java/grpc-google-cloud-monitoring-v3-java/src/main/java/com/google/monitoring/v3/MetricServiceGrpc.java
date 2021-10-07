@@ -266,6 +266,37 @@ public final class MetricServiceGrpc {
     return getCreateTimeSeriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.monitoring.v3.CreateTimeSeriesRequest,
+      com.google.protobuf.Empty> getCreateServiceTimeSeriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateServiceTimeSeries",
+      requestType = com.google.monitoring.v3.CreateTimeSeriesRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.monitoring.v3.CreateTimeSeriesRequest,
+      com.google.protobuf.Empty> getCreateServiceTimeSeriesMethod() {
+    io.grpc.MethodDescriptor<com.google.monitoring.v3.CreateTimeSeriesRequest, com.google.protobuf.Empty> getCreateServiceTimeSeriesMethod;
+    if ((getCreateServiceTimeSeriesMethod = MetricServiceGrpc.getCreateServiceTimeSeriesMethod) == null) {
+      synchronized (MetricServiceGrpc.class) {
+        if ((getCreateServiceTimeSeriesMethod = MetricServiceGrpc.getCreateServiceTimeSeriesMethod) == null) {
+          MetricServiceGrpc.getCreateServiceTimeSeriesMethod = getCreateServiceTimeSeriesMethod =
+              io.grpc.MethodDescriptor.<com.google.monitoring.v3.CreateTimeSeriesRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateServiceTimeSeries"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.monitoring.v3.CreateTimeSeriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new MetricServiceMethodDescriptorSupplier("CreateServiceTimeSeries"))
+              .build();
+        }
+      }
+    }
+    return getCreateServiceTimeSeriesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -361,6 +392,8 @@ public final class MetricServiceGrpc {
     /**
      * <pre>
      * Creates a new metric descriptor.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
@@ -403,6 +436,24 @@ public final class MetricServiceGrpc {
     public void createTimeSeries(com.google.monitoring.v3.CreateTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTimeSeriesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates or adds data to one or more service time series. A service time
+     * series is a time series for a metric from a Google Cloud service. The
+     * response is empty if all time series in the request were written. If any
+     * time series could not be written, a corresponding failure message is
+     * included in the error response. This endpoint rejects writes to
+     * user-defined metrics.
+     * This method is only for use by Google Cloud services. Use
+     * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+     * instead.
+     * </pre>
+     */
+    public void createServiceTimeSeries(com.google.monitoring.v3.CreateTimeSeriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateServiceTimeSeriesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -463,6 +514,13 @@ public final class MetricServiceGrpc {
                 com.google.monitoring.v3.CreateTimeSeriesRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_CREATE_TIME_SERIES)))
+          .addMethod(
+            getCreateServiceTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.monitoring.v3.CreateTimeSeriesRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_CREATE_SERVICE_TIME_SERIES)))
           .build();
     }
   }
@@ -532,6 +590,8 @@ public final class MetricServiceGrpc {
     /**
      * <pre>
      * Creates a new metric descriptor.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
@@ -578,6 +638,25 @@ public final class MetricServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateTimeSeriesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates or adds data to one or more service time series. A service time
+     * series is a time series for a metric from a Google Cloud service. The
+     * response is empty if all time series in the request were written. If any
+     * time series could not be written, a corresponding failure message is
+     * included in the error response. This endpoint rejects writes to
+     * user-defined metrics.
+     * This method is only for use by Google Cloud services. Use
+     * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+     * instead.
+     * </pre>
+     */
+    public void createServiceTimeSeries(com.google.monitoring.v3.CreateTimeSeriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateServiceTimeSeriesMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -642,6 +721,8 @@ public final class MetricServiceGrpc {
     /**
      * <pre>
      * Creates a new metric descriptor.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
@@ -684,6 +765,24 @@ public final class MetricServiceGrpc {
     public com.google.protobuf.Empty createTimeSeries(com.google.monitoring.v3.CreateTimeSeriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateTimeSeriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates or adds data to one or more service time series. A service time
+     * series is a time series for a metric from a Google Cloud service. The
+     * response is empty if all time series in the request were written. If any
+     * time series could not be written, a corresponding failure message is
+     * included in the error response. This endpoint rejects writes to
+     * user-defined metrics.
+     * This method is only for use by Google Cloud services. Use
+     * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+     * instead.
+     * </pre>
+     */
+    public com.google.protobuf.Empty createServiceTimeSeries(com.google.monitoring.v3.CreateTimeSeriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceTimeSeriesMethod(), getCallOptions(), request);
     }
   }
 
@@ -752,6 +851,8 @@ public final class MetricServiceGrpc {
     /**
      * <pre>
      * Creates a new metric descriptor.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
@@ -799,6 +900,25 @@ public final class MetricServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateTimeSeriesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Creates or adds data to one or more service time series. A service time
+     * series is a time series for a metric from a Google Cloud service. The
+     * response is empty if all time series in the request were written. If any
+     * time series could not be written, a corresponding failure message is
+     * included in the error response. This endpoint rejects writes to
+     * user-defined metrics.
+     * This method is only for use by Google Cloud services. Use
+     * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+     * instead.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> createServiceTimeSeries(
+        com.google.monitoring.v3.CreateTimeSeriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateServiceTimeSeriesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS = 0;
@@ -809,6 +929,7 @@ public final class MetricServiceGrpc {
   private static final int METHODID_DELETE_METRIC_DESCRIPTOR = 5;
   private static final int METHODID_LIST_TIME_SERIES = 6;
   private static final int METHODID_CREATE_TIME_SERIES = 7;
+  private static final int METHODID_CREATE_SERVICE_TIME_SERIES = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -857,6 +978,10 @@ public final class MetricServiceGrpc {
           break;
         case METHODID_CREATE_TIME_SERIES:
           serviceImpl.createTimeSeries((com.google.monitoring.v3.CreateTimeSeriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_SERVICE_TIME_SERIES:
+          serviceImpl.createServiceTimeSeries((com.google.monitoring.v3.CreateTimeSeriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -928,6 +1053,7 @@ public final class MetricServiceGrpc {
               .addMethod(getDeleteMetricDescriptorMethod())
               .addMethod(getListTimeSeriesMethod())
               .addMethod(getCreateTimeSeriesMethod())
+              .addMethod(getCreateServiceTimeSeriesMethod())
               .build();
         }
       }

@@ -15,6 +15,18 @@ return [
                     ],
                 ],
             ],
+            'CreateServiceTimeSeries' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{name=projects/*}/timeSeries:createService',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'CreateTimeSeries' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/{name=projects/*}/timeSeries',

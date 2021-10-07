@@ -95,6 +95,8 @@ class MetricServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates a new metric descriptor.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * @param \Google\Cloud\Monitoring\V3\CreateMetricDescriptorRequest $argument input argument
@@ -155,6 +157,29 @@ class MetricServiceGrpcClient extends \Grpc\BaseStub {
     public function CreateTimeSeries(\Google\Cloud\Monitoring\V3\CreateTimeSeriesRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.monitoring.v3.MetricService/CreateTimeSeries',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates or adds data to one or more service time series. A service time
+     * series is a time series for a metric from a Google Cloud service. The
+     * response is empty if all time series in the request were written. If any
+     * time series could not be written, a corresponding failure message is
+     * included in the error response. This endpoint rejects writes to
+     * user-defined metrics.
+     * This method is only for use by Google Cloud services. Use
+     * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+     * instead.
+     * @param \Google\Cloud\Monitoring\V3\CreateTimeSeriesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateServiceTimeSeries(\Google\Cloud\Monitoring\V3\CreateTimeSeriesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.monitoring.v3.MetricService/CreateServiceTimeSeries',
         $argument,
         ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
