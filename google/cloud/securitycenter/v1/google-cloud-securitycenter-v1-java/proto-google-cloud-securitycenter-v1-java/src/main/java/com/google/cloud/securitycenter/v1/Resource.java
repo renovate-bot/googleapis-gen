@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     projectDisplayName_ = "";
     parent_ = "";
     parentDisplayName_ = "";
+    type_ = "";
     folders_ = java.util.Collections.emptyList();
   }
 
@@ -87,6 +88,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             parentDisplayName_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            type_ = s;
             break;
           }
           case 58: {
@@ -365,6 +372,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object type_;
+  /**
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The full resource type of the resource.
+   * </pre>
+   *
+   * <code>string type = 6;</code>
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FOLDERS_FIELD_NUMBER = 7;
   private java.util.List<com.google.cloud.securitycenter.v1.Folder> folders_;
   /**
@@ -464,6 +517,9 @@ private static final long serialVersionUID = 0L;
     if (!getParentDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, parentDisplayName_);
     }
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, type_);
+    }
     for (int i = 0; i < folders_.size(); i++) {
       output.writeMessage(7, folders_.get(i));
     }
@@ -490,6 +546,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getParentDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parentDisplayName_);
+    }
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, type_);
     }
     for (int i = 0; i < folders_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -520,6 +579,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getParent())) return false;
     if (!getParentDisplayName()
         .equals(other.getParentDisplayName())) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
     if (!getFoldersList()
         .equals(other.getFoldersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -543,6 +604,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + PARENT_DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getParentDisplayName().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     if (getFoldersCount() > 0) {
       hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
       hash = (53 * hash) + getFoldersList().hashCode();
@@ -695,6 +758,8 @@ private static final long serialVersionUID = 0L;
 
       parentDisplayName_ = "";
 
+      type_ = "";
+
       if (foldersBuilder_ == null) {
         folders_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -733,6 +798,7 @@ private static final long serialVersionUID = 0L;
       result.projectDisplayName_ = projectDisplayName_;
       result.parent_ = parent_;
       result.parentDisplayName_ = parentDisplayName_;
+      result.type_ = type_;
       if (foldersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           folders_ = java.util.Collections.unmodifiableList(folders_);
@@ -808,6 +874,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getParentDisplayName().isEmpty()) {
         parentDisplayName_ = other.parentDisplayName_;
+        onChanged();
+      }
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
         onChanged();
       }
       if (foldersBuilder_ == null) {
@@ -1347,6 +1417,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       parentDisplayName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The full resource type of the resource.
+     * </pre>
+     *
+     * <code>string type = 6;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type_ = value;
       onChanged();
       return this;
     }

@@ -17,6 +17,7 @@ import proto  # type: ignore
 
 from google.cloud.securitycenter_v1.types import indicator as gcs_indicator
 from google.cloud.securitycenter_v1.types import security_marks as gcs_security_marks
+from google.cloud.securitycenter_v1.types import vulnerability as gcs_vulnerability
 from google.protobuf import struct_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 
@@ -112,6 +113,11 @@ class Finding(proto.Message):
             observed on a network or in an operating system that, with
             high confidence, indicates a computer intrusion. Reference:
             https://en.wikipedia.org/wiki/Indicator_of_compromise
+        vulnerability (google.cloud.securitycenter_v1.types.Vulnerability):
+            Represents vulnerability specific fields like
+            cve, cvss scores etc. CVE stands for Common
+            Vulnerabilities and Exposures
+            (https://cve.mitre.org/about/)
     """
     class State(proto.Enum):
         r"""The state of the finding."""
@@ -199,6 +205,11 @@ class Finding(proto.Message):
         proto.MESSAGE,
         number=18,
         message=gcs_indicator.Indicator,
+    )
+    vulnerability = proto.Field(
+        proto.MESSAGE,
+        number=20,
+        message=gcs_vulnerability.Vulnerability,
     )
 
 

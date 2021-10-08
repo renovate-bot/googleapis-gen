@@ -75,6 +75,12 @@ from .securitycenter_service import (
 from .source import (
     Source,
 )
+from .vulnerability import (
+    Cve,
+    Cvssv3,
+    Reference,
+    Vulnerability,
+)
 
 __all__ = (
     'Asset',
@@ -115,4 +121,8 @@ __all__ = (
     'UpdateSecurityMarksRequest',
     'UpdateSourceRequest',
     'Source',
+    'Cve',
+    'Cvssv3',
+    'Reference',
+    'Vulnerability',
 )

@@ -55,6 +55,10 @@ from google.cloud.securitycenter_v1.types.securitycenter_service import UpdateOr
 from google.cloud.securitycenter_v1.types.securitycenter_service import UpdateSecurityMarksRequest
 from google.cloud.securitycenter_v1.types.securitycenter_service import UpdateSourceRequest
 from google.cloud.securitycenter_v1.types.source import Source
+from google.cloud.securitycenter_v1.types.vulnerability import Cve
+from google.cloud.securitycenter_v1.types.vulnerability import Cvssv3
+from google.cloud.securitycenter_v1.types.vulnerability import Reference
+from google.cloud.securitycenter_v1.types.vulnerability import Vulnerability
 
 __all__ = ('SecurityCenterClient',
     'SecurityCenterAsyncClient',
@@ -96,4 +100,8 @@ __all__ = ('SecurityCenterClient',
     'UpdateSecurityMarksRequest',
     'UpdateSourceRequest',
     'Source',
+    'Cve',
+    'Cvssv3',
+    'Reference',
+    'Vulnerability',
 )

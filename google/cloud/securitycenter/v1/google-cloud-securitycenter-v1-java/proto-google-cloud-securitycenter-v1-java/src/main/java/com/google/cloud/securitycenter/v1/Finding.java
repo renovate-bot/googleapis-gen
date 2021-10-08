@@ -186,6 +186,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 162: {
+            com.google.cloud.securitycenter.v1.Vulnerability.Builder subBuilder = null;
+            if (vulnerability_ != null) {
+              subBuilder = vulnerability_.toBuilder();
+            }
+            vulnerability_ = input.readMessage(com.google.cloud.securitycenter.v1.Vulnerability.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(vulnerability_);
+              vulnerability_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1508,6 +1521,50 @@ private static final long serialVersionUID = 0L;
     return getIndicator();
   }
 
+  public static final int VULNERABILITY_FIELD_NUMBER = 20;
+  private com.google.cloud.securitycenter.v1.Vulnerability vulnerability_;
+  /**
+   * <pre>
+   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * CVE stands for Common Vulnerabilities and Exposures
+   * (https://cve.mitre.org/about/)
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+   * @return Whether the vulnerability field is set.
+   */
+  @java.lang.Override
+  public boolean hasVulnerability() {
+    return vulnerability_ != null;
+  }
+  /**
+   * <pre>
+   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * CVE stands for Common Vulnerabilities and Exposures
+   * (https://cve.mitre.org/about/)
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+   * @return The vulnerability.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Vulnerability getVulnerability() {
+    return vulnerability_ == null ? com.google.cloud.securitycenter.v1.Vulnerability.getDefaultInstance() : vulnerability_;
+  }
+  /**
+   * <pre>
+   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * CVE stands for Common Vulnerabilities and Exposures
+   * (https://cve.mitre.org/about/)
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder getVulnerabilityOrBuilder() {
+    return getVulnerability();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1566,6 +1623,9 @@ private static final long serialVersionUID = 0L;
     }
     if (indicator_ != null) {
       output.writeMessage(18, getIndicator());
+    }
+    if (vulnerability_ != null) {
+      output.writeMessage(20, getVulnerability());
     }
     unknownFields.writeTo(output);
   }
@@ -1632,6 +1692,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getIndicator());
     }
+    if (vulnerability_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getVulnerability());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1684,6 +1748,11 @@ private static final long serialVersionUID = 0L;
       if (!getIndicator()
           .equals(other.getIndicator())) return false;
     }
+    if (hasVulnerability() != other.hasVulnerability()) return false;
+    if (hasVulnerability()) {
+      if (!getVulnerability()
+          .equals(other.getVulnerability())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1732,6 +1801,10 @@ private static final long serialVersionUID = 0L;
     if (hasIndicator()) {
       hash = (37 * hash) + INDICATOR_FIELD_NUMBER;
       hash = (53 * hash) + getIndicator().hashCode();
+    }
+    if (hasVulnerability()) {
+      hash = (37 * hash) + VULNERABILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVulnerability().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1940,6 +2013,12 @@ private static final long serialVersionUID = 0L;
         indicator_ = null;
         indicatorBuilder_ = null;
       }
+      if (vulnerabilityBuilder_ == null) {
+        vulnerability_ = null;
+      } else {
+        vulnerability_ = null;
+        vulnerabilityBuilder_ = null;
+      }
       return this;
     }
 
@@ -1997,6 +2076,11 @@ private static final long serialVersionUID = 0L;
         result.indicator_ = indicator_;
       } else {
         result.indicator_ = indicatorBuilder_.build();
+      }
+      if (vulnerabilityBuilder_ == null) {
+        result.vulnerability_ = vulnerability_;
+      } else {
+        result.vulnerability_ = vulnerabilityBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2092,6 +2176,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasIndicator()) {
         mergeIndicator(other.getIndicator());
+      }
+      if (other.hasVulnerability()) {
+        mergeVulnerability(other.getVulnerability());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3925,6 +4012,179 @@ private static final long serialVersionUID = 0L;
         indicator_ = null;
       }
       return indicatorBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.Vulnerability vulnerability_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.securitycenter.v1.Vulnerability, com.google.cloud.securitycenter.v1.Vulnerability.Builder, com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder> vulnerabilityBuilder_;
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     * @return Whether the vulnerability field is set.
+     */
+    public boolean hasVulnerability() {
+      return vulnerabilityBuilder_ != null || vulnerability_ != null;
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     * @return The vulnerability.
+     */
+    public com.google.cloud.securitycenter.v1.Vulnerability getVulnerability() {
+      if (vulnerabilityBuilder_ == null) {
+        return vulnerability_ == null ? com.google.cloud.securitycenter.v1.Vulnerability.getDefaultInstance() : vulnerability_;
+      } else {
+        return vulnerabilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    public Builder setVulnerability(com.google.cloud.securitycenter.v1.Vulnerability value) {
+      if (vulnerabilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vulnerability_ = value;
+        onChanged();
+      } else {
+        vulnerabilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    public Builder setVulnerability(
+        com.google.cloud.securitycenter.v1.Vulnerability.Builder builderForValue) {
+      if (vulnerabilityBuilder_ == null) {
+        vulnerability_ = builderForValue.build();
+        onChanged();
+      } else {
+        vulnerabilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    public Builder mergeVulnerability(com.google.cloud.securitycenter.v1.Vulnerability value) {
+      if (vulnerabilityBuilder_ == null) {
+        if (vulnerability_ != null) {
+          vulnerability_ =
+            com.google.cloud.securitycenter.v1.Vulnerability.newBuilder(vulnerability_).mergeFrom(value).buildPartial();
+        } else {
+          vulnerability_ = value;
+        }
+        onChanged();
+      } else {
+        vulnerabilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    public Builder clearVulnerability() {
+      if (vulnerabilityBuilder_ == null) {
+        vulnerability_ = null;
+        onChanged();
+      } else {
+        vulnerability_ = null;
+        vulnerabilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Vulnerability.Builder getVulnerabilityBuilder() {
+      
+      onChanged();
+      return getVulnerabilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    public com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder getVulnerabilityOrBuilder() {
+      if (vulnerabilityBuilder_ != null) {
+        return vulnerabilityBuilder_.getMessageOrBuilder();
+      } else {
+        return vulnerability_ == null ?
+            com.google.cloud.securitycenter.v1.Vulnerability.getDefaultInstance() : vulnerability_;
+      }
+    }
+    /**
+     * <pre>
+     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * CVE stands for Common Vulnerabilities and Exposures
+     * (https://cve.mitre.org/about/)
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Vulnerability vulnerability = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.securitycenter.v1.Vulnerability, com.google.cloud.securitycenter.v1.Vulnerability.Builder, com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder> 
+        getVulnerabilityFieldBuilder() {
+      if (vulnerabilityBuilder_ == null) {
+        vulnerabilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Vulnerability, com.google.cloud.securitycenter.v1.Vulnerability.Builder, com.google.cloud.securitycenter.v1.VulnerabilityOrBuilder>(
+                getVulnerability(),
+                getParentForChildren(),
+                isClean());
+        vulnerability_ = null;
+      }
+      return vulnerabilityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
