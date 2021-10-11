@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
     CREATING(3),
     /**
      * <pre>
-     * The migration job is created, not started and is fully editable.
+     * The migration job is created and not started.
      * </pre>
      *
      * <code>NOT_STARTED = 4;</code>
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
     public static final int CREATING_VALUE = 3;
     /**
      * <pre>
-     * The migration job is created, not started and is fully editable.
+     * The migration job is created and not started.
      * </pre>
      *
      * <code>NOT_STARTED = 4;</code>
