@@ -46,7 +46,7 @@ function main(parent) {
   // const orderBy = 'abc123'
 
   // Imports the Transcoder library
-  const {TranscoderServiceClient} = require('@google-cloud/transcoder').v1;
+  const {TranscoderServiceClient} = require('@google-cloud/video-transcoder').v1;
 
   // Instantiates a client
   const transcoderClient = new TranscoderServiceClient();

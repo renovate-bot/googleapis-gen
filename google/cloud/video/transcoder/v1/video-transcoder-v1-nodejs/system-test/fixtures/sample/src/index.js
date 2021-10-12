@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const transcoder = require('@google-cloud/transcoder');
+const transcoder = require('@google-cloud/video-transcoder');
 
 function main() {
   const transcoderServiceClient = new transcoder.TranscoderServiceClient();
