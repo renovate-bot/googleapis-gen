@@ -38,7 +38,7 @@ class MetricAbsence extends \Google\Protobuf\Internal\Message
      * well as how to combine the retrieved time series together (such as
      * when aggregating multiple streams on each resource to a single
      * stream for each resource or when aggregating streams across all
-     * members of a group of resrouces). Multiple aggregations
+     * members of a group of resources). Multiple aggregations
      * are applied in the order specified.
      * This field is similar to the one in the [`ListTimeSeries`
      * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -91,7 +91,7 @@ class MetricAbsence extends \Google\Protobuf\Internal\Message
      *           well as how to combine the retrieved time series together (such as
      *           when aggregating multiple streams on each resource to a single
      *           stream for each resource or when aggregating streams across all
-     *           members of a group of resrouces). Multiple aggregations
+     *           members of a group of resources). Multiple aggregations
      *           are applied in the order specified.
      *           This field is similar to the one in the [`ListTimeSeries`
      *           request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -164,7 +164,7 @@ class MetricAbsence extends \Google\Protobuf\Internal\Message
      * well as how to combine the retrieved time series together (such as
      * when aggregating multiple streams on each resource to a single
      * stream for each resource or when aggregating streams across all
-     * members of a group of resrouces). Multiple aggregations
+     * members of a group of resources). Multiple aggregations
      * are applied in the order specified.
      * This field is similar to the one in the [`ListTimeSeries`
      * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
@@ -184,7 +184,7 @@ class MetricAbsence extends \Google\Protobuf\Internal\Message
      * well as how to combine the retrieved time series together (such as
      * when aggregating multiple streams on each resource to a single
      * stream for each resource or when aggregating streams across all
-     * members of a group of resrouces). Multiple aggregations
+     * members of a group of resources). Multiple aggregations
      * are applied in the order specified.
      * This field is similar to the one in the [`ListTimeSeries`
      * request](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
