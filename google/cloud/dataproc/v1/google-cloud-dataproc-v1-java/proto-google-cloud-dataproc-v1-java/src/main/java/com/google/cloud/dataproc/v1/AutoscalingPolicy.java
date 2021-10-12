@@ -44,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -106,6 +107,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              labels_ = com.google.protobuf.MapField.newMapField(
+                  LabelsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            labels__ = input.readMessage(
+                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            labels_.getMutableMap().put(
+                labels__.getKey(), labels__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -130,6 +144,18 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto.internal_static_google_cloud_dataproc_v1_AutoscalingPolicy_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 6:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -396,6 +422,127 @@ private static final long serialVersionUID = 0L;
     return getSecondaryWorkerConfig();
   }
 
+  public static final int LABELS_FIELD_NUMBER = 6;
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.dataproc.v1.AutoscalingPoliciesProto.internal_static_google_cloud_dataproc_v1_AutoscalingPolicy_LabelsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> labels_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsLabels(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Optional. The labels to associate with this autoscaling policy.
+   * Label **keys** must contain 1 to 63 characters, and must conform to
+   * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+   * Label **values** may be empty, but, if present, must contain 1 to 63
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with an autoscaling policy.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getLabelsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -425,6 +572,12 @@ private static final long serialVersionUID = 0L;
     if (secondaryWorkerConfig_ != null) {
       output.writeMessage(5, getSecondaryWorkerConfig());
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetLabels(),
+        LabelsDefaultEntryHolder.defaultEntry,
+        6);
     unknownFields.writeTo(output);
   }
 
@@ -451,6 +604,16 @@ private static final long serialVersionUID = 0L;
     if (secondaryWorkerConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getSecondaryWorkerConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -481,6 +644,8 @@ private static final long serialVersionUID = 0L;
       if (!getSecondaryWorkerConfig()
           .equals(other.getSecondaryWorkerConfig())) return false;
     }
+    if (!internalGetLabels().equals(
+        other.internalGetLabels())) return false;
     if (!getAlgorithmCase().equals(other.getAlgorithmCase())) return false;
     switch (algorithmCase_) {
       case 3:
@@ -512,6 +677,10 @@ private static final long serialVersionUID = 0L;
     if (hasSecondaryWorkerConfig()) {
       hash = (37 * hash) + SECONDARY_WORKER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryWorkerConfig().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     switch (algorithmCase_) {
       case 3:
@@ -632,6 +801,28 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dataproc.v1.AutoscalingPoliciesProto.internal_static_google_cloud_dataproc_v1_AutoscalingPolicy_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -674,6 +865,7 @@ private static final long serialVersionUID = 0L;
         secondaryWorkerConfig_ = null;
         secondaryWorkerConfigBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       algorithmCase_ = 0;
       algorithm_ = null;
       return this;
@@ -702,6 +894,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.dataproc.v1.AutoscalingPolicy buildPartial() {
       com.google.cloud.dataproc.v1.AutoscalingPolicy result = new com.google.cloud.dataproc.v1.AutoscalingPolicy(this);
+      int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.name_ = name_;
       if (algorithmCase_ == 3) {
@@ -721,6 +914,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.secondaryWorkerConfig_ = secondaryWorkerConfigBuilder_.build();
       }
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       result.algorithmCase_ = algorithmCase_;
       onBuilt();
       return result;
@@ -784,6 +979,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasSecondaryWorkerConfig()) {
         mergeSecondaryWorkerConfig(other.getSecondaryWorkerConfig());
       }
+      internalGetMutableLabels().mergeFrom(
+          other.internalGetLabels());
       switch (other.getAlgorithmCase()) {
         case BASIC_ALGORITHM: {
           mergeBasicAlgorithm(other.getBasicAlgorithm());
@@ -836,6 +1033,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1528,6 +1726,204 @@ private static final long serialVersionUID = 0L;
         secondaryWorkerConfig_ = null;
       }
       return secondaryWorkerConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> labels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableLabels() {
+      onChanged();;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsLabels(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getLabelsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getLabelsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+
+    public Builder removeLabels(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableLabels().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableLabels().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The labels to associate with this autoscaling policy.
+     * Label **keys** must contain 1 to 63 characters, and must conform to
+     * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
+     * Label **values** may be empty, but, if present, must contain 1 to 63
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with an autoscaling policy.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+
+    public Builder putAllLabels(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

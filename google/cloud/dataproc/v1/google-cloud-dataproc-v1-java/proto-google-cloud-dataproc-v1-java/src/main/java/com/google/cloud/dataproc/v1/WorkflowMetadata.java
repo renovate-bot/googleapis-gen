@@ -895,8 +895,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration dagTimeout_;
   /**
    * <pre>
-   * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-   * (see [JSON representation of
+   * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
    * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -909,8 +909,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-   * (see [JSON representation of
+   * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
    * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -923,8 +923,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-   * (see [JSON representation of
+   * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+   * [JSON representation of
    * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
@@ -939,9 +939,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp dagStartTime_;
   /**
    * <pre>
-   * Output only. DAG start time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG begins.
+   * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+   * begins.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -953,9 +952,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. DAG start time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG begins.
+   * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+   * begins.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -967,9 +965,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. DAG start time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG begins.
+   * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+   * begins.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -983,9 +980,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp dagEndTime_;
   /**
    * <pre>
-   * Output only. DAG end time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG ends.
+   * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -997,9 +992,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. DAG end time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG ends.
+   * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1011,9 +1004,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. DAG end time, only set for workflows with
-   * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-   * DAG ends.
+   * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3066,8 +3057,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> dagTimeoutBuilder_;
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3079,8 +3070,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3096,8 +3087,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3118,8 +3109,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3138,8 +3129,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3162,8 +3153,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3182,8 +3173,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3196,8 +3187,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3213,8 +3204,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The timeout duration for the DAG of jobs, expressed in seconds
-     * (see [JSON representation of
+     * Output only. The timeout duration for the DAG of jobs, expressed in seconds (see
+     * [JSON representation of
      * duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
@@ -3239,9 +3230,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dagStartTimeBuilder_;
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3252,9 +3242,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3269,9 +3258,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3291,9 +3279,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3311,9 +3298,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3335,9 +3321,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3355,9 +3340,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3369,9 +3353,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3386,9 +3369,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG start time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG begins.
+     * Output only. DAG start time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG
+     * begins.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_start_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3412,9 +3394,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dagEndTimeBuilder_;
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3425,9 +3405,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3442,9 +3420,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3464,9 +3440,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3484,9 +3458,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3508,9 +3480,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3528,9 +3498,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3542,9 +3510,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3559,9 +3525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. DAG end time, only set for workflows with
-     * [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when
-     * DAG ends.
+     * Output only. DAG end time, only set for workflows with [dag_timeout][google.cloud.dataproc.v1.WorkflowMetadata.dag_timeout] when DAG ends.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp dag_end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

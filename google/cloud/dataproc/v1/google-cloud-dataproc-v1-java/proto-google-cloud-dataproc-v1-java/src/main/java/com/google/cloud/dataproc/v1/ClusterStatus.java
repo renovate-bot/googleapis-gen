@@ -161,6 +161,15 @@ private static final long serialVersionUID = 0L;
     ERROR(3),
     /**
      * <pre>
+     * The cluster has encountered an error while being updated. Jobs can
+     * be submitted to the cluster, but the cluster cannot be updated.
+     * </pre>
+     *
+     * <code>ERROR_DUE_TO_UPDATE = 9;</code>
+     */
+    ERROR_DUE_TO_UPDATE(9),
+    /**
+     * <pre>
      * The cluster is being deleted. It cannot be used.
      * </pre>
      *
@@ -236,6 +245,15 @@ private static final long serialVersionUID = 0L;
     public static final int ERROR_VALUE = 3;
     /**
      * <pre>
+     * The cluster has encountered an error while being updated. Jobs can
+     * be submitted to the cluster, but the cluster cannot be updated.
+     * </pre>
+     *
+     * <code>ERROR_DUE_TO_UPDATE = 9;</code>
+     */
+    public static final int ERROR_DUE_TO_UPDATE_VALUE = 9;
+    /**
+     * <pre>
      * The cluster is being deleted. It cannot be used.
      * </pre>
      *
@@ -304,6 +322,7 @@ private static final long serialVersionUID = 0L;
         case 1: return CREATING;
         case 2: return RUNNING;
         case 3: return ERROR;
+        case 9: return ERROR_DUE_TO_UPDATE;
         case 4: return DELETING;
         case 5: return UPDATING;
         case 6: return STOPPING;

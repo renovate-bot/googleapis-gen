@@ -456,4 +456,34 @@ public interface GceClusterConfigOrBuilder extends
    * <code>.google.cloud.dataproc.v1.ShieldedInstanceConfig shielded_instance_config = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.dataproc.v1.ShieldedInstanceConfigOrBuilder getShieldedInstanceConfigOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. Confidential Instance Config for clusters using [Confidential
+   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the confidentialInstanceConfig field is set.
+   */
+  boolean hasConfidentialInstanceConfig();
+  /**
+   * <pre>
+   * Optional. Confidential Instance Config for clusters using [Confidential
+   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The confidentialInstanceConfig.
+   */
+  com.google.cloud.dataproc.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
+  /**
+   * <pre>
+   * Optional. Confidential Instance Config for clusters using [Confidential
+   * VMs](https://cloud.google.com/compute/confidential-vm/docs).
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.ConfidentialInstanceConfig confidential_instance_config = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.cloud.dataproc.v1.ConfidentialInstanceConfigOrBuilder getConfidentialInstanceConfigOrBuilder();
 }

@@ -246,8 +246,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -269,8 +268,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -282,8 +280,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -300,8 +297,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -918,8 +914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -941,8 +936,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -954,8 +948,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -972,8 +965,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -998,8 +990,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1022,8 +1013,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1039,8 +1029,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Cluster labels to identify a cluster where the job will be
-     * submitted.
+     * Optional. Cluster labels to identify a cluster where the job will be submitted.
      * </pre>
      *
      * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

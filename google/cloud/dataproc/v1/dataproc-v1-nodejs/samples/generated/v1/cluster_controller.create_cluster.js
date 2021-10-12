@@ -34,17 +34,21 @@ function main(projectId, region, cluster) {
    */
   // const cluster = ''
   /**
-   *  Optional. A unique id used to identify the request. If the server receives two
+   *  Optional. A unique ID used to identify the request. If the server receives two
    *  [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
    *  with the same id, then the second request will be ignored and the
    *  first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
    *  is returned.
    *  It is recommended to always set this value to a
    *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   *  The id must contain only letters (a-z, A-Z), numbers (0-9),
+   *  The ID must contain only letters (a-z, A-Z), numbers (0-9),
    *  underscores (_), and hyphens (-). The maximum length is 40 characters.
    */
   // const requestId = 'abc123'
+  /**
+   *  Optional. Failure action when primary worker creation fails.
+   */
+  // const actionOnFailedPrimaryWorkers = ''
 
   // Imports the Dataproc library
   const {ClusterControllerClient} = require('@google-cloud/dataproc').v1;

@@ -483,7 +483,7 @@ export class ClusterControllerClient {
  * @param {google.cloud.dataproc.v1.Cluster} request.cluster
  *   Required. The cluster to create.
  * @param {string} [request.requestId]
- *   Optional. A unique id used to identify the request. If the server receives two
+ *   Optional. A unique ID used to identify the request. If the server receives two
  *   [CreateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateClusterRequest)s
  *   with the same id, then the second request will be ignored and the
  *   first {@link google.longrunning.Operation|google.longrunning.Operation} created and stored in the backend
@@ -492,8 +492,10 @@ export class ClusterControllerClient {
  *   It is recommended to always set this value to a
  *   [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
  *
- *   The id must contain only letters (a-z, A-Z), numbers (0-9),
+ *   The ID must contain only letters (a-z, A-Z), numbers (0-9),
  *   underscores (_), and hyphens (-). The maximum length is 40 characters.
+ * @param {google.cloud.dataproc.v1.FailureAction} [request.actionOnFailedPrimaryWorkers]
+ *   Optional. Failure action when primary worker creation fails.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -586,6 +588,8 @@ export class ClusterControllerClient {
  * Updates a cluster in a project. The returned
  * {@link google.longrunning.Operation.metadata|Operation.metadata} will be
  * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+ * The cluster must be in a {@link google.cloud.dataproc.v1.ClusterStatus.State|`RUNNING`} state or an error
+ * is returned.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -661,7 +665,7 @@ export class ClusterControllerClient {
  *    </tbody>
  *    </table>
  * @param {string} [request.requestId]
- *   Optional. A unique id used to identify the request. If the server
+ *   Optional. A unique ID used to identify the request. If the server
  *   receives two
  *   [UpdateClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.UpdateClusterRequest)s
  *   with the same id, then the second request will be ignored and the
@@ -671,7 +675,7 @@ export class ClusterControllerClient {
  *   It is recommended to always set this value to a
  *   [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
  *
- *   The id must contain only letters (a-z, A-Z), numbers (0-9),
+ *   The ID must contain only letters (a-z, A-Z), numbers (0-9),
  *   underscores (_), and hyphens (-). The maximum length is 40 characters.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -777,7 +781,7 @@ export class ClusterControllerClient {
  *   Optional. Specifying the `cluster_uuid` means the RPC will fail
  *   (with error NOT_FOUND) if a cluster with the specified UUID does not exist.
  * @param {string} [request.requestId]
- *   Optional. A unique id used to identify the request. If the server
+ *   Optional. A unique ID used to identify the request. If the server
  *   receives two
  *   [StopClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StopClusterRequest)s
  *   with the same id, then the second request will be ignored and the
@@ -787,7 +791,7 @@ export class ClusterControllerClient {
  *   Recommendation: Set this value to a
  *   [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
  *
- *   The id must contain only letters (a-z, A-Z), numbers (0-9),
+ *   The ID must contain only letters (a-z, A-Z), numbers (0-9),
  *   underscores (_), and hyphens (-). The maximum length is 40 characters.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -893,7 +897,7 @@ export class ClusterControllerClient {
  *   Optional. Specifying the `cluster_uuid` means the RPC will fail
  *   (with error NOT_FOUND) if a cluster with the specified UUID does not exist.
  * @param {string} [request.requestId]
- *   Optional. A unique id used to identify the request. If the server
+ *   Optional. A unique ID used to identify the request. If the server
  *   receives two
  *   [StartClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StartClusterRequest)s
  *   with the same id, then the second request will be ignored and the
@@ -903,7 +907,7 @@ export class ClusterControllerClient {
  *   Recommendation: Set this value to a
  *   [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
  *
- *   The id must contain only letters (a-z, A-Z), numbers (0-9),
+ *   The ID must contain only letters (a-z, A-Z), numbers (0-9),
  *   underscores (_), and hyphens (-). The maximum length is 40 characters.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1011,7 +1015,7 @@ export class ClusterControllerClient {
  *   Optional. Specifying the `cluster_uuid` means the RPC should fail
  *   (with error NOT_FOUND) if cluster with specified UUID does not exist.
  * @param {string} [request.requestId]
- *   Optional. A unique id used to identify the request. If the server
+ *   Optional. A unique ID used to identify the request. If the server
  *   receives two
  *   [DeleteClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.DeleteClusterRequest)s
  *   with the same id, then the second request will be ignored and the
@@ -1021,7 +1025,7 @@ export class ClusterControllerClient {
  *   It is recommended to always set this value to a
  *   [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
  *
- *   The id must contain only letters (a-z, A-Z), numbers (0-9),
+ *   The ID must contain only letters (a-z, A-Z), numbers (0-9),
  *   underscores (_), and hyphens (-). The maximum length is 40 characters.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.

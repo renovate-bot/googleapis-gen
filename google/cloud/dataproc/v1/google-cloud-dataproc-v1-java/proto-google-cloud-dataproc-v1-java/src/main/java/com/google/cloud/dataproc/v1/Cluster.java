@@ -6,7 +6,7 @@ package com.google.cloud.dataproc.v1;
 /**
  * <pre>
  * Describes the identifying information, config, and status of
- * a cluster of Compute Engine instances.
+ * a Dataproc cluster
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.Cluster}
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Describes the identifying information, config, and status of
-   * a cluster of Compute Engine instances.
+   * a Dataproc cluster
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.Cluster}

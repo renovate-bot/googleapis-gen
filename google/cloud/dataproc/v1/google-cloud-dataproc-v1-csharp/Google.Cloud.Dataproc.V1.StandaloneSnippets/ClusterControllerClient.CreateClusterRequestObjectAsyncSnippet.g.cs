@@ -38,6 +38,7 @@ namespace Google.Cloud.Dataproc.V1.Snippets
                 Cluster = new Cluster(),
                 Region = "",
                 RequestId = "",
+                ActionOnFailedPrimaryWorkers = FailureAction.Unspecified,
             };
             // Make the request
             Operation<Cluster, ClusterOperationMetadata> response = await clusterControllerClient.CreateClusterAsync(request);

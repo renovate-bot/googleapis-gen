@@ -51,8 +51,7 @@ public interface JobPlacementOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -60,8 +59,7 @@ public interface JobPlacementOrBuilder extends
   int getClusterLabelsCount();
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -76,8 +74,7 @@ public interface JobPlacementOrBuilder extends
   getClusterLabels();
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86,8 +83,7 @@ public interface JobPlacementOrBuilder extends
   getClusterLabelsMap();
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,8 +94,7 @@ public interface JobPlacementOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Optional. Cluster labels to identify a cluster where the job will be
-   * submitted.
+   * Optional. Cluster labels to identify a cluster where the job will be submitted.
    * </pre>
    *
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -202,7 +202,7 @@ class ClusterControllerAsyncClient:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.dataproc_v1.types.Cluster` Describes the identifying information, config, and status of
-                   a cluster of Compute Engine instances.
+                   a Dataproc cluster
 
         """
         # Create or coerce a protobuf request object.
@@ -273,6 +273,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         [Operation.metadata][google.longrunning.Operation.metadata] will
         be
         `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata>`__.
+        The cluster must be in a
+        [``RUNNING``][google.cloud.dataproc.v1.ClusterStatus.State]
+        state or an error is returned.
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.UpdateClusterRequest`):
@@ -379,7 +382,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.dataproc_v1.types.Cluster` Describes the identifying information, config, and status of
-                   a cluster of Compute Engine instances.
+                   a Dataproc cluster
 
         """
         # Create or coerce a protobuf request object.
@@ -461,7 +464,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.dataproc_v1.types.Cluster` Describes the identifying information, config, and status of
-                   a cluster of Compute Engine instances.
+                   a Dataproc cluster
 
         """
         # Create or coerce a protobuf request object.
@@ -517,7 +520,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.cloud.dataproc_v1.types.Cluster` Describes the identifying information, config, and status of
-                   a cluster of Compute Engine instances.
+                   a Dataproc cluster
 
         """
         # Create or coerce a protobuf request object.
@@ -712,7 +715,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             google.cloud.dataproc_v1.types.Cluster:
                 Describes the identifying
                 information, config, and status of a
-                cluster of Compute Engine instances.
+                Dataproc cluster
 
         """
         # Create or coerce a protobuf request object.

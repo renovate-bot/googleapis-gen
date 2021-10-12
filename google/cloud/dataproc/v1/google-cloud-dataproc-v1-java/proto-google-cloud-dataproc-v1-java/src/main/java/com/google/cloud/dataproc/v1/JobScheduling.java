@@ -118,8 +118,8 @@ private static final long serialVersionUID = 0L;
   private int maxFailuresTotal_;
   /**
    * <pre>
-   * Optional. Maximum number of times in total a driver may be restarted as a
-   * result of driver exiting with non-zero code before job is reported failed.
+   * Optional. Maximum number of times in total a driver may be restarted as a result of
+   * driver exiting with non-zero code before job is reported failed.
    * Maximum value is 240.
    * </pre>
    *
@@ -515,8 +515,8 @@ private static final long serialVersionUID = 0L;
     private int maxFailuresTotal_ ;
     /**
      * <pre>
-     * Optional. Maximum number of times in total a driver may be restarted as a
-     * result of driver exiting with non-zero code before job is reported failed.
+     * Optional. Maximum number of times in total a driver may be restarted as a result of
+     * driver exiting with non-zero code before job is reported failed.
      * Maximum value is 240.
      * </pre>
      *
@@ -529,8 +529,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Maximum number of times in total a driver may be restarted as a
-     * result of driver exiting with non-zero code before job is reported failed.
+     * Optional. Maximum number of times in total a driver may be restarted as a result of
+     * driver exiting with non-zero code before job is reported failed.
      * Maximum value is 240.
      * </pre>
      *
@@ -546,8 +546,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Maximum number of times in total a driver may be restarted as a
-     * result of driver exiting with non-zero code before job is reported failed.
+     * Optional. Maximum number of times in total a driver may be restarted as a result of
+     * driver exiting with non-zero code before job is reported failed.
      * Maximum value is 240.
      * </pre>
      *
