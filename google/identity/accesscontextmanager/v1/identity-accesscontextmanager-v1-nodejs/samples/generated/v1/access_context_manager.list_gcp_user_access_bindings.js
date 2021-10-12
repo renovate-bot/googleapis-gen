@@ -38,7 +38,7 @@ function main(parent) {
   // const pageToken = 'abc123'
 
   // Imports the Accesscontextmanager library
-  const {AccessContextManagerClient} = require('@google-cloud/accesscontextmanager').v1;
+  const {AccessContextManagerClient} = require('@google-cloud/access-context-manager').v1;
 
   // Instantiates a client
   const accesscontextmanagerClient = new AccessContextManagerClient();
