@@ -125,6 +125,11 @@ module Google
         #     Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
         #     set, this ModelDeploymentMonitoringJob and all sub-resources of this
         #     ModelDeploymentMonitoringJob will be secured by this key.
+        # @!attribute [rw] enable_monitoring_pipeline_logs
+        #   @return [::Boolean]
+        #     If true, the scheduled monitoring pipeline status logs are sent to
+        #     Google Cloud Logging. Please note the logs incur cost, which are subject to
+        #     [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
         # @!attribute [r] error
         #   @return [::Google::Rpc::Status]
         #     Output only. Only populated when the job's state is `JOB_STATE_FAILED` or

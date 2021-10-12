@@ -73,6 +73,19 @@ module Google
         #     Customer-managed encryption key spec for an Endpoint. If set, this
         #     Endpoint and all sub-resources of this Endpoint will be secured by
         #     this key.
+        # @!attribute [rw] network
+        #   @return [::String]
+        #     The full name of the Google Compute Engine
+        #     [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+        #     to which the Endpoint should be peered.
+        #
+        #     Private services access must already be configured for the network. If left
+        #     unspecified, the Endpoint is not peered with any network.
+        #
+        #     [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+        #     `projects/{project}/global/networks/{network}`.
+        #     Where `{project}` is a project number, as in `12345`, and `{network}` is
+        #     network name.
         # @!attribute [r] model_deployment_monitoring_job
         #   @return [::String]
         #     Output only. Resource name of the Model Monitoring job associated with this Endpoint
@@ -162,7 +175,28 @@ module Google
         #     Note that Stackdriver logs may incur a cost, especially if your project
         #     receives prediction requests at a high queries per second rate (QPS).
         #     Estimate your costs before enabling this option.
+        # @!attribute [r] private_endpoints
+        #   @return [::Google::Cloud::AIPlatform::V1::PrivateEndpoints]
+        #     Output only. Provide paths for users to send predict/explain/health requests directly to
+        #     the deployed model services running on Cloud via private services access.
+        #     This field is populated if {::Google::Cloud::AIPlatform::V1::Endpoint#network network} is configured.
         class DeployedModel
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # PrivateEndpoints is used to provide paths for users to send
+        # requests via private services access.
+        # @!attribute [r] predict_http_uri
+        #   @return [::String]
+        #     Output only. Http(s) path to send prediction requests.
+        # @!attribute [r] explain_http_uri
+        #   @return [::String]
+        #     Output only. Http(s) path to send explain requests.
+        # @!attribute [r] health_http_uri
+        #   @return [::String]
+        #     Output only. Http(s) path to send health check requests.
+        class PrivateEndpoints
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

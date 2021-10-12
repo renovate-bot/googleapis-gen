@@ -148,8 +148,12 @@ class PredictionServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $deployedModelId = 'deployedModelId866642506';
+        $model = 'model104069929';
+        $modelDisplayName = 'modelDisplayName1757732158';
         $expectedResponse = new PredictResponse();
         $expectedResponse->setDeployedModelId($deployedModelId);
+        $expectedResponse->setModel($model);
+        $expectedResponse->setModelDisplayName($modelDisplayName);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedEndpoint = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');

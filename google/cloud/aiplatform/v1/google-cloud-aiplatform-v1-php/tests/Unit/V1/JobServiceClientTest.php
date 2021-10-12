@@ -747,12 +747,14 @@ class JobServiceClientTest extends GeneratedTest
         $endpoint = 'endpoint1741102485';
         $predictInstanceSchemaUri = 'predictInstanceSchemaUri1705398098';
         $analysisInstanceSchemaUri = 'analysisInstanceSchemaUri1555410389';
+        $enableMonitoringPipelineLogs = false;
         $expectedResponse = new ModelDeploymentMonitoringJob();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEndpoint($endpoint);
         $expectedResponse->setPredictInstanceSchemaUri($predictInstanceSchemaUri);
         $expectedResponse->setAnalysisInstanceSchemaUri($analysisInstanceSchemaUri);
+        $expectedResponse->setEnableMonitoringPipelineLogs($enableMonitoringPipelineLogs);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
@@ -1734,12 +1736,14 @@ class JobServiceClientTest extends GeneratedTest
         $endpoint = 'endpoint1741102485';
         $predictInstanceSchemaUri = 'predictInstanceSchemaUri1705398098';
         $analysisInstanceSchemaUri = 'analysisInstanceSchemaUri1555410389';
+        $enableMonitoringPipelineLogs = false;
         $expectedResponse = new ModelDeploymentMonitoringJob();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEndpoint($endpoint);
         $expectedResponse->setPredictInstanceSchemaUri($predictInstanceSchemaUri);
         $expectedResponse->setAnalysisInstanceSchemaUri($analysisInstanceSchemaUri);
+        $expectedResponse->setEnableMonitoringPipelineLogs($enableMonitoringPipelineLogs);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->modelDeploymentMonitoringJobName('[PROJECT]', '[LOCATION]', '[MODEL_DEPLOYMENT_MONITORING_JOB]');
@@ -2380,12 +2384,14 @@ class JobServiceClientTest extends GeneratedTest
         $endpoint = 'endpoint1741102485';
         $predictInstanceSchemaUri = 'predictInstanceSchemaUri1705398098';
         $analysisInstanceSchemaUri = 'analysisInstanceSchemaUri1555410389';
+        $enableMonitoringPipelineLogs = false;
         $expectedResponse = new ModelDeploymentMonitoringJob();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEndpoint($endpoint);
         $expectedResponse->setPredictInstanceSchemaUri($predictInstanceSchemaUri);
         $expectedResponse->setAnalysisInstanceSchemaUri($analysisInstanceSchemaUri);
+        $expectedResponse->setEnableMonitoringPipelineLogs($enableMonitoringPipelineLogs);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();

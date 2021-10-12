@@ -1,21 +1,21 @@
-# Ruby Client for the Google Cloud Aiplatform V1 API
+# Ruby Client for the Vertex AI V1 API
 
-API Client library for the Google Cloud Aiplatform V1 API
+API Client library for the Vertex AI V1 API
 
-google-cloud-aiplatform-v1 is the official client library for the Google Cloud Aiplatform V1 API.
+Vertex AI enables data scientists, developers, and AI newcomers to create custom machine learning models specific to their business needs by leveraging Google's state-of-the-art transfer learning and innovative AI research.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Aiplatform V1 API. Most users should consider using
+specific version of the Vertex AI V1 API. Most users should consider using
 the main client gem,
-[google-cloud-aiplatform](https://rubygems.org/gems/google-cloud-aiplatform).
+[google-cloud-ai_platform](https://rubygems.org/gems/google-cloud-ai_platform).
 See the section below titled *Which client should I use?* for more information.
 
 ## Installation
 
 ```
-$ gem install google-cloud-aiplatform-v1
+$ gem install google-cloud-ai_platform-v1
 ```
 
 ## Before You Begin
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/aiplatform.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -36,8 +37,11 @@ request = ::Google::Cloud::AIPlatform::V1::CreateDatasetRequest.new # (request f
 response = client.create_dataset request
 ```
 
-View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-aiplatform-v1/latest)
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-ai_platform-v1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/vertex-ai/docs/)
+for general usage information.
 
 ## Enabling Logging
 
@@ -79,9 +83,9 @@ about the Ruby support schedule.
 ## Which client should I use?
 
 Most modern Ruby client libraries for Google APIs come in two flavors: the main
-client library with a name such as `google-cloud-aiplatform`,
+client library with a name such as `google-cloud-ai_platform`,
 and lower-level _versioned_ client libraries with names such as
-`google-cloud-aiplatform-v1`.
+`google-cloud-ai_platform-v1`.
 _In most cases, you should install the main client._
 
 ### What's the difference between the main client and a versioned client?
@@ -106,7 +110,7 @@ service version.
 
 We recommend that most users install the main client gem for a service. You can
 identify this gem as the one _without_ a version in its name, e.g.
-`google-cloud-aiplatform`.
+`google-cloud-ai_platform`.
 The main client is recommended because it will embody the best practices for
 accessing the service, and may also provide more convenient interfaces or
 tighter integration into frameworks and third-party libraries. In addition, the
@@ -119,7 +123,7 @@ You can use a versioned client if you are content with a possibly lower-level
 class interface, you explicitly want to avoid features provided by the main
 client, or you want to access a specific service version not be covered by the
 main client. You can identify versioned client gems because the service version
-is part of the name, e.g. `google-cloud-aiplatform-v1`.
+is part of the name, e.g. `google-cloud-ai_platform-v1`.
 
 ### What about the google-apis-<name> clients?
 

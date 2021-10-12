@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Aiplatform V1 API
+--title=Vertex AI V1 API
 --exclude _pb\.rb$
 --markup markdown
 --markup-provider redcarpet

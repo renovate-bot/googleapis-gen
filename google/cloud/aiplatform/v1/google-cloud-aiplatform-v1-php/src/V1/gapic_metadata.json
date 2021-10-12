@@ -108,6 +108,134 @@
                 }
             }
         },
+        "FeaturestoreOnlineServingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeaturestoreOnlineServingServiceGapicClient",
+                    "rpcs": {
+                        "ReadFeatureValues": {
+                            "methods": [
+                                "readFeatureValues"
+                            ]
+                        },
+                        "StreamingReadFeatureValues": {
+                            "methods": [
+                                "streamingReadFeatureValues"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeaturestoreService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeaturestoreServiceGapicClient",
+                    "rpcs": {
+                        "BatchCreateFeatures": {
+                            "methods": [
+                                "batchCreateFeatures"
+                            ]
+                        },
+                        "BatchReadFeatureValues": {
+                            "methods": [
+                                "batchReadFeatureValues"
+                            ]
+                        },
+                        "CreateEntityType": {
+                            "methods": [
+                                "createEntityType"
+                            ]
+                        },
+                        "CreateFeature": {
+                            "methods": [
+                                "createFeature"
+                            ]
+                        },
+                        "CreateFeaturestore": {
+                            "methods": [
+                                "createFeaturestore"
+                            ]
+                        },
+                        "DeleteEntityType": {
+                            "methods": [
+                                "deleteEntityType"
+                            ]
+                        },
+                        "DeleteFeature": {
+                            "methods": [
+                                "deleteFeature"
+                            ]
+                        },
+                        "DeleteFeaturestore": {
+                            "methods": [
+                                "deleteFeaturestore"
+                            ]
+                        },
+                        "ExportFeatureValues": {
+                            "methods": [
+                                "exportFeatureValues"
+                            ]
+                        },
+                        "GetEntityType": {
+                            "methods": [
+                                "getEntityType"
+                            ]
+                        },
+                        "GetFeature": {
+                            "methods": [
+                                "getFeature"
+                            ]
+                        },
+                        "GetFeaturestore": {
+                            "methods": [
+                                "getFeaturestore"
+                            ]
+                        },
+                        "ImportFeatureValues": {
+                            "methods": [
+                                "importFeatureValues"
+                            ]
+                        },
+                        "ListEntityTypes": {
+                            "methods": [
+                                "listEntityTypes"
+                            ]
+                        },
+                        "ListFeatures": {
+                            "methods": [
+                                "listFeatures"
+                            ]
+                        },
+                        "ListFeaturestores": {
+                            "methods": [
+                                "listFeaturestores"
+                            ]
+                        },
+                        "SearchFeatures": {
+                            "methods": [
+                                "searchFeatures"
+                            ]
+                        },
+                        "UpdateEntityType": {
+                            "methods": [
+                                "updateEntityType"
+                            ]
+                        },
+                        "UpdateFeature": {
+                            "methods": [
+                                "updateFeature"
+                            ]
+                        },
+                        "UpdateFeaturestore": {
+                            "methods": [
+                                "updateFeaturestore"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "IndexEndpointService": {
             "clients": {
                 "grpc": {
@@ -329,6 +457,170 @@
                         "UpdateModelDeploymentMonitoringJob": {
                             "methods": [
                                 "updateModelDeploymentMonitoringJob"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MetadataService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MetadataServiceGapicClient",
+                    "rpcs": {
+                        "AddContextArtifactsAndExecutions": {
+                            "methods": [
+                                "addContextArtifactsAndExecutions"
+                            ]
+                        },
+                        "AddContextChildren": {
+                            "methods": [
+                                "addContextChildren"
+                            ]
+                        },
+                        "AddExecutionEvents": {
+                            "methods": [
+                                "addExecutionEvents"
+                            ]
+                        },
+                        "CreateArtifact": {
+                            "methods": [
+                                "createArtifact"
+                            ]
+                        },
+                        "CreateContext": {
+                            "methods": [
+                                "createContext"
+                            ]
+                        },
+                        "CreateExecution": {
+                            "methods": [
+                                "createExecution"
+                            ]
+                        },
+                        "CreateMetadataSchema": {
+                            "methods": [
+                                "createMetadataSchema"
+                            ]
+                        },
+                        "CreateMetadataStore": {
+                            "methods": [
+                                "createMetadataStore"
+                            ]
+                        },
+                        "DeleteArtifact": {
+                            "methods": [
+                                "deleteArtifact"
+                            ]
+                        },
+                        "DeleteContext": {
+                            "methods": [
+                                "deleteContext"
+                            ]
+                        },
+                        "DeleteExecution": {
+                            "methods": [
+                                "deleteExecution"
+                            ]
+                        },
+                        "DeleteMetadataStore": {
+                            "methods": [
+                                "deleteMetadataStore"
+                            ]
+                        },
+                        "GetArtifact": {
+                            "methods": [
+                                "getArtifact"
+                            ]
+                        },
+                        "GetContext": {
+                            "methods": [
+                                "getContext"
+                            ]
+                        },
+                        "GetExecution": {
+                            "methods": [
+                                "getExecution"
+                            ]
+                        },
+                        "GetMetadataSchema": {
+                            "methods": [
+                                "getMetadataSchema"
+                            ]
+                        },
+                        "GetMetadataStore": {
+                            "methods": [
+                                "getMetadataStore"
+                            ]
+                        },
+                        "ListArtifacts": {
+                            "methods": [
+                                "listArtifacts"
+                            ]
+                        },
+                        "ListContexts": {
+                            "methods": [
+                                "listContexts"
+                            ]
+                        },
+                        "ListExecutions": {
+                            "methods": [
+                                "listExecutions"
+                            ]
+                        },
+                        "ListMetadataSchemas": {
+                            "methods": [
+                                "listMetadataSchemas"
+                            ]
+                        },
+                        "ListMetadataStores": {
+                            "methods": [
+                                "listMetadataStores"
+                            ]
+                        },
+                        "PurgeArtifacts": {
+                            "methods": [
+                                "purgeArtifacts"
+                            ]
+                        },
+                        "PurgeContexts": {
+                            "methods": [
+                                "purgeContexts"
+                            ]
+                        },
+                        "PurgeExecutions": {
+                            "methods": [
+                                "purgeExecutions"
+                            ]
+                        },
+                        "QueryArtifactLineageSubgraph": {
+                            "methods": [
+                                "queryArtifactLineageSubgraph"
+                            ]
+                        },
+                        "QueryContextLineageSubgraph": {
+                            "methods": [
+                                "queryContextLineageSubgraph"
+                            ]
+                        },
+                        "QueryExecutionInputsAndOutputs": {
+                            "methods": [
+                                "queryExecutionInputsAndOutputs"
+                            ]
+                        },
+                        "UpdateArtifact": {
+                            "methods": [
+                                "updateArtifact"
+                            ]
+                        },
+                        "UpdateContext": {
+                            "methods": [
+                                "updateContext"
+                            ]
+                        },
+                        "UpdateExecution": {
+                            "methods": [
+                                "updateExecution"
                             ]
                         }
                     }

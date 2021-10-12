@@ -86,6 +86,14 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool enable_access_logging = 13;</code>
      */
     protected $enable_access_logging = false;
+    /**
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $private_endpoints = null;
     protected $prediction_resources;
 
     /**
@@ -139,6 +147,10 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *           Note that Stackdriver logs may incur a cost, especially if your project
      *           receives prediction requests at a high queries per second rate (QPS).
      *           Estimate your costs before enabling this option.
+     *     @type \Google\Cloud\AIPlatform\V1\PrivateEndpoints $private_endpoints
+     *           Output only. Provide paths for users to send predict/explain/health requests directly to
+     *           the deployed model services running on Cloud via private services access.
+     *           This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * }
      */
     public function __construct($data = NULL) {
@@ -482,6 +494,46 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->enable_access_logging = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\AIPlatform\V1\PrivateEndpoints|null
+     */
+    public function getPrivateEndpoints()
+    {
+        return isset($this->private_endpoints) ? $this->private_endpoints : null;
+    }
+
+    public function hasPrivateEndpoints()
+    {
+        return isset($this->private_endpoints);
+    }
+
+    public function clearPrivateEndpoints()
+    {
+        unset($this->private_endpoints);
+    }
+
+    /**
+     * Output only. Provide paths for users to send predict/explain/health requests directly to
+     * the deployed model services running on Cloud via private services access.
+     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.PrivateEndpoints private_endpoints = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\AIPlatform\V1\PrivateEndpoints $var
+     * @return $this
+     */
+    public function setPrivateEndpoints($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\PrivateEndpoints::class);
+        $this->private_endpoints = $var;
 
         return $this;
     }

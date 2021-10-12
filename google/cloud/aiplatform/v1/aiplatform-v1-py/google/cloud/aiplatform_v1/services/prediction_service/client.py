@@ -170,6 +170,17 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def model_path(project: str,location: str,model: str,) -> str:
+        """Returns a fully-qualified model string."""
+        return "projects/{project}/locations/{location}/models/{model}".format(project=project, location=location, model=model, )
+
+    @staticmethod
+    def parse_model_path(path: str) -> Dict[str,str]:
+        """Parses a model path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/models/(?P<model>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
@@ -453,8 +464,17 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> httpbody_pb2.HttpBody:
-        r"""Perform an online prediction with arbitrary http
-        payload.
+        r"""Perform an online prediction with an arbitrary HTTP payload.
+
+        The response includes the following HTTP headers:
+
+        -  ``X-Vertex-AI-Endpoint-Id``: ID of the
+           [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served
+           this prediction.
+
+        -  ``X-Vertex-AI-Deployed-Model-Id``: ID of the Endpoint's
+           [DeployedModel][google.cloud.aiplatform.v1.DeployedModel]
+           that served this prediction.
 
         Args:
             request (Union[google.cloud.aiplatform_v1.types.RawPredictRequest, dict]):

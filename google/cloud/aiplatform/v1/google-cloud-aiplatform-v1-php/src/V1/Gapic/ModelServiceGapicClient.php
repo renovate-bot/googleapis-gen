@@ -461,7 +461,8 @@ class ModelServiceGapicClient
 
     /**
      * Deletes a Model.
-     * Note: Model can only be deleted if there are no DeployedModels created
+     *
+     * Model can only be deleted if there are no [DeployedModels][] created
      * from it.
      *
      * Sample code:
@@ -568,7 +569,6 @@ class ModelServiceGapicClient
      * ```
      *
      * @param string       $name         Required. The resource name of the Model to export.
-     *                                   Format: `projects/{project}/locations/{location}/models/{model}`
      * @param OutputConfig $outputConfig Required. The desired output location and configuration.
      * @param array        $optionalArgs {
      *     Optional.

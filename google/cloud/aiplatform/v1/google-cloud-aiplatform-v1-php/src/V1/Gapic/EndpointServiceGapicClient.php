@@ -137,6 +137,8 @@ class EndpointServiceGapicClient
 
     private static $modelDeploymentMonitoringJobNameTemplate;
 
+    private static $networkNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -196,6 +198,15 @@ class EndpointServiceGapicClient
         return self::$modelDeploymentMonitoringJobNameTemplate;
     }
 
+    private static function getNetworkNameTemplate()
+    {
+        if (self::$networkNameTemplate == null) {
+            self::$networkNameTemplate = new PathTemplate('projects/{project}/global/networks/{network}');
+        }
+
+        return self::$networkNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -204,6 +215,7 @@ class EndpointServiceGapicClient
                 'location' => self::getLocationNameTemplate(),
                 'model' => self::getModelNameTemplate(),
                 'modelDeploymentMonitoringJob' => self::getModelDeploymentMonitoringJobNameTemplate(),
+                'network' => self::getNetworkNameTemplate(),
             ];
         }
 
@@ -285,6 +297,23 @@ class EndpointServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a network
+     * resource.
+     *
+     * @param string $project
+     * @param string $network
+     *
+     * @return string The formatted network resource.
+     */
+    public static function networkName($project, $network)
+    {
+        return self::getNetworkNameTemplate()->render([
+            'project' => $project,
+            'network' => $network,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -292,6 +321,7 @@ class EndpointServiceGapicClient
      * - location: projects/{project}/locations/{location}
      * - model: projects/{project}/locations/{location}/models/{model}
      * - modelDeploymentMonitoringJob: projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+     * - network: projects/{project}/global/networks/{network}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

@@ -19,14 +19,15 @@ class SpecialistPool
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ò
-0google/cloud/aiplatform/v1/specialist_pool.protogoogle.cloud.aiplatform.v1google/api/resource.protogoogle/api/annotations.proto"¨
+∫
+0google/cloud/aiplatform/v1/specialist_pool.protogoogle.cloud.aiplatform.v1google/api/resource.protogoogle/api/annotations.proto"Œ
 SpecialistPool
 name (	B‡A
 display_name (	B‡A&
 specialist_managers_count (B‡A!
 specialist_manager_emails (	\'
-pending_data_labeling_jobs (	B‡A:xÍAu
+pending_data_labeling_jobs (	B‡A 
+specialist_worker_emails (	:xÍAu
 (aiplatform.googleapis.com/SpecialistPoolIprojects/{project}/locations/{location}/specialistPools/{specialist_pool}B◊
 com.google.cloud.aiplatform.v1BSpecialistPoolProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatform™Google.Cloud.AIPlatform.V1 Google\\Cloud\\AIPlatform\\V1ÍGoogle::Cloud::AIPlatform::V1bproto3'
         , true);

@@ -10,7 +10,6 @@ public interface ExportModelRequestOrBuilder extends
   /**
    * <pre>
    * Required. The resource name of the Model to export.
-   * Format: `projects/{project}/locations/{location}/models/{model}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +19,6 @@ public interface ExportModelRequestOrBuilder extends
   /**
    * <pre>
    * Required. The resource name of the Model to export.
-   * Format: `projects/{project}/locations/{location}/models/{model}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

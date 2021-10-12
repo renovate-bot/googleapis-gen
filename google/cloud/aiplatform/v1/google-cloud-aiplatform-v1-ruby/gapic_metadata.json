@@ -108,6 +108,134 @@
         }
       }
     },
+    "FeaturestoreOnlineServingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::AIPlatform::V1::FeaturestoreOnlineServingService::Client",
+          "rpcs": {
+            "ReadFeatureValues": {
+              "methods": [
+                "read_feature_values"
+              ]
+            },
+            "StreamingReadFeatureValues": {
+              "methods": [
+                "streaming_read_feature_values"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeaturestoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::AIPlatform::V1::FeaturestoreService::Client",
+          "rpcs": {
+            "CreateFeaturestore": {
+              "methods": [
+                "create_featurestore"
+              ]
+            },
+            "GetFeaturestore": {
+              "methods": [
+                "get_featurestore"
+              ]
+            },
+            "ListFeaturestores": {
+              "methods": [
+                "list_featurestores"
+              ]
+            },
+            "UpdateFeaturestore": {
+              "methods": [
+                "update_featurestore"
+              ]
+            },
+            "DeleteFeaturestore": {
+              "methods": [
+                "delete_featurestore"
+              ]
+            },
+            "CreateEntityType": {
+              "methods": [
+                "create_entity_type"
+              ]
+            },
+            "GetEntityType": {
+              "methods": [
+                "get_entity_type"
+              ]
+            },
+            "ListEntityTypes": {
+              "methods": [
+                "list_entity_types"
+              ]
+            },
+            "UpdateEntityType": {
+              "methods": [
+                "update_entity_type"
+              ]
+            },
+            "DeleteEntityType": {
+              "methods": [
+                "delete_entity_type"
+              ]
+            },
+            "CreateFeature": {
+              "methods": [
+                "create_feature"
+              ]
+            },
+            "BatchCreateFeatures": {
+              "methods": [
+                "batch_create_features"
+              ]
+            },
+            "GetFeature": {
+              "methods": [
+                "get_feature"
+              ]
+            },
+            "ListFeatures": {
+              "methods": [
+                "list_features"
+              ]
+            },
+            "UpdateFeature": {
+              "methods": [
+                "update_feature"
+              ]
+            },
+            "DeleteFeature": {
+              "methods": [
+                "delete_feature"
+              ]
+            },
+            "ImportFeatureValues": {
+              "methods": [
+                "import_feature_values"
+              ]
+            },
+            "BatchReadFeatureValues": {
+              "methods": [
+                "batch_read_feature_values"
+              ]
+            },
+            "ExportFeatureValues": {
+              "methods": [
+                "export_feature_values"
+              ]
+            },
+            "SearchFeatures": {
+              "methods": [
+                "search_features"
+              ]
+            }
+          }
+        }
+      }
+    },
     "IndexEndpointService": {
       "clients": {
         "grpc": {
@@ -329,6 +457,170 @@
             "ResumeModelDeploymentMonitoringJob": {
               "methods": [
                 "resume_model_deployment_monitoring_job"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MetadataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::AIPlatform::V1::MetadataService::Client",
+          "rpcs": {
+            "CreateMetadataStore": {
+              "methods": [
+                "create_metadata_store"
+              ]
+            },
+            "GetMetadataStore": {
+              "methods": [
+                "get_metadata_store"
+              ]
+            },
+            "ListMetadataStores": {
+              "methods": [
+                "list_metadata_stores"
+              ]
+            },
+            "DeleteMetadataStore": {
+              "methods": [
+                "delete_metadata_store"
+              ]
+            },
+            "CreateArtifact": {
+              "methods": [
+                "create_artifact"
+              ]
+            },
+            "GetArtifact": {
+              "methods": [
+                "get_artifact"
+              ]
+            },
+            "ListArtifacts": {
+              "methods": [
+                "list_artifacts"
+              ]
+            },
+            "UpdateArtifact": {
+              "methods": [
+                "update_artifact"
+              ]
+            },
+            "DeleteArtifact": {
+              "methods": [
+                "delete_artifact"
+              ]
+            },
+            "PurgeArtifacts": {
+              "methods": [
+                "purge_artifacts"
+              ]
+            },
+            "CreateContext": {
+              "methods": [
+                "create_context"
+              ]
+            },
+            "GetContext": {
+              "methods": [
+                "get_context"
+              ]
+            },
+            "ListContexts": {
+              "methods": [
+                "list_contexts"
+              ]
+            },
+            "UpdateContext": {
+              "methods": [
+                "update_context"
+              ]
+            },
+            "DeleteContext": {
+              "methods": [
+                "delete_context"
+              ]
+            },
+            "PurgeContexts": {
+              "methods": [
+                "purge_contexts"
+              ]
+            },
+            "AddContextArtifactsAndExecutions": {
+              "methods": [
+                "add_context_artifacts_and_executions"
+              ]
+            },
+            "AddContextChildren": {
+              "methods": [
+                "add_context_children"
+              ]
+            },
+            "QueryContextLineageSubgraph": {
+              "methods": [
+                "query_context_lineage_subgraph"
+              ]
+            },
+            "CreateExecution": {
+              "methods": [
+                "create_execution"
+              ]
+            },
+            "GetExecution": {
+              "methods": [
+                "get_execution"
+              ]
+            },
+            "ListExecutions": {
+              "methods": [
+                "list_executions"
+              ]
+            },
+            "UpdateExecution": {
+              "methods": [
+                "update_execution"
+              ]
+            },
+            "DeleteExecution": {
+              "methods": [
+                "delete_execution"
+              ]
+            },
+            "PurgeExecutions": {
+              "methods": [
+                "purge_executions"
+              ]
+            },
+            "AddExecutionEvents": {
+              "methods": [
+                "add_execution_events"
+              ]
+            },
+            "QueryExecutionInputsAndOutputs": {
+              "methods": [
+                "query_execution_inputs_and_outputs"
+              ]
+            },
+            "CreateMetadataSchema": {
+              "methods": [
+                "create_metadata_schema"
+              ]
+            },
+            "GetMetadataSchema": {
+              "methods": [
+                "get_metadata_schema"
+              ]
+            },
+            "ListMetadataSchemas": {
+              "methods": [
+                "list_metadata_schemas"
+              ]
+            },
+            "QueryArtifactLineageSubgraph": {
+              "methods": [
+                "query_artifact_lineage_subgraph"
               ]
             }
           }

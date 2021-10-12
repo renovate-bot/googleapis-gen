@@ -204,7 +204,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+                gapic_version: ::Google::Cloud::AIPlatform::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -230,7 +230,15 @@ module Google
             end
 
             ##
-            # Perform an online prediction with arbitrary http payload.
+            # Perform an online prediction with an arbitrary HTTP payload.
+            #
+            # The response includes the following HTTP headers:
+            #
+            # * `X-Vertex-AI-Endpoint-Id`: ID of the {::Google::Cloud::AIPlatform::V1::Endpoint Endpoint} that served this
+            # prediction.
+            #
+            # * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's {::Google::Cloud::AIPlatform::V1::DeployedModel DeployedModel}
+            # that served this prediction.
             #
             # @overload raw_predict(request, options = nil)
             #   Pass arguments to `raw_predict` via a request object, either of type
@@ -288,7 +296,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+                gapic_version: ::Google::Cloud::AIPlatform::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -394,7 +402,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Aiplatform::V1::VERSION
+                gapic_version: ::Google::Cloud::AIPlatform::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {

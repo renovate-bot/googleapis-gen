@@ -741,8 +741,9 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> gac_operation.Operation:
         r"""Deletes a Model.
-        Note: Model can only be deleted if there are no
-        DeployedModels created from it.
+
+        Model can only be deleted if there are no [DeployedModels][]
+        created from it.
 
         Args:
             request (Union[google.cloud.aiplatform_v1.types.DeleteModelRequest, dict]):
@@ -850,9 +851,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
                 The request object. Request message for
                 [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel].
             name (str):
-                Required. The resource name of the Model to export.
-                Format:
-                ``projects/{project}/locations/{location}/models/{model}``
+                Required. The resource name of the
+                Model to export.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this

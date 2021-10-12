@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     parent_ = "";
     filter_ = "";
     pageToken_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -76,6 +77,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             pageToken_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            orderBy_ = s;
             break;
           }
           default: {
@@ -165,6 +172,10 @@ private static final long serialVersionUID = 0L;
    * Lists the PipelineJobs that match the filter expression. The following
    * fields are supported:
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
+   * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   *  for example, can check if pipeline's display_name contains *step* by doing
+   *   display_name:&#92;"*step*&#92;"
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -206,6 +217,10 @@ private static final long serialVersionUID = 0L;
    * Lists the PipelineJobs that match the filter expression. The following
    * fields are supported:
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
+   * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+   *  for example, can check if pipeline's display_name contains *step* by doing
+   *   display_name:&#92;"*step*&#92;"
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -311,6 +326,74 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ORDER_BY_FIELD_NUMBER = 6;
+  private volatile java.lang.Object orderBy_;
+  /**
+   * <pre>
+   * A comma-separated list of fields to order by. The default sort order is in
+   * ascending order. Use "desc" after a field name for descending. You can have
+   * multiple order_by fields provided e.g. "create_time desc, end_time",
+   * "end_time, start_time, update_time" For example, using "create_time desc,
+   * end_time" will order results by create time in descending order, and if
+   * there are multiple jobs having the same create time, order them by the end
+   * time in ascending order. if order_by is not specified, it will order by
+   * default order is create time in descending order. Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   *   * `end_time`
+   *   * `start_time`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A comma-separated list of fields to order by. The default sort order is in
+   * ascending order. Use "desc" after a field name for descending. You can have
+   * multiple order_by fields provided e.g. "create_time desc, end_time",
+   * "end_time, start_time, update_time" For example, using "create_time desc,
+   * end_time" will order results by create time in descending order, and if
+   * there are multiple jobs having the same create time, order them by the end
+   * time in ascending order. if order_by is not specified, it will order by
+   * default order is create time in descending order. Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   *   * `end_time`
+   *   * `start_time`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -337,6 +420,9 @@ private static final long serialVersionUID = 0L;
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
+    if (!getOrderByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -358,6 +444,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+    }
+    if (!getOrderByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -382,6 +471,8 @@ private static final long serialVersionUID = 0L;
         != other.getPageSize()) return false;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
+    if (!getOrderBy()
+        .equals(other.getOrderBy())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -401,6 +492,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -546,6 +639,8 @@ private static final long serialVersionUID = 0L;
 
       pageToken_ = "";
 
+      orderBy_ = "";
+
       return this;
     }
 
@@ -576,6 +671,7 @@ private static final long serialVersionUID = 0L;
       result.filter_ = filter_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
@@ -637,6 +733,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -775,6 +875,10 @@ private static final long serialVersionUID = 0L;
      * Lists the PipelineJobs that match the filter expression. The following
      * fields are supported:
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
+     * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     *  for example, can check if pipeline's display_name contains *step* by doing
+     *   display_name:&#92;"*step*&#92;"
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -815,6 +919,10 @@ private static final long serialVersionUID = 0L;
      * Lists the PipelineJobs that match the filter expression. The following
      * fields are supported:
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
+     * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     *  for example, can check if pipeline's display_name contains *step* by doing
+     *   display_name:&#92;"*step*&#92;"
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -856,6 +964,10 @@ private static final long serialVersionUID = 0L;
      * Lists the PipelineJobs that match the filter expression. The following
      * fields are supported:
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
+     * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     *  for example, can check if pipeline's display_name contains *step* by doing
+     *   display_name:&#92;"*step*&#92;"
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -895,6 +1007,10 @@ private static final long serialVersionUID = 0L;
      * Lists the PipelineJobs that match the filter expression. The following
      * fields are supported:
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
+     * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     *  for example, can check if pipeline's display_name contains *step* by doing
+     *   display_name:&#92;"*step*&#92;"
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -929,6 +1045,10 @@ private static final long serialVersionUID = 0L;
      * Lists the PipelineJobs that match the filter expression. The following
      * fields are supported:
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
+     * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
+     *  for example, can check if pipeline's display_name contains *step* by doing
+     *   display_name:&#92;"*step*&#92;"
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -1115,6 +1235,157 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       pageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     * <pre>
+     * A comma-separated list of fields to order by. The default sort order is in
+     * ascending order. Use "desc" after a field name for descending. You can have
+     * multiple order_by fields provided e.g. "create_time desc, end_time",
+     * "end_time, start_time, update_time" For example, using "create_time desc,
+     * end_time" will order results by create time in descending order, and if
+     * there are multiple jobs having the same create time, order them by the end
+     * time in ascending order. if order_by is not specified, it will order by
+     * default order is create time in descending order. Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     *   * `end_time`
+     *   * `start_time`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A comma-separated list of fields to order by. The default sort order is in
+     * ascending order. Use "desc" after a field name for descending. You can have
+     * multiple order_by fields provided e.g. "create_time desc, end_time",
+     * "end_time, start_time, update_time" For example, using "create_time desc,
+     * end_time" will order results by create time in descending order, and if
+     * there are multiple jobs having the same create time, order them by the end
+     * time in ascending order. if order_by is not specified, it will order by
+     * default order is create time in descending order. Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     *   * `end_time`
+     *   * `start_time`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString
+        getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A comma-separated list of fields to order by. The default sort order is in
+     * ascending order. Use "desc" after a field name for descending. You can have
+     * multiple order_by fields provided e.g. "create_time desc, end_time",
+     * "end_time, start_time, update_time" For example, using "create_time desc,
+     * end_time" will order results by create time in descending order, and if
+     * there are multiple jobs having the same create time, order them by the end
+     * time in ascending order. if order_by is not specified, it will order by
+     * default order is create time in descending order. Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     *   * `end_time`
+     *   * `start_time`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A comma-separated list of fields to order by. The default sort order is in
+     * ascending order. Use "desc" after a field name for descending. You can have
+     * multiple order_by fields provided e.g. "create_time desc, end_time",
+     * "end_time, start_time, update_time" For example, using "create_time desc,
+     * end_time" will order results by create time in descending order, and if
+     * there are multiple jobs having the same create time, order them by the end
+     * time in ascending order. if order_by is not specified, it will order by
+     * default order is create time in descending order. Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     *   * `end_time`
+     *   * `start_time`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A comma-separated list of fields to order by. The default sort order is in
+     * ascending order. Use "desc" after a field name for descending. You can have
+     * multiple order_by fields provided e.g. "create_time desc, end_time",
+     * "end_time, start_time, update_time" For example, using "create_time desc,
+     * end_time" will order results by create time in descending order, and if
+     * there are multiple jobs having the same create time, order them by the end
+     * time in ascending order. if order_by is not specified, it will order by
+     * default order is create time in descending order. Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     *   * `end_time`
+     *   * `start_time`
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      orderBy_ = value;
       onChanged();
       return this;
     }

@@ -16,13 +16,19 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {DatasetServiceClient, EndpointServiceClient, IndexEndpointServiceClient, IndexServiceClient, JobServiceClient, MigrationServiceClient, ModelServiceClient, PipelineServiceClient, PredictionServiceClient, SpecialistPoolServiceClient, VizierServiceClient} from '@google-cloud/aiplatform';
+import {DatasetServiceClient, EndpointServiceClient, FeaturestoreOnlineServingServiceClient, FeaturestoreServiceClient, IndexEndpointServiceClient, IndexServiceClient, JobServiceClient, MetadataServiceClient, MigrationServiceClient, ModelServiceClient, PipelineServiceClient, PredictionServiceClient, SpecialistPoolServiceClient, VizierServiceClient} from '@google-cloud/aiplatform';
 
 // check that the client class type name can be used
 function doStuffWithDatasetServiceClient(client: DatasetServiceClient) {
   client.close();
 }
 function doStuffWithEndpointServiceClient(client: EndpointServiceClient) {
+  client.close();
+}
+function doStuffWithFeaturestoreOnlineServingServiceClient(client: FeaturestoreOnlineServingServiceClient) {
+  client.close();
+}
+function doStuffWithFeaturestoreServiceClient(client: FeaturestoreServiceClient) {
   client.close();
 }
 function doStuffWithIndexEndpointServiceClient(client: IndexEndpointServiceClient) {
@@ -32,6 +38,9 @@ function doStuffWithIndexServiceClient(client: IndexServiceClient) {
   client.close();
 }
 function doStuffWithJobServiceClient(client: JobServiceClient) {
+  client.close();
+}
+function doStuffWithMetadataServiceClient(client: MetadataServiceClient) {
   client.close();
 }
 function doStuffWithMigrationServiceClient(client: MigrationServiceClient) {
@@ -61,6 +70,12 @@ function main() {
   const endpointServiceClient = new EndpointServiceClient();
   doStuffWithEndpointServiceClient(endpointServiceClient);
   // check that the client instance can be created
+  const featurestoreOnlineServingServiceClient = new FeaturestoreOnlineServingServiceClient();
+  doStuffWithFeaturestoreOnlineServingServiceClient(featurestoreOnlineServingServiceClient);
+  // check that the client instance can be created
+  const featurestoreServiceClient = new FeaturestoreServiceClient();
+  doStuffWithFeaturestoreServiceClient(featurestoreServiceClient);
+  // check that the client instance can be created
   const indexEndpointServiceClient = new IndexEndpointServiceClient();
   doStuffWithIndexEndpointServiceClient(indexEndpointServiceClient);
   // check that the client instance can be created
@@ -69,6 +84,9 @@ function main() {
   // check that the client instance can be created
   const jobServiceClient = new JobServiceClient();
   doStuffWithJobServiceClient(jobServiceClient);
+  // check that the client instance can be created
+  const metadataServiceClient = new MetadataServiceClient();
+  doStuffWithMetadataServiceClient(metadataServiceClient);
   // check that the client instance can be created
   const migrationServiceClient = new MigrationServiceClient();
   doStuffWithMigrationServiceClient(migrationServiceClient);

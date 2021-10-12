@@ -358,8 +358,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
         r"""Return a callable for the delete model method over gRPC.
 
         Deletes a Model.
-        Note: Model can only be deleted if there are no
-        DeployedModels created from it.
+
+        Model can only be deleted if there are no [DeployedModels][]
+        created from it.
 
         Returns:
             Callable[[~.DeleteModelRequest],

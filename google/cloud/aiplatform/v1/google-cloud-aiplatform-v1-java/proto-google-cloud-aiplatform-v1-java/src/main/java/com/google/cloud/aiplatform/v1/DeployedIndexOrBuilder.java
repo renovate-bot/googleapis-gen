@@ -208,11 +208,10 @@ public interface DeployedIndexOrBuilder extends
    * Optional. A description of resources that the DeployedIndex uses, which to large
    * degree are decided by Vertex AI, and optionally allows only a modest
    * additional configuration.
-   * If min_replica_count is not set, the default value is 1. If
-   * max_replica_count is not set, the default value is min_replica_count. The
-   * max allowed replica count is 1000.
-   * The user is billed for the resources (at least their minimal amount) even
-   * if the DeployedIndex receives no traffic.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -224,11 +223,10 @@ public interface DeployedIndexOrBuilder extends
    * Optional. A description of resources that the DeployedIndex uses, which to large
    * degree are decided by Vertex AI, and optionally allows only a modest
    * additional configuration.
-   * If min_replica_count is not set, the default value is 1. If
-   * max_replica_count is not set, the default value is min_replica_count. The
-   * max allowed replica count is 1000.
-   * The user is billed for the resources (at least their minimal amount) even
-   * if the DeployedIndex receives no traffic.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -240,11 +238,10 @@ public interface DeployedIndexOrBuilder extends
    * Optional. A description of resources that the DeployedIndex uses, which to large
    * degree are decided by Vertex AI, and optionally allows only a modest
    * additional configuration.
-   * If min_replica_count is not set, the default value is 1. If
-   * max_replica_count is not set, the default value is min_replica_count. The
-   * max allowed replica count is 1000.
-   * The user is billed for the resources (at least their minimal amount) even
-   * if the DeployedIndex receives no traffic.
+   * If min_replica_count is not set, the default value is 2 (we don't provide
+   * SLA when min_replica_count=1). If max_replica_count is not set, the
+   * default value is min_replica_count. The max allowed replica count is
+   * 1000.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.AutomaticResources automatic_resources = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

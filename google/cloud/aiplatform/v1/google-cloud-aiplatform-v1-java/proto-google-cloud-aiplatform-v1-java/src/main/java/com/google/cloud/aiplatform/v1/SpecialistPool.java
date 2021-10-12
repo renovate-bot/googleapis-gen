@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     specialistManagerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     pendingDataLabelingJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    specialistWorkerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -97,6 +98,15 @@ private static final long serialVersionUID = 0L;
             pendingDataLabelingJobs_.add(s);
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              specialistWorkerEmails_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            specialistWorkerEmails_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -117,6 +127,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         pendingDataLabelingJobs_ = pendingDataLabelingJobs_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        specialistWorkerEmails_ = specialistWorkerEmails_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -350,6 +363,57 @@ private static final long serialVersionUID = 0L;
     return pendingDataLabelingJobs_.getByteString(index);
   }
 
+  public static final int SPECIALIST_WORKER_EMAILS_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList specialistWorkerEmails_;
+  /**
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   * @return A list containing the specialistWorkerEmails.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getSpecialistWorkerEmailsList() {
+    return specialistWorkerEmails_;
+  }
+  /**
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   * @return The count of specialistWorkerEmails.
+   */
+  public int getSpecialistWorkerEmailsCount() {
+    return specialistWorkerEmails_.size();
+  }
+  /**
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   * @param index The index of the element to return.
+   * @return The specialistWorkerEmails at the given index.
+   */
+  public java.lang.String getSpecialistWorkerEmails(int index) {
+    return specialistWorkerEmails_.get(index);
+  }
+  /**
+   * <pre>
+   * The email addresses of workers in the SpecialistPool.
+   * </pre>
+   *
+   * <code>repeated string specialist_worker_emails = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the specialistWorkerEmails at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getSpecialistWorkerEmailsBytes(int index) {
+    return specialistWorkerEmails_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -378,6 +442,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < pendingDataLabelingJobs_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, pendingDataLabelingJobs_.getRaw(i));
+    }
+    for (int i = 0; i < specialistWorkerEmails_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, specialistWorkerEmails_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -414,6 +481,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPendingDataLabelingJobsList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < specialistWorkerEmails_.size(); i++) {
+        dataSize += computeStringSizeNoTag(specialistWorkerEmails_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSpecialistWorkerEmailsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -439,6 +514,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSpecialistManagerEmailsList())) return false;
     if (!getPendingDataLabelingJobsList()
         .equals(other.getPendingDataLabelingJobsList())) return false;
+    if (!getSpecialistWorkerEmailsList()
+        .equals(other.getSpecialistWorkerEmailsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -463,6 +540,10 @@ private static final long serialVersionUID = 0L;
     if (getPendingDataLabelingJobsCount() > 0) {
       hash = (37 * hash) + PENDING_DATA_LABELING_JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getPendingDataLabelingJobsList().hashCode();
+    }
+    if (getSpecialistWorkerEmailsCount() > 0) {
+      hash = (37 * hash) + SPECIALIST_WORKER_EMAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecialistWorkerEmailsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -616,6 +697,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       pendingDataLabelingJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      specialistWorkerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -656,6 +739,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.pendingDataLabelingJobs_ = pendingDataLabelingJobs_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        specialistWorkerEmails_ = specialistWorkerEmails_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.specialistWorkerEmails_ = specialistWorkerEmails_;
       onBuilt();
       return result;
     }
@@ -732,6 +820,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensurePendingDataLabelingJobsIsMutable();
           pendingDataLabelingJobs_.addAll(other.pendingDataLabelingJobs_);
+        }
+        onChanged();
+      }
+      if (!other.specialistWorkerEmails_.isEmpty()) {
+        if (specialistWorkerEmails_.isEmpty()) {
+          specialistWorkerEmails_ = other.specialistWorkerEmails_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureSpecialistWorkerEmailsIsMutable();
+          specialistWorkerEmails_.addAll(other.specialistWorkerEmails_);
         }
         onChanged();
       }
@@ -1303,6 +1401,152 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensurePendingDataLabelingJobsIsMutable();
       pendingDataLabelingJobs_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList specialistWorkerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureSpecialistWorkerEmailsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        specialistWorkerEmails_ = new com.google.protobuf.LazyStringArrayList(specialistWorkerEmails_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @return A list containing the specialistWorkerEmails.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSpecialistWorkerEmailsList() {
+      return specialistWorkerEmails_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @return The count of specialistWorkerEmails.
+     */
+    public int getSpecialistWorkerEmailsCount() {
+      return specialistWorkerEmails_.size();
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @param index The index of the element to return.
+     * @return The specialistWorkerEmails at the given index.
+     */
+    public java.lang.String getSpecialistWorkerEmails(int index) {
+      return specialistWorkerEmails_.get(index);
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the specialistWorkerEmails at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getSpecialistWorkerEmailsBytes(int index) {
+      return specialistWorkerEmails_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The specialistWorkerEmails to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecialistWorkerEmails(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSpecialistWorkerEmailsIsMutable();
+      specialistWorkerEmails_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @param value The specialistWorkerEmails to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSpecialistWorkerEmails(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSpecialistWorkerEmailsIsMutable();
+      specialistWorkerEmails_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @param values The specialistWorkerEmails to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSpecialistWorkerEmails(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSpecialistWorkerEmailsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, specialistWorkerEmails_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSpecialistWorkerEmails() {
+      specialistWorkerEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The email addresses of workers in the SpecialistPool.
+     * </pre>
+     *
+     * <code>repeated string specialist_worker_emails = 7;</code>
+     * @param value The bytes of the specialistWorkerEmails to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSpecialistWorkerEmailsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureSpecialistWorkerEmailsIsMutable();
+      specialistWorkerEmails_.add(value);
       onChanged();
       return this;
     }

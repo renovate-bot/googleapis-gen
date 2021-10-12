@@ -56,6 +56,8 @@ class EndpointServiceAsyncClient:
     parse_model_path = staticmethod(EndpointServiceClient.parse_model_path)
     model_deployment_monitoring_job_path = staticmethod(EndpointServiceClient.model_deployment_monitoring_job_path)
     parse_model_deployment_monitoring_job_path = staticmethod(EndpointServiceClient.parse_model_deployment_monitoring_job_path)
+    network_path = staticmethod(EndpointServiceClient.network_path)
+    parse_network_path = staticmethod(EndpointServiceClient.parse_network_path)
     common_billing_account_path = staticmethod(EndpointServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(EndpointServiceClient.parse_common_billing_account_path)
     common_folder_path = staticmethod(EndpointServiceClient.common_folder_path)

@@ -21,6 +21,24 @@ module Google
   module Cloud
     module AIPlatform
       module V1
+        # The storage details for Avro input content.
+        # @!attribute [rw] gcs_source
+        #   @return [::Google::Cloud::AIPlatform::V1::GcsSource]
+        #     Required. Google Cloud Storage location.
+        class AvroSource
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The storage details for CSV input content.
+        # @!attribute [rw] gcs_source
+        #   @return [::Google::Cloud::AIPlatform::V1::GcsSource]
+        #     Required. Google Cloud Storage location.
+        class CsvSource
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # The Google Cloud Storage location for the input content.
         # @!attribute [rw] uris
         #   @return [::Array<::String>]
@@ -70,6 +88,24 @@ module Google
         #     `bq://projectId` or `bq://projectId.bqDatasetId` or
         #     `bq://projectId.bqDatasetId.bqTableId`.
         class BigQueryDestination
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The storage details for CSV output content.
+        # @!attribute [rw] gcs_destination
+        #   @return [::Google::Cloud::AIPlatform::V1::GcsDestination]
+        #     Required. Google Cloud Storage location.
+        class CsvDestination
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The storage details for TFRecord output content.
+        # @!attribute [rw] gcs_destination
+        #   @return [::Google::Cloud::AIPlatform::V1::GcsDestination]
+        #     Required. Google Cloud Storage location.
+        class TFRecordDestination
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

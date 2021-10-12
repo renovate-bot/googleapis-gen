@@ -14,6 +14,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :specialist_managers_count, :int32, 3
       repeated :specialist_manager_emails, :string, 4
       repeated :pending_data_labeling_jobs, :string, 5
+      repeated :specialist_worker_emails, :string, 7
     end
   end
 end

@@ -652,6 +652,7 @@ def test_get_specialist_pool(transport: str = 'grpc', request_type=specialist_po
             specialist_managers_count=2662,
             specialist_manager_emails=['specialist_manager_emails_value'],
             pending_data_labeling_jobs=['pending_data_labeling_jobs_value'],
+            specialist_worker_emails=['specialist_worker_emails_value'],
         )
         response = client.get_specialist_pool(request)
 
@@ -667,6 +668,7 @@ def test_get_specialist_pool(transport: str = 'grpc', request_type=specialist_po
     assert response.specialist_managers_count == 2662
     assert response.specialist_manager_emails == ['specialist_manager_emails_value']
     assert response.pending_data_labeling_jobs == ['pending_data_labeling_jobs_value']
+    assert response.specialist_worker_emails == ['specialist_worker_emails_value']
 
 
 def test_get_specialist_pool_from_dict():
@@ -713,6 +715,7 @@ async def test_get_specialist_pool_async(transport: str = 'grpc_asyncio', reques
             specialist_managers_count=2662,
             specialist_manager_emails=['specialist_manager_emails_value'],
             pending_data_labeling_jobs=['pending_data_labeling_jobs_value'],
+            specialist_worker_emails=['specialist_worker_emails_value'],
         ))
         response = await client.get_specialist_pool(request)
 
@@ -728,6 +731,7 @@ async def test_get_specialist_pool_async(transport: str = 'grpc_asyncio', reques
     assert response.specialist_managers_count == 2662
     assert response.specialist_manager_emails == ['specialist_manager_emails_value']
     assert response.pending_data_labeling_jobs == ['pending_data_labeling_jobs_value']
+    assert response.specialist_worker_emails == ['specialist_worker_emails_value']
 
 
 @pytest.mark.asyncio

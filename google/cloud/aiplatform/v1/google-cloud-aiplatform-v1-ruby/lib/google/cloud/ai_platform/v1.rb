@@ -18,16 +18,19 @@
 
 require "google/cloud/ai_platform/v1/dataset_service"
 require "google/cloud/ai_platform/v1/endpoint_service"
+require "google/cloud/ai_platform/v1/featurestore_online_serving_service"
+require "google/cloud/ai_platform/v1/featurestore_service"
 require "google/cloud/ai_platform/v1/index_endpoint_service"
 require "google/cloud/ai_platform/v1/index_service"
 require "google/cloud/ai_platform/v1/job_service"
+require "google/cloud/ai_platform/v1/metadata_service"
 require "google/cloud/ai_platform/v1/migration_service"
 require "google/cloud/ai_platform/v1/model_service"
 require "google/cloud/ai_platform/v1/pipeline_service"
 require "google/cloud/ai_platform/v1/prediction_service"
 require "google/cloud/ai_platform/v1/specialist_pool_service"
 require "google/cloud/ai_platform/v1/vizier_service"
-require "google/cloud/aiplatform/v1/version"
+require "google/cloud/ai_platform/v1/version"
 
 module Google
   module Cloud

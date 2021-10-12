@@ -5953,6 +5953,7 @@ def test_create_model_deployment_monitoring_job(transport: str = 'grpc', request
             schedule_state=gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING,
             predict_instance_schema_uri='predict_instance_schema_uri_value',
             analysis_instance_schema_uri='analysis_instance_schema_uri_value',
+            enable_monitoring_pipeline_logs=True,
         )
         response = client.create_model_deployment_monitoring_job(request)
 
@@ -5970,6 +5971,7 @@ def test_create_model_deployment_monitoring_job(transport: str = 'grpc', request
     assert response.schedule_state == gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING
     assert response.predict_instance_schema_uri == 'predict_instance_schema_uri_value'
     assert response.analysis_instance_schema_uri == 'analysis_instance_schema_uri_value'
+    assert response.enable_monitoring_pipeline_logs is True
 
 
 def test_create_model_deployment_monitoring_job_from_dict():
@@ -6018,6 +6020,7 @@ async def test_create_model_deployment_monitoring_job_async(transport: str = 'gr
             schedule_state=gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING,
             predict_instance_schema_uri='predict_instance_schema_uri_value',
             analysis_instance_schema_uri='analysis_instance_schema_uri_value',
+            enable_monitoring_pipeline_logs=True,
         ))
         response = await client.create_model_deployment_monitoring_job(request)
 
@@ -6035,6 +6038,7 @@ async def test_create_model_deployment_monitoring_job_async(transport: str = 'gr
     assert response.schedule_state == gca_model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING
     assert response.predict_instance_schema_uri == 'predict_instance_schema_uri_value'
     assert response.analysis_instance_schema_uri == 'analysis_instance_schema_uri_value'
+    assert response.enable_monitoring_pipeline_logs is True
 
 
 @pytest.mark.asyncio
@@ -6637,6 +6641,7 @@ def test_get_model_deployment_monitoring_job(transport: str = 'grpc', request_ty
             schedule_state=model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING,
             predict_instance_schema_uri='predict_instance_schema_uri_value',
             analysis_instance_schema_uri='analysis_instance_schema_uri_value',
+            enable_monitoring_pipeline_logs=True,
         )
         response = client.get_model_deployment_monitoring_job(request)
 
@@ -6654,6 +6659,7 @@ def test_get_model_deployment_monitoring_job(transport: str = 'grpc', request_ty
     assert response.schedule_state == model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING
     assert response.predict_instance_schema_uri == 'predict_instance_schema_uri_value'
     assert response.analysis_instance_schema_uri == 'analysis_instance_schema_uri_value'
+    assert response.enable_monitoring_pipeline_logs is True
 
 
 def test_get_model_deployment_monitoring_job_from_dict():
@@ -6702,6 +6708,7 @@ async def test_get_model_deployment_monitoring_job_async(transport: str = 'grpc_
             schedule_state=model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING,
             predict_instance_schema_uri='predict_instance_schema_uri_value',
             analysis_instance_schema_uri='analysis_instance_schema_uri_value',
+            enable_monitoring_pipeline_logs=True,
         ))
         response = await client.get_model_deployment_monitoring_job(request)
 
@@ -6719,6 +6726,7 @@ async def test_get_model_deployment_monitoring_job_async(transport: str = 'grpc_
     assert response.schedule_state == model_deployment_monitoring_job.ModelDeploymentMonitoringJob.MonitoringScheduleState.PENDING
     assert response.predict_instance_schema_uri == 'predict_instance_schema_uri_value'
     assert response.analysis_instance_schema_uri == 'analysis_instance_schema_uri_value'
+    assert response.enable_monitoring_pipeline_logs is True
 
 
 @pytest.mark.asyncio

@@ -413,7 +413,15 @@ class PredictionServiceGapicClient
     }
 
     /**
-     * Perform an online prediction with arbitrary http payload.
+     * Perform an online prediction with an arbitrary HTTP payload.
+     *
+     * The response includes the following HTTP headers:
+     *
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1.Endpoint] that served this
+     * prediction.
+     *
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1.DeployedModel]
+     * that served this prediction.
      *
      * Sample code:
      * ```

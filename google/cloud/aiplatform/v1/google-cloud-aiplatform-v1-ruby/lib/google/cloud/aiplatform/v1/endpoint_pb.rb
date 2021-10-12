@@ -25,6 +25,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 8, "google.protobuf.Timestamp"
       optional :update_time, :message, 9, "google.protobuf.Timestamp"
       optional :encryption_spec, :message, 10, "google.cloud.aiplatform.v1.EncryptionSpec"
+      optional :network, :string, 13
       optional :model_deployment_monitoring_job, :string, 14
     end
     add_message "google.cloud.aiplatform.v1.DeployedModel" do
@@ -36,10 +37,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :service_account, :string, 11
       optional :disable_container_logging, :bool, 15
       optional :enable_access_logging, :bool, 13
+      optional :private_endpoints, :message, 14, "google.cloud.aiplatform.v1.PrivateEndpoints"
       oneof :prediction_resources do
         optional :dedicated_resources, :message, 7, "google.cloud.aiplatform.v1.DedicatedResources"
         optional :automatic_resources, :message, 8, "google.cloud.aiplatform.v1.AutomaticResources"
       end
+    end
+    add_message "google.cloud.aiplatform.v1.PrivateEndpoints" do
+      optional :predict_http_uri, :string, 1
+      optional :explain_http_uri, :string, 2
+      optional :health_http_uri, :string, 3
     end
   end
 end
@@ -50,6 +57,7 @@ module Google
       module V1
         Endpoint = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.Endpoint").msgclass
         DeployedModel = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.DeployedModel").msgclass
+        PrivateEndpoints = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.PrivateEndpoints").msgclass
       end
     end
   end

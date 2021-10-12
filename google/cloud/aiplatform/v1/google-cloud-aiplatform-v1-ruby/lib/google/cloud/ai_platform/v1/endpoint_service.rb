@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/aiplatform/v1/version"
+require "google/cloud/ai_platform/v1/version"
 
 require "google/cloud/ai_platform/v1/endpoint_service/credentials"
 require "google/cloud/ai_platform/v1/endpoint_service/paths"

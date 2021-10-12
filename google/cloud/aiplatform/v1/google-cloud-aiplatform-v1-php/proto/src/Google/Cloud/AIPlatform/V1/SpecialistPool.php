@@ -53,6 +53,12 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string pending_data_labeling_jobs = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $pending_data_labeling_jobs;
+    /**
+     * The email addresses of workers in the SpecialistPool.
+     *
+     * Generated from protobuf field <code>repeated string specialist_worker_emails = 7;</code>
+     */
+    private $specialist_worker_emails;
 
     /**
      * Constructor.
@@ -73,6 +79,8 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
      *           The email addresses of the managers in the SpecialistPool.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $pending_data_labeling_jobs
      *           Output only. The resource name of the pending data labeling jobs.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $specialist_worker_emails
+     *           The email addresses of workers in the SpecialistPool.
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +220,32 @@ class SpecialistPool extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->pending_data_labeling_jobs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The email addresses of workers in the SpecialistPool.
+     *
+     * Generated from protobuf field <code>repeated string specialist_worker_emails = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSpecialistWorkerEmails()
+    {
+        return $this->specialist_worker_emails;
+    }
+
+    /**
+     * The email addresses of workers in the SpecialistPool.
+     *
+     * Generated from protobuf field <code>repeated string specialist_worker_emails = 7;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSpecialistWorkerEmails($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->specialist_worker_emails = $arr;
 
         return $this;
     }

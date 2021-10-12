@@ -93,6 +93,20 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      */
     protected $encryption_spec = null;
     /**
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     *
+     * Generated from protobuf field <code>string network = 13 [(.google.api.resource_reference) = {</code>
+     */
+    protected $network = '';
+    /**
      * Output only. Resource name of the Model Monitoring job associated with this Endpoint
      * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
      * Format:
@@ -144,6 +158,16 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      *           Customer-managed encryption key spec for an Endpoint. If set, this
      *           Endpoint and all sub-resources of this Endpoint will be secured by
      *           this key.
+     *     @type string $network
+     *           The full name of the Google Compute Engine
+     *           [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     *           to which the Endpoint should be peered.
+     *           Private services access must already be configured for the network. If left
+     *           unspecified, the Endpoint is not peered with any network.
+     *           [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     *           `projects/{project}/global/networks/{network}`.
+     *           Where `{project}` is a project number, as in `12345`, and `{network}` is
+     *           network name.
      *     @type string $model_deployment_monitoring_job
      *           Output only. Resource name of the Model Monitoring job associated with this Endpoint
      *           if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
@@ -474,6 +498,48 @@ class Endpoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\EncryptionSpec::class);
         $this->encryption_spec = $var;
+
+        return $this;
+    }
+
+    /**
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     *
+     * Generated from protobuf field <code>string network = 13 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getNetwork()
+    {
+        return $this->network;
+    }
+
+    /**
+     * The full name of the Google Compute Engine
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
+     * Private services access must already be configured for the network. If left
+     * unspecified, the Endpoint is not peered with any network.
+     * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * network name.
+     *
+     * Generated from protobuf field <code>string network = 13 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNetwork($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->network = $var;
 
         return $this;
     }

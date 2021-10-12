@@ -176,6 +176,14 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     protected $encryption_spec = null;
     /**
+     * If true, the scheduled monitoring pipeline status logs are sent to
+     * Google Cloud Logging. Please note the logs incur cost, which are subject to
+     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     *
+     * Generated from protobuf field <code>bool enable_monitoring_pipeline_logs = 22;</code>
+     */
+    protected $enable_monitoring_pipeline_logs = false;
+    /**
      * Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
      * `JOB_STATE_CANCELLED`.
      *
@@ -267,6 +275,10 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      *           Customer-managed encryption key spec for a ModelDeploymentMonitoringJob. If
      *           set, this ModelDeploymentMonitoringJob and all sub-resources of this
      *           ModelDeploymentMonitoringJob will be secured by this key.
+     *     @type bool $enable_monitoring_pipeline_logs
+     *           If true, the scheduled monitoring pipeline status logs are sent to
+     *           Google Cloud Logging. Please note the logs incur cost, which are subject to
+     *           [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
      *     @type \Google\Rpc\Status $error
      *           Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
      *           `JOB_STATE_CANCELLED`.
@@ -969,6 +981,36 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\EncryptionSpec::class);
         $this->encryption_spec = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, the scheduled monitoring pipeline status logs are sent to
+     * Google Cloud Logging. Please note the logs incur cost, which are subject to
+     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     *
+     * Generated from protobuf field <code>bool enable_monitoring_pipeline_logs = 22;</code>
+     * @return bool
+     */
+    public function getEnableMonitoringPipelineLogs()
+    {
+        return $this->enable_monitoring_pipeline_logs;
+    }
+
+    /**
+     * If true, the scheduled monitoring pipeline status logs are sent to
+     * Google Cloud Logging. Please note the logs incur cost, which are subject to
+     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     *
+     * Generated from protobuf field <code>bool enable_monitoring_pipeline_logs = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableMonitoringPipelineLogs($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_monitoring_pipeline_logs = $var;
 
         return $this;
     }

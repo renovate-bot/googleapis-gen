@@ -18,12 +18,18 @@ from google.cloud.aiplatform_v1.services.dataset_service.client import DatasetSe
 from google.cloud.aiplatform_v1.services.dataset_service.async_client import DatasetServiceAsyncClient
 from google.cloud.aiplatform_v1.services.endpoint_service.client import EndpointServiceClient
 from google.cloud.aiplatform_v1.services.endpoint_service.async_client import EndpointServiceAsyncClient
+from google.cloud.aiplatform_v1.services.featurestore_online_serving_service.client import FeaturestoreOnlineServingServiceClient
+from google.cloud.aiplatform_v1.services.featurestore_online_serving_service.async_client import FeaturestoreOnlineServingServiceAsyncClient
+from google.cloud.aiplatform_v1.services.featurestore_service.client import FeaturestoreServiceClient
+from google.cloud.aiplatform_v1.services.featurestore_service.async_client import FeaturestoreServiceAsyncClient
 from google.cloud.aiplatform_v1.services.index_endpoint_service.client import IndexEndpointServiceClient
 from google.cloud.aiplatform_v1.services.index_endpoint_service.async_client import IndexEndpointServiceAsyncClient
 from google.cloud.aiplatform_v1.services.index_service.client import IndexServiceClient
 from google.cloud.aiplatform_v1.services.index_service.async_client import IndexServiceAsyncClient
 from google.cloud.aiplatform_v1.services.job_service.client import JobServiceClient
 from google.cloud.aiplatform_v1.services.job_service.async_client import JobServiceAsyncClient
+from google.cloud.aiplatform_v1.services.metadata_service.client import MetadataServiceClient
+from google.cloud.aiplatform_v1.services.metadata_service.async_client import MetadataServiceAsyncClient
 from google.cloud.aiplatform_v1.services.migration_service.client import MigrationServiceClient
 from google.cloud.aiplatform_v1.services.migration_service.async_client import MigrationServiceAsyncClient
 from google.cloud.aiplatform_v1.services.model_service.client import ModelServiceClient
@@ -81,6 +87,7 @@ from google.cloud.aiplatform_v1.types.deployed_model_ref import DeployedModelRef
 from google.cloud.aiplatform_v1.types.encryption_spec import EncryptionSpec
 from google.cloud.aiplatform_v1.types.endpoint import DeployedModel
 from google.cloud.aiplatform_v1.types.endpoint import Endpoint
+from google.cloud.aiplatform_v1.types.endpoint import PrivateEndpoints
 from google.cloud.aiplatform_v1.types.endpoint_service import CreateEndpointOperationMetadata
 from google.cloud.aiplatform_v1.types.endpoint_service import CreateEndpointRequest
 from google.cloud.aiplatform_v1.types.endpoint_service import DeleteEndpointRequest
@@ -94,7 +101,9 @@ from google.cloud.aiplatform_v1.types.endpoint_service import UndeployModelOpera
 from google.cloud.aiplatform_v1.types.endpoint_service import UndeployModelRequest
 from google.cloud.aiplatform_v1.types.endpoint_service import UndeployModelResponse
 from google.cloud.aiplatform_v1.types.endpoint_service import UpdateEndpointRequest
+from google.cloud.aiplatform_v1.types.entity_type import EntityType
 from google.cloud.aiplatform_v1.types.env_var import EnvVar
+from google.cloud.aiplatform_v1.types.event import Event
 from google.cloud.aiplatform_v1.types.execution import Execution
 from google.cloud.aiplatform_v1.types.explanation import Attribution
 from google.cloud.aiplatform_v1.types.explanation import Explanation
@@ -109,7 +118,54 @@ from google.cloud.aiplatform_v1.types.explanation import SampledShapleyAttributi
 from google.cloud.aiplatform_v1.types.explanation import SmoothGradConfig
 from google.cloud.aiplatform_v1.types.explanation import XraiAttribution
 from google.cloud.aiplatform_v1.types.explanation_metadata import ExplanationMetadata
+from google.cloud.aiplatform_v1.types.feature import Feature
 from google.cloud.aiplatform_v1.types.feature_monitoring_stats import FeatureStatsAnomaly
+from google.cloud.aiplatform_v1.types.feature_selector import FeatureSelector
+from google.cloud.aiplatform_v1.types.feature_selector import IdMatcher
+from google.cloud.aiplatform_v1.types.featurestore import Featurestore
+from google.cloud.aiplatform_v1.types.featurestore_online_service import FeatureValue
+from google.cloud.aiplatform_v1.types.featurestore_online_service import FeatureValueList
+from google.cloud.aiplatform_v1.types.featurestore_online_service import ReadFeatureValuesRequest
+from google.cloud.aiplatform_v1.types.featurestore_online_service import ReadFeatureValuesResponse
+from google.cloud.aiplatform_v1.types.featurestore_online_service import StreamingReadFeatureValuesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import BatchCreateFeaturesOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import BatchCreateFeaturesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import BatchCreateFeaturesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import BatchReadFeatureValuesOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import BatchReadFeatureValuesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import BatchReadFeatureValuesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import CreateEntityTypeOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import CreateEntityTypeRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import CreateFeatureOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import CreateFeatureRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import CreateFeaturestoreOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import CreateFeaturestoreRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import DeleteEntityTypeRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import DeleteFeatureRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import DeleteFeaturestoreRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import DestinationFeatureSetting
+from google.cloud.aiplatform_v1.types.featurestore_service import ExportFeatureValuesOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import ExportFeatureValuesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import ExportFeatureValuesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import FeatureValueDestination
+from google.cloud.aiplatform_v1.types.featurestore_service import GetEntityTypeRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import GetFeatureRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import GetFeaturestoreRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import ImportFeatureValuesOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import ImportFeatureValuesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import ImportFeatureValuesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import ListEntityTypesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import ListEntityTypesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import ListFeaturesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import ListFeaturesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import ListFeaturestoresRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import ListFeaturestoresResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import SearchFeaturesRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import SearchFeaturesResponse
+from google.cloud.aiplatform_v1.types.featurestore_service import UpdateEntityTypeRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import UpdateFeatureRequest
+from google.cloud.aiplatform_v1.types.featurestore_service import UpdateFeaturestoreOperationMetadata
+from google.cloud.aiplatform_v1.types.featurestore_service import UpdateFeaturestoreRequest
 from google.cloud.aiplatform_v1.types.hyperparameter_tuning_job import HyperparameterTuningJob
 from google.cloud.aiplatform_v1.types.index import Index
 from google.cloud.aiplatform_v1.types.index_endpoint import DeployedIndex
@@ -138,11 +194,15 @@ from google.cloud.aiplatform_v1.types.index_service import ListIndexesResponse
 from google.cloud.aiplatform_v1.types.index_service import NearestNeighborSearchOperationMetadata
 from google.cloud.aiplatform_v1.types.index_service import UpdateIndexOperationMetadata
 from google.cloud.aiplatform_v1.types.index_service import UpdateIndexRequest
+from google.cloud.aiplatform_v1.types.io import AvroSource
 from google.cloud.aiplatform_v1.types.io import BigQueryDestination
 from google.cloud.aiplatform_v1.types.io import BigQuerySource
 from google.cloud.aiplatform_v1.types.io import ContainerRegistryDestination
+from google.cloud.aiplatform_v1.types.io import CsvDestination
+from google.cloud.aiplatform_v1.types.io import CsvSource
 from google.cloud.aiplatform_v1.types.io import GcsDestination
 from google.cloud.aiplatform_v1.types.io import GcsSource
+from google.cloud.aiplatform_v1.types.io import TFRecordDestination
 from google.cloud.aiplatform_v1.types.job_service import CancelBatchPredictionJobRequest
 from google.cloud.aiplatform_v1.types.job_service import CancelCustomJobRequest
 from google.cloud.aiplatform_v1.types.job_service import CancelDataLabelingJobRequest
@@ -179,6 +239,7 @@ from google.cloud.aiplatform_v1.types.job_service import SearchModelDeploymentMo
 from google.cloud.aiplatform_v1.types.job_service import UpdateModelDeploymentMonitoringJobOperationMetadata
 from google.cloud.aiplatform_v1.types.job_service import UpdateModelDeploymentMonitoringJobRequest
 from google.cloud.aiplatform_v1.types.job_state import JobState
+from google.cloud.aiplatform_v1.types.lineage_subgraph import LineageSubgraph
 from google.cloud.aiplatform_v1.types.machine_resources import AutomaticResources
 from google.cloud.aiplatform_v1.types.machine_resources import AutoscalingMetricSpec
 from google.cloud.aiplatform_v1.types.machine_resources import BatchDedicatedResources
@@ -187,6 +248,55 @@ from google.cloud.aiplatform_v1.types.machine_resources import DiskSpec
 from google.cloud.aiplatform_v1.types.machine_resources import MachineSpec
 from google.cloud.aiplatform_v1.types.machine_resources import ResourcesConsumed
 from google.cloud.aiplatform_v1.types.manual_batch_tuning_parameters import ManualBatchTuningParameters
+from google.cloud.aiplatform_v1.types.metadata_schema import MetadataSchema
+from google.cloud.aiplatform_v1.types.metadata_service import AddContextArtifactsAndExecutionsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import AddContextArtifactsAndExecutionsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import AddContextChildrenRequest
+from google.cloud.aiplatform_v1.types.metadata_service import AddContextChildrenResponse
+from google.cloud.aiplatform_v1.types.metadata_service import AddExecutionEventsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import AddExecutionEventsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import CreateArtifactRequest
+from google.cloud.aiplatform_v1.types.metadata_service import CreateContextRequest
+from google.cloud.aiplatform_v1.types.metadata_service import CreateExecutionRequest
+from google.cloud.aiplatform_v1.types.metadata_service import CreateMetadataSchemaRequest
+from google.cloud.aiplatform_v1.types.metadata_service import CreateMetadataStoreOperationMetadata
+from google.cloud.aiplatform_v1.types.metadata_service import CreateMetadataStoreRequest
+from google.cloud.aiplatform_v1.types.metadata_service import DeleteArtifactRequest
+from google.cloud.aiplatform_v1.types.metadata_service import DeleteContextRequest
+from google.cloud.aiplatform_v1.types.metadata_service import DeleteExecutionRequest
+from google.cloud.aiplatform_v1.types.metadata_service import DeleteMetadataStoreOperationMetadata
+from google.cloud.aiplatform_v1.types.metadata_service import DeleteMetadataStoreRequest
+from google.cloud.aiplatform_v1.types.metadata_service import GetArtifactRequest
+from google.cloud.aiplatform_v1.types.metadata_service import GetContextRequest
+from google.cloud.aiplatform_v1.types.metadata_service import GetExecutionRequest
+from google.cloud.aiplatform_v1.types.metadata_service import GetMetadataSchemaRequest
+from google.cloud.aiplatform_v1.types.metadata_service import GetMetadataStoreRequest
+from google.cloud.aiplatform_v1.types.metadata_service import ListArtifactsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import ListArtifactsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import ListContextsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import ListContextsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import ListExecutionsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import ListExecutionsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import ListMetadataSchemasRequest
+from google.cloud.aiplatform_v1.types.metadata_service import ListMetadataSchemasResponse
+from google.cloud.aiplatform_v1.types.metadata_service import ListMetadataStoresRequest
+from google.cloud.aiplatform_v1.types.metadata_service import ListMetadataStoresResponse
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeArtifactsMetadata
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeArtifactsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeArtifactsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeContextsMetadata
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeContextsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeContextsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeExecutionsMetadata
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeExecutionsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import PurgeExecutionsResponse
+from google.cloud.aiplatform_v1.types.metadata_service import QueryArtifactLineageSubgraphRequest
+from google.cloud.aiplatform_v1.types.metadata_service import QueryContextLineageSubgraphRequest
+from google.cloud.aiplatform_v1.types.metadata_service import QueryExecutionInputsAndOutputsRequest
+from google.cloud.aiplatform_v1.types.metadata_service import UpdateArtifactRequest
+from google.cloud.aiplatform_v1.types.metadata_service import UpdateContextRequest
+from google.cloud.aiplatform_v1.types.metadata_service import UpdateExecutionRequest
+from google.cloud.aiplatform_v1.types.metadata_store import MetadataStore
 from google.cloud.aiplatform_v1.types.migratable_resource import MigratableResource
 from google.cloud.aiplatform_v1.types.migration_service import BatchMigrateResourcesOperationMetadata
 from google.cloud.aiplatform_v1.types.migration_service import BatchMigrateResourcesRequest
@@ -271,6 +381,10 @@ from google.cloud.aiplatform_v1.types.training_pipeline import InputDataConfig
 from google.cloud.aiplatform_v1.types.training_pipeline import PredefinedSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TimestampSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TrainingPipeline
+from google.cloud.aiplatform_v1.types.types import BoolArray
+from google.cloud.aiplatform_v1.types.types import DoubleArray
+from google.cloud.aiplatform_v1.types.types import Int64Array
+from google.cloud.aiplatform_v1.types.types import StringArray
 from google.cloud.aiplatform_v1.types.user_action_reference import UserActionReference
 from google.cloud.aiplatform_v1.types.value import Value
 from google.cloud.aiplatform_v1.types.vizier_service import AddTrialMeasurementRequest
@@ -300,12 +414,18 @@ __all__ = ('DatasetServiceClient',
     'DatasetServiceAsyncClient',
     'EndpointServiceClient',
     'EndpointServiceAsyncClient',
+    'FeaturestoreOnlineServingServiceClient',
+    'FeaturestoreOnlineServingServiceAsyncClient',
+    'FeaturestoreServiceClient',
+    'FeaturestoreServiceAsyncClient',
     'IndexEndpointServiceClient',
     'IndexEndpointServiceAsyncClient',
     'IndexServiceClient',
     'IndexServiceAsyncClient',
     'JobServiceClient',
     'JobServiceAsyncClient',
+    'MetadataServiceClient',
+    'MetadataServiceAsyncClient',
     'MigrationServiceClient',
     'MigrationServiceAsyncClient',
     'ModelServiceClient',
@@ -362,6 +482,7 @@ __all__ = ('DatasetServiceClient',
     'EncryptionSpec',
     'DeployedModel',
     'Endpoint',
+    'PrivateEndpoints',
     'CreateEndpointOperationMetadata',
     'CreateEndpointRequest',
     'DeleteEndpointRequest',
@@ -375,7 +496,9 @@ __all__ = ('DatasetServiceClient',
     'UndeployModelRequest',
     'UndeployModelResponse',
     'UpdateEndpointRequest',
+    'EntityType',
     'EnvVar',
+    'Event',
     'Execution',
     'Attribution',
     'Explanation',
@@ -390,7 +513,54 @@ __all__ = ('DatasetServiceClient',
     'SmoothGradConfig',
     'XraiAttribution',
     'ExplanationMetadata',
+    'Feature',
     'FeatureStatsAnomaly',
+    'FeatureSelector',
+    'IdMatcher',
+    'Featurestore',
+    'FeatureValue',
+    'FeatureValueList',
+    'ReadFeatureValuesRequest',
+    'ReadFeatureValuesResponse',
+    'StreamingReadFeatureValuesRequest',
+    'BatchCreateFeaturesOperationMetadata',
+    'BatchCreateFeaturesRequest',
+    'BatchCreateFeaturesResponse',
+    'BatchReadFeatureValuesOperationMetadata',
+    'BatchReadFeatureValuesRequest',
+    'BatchReadFeatureValuesResponse',
+    'CreateEntityTypeOperationMetadata',
+    'CreateEntityTypeRequest',
+    'CreateFeatureOperationMetadata',
+    'CreateFeatureRequest',
+    'CreateFeaturestoreOperationMetadata',
+    'CreateFeaturestoreRequest',
+    'DeleteEntityTypeRequest',
+    'DeleteFeatureRequest',
+    'DeleteFeaturestoreRequest',
+    'DestinationFeatureSetting',
+    'ExportFeatureValuesOperationMetadata',
+    'ExportFeatureValuesRequest',
+    'ExportFeatureValuesResponse',
+    'FeatureValueDestination',
+    'GetEntityTypeRequest',
+    'GetFeatureRequest',
+    'GetFeaturestoreRequest',
+    'ImportFeatureValuesOperationMetadata',
+    'ImportFeatureValuesRequest',
+    'ImportFeatureValuesResponse',
+    'ListEntityTypesRequest',
+    'ListEntityTypesResponse',
+    'ListFeaturesRequest',
+    'ListFeaturesResponse',
+    'ListFeaturestoresRequest',
+    'ListFeaturestoresResponse',
+    'SearchFeaturesRequest',
+    'SearchFeaturesResponse',
+    'UpdateEntityTypeRequest',
+    'UpdateFeatureRequest',
+    'UpdateFeaturestoreOperationMetadata',
+    'UpdateFeaturestoreRequest',
     'HyperparameterTuningJob',
     'Index',
     'DeployedIndex',
@@ -419,11 +589,15 @@ __all__ = ('DatasetServiceClient',
     'NearestNeighborSearchOperationMetadata',
     'UpdateIndexOperationMetadata',
     'UpdateIndexRequest',
+    'AvroSource',
     'BigQueryDestination',
     'BigQuerySource',
     'ContainerRegistryDestination',
+    'CsvDestination',
+    'CsvSource',
     'GcsDestination',
     'GcsSource',
+    'TFRecordDestination',
     'CancelBatchPredictionJobRequest',
     'CancelCustomJobRequest',
     'CancelDataLabelingJobRequest',
@@ -460,6 +634,7 @@ __all__ = ('DatasetServiceClient',
     'UpdateModelDeploymentMonitoringJobOperationMetadata',
     'UpdateModelDeploymentMonitoringJobRequest',
     'JobState',
+    'LineageSubgraph',
     'AutomaticResources',
     'AutoscalingMetricSpec',
     'BatchDedicatedResources',
@@ -468,6 +643,55 @@ __all__ = ('DatasetServiceClient',
     'MachineSpec',
     'ResourcesConsumed',
     'ManualBatchTuningParameters',
+    'MetadataSchema',
+    'AddContextArtifactsAndExecutionsRequest',
+    'AddContextArtifactsAndExecutionsResponse',
+    'AddContextChildrenRequest',
+    'AddContextChildrenResponse',
+    'AddExecutionEventsRequest',
+    'AddExecutionEventsResponse',
+    'CreateArtifactRequest',
+    'CreateContextRequest',
+    'CreateExecutionRequest',
+    'CreateMetadataSchemaRequest',
+    'CreateMetadataStoreOperationMetadata',
+    'CreateMetadataStoreRequest',
+    'DeleteArtifactRequest',
+    'DeleteContextRequest',
+    'DeleteExecutionRequest',
+    'DeleteMetadataStoreOperationMetadata',
+    'DeleteMetadataStoreRequest',
+    'GetArtifactRequest',
+    'GetContextRequest',
+    'GetExecutionRequest',
+    'GetMetadataSchemaRequest',
+    'GetMetadataStoreRequest',
+    'ListArtifactsRequest',
+    'ListArtifactsResponse',
+    'ListContextsRequest',
+    'ListContextsResponse',
+    'ListExecutionsRequest',
+    'ListExecutionsResponse',
+    'ListMetadataSchemasRequest',
+    'ListMetadataSchemasResponse',
+    'ListMetadataStoresRequest',
+    'ListMetadataStoresResponse',
+    'PurgeArtifactsMetadata',
+    'PurgeArtifactsRequest',
+    'PurgeArtifactsResponse',
+    'PurgeContextsMetadata',
+    'PurgeContextsRequest',
+    'PurgeContextsResponse',
+    'PurgeExecutionsMetadata',
+    'PurgeExecutionsRequest',
+    'PurgeExecutionsResponse',
+    'QueryArtifactLineageSubgraphRequest',
+    'QueryContextLineageSubgraphRequest',
+    'QueryExecutionInputsAndOutputsRequest',
+    'UpdateArtifactRequest',
+    'UpdateContextRequest',
+    'UpdateExecutionRequest',
+    'MetadataStore',
     'MigratableResource',
     'BatchMigrateResourcesOperationMetadata',
     'BatchMigrateResourcesRequest',
@@ -552,6 +776,10 @@ __all__ = ('DatasetServiceClient',
     'PredefinedSplit',
     'TimestampSplit',
     'TrainingPipeline',
+    'BoolArray',
+    'DoubleArray',
+    'Int64Array',
+    'StringArray',
     'UserActionReference',
     'Value',
     'AddTrialMeasurementRequest',

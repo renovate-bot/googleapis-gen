@@ -17,7 +17,6 @@ class ExportModelRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,7 +36,6 @@ class ExportModelRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Required. The resource name of the Model to export.
-     *           Format: `projects/{project}/locations/{location}/models/{model}`
      *     @type \Google\Cloud\AIPlatform\V1\ExportModelRequest\OutputConfig $output_config
      *           Required. The desired output location and configuration.
      * }
@@ -49,7 +47,6 @@ class ExportModelRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,7 +58,6 @@ class ExportModelRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the Model to export.
-     * Format: `projects/{project}/locations/{location}/models/{model}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
