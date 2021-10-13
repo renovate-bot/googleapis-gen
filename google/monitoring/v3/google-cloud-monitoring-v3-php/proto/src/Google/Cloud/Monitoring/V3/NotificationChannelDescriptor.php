@@ -59,6 +59,14 @@ class NotificationChannelDescriptor extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
+     * The tiers that support this notification channel; the project service tier
+     * must be one of the supported_tiers.
+     *
+     * Generated from protobuf field <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * @deprecated
+     */
+    private $supported_tiers;
+    /**
      * The product launch stage for channels of this type.
      *
      * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 7;</code>
@@ -92,6 +100,9 @@ class NotificationChannelDescriptor extends \Google\Protobuf\Internal\Message
      *           The set of labels that must be defined to identify a particular
      *           channel of the corresponding type. Each label includes a
      *           description for how that field should be populated.
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $supported_tiers
+     *           The tiers that support this notification channel; the project service tier
+     *           must be one of the supported_tiers.
      *     @type int $launch_stage
      *           The product launch stage for channels of this type.
      * }
@@ -249,6 +260,38 @@ class NotificationChannelDescriptor extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Api\LabelDescriptor::class);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The tiers that support this notification channel; the project service tier
+     * must be one of the supported_tiers.
+     *
+     * Generated from protobuf field <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
+     */
+    public function getSupportedTiers()
+    {
+        @trigger_error('supported_tiers is deprecated.', E_USER_DEPRECATED);
+        return $this->supported_tiers;
+    }
+
+    /**
+     * The tiers that support this notification channel; the project service tier
+     * must be one of the supported_tiers.
+     *
+     * Generated from protobuf field <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     * @deprecated
+     */
+    public function setSupportedTiers($var)
+    {
+        @trigger_error('supported_tiers is deprecated.', E_USER_DEPRECATED);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Cloud\Monitoring\V3\ServiceTier::class);
+        $this->supported_tiers = $arr;
 
         return $this;
     }
