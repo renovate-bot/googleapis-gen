@@ -16,7 +16,6 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1.Snippets
 {
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.ArtifactRegistry.V1;
     using System.Threading.Tasks;
 
@@ -32,7 +31,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
-            LocationName name = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            RepositoryName name = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
             // Make the request
             Repository response = await artifactRegistryClient.GetRepositoryAsync(name);
         }

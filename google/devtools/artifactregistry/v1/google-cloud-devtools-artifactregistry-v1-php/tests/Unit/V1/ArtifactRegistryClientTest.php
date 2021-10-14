@@ -89,7 +89,7 @@ class ArtifactRegistryClientTest extends GeneratedTest
         $expectedResponse->setKmsKeyName($kmsKeyName);
         $transport->addResponse($expectedResponse);
         // Mock request
-        $formattedName = $client->locationName('[PROJECT]', '[LOCATION]');
+        $formattedName = $client->repositoryName('[PROJECT]', '[LOCATION]', '[REPOSITORY]');
         $response = $client->getRepository($formattedName);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -123,7 +123,7 @@ class ArtifactRegistryClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $formattedName = $client->locationName('[PROJECT]', '[LOCATION]');
+        $formattedName = $client->repositoryName('[PROJECT]', '[LOCATION]', '[REPOSITORY]');
         try {
             $client->getRepository($formattedName);
             // If the $client method call did not throw, fail the test

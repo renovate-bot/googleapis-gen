@@ -62,7 +62,7 @@ use Google\Cloud\ArtifactRegistry\V1\Repository;
  * ```
  * $artifactRegistryClient = new ArtifactRegistryClient();
  * try {
- *     $formattedName = $artifactRegistryClient->locationName('[PROJECT]', '[LOCATION]');
+ *     $formattedName = $artifactRegistryClient->repositoryName('[PROJECT]', '[LOCATION]', '[REPOSITORY]');
  *     $response = $artifactRegistryClient->getRepository($formattedName);
  * } finally {
  *     $artifactRegistryClient->close();
@@ -108,6 +108,8 @@ class ArtifactRegistryGapicClient
 
     private static $locationNameTemplate;
 
+    private static $repositoryNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -138,11 +140,21 @@ class ArtifactRegistryGapicClient
         return self::$locationNameTemplate;
     }
 
+    private static function getRepositoryNameTemplate()
+    {
+        if (self::$repositoryNameTemplate == null) {
+            self::$repositoryNameTemplate = new PathTemplate('projects/{project}/locations/{location}/repositories/{repository}');
+        }
+
+        return self::$repositoryNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'location' => self::getLocationNameTemplate(),
+                'repository' => self::getRepositoryNameTemplate(),
             ];
         }
 
@@ -167,10 +179,30 @@ class ArtifactRegistryGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a repository
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $repository
+     *
+     * @return string The formatted repository resource.
+     */
+    public static function repositoryName($project, $location, $repository)
+    {
+        return self::getRepositoryNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'repository' => $repository,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - location: projects/{project}/locations/{location}
+     * - repository: projects/{project}/locations/{location}/repositories/{repository}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -274,7 +306,7 @@ class ArtifactRegistryGapicClient
      * ```
      * $artifactRegistryClient = new ArtifactRegistryClient();
      * try {
-     *     $formattedName = $artifactRegistryClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $formattedName = $artifactRegistryClient->repositoryName('[PROJECT]', '[LOCATION]', '[REPOSITORY]');
      *     $response = $artifactRegistryClient->getRepository($formattedName);
      * } finally {
      *     $artifactRegistryClient->close();

@@ -16,7 +16,6 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1.Snippets
 {
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.ArtifactRegistry.V1;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
@@ -31,7 +30,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
-            LocationName name = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            RepositoryName name = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
             // Make the request
             Repository response = artifactRegistryClient.GetRepository(name);
         }

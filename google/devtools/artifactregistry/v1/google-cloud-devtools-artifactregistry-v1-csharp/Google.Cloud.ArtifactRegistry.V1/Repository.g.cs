@@ -48,7 +48,7 @@ namespace Google.Cloud.ArtifactRegistry.V1 {
             "ZXNSZXNwb25zZRJFCgxyZXBvc2l0b3JpZXMYASADKAsyLy5nb29nbGUuZGV2",
             "dG9vbHMuYXJ0aWZhY3RyZWdpc3RyeS52MS5SZXBvc2l0b3J5EhcKD25leHRf",
             "cGFnZV90b2tlbhgCIAEoCSJYChRHZXRSZXBvc2l0b3J5UmVxdWVzdBJACgRu",
-            "YW1lGAEgASgJQjLgQQL6QSwSKmFydGlmYWN0cmVnaXN0cnkuZ29vZ2xlYXBp",
+            "YW1lGAEgASgJQjLgQQL6QSwKKmFydGlmYWN0cmVnaXN0cnkuZ29vZ2xlYXBp",
             "cy5jb20vUmVwb3NpdG9yeUL9AQonY29tLmdvb2dsZS5kZXZ0b29scy5hcnRp",
             "ZmFjdHJlZ2lzdHJ5LnYxQg9SZXBvc2l0b3J5UHJvdG9QAVpTZ29vZ2xlLmdv",
             "bGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9kZXZ0b29scy9hcnRpZmFj",

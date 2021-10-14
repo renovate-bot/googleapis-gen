@@ -490,7 +490,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Initialize request argument(s)
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             // Make the request
             Repository response = artifactRegistryClient.GetRepository(request);
@@ -507,7 +507,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Initialize request argument(s)
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             // Make the request
             Repository response = await artifactRegistryClient.GetRepositoryAsync(request);
@@ -521,7 +521,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
-            string name = "projects/[PROJECT]/locations/[LOCATION]";
+            string name = "projects/[PROJECT]/locations/[LOCATION]/repositories/[REPOSITORY]";
             // Make the request
             Repository response = artifactRegistryClient.GetRepository(name);
             // End snippet
@@ -535,7 +535,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
-            string name = "projects/[PROJECT]/locations/[LOCATION]";
+            string name = "projects/[PROJECT]/locations/[LOCATION]/repositories/[REPOSITORY]";
             // Make the request
             Repository response = await artifactRegistryClient.GetRepositoryAsync(name);
             // End snippet
@@ -544,11 +544,11 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
         /// <summary>Snippet for GetRepository</summary>
         public void GetRepositoryResourceNames()
         {
-            // Snippet: GetRepository(LocationName, CallSettings)
+            // Snippet: GetRepository(RepositoryName, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
-            LocationName name = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            RepositoryName name = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
             // Make the request
             Repository response = artifactRegistryClient.GetRepository(name);
             // End snippet
@@ -557,12 +557,12 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
         /// <summary>Snippet for GetRepositoryAsync</summary>
         public async Task GetRepositoryResourceNamesAsync()
         {
-            // Snippet: GetRepositoryAsync(LocationName, CallSettings)
-            // Additional: GetRepositoryAsync(LocationName, CancellationToken)
+            // Snippet: GetRepositoryAsync(RepositoryName, CallSettings)
+            // Additional: GetRepositoryAsync(RepositoryName, CancellationToken)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
-            LocationName name = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
+            RepositoryName name = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
             // Make the request
             Repository response = await artifactRegistryClient.GetRepositoryAsync(name);
             // End snippet

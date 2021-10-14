@@ -518,10 +518,10 @@ namespace Google.Cloud.ArtifactRegistry.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
-        public virtual Repository GetRepository(gagr::LocationName name, gaxgrpc::CallSettings callSettings = null) =>
+        public virtual Repository GetRepository(RepositoryName name, gaxgrpc::CallSettings callSettings = null) =>
             GetRepository(new GetRepositoryRequest
             {
-                LocationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                RepositoryName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
             }, callSettings);
 
         /// <summary>
@@ -532,10 +532,10 @@ namespace Google.Cloud.ArtifactRegistry.V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
-        public virtual stt::Task<Repository> GetRepositoryAsync(gagr::LocationName name, gaxgrpc::CallSettings callSettings = null) =>
+        public virtual stt::Task<Repository> GetRepositoryAsync(RepositoryName name, gaxgrpc::CallSettings callSettings = null) =>
             GetRepositoryAsync(new GetRepositoryRequest
             {
-                LocationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                RepositoryName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
             }, callSettings);
 
         /// <summary>
@@ -546,7 +546,7 @@ namespace Google.Cloud.ArtifactRegistry.V1
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
-        public virtual stt::Task<Repository> GetRepositoryAsync(gagr::LocationName name, st::CancellationToken cancellationToken) =>
+        public virtual stt::Task<Repository> GetRepositoryAsync(RepositoryName name, st::CancellationToken cancellationToken) =>
             GetRepositoryAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
     }
 

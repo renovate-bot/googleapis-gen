@@ -31,7 +31,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Snippets
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
-            string name = "projects/[PROJECT]/locations/[LOCATION]";
+            string name = "projects/[PROJECT]/locations/[LOCATION]/repositories/[REPOSITORY]";
             // Make the request
             Repository response = await artifactRegistryClient.GetRepositoryAsync(name);
         }

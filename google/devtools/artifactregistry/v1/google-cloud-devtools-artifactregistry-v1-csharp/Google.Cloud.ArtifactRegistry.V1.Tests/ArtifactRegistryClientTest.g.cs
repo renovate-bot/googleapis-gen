@@ -15,7 +15,6 @@
 // Generated code. DO NOT EDIT!
 
 using gaxgrpc = Google.Api.Gax.Grpc;
-using gagr = Google.Api.Gax.ResourceNames;
 using wkt = Google.Protobuf.WellKnownTypes;
 using grpccore = Grpc.Core;
 using moq = Moq;
@@ -34,7 +33,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             moq::Mock<ArtifactRegistry.ArtifactRegistryClient> mockGrpcClient = new moq::Mock<ArtifactRegistry.ArtifactRegistryClient>(moq::MockBehavior.Strict);
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             Repository expectedResponse = new Repository
             {
@@ -65,7 +64,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             moq::Mock<ArtifactRegistry.ArtifactRegistryClient> mockGrpcClient = new moq::Mock<ArtifactRegistry.ArtifactRegistryClient>(moq::MockBehavior.Strict);
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             Repository expectedResponse = new Repository
             {
@@ -98,7 +97,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             moq::Mock<ArtifactRegistry.ArtifactRegistryClient> mockGrpcClient = new moq::Mock<ArtifactRegistry.ArtifactRegistryClient>(moq::MockBehavior.Strict);
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             Repository expectedResponse = new Repository
             {
@@ -129,7 +128,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             moq::Mock<ArtifactRegistry.ArtifactRegistryClient> mockGrpcClient = new moq::Mock<ArtifactRegistry.ArtifactRegistryClient>(moq::MockBehavior.Strict);
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             Repository expectedResponse = new Repository
             {
@@ -162,7 +161,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             moq::Mock<ArtifactRegistry.ArtifactRegistryClient> mockGrpcClient = new moq::Mock<ArtifactRegistry.ArtifactRegistryClient>(moq::MockBehavior.Strict);
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             Repository expectedResponse = new Repository
             {
@@ -182,7 +181,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             };
             mockGrpcClient.Setup(x => x.GetRepository(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ArtifactRegistryClient client = new ArtifactRegistryClientImpl(mockGrpcClient.Object, null);
-            Repository response = client.GetRepository(request.LocationName);
+            Repository response = client.GetRepository(request.RepositoryName);
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -193,7 +192,7 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             moq::Mock<ArtifactRegistry.ArtifactRegistryClient> mockGrpcClient = new moq::Mock<ArtifactRegistry.ArtifactRegistryClient>(moq::MockBehavior.Strict);
             GetRepositoryRequest request = new GetRepositoryRequest
             {
-                LocationName = gagr::LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
+                RepositoryName = RepositoryName.FromProjectLocationRepository("[PROJECT]", "[LOCATION]", "[REPOSITORY]"),
             };
             Repository expectedResponse = new Repository
             {
@@ -213,9 +212,9 @@ namespace Google.Cloud.ArtifactRegistry.V1.Tests
             };
             mockGrpcClient.Setup(x => x.GetRepositoryAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Repository>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ArtifactRegistryClient client = new ArtifactRegistryClientImpl(mockGrpcClient.Object, null);
-            Repository responseCallSettings = await client.GetRepositoryAsync(request.LocationName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            Repository responseCallSettings = await client.GetRepositoryAsync(request.RepositoryName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
             xunit::Assert.Same(expectedResponse, responseCallSettings);
-            Repository responseCancellationToken = await client.GetRepositoryAsync(request.LocationName, st::CancellationToken.None);
+            Repository responseCancellationToken = await client.GetRepositoryAsync(request.RepositoryName, st::CancellationToken.None);
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }

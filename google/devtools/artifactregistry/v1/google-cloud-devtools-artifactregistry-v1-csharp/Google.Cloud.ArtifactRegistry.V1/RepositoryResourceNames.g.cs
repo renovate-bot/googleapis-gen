@@ -287,11 +287,11 @@ namespace Google.Cloud.ArtifactRegistry.V1
     public partial class GetRepositoryRequest
     {
         /// <summary>
-        /// <see cref="gagr::LocationName"/>-typed view over the <see cref="Name"/> resource name property.
+        /// <see cref="gcav::RepositoryName"/>-typed view over the <see cref="Name"/> resource name property.
         /// </summary>
-        public gagr::LocationName LocationName
+        public gcav::RepositoryName RepositoryName
         {
-            get => string.IsNullOrEmpty(Name) ? null : gagr::LocationName.Parse(Name, allowUnparsed: true);
+            get => string.IsNullOrEmpty(Name) ? null : gcav::RepositoryName.Parse(Name, allowUnparsed: true);
             set => Name = value?.ToString() ?? "";
         }
     }
